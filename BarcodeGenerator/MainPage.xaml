@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI"
+             x:Class="BarcodeGenerator.MainPage"
+             Loaded="OnLoad">
+
+    <Shell.TitleView>
+        <Grid RowDefinitions="40"
+              ColumnDefinitions="40, 160, 110*, 40"
+              Margin="5"
+              BackgroundColor="#00bfff">
+
+            <ImageButton Grid.Row="0"
+                         Grid.Column="0"
+                         Source="info_32p.png"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Center"
+                         HeightRequest="28"
+                         WidthRequest="28"
+                         BackgroundColor="#00bfff"
+                         BorderColor="#00bfff"
+                         Clicked="OnPageAboutClicked">
+            </ImageButton>
+
+            <Label Style="{StaticResource labelStyleShellTitleView}"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Margin="0"
+                   HorizontalTextAlignment="Start"
+                   FontSize="17"
+                   Text="Barcode Generator">
+            </Label>
+
+            <ImageButton Grid.Row="0"
+                         Grid.Column="3"
+                         Source="cancel_close_icon_48p.png"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         HeightRequest="24"
+                         WidthRequest="24"
+                         BackgroundColor="#00bfff"
+                         BorderColor="#00bfff"
+                         Clicked="OnCloseApplicationClicked">
+            </ImageButton>
+        </Grid>
+    </Shell.TitleView>
+
+    <ScrollView>
+        <Grid RowDefinitions="40, 38, 190, 46, 240, 40, 46"
+              ColumnDefinitions="140, 210*"
+              Margin="10,10,10,0"
+              ColumnSpacing="0"
+              RowSpacing="2">
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                VerticalTextAlignment="Start"
+                HeightRequest="37"
+                Text="Select a format:" />
+
+            <Border Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+
+                <Picker
+                    x:Name="PckFormatCode"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="37"
+                    WidthRequest="200"
+                    SelectedIndexChanged="OnPickerFormatCodeChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Aztec</x:String>
+                            <x:String>Codabar</x:String>
+                            <x:String>Code 128</x:String>
+                            <x:String>Code 39</x:String>
+                            <x:String>Code 93</x:String>
+                            <x:String>Data Matrix</x:String>
+                            <x:String>EAN-13</x:String>
+                            <x:String>EAN-8</x:String>
+                            <x:String>IMb (Intelligent Mail)</x:String>
+                            <x:String>ITF (Interleaved 2 of 5)</x:String>
+                            <x:String>MSI (Modified Plessey)</x:String>
+                            <x:String>PDF417</x:String>
+                            <x:String>Pharmacode</x:String>
+                            <x:String>Plessey</x:String>
+                            <x:String>QR Code</x:String>
+                            <x:String>RSS 14</x:String>
+                            <x:String>RSS Expanded</x:String>
+                            <x:String>UPC-A</x:String>
+                            <x:String>UPC-E</x:String>
+                            <x:String>UPC EAN Extension</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Border>
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                Text="Text to code:" />
+
+            <Border Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+
+                <Editor
+                    x:Name="edtTextToCode"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="190"
+                    MinimumWidthRequest="350"
+                    VerticalTextAlignment="Start" />
+
+            </Border>
+
+            <Button
+                x:Name="btnGenerateCode"
+                Grid.Row="3"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                HeightRequest="40"
+                WidthRequest="120"
+                Text="Generate"
+                Clicked="OnGenerateCodeClicked" />
+
+            <Button
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                HeightRequest="40"
+                WidthRequest="120"
+                Text="Clear"
+                Clicked="OnClearCodeClicked" />
+
+            <BoxView
+                 Grid.Row="4"
+                 Grid.ColumnSpan="2"
+                 Color="White" />
+
+            <zxing:BarcodeGeneratorView
+                x:Name="bgvCode"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="210"
+                MinimumWidthRequest="350"
+                BarcodeMargin="0"
+                BackgroundColor="White"
+                ForegroundColor="Black" />
+
+            <Label
+                x:Name="lblTextCode"
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                LineBreakMode="TailTruncation" />
+
+            <Button
+                x:Name="btnShare"
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                HeightRequest="40"
+                MinimumWidthRequest="120"
+                Text="Share"
+                IsEnabled="False"
+                Clicked="OnShareClicked" />
+
+            <Image
+                x:Name="imgScreenshot"
+                Grid.Row="6"
+                Grid.Column="1"
+                IsVisible="false" />
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
