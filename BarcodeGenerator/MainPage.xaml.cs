@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.15 Beta
-// Date ........: 2022-10-01 (YYYY-MM-DD)
+// Date ........: 2022-10-02 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Code generator for barcordes
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
@@ -13,6 +13,10 @@ namespace BarcodeGenerator;
 
 public partial class MainPage : ContentPage
 {
+    // Global variables for all pages part of Barcode Generator.
+    public static string cTheme;
+    public static int nFormatIndex;
+
     // Local variables.
     private bool bLicense;
     private readonly string cMessageErrorInCode = "There is an error in the code you entered.\nThe check digit was modified.";
@@ -28,23 +32,51 @@ public partial class MainPage : ContentPage
             DisplayAlert("InitializeComponent MainPage", ex.Message, "OK");
             return;
         }
-        
+
+        // Get the saved settings.
+        cTheme = Preferences.Get("SettingTheme", "System");
+        nFormatIndex = Preferences.Get("SettingFormatIndex", 14);
         bLicense = Preferences.Get("SettingLicense", false);
         //bLicense = false;  // For testing.
 
-        // Default format code = QrCode.
-        PckFormatCode.SelectedIndex = 14;
+        // Set the theme.
+        if (cTheme == "Light")
+        {
+            Application.Current.UserAppTheme = AppTheme.Light;
+        }
+        else if (cTheme == "Dark")
+        {
+            Application.Current.UserAppTheme = AppTheme.Dark;
+        }
+        else
+        {
+            Application.Current.UserAppTheme = AppTheme.Unspecified;
+        }
 
-        // Default settings for editor.
-        edtTextToCode.MaxLength = 7089;
-        edtTextToCode.Keyboard = Keyboard.Default;
+        // Set the format barcode.
+        if (nFormatIndex < 1 || nFormatIndex > 19)
+        {
+            // Default format code = QrCode.
+            PckFormatCode.SelectedIndex = 14;
+        }
+        else
+        {
+            // Set the format barcode to the saved code.
+            PckFormatCode.SelectedIndex = nFormatIndex;
+        }
+
         edtTextToCode.Focus();
     }
 
-    // Buttons clicked events.
+    // TitleView buttons clicked events.
     private async void OnPageAboutClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PageAbout());
+    }
+
+    private async void OnPageSettingsClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new PageSettings());
     }
 
     // Set the editor properties for the selected format code.

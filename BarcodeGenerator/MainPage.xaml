@@ -32,7 +32,7 @@
                    Text="Barcode Generator">
             </Label>
 
-            <ImageButton Grid.Row="0"
+            <!--<ImageButton Grid.Row="0"
                          Grid.Column="3"
                          Source="cancel_close_icon_48p.png"
                          HorizontalOptions="Center"
@@ -42,7 +42,20 @@
                          BackgroundColor="#00bfff"
                          BorderColor="#00bfff"
                          Clicked="OnCloseApplicationClicked">
+            </ImageButton>-->
+
+            <ImageButton Grid.Row="0"
+                         Grid.Column="3"
+                         Source="settings_32p.png"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         HeightRequest="24"
+                         WidthRequest="24"
+                         BackgroundColor="#00bfff"
+                         BorderColor="#00bfff"
+                         Clicked="OnPageSettingsClicked">
             </ImageButton>
+
         </Grid>
     </Shell.TitleView>
 
@@ -130,22 +143,20 @@
 
             <Button
                 x:Name="btnGenerateCode"
+                Style="{StaticResource buttonStyleDefault}"
                 Grid.Row="3"
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
-                HeightRequest="40"
-                WidthRequest="120"
                 Text="Generate"
                 Clicked="OnGenerateCodeClicked" />
 
             <Button
+                Style="{StaticResource buttonStyleDefault}"
                 Grid.Row="3"
                 Grid.Column="1"
                 HorizontalOptions="End"
                 VerticalOptions="Start"
-                HeightRequest="40"
-                WidthRequest="120"
                 Text="Clear"
                 Clicked="OnClearCodeClicked" />
 
