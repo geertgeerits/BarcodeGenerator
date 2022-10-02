@@ -1,8 +1,8 @@
 ﻿// Program .....: CodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
-// Version .....: 1.0.15 Beta
-// Date ........: 2022-10-02 (YYYY-MM-DD)
+// Version .....: 1.0.16 Beta
+// Date ........: 2022-10-03 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Code generator for barcordes
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
@@ -58,7 +58,7 @@ public partial class MainPage : ContentPage
         }
 
         // Set the format barcode.
-        if (nFormatIndex < 1 || nFormatIndex > 19)
+        if (nFormatIndex < 0 || nFormatIndex > 19)
         {
             // Default format code = QrCode.
             PckFormatCode.SelectedIndex = 14;

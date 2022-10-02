@@ -1,18 +1,11 @@
-using System.Diagnostics;
 using System.Globalization;
 
 namespace BarcodeGenerator;
 
 public partial class PageSettings : ContentPage
 {
-    // Local variables.
-    private Stopwatch stopWatch = new();
-    private int nNoClickedEvents = 1;
-    private readonly string cThemeCurrent = MainPage.cTheme;
-
     public PageSettings()
 	{
-        //InitializeComponent();
         try
         {
             InitializeComponent();
@@ -35,7 +28,6 @@ public partial class PageSettings : ContentPage
         {
             cCurrentTheme = MainPage.cTheme;
         }
-        //DisplayAlert("cCurrentTheme", cCurrentTheme, "OK");  // For testing
 
         if (cCurrentTheme == "Light")
         {
@@ -69,9 +61,6 @@ public partial class PageSettings : ContentPage
         sldColorBgRed.Value = nRed;
         sldColorBgGreen.Value = nGreen;
         sldColorBgBlue.Value = nBlue;
-
-        // Start the stopWatch for clearing all the settings.
-        stopWatch.Start();
     }
 
     // Radio button themes clicked event.
@@ -174,12 +163,12 @@ public partial class PageSettings : ContentPage
     }
 
     // Convert RRGGBB Hex color to RGB color.
-    public static void HexToRgbColor(string cHexColor, ref int nRed, ref int nGreen, ref int nBlue)
+    private static void HexToRgbColor(string cHexColor, ref int nRed, ref int nGreen, ref int nBlue)
     {
-        // Remove # if present.
-        if (cHexColor.IndexOf('#') != -1)
+        // Remove leading # if present.
+        if (cHexColor.Substring(0, 1) == "#")
         {
-            cHexColor = cHexColor.Replace("#", "");
+            cHexColor = cHexColor.Substring(1);
         }
 
         nRed = int.Parse(cHexColor.Substring(0, 2), NumberStyles.AllowHexSpecifier);
@@ -188,58 +177,39 @@ public partial class PageSettings : ContentPage
     }
 
     // Button save settings clicked event.
-    private async void OnSettingsSaveClicked(object sender, EventArgs e)
+    private void OnSettingsSaveClicked(object sender, EventArgs e)
     {
         Preferences.Default.Set("SettingTheme", MainPage.cTheme);
         Preferences.Default.Set("SettingFormatIndex", MainPage.nFormatIndex);
         Preferences.Default.Set("SettingCodeColorFg", MainPage.cCodeColorFg);
         Preferences.Default.Set("SettingCodeColorBg", MainPage.cCodeColorBg);
 
-        if (cThemeCurrent != MainPage.cTheme)
-        {
-            bool bAnswer = await Application.Current.MainPage.DisplayAlert("Theme", "The theme will not be applied until the application is closed.\nClose now?", "Yes", "No");
+        // Wait 500 milliseconds otherwise the settings are not saved in Android.
+        Task.Delay(500).Wait();
 
-            if (bAnswer)
-            {
-                // Wait 500 milliseconds otherwise the settings are not saved in Android.
-                Task.Delay(500).Wait();
-
-                // Close the application.
-                Application.Current.Quit();
-            }
-        }
+        // Restart the application.
+        Application.Current.MainPage = new AppShell();
     }
 
-    // Button clear settings clicked event.
-    private void OnSettingsClearClicked(object sender, EventArgs e)
+    // Button reset settings clicked event.
+    private void OnSettingsResetClicked(object sender, EventArgs e)
     {
-        // Clear some settings.
-        if (nNoClickedEvents != 4)
-        {
-            Preferences.Remove("SettingTheme");
-            Preferences.Remove("SettingFormatIndex");
-            Preferences.Remove("SettingCodeColorFg");
-            Preferences.Remove("SettingCodeColorBg");
+        // Reset some settings.
+        Preferences.Remove("SettingTheme");
+        Preferences.Remove("SettingFormatIndex");
+        Preferences.Remove("SettingCodeColorFg");
+        Preferences.Remove("SettingCodeColorBg");
 
-            nNoClickedEvents++;
-        }
-        // Clear all settings and close the application after the 4 first clicked events in the first 5 seconds after opening the page.
-        else
-        {
-            // Get the elapsed time in milli seconds.
-            stopWatch.Stop();
+        // Reset to the default values.
+        MainPage.cTheme = "System";
+        MainPage.nFormatIndex = 14;
+        MainPage.cCodeColorFg = "000000";
+        MainPage.cCodeColorBg = "FFFFFF";
 
-            if (stopWatch.ElapsedMilliseconds < 5001)
-            {
-                // Clear all settings.
-                Preferences.Clear();
+        // Wait 500 milliseconds otherwise the settings are not saved in Android.
+        Task.Delay(500).Wait();
 
-                // Wait 500 milliseconds otherwise the Preferences.Clear() is not executed in Android.
-                Task.Delay(500).Wait();
-
-                // Close the application.
-                Application.Current.Quit();
-            }
-        }
+        // Restart the application.
+        Application.Current.MainPage = new AppShell();
     }
 }
