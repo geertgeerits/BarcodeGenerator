@@ -16,6 +16,8 @@ public partial class MainPage : ContentPage
     // Global variables for all pages part of Barcode Generator.
     public static string cTheme;
     public static int nFormatIndex;
+    public static string cCodeColorFg;
+    public static string cCodeColorBg;
 
     // Local variables.
     private bool bLicense;
@@ -36,6 +38,8 @@ public partial class MainPage : ContentPage
         // Get the saved settings.
         cTheme = Preferences.Get("SettingTheme", "System");
         nFormatIndex = Preferences.Get("SettingFormatIndex", 14);
+        cCodeColorFg = Preferences.Get("SettingCodeColorFg", "000000");
+        cCodeColorBg = Preferences.Get("SettingCodeColorBg", "FFFFFF");
         bLicense = Preferences.Get("SettingLicense", false);
         //bLicense = false;  // For testing.
 
@@ -82,8 +86,6 @@ public partial class MainPage : ContentPage
     // Set the editor properties for the selected format code.
     void OnPickerFormatCodeChanged(object sender, EventArgs e)
     {
-        //bgvCode.IsVisible = false;
-
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
@@ -246,7 +248,10 @@ public partial class MainPage : ContentPage
         edtTextToCode.IsEnabled = false;
         edtTextToCode.IsEnabled = true;
 
-        //bgvCode.IsVisible = true;  //Does not work !!!
+        // Set the barcode colors.
+        bgvCode.ForegroundColor = Color.FromArgb(cCodeColorFg);
+        bgvCode.BackgroundColor = Color.FromArgb(cCodeColorBg);
+        bxvCodeColorBg.Color = Color.FromArgb(cCodeColorBg);
 
         bgvCode.Value = "";
         string cChecksum = "";

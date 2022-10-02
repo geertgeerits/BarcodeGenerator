@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Globalization;
 
 namespace BarcodeGenerator;
 
@@ -49,8 +50,25 @@ public partial class PageSettings : ContentPage
             rbnThemeSystem.IsChecked = true;
         }
 
-        // Set the barcode format.
+        // Set the barcode format in the picker.
         PckFormatCode.SelectedIndex = MainPage.nFormatIndex;
+
+        // Set the color sliders.
+        int nRed = 0;
+        int nGreen = 0;
+        int nBlue = 0;
+
+        HexToRgbColor(MainPage.cCodeColorFg, ref nRed, ref nGreen, ref nBlue);
+
+        sldColorFgRed.Value = nRed;
+        sldColorFgGreen.Value = nGreen;
+        sldColorFgBlue.Value = nBlue;
+
+        HexToRgbColor(MainPage.cCodeColorBg, ref nRed, ref nGreen, ref nBlue);
+
+        sldColorBgRed.Value = nRed;
+        sldColorBgGreen.Value = nGreen;
+        sldColorBgBlue.Value = nBlue;
 
         // Start the stopWatch for clearing all the settings.
         stopWatch.Start();
@@ -74,7 +92,7 @@ public partial class PageSettings : ContentPage
     }
 
     // Picker format clicked event.
-    void OnPickerFormatCodeChanged(object sender, EventArgs e)
+    private void OnPickerFormatCodeChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
@@ -85,11 +103,97 @@ public partial class PageSettings : ContentPage
         }
     }
 
+    // Slider color barcode forground value change.
+    private void OnSliderColorForgroundValueChanged(object sender, ValueChangedEventArgs args)
+    {
+        int nColorRed = 0;
+        int nColorGreen = 0;
+        int nColorBlue = 0;
+
+        var slider = (Slider)sender;
+
+        if (slider == sldColorFgRed)
+        {
+            nColorRed = (int)args.NewValue;
+            nColorGreen = (int)sldColorFgGreen.Value;
+            nColorBlue = (int)sldColorFgBlue.Value;
+        }
+        else if (slider == sldColorFgGreen)
+        {
+            nColorRed = (int)sldColorFgRed.Value;
+            nColorGreen = (int)args.NewValue;
+            nColorBlue = (int)sldColorFgBlue.Value;
+        }
+        else if (slider == sldColorFgBlue)
+        {
+            nColorRed = (int)sldColorFgRed.Value;
+            nColorGreen = (int)sldColorFgGreen.Value;
+            nColorBlue = (int)args.NewValue;
+        }
+
+        string cColorFgHex = nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
+        bxvColorFg.Color = Color.FromArgb(cColorFgHex);
+        //bxvColorFg.Color = Color.FromRgb(nColorRed, nColorGreen, nColorBlue);
+
+        MainPage.cCodeColorFg = cColorFgHex;
+    }
+
+    // Slider color barcode background value change.
+    private void OnSliderColorBackgroundValueChanged(object sender, ValueChangedEventArgs args)
+    {
+        int nColorRed = 0;
+        int nColorGreen = 0;
+        int nColorBlue = 0;
+
+        var slider = (Slider)sender;
+
+        if (slider == sldColorBgRed)
+        {
+            nColorRed = (int)args.NewValue;
+            nColorGreen = (int)sldColorBgGreen.Value;
+            nColorBlue = (int)sldColorBgBlue.Value;
+        }
+        else if (slider == sldColorBgGreen)
+        {
+            nColorRed = (int)sldColorBgRed.Value;
+            nColorGreen = (int)args.NewValue;
+            nColorBlue = (int)sldColorBgBlue.Value;
+        }
+        else if (slider == sldColorBgBlue)
+        {
+            nColorRed = (int)sldColorBgRed.Value;
+            nColorGreen = (int)sldColorBgGreen.Value;
+            nColorBlue = (int)args.NewValue;
+        }
+
+        string cColorBgHex = nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
+        bxvColorBg.Color = Color.FromArgb(cColorBgHex);
+        //bxvColorBg.Color = Color.FromRgb(nColorRed, nColorGreen, nColorBlue);
+
+        MainPage.cCodeColorBg = cColorBgHex;
+    }
+
+    // Convert RRGGBB Hex color to RGB color.
+    public static void HexToRgbColor(string cHexColor, ref int nRed, ref int nGreen, ref int nBlue)
+    {
+        // Remove # if present.
+        if (cHexColor.IndexOf('#') != -1)
+        {
+            cHexColor = cHexColor.Replace("#", "");
+        }
+
+        nRed = int.Parse(cHexColor.Substring(0, 2), NumberStyles.AllowHexSpecifier);
+        nGreen = int.Parse(cHexColor.Substring(2, 2), NumberStyles.AllowHexSpecifier);
+        nBlue = int.Parse(cHexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
+    }
+
     // Button save settings clicked event.
     private async void OnSettingsSaveClicked(object sender, EventArgs e)
     {
         Preferences.Default.Set("SettingTheme", MainPage.cTheme);
         Preferences.Default.Set("SettingFormatIndex", MainPage.nFormatIndex);
+        Preferences.Default.Set("SettingCodeColorFg", MainPage.cCodeColorFg);
+        Preferences.Default.Set("SettingCodeColorBg", MainPage.cCodeColorBg);
 
         if (cThemeCurrent != MainPage.cTheme)
         {
@@ -114,6 +218,8 @@ public partial class PageSettings : ContentPage
         {
             Preferences.Remove("SettingTheme");
             Preferences.Remove("SettingFormatIndex");
+            Preferences.Remove("SettingCodeColorFg");
+            Preferences.Remove("SettingCodeColorBg");
 
             nNoClickedEvents++;
         }

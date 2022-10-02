@@ -161,6 +161,7 @@
                 Clicked="OnClearCodeClicked" />
 
             <BoxView
+                 x:Name="bxvCodeColorBg"
                  Grid.Row="4"
                  Grid.ColumnSpan="2"
                  Color="White" />
