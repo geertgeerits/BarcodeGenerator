@@ -35,7 +35,7 @@ public static class MauiProgram
                         WindowId win32WindowsId = Win32Interop.GetWindowIdFromWindow(nativeWindowHandle);
                         AppWindow winuiAppWindow = AppWindow.GetFromWindowId(win32WindowsId);
 
-                        const int width = 520;
+                        const int width = 540;
                         const int height =1000;
                         winuiAppWindow.MoveAndResize(new RectInt32(1920 / 2 - width / 2, 1080 / 2 - height / 2, width, height));
                     });

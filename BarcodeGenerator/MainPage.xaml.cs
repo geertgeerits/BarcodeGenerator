@@ -1,10 +1,10 @@
-﻿// Program .....: CodeGenerator.sln
+﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.16 Beta
-// Date ........: 2022-10-03 (YYYY-MM-DD)
+// Date ........: 2022-10-04 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
-// Description .: Code generator for barcordes
+// Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
 
 using ZXing.Net.Maui;
@@ -42,6 +42,26 @@ public partial class MainPage : ContentPage
         cCodeColorBg = Preferences.Get("SettingCodeColorBg", "FFFFFF");
         bLicense = Preferences.Get("SettingLicense", false);
         //bLicense = false;  // For testing.
+
+#if WINDOWS
+        // Set the settings default values because of a BUG in the Windows app they have NULL values !!!
+        if (cTheme == null)
+        {
+            cTheme = "System";
+        }
+
+        nFormatIndex = 14;
+
+        if (cCodeColorFg == null)
+        {
+            cCodeColorFg = "000000";
+        }
+
+        if (cCodeColorBg == null)
+        {
+            cCodeColorBg = "FFFFFF";
+        }
+#endif
 
         // Set the theme.
         if (cTheme == "Light")
@@ -776,7 +796,7 @@ public partial class MainPage : ContentPage
     {
         if (bLicense == false)
         {
-            bool bAnswer = await Application.Current.MainPage.DisplayAlert("License", "Code Generator" + "\n" + "Copyright © 2022-2022 Geert Geerits" + "\n\n" + "This application may be used freely for non-commercial purposes.\r\nUse this program entirely at your own risk.", "Agree", "Disagree");
+            bool bAnswer = await Application.Current.MainPage.DisplayAlert("License", "Barcode Generator" + "\n" + "Copyright © 2022-2022 Geert Geerits" + "\n\n" + "This application may be used freely for non-commercial purposes.\r\nUse this program entirely at your own risk.", "Agree", "Disagree");
 
             if (bAnswer)
             {

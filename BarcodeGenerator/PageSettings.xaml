@@ -13,7 +13,7 @@
     <ScrollView>
         <StackLayout>
             <Grid RowDefinitions="36, 36, 36"
-                  ColumnDefinitions="140, 210*"
+                  ColumnDefinitions="150, 200*"
                   Margin="10,10,10,0"
                   ColumnSpacing="0"
                   RowSpacing="10">
@@ -51,9 +51,9 @@
             <Label></Label>
 
             <Grid RowDefinitions="40, 10, 40, 40, 40, 10, 40, 40, 40, 6, 40"
-                  ColumnDefinitions="140, 210*"
+                  ColumnDefinitions="150, 200*"
                   Margin="10,10,10,0"
-                  ColumnSpacing="0"
+                  ColumnSpacing="10"
                   RowSpacing="10">
 
                 <Label
@@ -118,6 +118,7 @@
                     Grid.Row="2"
                     Grid.Column="1"
                     ThumbColor="#FF0000"
+                    MinimumTrackColor="#FF0000"
                     Minimum="0"
                     Maximum="255"
                     ValueChanged="OnSliderColorForgroundValueChanged" />
@@ -133,6 +134,7 @@
                     Grid.Row="3"
                     Grid.Column="1"
                     ThumbColor="#00FF00"
+                    MinimumTrackColor="#00FF00"
                     Minimum="0"
                     Maximum="255"
                     ValueChanged="OnSliderColorForgroundValueChanged" />
@@ -142,6 +144,7 @@
                     Grid.Row="4"
                     Grid.Column="1"
                     ThumbColor="#0000FF"
+                    MinimumTrackColor="#0000FF"
                     Minimum="0"
                     Maximum="255"
                     ValueChanged="OnSliderColorForgroundValueChanged" />
@@ -159,6 +162,7 @@
                     Grid.Row="6"
                     Grid.Column="1"
                     ThumbColor="#FF0000"
+                    MinimumTrackColor="#FF0000"
                     Minimum="0"
                     Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
@@ -174,6 +178,7 @@
                     Grid.Row="7"
                     Grid.Column="1"
                     ThumbColor="#00FF00"
+                    MinimumTrackColor="#00FF00"
                     Minimum="0"
                     Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
@@ -183,6 +188,7 @@
                     Grid.Row="8"
                     Grid.Column="1"
                     ThumbColor="#0000FF"
+                    MinimumTrackColor="#0000FF"
                     Minimum="0"
                     Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
