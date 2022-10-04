@@ -187,13 +187,13 @@
 
             <Button
                 x:Name="btnShare"
-                Style="{StaticResource buttonStyleDefault}"
                 Grid.Row="6"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="End"
-                MinimumWidthRequest="120"
+                HeightRequest="40"
+                MinimumWidthRequest="130"
                 Text="Share"
                 IsEnabled="False"
                 Clicked="OnShareClicked" />
