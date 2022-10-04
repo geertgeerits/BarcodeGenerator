@@ -126,7 +126,7 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HeightRequest" Value="40" />
-                <Setter Property="WidthRequest" Value="120" />
+                <Setter Property="WidthRequest" Value="130" />
             </Style>
 
         </ResourceDictionary>

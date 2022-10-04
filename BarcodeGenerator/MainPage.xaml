@@ -60,7 +60,7 @@
     </Shell.TitleView>
 
     <ScrollView>
-        <Grid RowDefinitions="40, 38, 190, 46, 240, 40, 46"
+        <Grid RowDefinitions="40, 40, 190, 46, 240, 40, 46"
               ColumnDefinitions="140, 210*"
               Margin="10,10,10,0"
               ColumnSpacing="0"
@@ -70,23 +70,21 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 HorizontalOptions="Start"
-                VerticalOptions="End"
-                VerticalTextAlignment="Start"
-                HeightRequest="37"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center"
                 Text="Select a format:" />
 
             <Border Style="{StaticResource borderStyleDefault}"
                     Grid.Row="0"
                     Grid.Column="1"
                     HorizontalOptions="Start"
-                    VerticalOptions="Start">
+                    VerticalOptions="Center">
 
                 <Picker
                     x:Name="PckFormatCode"
                     Grid.Row="0"
                     Grid.Column="1"
-                    HeightRequest="37"
-                    WidthRequest="200"
+                    MinimumWidthRequest="200"
                     SelectedIndexChanged="OnPickerFormatCodeChanged">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -189,12 +187,12 @@
 
             <Button
                 x:Name="btnShare"
+                Style="{StaticResource buttonStyleDefault}"
                 Grid.Row="6"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="End"
-                HeightRequest="40"
                 MinimumWidthRequest="120"
                 Text="Share"
                 IsEnabled="False"
