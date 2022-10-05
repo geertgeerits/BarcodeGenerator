@@ -220,7 +220,7 @@ public partial class MainPage : ContentPage
                 case 14:
                     edtTextToCode.MaxLength = 7089;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 0;
+                    bgvCode.BarcodeMargin = 4;
                     break;
 
                 // Rss14.
@@ -812,15 +812,15 @@ public partial class MainPage : ContentPage
     // Button share event.
     private async void OnShareClicked(object sender, EventArgs e)
     {
-        imgScreenshot.Source = await TakeScreenshotAsync();
+        await TakeScreenshotAsync();
     }
 
     // Capture a screenshot.
-    public static async Task<ImageSource> TakeScreenshotAsync()
+    public async Task<ImageSource> TakeScreenshotAsync()
     {
         if (Screenshot.Default.IsCaptureSupported)
         {
-            IScreenshotResult screen = await Screenshot.Default.CaptureAsync();
+            IScreenshotResult screen = await bgvCode.CaptureAsync();
 
             Stream stream = await screen.OpenReadAsync();
             
