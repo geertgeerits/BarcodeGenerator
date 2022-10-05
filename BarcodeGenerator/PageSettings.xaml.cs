@@ -1,9 +1,13 @@
+using System.Diagnostics;
 using System.Globalization;
 
 namespace BarcodeGenerator;
 
 public partial class PageSettings : ContentPage
 {
+    // Local variables.
+    private Stopwatch stopWatch = new();
+
     public PageSettings()
 	{
         try
@@ -61,6 +65,9 @@ public partial class PageSettings : ContentPage
         sldColorBgRed.Value = nRed;
         sldColorBgGreen.Value = nGreen;
         sldColorBgBlue.Value = nBlue;
+
+        // Start the stopWatch for resetting all the settings.
+        stopWatch.Start();
     }
 
     // Radio button themes clicked event.
@@ -194,17 +201,22 @@ public partial class PageSettings : ContentPage
     // Button reset settings clicked event.
     private void OnSettingsResetClicked(object sender, EventArgs e)
     {
-        // Reset some settings.
-        Preferences.Remove("SettingTheme");
-        Preferences.Remove("SettingFormatIndex");
-        Preferences.Remove("SettingCodeColorFg");
-        Preferences.Remove("SettingCodeColorBg");
+        // Get the elapsed time in milli seconds.
+        stopWatch.Stop();
 
-        // Reset to the default values.
-        MainPage.cTheme = "System";
-        MainPage.nFormatIndex = 14;
-        MainPage.cCodeColorFg = "000000";
-        MainPage.cCodeColorBg = "FFFFFF";
+        if (stopWatch.ElapsedMilliseconds < 3001)
+        {
+            // Clear all settings after the first clicked event within the first 3 seconds after opening the setting page.
+            Preferences.Default.Clear();
+        }
+        else
+        {
+            // Reset some settings.
+            Preferences.Default.Remove("SettingTheme");
+            Preferences.Default.Remove("SettingFormatIndex");
+            Preferences.Default.Remove("SettingCodeColorFg");
+            Preferences.Default.Remove("SettingCodeColorBg");
+        }
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
         Task.Delay(500).Wait();
