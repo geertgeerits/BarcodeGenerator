@@ -50,18 +50,20 @@ public partial class PageSettings : ContentPage
         PckFormatCode.SelectedIndex = MainPage.nFormatIndex;
 
         // Set the color sliders.
+        int nOpacity = 0;
         int nRed = 0;
         int nGreen = 0;
         int nBlue = 0;
 
-        HexToRgbColor(MainPage.cCodeColorFg, ref nRed, ref nGreen, ref nBlue);
+        HexToRgbColor(MainPage.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
         sldColorFgRed.Value = nRed;
         sldColorFgGreen.Value = nGreen;
         sldColorFgBlue.Value = nBlue;
 
-        HexToRgbColor(MainPage.cCodeColorBg, ref nRed, ref nGreen, ref nBlue);
+        HexToRgbColor(MainPage.cCodeColorBg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
+        sldOpacityBg.Value = nOpacity;
         sldColorBgRed.Value = nRed;
         sldColorBgGreen.Value = nGreen;
         sldColorBgBlue.Value = nBlue;
@@ -127,9 +129,8 @@ public partial class PageSettings : ContentPage
             nColorBlue = (int)args.NewValue;
         }
 
-        string cColorFgHex = nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
+        string cColorFgHex = "FF" + nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
         bxvColorFg.Color = Color.FromArgb(cColorFgHex);
-        //bxvColorFg.Color = Color.FromRgb(nColorRed, nColorGreen, nColorBlue);
 
         MainPage.cCodeColorFg = cColorFgHex;
     }
@@ -137,40 +138,50 @@ public partial class PageSettings : ContentPage
     // Slider color barcode background value change.
     private void OnSliderColorBackgroundValueChanged(object sender, ValueChangedEventArgs args)
     {
+        int nAmountOpacity = 0;
         int nColorRed = 0;
         int nColorGreen = 0;
         int nColorBlue = 0;
 
         var slider = (Slider)sender;
 
-        if (slider == sldColorBgRed)
+        if (slider == sldOpacityBg)
         {
+            nAmountOpacity = (int)args.NewValue;
+            nColorRed = (int)sldColorBgRed.Value;
+            nColorGreen = (int)sldColorBgGreen.Value;
+            nColorBlue = (int)sldColorBgBlue.Value;
+        }
+        else if (slider == sldColorBgRed)
+        {
+            nAmountOpacity = (int)sldOpacityBg.Value;
             nColorRed = (int)args.NewValue;
             nColorGreen = (int)sldColorBgGreen.Value;
             nColorBlue = (int)sldColorBgBlue.Value;
         }
         else if (slider == sldColorBgGreen)
         {
+            nAmountOpacity = (int)sldOpacityBg.Value;
             nColorRed = (int)sldColorBgRed.Value;
             nColorGreen = (int)args.NewValue;
             nColorBlue = (int)sldColorBgBlue.Value;
         }
         else if (slider == sldColorBgBlue)
         {
+            nAmountOpacity = (int)sldOpacityBg.Value;
             nColorRed = (int)sldColorBgRed.Value;
             nColorGreen = (int)sldColorBgGreen.Value;
             nColorBlue = (int)args.NewValue;
         }
 
-        string cColorBgHex = nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
+        string cColorBgHex = nAmountOpacity.ToString("X2") + nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
         bxvColorBg.Color = Color.FromArgb(cColorBgHex);
-        //bxvColorBg.Color = Color.FromRgb(nColorRed, nColorGreen, nColorBlue);
 
         MainPage.cCodeColorBg = cColorBgHex;
     }
 
-    // Convert RRGGBB Hex color to RGB color.
-    private static void HexToRgbColor(string cHexColor, ref int nRed, ref int nGreen, ref int nBlue)
+    // Convert OORRGGBB Hex color to RGB color.
+    private static void HexToRgbColor(string cHexColor, ref int nOpacity, ref int nRed, ref int nGreen, ref int nBlue)
     {
         // Remove leading # if present.
         if (cHexColor.Substring(0, 1) == "#")
@@ -178,9 +189,10 @@ public partial class PageSettings : ContentPage
             cHexColor = cHexColor.Substring(1);
         }
 
-        nRed = int.Parse(cHexColor.Substring(0, 2), NumberStyles.AllowHexSpecifier);
-        nGreen = int.Parse(cHexColor.Substring(2, 2), NumberStyles.AllowHexSpecifier);
-        nBlue = int.Parse(cHexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
+        nOpacity = int.Parse(cHexColor.Substring(0, 2), NumberStyles.AllowHexSpecifier);
+        nRed = int.Parse(cHexColor.Substring(2, 2), NumberStyles.AllowHexSpecifier);
+        nGreen = int.Parse(cHexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
+        nBlue = int.Parse(cHexColor.Substring(6, 2), NumberStyles.AllowHexSpecifier);
     }
 
     // Button save settings clicked event.

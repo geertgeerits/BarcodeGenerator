@@ -11,25 +11,27 @@
               Margin="5"
               BackgroundColor="#00bfff">
 
-            <ImageButton Grid.Row="0"
-                         Grid.Column="0"
-                         Source="info_32p.png"
-                         HorizontalOptions="Start"
-                         VerticalOptions="Center"
-                         HeightRequest="28"
-                         WidthRequest="28"
-                         BackgroundColor="#00bfff"
-                         BorderColor="#00bfff"
-                         Clicked="OnPageAboutClicked">
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="info_32p.png"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                HeightRequest="28"
+                WidthRequest="28"
+                BackgroundColor="#00bfff"
+                BorderColor="#00bfff"
+                Clicked="OnPageAboutClicked">
             </ImageButton>
 
-            <Label Style="{StaticResource labelStyleShellTitleView}"
-                   Grid.Row="0"
-                   Grid.Column="1"
-                   Margin="0"
-                   HorizontalTextAlignment="Start"
-                   FontSize="17"
-                   Text="Barcode Generator">
+            <Label
+                Style="{StaticResource labelStyleShellTitleView}"
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="0"
+                HorizontalTextAlignment="Start"
+                FontSize="17"
+                Text="Barcode Generator">
             </Label>
 
             <!--<ImageButton Grid.Row="0"
@@ -44,16 +46,17 @@
                          Clicked="OnCloseApplicationClicked">
             </ImageButton>-->
 
-            <ImageButton Grid.Row="0"
-                         Grid.Column="3"
-                         Source="settings_32p.png"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center"
-                         HeightRequest="24"
-                         WidthRequest="24"
-                         BackgroundColor="#00bfff"
-                         BorderColor="#00bfff"
-                         Clicked="OnPageSettingsClicked">
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="3"
+                Source="settings_32p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="24"
+                WidthRequest="24"
+                BackgroundColor="#00bfff"
+                BorderColor="#00bfff"
+                Clicked="OnPageSettingsClicked">
             </ImageButton>
 
         </Grid>
@@ -74,11 +77,12 @@
                 VerticalTextAlignment="Center"
                 Text="Select a format:" />
 
-            <Border Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center">
+            <Border
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="Start"
+                VerticalOptions="Center">
 
                 <Picker
                     x:Name="PckFormatCode"
@@ -120,12 +124,13 @@
                 VerticalOptions="End"
                 Text="Text to code:" />
 
-            <Border Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Start">
+            <Border
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start">
 
                 <Editor
                     x:Name="edtTextToCode"
@@ -158,24 +163,27 @@
                 Text="Clear"
                 Clicked="OnClearCodeClicked" />
 
-            <BoxView
-                 x:Name="bxvCodeColorBg"
-                 Grid.Row="4"
-                 Grid.ColumnSpan="2"
-                 Color="White" />
-
-            <zxing:BarcodeGeneratorView
-                x:Name="bgvCode"
+            <Border
+                Style="{StaticResource borderStyleDefault}"
                 Grid.Row="4"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="FillAndExpand"
-                HeightRequest="210"
-                MinimumWidthRequest="350"
-                BarcodeMargin="0"
-                BackgroundColor="White"
-                ForegroundColor="Black" />
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
 
+                <zxing:BarcodeGeneratorView
+                    x:Name="bgvCode"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="240"
+                    WidthRequest="350"
+                    BarcodeMargin="0"
+                    BackgroundColor="Transparent"
+                    ForegroundColor="Black" />
+            </Border>
+            
             <Label
                 x:Name="lblTextCode"
                 Grid.Row="5"

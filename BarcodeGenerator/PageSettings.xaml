@@ -50,7 +50,7 @@
 
             <Label></Label>
 
-            <Grid RowDefinitions="40, 10, 40, 40, 40, 10, 40, 40, 40, 6, 40"
+            <Grid RowDefinitions="40, 10, 40, 40, 40, 10, 40, 40, 40, 40, 4, 40"
                   ColumnDefinitions="150, 200*"
                   Margin="10,10,10,0"
                   ColumnSpacing="8"
@@ -192,9 +192,27 @@
                     Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
 
+                <Label
+                    Grid.Row="9"
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Start"
+                    Text="Background opacity:" />
+
+                <Slider
+                    x:Name="sldOpacityBg"
+                    Grid.Row="9"
+                    Grid.Column="1"
+                    ThumbColor="Grey"
+                    MinimumTrackColor="Black"
+                    Minimum="0"
+                    Maximum="255"
+                    ValueChanged="OnSliderColorBackgroundValueChanged" />
+
                 <Button x:Name="btnSettingsSave"
                     Style="{StaticResource buttonStyleDefault}"
-                    Grid.Row="10"
+                    Grid.Row="11"
                     Grid.Column="0"
                     HorizontalOptions="Start"
                     Text="Save"
@@ -202,7 +220,7 @@
 
                 <Button x:Name="btnSettingsReset"
                     Style="{StaticResource buttonStyleDefault}"
-                    Grid.Row="10"
+                    Grid.Row="11"
                     Grid.Column="1"
                     HorizontalOptions="End"
                     Text="Reset"

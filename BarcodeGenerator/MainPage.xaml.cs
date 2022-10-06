@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.16 Beta
-// Date ........: 2022-10-05 (YYYY-MM-DD)
+// Date ........: 2022-10-06 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
@@ -38,8 +38,8 @@ public partial class MainPage : ContentPage
         // Get the saved settings.
         cTheme = Preferences.Default.Get("SettingTheme", "System");
         nFormatIndex = Preferences.Default.Get("SettingFormatIndex", 14);
-        cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "000000");
-        cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFF");
+        cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
+        cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
         bLicense = Preferences.Default.Get("SettingLicense", false);
         //bLicense = false;  // For testing.
 
@@ -54,12 +54,12 @@ public partial class MainPage : ContentPage
 
         if (cCodeColorFg == null)
         {
-            cCodeColorFg = "000000";
+            cCodeColorFg = "FF000000";
         }
 
         if (cCodeColorBg == null)
         {
-            cCodeColorBg = "FFFFFF";
+            cCodeColorBg = "FFFFFFFF";
         }
 #endif
 
@@ -112,6 +112,8 @@ public partial class MainPage : ContentPage
         if (selectedIndex != -1)
         {
             bgvCode.Value = "";
+            bgvCode.HeightRequest = 160;
+            bgvCode.WidthRequest = 350;
             lblTextCode.Text = "";
             btnShare.Text = "Share";
             btnShare.IsEnabled = false;
@@ -122,7 +124,9 @@ public partial class MainPage : ContentPage
                 case 0:
                     edtTextToCode.MaxLength = 3832;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 0;
+                    bgvCode.HeightRequest = 240;
+                    bgvCode.WidthRequest = 240;
+                    bgvCode.BarcodeMargin = 2;
                     break;
 
                 // Codabar.
@@ -157,7 +161,9 @@ public partial class MainPage : ContentPage
                 case 5:
                     edtTextToCode.MaxLength = 3116;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 4;
+                    bgvCode.HeightRequest = 240;
+                    bgvCode.WidthRequest = 240;
+                    bgvCode.BarcodeMargin = 2;
                     break;
 
                 // Ean13.
@@ -220,7 +226,9 @@ public partial class MainPage : ContentPage
                 case 14:
                     edtTextToCode.MaxLength = 7089;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 4;
+                    bgvCode.HeightRequest = 240;
+                    bgvCode.WidthRequest = 240;
+                    bgvCode.BarcodeMargin = 1;
                     break;
 
                 // Rss14.
@@ -271,7 +279,6 @@ public partial class MainPage : ContentPage
         // Set the barcode colors.
         bgvCode.ForegroundColor = Color.FromArgb(cCodeColorFg);
         bgvCode.BackgroundColor = Color.FromArgb(cCodeColorBg);
-        bxvCodeColorBg.Color = Color.FromArgb(cCodeColorBg);
 
         bgvCode.Value = "";
         string cChecksum = "";
@@ -809,30 +816,19 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Button share event.
+    // Button share event - make screenshot of the barcode.
     private async void OnShareClicked(object sender, EventArgs e)
-    {
-        await TakeScreenshotAsync();
-    }
-
-    // Capture a screenshot.
-    public async Task<ImageSource> TakeScreenshotAsync()
     {
         if (Screenshot.Default.IsCaptureSupported)
         {
             IScreenshotResult screen = await bgvCode.CaptureAsync();
-
             Stream stream = await screen.OpenReadAsync();
-            
+
             SaveStreamAsFile(stream);
-
-            return ImageSource.FromStream(() => stream);
         }
-
-        return null;
     }
 
-    // Save screenshot as image file.
+    // Save the barcode as an image file.
     private static async void SaveStreamAsFile(Stream inputStream)
     {
         // Save the image file.
