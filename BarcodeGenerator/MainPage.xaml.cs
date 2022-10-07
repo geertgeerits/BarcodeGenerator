@@ -164,7 +164,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 3116;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
-                    bgvBarcode.MaximumWidthRequest = 250;
+                    bgvBarcode.WidthRequest = 250;
                     bgvBarcode.BarcodeMargin = 2;
                     break;
 
@@ -229,7 +229,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 7089;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
-                    bgvBarcode.MaximumWidthRequest = 250;
+                    bgvBarcode.WidthRequest = 250;
                     bgvBarcode.BarcodeMargin = 1;
                     break;
 
