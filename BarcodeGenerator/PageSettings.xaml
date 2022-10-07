@@ -50,7 +50,7 @@
 
             <Label></Label>
 
-            <Grid RowDefinitions="40, 10, 40, 40, 40, 10, 40, 40, 40, 40, 4, 40"
+            <Grid RowDefinitions="40, 8, 40, 40, 40, 4, 40, 40, 40, 40, 6, 40"
                   ColumnDefinitions="150, 200*"
                   Margin="10,10,10,0"
                   ColumnSpacing="8"
@@ -171,7 +171,7 @@
                     Grid.Row="7"
                     Grid.Column="0"
                     Color="White" />
-
+                
                 <Slider
                     x:Name="sldColorBgGreen"
                     Grid.Row="7"

@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.16 Beta
-// Date ........: 2022-10-06 (YYYY-MM-DD)
+// Date ........: 2022-10-07 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
@@ -41,7 +41,6 @@ public partial class MainPage : ContentPage
         cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
         cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
         bLicense = Preferences.Default.Get("SettingLicense", false);
-        //bLicense = false;  // For testing.
 
 #if WINDOWS
         // Set the settings default values because of a BUG in the Windows app they have NULL values !!!
@@ -111,9 +110,12 @@ public partial class MainPage : ContentPage
 
         if (selectedIndex != -1)
         {
-            bgvCode.Value = "";
-            bgvCode.HeightRequest = 160;
-            bgvCode.WidthRequest = 350;
+            bgvBarcode.Value = "";
+            bgvBarcode.HeightRequest = 160;
+            bgvBarcode.WidthRequest = -1;
+            bgvBarcode.MaximumWidthRequest = 700;
+            bgvBarcode.HorizontalOptions = LayoutOptions.FillAndExpand;
+
             lblTextCode.Text = "";
             btnShare.Text = "Share";
             btnShare.IsEnabled = false;
@@ -124,146 +126,146 @@ public partial class MainPage : ContentPage
                 case 0:
                     edtTextToCode.MaxLength = 3832;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.HeightRequest = 240;
-                    bgvCode.WidthRequest = 240;
-                    bgvCode.BarcodeMargin = 2;
+                    bgvBarcode.HeightRequest = 250;
+                    bgvBarcode.WidthRequest = 250;
+                    bgvBarcode.BarcodeMargin = 2;
                     break;
 
                 // Codabar.
                 case 1:
                     edtTextToCode.MaxLength = 43;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 4;
+                    bgvBarcode.BarcodeMargin = 4;
                     break;
 
                 // Code128.
                 case 2:
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 20;
+                    bgvBarcode.BarcodeMargin = 20;
                     break;
 
                 // Code39.
                 case 3:
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 4;
+                    bgvBarcode.BarcodeMargin = 4;
                     break;
 
                 // Code93.
                 case 4:
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 4;
+                    bgvBarcode.BarcodeMargin = 4;
                     break;
 
                 // DataMatrix.
                 case 5:
                     edtTextToCode.MaxLength = 3116;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.HeightRequest = 240;
-                    bgvCode.WidthRequest = 240;
-                    bgvCode.BarcodeMargin = 2;
+                    bgvBarcode.HeightRequest = 250;
+                    bgvBarcode.MaximumWidthRequest = 250;
+                    bgvBarcode.BarcodeMargin = 2;
                     break;
 
                 // Ean13.
                 case 6:
                     edtTextToCode.MaxLength = 13;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvCode.BarcodeMargin = 4;
+                    bgvBarcode.BarcodeMargin = 4;
                     break;
 
                 // Ean8.
                 case 7:
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvCode.BarcodeMargin = 4;
+                    bgvBarcode.BarcodeMargin = 4;
                     break;
 
                 // Imb.
                 case 8:
                     edtTextToCode.MaxLength = 2730;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 0;
+                    bgvBarcode.BarcodeMargin = 0;
                     break;
 
                 // Itf.
                 case 9:
                     edtTextToCode.MaxLength = 30;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvCode.BarcodeMargin = 8;
+                    bgvBarcode.BarcodeMargin = 8;
                     break;
 
                 // Msi.
                 case 10:
                     edtTextToCode.MaxLength = 255;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvCode.BarcodeMargin = 10;
+                    bgvBarcode.BarcodeMargin = 10;
                     break;
 
                 // Pdf417.
                 case 11:
                     edtTextToCode.MaxLength = 2710;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 10;
+                    bgvBarcode.BarcodeMargin = 10;
                     break;
 
                 // PharmaCode.
                 case 12:
                     edtTextToCode.MaxLength = 6;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvCode.BarcodeMargin = 0;
+                    bgvBarcode.BarcodeMargin = 0;
                     break;
 
                 // Plessey.
                 case 13:
                     edtTextToCode.MaxLength = 16;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 8;
+                    bgvBarcode.BarcodeMargin = 8;
                     break;
 
                 // QrCode.
                 case 14:
                     edtTextToCode.MaxLength = 7089;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.HeightRequest = 240;
-                    bgvCode.WidthRequest = 240;
-                    bgvCode.BarcodeMargin = 1;
+                    bgvBarcode.HeightRequest = 250;
+                    bgvBarcode.MaximumWidthRequest = 250;
+                    bgvBarcode.BarcodeMargin = 1;
                     break;
 
                 // Rss14.
                 case 15:
                     edtTextToCode.MaxLength = 14;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvCode.BarcodeMargin = 0;
+                    bgvBarcode.BarcodeMargin = 0;
                     break;
 
                 // RssExpanded.
                 case 16:
                     edtTextToCode.MaxLength = 74;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvCode.BarcodeMargin = 0;
+                    bgvBarcode.BarcodeMargin = 0;
                     break;
 
                 // UpcA.
                 case 17:
                     edtTextToCode.MaxLength = 12;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvCode.BarcodeMargin = 0;
+                    bgvBarcode.BarcodeMargin = 0;
                     break;
 
                 // UpcE.
                 case 18:
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvCode.BarcodeMargin = 8;
+                    bgvBarcode.BarcodeMargin = 8;
                     break;
 
                 // UpcEanExtension.
                 case 19:
                     edtTextToCode.MaxLength = 2;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvCode.BarcodeMargin = 4;
+                    bgvBarcode.BarcodeMargin = 4;
                     break;
             }
         }
@@ -277,10 +279,10 @@ public partial class MainPage : ContentPage
         edtTextToCode.IsEnabled = true;
 
         // Set the barcode colors.
-        bgvCode.ForegroundColor = Color.FromArgb(cCodeColorFg);
-        bgvCode.BackgroundColor = Color.FromArgb(cCodeColorBg);
+        bgvBarcode.ForegroundColor = Color.FromArgb(cCodeColorFg);
+        bgvBarcode.BackgroundColor = Color.FromArgb(cCodeColorBg);
 
-        bgvCode.Value = "";
+        bgvBarcode.Value = "";
         string cChecksum = "";
         string cTextCode = "";
 
@@ -307,7 +309,7 @@ public partial class MainPage : ContentPage
                 {
                     // Aztec.
                     case 0:
-                        bgvCode.Format = BarcodeFormat.Aztec;
+                        bgvBarcode.Format = BarcodeFormat.Aztec;
                         break;
 
                     // Codabar.
@@ -324,12 +326,12 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvCode.Format = BarcodeFormat.Codabar;
+                        bgvBarcode.Format = BarcodeFormat.Codabar;
                         break;
 
                     // Code128.
                     case 2:
-                        bgvCode.Format = BarcodeFormat.Code128;
+                        bgvBarcode.Format = BarcodeFormat.Code128;
                         break;
 
                     // Code39.
@@ -346,7 +348,7 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvCode.Format = BarcodeFormat.Code39;
+                        bgvBarcode.Format = BarcodeFormat.Code39;
                         break;
 
                     // Code93.
@@ -363,12 +365,12 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvCode.Format = BarcodeFormat.Code93;
+                        bgvBarcode.Format = BarcodeFormat.Code93;
                         break;
 
                     // DataMatrix.
                     case 5:
-                        bgvCode.Format = BarcodeFormat.DataMatrix;
+                        bgvBarcode.Format = BarcodeFormat.DataMatrix;
                         break;
 
                     // Ean13.
@@ -401,7 +403,7 @@ public partial class MainPage : ContentPage
                         edtTextToCode.Text = cTextToCode;
                         cTextCode = string.Concat(cTextToCode.Substring(0, 1), " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 6));
 
-                        bgvCode.Format = BarcodeFormat.Ean13;
+                        bgvBarcode.Format = BarcodeFormat.Ean13;
                         break;
 
                     // Ean8.
@@ -434,7 +436,7 @@ public partial class MainPage : ContentPage
                         edtTextToCode.Text = cTextToCode;
                         cTextCode = string.Concat(cTextToCode.Substring(0, 4), " ", cTextToCode.Substring(4, 4));
 
-                        bgvCode.Format = BarcodeFormat.Ean8;
+                        bgvBarcode.Format = BarcodeFormat.Ean8;
                         break;
 
                     // Imb.
@@ -442,7 +444,7 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("IMb");
                         return;
 
-                    //bgvCode.Format = BarcodeFormat.Imb;
+                    //bgvBarcode.Format = BarcodeFormat.Imb;
                     //break;
 
                     // Itf.
@@ -458,7 +460,7 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvCode.Format = BarcodeFormat.Itf;
+                        bgvBarcode.Format = BarcodeFormat.Itf;
                         break;
 
                     // Msi.
@@ -468,12 +470,12 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvCode.Format = BarcodeFormat.Msi;
+                        bgvBarcode.Format = BarcodeFormat.Msi;
                         break;
 
                     // Pdf417.
                     case 11:
-                        bgvCode.Format = BarcodeFormat.Pdf417;
+                        bgvBarcode.Format = BarcodeFormat.Pdf417;
                         break;
 
                     // PharmaCode.
@@ -481,7 +483,7 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("PharmaCode");
                         return;
 
-                    //bgvCode.Format = BarcodeFormat.PharmaCode;
+                    //bgvBarcode.Format = BarcodeFormat.PharmaCode;
                     //break;
 
                     // Plessey.
@@ -493,12 +495,12 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvCode.Format = BarcodeFormat.Plessey;
+                        bgvBarcode.Format = BarcodeFormat.Plessey;
                         break;
 
                     // QrCode.
                     case 14:
-                        bgvCode.Format = BarcodeFormat.QrCode;
+                        bgvBarcode.Format = BarcodeFormat.QrCode;
                         break;
 
                     // Rss14.
@@ -506,7 +508,7 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("RSS 14");
                         return;
 
-                    //bgvCode.Format = BarcodeFormat.Rss14;
+                    //bgvBarcode.Format = BarcodeFormat.Rss14;
                     //break;
 
                     // RssExpanded.
@@ -514,7 +516,7 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("RSS Expanded");
                         return;
 
-                    //bgvCode.Format = BarcodeFormat.RssExpanded;
+                    //bgvBarcode.Format = BarcodeFormat.RssExpanded;
                     //break;
 
                     // UpcA.
@@ -547,7 +549,7 @@ public partial class MainPage : ContentPage
                         edtTextToCode.Text = cTextToCode;
                         cTextCode = string.Concat(cTextToCode.Substring(0, 1), " ", cTextToCode.Substring(1, 5), " ", cTextToCode.Substring(6, 5), " ", cTextToCode.Substring(11, 1));
 
-                        bgvCode.Format = BarcodeFormat.UpcA;
+                        bgvBarcode.Format = BarcodeFormat.UpcA;
                         break;
 
                     // UpcE.
@@ -614,7 +616,7 @@ public partial class MainPage : ContentPage
                         edtTextToCode.Text = cTextToCode;
                         cTextCode = string.Concat(cTextToCode.Substring(0, 1), " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 1));
 
-                        bgvCode.Format = BarcodeFormat.UpcE;
+                        bgvBarcode.Format = BarcodeFormat.UpcE;
                         break;
 
                     // UpcEanExtension.
@@ -622,14 +624,14 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("UPC EAN Extension");
                         return;
 
-                        //bgvCode.Format = BarcodeFormat.UpcEanExtension;
+                        //bgvBarcode.Format = BarcodeFormat.UpcEanExtension;
                         //break;
                 }
             }
 
             catch (Exception)
             {
-                bgvCode.Value = "";
+                bgvBarcode.Value = "";
 
                 return;
             }
@@ -637,7 +639,7 @@ public partial class MainPage : ContentPage
 
         try
         {
-            bgvCode.Value = cTextToCode;
+            bgvBarcode.Value = cTextToCode;
             btnShare.Text = "Share " + PckFormatCode.Items[selectedIndex];
             btnShare.IsEnabled = true;
 
@@ -654,7 +656,7 @@ public partial class MainPage : ContentPage
         catch (Exception ex)
         {
             DisplayAlert("Format code", ex.Message, "OK");
-            bgvCode.Value = "";
+            bgvBarcode.Value = "";
             CloseApplication();
         }
     }
@@ -765,7 +767,7 @@ public partial class MainPage : ContentPage
     private void OnClearCodeClicked(object sender, EventArgs e)
     {
         edtTextToCode.Text = "";
-        bgvCode.Value = "";
+        bgvBarcode.Value = "";
         lblTextCode.Text = "";
         btnShare.Text = "Share";
         btnShare.IsEnabled = false;
@@ -821,7 +823,7 @@ public partial class MainPage : ContentPage
     {
         if (Screenshot.Default.IsCaptureSupported)
         {
-            IScreenshotResult screen = await bgvCode.CaptureAsync();
+            IScreenshotResult screen = await bgvBarcode.CaptureAsync();
             Stream stream = await screen.OpenReadAsync();
 
             SaveStreamAsFile(stream);

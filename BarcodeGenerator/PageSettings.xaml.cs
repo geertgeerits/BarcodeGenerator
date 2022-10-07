@@ -216,9 +216,9 @@ public partial class PageSettings : ContentPage
         // Get the elapsed time in milli seconds.
         stopWatch.Stop();
 
-        if (stopWatch.ElapsedMilliseconds < 3001)
+        if (stopWatch.ElapsedMilliseconds < 2001)
         {
-            // Clear all settings after the first clicked event within the first 3 seconds after opening the setting page.
+            // Clear all settings after the first clicked event within the first 2 seconds after opening the setting page.
             Preferences.Default.Clear();
         }
         else
