@@ -122,7 +122,7 @@
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="End"
-                Text="Text to code:" />
+                Text="Text to encode:" />
 
             <Border
                 Style="{StaticResource borderStyleDefault}"
@@ -132,16 +132,19 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="Start">
 
-                <Editor
-                    x:Name="edtTextToCode"
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    HorizontalOptions="FillAndExpand"
-                    HeightRequest="180"
-                    MinimumWidthRequest="350"
-                    VerticalTextAlignment="Start" />
-
+                <ScrollView 
+                    Orientation="Vertical" VerticalScrollBarVisibility="Default">
+                    
+                    <Editor
+                        x:Name="edtTextToCode"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="180"
+                        MinimumWidthRequest="350"
+                        VerticalTextAlignment="Start" />
+                </ScrollView>
             </Border>
 
             <Button
@@ -168,7 +171,8 @@
                 Grid.Row="4"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                HorizontalOptions="FillAndExpand"
+                MaximumWidthRequest="700"
+                HorizontalOptions="Fill"
                 BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
 
                 <zxing:BarcodeGeneratorView

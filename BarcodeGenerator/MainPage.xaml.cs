@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.16 Beta
-// Date ........: 2022-10-07 (YYYY-MM-DD)
+// Date ........: 2022-10-08 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
@@ -114,7 +114,7 @@ public partial class MainPage : ContentPage
             bgvBarcode.HeightRequest = 160;
             bgvBarcode.WidthRequest = -1;
             bgvBarcode.MaximumWidthRequest = 700;
-            bgvBarcode.HorizontalOptions = LayoutOptions.FillAndExpand;
+            bgvBarcode.HorizontalOptions = LayoutOptions.Fill;
 
             lblTextCode.Text = "";
             btnShare.Text = "Share";
