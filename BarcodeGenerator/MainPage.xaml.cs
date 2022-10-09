@@ -161,7 +161,7 @@ public partial class MainPage : ContentPage
 
                 // DataMatrix.
                 case 5:
-                    edtTextToCode.MaxLength = 3116;
+                    edtTextToCode.MaxLength = 2335;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;
@@ -309,6 +309,11 @@ public partial class MainPage : ContentPage
                 {
                     // Aztec.
                     case 0:
+                        if (TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                        {
+                            return;
+                        }
+
                         bgvBarcode.Format = BarcodeFormat.Aztec;
                         break;
 
@@ -331,6 +336,11 @@ public partial class MainPage : ContentPage
 
                     // Code128.
                     case 2:
+                        if (TestAllowedAsciiValues(1, 127, cTextToCode) == false)
+                        {
+                            return;
+                        }
+
                         bgvBarcode.Format = BarcodeFormat.Code128;
                         break;
 
@@ -370,6 +380,11 @@ public partial class MainPage : ContentPage
 
                     // DataMatrix.
                     case 5:
+                        if (TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                        {
+                            return;
+                        }
+
                         bgvBarcode.Format = BarcodeFormat.DataMatrix;
                         break;
 
@@ -475,6 +490,11 @@ public partial class MainPage : ContentPage
 
                     // Pdf417.
                     case 11:
+                        if (TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                        {
+                            return;
+                        }
+
                         bgvBarcode.Format = BarcodeFormat.Pdf417;
                         break;
 
@@ -657,11 +677,13 @@ public partial class MainPage : ContentPage
         {
             DisplayAlert("Format code", ex.Message, "OK");
             bgvBarcode.Value = "";
+            
+            //RestartApplication();
             CloseApplication();
         }
     }
 
-    // Test allowed characters.
+    // Test for allowed characters.
     private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
     {
         foreach (char cChar in cTextToCode)
@@ -670,7 +692,24 @@ public partial class MainPage : ContentPage
 
             if (bResult == false)
             {
-                DisplayAlert("Error", "Allowed characters:\n" + cAllowedCharacters, "OK");
+                DisplayAlert("Error", "Allowed characters:\n" + cAllowedCharacters + "\nNot allowed character: " + cChar, "OK");
+                edtTextToCode.Focus();
+
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // Test for allowed ASCII values.
+    private bool TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
+    {
+        foreach (char cChar in cTextToCode)
+        {
+            if ((int)cChar < nMinAsciiValue || (int)cChar > nMaxAsciiValue)
+            {
+                DisplayAlert("Error", "The text contains one or more characters that are not allowed.\nNot allowed character: " + cChar, "OK");
                 edtTextToCode.Focus();
 
                 return false;
@@ -861,15 +900,20 @@ public partial class MainPage : ContentPage
         });
     }
 
-    // Close the application after an error.
-    private static async void CloseApplication()
-    {
-        bool bAnswer = await Application.Current.MainPage.DisplayAlert("Error", "The application needs to be restarted due to an error.\nClose now?", "Yes", "No");
+    // Restart the application after an error.
+    //private async void RestartApplication()
+    //{
+    //    await DisplayAlert("Error", "The application will be restarted due to an error.", "OK");
 
-        if (bAnswer)
-        {
-            Application.Current.Quit();
-        }
+    //    Application.Current.MainPage = new AppShell();
+    //}
+
+    // Close the application after an error.
+    private async void CloseApplication()
+    {
+        await DisplayAlert("Error", "The application will be closed due to an error.\nAfter that, open the application again.", "OK");
+
+        Application.Current.Quit();
     }
 
     // Close the application.
