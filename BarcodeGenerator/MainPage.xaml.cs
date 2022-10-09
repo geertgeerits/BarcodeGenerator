@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.16 Beta
-// Date ........: 2022-10-08 (YYYY-MM-DD)
+// Date ........: 2022-10-09 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
@@ -392,7 +392,7 @@ public partial class MainPage : ContentPage
                             cChecksum = cTextToCode.Substring(12, 1);
                         }
 
-                        cTextToCode = cTextToCode.Substring(0, 12);
+                        cTextToCode = cTextToCode[..12];
                         cTextToCode += CalculateChecksumEanUpcA(ReverseString(cTextToCode));
 
                         if (nLenTextToCode == 13 && cChecksum != cTextToCode.Substring(12, 1))
@@ -401,7 +401,7 @@ public partial class MainPage : ContentPage
                         }
 
                         edtTextToCode.Text = cTextToCode;
-                        cTextCode = string.Concat(cTextToCode.Substring(0, 1), " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 6));
+                        cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 6));
 
                         bgvBarcode.Format = BarcodeFormat.Ean13;
                         break;
@@ -425,7 +425,7 @@ public partial class MainPage : ContentPage
                             cChecksum = cTextToCode.Substring(7, 1);
                         }
 
-                        cTextToCode = cTextToCode.Substring(0, 7);
+                        cTextToCode = cTextToCode[..7];
                         cTextToCode += CalculateChecksumEanUpcA(ReverseString(cTextToCode));
 
                         if (nLenTextToCode == 8 && cChecksum != cTextToCode.Substring(7, 1))
@@ -434,7 +434,7 @@ public partial class MainPage : ContentPage
                         }
 
                         edtTextToCode.Text = cTextToCode;
-                        cTextCode = string.Concat(cTextToCode.Substring(0, 4), " ", cTextToCode.Substring(4, 4));
+                        cTextCode = string.Concat(cTextToCode[..4], " ", cTextToCode.Substring(4, 4));
 
                         bgvBarcode.Format = BarcodeFormat.Ean8;
                         break;
@@ -480,7 +480,7 @@ public partial class MainPage : ContentPage
 
                     // PharmaCode.
                     case 12:
-                        DisplayMessageFormat("PharmaCode");
+                        DisplayMessageFormat("Pharmacode");
                         return;
 
                     //bgvBarcode.Format = BarcodeFormat.PharmaCode;
@@ -538,7 +538,7 @@ public partial class MainPage : ContentPage
                             cChecksum = cTextToCode.Substring(11, 1);
                         }
 
-                        cTextToCode = cTextToCode.Substring(0, 11);
+                        cTextToCode = cTextToCode[..11];
                         cTextToCode += CalculateChecksumEanUpcA(cTextToCode);
 
                         if (nLenTextToCode == 12 && cChecksum != cTextToCode.Substring(11, 1))
@@ -547,7 +547,7 @@ public partial class MainPage : ContentPage
                         }
 
                         edtTextToCode.Text = cTextToCode;
-                        cTextCode = string.Concat(cTextToCode.Substring(0, 1), " ", cTextToCode.Substring(1, 5), " ", cTextToCode.Substring(6, 5), " ", cTextToCode.Substring(11, 1));
+                        cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 5), " ", cTextToCode.Substring(6, 5), " ", cTextToCode.Substring(11, 1));
 
                         bgvBarcode.Format = BarcodeFormat.UpcA;
                         break;
@@ -565,7 +565,7 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        if (cTextToCode.Substring(0, 1) != "0")
+                        if (cTextToCode[..1] != "0")
                         {
                             DisplayErrorMessage("First number chould be 0.");
                             return;
@@ -614,7 +614,7 @@ public partial class MainPage : ContentPage
                         }
 
                         edtTextToCode.Text = cTextToCode;
-                        cTextCode = string.Concat(cTextToCode.Substring(0, 1), " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 1));
+                        cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 1));
 
                         bgvBarcode.Format = BarcodeFormat.UpcE;
                         break;
@@ -701,15 +701,15 @@ public partial class MainPage : ContentPage
         }
 
         // Control of missing start or end guard.
-        if (cStartEndGuards.Contains(cTextToCode.Substring(0, 1)) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
-        {
+        if (cStartEndGuards.Contains(cTextToCode[..1]) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
+            {
             DisplayAlert("Error", "Missing end guard.", "OK");
             edtTextToCode.Focus();
 
             return false;
         }
-        else if (cStartEndGuards.Contains(cTextToCode.Substring(0, 1)) == false && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)))
-        {
+        else if (cStartEndGuards.Contains(cTextToCode[..1]) == false && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)))
+            {
             DisplayAlert("Error", "Missing start guard.", "OK");
             edtTextToCode.Focus();
 
@@ -794,7 +794,7 @@ public partial class MainPage : ContentPage
     // Display a message with no encoder available for format.
     private void DisplayMessageFormat(string cFormat)
     {
-        DisplayAlert("Error", "No encoder available for format " + cFormat + ".", "OK");
+        DisplayAlert("Format", cFormat + " is currently not supported.", "OK");
 
         edtTextToCode.Focus();
     }
@@ -803,6 +803,10 @@ public partial class MainPage : ContentPage
     // Solution is using the Loaded event of the MainPage.xaml.
     private async void OnLoad(object sender, EventArgs e)
     {
+        // Show splash screen during 1 second longer.
+        //Task.Delay(1000).Wait();
+
+        // Show license.
         if (bLicense == false)
         {
             bool bAnswer = await Application.Current.MainPage.DisplayAlert("License", "Barcode Generator" + "\n" + "Copyright © 2022-2022 Geert Geerits" + "\n\n" + "This application may be used freely for non-commercial purposes.\r\nUse this program entirely at your own risk.", "Agree", "Disagree");
@@ -869,10 +873,10 @@ public partial class MainPage : ContentPage
     }
 
     // Close the application.
-    private static void OnCloseApplicationClicked(object sender, EventArgs e)
-    {
-        Application.Current.Quit();
-    }
+    //private static void OnCloseApplicationClicked(object sender, EventArgs e)
+    //{
+    //    Application.Current.Quit();
+    //}
 }
 
 /*

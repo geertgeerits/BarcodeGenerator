@@ -6,7 +6,7 @@ namespace BarcodeGenerator;
 public partial class PageSettings : ContentPage
 {
     // Local variables.
-    private Stopwatch stopWatch = new();
+    private readonly Stopwatch stopWatch = new();
 
     public PageSettings()
 	{
@@ -184,12 +184,12 @@ public partial class PageSettings : ContentPage
     private static void HexToRgbColor(string cHexColor, ref int nOpacity, ref int nRed, ref int nGreen, ref int nBlue)
     {
         // Remove leading # if present.
-        if (cHexColor.Substring(0, 1) == "#")
+        if (cHexColor[..1] == "#")
         {
-            cHexColor = cHexColor.Substring(1);
+            cHexColor = cHexColor[1..];
         }
 
-        nOpacity = int.Parse(cHexColor.Substring(0, 2), NumberStyles.AllowHexSpecifier);
+        nOpacity = int.Parse(cHexColor[..2], NumberStyles.AllowHexSpecifier);
         nRed = int.Parse(cHexColor.Substring(2, 2), NumberStyles.AllowHexSpecifier);
         nGreen = int.Parse(cHexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
         nBlue = int.Parse(cHexColor.Substring(6, 2), NumberStyles.AllowHexSpecifier);
