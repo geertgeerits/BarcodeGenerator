@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.16 Beta
-// Date ........: 2022-10-09 (YYYY-MM-DD)
+// Date ........: 2022-10-10 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
@@ -282,6 +282,7 @@ public partial class MainPage : ContentPage
         bgvBarcode.ForegroundColor = Color.FromArgb(cCodeColorFg);
         bgvBarcode.BackgroundColor = Color.FromArgb(cCodeColorBg);
 
+        // Miscellaneous.
         bgvBarcode.Value = "";
         string cChecksum = "";
         string cTextCode = "";
@@ -299,6 +300,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Validate the text input and set the format.
         int selectedIndex = PckFormatCode.SelectedIndex;
 
         if (selectedIndex != -1)
@@ -459,8 +461,8 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("IMb");
                         return;
 
-                    //bgvBarcode.Format = BarcodeFormat.Imb;
-                    //break;
+                        //bgvBarcode.Format = BarcodeFormat.Imb;
+                        //break;
 
                     // Itf.
                     case 9:
@@ -503,8 +505,8 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("Pharmacode");
                         return;
 
-                    //bgvBarcode.Format = BarcodeFormat.PharmaCode;
-                    //break;
+                        //bgvBarcode.Format = BarcodeFormat.PharmaCode;
+                        //break;
 
                     // Plessey.
                     case 13:
@@ -528,16 +530,16 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("RSS 14");
                         return;
 
-                    //bgvBarcode.Format = BarcodeFormat.Rss14;
-                    //break;
+                        //bgvBarcode.Format = BarcodeFormat.Rss14;
+                        //break;
 
                     // RssExpanded.
                     case 16:
                         DisplayMessageFormat("RSS Expanded");
                         return;
 
-                    //bgvBarcode.Format = BarcodeFormat.RssExpanded;
-                    //break;
+                        //bgvBarcode.Format = BarcodeFormat.RssExpanded;
+                        //break;
 
                     // UpcA.
                     case 17:
@@ -660,6 +662,7 @@ public partial class MainPage : ContentPage
         try
         {
             bgvBarcode.Value = cTextToCode;
+            
             btnShare.Text = "Share " + PckFormatCode.Items[selectedIndex];
             btnShare.IsEnabled = true;
 
@@ -675,11 +678,9 @@ public partial class MainPage : ContentPage
 
         catch (Exception ex)
         {
-            DisplayAlert("Format code", ex.Message, "OK");
             bgvBarcode.Value = "";
-            
-            //RestartApplication();
-            CloseApplication();
+
+            RestartApplication(ex.Message);
         }
     }
 
@@ -814,6 +815,14 @@ public partial class MainPage : ContentPage
         edtTextToCode.Focus();
     }
 
+    // Display a message with no encoder available for format.
+    private void DisplayMessageFormat(string cFormat)
+    {
+        DisplayAlert("Format", cFormat + " is currently not supported.", "OK");
+
+        edtTextToCode.Focus();
+    }
+
     // Display an error message.
     private void DisplayErrorMessage(string cMessage)
     {
@@ -830,12 +839,12 @@ public partial class MainPage : ContentPage
         edtTextToCode.Focus();
     }
 
-    // Display a message with no encoder available for format.
-    private void DisplayMessageFormat(string cFormat)
+    // Display an error message and restart the application.
+    private async void RestartApplication(string cErrorMessage)
     {
-        DisplayAlert("Format", cFormat + " is currently not supported.", "OK");
+        await DisplayAlert("Error", cErrorMessage + "\nThe application will be restarted.", "OK");
 
-        edtTextToCode.Focus();
+        Application.Current.MainPage = new AppShell();
     }
 
     // Show license for Android and Windows = Workaround !!!
@@ -900,22 +909,6 @@ public partial class MainPage : ContentPage
         });
     }
 
-    // Restart the application after an error.
-    //private async void RestartApplication()
-    //{
-    //    await DisplayAlert("Error", "The application will be restarted due to an error.", "OK");
-
-    //    Application.Current.MainPage = new AppShell();
-    //}
-
-    // Close the application after an error.
-    private async void CloseApplication()
-    {
-        await DisplayAlert("Error", "The application will be closed due to an error.\nAfter that, open the application again.", "OK");
-
-        Application.Current.Quit();
-    }
-
     // Close the application.
     //private static void OnCloseApplicationClicked(object sender, EventArgs e)
     //{
@@ -924,7 +917,7 @@ public partial class MainPage : ContentPage
 }
 
 /*
-How to convert a UPC-E code back UPC-A ?
+How to convert a UPC-E code back to UPC-A ?
 A 6-digit UPC-E code is derived from a UPC-A 12-digit code.
 You can convert a UPC-E code back to its UPC-A format using the following scenarios.
 

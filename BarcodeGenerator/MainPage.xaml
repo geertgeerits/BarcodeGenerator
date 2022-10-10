@@ -181,9 +181,7 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HeightRequest="250"
-                    BackgroundColor="White"
-                    ForegroundColor="Black" />
+                    HeightRequest="250" />
             </Border>
             
             <Label
