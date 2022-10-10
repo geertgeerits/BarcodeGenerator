@@ -25,6 +25,7 @@
             </ImageButton>
 
             <Label
+                x:Name="lblBarcodeGenerator"
                 Style="{StaticResource labelStyleShellTitleView}"
                 Grid.Row="0"
                 Grid.Column="1"
@@ -71,6 +72,7 @@
               RowSpacing="2">
 
             <Label
+                x:Name="lblFormatCode"
                 Grid.Row="0"
                 Grid.Column="0"
                 HorizontalOptions="Start"
@@ -86,7 +88,7 @@
                 VerticalOptions="Center">
 
                 <Picker
-                    x:Name="PckFormatCode"
+                    x:Name="pckFormatCode"
                     Grid.Row="0"
                     Grid.Column="1"
                     MinimumWidthRequest="200"
@@ -119,8 +121,10 @@
             </Border>
 
             <Label
+                x:Name="lblTextToEncode"
                 Grid.Row="1"
                 Grid.Column="0"
+                Grid.ColumnSpan="2"
                 HorizontalOptions="Start"
                 VerticalOptions="End"
                 Text="Text to encode:" />
@@ -159,6 +163,7 @@
                 Clicked="OnGenerateCodeClicked" />
 
             <Button
+                x:Name="btnClearCode"
                 Style="{StaticResource buttonStyleDefault}"
                 Grid.Row="3"
                 Grid.Column="1"

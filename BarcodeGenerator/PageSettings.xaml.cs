@@ -1,3 +1,4 @@
+using BarcodeGenerator.Resources.Languages;
 using System.Diagnostics;
 using System.Globalization;
 
@@ -18,6 +19,58 @@ public partial class PageSettings : ContentPage
         {
             DisplayAlert("InitializeComponent PageSettings", ex.Message, "OK");
             return;
+        }
+
+        // Put text in the chosen language in the controls.
+        lblLanguage.Text = CodeLang.Language_Text;
+        lblTheme.Text = CodeLang.Theme_Text;
+        rbnThemeSystem.Content = CodeLang.ThemeSystem_Text;
+        rbnThemeLight.Content = CodeLang.ThemeLight_Text;
+        rbnThemeDark.Content = CodeLang.ThemeDark_Text;
+        lblDefaultFormat.Text = CodeLang.DefaultFormat_Text;
+        lblBarcodeColor.Text = CodeLang.BarcodeColor_Text;
+        lblBackgroundColor.Text = CodeLang.BackgroundColor_Text;
+        lblBackgroundOpacity.Text = CodeLang.BackgroundOpacity_Text;
+        btnSettingsSave.Text = CodeLang.SettingsSave_Text;
+        btnSettingsReset.Text = CodeLang.SettingsReset_Text;
+
+        // Set the language in the picker.
+        switch (MainPage.cLanguage)
+        {
+            // German (Deutsch).
+            case "de":
+                pickerLanguage.SelectedIndex = 0;
+                break;
+
+            // Spanish (Español).
+            case "es":
+                pickerLanguage.SelectedIndex = 2;
+                break;
+
+            // French (Français).
+            case "fr":
+                pickerLanguage.SelectedIndex = 3;
+                break;
+
+            // Italian (Italiano).
+            case "it":
+                pickerLanguage.SelectedIndex = 4;
+                break;
+
+            // Dutch (Nederlands).
+            case "nl":
+                pickerLanguage.SelectedIndex = 5;
+                break;
+
+            // Portuguese (Português).
+            case "pt":
+                pickerLanguage.SelectedIndex = 6;
+                break;
+
+            // English.
+            default:
+                pickerLanguage.SelectedIndex = 1;
+                break;
         }
 
         // Set radiobutton to the used theme.
@@ -47,7 +100,7 @@ public partial class PageSettings : ContentPage
         }
 
         // Set the barcode format in the picker.
-        PckFormatCode.SelectedIndex = MainPage.nFormatIndex;
+        pckFormatCode.SelectedIndex = MainPage.nFormatIndex;
 
         // Set the color sliders.
         int nOpacity = 0;
@@ -86,6 +139,44 @@ public partial class PageSettings : ContentPage
         else if (rbnThemeDark.IsChecked)
         {
             MainPage.cTheme = "Dark";
+        }
+    }
+
+    // Picker language clicked event.
+    private void OnPickerLanguageChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        int selectedIndex = picker.SelectedIndex;
+
+        if (selectedIndex != -1)
+        {
+            //string cSelected = picker.Items[selectedIndex];
+            //App.Current.MainPage.DisplayAlert("cSelected", cSelected, "OK");  // For testing
+
+            MainPage.cLanguage = selectedIndex switch
+            {
+                // German (Deutsch).
+                0 => "de",
+                
+                // Spanish (Español).
+                2 => "es",
+                
+                // French (Français).
+                3 => "fr",
+                
+                // Italian (Italiano).
+                4 => "it",
+                
+                // Dutch (Nederlands).
+                5 => "nl",
+                
+                // Portuguese (Português).
+                6 => "pt",
+                
+                // English.
+                _ => "en",
+            };
+            //App.Current.MainPage.DisplayAlert("cLanguage", cLanguage, "OK");  // For testing
         }
     }
 
@@ -202,6 +293,7 @@ public partial class PageSettings : ContentPage
         Preferences.Default.Set("SettingFormatIndex", MainPage.nFormatIndex);
         Preferences.Default.Set("SettingCodeColorFg", MainPage.cCodeColorFg);
         Preferences.Default.Set("SettingCodeColorBg", MainPage.cCodeColorBg);
+        Preferences.Default.Set("SettingLanguage", MainPage.cLanguage);
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
         Task.Delay(500).Wait();
@@ -228,6 +320,7 @@ public partial class PageSettings : ContentPage
             Preferences.Default.Remove("SettingFormatIndex");
             Preferences.Default.Remove("SettingCodeColorFg");
             Preferences.Default.Remove("SettingCodeColorBg");
+            Preferences.Default.Remove("SettingLanguage");
         }
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.

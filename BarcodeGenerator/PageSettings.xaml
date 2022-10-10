@@ -12,19 +12,53 @@
 
     <ScrollView>
         <StackLayout>
-            <Grid RowDefinitions="36, 36, 36"
+            <Grid RowDefinitions="40, 36, 36, 36"
                   ColumnDefinitions="150, 200*"
                   Margin="10,10,10,0"
                   ColumnSpacing="0"
                   RowSpacing="8">
 
+                <Label
+                    x:Name="lblLanguage"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Language:" />
+
+                <Border Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+
+                    <Picker x:Name="pickerLanguage"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        MinimumWidthRequest="190"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="OnPickerLanguageChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Deutsch</x:String>
+                                <x:String>English</x:String>
+                                <x:String>Español</x:String>
+                                <x:String>Français</x:String>
+                                <x:String>Italiano</x:String>
+                                <x:String>Nederlands</x:String>
+                                <x:String>Português</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Border>
+
                 <Label x:Name="lblTheme"
-                       Grid.Row="0"
+                       Grid.Row="1"
                        Grid.Column="0"
                        Text="Theme:" />
 
                 <RadioButton x:Name="rbnThemeSystem"
-                             Grid.Row="0"
+                             Grid.Row="1"
                              Grid.Column="1"
                              GroupName="rbgThemes"
                              Value="rbnThemeSystem"
@@ -32,7 +66,7 @@
                              CheckedChanged="OnThemesRadioButtonCheckedChanged" />
 
                 <RadioButton x:Name="rbnThemeLight"
-                             Grid.Row="1"
+                             Grid.Row="2"
                              Grid.Column="1"
                              GroupName="rbgThemes"
                              Value="rbnThemeLight"
@@ -40,7 +74,7 @@
                              CheckedChanged="OnThemesRadioButtonCheckedChanged" />
 
                 <RadioButton x:Name="rbnThemeDark"
-                             Grid.Row="2"
+                             Grid.Row="3"
                              Grid.Column="1"
                              GroupName="rbgThemes"
                              Value="rbnThemeDark"
@@ -57,11 +91,9 @@
                   RowSpacing="8">
 
                 <Label
+                    x:Name="lblDefaultFormat"
                     Grid.Row="0"
                     Grid.Column="0"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    VerticalTextAlignment="Center"
                     Text="Default format:" />
 
                 <Border Style="{StaticResource borderStyleDefault}"
@@ -71,11 +103,13 @@
                     VerticalOptions="Center">
 
                     <Picker
-                    x:Name="PckFormatCode"
+                    x:Name="pckFormatCode"
                     Grid.Row="0"
                     Grid.Column="1"
-                    HorizontalOptions="End"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
                     MinimumWidthRequest="190"
+                    VerticalTextAlignment="Center"
                     SelectedIndexChanged="OnPickerFormatCodeChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -105,6 +139,7 @@
                 </Border>
 
                 <Label
+                    x:Name="lblBarcodeColor"
                     Grid.Row="2"
                     Grid.Column="0"
                     HorizontalOptions="Start"
@@ -149,6 +184,7 @@
                     ValueChanged="OnSliderColorForgroundValueChanged" />
 
                 <Label
+                    x:Name="lblBackgroundColor"
                     Grid.Row="6"
                     Grid.Column="0"
                     HorizontalOptions="Start"
@@ -193,6 +229,7 @@
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
 
                 <Label
+                    x:Name="lblBackgroundOpacity"
                     Grid.Row="9"
                     Grid.Column="0"
                     HorizontalOptions="Start"

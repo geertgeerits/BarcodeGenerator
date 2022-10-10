@@ -1,12 +1,14 @@
 ﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
-// Version .....: 1.0.16 Beta
+// Version .....: 1.0.17 Beta
 // Date ........: 2022-10-10 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
 
+using BarcodeGenerator.Resources.Languages;
+using System.Globalization;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator;
@@ -18,6 +20,7 @@ public partial class MainPage : ContentPage
     public static int nFormatIndex;
     public static string cCodeColorFg;
     public static string cCodeColorBg;
+    public static string cLanguage;
 
     // Local variables.
     private bool bLicense;
@@ -40,6 +43,7 @@ public partial class MainPage : ContentPage
         nFormatIndex = Preferences.Default.Get("SettingFormatIndex", 14);
         cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
         cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
+        cLanguage = Preferences.Default.Get("SettingLanguage", "");
         bLicense = Preferences.Default.Get("SettingLicense", false);
 
 #if WINDOWS
@@ -59,6 +63,11 @@ public partial class MainPage : ContentPage
         if (cCodeColorBg == null)
         {
             cCodeColorBg = "FFFFFFFF";
+        }
+        
+        if (cLanguage == null)
+        {
+            cLanguage = "";
         }
 #endif
 
@@ -80,14 +89,54 @@ public partial class MainPage : ContentPage
         if (nFormatIndex < 0 || nFormatIndex > 19)
         {
             // Default format code = QrCode.
-            PckFormatCode.SelectedIndex = 14;
+            pckFormatCode.SelectedIndex = 14;
         }
         else
         {
             // Set the format barcode to the saved code.
-            PckFormatCode.SelectedIndex = nFormatIndex;
+            pckFormatCode.SelectedIndex = nFormatIndex;
         }
 
+        // Get and set the system OS user language.
+        if (cLanguage == "")
+        {
+            cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+        }
+
+        // Set the current UI culture of the selected language.
+        Thread.CurrentThread.CurrentUICulture = cLanguage switch
+        {
+            // German (Deutsch).
+            "de" => CultureInfo.GetCultureInfo("de"),
+            
+            // Spanish (Español).
+            "es" => CultureInfo.GetCultureInfo("es"),
+            
+            // French (Français).
+            "fr" => CultureInfo.GetCultureInfo("fr"),
+            
+            // Italian (Italiano).
+            "it" => CultureInfo.GetCultureInfo("it"),
+            
+            // Dutch (Nederlands).
+            "nl" => CultureInfo.GetCultureInfo("nl"),
+            
+            // Portuguese (Português).
+            "pt" => CultureInfo.GetCultureInfo("pt"),
+            
+            // English.
+            _ => CultureInfo.GetCultureInfo("en"),
+        };
+
+        // Put text in the chosen language in the controls.
+        lblBarcodeGenerator.Text = CodeLang.BarcodeGenerator_Text;
+        lblFormatCode.Text = CodeLang.FormatCode_Text;
+        lblTextToEncode.Text = CodeLang.TextToEncode_Text;
+        btnGenerateCode.Text = CodeLang.GenerateCode_Text;
+        btnClearCode.Text = CodeLang.ClearCode_Text;
+        btnShare.Text = CodeLang.Share_Text;
+
+        // Set focus to the editor.
         edtTextToCode.Focus();
     }
 
@@ -301,7 +350,7 @@ public partial class MainPage : ContentPage
         }
 
         // Validate the text input and set the format.
-        int selectedIndex = PckFormatCode.SelectedIndex;
+        int selectedIndex = pckFormatCode.SelectedIndex;
 
         if (selectedIndex != -1)
         {
@@ -663,7 +712,7 @@ public partial class MainPage : ContentPage
         {
             bgvBarcode.Value = cTextToCode;
             
-            btnShare.Text = "Share " + PckFormatCode.Items[selectedIndex];
+            btnShare.Text = "Share " + pckFormatCode.Items[selectedIndex];
             btnShare.IsEnabled = true;
 
             if (cTextCode == "")
