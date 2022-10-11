@@ -61,6 +61,54 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        internal static string About_Text {
+            get {
+                return ResourceManager.GetString("About_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
+        ///The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
+        ///
+        ///You can always contact me for any corrections..
+        /// </summary>
+        internal static string AboutExplanation_Text {
+            get {
+                return ResourceManager.GetString("AboutExplanation_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agree.
+        /// </summary>
+        internal static string Agree_Text {
+            get {
+                return ResourceManager.GetString("Agree_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allowed characters:.
+        /// </summary>
+        internal static string AllowedChar_Text {
+            get {
+                return ResourceManager.GetString("AllowedChar_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not allowed:.
+        /// </summary>
+        internal static string AllowedCharNot_Text {
+            get {
+                return ResourceManager.GetString("AllowedCharNot_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Background color:.
         /// </summary>
         internal static string BackgroundColor_Text {
@@ -97,11 +145,93 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string ButtonClose_Text {
+            get {
+                return ResourceManager.GetString("ButtonClose_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share.
+        /// </summary>
+        internal static string ButtonShare_Text {
+            get {
+                return ResourceManager.GetString("ButtonShare_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is an error in the code you entered.
+        ///The check digit was modified..
+        /// </summary>
+        internal static string CheckDigitError_Text {
+            get {
+                return ResourceManager.GetString("CheckDigitError_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear.
         /// </summary>
         internal static string ClearCode_Text {
             get {
                 return ResourceManager.GetString("ClearCode_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The code should be.
+        /// </summary>
+        internal static string CodeLengthPart1_Text {
+            get {
+                return ResourceManager.GetString("CodeLengthPart1_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (without checksum digit) or.
+        /// </summary>
+        internal static string CodeLengthPart2_Text {
+            get {
+                return ResourceManager.GetString("CodeLengthPart2_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to digits long..
+        /// </summary>
+        internal static string CodeLengthPart3_Text {
+            get {
+                return ResourceManager.GetString("CodeLengthPart3_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact:.
+        /// </summary>
+        internal static string Contact_Text {
+            get {
+                return ResourceManager.GetString("Contact_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copyright.
+        /// </summary>
+        internal static string Copyright_Text {
+            get {
+                return ResourceManager.GetString("Copyright_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string Default_Text {
+            get {
+                return ResourceManager.GetString("Default_Text", resourceCulture);
             }
         }
         
@@ -115,11 +245,74 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate various barcodes..
+        /// </summary>
+        internal static string Description_Text {
+            get {
+                return ResourceManager.GetString("Description_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disagree.
+        /// </summary>
+        internal static string Disagree_Text {
+            get {
+                return ResourceManager.GetString("Disagree_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail:.
+        /// </summary>
+        internal static string Email_Text {
+            get {
+                return ResourceManager.GetString("Email_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string ErrorTitle_Text {
+            get {
+                return ResourceManager.GetString("ErrorTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First number chould be 0..
+        /// </summary>
+        internal static string FirstNumber0_Text {
+            get {
+                return ResourceManager.GetString("FirstNumber0_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select a format:.
         /// </summary>
         internal static string FormatCode_Text {
             get {
                 return ResourceManager.GetString("FormatCode_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is currently not supported..
+        /// </summary>
+        internal static string FormatNotSupported_Text {
+            get {
+                return ResourceManager.GetString("FormatNotSupported_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Format.
+        /// </summary>
+        internal static string FormatTitle_Text {
+            get {
+                return ResourceManager.GetString("FormatTitle_Text", resourceCulture);
             }
         }
         
@@ -133,11 +326,111 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid start/end guards:.
+        /// </summary>
+        internal static string GuardInvalidStartEnd_Text {
+            get {
+                return ResourceManager.GetString("GuardInvalidStartEnd_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing end guard..
+        /// </summary>
+        internal static string GuardMissingEnd_Text {
+            get {
+                return ResourceManager.GetString("GuardMissingEnd_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing start guard..
+        /// </summary>
+        internal static string GuardMissingStart_Text {
+            get {
+                return ResourceManager.GetString("GuardMissingStart_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language:.
         /// </summary>
         internal static string Language_Text {
             get {
                 return ResourceManager.GetString("Language_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The length of the input should be even..
+        /// </summary>
+        internal static string LengthInputEven_Text {
+            get {
+                return ResourceManager.GetString("LengthInputEven_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This application may be used freely for non-commercial purposes.
+        ///Use this program entirely at your own risk..
+        /// </summary>
+        internal static string License_Text {
+            get {
+                return ResourceManager.GetString("License_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to License.
+        /// </summary>
+        internal static string LicenseTitle_Text {
+            get {
+                return ResourceManager.GetString("LicenseTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Barcode Generator.
+        /// </summary>
+        internal static string NameProgram_Text {
+            get {
+                return ResourceManager.GetString("NameProgram_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No personal and other data is stored or passed on to myself and others..
+        /// </summary>
+        internal static string PrivacyPolicy_Text {
+            get {
+                return ResourceManager.GetString("PrivacyPolicy_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy Policy:.
+        /// </summary>
+        internal static string PrivacyPolicyTitle_Text {
+            get {
+                return ResourceManager.GetString("PrivacyPolicyTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The application will be restarted..
+        /// </summary>
+        internal static string RestartApp_Text {
+            get {
+                return ResourceManager.GetString("RestartApp_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string Settings_Text {
+            get {
+                return ResourceManager.GetString("Settings_Text", resourceCulture);
             }
         }
         
@@ -160,11 +453,12 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Share.
+        ///   Looks up a localized string similar to The text contains one or more characters that are not allowed.
+        ///Not allowed:.
         /// </summary>
-        internal static string Share_Text {
+        internal static string TextContainsChar_Text {
             get {
-                return ResourceManager.GetString("Share_Text", resourceCulture);
+                return ResourceManager.GetString("TextContainsChar_Text", resourceCulture);
             }
         }
         
@@ -210,6 +504,24 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string ThemeSystem_Text {
             get {
                 return ResourceManager.GetString("ThemeSystem_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version:.
+        /// </summary>
+        internal static string Version_Text {
+            get {
+                return ResourceManager.GetString("Version_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website:.
+        /// </summary>
+        internal static string Website_Text {
+            get {
+                return ResourceManager.GetString("Website_Text", resourceCulture);
             }
         }
     }

@@ -1,3 +1,5 @@
+using BarcodeGenerator.Resources.Languages;
+
 namespace BarcodeGenerator;
 
 public partial class PageAbout : ContentPage
@@ -11,10 +13,23 @@ public partial class PageAbout : ContentPage
         }
         catch (Exception ex)
         {
-            DisplayAlert("InitializeComponent PageAbout", ex.Message, "OK");
+            DisplayAlert("InitializeComponent: PageAbout", ex.Message, "OK");
             return;
         }
-	}
+
+        // Put text in the chosen language in the controls.
+        lblTitle.Text = CodeLang.About_Text;
+
+        lblNameProgram.Text = CodeLang.NameProgram_Text;
+        lblDescription.Text = CodeLang.Description_Text;
+        lblVersion.Text = CodeLang.Version_Text + " 1.0.17 Beta";
+        lblCopyright.Text = CodeLang.Copyright_Text + " © 2022-2022 Geert Geerits";
+        lblEmail.Text = CodeLang.Email_Text + " " + lblEmail.Text;
+        lblWebsite.Text = CodeLang.Website_Text + " " + lblWebsite.Text;
+        lblLicense.Text = CodeLang.LicenseTitle_Text + ": " + CodeLang.License_Text;
+        lblPrivacyPolicy.Text = CodeLang.PrivacyPolicyTitle_Text + " " + CodeLang.PrivacyPolicy_Text;
+        lblAboutExplanation.Text = CodeLang.AboutExplanation_Text;
+    }
 
     // Open e-mail program.
     private void OnbtnEmailLinkClicked(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.17 Beta
-// Date ........: 2022-10-10 (YYYY-MM-DD)
+// Date ........: 2022-10-11 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
@@ -23,8 +23,29 @@ public partial class MainPage : ContentPage
     public static string cLanguage;
 
     // Local variables.
+    private string cButtonShare;
+    private string cButtonClose;
+    private string cErrorTitle;
+    private string cAllowedChar;
+    private string cAllowedCharNot;
+    private string cTextContainsChar;
+    private string cGuardInvalidStartEnd;
+    private string cGuardMissingEnd;
+    private string cGuardMissingStart;
+    private string cFirstNumber0;
+    private string cCheckDigitError;
+    private string cLengthInputEven;
+    private string cFormatTitle;
+    private string cFormatNotSupported;
+    private string cCodeLengthPart1;
+    private string cCodeLengthPart2;
+    private string cCodeLengthPart3;
+    private string cRestartApp;
+    private string cLicenseTitle;
+    private string cLicense;
+    private string cAgree;
+    private string cDisagree;
     private bool bLicense;
-    private readonly string cMessageErrorInCode = "There is an error in the code you entered.\nThe check digit was modified.";
 
     public MainPage()
     {
@@ -34,7 +55,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            DisplayAlert("InitializeComponent MainPage", ex.Message, "OK");
+            DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
             return;
         }
 
@@ -98,13 +119,21 @@ public partial class MainPage : ContentPage
         }
 
         // Get and set the system OS user language.
-        if (cLanguage == "")
+        try
         {
-            cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+            if (cLanguage == "")
+            {
+                cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+            }
+        }
+        catch (Exception ex)
+        {
+            //DisplayAlert("Error", ex.Message, "OK");
+            cLanguage = "en";
         }
 
-        // Set the current UI culture of the selected language.
-        Thread.CurrentThread.CurrentUICulture = cLanguage switch
+    // Set the current UI culture of the selected language.
+    Thread.CurrentThread.CurrentUICulture = cLanguage switch
         {
             // German (Deutsch).
             "de" => CultureInfo.GetCultureInfo("de"),
@@ -128,13 +157,36 @@ public partial class MainPage : ContentPage
             _ => CultureInfo.GetCultureInfo("en"),
         };
 
-        // Put text in the chosen language in the controls.
+        // Put text in the chosen language in the controls and variables.
         lblBarcodeGenerator.Text = CodeLang.BarcodeGenerator_Text;
         lblFormatCode.Text = CodeLang.FormatCode_Text;
         lblTextToEncode.Text = CodeLang.TextToEncode_Text;
         btnGenerateCode.Text = CodeLang.GenerateCode_Text;
         btnClearCode.Text = CodeLang.ClearCode_Text;
-        btnShare.Text = CodeLang.Share_Text;
+        btnShare.Text = CodeLang.ButtonShare_Text;
+
+        cButtonShare = CodeLang.ButtonShare_Text;
+        cButtonClose = CodeLang.ButtonClose_Text;
+        cErrorTitle = CodeLang.ErrorTitle_Text;
+        cAllowedChar = CodeLang.AllowedChar_Text;
+        cAllowedCharNot = CodeLang.AllowedCharNot_Text;
+        cTextContainsChar = CodeLang.TextContainsChar_Text;
+        cGuardInvalidStartEnd = CodeLang.GuardInvalidStartEnd_Text;
+        cGuardMissingEnd = CodeLang.GuardMissingEnd_Text;
+        cGuardMissingStart = CodeLang.GuardMissingStart_Text;
+        cFirstNumber0 = CodeLang.FirstNumber0_Text;
+        cCheckDigitError = CodeLang.CheckDigitError_Text;
+        cLengthInputEven = CodeLang.LengthInputEven_Text;
+        cFormatTitle = CodeLang.FormatTitle_Text;
+        cFormatNotSupported = CodeLang.FormatNotSupported_Text;
+        cCodeLengthPart1 = CodeLang.CodeLengthPart1_Text;
+        cCodeLengthPart2 = CodeLang.CodeLengthPart2_Text;
+        cCodeLengthPart3 = CodeLang.CodeLengthPart3_Text;
+        cRestartApp = CodeLang.RestartApp_Text;
+        cLicenseTitle = CodeLang.LicenseTitle_Text;
+        cLicense = CodeLang.License_Text;
+        cAgree = CodeLang.Agree_Text;
+        cDisagree = CodeLang.Disagree_Text;
 
         // Set focus to the editor.
         edtTextToCode.Focus();
@@ -166,7 +218,7 @@ public partial class MainPage : ContentPage
             bgvBarcode.HorizontalOptions = LayoutOptions.Fill;
 
             lblTextCode.Text = "";
-            btnShare.Text = "Share";
+            btnShare.Text = cButtonShare;
             btnShare.IsEnabled = false;
 
             switch (selectedIndex)
@@ -463,7 +515,7 @@ public partial class MainPage : ContentPage
 
                         if (nLenTextToCode == 13 && cChecksum != cTextToCode.Substring(12, 1))
                         {
-                            DisplayErrorMessage(cMessageErrorInCode);
+                            DisplayErrorMessage(cCheckDigitError);
                         }
 
                         edtTextToCode.Text = cTextToCode;
@@ -496,7 +548,7 @@ public partial class MainPage : ContentPage
 
                         if (nLenTextToCode == 8 && cChecksum != cTextToCode.Substring(7, 1))
                         {
-                            DisplayErrorMessage(cMessageErrorInCode);
+                            DisplayErrorMessage(cCheckDigitError);
                         }
 
                         edtTextToCode.Text = cTextToCode;
@@ -522,7 +574,7 @@ public partial class MainPage : ContentPage
 
                         if (nLenTextToCode % 2 != 0)
                         {
-                            DisplayErrorMessage("The length of the input should be even.");
+                            DisplayErrorMessage(cLengthInputEven);
                             return;
                         }
 
@@ -614,7 +666,7 @@ public partial class MainPage : ContentPage
 
                         if (nLenTextToCode == 12 && cChecksum != cTextToCode.Substring(11, 1))
                         {
-                            DisplayErrorMessage(cMessageErrorInCode);
+                            DisplayErrorMessage(cCheckDigitError);
                         }
 
                         edtTextToCode.Text = cTextToCode;
@@ -638,7 +690,7 @@ public partial class MainPage : ContentPage
 
                         if (cTextToCode[..1] != "0")
                         {
-                            DisplayErrorMessage("First number chould be 0.");
+                            DisplayErrorMessage(cFirstNumber0);
                             return;
                         }
 
@@ -681,7 +733,7 @@ public partial class MainPage : ContentPage
 
                         if (nLenTextToCode == 8 && cChecksum != cTextToCode.Substring(7, 1))
                         {
-                            DisplayErrorMessage(cMessageErrorInCode);
+                            DisplayErrorMessage(cCheckDigitError);
                         }
 
                         edtTextToCode.Text = cTextToCode;
@@ -712,7 +764,7 @@ public partial class MainPage : ContentPage
         {
             bgvBarcode.Value = cTextToCode;
             
-            btnShare.Text = "Share " + pckFormatCode.Items[selectedIndex];
+            btnShare.Text = cButtonShare + " " + pckFormatCode.Items[selectedIndex];
             btnShare.IsEnabled = true;
 
             if (cTextCode == "")
@@ -742,7 +794,7 @@ public partial class MainPage : ContentPage
 
             if (bResult == false)
             {
-                DisplayAlert("Error", "Allowed characters:\n" + cAllowedCharacters + "\nNot allowed character: " + cChar, "OK");
+                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n" + cAllowedCharNot + " " + cChar, cButtonClose);
                 edtTextToCode.Focus();
 
                 return false;
@@ -759,7 +811,7 @@ public partial class MainPage : ContentPage
         {
             if ((int)cChar < nMinAsciiValue || (int)cChar > nMaxAsciiValue)
             {
-                DisplayAlert("Error", "The text contains one or more characters that are not allowed.\nNot allowed character: " + cChar, "OK");
+                DisplayAlert(cErrorTitle, cTextContainsChar + " " + cChar, cButtonClose);
                 edtTextToCode.Focus();
 
                 return false;
@@ -769,7 +821,7 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Test start/end guards.
+    // Test start & end guards.
     private bool TestStartEndGuards(string cStartEndGuards, string cTextToCode)
     {
         int nPos;
@@ -782,7 +834,7 @@ public partial class MainPage : ContentPage
 
             if (cStartEndGuards.Contains(cChar) && nPos > 0 && nPos < cTextToCode.Length - 1)
             {
-                DisplayAlert("Error", "Invalid start/end guards: " + cChar, "OK");
+                DisplayAlert(cErrorTitle, cGuardInvalidStartEnd + " " + cChar, cButtonClose);
                 edtTextToCode.Focus();
 
                 return false;
@@ -792,14 +844,14 @@ public partial class MainPage : ContentPage
         // Control of missing start or end guard.
         if (cStartEndGuards.Contains(cTextToCode[..1]) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
             {
-            DisplayAlert("Error", "Missing end guard.", "OK");
+            DisplayAlert(cErrorTitle, cGuardMissingEnd, cButtonClose);
             edtTextToCode.Focus();
 
             return false;
         }
         else if (cStartEndGuards.Contains(cTextToCode[..1]) == false && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)))
             {
-            DisplayAlert("Error", "Missing start guard.", "OK");
+            DisplayAlert(cErrorTitle, cGuardMissingStart, cButtonClose);
             edtTextToCode.Focus();
 
             return false;
@@ -858,7 +910,7 @@ public partial class MainPage : ContentPage
         edtTextToCode.Text = "";
         bgvBarcode.Value = "";
         lblTextCode.Text = "";
-        btnShare.Text = "Share";
+        btnShare.Text = cButtonShare;
         btnShare.IsEnabled = false;
 
         edtTextToCode.Focus();
@@ -867,7 +919,7 @@ public partial class MainPage : ContentPage
     // Display a message with no encoder available for format.
     private void DisplayMessageFormat(string cFormat)
     {
-        DisplayAlert("Format", cFormat + " is currently not supported.", "OK");
+        DisplayAlert(cFormatTitle, cFormat + " " + cFormatNotSupported, cButtonClose);
 
         edtTextToCode.Focus();
     }
@@ -875,7 +927,7 @@ public partial class MainPage : ContentPage
     // Display an error message.
     private void DisplayErrorMessage(string cMessage)
     {
-        DisplayAlert("Error", cMessage, "OK");
+        DisplayAlert(cErrorTitle, cMessage, cButtonClose);
 
         edtTextToCode.Focus();
     }
@@ -883,7 +935,7 @@ public partial class MainPage : ContentPage
     // Display an error message with minimum and maximum length.
     private void DisplayErrorMessageLength(string cMinLength, string cMaxLength)
     {
-        DisplayAlert("Error", "The code chould be " + cMinLength + " (without checksum digit) or " + cMaxLength + " digits long.", "OK");
+        DisplayAlert(cErrorTitle, cCodeLengthPart1 + " " + cMinLength + " " + cCodeLengthPart2 + " " + cMaxLength + " " + cCodeLengthPart3 , cButtonClose);
 
         edtTextToCode.Focus();
     }
@@ -891,7 +943,7 @@ public partial class MainPage : ContentPage
     // Display an error message and restart the application.
     private async void RestartApplication(string cErrorMessage)
     {
-        await DisplayAlert("Error", cErrorMessage + "\nThe application will be restarted.", "OK");
+        await DisplayAlert(cErrorTitle, cErrorMessage + "\n" + cRestartApp, cButtonClose);
 
         Application.Current.MainPage = new AppShell();
     }
@@ -906,7 +958,7 @@ public partial class MainPage : ContentPage
         // Show license.
         if (bLicense == false)
         {
-            bool bAnswer = await Application.Current.MainPage.DisplayAlert("License", "Barcode Generator" + "\n" + "Copyright © 2022-2022 Geert Geerits" + "\n\n" + "This application may be used freely for non-commercial purposes.\r\nUse this program entirely at your own risk.", "Agree", "Disagree");
+            bool bAnswer = await Application.Current.MainPage.DisplayAlert(cLicenseTitle, cLicense, cAgree, cDisagree);
 
             if (bAnswer)
             {

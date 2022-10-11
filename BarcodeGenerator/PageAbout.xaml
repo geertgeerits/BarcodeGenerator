@@ -38,7 +38,7 @@
                 <Label x:Name="lblEmail"
                        VerticalOptions="Center" 
                        HorizontalOptions="Start"
-                       Text="E-mail: geertgeerits@gmail.com"/>
+                       Text="geertgeerits@gmail.com"/>
 
                 <ImageButton Source="circled_envelope_24p.png"                         
                              HorizontalOptions="Center"
@@ -53,7 +53,7 @@
                 <Label x:Name="lblWebsite"
                        VerticalOptions="Center" 
                        HorizontalOptions="Start"
-                       Text="Website: ../barcodegenerator"/>
+                       Text="../barcodegenerator"/>
 
                 <ImageButton Source="internet_24p.png"
                              HorizontalOptions="Center"
@@ -80,6 +80,17 @@
                    HorizontalOptions="Start"
                    FontSize="13"
                    Text="Privacy Policy: No personal and other data is stored or passed on to myself and others." />
+
+            <Label></Label>
+
+            <Label x:Name="lblAboutExplanation"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Start"
+                   FontSize="13"
+                   Text="Google Translate was used for the translation of the text.  This is not a guarantee that all translations are correct.
+                         &#10;The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
+                         &#10; &#10;You can always contact me for any corrections.
+                         &#10; &#10;Use this program entirely at your own risk." />
 
         </StackLayout>
     </ScrollView>

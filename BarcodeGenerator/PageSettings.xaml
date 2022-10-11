@@ -12,16 +12,17 @@
 
     <ScrollView>
         <StackLayout>
-            <Grid RowDefinitions="40, 36, 36, 36"
+            <Grid RowDefinitions="40, 40, 40, 10, 40, 40, 40, 10, 40, 40, 40, 40, 10, 40"
                   ColumnDefinitions="150, 200*"
                   Margin="10,10,10,0"
-                  ColumnSpacing="0"
+                  ColumnSpacing="8"
                   RowSpacing="8">
 
                 <Label
                     x:Name="lblLanguage"
                     Grid.Row="0"
                     Grid.Column="0"
+                    VerticalTextAlignment="Center"
                     Text="Language:" />
 
                 <Border Style="{StaticResource borderStyleDefault}"
@@ -30,7 +31,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
 
-                    <Picker x:Name="pickerLanguage"
+                    <Picker x:Name="pckLanguage"
                         Grid.Row="0"
                         Grid.Column="1"
                         HorizontalOptions="Start"
@@ -55,56 +56,49 @@
                 <Label x:Name="lblTheme"
                        Grid.Row="1"
                        Grid.Column="0"
+                       VerticalTextAlignment="Center"
                        Text="Theme:" />
 
-                <RadioButton x:Name="rbnThemeSystem"
-                             Grid.Row="1"
-                             Grid.Column="1"
-                             GroupName="rbgThemes"
-                             Value="rbnThemeSystem"
-                             Content="System"
-                             CheckedChanged="OnThemesRadioButtonCheckedChanged" />
+                <Border Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
 
-                <RadioButton x:Name="rbnThemeLight"
-                             Grid.Row="2"
-                             Grid.Column="1"
-                             GroupName="rbgThemes"
-                             Value="rbnThemeLight"
-                             Content="Light"
-                             CheckedChanged="OnThemesRadioButtonCheckedChanged" />
-
-                <RadioButton x:Name="rbnThemeDark"
-                             Grid.Row="3"
-                             Grid.Column="1"
-                             GroupName="rbgThemes"
-                             Value="rbnThemeDark"
-                             Content="Dark"
-                             CheckedChanged="OnThemesRadioButtonCheckedChanged" />
-            </Grid>
-            
-            <Label></Label>
-            
-            <Grid RowDefinitions="40, 8, 40, 40, 40, 8, 40, 40, 40, 40, 10, 40"
-                  ColumnDefinitions="150, 200*"
-                  Margin="10,10,10,0"
-                  ColumnSpacing="8"
-                  RowSpacing="8">
+                    <Picker x:Name="pckTheme"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        MinimumWidthRequest="190"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="OnPickerThemeChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>System</x:String>
+                                <x:String>Light</x:String>
+                                <x:String>Dark</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Border>
 
                 <Label
                     x:Name="lblDefaultFormat"
-                    Grid.Row="0"
+                    Grid.Row="2"
                     Grid.Column="0"
+                    VerticalTextAlignment="Center"
                     Text="Default format:" />
 
                 <Border Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="0"
+                    Grid.Row="2"
                     Grid.Column="1"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
 
                     <Picker
                     x:Name="pckFormatCode"
-                    Grid.Row="0"
+                    Grid.Row="2"
                     Grid.Column="1"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
@@ -140,7 +134,7 @@
 
                 <Label
                     x:Name="lblBarcodeColor"
-                    Grid.Row="2"
+                    Grid.Row="4"
                     Grid.Column="0"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
@@ -149,7 +143,7 @@
              
                 <Slider
                     x:Name="sldColorFgRed"
-                    Grid.Row="2"
+                    Grid.Row="4"
                     Grid.Column="1"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
@@ -159,13 +153,13 @@
 
                 <BoxView
                     x:Name="bxvColorFg"
-                    Grid.Row="3"
+                    Grid.Row="5"
                     Grid.Column="0"
                     Color="Black" />
 
                 <Slider
                     x:Name="sldColorFgGreen"
-                    Grid.Row="3"
+                    Grid.Row="5"
                     Grid.Column="1"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
@@ -175,7 +169,7 @@
 
                 <Slider
                     x:Name="sldColorFgBlue"
-                    Grid.Row="4"
+                    Grid.Row="6"
                     Grid.Column="1"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
@@ -185,7 +179,7 @@
 
                 <Label
                     x:Name="lblBackgroundColor"
-                    Grid.Row="6"
+                    Grid.Row="8"
                     Grid.Column="0"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
@@ -194,7 +188,7 @@
 
                 <Slider
                     x:Name="sldColorBgRed"
-                    Grid.Row="6"
+                    Grid.Row="8"
                     Grid.Column="1"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
@@ -204,13 +198,13 @@
 
                 <BoxView
                     x:Name="bxvColorBg"
-                    Grid.Row="7"
+                    Grid.Row="9"
                     Grid.Column="0"
                     Color="White" />
                 
                 <Slider
                     x:Name="sldColorBgGreen"
-                    Grid.Row="7"
+                    Grid.Row="9"
                     Grid.Column="1"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
@@ -220,7 +214,7 @@
 
                 <Slider
                     x:Name="sldColorBgBlue"
-                    Grid.Row="8"
+                    Grid.Row="10"
                     Grid.Column="1"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
@@ -230,7 +224,7 @@
 
                 <Label
                     x:Name="lblBackgroundOpacity"
-                    Grid.Row="9"
+                    Grid.Row="11"
                     Grid.Column="0"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
@@ -239,7 +233,7 @@
 
                 <Slider
                     x:Name="sldOpacityBg"
-                    Grid.Row="9"
+                    Grid.Row="11"
                     Grid.Column="1"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
@@ -249,7 +243,7 @@
 
                 <Button x:Name="btnSettingsSave"
                     Style="{StaticResource buttonStyleDefault}"
-                    Grid.Row="11"
+                    Grid.Row="13"
                     Grid.Column="0"
                     HorizontalOptions="Start"
                     Text="Save"
@@ -257,7 +251,7 @@
 
                 <Button x:Name="btnSettingsReset"
                     Style="{StaticResource buttonStyleDefault}"
-                    Grid.Row="11"
+                    Grid.Row="13"
                     Grid.Column="1"
                     HorizontalOptions="End"
                     Text="Reset"

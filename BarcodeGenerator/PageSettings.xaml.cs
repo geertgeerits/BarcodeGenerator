@@ -17,16 +17,15 @@ public partial class PageSettings : ContentPage
         }
         catch (Exception ex)
         {
-            DisplayAlert("InitializeComponent PageSettings", ex.Message, "OK");
+            DisplayAlert("InitializeComponent: PageSettings", ex.Message, "OK");
             return;
         }
 
         // Put text in the chosen language in the controls.
+        lblTitle.Text = CodeLang.Settings_Text;
+
         lblLanguage.Text = CodeLang.Language_Text;
         lblTheme.Text = CodeLang.Theme_Text;
-        rbnThemeSystem.Content = CodeLang.ThemeSystem_Text;
-        rbnThemeLight.Content = CodeLang.ThemeLight_Text;
-        rbnThemeDark.Content = CodeLang.ThemeDark_Text;
         lblDefaultFormat.Text = CodeLang.DefaultFormat_Text;
         lblBarcodeColor.Text = CodeLang.BarcodeColor_Text;
         lblBackgroundColor.Text = CodeLang.BackgroundColor_Text;
@@ -34,75 +33,54 @@ public partial class PageSettings : ContentPage
         btnSettingsSave.Text = CodeLang.SettingsSave_Text;
         btnSettingsReset.Text = CodeLang.SettingsReset_Text;
 
-        // Set the language in the picker.
-        switch (MainPage.cLanguage)
+        var ThemeList = new List<string>();
+        ThemeList.Add(CodeLang.ThemeSystem_Text);
+        ThemeList.Add(CodeLang.ThemeLight_Text);
+        ThemeList.Add(CodeLang.ThemeDark_Text);
+        pckTheme.ItemsSource = ThemeList;
+
+        // Set the current language in the picker.
+        pckLanguage.SelectedIndex = MainPage.cLanguage switch
         {
             // German (Deutsch).
-            case "de":
-                pickerLanguage.SelectedIndex = 0;
-                break;
-
+            "de" => 0,
+            
             // Spanish (Español).
-            case "es":
-                pickerLanguage.SelectedIndex = 2;
-                break;
-
+            "es" => 2,
+            
             // French (Français).
-            case "fr":
-                pickerLanguage.SelectedIndex = 3;
-                break;
-
+            "fr" => 3,
+            
             // Italian (Italiano).
-            case "it":
-                pickerLanguage.SelectedIndex = 4;
-                break;
-
+            "it" => 4,
+            
             // Dutch (Nederlands).
-            case "nl":
-                pickerLanguage.SelectedIndex = 5;
-                break;
-
+            "nl" => 5,
+            
             // Portuguese (Português).
-            case "pt":
-                pickerLanguage.SelectedIndex = 6;
-                break;
-
+            "pt" => 6,
+            
             // English.
-            default:
-                pickerLanguage.SelectedIndex = 1;
-                break;
-        }
+            _ => 1,
+        };
 
-        // Set radiobutton to the used theme.
-        string cCurrentTheme;
+        // Set the current theme in the picker.
+        pckTheme.SelectedIndex = MainPage.cTheme switch
+        {
+            // Light.
+            "Light" => 1,
 
-        if (MainPage.cTheme == "")
-        {
-            AppTheme currentTheme = Application.Current.RequestedTheme;
-            cCurrentTheme = Convert.ToString(currentTheme);
-        }
-        else
-        {
-            cCurrentTheme = MainPage.cTheme;
-        }
+            // Dark.
+            "Dark" => 2,
 
-        if (cCurrentTheme == "Light")
-        {
-            rbnThemeLight.IsChecked = true;
-        }
-        else if (cCurrentTheme == "Dark")
-        {
-            rbnThemeDark.IsChecked = true;
-        }
-        else
-        {
-            rbnThemeSystem.IsChecked = true;
-        }
+            // System.
+            _ => 0,
+        };
 
-        // Set the barcode format in the picker.
+        // Set the current default barcode format in the picker.
         pckFormatCode.SelectedIndex = MainPage.nFormatIndex;
 
-        // Set the color sliders.
+        // Set the current color on the sliders.
         int nOpacity = 0;
         int nRed = 0;
         int nGreen = 0;
@@ -125,23 +103,6 @@ public partial class PageSettings : ContentPage
         stopWatch.Start();
     }
 
-    // Radio button themes clicked event.
-    private void OnThemesRadioButtonCheckedChanged(object sender, EventArgs e)
-    {
-        if (rbnThemeSystem.IsChecked)
-        {
-            MainPage.cTheme = "System";
-        }
-        else if (rbnThemeLight.IsChecked)
-        {
-            MainPage.cTheme = "Light";
-        }
-        else if (rbnThemeDark.IsChecked)
-        {
-            MainPage.cTheme = "Dark";
-        }
-    }
-
     // Picker language clicked event.
     private void OnPickerLanguageChanged(object sender, EventArgs e)
     {
@@ -150,9 +111,6 @@ public partial class PageSettings : ContentPage
 
         if (selectedIndex != -1)
         {
-            //string cSelected = picker.Items[selectedIndex];
-            //App.Current.MainPage.DisplayAlert("cSelected", cSelected, "OK");  // For testing
-
             MainPage.cLanguage = selectedIndex switch
             {
                 // German (Deutsch).
@@ -176,7 +134,28 @@ public partial class PageSettings : ContentPage
                 // English.
                 _ => "en",
             };
-            //App.Current.MainPage.DisplayAlert("cLanguage", cLanguage, "OK");  // For testing
+        }
+    }
+
+    // Picker theme clicked event.
+    private void OnPickerThemeChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        int selectedIndex = picker.SelectedIndex;
+
+        if (selectedIndex != -1)
+        {
+            MainPage.cTheme = selectedIndex switch
+            {
+                // Light.
+                1 => "Light",
+
+                // Dark.
+                2 => "Dark",
+
+                // System.
+                _ => "System",
+            };
         }
     }
 

@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutExplanation_Text" xml:space="preserve">
+    <value>Voor de vertaling van de tekst werd gebruik gemaakt van Google Translate.  Dit is geen garantie dat alle vertalingen correct zijn.
+De ondersteunende talen zijn: Nederlands, Engels, Frans, Duits, Italiaans, Portugees en Spaans.
+
+Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
+  </data>
+  <data name="About_Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Agree_Text" xml:space="preserve">
+    <value>Akkoord</value>
+  </data>
+  <data name="AllowedCharNot_Text" xml:space="preserve">
+    <value>Niet toegestaan:</value>
+  </data>
+  <data name="AllowedChar_Text" xml:space="preserve">
+    <value>Toegestane karakters:</value>
+  </data>
   <data name="BackgroundColor_Text" xml:space="preserve">
     <value>Kleur achtergrond:</value>
   </data>
@@ -129,20 +147,100 @@
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
   </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>Delen</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>Er zit een fout in de code die je hebt ingevoerd.
+Het controlecijfer werd gewijzigd.</value>
+  </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Wissen</value>
+  </data>
+  <data name="CodeLengthPart1_Text" xml:space="preserve">
+    <value>De code moet</value>
+  </data>
+  <data name="CodeLengthPart2_Text" xml:space="preserve">
+    <value>(zonder controlecijfer) of</value>
+  </data>
+  <data name="CodeLengthPart3_Text" xml:space="preserve">
+    <value>cijfers lang zijn.</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>Contact:</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>Auteursrechten</value>
   </data>
   <data name="DefaultFormat_Text" xml:space="preserve">
     <value>Standaard formaat:</value>
   </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>Standaard</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>Genereer verschillende barcodes.</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>Niet akkoord</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>Fout</value>
+  </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>Het eerste cijfer moet 0 zijn.</value>
+  </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Selecteer formaat:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>wordt momenteel niet ondersteund.</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>Formaat</value>
   </data>
   <data name="GenerateCode_Text" xml:space="preserve">
     <value>Genereren</value>
   </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>Ongeldige begin/eind karakter:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>Eindkarakter ontbreekt.</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>Startkarakter ontbreekt.</value>
+  </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Taal:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>De lengte van de invoer moet even zijn.</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>Licentie</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>Deze applicatie mag vrij worden gebruikt voor niet-commerciële doeleinden.
+Gebruik dit programma geheel op eigen risico.</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>Barcode Generator</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>Privacybeleid:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>Er worden geen persoonlijke en andere gegevens opgeslagen of doorgegeven aan mezelf en anderen.</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>De toepassing wordt opnieuw gestart.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Reset</value>
@@ -150,8 +248,12 @@
   <data name="SettingsSave_Text" xml:space="preserve">
     <value>Opslaan</value>
   </data>
-  <data name="Share_Text" xml:space="preserve">
-    <value>Delen</value>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>Instellingen</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>De tekst bevat een of meer karakters die niet zijn toegestaan.
+Niet toegestaan:</value>
   </data>
   <data name="TextToEncode_Text" xml:space="preserve">
     <value>Tekst om te coderen:</value>
@@ -167,5 +269,11 @@
   </data>
   <data name="Theme_Text" xml:space="preserve">
     <value>Thema:</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Versie:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Website:</value>
   </data>
 </root>
