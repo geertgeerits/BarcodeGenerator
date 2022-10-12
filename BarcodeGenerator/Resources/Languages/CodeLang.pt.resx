@@ -154,8 +154,8 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
     <value>Compartilhar</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Há um erro no código que você digitou.
-O dígito de verificação foi modificado.</value>
+    <value>O código está errado.
+O dígito de verificação foi corrigido.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Remover</value>
@@ -222,6 +222,17 @@ O dígito de verificação foi modificado.</value>
   </data>
   <data name="LengthInputEven_Text" xml:space="preserve">
     <value>O comprimento da entrada deve ser uniforme.</value>
+  </data>
+  <data name="LicenseMIT_Text" xml:space="preserve">
+    <value>Copyright ZXing.Net.Maui by Redth
+Barcode scanning and generation for .NET MAUI applications.
+MIT License:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of Barcode Generator (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE PUBLISHER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licença</value>

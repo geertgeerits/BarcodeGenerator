@@ -154,8 +154,8 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
     <value>Delen</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Er zit een fout in de code die je hebt ingevoerd.
-Het controlecijfer werd gewijzigd.</value>
+    <value>De code is fout.
+Het controlecijfer is gecorrigeerd.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Wissen</value>
@@ -222,6 +222,17 @@ Het controlecijfer werd gewijzigd.</value>
   </data>
   <data name="LengthInputEven_Text" xml:space="preserve">
     <value>De lengte van de invoer moet even zijn.</value>
+  </data>
+  <data name="LicenseMIT_Text" xml:space="preserve">
+    <value>Copyright ZXing.Net.Maui door Redth
+Barcode scannen en genereren voor .NET MAUI-toepassingen.
+MIT-licentie:
+
+Hierbij wordt kosteloos toestemming verleend aan eenieder die een kopie van de Barcode Generator (de 'Software') verkrijgt, om zonder beperking in de Software te handelen, inclusief maar niet beperkt tot de rechten om te gebruiken, kopiëren, wijzigen, samenvoegen, publiceren, distribueren , in sublicentie geven en/of kopieën van de Software verkopen, en om personen aan wie de Software wordt geleverd toe te staan ​​dit te doen, onder de volgende voorwaarden:
+
+De bovenstaande copyrightkennisgeving en deze toestemmingskennisgeving (inclusief de volgende paragraaf) zullen worden opgenomen in alle kopieën of substantiële delen van de Software.
+
+DE SOFTWARE WORDT GELEVERD 'AS IS', ZONDER ENIGE GARANTIE, EXPLICIET OF IMPLICIET, INCLUSIEF MAAR NIET BEPERKT TOT DE GARANTIES VAN VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL EN NIET-INBREUK. IN GEEN GEVAL ZAL DE UITGEVER AANSPRAKELIJK ZIJN VOOR ENIGE CLAIM, SCHADE OF ANDERE AANSPRAKELIJKHEID, HETZIJ IN EEN HANDELING VAN CONTRACT, ONRECHTMATIGE OF ANDERSZINS, VOORTVLOEIEND UIT, UIT OF IN VERBAND MET DE SOFTWARE OF HET GEBRUIK OF ANDERE HANDELINGEN IN DE SOFTWARE.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licentie</value>

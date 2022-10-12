@@ -67,31 +67,6 @@ public partial class MainPage : ContentPage
         cLanguage = Preferences.Default.Get("SettingLanguage", "");
         bLicense = Preferences.Default.Get("SettingLicense", false);
 
-//#if WINDOWS
-//        // Set the settings default values because of a BUG in the Windows app they have NULL values !!!
-//        if (cTheme == null)
-//        {
-//            cTheme = "System";
-//        }
-
-//        nFormatIndex = 14;
-
-//        if (cCodeColorFg == null)
-//        {
-//            cCodeColorFg = "FF000000";
-//        }
-
-//        if (cCodeColorBg == null)
-//        {
-//            cCodeColorBg = "FFFFFFFF";
-//        }
-        
-//        if (cLanguage == null)
-//        {
-//            cLanguage = "";
-//        }
-//#endif
-
         // Set the theme.
         if (cTheme == "Light")
         {
