@@ -194,7 +194,7 @@ The check digit was modified.</value>
     <value>Error</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
-    <value>First number chould be 0.</value>
+    <value>First number should be 0.</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Select a format:</value>
@@ -209,13 +209,13 @@ The check digit was modified.</value>
     <value>Generate</value>
   </data>
   <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
-    <value>Invalid start/end guards:</value>
+    <value>Invalid start/end character:</value>
   </data>
   <data name="GuardMissingEnd_Text" xml:space="preserve">
-    <value>Missing end guard.</value>
+    <value>Missing end character.</value>
   </data>
   <data name="GuardMissingStart_Text" xml:space="preserve">
-    <value>Missing start guard.</value>
+    <value>Missing start character.</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Language:</value>

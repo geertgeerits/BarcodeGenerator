@@ -281,7 +281,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to First number chould be 0..
+        ///   Looks up a localized string similar to First number should be 0..
         /// </summary>
         internal static string FirstNumber0_Text {
             get {
@@ -326,7 +326,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid start/end guards:.
+        ///   Looks up a localized string similar to Invalid start/end character:.
         /// </summary>
         internal static string GuardInvalidStartEnd_Text {
             get {
@@ -335,7 +335,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing end guard..
+        ///   Looks up a localized string similar to Missing end character..
         /// </summary>
         internal static string GuardMissingEnd_Text {
             get {
@@ -344,7 +344,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing start guard..
+        ///   Looks up a localized string similar to Missing start character..
         /// </summary>
         internal static string GuardMissingStart_Text {
             get {
