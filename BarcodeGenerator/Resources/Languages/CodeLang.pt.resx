@@ -223,16 +223,16 @@ O dígito de verificação foi corrigido.</value>
   <data name="LengthInputEven_Text" xml:space="preserve">
     <value>O comprimento da entrada deve ser uniforme.</value>
   </data>
-  <data name="LicenseMIT_Text" xml:space="preserve">
-    <value>Copyright ZXing.Net.Maui by Redth
-Barcode scanning and generation for .NET MAUI applications.
-MIT License:
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>ZXing.Net.Maui por Redth
+Digitalização e geração de código de barras para aplicativos .NET MAUI.
+Licença MIT:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of Barcode Generator (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia do Barcode Generator (o 'Software'), para negociar o Software sem restrições, incluindo, sem limitação, os direitos de usar, copiar, modificar, mesclar, publicar, distribuir , sublicenciar e/ou vender cópias do Software e permitir que as pessoas a quem o Software é fornecido o façam, sujeito às seguintes condições:
 
-The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.
+O aviso de direitos autorais acima e este aviso de permissão (incluindo o próximo parágrafo) devem ser incluídos em todas as cópias ou partes substanciais do Software.
 
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE PUBLISHER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
+O SOFTWARE É FORNECIDO 'COMO ESTÁ', SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU IMPLÍCITA, INCLUINDO MAS NÃO LIMITADO ÀS GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM DETERMINADO FIM E NÃO VIOLAÇÃO. EM NENHUMA CIRCUNSTÂNCIA O EDITOR SERÁ RESPONSÁVEL POR QUALQUER RECLAMAÇÃO, DANOS OU OUTRA RESPONSABILIDADE, SEJA EM UMA AÇÃO DE CONTRATO, ATO ILÍCITO OU DE OUTRA FORMA, DECORRENTE DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO SOFTWARE.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licença</value>

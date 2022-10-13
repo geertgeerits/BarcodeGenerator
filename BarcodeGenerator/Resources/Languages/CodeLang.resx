@@ -223,8 +223,8 @@ The check digit has been corrected.</value>
   <data name="LengthInputEven_Text" xml:space="preserve">
     <value>The length of the input should be even.</value>
   </data>
-  <data name="LicenseMIT_Text" xml:space="preserve">
-    <value>Copyright ZXing.Net.Maui by Redth
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>ZXing.Net.Maui by Redth
 Barcode scanning and generation for .NET MAUI applications.
 MIT License:
 

@@ -6,7 +6,6 @@ public partial class PageAbout : ContentPage
 {
 	public PageAbout()
 	{
-        //InitializeComponent();
         try
         {
             InitializeComponent();
@@ -26,8 +25,9 @@ public partial class PageAbout : ContentPage
         lblCopyright.Text = CodeLang.Copyright_Text + " © 2022-2022 Geert Geerits";
         lblEmail.Text = CodeLang.Email_Text + " " + lblEmail.Text;
         lblWebsite.Text = CodeLang.Website_Text + " " + lblWebsite.Text;
-        lblLicense.Text = CodeLang.LicenseTitle_Text + ": " + CodeLang.License_Text;
         lblPrivacyPolicy.Text = CodeLang.PrivacyPolicyTitle_Text + " " + CodeLang.PrivacyPolicy_Text;
+        lblLicense.Text = CodeLang.LicenseTitle_Text + ": " + CodeLang.License_Text;
+        lblLicenseMit.Text = CodeLang.Copyright_Text + " © " + CodeLang.LicenseMit_Text;
         lblAboutExplanation.Text = CodeLang.AboutExplanation_Text;
     }
 

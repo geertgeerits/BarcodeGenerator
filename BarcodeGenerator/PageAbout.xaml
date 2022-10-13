@@ -66,6 +66,14 @@
 
             <Label></Label>
 
+            <Label x:Name="lblPrivacyPolicy"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Start"
+                   FontSize="13"
+                   Text="Privacy Policy: No personal and other data is stored or passed on to myself and others." />
+
+            <Label></Label>
+
             <Label x:Name="lblLicense"
                    VerticalOptions="Center" 
                    HorizontalOptions="Start"
@@ -75,11 +83,13 @@
 
             <Label></Label>
 
-            <Label x:Name="lblPrivacyPolicy"
+            <Label x:Name="lblLicenseMit"
                    VerticalOptions="Center" 
                    HorizontalOptions="Start"
                    FontSize="13"
-                   Text="Privacy Policy: No personal and other data is stored or passed on to myself and others." />
+                   Text="Copyright ZXing.Net.Maui by Redth
+                         &#10;Barcode scanning and generation for .NET MAUI applications.
+                         &#10;MIT License:" />
 
             <Label></Label>
 

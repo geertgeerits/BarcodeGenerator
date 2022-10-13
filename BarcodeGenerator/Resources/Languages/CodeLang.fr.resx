@@ -223,16 +223,16 @@ Le chiffre de contrôle a été corrigé.</value>
   <data name="LengthInputEven_Text" xml:space="preserve">
     <value>La longueur de l'entrée doit être paire.</value>
   </data>
-  <data name="LicenseMIT_Text" xml:space="preserve">
-    <value>Copyright ZXing.Net.Maui by Redth
-Barcode scanning and generation for .NET MAUI applications.
-MIT License:
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>ZXing.Net.Maui par Redth
+Lecture et génération de codes-barres pour les applications .NET MAUI.
+Licence MIT :
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of Barcode Generator (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+L'autorisation est accordée, gratuitement, à toute personne obtenant une copie de Barcode Generator (le « Logiciel »), de traiter le Logiciel sans restriction, y compris, sans limitation, les droits d'utilisation, de copie, de modification, de fusion, de publication, de distribution , sous-licencier et/ou vendre des copies du Logiciel, et permettre aux personnes à qui le Logiciel est fourni de le faire, sous réserve des conditions suivantes :
 
-The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.
+L'avis de droit d'auteur ci-dessus et cet avis d'autorisation (y compris le paragraphe suivant) doivent être inclus dans toutes les copies ou parties substantielles du Logiciel.
 
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE PUBLISHER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
+LE LOGICIEL EST FOURNI « EN L'ÉTAT », SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU IMPLICITE, Y COMPRIS, MAIS SANS S'Y LIMITER, LES GARANTIES DE QUALITÉ MARCHANDE, D'ADÉQUATION À UN USAGE PARTICULIER ET D'ABSENCE DE CONTREFAÇON. EN AUCUN CAS L'ÉDITEUR NE SERA RESPONSABLE DE TOUTE RÉCLAMATION, DOMMAGE OU AUTRE RESPONSABILITÉ, QUE CE SOIT DANS UNE ACTION CONTRACTUELLE, DÉLICTUELLE OU AUTRE, DÉCOULANT DE, DE OU EN RELATION AVEC LE LOGICIEL OU L'UTILISATION OU D'AUTRES TRANSACTIONS DANS LE LOGICIEL.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licence</value>

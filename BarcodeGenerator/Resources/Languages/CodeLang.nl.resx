@@ -223,8 +223,8 @@ Het controlecijfer is gecorrigeerd.</value>
   <data name="LengthInputEven_Text" xml:space="preserve">
     <value>De lengte van de invoer moet even zijn.</value>
   </data>
-  <data name="LicenseMIT_Text" xml:space="preserve">
-    <value>Copyright ZXing.Net.Maui door Redth
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>ZXing.Net.Maui door Redth
 Barcode scannen en genereren voor .NET MAUI-toepassingen.
 MIT-licentie:
 
