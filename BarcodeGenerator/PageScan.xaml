@@ -12,9 +12,9 @@
     </Shell.TitleView>
 
     <ScrollView>
-        <Grid RowDefinitions="40, 10, 400, 10, 40, 40*"
+        <Grid RowDefinitions="40, 10, 400, 10, 40, 100*"
               ColumnDefinitions="350*"
-              Margin="10,10,10,0"
+              Margin="10,10,10,10"
               ColumnSpacing="0"
               RowSpacing="2">
 
@@ -49,13 +49,23 @@
                 IsEnabled="False"
                 Clicked="OnShareClicked" />
 
-            <Label
-                x:Name="lblBarcodeResult"
+            <Border
+                Style="{StaticResource borderStyleDefault}"
                 Grid.Row="5"
                 Grid.Column="0"
-                HorizontalOptions="Center"
-                Text="Result" />
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
 
+                <Label
+                    x:Name="lblBarcodeResult"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Padding="10"
+                    HorizontalOptions="Start"
+                    HorizontalTextAlignment="Start"
+                    Text="" />
+            </Border>
         </Grid>
     </ScrollView>
 </ContentPage>
