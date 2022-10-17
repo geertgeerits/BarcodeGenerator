@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI"
+             x:Class="BarcodeGenerator.PageScan">
+
+    <Shell.TitleView>
+        <Label x:Name="lblTitle"
+               Style="{StaticResource labelStyleShellTitleView}"
+               HorizontalOptions="Start"
+               Text="Barcode Scanner" />
+    </Shell.TitleView>
+
+    <ScrollView>
+        <Grid RowDefinitions="40, 10, 400, 10, 40, 40*"
+              ColumnDefinitions="350*"
+              Margin="10,10,10,0"
+              ColumnSpacing="0"
+              RowSpacing="2">
+
+            <Label
+                x:Name="lblScanCode"
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                Text="Scan the code" />
+
+            <zxing:CameraBarcodeReaderView
+                x:Name="barcodeReader"
+                Grid.Row="2"
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="300"
+                HeightRequest="300"
+                IsDetecting="True"
+                IsTorchOn="False"
+                BarcodesDetected="OnBarcodesDetected" />
+
+            <Button
+                x:Name="btnShare"
+                Grid.Row="4"
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                HeightRequest="40"
+                MinimumWidthRequest="130"
+                Text="Share"
+                IsEnabled="False"
+                Clicked="OnShareClicked" />
+
+            <Label
+                x:Name="lblBarcodeResult"
+                Grid.Row="5"
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                Text="Result" />
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

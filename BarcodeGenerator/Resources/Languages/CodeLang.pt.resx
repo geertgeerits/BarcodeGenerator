@@ -147,6 +147,9 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
   </data>
+  <data name="BarcodeScanner_Text" xml:space="preserve">
+    <value>Barcode Scanner</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Perto</value>
   </data>
@@ -232,7 +235,7 @@ A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cóp
 
 O aviso de direitos autorais acima e este aviso de permissão (incluindo o próximo parágrafo) devem ser incluídos em todas as cópias ou partes substanciais do Software.
 
-O SOFTWARE É FORNECIDO 'COMO ESTÁ', SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU IMPLÍCITA, INCLUINDO MAS NÃO LIMITADO ÀS GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM DETERMINADO FIM E NÃO VIOLAÇÃO. EM NENHUMA CIRCUNSTÂNCIA O EDITOR SERÁ RESPONSÁVEL POR QUALQUER RECLAMAÇÃO, DANOS OU OUTRA RESPONSABILIDADE, SEJA EM UMA AÇÃO DE CONTRATO, ATO ILÍCITO OU DE OUTRA FORMA, DECORRENTE DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO SOFTWARE.</value>
+O SOFTWARE É FORNECIDO 'COMO ESTÁ', SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU IMPLÍCITA, INCLUINDO MAS NÃO LIMITADO ÀS GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM DETERMINADO FIM E NÃO VIOLAÇÃO. EM NENHUMA CIRCUNSTÂNCIA O AUTOR E/OU EDITOR SERÁ RESPONSÁVEL POR QUALQUER RECLAMAÇÃO, DANOS OU OUTRA RESPONSABILIDADE, SEJA EM UMA AÇÃO DE CONTRATO, ATO ILÍCITO OU DE OUTRA FORMA, DECORRENTE DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO SOFTWARE.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licença</value>
@@ -252,6 +255,9 @@ Use este programa inteiramente por sua conta e risco.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>O aplicativo será reiniciado.</value>
+  </data>
+  <data name="ScanCode_Text" xml:space="preserve">
+    <value>Escaneie o código</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Redefinir</value>

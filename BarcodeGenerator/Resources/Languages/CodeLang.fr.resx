@@ -147,6 +147,9 @@ Vous pouvez toujours me contacter pour toute correction.</value>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
   </data>
+  <data name="BarcodeScanner_Text" xml:space="preserve">
+    <value>Barcode Scanner</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
@@ -232,7 +235,7 @@ L'autorisation est accordée, gratuitement, à toute personne obtenant une copie
 
 L'avis de droit d'auteur ci-dessus et cet avis d'autorisation (y compris le paragraphe suivant) doivent être inclus dans toutes les copies ou parties substantielles du Logiciel.
 
-LE LOGICIEL EST FOURNI « EN L'ÉTAT », SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU IMPLICITE, Y COMPRIS, MAIS SANS S'Y LIMITER, LES GARANTIES DE QUALITÉ MARCHANDE, D'ADÉQUATION À UN USAGE PARTICULIER ET D'ABSENCE DE CONTREFAÇON. EN AUCUN CAS L'ÉDITEUR NE SERA RESPONSABLE DE TOUTE RÉCLAMATION, DOMMAGE OU AUTRE RESPONSABILITÉ, QUE CE SOIT DANS UNE ACTION CONTRACTUELLE, DÉLICTUELLE OU AUTRE, DÉCOULANT DE, DE OU EN RELATION AVEC LE LOGICIEL OU L'UTILISATION OU D'AUTRES TRANSACTIONS DANS LE LOGICIEL.</value>
+LE LOGICIEL EST FOURNI « EN L'ÉTAT », SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU IMPLICITE, Y COMPRIS, MAIS SANS S'Y LIMITER, LES GARANTIES DE QUALITÉ MARCHANDE, D'ADÉQUATION À UN USAGE PARTICULIER ET D'ABSENCE DE CONTREFAÇON. EN AUCUN CAS L'AUTEUR ET/OU L'EDITEUR NE SERA RESPONSABLE DE TOUTE RÉCLAMATION, DOMMAGE OU AUTRE RESPONSABILITÉ, QUE CE SOIT DANS UNE ACTION CONTRACTUELLE, DÉLICTUELLE OU AUTRE, DÉCOULANT DE, DE OU EN RELATION AVEC LE LOGICIEL OU L'UTILISATION OU D'AUTRES TRANSACTIONS DANS LE LOGICIEL.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licence</value>
@@ -252,6 +255,9 @@ Utilisez ce programme entièrement à vos propres risques.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>L'application sera redémarrée.</value>
+  </data>
+  <data name="ScanCode_Text" xml:space="preserve">
+    <value>Scannez le code</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Réinitialiser</value>

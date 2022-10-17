@@ -4,7 +4,11 @@ namespace BarcodeGenerator;
 
 public partial class PageAbout : ContentPage
 {
-	public PageAbout()
+    // Local variables.
+    private string cButtonClose;
+    private string cErrorTitle;
+
+    public PageAbout()
 	{
         try
         {
@@ -21,7 +25,7 @@ public partial class PageAbout : ContentPage
 
         lblNameProgram.Text = CodeLang.NameProgram_Text;
         lblDescription.Text = CodeLang.Description_Text;
-        lblVersion.Text = CodeLang.Version_Text + " 1.0.17 Beta";
+        lblVersion.Text = CodeLang.Version_Text + " 1.0.18 Beta";
         lblCopyright.Text = CodeLang.Copyright_Text + " © 2022-2022 Geert Geerits";
         lblEmail.Text = CodeLang.Email_Text + " " + lblEmail.Text;
         lblWebsite.Text = CodeLang.Website_Text + " " + lblWebsite.Text;
@@ -29,6 +33,9 @@ public partial class PageAbout : ContentPage
         lblLicense.Text = CodeLang.LicenseTitle_Text + ": " + CodeLang.License_Text;
         lblLicenseMit.Text = CodeLang.Copyright_Text + " © " + CodeLang.LicenseMit_Text;
         lblAboutExplanation.Text = CodeLang.AboutExplanation_Text;
+
+        cButtonClose = CodeLang.ButtonClose_Text;
+        cErrorTitle = CodeLang.ErrorTitle_Text;
     }
 
     // Open e-mail program.
@@ -42,7 +49,7 @@ public partial class PageAbout : ContentPage
         }
         catch (Exception ex)
         {
-            DisplayAlert("Error", ex.Message, "OK");
+            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
         }
     }
 
@@ -57,7 +64,7 @@ public partial class PageAbout : ContentPage
         }
         catch (Exception ex)
         {
-            DisplayAlert("Error", ex.Message, "OK");
+            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
         }
     }
 }

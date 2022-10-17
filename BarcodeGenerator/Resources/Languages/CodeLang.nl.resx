@@ -147,6 +147,9 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
   </data>
+  <data name="BarcodeScanner_Text" xml:space="preserve">
+    <value>Barcode Scanner</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Sluiten</value>
   </data>
@@ -232,7 +235,7 @@ Hierbij wordt kosteloos toestemming verleend aan eenieder die een kopie van de B
 
 De bovenstaande copyrightkennisgeving en deze toestemmingskennisgeving (inclusief de volgende paragraaf) zullen worden opgenomen in alle kopieën of substantiële delen van de Software.
 
-DE SOFTWARE WORDT GELEVERD 'AS IS', ZONDER ENIGE GARANTIE, EXPLICIET OF IMPLICIET, INCLUSIEF MAAR NIET BEPERKT TOT DE GARANTIES VAN VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL EN NIET-INBREUK. IN GEEN GEVAL ZAL DE UITGEVER AANSPRAKELIJK ZIJN VOOR ENIGE CLAIM, SCHADE OF ANDERE AANSPRAKELIJKHEID, HETZIJ IN EEN HANDELING VAN CONTRACT, ONRECHTMATIGE OF ANDERSZINS, VOORTVLOEIEND UIT, UIT OF IN VERBAND MET DE SOFTWARE OF HET GEBRUIK OF ANDERE HANDELINGEN IN DE SOFTWARE.</value>
+DE SOFTWARE WORDT GELEVERD 'AS IS', ZONDER ENIGE GARANTIE, EXPLICIET OF IMPLICIET, INCLUSIEF MAAR NIET BEPERKT TOT DE GARANTIES VAN VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL EN NIET-INBREUK. IN GEEN GEVAL ZAL DE AUTEUR EN/OF UITGEVER AANSPRAKELIJK ZIJN VOOR ENIGE CLAIM, SCHADE OF ANDERE AANSPRAKELIJKHEID, HETZIJ IN EEN HANDELING VAN CONTRACT, ONRECHTMATIGE OF ANDERSZINS, VOORTVLOEIEND UIT, UIT OF IN VERBAND MET DE SOFTWARE OF HET GEBRUIK OF ANDERE HANDELINGEN IN DE SOFTWARE.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licentie</value>
@@ -252,6 +255,9 @@ Gebruik dit programma geheel op eigen risico.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>De toepassing wordt opnieuw gestart.</value>
+  </data>
+  <data name="ScanCode_Text" xml:space="preserve">
+    <value>Scan de code</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Reset</value>

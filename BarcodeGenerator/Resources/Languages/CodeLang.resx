@@ -147,6 +147,9 @@ You can always contact me for any corrections.</value>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
   </data>
+  <data name="BarcodeScanner_Text" xml:space="preserve">
+    <value>Barcode Scanner</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Close</value>
   </data>
@@ -232,7 +235,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE PUBLISHER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR AND/OR PUBLISHER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>License</value>
@@ -252,6 +255,9 @@ Use this program entirely at your own risk.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>The application will be restarted.</value>
+  </data>
+  <data name="ScanCode_Text" xml:space="preserve">
+    <value>Scan the code</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Reset</value>

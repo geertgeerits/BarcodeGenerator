@@ -1,8 +1,8 @@
 ﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
-// Version .....: 1.0.17 Beta
-// Date ........: 2022-10-13 (YYYY-MM-DD)
+// Version .....: 1.0.18 Beta
+// Date ........: 2022-10-17 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
@@ -107,8 +107,8 @@ public partial class MainPage : ContentPage
             cLanguage = "en";
         }
 
-    // Set the current UI culture of the selected language.
-    Thread.CurrentThread.CurrentUICulture = cLanguage switch
+        // Set the current UI culture of the selected language.
+        Thread.CurrentThread.CurrentUICulture = cLanguage switch
         {
             // German (Deutsch).
             "de" => CultureInfo.GetCultureInfo("de"),
@@ -133,7 +133,7 @@ public partial class MainPage : ContentPage
         };
 
         // Put text in the chosen language in the controls and variables.
-        lblBarcodeGenerator.Text = CodeLang.BarcodeGenerator_Text;
+        lblTitle.Text = CodeLang.BarcodeGenerator_Text;
         lblFormatCode.Text = CodeLang.FormatCode_Text;
         lblTextToEncode.Text = CodeLang.TextToEncode_Text;
         btnGenerateCode.Text = CodeLang.GenerateCode_Text;
@@ -171,6 +171,11 @@ public partial class MainPage : ContentPage
     private async void OnPageAboutClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PageAbout());
+    }
+
+    private async void OnPageScanClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new PageScan());
     }
 
     private async void OnPageSettingsClicked(object sender, EventArgs e)

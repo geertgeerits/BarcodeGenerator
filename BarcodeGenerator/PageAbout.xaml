@@ -27,7 +27,7 @@
             <Label x:Name="lblVersion"
                    VerticalOptions="Center" 
                    HorizontalOptions="Start"
-                   Text="Version: 1.0.17 Beta"/>
+                   Text="Version: 1.0.18 Beta"/>
 
             <Label x:Name="lblCopyright"
                    VerticalOptions="Center" 

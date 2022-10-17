@@ -145,6 +145,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Barcode Scanner.
+        /// </summary>
+        internal static string BarcodeScanner_Text {
+            get {
+                return ResourceManager.GetString("BarcodeScanner_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         internal static string ButtonClose_Text {
@@ -437,6 +446,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string RestartApp_Text {
             get {
                 return ResourceManager.GetString("RestartApp_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan the code.
+        /// </summary>
+        internal static string ScanCode_Text {
+            get {
+                return ResourceManager.GetString("ScanCode_Text", resourceCulture);
             }
         }
         

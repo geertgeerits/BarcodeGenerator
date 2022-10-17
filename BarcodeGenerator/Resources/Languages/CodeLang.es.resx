@@ -147,6 +147,9 @@ Siempre puedes contactarme para cualquier corrección.</value>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
   </data>
+  <data name="BarcodeScanner_Text" xml:space="preserve">
+    <value>Barcode Scanner</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Cerrar</value>
   </data>
@@ -232,7 +235,7 @@ Por la presente se otorga permiso, sin cargo, a cualquier persona que obtenga un
 
 El aviso de derechos de autor anterior y este aviso de permiso (incluido el siguiente párrafo) se incluirán en todas las copias o partes sustanciales del Software.
 
-EL SOFTWARE SE PROPORCIONA 'TAL CUAL', SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO, ENTRE OTRAS, LAS GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD PARA UN FIN DETERMINADO Y NO VIOLACIÓN. EN NINGÚN CASO EL EDITOR SERÁ RESPONSABLE DE CUALQUIER RECLAMACIÓN, DAÑOS U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O DE CUALQUIER OTRO TIPO, QUE SURJA DE, FUERA DE O EN RELACIÓN CON EL SOFTWARE O EL USO U OTRAS OPERACIONES EN EL SOFTWARE.</value>
+EL SOFTWARE SE PROPORCIONA 'TAL CUAL', SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO, ENTRE OTRAS, LAS GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD PARA UN FIN DETERMINADO Y NO VIOLACIÓN. EN NINGÚN CASO EL AUTOR Y/O EL EDITOR SERÁ RESPONSABLE DE CUALQUIER RECLAMACIÓN, DAÑOS U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O DE CUALQUIER OTRO TIPO, QUE SURJA DE, FUERA DE O EN RELACIÓN CON EL SOFTWARE O EL USO U OTRAS OPERACIONES EN EL SOFTWARE.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licencia</value>
@@ -252,6 +255,9 @@ Utilice este programa bajo su propio riesgo.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>La aplicación se reiniciará.</value>
+  </data>
+  <data name="ScanCode_Text" xml:space="preserve">
+    <value>Escanea el código</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Reiniciar</value>
