@@ -153,6 +153,9 @@ Siempre puedes contactarme para cualquier corrección.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Cerrar</value>
   </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>Compartir texto</value>
+  </data>
   <data name="ButtonShare_Text" xml:space="preserve">
     <value>Compartir</value>
   </data>

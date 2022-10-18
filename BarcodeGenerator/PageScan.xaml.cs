@@ -1,8 +1,5 @@
 using BarcodeGenerator.Resources.Languages;
-using Microsoft.Maui.ApplicationModel.DataTransfer;
-using System.ComponentModel;
 using ZXing.Net.Maui;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace BarcodeGenerator;
 
@@ -29,17 +26,18 @@ public partial class PageScan : ContentPage
             return;
         }
 
-        //barcodeReader.Options = new ZXing.Net.Maui.BarcodeReaderOptions()
-        //{
-        //    Formats = BarcodeFormat.All
-        //};
+        barcodeReader.Options = new BarcodeReaderOptions()
+        {
+            AutoRotate = true,
+            Formats = BarcodeFormats.All
+        };
 
         // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.BarcodeScanner_Text;
         lblScanCode.Text = CodeLang.ScanCode_Text;
-        btnShare.Text = CodeLang.ButtonShare_Text;
+        btnShare.Text = CodeLang.ButtonShareText_Text;
 
-        cButtonShare = CodeLang.ButtonShare_Text;
+        cButtonShare = CodeLang.ButtonShareText_Text;
         cButtonClose = CodeLang.ButtonClose_Text;
         cOpenLinkTitle = CodeLang.OpenLinkTitle_Text;
         cOpenLinkText = CodeLang.OpenLinkText_Text;
@@ -62,15 +60,22 @@ public partial class PageScan : ContentPage
     }
     
     // Barcode detected event.
-    private void OnBarcodesDetected(object sender, BarcodeDetectionEventArgs e)
+    private async void OnBarcodesDetected(object sender, BarcodeDetectionEventArgs e)
     {
-        Dispatcher.Dispatch(() =>
+        try
         {
-            btnShare.Text = cButtonShare + " " + e.Results[0].Format;
-            lblBarcodeResult.Text = e.Results[0].Value;
+            Dispatcher.Dispatch(() =>
+            {
+                btnShare.Text = cButtonShare + " " + e.Results[0].Format;
+                lblBarcodeResult.Text = e.Results[0].Value;
 
-            btnShare.IsEnabled = true;
-        });
+                btnShare.IsEnabled = true;
+            });
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
     }
 
     // Button share event.
@@ -103,7 +108,7 @@ public partial class PageScan : ContentPage
         }
     }
 
-    // Open the website.
+    // Open the website link.
     private async void OpenWebsiteLink(string cUrl)
     {
         try

@@ -172,6 +172,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Share text.
+        /// </summary>
+        internal static string ButtonShareText_Text {
+            get {
+                return ResourceManager.GetString("ButtonShareText_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The code is wrong.
         ///The check digit has been corrected..
         /// </summary>
