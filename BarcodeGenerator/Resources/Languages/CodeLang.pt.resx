@@ -268,9 +268,6 @@ Use este programa inteiramente por sua conta e risco.</value>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>O aplicativo será reiniciado.</value>
   </data>
-  <data name="ScanCode_Text" xml:space="preserve">
-    <value>Escaneie o código</value>
-  </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Redefinir</value>
   </data>

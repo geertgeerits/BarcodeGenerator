@@ -26,15 +26,9 @@ public partial class PageScan : ContentPage
             return;
         }
 
-        barcodeReader.Options = new BarcodeReaderOptions()
-        {
-            AutoRotate = true,
-            Formats = BarcodeFormats.All
-        };
-
         // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.BarcodeScanner_Text;
-        lblScanCode.Text = CodeLang.ScanCode_Text;
+        lblFormatCode.Text = CodeLang.FormatCode_Text;
         btnShare.Text = CodeLang.ButtonShareText_Text;
 
         cButtonShare = CodeLang.ButtonShareText_Text;
@@ -44,6 +38,9 @@ public partial class PageScan : ContentPage
         cYes = CodeLang.Yes_Text;
         cNo = CodeLang.No_Text;
         cErrorTitle = CodeLang.ErrorTitle_Text;
+
+        // Default format code = QrCode.
+        pckFormatCode.SelectedIndex = 20;
     }
 
     // ImageButton torch clicked event.
@@ -58,7 +55,235 @@ public partial class PageScan : ContentPage
             barcodeReader.IsTorchOn = false;
         }
     }
-    
+
+    // Set the scanner properties for the selected format code.
+    // ZXing CameraBarcodeReaderView options.
+    void OnPickerFormatCodeChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        int selectedIndex = picker.SelectedIndex;
+
+        if (selectedIndex != -1)
+        {
+            lblBarcodeResult.Text = "";
+            btnShare.Text = cButtonShare;
+            btnShare.IsEnabled = false;
+
+            switch (selectedIndex)
+            {
+                // Aztec.
+                case 0:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Aztec,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Codabar.
+                case 1:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Codabar,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Code128.
+                case 2:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Code128,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Code39.
+                case 3:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Code39,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Code93.
+                case 4:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Code93,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // DataMatrix.
+                case 5:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.DataMatrix,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Ean13.
+                case 6:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Ean13,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Ean8.
+                case 7:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Ean8,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Imb.
+                case 8:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Imb,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Itf.
+                case 9:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Itf,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Msi.
+                case 10:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Msi,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Pdf417.
+                case 11:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Pdf417,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // PharmaCode.
+                case 12:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.PharmaCode,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Plessey.
+                case 13:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Plessey,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // QrCode.
+                case 14:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.QrCode,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Rss14.
+                case 15:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.Rss14,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // RssExpanded.
+                case 16:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.RssExpanded,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // UpcA.
+                case 17:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.UpcA,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // UpcE.
+                case 18:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.UpcE,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // UpcEanExtension.
+                case 19:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.UpcEanExtension,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // All.
+                case 20:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormats.All,
+                        TryHarder = true,
+                    };
+                    break;
+            }
+        }
+    }
+
     // Barcode detected event.
     private async void OnBarcodesDetected(object sender, BarcodeDetectionEventArgs e)
     {
@@ -81,9 +306,6 @@ public partial class PageScan : ContentPage
     // Button share event.
     private async void OnShareClicked(object sender, EventArgs e)
     {
-        //lblBarcodeResult.Text = "https://www.google.be/";
-        //lblBarcodeResult.Text = "dkjfkfjd ke kejk k kjkerjl kjkjekrjk";
-
         // Open/Share link website.
         if (lblBarcodeResult.Text[..8] == "https://" || lblBarcodeResult.Text[..7] == "http://")
         {
@@ -100,7 +322,6 @@ public partial class PageScan : ContentPage
                 await ShareText(lblBarcodeResult.Text);
             }
         }
-
         // Share the text.
         else
         {

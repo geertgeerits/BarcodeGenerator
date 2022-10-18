@@ -154,7 +154,7 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
     <value>Sluiten</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
-    <value>Tekst delen</value>
+    <value>Deel tekst</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
     <value>Delen</value>
@@ -267,9 +267,6 @@ Gebruik dit programma geheel op eigen risico.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>De toepassing wordt opnieuw gestart.</value>
-  </data>
-  <data name="ScanCode_Text" xml:space="preserve">
-    <value>Scan de code</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Reset</value>

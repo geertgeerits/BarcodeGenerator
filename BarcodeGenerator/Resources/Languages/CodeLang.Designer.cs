@@ -486,15 +486,6 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scan the code.
-        /// </summary>
-        internal static string ScanCode_Text {
-            get {
-                return ResourceManager.GetString("ScanCode_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         internal static string Settings_Text {

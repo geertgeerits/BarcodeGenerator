@@ -154,7 +154,7 @@ Vous pouvez toujours me contacter pour toute correction.</value>
     <value>Fermer</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
-    <value>Partager du texte</value>
+    <value>Partager texte</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
     <value>Partager</value>
@@ -267,9 +267,6 @@ Utilisez ce programme entièrement à vos propres risques.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>L'application sera redémarrée.</value>
-  </data>
-  <data name="ScanCode_Text" xml:space="preserve">
-    <value>Scannez le code</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Réinitialiser</value>
