@@ -247,6 +247,15 @@ Utilizzare questo programma interamente a proprio rischio.</value>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator</value>
   </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>Vuoi aprire questo link?</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>Collegamento al sito web</value>
+  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Politica sulla riservatezza:</value>
   </data>
@@ -292,5 +301,8 @@ Non autorizzato:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
     <value>Sito web:</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Sì</value>
   </data>
 </root>

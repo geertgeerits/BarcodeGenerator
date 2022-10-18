@@ -1,5 +1,8 @@
 using BarcodeGenerator.Resources.Languages;
+using Microsoft.Maui.ApplicationModel.DataTransfer;
+using System.ComponentModel;
 using ZXing.Net.Maui;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BarcodeGenerator;
 
@@ -8,6 +11,10 @@ public partial class PageScan : ContentPage
     // Local variables.
     private string cButtonShare;
     private string cButtonClose;
+    private string cOpenLinkTitle;
+    private string cOpenLinkText;
+    private string cYes;
+    private string cNo;
     private string cErrorTitle;
 
     public PageScan()
@@ -34,9 +41,27 @@ public partial class PageScan : ContentPage
 
         cButtonShare = CodeLang.ButtonShare_Text;
         cButtonClose = CodeLang.ButtonClose_Text;
+        cOpenLinkTitle = CodeLang.OpenLinkTitle_Text;
+        cOpenLinkText = CodeLang.OpenLinkText_Text;
+        cYes = CodeLang.Yes_Text;
+        cNo = CodeLang.No_Text;
         cErrorTitle = CodeLang.ErrorTitle_Text;
     }
 
+    // ImageButton torch clicked event.
+    private void OnTorchClicked(object sender, EventArgs e)
+    {
+        if (barcodeReader.IsTorchOn == false)
+        {
+            barcodeReader.IsTorchOn = true;
+        }
+        else
+        {
+            barcodeReader.IsTorchOn = false;
+        }
+    }
+    
+    // Barcode detected event.
     private void OnBarcodesDetected(object sender, BarcodeDetectionEventArgs e)
     {
         Dispatcher.Dispatch(() =>
@@ -51,39 +76,34 @@ public partial class PageScan : ContentPage
     // Button share event.
     private async void OnShareClicked(object sender, EventArgs e)
     {
-        // Open link website.
+        //lblBarcodeResult.Text = "https://www.google.be/";
+        //lblBarcodeResult.Text = "dkjfkfjd ke kejk k kjkerjl kjkjekrjk";
+
+        // Open/Share link website.
         if (lblBarcodeResult.Text[..8] == "https://" || lblBarcodeResult.Text[..7] == "http://")
         {
-            OpenWebsiteLink(lblBarcodeResult.Text);
+            bool bAnswer = await DisplayAlert(cOpenLinkTitle, cOpenLinkText, cYes, cNo);
+
+            // Open link website.
+            if (bAnswer)
+            {
+                OpenWebsiteLink(lblBarcodeResult.Text);
+            }
+            // Share link website.
+            else
+            {
+                await ShareText(lblBarcodeResult.Text);
+            }
         }
 
-        // Write text to file.
+        // Share the text.
         else
         {
-            string cFileName = Path.Combine(FileSystem.CacheDirectory, "BarcodeScanner.txt");
-
-            try
-            {
-                using StreamWriter sw = new(cFileName, false);
-
-                // Write the text to a file.
-                sw.WriteLine(lblBarcodeResult.Text);
-
-                // Close the StreamWriter object.
-                sw.Close();
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-                return;
-            }
-
-            // Open the share interface to share the file.
-            await OpenShareInterface(cFileName);
+            await ShareText(lblBarcodeResult.Text);
         }
     }
 
-    // Open website.
+    // Open the website.
     private async void OpenWebsiteLink(string cUrl)
     {
         try
@@ -95,13 +115,21 @@ public partial class PageScan : ContentPage
             await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
         }
     }
+
     // Open the share interface.
-    private static async Task OpenShareInterface(string cFile)
+    public async Task ShareText(string cText)
     {
-        await Share.Default.RequestAsync(new ShareFileRequest
+        try
         {
-            Title = "Barcode Scanner",
-            File = new ShareFile(cFile)
-        });
+            await Share.Default.RequestAsync(new ShareTextRequest
+            {
+                Text = cText,
+                Title = "Barcode Scanner"
+            });
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
     }
 }

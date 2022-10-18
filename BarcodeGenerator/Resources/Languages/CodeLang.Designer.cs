@@ -423,6 +423,33 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string No_Text {
+            get {
+                return ResourceManager.GetString("No_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to open this link?.
+        /// </summary>
+        internal static string OpenLinkText_Text {
+            get {
+                return ResourceManager.GetString("OpenLinkText_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website link.
+        /// </summary>
+        internal static string OpenLinkTitle_Text {
+            get {
+                return ResourceManager.GetString("OpenLinkTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No personal and other data is stored or passed on to myself and others..
         /// </summary>
         internal static string PrivacyPolicy_Text {
@@ -555,6 +582,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string Website_Text {
             get {
                 return ResourceManager.GetString("Website_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string Yes_Text {
+            get {
+                return ResourceManager.GetString("Yes_Text", resourceCulture);
             }
         }
     }

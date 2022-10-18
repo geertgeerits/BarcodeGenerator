@@ -5,10 +5,37 @@
              x:Class="BarcodeGenerator.PageScan">
 
     <Shell.TitleView>
-        <Label x:Name="lblTitle"
-               Style="{StaticResource labelStyleShellTitleView}"
-               HorizontalOptions="Start"
-               Text="Barcode Scanner" />
+        <Grid RowDefinitions="40"
+              ColumnDefinitions="40, 160, 110*, 40"
+              Margin="5"
+              BackgroundColor="#00bfff">
+
+            <Label
+                x:Name="lblTitle"
+                Style="{StaticResource labelStyleShellTitleView}"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0"
+                HorizontalOptions="Start"
+                HorizontalTextAlignment="Start"
+                FontSize="17"
+                Text="Barcode Scanner">
+            </Label>
+
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="3"
+                Source="torch_icon_64p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="30"
+                WidthRequest="30"
+                BackgroundColor="#00bfff"
+                BorderColor="#00bfff"
+                Clicked="OnTorchClicked">
+            </ImageButton>
+        </Grid>
     </Shell.TitleView>
 
     <ScrollView>
