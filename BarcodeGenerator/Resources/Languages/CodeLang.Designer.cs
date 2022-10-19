@@ -91,6 +91,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All codes.
+        /// </summary>
+        internal static string AllCodes_Text {
+            get {
+                return ResourceManager.GetString("AllCodes_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allowed characters:.
         /// </summary>
         internal static string AllowedChar_Text {

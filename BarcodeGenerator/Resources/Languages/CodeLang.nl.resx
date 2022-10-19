@@ -129,6 +129,9 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   <data name="Agree_Text" xml:space="preserve">
     <value>Akkoord</value>
   </data>
+  <data name="AllCodes_Text" xml:space="preserve">
+    <value>Alle codes</value>
+  </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
     <value>Niet toegestaan:</value>
   </data>

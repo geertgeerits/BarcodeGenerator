@@ -33,10 +33,12 @@ public partial class PageSettings : ContentPage
         btnSettingsSave.Text = CodeLang.SettingsSave_Text;
         btnSettingsReset.Text = CodeLang.SettingsReset_Text;
 
-        var ThemeList = new List<string>();
-        ThemeList.Add(CodeLang.ThemeSystem_Text);
-        ThemeList.Add(CodeLang.ThemeLight_Text);
-        ThemeList.Add(CodeLang.ThemeDark_Text);
+        var ThemeList = new List<string>
+        {
+            CodeLang.ThemeSystem_Text,
+            CodeLang.ThemeLight_Text,
+            CodeLang.ThemeDark_Text
+        };
         pckTheme.ItemsSource = ThemeList;
 
         // Set the current language in the picker.

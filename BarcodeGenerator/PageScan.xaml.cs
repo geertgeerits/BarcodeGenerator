@@ -31,6 +31,32 @@ public partial class PageScan : ContentPage
         lblFormatCode.Text = CodeLang.FormatCode_Text;
         btnShare.Text = CodeLang.ButtonShareText_Text;
 
+        var FormatCodeList = new List<string>
+        {
+            "Aztec",
+            "Codabar",
+            "Code 128",
+            "Code 39",
+            "Code 93",
+            "Data Matrix",
+            "EAN-13",
+            "EAN-8",
+            "IMb (Intelligent Mail)",
+            "ITF (Interleaved 2 of 5)",
+            "MSI (Modified Plessey)",
+            "PDF417",
+            "Pharmacode",
+            "Plessey",
+            "QR Code",
+            "RSS 14",
+            "RSS Expanded",
+            "UPC-A",
+            "UPC-E",
+            "UPC EAN Extension",
+            CodeLang.AllCodes_Text
+        };
+        pckFormatCode.ItemsSource = FormatCodeList;
+
         cButtonShare = CodeLang.ButtonShareText_Text;
         cButtonClose = CodeLang.ButtonClose_Text;
         cOpenLinkTitle = CodeLang.OpenLinkTitle_Text;
@@ -39,6 +65,8 @@ public partial class PageScan : ContentPage
         cNo = CodeLang.No_Text;
         cErrorTitle = CodeLang.ErrorTitle_Text;
 
+        //CodeLang.AllCodes_Text;
+
         // Default format code = QrCode.
         pckFormatCode.SelectedIndex = 20;
     }
@@ -46,14 +74,7 @@ public partial class PageScan : ContentPage
     // ImageButton torch clicked event.
     private void OnTorchClicked(object sender, EventArgs e)
     {
-        if (barcodeReader.IsTorchOn == false)
-        {
-            barcodeReader.IsTorchOn = true;
-        }
-        else
-        {
-            barcodeReader.IsTorchOn = false;
-        }
+        barcodeReader.IsTorchOn = !barcodeReader.IsTorchOn;
     }
 
     // Set the scanner properties for the selected format code.

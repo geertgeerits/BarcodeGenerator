@@ -89,7 +89,7 @@
                             <x:String>UPC-A</x:String>
                             <x:String>UPC-E</x:String>
                             <x:String>UPC EAN Extension</x:String>
-                            <x:String>All</x:String>
+                            <x:String>All Codes</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>

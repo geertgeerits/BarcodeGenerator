@@ -129,6 +129,9 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   <data name="Agree_Text" xml:space="preserve">
     <value>Concordar</value>
   </data>
+  <data name="AllCodes_Text" xml:space="preserve">
+    <value>Todos os códigos</value>
+  </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
     <value>Não permitido:</value>
   </data>
