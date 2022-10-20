@@ -61,7 +61,7 @@ public partial class MainPage : ContentPage
 
         // Get the saved settings.
         cTheme = Preferences.Default.Get("SettingTheme", "System");
-        nFormatIndex = Preferences.Default.Get("SettingFormatIndex", 14);
+        nFormatIndex = Preferences.Default.Get("SettingFormatIndex", 15);
         cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
         cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
         cLanguage = Preferences.Default.Get("SettingLanguage", "");
@@ -82,10 +82,10 @@ public partial class MainPage : ContentPage
         }
 
         // Set the format barcode.
-        if (nFormatIndex < 0 || nFormatIndex > 19)
+        if (nFormatIndex < 0 || nFormatIndex > 20)
         {
             // Default format code = QrCode.
-            pckFormatCode.SelectedIndex = 14;
+            pckFormatCode.SelectedIndex = 15;
         }
         else
         {
@@ -277,36 +277,43 @@ public partial class MainPage : ContentPage
                     bgvBarcode.BarcodeMargin = 8;
                     break;
 
-                // Msi.
+                // MaxiCode.
                 case 10:
+                    edtTextToCode.MaxLength = 93;
+                    edtTextToCode.Keyboard = Keyboard.Numeric;
+                    bgvBarcode.BarcodeMargin = 8;
+                    break;
+
+                // Msi.
+                case 11:
                     edtTextToCode.MaxLength = 255;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 10;
                     break;
 
                 // Pdf417.
-                case 11:
+                case 12:
                     edtTextToCode.MaxLength = 2710;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 10;
                     break;
 
                 // PharmaCode.
-                case 12:
+                case 13:
                     edtTextToCode.MaxLength = 6;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 0;
                     break;
 
                 // Plessey.
-                case 13:
+                case 14:
                     edtTextToCode.MaxLength = 16;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 8;
                     break;
 
                 // QrCode.
-                case 14:
+                case 15:
                     edtTextToCode.MaxLength = 7089;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
@@ -315,35 +322,35 @@ public partial class MainPage : ContentPage
                     break;
 
                 // Rss14.
-                case 15:
+                case 16:
                     edtTextToCode.MaxLength = 14;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 0;
                     break;
 
                 // RssExpanded.
-                case 16:
+                case 17:
                     edtTextToCode.MaxLength = 74;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 0;
                     break;
 
                 // UpcA.
-                case 17:
+                case 18:
                     edtTextToCode.MaxLength = 12;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 0;
                     break;
 
                 // UpcE.
-                case 18:
+                case 19:
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 8;
                     break;
 
                 // UpcEanExtension.
-                case 19:
+                case 20:
                     edtTextToCode.MaxLength = 2;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 4;
@@ -561,8 +568,16 @@ public partial class MainPage : ContentPage
                         bgvBarcode.Format = BarcodeFormat.Itf;
                         break;
 
-                    // Msi.
+                    // MaxiCode.
                     case 10:
+                        DisplayMessageFormat("MaxiCode");
+                        return;
+
+                        //bgvBarcode.Format = BarcodeFormat.MaxiCode;
+                        //break;
+
+                    // Msi.
+                    case 11:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
                             return;
@@ -572,7 +587,7 @@ public partial class MainPage : ContentPage
                         break;
 
                     // Pdf417.
-                    case 11:
+                    case 12:
                         if (TestAllowedAsciiValues(1, 255, cTextToCode) == false)
                         {
                             return;
@@ -582,7 +597,7 @@ public partial class MainPage : ContentPage
                         break;
 
                     // PharmaCode.
-                    case 12:
+                    case 13:
                         DisplayMessageFormat("Pharmacode");
                         return;
 
@@ -590,7 +605,7 @@ public partial class MainPage : ContentPage
                         //break;
 
                     // Plessey.
-                    case 13:
+                    case 14:
                         cTextToCode = cTextToCode.ToUpper();
 
                         if (TestAllowedCharacters("0123456789ABCDEF", cTextToCode) == false)
@@ -602,12 +617,12 @@ public partial class MainPage : ContentPage
                         break;
 
                     // QrCode.
-                    case 14:
+                    case 15:
                         bgvBarcode.Format = BarcodeFormat.QrCode;
                         break;
 
                     // Rss14.
-                    case 15:
+                    case 16:
                         DisplayMessageFormat("RSS 14");
                         return;
 
@@ -615,7 +630,7 @@ public partial class MainPage : ContentPage
                         //break;
 
                     // RssExpanded.
-                    case 16:
+                    case 17:
                         DisplayMessageFormat("RSS Expanded");
                         return;
 
@@ -623,7 +638,7 @@ public partial class MainPage : ContentPage
                         //break;
 
                     // UpcA.
-                    case 17:
+                    case 18:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
                             return;
@@ -656,7 +671,7 @@ public partial class MainPage : ContentPage
                         break;
 
                     // UpcE.
-                    case 18:
+                    case 19:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
                             return;
@@ -723,7 +738,7 @@ public partial class MainPage : ContentPage
                         break;
 
                     // UpcEanExtension.
-                    case 19:
+                    case 20:
                         DisplayMessageFormat("UPC EAN Extension");
                         return;
 
@@ -774,7 +789,7 @@ public partial class MainPage : ContentPage
 
             if (bResult == false)
             {
-                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n" + cAllowedCharNot + " " + cChar, cButtonClose);
+                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
                 edtTextToCode.Focus();
 
                 return false;

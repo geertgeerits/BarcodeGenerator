@@ -79,6 +79,7 @@
                             <x:String>EAN-8</x:String>
                             <x:String>IMb (Intelligent Mail)</x:String>
                             <x:String>ITF (Interleaved 2 of 5)</x:String>
+                            <x:String>MaxiCode</x:String>
                             <x:String>MSI (Modified Plessey)</x:String>
                             <x:String>PDF417</x:String>
                             <x:String>Pharmacode</x:String>

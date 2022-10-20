@@ -43,6 +43,7 @@ public partial class PageScan : ContentPage
             "EAN-8",
             "IMb (Intelligent Mail)",
             "ITF (Interleaved 2 of 5)",
+            "MaxiCode",
             "MSI (Modified Plessey)",
             "PDF417",
             "Pharmacode",
@@ -65,10 +66,8 @@ public partial class PageScan : ContentPage
         cNo = CodeLang.No_Text;
         cErrorTitle = CodeLang.ErrorTitle_Text;
 
-        //CodeLang.AllCodes_Text;
-
-        // Default format code = QrCode.
-        pckFormatCode.SelectedIndex = 20;
+        // Default format code = All codes
+        pckFormatCode.SelectedIndex = 21;
     }
 
     // ImageButton torch clicked event.
@@ -192,8 +191,18 @@ public partial class PageScan : ContentPage
                     };
                     break;
 
-                // Msi.
+                // MaxiCode.
                 case 10:
+                    barcodeReader.Options = new BarcodeReaderOptions()
+                    {
+                        AutoRotate = true,
+                        Formats = BarcodeFormat.MaxiCode,
+                        TryHarder = true,
+                    };
+                    break;
+
+                // Msi.
+                case 11:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,
@@ -203,7 +212,7 @@ public partial class PageScan : ContentPage
                     break;
 
                 // Pdf417.
-                case 11:
+                case 12:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,
@@ -213,7 +222,7 @@ public partial class PageScan : ContentPage
                     break;
 
                 // PharmaCode.
-                case 12:
+                case 13:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,
@@ -223,7 +232,7 @@ public partial class PageScan : ContentPage
                     break;
 
                 // Plessey.
-                case 13:
+                case 14:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,
@@ -233,7 +242,7 @@ public partial class PageScan : ContentPage
                     break;
 
                 // QrCode.
-                case 14:
+                case 15:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,
@@ -243,7 +252,7 @@ public partial class PageScan : ContentPage
                     break;
 
                 // Rss14.
-                case 15:
+                case 16:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,
@@ -253,7 +262,7 @@ public partial class PageScan : ContentPage
                     break;
 
                 // RssExpanded.
-                case 16:
+                case 17:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,
@@ -263,7 +272,7 @@ public partial class PageScan : ContentPage
                     break;
 
                 // UpcA.
-                case 17:
+                case 18:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,
@@ -273,7 +282,7 @@ public partial class PageScan : ContentPage
                     break;
 
                 // UpcE.
-                case 18:
+                case 19:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,
@@ -283,7 +292,7 @@ public partial class PageScan : ContentPage
                     break;
 
                 // UpcEanExtension.
-                case 19:
+                case 20:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,
@@ -293,7 +302,7 @@ public partial class PageScan : ContentPage
                     break;
 
                 // All.
-                case 20:
+                case 21:
                     barcodeReader.Options = new BarcodeReaderOptions()
                     {
                         AutoRotate = true,

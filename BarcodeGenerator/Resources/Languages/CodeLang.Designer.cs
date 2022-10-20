@@ -532,6 +532,7 @@ namespace BarcodeGenerator.Resources.Languages {
         
         /// <summary>
         ///   Looks up a localized string similar to The text contains one or more characters that are not allowed.
+        ///
         ///Not allowed:.
         /// </summary>
         internal static string TextContainsChar_Text {

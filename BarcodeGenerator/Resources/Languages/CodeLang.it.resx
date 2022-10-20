@@ -285,6 +285,7 @@ Utilizzare questo programma interamente a proprio rischio.</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
     <value>Il testo contiene uno o più caratteri non consentiti.
+
 Non autorizzato:</value>
   </data>
   <data name="TextToEncode_Text" xml:space="preserve">

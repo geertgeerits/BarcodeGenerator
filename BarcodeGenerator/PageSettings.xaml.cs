@@ -210,7 +210,7 @@ public partial class PageSettings : ContentPage
 
             if (bResult == false)
             {
-                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n" + cAllowedCharNot + " " + cChar, cButtonClose);
+                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
                 return false;
             }
         }

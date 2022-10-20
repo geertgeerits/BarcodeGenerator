@@ -285,6 +285,7 @@ Use this program entirely at your own risk.</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
     <value>The text contains one or more characters that are not allowed.
+
 Not allowed:</value>
   </data>
   <data name="TextToEncode_Text" xml:space="preserve">
