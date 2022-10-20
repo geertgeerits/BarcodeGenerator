@@ -389,6 +389,20 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hexadecimal color codes:
+        ///
+        ///Character 1-2: Opacity/Transparency
+        ///Character 3-4: Red
+        ///Character 5-6: Green
+        ///Character 7-8: Blue.
+        /// </summary>
+        internal static string HexColorCodes_Text {
+            get {
+                return ResourceManager.GetString("HexColorCodes_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language:.
         /// </summary>
         internal static string Language_Text {

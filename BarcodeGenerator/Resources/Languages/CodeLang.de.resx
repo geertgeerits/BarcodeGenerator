@@ -229,6 +229,14 @@ Die Prüfziffer wurde korrigiert.</value>
   <data name="GuardMissingStart_Text" xml:space="preserve">
     <value>Fehlendes Startzeichen.</value>
   </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Hexadezimale Farbcodes:
+
+Zeichen 1-2: Opazität/Transparenz
+Zeichen 3-4: Rot
+Zeichen 5-6: Grün
+Zeichen 7-8: Blau</value>
+  </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Sprache:</value>
   </data>

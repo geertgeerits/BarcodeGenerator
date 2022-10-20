@@ -11,6 +11,7 @@ public partial class PageSettings : ContentPage
     private string cErrorTitle;
     private string cAllowedChar;
     private string cAllowedCharNot;
+    private string cHexColorCodes;
     private readonly Stopwatch stopWatch = new();
 
     public PageSettings()
@@ -50,6 +51,7 @@ public partial class PageSettings : ContentPage
         cErrorTitle = CodeLang.ErrorTitle_Text;
         cAllowedChar = CodeLang.AllowedChar_Text;
         cAllowedCharNot = CodeLang.AllowedCharNot_Text;
+        cHexColorCodes = CodeLang.HexColorCodes_Text;
 
         // Set the current language in the picker.
         pckLanguage.SelectedIndex = MainPage.cLanguage switch
@@ -218,6 +220,12 @@ public partial class PageSettings : ContentPage
         return true;
     }
 
+    // Display help for Hex color.
+    private async void OnSettingsHexColorClicked(object sender, EventArgs e)
+    {
+        await DisplayAlert("?#", cHexColorCodes, cButtonClose);
+    }
+    
     // Entry HexColor Unfocused event.
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {

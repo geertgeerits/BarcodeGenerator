@@ -229,6 +229,14 @@ Het controlecijfer is gecorrigeerd.</value>
   <data name="GuardMissingStart_Text" xml:space="preserve">
     <value>Startkarakter ontbreekt.</value>
   </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Hexadecimale kleurcodes:
+
+Karakter 1-2: dekking/transparantie
+Karakter 3-4: Rood
+Karakter 5-6: Groen
+Karakter 7-8: Blauw</value>
+  </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Taal:</value>
   </data>

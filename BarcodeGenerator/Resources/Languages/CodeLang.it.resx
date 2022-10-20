@@ -229,6 +229,14 @@ La cifra di controllo è stata corretta.</value>
   <data name="GuardMissingStart_Text" xml:space="preserve">
     <value>Carattere iniziale mancante.</value>
   </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Codici colore esadecimali:
+
+Carattere 1-2: Opacità/Trasparenza
+Carattere 3-4: rosso
+Carattere 5-6: verde
+Carattere 7-8: Blu</value>
+  </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Lingua:</value>
   </data>

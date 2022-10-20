@@ -229,6 +229,14 @@ The check digit has been corrected.</value>
   <data name="GuardMissingStart_Text" xml:space="preserve">
     <value>Missing start character.</value>
   </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Hexadecimal color codes:
+
+Character 1-2: Opacity/Transparency
+Character 3-4: Red
+Character 5-6: Green
+Character 7-8: Blue</value>
+  </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Language:</value>
   </data>

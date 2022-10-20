@@ -13,9 +13,9 @@
     <ScrollView>
         <StackLayout>
             <Grid RowDefinitions="40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40"
-                  ColumnDefinitions="10, 140, 200*"
+                  ColumnDefinitions="20, 130, 200*"
                   Margin="10,10,10,0"
-                  ColumnSpacing="8"
+                  ColumnSpacing="2"
                   RowSpacing="8">
 
                 <Label
@@ -120,6 +120,7 @@
                                 <x:String>EAN-8</x:String>
                                 <x:String>IMb (Intelligent Mail)</x:String>
                                 <x:String>ITF (Interleaved 2 of 5)</x:String>
+                                <x:String>MaxiCode</x:String>
                                 <x:String>MSI (Modified Plessey)</x:String>
                                 <x:String>PDF417</x:String>
                                 <x:String>Pharmacode</x:String>
@@ -175,13 +176,13 @@
                     Maximum="255"
                     ValueChanged="OnSliderColorForgroundValueChanged" />
 
-                <Label
+                <Button
                     Grid.Row="6"
                     Grid.Column="0"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    VerticalTextAlignment="Start"
-                    Text="#" />
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    Text="?"
+                    Clicked="OnSettingsHexColorClicked"/>
 
                 <Border Style="{StaticResource borderStyleDefault}"
                     Grid.Row="6"
@@ -268,14 +269,14 @@
                     Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
 
-                <Label
+                <Button
                     Grid.Row="11"
                     Grid.Column="0"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    VerticalTextAlignment="Start"
-                    Text="#" />
-                    
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    Text="?"
+                    Clicked="OnSettingsHexColorClicked"/>
+
                 <Border Style="{StaticResource borderStyleDefault}"
                     Grid.Row="11"
                     Grid.Column="1"

@@ -280,7 +280,9 @@ public partial class MainPage : ContentPage
                 // MaxiCode.
                 case 10:
                     edtTextToCode.MaxLength = 93;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    bgvBarcode.HeightRequest = 250;
+                    bgvBarcode.WidthRequest = 250;
                     bgvBarcode.BarcodeMargin = 8;
                     break;
 
