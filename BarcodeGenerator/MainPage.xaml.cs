@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.18 Beta
-// Date ........: 2022-10-19 (YYYY-MM-DD)
+// Date ........: 2022-10-20 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth v0.1.0-preview.7 ; https://github.com/redth/ZXing.Net.Maui
@@ -766,7 +766,7 @@ public partial class MainPage : ContentPage
     }
 
     // Test for allowed characters.
-    private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
+    public bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
     {
         foreach (char cChar in cTextToCode)
         {

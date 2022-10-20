@@ -136,15 +136,6 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barcode color:.
-        /// </summary>
-        internal static string BarcodeColor_Text {
-            get {
-                return ResourceManager.GetString("BarcodeColor_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Barcode Generator.
         /// </summary>
         internal static string BarcodeGenerator_Text {
@@ -313,6 +304,24 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string FirstNumber0_Text {
             get {
                 return ResourceManager.GetString("FirstNumber0_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forground color:.
+        /// </summary>
+        internal static string ForgroundColor_Text {
+            get {
+                return ResourceManager.GetString("ForgroundColor_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forground opacity:.
+        /// </summary>
+        internal static string ForgroundOpacity_Text {
+            get {
+                return ResourceManager.GetString("ForgroundOpacity_Text", resourceCulture);
             }
         }
         

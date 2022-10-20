@@ -12,8 +12,8 @@
 
     <ScrollView>
         <StackLayout>
-            <Grid RowDefinitions="40, 40, 40, 10, 40, 40, 40, 10, 40, 40, 40, 40, 10, 40"
-                  ColumnDefinitions="150, 200*"
+            <Grid RowDefinitions="40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40"
+                  ColumnDefinitions="10, 140, 200*"
                   Margin="10,10,10,0"
                   ColumnSpacing="8"
                   RowSpacing="8">
@@ -22,18 +22,19 @@
                     x:Name="lblLanguage"
                     Grid.Row="0"
                     Grid.Column="0"
+                    Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
                     Text="Language:" />
 
                 <Border Style="{StaticResource borderStyleDefault}"
                     Grid.Row="0"
-                    Grid.Column="1"
+                    Grid.Column="2"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
 
                     <Picker x:Name="pckLanguage"
                         Grid.Row="0"
-                        Grid.Column="1"
+                        Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
                         MinimumWidthRequest="190"
@@ -56,18 +57,19 @@
                 <Label x:Name="lblTheme"
                        Grid.Row="1"
                        Grid.Column="0"
+                       Grid.ColumnSpan="2"
                        VerticalTextAlignment="Center"
                        Text="Theme:" />
 
                 <Border Style="{StaticResource borderStyleDefault}"
                     Grid.Row="1"
-                    Grid.Column="1"
+                    Grid.Column="2"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
 
                     <Picker x:Name="pckTheme"
                         Grid.Row="1"
-                        Grid.Column="1"
+                        Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
                         MinimumWidthRequest="190"
@@ -87,19 +89,20 @@
                     x:Name="lblDefaultFormat"
                     Grid.Row="2"
                     Grid.Column="0"
+                    Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
                     Text="Default format:" />
 
                 <Border Style="{StaticResource borderStyleDefault}"
                     Grid.Row="2"
-                    Grid.Column="1"
+                    Grid.Column="2"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
 
                     <Picker
                     x:Name="pckFormatCode"
                     Grid.Row="2"
-                    Grid.Column="1"
+                    Grid.Column="2"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     MinimumWidthRequest="190"
@@ -133,99 +136,103 @@
                 </Border>
 
                 <Label
-                    x:Name="lblBarcodeColor"
+                    x:Name="lblForgroundOpacity"
                     Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Start"
+                    Text="Forground opacity:" />
+
+                <Slider
+                    x:Name="sldOpacityFg"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    ThumbColor="Grey"
+                    MinimumTrackColor="Black"
+                    Minimum="0"
+                    Maximum="255"
+                    ValueChanged="OnSliderColorForgroundValueChanged" />
+
+                <Label
+                    x:Name="lblForgroundColor"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Start"
+                    Text="Forground color:" />
+             
+                <Slider
+                    x:Name="sldColorFgRed"
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    ThumbColor="#FF0000"
+                    MinimumTrackColor="#FF0000"
+                    Minimum="0"
+                    Maximum="255"
+                    ValueChanged="OnSliderColorForgroundValueChanged" />
+
+                <Label
+                    Grid.Row="6"
                     Grid.Column="0"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="Barcode color:" />
-             
-                <Slider
-                    x:Name="sldColorFgRed"
-                    Grid.Row="4"
+                    Text="#" />
+
+                <Border Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="6"
                     Grid.Column="1"
-                    ThumbColor="#FF0000"
-                    MinimumTrackColor="#FF0000"
+                    HorizontalOptions="FillAndExpand">
+
+                    <Entry
+                        x:Name="entHexColorFg"
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        ClearButtonVisibility="WhileEditing"
+                        Keyboard="Text"
+                        ReturnType="Done"
+                        Completed="EntryHexColorUnfocused"
+                        MaxLength="8"
+                        TextChanged="EntryHexColorTextChanged"
+                        Unfocused="EntryHexColorUnfocused" />
+                </Border>
+
+                <Slider
+                    x:Name="sldColorFgGreen"
+                    Grid.Row="6"
+                    Grid.Column="2"
+                    ThumbColor="#00FF00"
+                    MinimumTrackColor="#00FF00"
                     Minimum="0"
                     Maximum="255"
                     ValueChanged="OnSliderColorForgroundValueChanged" />
 
                 <BoxView
                     x:Name="bxvColorFg"
-                    Grid.Row="5"
+                    Grid.Row="7"
                     Grid.Column="0"
+                    Grid.ColumnSpan="2"
                     Color="Black" />
 
                 <Slider
-                    x:Name="sldColorFgGreen"
-                    Grid.Row="5"
-                    Grid.Column="1"
-                    ThumbColor="#00FF00"
-                    MinimumTrackColor="#00FF00"
-                    Minimum="0"
-                    Maximum="255"
-                    ValueChanged="OnSliderColorForgroundValueChanged" />
-
-                <Slider
                     x:Name="sldColorFgBlue"
-                    Grid.Row="6"
-                    Grid.Column="1"
+                    Grid.Row="7"
+                    Grid.Column="2"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
                     Minimum="0"
                     Maximum="255"
                     ValueChanged="OnSliderColorForgroundValueChanged" />
-
-                <Label
-                    x:Name="lblBackgroundColor"
-                    Grid.Row="8"
-                    Grid.Column="0"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    VerticalTextAlignment="Start"
-                    Text="Background color:" />
-
-                <Slider
-                    x:Name="sldColorBgRed"
-                    Grid.Row="8"
-                    Grid.Column="1"
-                    ThumbColor="#FF0000"
-                    MinimumTrackColor="#FF0000"
-                    Minimum="0"
-                    Maximum="255"
-                    ValueChanged="OnSliderColorBackgroundValueChanged" />
-
-                <BoxView
-                    x:Name="bxvColorBg"
-                    Grid.Row="9"
-                    Grid.Column="0"
-                    Color="White" />
-                
-                <Slider
-                    x:Name="sldColorBgGreen"
-                    Grid.Row="9"
-                    Grid.Column="1"
-                    ThumbColor="#00FF00"
-                    MinimumTrackColor="#00FF00"
-                    Minimum="0"
-                    Maximum="255"
-                    ValueChanged="OnSliderColorBackgroundValueChanged" />
-
-                <Slider
-                    x:Name="sldColorBgBlue"
-                    Grid.Row="10"
-                    Grid.Column="1"
-                    ThumbColor="#0000FF"
-                    MinimumTrackColor="#0000FF"
-                    Minimum="0"
-                    Maximum="255"
-                    ValueChanged="OnSliderColorBackgroundValueChanged" />
 
                 <Label
                     x:Name="lblBackgroundOpacity"
-                    Grid.Row="11"
+                    Grid.Row="9"
                     Grid.Column="0"
+                    Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
@@ -233,26 +240,100 @@
 
                 <Slider
                     x:Name="sldOpacityBg"
-                    Grid.Row="11"
-                    Grid.Column="1"
+                    Grid.Row="9"
+                    Grid.Column="2"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
                     Minimum="0"
                     Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
 
+                <Label
+                    x:Name="lblBackgroundColor"
+                    Grid.Row="10"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Start"
+                    Text="Background color:" />
+
+                <Slider
+                    x:Name="sldColorBgRed"
+                    Grid.Row="10"
+                    Grid.Column="2"
+                    ThumbColor="#FF0000"
+                    MinimumTrackColor="#FF0000"
+                    Minimum="0"
+                    Maximum="255"
+                    ValueChanged="OnSliderColorBackgroundValueChanged" />
+
+                <Label
+                    Grid.Row="11"
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Start"
+                    Text="#" />
+                    
+                <Border Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="11"
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand">
+
+                    <Entry
+                        x:Name="entHexColorBg"
+                        Grid.Row="11"
+                        Grid.Column="1"
+                        ClearButtonVisibility="WhileEditing"
+                        Keyboard="Text"
+                        ReturnType="Done"
+                        Completed="EntryHexColorUnfocused"
+                        MaxLength="8"
+                        TextChanged="EntryHexColorTextChanged"
+                        Unfocused="EntryHexColorUnfocused" />
+                </Border>
+
+                <Slider
+                    x:Name="sldColorBgGreen"
+                    Grid.Row="11"
+                    Grid.Column="2"
+                    ThumbColor="#00FF00"
+                    MinimumTrackColor="#00FF00"
+                    Minimum="0"
+                    Maximum="255"
+                    ValueChanged="OnSliderColorBackgroundValueChanged" />
+
+                <BoxView
+                    x:Name="bxvColorBg"
+                    Grid.Row="12"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Color="White" />
+
+                <Slider
+                    x:Name="sldColorBgBlue"
+                    Grid.Row="12"
+                    Grid.Column="2"
+                    ThumbColor="#0000FF"
+                    MinimumTrackColor="#0000FF"
+                    Minimum="0"
+                    Maximum="255"
+                    ValueChanged="OnSliderColorBackgroundValueChanged" />
+
                 <Button x:Name="btnSettingsSave"
                     Style="{StaticResource buttonStyleDefault}"
-                    Grid.Row="13"
+                    Grid.Row="14"
                     Grid.Column="0"
+                    Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
                     Text="Save"
                     Clicked="OnSettingsSaveClicked" />
 
                 <Button x:Name="btnSettingsReset"
                     Style="{StaticResource buttonStyleDefault}"
-                    Grid.Row="13"
-                    Grid.Column="1"
+                    Grid.Row="14"
+                    Grid.Column="2"
                     HorizontalOptions="End"
                     Text="Reset"
                     Clicked="OnSettingsResetClicked" />

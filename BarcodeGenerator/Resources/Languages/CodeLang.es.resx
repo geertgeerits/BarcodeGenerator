@@ -144,9 +144,6 @@ Siempre puedes contactarme para cualquier corrección.</value>
   <data name="BackgroundOpacity_Text" xml:space="preserve">
     <value>Opacidad de fondo:</value>
   </data>
-  <data name="BarcodeColor_Text" xml:space="preserve">
-    <value>Color del código de barras:</value>
-  </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
   </data>
@@ -204,6 +201,12 @@ El dígito de control ha sido corregido.</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>El primer número debe ser 0.</value>
+  </data>
+  <data name="ForgroundColor_Text" xml:space="preserve">
+    <value>Color de primer plano:</value>
+  </data>
+  <data name="ForgroundOpacity_Text" xml:space="preserve">
+    <value>Opacidad de primer plano:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Seleccione un formato:</value>

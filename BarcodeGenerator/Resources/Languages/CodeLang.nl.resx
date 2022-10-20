@@ -142,10 +142,7 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
     <value>Kleur achtergrond:</value>
   </data>
   <data name="BackgroundOpacity_Text" xml:space="preserve">
-    <value>Achtergronddekking:</value>
-  </data>
-  <data name="BarcodeColor_Text" xml:space="preserve">
-    <value>Kleur barcode:</value>
+    <value>Dekking achtergrond:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
@@ -204,6 +201,12 @@ Het controlecijfer is gecorrigeerd.</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>Het eerste cijfer moet 0 zijn.</value>
+  </data>
+  <data name="ForgroundColor_Text" xml:space="preserve">
+    <value>Kleur voorgrond:</value>
+  </data>
+  <data name="ForgroundOpacity_Text" xml:space="preserve">
+    <value>Dekking voorgrond:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Selecteer formaat:</value>

@@ -7,6 +7,10 @@ namespace BarcodeGenerator;
 public partial class PageSettings : ContentPage
 {
     // Local variables.
+    private string cButtonClose;
+    private string cErrorTitle;
+    private string cAllowedChar;
+    private string cAllowedCharNot;
     private readonly Stopwatch stopWatch = new();
 
     public PageSettings()
@@ -21,15 +25,16 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-        // Put text in the chosen language in the controls.
+        // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.Settings_Text;
 
         lblLanguage.Text = CodeLang.Language_Text;
         lblTheme.Text = CodeLang.Theme_Text;
         lblDefaultFormat.Text = CodeLang.DefaultFormat_Text;
-        lblBarcodeColor.Text = CodeLang.BarcodeColor_Text;
-        lblBackgroundColor.Text = CodeLang.BackgroundColor_Text;
+        lblForgroundOpacity.Text = CodeLang.ForgroundOpacity_Text;
+        lblForgroundColor.Text = CodeLang.ForgroundColor_Text;
         lblBackgroundOpacity.Text = CodeLang.BackgroundOpacity_Text;
+        lblBackgroundColor.Text = CodeLang.BackgroundColor_Text;
         btnSettingsSave.Text = CodeLang.SettingsSave_Text;
         btnSettingsReset.Text = CodeLang.SettingsReset_Text;
 
@@ -40,6 +45,11 @@ public partial class PageSettings : ContentPage
             CodeLang.ThemeDark_Text
         };
         pckTheme.ItemsSource = ThemeList;
+
+        cButtonClose = CodeLang.ButtonClose_Text;
+        cErrorTitle = CodeLang.ErrorTitle_Text;
+        cAllowedChar = CodeLang.AllowedChar_Text;
+        cAllowedCharNot = CodeLang.AllowedCharNot_Text;
 
         // Set the current language in the picker.
         pckLanguage.SelectedIndex = MainPage.cLanguage switch
@@ -79,20 +89,25 @@ public partial class PageSettings : ContentPage
             _ => 0,
         };
 
-        // Set the current default barcode format in the picker.
+        // Set the current default barcode format in the picker for the barcode generator.
         pckFormatCode.SelectedIndex = MainPage.nFormatIndex;
 
-        // Set the current color on the sliders.
+        // Set the current color in the entry and on the sliders.
         int nOpacity = 0;
         int nRed = 0;
         int nGreen = 0;
         int nBlue = 0;
 
+        entHexColorFg.Text = MainPage.cCodeColorFg;
+
         HexToRgbColor(MainPage.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
+        sldOpacityFg.Value = nOpacity;
         sldColorFgRed.Value = nRed;
         sldColorFgGreen.Value = nGreen;
         sldColorFgBlue.Value = nBlue;
+
+        entHexColorBg.Text = MainPage.cCodeColorBg;
 
         HexToRgbColor(MainPage.cCodeColorBg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
@@ -173,35 +188,126 @@ public partial class PageSettings : ContentPage
         }
     }
 
+    // On entry HexColor text changed event.
+    private void EntryHexColorTextChanged(object sender, EventArgs e)
+    {
+        var entry = (Entry)sender;
+        
+        string cTextToCode = entry.Text;
+
+        if (TestAllowedCharacters("0123456789ABCDEFabcdef", cTextToCode) == false)
+        {
+            entry.Focus();
+        }
+    }
+
+    // Test for allowed characters.
+    private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
+    {
+        foreach (char cChar in cTextToCode)
+        {
+            bool bResult = cAllowedCharacters.Contains(cChar);
+
+            if (bResult == false)
+            {
+                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n" + cAllowedCharNot + " " + cChar, cButtonClose);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // Entry HexColor Unfocused event.
+    private void EntryHexColorUnfocused(object sender, EventArgs e)
+    {
+        var entry = (Entry)sender;
+
+        // Length must be 8 characters.
+        if (entry.Text.Length != 8)
+        {
+            entry.Focus();
+            return;
+        }
+
+        // Hide the keyboard.
+        entry.IsEnabled = false;
+        entry.IsEnabled = true;
+
+        // Set the sliders position.
+        int nOpacity = 0;
+        int nRed = 0;
+        int nGreen = 0;
+        int nBlue = 0;
+
+        if (entry == entHexColorFg)
+        {
+            MainPage.cCodeColorFg = entHexColorFg.Text;
+
+            HexToRgbColor(MainPage.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+
+            sldOpacityFg.Value = nOpacity;
+            sldColorFgRed.Value = nRed;
+            sldColorFgGreen.Value = nGreen;
+            sldColorFgBlue.Value = nBlue;
+        }
+        else
+        {
+            MainPage.cCodeColorBg = entHexColorBg.Text;
+
+            HexToRgbColor(MainPage.cCodeColorBg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+
+            sldOpacityBg.Value = nOpacity;
+            sldColorBgRed.Value = nRed;
+            sldColorBgGreen.Value = nGreen;
+            sldColorBgBlue.Value = nBlue;
+        }
+
+        // Set focus to the save button.
+        _ = btnSettingsSave.Focus();
+    }
+    
     // Slider color barcode forground value change.
     private void OnSliderColorForgroundValueChanged(object sender, ValueChangedEventArgs args)
     {
+        int nAmountOpacity = 0;
         int nColorRed = 0;
         int nColorGreen = 0;
         int nColorBlue = 0;
 
         var slider = (Slider)sender;
 
-        if (slider == sldColorFgRed)
+        if (slider == sldOpacityFg)
         {
+            nAmountOpacity = (int)args.NewValue;
+            nColorRed = (int)sldColorFgRed.Value;
+            nColorGreen = (int)sldColorFgGreen.Value;
+            nColorBlue = (int)sldColorFgBlue.Value;
+        }
+        else if (slider == sldColorFgRed)
+        {
+            nAmountOpacity = (int)sldOpacityFg.Value;
             nColorRed = (int)args.NewValue;
             nColorGreen = (int)sldColorFgGreen.Value;
             nColorBlue = (int)sldColorFgBlue.Value;
         }
         else if (slider == sldColorFgGreen)
         {
+            nAmountOpacity = (int)sldOpacityFg.Value;
             nColorRed = (int)sldColorFgRed.Value;
             nColorGreen = (int)args.NewValue;
             nColorBlue = (int)sldColorFgBlue.Value;
         }
         else if (slider == sldColorFgBlue)
         {
+            nAmountOpacity = (int)sldOpacityFg.Value;
             nColorRed = (int)sldColorFgRed.Value;
             nColorGreen = (int)sldColorFgGreen.Value;
             nColorBlue = (int)args.NewValue;
         }
 
-        string cColorFgHex = "FF" + nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
+        string cColorFgHex = nAmountOpacity.ToString("X2") + nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
+        entHexColorFg.Text = cColorFgHex;
         bxvColorFg.Color = Color.FromArgb(cColorFgHex);
 
         MainPage.cCodeColorFg = cColorFgHex;
@@ -247,6 +353,7 @@ public partial class PageSettings : ContentPage
         }
 
         string cColorBgHex = nAmountOpacity.ToString("X2") + nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
+        entHexColorBg.Text = cColorBgHex;
         bxvColorBg.Color = Color.FromArgb(cColorBgHex);
 
         MainPage.cCodeColorBg = cColorBgHex;

@@ -144,9 +144,6 @@ Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   <data name="BackgroundOpacity_Text" xml:space="preserve">
     <value>Hintergrundopazität:</value>
   </data>
-  <data name="BarcodeColor_Text" xml:space="preserve">
-    <value>Barcode-Farbe:</value>
-  </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
   </data>
@@ -204,6 +201,12 @@ Die Prüfziffer wurde korrigiert.</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>Die erste Zahl sollte 0 sein.</value>
+  </data>
+  <data name="ForgroundColor_Text" xml:space="preserve">
+    <value>Vordergrundfarbe:</value>
+  </data>
+  <data name="ForgroundOpacity_Text" xml:space="preserve">
+    <value>Vordergrundopazität:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Wählen Sie ein Format aus:</value>
