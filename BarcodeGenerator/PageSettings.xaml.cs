@@ -223,7 +223,7 @@ public partial class PageSettings : ContentPage
     // Display help for Hex color.
     private async void OnSettingsHexColorClicked(object sender, EventArgs e)
     {
-        await DisplayAlert("?#", cHexColorCodes, cButtonClose);
+        await DisplayAlert("?", cHexColorCodes, cButtonClose);
     }
     
     // Entry HexColor Unfocused event.

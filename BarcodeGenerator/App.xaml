@@ -126,7 +126,18 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HeightRequest" Value="40" />
-                <Setter Property="WidthRequest" Value="130" />
+                <Setter Property="WidthRequest" Value="150" />
+            </Style>
+
+            <Style x:Key="buttonStyleHelp" TargetType="Button">
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="38" />
+                <Setter Property="WidthRequest" Value="38" />
+                <Setter Property="Text" Value="?" />
             </Style>
 
         </ResourceDictionary>

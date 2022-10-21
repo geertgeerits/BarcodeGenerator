@@ -232,10 +232,10 @@ Het controlecijfer is gecorrigeerd.</value>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadecimale kleurcodes:
 
-Karakter 1-2: dekking/transparantie
-Karakter 3-4: Rood
-Karakter 5-6: Groen
-Karakter 7-8: Blauw</value>
+Karakters 1-2: dekking/transparantie
+Karakters 3-4: rood
+Karakters 5-6: groen
+Karakters 7-8: blauw</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Taal:</value>

@@ -49,7 +49,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="ZXing.Net.Maui" Version="0.1.0-preview.7" />
+	  <PackageReference Include="ZXing.Net.Maui" Version="0.2.0-preview.2" />
+	  <PackageReference Include="ZXing.Net.Maui.Controls" Version="0.2.0-preview.2" />
 	</ItemGroup>
 
 	<ItemGroup>

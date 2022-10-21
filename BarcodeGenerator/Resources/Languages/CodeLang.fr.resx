@@ -232,10 +232,10 @@ Le chiffre de contrôle a été corrigé.</value>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Codes couleurs hexadécimaux:
 
-Caractère 1-2 : Opacité/Transparence
-Caractère 3-4 : Rouge
-Caractère 5-6 : Vert
-Caractère 7-8 : Bleu</value>
+Caractères 1-2: Opacité/Transparence
+Caractères 3-4: Rouge
+Caractères 5-6: Vert
+Caractères 7-8: Bleu</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Langue:</value>

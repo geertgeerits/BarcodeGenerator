@@ -232,10 +232,10 @@ O dígito de verificação foi corrigido.</value>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Códigos de cores hexadecimais:
 
-Caractere 1-2: Opacidade/Transparência
-Caractere 3-4: Vermelho
-Caractere 5-6: Verde
-Caractere 7-8: Azul</value>
+Caracteres 1-2: Opacidade/Transparência
+Caracteres 3-4: Vermelho
+Caracteres 5-6: Verde
+Caracteres 7-8: Azul</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Língua:</value>

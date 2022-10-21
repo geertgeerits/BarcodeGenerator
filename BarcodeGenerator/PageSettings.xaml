@@ -13,9 +13,9 @@
     <ScrollView>
         <StackLayout>
             <Grid RowDefinitions="40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40"
-                  ColumnDefinitions="20, 130, 200*"
-                  Margin="10,10,10,0"
-                  ColumnSpacing="2"
+                  ColumnDefinitions="40, 110, 200*"
+                  Margin="10,10,10,10"
+                  ColumnSpacing="4"
                   RowSpacing="8">
 
                 <Label
@@ -177,11 +177,9 @@
                     ValueChanged="OnSliderColorForgroundValueChanged" />
 
                 <Button
+                    Style="{StaticResource buttonStyleHelp}"
                     Grid.Row="6"
                     Grid.Column="0"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"
-                    Text="?"
                     Clicked="OnSettingsHexColorClicked"/>
 
                 <Border Style="{StaticResource borderStyleDefault}"
@@ -270,11 +268,9 @@
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
 
                 <Button
+                    Style="{StaticResource buttonStyleHelp}"
                     Grid.Row="11"
                     Grid.Column="0"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"
-                    Text="?"
                     Clicked="OnSettingsHexColorClicked"/>
 
                 <Border Style="{StaticResource borderStyleDefault}"
