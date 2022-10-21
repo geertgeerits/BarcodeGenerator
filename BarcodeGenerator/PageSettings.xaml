@@ -15,7 +15,7 @@
             <Grid RowDefinitions="40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40"
                   ColumnDefinitions="40, 110, 200*"
                   Margin="10,10,10,10"
-                  ColumnSpacing="4"
+                  ColumnSpacing="8"
                   RowSpacing="8">
 
                 <Label

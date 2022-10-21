@@ -231,6 +231,12 @@ public partial class PageSettings : ContentPage
     {
         var entry = (Entry)sender;
 
+        // Add the opacity if length = 6 characters.
+        if (entry.Text.Length == 6)
+        {
+            entry.Text = "FF" + entry.Text;
+        }
+
         // Length must be 8 characters.
         if (entry.Text.Length != 8)
         {
