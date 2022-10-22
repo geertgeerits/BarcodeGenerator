@@ -1,5 +1,6 @@
 using BarcodeGenerator.Resources.Languages;
 using ZXing.Net.Maui;
+using System.Text.RegularExpressions;
 
 namespace BarcodeGenerator;
 
@@ -336,31 +337,46 @@ public partial class PageScan : ContentPage
     // Button share event.
     private async void OnShareClicked(object sender, EventArgs e)
     {
-        // Open/Share link website.
-        if (lblBarcodeResult.Text[..8] == "https://" || lblBarcodeResult.Text[..7] == "http://")
-        {
-            bool bAnswer = await DisplayAlert(cOpenLinkTitle, cOpenLinkText, cYes, cNo);
+        // For testing.
+        //lblBarcodeResult.Text = "http://www.google.com";
+        //lblBarcodeResult.Text = "this is my url https://www.google.com and visit this website and this is my url http://www.yahoo.com and www.modegeerits.be this ggeerits@gmail.com address";
+        //lblBarcodeResult.Text = "Share text from barcode scanner";
+        
+        string cText = lblBarcodeResult.Text;
 
-            // Open link website.
-            if (bAnswer)
-            {
-                OpenWebsiteLink(lblBarcodeResult.Text);
-            }
-            // Share link website.
-            else
-            {
-                await ShareText(lblBarcodeResult.Text);
-            }
-        }
-        // Share the text.
-        else
+        // Search for links in the text.
+        try
         {
-            await ShareText(lblBarcodeResult.Text);
+            foreach (Match item in Regex.Matches(cText, @"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?").Cast<Match>())
+            {
+                if (item.Success)
+                {
+                    bool bAnswer = await DisplayAlert(cOpenLinkTitle, item.Value + "\n\n" + cOpenLinkText, cYes, cNo);
+
+                    // Open link website.
+                    if (bAnswer)
+                    {
+                        await OpenWebsiteLink(item.Value);
+                        //await ShareUri(item.Value, Share.Default);
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
+        catch (Exception ex)
+        {
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
+
+        // Open share interface.
+        await ShareText(cText);
     }
 
     // Open the website link.
-    private async void OpenWebsiteLink(string cUrl)
+    private async Task OpenWebsiteLink(string cUrl)
     {
         try
         {
@@ -372,8 +388,25 @@ public partial class PageScan : ContentPage
         }
     }
 
+    // Open the website link (opens the share interface in stead of the link in a browser).
+    //private async Task ShareUri(string uri, IShare share)
+    //{
+    //    try
+    //    {
+    //        await share.RequestAsync(new ShareTextRequest
+    //        {
+    //            Uri = uri,
+    //            Title = "Barcode Scanner"
+    //        });
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+    //    }
+    //}
+
     // Open the share interface.
-    public async Task ShareText(string cText)
+    private async Task ShareText(string cText)
     {
         try
         {
