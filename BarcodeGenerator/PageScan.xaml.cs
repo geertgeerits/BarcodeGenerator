@@ -42,19 +42,19 @@ public partial class PageScan : ContentPage
             "Data Matrix",
             "EAN-13",
             "EAN-8",
-            "IMb (Intelligent Mail)",
+            "(IMb (Intelligent Mail))",
             "ITF (Interleaved 2 of 5)",
-            "MaxiCode",
+            "(MaxiCode)",
             "MSI (Modified Plessey)",
             "PDF417",
-            "Pharmacode",
+            "(Pharmacode)",
             "Plessey",
             "QR Code",
-            "RSS 14",
-            "RSS Expanded",
+            "(RSS 14)",
+            "(RSS Expanded)",
             "UPC-A",
             "UPC-E",
-            "UPC EAN Extension",
+            "(UPC EAN Extension)",
             CodeLang.AllCodes_Text
         };
         pckFormatCode.ItemsSource = FormatCodeList;
@@ -339,25 +339,27 @@ public partial class PageScan : ContentPage
     {
         // For testing.
         //lblBarcodeResult.Text = "http://www.google.com";
-        //lblBarcodeResult.Text = "this is my url https://www.google.com and visit this website and this is my url http://www.yahoo.com and www.modegeerits.be this ggeerits@gmail.com address";
+        //lblBarcodeResult.Text = "this is my url http://www.google.com and visit this website and this is my url https://www.microsoft.com and www.modegeerits.be this geertgeerits@gmail.com address";
         //lblBarcodeResult.Text = "Share text from barcode scanner";
-        
+
         string cText = lblBarcodeResult.Text;
 
-        // Search for links in the text.
+        //string cPattern = @"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?";
+        string cPattern = @"((https?|ftp|file)\://|www.)[A-Za-z0-9\.\-]+(/[A-Za-z0-9\?\&\=;\+!'\(\)\*\-\._~%]*)*";
+
+        // Call Matches method for case-insensitive matching.
         try
         {
-            foreach (Match item in Regex.Matches(cText, @"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?").Cast<Match>())
+            foreach (Match match in Regex.Matches(cText, cPattern, RegexOptions.IgnoreCase).Cast<Match>())
             {
-                if (item.Success)
+                if (match.Success)
                 {
-                    bool bAnswer = await DisplayAlert(cOpenLinkTitle, item.Value + "\n\n" + cOpenLinkText, cYes, cNo);
+                    bool bAnswer = await DisplayAlert(cOpenLinkTitle, match.Value + "\n\n" + cOpenLinkText, cYes, cNo);
 
                     // Open link website.
                     if (bAnswer)
                     {
-                        await OpenWebsiteLink(item.Value);
-                        //await ShareUri(item.Value, Share.Default);
+                        await OpenWebsiteLink(match.Value);
                     }
                 }
                 else
@@ -371,6 +373,9 @@ public partial class PageScan : ContentPage
             await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
         }
 
+        // Wait 500 milliseconds otherwise the ShareText() is not executed after the last opened link.
+        Task.Delay(500).Wait();
+
         // Open share interface.
         await ShareText(cText);
     }
@@ -378,6 +383,11 @@ public partial class PageScan : ContentPage
     // Open the website link.
     private async Task OpenWebsiteLink(string cUrl)
     {
+        if (cUrl.Substring(0,4) == "www.")
+        {
+            cUrl = "http://" + cUrl;
+        }
+        
         try
         {
             await Launcher.OpenAsync(new Uri(cUrl));
@@ -387,23 +397,6 @@ public partial class PageScan : ContentPage
             await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
         }
     }
-
-    // Open the website link (opens the share interface in stead of the link in a browser).
-    //private async Task ShareUri(string uri, IShare share)
-    //{
-    //    try
-    //    {
-    //        await share.RequestAsync(new ShareTextRequest
-    //        {
-    //            Uri = uri,
-    //            Title = "Barcode Scanner"
-    //        });
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-    //    }
-    //}
 
     // Open the share interface.
     private async Task ShareText(string cText)
