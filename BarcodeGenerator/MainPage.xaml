@@ -61,19 +61,6 @@
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
 
-            <!--<ImageButton
-                Grid.Row="0"
-                Grid.Column="3"
-                Source="cancel_close_icon_48p.png"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="24"
-                WidthRequest="24"
-                BackgroundColor="#00bfff"
-                BorderColor="#00bfff"
-                Clicked="OnCloseApplicationClicked">
-            </ImageButton>-->
-
         </Grid>
     </Shell.TitleView>
 

@@ -473,7 +473,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Would you like to open this link?.
+        ///   Looks up a localized string similar to Open this link?.
         /// </summary>
         internal static string OpenLinkText_Text {
             get {

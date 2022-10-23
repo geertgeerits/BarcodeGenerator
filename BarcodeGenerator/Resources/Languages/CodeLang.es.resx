@@ -268,7 +268,7 @@ Utilice este programa bajo su propio riesgo.</value>
     <value>No</value>
   </data>
   <data name="OpenLinkText_Text" xml:space="preserve">
-    <value>¿Quieres abrir este enlace?</value>
+    <value>¿Abre este enlace?</value>
   </data>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>Enlace de página web</value>

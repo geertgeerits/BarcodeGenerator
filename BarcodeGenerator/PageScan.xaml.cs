@@ -50,8 +50,8 @@ public partial class PageScan : ContentPage
             "(Pharmacode)",
             "Plessey",
             "QR Code",
-            "(RSS 14)",
-            "(RSS Expanded)",
+            "RSS 14",
+            "RSS Expanded",
             "UPC-A",
             "UPC-E",
             "(UPC EAN Extension)",
@@ -339,7 +339,7 @@ public partial class PageScan : ContentPage
     {
         // For testing.
         //lblBarcodeResult.Text = "http://www.google.com";
-        //lblBarcodeResult.Text = "this is my url http://www.google.com and visit this website and this is my url https://www.microsoft.com and www.modegeerits.be this geertgeerits@gmail.com address";
+        //lblBarcodeResult.Text = "url http://www.google.com, visit website url https://www.microsoft.com, www.yahou.com and WWW.MODEGEERITS.BE and geertgeerits@gmail.com address";
         //lblBarcodeResult.Text = "Share text from barcode scanner";
 
         string cText = lblBarcodeResult.Text;
@@ -383,7 +383,7 @@ public partial class PageScan : ContentPage
     // Open the website link.
     private async Task OpenWebsiteLink(string cUrl)
     {
-        if (cUrl.Substring(0,4) == "www.")
+        if (cUrl[..4] is "www." or "WWW.")
         {
             cUrl = "http://" + cUrl;
         }

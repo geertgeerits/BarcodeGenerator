@@ -268,7 +268,7 @@ Gebruik dit programma geheel op eigen risico.</value>
     <value>Neen</value>
   </data>
   <data name="OpenLinkText_Text" xml:space="preserve">
-    <value>Wil je deze link openen?</value>
+    <value>Deze link openen?</value>
   </data>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>Website link</value>
