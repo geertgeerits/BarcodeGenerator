@@ -79,7 +79,7 @@ public partial class PageScan : ContentPage
 
     // Set the scanner properties for the selected format code.
     // ZXing CameraBarcodeReaderView options.
-    void OnPickerFormatCodeChanged(object sender, EventArgs e)
+    private void OnPickerFormatCodeChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;

@@ -184,7 +184,7 @@ public partial class MainPage : ContentPage
     }
 
     // Set the editor properties for the selected format code.
-    void OnPickerFormatCodeChanged(object sender, EventArgs e)
+    private void OnPickerFormatCodeChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
@@ -783,7 +783,7 @@ public partial class MainPage : ContentPage
     }
 
     // Test for allowed characters.
-    public bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
+    private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
     {
         foreach (char cChar in cTextToCode)
         {
