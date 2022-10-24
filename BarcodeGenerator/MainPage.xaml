@@ -7,7 +7,7 @@
 
     <Shell.TitleView>
         <Grid RowDefinitions="40"
-              ColumnDefinitions="40, 160, 110*, 40"
+              ColumnDefinitions="40, 160, 100*, 50"
               Margin="5"
               BackgroundColor="#00bfff">
 
@@ -17,8 +17,8 @@
                 Source="info_32p.png"
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
-                HeightRequest="28"
-                WidthRequest="28"
+                HeightRequest="32"
+                WidthRequest="32"
                 BackgroundColor="#00bfff"
                 BorderColor="#00bfff"
                 Clicked="OnPageAboutClicked">
@@ -41,8 +41,8 @@
                 Source="scan_barcode_icon_128p.png"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                HeightRequest="30"
-                WidthRequest="30"
+                HeightRequest="38"
+                WidthRequest="38"
                 BackgroundColor="#00bfff"
                 BorderColor="#00bfff"
                 Clicked="OnPageScanClicked">
@@ -54,8 +54,8 @@
                 Source="settings_32p.png"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                HeightRequest="24"
-                WidthRequest="24"
+                HeightRequest="32"
+                WidthRequest="32"
                 BackgroundColor="#00bfff"
                 BorderColor="#00bfff"
                 Clicked="OnPageSettingsClicked">

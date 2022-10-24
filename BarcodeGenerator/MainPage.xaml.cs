@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.18 Beta
-// Date ........: 2022-10-23 (YYYY-MM-DD)
+// Date ........: 2022-10-24 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.2.0-preview.2 ; https://github.com/redth/ZXing.Net.Maui

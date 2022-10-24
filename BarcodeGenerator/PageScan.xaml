@@ -6,7 +6,7 @@
 
     <Shell.TitleView>
         <Grid RowDefinitions="40"
-              ColumnDefinitions="40, 160, 110*, 40"
+              ColumnDefinitions="40, 160, 100*, 50"
               Margin="5"
               BackgroundColor="#00bfff">
 
