@@ -188,7 +188,7 @@ Die Prüfziffer wurde korrigiert.</value>
     <value>Standard</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Generieren Sie verschiedene Barcodes.</value>
+    <value>Generieren und scannen Sie verschiedene Barcodes.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
     <value>Nicht zustimmen</value>
@@ -262,7 +262,7 @@ DIE SOFTWARE WIRD OHNE MÄNGELGEWÄHR BEREITGESTELLT, OHNE AUSDRÜCKLICHE ODER S
 Verwenden Sie dieses Programm ausschließlich auf eigene Gefahr.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Nein</value>

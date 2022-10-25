@@ -5,7 +5,7 @@
              x:Class="BarcodeGenerator.PageScan">
 
     <Shell.TitleView>
-        <Grid RowDefinitions="40"
+        <Grid RowDefinitions="50"
               ColumnDefinitions="40, 160, 100*, 50"
               Margin="5"
               BackgroundColor="#00bfff">
@@ -39,7 +39,7 @@
     </Shell.TitleView>
 
     <ScrollView>
-        <Grid RowDefinitions="40, 10, 400, 10, 40, 100*"
+        <Grid RowDefinitions="40, 10, 320*, 10, 40, 100*"
               ColumnDefinitions="140, 210*"
               Margin="10,10,10,10"
               ColumnSpacing="0"

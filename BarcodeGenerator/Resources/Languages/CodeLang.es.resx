@@ -188,7 +188,7 @@ El dígito de control ha sido corregido.</value>
     <value>Estándar</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Genera varios códigos de barras.</value>
+    <value>Genere y escanee varios códigos de barras.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
     <value>No acordado</value>
@@ -262,7 +262,7 @@ EL SOFTWARE SE PROPORCIONA 'TAL CUAL', SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O 
 Utilice este programa bajo su propio riesgo.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>No</value>

@@ -263,7 +263,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generate various barcodes..
+        ///   Looks up a localized string similar to Generate and scan various barcodes..
         /// </summary>
         internal static string Description_Text {
             get {
@@ -455,7 +455,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barcode Generator.
+        ///   Looks up a localized string similar to Barcode Generator and Scanner.
         /// </summary>
         internal static string NameProgram_Text {
             get {

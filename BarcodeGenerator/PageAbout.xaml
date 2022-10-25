@@ -15,14 +15,14 @@
             <Label x:Name="lblNameProgram"
                    VerticalOptions="Center" 
                    HorizontalOptions="Start"
-                   Text="Barcode Generator"
-                   FontSize="28"
+                   Text="Barcode Generator and Scanner"
+                   FontSize="20"
                    FontAttributes="Bold" />
 
             <Label x:Name="lblDescription"
                    VerticalOptions="Center" 
                    HorizontalOptions="Start"
-                   Text="Generate various barcodes." />
+                   Text="Generate and scan various barcodes." />
 
             <Label x:Name="lblVersion"
                    VerticalOptions="Center" 

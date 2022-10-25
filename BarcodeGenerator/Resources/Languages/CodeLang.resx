@@ -188,7 +188,7 @@ The check digit has been corrected.</value>
     <value>Default</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Generate various barcodes.</value>
+    <value>Generate and scan various barcodes.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
     <value>Disagree</value>
@@ -262,7 +262,7 @@ THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Use this program entirely at your own risk.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>No</value>

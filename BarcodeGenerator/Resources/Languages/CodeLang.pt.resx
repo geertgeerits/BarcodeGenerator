@@ -188,7 +188,7 @@ O dígito de verificação foi corrigido.</value>
     <value>Padrão</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Gere vários códigos de barras.</value>
+    <value>Gere e digitalize vários códigos de barras.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
     <value>Discordar</value>
@@ -262,7 +262,7 @@ O SOFTWARE É FORNECIDO 'COMO ESTÁ', SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU
 Use este programa inteiramente por sua conta e risco.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Não</value>

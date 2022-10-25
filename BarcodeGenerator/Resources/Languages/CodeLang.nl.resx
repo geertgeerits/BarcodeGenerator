@@ -188,7 +188,7 @@ Het controlecijfer is gecorrigeerd.</value>
     <value>Standaard</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Genereer verschillende barcodes.</value>
+    <value>Genereer en scan verschillende barcodes.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
     <value>Niet akkoord</value>
@@ -262,7 +262,7 @@ DE SOFTWARE WORDT GELEVERD 'AS IS', ZONDER ENIGE GARANTIE, EXPLICIET OF IMPLICIE
 Gebruik dit programma geheel op eigen risico.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Neen</value>

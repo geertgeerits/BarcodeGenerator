@@ -188,7 +188,7 @@ Le chiffre de contrôle a été corrigé.</value>
     <value>Standard</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Générer divers codes-barres.</value>
+    <value>Générez et numérisez divers codes-barres.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
     <value>Désaccord</value>
@@ -262,7 +262,7 @@ LE LOGICIEL EST FOURNI « EN L'ÉTAT », SANS GARANTIE D'AUCUNE SORTE, EXPRESSE 
 Utilisez ce programme entièrement à vos propres risques.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Non</value>
