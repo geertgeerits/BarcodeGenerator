@@ -103,8 +103,8 @@
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                WidthRequest="300"
-                HeightRequest="300"
+                MaximumWidthRequest="300"
+                MaximumHeightRequest="300"
                 IsDetecting="True"
                 IsTorchOn="False"
                 BarcodesDetected="OnBarcodesDetected" />
