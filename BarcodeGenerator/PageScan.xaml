@@ -103,6 +103,7 @@
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
+                HeightRequest="400"
                 WidthRequest="300"
                 IsDetecting="True"
                 IsTorchOn="False"
