@@ -39,7 +39,7 @@
     </Shell.TitleView>
 
     <ScrollView>
-        <Grid RowDefinitions="40, 10, 320*, 10, 40, 100*"
+        <Grid RowDefinitions="40, 10, 400*, 10, 40, 100*"
               ColumnDefinitions="140, 210*"
               Margin="10,10,10,10"
               ColumnSpacing="0"
@@ -103,8 +103,7 @@
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                MaximumWidthRequest="300"
-                MaximumHeightRequest="300"
+                WidthRequest="300"
                 IsDetecting="True"
                 IsTorchOn="False"
                 BarcodesDetected="OnBarcodesDetected" />
