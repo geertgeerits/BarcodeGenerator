@@ -181,8 +181,11 @@ Die Prüfziffer wurde korrigiert.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Urheberrechte</value>
   </data>
-  <data name="DefaultFormat_Text" xml:space="preserve">
-    <value>Standardformat:</value>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Standardformat Generator:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Standardformat Scanner:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
     <value>Standard</value>

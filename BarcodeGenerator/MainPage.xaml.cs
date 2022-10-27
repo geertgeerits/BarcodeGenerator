@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.19 Beta
-// Date ........: 2022-10-26 (YYYY-MM-DD)
+// Date ........: 2022-10-27 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -19,7 +19,8 @@ public partial class MainPage : ContentPage
 {
     // Global variables for all pages part of Barcode Generator.
     public static string cTheme;
-    public static int nFormatIndex;
+    public static int nFormatGeneratorIndex;
+    public static int nFormatScannerIndex;
     public static string cCodeColorFg;
     public static string cCodeColorBg;
     public static string cLanguage;
@@ -63,7 +64,8 @@ public partial class MainPage : ContentPage
 
         // Get the saved settings.
         cTheme = Preferences.Default.Get("SettingTheme", "System");
-        nFormatIndex = Preferences.Default.Get("SettingFormatIndex", 15);
+        nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 15);
+        nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 21);
         cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
         cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
         cLanguage = Preferences.Default.Get("SettingLanguage", "");
@@ -83,16 +85,16 @@ public partial class MainPage : ContentPage
             Application.Current.UserAppTheme = AppTheme.Unspecified;
         }
 
-        // Set the format barcode.
-        if (nFormatIndex < 0 || nFormatIndex > 20)
+        // Set the format generator barcode.
+        if (nFormatGeneratorIndex < 0 || nFormatGeneratorIndex > 20)
         {
             // Default format code = QrCode.
-            pckFormatCode.SelectedIndex = 15;
+            pckFormatCodeGenerator.SelectedIndex = 15;
         }
         else
         {
             // Set the format barcode to the saved code.
-            pckFormatCode.SelectedIndex = nFormatIndex;
+            pckFormatCodeGenerator.SelectedIndex = nFormatGeneratorIndex;
         }
 
         // Get and set the system OS user language.
@@ -392,7 +394,7 @@ public partial class MainPage : ContentPage
         }
 
         // Validate the text input and set the format.
-        int selectedIndex = pckFormatCode.SelectedIndex;
+        int selectedIndex = pckFormatCodeGenerator.SelectedIndex;
 
         if (selectedIndex != -1)
         {
@@ -762,7 +764,7 @@ public partial class MainPage : ContentPage
         {
             bgvBarcode.Value = cTextToCode;
             
-            btnShare.Text = cButtonShare + " " + pckFormatCode.Items[selectedIndex];
+            btnShare.Text = cButtonShare + " " + pckFormatCodeGenerator.Items[selectedIndex];
             btnShare.IsEnabled = true;
 
             if (cTextCode == "")

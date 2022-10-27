@@ -254,11 +254,20 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Default format:.
+        ///   Looks up a localized string similar to Default format generator:.
         /// </summary>
-        internal static string DefaultFormat_Text {
+        internal static string DefaultFormatGenerator_Text {
             get {
-                return ResourceManager.GetString("DefaultFormat_Text", resourceCulture);
+                return ResourceManager.GetString("DefaultFormatGenerator_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default format scanner:.
+        /// </summary>
+        internal static string DefaultFormatScanner_Text {
+            get {
+                return ResourceManager.GetString("DefaultFormatScanner_Text", resourceCulture);
             }
         }
         

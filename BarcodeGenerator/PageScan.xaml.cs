@@ -27,6 +27,52 @@ public partial class PageScan : ContentPage
             return;
         }
 
+        // Workaround for bug in zxing:CameraBarcodeReaderView HeightRequest.
+        // Get the screen size.
+        double nDisplayHeight;
+        double nDisplayDensity;
+        
+        try
+        {
+            nDisplayHeight = DeviceDisplay.Current.MainDisplayInfo.Height;
+            nDisplayDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
+        }
+        catch
+        {
+            // Default values voor a Samsung Galaxy S21 phone.
+            nDisplayHeight = 2340;
+            nDisplayDensity = 2.75;
+        }
+
+        if (nDisplayDensity == 0)
+        {
+            nDisplayDensity = 1;
+        }
+
+        double nDisplayResHeight = nDisplayHeight / nDisplayDensity;
+
+        // Set the grid row height.
+        double nCameraRowHeight = 440;
+
+        if (nDisplayResHeight < 740)
+        {
+            nCameraRowHeight = 540;
+        }
+
+        Grid grid = new Grid
+        {
+            RowDefinitions =
+            {
+                new RowDefinition { Height = new GridLength(40) },
+                new RowDefinition { Height = new GridLength(10) },
+                new RowDefinition { Height = new GridLength(nCameraRowHeight) },
+                new RowDefinition { Height = new GridLength(10) },
+                new RowDefinition { Height = new GridLength(40) },
+                new RowDefinition { Height = new GridLength(100, GridUnitType.Star) }
+            }
+        };
+        grdMain.RowDefinitions = grid.RowDefinitions;
+
         // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.BarcodeScanner_Text;
         lblFormatCode.Text = CodeLang.FormatCode_Text;
@@ -57,7 +103,7 @@ public partial class PageScan : ContentPage
             "(UPC EAN Extension)",
             CodeLang.AllCodes_Text
         };
-        pckFormatCode.ItemsSource = FormatCodeList;
+        pckFormatCodeScanner.ItemsSource = FormatCodeList;
 
         cButtonShare = CodeLang.ButtonShareText_Text;
         cButtonClose = CodeLang.ButtonClose_Text;
@@ -68,7 +114,7 @@ public partial class PageScan : ContentPage
         cErrorTitle = CodeLang.ErrorTitle_Text;
 
         // Default format code = All codes
-        pckFormatCode.SelectedIndex = 21;
+        pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
     }
 
     // ImageButton torch clicked event.

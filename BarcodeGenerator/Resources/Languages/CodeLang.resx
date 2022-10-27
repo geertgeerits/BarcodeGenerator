@@ -181,8 +181,11 @@ The check digit has been corrected.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Copyright</value>
   </data>
-  <data name="DefaultFormat_Text" xml:space="preserve">
-    <value>Default format:</value>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Default format generator:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Default format scanner:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
     <value>Default</value>

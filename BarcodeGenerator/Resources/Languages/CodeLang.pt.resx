@@ -181,8 +181,11 @@ O dígito de verificação foi corrigido.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Direito autoral</value>
   </data>
-  <data name="DefaultFormat_Text" xml:space="preserve">
-    <value>Formato padrão:</value>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Gerador de formato padrão:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Scanner de formato padrão:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
     <value>Padrão</value>

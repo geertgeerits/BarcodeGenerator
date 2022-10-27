@@ -39,11 +39,12 @@
     </Shell.TitleView>
 
     <ScrollView>
-        <Grid RowDefinitions="40, 10, 400*, 10, 40, 100*"
+        <Grid RowDefinitions="40, 10, 520, 10, 40, 100*"
               ColumnDefinitions="140, 210*"
               Margin="10,10,10,10"
               ColumnSpacing="0"
-              RowSpacing="2">
+              RowSpacing="2"
+              x:Name="grdMain">
 
             <Label
                 x:Name="lblFormatCode"
@@ -62,7 +63,7 @@
                 VerticalOptions="Center">
 
                 <Picker
-                    x:Name="pckFormatCode"
+                    x:Name="pckFormatCodeScanner"
                     Grid.Row="0"
                     Grid.Column="1"
                     MinimumWidthRequest="200"
@@ -103,7 +104,7 @@
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                HeightRequest="400"
+                HeightRequest="300"
                 WidthRequest="300"
                 IsDetecting="True"
                 IsTorchOn="False"

@@ -181,8 +181,11 @@ La cifra di controllo è stata corretta.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Diritto d'autore</value>
   </data>
-  <data name="DefaultFormat_Text" xml:space="preserve">
-    <value>Formato predefinito:</value>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Generatore di formati predefinito:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Scanner formato predefinito:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
     <value>Predefinito</value>

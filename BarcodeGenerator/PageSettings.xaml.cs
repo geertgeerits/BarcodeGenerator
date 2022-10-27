@@ -31,7 +31,8 @@ public partial class PageSettings : ContentPage
 
         lblLanguage.Text = CodeLang.Language_Text;
         lblTheme.Text = CodeLang.Theme_Text;
-        lblDefaultFormat.Text = CodeLang.DefaultFormat_Text;
+        lblDefaultFormatGenerator.Text = CodeLang.DefaultFormatGenerator_Text;
+        lblDefaultFormatScanner.Text = CodeLang.DefaultFormatScanner_Text;
         lblForgroundOpacity.Text = CodeLang.ForgroundOpacity_Text;
         lblForgroundColor.Text = CodeLang.ForgroundColor_Text;
         lblBackgroundOpacity.Text = CodeLang.BackgroundOpacity_Text;
@@ -92,7 +93,37 @@ public partial class PageSettings : ContentPage
         };
 
         // Set the current default barcode format in the picker for the barcode generator.
-        pckFormatCode.SelectedIndex = MainPage.nFormatIndex;
+        pckFormatCodeGenerator.SelectedIndex = MainPage.nFormatGeneratorIndex;
+
+        // Set the barcode list and the current default barcode format in the picker for the barcode scanner.
+        var FormatCodeList = new List<string>
+        {
+            "Aztec",
+            "Codabar",
+            "Code 128",
+            "Code 39",
+            "Code 93",
+            "Data Matrix",
+            "EAN-13",
+            "EAN-8",
+            "(IMb (Intelligent Mail))",
+            "ITF (Interleaved 2 of 5)",
+            "(MaxiCode)",
+            "MSI (Modified Plessey)",
+            "PDF417",
+            "(Pharmacode)",
+            "Plessey",
+            "QR Code",
+            "RSS 14",
+            "RSS Expanded",
+            "UPC-A",
+            "UPC-E",
+            "(UPC EAN Extension)",
+            CodeLang.AllCodes_Text
+        };
+        pckFormatCodeScanner.ItemsSource = FormatCodeList;
+
+        pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
 
         // Set the current color in the entry and on the sliders.
         int nOpacity = 0;
@@ -178,15 +209,27 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Picker format clicked event.
-    private void OnPickerFormatCodeChanged(object sender, EventArgs e)
+    // Picker format generator clicked event.
+    private void OnPickerFormatCodeGeneratorChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
         {
-            MainPage.nFormatIndex = selectedIndex;
+            MainPage.nFormatGeneratorIndex = selectedIndex;
+        }
+    }
+
+    // Picker format scanner clicked event.
+    private void OnPickerFormatCodeScannerChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        int selectedIndex = picker.SelectedIndex;
+
+        if (selectedIndex != -1)
+        {
+            MainPage.nFormatScannerIndex = selectedIndex;
         }
     }
 
@@ -392,7 +435,8 @@ public partial class PageSettings : ContentPage
     private void OnSettingsSaveClicked(object sender, EventArgs e)
     {
         Preferences.Default.Set("SettingTheme", MainPage.cTheme);
-        Preferences.Default.Set("SettingFormatIndex", MainPage.nFormatIndex);
+        Preferences.Default.Set("SettingFormatGeneratorIndex", MainPage.nFormatGeneratorIndex);
+        Preferences.Default.Set("SettingFormatScannerIndex", MainPage.nFormatScannerIndex);
         Preferences.Default.Set("SettingCodeColorFg", MainPage.cCodeColorFg);
         Preferences.Default.Set("SettingCodeColorBg", MainPage.cCodeColorBg);
         Preferences.Default.Set("SettingLanguage", MainPage.cLanguage);
@@ -419,7 +463,8 @@ public partial class PageSettings : ContentPage
         {
             // Reset some settings.
             Preferences.Default.Remove("SettingTheme");
-            Preferences.Default.Remove("SettingFormatIndex");
+            Preferences.Default.Remove("SettingFormatGeneratorIndex");
+            Preferences.Default.Remove("SettingFormatScannerIndex");
             Preferences.Default.Remove("SettingCodeColorFg");
             Preferences.Default.Remove("SettingCodeColorBg");
             Preferences.Default.Remove("SettingLanguage");
