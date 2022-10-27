@@ -92,37 +92,12 @@ public partial class PageSettings : ContentPage
             _ => 0,
         };
 
-        // Set the current default barcode format in the picker for the barcode generator.
+        // Set the barcode list and the current default barcode format in the picker for the barcode generator.
+        pckFormatCodeGenerator.ItemsSource = MainPage.GetFormatCodeListGenerator();
         pckFormatCodeGenerator.SelectedIndex = MainPage.nFormatGeneratorIndex;
 
         // Set the barcode list and the current default barcode format in the picker for the barcode scanner.
-        var FormatCodeList = new List<string>
-        {
-            "Aztec",
-            "Codabar",
-            "Code 128",
-            "Code 39",
-            "Code 93",
-            "Data Matrix",
-            "EAN-13",
-            "EAN-8",
-            "(IMb (Intelligent Mail))",
-            "ITF (Interleaved 2 of 5)",
-            "(MaxiCode)",
-            "MSI (Modified Plessey)",
-            "PDF417",
-            "(Pharmacode)",
-            "Plessey",
-            "QR Code",
-            "RSS 14",
-            "RSS Expanded",
-            "UPC-A",
-            "UPC-E",
-            "(UPC EAN Extension)",
-            CodeLang.AllCodes_Text
-        };
-        pckFormatCodeScanner.ItemsSource = FormatCodeList;
-
+        pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
         pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
 
         // Set the current color in the entry and on the sliders.

@@ -85,7 +85,9 @@ public partial class MainPage : ContentPage
             Application.Current.UserAppTheme = AppTheme.Unspecified;
         }
 
-        // Set the format generator barcode.
+        // Set the barcode list and the current default barcode format in the picker for the barcode generator.
+        pckFormatCodeGenerator.ItemsSource = MainPage.GetFormatCodeListGenerator();
+
         if (nFormatGeneratorIndex < 0 || nFormatGeneratorIndex > 20)
         {
             // Default format code = QrCode.
@@ -1008,6 +1010,65 @@ public partial class MainPage : ContentPage
             Title = "Barcode Generator",
             File = new ShareFile(cFile)
         });
+    }
+
+    // Put the generator barcode formats in a List string.
+    public static List<string> GetFormatCodeListGenerator()
+    {
+        return new List<string>
+        {
+            "Aztec",
+            "Codabar",
+            "Code 128",
+            "Code 39",
+            "Code 93",
+            "Data Matrix",
+            "EAN-13",
+            "EAN-8",
+            "(IMb (Intelligent Mail))",
+            "ITF (Interleaved 2 of 5)",
+            "(MaxiCode)",
+            "MSI (Modified Plessey)",
+            "PDF417",
+            "(Pharmacode)",
+            "Plessey",
+            "QR Code",
+            "(RSS 14)",
+            "(RSS Expanded)",
+            "UPC-A",
+            "UPC-E",
+            "(UPC EAN Extension)"
+        };
+    }
+
+    // Put the scanner barcode formats in a List string.
+    public static List<string> GetFormatCodeListScanner()
+    {
+        return new List<string>
+        {
+            "Aztec",
+            "Codabar",
+            "Code 128",
+            "Code 39",
+            "Code 93",
+            "Data Matrix",
+            "EAN-13",
+            "EAN-8",
+            "(IMb (Intelligent Mail))",
+            "ITF (Interleaved 2 of 5)",
+            "(MaxiCode)",
+            "MSI (Modified Plessey)",
+            "PDF417",
+            "(Pharmacode)",
+            "Plessey",
+            "QR Code",
+            "RSS 14",
+            "RSS Expanded",
+            "UPC-A",
+            "UPC-E",
+            "(UPC EAN Extension)",
+            CodeLang.AllCodes_Text
+        };
     }
 }
 

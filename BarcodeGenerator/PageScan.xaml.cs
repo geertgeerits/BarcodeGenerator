@@ -78,32 +78,7 @@ public partial class PageScan : ContentPage
         lblFormatCode.Text = CodeLang.FormatCode_Text;
         btnShare.Text = CodeLang.ButtonShareText_Text;
 
-        var FormatCodeList = new List<string>
-        {
-            "Aztec",
-            "Codabar",
-            "Code 128",
-            "Code 39",
-            "Code 93",
-            "Data Matrix",
-            "EAN-13",
-            "EAN-8",
-            "(IMb (Intelligent Mail))",
-            "ITF (Interleaved 2 of 5)",
-            "(MaxiCode)",
-            "MSI (Modified Plessey)",
-            "PDF417",
-            "(Pharmacode)",
-            "Plessey",
-            "QR Code",
-            "RSS 14",
-            "RSS Expanded",
-            "UPC-A",
-            "UPC-E",
-            "(UPC EAN Extension)",
-            CodeLang.AllCodes_Text
-        };
-        pckFormatCodeScanner.ItemsSource = FormatCodeList;
+        pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
 
         cButtonShare = CodeLang.ButtonShareText_Text;
         cButtonClose = CodeLang.ButtonClose_Text;
