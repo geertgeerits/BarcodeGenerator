@@ -28,50 +28,13 @@ public partial class PageScan : ContentPage
         }
 
         // Workaround for bug in zxing:CameraBarcodeReaderView HeightRequest.
-        // Get the screen size.
-        double nDisplayHeight;
-        double nDisplayDensity;
-        
-        try
-        {
-            nDisplayHeight = DeviceDisplay.Current.MainDisplayInfo.Height;
-            nDisplayDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
-        }
-        catch
-        {
-            // Default values voor a Samsung Galaxy S21 phone.
-            nDisplayHeight = 2340;
-            nDisplayDensity = 2.75;
-        }
-
-        if (nDisplayDensity == 0)
-        {
-            nDisplayDensity = 1;
-        }
-
-        double nDisplayResHeight = nDisplayHeight / nDisplayDensity;
-
-        // Set the grid row height.
-        double nCameraRowHeight = 440;
-
-        if (nDisplayResHeight < 740)
-        {
-            nCameraRowHeight = 540;
-        }
-
-        Grid grid = new Grid
-        {
-            RowDefinitions =
-            {
-                new RowDefinition { Height = new GridLength(40) },
-                new RowDefinition { Height = new GridLength(10) },
-                new RowDefinition { Height = new GridLength(nCameraRowHeight) },
-                new RowDefinition { Height = new GridLength(10) },
-                new RowDefinition { Height = new GridLength(40) },
-                new RowDefinition { Height = new GridLength(100, GridUnitType.Star) }
-            }
-        };
-        grdMain.RowDefinitions = grid.RowDefinitions;
+        // The camera sometimes overlaps adjacent rows in the grid.
+        // Code to run on Android, Windows and on the main thread for iOS\MacOS.
+#if IOS
+        MainThread.BeginInvokeOnMainThread(SetGridRowHeightCamera);
+#else
+        SetGridRowHeightCamera();
+#endif
 
         // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.BarcodeScanner_Text;
@@ -434,5 +397,56 @@ public partial class PageScan : ContentPage
         {
             await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
         }
+    }
+
+    // Workaround for bug in zxing:CameraBarcodeReaderView HeightRequest.
+    // The camera sometimes overlaps adjacent rows in the grid.
+    // Code to run on Android, Windows and on the main thread for iOS\MacOS.
+    private void SetGridRowHeightCamera()
+    {
+        // Get the screen size.
+        double nDisplayHeight;
+        double nDisplayDensity;
+
+        try
+        {
+            nDisplayHeight = DeviceDisplay.Current.MainDisplayInfo.Height;
+            nDisplayDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
+        }
+        catch
+        {
+            // Default values voor a Samsung Galaxy S21 phone.
+            nDisplayHeight = 2340;
+            nDisplayDensity = 2.75;
+        }
+
+        if (nDisplayDensity == 0)
+        {
+            nDisplayDensity = 1;
+        }
+
+        double nDisplayResHeight = nDisplayHeight / nDisplayDensity;
+
+        // Set the grid row height.
+        double nCameraRowHeight = 440;
+
+        if (nDisplayResHeight < 740)
+        {
+            nCameraRowHeight = 540;
+        }
+
+        Grid grid = new Grid
+        {
+            RowDefinitions =
+            {
+                new RowDefinition { Height = new GridLength(40) },
+                new RowDefinition { Height = new GridLength(10) },
+                new RowDefinition { Height = new GridLength(nCameraRowHeight) },
+                new RowDefinition { Height = new GridLength(10) },
+                new RowDefinition { Height = new GridLength(40) },
+                new RowDefinition { Height = new GridLength(100, GridUnitType.Star) }
+            }
+        };
+        grdScanner.RowDefinitions = grid.RowDefinitions;
     }
 }

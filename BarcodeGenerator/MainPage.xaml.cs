@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.19 Beta
-// Date ........: 2022-10-27 (YYYY-MM-DD)
+// Date ........: 2022-10-28 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -806,7 +806,7 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Test for allowed ASCII values.
+    // Test for allowed minimum and maximum ASCII values.
     private bool TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
     {
         foreach (char cChar in cTextToCode)

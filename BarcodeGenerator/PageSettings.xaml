@@ -12,7 +12,7 @@
 
     <ScrollView>
         <StackLayout>
-            <Grid RowDefinitions="40, 40, 40, 40, 4, 40, 40, 40, 40, 4, 40, 40, 40, 40, 4, 40"
+            <Grid RowDefinitions="40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40"
                   ColumnDefinitions="40, 110, 200*"
                   Margin="10,10,10,10"
                   ColumnSpacing="8"

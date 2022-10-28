@@ -44,7 +44,7 @@
               Margin="10,10,10,10"
               ColumnSpacing="0"
               RowSpacing="2"
-              x:Name="grdMain">
+              x:Name="grdScanner">
 
             <Label
                 x:Name="lblFormatCode"
@@ -71,7 +71,8 @@
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Barcode 1</x:String>
-                            <x:String>Barcode 2</x:String>                        </x:Array>
+                            <x:String>Barcode 2</x:String>
+                        </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
             </Border>
