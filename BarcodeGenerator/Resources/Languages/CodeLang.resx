@@ -246,6 +246,9 @@ Characters 7-8: Blue</value>
   <data name="LengthInputEven_Text" xml:space="preserve">
     <value>The length of the input should be even.</value>
   </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
+  </data>
   <data name="LicenseMit_Text" xml:space="preserve">
     <value>ZXing.Net.Maui by Redth
 Barcode scanning and generation for .NET MAUI applications.
@@ -253,9 +256,7 @@ MIT License:
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of Barcode Generator (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR AND/OR PUBLISHER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
+The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>License</value>

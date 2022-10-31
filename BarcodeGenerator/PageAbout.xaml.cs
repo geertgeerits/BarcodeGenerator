@@ -25,13 +25,13 @@ public partial class PageAbout : ContentPage
 
         lblNameProgram.Text = CodeLang.NameProgram_Text;
         lblDescription.Text = CodeLang.Description_Text;
-        lblVersion.Text = CodeLang.Version_Text + " 1.0.19 Beta";
+        lblVersion.Text = CodeLang.Version_Text + " 1.0.20 Beta";
         lblCopyright.Text = CodeLang.Copyright_Text + " © 2022-2022 Geert Geerits";
         lblEmail.Text = CodeLang.Email_Text + " " + lblEmail.Text;
         lblWebsite.Text = CodeLang.Website_Text + " " + lblWebsite.Text;
         lblPrivacyPolicy.Text = CodeLang.PrivacyPolicyTitle_Text + " " + CodeLang.PrivacyPolicy_Text;
         lblLicense.Text = CodeLang.LicenseTitle_Text + ": " + CodeLang.License_Text;
-        lblLicenseMit.Text = CodeLang.Copyright_Text + " © " + CodeLang.LicenseMit_Text;
+        lblLicenseMit.Text = CodeLang.Copyright_Text + " © " + CodeLang.LicenseMit_Text + "\n\n" + CodeLang.LicenseMit2_Text;
         lblAboutExplanation.Text = CodeLang.AboutExplanation_Text;
 
         cButtonClose = CodeLang.ButtonClose_Text;

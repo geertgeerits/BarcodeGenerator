@@ -246,6 +246,9 @@ Karakters 7-8: blauw</value>
   <data name="LengthInputEven_Text" xml:space="preserve">
     <value>De lengte van de invoer moet even zijn.</value>
   </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>De software wordt geleverd 'zoals ze is', zonder enige vorm van garantie, expliciet of impliciet, inclusief maar niet beperkt tot de garanties van verkoopbaarheid, geschiktheid voor een bepaald doel en niet-inbreuk. In geen geval zal de auteur en/of uitgever aansprakelijk zijn voor enige claim, schade of andere aansprakelijkheid, hetzij in een contractuele actie, onrechtmatige daad of anderszins, die voortvloeit van, uit of in verband staat met de software of het gebruik of andere transacties in de software.</value>
+  </data>
   <data name="LicenseMit_Text" xml:space="preserve">
     <value>ZXing.Net.Maui door Redth
 Barcode scannen en genereren voor .NET MAUI-toepassingen.
@@ -253,9 +256,7 @@ MIT-licentie:
 
 Hierbij wordt kosteloos toestemming verleend aan eenieder die een kopie van de Barcode Generator (de 'Software') verkrijgt, om zonder beperking in de Software te handelen, inclusief maar niet beperkt tot de rechten om te gebruiken, kopiëren, wijzigen, samenvoegen, publiceren, distribueren , in sublicentie geven en/of kopieën van de Software verkopen, en om personen aan wie de Software wordt geleverd toe te staan ​​dit te doen, onder de volgende voorwaarden:
 
-De bovenstaande copyrightkennisgeving en deze toestemmingskennisgeving (inclusief de volgende paragraaf) zullen worden opgenomen in alle kopieën of substantiële delen van de Software.
-
-DE SOFTWARE WORDT GELEVERD 'AS IS', ZONDER ENIGE GARANTIE, EXPLICIET OF IMPLICIET, INCLUSIEF MAAR NIET BEPERKT TOT DE GARANTIES VAN VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL EN NIET-INBREUK. IN GEEN GEVAL ZAL DE AUTEUR EN/OF UITGEVER AANSPRAKELIJK ZIJN VOOR ENIGE CLAIM, SCHADE OF ANDERE AANSPRAKELIJKHEID, HETZIJ IN EEN HANDELING VAN CONTRACT, ONRECHTMATIGE OF ANDERSZINS, VOORTVLOEIEND UIT, UIT OF IN VERBAND MET DE SOFTWARE OF HET GEBRUIK OF ANDERE HANDELINGEN IN DE SOFTWARE.</value>
+De bovenstaande copyrightkennisgeving en deze toestemmingskennisgeving (inclusief de volgende paragraaf) zullen worden opgenomen in alle kopieën of substantiële delen van de Software.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licentie</value>

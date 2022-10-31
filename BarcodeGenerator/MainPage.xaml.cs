@@ -1,8 +1,8 @@
 ﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
-// Version .....: 1.0.19 Beta
-// Date ........: 2022-10-28 (YYYY-MM-DD)
+// Version .....: 1.0.20 Beta
+// Date ........: 2022-10-31 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -164,7 +164,7 @@ public partial class MainPage : ContentPage
         cCodeLengthPart3 = CodeLang.CodeLengthPart3_Text;
         cRestartApp = CodeLang.RestartApp_Text;
         cLicenseTitle = CodeLang.LicenseTitle_Text;
-        cLicense = CodeLang.License_Text;
+        cLicense = CodeLang.License_Text + "\n\n" + CodeLang.LicenseMit2_Text;
         cAgree = CodeLang.Agree_Text;
         cDisagree = CodeLang.Disagree_Text;
 

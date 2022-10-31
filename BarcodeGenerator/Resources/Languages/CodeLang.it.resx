@@ -246,6 +246,9 @@ Caratteri 7-8: Blu</value>
   <data name="LengthInputEven_Text" xml:space="preserve">
     <value>La lunghezza dell'input dovrebbe essere pari.</value>
   </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>Il software viene fornito "così com'è", senza garanzie di alcun tipo, esplicite o implicite, incluse, a titolo esemplificativo ma non esaustivo, le garanzie di commerciabilità, idoneità per uno scopo particolare e non violazione. In nessun caso l'autore e/o l'editore possono essere ritenuti responsabili per qualsiasi pretesa, danno o altra responsabilità, sia in un'azione contrattuale, illecita o altro, derivante da, fuori o in connessione con il software o l'uso o altri rapporti in il software.</value>
+  </data>
   <data name="LicenseMit_Text" xml:space="preserve">
     <value>ZXing.Net.Maui di Redth
 Scansione e generazione di codici a barre per applicazioni .NET MAUI.
@@ -253,9 +256,7 @@ Licenza MIT:
 
 Con la presente viene concesso il permesso, gratuitamente, a chiunque ottenga una copia di Barcode Generator (il "Software"), di trattare il Software senza restrizioni, inclusi senza limitazione i diritti di utilizzare, copiare, modificare, unire, pubblicare, distribuire , concedere in sublicenza e/o vendere copie del Software e consentire alle persone a cui il Software viene fornito di farlo, alle condizioni seguenti:
 
-L'avviso di copyright di cui sopra e questo avviso di autorizzazione (incluso il paragrafo successivo) devono essere inclusi in tutte le copie o parti sostanziali del Software.
-
-IL SOFTWARE VIENE FORNITO "COSÌ COM'È", SENZA ALCUN TIPO DI GARANZIA, ESPRESSA O IMPLICITA, INCLUSE, A TITOLO ESEMPLIFICATIVO, LE GARANZIE DI COMMERCIABILITÀ, IDONEITÀ PER UNO SCOPO PARTICOLARE E NON VIOLAZIONE. IN NESSUN CASO L'AUTORE E/O L'EDITORE SARÀ RESPONSABILE DI ALCUN RECLAMO, DANNO O ALTRA RESPONSABILITÀ, SIA IN UN'AZIONE CONTRATTUALE, ILLECITO O ALTRO, DERIVANTE DA, DERIVANTE DA O IN COLLEGAMENTO CON IL SOFTWARE O L'UTILIZZO O ALTRI CONTRATTI NEL SOFTWARE.</value>
+L'avviso di copyright di cui sopra e questo avviso di autorizzazione (incluso il paragrafo successivo) devono essere inclusi in tutte le copie o parti sostanziali del Software.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licenza</value>
