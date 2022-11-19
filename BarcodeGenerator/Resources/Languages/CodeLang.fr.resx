@@ -1,327 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
+	<!-- 
+		Microsoft ResX Schema
 
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Google Translate a été utilisé pour la traduction du texte. Ceci ne garantit pas que toutes les traductions sont correctes.
-Les langues de support sont : le néerlandais, l'anglais, le français, l'allemand, l'italien, le portugais et l'espagnol.
+		Version 1.3
 
-Vous pouvez toujours me contacter pour toute correction.</value>
-  </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Info</value>
-  </data>
-  <data name="Agree_Text" xml:space="preserve">
-    <value>D 'accord</value>
-  </data>
-  <data name="AllCodes_Text" xml:space="preserve">
-    <value>Tous les codes</value>
-  </data>
-  <data name="AllowedCharNot_Text" xml:space="preserve">
-    <value>Interdit:</value>
-  </data>
-  <data name="AllowedChar_Text" xml:space="preserve">
-    <value>Caractères autorisés:</value>
-  </data>
-  <data name="BackgroundColor_Text" xml:space="preserve">
-    <value>Couleur de l'arrière plan:</value>
-  </data>
-  <data name="BackgroundOpacity_Text" xml:space="preserve">
-    <value>Opacité de fond:</value>
-  </data>
-  <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
-  </data>
-  <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode Scanner</value>
-  </data>
-  <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
-  <data name="ButtonShareText_Text" xml:space="preserve">
-    <value>Partager texte</value>
-  </data>
-  <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Partager</value>
-  </data>
-  <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Le code est faux.
-Le chiffre de contrôle a été corrigé.</value>
-  </data>
-  <data name="ClearCode_Text" xml:space="preserve">
-    <value>Retirer</value>
-  </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>Le code doit comporter</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>chiffres (sans chiffre de contrôle) ou</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>chiffres.</value>
-  </data>
-  <data name="Contact_Text" xml:space="preserve">
-    <value>Contact:</value>
-  </data>
-  <data name="Copyright_Text" xml:space="preserve">
-    <value>Droits d'auteur</value>
-  </data>
-  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Générateur de format par défaut:</value>
-  </data>
-  <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Analyseur de format par défaut :</value>
-  </data>
-  <data name="Default_Text" xml:space="preserve">
-    <value>Standard</value>
-  </data>
-  <data name="Description_Text" xml:space="preserve">
-    <value>Générez et numérisez divers codes-barres.</value>
-  </data>
-  <data name="Disagree_Text" xml:space="preserve">
-    <value>Désaccord</value>
-  </data>
-  <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Erreur</value>
-  </data>
-  <data name="FirstNumber0_Text" xml:space="preserve">
-    <value>Le premier chiffre doit être 0.</value>
-  </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
-    <value>Couleur de premier plan:</value>
-  </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
-    <value>Opacité du premier plan:</value>
-  </data>
-  <data name="FormatCode_Text" xml:space="preserve">
-    <value>Sélectionnez un format:</value>
-  </data>
-  <data name="FormatNotSupported_Text" xml:space="preserve">
-    <value>n'est actuellement pas pris en charge.</value>
-  </data>
-  <data name="FormatTitle_Text" xml:space="preserve">
-    <value>Format</value>
-  </data>
-  <data name="GenerateCode_Text" xml:space="preserve">
-    <value>Générer</value>
-  </data>
-  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
-    <value>Caractère de début/fin non valide:</value>
-  </data>
-  <data name="GuardMissingEnd_Text" xml:space="preserve">
-    <value>Caractère de fin manquant.</value>
-  </data>
-  <data name="GuardMissingStart_Text" xml:space="preserve">
-    <value>Caractère de début manquant.</value>
-  </data>
-  <data name="HexColorCodes_Text" xml:space="preserve">
-    <value>Codes couleurs hexadécimaux:
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
 
-Caractères 1-2: Opacité/Transparence
-Caractères 3-4: Rouge
-Caractères 5-6: Vert
-Caractères 7-8: Bleu</value>
-  </data>
-  <data name="Language_Text" xml:space="preserve">
-    <value>Langue:</value>
-  </data>
-  <data name="LengthInputEven_Text" xml:space="preserve">
-    <value>La longueur de l'entrée doit être paire.</value>
-  </data>
-  <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>Le logiciel est fourni « tel quel », sans garantie d'aucune sorte, expresse ou implicite, y compris, mais sans s'y limiter, les garanties de qualité marchande, d'adéquation à un usage particulier et d'absence de contrefaçon. En aucun cas, l'auteur et/ou l'éditeur ne pourront être tenus responsables de toute réclamation, dommage ou autre responsabilité, que ce soit dans le cadre d'une action contractuelle, délictuelle ou autre, découlant de, de ou en relation avec le logiciel ou l'utilisation ou d'autres transactions dans les logiciels.</value>
-  </data>
-  <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui par Redth
-Lecture et génération de codes-barres pour les applications .NET MAUI.
-Licence MIT :
+		Example:
 
-L'autorisation est accordée, gratuitement, à toute personne obtenant une copie de Barcode Generator (le « Logiciel »), de traiter le Logiciel sans restriction, y compris, sans limitation, les droits d'utilisation, de copie, de modification, de fusion, de publication, de distribution , sous-licencier et/ou vendre des copies du Logiciel, et permettre aux personnes à qui le Logiciel est fourni de le faire, sous réserve des conditions suivantes :
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
 
-L'avis de droit d'auteur ci-dessus et cet avis d'autorisation (y compris le paragraphe suivant) doivent être inclus dans toutes les copies ou parties substantielles du Logiciel.</value>
-  </data>
-  <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>Licence</value>
-  </data>
-  <data name="License_Text" xml:space="preserve">
-    <value>Cette application peut être utilisée librement à des fins non commerciales.
-Utilisez ce programme entièrement à vos propres risques.</value>
-  </data>
-  <data name="NameProgram_Text" xml:space="preserve">
-    <value>Barcode Generator and Scanner</value>
-  </data>
-  <data name="No_Text" xml:space="preserve">
-    <value>Non</value>
-  </data>
-  <data name="OpenLinkText_Text" xml:space="preserve">
-    <value>Ouvrez ce lien?</value>
-  </data>
-  <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Lien de site Web</value>
-  </data>
-  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Politique de confidentialité:</value>
-  </data>
-  <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>Aucune donnée personnelle ou autre n'est stockée ou transmise à moi-même et à d'autres.</value>
-  </data>
-  <data name="RestartApp_Text" xml:space="preserve">
-    <value>L'application sera redémarrée.</value>
-  </data>
-  <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Réinitialiser</value>
-  </data>
-  <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Sauvegarder</value>
-  </data>
-  <data name="Settings_Text" xml:space="preserve">
-    <value>Réglages</value>
-  </data>
-  <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>Le texte contient un ou plusieurs caractères non autorisés.
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
 
-Interdit:</value>
-  </data>
-  <data name="TextToEncode_Text" xml:space="preserve">
-    <value>Texte à encoder:</value>
-  </data>
-  <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Sombre</value>
-  </data>
-  <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Léger</value>
-  </data>
-  <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>Système</value>
-  </data>
-  <data name="Theme_Text" xml:space="preserve">
-    <value>Thème:</value>
-  </data>
-  <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
-  </data>
-  <data name="Website_Text" xml:space="preserve">
-    <value>Site Internet:</value>
-  </data>
-  <data name="Yes_Text" xml:space="preserve">
-    <value>Oui</value>
-  </data>
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+	
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
 </root>

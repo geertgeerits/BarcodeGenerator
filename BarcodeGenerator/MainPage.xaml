@@ -3,9 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.MainPage"
+             Shell.NavBarIsVisible="false"
              Loaded="OnLoad">
 
-    <Shell.TitleView>
+    <!--BUG Shell.TitleView:
+    If the bug is solved remove 'Shell.NavBarIsVisible="false"', uncomment the '<Shell.TitleView>',
+    remove the first Grid after the '</Shell.TitleView>' and remove the '<StackLayout>' commands.-->
+        
+    <!--<Shell.TitleView>
         <Grid RowDefinitions="50"
               ColumnDefinitions="40, 160, 100*, 50"
               Margin="5"
@@ -60,11 +65,67 @@
                 BorderColor="#00bfff"
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
-
         </Grid>
-    </Shell.TitleView>
+    </Shell.TitleView>-->
 
     <ScrollView>
+        <StackLayout>
+            <Grid RowDefinitions="55"
+              ColumnDefinitions="40, 160, 100*, 50"
+              Margin="0"
+              BackgroundColor="#00bfff">
+
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="info_32p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="32"
+                WidthRequest="32"
+                BackgroundColor="#00bfff"
+                BorderColor="#00bfff"
+                Clicked="OnPageAboutClicked">
+            </ImageButton>
+
+            <Label
+                x:Name="lblTitle"
+                Style="{StaticResource labelStyleShellTitleView}"
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="0"
+                HorizontalTextAlignment="Start"
+                FontSize="17"
+                Text="Barcode Generator">
+            </Label>
+
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="2"
+                Source="scan_barcode_icon_128p.png"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                HeightRequest="38"
+                WidthRequest="38"
+                BackgroundColor="#00bfff"
+                BorderColor="#00bfff"
+                Clicked="OnPageScanClicked">
+            </ImageButton>
+
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="3"
+                Source="settings_32p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="32"
+                WidthRequest="32"
+                BackgroundColor="#00bfff"
+                BorderColor="#00bfff"
+                Clicked="OnPageSettingsClicked">
+            </ImageButton>
+        </Grid>
+
         <Grid RowDefinitions="40, 40, 180, 46, 250, 40, 46"
               ColumnDefinitions="140, 210*"
               Margin="10,10,10,10"
@@ -200,5 +261,6 @@
                 IsVisible="false" />
 
         </Grid>
+    </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -2,12 +2,12 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.20 Beta
-// Date ........: 2022-10-31 (YYYY-MM-DD)
-// Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 10.0
+// Date ........: 2022-11-19 (YYYY-MM-DD)
+// Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
-// Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.2.0-preview.2 ; https://github.com/redth/ZXing.Net.Maui
-//                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.2.0-preview.2
+// Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.3.0-preview.1 ; https://github.com/redth/ZXing.Net.Maui
+//                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.3.0-preview.1
 
 using BarcodeGenerator.Resources.Languages;
 using System.Globalization;

@@ -1,12 +1,4 @@
-﻿using Microsoft.Maui.LifecycleEvents;
-using ZXing.Net.Maui;
-using ZXing.Net.Maui.Controls;
-
-#if WINDOWS
-    using Microsoft.UI;
-    using Microsoft.UI.Windowing;
-    using Windows.Graphics;
-#endif
+﻿using ZXing.Net.Maui.Controls;
 
 namespace BarcodeGenerator;
 
@@ -23,35 +15,6 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
-
-   //     #region
-			//.ConfigureMauiHandlers(h =>
-   //          {
-   //              h.AddHandler(typeof(ZXing.Net.Maui.Controls.CameraBarcodeReaderView), typeof(CameraBarcodeReaderViewHandler));
-   //              h.AddHandler(typeof(ZXing.Net.Maui.Controls.CameraView), typeof(CameraViewHandler));
-   //              h.AddHandler(typeof(ZXing.Net.Maui.Controls.BarcodeGeneratorView), typeof(BarcodeGeneratorViewHandler));
-   //          });
-   //     #endregion
-
-#if WINDOWS
-            // Set screen size for Windows
-            builder.ConfigureLifecycleEvents(events =>
-            {
-                events.AddWindows(wndLifeCycleBuilder =>
-                {
-                    wndLifeCycleBuilder.OnWindowCreated(window =>
-                    {
-                        IntPtr nativeWindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(window);
-                        WindowId win32WindowsId = Win32Interop.GetWindowIdFromWindow(nativeWindowHandle);
-                        AppWindow winuiAppWindow = AppWindow.GetFromWindowId(win32WindowsId);
-
-                        const int width = 540;
-                        const int height =1000;
-                        winuiAppWindow.MoveAndResize(new RectInt32(1920 / 2 - width / 2, 1080 / 2 - height / 2, width, height));
-                    });
-                });
-            });
-#endif
 
         return builder.Build();
     }

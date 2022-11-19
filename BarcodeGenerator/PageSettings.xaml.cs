@@ -1,6 +1,9 @@
 using BarcodeGenerator.Resources.Languages;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 using System.Diagnostics;
 using System.Globalization;
+using System.Windows.Input;
 
 namespace BarcodeGenerator;
 
@@ -262,10 +265,6 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-        // Hide the keyboard.
-        entry.IsEnabled = false;
-        entry.IsEnabled = true;
-
         // Set the sliders position.
         int nOpacity = 0;
         int nRed = 0;
@@ -295,8 +294,19 @@ public partial class PageSettings : ContentPage
             sldColorBgBlue.Value = nBlue;
         }
 
-        // Set focus to the save button.
-        _ = btnSettingsSave.Focus();
+        // Set focus to the next or save button.
+        if (sender.Equals(entHexColorFg))
+        {
+            entHexColorBg.Focus();
+        }
+        else
+        {
+            // Hide the keyboard.
+            entry.IsEnabled = false;
+            entry.IsEnabled = true;
+
+            _ = btnSettingsSave.Focus();
+        }
     }
     
     // Slider color barcode forground value change.

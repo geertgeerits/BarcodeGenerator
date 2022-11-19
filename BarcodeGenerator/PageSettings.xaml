@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BarcodeGenerator.PageSettings">
-
+  
     <Shell.TitleView>
         <Label x:Name="lblTitle"
                Style="{StaticResource labelStyleShellTitleView}"
@@ -206,7 +206,7 @@
                         Grid.Column="1"
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
-                        ReturnType="Done"
+                        ReturnType="Next"
                         Completed="EntryHexColorUnfocused"
                         MaxLength="8"
                         TextChanged="EntryHexColorTextChanged"

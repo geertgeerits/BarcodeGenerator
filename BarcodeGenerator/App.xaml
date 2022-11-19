@@ -58,7 +58,7 @@
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}" />
                 <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
                 <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource Light}}" />
-                <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+                <!--<Setter Property="ClearButtonVisibility" Value="WhileEditing" />-->
                 <Setter Property="FontFamily" Value="OpenSansRegular"/>
                 <Setter Property="FontSize" Value="15"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
