@@ -32,8 +32,10 @@ public partial class PageScan : ContentPage
         // Code to run on Android, Windows and on the main thread for iOS\MacOS.
 #if IOS
         MainThread.BeginInvokeOnMainThread(SetGridRowHeightCamera);
+        barcodeReader.HeightRequest = 400;
 #else
         SetGridRowHeightCamera();
+        barcodeReader.HeightRequest = 300;
 #endif
 
         // Put text in the chosen language in the controls and variables.
