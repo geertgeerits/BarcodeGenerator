@@ -128,5 +128,18 @@
 	  <ProvisioningType>manual</ProvisioningType>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
+		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+		<!-- Only needed when you have a need for entitlements -->
+		<!-- <CodesignEntitlement>Entitlements.plist</CodesignEntitlement> -->
+		<CodesignKey>iPhone Distribution: Geert Geerits (S6CWMSSJ54)</CodesignKey>
+		<CodesignProvision>provisioningprofile01iOSBarcodeGenerator</CodesignProvision>
+		<ArchiveOnBuild>true</ArchiveOnBuild>
+		<TcpPort>58181</TcpPort>
+
+		<ApplicationDisplayVersion>1.0.20</ApplicationDisplayVersion>
+		<ApplicationVersion>20</ApplicationVersion>
+		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
+	</PropertyGroup>
 
 </Project>
