@@ -76,6 +76,7 @@
               BackgroundColor="#00bfff">
 
             <ImageButton
+                x:Name="imgbtnAbout"
                 Grid.Row="0"
                 Grid.Column="0"
                 Source="info_32p.png"
@@ -100,6 +101,7 @@
             </Label>
 
             <ImageButton
+                x:Name="imgbtnScan"
                 Grid.Row="0"
                 Grid.Column="2"
                 Source="scan_barcode_icon_128p.png"
@@ -253,12 +255,6 @@
                 Text="Share"
                 IsEnabled="False"
                 Clicked="OnShareClicked" />
-
-            <Image
-                x:Name="imgScreenshot"
-                Grid.Row="6"
-                Grid.Column="1"
-                IsVisible="false" />
 
         </Grid>
     </StackLayout>

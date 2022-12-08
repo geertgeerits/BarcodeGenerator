@@ -1,8 +1,8 @@
 ﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
-// Version .....: 1.0.20 Beta
-// Date ........: 2022-12-05 (YYYY-MM-DD)
+// Version .....: 1.0.21
+// Date ........: 2022-12-08 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -26,29 +26,29 @@ public partial class MainPage : ContentPage
     public static string cLanguage;
 
     // Local variables.
-    private string cButtonShare;
-    private string cButtonClose;
-    private string cErrorTitle;
-    private string cAllowedChar;
-    private string cAllowedCharNot;
-    private string cTextContainsChar;
-    private string cGuardInvalidStartEnd;
-    private string cGuardMissingEnd;
-    private string cGuardMissingStart;
-    private string cFirstNumber0;
-    private string cCheckDigitError;
-    private string cLengthInputEven;
-    private string cFormatTitle;
-    private string cFormatNotSupported;
-    private string cCodeLengthPart1;
-    private string cCodeLengthPart2;
-    private string cCodeLengthPart3;
-    private string cRestartApp;
-    private string cLicenseTitle;
-    private string cLicense;
-    private string cAgree;
-    private string cDisagree;
-    private bool bLicense;
+    private readonly string cButtonShare;
+    private readonly string cButtonClose;
+    private readonly string cErrorTitle;
+    private readonly string cAllowedChar;
+    private readonly string cAllowedCharNot;
+    private readonly string cTextContainsChar;
+    private readonly string cGuardInvalidStartEnd;
+    private readonly string cGuardMissingEnd;
+    private readonly string cGuardMissingStart;
+    private readonly string cFirstNumber0;
+    private readonly string cCheckDigitError;
+    private readonly string cLengthInputEven;
+    private readonly string cFormatTitle;
+    private readonly string cFormatNotSupported;
+    private readonly string cCodeLengthPart1;
+    private readonly string cCodeLengthPart2;
+    private readonly string cCodeLengthPart3;
+    private readonly string cRestartApp;
+    private readonly string cLicenseTitle;
+    private readonly string cLicense;
+    private readonly string cAgree;
+    private readonly string cDisagree;
+    private readonly bool bLicense;
 
     public MainPage()
     {
@@ -969,7 +969,10 @@ public partial class MainPage : ContentPage
             else
             {
 #if IOS
-                Thread.CurrentThread.Abort();
+                //Thread.CurrentThread.Abort();  // Not allowed in iOS.
+                imgbtnAbout.IsEnabled = false;
+                imgbtnScan.IsEnabled = false;
+                btnGenerateCode.IsEnabled = false;
 #else
                 Application.Current.Quit();
 #endif

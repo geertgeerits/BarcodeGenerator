@@ -7,13 +7,13 @@ namespace BarcodeGenerator;
 public partial class PageScan : ContentPage
 {
     // Local variables.
-    private string cButtonShare;
-    private string cButtonClose;
-    private string cOpenLinkTitle;
-    private string cOpenLinkText;
-    private string cYes;
-    private string cNo;
-    private string cErrorTitle;
+    private readonly string cButtonShare;
+    private readonly string cButtonClose;
+    private readonly string cOpenLinkTitle;
+    private readonly string cOpenLinkText;
+    private readonly string cYes;
+    private readonly string cNo;
+    private readonly string cErrorTitle;
 
     public PageScan()
 	{
