@@ -200,6 +200,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please close the application..
+        /// </summary>
+        internal static string CloseApplication_Text {
+            get {
+                return ResourceManager.GetString("CloseApplication_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The code should be.
         /// </summary>
         internal static string CodeLengthPart1_Text {

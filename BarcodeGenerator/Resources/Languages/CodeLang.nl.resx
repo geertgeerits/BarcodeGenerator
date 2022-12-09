@@ -166,6 +166,9 @@ Het controlecijfer is gecorrigeerd.</value>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Wissen</value>
   </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Gelieve de toepassing te sluiten.</value>
+  </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
     <value>De code moet</value>
   </data>

@@ -166,6 +166,9 @@ La cifra di controllo è stata corretta.</value>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Rimuovere</value>
   </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Si prega di chiudere l'applicazione.</value>
+  </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
     <value>Il codice dovrebbe essere</value>
   </data>

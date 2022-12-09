@@ -166,6 +166,9 @@ El dígito de control ha sido corregido.</value>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Retirar</value>
   </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Cierra la aplicación.</value>
+  </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
     <value>El código debe tener</value>
   </data>

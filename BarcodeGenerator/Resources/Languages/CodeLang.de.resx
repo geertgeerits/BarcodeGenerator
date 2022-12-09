@@ -166,6 +166,9 @@ Die Prüfziffer wurde korrigiert.</value>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Löschen</value>
   </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Bitte schließen Sie die Anwendung.</value>
+  </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
     <value>Der Code sollte</value>
   </data>

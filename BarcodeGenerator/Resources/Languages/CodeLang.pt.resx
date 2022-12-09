@@ -166,6 +166,9 @@ O dígito de verificação foi corrigido.</value>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Remover</value>
   </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Feche o aplicativo.</value>
+  </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
     <value>O código deve ter</value>
   </data>

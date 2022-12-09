@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.21
-// Date ........: 2022-12-08 (YYYY-MM-DD)
+// Date ........: 2022-12-09 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -49,6 +49,7 @@ public partial class MainPage : ContentPage
     private readonly string cAgree;
     private readonly string cDisagree;
     private readonly bool bLicense;
+    private readonly string cCloseApplication;
 
     public MainPage()
     {
@@ -167,6 +168,7 @@ public partial class MainPage : ContentPage
         cLicense = CodeLang.License_Text + "\n\n" + CodeLang.LicenseMit2_Text;
         cAgree = CodeLang.Agree_Text;
         cDisagree = CodeLang.Disagree_Text;
+        cCloseApplication = CodeLang.CloseApplication_Text;
 
         // Set focus to the editor.
         edtTextToCode.Focus();
@@ -973,6 +975,8 @@ public partial class MainPage : ContentPage
                 imgbtnAbout.IsEnabled = false;
                 imgbtnScan.IsEnabled = false;
                 btnGenerateCode.IsEnabled = false;
+                
+                await DisplayAlert(cLicenseTitle, cCloseApplication, cButtonClose);
 #else
                 Application.Current.Quit();
 #endif

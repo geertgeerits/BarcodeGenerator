@@ -166,6 +166,9 @@ The check digit has been corrected.</value>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Clear</value>
   </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Please close the application.</value>
+  </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
     <value>The code should be</value>
   </data>
