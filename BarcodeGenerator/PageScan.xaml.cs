@@ -1,19 +1,20 @@
 using BarcodeGenerator.Resources.Languages;
 using ZXing.Net.Maui;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace BarcodeGenerator;
 
 public partial class PageScan : ContentPage
 {
     // Local variables.
-    private readonly string cButtonShare;
-    private readonly string cButtonClose;
-    private readonly string cOpenLinkTitle;
-    private readonly string cOpenLinkText;
-    private readonly string cYes;
-    private readonly string cNo;
-    private readonly string cErrorTitle;
+    private string cButtonShare;
+    private string cButtonClose;
+    private string cOpenLinkTitle;
+    private string cOpenLinkText;
+    private string cYes;
+    private string cNo;
+    private string cErrorTitle;
 
     public PageScan()
 	{
@@ -37,6 +38,9 @@ public partial class PageScan : ContentPage
         SetGridRowHeightCamera();
         barcodeReader.HeightRequest = 300;
 #endif
+
+        // Set the current UI culture of the selected language.
+        MainPage.SetCultureSelectedLanguage();
 
         // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.BarcodeScanner_Text;

@@ -7,11 +7,11 @@ namespace BarcodeGenerator;
 public partial class PageSettings : ContentPage
 {
     // Local variables.
-    private readonly string cButtonClose;
-    private readonly string cErrorTitle;
-    private readonly string cAllowedChar;
-    private readonly string cAllowedCharNot;
-    private readonly string cHexColorCodes;
+    private string cButtonClose;
+    private string cErrorTitle;
+    private string cAllowedChar;
+    private string cAllowedCharNot;
+    private string cHexColorCodes;
     private readonly Stopwatch stopWatch = new();
 
     public PageSettings()
@@ -25,6 +25,9 @@ public partial class PageSettings : ContentPage
             DisplayAlert("InitializeComponent: PageSettings", ex.Message, "OK");
             return;
         }
+
+        // Set the current UI culture of the selected language.
+        MainPage.SetCultureSelectedLanguage();
 
         // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.Settings_Text;
@@ -78,9 +81,6 @@ public partial class PageSettings : ContentPage
             // English.
             _ => 1,
         };
-
-        // Set the current UI culture of the selected language.
-        MainPage.SetCultureSelectedLanguage();
 
         // Set the current theme in the picker.
         pckTheme.SelectedIndex = MainPage.cTheme switch
@@ -161,31 +161,6 @@ public partial class PageSettings : ContentPage
                 
                 // English.
                 _ => "en",
-            };
-
-            // Set the current UI culture of the selected language.
-            Thread.CurrentThread.CurrentUICulture = MainPage.cLanguage switch
-            {
-                // German (Deutsch).
-                "de" => CultureInfo.GetCultureInfo("de"),
-
-                // Spanish (Español).
-                "es" => CultureInfo.GetCultureInfo("es"),
-
-                // French (Français).
-                "fr" => CultureInfo.GetCultureInfo("fr"),
-
-                // Italian (Italiano).
-                "it" => CultureInfo.GetCultureInfo("it"),
-
-                // Dutch (Nederlands).
-                "nl" => CultureInfo.GetCultureInfo("nl"),
-
-                // Portuguese (Português).
-                "pt" => CultureInfo.GetCultureInfo("pt"),
-
-                // English.
-                _ => CultureInfo.GetCultureInfo("en"),
             };
         }
     }

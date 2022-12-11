@@ -1,12 +1,13 @@
 using BarcodeGenerator.Resources.Languages;
+using System.Globalization;
 
 namespace BarcodeGenerator;
 
 public partial class PageAbout : ContentPage
 {
     // Local variables.
-    private readonly string cButtonClose;
-    private readonly string cErrorTitle;
+    private string cButtonClose;
+    private string cErrorTitle;
 
     public PageAbout()
 	{
@@ -19,6 +20,9 @@ public partial class PageAbout : ContentPage
             DisplayAlert("InitializeComponent: PageAbout", ex.Message, "OK");
             return;
         }
+
+        // Set the current UI culture of the selected language.
+        MainPage.SetCultureSelectedLanguage();
 
         // Put text in the chosen language in the controls.
         lblTitle.Text = CodeLang.About_Text;
