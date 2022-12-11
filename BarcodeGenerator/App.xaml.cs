@@ -9,8 +9,14 @@ public partial class App : Application
         // Set the language to test the application, otherwise comment out the next line.
         //System.Globalization.CultureInfo.CurrentCulture = new System.Globalization.CultureInfo("nl-BE");
 
-        MainPage = new AppShell();
-	}
+        //MainPage = new AppShell();
+        //MainPage = new NavigationPage(new MainPage());
+
+        var navigationPage = new NavigationPage(new MainPage());
+        navigationPage.BarBackgroundColor = Colors.DeepSkyBlue;
+        navigationPage.BarTextColor = Colors.Black;
+        MainPage = navigationPage;
+    }
 
     // Window dimensions and location for desktop apps.
     protected override Window CreateWindow(IActivationState activationState)

@@ -3,105 +3,117 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BarcodeGenerator.PageAbout">
 
-    <Shell.TitleView>
-        <Label x:Name="lblTitle"
-               Style="{StaticResource labelStyleShellTitleView}"
-               HorizontalOptions="Start"
-               Text="About" />
-    </Shell.TitleView>
+    <NavigationPage.TitleView>
+        <Label
+            x:Name="lblTitle"
+            Style="{StaticResource labelStyleShellTitleView}"
+            Text="About" />
+    </NavigationPage.TitleView>
 
     <ScrollView>
         <StackLayout Margin="15" Spacing="4">
-            <Label x:Name="lblNameProgram"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Start"
-                   Text="Barcode Generator and Scanner"
-                   FontSize="20"
-                   FontAttributes="Bold" />
+            <Label
+                x:Name="lblNameProgram"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Text="Barcode Generator and Scanner"
+                FontSize="20"
+                FontAttributes="Bold" />
 
-            <Label x:Name="lblDescription"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Start"
-                   Text="Generate and scan various barcodes." />
+            <Label
+                x:Name="lblDescription"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Text="Generate and scan various barcodes." />
 
-            <Label x:Name="lblVersion"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Start"
-                   Text="Version: 1.0.21"/>
+            <Label
+                x:Name="lblVersion"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Text="Version: 1.0.21" />
 
-            <Label x:Name="lblCopyright"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Start"
-                   Text="Copyright © 2022-2022 Geert Geerits" />
+            <Label
+                x:Name="lblCopyright"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Text="Copyright © 2022-2022 Geert Geerits" />
 
             <HorizontalStackLayout Spacing="10">
-                <Label x:Name="lblEmail"
-                       VerticalOptions="Center" 
-                       HorizontalOptions="Start"
-                       Text="geertgeerits@gmail.com"/>
+                <Label
+                    x:Name="lblEmail"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Start"
+                    Text="geertgeerits@gmail.com"/>
 
-                <ImageButton Source="circled_envelope_24p.png"                         
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             HeightRequest="24"
-                             WidthRequest="24"
-                             Clicked="OnbtnEmailLinkClicked">
+                <ImageButton
+                    Source="circled_envelope_24p.png"                         
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HeightRequest="24"
+                    WidthRequest="24"
+                    Clicked="OnbtnEmailLinkClicked">
                 </ImageButton>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Spacing="10">
-                <Label x:Name="lblWebsite"
-                       VerticalOptions="Center" 
-                       HorizontalOptions="Start"
-                       Text="../barcodegenerator"/>
+                <Label
+                    x:Name="lblWebsite"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Start"
+                    Text="../barcodegenerator"/>
 
-                <ImageButton Source="internet_24p.png"
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             HeightRequest="24"
-                             WidthRequest="24"
-                             Clicked="OnbtnWebsiteLinkClicked">
+                <ImageButton
+                    Source="internet_24p.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HeightRequest="24"
+                    WidthRequest="24"
+                    Clicked="OnbtnWebsiteLinkClicked">
                 </ImageButton>
             </HorizontalStackLayout>
 
             <Label></Label>
 
-            <Label x:Name="lblPrivacyPolicy"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Start"
-                   FontSize="13"
-                   Text="Privacy Policy: No personal and other data is stored or passed on to myself and others." />
+            <Label
+                x:Name="lblPrivacyPolicy"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="Privacy Policy: No personal and other data is stored or passed on to myself and others." />
 
             <Label></Label>
 
-            <Label x:Name="lblLicense"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Start"
-                   FontSize="13"
-                   Text="License: This application may be used freely for non-commercial purposes.
-                         &#10; &#10;Use this program entirely at your own risk." />
+            <Label
+                x:Name="lblLicense"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="License: This application may be used freely for non-commercial purposes.
+                      &#10; &#10;Use this program entirely at your own risk." />
 
             <Label></Label>
 
-            <Label x:Name="lblLicenseMit"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Start"
-                   FontSize="13"
-                   Text="Copyright ZXing.Net.Maui by Redth
-                         &#10;Barcode scanning and generation for .NET MAUI applications.
-                         &#10;MIT License:" />
+            <Label
+                x:Name="lblLicenseMit"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="Copyright ZXing.Net.Maui by Redth
+                      &#10;Barcode scanning and generation for .NET MAUI applications.
+                      &#10;MIT License:" />
 
             <Label></Label>
 
-            <Label x:Name="lblAboutExplanation"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Start"
-                   FontSize="13"
-                   Text="Google Translate was used for the translation of the text.  This is not a guarantee that all translations are correct.
-                         &#10;The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
-                         &#10; &#10;You can always contact me for any corrections.
-                         &#10; &#10;Use this program entirely at your own risk." />
-
+            <Label
+                x:Name="lblAboutExplanation"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="Google Translate was used for the translation of the text.  This is not a guarantee that all translations are correct.
+                      &#10;The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
+                      &#10; &#10;You can always contact me for any corrections.
+                      &#10; &#10;Use this program entirely at your own risk.">
+            </Label>
         </StackLayout>
     </ScrollView>
 </ContentPage>

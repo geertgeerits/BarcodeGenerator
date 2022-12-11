@@ -4,9 +4,9 @@
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.PageScan">
 
-    <Shell.TitleView>
-        <Grid RowDefinitions="50"
-              ColumnDefinitions="40, 160, 100*, 50"
+    <NavigationPage.TitleView>
+            <Grid RowDefinitions="50"
+              ColumnDefinitions="200*, 60, 60"
               Margin="5"
               BackgroundColor="#00bfff">
 
@@ -16,16 +16,12 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                Margin="0"
-                HorizontalOptions="Start"
-                HorizontalTextAlignment="Start"
-                FontSize="17"
                 Text="Barcode Scanner">
             </Label>
 
             <ImageButton
                 Grid.Row="0"
-                Grid.Column="3"
+                Grid.Column="2"
                 Source="torch_icon_64p.png"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
@@ -36,7 +32,7 @@
                 Clicked="OnTorchClicked">
             </ImageButton>
         </Grid>
-    </Shell.TitleView>
+    </NavigationPage.TitleView>
 
     <ScrollView>
         <Grid RowDefinitions="40, 10, 520, 10, 40, 100*"

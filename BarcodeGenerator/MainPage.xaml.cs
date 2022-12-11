@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.21
-// Date ........: 2022-12-09 (YYYY-MM-DD)
+// Date ........: 2022-12-11 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -114,29 +114,7 @@ public partial class MainPage : ContentPage
         }
 
         // Set the current UI culture of the selected language.
-        Thread.CurrentThread.CurrentUICulture = cLanguage switch
-        {
-            // German (Deutsch).
-            "de" => CultureInfo.GetCultureInfo("de"),
-            
-            // Spanish (Español).
-            "es" => CultureInfo.GetCultureInfo("es"),
-            
-            // French (Français).
-            "fr" => CultureInfo.GetCultureInfo("fr"),
-            
-            // Italian (Italiano).
-            "it" => CultureInfo.GetCultureInfo("it"),
-            
-            // Dutch (Nederlands).
-            "nl" => CultureInfo.GetCultureInfo("nl"),
-            
-            // Portuguese (Português).
-            "pt" => CultureInfo.GetCultureInfo("pt"),
-            
-            // English.
-            _ => CultureInfo.GetCultureInfo("en"),
-        };
+        SetCultureSelectedLanguage();
 
         // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.BarcodeGenerator_Text;
@@ -949,7 +927,8 @@ public partial class MainPage : ContentPage
     {
         await DisplayAlert(cErrorTitle, cErrorMessage + "\n" + cRestartApp, cButtonClose);
 
-        Application.Current.MainPage = new AppShell();
+        //Application.Current.MainPage = new AppShell();
+        await Navigation.PushAsync(new MainPage());
     }
 
     // Show license for Android and Windows = Workaround !!!
@@ -1021,6 +1000,35 @@ public partial class MainPage : ContentPage
             Title = "Barcode Generator",
             File = new ShareFile(cFile)
         });
+    }
+
+
+    // Set the current UI culture of the selected language.
+    public static void SetCultureSelectedLanguage()
+    {
+        Thread.CurrentThread.CurrentUICulture = cLanguage switch
+        {
+            // German (Deutsch).
+            "de" => CultureInfo.GetCultureInfo("de"),
+
+            // Spanish (Español).
+            "es" => CultureInfo.GetCultureInfo("es"),
+
+            // French (Français).
+            "fr" => CultureInfo.GetCultureInfo("fr"),
+
+            // Italian (Italiano).
+            "it" => CultureInfo.GetCultureInfo("it"),
+
+            // Dutch (Nederlands).
+            "nl" => CultureInfo.GetCultureInfo("nl"),
+
+            // Portuguese (Português).
+            "pt" => CultureInfo.GetCultureInfo("pt"),
+
+            // English.
+            _ => CultureInfo.GetCultureInfo("en"),
+        };
     }
 
     // Put the generator barcode formats in a List string.

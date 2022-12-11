@@ -1,20 +1,17 @@
 using BarcodeGenerator.Resources.Languages;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
 using System.Diagnostics;
 using System.Globalization;
-using System.Windows.Input;
 
 namespace BarcodeGenerator;
 
 public partial class PageSettings : ContentPage
 {
     // Local variables.
-    private string cButtonClose;
-    private string cErrorTitle;
-    private string cAllowedChar;
-    private string cAllowedCharNot;
-    private string cHexColorCodes;
+    private readonly string cButtonClose;
+    private readonly string cErrorTitle;
+    private readonly string cAllowedChar;
+    private readonly string cAllowedCharNot;
+    private readonly string cHexColorCodes;
     private readonly Stopwatch stopWatch = new();
 
     public PageSettings()
@@ -81,6 +78,9 @@ public partial class PageSettings : ContentPage
             // English.
             _ => 1,
         };
+
+        // Set the current UI culture of the selected language.
+        MainPage.SetCultureSelectedLanguage();
 
         // Set the current theme in the picker.
         pckTheme.SelectedIndex = MainPage.cTheme switch
@@ -161,6 +161,31 @@ public partial class PageSettings : ContentPage
                 
                 // English.
                 _ => "en",
+            };
+
+            // Set the current UI culture of the selected language.
+            Thread.CurrentThread.CurrentUICulture = MainPage.cLanguage switch
+            {
+                // German (Deutsch).
+                "de" => CultureInfo.GetCultureInfo("de"),
+
+                // Spanish (Español).
+                "es" => CultureInfo.GetCultureInfo("es"),
+
+                // French (Français).
+                "fr" => CultureInfo.GetCultureInfo("fr"),
+
+                // Italian (Italiano).
+                "it" => CultureInfo.GetCultureInfo("it"),
+
+                // Dutch (Nederlands).
+                "nl" => CultureInfo.GetCultureInfo("nl"),
+
+                // Portuguese (Português).
+                "pt" => CultureInfo.GetCultureInfo("pt"),
+
+                // English.
+                _ => CultureInfo.GetCultureInfo("en"),
             };
         }
     }
@@ -417,7 +442,7 @@ public partial class PageSettings : ContentPage
     }
 
     // Button save settings clicked event.
-    private void OnSettingsSaveClicked(object sender, EventArgs e)
+    private async void OnSettingsSaveClicked(object sender, EventArgs e)
     {
         Preferences.Default.Set("SettingTheme", MainPage.cTheme);
         Preferences.Default.Set("SettingFormatGeneratorIndex", MainPage.nFormatGeneratorIndex);
@@ -430,11 +455,12 @@ public partial class PageSettings : ContentPage
         Task.Delay(500).Wait();
 
         // Restart the application.
-        Application.Current.MainPage = new AppShell();
+        //Application.Current.MainPage = new AppShell();
+        await Navigation.PushAsync(new MainPage());
     }
 
     // Button reset settings clicked event.
-    private void OnSettingsResetClicked(object sender, EventArgs e)
+    private async void OnSettingsResetClicked(object sender, EventArgs e)
     {
         // Get the elapsed time in milli seconds.
         stopWatch.Stop();
@@ -459,6 +485,7 @@ public partial class PageSettings : ContentPage
         Task.Delay(500).Wait();
 
         // Restart the application.
-        Application.Current.MainPage = new AppShell();
+        //Application.Current.MainPage = new AppShell();
+        await Navigation.PushAsync(new MainPage());
     }
 }
