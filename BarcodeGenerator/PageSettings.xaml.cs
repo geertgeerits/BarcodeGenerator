@@ -7,11 +7,11 @@ namespace BarcodeGenerator;
 public partial class PageSettings : ContentPage
 {
     // Local variables.
-    private string cButtonClose;
-    private string cErrorTitle;
-    private string cAllowedChar;
-    private string cAllowedCharNot;
-    private string cHexColorCodes;
+    private readonly string cButtonClose;
+    private readonly string cErrorTitle;
+    private readonly string cAllowedChar;
+    private readonly string cAllowedCharNot;
+    private readonly string cHexColorCodes;
     private readonly Stopwatch stopWatch = new();
 
     public PageSettings()

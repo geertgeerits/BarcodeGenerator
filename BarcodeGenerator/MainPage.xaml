@@ -49,6 +49,7 @@
             </ImageButton>
 
             <ImageButton
+                x:Name="imgbtnSettings"
                 Grid.Row="0"
                 Grid.Column="3"
                 Source="settings_32p.png"

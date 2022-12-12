@@ -6,8 +6,8 @@ namespace BarcodeGenerator;
 public partial class PageAbout : ContentPage
 {
     // Local variables.
-    private string cButtonClose;
-    private string cErrorTitle;
+    private readonly string cButtonClose;
+    private readonly string cErrorTitle;
 
     public PageAbout()
 	{
