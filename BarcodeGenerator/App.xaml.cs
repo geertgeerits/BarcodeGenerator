@@ -10,12 +10,7 @@ public partial class App : Application
         //System.Globalization.CultureInfo.CurrentCulture = new System.Globalization.CultureInfo("nl-BE");
 
         //MainPage = new AppShell();
-        //MainPage = new NavigationPage(new MainPage());
-
-        var navigationPage = new NavigationPage(new MainPage());
-        navigationPage.BarBackgroundColor = Colors.DeepSkyBlue;
-        navigationPage.BarTextColor = Colors.Black;
-        MainPage = navigationPage;
+        MainPage = new NavigationPage(new MainPage());
     }
 
     // Window dimensions and location for desktop apps.

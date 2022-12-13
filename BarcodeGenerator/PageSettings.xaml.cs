@@ -417,7 +417,7 @@ public partial class PageSettings : ContentPage
     }
 
     // Button save settings clicked event.
-    private async void OnSettingsSaveClicked(object sender, EventArgs e)
+    private static void OnSettingsSaveClicked(object sender, EventArgs e)
     {
         Preferences.Default.Set("SettingTheme", MainPage.cTheme);
         Preferences.Default.Set("SettingFormatGeneratorIndex", MainPage.nFormatGeneratorIndex);
@@ -431,11 +431,11 @@ public partial class PageSettings : ContentPage
 
         // Restart the application.
         //Application.Current.MainPage = new AppShell();
-        await Navigation.PushAsync(new MainPage());
+        Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
     // Button reset settings clicked event.
-    private async void OnSettingsResetClicked(object sender, EventArgs e)
+    private void OnSettingsResetClicked(object sender, EventArgs e)
     {
         // Get the elapsed time in milli seconds.
         stopWatch.Stop();
@@ -461,6 +461,6 @@ public partial class PageSettings : ContentPage
 
         // Restart the application.
         //Application.Current.MainPage = new AppShell();
-        await Navigation.PushAsync(new MainPage());
+        Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 }

@@ -21,6 +21,12 @@
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
             </Style>
 
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}" />
+                <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Black}}" />
+                <Setter Property="IconColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Black}}" />
+            </Style>
+
             <Style TargetType="StackLayout">
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
             </Style>

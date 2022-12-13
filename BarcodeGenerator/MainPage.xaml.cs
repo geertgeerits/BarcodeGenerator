@@ -1,8 +1,8 @@
 ﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
-// Version .....: 1.0.21
-// Date ........: 2022-12-12 (YYYY-MM-DD)
+// Version .....: 1.0.22
+// Date ........: 2022-12-13 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -848,7 +848,7 @@ public partial class MainPage : ContentPage
         char[] charArray = cText.ToCharArray();
         Array.Reverse(charArray);
 
-        return String.Concat(charArray);
+        return string.Concat(charArray);
     }
 
     // Calculate the checksum of an EAN-13, EAN-8 and UPC-A code.
@@ -928,7 +928,7 @@ public partial class MainPage : ContentPage
         await DisplayAlert(cErrorTitle, cErrorMessage + "\n" + cRestartApp, cButtonClose);
 
         //Application.Current.MainPage = new AppShell();
-        await Navigation.PushAsync(new MainPage());
+        Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
     // Show license for Android and Windows = Workaround !!!
