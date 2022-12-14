@@ -29,7 +29,7 @@ public partial class PageAbout : ContentPage
 
         lblNameProgram.Text = CodeLang.NameProgram_Text;
         lblDescription.Text = CodeLang.Description_Text;
-        lblVersion.Text = CodeLang.Version_Text + " 1.0.22";
+        lblVersion.Text = CodeLang.Version_Text + " 1.0.23";
         lblCopyright.Text = CodeLang.Copyright_Text + " © 2022-2022 Geert Geerits";
         lblEmail.Text = CodeLang.Email_Text + " " + lblEmail.Text;
         lblWebsite.Text = CodeLang.Website_Text + " " + lblWebsite.Text;
