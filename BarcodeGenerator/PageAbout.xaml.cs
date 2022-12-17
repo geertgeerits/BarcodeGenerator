@@ -1,5 +1,4 @@
 using BarcodeGenerator.Resources.Languages;
-using System.Globalization;
 
 namespace BarcodeGenerator;
 
@@ -43,32 +42,57 @@ public partial class PageAbout : ContentPage
     }
 
     // Open e-mail program.
-    private void OnbtnEmailLinkClicked(object sender, EventArgs e)
+    private async void OnbtnEmailLinkClicked(object sender, EventArgs e)
     {
+#if (IOS || MACCATALYST)
         string cAddress = "geertgeerits@gmail.com";
 
         try
         {
-            Launcher.OpenAsync(new Uri($"mailto:{cAddress}"));
+            await Launcher.OpenAsync(new Uri($"mailto:{cAddress}"));
         }
         catch (Exception ex)
         {
-            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
         }
+#else
+        if (Email.Default.IsComposeSupported)
+        {
+            string subject = "Barcode generator and scanner";
+            string body = "";
+            string[] recipients = new[] { "geertgeerits@gmail.com" };
+
+            var message = new EmailMessage
+            {
+                Subject = subject,
+                Body = body,
+                BodyFormat = EmailBodyFormat.PlainText,
+                To = new List<string>(recipients)
+            };
+
+            try
+            {
+                await Email.Default.ComposeAsync(message);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            }
+        }
+#endif
     }
 
-    // Open website.
-    private void OnbtnWebsiteLinkClicked(object sender, EventArgs e)
+    // Open website in default browser.
+    private async void OnbtnWebsiteLinkClicked(object sender, EventArgs e)
     {
-        string cUrl = "https://geertgeerits.wixsite.com/barcodegenerator";
-
         try
         {
-            Launcher.OpenAsync(new Uri(cUrl));
+            Uri uri = new Uri("https://geertgeerits.wixsite.com/barcodegenerator");
+            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
         catch (Exception ex)
         {
-            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
         }
     }
 }

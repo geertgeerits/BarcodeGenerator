@@ -1,7 +1,6 @@
 using BarcodeGenerator.Resources.Languages;
 using ZXing.Net.Maui;
 using System.Text.RegularExpressions;
-using System.Globalization;
 
 namespace BarcodeGenerator;
 
@@ -380,7 +379,8 @@ public partial class PageScan : ContentPage
         
         try
         {
-            await Launcher.OpenAsync(new Uri(cUrl));
+            Uri uri = new Uri(cUrl);
+            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
         catch (Exception ex)
         {
