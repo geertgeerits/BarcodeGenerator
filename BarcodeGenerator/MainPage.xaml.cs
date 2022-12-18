@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.24
-// Date ........: 2022-12-17 (YYYY-MM-DD)
+// Date ........: 2022-12-18 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -994,7 +994,7 @@ public partial class MainPage : ContentPage
     }
 
     // Open the share interface.
-    public static async Task OpenShareInterface(string cFile)
+    private static async Task OpenShareInterface(string cFile)
     {
         await Share.Default.RequestAsync(new ShareFileRequest
         {
