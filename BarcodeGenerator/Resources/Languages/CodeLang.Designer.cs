@@ -572,6 +572,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Some changed settings must be saved in order to apply them..
+        /// </summary>
+        internal static string SettingsSaved_Text {
+            get {
+                return ResourceManager.GetString("SettingsSaved_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The text contains one or more characters that are not allowed.
         ///
         ///Not allowed:.

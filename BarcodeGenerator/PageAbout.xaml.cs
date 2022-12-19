@@ -44,7 +44,7 @@ public partial class PageAbout : ContentPage
     // Open e-mail program.
     private async void OnbtnEmailLinkClicked(object sender, EventArgs e)
     {
-#if (IOS || MACCATALYST)
+#if IOS || MACCATALYST
         string cAddress = "geertgeerits@gmail.com";
 
         try

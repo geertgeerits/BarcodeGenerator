@@ -292,6 +292,9 @@ Utilizzare questo programma interamente a proprio rischio.</value>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Ripristina</value>
   </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Alcune impostazioni modificate devono essere salvate per poterle applicare.</value>
+  </data>
   <data name="SettingsSave_Text" xml:space="preserve">
     <value>Salva</value>
   </data>

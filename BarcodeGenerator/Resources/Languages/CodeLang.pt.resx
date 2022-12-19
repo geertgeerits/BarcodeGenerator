@@ -292,6 +292,9 @@ Use este programa inteiramente por sua conta e risco.</value>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Redefinir</value>
   </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Algumas configurações alteradas devem ser salvas para serem aplicadas.</value>
+  </data>
   <data name="SettingsSave_Text" xml:space="preserve">
     <value>Salvar</value>
   </data>

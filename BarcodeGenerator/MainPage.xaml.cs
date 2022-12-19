@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.24
-// Date ........: 2022-12-18 (YYYY-MM-DD)
+// Date ........: 2022-12-19 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -24,32 +24,33 @@ public partial class MainPage : ContentPage
     public static string cCodeColorFg;
     public static string cCodeColorBg;
     public static string cLanguage;
+    public static bool bLanguageChanged = false;
 
     // Local variables.
-    private readonly string cButtonShare;
-    private readonly string cButtonClose;
-    private readonly string cErrorTitle;
-    private readonly string cAllowedChar;
-    private readonly string cAllowedCharNot;
-    private readonly string cTextContainsChar;
-    private readonly string cGuardInvalidStartEnd;
-    private readonly string cGuardMissingEnd;
-    private readonly string cGuardMissingStart;
-    private readonly string cFirstNumber0;
-    private readonly string cCheckDigitError;
-    private readonly string cLengthInputEven;
-    private readonly string cFormatTitle;
-    private readonly string cFormatNotSupported;
-    private readonly string cCodeLengthPart1;
-    private readonly string cCodeLengthPart2;
-    private readonly string cCodeLengthPart3;
-    private readonly string cRestartApp;
-    private readonly string cLicenseTitle;
-    private readonly string cLicense;
-    private readonly string cAgree;
-    private readonly string cDisagree;
-    private readonly bool bLicense;
-    private readonly string cCloseApplication;
+    private string cButtonShare;
+    private string cButtonClose;
+    private string cErrorTitle;
+    private string cAllowedChar;
+    private string cAllowedCharNot;
+    private string cTextContainsChar;
+    private string cGuardInvalidStartEnd;
+    private string cGuardMissingEnd;
+    private string cGuardMissingStart;
+    private string cFirstNumber0;
+    private string cCheckDigitError;
+    private string cLengthInputEven;
+    private string cFormatTitle;
+    private string cFormatNotSupported;
+    private string cCodeLengthPart1;
+    private string cCodeLengthPart2;
+    private string cCodeLengthPart3;
+    private string cRestartApp;
+    private string cLicenseTitle;
+    private string cLicense;
+    private string cAgree;
+    private string cDisagree;
+    private bool bLicense;
+    private string cCloseApplication;
 
     public MainPage()
     {
@@ -113,40 +114,7 @@ public partial class MainPage : ContentPage
             cLanguage = "en";
         }
 
-        // Set the current UI culture of the selected language.
-        SetCultureSelectedLanguage();
-
-        // Put text in the chosen language in the controls and variables.
-        lblTitle.Text = CodeLang.BarcodeGenerator_Text;
-        lblFormatCode.Text = CodeLang.FormatCode_Text;
-        lblTextToEncode.Text = CodeLang.TextToEncode_Text;
-        btnGenerateCode.Text = CodeLang.GenerateCode_Text;
-        btnClearCode.Text = CodeLang.ClearCode_Text;
-        btnShare.Text = CodeLang.ButtonShare_Text;
-
-        cButtonShare = CodeLang.ButtonShare_Text;
-        cButtonClose = CodeLang.ButtonClose_Text;
-        cErrorTitle = CodeLang.ErrorTitle_Text;
-        cAllowedChar = CodeLang.AllowedChar_Text;
-        cAllowedCharNot = CodeLang.AllowedCharNot_Text;
-        cTextContainsChar = CodeLang.TextContainsChar_Text;
-        cGuardInvalidStartEnd = CodeLang.GuardInvalidStartEnd_Text;
-        cGuardMissingEnd = CodeLang.GuardMissingEnd_Text;
-        cGuardMissingStart = CodeLang.GuardMissingStart_Text;
-        cFirstNumber0 = CodeLang.FirstNumber0_Text;
-        cCheckDigitError = CodeLang.CheckDigitError_Text;
-        cLengthInputEven = CodeLang.LengthInputEven_Text;
-        cFormatTitle = CodeLang.FormatTitle_Text;
-        cFormatNotSupported = CodeLang.FormatNotSupported_Text;
-        cCodeLengthPart1 = CodeLang.CodeLengthPart1_Text;
-        cCodeLengthPart2 = CodeLang.CodeLengthPart2_Text;
-        cCodeLengthPart3 = CodeLang.CodeLengthPart3_Text;
-        cRestartApp = CodeLang.RestartApp_Text;
-        cLicenseTitle = CodeLang.LicenseTitle_Text;
-        cLicense = CodeLang.License_Text + "\n\n" + CodeLang.LicenseMit2_Text;
-        cAgree = CodeLang.Agree_Text;
-        cDisagree = CodeLang.Disagree_Text;
-        cCloseApplication = CodeLang.CloseApplication_Text;
+        SetTextLanguage();
 
         // Set focus to the editor.
         edtTextToCode.Focus();
@@ -931,13 +899,9 @@ public partial class MainPage : ContentPage
         Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
-    // Show license for Android and Windows = Workaround !!!
-    // Solution is using the Loaded event of the MainPage.xaml.
-    private async void OnLoad(object sender, EventArgs e)
+    // Show license using the Loaded event of the MainPage.xaml.
+    private async void OnPageLoad(object sender, EventArgs e)
     {
-        // Show splash screen during 1 second longer.
-        //Task.Delay(1000).Wait();
-
         // Show license.
         if (bLicense == false)
         {
@@ -961,6 +925,18 @@ public partial class MainPage : ContentPage
                 Application.Current.Quit();
 #endif
             }
+        }
+    }
+
+    // Set language using the Appearing event of the MainPage.xaml.
+    private void OnPageAppearing(object sender, EventArgs e)
+    {
+        if (bLanguageChanged)
+        {
+            SetTextLanguage();
+            bLanguageChanged = false;
+
+            //DisplayAlert("bLanguageChanged", "true", "OK");  // For testing.
         }
     }
 
@@ -1003,6 +979,48 @@ public partial class MainPage : ContentPage
         });
     }
 
+    // Put text in the chosen language in the controls.
+    private void SetTextLanguage()
+    {
+        //cLanguage = "es";  // For testing.
+        //App.Current.MainPage.DisplayAlert("cLanguage", cLanguage, "OK");  // For testing.
+
+        // Set the current UI culture of the selected language.
+        SetCultureSelectedLanguage();
+
+        lblTitle.Text = CodeLang.BarcodeGenerator_Text;
+        lblFormatCode.Text = CodeLang.FormatCode_Text;
+        lblTextToEncode.Text = CodeLang.TextToEncode_Text;
+        btnGenerateCode.Text = CodeLang.GenerateCode_Text;
+        btnClearCode.Text = CodeLang.ClearCode_Text;
+        btnShare.Text = CodeLang.ButtonShare_Text;
+
+        cButtonShare = CodeLang.ButtonShare_Text;
+        cButtonClose = CodeLang.ButtonClose_Text;
+        cErrorTitle = CodeLang.ErrorTitle_Text;
+        cAllowedChar = CodeLang.AllowedChar_Text;
+        cAllowedCharNot = CodeLang.AllowedCharNot_Text;
+        cTextContainsChar = CodeLang.TextContainsChar_Text;
+        cGuardInvalidStartEnd = CodeLang.GuardInvalidStartEnd_Text;
+        cGuardMissingEnd = CodeLang.GuardMissingEnd_Text;
+        cGuardMissingStart = CodeLang.GuardMissingStart_Text;
+        cFirstNumber0 = CodeLang.FirstNumber0_Text;
+        cCheckDigitError = CodeLang.CheckDigitError_Text;
+        cLengthInputEven = CodeLang.LengthInputEven_Text;
+        cFormatTitle = CodeLang.FormatTitle_Text;
+        cFormatNotSupported = CodeLang.FormatNotSupported_Text;
+        cCodeLengthPart1 = CodeLang.CodeLengthPart1_Text;
+        cCodeLengthPart2 = CodeLang.CodeLengthPart2_Text;
+        cCodeLengthPart3 = CodeLang.CodeLengthPart3_Text;
+        cRestartApp = CodeLang.RestartApp_Text;
+        cLicenseTitle = CodeLang.LicenseTitle_Text;
+        cLicense = CodeLang.License_Text + "\n\n" + CodeLang.LicenseMit2_Text;
+        cAgree = CodeLang.Agree_Text;
+        cDisagree = CodeLang.Disagree_Text;
+        cCloseApplication = CodeLang.CloseApplication_Text;
+
+        //App.Current.MainPage.DisplayAlert(cErrorTitleText, cLanguage, cButtonCloseText);  // For testing.
+    }
 
     // Set the current UI culture of the selected language.
     public static void SetCultureSelectedLanguage()

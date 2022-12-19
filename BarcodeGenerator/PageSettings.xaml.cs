@@ -32,6 +32,7 @@ public partial class PageSettings : ContentPage
         // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.Settings_Text;
 
+        lblExplanation.Text = CodeLang.SettingsSaved_Text;
         lblLanguage.Text = CodeLang.Language_Text;
         lblTheme.Text = CodeLang.Theme_Text;
         lblDefaultFormatGenerator.Text = CodeLang.DefaultFormatGenerator_Text;
@@ -134,6 +135,8 @@ public partial class PageSettings : ContentPage
     // Picker language clicked event.
     private void OnPickerLanguageChanged(object sender, EventArgs e)
     {
+        string cLanguageOld = MainPage.cLanguage;
+
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
@@ -162,6 +165,11 @@ public partial class PageSettings : ContentPage
                 // English.
                 _ => "en",
             };
+        }
+
+        if (cLanguageOld != MainPage.cLanguage)
+        {
+            MainPage.bLanguageChanged = true;
         }
     }
 

@@ -4,7 +4,8 @@
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.MainPage"
              NavigationPage.HasBackButton="False"
-             Loaded="OnLoad">
+             Loaded="OnPageLoad"
+             Appearing="OnPageAppearing">
 
     <NavigationPage.TitleView>
         <Grid RowDefinitions="50"

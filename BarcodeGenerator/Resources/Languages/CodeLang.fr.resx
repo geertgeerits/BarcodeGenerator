@@ -292,6 +292,9 @@ Utilisez ce programme entièrement à vos propres risques.</value>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Réinitialiser</value>
   </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Certains paramètres modifiés doivent être enregistrés pour pouvoir être appliqués.</value>
+  </data>
   <data name="SettingsSave_Text" xml:space="preserve">
     <value>Sauvegarder</value>
   </data>

@@ -292,6 +292,9 @@ Use this program entirely at your own risk.</value>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Reset</value>
   </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Some changed settings must be saved in order to apply them.</value>
+  </data>
   <data name="SettingsSave_Text" xml:space="preserve">
     <value>Save</value>
   </data>
