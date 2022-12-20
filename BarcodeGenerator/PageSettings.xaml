@@ -12,7 +12,8 @@
 
     <Grid
         RowDefinitions="*, auto"
-        ColumnDefinitions="170, 170*"
+        ColumnDefinitions="150, 190"
+        HorizontalOptions="Center"
         Margin="8">        
         
         <ScrollView
@@ -23,8 +24,8 @@
 
             <Grid
                 RowDefinitions="Auto, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40"
-                ColumnDefinitions="40, 110, 200*"
-                ColumnSpacing="8"
+                ColumnDefinitions="40, 110, 190"
+                ColumnSpacing="4"
                 RowSpacing="4">
 
                 <BoxView
@@ -61,7 +62,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        MinimumWidthRequest="190"
+                        WidthRequest="170"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerLanguageChanged">
                         <Picker.ItemsSource>
@@ -99,7 +100,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        MinimumWidthRequest="190"
+                        WidthRequest="170"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerThemeChanged">
                         <Picker.ItemsSource>
@@ -133,7 +134,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        MinimumWidthRequest="190"
+                        WidthRequest="170"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeGeneratorChanged">
                         <Picker.ItemsSource>
@@ -166,7 +167,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        MinimumWidthRequest="190"
+                        WidthRequest="170"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeScannerChanged">
                         <Picker.ItemsSource>
@@ -192,6 +193,7 @@
                     x:Name="sldOpacityFg"
                     Grid.Row="6"
                     Grid.Column="2"
+                    WidthRequest="170"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
                     Minimum="0"
@@ -212,6 +214,7 @@
                     x:Name="sldColorFgRed"
                     Grid.Row="7"
                     Grid.Column="2"
+                    WidthRequest="170"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
                     Minimum="0"
@@ -247,6 +250,7 @@
                     x:Name="sldColorFgGreen"
                     Grid.Row="8"
                     Grid.Column="2"
+                    WidthRequest="170"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
                     Minimum="0"
@@ -264,6 +268,7 @@
                     x:Name="sldColorFgBlue"
                     Grid.Row="9"
                     Grid.Column="2"
+                    WidthRequest="170"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
                     Minimum="0"
@@ -284,6 +289,7 @@
                     x:Name="sldOpacityBg"
                     Grid.Row="11"
                     Grid.Column="2"
+                    WidthRequest="170"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
                     Minimum="0"
@@ -304,6 +310,7 @@
                     x:Name="sldColorBgRed"
                     Grid.Row="12"
                     Grid.Column="2"
+                    WidthRequest="170"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
                     Minimum="0"
@@ -338,6 +345,7 @@
                     x:Name="sldColorBgGreen"
                     Grid.Row="13"
                     Grid.Column="2"
+                    WidthRequest="170"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
                     Minimum="0"
@@ -355,6 +363,7 @@
                     x:Name="sldColorBgBlue"
                     Grid.Row="14"
                     Grid.Column="2"
+                    WidthRequest="170"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
                     Minimum="0"
