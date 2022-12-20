@@ -26,9 +26,6 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-        // Set the current UI culture of the selected language.
-        MainPage.SetCultureSelectedLanguage();
-
         // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.Settings_Text;
 
@@ -170,6 +167,9 @@ public partial class PageSettings : ContentPage
         if (cLanguageOld != MainPage.cLanguage)
         {
             MainPage.bLanguageChanged = true;
+
+            // Set the current UI culture of the selected language.
+            MainPage.SetCultureSelectedLanguage();
         }
     }
 

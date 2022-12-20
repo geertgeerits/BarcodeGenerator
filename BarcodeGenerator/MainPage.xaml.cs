@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2022
 // Version .....: 1.0.24
-// Date ........: 2022-12-19 (YYYY-MM-DD)
+// Date ........: 2022-12-20 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -49,7 +49,7 @@ public partial class MainPage : ContentPage
     private string cLicense;
     private string cAgree;
     private string cDisagree;
-    private bool bLicense;
+    private readonly bool bLicense;
     private string cCloseApplication;
 
     public MainPage()
@@ -1025,29 +1025,14 @@ public partial class MainPage : ContentPage
     // Set the current UI culture of the selected language.
     public static void SetCultureSelectedLanguage()
     {
-        Thread.CurrentThread.CurrentUICulture = cLanguage switch
+        try
         {
-            // German (Deutsch).
-            "de" => CultureInfo.GetCultureInfo("de"),
-
-            // Spanish (Español).
-            "es" => CultureInfo.GetCultureInfo("es"),
-
-            // French (Français).
-            "fr" => CultureInfo.GetCultureInfo("fr"),
-
-            // Italian (Italiano).
-            "it" => CultureInfo.GetCultureInfo("it"),
-
-            // Dutch (Nederlands).
-            "nl" => CultureInfo.GetCultureInfo("nl"),
-
-            // Portuguese (Português).
-            "pt" => CultureInfo.GetCultureInfo("pt"),
-
-            // English.
-            _ => CultureInfo.GetCultureInfo("en"),
-        };
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cLanguage);
+        }
+        catch
+        {
+            // Do nothing.
+        }
     }
 
     // Put the generator barcode formats in a List string.

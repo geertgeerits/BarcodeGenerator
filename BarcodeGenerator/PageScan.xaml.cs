@@ -38,9 +38,6 @@ public partial class PageScan : ContentPage
         barcodeReader.HeightRequest = 300;
 #endif
 
-        // Set the current UI culture of the selected language.
-        MainPage.SetCultureSelectedLanguage();
-
         // Put text in the chosen language in the controls and variables.
         lblTitle.Text = CodeLang.BarcodeScanner_Text;
         lblFormatCode.Text = CodeLang.FormatCode_Text;
