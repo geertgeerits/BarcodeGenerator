@@ -52,6 +52,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="PageSettings-Copy.xaml.Copy" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_128p.png" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_324p.png" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_324p.svg" />

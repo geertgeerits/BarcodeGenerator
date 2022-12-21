@@ -175,6 +175,14 @@
                 <Setter Property="Text" Value="?" />
             </Style>
 
+            <Style x:Key="sliderStyleColor" TargetType="Slider">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <!--<Setter Property="MinimumWidthRequest" Value="174" />  // BUG: Does not works in Android !!!-->
+                <Setter Property="Minimum" Value="0" />
+                <Setter Property="Maximum" Value="255" />
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -12,9 +12,9 @@
 
     <Grid
         RowDefinitions="*, auto"
-        ColumnDefinitions="150, 190"
-        HorizontalOptions="Center"
-        Margin="8">        
+        ColumnDefinitions="150, 190*"
+        HorizontalOptions="Start"
+        Margin="10,10,10,10">        
         
         <ScrollView
             Grid.Row="0"
@@ -23,11 +23,11 @@
             VerticalOptions="FillAndExpand">
 
             <Grid
-                RowDefinitions="Auto, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40"
-                ColumnDefinitions="40, 110, 190"
-                ColumnSpacing="4"
+                RowDefinitions="Auto, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40"
+                ColumnDefinitions="40, 110, 190*"
+                ColumnSpacing="8"
                 RowSpacing="4">
-
+                
                 <BoxView
                     Grid.Row="0"
                     Grid.Column="0"
@@ -62,7 +62,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="170"
+                        WidthRequest="180"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerLanguageChanged">
                         <Picker.ItemsSource>
@@ -100,7 +100,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="170"
+                        WidthRequest="180"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerThemeChanged">
                         <Picker.ItemsSource>
@@ -134,7 +134,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="170"
+                        WidthRequest="180"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeGeneratorChanged">
                         <Picker.ItemsSource>
@@ -167,7 +167,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="170"
+                        WidthRequest="180"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeScannerChanged">
                         <Picker.ItemsSource>
@@ -193,13 +193,12 @@
                     x:Name="sldOpacityFg"
                     Grid.Row="6"
                     Grid.Column="2"
-                    WidthRequest="170"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
                     Minimum="0"
                     Maximum="255"
-                    ValueChanged="OnSliderColorForgroundValueChanged" />
-
+                    ValueChanged="OnSliderColorForgroundValueChanged" />                
+                
                 <Label
                     x:Name="lblForgroundColor"
                     Grid.Row="7"
@@ -214,7 +213,6 @@
                     x:Name="sldColorFgRed"
                     Grid.Row="7"
                     Grid.Column="2"
-                    WidthRequest="170"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
                     Minimum="0"
@@ -250,7 +248,6 @@
                     x:Name="sldColorFgGreen"
                     Grid.Row="8"
                     Grid.Column="2"
-                    WidthRequest="170"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
                     Minimum="0"
@@ -268,7 +265,6 @@
                     x:Name="sldColorFgBlue"
                     Grid.Row="9"
                     Grid.Column="2"
-                    WidthRequest="170"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
                     Minimum="0"
@@ -289,7 +285,6 @@
                     x:Name="sldOpacityBg"
                     Grid.Row="11"
                     Grid.Column="2"
-                    WidthRequest="170"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
                     Minimum="0"
@@ -310,7 +305,6 @@
                     x:Name="sldColorBgRed"
                     Grid.Row="12"
                     Grid.Column="2"
-                    WidthRequest="170"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
                     Minimum="0"
@@ -345,7 +339,6 @@
                     x:Name="sldColorBgGreen"
                     Grid.Row="13"
                     Grid.Column="2"
-                    WidthRequest="170"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
                     Minimum="0"
@@ -363,13 +356,12 @@
                     x:Name="sldColorBgBlue"
                     Grid.Row="14"
                     Grid.Column="2"
-                    WidthRequest="170"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
                     Minimum="0"
                     Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
-       
+
             </Grid>
         </ScrollView>
 
