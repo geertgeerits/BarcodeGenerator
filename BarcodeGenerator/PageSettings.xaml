@@ -14,17 +14,21 @@
         RowDefinitions="*, auto"
         ColumnDefinitions="150, 190*"
         HorizontalOptions="Start"
-        Margin="10,10,10,10">        
+        Margin="10"
+        ColumnSpacing="8"
+        RowSpacing="0">        
         
         <ScrollView
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            VerticalOptions="FillAndExpand">
+            VerticalOptions="FillAndExpand"
+            Orientation="Vertical">
 
             <Grid
                 RowDefinitions="Auto, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40"
                 ColumnDefinitions="40, 110, 190*"
+                Margin="0"
                 ColumnSpacing="8"
                 RowSpacing="4">
                 
@@ -191,12 +195,11 @@
 
                 <Slider
                     x:Name="sldOpacityFg"
+                    Style="{StaticResource sliderStyleColor}"
                     Grid.Row="6"
                     Grid.Column="2"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
-                    Minimum="0"
-                    Maximum="255"
                     ValueChanged="OnSliderColorForgroundValueChanged" />                
                 
                 <Label
@@ -211,12 +214,11 @@
 
                 <Slider
                     x:Name="sldColorFgRed"
+                    Style="{StaticResource sliderStyleColor}"
                     Grid.Row="7"
                     Grid.Column="2"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
-                    Minimum="0"
-                    Maximum="255"
                     ValueChanged="OnSliderColorForgroundValueChanged" />
 
                 <Button
@@ -246,12 +248,11 @@
 
                 <Slider
                     x:Name="sldColorFgGreen"
+                    Style="{StaticResource sliderStyleColor}"
                     Grid.Row="8"
                     Grid.Column="2"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
-                    Minimum="0"
-                    Maximum="255"
                     ValueChanged="OnSliderColorForgroundValueChanged" />
 
                 <BoxView
@@ -263,12 +264,11 @@
 
                 <Slider
                     x:Name="sldColorFgBlue"
+                    Style="{StaticResource sliderStyleColor}"
                     Grid.Row="9"
                     Grid.Column="2"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
-                    Minimum="0"
-                    Maximum="255"
                     ValueChanged="OnSliderColorForgroundValueChanged" />
 
                 <Label
@@ -283,12 +283,11 @@
 
                 <Slider
                     x:Name="sldOpacityBg"
+                    Style="{StaticResource sliderStyleColor}"
                     Grid.Row="11"
                     Grid.Column="2"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
-                    Minimum="0"
-                    Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
 
                 <Label
@@ -303,12 +302,11 @@
 
                 <Slider
                     x:Name="sldColorBgRed"
+                    Style="{StaticResource sliderStyleColor}"
                     Grid.Row="12"
                     Grid.Column="2"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
-                    Minimum="0"
-                    Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
 
                 <Button
@@ -337,12 +335,11 @@
 
                 <Slider
                     x:Name="sldColorBgGreen"
+                    Style="{StaticResource sliderStyleColor}"
                     Grid.Row="13"
                     Grid.Column="2"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
-                    Minimum="0"
-                    Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
 
                 <BoxView
@@ -354,12 +351,11 @@
 
                 <Slider
                     x:Name="sldColorBgBlue"
+                    Style="{StaticResource sliderStyleColor}"
                     Grid.Row="14"
                     Grid.Column="2"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
-                    Minimum="0"
-                    Maximum="255"
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
 
             </Grid>
