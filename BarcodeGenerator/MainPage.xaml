@@ -66,7 +66,7 @@
     </NavigationPage.TitleView>
 
     <ScrollView>
-        <Grid RowDefinitions="40, 40, 180, 46, 250, 40, 46"
+        <Grid RowDefinitions="40, 40, 180, 46, 250, 46"
               ColumnDefinitions="140, 210*"
               Margin="10,10,10,10"
               ColumnSpacing="0"
@@ -172,22 +172,13 @@
                     HeightRequest="250" />
             </Border>
             
-            <Label
-                x:Name="lblTextCode"
+            <Button
+                x:Name="btnShare"
                 Grid.Row="5"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
-                VerticalOptions="Center"
-                LineBreakMode="TailTruncation" />
-
-            <Button
-                x:Name="btnShare"
-                Grid.Row="6"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
-                HorizontalOptions="Center"
-                VerticalOptions="End"
+                VerticalOptions="Start"
                 HeightRequest="40"
                 MinimumWidthRequest="130"
                 Text="Share"

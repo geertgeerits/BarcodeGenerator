@@ -101,7 +101,7 @@ public partial class PageSettings : ContentPage
         pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
         pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
 
-        // Correction for !!!BUG!!! in iOS with the Slider right margin.
+        // Workaround for !!!BUG!!! in iOS with the Slider right margin.
 #if IOS
         Slider slider = new Slider
         {

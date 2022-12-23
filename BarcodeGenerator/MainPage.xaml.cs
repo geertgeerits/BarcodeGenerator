@@ -150,7 +150,6 @@ public partial class MainPage : ContentPage
             bgvBarcode.MaximumWidthRequest = 700;
             bgvBarcode.HorizontalOptions = LayoutOptions.Fill;
 
-            lblTextCode.Text = "";
             btnShare.Text = cButtonShare;
             btnShare.IsEnabled = false;
 
@@ -701,7 +700,6 @@ public partial class MainPage : ContentPage
                         //break;
                 }
             }
-
             catch (Exception)
             {
                 bgvBarcode.Value = "";
@@ -716,17 +714,7 @@ public partial class MainPage : ContentPage
             
             btnShare.Text = cButtonShare + " " + pckFormatCodeGenerator.Items[selectedIndex];
             btnShare.IsEnabled = true;
-
-            if (cTextCode == "")
-            {
-                lblTextCode.Text = cTextToCode;
-            }
-            else
-            {
-                lblTextCode.Text = cTextCode;
-            }
         }
-
         catch (Exception ex)
         {
             bgvBarcode.Value = "";
@@ -859,7 +847,6 @@ public partial class MainPage : ContentPage
     {
         edtTextToCode.Text = "";
         bgvBarcode.Value = "";
-        lblTextCode.Text = "";
         btnShare.Text = cButtonShare;
         btnShare.IsEnabled = false;
 
