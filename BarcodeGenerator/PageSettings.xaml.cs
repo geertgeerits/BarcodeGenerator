@@ -101,6 +101,23 @@ public partial class PageSettings : ContentPage
         pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
         pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
 
+        // Correction for !!!BUG!!! in iOS with the Slider right margin.
+#if IOS
+        Slider slider = new Slider
+        {
+            Margin = new Thickness(0, 0, 25, 0)
+        };
+        
+        sldOpacityFg.Margin = slider.Margin;
+        sldColorFgRed.Margin = slider.Margin;
+        sldColorFgGreen.Margin = slider.Margin;
+        sldColorFgBlue.Margin = slider.Margin;
+        sldOpacityBg.Margin = slider.Margin;
+        sldColorBgRed.Margin = slider.Margin;
+        sldColorBgGreen.Margin = slider.Margin;
+        sldColorBgBlue.Margin = slider.Margin;
+#endif
+
         // Set the current color in the entry and on the sliders.
         int nOpacity = 0;
         int nRed = 0;
