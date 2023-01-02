@@ -153,6 +153,9 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Sluiten</value>
   </data>
+  <data name="ButtonListenText_Text" xml:space="preserve">
+    <value>Luisteren</value>
+  </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
     <value>Deel tekst</value>
   </data>
@@ -242,6 +245,9 @@ Karakters 1-2: dekking/transparantie
 Karakters 3-4: rood
 Karakters 5-6: groen
 Karakters 7-8: blauw</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Taal spraak:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Taal:</value>

@@ -153,6 +153,9 @@ Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Schließen</value>
   </data>
+  <data name="ButtonListenText_Text" xml:space="preserve">
+    <value>Hören</value>
+  </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
     <value>Text teilen</value>
   </data>
@@ -242,6 +245,9 @@ Zeichen 1-2: Opazität/Transparenz
 Zeichen 3-4: Rot
 Zeichen 5-6: Grün
 Zeichen 7-8: Blau</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Sprache Rede:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
     <value>Sprache:</value>

@@ -90,14 +90,25 @@
                 x:Name="btnShare"
                 Grid.Row="4"
                 Grid.Column="0"
-                Grid.ColumnSpan="2"
-                HorizontalOptions="Center"
+                HorizontalOptions="Start"
                 VerticalOptions="End"
                 HeightRequest="40"
                 MinimumWidthRequest="130"
                 Text="Share"
                 IsEnabled="False"
                 Clicked="OnShareClicked" />
+
+            <Button
+                x:Name="btnListen"
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                HeightRequest="40"
+                MinimumWidthRequest="130"
+                Text="Listen"
+                IsEnabled="False"
+                Clicked="OnListenClicked" />
 
             <Border
                 Style="{StaticResource borderStyleDefault}"

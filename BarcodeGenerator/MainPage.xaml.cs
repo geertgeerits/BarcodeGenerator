@@ -1,15 +1,17 @@
 ﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
-// Copyright ...: (C) 2022-2022
-// Version .....: 1.0.24
-// Date ........: 2022-12-23 (YYYY-MM-DD)
+// Copyright ...: (C) 2022-2023
+// Version .....: 1.0.25
+// Date ........: 2023-01-02 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.3.0-preview.1 ; https://github.com/redth/ZXing.Net.Maui
 //                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.3.0-preview.1
+// Thanks to ...: Gerald Versluis
 
 using BarcodeGenerator.Resources.Languages;
+using Microsoft.Maui.Media;
 using System.Globalization;
 using ZXing.Net.Maui;
 
@@ -25,6 +27,9 @@ public partial class MainPage : ContentPage
     public static string cCodeColorBg;
     public static string cLanguage;
     public static bool bLanguageChanged = false;
+    public static string cLanguageSpeech;
+    public static string[] cLangLocales;
+    public IEnumerable<Locale> locales;
 
     // Local variables.
     private string cButtonShare;
@@ -71,6 +76,7 @@ public partial class MainPage : ContentPage
         cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
         cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
         cLanguage = Preferences.Default.Get("SettingLanguage", "");
+        cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
         bLicense = Preferences.Default.Get("SettingLicense", false);
 
         // Set the theme.
@@ -115,6 +121,21 @@ public partial class MainPage : ContentPage
         }
 
         SetTextLanguage();
+
+        // Get and set the speech language.
+        try
+        {
+            if (cLanguageSpeech == "")
+            {
+                cLanguageSpeech = Thread.CurrentThread.CurrentCulture.Name;
+            }
+        }
+        catch (Exception)
+        {
+            cLanguageSpeech = "en-US";
+        }
+
+        FillArrayWithSpeechLanguages();
 
         // Set focus to the editor.
         edtTextToCode.Focus();
@@ -503,8 +524,8 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("IMb");
                         return;
 
-                        //bgvBarcode.Format = BarcodeFormat.Imb;
-                        //break;
+                    //bgvBarcode.Format = BarcodeFormat.Imb;
+                    //break;
 
                     // Itf.
                     case 9:
@@ -527,8 +548,8 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("MaxiCode");
                         return;
 
-                        //bgvBarcode.Format = BarcodeFormat.MaxiCode;
-                        //break;
+                    //bgvBarcode.Format = BarcodeFormat.MaxiCode;
+                    //break;
 
                     // Msi.
                     case 11:
@@ -555,8 +576,8 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("Pharmacode");
                         return;
 
-                        //bgvBarcode.Format = BarcodeFormat.PharmaCode;
-                        //break;
+                    //bgvBarcode.Format = BarcodeFormat.PharmaCode;
+                    //break;
 
                     // Plessey.
                     case 14:
@@ -580,16 +601,16 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("RSS 14");
                         return;
 
-                        //bgvBarcode.Format = BarcodeFormat.Rss14;
-                        //break;
+                    //bgvBarcode.Format = BarcodeFormat.Rss14;
+                    //break;
 
                     // RssExpanded.
                     case 17:
                         DisplayMessageFormat("RSS Expanded");
                         return;
 
-                        //bgvBarcode.Format = BarcodeFormat.RssExpanded;
-                        //break;
+                    //bgvBarcode.Format = BarcodeFormat.RssExpanded;
+                    //break;
 
                     // UpcA.
                     case 18:
@@ -711,7 +732,7 @@ public partial class MainPage : ContentPage
         try
         {
             bgvBarcode.Value = cTextToCode;
-            
+
             btnShare.Text = cButtonShare + " " + pckFormatCodeGenerator.Items[selectedIndex];
             btnShare.IsEnabled = true;
         }
@@ -781,14 +802,14 @@ public partial class MainPage : ContentPage
 
         // Control of missing start or end guard.
         if (cStartEndGuards.Contains(cTextToCode[..1]) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
-            {
+        {
             DisplayAlert(cErrorTitle, cGuardMissingEnd, cButtonClose);
             edtTextToCode.Focus();
 
             return false;
         }
         else if (cStartEndGuards.Contains(cTextToCode[..1]) == false && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)))
-            {
+        {
             DisplayAlert(cErrorTitle, cGuardMissingStart, cButtonClose);
             edtTextToCode.Focus();
 
@@ -872,7 +893,7 @@ public partial class MainPage : ContentPage
     // Display an error message with minimum and maximum length.
     private void DisplayErrorMessageLength(string cMinLength, string cMaxLength)
     {
-        DisplayAlert(cErrorTitle, cCodeLengthPart1 + " " + cMinLength + " " + cCodeLengthPart2 + " " + cMaxLength + " " + cCodeLengthPart3 , cButtonClose);
+        DisplayAlert(cErrorTitle, cCodeLengthPart1 + " " + cMinLength + " " + cCodeLengthPart2 + " " + cMaxLength + " " + cCodeLengthPart3, cButtonClose);
 
         edtTextToCode.Focus();
     }
@@ -1080,8 +1101,43 @@ public partial class MainPage : ContentPage
             CodeLang.AllCodes_Text
         };
     }
-}
 
+    // Fill the the array with the speech languages.
+    // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+    private async void FillArrayWithSpeechLanguages()
+    {
+        try
+        {
+            locales = await TextToSpeech.GetLocalesAsync();
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            return;
+        }
+
+        // Count the number of locales and allocate memory for the array.
+        int nTotalItems = locales.Count();
+        cLangLocales = new string[nTotalItems];
+
+        // Put the locales in the array and sort the array.
+        int nItem = 0;
+        foreach (var l in locales)
+        {
+            if (l.Country != "")
+            {
+                cLangLocales[nItem] = l.Language + "-" + l.Country + "  " + l.Name;
+            }
+            else
+            {
+                cLangLocales[nItem] = l.Language + "  " + l.Name;
+            }
+            nItem++;
+        }
+
+        Array.Sort(cLangLocales);
+    }
+}
 /*
 How to convert a UPC-E code back to UPC-A ?
 A 6-digit UPC-E code is derived from a UPC-A 12-digit code.

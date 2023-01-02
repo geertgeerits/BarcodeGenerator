@@ -16,8 +16,8 @@
         HorizontalOptions="Start"
         Margin="10"
         ColumnSpacing="8"
-        RowSpacing="0">        
-        
+        RowSpacing="0">
+
         <ScrollView
             Grid.Row="0"
             Grid.Column="0"
@@ -26,12 +26,12 @@
             Orientation="Vertical">
 
             <Grid
-                RowDefinitions="Auto, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40"
+                RowDefinitions="Auto, 40, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40"
                 ColumnDefinitions="40, 110, 190*"
                 Margin="0"
                 ColumnSpacing="8"
                 RowSpacing="4">
-                
+
                 <BoxView
                     Grid.Row="0"
                     Grid.Column="0"
@@ -66,7 +66,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="180"
+                        WidthRequest="190"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerLanguageChanged">
                         <Picker.ItemsSource>
@@ -84,12 +84,12 @@
                 </Border>
 
                 <Label
-                    x:Name="lblTheme"
+                    x:Name="lblLanguageSpeech"
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="Theme:" />
+                    Text="Language speech:" />
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -99,12 +99,39 @@
                     VerticalOptions="Center">
 
                     <Picker
-                        x:Name="pckTheme"
+                        x:Name="pckLanguageSpeech"
                         Grid.Row="2"
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="180"
+                        WidthRequest="190"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="OnPickerLanguageSpeechChanged">
+                    </Picker>
+                </Border>
+
+                <Label
+                    x:Name="lblTheme"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    VerticalTextAlignment="Center"
+                    Text="Theme:" />
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+
+                    <Picker
+                        x:Name="pckTheme"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        WidthRequest="190"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerThemeChanged">
                         <Picker.ItemsSource>
@@ -119,7 +146,7 @@
 
                 <Label
                     x:Name="lblDefaultFormatGenerator"
-                    Grid.Row="3"
+                    Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
@@ -127,18 +154,18 @@
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="3"
+                    Grid.Row="4"
                     Grid.Column="2"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
 
                     <Picker
                         x:Name="pckFormatCodeGenerator"
-                        Grid.Row="3"
+                        Grid.Row="4"
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="180"
+                        WidthRequest="190"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeGeneratorChanged">
                         <Picker.ItemsSource>
@@ -152,7 +179,7 @@
 
                 <Label
                     x:Name="lblDefaultFormatScanner"
-                    Grid.Row="4"
+                    Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
@@ -160,18 +187,18 @@
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="4"
+                    Grid.Row="5"
                     Grid.Column="2"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
 
                     <Picker
                         x:Name="pckFormatCodeScanner"
-                        Grid.Row="4"
+                        Grid.Row="5"
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="180"
+                        WidthRequest="190"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeScannerChanged">
                         <Picker.ItemsSource>
@@ -185,7 +212,7 @@
 
                 <Label
                     x:Name="lblForgroundOpacity"
-                    Grid.Row="6"
+                    Grid.Row="7"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
@@ -196,15 +223,15 @@
                 <Slider
                     x:Name="sldOpacityFg"
                     Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="6"
+                    Grid.Row="7"
                     Grid.Column="2"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
-                    ValueChanged="OnSliderColorForgroundValueChanged" />                
-                
+                    ValueChanged="OnSliderColorForgroundValueChanged" />
+
                 <Label
                     x:Name="lblForgroundColor"
-                    Grid.Row="7"
+                    Grid.Row="8"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
@@ -215,7 +242,7 @@
                 <Slider
                     x:Name="sldColorFgRed"
                     Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="7"
+                    Grid.Row="8"
                     Grid.Column="2"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
@@ -223,19 +250,19 @@
 
                 <Button
                     Style="{StaticResource buttonStyleHelp}"
-                    Grid.Row="8"
+                    Grid.Row="9"
                     Grid.Column="0"
                     Clicked="OnSettingsHexColorClicked"/>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="8"
+                    Grid.Row="9"
                     Grid.Column="1"
                     HorizontalOptions="FillAndExpand">
 
                     <Entry
                         x:Name="entHexColorFg"
-                        Grid.Row="8"
+                        Grid.Row="9"
                         Grid.Column="1"
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
@@ -249,7 +276,7 @@
                 <Slider
                     x:Name="sldColorFgGreen"
                     Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="8"
+                    Grid.Row="9"
                     Grid.Column="2"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
@@ -257,7 +284,7 @@
 
                 <BoxView
                     x:Name="bxvColorFg"
-                    Grid.Row="9"
+                    Grid.Row="10"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Color="Black" />
@@ -265,7 +292,7 @@
                 <Slider
                     x:Name="sldColorFgBlue"
                     Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="9"
+                    Grid.Row="10"
                     Grid.Column="2"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
@@ -273,7 +300,7 @@
 
                 <Label
                     x:Name="lblBackgroundOpacity"
-                    Grid.Row="11"
+                    Grid.Row="12"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
@@ -284,7 +311,7 @@
                 <Slider
                     x:Name="sldOpacityBg"
                     Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="11"
+                    Grid.Row="12"
                     Grid.Column="2"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
@@ -292,7 +319,7 @@
 
                 <Label
                     x:Name="lblBackgroundColor"
-                    Grid.Row="12"
+                    Grid.Row="13"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
@@ -303,7 +330,7 @@
                 <Slider
                     x:Name="sldColorBgRed"
                     Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="12"
+                    Grid.Row="13"
                     Grid.Column="2"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
@@ -311,18 +338,18 @@
 
                 <Button
                     Style="{StaticResource buttonStyleHelp}"
-                    Grid.Row="13"
+                    Grid.Row="14"
                     Grid.Column="0"
                     Clicked="OnSettingsHexColorClicked"/>
 
                 <Border Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="13"
+                    Grid.Row="14"
                     Grid.Column="1"
                     HorizontalOptions="FillAndExpand">
 
                     <Entry
                         x:Name="entHexColorBg"
-                        Grid.Row="13"
+                        Grid.Row="14"
                         Grid.Column="1"
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
@@ -336,7 +363,7 @@
                 <Slider
                     x:Name="sldColorBgGreen"
                     Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="13"
+                    Grid.Row="14"
                     Grid.Column="2"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
@@ -344,7 +371,7 @@
 
                 <BoxView
                     x:Name="bxvColorBg"
-                    Grid.Row="14"
+                    Grid.Row="15"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Color="White" />
@@ -352,7 +379,7 @@
                 <Slider
                     x:Name="sldColorBgBlue"
                     Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="14"
+                    Grid.Row="15"
                     Grid.Column="2"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"

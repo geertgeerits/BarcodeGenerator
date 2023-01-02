@@ -14,6 +14,7 @@ public partial class PageScan : ContentPage
     private readonly string cYes;
     private readonly string cNo;
     private readonly string cErrorTitle;
+    private IEnumerable<Locale> locales;
 
     public PageScan()
 	{
@@ -27,14 +28,14 @@ public partial class PageScan : ContentPage
             return;
         }
 
-        // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
-        // The camera sometimes overlaps adjacent rows in the grid.
-        // Code to run on Android, Windows and on the main thread for iOS\MacOS.
+    // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
+    // The camera sometimes overlaps adjacent rows in the grid.
+    // Code to run on Android, Windows and on the main thread for iOS\MacOS.
 #if IOS
         MainThread.BeginInvokeOnMainThread(SetGridRowHeightCamera);
         barcodeReader.HeightRequest = 400;
 #else
-        SetGridRowHeightCamera();
+    SetGridRowHeightCamera();
         barcodeReader.HeightRequest = 300;
 #endif
 
@@ -42,6 +43,7 @@ public partial class PageScan : ContentPage
         lblTitle.Text = CodeLang.BarcodeScanner_Text;
         lblFormatCode.Text = CodeLang.FormatCode_Text;
         btnShare.Text = CodeLang.ButtonShareText_Text;
+        btnListen.Text = CodeLang.ButtonListenText_Text;
 
         pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
 
@@ -55,6 +57,9 @@ public partial class PageScan : ContentPage
 
         // Default format code = All codes
         pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
+        
+        // Initialize text to speech.
+        InitializeTextToSpeech();
     }
 
     // ImageButton torch clicked event.
@@ -75,6 +80,7 @@ public partial class PageScan : ContentPage
             lblBarcodeResult.Text = "";
             btnShare.Text = cButtonShare;
             btnShare.IsEnabled = false;
+            btnListen.IsEnabled = false;
 
             switch (selectedIndex)
             {
@@ -312,6 +318,7 @@ public partial class PageScan : ContentPage
                 lblBarcodeResult.Text = e.Results[0].Value;
 
                 btnShare.IsEnabled = true;
+                btnListen.IsEnabled = true;
             });
         }
         catch (Exception ex)
@@ -364,6 +371,37 @@ public partial class PageScan : ContentPage
 
         // Open share interface.
         await ShareText(cText);
+    }
+
+    // Initialize text to speech.
+    private async void InitializeTextToSpeech()
+    {
+        try
+        {
+            locales = await TextToSpeech.GetLocalesAsync();
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
+    }
+
+    // Button read text event.
+    private void OnListenClicked(object sender, EventArgs e)
+    {
+        try
+        {
+            TextToSpeech.SpeakAsync(lblBarcodeResult.Text, new SpeechOptions
+            {
+                Locale = locales.Single(l => l.Language + "-" + l.Country == MainPage.cLanguageSpeech)
+            });
+
+            //DisplayAlert("cLanguageSpeech", MainPage.cLanguageSpeech, "OK");
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
     }
 
     // Open the website link.

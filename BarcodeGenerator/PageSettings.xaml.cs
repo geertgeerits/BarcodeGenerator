@@ -13,6 +13,7 @@ public partial class PageSettings : ContentPage
     private readonly string cAllowedCharNot;
     private readonly string cHexColorCodes;
     private readonly Stopwatch stopWatch = new();
+    private IEnumerable<Locale> locales;
 
     public PageSettings()
 	{
@@ -31,6 +32,7 @@ public partial class PageSettings : ContentPage
 
         lblExplanation.Text = CodeLang.SettingsSaved_Text;
         lblLanguage.Text = CodeLang.Language_Text;
+        lblLanguageSpeech.Text = CodeLang.LanguageSpeech_Text;
         lblTheme.Text = CodeLang.Theme_Text;
         lblDefaultFormatGenerator.Text = CodeLang.DefaultFormatGenerator_Text;
         lblDefaultFormatScanner.Text = CodeLang.DefaultFormatScanner_Text;
@@ -79,6 +81,9 @@ public partial class PageSettings : ContentPage
             // English.
             _ => 1,
         };
+
+        // Fill the picker with the speech languages and set the saved language in the picker.
+        FillPickerWithSpeechLanguages();
 
         // Set the current theme in the picker.
         pckTheme.SelectedIndex = MainPage.cTheme switch
@@ -187,6 +192,64 @@ public partial class PageSettings : ContentPage
 
             // Set the current UI culture of the selected language.
             MainPage.SetCultureSelectedLanguage();
+        }
+    }
+
+    // Fill the picker with the speech languages from the array.
+    // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+    private async void FillPickerWithSpeechLanguages()
+    {
+        try
+        {
+            locales = await TextToSpeech.GetLocalesAsync();
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            return;
+        }
+
+        // Count the number of locales.
+        int nTotalItems = locales.Count();
+
+        // Put the sorted locales from the array in the picker and select the saved language.
+        string cLangLocal;
+
+        for (int nItem = 0; nItem < nTotalItems; nItem++)
+        {
+            pckLanguageSpeech.Items.Add(MainPage.cLangLocales[nItem]);
+
+            // Split before first space and remove last character '-' if there.
+            cLangLocal = MainPage.cLangLocales[nItem].Split(' ').First();
+
+            if (cLangLocal.EndsWith("-"))
+            {
+                cLangLocal = cLangLocal.Remove(cLangLocal.Length - 1, 1);
+            }
+
+            if (MainPage.cLanguageSpeech == cLangLocal)
+            {
+                pckLanguageSpeech.SelectedIndex = nItem;
+            }
+        }
+    }
+
+    // Picker speech language clicked event.
+    private void OnPickerLanguageSpeechChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        int selectedIndex = picker.SelectedIndex;
+
+        if (selectedIndex != -1)
+        {
+            MainPage.cLanguageSpeech = picker.Items[selectedIndex].Split(' ').First();
+
+            // Remove last character '-' from cLanguageSpeech if there.
+            if (MainPage.cLanguageSpeech.EndsWith("-"))
+            {
+                MainPage.cLanguageSpeech = MainPage.cLanguageSpeech.Remove(MainPage.cLanguageSpeech.Length - 1, 1);
+            }
+            //DisplayAlert("cLanguageSpeech", "*" + MainPage.cLanguageSpeech + "*", "OK");
         }
     }
 
@@ -450,6 +513,7 @@ public partial class PageSettings : ContentPage
         Preferences.Default.Set("SettingCodeColorFg", MainPage.cCodeColorFg);
         Preferences.Default.Set("SettingCodeColorBg", MainPage.cCodeColorBg);
         Preferences.Default.Set("SettingLanguage", MainPage.cLanguage);
+        Preferences.Default.Set("SettingLanguageSpeech", MainPage.cLanguageSpeech);
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
         Task.Delay(500).Wait();
@@ -479,6 +543,7 @@ public partial class PageSettings : ContentPage
             Preferences.Default.Remove("SettingCodeColorFg");
             Preferences.Default.Remove("SettingCodeColorBg");
             Preferences.Default.Remove("SettingLanguage");
+            Preferences.Default.Remove("SettingLanguageSpeech");
         }
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.

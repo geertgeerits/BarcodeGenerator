@@ -163,6 +163,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Listen.
+        /// </summary>
+        internal static string ButtonListenText_Text {
+            get {
+                return ResourceManager.GetString("ButtonListenText_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Share.
         /// </summary>
         internal static string ButtonShare_Text {
@@ -426,6 +435,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string Language_Text {
             get {
                 return ResourceManager.GetString("Language_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language speech:.
+        /// </summary>
+        internal static string LanguageSpeech_Text {
+            get {
+                return ResourceManager.GetString("LanguageSpeech_Text", resourceCulture);
             }
         }
         
