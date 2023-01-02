@@ -112,6 +112,16 @@
                 VerticalOptions="End"
                 Text="Text to encode:" />
 
+            <Button
+                x:Name="btnSpeak"
+                Style="{StaticResource buttonStyleDefault}"
+                Grid.Row="1"
+                Grid.Column="2"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Text="Speak"
+                Clicked="OnSpeakClicked" />
+
             <Border
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="2"

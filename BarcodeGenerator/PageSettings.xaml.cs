@@ -214,6 +214,7 @@ public partial class PageSettings : ContentPage
 
         // Put the sorted locales from the array in the picker and select the saved language.
         string cLangLocal;
+        bool bIsSetSelectedIndex = false;
 
         for (int nItem = 0; nItem < nTotalItems; nItem++)
         {
@@ -230,7 +231,13 @@ public partial class PageSettings : ContentPage
             if (MainPage.cLanguageSpeech == cLangLocal)
             {
                 pckLanguageSpeech.SelectedIndex = nItem;
+                bIsSetSelectedIndex = true;
             }
+        }
+        
+        if (!bIsSetSelectedIndex)
+        {
+            pckLanguageSpeech.SelectedIndex = 0;
         }
     }
 

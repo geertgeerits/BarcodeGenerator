@@ -11,7 +11,6 @@
 // Thanks to ...: Gerald Versluis
 
 using BarcodeGenerator.Resources.Languages;
-using Microsoft.Maui.Media;
 using System.Globalization;
 using ZXing.Net.Maui;
 
@@ -29,7 +28,6 @@ public partial class MainPage : ContentPage
     public static bool bLanguageChanged = false;
     public static string cLanguageSpeech;
     public static string[] cLangLocales;
-    public IEnumerable<Locale> locales;
 
     // Local variables.
     private string cButtonShare;
@@ -56,6 +54,7 @@ public partial class MainPage : ContentPage
     private string cDisagree;
     private readonly bool bLicense;
     private string cCloseApplication;
+    private IEnumerable<Locale> locales;
 
     public MainPage()
     {
@@ -946,6 +945,12 @@ public partial class MainPage : ContentPage
 
             //DisplayAlert("bLanguageChanged", "true", "OK");  // For testing.
         }
+    }
+
+    // Button share event - record the text.
+    private void OnSpeakClicked(object sender, EventArgs e)
+    {
+    
     }
 
     // Button share event - make screenshot of the barcode.
