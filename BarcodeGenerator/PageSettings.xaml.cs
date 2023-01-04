@@ -213,28 +213,20 @@ public partial class PageSettings : ContentPage
         int nTotalItems = locales.Count();
 
         // Put the sorted locales from the array in the picker and select the saved language.
-        string cLangLocal;
         bool bIsSetSelectedIndex = false;
 
         for (int nItem = 0; nItem < nTotalItems; nItem++)
         {
             pckLanguageSpeech.Items.Add(MainPage.cLangLocales[nItem]);
 
-            // Split before first space and remove last character '-' if there.
-            cLangLocal = MainPage.cLangLocales[nItem].Split(' ').First();
-
-            if (cLangLocal.EndsWith("-"))
-            {
-                cLangLocal = cLangLocal.Remove(cLangLocal.Length - 1, 1);
-            }
-
-            if (MainPage.cLanguageSpeech == cLangLocal)
+            if (MainPage.cLanguageSpeech == MainPage.cLangLocales[nItem])
             {
                 pckLanguageSpeech.SelectedIndex = nItem;
                 bIsSetSelectedIndex = true;
             }
         }
         
+        // If the language is not found set the picker to the first item.
         if (!bIsSetSelectedIndex)
         {
             pckLanguageSpeech.SelectedIndex = 0;
@@ -249,14 +241,7 @@ public partial class PageSettings : ContentPage
 
         if (selectedIndex != -1)
         {
-            MainPage.cLanguageSpeech = picker.Items[selectedIndex].Split(' ').First();
-
-            // Remove last character '-' from cLanguageSpeech if there.
-            if (MainPage.cLanguageSpeech.EndsWith("-"))
-            {
-                MainPage.cLanguageSpeech = MainPage.cLanguageSpeech.Remove(MainPage.cLanguageSpeech.Length - 1, 1);
-            }
-            //DisplayAlert("cLanguageSpeech", "*" + MainPage.cLanguageSpeech + "*", "OK");
+            MainPage.cLanguageSpeech = picker.Items[selectedIndex];
         }
     }
 
@@ -526,8 +511,8 @@ public partial class PageSettings : ContentPage
         Task.Delay(500).Wait();
 
         // Restart the application.
-        //Application.Current.MainPage = new AppShell();
-        Application.Current.MainPage = new NavigationPage(new MainPage());
+        Application.Current.MainPage = new AppShell();
+        //Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
     // Button reset settings clicked event.
@@ -557,7 +542,7 @@ public partial class PageSettings : ContentPage
         Task.Delay(500).Wait();
 
         // Restart the application.
-        //Application.Current.MainPage = new AppShell();
-        Application.Current.MainPage = new NavigationPage(new MainPage());
+        Application.Current.MainPage = new AppShell();
+        //Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 }

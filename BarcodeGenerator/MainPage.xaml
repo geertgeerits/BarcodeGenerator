@@ -7,7 +7,7 @@
              Loaded="OnPageLoad"
              Appearing="OnPageAppearing">
 
-    <NavigationPage.TitleView>
+    <Shell.TitleView>
         <Grid RowDefinitions="50"
               ColumnDefinitions="60, 140*, 60, 60"
               Margin="5"
@@ -63,7 +63,7 @@
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
         </Grid>
-    </NavigationPage.TitleView>
+    </Shell.TitleView>
 
     <ScrollView>
         <Grid RowDefinitions="40, 40, 180, 46, 250, 46"
@@ -112,15 +112,53 @@
                 VerticalOptions="End"
                 Text="Text to encode:" />
 
-            <Button
-                x:Name="btnSpeak"
-                Style="{StaticResource buttonStyleDefault}"
+            <HorizontalStackLayout
                 Grid.Row="1"
-                Grid.Column="2"
+                Grid.Column="1"
                 HorizontalOptions="End"
-                VerticalOptions="End"
-                Text="Speak"
-                Clicked="OnSpeakClicked" />
+                VerticalOptions="Center"
+                Spacing="10">
+                
+                <ImageButton
+                    x:Name="imgbtnSpeechToText"
+                    Source="microphone_50p.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="Transparent"
+                    BorderColor="Gray"
+                    Command="{Binding ListenCommand}">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="imgbtnSpeechToTextCancel"
+                    Source="microphone_cancel_50p.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="Transparent"
+                    BorderColor="Gray"
+                    Command="{Binding ListenCancelCommand}">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="imgbtnTextToSpeech"
+                    Source="speaker_64p.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="Transparent"
+                    BorderColor="Gray"
+                    Clicked="OnTextToSpeechClicked">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="imgbtnTextToSpeechCancel"
+                    Source="speaker_cancel_64p.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="Transparent"
+                    BorderColor="Gray"
+                    Clicked="OnTextToSpeechCancelClicked">
+                </ImageButton>
+            </HorizontalStackLayout>
 
             <Border
                 Style="{StaticResource borderStyleDefault}"
@@ -141,10 +179,11 @@
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="180"
                         MinimumWidthRequest="350"
-                        VerticalTextAlignment="Start" />
+                        VerticalTextAlignment="Start"
+                        Text="{Binding RecognitionText}" />
                 </ScrollView>
             </Border>
-
+            
             <Button
                 x:Name="btnGenerateCode"
                 Style="{StaticResource buttonStyleDefault}"
@@ -195,6 +234,7 @@
                 IsEnabled="False"
                 Clicked="OnShareClicked">
             </Button>
+
         </Grid>
     </ScrollView>
 </ContentPage>

@@ -40,6 +40,10 @@
 	<string>I want to scan barcodes please</string>
 	<key>CFBundleDisplayName</key>
 	<string>Barcode Generator and Scanner</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Recognize speech</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>I will need the microphone to listen to your speech</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.25</string>
 	<key>CFBundleVersion</key>

@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.25
-// Date ........: 2023-01-02 (YYYY-MM-DD)
+// Date ........: 2023-01-04 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -54,9 +54,16 @@ public partial class MainPage : ContentPage
     private string cDisagree;
     private readonly bool bLicense;
     private string cCloseApplication;
+    
     private IEnumerable<Locale> locales;
+    private ISpeechToText speechToText;
+    private CancellationTokenSource tokenSource = new CancellationTokenSource();
 
-    public MainPage()
+    public Command ListenCommand { get; set; }
+    public Command ListenCancelCommand { get; set; }
+    public string RecognitionText { get; set; }
+
+    public MainPage(ISpeechToText speechToText)
     {
         try
         {
@@ -67,6 +74,12 @@ public partial class MainPage : ContentPage
             DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
             return;
         }
+
+        this.speechToText = speechToText;
+
+        ListenCommand = new Command(Listen);
+        ListenCancelCommand = new Command(ListenCancel);
+        BindingContext = this;
 
         // Get the saved settings.
         cTheme = Preferences.Default.Get("SettingTheme", "System");
@@ -122,24 +135,99 @@ public partial class MainPage : ContentPage
         SetTextLanguage();
 
         // Get and set the speech language.
-        try
-        {
-            if (cLanguageSpeech == "")
-            {
-                cLanguageSpeech = Thread.CurrentThread.CurrentCulture.Name;
-            }
-        }
-        catch (Exception)
-        {
-            cLanguageSpeech = "en-US";
-        }
-
         FillArrayWithSpeechLanguages();
-
+        
+        // Initialize text to speech.
+        InitializeTextToSpeech();
+        
         // Set focus to the editor.
         edtTextToCode.Focus();
     }
+       
+    // Listen.
+    private async void Listen()
+    {
+        string result = await DisplayPromptAsync("Test language", "ISO code language and country?", initialValue: GetIsoLanguageCode());
+        if(result == "")
+        {
+            result = "en-US";
+        }
+        //await DisplayAlert("result", result, "OK");
 
+        var isAuthorized = await speechToText.RequestPermissions();
+        if (isAuthorized)
+        {
+            try
+            {
+                //RecognitionText = await speechToText.Listen(CultureInfo.GetCultureInfo(GetIsoLanguageCode()),
+                //RecognitionText = await speechToText.Listen(CultureInfo.GetCultureInfo("en-US"),
+                RecognitionText = await speechToText.Listen(CultureInfo.GetCultureInfo(result),
+                new Progress<string>(partialText =>
+                    {
+                        if (DeviceInfo.Platform == DevicePlatform.Android)
+                        {
+                            RecognitionText = partialText;
+                        }
+                        else
+                        {
+                            RecognitionText += partialText + " ";
+                        }
+
+                        OnPropertyChanged(nameof(RecognitionText));
+                    }), tokenSource.Token);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
+        else
+        {
+            await DisplayAlert("Permission Error", "No microphone access", "OK");
+        }
+    }
+
+    // Cancel listen.
+    private void ListenCancel()
+    {
+        tokenSource?.Cancel();
+    }
+
+    // Initialize text to speech.
+    private async void InitializeTextToSpeech()
+    {
+        try
+        {
+            locales = await TextToSpeech.GetLocalesAsync();
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
+    }
+
+    // Button text to speech event.
+    private void OnTextToSpeechClicked(object sender, EventArgs e)
+    {
+        try
+        {
+            TextToSpeech.SpeakAsync(edtTextToCode.Text, new SpeechOptions
+            {
+                Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
+            });
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
+    }
+
+    // Button text to speech cancel event.
+    private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
+    {
+    
+    }
+    
     // TitleView buttons clicked events.
     private async void OnPageAboutClicked(object sender, EventArgs e)
     {
@@ -902,8 +990,11 @@ public partial class MainPage : ContentPage
     {
         await DisplayAlert(cErrorTitle, cErrorMessage + "\n" + cRestartApp, cButtonClose);
 
-        //Application.Current.MainPage = new AppShell();
-        Application.Current.MainPage = new NavigationPage(new MainPage());
+        Application.Current.MainPage = new AppShell();
+        //Application.Current.MainPage = new NavigationPage(new MainPage());
+        //Application.Current.MainPage = new NavigationPage(new MainPage(speechToText));
+
+
     }
 
     // Show license using the Loaded event of the MainPage.xaml.
@@ -1004,6 +1095,7 @@ public partial class MainPage : ContentPage
         lblTitle.Text = CodeLang.BarcodeGenerator_Text;
         lblFormatCode.Text = CodeLang.FormatCode_Text;
         lblTextToEncode.Text = CodeLang.TextToEncode_Text;
+        //btnSpeak.Text = CodeLang.ButtonSpeak_Text;
         btnGenerateCode.Text = CodeLang.GenerateCode_Text;
         btnClearCode.Text = CodeLang.ClearCode_Text;
         btnShare.Text = CodeLang.ButtonShare_Text;
@@ -1131,16 +1223,29 @@ public partial class MainPage : ContentPage
         {
             if (l.Country != "")
             {
-                cLangLocales[nItem] = l.Language + "-" + l.Country + "  " + l.Name;
+                cLangLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
             }
             else
             {
-                cLangLocales[nItem] = l.Language + "  " + l.Name;
+                cLangLocales[nItem] = l.Language + " " + l.Name;
             }
             nItem++;
         }
 
         Array.Sort(cLangLocales);
+    }
+
+    public static string GetIsoLanguageCode()
+    {
+        // Split before first space and remove last character '-' if there.
+        string cLanguageIso = cLanguageSpeech.Split(' ').First();
+
+        if (cLanguageIso.EndsWith("-"))
+        {
+            cLanguageIso = cLanguageIso.Remove(cLanguageIso.Length - 1, 1);
+        }
+        
+        return cLanguageIso;
     }
 }
 /*

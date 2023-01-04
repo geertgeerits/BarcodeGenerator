@@ -153,7 +153,7 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Sluiten</value>
   </data>
-  <data name="ButtonListenText_Text" xml:space="preserve">
+  <data name="ButtonListen_Text" xml:space="preserve">
     <value>Luisteren</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
@@ -161,6 +161,9 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
     <value>Delen</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>Spreek</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>De code is fout.

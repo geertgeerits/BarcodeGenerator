@@ -153,7 +153,7 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Perto</value>
   </data>
-  <data name="ButtonListenText_Text" xml:space="preserve">
+  <data name="ButtonListen_Text" xml:space="preserve">
     <value>Ouço</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
@@ -161,6 +161,9 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
     <value>Compartilhar</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>Falar</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>O código está errado.

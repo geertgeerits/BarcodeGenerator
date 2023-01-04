@@ -4,7 +4,7 @@
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.PageScan">
 
-    <NavigationPage.TitleView>
+    <Shell.TitleView>
             <Grid RowDefinitions="50"
               ColumnDefinitions="200*, 60, 60"
               Margin="5"
@@ -32,7 +32,7 @@
                 Clicked="OnTorchClicked">
             </ImageButton>
         </Grid>
-    </NavigationPage.TitleView>
+    </Shell.TitleView>
 
     <ScrollView>
         <Grid RowDefinitions="40, 10, 520, 10, 40, 100*"
@@ -98,8 +98,36 @@
                 IsEnabled="False"
                 Clicked="OnShareClicked" />
 
-            <Button
-                x:Name="btnListen"
+            <HorizontalStackLayout
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Spacing="10">
+
+                <ImageButton
+                    x:Name="imgbtnTextToSpeech"
+                    Source="speaker_64p.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="Transparent"
+                    BorderColor="Gray"
+                    Clicked="OnTextToSpeechClicked">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="imgbtnTextToSpeechCancel"
+                    Source="speaker_cancel_64p.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="Transparent"
+                    BorderColor="Gray"
+                    Clicked="OnTextToSpeechCancelClicked">
+                </ImageButton>
+            </HorizontalStackLayout>
+
+            <!--<Button
+                x:Name="btnTextToSpeech"
                 Grid.Row="4"
                 Grid.Column="1"
                 HorizontalOptions="End"
@@ -108,7 +136,7 @@
                 MinimumWidthRequest="130"
                 Text="Listen"
                 IsEnabled="False"
-                Clicked="OnListenClicked" />
+                Clicked="OnTextToSpeechClicked" />-->
 
             <Border
                 Style="{StaticResource borderStyleDefault}"
