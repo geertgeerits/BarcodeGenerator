@@ -9,7 +9,7 @@
             Style="{StaticResource labelStyleShellTitleView}"
             Text="About" />
     </NavigationPage.TitleView>
-
+       
     <ScrollView>
         <StackLayout Margin="15" Spacing="4">
             <Label
