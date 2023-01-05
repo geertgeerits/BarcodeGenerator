@@ -13,10 +13,9 @@ public partial class PageSettings : ContentPage
     private readonly string cAllowedCharNot;
     private readonly string cHexColorCodes;
     private readonly Stopwatch stopWatch = new();
-    private IEnumerable<Locale> locales;
 
     public PageSettings()
-	{
+    {
         try
         {
             InitializeComponent();
@@ -62,22 +61,22 @@ public partial class PageSettings : ContentPage
         {
             // German (Deutsch).
             "de" => 0,
-            
+
             // Spanish (Español).
             "es" => 2,
-            
+
             // French (Français).
             "fr" => 3,
-            
+
             // Italian (Italiano).
             "it" => 4,
-            
+
             // Dutch (Nederlands).
             "nl" => 5,
-            
+
             // Portuguese (Português).
             "pt" => 6,
-            
+
             // English.
             _ => 1,
         };
@@ -112,7 +111,7 @@ public partial class PageSettings : ContentPage
         {
             Margin = new Thickness(0, 0, 25, 0)
         };
-        
+
         sldOpacityFg.Margin = slider.Margin;
         sldColorFgRed.Margin = slider.Margin;
         sldColorFgGreen.Margin = slider.Margin;
@@ -165,22 +164,22 @@ public partial class PageSettings : ContentPage
             {
                 // German (Deutsch).
                 0 => "de",
-                
+
                 // Spanish (Español).
                 2 => "es",
-                
+
                 // French (Français).
                 3 => "fr",
-                
+
                 // Italian (Italiano).
                 4 => "it",
-                
+
                 // Dutch (Nederlands).
                 5 => "nl",
-                
+
                 // Portuguese (Português).
                 6 => "pt",
-                
+
                 // English.
                 _ => "en",
             };
@@ -197,40 +196,28 @@ public partial class PageSettings : ContentPage
 
     // Fill the picker with the speech languages from the array.
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
-    private async void FillPickerWithSpeechLanguages()
+    private void FillPickerWithSpeechLanguages()
     {
-        try
-        {
-            locales = await TextToSpeech.GetLocalesAsync();
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-            return;
-        }
-
-        // Count the number of locales.
-        int nTotalItems = locales.Count();
-
         // Put the sorted locales from the array in the picker and select the saved language.
-        string cLangLocal;
+        bool bIsSetSelectedIndex = false;
+
+        int nTotalItems = MainPage.cLanguageLocales.Count();
 
         for (int nItem = 0; nItem < nTotalItems; nItem++)
         {
-            pckLanguageSpeech.Items.Add(MainPage.cLangLocales[nItem]);
+            pckLanguageSpeech.Items.Add(MainPage.cLanguageLocales[nItem]);
 
-            // Split before first space and remove last character '-' if there.
-            cLangLocal = MainPage.cLangLocales[nItem].Split(' ').First();
-
-            if (cLangLocal.EndsWith("-"))
-            {
-                cLangLocal = cLangLocal.Remove(cLangLocal.Length - 1, 1);
-            }
-
-            if (MainPage.cLanguageSpeech == cLangLocal)
+            if (MainPage.cLanguageSpeech == MainPage.cLanguageLocales[nItem])
             {
                 pckLanguageSpeech.SelectedIndex = nItem;
+                bIsSetSelectedIndex = true;
             }
+        }
+
+        // If the language is not found set the picker to the first item.
+        if (!bIsSetSelectedIndex)
+        {
+            pckLanguageSpeech.SelectedIndex = 0;
         }
     }
 
@@ -242,14 +229,7 @@ public partial class PageSettings : ContentPage
 
         if (selectedIndex != -1)
         {
-            MainPage.cLanguageSpeech = picker.Items[selectedIndex].Split(' ').First();
-
-            // Remove last character '-' from cLanguageSpeech if there.
-            if (MainPage.cLanguageSpeech.EndsWith("-"))
-            {
-                MainPage.cLanguageSpeech = MainPage.cLanguageSpeech.Remove(MainPage.cLanguageSpeech.Length - 1, 1);
-            }
-            //DisplayAlert("cLanguageSpeech", "*" + MainPage.cLanguageSpeech + "*", "OK");
+            MainPage.cLanguageSpeech = picker.Items[selectedIndex];
         }
     }
 
@@ -303,7 +283,7 @@ public partial class PageSettings : ContentPage
     private void EntryHexColorTextChanged(object sender, EventArgs e)
     {
         var entry = (Entry)sender;
-        
+
         string cTextToCode = entry.Text;
 
         if (TestAllowedCharacters("0123456789ABCDEFabcdef", cTextToCode) == false)
@@ -334,7 +314,7 @@ public partial class PageSettings : ContentPage
     {
         await DisplayAlert("?", cHexColorCodes, cButtonClose);
     }
-    
+
     // Entry HexColor Unfocused event.
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {
@@ -396,7 +376,7 @@ public partial class PageSettings : ContentPage
             _ = btnSettingsSave.Focus();
         }
     }
-    
+
     // Slider color barcode forground value change.
     private void OnSliderColorForgroundValueChanged(object sender, ValueChangedEventArgs args)
     {

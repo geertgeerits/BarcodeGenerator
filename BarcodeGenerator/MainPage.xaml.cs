@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.25
-// Date ........: 2023-01-02 (YYYY-MM-DD)
+// Date ........: 2023-01-05 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -11,7 +11,6 @@
 // Thanks to ...: Gerald Versluis
 
 using BarcodeGenerator.Resources.Languages;
-using Microsoft.Maui.Media;
 using System.Globalization;
 using ZXing.Net.Maui;
 
@@ -28,8 +27,7 @@ public partial class MainPage : ContentPage
     public static string cLanguage;
     public static bool bLanguageChanged = false;
     public static string cLanguageSpeech;
-    public static string[] cLangLocales;
-    public IEnumerable<Locale> locales;
+    public static string[] cLanguageLocales;
 
     // Local variables.
     private string cButtonShare;
@@ -56,6 +54,8 @@ public partial class MainPage : ContentPage
     private string cDisagree;
     private readonly bool bLicense;
     private string cCloseApplication;
+    private IEnumerable<Locale> locales;
+    //private CancellationTokenSource cts;
 
     public MainPage()
     {
@@ -123,22 +123,52 @@ public partial class MainPage : ContentPage
         SetTextLanguage();
 
         // Get and set the speech language.
-        try
-        {
-            if (cLanguageSpeech == "")
-            {
-                cLanguageSpeech = Thread.CurrentThread.CurrentCulture.Name;
-            }
-        }
-        catch (Exception)
-        {
-            cLanguageSpeech = "en-US";
-        }
-
         FillArrayWithSpeechLanguages();
+
+        // Initialize text to speech.
+        InitializeTextToSpeech();
 
         // Set focus to the editor.
         edtTextToCode.Focus();
+    }
+
+    // Initialize text to speech.
+    private async void InitializeTextToSpeech()
+    {
+        try
+        {
+            locales = await TextToSpeech.GetLocalesAsync();
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
+    }
+
+    // Button text to speech event.
+    private void OnTextToSpeechClicked(object sender, EventArgs e)
+    {
+        try
+        {
+            //cts = new CancellationTokenSource();
+            TextToSpeech.SpeakAsync(edtTextToCode.Text, new SpeechOptions
+            {
+                Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
+            });
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
+    }
+
+    // Button text to speech cancel event.
+    private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
+    {
+        //if (cts?.IsCancellationRequested ?? true)
+        //    return;
+
+        //cts.Cancel();
     }
 
     // TitleView buttons clicked events.
@@ -925,7 +955,7 @@ public partial class MainPage : ContentPage
                 //Thread.CurrentThread.Abort();  // Not allowed in iOS.
                 imgbtnAbout.IsEnabled = false;
                 imgbtnScan.IsEnabled = false;
-                imgbtnSettings.IsEnabled= false;
+                imgbtnSettings.IsEnabled = false;
                 btnGenerateCode.IsEnabled = false;
 
                 await DisplayAlert(cLicenseTitle, cCloseApplication, cButtonClose);
@@ -999,6 +1029,7 @@ public partial class MainPage : ContentPage
         lblTitle.Text = CodeLang.BarcodeGenerator_Text;
         lblFormatCode.Text = CodeLang.FormatCode_Text;
         lblTextToEncode.Text = CodeLang.TextToEncode_Text;
+        //btnSpeak.Text = CodeLang.ButtonSpeak_Text;
         btnGenerateCode.Text = CodeLang.GenerateCode_Text;
         btnClearCode.Text = CodeLang.ClearCode_Text;
         btnShare.Text = CodeLang.ButtonShare_Text;
@@ -1118,7 +1149,7 @@ public partial class MainPage : ContentPage
 
         // Count the number of locales and allocate memory for the array.
         int nTotalItems = locales.Count();
-        cLangLocales = new string[nTotalItems];
+        cLanguageLocales = new string[nTotalItems];
 
         // Put the locales in the array and sort the array.
         int nItem = 0;
@@ -1126,18 +1157,38 @@ public partial class MainPage : ContentPage
         {
             if (l.Country != "")
             {
-                cLangLocales[nItem] = l.Language + "-" + l.Country + "  " + l.Name;
+                cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
             }
             else
             {
-                cLangLocales[nItem] = l.Language + "  " + l.Name;
+                cLanguageLocales[nItem] = l.Language + " " + l.Name;
             }
             nItem++;
         }
 
-        Array.Sort(cLangLocales);
+        Array.Sort(cLanguageLocales);
+
+        if (cLanguageSpeech == "")
+        {
+            cLanguageSpeech = cLanguageLocales[0];
+        }
+    }
+
+    // Get ISO language code from locales.
+    public static string GetIsoLanguageCode()
+    {
+        // Split before first space and remove last character '-' if there.
+        string cLanguageIso = cLanguageSpeech.Split(' ').First();
+
+        if (cLanguageIso.EndsWith("-"))
+        {
+            cLanguageIso = cLanguageIso.Remove(cLanguageIso.Length - 1, 1);
+        }
+
+        return cLanguageIso;
     }
 }
+
 /*
 How to convert a UPC-E code back to UPC-A ?
 A 6-digit UPC-E code is derived from a UPC-A 12-digit code.

@@ -5,7 +5,7 @@
              x:Class="BarcodeGenerator.PageScan">
 
     <NavigationPage.TitleView>
-            <Grid RowDefinitions="50"
+        <Grid RowDefinitions="50"
               ColumnDefinitions="200*, 60, 60"
               Margin="5"
               BackgroundColor="#00bfff">
@@ -98,8 +98,36 @@
                 IsEnabled="False"
                 Clicked="OnShareClicked" />
 
-            <Button
-                x:Name="btnListen"
+            <HorizontalStackLayout
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Spacing="10">
+
+                <ImageButton
+                    x:Name="imgbtnTextToSpeech"
+                    Source="speaker_64p.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="#00bfff"
+                    BorderColor="Gray"
+                    Clicked="OnTextToSpeechClicked">
+                </ImageButton>
+
+                <!--<ImageButton
+                    x:Name="imgbtnTextToSpeechCancel"
+                    Source="speaker_cancel_64p.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="#00bfff"
+                    BorderColor="Gray"
+                    Clicked="OnTextToSpeechCancelClicked">
+                </ImageButton>-->
+            </HorizontalStackLayout>
+
+            <!--<Button
+                x:Name="btnTextToSpeech"
                 Grid.Row="4"
                 Grid.Column="1"
                 HorizontalOptions="End"
@@ -108,7 +136,7 @@
                 MinimumWidthRequest="130"
                 Text="Listen"
                 IsEnabled="False"
-                Clicked="OnListenClicked" />
+                Clicked="OnTextToSpeechClicked" />-->
 
             <Border
                 Style="{StaticResource borderStyleDefault}"
@@ -132,3 +160,4 @@
         </Grid>
     </ScrollView>
 </ContentPage>
+    

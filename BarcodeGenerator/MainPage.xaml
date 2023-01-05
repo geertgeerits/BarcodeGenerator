@@ -112,6 +112,34 @@
                 VerticalOptions="End"
                 Text="Text to encode:" />
 
+            <HorizontalStackLayout
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Spacing="10">
+
+                <ImageButton
+                    x:Name="imgbtnTextToSpeech"
+                    Source="speaker_64p.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="#00bfff"
+                    BorderColor="Gray"
+                    Clicked="OnTextToSpeechClicked">
+                </ImageButton>
+
+                <!--<ImageButton
+                    x:Name="imgbtnTextToSpeechCancel"
+                    Source="speaker_cancel_64p.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="#00bfff"
+                    BorderColor="Gray"
+                    Clicked="OnTextToSpeechCancelClicked">
+                </ImageButton>-->
+            </HorizontalStackLayout>
+
             <Border
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="2"
@@ -122,7 +150,7 @@
 
                 <ScrollView 
                     Orientation="Vertical" VerticalScrollBarVisibility="Default">
-                    
+
                     <Editor
                         x:Name="edtTextToCode"
                         Grid.Row="2"
@@ -131,7 +159,8 @@
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="180"
                         MinimumWidthRequest="350"
-                        VerticalTextAlignment="Start" />
+                        VerticalTextAlignment="Start"
+                        Text="{Binding RecognitionText}" />
                 </ScrollView>
             </Border>
 
@@ -171,7 +200,7 @@
                     Grid.ColumnSpan="2"
                     HeightRequest="250" />
             </Border>
-            
+
             <Button
                 x:Name="btnShare"
                 Grid.Row="5"
@@ -185,6 +214,7 @@
                 IsEnabled="False"
                 Clicked="OnShareClicked">
             </Button>
+
         </Grid>
     </ScrollView>
 </ContentPage>

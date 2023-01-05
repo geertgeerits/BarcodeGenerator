@@ -66,7 +66,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="190"
+                        WidthRequest="180"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerLanguageChanged">
                         <Picker.ItemsSource>
@@ -104,7 +104,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="190"
+                        WidthRequest="180"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerLanguageSpeechChanged">
                     </Picker>
@@ -131,7 +131,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="190"
+                        WidthRequest="180"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerThemeChanged">
                         <Picker.ItemsSource>
@@ -165,7 +165,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="190"
+                        WidthRequest="180"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeGeneratorChanged">
                         <Picker.ItemsSource>
@@ -198,7 +198,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="190"
+                        WidthRequest="180"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeScannerChanged">
                         <Picker.ItemsSource>
