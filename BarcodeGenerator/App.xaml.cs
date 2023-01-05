@@ -9,8 +9,8 @@ public partial class App : Application
         // Set the language to test the application, otherwise comment out the next line.
         //System.Globalization.CultureInfo.CurrentCulture = new System.Globalization.CultureInfo("nl-BE");
 
-        MainPage = new AppShell();
-        //MainPage = new NavigationPage(new MainPage());
+        //MainPage = new AppShell();
+        MainPage = new NavigationPage(new MainPage());
     }
 
     // Window dimensions and location for desktop apps.

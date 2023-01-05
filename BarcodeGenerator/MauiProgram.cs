@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using ZXing.Net.Maui.Controls;
-using BarcodeGenerator.Platforms;
+﻿using ZXing.Net.Maui.Controls;
 
 namespace BarcodeGenerator;
 
@@ -17,14 +15,6 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
-
-#if DEBUG
-        builder.Logging.AddDebug();
-#endif
-
-        builder.Services.AddTransient<MainPage>();
-        //builder.Services.AddSingleton<ISpeechToText>();
-        builder.Services.AddSingleton<ISpeechToText, SpeechToTextImplementation>();
 
         return builder.Build();
     }

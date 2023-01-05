@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BarcodeGenerator.PageSettings">
 
-    <Shell.TitleView>
+    <NavigationPage.TitleView>
         <Label
             x:Name="lblTitle"
             Style="{StaticResource labelStyleShellTitleView}"
             Text="Settings" />
-    </Shell.TitleView>
+    </NavigationPage.TitleView>
 
     <Grid
         RowDefinitions="*, auto"

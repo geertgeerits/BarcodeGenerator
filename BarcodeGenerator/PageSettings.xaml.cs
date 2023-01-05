@@ -13,7 +13,6 @@ public partial class PageSettings : ContentPage
     private readonly string cAllowedCharNot;
     private readonly string cHexColorCodes;
     private readonly Stopwatch stopWatch = new();
-    private IEnumerable<Locale> locales;
 
     public PageSettings()
 	{
@@ -197,35 +196,24 @@ public partial class PageSettings : ContentPage
 
     // Fill the picker with the speech languages from the array.
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
-    private async void FillPickerWithSpeechLanguages()
+    private void FillPickerWithSpeechLanguages()
     {
-        try
-        {
-            locales = await TextToSpeech.GetLocalesAsync();
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-            return;
-        }
-
-        // Count the number of locales.
-        int nTotalItems = locales.Count();
-
         // Put the sorted locales from the array in the picker and select the saved language.
         bool bIsSetSelectedIndex = false;
 
+        int nTotalItems = MainPage.cLanguageLocales.Count();
+
         for (int nItem = 0; nItem < nTotalItems; nItem++)
         {
-            pckLanguageSpeech.Items.Add(MainPage.cLangLocales[nItem]);
+            pckLanguageSpeech.Items.Add(MainPage.cLanguageLocales[nItem]);
 
-            if (MainPage.cLanguageSpeech == MainPage.cLangLocales[nItem])
+            if (MainPage.cLanguageSpeech == MainPage.cLanguageLocales[nItem])
             {
                 pckLanguageSpeech.SelectedIndex = nItem;
                 bIsSetSelectedIndex = true;
             }
         }
-        
+
         // If the language is not found set the picker to the first item.
         if (!bIsSetSelectedIndex)
         {
@@ -511,8 +499,8 @@ public partial class PageSettings : ContentPage
         Task.Delay(500).Wait();
 
         // Restart the application.
-        Application.Current.MainPage = new AppShell();
-        //Application.Current.MainPage = new NavigationPage(new MainPage());
+        //Application.Current.MainPage = new AppShell();
+        Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
     // Button reset settings clicked event.
@@ -542,7 +530,7 @@ public partial class PageSettings : ContentPage
         Task.Delay(500).Wait();
 
         // Restart the application.
-        Application.Current.MainPage = new AppShell();
-        //Application.Current.MainPage = new NavigationPage(new MainPage());
+        //Application.Current.MainPage = new AppShell();
+        Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 }

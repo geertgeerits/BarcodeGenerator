@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.25
-// Date ........: 2023-01-04 (YYYY-MM-DD)
+// Date ........: 2023-01-05 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -27,7 +27,7 @@ public partial class MainPage : ContentPage
     public static string cLanguage;
     public static bool bLanguageChanged = false;
     public static string cLanguageSpeech;
-    public static string[] cLangLocales;
+    public static string[] cLanguageLocales;
 
     // Local variables.
     private string cButtonShare;
@@ -54,16 +54,10 @@ public partial class MainPage : ContentPage
     private string cDisagree;
     private readonly bool bLicense;
     private string cCloseApplication;
-    
     private IEnumerable<Locale> locales;
-    private ISpeechToText speechToText;
-    private CancellationTokenSource tokenSource = new CancellationTokenSource();
+    //private CancellationTokenSource cts;
 
-    public Command ListenCommand { get; set; }
-    public Command ListenCancelCommand { get; set; }
-    public string RecognitionText { get; set; }
-
-    public MainPage(ISpeechToText speechToText)
+    public MainPage()
     {
         try
         {
@@ -74,12 +68,6 @@ public partial class MainPage : ContentPage
             DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
             return;
         }
-
-        this.speechToText = speechToText;
-
-        ListenCommand = new Command(Listen);
-        ListenCancelCommand = new Command(ListenCancel);
-        BindingContext = this;
 
         // Get the saved settings.
         cTheme = Preferences.Default.Get("SettingTheme", "System");
@@ -136,61 +124,12 @@ public partial class MainPage : ContentPage
 
         // Get and set the speech language.
         FillArrayWithSpeechLanguages();
-        
+      
         // Initialize text to speech.
         InitializeTextToSpeech();
         
         // Set focus to the editor.
         edtTextToCode.Focus();
-    }
-       
-    // Listen.
-    private async void Listen()
-    {
-        string result = await DisplayPromptAsync("Test language", "ISO code language and country?", initialValue: GetIsoLanguageCode());
-        if(result == "")
-        {
-            result = "en-US";
-        }
-        //await DisplayAlert("result", result, "OK");
-
-        var isAuthorized = await speechToText.RequestPermissions();
-        if (isAuthorized)
-        {
-            try
-            {
-                //RecognitionText = await speechToText.Listen(CultureInfo.GetCultureInfo(GetIsoLanguageCode()),
-                //RecognitionText = await speechToText.Listen(CultureInfo.GetCultureInfo("en-US"),
-                RecognitionText = await speechToText.Listen(CultureInfo.GetCultureInfo(result),
-                new Progress<string>(partialText =>
-                    {
-                        if (DeviceInfo.Platform == DevicePlatform.Android)
-                        {
-                            RecognitionText = partialText;
-                        }
-                        else
-                        {
-                            RecognitionText += partialText + " ";
-                        }
-
-                        OnPropertyChanged(nameof(RecognitionText));
-                    }), tokenSource.Token);
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Error", ex.Message, "OK");
-            }
-        }
-        else
-        {
-            await DisplayAlert("Permission Error", "No microphone access", "OK");
-        }
-    }
-
-    // Cancel listen.
-    private void ListenCancel()
-    {
-        tokenSource?.Cancel();
     }
 
     // Initialize text to speech.
@@ -211,6 +150,7 @@ public partial class MainPage : ContentPage
     {
         try
         {
+            //cts = new CancellationTokenSource();
             TextToSpeech.SpeakAsync(edtTextToCode.Text, new SpeechOptions
             {
                 Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
@@ -225,7 +165,10 @@ public partial class MainPage : ContentPage
     // Button text to speech cancel event.
     private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
     {
-    
+        //if (cts?.IsCancellationRequested ?? true)
+        //    return;
+
+        //cts.Cancel();
     }
     
     // TitleView buttons clicked events.
@@ -990,11 +933,8 @@ public partial class MainPage : ContentPage
     {
         await DisplayAlert(cErrorTitle, cErrorMessage + "\n" + cRestartApp, cButtonClose);
 
-        Application.Current.MainPage = new AppShell();
-        //Application.Current.MainPage = new NavigationPage(new MainPage());
-        //Application.Current.MainPage = new NavigationPage(new MainPage(speechToText));
-
-
+        //Application.Current.MainPage = new AppShell();
+        Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
     // Show license using the Loaded event of the MainPage.xaml.
@@ -1036,12 +976,6 @@ public partial class MainPage : ContentPage
 
             //DisplayAlert("bLanguageChanged", "true", "OK");  // For testing.
         }
-    }
-
-    // Button share event - record the text.
-    private void OnSpeakClicked(object sender, EventArgs e)
-    {
-    
     }
 
     // Button share event - make screenshot of the barcode.
@@ -1215,7 +1149,7 @@ public partial class MainPage : ContentPage
 
         // Count the number of locales and allocate memory for the array.
         int nTotalItems = locales.Count();
-        cLangLocales = new string[nTotalItems];
+        cLanguageLocales = new string[nTotalItems];
 
         // Put the locales in the array and sort the array.
         int nItem = 0;
@@ -1223,18 +1157,24 @@ public partial class MainPage : ContentPage
         {
             if (l.Country != "")
             {
-                cLangLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
+                cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
             }
             else
             {
-                cLangLocales[nItem] = l.Language + " " + l.Name;
+                cLanguageLocales[nItem] = l.Language + " " + l.Name;
             }
             nItem++;
         }
 
-        Array.Sort(cLangLocales);
+        Array.Sort(cLanguageLocales);
+
+        if (cLanguageSpeech == "")
+        {
+            cLanguageSpeech = cLanguageLocales[0];
+        }
     }
 
+    // Get ISO language code from locales.
     public static string GetIsoLanguageCode()
     {
         // Split before first space and remove last character '-' if there.
@@ -1248,6 +1188,7 @@ public partial class MainPage : ContentPage
         return cLanguageIso;
     }
 }
+
 /*
 How to convert a UPC-E code back to UPC-A ?
 A 6-digit UPC-E code is derived from a UPC-A 12-digit code.

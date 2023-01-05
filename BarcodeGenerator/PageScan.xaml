@@ -4,7 +4,7 @@
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.PageScan">
 
-    <Shell.TitleView>
+    <NavigationPage.TitleView>
             <Grid RowDefinitions="50"
               ColumnDefinitions="200*, 60, 60"
               Margin="5"
@@ -32,7 +32,7 @@
                 Clicked="OnTorchClicked">
             </ImageButton>
         </Grid>
-    </Shell.TitleView>
+    </NavigationPage.TitleView>
 
     <ScrollView>
         <Grid RowDefinitions="40, 10, 520, 10, 40, 100*"
@@ -110,20 +110,20 @@
                     Source="speaker_64p.png"
                     HeightRequest="32"
                     WidthRequest="32"
-                    BackgroundColor="Transparent"
+                    BackgroundColor="#00bfff"
                     BorderColor="Gray"
                     Clicked="OnTextToSpeechClicked">
                 </ImageButton>
 
-                <ImageButton
+                <!--<ImageButton
                     x:Name="imgbtnTextToSpeechCancel"
                     Source="speaker_cancel_64p.png"
                     HeightRequest="32"
                     WidthRequest="32"
-                    BackgroundColor="Transparent"
+                    BackgroundColor="#00bfff"
                     BorderColor="Gray"
                     Clicked="OnTextToSpeechCancelClicked">
-                </ImageButton>
+                </ImageButton>-->
             </HorizontalStackLayout>
 
             <!--<Button

@@ -7,7 +7,7 @@
              Loaded="OnPageLoad"
              Appearing="OnPageAppearing">
 
-    <Shell.TitleView>
+    <NavigationPage.TitleView>
         <Grid RowDefinitions="50"
               ColumnDefinitions="60, 140*, 60, 60"
               Margin="5"
@@ -63,7 +63,7 @@
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
         </Grid>
-    </Shell.TitleView>
+    </NavigationPage.TitleView>
 
     <ScrollView>
         <Grid RowDefinitions="40, 40, 180, 46, 250, 46"
@@ -120,44 +120,24 @@
                 Spacing="10">
                 
                 <ImageButton
-                    x:Name="imgbtnSpeechToText"
-                    Source="microphone_50p.png"
-                    HeightRequest="32"
-                    WidthRequest="32"
-                    BackgroundColor="Transparent"
-                    BorderColor="Gray"
-                    Command="{Binding ListenCommand}">
-                </ImageButton>
-
-                <ImageButton
-                    x:Name="imgbtnSpeechToTextCancel"
-                    Source="microphone_cancel_50p.png"
-                    HeightRequest="32"
-                    WidthRequest="32"
-                    BackgroundColor="Transparent"
-                    BorderColor="Gray"
-                    Command="{Binding ListenCancelCommand}">
-                </ImageButton>
-
-                <ImageButton
                     x:Name="imgbtnTextToSpeech"
                     Source="speaker_64p.png"
                     HeightRequest="32"
                     WidthRequest="32"
-                    BackgroundColor="Transparent"
+                    BackgroundColor="#00bfff"
                     BorderColor="Gray"
                     Clicked="OnTextToSpeechClicked">
                 </ImageButton>
 
-                <ImageButton
+                <!--<ImageButton
                     x:Name="imgbtnTextToSpeechCancel"
                     Source="speaker_cancel_64p.png"
                     HeightRequest="32"
                     WidthRequest="32"
-                    BackgroundColor="Transparent"
+                    BackgroundColor="#00bfff"
                     BorderColor="Gray"
                     Clicked="OnTextToSpeechCancelClicked">
-                </ImageButton>
+                </ImageButton>-->
             </HorizontalStackLayout>
 
             <Border

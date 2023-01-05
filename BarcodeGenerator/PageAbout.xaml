@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BarcodeGenerator.PageAbout">
 
-    <Shell.TitleView>
+    <NavigationPage.TitleView>
         <Label
             x:Name="lblTitle"
             Style="{StaticResource labelStyleShellTitleView}"
             Text="About" />
-    </Shell.TitleView>
-
+    </NavigationPage.TitleView>
+       
     <ScrollView>
         <StackLayout Margin="15" Spacing="4">
             <Label
