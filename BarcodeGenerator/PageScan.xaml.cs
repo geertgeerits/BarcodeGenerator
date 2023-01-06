@@ -377,10 +377,7 @@ public partial class PageScan : ContentPage
     private async void InitializeTextToSpeech()
     {
         if (!MainPage.bLanguageLocalesExist)
-        {
-            lblTextToSpeech.IsVisible = false;
-            imgbtnTextToSpeech.IsVisible = false;
-            
+        {           
             return;
         }
 
@@ -391,7 +388,12 @@ public partial class PageScan : ContentPage
         catch (Exception ex)
         {
             await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+
+            return;
         }
+
+        lblTextToSpeech.IsVisible = true;
+        imgbtnTextToSpeech.IsVisible = true;
     }
 
     // Button text to speech event.

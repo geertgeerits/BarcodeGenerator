@@ -36,9 +36,5 @@
 	<string>This app needs access to the photo gallery to save photos and videos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app needs access to the photo gallery to save photos and videos.</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Recognize speech</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>I will need the microphone to listen to your speech</string>
 </dict>
 </plist>

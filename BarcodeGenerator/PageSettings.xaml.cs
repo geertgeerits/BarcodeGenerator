@@ -198,17 +198,18 @@ public partial class PageSettings : ContentPage
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
     private void FillPickerWithSpeechLanguages()
     {
-        // Put the sorted locales from the array in the picker and select the saved language.
+        // If there are no locales then return.
         bool bIsSetSelectedIndex = false;
 
         if (!MainPage.bLanguageLocalesExist)
         {
-            pckLanguageSpeech.IsVisible = false;
+            pckLanguageSpeech.IsEnabled = false;
             
             return;
         }
-        
-        int nTotalItems = MainPage.cLanguageLocales.Count();
+
+        // Put the sorted locales from the array in the picker and select the saved language.
+        int nTotalItems = MainPage.cLanguageLocales.Length;
 
         for (int nItem = 0; nItem < nTotalItems; nItem++)
         {

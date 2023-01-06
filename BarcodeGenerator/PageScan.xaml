@@ -113,6 +113,7 @@
                     VerticalOptions="End"
                     HorizontalTextAlignment="End"
                     VerticalTextAlignment="End"
+                    IsVisible="False"
                     Text="en-US" />
 
                 <ImageButton
@@ -122,6 +123,7 @@
                     WidthRequest="38"
                     BackgroundColor="#00bfff"
                     BorderColor="Gray"
+                    IsVisible="False"
                     Clicked="OnTextToSpeechClicked">
                 </ImageButton>
 
@@ -132,21 +134,10 @@
                     WidthRequest="32"
                     BackgroundColor="#00bfff"
                     BorderColor="Gray"
+                    IsVisible="False"
                     Clicked="OnTextToSpeechCancelClicked">
                 </ImageButton>-->
             </HorizontalStackLayout>
-
-            <!--<Button
-                x:Name="btnTextToSpeech"
-                Grid.Row="4"
-                Grid.Column="1"
-                HorizontalOptions="End"
-                VerticalOptions="End"
-                HeightRequest="40"
-                MinimumWidthRequest="130"
-                Text="Listen"
-                IsEnabled="False"
-                Clicked="OnTextToSpeechClicked" />-->
 
             <Border
                 Style="{StaticResource borderStyleDefault}"
