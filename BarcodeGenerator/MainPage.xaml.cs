@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.25
-// Date ........: 2023-01-05 (YYYY-MM-DD)
+// Date ........: 2023-01-06 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -130,45 +130,6 @@ public partial class MainPage : ContentPage
 
         // Set focus to the editor.
         edtTextToCode.Focus();
-    }
-
-    // Initialize text to speech.
-    private async void InitializeTextToSpeech()
-    {
-        try
-        {
-            locales = await TextToSpeech.GetLocalesAsync();
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-        }
-    }
-
-    // Button text to speech event.
-    private void OnTextToSpeechClicked(object sender, EventArgs e)
-    {
-        try
-        {
-            //cts = new CancellationTokenSource();
-            TextToSpeech.SpeakAsync(edtTextToCode.Text, new SpeechOptions
-            {
-                Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
-            });
-        }
-        catch (Exception ex)
-        {
-            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-        }
-    }
-
-    // Button text to speech cancel event.
-    private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
-    {
-        //if (cts?.IsCancellationRequested ?? true)
-        //    return;
-
-        //cts.Cancel();
     }
 
     // TitleView buttons clicked events.
@@ -976,6 +937,8 @@ public partial class MainPage : ContentPage
 
             //DisplayAlert("bLanguageChanged", "true", "OK");  // For testing.
         }
+
+        lblTextToSpeech.Text = GetIsoLanguageCode();
     }
 
     // Button share event - make screenshot of the barcode.
@@ -1016,6 +979,68 @@ public partial class MainPage : ContentPage
             File = new ShareFile(cFile)
         });
     }
+
+    // Initialize text to speech.
+    private async void InitializeTextToSpeech()
+    {
+        try
+        {
+            locales = await TextToSpeech.GetLocalesAsync();
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
+    }
+
+    // Button text to speech event.
+    private void OnTextToSpeechClicked(object sender, EventArgs e)
+    {
+        if (edtTextToCode.Text != null && edtTextToCode.Text != "")
+        {
+            try
+            {
+                //cts = new CancellationTokenSource();
+                TextToSpeech.SpeakAsync(edtTextToCode.Text, new SpeechOptions
+                {
+                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
+                });
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            }
+        }
+    }
+
+    // Button text to speech cancel event.
+    //private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
+    //{
+    //    if (cts?.IsCancellationRequested ?? true)
+    //        return;
+
+    //    cts.Cancel();
+    //}
+
+    // Text to speech.
+    //public void TextToSpeechAndListen(string cText)
+    //{
+    //    if (cText != null && cText != "")
+    //    {
+    //        try
+    //        {
+    //            //cts = new CancellationTokenSource();
+    //            TextToSpeech.SpeakAsync(cText, new SpeechOptions
+    //            {
+    //                Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
+    //            });
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+    //        }
+    //    }       
+    //}
 
     // Put text in the chosen language in the controls.
     private void SetTextLanguage()
@@ -1172,6 +1197,8 @@ public partial class MainPage : ContentPage
         {
             cLanguageSpeech = cLanguageLocales[0];
         }
+
+        lblTextToSpeech.Text = GetIsoLanguageCode();
     }
 
     // Get ISO language code from locales.

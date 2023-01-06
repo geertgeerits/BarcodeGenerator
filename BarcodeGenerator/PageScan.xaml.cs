@@ -389,23 +389,20 @@ public partial class PageScan : ContentPage
     // Button text to speech event.
     private void OnTextToSpeechClicked(object sender, EventArgs e)
     {
-        try
+        if (lblBarcodeResult.Text != null && lblBarcodeResult.Text != "")
         {
-            TextToSpeech.SpeakAsync(lblBarcodeResult.Text, new SpeechOptions
+            try
             {
-                Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
-            });
+                TextToSpeech.SpeakAsync(lblBarcodeResult.Text, new SpeechOptions
+                {
+                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
+                });
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            }
         }
-        catch (Exception ex)
-        {
-            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-        }
-    }
-
-    // Button text to speech cancel event.
-    private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
-    {
-
     }
 
     // Open the website link.
@@ -442,6 +439,12 @@ public partial class PageScan : ContentPage
         {
             await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
         }
+    }
+
+    // Set language text to speech using the Appearing event of the PageScan.xaml.
+    private void OnPageAppearing(object sender, EventArgs e)
+    {
+        lblTextToSpeech.Text = MainPage.GetIsoLanguageCode();
     }
 
     // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
@@ -492,6 +495,7 @@ public partial class PageScan : ContentPage
                 new RowDefinition { Height = new GridLength(100, GridUnitType.Star) }
             }
         };
+        
         grdScanner.RowDefinitions = grid.RowDefinitions;
     }
 }
