@@ -201,6 +201,13 @@ public partial class PageSettings : ContentPage
         // Put the sorted locales from the array in the picker and select the saved language.
         bool bIsSetSelectedIndex = false;
 
+        if (!MainPage.bLanguageLocalesExist)
+        {
+            pckLanguageSpeech.IsVisible = false;
+            
+            return;
+        }
+        
         int nTotalItems = MainPage.cLanguageLocales.Count();
 
         for (int nItem = 0; nItem < nTotalItems; nItem++)

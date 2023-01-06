@@ -376,6 +376,14 @@ public partial class PageScan : ContentPage
     // Initialize text to speech.
     private async void InitializeTextToSpeech()
     {
+        if (!MainPage.bLanguageLocalesExist)
+        {
+            lblTextToSpeech.IsVisible = false;
+            imgbtnTextToSpeech.IsVisible = false;
+            
+            return;
+        }
+
         try
         {
             locales = await TextToSpeech.GetLocalesAsync();

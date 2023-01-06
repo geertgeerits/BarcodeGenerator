@@ -118,8 +118,8 @@
                 <ImageButton
                     x:Name="imgbtnTextToSpeech"
                     Source="speaker_64p.png"
-                    HeightRequest="32"
-                    WidthRequest="32"
+                    HeightRequest="38"
+                    WidthRequest="38"
                     BackgroundColor="#00bfff"
                     BorderColor="Gray"
                     Clicked="OnTextToSpeechClicked">

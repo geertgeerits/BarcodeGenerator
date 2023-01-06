@@ -28,6 +28,7 @@ public partial class MainPage : ContentPage
     public static bool bLanguageChanged = false;
     public static string cLanguageSpeech;
     public static string[] cLanguageLocales;
+    public static bool bLanguageLocalesExist = false;
 
     // Local variables.
     private string cButtonShare;
@@ -122,11 +123,8 @@ public partial class MainPage : ContentPage
 
         SetTextLanguage();
 
-        // Get and set the speech language.
+        // Initialize text to speech and get and set the speech language.
         FillArrayWithSpeechLanguages();
-
-        // Initialize text to speech.
-        InitializeTextToSpeech();
 
         // Set focus to the editor.
         edtTextToCode.Focus();
@@ -980,68 +978,6 @@ public partial class MainPage : ContentPage
         });
     }
 
-    // Initialize text to speech.
-    private async void InitializeTextToSpeech()
-    {
-        try
-        {
-            locales = await TextToSpeech.GetLocalesAsync();
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-        }
-    }
-
-    // Button text to speech event.
-    private void OnTextToSpeechClicked(object sender, EventArgs e)
-    {
-        if (edtTextToCode.Text != null && edtTextToCode.Text != "")
-        {
-            try
-            {
-                //cts = new CancellationTokenSource();
-                TextToSpeech.SpeakAsync(edtTextToCode.Text, new SpeechOptions
-                {
-                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
-                });
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-            }
-        }
-    }
-
-    // Button text to speech cancel event.
-    //private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
-    //{
-    //    if (cts?.IsCancellationRequested ?? true)
-    //        return;
-
-    //    cts.Cancel();
-    //}
-
-    // Text to speech.
-    //public void TextToSpeechAndListen(string cText)
-    //{
-    //    if (cText != null && cText != "")
-    //    {
-    //        try
-    //        {
-    //            //cts = new CancellationTokenSource();
-    //            TextToSpeech.SpeakAsync(cText, new SpeechOptions
-    //            {
-    //                Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
-    //            });
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-    //        }
-    //    }       
-    //}
-
     // Put text in the chosen language in the controls.
     private void SetTextLanguage()
     {
@@ -1158,10 +1094,40 @@ public partial class MainPage : ContentPage
         };
     }
 
+    // Button text to speech event.
+    private void OnTextToSpeechClicked(object sender, EventArgs e)
+    {
+        if (edtTextToCode.Text != null && edtTextToCode.Text != "")
+        {
+            try
+            {
+                //cts = new CancellationTokenSource();
+                TextToSpeech.SpeakAsync(edtTextToCode.Text, new SpeechOptions
+                {
+                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
+                });
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            }
+        }
+    }
+
+    // Button text to speech cancel event.
+    //private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
+    //{
+    //    if (cts?.IsCancellationRequested ?? true)
+    //        return;
+
+    //    cts.Cancel();
+    //}
+
     // Fill the the array with the speech languages.
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
     private async void FillArrayWithSpeechLanguages()
     {
+        // Initialize text to speech.
         try
         {
             locales = await TextToSpeech.GetLocalesAsync();
@@ -1169,11 +1135,22 @@ public partial class MainPage : ContentPage
         catch (Exception ex)
         {
             await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            
             return;
         }
 
         // Count the number of locales and allocate memory for the array.
         int nTotalItems = locales.Count();
+
+        if (nTotalItems == 0)
+        {
+            return;
+        }
+
+        lblTextToSpeech.IsVisible = true;
+        imgbtnTextToSpeech.IsVisible = true;
+        bLanguageLocalesExist = true;
+
         cLanguageLocales = new string[nTotalItems];
 
         // Put the locales in the array and sort the array.
@@ -1195,7 +1172,18 @@ public partial class MainPage : ContentPage
 
         if (cLanguageSpeech == "")
         {
-            cLanguageSpeech = cLanguageLocales[0];
+            try
+            {
+                string value = Array.Find(cLanguageLocales,
+                    element => element.StartsWith(cLanguage,
+                    StringComparison.OrdinalIgnoreCase));
+
+                cLanguageSpeech = value;
+            }
+            catch
+            {
+                cLanguageSpeech = cLanguageLocales[0];
+            }
         }
 
         lblTextToSpeech.Text = GetIsoLanguageCode();

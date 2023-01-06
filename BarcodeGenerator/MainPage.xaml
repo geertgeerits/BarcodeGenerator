@@ -127,15 +127,17 @@
                     VerticalOptions="End"
                     HorizontalTextAlignment="End"
                     VerticalTextAlignment="End"
+                    IsVisible="False"
                     Text="en-US" />
 
                 <ImageButton
                     x:Name="imgbtnTextToSpeech"
                     Source="speaker_64p.png"
-                    HeightRequest="32"
-                    WidthRequest="32"
+                    HeightRequest="38"
+                    WidthRequest="38"
                     BackgroundColor="#00bfff"
                     BorderColor="Gray"
+                    IsVisible="False"
                     Clicked="OnTextToSpeechClicked">
                 </ImageButton>
             </HorizontalStackLayout>
