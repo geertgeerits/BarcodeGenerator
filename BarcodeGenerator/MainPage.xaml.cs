@@ -1205,7 +1205,7 @@ public partial class MainPage : ContentPage
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)
             {
-                if (cLanguageLocales[nItem].Contains(cCultureName))
+                if (cLanguageLocales[nItem].StartsWith(cCultureName))
                 {
                     cLanguageSpeech = cLanguageLocales[nItem];
                     break;
