@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.25
-// Date ........: 2023-01-06 (YYYY-MM-DD)
+// Date ........: 2023-01-07 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -55,6 +55,7 @@ public partial class MainPage : ContentPage
     private string cDisagree;
     private readonly bool bLicense;
     private string cCloseApplication;
+    private string cTextToSpeechError;
     private IEnumerable<Locale> locales;
     //private CancellationTokenSource cts;
 
@@ -713,7 +714,6 @@ public partial class MainPage : ContentPage
             catch (Exception)
             {
                 bgvBarcode.Value = "";
-
                 return;
             }
         }
@@ -743,8 +743,8 @@ public partial class MainPage : ContentPage
             if (bResult == false)
             {
                 DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
+                
                 edtTextToCode.Focus();
-
                 return false;
             }
         }
@@ -760,8 +760,8 @@ public partial class MainPage : ContentPage
             if (cChar < nMinAsciiValue || cChar > nMaxAsciiValue)
             {
                 DisplayAlert(cErrorTitle, cTextContainsChar + " " + cChar, cButtonClose);
+                
                 edtTextToCode.Focus();
-
                 return false;
             }
         }
@@ -783,8 +783,8 @@ public partial class MainPage : ContentPage
             if (cStartEndGuards.Contains(cChar) && nPos > 0 && nPos < cTextToCode.Length - 1)
             {
                 DisplayAlert(cErrorTitle, cGuardInvalidStartEnd + " " + cChar, cButtonClose);
+                
                 edtTextToCode.Focus();
-
                 return false;
             }
         }
@@ -793,15 +793,15 @@ public partial class MainPage : ContentPage
         if (cStartEndGuards.Contains(cTextToCode[..1]) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
         {
             DisplayAlert(cErrorTitle, cGuardMissingEnd, cButtonClose);
+            
             edtTextToCode.Focus();
-
             return false;
         }
         else if (cStartEndGuards.Contains(cTextToCode[..1]) == false && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)))
         {
             DisplayAlert(cErrorTitle, cGuardMissingStart, cButtonClose);
+            
             edtTextToCode.Focus();
-
             return false;
         }
 
@@ -1018,6 +1018,7 @@ public partial class MainPage : ContentPage
         cAgree = CodeLang.Agree_Text;
         cDisagree = CodeLang.Disagree_Text;
         cCloseApplication = CodeLang.CloseApplication_Text;
+        cTextToSpeechError = CodeLang.TextToSpeechError_Text;
 
         //App.Current.MainPage.DisplayAlert(cErrorTitleText, cLanguage, cButtonCloseText);  // For testing.
     }
@@ -1128,33 +1129,33 @@ public partial class MainPage : ContentPage
     private async void FillArrayWithSpeechLanguages()
     {
         // Initialize text to speech.
+        int nTotalItems;
+
         try
         {
             locales = await TextToSpeech.GetLocalesAsync();
+            
+            nTotalItems = locales.Count();           
+            
+            if (nTotalItems == 0)
+            {
+                return;
+            }
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-            
+            await DisplayAlert(cErrorTitle, ex.Message + "\n\n" + cTextToSpeechError, cButtonClose);            
             return;
         }
-
-        // Count the number of locales and allocate memory for the array.
-        int nTotalItems = locales.Count();
-
-        if (nTotalItems == 0)
-        {
-            return;
-        }
-
+       
         lblTextToSpeech.IsVisible = true;
         imgbtnTextToSpeech.IsVisible = true;
         bLanguageLocalesExist = true;
 
-        cLanguageLocales = new string[nTotalItems];
-
         // Put the locales in the array and sort the array.
+        cLanguageLocales = new string[nTotalItems];
         int nItem = 0;
+
         foreach (var l in locales)
         {
             if (l.Country != "")
@@ -1170,6 +1171,7 @@ public partial class MainPage : ContentPage
 
         Array.Sort(cLanguageLocales);
 
+        // Search for the language after a first start or reset of the application.
         if (cLanguageSpeech == "")
         {
             try
@@ -1189,7 +1191,7 @@ public partial class MainPage : ContentPage
         lblTextToSpeech.Text = GetIsoLanguageCode();
     }
 
-    // Get ISO language code from locales.
+    // Get ISO language (and country) code from locales.
     public static string GetIsoLanguageCode()
     {
         // Split before first space and remove last character '-' if there.

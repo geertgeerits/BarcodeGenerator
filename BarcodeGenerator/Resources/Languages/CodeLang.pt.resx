@@ -318,6 +318,9 @@ Não permitido:</value>
   <data name="TextToEncode_Text" xml:space="preserve">
     <value>Texto a codificar:</value>
   </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>A conversão de texto em fala não é compatível com este dispositivo.</value>
+  </data>
   <data name="ThemeDark_Text" xml:space="preserve">
     <value>Escuro</value>
   </data>

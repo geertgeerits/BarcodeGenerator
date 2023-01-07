@@ -203,8 +203,7 @@ public partial class PageSettings : ContentPage
 
         if (!MainPage.bLanguageLocalesExist)
         {
-            pckLanguageSpeech.IsEnabled = false;
-            
+            pckLanguageSpeech.IsEnabled = false;           
             return;
         }
 

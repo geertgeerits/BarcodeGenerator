@@ -388,7 +388,6 @@ public partial class PageScan : ContentPage
         catch (Exception ex)
         {
             await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-
             return;
         }
 

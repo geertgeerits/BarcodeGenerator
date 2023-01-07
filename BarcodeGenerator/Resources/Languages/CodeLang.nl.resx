@@ -318,6 +318,9 @@ Niet toegestaan:</value>
   <data name="TextToEncode_Text" xml:space="preserve">
     <value>Tekst om te coderen:</value>
   </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>Tekst-naar-spraak wordt niet ondersteund op dit apparaat.</value>
+  </data>
   <data name="ThemeDark_Text" xml:space="preserve">
     <value>Donker</value>
   </data>

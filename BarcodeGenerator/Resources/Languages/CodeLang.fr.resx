@@ -318,6 +318,9 @@ Interdit:</value>
   <data name="TextToEncode_Text" xml:space="preserve">
     <value>Texte à encoder:</value>
   </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>La synthèse vocale n'est pas prise en charge sur cet appareil.</value>
+  </data>
   <data name="ThemeDark_Text" xml:space="preserve">
     <value>Sombre</value>
   </data>

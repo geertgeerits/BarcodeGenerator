@@ -628,6 +628,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Text to speech is not supported on this device..
+        /// </summary>
+        internal static string TextToSpeechError_Text {
+            get {
+                return ResourceManager.GetString("TextToSpeechError_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Theme:.
         /// </summary>
         internal static string Theme_Text {
