@@ -125,25 +125,22 @@ public partial class MainPage : ContentPage
         SetTextLanguage();
 
         // Initialize text to speech and get and set the speech language.
-        // Line 132-144 does not works on Android 13 (works on Android 8) - App is closing after starting.
-        // There is a problem in method 'FillArrayWithSpeechLanguages(cCultureName)' with the StartsWith->cCultureName:
-        // string value = Array.Find(cLanguageLocales, element => element.StartsWith(cCultureName, StringComparison.OrdinalIgnoreCase));
+        string cCultureName = "";
 
-        //string cCultureName = "";
-        //try
-        //{
-        //    if (cLanguageSpeech == "")
-        //    {
-        //        cCultureName = Thread.CurrentThread.CurrentCulture.Name;
-        //    }
-        //}
-        //catch (Exception)
-        //{
-        //    cCultureName = "en-US";
-        //}
-        //DisplayAlert("cCultureName", "*" + cCultureName + "*", "OK");
+        try
+        {
+            if (cLanguageSpeech == "")
+            {
+                cCultureName = Thread.CurrentThread.CurrentCulture.Name;
+            }
+        }
+        catch (Exception)
+        {
+            cCultureName = "en-US";
+        }
+        //DisplayAlert("cCultureName", "*" + cCultureName + "*", "OK");  // For testing.
 
-        FillArrayWithSpeechLanguages();
+        FillArrayWithSpeechLanguages(cCultureName);
 
         // Set focus to the editor.
         edtTextToCode.Focus();
@@ -1144,7 +1141,7 @@ public partial class MainPage : ContentPage
 
     // Fill the the array with the speech languages.
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
-    private async void FillArrayWithSpeechLanguages()
+    private async void FillArrayWithSpeechLanguages(string cCultureName)
     {
         // Initialize text to speech.
         int nTotalItems;
@@ -1162,7 +1159,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message + "\n\n" + cTextToSpeechError, cButtonClose);            
+            await DisplayAlert(cErrorTitle, ex.Message + "\n\n" + cTextToSpeechError, cButtonClose);
             return;
         }
        
@@ -1192,23 +1189,72 @@ public partial class MainPage : ContentPage
         // Search for the language after a first start or reset of the application.
         if (cLanguageSpeech == "")
         {
-            try
-            {
-                string value = Array.Find(cLanguageLocales,
-                    element => element.StartsWith(cLanguage,
-                    StringComparison.OrdinalIgnoreCase));
-
-                cLanguageSpeech = value;
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-                cLanguageSpeech = cLanguageLocales[0];
-            }
+            SearchArrayWithSpeechLanguages(cCultureName);
         }
-
+        //await DisplayAlert("cLanguageSpeech", cLanguageSpeech, "OK");  // For testing.
+        
         lblTextToSpeech.Text = GetIsoLanguageCode();
     }
+    
+    // Search for the language after a first start or reset of the application.
+    private void SearchArrayWithSpeechLanguages(string cCultureName)
+    {
+        try
+        {
+            int nTotalItems = cLanguageLocales.Length;
+
+            for (int nItem = 0; nItem < nTotalItems; nItem++)
+            {
+                if (cLanguageLocales[nItem].Contains(cCultureName))
+                {
+                    cLanguageSpeech = cLanguageLocales[nItem];
+                    break;
+                }
+            }
+
+            if (cLanguageSpeech == "")
+            {
+                for (int nItem = 0; nItem < nTotalItems; nItem++)
+                {
+                    if (cLanguageLocales[nItem].StartsWith(cLanguage))
+                    {
+                        cLanguageSpeech = cLanguageLocales[nItem];
+                        break;
+                    }
+                    else
+                    {
+                        cLanguageSpeech = cLanguageLocales[0];
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+        }
+    }
+
+    // Search for the language after a first start or reset of the application.
+    //private void SearchArrayWithSpeechLanguages(string cCultureName)
+    //{
+    //    // Does not works on Android 13 (works on Android 8) - App is closing after starting.
+    //    // There is a problem with the StartsWith->cCultureName:
+    //    // string value = Array.Find(cLanguageLocales, element => element.StartsWith(cCultureName, StringComparison.OrdinalIgnoreCase));
+
+    //    if (cLanguageSpeech == "")
+    //    {
+    //        try
+    //        {
+    //            string value = Array.Find(cLanguageLocales, element => element.StartsWith(cCultureName, StringComparison.OrdinalIgnoreCase));
+    //            cLanguageSpeech = value;
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+    //            cLanguageSpeech = cLanguageLocales[0];
+    //        }
+    //    }
+    //}
 
     // Get ISO language (and country) code from locales.
     public static string GetIsoLanguageCode()
