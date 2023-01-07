@@ -125,6 +125,24 @@ public partial class MainPage : ContentPage
         SetTextLanguage();
 
         // Initialize text to speech and get and set the speech language.
+        // Line 132-144 does not works on Android 13 (works on Android 8) - App is closing after starting.
+        // There is a problem in method 'FillArrayWithSpeechLanguages(cCultureName)' with the StartsWith->cCultureName:
+        // string value = Array.Find(cLanguageLocales, element => element.StartsWith(cCultureName, StringComparison.OrdinalIgnoreCase));
+
+        //string cCultureName = "";
+        //try
+        //{
+        //    if (cLanguageSpeech == "")
+        //    {
+        //        cCultureName = Thread.CurrentThread.CurrentCulture.Name;
+        //    }
+        //}
+        //catch (Exception)
+        //{
+        //    cCultureName = "en-US";
+        //}
+        //DisplayAlert("cCultureName", "*" + cCultureName + "*", "OK");
+
         FillArrayWithSpeechLanguages();
 
         // Set focus to the editor.
@@ -1182,8 +1200,9 @@ public partial class MainPage : ContentPage
 
                 cLanguageSpeech = value;
             }
-            catch
+            catch (Exception ex)
             {
+                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
                 cLanguageSpeech = cLanguageLocales[0];
             }
         }
