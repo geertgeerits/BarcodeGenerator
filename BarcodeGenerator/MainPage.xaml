@@ -140,6 +140,18 @@
                     IsVisible="False"
                     Clicked="OnTextToSpeechClicked">
                 </ImageButton>
+
+                <ImageButton
+                    x:Name="imgbtnTextToSpeechCancel"
+                    Source="speaker_cancel_64p.png"
+                    HeightRequest="38"
+                    WidthRequest="38"
+                    BackgroundColor="#00bfff"
+                    BorderColor="Gray"
+                    IsVisible="False"
+                    Clicked="OnTextToSpeechCancelClicked">
+                </ImageButton>
+
             </HorizontalStackLayout>
 
             <Border

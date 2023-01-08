@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.25
-// Date ........: 2023-01-07 (YYYY-MM-DD)
+// Date ........: 2023-01-08 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -57,7 +57,7 @@ public partial class MainPage : ContentPage
     private string cCloseApplication;
     private string cTextToSpeechError;
     private IEnumerable<Locale> locales;
-    //private CancellationTokenSource cts;
+    private CancellationTokenSource cts;
 
     public MainPage()
     {
@@ -140,7 +140,7 @@ public partial class MainPage : ContentPage
         }
         //DisplayAlert("cCultureName", "*" + cCultureName + "*", "OK");  // For testing.
 
-        FillArrayWithSpeechLanguages(cCultureName);
+        InitializeTextToSpeech(cCultureName);
 
         // Set focus to the editor.
         edtTextToCode.Focus();
@@ -1110,45 +1110,16 @@ public partial class MainPage : ContentPage
         };
     }
 
-    // Button text to speech event.
-    private void OnTextToSpeechClicked(object sender, EventArgs e)
-    {
-        if (edtTextToCode.Text != null && edtTextToCode.Text != "")
-        {
-            try
-            {
-                //cts = new CancellationTokenSource();
-                TextToSpeech.SpeakAsync(edtTextToCode.Text, new SpeechOptions
-                {
-                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
-                });
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-            }
-        }
-    }
-
-    // Button text to speech cancel event.
-    //private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
-    //{
-    //    if (cts?.IsCancellationRequested ?? true)
-    //        return;
-
-    //    cts.Cancel();
-    //}
-
-    // Fill the the array with the speech languages.
+    // Initialize text to speech and fill the the array with the speech languages.
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
-    private async void FillArrayWithSpeechLanguages(string cCultureName)
+    private async void InitializeTextToSpeech(string cCultureName)
     {
         // Initialize text to speech.
         int nTotalItems;
 
         try
         {
-            locales = await TextToSpeech.GetLocalesAsync();
+            locales = await TextToSpeech.Default.GetLocalesAsync();
             
             nTotalItems = locales.Count();           
             
@@ -1165,6 +1136,7 @@ public partial class MainPage : ContentPage
        
         lblTextToSpeech.IsVisible = true;
         imgbtnTextToSpeech.IsVisible = true;
+        imgbtnTextToSpeechCancel.IsVisible = true;
         bLanguageLocalesExist = true;
 
         // Put the locales in the array and sort the array.
@@ -1212,6 +1184,7 @@ public partial class MainPage : ContentPage
                 }
             }
 
+            // If the language is not found try it with the language (cLanguage) of the user setting for this app.
             if (cLanguageSpeech == "")
             {
                 for (int nItem = 0; nItem < nTotalItems; nItem++)
@@ -1221,11 +1194,13 @@ public partial class MainPage : ContentPage
                         cLanguageSpeech = cLanguageLocales[nItem];
                         break;
                     }
-                    else
-                    {
-                        cLanguageSpeech = cLanguageLocales[0];
-                    }
                 }
+            }
+
+            // If the language is still not found use the first language in the array.
+            if (cLanguageSpeech == "")
+            {
+                cLanguageSpeech = cLanguageLocales[0];
             }
         }
         catch (Exception ex)
@@ -1268,6 +1243,38 @@ public partial class MainPage : ContentPage
         }
 
         return cLanguageIso;
+    }
+
+    // Button text to speech event.
+    private void OnTextToSpeechClicked(object sender, EventArgs e)
+    {
+        if (edtTextToCode.Text != null && edtTextToCode.Text != "")
+        {
+            try
+            {
+                cts = new CancellationTokenSource();
+
+                SpeechOptions options = new SpeechOptions()
+                {
+                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
+                };
+
+                TextToSpeech.Default.SpeakAsync(edtTextToCode.Text, options, cancelToken: cts.Token);
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            }
+        }
+    }
+
+    // Button text to speech cancel event.
+    private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
+    {
+        if (cts?.IsCancellationRequested ?? true)
+            return;
+
+        cts.Cancel();
     }
 }
 

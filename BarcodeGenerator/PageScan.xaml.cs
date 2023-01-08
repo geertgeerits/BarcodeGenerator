@@ -15,6 +15,7 @@ public partial class PageScan : ContentPage
     private readonly string cNo;
     private readonly string cErrorTitle;
     private IEnumerable<Locale> locales;
+    private CancellationTokenSource cts;
 
     public PageScan()
     {
@@ -81,6 +82,7 @@ public partial class PageScan : ContentPage
             btnShare.Text = cButtonShare;
             btnShare.IsEnabled = false;
             imgbtnTextToSpeech.IsEnabled = false;
+            imgbtnTextToSpeechCancel.IsEnabled = false;
 
             switch (selectedIndex)
             {
@@ -319,6 +321,7 @@ public partial class PageScan : ContentPage
 
                 btnShare.IsEnabled = true;
                 imgbtnTextToSpeech.IsEnabled = true;
+                imgbtnTextToSpeechCancel.IsEnabled = true;
             });
         }
         catch (Exception ex)
@@ -372,48 +375,7 @@ public partial class PageScan : ContentPage
         // Open share interface.
         await ShareText(cText);
     }
-
-    // Initialize text to speech.
-    private async void InitializeTextToSpeech()
-    {
-        if (!MainPage.bLanguageLocalesExist)
-        {           
-            return;
-        }
-
-        try
-        {
-            locales = await TextToSpeech.GetLocalesAsync();
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-            return;
-        }
-
-        lblTextToSpeech.IsVisible = true;
-        imgbtnTextToSpeech.IsVisible = true;
-    }
-
-    // Button text to speech event.
-    private void OnTextToSpeechClicked(object sender, EventArgs e)
-    {
-        if (lblBarcodeResult.Text != null && lblBarcodeResult.Text != "")
-        {
-            try
-            {
-                TextToSpeech.SpeakAsync(lblBarcodeResult.Text, new SpeechOptions
-                {
-                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
-                });
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
-            }
-        }
-    }
-
+   
     // Open the website link.
     private async Task OpenWebsiteLink(string cUrl)
     {
@@ -454,6 +416,61 @@ public partial class PageScan : ContentPage
     private void OnPageAppearing(object sender, EventArgs e)
     {
         lblTextToSpeech.Text = MainPage.GetIsoLanguageCode();
+    }
+
+    // Initialize text to speech.
+    private async void InitializeTextToSpeech()
+    {
+        if (!MainPage.bLanguageLocalesExist)
+        {
+            return;
+        }
+
+        try
+        {
+            locales = await TextToSpeech.Default.GetLocalesAsync();
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            return;
+        }
+
+        lblTextToSpeech.IsVisible = true;
+        imgbtnTextToSpeech.IsVisible = true;
+        imgbtnTextToSpeechCancel.IsVisible = true;
+    }
+
+    // Button text to speech event.
+    private void OnTextToSpeechClicked(object sender, EventArgs e)
+    {
+        if (lblBarcodeResult.Text != null && lblBarcodeResult.Text != "")
+        {
+            try
+            {
+                cts = new CancellationTokenSource();
+
+                SpeechOptions options = new SpeechOptions()
+                {
+                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
+                };
+
+                TextToSpeech.Default.SpeakAsync(lblBarcodeResult.Text, options, cancelToken: cts.Token);
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            }
+        }
+    }
+
+    // Button text to speech cancel event.
+    private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
+    {
+        if (cts?.IsCancellationRequested ?? true)
+            return;
+
+        cts.Cancel();
     }
 
     // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.

@@ -121,22 +121,22 @@
                     Source="speaker_64p.png"
                     HeightRequest="38"
                     WidthRequest="38"
-                    BackgroundColor="#00bfff"
+                    BackgroundColor="#00FF00"
                     BorderColor="Gray"
                     IsVisible="False"
                     Clicked="OnTextToSpeechClicked">
                 </ImageButton>
 
-                <!--<ImageButton
+                <ImageButton
                     x:Name="imgbtnTextToSpeechCancel"
                     Source="speaker_cancel_64p.png"
-                    HeightRequest="32"
-                    WidthRequest="32"
-                    BackgroundColor="#00bfff"
+                    HeightRequest="38"
+                    WidthRequest="38"
+                    BackgroundColor="#FF0000"
                     BorderColor="Gray"
                     IsVisible="False"
                     Clicked="OnTextToSpeechCancelClicked">
-                </ImageButton>-->
+                </ImageButton>
             </HorizontalStackLayout>
 
             <Border
