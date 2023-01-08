@@ -118,22 +118,20 @@
 
                 <ImageButton
                     x:Name="imgbtnTextToSpeech"
-                    Source="speaker_64p.png"
+                    Source="speaker_64p_blue.png"
                     HeightRequest="38"
                     WidthRequest="38"
-                    BackgroundColor="#00FF00"
-                    BorderColor="Gray"
+                    BackgroundColor="Transparent"
                     IsVisible="False"
                     Clicked="OnTextToSpeechClicked">
                 </ImageButton>
 
                 <ImageButton
                     x:Name="imgbtnTextToSpeechCancel"
-                    Source="speaker_cancel_64p.png"
+                    Source="speaker_cancel_64p_blue.png"
                     HeightRequest="38"
                     WidthRequest="38"
-                    BackgroundColor="#FF0000"
-                    BorderColor="Gray"
+                    BackgroundColor="Transparent"
                     IsVisible="False"
                     Clicked="OnTextToSpeechCancelClicked">
                 </ImageButton>

@@ -1145,14 +1145,7 @@ public partial class MainPage : ContentPage
 
         foreach (var l in locales)
         {
-            if (l.Country != "")
-            {
-                cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
-            }
-            else
-            {
-                cLanguageLocales[nItem] = l.Language + " " + l.Name;
-            }
+            cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
             nItem++;
         }
 
