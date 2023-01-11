@@ -1,8 +1,8 @@
 ﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
-// Version .....: 1.0.25
-// Date ........: 2023-01-08 (YYYY-MM-DD)
+// Version .....: 1.0.26
+// Date ........: 2023-01-11 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -11,6 +11,7 @@
 // Thanks to ...: Gerald Versluis
 
 using BarcodeGenerator.Resources.Languages;
+using Microsoft.Maui.Platform;
 using System.Globalization;
 using ZXing.Net.Maui;
 
@@ -29,6 +30,8 @@ public partial class MainPage : ContentPage
     public static string cLanguageSpeech;
     public static string[] cLanguageLocales;
     public static bool bLanguageLocalesExist = false;
+    public static string cImageTextToSpeech = "speaker_64p_blue.png";
+    public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue.png";
 
     // Local variables.
     private string cButtonShare;
@@ -58,6 +61,7 @@ public partial class MainPage : ContentPage
     private string cTextToSpeechError;
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
+    private bool bTextToSpeechIsBusy = false;
 
     public MainPage()
     {
@@ -1136,7 +1140,6 @@ public partial class MainPage : ContentPage
        
         lblTextToSpeech.IsVisible = true;
         imgbtnTextToSpeech.IsVisible = true;
-        imgbtnTextToSpeechCancel.IsVisible = true;
         bLanguageLocalesExist = true;
 
         // Put the locales in the array and sort the array.
@@ -1239,10 +1242,25 @@ public partial class MainPage : ContentPage
     }
 
     // Button text to speech event.
-    private void OnTextToSpeechClicked(object sender, EventArgs e)
+    private async void OnTextToSpeechClicked(object sender, EventArgs e)
     {
+        // Cancel the text to speech.
+        if (bTextToSpeechIsBusy)
+        {
+            if (cts?.IsCancellationRequested ?? true)
+                return;
+
+            cts.Cancel();
+            imgbtnTextToSpeech.Source = cImageTextToSpeech;
+            return;
+        }
+
+        // Start with the text to speech.
         if (edtTextToCode.Text != null && edtTextToCode.Text != "")
         {
+            bTextToSpeechIsBusy = true;
+            imgbtnTextToSpeech.Source = cImageTextToSpeechCancel;
+
             try
             {
                 cts = new CancellationTokenSource();
@@ -1252,22 +1270,16 @@ public partial class MainPage : ContentPage
                     Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
                 };
 
-                TextToSpeech.Default.SpeakAsync(edtTextToCode.Text, options, cancelToken: cts.Token);
+                await TextToSpeech.Default.SpeakAsync(edtTextToCode.Text, options, cancelToken: cts.Token);
+                bTextToSpeechIsBusy = false;
             }
             catch (Exception ex)
             {
-                DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
             }
+
+            imgbtnTextToSpeech.Source = cImageTextToSpeech;
         }
-    }
-
-    // Button text to speech cancel event.
-    private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
-    {
-        if (cts?.IsCancellationRequested ?? true)
-            return;
-
-        cts.Cancel();
     }
 }
 

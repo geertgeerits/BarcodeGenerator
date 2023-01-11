@@ -30,7 +30,7 @@
                 x:Name="lblVersion"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Version: 1.0.25" />
+                Text="Version: 1.0.26" />
 
             <Label
                 x:Name="lblCopyright"

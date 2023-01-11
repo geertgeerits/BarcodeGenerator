@@ -16,6 +16,7 @@ public partial class PageScan : ContentPage
     private readonly string cErrorTitle;
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
+    private bool bTextToSpeechIsBusy = false;
 
     public PageScan()
     {
@@ -82,7 +83,6 @@ public partial class PageScan : ContentPage
             btnShare.Text = cButtonShare;
             btnShare.IsEnabled = false;
             imgbtnTextToSpeech.IsEnabled = false;
-            imgbtnTextToSpeechCancel.IsEnabled = false;
 
             switch (selectedIndex)
             {
@@ -321,7 +321,6 @@ public partial class PageScan : ContentPage
 
                 btnShare.IsEnabled = true;
                 imgbtnTextToSpeech.IsEnabled = true;
-                imgbtnTextToSpeechCancel.IsEnabled = true;
             });
         }
         catch (Exception ex)
@@ -438,14 +437,28 @@ public partial class PageScan : ContentPage
 
         lblTextToSpeech.IsVisible = true;
         imgbtnTextToSpeech.IsVisible = true;
-        imgbtnTextToSpeechCancel.IsVisible = true;
     }
 
     // Button text to speech event.
-    private void OnTextToSpeechClicked(object sender, EventArgs e)
+    private async void OnTextToSpeechClicked(object sender, EventArgs e)
     {
+        // Cancel the text to speech.
+        if (bTextToSpeechIsBusy)
+        {
+            if (cts?.IsCancellationRequested ?? true)
+                return;
+
+            cts.Cancel();
+            imgbtnTextToSpeech.Source = MainPage.cImageTextToSpeech;
+            return;
+        }
+
+        // Start with the text to speech.
         if (lblBarcodeResult.Text != null && lblBarcodeResult.Text != "")
         {
+            bTextToSpeechIsBusy = true;
+            imgbtnTextToSpeech.Source = MainPage.cImageTextToSpeechCancel;
+
             try
             {
                 cts = new CancellationTokenSource();
@@ -455,22 +468,16 @@ public partial class PageScan : ContentPage
                     Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
                 };
 
-                TextToSpeech.Default.SpeakAsync(lblBarcodeResult.Text, options, cancelToken: cts.Token);
+                await TextToSpeech.Default.SpeakAsync(lblBarcodeResult.Text, options, cancelToken: cts.Token);
+                bTextToSpeechIsBusy = false;
             }
             catch (Exception ex)
             {
-                DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
             }
+
+            imgbtnTextToSpeech.Source = MainPage.cImageTextToSpeech;
         }
-    }
-
-    // Button text to speech cancel event.
-    private void OnTextToSpeechCancelClicked(object sender, EventArgs e)
-    {
-        if (cts?.IsCancellationRequested ?? true)
-            return;
-
-        cts.Cancel();
     }
 
     // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
