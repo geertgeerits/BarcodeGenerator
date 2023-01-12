@@ -118,7 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>O Google Tradutor foi utilizado para a tradução do texto. Isso não é uma garantia de que todas as traduções estão corretas.
+    <value>Texto para fala: Nem todos os idiomas são suportados fornecidos nas configurações do aplicativo.
+Fala para texto: ative-o nas configurações do seu dispositivo. Um microfone aparecerá no teclado virtual.
+Ambas as opções dependem de dispositivo para dispositivo e dos idiomas instalados. É possível que, para alguns idiomas, a tradução de e para fala seja feita pela Internet pelos serviços envolvidos.
+
+O Google Tradutor foi utilizado para a tradução do texto. Isso não é uma garantia de que todas as traduções estão corretas.
 Os idiomas de suporte são: holandês, inglês, francês, alemão, italiano, português e espanhol.
 
 Você sempre pode entrar em contato comigo para quaisquer correções.</value>

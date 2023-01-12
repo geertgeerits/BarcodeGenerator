@@ -118,7 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Voor de vertaling van de tekst werd gebruik gemaakt van Google Translate.  Dit is geen garantie dat alle vertalingen correct zijn.
+    <value>Tekst naar spraak: niet alle talen die beschikbaar zijn in de applicatie-instellingen worden ondersteund.
+Spraak naar tekst: activeer het via uw apparaatinstellingen. Er verschijnt dan een microfoon in het virtuele toetsenbord.
+Beide opties zijn afhankelijk van apparaat tot apparaat en de geïnstalleerde talen. Het is mogelijk dat voor sommige talen de vertaling van en naar spraak via het internet wordt gedaan door de betrokken diensten.
+
+Voor de vertaling van de tekst werd gebruik gemaakt van Google Translate.  Dit is geen garantie dat alle vertalingen correct zijn.
 De ondersteunende talen zijn: Nederlands, Engels, Frans, Duits, Italiaans, Portugees en Spaans.
 
 Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>

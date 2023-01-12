@@ -70,10 +70,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
-        ///The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
+        ///   Looks up a localized string similar to Text to speech: Not all languages are supported that are provided in the application settings.
+        ///Speech to text: Activate it through your device settings. A microphone will then appear in the virtual keyboard.
+        ///Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
         ///
-        ///You can always contact me for any corrections..
+        ///Google Translate was used for the translation of the text. This is not a guarantee that all  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AboutExplanation_Text {
             get {

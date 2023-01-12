@@ -118,7 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Für die Übersetzung des Textes wurde Google Translate verwendet. Dies ist keine Garantie dafür, dass alle Übersetzungen korrekt sind.
+    <value>Text zu Sprache: Es werden nicht alle Sprachen unterstützt, die in den Anwendungseinstellungen bereitgestellt werden.
+Sprache zu Text: Aktivieren Sie es über Ihre Geräteeinstellungen. Auf der virtuellen Tastatur erscheint dann ein Mikrofon.
+Beide Optionen hängen von Gerät zu Gerät und den installierten Sprachen ab. Es ist möglich, dass für einige Sprachen die Übersetzung in und aus der Sprache von den betreffenden Diensten über das Internet durchgeführt wird.
+
+Für die Übersetzung des Textes wurde Google Translate verwendet. Dies ist keine Garantie dafür, dass alle Übersetzungen korrekt sind.
 Die unterstützenden Sprachen sind: Niederländisch, Englisch, Französisch, Deutsch, Italienisch, Portugiesisch und Spanisch.
 
 Sie können mich jederzeit für Korrekturen kontaktieren.</value>
