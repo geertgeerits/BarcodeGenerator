@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.26
-// Date ........: 2023-01-11 (YYYY-MM-DD)
+// Date ........: 2023-01-12 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -11,7 +11,6 @@
 // Thanks to ...: Gerald Versluis
 
 using BarcodeGenerator.Resources.Languages;
-using Microsoft.Maui.Platform;
 using System.Globalization;
 using ZXing.Net.Maui;
 
@@ -30,8 +29,8 @@ public partial class MainPage : ContentPage
     public static string cLanguageSpeech;
     public static string[] cLanguageLocales;
     public static bool bLanguageLocalesExist = false;
-    public static string cImageTextToSpeech = "speaker_64p_blue.png";
-    public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue.png";
+    public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
+    public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
 
     // Local variables.
     private string cButtonShare;
@@ -357,7 +356,7 @@ public partial class MainPage : ContentPage
         // Miscellaneous.
         bgvBarcode.Value = "";
         string cChecksum = "";
-        string cTextCode = "";
+        //string cTextCode = "";
 
         if (edtTextToCode.Text == null)
         {
@@ -490,7 +489,7 @@ public partial class MainPage : ContentPage
                         }
 
                         edtTextToCode.Text = cTextToCode;
-                        cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 6));
+                        //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 6));
 
                         bgvBarcode.Format = BarcodeFormat.Ean13;
                         break;
@@ -523,7 +522,7 @@ public partial class MainPage : ContentPage
                         }
 
                         edtTextToCode.Text = cTextToCode;
-                        cTextCode = string.Concat(cTextToCode[..4], " ", cTextToCode.Substring(4, 4));
+                        //cTextCode = string.Concat(cTextToCode[..4], " ", cTextToCode.Substring(4, 4));
 
                         bgvBarcode.Format = BarcodeFormat.Ean8;
                         break;
@@ -649,7 +648,7 @@ public partial class MainPage : ContentPage
                         }
 
                         edtTextToCode.Text = cTextToCode;
-                        cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 5), " ", cTextToCode.Substring(6, 5), " ", cTextToCode.Substring(11, 1));
+                        //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 5), " ", cTextToCode.Substring(6, 5), " ", cTextToCode.Substring(11, 1));
 
                         bgvBarcode.Format = BarcodeFormat.UpcA;
                         break;
@@ -716,7 +715,7 @@ public partial class MainPage : ContentPage
                         }
 
                         edtTextToCode.Text = cTextToCode;
-                        cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 1));
+                        //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 1));
 
                         bgvBarcode.Format = BarcodeFormat.UpcE;
                         break;
