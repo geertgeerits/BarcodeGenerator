@@ -30,13 +30,13 @@
                 x:Name="lblVersion"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Version: 1.0.26" />
+                Text="Version: 1.0.27" />
 
             <Label
                 x:Name="lblCopyright"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Copyright © 2022-2022 Geert Geerits" />
+                Text="Copyright © 2022-2023 Geert Geerits" />
 
             <HorizontalStackLayout Spacing="10">
                 <Label

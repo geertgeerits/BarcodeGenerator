@@ -166,7 +166,7 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalTextAlignment" Value="Start" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
-                <Setter Property="BackgroundColor" Value="DeepSkyBlue" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontSize" Value="18" />
                 <Setter Property="LineBreakMode" Value="TailTruncation" />
