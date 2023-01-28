@@ -12,6 +12,7 @@ public partial class PageSettings : ContentPage
     private readonly string cAllowedChar;
     private readonly string cAllowedCharNot;
     private readonly string cHexColorCodes;
+    private readonly string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
     public PageSettings()
@@ -291,29 +292,10 @@ public partial class PageSettings : ContentPage
     {
         var entry = (Entry)sender;
 
-        string cTextToCode = entry.Text;
-
-        if (TestAllowedCharacters("0123456789ABCDEFabcdef", cTextToCode) == false)
+        if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
         {
             entry.Focus();
         }
-    }
-
-    // Test for allowed characters.
-    private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
-    {
-        foreach (char cChar in cTextToCode)
-        {
-            bool bResult = cAllowedCharacters.Contains(cChar);
-
-            if (bResult == false)
-            {
-                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
-                return false;
-            }
-        }
-
-        return true;
     }
 
     // Display help for Hex color.
@@ -326,6 +308,13 @@ public partial class PageSettings : ContentPage
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {
         var entry = (Entry)sender;
+
+        //Test for allowed characters.
+        if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
+        {
+            entry.Focus();
+            return;
+        }
 
         // Add the opacity if length = 6 characters.
         if (entry.Text.Length == 6)
@@ -382,6 +371,23 @@ public partial class PageSettings : ContentPage
 
             _ = btnSettingsSave.Focus();
         }
+    }
+
+    // Test for allowed characters.
+    private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
+    {
+        foreach (char cChar in cTextToCode)
+        {
+            bool bResult = cAllowedCharacters.Contains(cChar);
+
+            if (bResult == false)
+            {
+                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
+                return false;
+            }
+        }
+
+        return true;
     }
 
     // Slider color barcode forground value change.
