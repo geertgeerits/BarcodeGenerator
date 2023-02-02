@@ -4,10 +4,6 @@ namespace BarcodeGenerator;
 
 public partial class PageAbout : ContentPage
 {
-    // Local variables.
-    private readonly string cButtonClose;
-    private readonly string cErrorTitle;
-
     public PageAbout()
 	{
         try
@@ -21,21 +17,13 @@ public partial class PageAbout : ContentPage
         }
 
         // Put text in the chosen language in the controls.
-        lblTitle.Text = CodeLang.About_Text;
-
-        lblNameProgram.Text = CodeLang.NameProgram_Text;
-        lblDescription.Text = CodeLang.Description_Text;
         lblVersion.Text = CodeLang.Version_Text + " 1.0.27";
         lblCopyright.Text = CodeLang.Copyright_Text + " © 2022-2023 Geert Geerits";
-        lblEmail.Text = CodeLang.Email_Text + " " + lblEmail.Text;
-        lblWebsite.Text = CodeLang.Website_Text + " " + lblWebsite.Text;
+        lblEmail.Text = CodeLang.Email_Text + " geertgeerits@gmail.com";
+        lblWebsite.Text = CodeLang.Website_Text + " ../barcodegenerator";
         lblPrivacyPolicy.Text = CodeLang.PrivacyPolicyTitle_Text + " " + CodeLang.PrivacyPolicy_Text;
         lblLicense.Text = CodeLang.LicenseTitle_Text + ": " + CodeLang.License_Text;
         lblLicenseMit.Text = CodeLang.Copyright_Text + " © " + CodeLang.LicenseMit_Text + "\n\n" + CodeLang.LicenseMit2_Text;
-        lblAboutExplanation.Text = CodeLang.AboutExplanation_Text;
-
-        cButtonClose = CodeLang.ButtonClose_Text;
-        cErrorTitle = CodeLang.ErrorTitle_Text;
     }
 
     // Open e-mail program.
@@ -50,7 +38,7 @@ public partial class PageAbout : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
 #else
         if (Email.Default.IsComposeSupported)
@@ -73,7 +61,7 @@ public partial class PageAbout : ContentPage
             }
             catch (Exception ex)
             {
-                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+                await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }
         }
 #endif
@@ -89,7 +77,7 @@ public partial class PageAbout : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
     }
 }

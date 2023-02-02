@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              x:Class="BarcodeGenerator.PageAbout">
 
     <NavigationPage.TitleView>
         <Label
             x:Name="lblTitle"
             Style="{StaticResource labelStyleShellTitleView}"
-            Text="About" />
+            Text="{x:Static resx:CodeLang.About_Text}" />
     </NavigationPage.TitleView>
        
     <ScrollView>
@@ -16,7 +17,7 @@
                 x:Name="lblNameProgram"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Barcode Generator and Scanner"
+                Text="{x:Static resx:CodeLang.NameProgram_Text}"
                 FontSize="20"
                 FontAttributes="Bold" />
 
@@ -24,26 +25,26 @@
                 x:Name="lblDescription"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Generate and scan various barcodes." />
+                Text="{x:Static resx:CodeLang.Description_Text}" />
 
             <Label
                 x:Name="lblVersion"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Version: 1.0.27" />
+                Text="Version:" />
 
             <Label
                 x:Name="lblCopyright"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Copyright © 2022-2023 Geert Geerits" />
+                Text="Copyright ©" />
 
             <HorizontalStackLayout Spacing="10">
                 <Label
                     x:Name="lblEmail"
                     VerticalOptions="Center" 
                     HorizontalOptions="Start"
-                    Text="geertgeerits@gmail.com"/>
+                    Text="E-mail:"/>
 
                 <ImageButton
                     Source="circled_envelope_24p.png"                         
@@ -60,7 +61,7 @@
                     x:Name="lblWebsite"
                     VerticalOptions="Center" 
                     HorizontalOptions="Start"
-                    Text="../barcodegenerator"/>
+                    Text="Website:"/>
 
                 <ImageButton
                     Source="internet_24p.png"
@@ -109,10 +110,7 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
                 FontSize="13"
-                Text="Google Translate was used for the translation of the text.  This is not a guarantee that all translations are correct.
-                      &#10;The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
-                      &#10; &#10;You can always contact me for any corrections.
-                      &#10; &#10;Use this program entirely at your own risk.">
+                Text="{x:Static resx:CodeLang.AboutExplanation_Text}">
             </Label>
         </StackLayout>
     </ScrollView>

@@ -7,11 +7,6 @@ namespace BarcodeGenerator;
 public partial class PageSettings : ContentPage
 {
     // Local variables.
-    private readonly string cButtonClose;
-    private readonly string cErrorTitle;
-    private readonly string cAllowedChar;
-    private readonly string cAllowedCharNot;
-    private readonly string cHexColorCodes;
     private readonly string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
@@ -28,34 +23,7 @@ public partial class PageSettings : ContentPage
         }
 
         // Put text in the chosen language in the controls and variables.
-        lblTitle.Text = CodeLang.Settings_Text;
-
-        lblExplanation.Text = CodeLang.SettingsSaved_Text;
-        lblLanguage.Text = CodeLang.Language_Text;
-        lblLanguageSpeech.Text = CodeLang.LanguageSpeech_Text;
-        lblTheme.Text = CodeLang.Theme_Text;
-        lblDefaultFormatGenerator.Text = CodeLang.DefaultFormatGenerator_Text;
-        lblDefaultFormatScanner.Text = CodeLang.DefaultFormatScanner_Text;
-        lblForgroundOpacity.Text = CodeLang.ForgroundOpacity_Text;
-        lblForgroundColor.Text = CodeLang.ForgroundColor_Text;
-        lblBackgroundOpacity.Text = CodeLang.BackgroundOpacity_Text;
-        lblBackgroundColor.Text = CodeLang.BackgroundColor_Text;
-        btnSettingsSave.Text = CodeLang.SettingsSave_Text;
-        btnSettingsReset.Text = CodeLang.SettingsReset_Text;
-
-        var ThemeList = new List<string>
-        {
-            CodeLang.ThemeSystem_Text,
-            CodeLang.ThemeLight_Text,
-            CodeLang.ThemeDark_Text
-        };
-        pckTheme.ItemsSource = ThemeList;
-
-        cButtonClose = CodeLang.ButtonClose_Text;
-        cErrorTitle = CodeLang.ErrorTitle_Text;
-        cAllowedChar = CodeLang.AllowedChar_Text;
-        cAllowedCharNot = CodeLang.AllowedCharNot_Text;
-        cHexColorCodes = CodeLang.HexColorCodes_Text;
+        SetLanguage();
 
         // Set the current language in the picker.
         pckLanguage.SelectedIndex = MainPage.cLanguage switch
@@ -192,7 +160,49 @@ public partial class PageSettings : ContentPage
 
             // Set the current UI culture of the selected language.
             MainPage.SetCultureSelectedLanguage();
+
+            // Put text in the chosen language in the controls and variables.
+            SetLanguage();
+
+            // Search the new language in the cLanguageLocales array and select the new speech language.
+            int nTotalItems = MainPage.cLanguageLocales.Length;
+
+            for (int nItem = 0; nItem < nTotalItems; nItem++)
+            {
+                if (MainPage.cLanguageLocales[nItem].StartsWith(MainPage.cLanguage))
+                {
+                    pckLanguageSpeech.SelectedIndex = nItem;
+                    break;
+                }
+            }
         }
+    }
+
+    // Put text in the chosen language in the controls and variables.
+    private void SetLanguage()
+    {
+        var ThemeList = new List<string>
+        {
+            CodeLang.ThemeSystem_Text,
+            CodeLang.ThemeLight_Text,
+            CodeLang.ThemeDark_Text
+        };
+        pckTheme.ItemsSource = ThemeList;
+
+        // Set the current theme in the picker.
+        pckTheme.SelectedIndex = MainPage.cTheme switch
+        {
+            // Light.
+            "Light" => 1,
+
+            // Dark.
+            "Dark" => 2,
+
+            // System.
+            _ => 0,
+        };
+
+        //lblExplanation.Text = CodeLang.SettingsSaved_Text + "\n";  // Workaround for !!!BUG!!! auto sizing label for small screens.  Add a new line to solve the bug.
     }
 
     // Fill the picker with the speech languages from the array.
@@ -301,7 +311,7 @@ public partial class PageSettings : ContentPage
     // Display help for Hex color.
     private async void OnSettingsHexColorClicked(object sender, EventArgs e)
     {
-        await DisplayAlert("?", cHexColorCodes, cButtonClose);
+        await DisplayAlert("?", CodeLang.HexColorCodes_Text, CodeLang.ButtonClose_Text);
     }
 
     // Entry HexColor Unfocused event.
@@ -382,7 +392,7 @@ public partial class PageSettings : ContentPage
 
             if (bResult == false)
             {
-                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
+                DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.AllowedChar_Text + "\n" + cAllowedCharacters + "\n\n" + CodeLang.AllowedCharNot_Text + " " + cChar, CodeLang.ButtonClose_Text);
                 return false;
             }
         }

@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.27
-// Date ........: 2023-01-28 (YYYY-MM-DD)
+// Date ........: 2023-02-02 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -33,31 +33,8 @@ public partial class MainPage : ContentPage
     public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
 
     // Local variables.
-    private string cButtonShare;
-    private string cButtonClose;
-    private string cErrorTitle;
-    private string cAllowedChar;
-    private string cAllowedCharNot;
-    private string cTextContainsChar;
-    private string cGuardInvalidStartEnd;
-    private string cGuardMissingEnd;
-    private string cGuardMissingStart;
-    private string cFirstNumber0;
-    private string cCheckDigitError;
-    private string cLengthInputEven;
-    private string cFormatTitle;
-    private string cFormatNotSupported;
-    private string cCodeLengthPart1;
-    private string cCodeLengthPart2;
-    private string cCodeLengthPart3;
-    private string cRestartApp;
-    private string cLicenseTitle;
     private string cLicense;
-    private string cAgree;
-    private string cDisagree;
     private readonly bool bLicense;
-    private string cCloseApplication;
-    private string cTextToSpeechError;
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
     private bool bTextToSpeechIsBusy = false;
@@ -179,7 +156,7 @@ public partial class MainPage : ContentPage
             bgvBarcode.MaximumWidthRequest = 700;
             bgvBarcode.HorizontalOptions = LayoutOptions.Fill;
 
-            btnShare.Text = cButtonShare;
+            btnShare.Text = CodeLang.ButtonShare_Text;
             btnShare.IsEnabled = false;
 
             switch (selectedIndex)
@@ -485,7 +462,7 @@ public partial class MainPage : ContentPage
 
                         if (nLenTextToCode == 13 && cChecksum != cTextToCode.Substring(12, 1))
                         {
-                            DisplayErrorMessage(cCheckDigitError);
+                            DisplayErrorMessage(CodeLang.CheckDigitError_Text);
                         }
 
                         edtTextToCode.Text = cTextToCode;
@@ -518,7 +495,7 @@ public partial class MainPage : ContentPage
 
                         if (nLenTextToCode == 8 && cChecksum != cTextToCode.Substring(7, 1))
                         {
-                            DisplayErrorMessage(cCheckDigitError);
+                            DisplayErrorMessage(CodeLang.CheckDigitError_Text);
                         }
 
                         edtTextToCode.Text = cTextToCode;
@@ -544,7 +521,7 @@ public partial class MainPage : ContentPage
 
                         if (nLenTextToCode % 2 != 0)
                         {
-                            DisplayErrorMessage(cLengthInputEven);
+                            DisplayErrorMessage(CodeLang.LengthInputEven_Text);
                             return;
                         }
 
@@ -644,7 +621,7 @@ public partial class MainPage : ContentPage
 
                         if (nLenTextToCode == 12 && cChecksum != cTextToCode.Substring(11, 1))
                         {
-                            DisplayErrorMessage(cCheckDigitError);
+                            DisplayErrorMessage(CodeLang.CheckDigitError_Text);
                         }
 
                         edtTextToCode.Text = cTextToCode;
@@ -668,7 +645,7 @@ public partial class MainPage : ContentPage
 
                         if (cTextToCode[..1] != "0")
                         {
-                            DisplayErrorMessage(cFirstNumber0);
+                            DisplayErrorMessage(CodeLang.FirstNumber0_Text);
                             return;
                         }
 
@@ -711,7 +688,7 @@ public partial class MainPage : ContentPage
 
                         if (nLenTextToCode == 8 && cChecksum != cTextToCode.Substring(7, 1))
                         {
-                            DisplayErrorMessage(cCheckDigitError);
+                            DisplayErrorMessage(CodeLang.CheckDigitError_Text);
                         }
 
                         edtTextToCode.Text = cTextToCode;
@@ -740,7 +717,7 @@ public partial class MainPage : ContentPage
         {
             bgvBarcode.Value = cTextToCode;
 
-            btnShare.Text = cButtonShare + " " + pckFormatCodeGenerator.Items[selectedIndex];
+            btnShare.Text = CodeLang.ButtonShare_Text + " " + pckFormatCodeGenerator.Items[selectedIndex];
             btnShare.IsEnabled = true;
         }
         catch (Exception ex)
@@ -760,7 +737,7 @@ public partial class MainPage : ContentPage
 
             if (bResult == false)
             {
-                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
+                DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.AllowedChar_Text + "\n" + cAllowedCharacters + "\n\n" + CodeLang.AllowedCharNot_Text + " " + cChar, CodeLang.ButtonClose_Text);
                 
                 edtTextToCode.Focus();
                 return false;
@@ -777,7 +754,7 @@ public partial class MainPage : ContentPage
         {
             if (cChar < nMinAsciiValue || cChar > nMaxAsciiValue)
             {
-                DisplayAlert(cErrorTitle, cTextContainsChar + " " + cChar, cButtonClose);
+                DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.TextContainsChar_Text + " " + cChar, CodeLang.ButtonClose_Text);
                 
                 edtTextToCode.Focus();
                 return false;
@@ -800,7 +777,7 @@ public partial class MainPage : ContentPage
 
             if (cStartEndGuards.Contains(cChar) && nPos > 0 && nPos < cTextToCode.Length - 1)
             {
-                DisplayAlert(cErrorTitle, cGuardInvalidStartEnd + " " + cChar, cButtonClose);
+                DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardInvalidStartEnd_Text + " " + cChar, CodeLang.ButtonClose_Text);
                 
                 edtTextToCode.Focus();
                 return false;
@@ -810,14 +787,14 @@ public partial class MainPage : ContentPage
         // Control of missing start or end guard.
         if (cStartEndGuards.Contains(cTextToCode[..1]) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
         {
-            DisplayAlert(cErrorTitle, cGuardMissingEnd, cButtonClose);
+            DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingEnd_Text, CodeLang.ButtonClose_Text);
             
             edtTextToCode.Focus();
             return false;
         }
         else if (cStartEndGuards.Contains(cTextToCode[..1]) == false && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)))
         {
-            DisplayAlert(cErrorTitle, cGuardMissingStart, cButtonClose);
+            DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingStart_Text, CodeLang.ButtonClose_Text);
             
             edtTextToCode.Focus();
             return false;
@@ -875,7 +852,7 @@ public partial class MainPage : ContentPage
     {
         edtTextToCode.Text = "";
         bgvBarcode.Value = "";
-        btnShare.Text = cButtonShare;
+        btnShare.Text = CodeLang.ButtonShare_Text;
         btnShare.IsEnabled = false;
 
         edtTextToCode.Focus();
@@ -884,7 +861,7 @@ public partial class MainPage : ContentPage
     // Display a message with no encoder available for format.
     private void DisplayMessageFormat(string cFormat)
     {
-        DisplayAlert(cFormatTitle, cFormat + " " + cFormatNotSupported, cButtonClose);
+        DisplayAlert(CodeLang.FormatTitle_Text, cFormat + " " + CodeLang.FormatNotSupported_Text, CodeLang.ButtonClose_Text);
 
         edtTextToCode.Focus();
     }
@@ -892,7 +869,7 @@ public partial class MainPage : ContentPage
     // Display an error message.
     private void DisplayErrorMessage(string cMessage)
     {
-        DisplayAlert(cErrorTitle, cMessage, cButtonClose);
+        DisplayAlert(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
 
         edtTextToCode.Focus();
     }
@@ -900,7 +877,7 @@ public partial class MainPage : ContentPage
     // Display an error message with minimum and maximum length.
     private void DisplayErrorMessageLength(string cMinLength, string cMaxLength)
     {
-        DisplayAlert(cErrorTitle, cCodeLengthPart1 + " " + cMinLength + " " + cCodeLengthPart2 + " " + cMaxLength + " " + cCodeLengthPart3, cButtonClose);
+        DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CodeLengthPart1_Text + " " + cMinLength + " " + CodeLang.CodeLengthPart2_Text + " " + cMaxLength + " " + CodeLang.CodeLengthPart3_Text, CodeLang.ButtonClose_Text);
 
         edtTextToCode.Focus();
     }
@@ -908,7 +885,7 @@ public partial class MainPage : ContentPage
     // Display an error message and restart the application.
     private async void RestartApplication(string cErrorMessage)
     {
-        await DisplayAlert(cErrorTitle, cErrorMessage + "\n" + cRestartApp, cButtonClose);
+        await DisplayAlert(CodeLang.ErrorTitle_Text, cErrorMessage + "\n" + CodeLang.RestartApp_Text, CodeLang.ButtonClose_Text);
 
         //Application.Current.MainPage = new AppShell();
         Application.Current.MainPage = new NavigationPage(new MainPage());
@@ -920,7 +897,7 @@ public partial class MainPage : ContentPage
         // Show license.
         if (bLicense == false)
         {
-            bool bAnswer = await Application.Current.MainPage.DisplayAlert(cLicenseTitle, cLicense, cAgree, cDisagree);
+            bool bAnswer = await Application.Current.MainPage.DisplayAlert(CodeLang.LicenseTitle_Text, cLicense, CodeLang.Agree_Text, CodeLang.Disagree_Text);
 
             if (bAnswer)
             {
@@ -935,7 +912,7 @@ public partial class MainPage : ContentPage
                 imgbtnSettings.IsEnabled = false;
                 btnGenerateCode.IsEnabled = false;
 
-                await DisplayAlert(cLicenseTitle, cCloseApplication, cButtonClose);
+                await DisplayAlert(CodeLang.LicenseTitle_Text, CodeLang.CloseApplication_Text, CodeLang.ButtonClose_Text);
 #else
                 Application.Current.Quit();
 #endif
@@ -1005,40 +982,9 @@ public partial class MainPage : ContentPage
         // Set the current UI culture of the selected language.
         SetCultureSelectedLanguage();
 
-        lblTitle.Text = CodeLang.BarcodeGenerator_Text;
-        lblFormatCode.Text = CodeLang.FormatCode_Text;
-        lblTextToEncode.Text = CodeLang.TextToEncode_Text;
-        //btnSpeak.Text = CodeLang.ButtonSpeak_Text;
-        btnGenerateCode.Text = CodeLang.GenerateCode_Text;
-        btnClearCode.Text = CodeLang.ClearCode_Text;
-        btnShare.Text = CodeLang.ButtonShare_Text;
-
-        cButtonShare = CodeLang.ButtonShare_Text;
-        cButtonClose = CodeLang.ButtonClose_Text;
-        cErrorTitle = CodeLang.ErrorTitle_Text;
-        cAllowedChar = CodeLang.AllowedChar_Text;
-        cAllowedCharNot = CodeLang.AllowedCharNot_Text;
-        cTextContainsChar = CodeLang.TextContainsChar_Text;
-        cGuardInvalidStartEnd = CodeLang.GuardInvalidStartEnd_Text;
-        cGuardMissingEnd = CodeLang.GuardMissingEnd_Text;
-        cGuardMissingStart = CodeLang.GuardMissingStart_Text;
-        cFirstNumber0 = CodeLang.FirstNumber0_Text;
-        cCheckDigitError = CodeLang.CheckDigitError_Text;
-        cLengthInputEven = CodeLang.LengthInputEven_Text;
-        cFormatTitle = CodeLang.FormatTitle_Text;
-        cFormatNotSupported = CodeLang.FormatNotSupported_Text;
-        cCodeLengthPart1 = CodeLang.CodeLengthPart1_Text;
-        cCodeLengthPart2 = CodeLang.CodeLengthPart2_Text;
-        cCodeLengthPart3 = CodeLang.CodeLengthPart3_Text;
-        cRestartApp = CodeLang.RestartApp_Text;
-        cLicenseTitle = CodeLang.LicenseTitle_Text;
         cLicense = CodeLang.License_Text + "\n\n" + CodeLang.LicenseMit2_Text;
-        cAgree = CodeLang.Agree_Text;
-        cDisagree = CodeLang.Disagree_Text;
-        cCloseApplication = CodeLang.CloseApplication_Text;
-        cTextToSpeechError = CodeLang.TextToSpeechError_Text;
 
-        //App.Current.MainPage.DisplayAlert(cErrorTitleText, cLanguage, cButtonCloseText);  // For testing.
+        //App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, cLanguage, CodeLang.ButtonClose_Text);  // For testing.
     }
 
     // Set the current UI culture of the selected language.
@@ -1046,7 +992,8 @@ public partial class MainPage : ContentPage
     {
         try
         {
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cLanguage);
+            var switchToCulture = new CultureInfo(cLanguage);
+            LocalizationResourceManager.Instance.SetCulture(switchToCulture);
         }
         catch
         {
@@ -1133,7 +1080,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message + "\n\n" + cTextToSpeechError, cButtonClose);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message + "\n\n" + CodeLang.TextToSpeechError_Text, CodeLang.ButtonClose_Text);
             return;
         }
        
@@ -1200,7 +1147,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
     }
 
@@ -1220,7 +1167,7 @@ public partial class MainPage : ContentPage
     //        }
     //        catch (Exception ex)
     //        {
-    //            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+    //            DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
     //            cLanguageSpeech = cLanguageLocales[0];
     //        }
     //    }
@@ -1274,7 +1221,7 @@ public partial class MainPage : ContentPage
             }
             catch (Exception ex)
             {
-                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+                await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }
 
             imgbtnTextToSpeech.Source = cImageTextToSpeech;

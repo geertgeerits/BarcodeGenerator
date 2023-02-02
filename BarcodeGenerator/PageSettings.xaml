@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BarcodeGenerator"
              x:Class="BarcodeGenerator.PageSettings">
 
     <NavigationPage.TitleView>
         <Label
             x:Name="lblTitle"
             Style="{StaticResource labelStyleShellTitleView}"
-            Text="Settings" />
+            Text="{local:Translate Settings_Text}" />
     </NavigationPage.TitleView>
 
     <Grid
@@ -43,7 +44,7 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    Text="Some changed settings must be saved in order to apply them." />
+                    Text="{local:Translate SettingsSaved_Text}" />
 
                 <Label
                     x:Name="lblLanguage"
@@ -51,7 +52,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="Language:" />
+                    Text="{local:Translate Language_Text}" />
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -89,7 +90,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="Language speech:" />
+                    Text="{local:Translate LanguageSpeech_Text}" />
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -116,7 +117,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="Theme:" />
+                    Text="{local:Translate Theme_Text}" />
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -150,7 +151,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="Default format:" />
+                    Text="{local:Translate DefaultFormatGenerator_Text}" />
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -183,7 +184,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="Default format:" />
+                    Text="{local:Translate DefaultFormatScanner_Text}" />
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -218,7 +219,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="Forground opacity:" />
+                    Text="{local:Translate ForgroundOpacity_Text}" />
 
                 <Slider
                     x:Name="sldOpacityFg"
@@ -237,7 +238,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="Forground color:" />
+                    Text="{local:Translate ForgroundColor_Text}" />
 
                 <Slider
                     x:Name="sldColorFgRed"
@@ -306,7 +307,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="Background opacity:" />
+                    Text="{local:Translate BackgroundOpacity_Text}" />
 
                 <Slider
                     x:Name="sldOpacityBg"
@@ -325,7 +326,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="Background color:" />
+                    Text="{local:Translate BackgroundColor_Text}" />
 
                 <Slider
                     x:Name="sldColorBgRed"
@@ -395,7 +396,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="2"
             HorizontalOptions="Start"
-            Text="Save"
+            Text="{local:Translate SettingsSave_Text}"
             Clicked="OnSettingsSaveClicked" />
 
         <Button
@@ -404,7 +405,7 @@
             Grid.Row="1"
             Grid.Column="1"
             HorizontalOptions="End"
-            Text="Reset"
+            Text="{local:Translate SettingsReset_Text}"
             Clicked="OnSettingsResetClicked" />
 
     </Grid>
