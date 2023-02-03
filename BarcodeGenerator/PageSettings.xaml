@@ -8,7 +8,8 @@
         <Label
             x:Name="lblTitle"
             Style="{StaticResource labelStyleShellTitleView}"
-            Text="{local:Translate Settings_Text}" />
+            Text="{local:Translate Settings_Text}">
+        </Label>
     </NavigationPage.TitleView>
 
     <Grid
@@ -39,7 +40,6 @@
                     Grid.ColumnSpan="3"/>
 
                 <Label
-                    x:Name="lblExplanation"
                     Style="{StaticResource labelStyleExplanation}"
                     Grid.Row="0"
                     Grid.Column="0"
@@ -47,7 +47,6 @@
                     Text="{local:Translate SettingsSaved_Text}" />
 
                 <Label
-                    x:Name="lblLanguage"
                     Grid.Row="1"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -85,7 +84,6 @@
                 </Border>
 
                 <Label
-                    x:Name="lblLanguageSpeech"
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -112,7 +110,6 @@
                 </Border>
 
                 <Label
-                    x:Name="lblTheme"
                     Grid.Row="3"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -146,7 +143,6 @@
                 </Border>
 
                 <Label
-                    x:Name="lblDefaultFormatGenerator"
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -179,7 +175,6 @@
                 </Border>
 
                 <Label
-                    x:Name="lblDefaultFormatScanner"
                     Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -212,7 +207,6 @@
                 </Border>
 
                 <Label
-                    x:Name="lblForgroundOpacity"
                     Grid.Row="7"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -231,7 +225,6 @@
                     ValueChanged="OnSliderColorForgroundValueChanged" />
 
                 <Label
-                    x:Name="lblForgroundColor"
                     Grid.Row="8"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -300,7 +293,6 @@
                     ValueChanged="OnSliderColorForgroundValueChanged" />
 
                 <Label
-                    x:Name="lblBackgroundOpacity"
                     Grid.Row="12"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -319,7 +311,6 @@
                     ValueChanged="OnSliderColorBackgroundValueChanged" />
 
                 <Label
-                    x:Name="lblBackgroundColor"
                     Grid.Row="13"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -400,7 +391,6 @@
             Clicked="OnSettingsSaveClicked" />
 
         <Button
-            x:Name="btnSettingsReset"
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="1"
             Grid.Column="1"

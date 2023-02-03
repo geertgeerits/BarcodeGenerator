@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.27
-// Date ........: 2023-02-02 (YYYY-MM-DD)
+// Date ........: 2023-02-03 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -983,6 +983,9 @@ public partial class MainPage : ContentPage
         SetCultureSelectedLanguage();
 
         cLicense = CodeLang.License_Text + "\n\n" + CodeLang.LicenseMit2_Text;
+        //btnShare.Text = CodeLang.ButtonShare_Text + " " + pckFormatCodeGenerator.Items[selectedIndex];
+        //btnShare.Text = CodeLang.ButtonShare_Text + " " + (string)pckFormatCodeGenerator.ItemsSource[selectedIndex];
+        btnShare.Text = CodeLang.ButtonShare_Text;
 
         //App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, cLanguage, CodeLang.ButtonClose_Text);  // For testing.
     }

@@ -6,45 +6,51 @@
 
     <NavigationPage.TitleView>
         <Label
-            x:Name="lblTitle"
             Style="{StaticResource labelStyleShellTitleView}"
-            Text="{x:Static resx:CodeLang.About_Text}" />
+            Text="{x:Static resx:CodeLang.About_Text}">
+        </Label>
     </NavigationPage.TitleView>
        
     <ScrollView>
-        <StackLayout Margin="15" Spacing="4">
+        <StackLayout
+            Margin="15"
+            Spacing="4">
+            
             <Label
-                x:Name="lblNameProgram"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
                 Text="{x:Static resx:CodeLang.NameProgram_Text}"
                 FontSize="20"
-                FontAttributes="Bold" />
+                FontAttributes="Bold">
+            </Label>
 
             <Label
-                x:Name="lblDescription"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="{x:Static resx:CodeLang.Description_Text}" />
+                Text="{x:Static resx:CodeLang.Description_Text}">
+            </Label>
 
             <Label
                 x:Name="lblVersion"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Version:" />
+                Text="Version:">
+            </Label>
 
             <Label
                 x:Name="lblCopyright"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Copyright ©" />
+                Text="Copyright ©">
+            </Label>
 
             <HorizontalStackLayout Spacing="10">
                 <Label
                     x:Name="lblEmail"
                     VerticalOptions="Center" 
                     HorizontalOptions="Start"
-                    Text="E-mail:"/>
+                    Text="E-mail:">
+                </Label>
 
                 <ImageButton
                     Source="circled_envelope_24p.png"                         
@@ -61,7 +67,8 @@
                     x:Name="lblWebsite"
                     VerticalOptions="Center" 
                     HorizontalOptions="Start"
-                    Text="Website:"/>
+                    Text="Website:">
+                </Label>
 
                 <ImageButton
                     Source="internet_24p.png"
@@ -80,7 +87,8 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
                 FontSize="13"
-                Text="Privacy Policy: No personal and other data is stored or passed on to myself and others." />
+                Text="Privacy Policy: No personal and other data is stored or passed on to myself and others.">
+            </Label>
 
             <Label></Label>
 
@@ -90,7 +98,8 @@
                 HorizontalOptions="Start"
                 FontSize="13"
                 Text="License: This application may be used freely for non-commercial purposes.
-                      &#10; &#10;Use this program entirely at your own risk." />
+                      &#10; &#10;Use this program entirely at your own risk.">
+            </Label>
 
             <Label></Label>
 
@@ -101,12 +110,12 @@
                 FontSize="13"
                 Text="Copyright ZXing.Net.Maui by Redth
                       &#10;Barcode scanning and generation for .NET MAUI applications.
-                      &#10;MIT License:" />
+                      &#10;MIT License:">
+            </Label>
 
             <Label></Label>
 
             <Label
-                x:Name="lblAboutExplanation"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
                 FontSize="13"

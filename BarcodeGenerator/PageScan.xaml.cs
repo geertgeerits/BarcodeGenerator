@@ -7,13 +7,6 @@ namespace BarcodeGenerator;
 public partial class PageScan : ContentPage
 {
     // Local variables.
-    private readonly string cButtonShare;
-    private readonly string cButtonClose;
-    private readonly string cOpenLinkTitle;
-    private readonly string cOpenLinkText;
-    private readonly string cYes;
-    private readonly string cNo;
-    private readonly string cErrorTitle;
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
     private bool bTextToSpeechIsBusy = false;
@@ -41,21 +34,8 @@ public partial class PageScan : ContentPage
         barcodeReader.HeightRequest = 300;
 #endif
 
-        // Put text in the chosen language in the controls and variables.
-        lblTitle.Text = CodeLang.BarcodeScanner_Text;
-        lblFormatCode.Text = CodeLang.FormatCode_Text;
-        btnShare.Text = CodeLang.ButtonShareText_Text;
-        //btnTextToSpeech.Text = CodeLang.ButtonListen_Text;
-
+        // Put text in the chosen language in the controls.
         pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
-
-        cButtonShare = CodeLang.ButtonShareText_Text;
-        cButtonClose = CodeLang.ButtonClose_Text;
-        cOpenLinkTitle = CodeLang.OpenLinkTitle_Text;
-        cOpenLinkText = CodeLang.OpenLinkText_Text;
-        cYes = CodeLang.Yes_Text;
-        cNo = CodeLang.No_Text;
-        cErrorTitle = CodeLang.ErrorTitle_Text;
 
         // Default format code = All codes
         pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
@@ -80,7 +60,7 @@ public partial class PageScan : ContentPage
         if (selectedIndex != -1)
         {
             lblBarcodeResult.Text = "";
-            btnShare.Text = cButtonShare;
+            btnShare.Text = CodeLang.ButtonShareText_Text;
             btnShare.IsEnabled = false;
             imgbtnTextToSpeech.IsEnabled = false;
 
@@ -316,7 +296,7 @@ public partial class PageScan : ContentPage
         {
             Dispatcher.Dispatch(() =>
             {
-                btnShare.Text = cButtonShare + " " + e.Results[0].Format;
+                btnShare.Text = CodeLang.ButtonShareText_Text + " " + e.Results[0].Format;
                 lblBarcodeResult.Text = e.Results[0].Value;
 
                 btnShare.IsEnabled = true;
@@ -325,7 +305,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
     }
 
@@ -349,7 +329,7 @@ public partial class PageScan : ContentPage
             {
                 if (match.Success)
                 {
-                    bool bAnswer = await DisplayAlert(cOpenLinkTitle, match.Value + "\n\n" + cOpenLinkText, cYes, cNo);
+                    bool bAnswer = await DisplayAlert(CodeLang.OpenLinkTitle_Text, match.Value + "\n\n" + CodeLang.OpenLinkText_Text, CodeLang.Yes_Text, CodeLang.No_Text);
 
                     // Open link website.
                     if (bAnswer)
@@ -365,7 +345,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
 
         // Wait 500 milliseconds otherwise the ShareText() is not executed after the last opened link.
@@ -390,7 +370,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
     }
 
@@ -407,7 +387,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
     }
 
@@ -431,7 +411,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             return;
         }
 
@@ -473,7 +453,7 @@ public partial class PageScan : ContentPage
             }
             catch (Exception ex)
             {
-                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+                await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }
 
             imgbtnTextToSpeech.Source = MainPage.cImageTextToSpeech;

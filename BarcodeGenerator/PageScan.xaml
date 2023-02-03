@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.PageScan"
              Appearing="OnPageAppearing">
 
     <NavigationPage.TitleView>
-        <Grid RowDefinitions="50"
-              ColumnDefinitions="200*, 60, 60"
-              Margin="5"
-              BackgroundColor="#00bfff">
+        <Grid
+            RowDefinitions="50"
+            ColumnDefinitions="200*, 60, 60"
+            Margin="5"
+            BackgroundColor="#00bfff">
 
             <Label
-                x:Name="lblTitle"
                 Style="{StaticResource labelStyleShellTitleView}"
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                Text="Barcode Scanner">
+                Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
             </Label>
 
             <ImageButton
@@ -34,21 +35,22 @@
     </NavigationPage.TitleView>
 
     <ScrollView>
-        <Grid RowDefinitions="40, 10, 520, 10, 40, 100*"
-              ColumnDefinitions="140, 210*"
-              Margin="10,10,10,10"
-              ColumnSpacing="0"
-              RowSpacing="2"
-              x:Name="grdScanner">
+        <Grid
+            RowDefinitions="40, 10, 520, 10, 40, 100*"
+            ColumnDefinitions="140, 210*"
+            Margin="10,10,10,10"
+            ColumnSpacing="0"
+            RowSpacing="2"
+            x:Name="grdScanner">
 
             <Label
-                x:Name="lblFormatCode"
                 Grid.Row="0"
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
                 VerticalTextAlignment="Center"
-                Text="Select a format:" />
+                Text="{x:Static resx:CodeLang.FormatCode_Text}">
+            </Label>
 
             <Border
                 Style="{StaticResource borderStyleDefault}"
@@ -93,10 +95,11 @@
                 VerticalOptions="End"
                 HeightRequest="40"
                 MinimumWidthRequest="130"
-                Text="Share"
+                Text="{x:Static resx:CodeLang.ButtonShareText_Text}"
                 IsEnabled="False"
-                Clicked="OnShareClicked" />
-
+                Clicked="OnShareClicked">
+            </Button>
+            
             <HorizontalStackLayout
                 Grid.Row="4"
                 Grid.Column="1"
@@ -112,7 +115,8 @@
                     HorizontalTextAlignment="End"
                     VerticalTextAlignment="End"
                     IsVisible="False"
-                    Text="en-US" />
+                    Text="en-US">
+                </Label>
 
                 <ImageButton
                     x:Name="imgbtnTextToSpeech"
@@ -141,7 +145,8 @@
                     Padding="10"
                     HorizontalOptions="Start"
                     HorizontalTextAlignment="Start"
-                    Text="" />
+                    Text="">
+                </Label>
             </Border>
         </Grid>
     </ScrollView>

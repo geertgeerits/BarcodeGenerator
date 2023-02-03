@@ -181,6 +181,11 @@ public partial class PageSettings : ContentPage
     // Put text in the chosen language in the controls and variables.
     private void SetLanguage()
     {
+        // Set the barcode list and the current default barcode format in the picker for the barcode scanner.
+        pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
+        pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
+
+        // Set the current theme in the picker.
         var ThemeList = new List<string>
         {
             CodeLang.ThemeSystem_Text,
@@ -189,7 +194,6 @@ public partial class PageSettings : ContentPage
         };
         pckTheme.ItemsSource = ThemeList;
 
-        // Set the current theme in the picker.
         pckTheme.SelectedIndex = MainPage.cTheme switch
         {
             // Light.

@@ -27,7 +27,6 @@
             </ImageButton>
 
             <Label
-                x:Name="lblTitle"
                 Style="{StaticResource labelStyleShellTitleView}"
                 Grid.Row="0"
                 Grid.Column="1"
@@ -68,7 +67,6 @@
               RowSpacing="2">
 
             <Label
-                x:Name="lblFormatCode"
                 Grid.Row="0"
                 Grid.Column="0"
                 HorizontalOptions="Start"
@@ -99,7 +97,6 @@
             </Border>
 
             <Label
-                x:Name="lblTextToEncode"
                 Grid.Row="1"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
