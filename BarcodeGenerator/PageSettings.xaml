@@ -37,21 +37,24 @@
                 <BoxView
                     Grid.Row="0"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"/>
+                    Grid.ColumnSpan="3">
+                </BoxView>
 
                 <Label
                     Style="{StaticResource labelStyleExplanation}"
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    Text="{local:Translate SettingsSaved_Text}" />
+                    Text="{local:Translate SettingsSaved_Text}">
+                </Label>
 
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="{local:Translate Language_Text}" />
+                    Text="{local:Translate Language_Text}">
+                </Label>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -88,7 +91,8 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="{local:Translate LanguageSpeech_Text}" />
+                    Text="{local:Translate LanguageSpeech_Text}">
+                </Label>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -114,7 +118,8 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="{local:Translate Theme_Text}" />
+                    Text="{local:Translate Theme_Text}">
+                </Label>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -147,7 +152,8 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="{local:Translate DefaultFormatGenerator_Text}" />
+                    Text="{local:Translate DefaultFormatGenerator_Text}">
+                </Label>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -179,7 +185,8 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="{local:Translate DefaultFormatScanner_Text}" />
+                    Text="{local:Translate DefaultFormatScanner_Text}">
+                </Label>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -213,7 +220,8 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate ForgroundOpacity_Text}" />
+                    Text="{local:Translate ForgroundOpacity_Text}">
+                </Label>
 
                 <Slider
                     x:Name="sldOpacityFg"
@@ -222,7 +230,8 @@
                     Grid.Column="2"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
-                    ValueChanged="OnSliderColorForgroundValueChanged" />
+                    ValueChanged="OnSliderColorForgroundValueChanged">
+                </Slider>
 
                 <Label
                     Grid.Row="8"
@@ -231,7 +240,8 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate ForgroundColor_Text}" />
+                    Text="{local:Translate ForgroundColor_Text}">
+                </Label>
 
                 <Slider
                     x:Name="sldColorFgRed"
@@ -240,13 +250,15 @@
                     Grid.Column="2"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
-                    ValueChanged="OnSliderColorForgroundValueChanged" />
+                    ValueChanged="OnSliderColorForgroundValueChanged">
+                </Slider>
 
                 <Button
                     Style="{StaticResource buttonStyleHelp}"
                     Grid.Row="9"
                     Grid.Column="0"
-                    Clicked="OnSettingsHexColorClicked"/>
+                    Clicked="OnSettingsHexColorClicked">
+                </Button>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -264,7 +276,8 @@
                         Completed="EntryHexColorUnfocused"
                         MaxLength="8"
                         TextChanged="EntryHexColorTextChanged"
-                        Unfocused="EntryHexColorUnfocused" />
+                        Unfocused="EntryHexColorUnfocused">
+                    </Entry>
                 </Border>
 
                 <Slider
@@ -274,14 +287,16 @@
                     Grid.Column="2"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
-                    ValueChanged="OnSliderColorForgroundValueChanged" />
+                    ValueChanged="OnSliderColorForgroundValueChanged">
+                </Slider>
 
                 <BoxView
                     x:Name="bxvColorFg"
                     Grid.Row="10"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Color="Black" />
+                    Color="Black">
+                </BoxView>
 
                 <Slider
                     x:Name="sldColorFgBlue"
@@ -290,7 +305,8 @@
                     Grid.Column="2"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
-                    ValueChanged="OnSliderColorForgroundValueChanged" />
+                    ValueChanged="OnSliderColorForgroundValueChanged">
+                </Slider>
 
                 <Label
                     Grid.Row="12"
@@ -299,7 +315,8 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate BackgroundOpacity_Text}" />
+                    Text="{local:Translate BackgroundOpacity_Text}">
+                </Label>
 
                 <Slider
                     x:Name="sldOpacityBg"
@@ -308,7 +325,8 @@
                     Grid.Column="2"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
-                    ValueChanged="OnSliderColorBackgroundValueChanged" />
+                    ValueChanged="OnSliderColorBackgroundValueChanged">
+                </Slider>
 
                 <Label
                     Grid.Row="13"
@@ -317,7 +335,8 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate BackgroundColor_Text}" />
+                    Text="{local:Translate BackgroundColor_Text}">
+                </Label>
 
                 <Slider
                     x:Name="sldColorBgRed"
@@ -326,13 +345,15 @@
                     Grid.Column="2"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
-                    ValueChanged="OnSliderColorBackgroundValueChanged" />
+                    ValueChanged="OnSliderColorBackgroundValueChanged">
+                </Slider>
 
                 <Button
                     Style="{StaticResource buttonStyleHelp}"
                     Grid.Row="14"
                     Grid.Column="0"
-                    Clicked="OnSettingsHexColorClicked"/>
+                    Clicked="OnSettingsHexColorClicked">
+                </Button>
 
                 <Border Style="{StaticResource borderStyleDefault}"
                     Grid.Row="14"
@@ -349,7 +370,8 @@
                         Completed="EntryHexColorUnfocused"
                         MaxLength="8"
                         TextChanged="EntryHexColorTextChanged"
-                        Unfocused="EntryHexColorUnfocused" />
+                        Unfocused="EntryHexColorUnfocused">
+                    </Entry>
                 </Border>
 
                 <Slider
@@ -359,14 +381,16 @@
                     Grid.Column="2"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
-                    ValueChanged="OnSliderColorBackgroundValueChanged" />
-
+                    ValueChanged="OnSliderColorBackgroundValueChanged">
+                </Slider>
+                
                 <BoxView
                     x:Name="bxvColorBg"
                     Grid.Row="15"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Color="White" />
+                    Color="White">
+                </BoxView>
 
                 <Slider
                     x:Name="sldColorBgBlue"
@@ -375,7 +399,8 @@
                     Grid.Column="2"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
-                    ValueChanged="OnSliderColorBackgroundValueChanged" />
+                    ValueChanged="OnSliderColorBackgroundValueChanged">
+                </Slider>
 
             </Grid>
         </ScrollView>
@@ -388,7 +413,8 @@
             Grid.ColumnSpan="2"
             HorizontalOptions="Start"
             Text="{local:Translate SettingsSave_Text}"
-            Clicked="OnSettingsSaveClicked" />
+            Clicked="OnSettingsSaveClicked">
+        </Button>
 
         <Button
             Style="{StaticResource buttonStyleDefault}"
@@ -396,7 +422,8 @@
             Grid.Column="1"
             HorizontalOptions="End"
             Text="{local:Translate SettingsReset_Text}"
-            Clicked="OnSettingsResetClicked" />
+            Clicked="OnSettingsResetClicked">
+        </Button>
 
     </Grid>
 </ContentPage>

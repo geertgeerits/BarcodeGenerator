@@ -9,10 +9,11 @@
              Appearing="OnPageAppearing">
 
     <NavigationPage.TitleView>
-        <Grid RowDefinitions="50"
-              ColumnDefinitions="60, 140*, 60, 60"
-              Margin="5"
-              BackgroundColor="#00bfff">
+        <Grid
+            RowDefinitions="50"
+            ColumnDefinitions="60, 140*, 60, 60"
+            Margin="5"
+            BackgroundColor="#00bfff">
 
             <ImageButton
                 x:Name="imgbtnAbout"
@@ -60,11 +61,12 @@
     </NavigationPage.TitleView>
 
     <ScrollView>
-        <Grid RowDefinitions="40, 40, 180, 46, 250, 46"
-              ColumnDefinitions="140, 210*"
-              Margin="10,10,10,10"
-              ColumnSpacing="0"
-              RowSpacing="2">
+        <Grid
+            RowDefinitions="40, 40, 180, 46, 250, 46"
+            ColumnDefinitions="140, 210*"
+            Margin="10,10,10,10"
+            ColumnSpacing="0"
+            RowSpacing="2">
 
             <Label
                 Grid.Row="0"
@@ -72,7 +74,8 @@
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
                 VerticalTextAlignment="Center"
-                Text="{local:Translate FormatCode_Text}" />
+                Text="{local:Translate FormatCode_Text}">
+            </Label>
 
             <Border
                 Style="{StaticResource borderStyleDefault}"
@@ -103,7 +106,8 @@
                 HorizontalOptions="Start"
                 VerticalOptions="End"
                 VerticalTextAlignment="Start"
-                Text="{local:Translate TextToEncode_Text}" />
+                Text="{local:Translate TextToEncode_Text}">
+            </Label>
 
             <HorizontalStackLayout
                 Grid.Row="1"
@@ -120,7 +124,8 @@
                     HorizontalTextAlignment="End"
                     VerticalTextAlignment="End"
                     IsVisible="False"
-                    Text="en-US" />
+                    Text="en-US">
+                </Label>
 
                 <ImageButton
                     x:Name="imgbtnTextToSpeech"
@@ -152,7 +157,8 @@
                         HeightRequest="180"
                         MinimumWidthRequest="350"
                         VerticalTextAlignment="Start"
-                        Text="{Binding RecognitionText}" />
+                        Text="{Binding RecognitionText}">
+                    </Editor>
                 </ScrollView>
             </Border>
 
@@ -164,7 +170,8 @@
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
                 Text="{local:Translate GenerateCode_Text}"
-                Clicked="OnGenerateCodeClicked" />
+                Clicked="OnGenerateCodeClicked">
+            </Button>
 
             <Button
                 x:Name="btnClearCode"
@@ -174,7 +181,8 @@
                 HorizontalOptions="End"
                 VerticalOptions="Start"
                 Text="{local:Translate ClearCode_Text}"
-                Clicked="OnClearCodeClicked" />
+                Clicked="OnClearCodeClicked">
+            </Button>
 
             <Border
                 Style="{StaticResource borderStyleDefault}"
@@ -190,7 +198,8 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HeightRequest="250" />
+                    HeightRequest="250">
+                </zxing:BarcodeGeneratorView>
             </Border>
 
             <Button

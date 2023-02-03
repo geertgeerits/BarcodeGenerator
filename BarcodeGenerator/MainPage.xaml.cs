@@ -983,11 +983,9 @@ public partial class MainPage : ContentPage
         SetCultureSelectedLanguage();
 
         cLicense = CodeLang.License_Text + "\n\n" + CodeLang.LicenseMit2_Text;
-        //btnShare.Text = CodeLang.ButtonShare_Text + " " + pckFormatCodeGenerator.Items[selectedIndex];
-        //btnShare.Text = CodeLang.ButtonShare_Text + " " + (string)pckFormatCodeGenerator.ItemsSource[selectedIndex];
-        btnShare.Text = CodeLang.ButtonShare_Text;
+        btnShare.Text = CodeLang.ButtonShare_Text + " " + pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex];
 
-        //App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, cLanguage, CodeLang.ButtonClose_Text);  // For testing.
+        //App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, cLanguage, "OK");  // For testing.
     }
 
     // Set the current UI culture of the selected language.
