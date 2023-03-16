@@ -365,7 +365,7 @@ public partial class PageScan : ContentPage
 
         try
         {
-            Uri uri = new Uri(cUrl);
+            Uri uri = new(cUrl);
             await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
         catch (Exception ex)
@@ -443,7 +443,7 @@ public partial class PageScan : ContentPage
             {
                 cts = new CancellationTokenSource();
 
-                SpeechOptions options = new SpeechOptions()
+                SpeechOptions options = new()
                 {
                     Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
                 };
@@ -496,7 +496,7 @@ public partial class PageScan : ContentPage
             nCameraRowHeight = 540;
         }
 
-        Grid grid = new Grid
+        Grid grid = new()
         {
             RowDefinitions =
             {

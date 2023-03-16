@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.27
-// Date ........: 2023-02-03 (YYYY-MM-DD)
+// Date ........: 2023-03-16 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Barcode Generator
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -952,7 +952,7 @@ public partial class MainPage : ContentPage
         // Save the image file.
         string cFileName = Path.Combine(FileSystem.CacheDirectory, "BarcodeGenerator.png");
 
-        using (FileStream outputFileStream = new FileStream(cFileName, FileMode.Create))
+        using (FileStream outputFileStream = new(cFileName, FileMode.Create))
         {
             inputStream.CopyTo(outputFileStream);
         }
@@ -1212,7 +1212,7 @@ public partial class MainPage : ContentPage
             {
                 cts = new CancellationTokenSource();
 
-                SpeechOptions options = new SpeechOptions()
+                SpeechOptions options = new()
                 {
                     Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
                 };
