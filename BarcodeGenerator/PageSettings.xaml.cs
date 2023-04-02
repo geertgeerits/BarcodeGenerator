@@ -22,6 +22,37 @@ public partial class PageSettings : ContentPage
             return;
         }
 
+        // Workaround for !!!BUG!!! in iOS.
+#if IOS
+        //Grid ColumnDefinitions="40, 110, 190*"
+        // The last column with a star (*) is too wide (is beyond the right margin of the device). 
+        Grid grid = new()
+        {
+            ColumnDefinitions =
+            {
+                new ColumnDefinition { Width = new GridLength(40) },
+                new ColumnDefinition { Width = new GridLength(110) },
+                new ColumnDefinition { Width = new GridLength(188) }
+            }
+        };
+        grdSettings.ColumnDefinitions = grid.ColumnDefinitions;
+
+        // Correction of the the Slider right margin.
+        //Slider slider = new Slider
+        //{
+        //    Margin = new Thickness(0, 0, 6, 0)
+        //};
+
+        //sldOpacityFg.Margin = slider.Margin;
+        //sldColorFgRed.Margin = slider.Margin;
+        //sldColorFgGreen.Margin = slider.Margin;
+        //sldColorFgBlue.Margin = slider.Margin;
+        //sldOpacityBg.Margin = slider.Margin;
+        //sldColorBgRed.Margin = slider.Margin;
+        //sldColorBgGreen.Margin = slider.Margin;
+        //sldColorBgBlue.Margin = slider.Margin;
+#endif
+
         // Put text in the chosen language in the controls and variables.
         SetLanguage();
 
@@ -73,23 +104,6 @@ public partial class PageSettings : ContentPage
         // Set the barcode list and the current default barcode format in the picker for the barcode scanner.
         pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
         pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
-
-        // Workaround for !!!BUG!!! in iOS with the Slider right margin.
-#if IOS
-        Slider slider = new Slider
-        {
-            Margin = new Thickness(0, 0, 25, 0)
-        };
-
-        sldOpacityFg.Margin = slider.Margin;
-        sldColorFgRed.Margin = slider.Margin;
-        sldColorFgGreen.Margin = slider.Margin;
-        sldColorFgBlue.Margin = slider.Margin;
-        sldOpacityBg.Margin = slider.Margin;
-        sldColorBgRed.Margin = slider.Margin;
-        sldColorBgGreen.Margin = slider.Margin;
-        sldColorBgBlue.Margin = slider.Margin;
-#endif
 
         // Set the current color in the entry and on the sliders.
         int nOpacity = 0;

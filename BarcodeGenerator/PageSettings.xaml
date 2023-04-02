@@ -15,7 +15,7 @@
     <Grid
         RowDefinitions="*, auto"
         ColumnDefinitions="150, 190*"
-        HorizontalOptions="Start"
+        HorizontalOptions="Center"
         Margin="10"
         ColumnSpacing="8"
         RowSpacing="0">
@@ -32,7 +32,8 @@
                 ColumnDefinitions="40, 110, 190*"
                 Margin="0"
                 ColumnSpacing="8"
-                RowSpacing="4">
+                RowSpacing="4"
+                x:Name="grdSettings">
 
                 <BoxView
                     Grid.Row="0"
