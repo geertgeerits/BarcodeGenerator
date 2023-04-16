@@ -92,11 +92,13 @@
                 x:Name="btnShare"
                 Grid.Row="4"
                 Grid.Column="0"
+                Grid.ColumnSpan="2"
                 HorizontalOptions="Start"
                 VerticalOptions="End"
                 HeightRequest="40"
                 MinimumWidthRequest="130"
-                Text="{x:Static resx:CodeLang.ButtonShareText_Text}"
+                MaximumWidthRequest="230"
+                Text="{x:Static resx:CodeLang.ButtonShare_Text}"
                 IsEnabled="False"
                 Clicked="OnShareClicked">
             </Button>

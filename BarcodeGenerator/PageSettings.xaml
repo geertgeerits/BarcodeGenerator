@@ -291,13 +291,23 @@
                     ValueChanged="OnSliderColorForgroundValueChanged">
                 </Slider>
 
-                <BoxView
-                    x:Name="bxvColorFg"
+                <Border
                     Grid.Row="10"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Color="Black">
-                </BoxView>
+                    BackgroundColor="Transparent"
+                    Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5">
+
+                    <BoxView
+                        x:Name="bxvColorFg"
+                        Grid.Row="10"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Color="Black">
+                    </BoxView>
+                </Border>
 
                 <Slider
                     x:Name="sldColorFgBlue"
@@ -356,7 +366,8 @@
                     Clicked="OnSettingsHexColorClicked">
                 </Button>
 
-                <Border Style="{StaticResource borderStyleDefault}"
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
                     Grid.Row="14"
                     Grid.Column="1"
                     HorizontalOptions="FillAndExpand">
@@ -384,15 +395,25 @@
                     MinimumTrackColor="#00FF00"
                     ValueChanged="OnSliderColorBackgroundValueChanged">
                 </Slider>
-                
-                <BoxView
-                    x:Name="bxvColorBg"
+
+                <Border
                     Grid.Row="15"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Color="White">
-                </BoxView>
-
+                    BackgroundColor="Transparent"
+                    Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5">
+                    
+                    <BoxView
+                        x:Name="bxvColorBg"
+                        Grid.Row="15"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Color="White">
+                    </BoxView>
+                </Border>
+            
                 <Slider
                     x:Name="sldColorBgBlue"
                     Style="{StaticResource sliderStyleColor}"

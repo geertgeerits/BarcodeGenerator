@@ -60,7 +60,7 @@ public partial class PageScan : ContentPage
         if (selectedIndex != -1)
         {
             lblBarcodeResult.Text = "";
-            btnShare.Text = CodeLang.ButtonShareText_Text;
+            btnShare.Text = CodeLang.ButtonShare_Text;
             btnShare.IsEnabled = false;
             imgbtnTextToSpeech.IsEnabled = false;
 
@@ -296,7 +296,7 @@ public partial class PageScan : ContentPage
         {
             Dispatcher.Dispatch(() =>
             {
-                btnShare.Text = CodeLang.ButtonShareText_Text + " " + e.Results[0].Format;
+                btnShare.Text = CodeLang.ButtonShare_Text + " " + e.Results[0].Format;
                 lblBarcodeResult.Text = e.Results[0].Value;
 
                 btnShare.IsEnabled = true;
