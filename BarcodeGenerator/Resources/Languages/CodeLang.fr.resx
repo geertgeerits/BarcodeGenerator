@@ -337,6 +337,12 @@ Interdit:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Thème:</value>
   </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>Copiez le texte dans le presse-papiers.</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>Collez le texte du presse-papiers.</value>
+  </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>
   </data>

@@ -99,15 +99,31 @@
                 </Picker>
             </Border>
 
-            <Label
+            <HorizontalStackLayout
                 Grid.Row="1"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Start"
-                VerticalOptions="End"
-                VerticalTextAlignment="Start"
-                Text="{local:Translate TextToEncode_Text}">
-            </Label>
+                VerticalOptions="Center"
+                Margin="0,10,2,0"
+                Spacing="0">
+                
+                <ImageButton
+                    x:Name="imgbtnPasteFromClipboard"
+                    Source="paste_icon_48p_blue.png"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    ToolTipProperties.Text="{local:Translate ToolTipPaste_Text}"
+                    Clicked="OnPasteFromClipboardClicked">
+                </ImageButton>
+
+                <Label
+                    HorizontalOptions="Start"
+                    VerticalOptions="End"
+                    VerticalTextAlignment="Start"
+                    Text="{local:Translate TextToEncode_Text}">
+                </Label>
+            </HorizontalStackLayout>
 
             <HorizontalStackLayout
                 Grid.Row="1"

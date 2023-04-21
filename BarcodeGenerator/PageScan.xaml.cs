@@ -72,7 +72,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Aztec,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -82,7 +82,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Codabar,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -92,7 +92,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Code128,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -102,7 +102,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Code39,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -112,7 +112,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Code93,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -122,7 +122,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.DataMatrix,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -132,7 +132,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Ean13,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -142,7 +142,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Ean8,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -152,7 +152,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Imb,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -162,7 +162,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Itf,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -172,7 +172,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.MaxiCode,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -182,7 +182,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Msi,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -192,7 +192,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Pdf417,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -202,7 +202,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.PharmaCode,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -212,7 +212,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Plessey,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -222,7 +222,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.QrCode,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -232,7 +232,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Rss14,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -242,7 +242,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.RssExpanded,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -252,7 +252,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.UpcA,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -262,7 +262,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.UpcE,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -272,7 +272,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.UpcEanExtension,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
 
@@ -282,7 +282,7 @@ public partial class PageScan : ContentPage
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormats.All,
-                        TryHarder = true,
+                        TryHarder = true
                     };
                     break;
             }
@@ -510,5 +510,11 @@ public partial class PageScan : ContentPage
         };
         
         grdScanner.RowDefinitions = grid.RowDefinitions;
+    }
+    
+    // Copy text to the clipboard clicked event.
+    private async void OnCopyToClipboardClicked(object sender, EventArgs e)
+    {
+        await Clipboard.Default.SetTextAsync(lblBarcodeResult.Text);
     }
 }

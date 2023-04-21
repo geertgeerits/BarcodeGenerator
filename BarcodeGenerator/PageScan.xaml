@@ -87,23 +87,40 @@
                 IsTorchOn="False"
                 BarcodesDetected="OnBarcodesDetected">
             </zxing:CameraBarcodeReaderView>
-
-            <Button
-                x:Name="btnShare"
+            
+            <HorizontalStackLayout
                 Grid.Row="4"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Start"
-                VerticalOptions="End"
-                HeightRequest="40"
-                MinimumWidthRequest="130"
-                MaximumWidthRequest="230"
-                LineBreakMode="TailTruncation"
-                Text="{x:Static resx:CodeLang.ButtonShare_Text}"
-                IsEnabled="False"
-                Clicked="OnShareClicked">
-            </Button>
-            
+                VerticalOptions="Center"
+                Margin="0,10,2,0"
+                Spacing="0">
+
+                <ImageButton
+                    x:Name="imgbtnCopyToClipboard"
+                    Source="copy_icon_48p_blue.png"
+                    HeightRequest="38"
+                    WidthRequest="38"
+                    VerticalOptions="End"
+                    ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCopy_Text}"
+                    Clicked="OnCopyToClipboardClicked">
+                </ImageButton>
+
+                <Button
+                    x:Name="btnShare"
+                    HorizontalOptions="Start"
+                    VerticalOptions="End"
+                    HeightRequest="40"
+                    MinimumWidthRequest="130"
+                    MaximumWidthRequest="200"
+                    LineBreakMode="TailTruncation"
+                    Text="{x:Static resx:CodeLang.ButtonShare_Text}"
+                    IsEnabled="False"
+                    Clicked="OnShareClicked">
+                </Button>
+            </HorizontalStackLayout>
+                       
             <HorizontalStackLayout
                 Grid.Row="4"
                 Grid.Column="1"

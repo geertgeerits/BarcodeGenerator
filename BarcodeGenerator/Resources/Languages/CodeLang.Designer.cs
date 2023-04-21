@@ -674,6 +674,24 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy text to the clipboard..
+        /// </summary>
+        internal static string ToolTipCopy_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCopy_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paste text from the clipboard..
+        /// </summary>
+        internal static string ToolTipPaste_Text {
+            get {
+                return ResourceManager.GetString("ToolTipPaste_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version:.
         /// </summary>
         internal static string Version_Text {
