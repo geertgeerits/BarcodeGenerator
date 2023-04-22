@@ -482,6 +482,12 @@ public partial class PageScan : ContentPage
         }
     }
 
+    // Copy text to the clipboard clicked event.
+    private async void OnCopyToClipboardClicked(object sender, EventArgs e)
+    {
+        await Clipboard.Default.SetTextAsync(lblBarcodeResult.Text);
+    }
+
     // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
     // The camera sometimes overlaps adjacent rows in the grid.
     // Code to run on Android, Windows and on the main thread for iOS\MacOS.
@@ -532,11 +538,5 @@ public partial class PageScan : ContentPage
         };
         
         grdScanner.RowDefinitions = grid.RowDefinitions;
-    }
-    
-    // Copy text to the clipboard clicked event.
-    private async void OnCopyToClipboardClicked(object sender, EventArgs e)
-    {
-        await Clipboard.Default.SetTextAsync(lblBarcodeResult.Text);
-    }
+    }    
 }
