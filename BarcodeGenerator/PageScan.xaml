@@ -104,6 +104,7 @@
                     WidthRequest="38"
                     VerticalOptions="End"
                     ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCopy_Text}"
+                    IsEnabled="False"
                     Clicked="OnCopyToClipboardClicked">
                 </ImageButton>
 

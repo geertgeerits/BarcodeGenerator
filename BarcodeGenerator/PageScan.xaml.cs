@@ -61,6 +61,8 @@ public partial class PageScan : ContentPage
         {
             lblBarcodeResult.Text = "";
             btnShare.Text = CodeLang.ButtonShare_Text;
+            
+            imgbtnCopyToClipboard.IsEnabled = false;
             btnShare.IsEnabled = false;
             imgbtnTextToSpeech.IsEnabled = false;
 
@@ -321,6 +323,7 @@ public partial class PageScan : ContentPage
                 btnShare.Text = CodeLang.ButtonShare_Text + " " + e.Results[0].Format;
                 lblBarcodeResult.Text = e.Results[0].Value;
 
+                imgbtnCopyToClipboard.IsEnabled = true;
                 btnShare.IsEnabled = true;
                 imgbtnTextToSpeech.IsEnabled = true;
             });
