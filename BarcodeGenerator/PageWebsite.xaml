@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
+             x:Class="BarcodeGenerator.PageWebsite">
+
+    <NavigationPage.TitleView>
+        <Grid
+            RowDefinitions="50"
+            ColumnDefinitions="200*, 60, 60"
+            Margin="5"
+            BackgroundColor="#00bfff">
+
+            <Label
+                Style="{StaticResource labelStyleShellTitleView}"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Text="{x:Static resx:CodeLang.Website_Text}">
+            </Label>
+
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="1"
+                Source="arrow_left_32p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="36"
+                WidthRequest="36"
+                Clicked="btnHomeClicked">
+            </ImageButton>
+
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="2"
+                Source="arrow_left_32p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="36"
+                WidthRequest="36"
+                Clicked="btnGoBackClicked">
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <WebView
+        x:Name="wvWebpage"
+        MinimumHeightRequest="800"
+        MinimumWidthRequest="400"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+    </WebView>
+
+</ContentPage>

@@ -68,7 +68,7 @@ public partial class PageAbout : ContentPage
     }
 
     // Open website in default browser.
-    private async void OnbtnWebsiteLinkClicked(object sender, EventArgs e)
+    private async void OnbtnWebsiteLinkClicked_ZZZ(object sender, EventArgs e)
     {
         try
         {
@@ -79,5 +79,11 @@ public partial class PageAbout : ContentPage
         {
             await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
+    }
+
+    // Open website in WebView control.
+    private async void OnbtnWebsiteLinkClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new PageWebsite());
     }
 }
