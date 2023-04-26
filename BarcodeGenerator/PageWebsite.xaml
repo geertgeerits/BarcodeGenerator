@@ -44,11 +44,7 @@
     </NavigationPage.TitleView>
 
     <WebView
-        x:Name="wvWebpage"
-        MinimumHeightRequest="800"
-        MinimumWidthRequest="400"
-        HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand">
+        x:Name="wvWebpage">
     </WebView>
 
 </ContentPage>
