@@ -20,7 +20,7 @@ public partial class PageAbout : ContentPage
         lblVersion.Text = CodeLang.Version_Text + " 1.0.29";
         lblCopyright.Text = CodeLang.Copyright_Text + " © 2022-2023 Geert Geerits";
         lblEmail.Text = CodeLang.Email_Text + " geertgeerits@gmail.com";
-        lblWebsite.Text = CodeLang.Website_Text + " ../barcodegenerator";
+        lblWebsite.Text = CodeLang.Website_Text + ": ../barcodegenerator";
         lblPrivacyPolicy.Text = CodeLang.PrivacyPolicyTitle_Text + " " + CodeLang.PrivacyPolicy_Text;
         lblLicense.Text = CodeLang.LicenseTitle_Text + ": " + CodeLang.License_Text;
         lblLicenseMit.Text = CodeLang.Copyright_Text + " © " + CodeLang.LicenseMit_Text + "\n\n" + CodeLang.LicenseMit2_Text;

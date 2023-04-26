@@ -7,7 +7,7 @@
     <NavigationPage.TitleView>
         <Grid
             RowDefinitions="50"
-            ColumnDefinitions="200*, 60, 60"
+            ColumnDefinitions="200*, 50, 50"
             Margin="5"
             BackgroundColor="#00bfff">
 
@@ -22,7 +22,7 @@
             <ImageButton
                 Grid.Row="0"
                 Grid.Column="1"
-                Source="arrow_left_32p.png"
+                Source="home_32p.png"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 HeightRequest="36"
@@ -33,7 +33,7 @@
             <ImageButton
                 Grid.Row="0"
                 Grid.Column="2"
-                Source="arrow_left_32p.png"
+                Source="goback_32p.png"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 HeightRequest="36"
