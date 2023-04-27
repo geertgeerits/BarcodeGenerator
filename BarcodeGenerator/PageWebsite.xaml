@@ -46,7 +46,9 @@
     </NavigationPage.TitleView>
 
     <WebView
-        x:Name="wvWebpage">
+        x:Name="wvWebpage"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
     </WebView>
 
 </ContentPage>
