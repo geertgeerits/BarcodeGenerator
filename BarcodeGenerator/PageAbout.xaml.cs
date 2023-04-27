@@ -26,7 +26,7 @@ public partial class PageAbout : ContentPage
         lblLicenseMit.Text = CodeLang.Copyright_Text + " © " + CodeLang.LicenseMit_Text + "\n\n" + CodeLang.LicenseMit2_Text;
     }
 
-    // Open e-mail program.
+    // Open the e-mail program.
     private async void OnbtnEmailLinkClicked(object sender, EventArgs e)
     {
 #if IOS || MACCATALYST
@@ -67,23 +67,23 @@ public partial class PageAbout : ContentPage
 #endif
     }
 
-    // Open website in default browser.
-    private async void OnbtnWebsiteLinkClicked_ZZZ(object sender, EventArgs e)
-    {
-        try
-        {
-            Uri uri = new("https://geertgeerits.wixsite.com/barcodegenerator");
-            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-        }
-    }
-
-    // Open website in WebView control.
+    // Open the page 'PageWebsite' to open the website in the WebView control.
     private async void OnbtnWebsiteLinkClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PageWebsite());
     }
+
+    // Open the website in the default browser.
+    //private async void OnbtnWebsiteLinkClicked(object sender, EventArgs e)
+    //{
+    //    try
+    //    {
+    //        Uri uri = new("https://geertgeerits.wixsite.com/barcodegenerator");
+    //        await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+    //    }
+    //}
 }

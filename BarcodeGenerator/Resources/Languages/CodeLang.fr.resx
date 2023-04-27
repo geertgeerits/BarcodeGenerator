@@ -340,6 +340,12 @@ Interdit:</value>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiez le texte dans le presse-papiers.</value>
   </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Retourner.</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Aller de l'avant.</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Collez le texte du presse-papiers.</value>
   </data>

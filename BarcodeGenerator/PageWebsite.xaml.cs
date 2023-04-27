@@ -2,15 +2,20 @@ namespace BarcodeGenerator;
 
 public partial class PageWebsite : ContentPage
 {
-    // Local variables.
-    private readonly string cUrl = "https://geertgeerits.wixsite.com/barcodegenerator";
-
     public PageWebsite()
-	{
-		InitializeComponent();
+    {
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("InitializeComponent: PageWebsite", ex.Message, "OK");
+            return;
+        }
 
         // Set WebView properties.
-        wvWebpage.Source = cUrl;
+        wvWebpage.Source = "https://geertgeerits.wixsite.com/barcodegenerator";
         wvWebpage.Navigating += OnNavigating;
         wvWebpage.Navigated += OnNavigated;
     }
@@ -20,10 +25,7 @@ public partial class PageWebsite : ContentPage
     {
         if (e.Url.StartsWith("mailto"))
         {
-            //e.Cancel = true;
-            //await Browser.OpenAsync(e.Url);
             await Launcher.TryOpenAsync(e.Url);
-            //await Launcher.OpenAsync(new Uri($"mailto:{"geertgeerits@gmail.com"}"));
             e.Cancel = true;
         }
     }
@@ -40,25 +42,21 @@ public partial class PageWebsite : ContentPage
         })()");
     }
 
-    // Return to the first website.
-    private void btnHomeClicked(object sender, EventArgs e)
+    // Go backwards, if allowed.
+    private void OnGoBackClicked(object sender, EventArgs e)
     {
-        wvWebpage.Source = cUrl;
-    }
-
-    // Return to the previous page.
-    private void btnGoBackClicked(object sender, EventArgs e)
-    {
-        // Go backwards, if allowed.
         if (wvWebpage.CanGoBack)
         {
             wvWebpage.GoBack();
         }
+    }
 
-        // Go forwards, if allowed.
-        //if (wvWebpage.CanGoForward)
-        //{
-        //    wvWebpage.GoForward();
-        //}
+    // Go forwards, if allowed.
+    private void OnGoForwardClicked(object sender, EventArgs e)
+    {
+        if (wvWebpage.CanGoForward)
+        {
+            wvWebpage.GoForward();
+        }
     }
 }

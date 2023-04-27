@@ -340,6 +340,12 @@ Non autorizzato:</value>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copia il testo negli appunti.</value>
   </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Torna indietro.</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Vai avanti.</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Incolla il testo dagli appunti.</value>
   </data>

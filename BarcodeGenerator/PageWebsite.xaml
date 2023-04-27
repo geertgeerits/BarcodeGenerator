@@ -7,7 +7,7 @@
     <NavigationPage.TitleView>
         <Grid
             RowDefinitions="50"
-            ColumnDefinitions="200*, 50, 50"
+            ColumnDefinitions="200*, 40, 40"
             Margin="5"
             BackgroundColor="#00bfff">
 
@@ -22,23 +22,25 @@
             <ImageButton
                 Grid.Row="0"
                 Grid.Column="1"
-                Source="home_32p.png"
-                HorizontalOptions="Center"
+                Source="arrow_left_32p.png"
+                HorizontalOptions="Start"
                 VerticalOptions="Center"
-                HeightRequest="36"
-                WidthRequest="36"
-                Clicked="btnHomeClicked">
+                HeightRequest="24"
+                WidthRequest="24"
+                ToolTipProperties.Text ="{x:Static resx:CodeLang.ToolTipGoBack_Text}"
+                Clicked="OnGoBackClicked">
             </ImageButton>
 
             <ImageButton
                 Grid.Row="0"
                 Grid.Column="2"
-                Source="goback_32p.png"
-                HorizontalOptions="Center"
+                Source="arrow_right_32p.png"
+                HorizontalOptions="Start"
                 VerticalOptions="Center"
-                HeightRequest="36"
-                WidthRequest="36"
-                Clicked="btnGoBackClicked">
+                HeightRequest="24"
+                WidthRequest="24"
+                ToolTipProperties.Text ="{x:Static resx:CodeLang.ToolTipGoForward_Text}"
+                Clicked="OnGoForwardClicked">
             </ImageButton>
         </Grid>
     </NavigationPage.TitleView>

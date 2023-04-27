@@ -340,6 +340,12 @@ No permitido:</value>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copie el texto en el portapapeles.</value>
   </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Regresa.</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Avanzar.</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Pegar texto desde el portapapeles.</value>
   </data>
