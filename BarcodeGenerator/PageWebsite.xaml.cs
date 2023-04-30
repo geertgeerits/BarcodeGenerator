@@ -18,11 +18,16 @@ public partial class PageWebsite : ContentPage
         wvWebpage.Source = "https://geertgeerits.wixsite.com/barcodegenerator";
         wvWebpage.Navigating += OnNavigating;
         wvWebpage.Navigated += OnNavigated;
+
+        // CanGoBack and CanGoForward !!!BUG!!! on Android and iOS !!!
+        btnGoBack.IsEnabled = true;
+        btnGoForward.IsEnabled = true;
     }
 
-    // if 'mailto' link in webpage then open the e-mail app.
+    // Navigating event that's raised when page navigation starts.
     private async void OnNavigating(object sender, WebNavigatingEventArgs e)
     {
+        // If 'mailto' link in webpage then open the e-mail app.
         if (e.Url.StartsWith("mailto"))
         {
             await Launcher.TryOpenAsync(e.Url);
@@ -30,9 +35,15 @@ public partial class PageWebsite : ContentPage
         }
     }
 
-    // The following code changes the target of all the links in _self.
+    // Navigated event that's raised when page navigation completes.
     private void OnNavigated(object sender, WebNavigatedEventArgs e)
     {
+        // CanGoBack and CanGoForward !!!BUG!!! on Android and iOS !!!
+        // Enable or disable the back and forward buttons.
+        //btnGoBack.IsEnabled = wvWebpage.CanGoBack;
+        //btnGoForward.IsEnabled = wvWebpage.CanGoForward;
+
+        // Changes the target of all the links in _self.
         wvWebpage.EvaluateJavaScriptAsync(@"(function() {
             var links = document.getElementsByTagName('a');
             for (var i = 0; i < links.length; i++)

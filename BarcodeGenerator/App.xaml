@@ -203,6 +203,32 @@
                 <Setter Property="Text" Value="?" />
             </Style>
 
+            <Style x:Key="buttonStyleWebsite" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderColor" Value="Transparent" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="FontSize" Value="28" />
+                <Setter Property="IsEnabled" Value="False" />
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="#969696" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
             <Style x:Key="sliderStyleColor" TargetType="Slider">
                 <!--<Setter Property="HorizontalOptions" Value="Center" /> !!!BUG!!!-->
                 <Setter Property="VerticalOptions" Value="Center" />

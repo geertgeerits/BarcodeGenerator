@@ -7,8 +7,7 @@
     <NavigationPage.TitleView>
         <Grid
             RowDefinitions="50"
-            ColumnDefinitions="200*, 40, 40"
-            Margin="5"
+            ColumnDefinitions="200*, 60, 60"
             BackgroundColor="#00bfff">
 
             <Label
@@ -19,29 +18,27 @@
                 Text="{x:Static resx:CodeLang.Website_Text}">
             </Label>
 
-            <ImageButton
+            <Button
+                x:Name="btnGoBack"
+                Style="{StaticResource buttonStyleWebsite}"
                 Grid.Row="0"
                 Grid.Column="1"
-                Source="arrow_left_32p.png"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"
-                HeightRequest="24"
-                WidthRequest="24"
+                HorizontalOptions="End"
                 ToolTipProperties.Text ="{x:Static resx:CodeLang.ToolTipGoBack_Text}"
+                Text="&lt;"
                 Clicked="OnGoBackClicked">
-            </ImageButton>
+            </Button>
 
-            <ImageButton
+            <Button
+                x:Name="btnGoForward"
+                Style="{StaticResource buttonStyleWebsite}"
                 Grid.Row="0"
                 Grid.Column="2"
-                Source="arrow_right_32p.png"
                 HorizontalOptions="Start"
-                VerticalOptions="Center"
-                HeightRequest="24"
-                WidthRequest="24"
                 ToolTipProperties.Text ="{x:Static resx:CodeLang.ToolTipGoForward_Text}"
+                Text=">"
                 Clicked="OnGoForwardClicked">
-            </ImageButton>
+            </Button>
         </Grid>
     </NavigationPage.TitleView>
 
