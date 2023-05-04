@@ -24,6 +24,7 @@
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
+                ToolTipProperties.Text="{local:Translate About_Text}"
                 Clicked="OnPageAboutClicked">
             </ImageButton>
 
@@ -43,6 +44,7 @@
                 VerticalOptions="Center"
                 HeightRequest="38"
                 WidthRequest="38"
+                ToolTipProperties.Text="{local:Translate ToolTipBarcodeScanner_Text}"
                 Clicked="OnPageScanClicked">
             </ImageButton>
 
@@ -55,6 +57,7 @@
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
+                ToolTipProperties.Text="{local:Translate Settings_Text}"
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
         </Grid>

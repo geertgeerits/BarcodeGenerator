@@ -29,6 +29,7 @@
                 VerticalOptions="Center"
                 HeightRequest="36"
                 WidthRequest="36"
+                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTorch_Text}"
                 Clicked="OnTorchClicked">
             </ImageButton>
         </Grid>

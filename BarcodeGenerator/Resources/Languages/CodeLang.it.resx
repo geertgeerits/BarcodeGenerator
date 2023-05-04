@@ -337,6 +337,9 @@ Non autorizzato:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Tema:</value>
   </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>Scanner</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copia il testo negli appunti.</value>
   </data>
@@ -348,6 +351,9 @@ Non autorizzato:</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Incolla il testo dagli appunti.</value>
+  </data>
+  <data name="ToolTipTorch_Text" xml:space="preserve">
+    <value>Torcia elettrica</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Versione:</value>

@@ -337,6 +337,9 @@ Not allowed:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Theme:</value>
   </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>Scanner</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copy text to the clipboard.</value>
   </data>
@@ -348,6 +351,9 @@ Not allowed:</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Paste text from the clipboard.</value>
+  </data>
+  <data name="ToolTipTorch_Text" xml:space="preserve">
+    <value>Flashlight</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>

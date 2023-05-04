@@ -41,8 +41,8 @@
 	<key>CFBundleDisplayName</key>
 	<string>Barcode Generator and Scanner</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.29</string>
+	<string>1.0.30</string>
 	<key>CFBundleVersion</key>
-	<string>29</string>
+	<string>30</string>
 </dict>
 </plist>

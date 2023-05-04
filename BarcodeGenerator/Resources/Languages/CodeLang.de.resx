@@ -337,6 +337,9 @@ Nicht erlaubt:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Thema:</value>
   </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>Scanner</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Text in die Zwischenablage kopieren.</value>
   </data>
@@ -348,6 +351,9 @@ Nicht erlaubt:</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Text aus der Zwischenablage einfügen.</value>
+  </data>
+  <data name="ToolTipTorch_Text" xml:space="preserve">
+    <value>Taschenlampe</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Ausführung:</value>
