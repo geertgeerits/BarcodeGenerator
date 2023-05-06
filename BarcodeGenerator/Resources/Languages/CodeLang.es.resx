@@ -341,16 +341,16 @@ No permitido:</value>
     <value>Escáner</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copie el texto en el portapapeles.</value>
+    <value>Copie el texto en el portapapeles</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Regresa.</value>
+    <value>Regresa</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Avanzar.</value>
+    <value>Avanzar</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Pegar texto desde el portapapeles.</value>
+    <value>Pegar texto desde el portapapeles</value>
   </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Linterna</value>

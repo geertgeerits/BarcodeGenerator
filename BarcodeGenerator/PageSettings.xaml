@@ -75,13 +75,16 @@
                         SelectedIndexChanged="OnPickerLanguageChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
+                                <x:String>Čeština</x:String>
                                 <x:String>Deutsch</x:String>
                                 <x:String>English</x:String>
                                 <x:String>Español</x:String>
                                 <x:String>Français</x:String>
                                 <x:String>Italiano</x:String>
                                 <x:String>Nederlands</x:String>
+                                <x:String>Polski</x:String>
                                 <x:String>Português</x:String>
+                                <x:String>Romana</x:String>
                             </x:Array>
                         </Picker.ItemsSource>
                     </Picker>

@@ -118,35 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Texte pour parler: Toutes les langues fournies dans les paramètres de l'application ne sont pas prises en charge.
-Discours au texte: activez-le via les paramètres de votre appareil. Un microphone apparaît alors dans le clavier virtuel.
-Ces deux options dépendent d'un appareil à l'autre et des langues installées. Il est possible que pour certaines langues la traduction vers et depuis la parole se fasse via internet par les services concernés.
+    <value>Převod textu na řeč: Nejsou podporovány všechny jazyky uvedené v nastavení aplikace.
+Převod řeči na text: Aktivujte ji prostřednictvím nastavení zařízení. Poté se na virtuální klávesnici objeví mikrofon.
+Obě tyto možnosti závisí na zařízení a na nainstalovaných jazycích. Je možné, že u některých jazyků je překlad do az řeči prováděn prostřednictvím internetu příslušnými službami.
 
-Google Translate a été utilisé pour la traduction du texte. Ceci ne garantit pas que toutes les traductions sont correctes.
-Les langues de support sont : le néerlandais, l'anglais, le français, l'allemand, l'italien, le portugais et l'espagnol.
+K překladu textu byl použit Google Translate. To nezaručuje, že všechny překlady jsou správné.
+Podporované jazyky jsou: holandština, angličtina, francouzština, němčina, italština, portugalština a španělština.
 
-Vous pouvez toujours me contacter pour toute correction.</value>
+Pro případné opravy mě můžete vždy kontaktovat.</value>
   </data>
   <data name="About_Text" xml:space="preserve">
-    <value>Info</value>
+    <value>O</value>
   </data>
   <data name="Agree_Text" xml:space="preserve">
-    <value>D 'accord</value>
+    <value>Souhlasit</value>
   </data>
   <data name="AllCodes_Text" xml:space="preserve">
-    <value>Tous les codes</value>
+    <value>Všechny kódy</value>
   </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
-    <value>Interdit:</value>
+    <value>Nepovoleno:</value>
   </data>
   <data name="AllowedChar_Text" xml:space="preserve">
-    <value>Caractères autorisés:</value>
+    <value>Povolené znaky:</value>
   </data>
   <data name="BackgroundColor_Text" xml:space="preserve">
-    <value>Couleur de l'arrière plan:</value>
+    <value>Barva pozadí:</value>
   </data>
   <data name="BackgroundOpacity_Text" xml:space="preserve">
-    <value>Opacité de fond:</value>
+    <value>Neprůhlednost pozadí:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
@@ -155,213 +155,213 @@ Vous pouvez toujours me contacter pour toute correction.</value>
     <value>Barcode Scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Fermer</value>
+    <value>Zavřít</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
-    <value>Ecoutez</value>
+    <value>Poslouchat</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
-    <value>Partager texte</value>
+    <value>Sdílejte text</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Partager</value>
+    <value>Podíl</value>
   </data>
   <data name="ButtonSpeak_Text" xml:space="preserve">
-    <value>Parlez</value>
+    <value>Mluvit</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Le code est faux.
-Le chiffre de contrôle a été corrigé.</value>
+    <value>Kód je špatný.
+Kontrolní číslice byla opravena.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Retirer</value>
+    <value>Průhledná</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Veuillez fermer l'application.</value>
+    <value>Zavřete aplikaci.</value>
   </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>Le code doit comporter</value>
+    <value>Kód by měl být</value>
   </data>
   <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>chiffres (sans chiffre de contrôle) ou</value>
+    <value>(bez číslice kontrolního součtu) nebo</value>
   </data>
   <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>chiffres.</value>
+    <value>číslice dlouhé.</value>
   </data>
   <data name="Contact_Text" xml:space="preserve">
-    <value>Contact:</value>
+    <value>Kontakt:</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Droits d'auteur</value>
+    <value>Autorská práva</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Générateur de format par défaut:</value>
+    <value>Výchozí generátor formátu:</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Analyseur de format par défaut :</value>
+    <value>Výchozí formát skeneru:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Standard</value>
+    <value>Výchozí</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Générez et numérisez divers codes-barres.</value>
+    <value>Generujte a skenujte různé čárové kódy.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Désaccord</value>
+    <value>Nesouhlasit</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mailem:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Erreur</value>
+    <value>Chyba</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
-    <value>Le premier chiffre doit être 0.</value>
+    <value>První číslo by mělo být 0.</value>
   </data>
   <data name="ForgroundColor_Text" xml:space="preserve">
-    <value>Couleur de premier plan:</value>
+    <value>Barva popředí:</value>
   </data>
   <data name="ForgroundOpacity_Text" xml:space="preserve">
-    <value>Opacité du premier plan:</value>
+    <value>Neprůhlednost vpředu:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
-    <value>Sélectionnez un format:</value>
+    <value>Vyberte formát:</value>
   </data>
   <data name="FormatNotSupported_Text" xml:space="preserve">
-    <value>n'est actuellement pas pris en charge.</value>
+    <value>v současné době není podporováno.</value>
   </data>
   <data name="FormatTitle_Text" xml:space="preserve">
-    <value>Format</value>
+    <value>Formát</value>
   </data>
   <data name="GenerateCode_Text" xml:space="preserve">
-    <value>Générer</value>
+    <value>Generovat</value>
   </data>
   <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
-    <value>Caractère de début/fin non valide:</value>
+    <value>Neplatný počáteční/koncový znak:</value>
   </data>
   <data name="GuardMissingEnd_Text" xml:space="preserve">
-    <value>Caractère de fin manquant.</value>
+    <value>Chybí koncový znak.</value>
   </data>
   <data name="GuardMissingStart_Text" xml:space="preserve">
-    <value>Caractère de début manquant.</value>
+    <value>Chybí počáteční znak.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
-    <value>Codes couleurs hexadécimaux:
+    <value>Hexadecimální barevné kódy:
 
-Caractères 1-2: Opacité/Transparence
-Caractères 3-4: Rouge
-Caractères 5-6: Vert
-Caractères 7-8: Bleu</value>
+Znaky 1-2: Neprůhlednost/průhlednost
+Postavy 3-4: Červená
+Postavy 5-6: Zelená
+Postavy 7-8: Modrá</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Discours de langue:</value>
+    <value>Jazyková řeč:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Langue:</value>
+    <value>Jazyk:</value>
   </data>
   <data name="LengthInputEven_Text" xml:space="preserve">
-    <value>La longueur de l'entrée doit être paire.</value>
+    <value>Délka vstupu by měla být rovnoměrná.</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>Le logiciel est fourni « tel quel », sans garantie d'aucune sorte, expresse ou implicite, y compris, mais sans s'y limiter, les garanties de qualité marchande, d'adéquation à un usage particulier et d'absence de contrefaçon. En aucun cas, l'auteur et/ou l'éditeur ne pourront être tenus responsables de toute réclamation, dommage ou autre responsabilité, que ce soit dans le cadre d'une action contractuelle, délictuelle ou autre, découlant de, de ou en relation avec le logiciel ou l'utilisation ou d'autres transactions dans les logiciels.</value>
+    <value>Software je poskytován „tak, jak je“, bez záruky jakéhokoli druhu, výslovné nebo předpokládané, včetně, ale bez omezení na záruky prodejnosti, vhodnosti pro konkrétní účel a neporušení práv. V žádném případě nenese autor a/nebo vydavatel odpovědnost za jakýkoli nárok, škody nebo jinou odpovědnost, ať už v případě smluvního jednání, deliktu nebo jinak, vyplývající z nebo v souvislosti se softwarem nebo používáním či jinými jednáními v software.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui par Redth
-Lecture et génération de codes-barres pour les applications .NET MAUI.
-Licence MIT :
+    <value>ZXing.Net.Maui od Redtha
+Skenování a generování čárových kódů pro aplikace .NET MAUI.
+Licence MIT:
 
-L'autorisation est accordée, gratuitement, à toute personne obtenant une copie de Barcode Generator (le « Logiciel »), de traiter le Logiciel sans restriction, y compris, sans limitation, les droits d'utilisation, de copie, de modification, de fusion, de publication, de distribution , sous-licencier et/ou vendre des copies du Logiciel, et permettre aux personnes à qui le Logiciel est fourni de le faire, sous réserve des conditions suivantes :
+Tímto se bezplatně uděluje povolení jakékoli osobě, která získá kopii Generátoru čárových kódů (dále jen „Software“), k nakládání se softwarem bez omezení, včetně, bez omezení, práv používat, kopírovat, upravovat, slučovat, publikovat, distribuovat , sublicencovat a/nebo prodávat kopie Softwaru a umožnit osobám, kterým je Software poskytován, aby tak učinily, za následujících podmínek:
 
-L'avis de droit d'auteur ci-dessus et cet avis d'autorisation (y compris le paragraphe suivant) doivent être inclus dans toutes les copies ou parties substantielles du Logiciel.</value>
+Výše uvedené oznámení o autorských právech a toto oznámení o povolení (včetně dalšího odstavce) musí být součástí všech kopií nebo podstatných částí Softwaru.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
     <value>Licence</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>Cette application peut être utilisée librement à des fins non commerciales.
-Utilisez ce programme entièrement à vos propres risques.</value>
+    <value>Tuto aplikaci lze volně používat pro nekomerční účely.
+Používejte tento program zcela na vlastní nebezpečí.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
-    <value>Non</value>
+    <value>Ne</value>
   </data>
   <data name="OpenLinkText_Text" xml:space="preserve">
-    <value>Ouvrez ce lien?</value>
+    <value>Otevřít tento odkaz?</value>
   </data>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Lien de site Web</value>
+    <value>Odkaz na webovou stránku</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Politique de confidentialité:</value>
+    <value>Zásady ochrany osobních údajů:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>Aucune donnée personnelle ou autre n'est stockée ou transmise à moi-même et à d'autres.</value>
+    <value>Žádné osobní a jiné údaje nejsou ukládány ani předávány mně a ostatním.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>L'application sera redémarrée.</value>
+    <value>Aplikace bude restartována.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Réinitialiser</value>
+    <value>Resetovat</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Certains paramètres modifiés doivent être enregistrés pour pouvoir être appliqués.</value>
+    <value>Některá změněná nastavení musí být uložena, aby je bylo možné použít.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Sauvegarder</value>
+    <value>Uložit</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Réglages</value>
+    <value>Nastavení</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>Le texte contient un ou plusieurs caractères non autorisés.
+    <value>Text obsahuje jeden nebo více znaků, které nejsou povoleny.
 
-Interdit:</value>
+Nepovoleno:</value>
   </data>
   <data name="TextToEncode_Text" xml:space="preserve">
-    <value>Texte à encoder:</value>
+    <value>Text ke kódování:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>La synthèse vocale n'est pas prise en charge sur cet appareil.</value>
+    <value>Převod textu na řeč není na tomto zařízení podporován.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Sombre</value>
+    <value>Temný</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Léger</value>
+    <value>Světlo</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>Système</value>
+    <value>Systém</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Thème:</value>
+    <value>Téma:</value>
   </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
-    <value>Scanner</value>
+    <value>Skener</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copiez le texte dans le presse-papiers</value>
+    <value>Zkopírujte text do schránky</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Retourner</value>
+    <value>Vraťte se</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Aller de l'avant</value>
+    <value>Jdi dopředu</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Collez le texte du presse-papiers</value>
+    <value>Vložte text ze schránky</value>
   </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Lampe de poche</value>
+    <value>Svítilna</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Verze:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Site Internet</value>
+    <value>Webová stránka</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Oui</value>
+    <value>Ano</value>
   </data>
 </root>

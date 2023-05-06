@@ -1,4 +1,4 @@
-using BarcodeGenerator.Resources.Languages;
+ï»¿using BarcodeGenerator.Resources.Languages;
 using System.Diagnostics;
 using System.Globalization;
 
@@ -59,26 +59,35 @@ public partial class PageSettings : ContentPage
         // Set the current language in the picker.
         pckLanguage.SelectedIndex = MainPage.cLanguage switch
         {
+            // Czech (ÄŒeÅ¡tina).
+            "cs" => 0,
+
             // German (Deutsch).
-            "de" => 0,
+            "de" => 1,
 
-            // Spanish (Español).
-            "es" => 2,
+            // Spanish (EspaÃ±ol).
+            "es" => 3,
 
-            // French (Français).
-            "fr" => 3,
+            // French (FranÃ§ais).
+            "fr" => 4,
 
             // Italian (Italiano).
-            "it" => 4,
+            "it" => 5,
 
             // Dutch (Nederlands).
-            "nl" => 5,
+            "nl" => 6,
 
-            // Portuguese (Português).
-            "pt" => 6,
+            // Polish (Polski).
+            "pl" => 7,
+
+            // Portuguese (PortuguÃªs).
+            "pt" => 8,
+
+            // Romanian (Romana).
+            "ro" => 9,
 
             // English.
-            _ => 1,
+            _ => 2,
         };
 
         // Fill the picker with the speech languages and set the saved language in the picker.
@@ -145,23 +154,32 @@ public partial class PageSettings : ContentPage
         {
             MainPage.cLanguage = selectedIndex switch
             {
+                // Czech (ÄŒeÅ¡tina).
+                0 => "cs",
+
                 // German (Deutsch).
-                0 => "de",
+                1 => "de",
 
-                // Spanish (Español).
-                2 => "es",
+                // Spanish (EspaÃ±ol).
+                3 => "es",
 
-                // French (Français).
-                3 => "fr",
+                // French (FranÃ§ais).
+                4 => "fr",
 
                 // Italian (Italiano).
-                4 => "it",
+                5 => "it",
 
                 // Dutch (Nederlands).
-                5 => "nl",
+                6 => "nl",
 
-                // Portuguese (Português).
-                6 => "pt",
+                // Polish (Polski).
+                7 => "pl",
+
+                // Portuguese (PortuguÃªs).
+                8 => "pt",
+
+                // Romanian (Romana).
+                9 => "ro",
 
                 // English.
                 _ => "en",

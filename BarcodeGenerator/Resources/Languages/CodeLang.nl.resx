@@ -341,16 +341,16 @@ Niet toegestaan:</value>
     <value>Scanner</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Kopieer tekst naar het klembord.</value>
+    <value>Kopieer tekst naar het klembord</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Ga terug.</value>
+    <value>Ga terug</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Ga vooruit.</value>
+    <value>Ga vooruit</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Plak tekst van het klembord.</value>
+    <value>Plak tekst van het klembord</value>
   </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Zaklamp</value>

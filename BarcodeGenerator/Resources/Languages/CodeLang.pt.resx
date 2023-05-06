@@ -341,16 +341,16 @@ Não permitido:</value>
     <value>Scanner</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copie o texto para a área de transferência.</value>
+    <value>Copie o texto para a área de transferência</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Volte.</value>
+    <value>Volte</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Vá em frente.</value>
+    <value>Vá em frente</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Cole o texto da área de transferência.</value>
+    <value>Cole o texto da área de transferência</value>
   </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Lanterna</value>

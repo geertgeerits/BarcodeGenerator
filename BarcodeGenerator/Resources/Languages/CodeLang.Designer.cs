@@ -683,7 +683,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy text to the clipboard..
+        ///   Looks up a localized string similar to Copy text to the clipboard.
         /// </summary>
         internal static string ToolTipCopy_Text {
             get {
@@ -692,7 +692,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go back..
+        ///   Looks up a localized string similar to Go back.
         /// </summary>
         internal static string ToolTipGoBack_Text {
             get {
@@ -701,7 +701,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go forward..
+        ///   Looks up a localized string similar to Go forward.
         /// </summary>
         internal static string ToolTipGoForward_Text {
             get {
@@ -710,7 +710,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paste text from the clipboard..
+        ///   Looks up a localized string similar to Paste text from the clipboard.
         /// </summary>
         internal static string ToolTipPaste_Text {
             get {

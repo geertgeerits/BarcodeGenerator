@@ -341,16 +341,16 @@ Nicht erlaubt:</value>
     <value>Scanner</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Text in die Zwischenablage kopieren.</value>
+    <value>Text in die Zwischenablage kopieren</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Geh zurück.</value>
+    <value>Geh zurück</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Vorwärts gehen.</value>
+    <value>Vorwärts gehen</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Text aus der Zwischenablage einfügen.</value>
+    <value>Text aus der Zwischenablage einfügen</value>
   </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Taschenlampe</value>

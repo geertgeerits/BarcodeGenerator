@@ -341,16 +341,16 @@ Not allowed:</value>
     <value>Scanner</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copy text to the clipboard.</value>
+    <value>Copy text to the clipboard</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Go back.</value>
+    <value>Go back</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Go forward.</value>
+    <value>Go forward</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Paste text from the clipboard.</value>
+    <value>Paste text from the clipboard</value>
   </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Flashlight</value>

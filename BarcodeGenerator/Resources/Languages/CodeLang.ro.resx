@@ -118,35 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Texte pour parler: Toutes les langues fournies dans les paramètres de l'application ne sont pas prises en charge.
-Discours au texte: activez-le via les paramètres de votre appareil. Un microphone apparaît alors dans le clavier virtuel.
-Ces deux options dépendent d'un appareil à l'autre et des langues installées. Il est possible que pour certaines langues la traduction vers et depuis la parole se fasse via internet par les services concernés.
+    <value>Text în vorbire: nu sunt acceptate toate limbile care sunt furnizate în setările aplicației.
+Vorbire în text: activează-l prin setările dispozitivului. Un microfon va apărea apoi pe tastatura virtuală.
+Ambele opțiuni depind de la dispozitiv la dispozitiv și de la limbile instalate. Este posibil ca, pentru unele limbi, traducerea către și din vorbire să se facă prin internet de către serviciile respective.
 
-Google Translate a été utilisé pour la traduction du texte. Ceci ne garantit pas que toutes les traductions sont correctes.
-Les langues de support sont : le néerlandais, l'anglais, le français, l'allemand, l'italien, le portugais et l'espagnol.
+Google Translate a fost folosit pentru traducerea textului. Aceasta nu este o garanție că toate traducerile sunt corecte.
+Limbile de sprijin sunt: olandeză, engleză, franceză, germană, italiană, portugheză și spaniolă.
 
-Vous pouvez toujours me contacter pour toute correction.</value>
+Mă puteți contacta oricând pentru orice corecturi.</value>
   </data>
   <data name="About_Text" xml:space="preserve">
-    <value>Info</value>
+    <value>Despre</value>
   </data>
   <data name="Agree_Text" xml:space="preserve">
-    <value>D 'accord</value>
+    <value>De acord</value>
   </data>
   <data name="AllCodes_Text" xml:space="preserve">
-    <value>Tous les codes</value>
+    <value>Toate codurile</value>
   </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
-    <value>Interdit:</value>
+    <value>Nepermis:</value>
   </data>
   <data name="AllowedChar_Text" xml:space="preserve">
-    <value>Caractères autorisés:</value>
+    <value>Caractere permise:</value>
   </data>
   <data name="BackgroundColor_Text" xml:space="preserve">
-    <value>Couleur de l'arrière plan:</value>
+    <value>Culoare de fundal:</value>
   </data>
   <data name="BackgroundOpacity_Text" xml:space="preserve">
-    <value>Opacité de fond:</value>
+    <value>Opacitatea fundalului:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
@@ -155,213 +155,213 @@ Vous pouvez toujours me contacter pour toute correction.</value>
     <value>Barcode Scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Fermer</value>
+    <value>Închide</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
-    <value>Ecoutez</value>
+    <value>Asculta</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
-    <value>Partager texte</value>
+    <value>Distribuie text</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Partager</value>
+    <value>Acțiune</value>
   </data>
   <data name="ButtonSpeak_Text" xml:space="preserve">
-    <value>Parlez</value>
+    <value>Vorbi</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Le code est faux.
-Le chiffre de contrôle a été corrigé.</value>
+    <value>Codul este greșit.
+Cifra de verificare a fost corectată.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Retirer</value>
+    <value>Clar</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Veuillez fermer l'application.</value>
+    <value>Vă rugăm să închideți aplicația.</value>
   </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>Le code doit comporter</value>
+    <value>Codul ar trebui să fie</value>
   </data>
   <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>chiffres (sans chiffre de contrôle) ou</value>
+    <value>(fără cifra sumei de control) sau</value>
   </data>
   <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>chiffres.</value>
+    <value>cifre lungi.</value>
   </data>
   <data name="Contact_Text" xml:space="preserve">
-    <value>Contact:</value>
+    <value>A lua legatura:</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Droits d'auteur</value>
+    <value>Drepturi de autor</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Générateur de format par défaut:</value>
+    <value>Generator de format implicit:</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Analyseur de format par défaut :</value>
+    <value>Scaner de format implicit:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Standard</value>
+    <value>Mod implicit</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Générez et numérisez divers codes-barres.</value>
+    <value>Generați și scanați diferite coduri de bare.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Désaccord</value>
+    <value>Dezacord</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
     <value>E-mail:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Erreur</value>
+    <value>Eroare</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
-    <value>Le premier chiffre doit être 0.</value>
+    <value>Primul număr ar trebui să fie 0.</value>
   </data>
   <data name="ForgroundColor_Text" xml:space="preserve">
-    <value>Couleur de premier plan:</value>
+    <value>Culoare prim plan:</value>
   </data>
   <data name="ForgroundOpacity_Text" xml:space="preserve">
-    <value>Opacité du premier plan:</value>
+    <value>Opacitatea primului plan:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
-    <value>Sélectionnez un format:</value>
+    <value>Selectați un format:</value>
   </data>
   <data name="FormatNotSupported_Text" xml:space="preserve">
-    <value>n'est actuellement pas pris en charge.</value>
+    <value>momentan nu este acceptat.</value>
   </data>
   <data name="FormatTitle_Text" xml:space="preserve">
     <value>Format</value>
   </data>
   <data name="GenerateCode_Text" xml:space="preserve">
-    <value>Générer</value>
+    <value>Genera</value>
   </data>
   <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
-    <value>Caractère de début/fin non valide:</value>
+    <value>Caracter de început/sfârșit nevalid:</value>
   </data>
   <data name="GuardMissingEnd_Text" xml:space="preserve">
-    <value>Caractère de fin manquant.</value>
+    <value>Lipsește caracterul final.</value>
   </data>
   <data name="GuardMissingStart_Text" xml:space="preserve">
-    <value>Caractère de début manquant.</value>
+    <value>Lipsește caracterul de început.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
-    <value>Codes couleurs hexadécimaux:
+    <value>Coduri de culoare hexazecimale:
 
-Caractères 1-2: Opacité/Transparence
-Caractères 3-4: Rouge
-Caractères 5-6: Vert
-Caractères 7-8: Bleu</value>
+Caracterele 1-2: Opacitate/Transparență
+Personajele 3-4: Roșu
+Personajele 5-6: Verde
+Personajele 7-8: Albastru</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Discours de langue:</value>
+    <value>Vorbirea limbajului:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Langue:</value>
+    <value>Limba:</value>
   </data>
   <data name="LengthInputEven_Text" xml:space="preserve">
-    <value>La longueur de l'entrée doit être paire.</value>
+    <value>Lungimea intrării ar trebui să fie uniformă.</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>Le logiciel est fourni « tel quel », sans garantie d'aucune sorte, expresse ou implicite, y compris, mais sans s'y limiter, les garanties de qualité marchande, d'adéquation à un usage particulier et d'absence de contrefaçon. En aucun cas, l'auteur et/ou l'éditeur ne pourront être tenus responsables de toute réclamation, dommage ou autre responsabilité, que ce soit dans le cadre d'une action contractuelle, délictuelle ou autre, découlant de, de ou en relation avec le logiciel ou l'utilisation ou d'autres transactions dans les logiciels.</value>
+    <value>Software-ul este furnizat „ca atare”, fără garanții de niciun fel, exprese sau implicite, incluzând, dar fără a se limita la garanțiile de vandabilitate, adecvare pentru un anumit scop și neîncălcare. În niciun caz, autorul și/sau editorul nu vor fi răspunzători pentru orice pretenție, daune sau altă răspundere, indiferent dacă este vorba despre o acțiune contractuală, delictuală sau de altă natură, care decurg din, din sau în legătură cu software-ul sau utilizarea sau alte tranzacții în software-ul.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui par Redth
-Lecture et génération de codes-barres pour les applications .NET MAUI.
-Licence MIT :
+    <value>ZXing.Net.Maui de Redth
+Scanarea și generarea codurilor de bare pentru aplicații .NET MAUI.
+Licență MIT:
 
-L'autorisation est accordée, gratuitement, à toute personne obtenant une copie de Barcode Generator (le « Logiciel »), de traiter le Logiciel sans restriction, y compris, sans limitation, les droits d'utilisation, de copie, de modification, de fusion, de publication, de distribution , sous-licencier et/ou vendre des copies du Logiciel, et permettre aux personnes à qui le Logiciel est fourni de le faire, sous réserve des conditions suivantes :
+Prin prezenta se acordă permisiunea, în mod gratuit, oricărei persoane care obține o copie a Generatorului de coduri de bare („Software-ul”), de a utiliza Software-ul fără restricții, inclusiv, fără limitare, drepturile de utilizare, copiere, modificare, îmbinare, publicare, distribuire. , să sublicențeze și/sau să vândă copii ale Software-ului și să permită persoanelor cărora le este furnizat Software-ul să facă acest lucru, sub rezerva următoarelor condiții:
 
-L'avis de droit d'auteur ci-dessus et cet avis d'autorisation (y compris le paragraphe suivant) doivent être inclus dans toutes les copies ou parties substantielles du Logiciel.</value>
+Nota privind drepturile de autor de mai sus și această notificare de permisiune (inclusiv următorul paragraf) vor fi incluse în toate copiile sau părțile substanțiale ale Software-ului.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>Licence</value>
+    <value>Licență</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>Cette application peut être utilisée librement à des fins non commerciales.
-Utilisez ce programme entièrement à vos propres risques.</value>
+    <value>Această aplicație poate fi folosită gratuit în scopuri necomerciale.
+Utilizați acest program în întregime pe propriul risc.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
-    <value>Non</value>
+    <value>Nu</value>
   </data>
   <data name="OpenLinkText_Text" xml:space="preserve">
-    <value>Ouvrez ce lien?</value>
+    <value>Deschide acest link?</value>
   </data>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Lien de site Web</value>
+    <value>Link-ul</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Politique de confidentialité:</value>
+    <value>Politica de confidențialitate:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>Aucune donnée personnelle ou autre n'est stockée ou transmise à moi-même et à d'autres.</value>
+    <value>Nicio dată cu caracter personal sau de altă natură nu este stocată sau transmisă mie și altora.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>L'application sera redémarrée.</value>
+    <value>Aplicația va fi repornită.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Réinitialiser</value>
+    <value>Resetați</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Certains paramètres modifiés doivent être enregistrés pour pouvoir être appliqués.</value>
+    <value>Unele setări modificate trebuie salvate pentru a le aplica.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Sauvegarder</value>
+    <value>Salvați</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Réglages</value>
+    <value>Setări</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>Le texte contient un ou plusieurs caractères non autorisés.
+    <value>Textul conține unul sau mai multe caractere care nu sunt permise.
 
-Interdit:</value>
+Nepermis:</value>
   </data>
   <data name="TextToEncode_Text" xml:space="preserve">
-    <value>Texte à encoder:</value>
+    <value>Text de codat:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>La synthèse vocale n'est pas prise en charge sur cet appareil.</value>
+    <value>Textul în vorbire nu este acceptat pe acest dispozitiv.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Sombre</value>
+    <value>Întuneric</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Léger</value>
+    <value>Ușoară</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>Système</value>
+    <value>Sistem</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Thème:</value>
+    <value>Temă:</value>
   </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copiez le texte dans le presse-papiers</value>
+    <value>Copiați textul în clipboard</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Retourner</value>
+    <value>Întoarce-te</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Aller de l'avant</value>
+    <value>Mergi inainte</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Collez le texte du presse-papiers</value>
+    <value>Lipiți text din clipboard</value>
   </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Lampe de poche</value>
+    <value>Lanternă</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Versiune:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Site Internet</value>
+    <value>Site-ul web</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Oui</value>
+    <value>Da</value>
   </data>
 </root>
