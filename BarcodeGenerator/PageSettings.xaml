@@ -76,15 +76,20 @@
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Čeština</x:String>
+                                <x:String>Dansk</x:String>
                                 <x:String>Deutsch</x:String>
                                 <x:String>English</x:String>
                                 <x:String>Español</x:String>
                                 <x:String>Français</x:String>
                                 <x:String>Italiano</x:String>
+                                <x:String>Magyar</x:String>
                                 <x:String>Nederlands</x:String>
+                                <x:String>Norsk</x:String>
                                 <x:String>Polski</x:String>
                                 <x:String>Português</x:String>
-                                <x:String>Romana</x:String>
+                                <x:String>Română</x:String>
+                                <x:String>Suomi</x:String>
+                                <x:String>Svenska</x:String>
                             </x:Array>
                         </Picker.ItemsSource>
                     </Picker>

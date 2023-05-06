@@ -118,35 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Texto para fala: Nem todos os idiomas são suportados fornecidos nas configurações do aplicativo.
-Fala para texto: ative-o nas configurações do seu dispositivo. Um microfone aparecerá no teclado virtual.
-Ambas as opções dependem de dispositivo para dispositivo e dos idiomas instalados. É possível que, para alguns idiomas, a tradução de e para fala seja feita pela Internet pelos serviços envolvidos.
+    <value>Tekst til tale: Ikke alle sprog understøttes, som er angivet i applikationsindstillingerne.
+Tale til tekst: Aktiver det via dine enhedsindstillinger. En mikrofon vises derefter på det virtuelle tastatur.
+Begge disse muligheder afhænger fra enhed til enhed og de installerede sprog. Det er muligt, at for nogle sprog udføres oversættelsen til og fra tale over internettet af de pågældende tjenester.
 
-O Google Tradutor foi utilizado para a tradução do texto. Isso não é uma garantia de que todas as traduções estão corretas.
-Os idiomas de suporte são: tcheco, dinamarquês, holandês, inglês, finlandês, francês, alemão, húngaro, italiano, norueguês, polonês, português, romeno, espanhol e sueco.
+Google Translate blev brugt til oversættelsen af teksten. Dette er ikke en garanti for, at alle oversættelser er korrekte.
+Understøttende sprog er: tjekkisk, dansk, hollandsk, engelsk, finsk, fransk, tysk, ungarsk, italiensk, norsk, polsk, portugisisk, rumænsk, spansk og svensk.
 
-Você sempre pode entrar em contato comigo para quaisquer correções.</value>
+Du kan altid kontakte mig for eventuelle rettelser.</value>
   </data>
   <data name="About_Text" xml:space="preserve">
-    <value>Sobre</value>
+    <value>Om</value>
   </data>
   <data name="Agree_Text" xml:space="preserve">
-    <value>Concordar</value>
+    <value>Enig</value>
   </data>
   <data name="AllCodes_Text" xml:space="preserve">
-    <value>Todos os códigos</value>
+    <value>Alle koder</value>
   </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
-    <value>Não permitido:</value>
+    <value>Ikke tilladt:</value>
   </data>
   <data name="AllowedChar_Text" xml:space="preserve">
-    <value>Caracteres permitidos:</value>
+    <value>Tilladte tegn:</value>
   </data>
   <data name="BackgroundColor_Text" xml:space="preserve">
-    <value>Cor de fundo:</value>
+    <value>Baggrundsfarve:</value>
   </data>
   <data name="BackgroundOpacity_Text" xml:space="preserve">
-    <value>Opacidade de fundo:</value>
+    <value>Baggrunds gennemsigtighed:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
@@ -155,184 +155,184 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
     <value>Barcode Scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Perto</value>
+    <value>Tæt</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
-    <value>Ouço</value>
+    <value>Hør efter</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
-    <value>Compartilhar texto</value>
+    <value>Del tekst</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Compartilhar</value>
+    <value>Del</value>
   </data>
   <data name="ButtonSpeak_Text" xml:space="preserve">
-    <value>Falar</value>
+    <value>Tale</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>O código está errado.
-O dígito de verificação foi corrigido.</value>
+    <value>Koden er forkert.
+Kontrolcifferet er blevet rettet.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Remover</value>
+    <value>Klar</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Feche o aplicativo.</value>
+    <value>Luk venligst ansøgningen.</value>
   </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>O código deve ter</value>
+    <value>Koden skal være</value>
   </data>
   <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(sem dígito de checksum) ou</value>
+    <value>(uden kontrolsum ciffer) eller</value>
   </data>
   <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>dígitos.</value>
+    <value>cifre lange.</value>
   </data>
   <data name="Contact_Text" xml:space="preserve">
-    <value>Contato:</value>
+    <value>Kontakt:</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Direito autoral</value>
+    <value>Ophavsret</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Gerador de formato padrão:</value>
+    <value>Standard format generator:</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Scanner de formato padrão:</value>
+    <value>Standard format scanner:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Padrão</value>
+    <value>Standard</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Gere e digitalize vários códigos de barras.</value>
+    <value>Generer og scan forskellige stregkoder.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Discordar</value>
+    <value>Være uenig</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
     <value>E-mail:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Erro</value>
+    <value>Fejl</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
-    <value>O primeiro número deve ser 0.</value>
+    <value>Det første tal skal være 0.</value>
   </data>
   <data name="ForgroundColor_Text" xml:space="preserve">
-    <value>Cor do primeiro plano:</value>
+    <value>Forgrundsfarve:</value>
   </data>
   <data name="ForgroundOpacity_Text" xml:space="preserve">
-    <value>Opacidade do primeiro plano:</value>
+    <value>Forgrunds gennemsigtighed:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
-    <value>Selecione um formato:</value>
+    <value>Vælg et format:</value>
   </data>
   <data name="FormatNotSupported_Text" xml:space="preserve">
-    <value>atualmente não é suportado.</value>
+    <value>er i øjeblikket ikke understøttet.</value>
   </data>
   <data name="FormatTitle_Text" xml:space="preserve">
-    <value>Formato</value>
+    <value>Format</value>
   </data>
   <data name="GenerateCode_Text" xml:space="preserve">
-    <value>Gerar</value>
+    <value>Frembringe</value>
   </data>
   <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
-    <value>Caractere inicial/final inválido:</value>
+    <value>Ugyldigt start-/sluttegn:</value>
   </data>
   <data name="GuardMissingEnd_Text" xml:space="preserve">
-    <value>Caractere final ausente.</value>
+    <value>Manglende slutkarakter.</value>
   </data>
   <data name="GuardMissingStart_Text" xml:space="preserve">
-    <value>Caractere inicial ausente.</value>
+    <value>Mangler startkarakter.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
-    <value>Códigos de cores hexadecimais:
+    <value>Hexadecimale farvekoder:
 
-Caracteres 1-2: Opacidade/Transparência
-Caracteres 3-4: Vermelho
-Caracteres 5-6: Verde
-Caracteres 7-8: Azul</value>
+Tegn 1-2: Opacitet/gennemsigtighed
+Tegn 3-4: Rød
+Tegn 5-6: Grøn
+Tegn 7-8: Blå</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Linguagem de fala:</value>
+    <value>Sprog tale:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Língua:</value>
+    <value>Sprog:</value>
   </data>
   <data name="LengthInputEven_Text" xml:space="preserve">
-    <value>O comprimento da entrada deve ser uniforme.</value>
+    <value>Længden af input skal være lige.</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>O software é fornecido 'como está', sem garantia de qualquer tipo, expressa ou implícita, incluindo, mas não se limitando às garantias de comercialização, adequação a uma finalidade específica e não violação. Em nenhum caso o autor e/ou editor será responsável por qualquer reclamação, dano ou outra responsabilidade, seja em uma ação de contrato, ato ilícito ou de outra forma, decorrente, fora ou em conexão com o software ou o uso ou outras negociações em o software.</value>
+    <value>Softwaren leveres 'som den er', uden garanti af nogen art, udtrykkelig eller underforstået, inklusive men ikke begrænset til garantier for salgbarhed, egnethed til et bestemt formål og ikke-krænkelse. Forfatteren og/eller udgiveren kan under ingen omstændigheder holdes ansvarlig for krav, skader eller andet ansvar, hvad enten det drejer sig om en kontrakt, skadevoldende handling eller på anden måde, opstået fra, ud af eller i forbindelse med softwaren eller brugen eller anden handel med softwaren.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui por Redth
-Digitalização e geração de código de barras para aplicativos .NET MAUI.
-Licença MIT:
+    <value>ZXing.Net.Maui af Redth
+Stregkodescanning og generering til .NET MAUI-applikationer.
+MIT-licens:
 
-A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia do Barcode Generator (o 'Software'), para negociar o Software sem restrições, incluindo, sem limitação, os direitos de usar, copiar, modificar, mesclar, publicar, distribuir , sublicenciar e/ou vender cópias do Software e permitir que as pessoas a quem o Software é fornecido o façam, sujeito às seguintes condições:
+Tilladelse gives hermed gratis til enhver person, der anskaffer sig en kopi af Barcode Generator ('Softwaren'), til at handle med Softwaren uden begrænsninger, herunder uden begrænsning rettighederne til at bruge, kopiere, ændre, flette, offentliggøre, distribuere , underlicensere og/eller sælge kopier af softwaren og tillade personer, som softwaren er leveret til, at gøre det på følgende betingelser:
 
-O aviso de direitos autorais acima e este aviso de permissão (incluindo o próximo parágrafo) devem ser incluídos em todas as cópias ou partes substanciais do Software.</value>
+Ovenstående copyright-meddelelse og denne tilladelsesmeddelelse (inklusive det næste afsnit) skal være inkluderet i alle kopier eller væsentlige dele af softwaren.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>Licença</value>
+    <value>Licens</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>Este aplicativo pode ser usado livremente para fins não comerciais.
-Use este programa inteiramente por sua conta e risco.</value>
+    <value>Denne applikation kan frit bruges til ikke-kommercielle formål.
+Brug dette program helt på egen risiko.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
-    <value>Não</value>
+    <value>Ingen</value>
   </data>
   <data name="OpenLinkText_Text" xml:space="preserve">
-    <value>Abra este link?</value>
+    <value>Vil du åbne dette link?</value>
   </data>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Link do site</value>
+    <value>Website link</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Política de Privacidade:</value>
+    <value>Fortrolighedspolitik:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>Nenhum dado pessoal e outros são armazenados ou transmitidos para mim e para outros.</value>
+    <value>Ingen personlige og andre data gemmes eller videregives til mig selv og andre.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>O aplicativo será reiniciado.</value>
+    <value>Applikationen vil blive genstartet.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Redefinir</value>
+    <value>Nulstil</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Algumas configurações alteradas devem ser salvas para serem aplicadas.</value>
+    <value>Nogle ændrede indstillinger skal gemmes for at kunne anvende dem.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Salvar</value>
+    <value>Gemme</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Definições</value>
+    <value>Indstillinger</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>O texto contém um ou mais caracteres que não são permitidos.
+    <value>Teksten indeholder et eller flere tegn, der ikke er tilladt.
 
-Não permitido:</value>
+Ikke tilladt:</value>
   </data>
   <data name="TextToEncode_Text" xml:space="preserve">
-    <value>Texto a codificar:</value>
+    <value>Tekst, der skal kodes:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>A conversão de texto em fala não é compatível com este dispositivo.</value>
+    <value>Tekst til tale understøttes ikke på denne enhed.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Escuro</value>
+    <value>Mørk</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Clara</value>
+    <value>Lys</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>Sistema</value>
+    <value>System</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
     <value>Tema:</value>
@@ -341,27 +341,27 @@ Não permitido:</value>
     <value>Scanner</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copie o texto para a área de transferência</value>
+    <value>Kopier tekst til udklipsholderen</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Volte</value>
+    <value>Gå tilbage</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Vá em frente</value>
+    <value>Gå fremad</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Cole o texto da área de transferência</value>
+    <value>Indsæt tekst fra udklipsholderen</value>
   </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Lanterna</value>
+    <value>Lommelygte</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Versão:</value>
+    <value>Version:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Site</value>
+    <value>Internet side</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Sim</value>
+    <value>Ja</value>
   </data>
 </root>

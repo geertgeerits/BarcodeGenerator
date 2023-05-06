@@ -59,35 +59,50 @@ public partial class PageSettings : ContentPage
         // Set the current language in the picker.
         pckLanguage.SelectedIndex = MainPage.cLanguage switch
         {
-            // Czech (Čeština).
+            // Čeština - Czech.
             "cs" => 0,
 
-            // German (Deutsch).
-            "de" => 1,
+            // Dansk - Danish.
+            "da" => 1,
 
-            // Spanish (Español).
-            "es" => 3,
+            // Deutsch - German.
+            "de" => 2,
 
-            // French (Français).
-            "fr" => 4,
+            // Español - Spanish.
+            "es" => 4,
 
-            // Italian (Italiano).
-            "it" => 5,
+            // Français - French.
+            "fr" => 5,
 
-            // Dutch (Nederlands).
-            "nl" => 6,
+            // Italiano - Italian.
+            "it" => 6,
 
-            // Polish (Polski).
-            "pl" => 7,
+            // Magyar - Hungarian.
+            "hu" => 7,
 
-            // Portuguese (Português).
-            "pt" => 8,
+            // Nederlands - Dutch.
+            "nl" => 8,
 
-            // Romanian (Romana).
-            "ro" => 9,
+            // Norsk - Norwegian.
+            "no" => 9,
+
+            // Polski - Polish.
+            "pl" => 10,
+
+            // Português - Portuguese.
+            "pt" => 11,
+
+            // Română - Romanian.
+            "ro" => 12,
+
+            // Suomi - Finnish.
+            "fi" => 13,
+
+            // Svenska - Swedish.
+            "sv" => 14,
 
             // English.
-            _ => 2,
+            _ => 3,
         };
 
         // Fill the picker with the speech languages and set the saved language in the picker.
@@ -154,32 +169,47 @@ public partial class PageSettings : ContentPage
         {
             MainPage.cLanguage = selectedIndex switch
             {
-                // Czech (Čeština).
+                // Čeština - Czech.
                 0 => "cs",
 
-                // German (Deutsch).
-                1 => "de",
+                // Dansk - Danish.
+                1 => "da",
 
-                // Spanish (Español).
-                3 => "es",
+                // Deutsch - German.
+                2 => "de",
 
-                // French (Français).
-                4 => "fr",
+                // Español - Spanish.
+                4 => "es",
 
-                // Italian (Italiano).
-                5 => "it",
+                // Français - French.
+                5 => "fr",
 
-                // Dutch (Nederlands).
-                6 => "nl",
+                // Italiano - Italian.
+                6 => "it",
 
-                // Polish (Polski).
-                7 => "pl",
+                // Magyar - Hungarian.
+                7 => "hu",
 
-                // Portuguese (Português).
-                8 => "pt",
+                // Nederlands - Dutch.
+                8 => "nl",
 
-                // Romanian (Romana).
-                9 => "ro",
+                // Norsk - Norwegian.
+                9 => "no",
+
+                // Polski - Polish.
+                10 => "pl",
+
+                // Português - Portuguese.
+                11 => "pt",
+
+                // Română - Romanian.
+                12 => "ro",
+
+                // Suomi - Finnish.
+                13 => "fi",
+
+                // Svenska - Swedish.
+                14 => "sv",
 
                 // English.
                 _ => "en",
