@@ -118,35 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Text to speech: Not all languages are supported that are provided in the application settings.
-Speech to text: Activate it through your device settings. A microphone will then appear in the virtual keyboard.
-Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
+    <value>Text till tal: Alla språk som finns i programinställningarna stöds inte.
+Tal till text: Aktivera den via dina enhetsinställningar. En mikrofon kommer då att dyka upp på det virtuella tangentbordet.
+Båda dessa alternativ beror från enhet till enhet och de installerade språken. Det är möjligt att för vissa språk görs översättningen till och från tal över internet av de berörda tjänsterna.
 
-Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
-The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Polish, Portuguese, Romanian, Spanish and Swedish.
+Google Translate användes för översättningen av texten. Detta är inte en garanti för att alla översättningar är korrekta.
+Stödspråken är: tjeckiska, danska, holländska, engelska, finska, franska, tyska, ungerska, italienska, norska, polska, portugisiska, rumänska, spanska och svenska.
 
-You can always contact me for any corrections.</value>
+Du kan alltid kontakta mig för eventuella korrigeringar.</value>
   </data>
   <data name="About_Text" xml:space="preserve">
-    <value>About</value>
+    <value>Handla om</value>
   </data>
   <data name="Agree_Text" xml:space="preserve">
-    <value>Agree</value>
+    <value>Hålla med</value>
   </data>
   <data name="AllCodes_Text" xml:space="preserve">
-    <value>All codes</value>
+    <value>Alla koder</value>
   </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
-    <value>Not allowed:</value>
+    <value>Inte tillåtet:</value>
   </data>
   <data name="AllowedChar_Text" xml:space="preserve">
-    <value>Allowed characters:</value>
+    <value>Tillåtna tecken:</value>
   </data>
   <data name="BackgroundColor_Text" xml:space="preserve">
-    <value>Background color:</value>
+    <value>Bakgrundsfärg:</value>
   </data>
   <data name="BackgroundOpacity_Text" xml:space="preserve">
-    <value>Background opacity:</value>
+    <value>Bakgrundsopacitet:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
@@ -155,213 +155,213 @@ You can always contact me for any corrections.</value>
     <value>Barcode Scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Stänga</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
-    <value>Listen</value>
+    <value>Lyssna</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
-    <value>Share text</value>
+    <value>Dela text</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Share</value>
+    <value>Dela med sig</value>
   </data>
   <data name="ButtonSpeak_Text" xml:space="preserve">
-    <value>Speak</value>
+    <value>Tala</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>The code is wrong.
-The check digit has been corrected.</value>
+    <value>Koden är fel.
+Kontrollsiffran har korrigerats.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Clear</value>
+    <value>Klar</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Please close the application.</value>
+    <value>Stäng applikationen.</value>
   </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>The code should be</value>
+    <value>Koden ska vara</value>
   </data>
   <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(without checksum digit) or</value>
+    <value>(utan kontrollsiffra) eller</value>
   </data>
   <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>digits long.</value>
+    <value>siffror långa.</value>
   </data>
   <data name="Contact_Text" xml:space="preserve">
-    <value>Contact:</value>
+    <value>Kontakt:</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>Upphovsrätt</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Default format generator:</value>
+    <value>Standardformat generator:</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Default format scanner:</value>
+    <value>Standardformat skanner:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Default</value>
+    <value>Standard</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Generate and scan various barcodes.</value>
+    <value>Generera och skanna olika streckkoder.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Disagree</value>
+    <value>Instämmer inte alls</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-post:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Error</value>
+    <value>Fel</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
-    <value>First number should be 0.</value>
+    <value>Första siffran ska vara 0.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
-    <value>Forground color:</value>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>Förgrundsfärg:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
-    <value>Forground opacity:</value>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Opacitet i förgrunden:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
-    <value>Select a format:</value>
+    <value>Välj ett format:</value>
   </data>
   <data name="FormatNotSupported_Text" xml:space="preserve">
-    <value>is currently not supported.</value>
+    <value>stöds för närvarande inte.</value>
   </data>
   <data name="FormatTitle_Text" xml:space="preserve">
-    <value>Format</value>
+    <value>Formatera</value>
   </data>
   <data name="GenerateCode_Text" xml:space="preserve">
-    <value>Generate</value>
+    <value>Generera</value>
   </data>
   <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
-    <value>Invalid start/end character:</value>
+    <value>Ogiltigt start-/sluttecken:</value>
   </data>
   <data name="GuardMissingEnd_Text" xml:space="preserve">
-    <value>Missing end character.</value>
+    <value>Saknar slutkaraktär.</value>
   </data>
   <data name="GuardMissingStart_Text" xml:space="preserve">
-    <value>Missing start character.</value>
+    <value>Saknar startkaraktär.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
-    <value>Hexadecimal color codes:
+    <value>Hexadecimala färgkoder:
 
-Characters 1-2: Opacity/Transparency
-Characters 3-4: Red
-Characters 5-6: Green
-Characters 7-8: Blue</value>
+Tecken 1-2: Opacitet/Transparens
+Karaktärer 3-4: Röd
+Karaktärer 5-6: Grön
+Karaktärerna 7-8: Blå</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Language speech:</value>
+    <value>Språktal:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Language:</value>
+    <value>Språk:</value>
   </data>
   <data name="LengthInputEven_Text" xml:space="preserve">
-    <value>The length of the input should be even.</value>
+    <value>Längden på ingången ska vara jämn.</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
+    <value>Programvaran tillhandahålls "i befintligt skick", utan garantier av något slag, uttryckliga eller underförstådda, inklusive men inte begränsat till garantier om säljbarhet, lämplighet för ett visst ändamål och icke-intrång. Under inga omständigheter ska författaren och/eller utgivaren hållas ansvariga för något anspråk, skadestånd eller annat ansvar, vare sig i en åtgärd av kontrakt, skadestånd eller på annat sätt, som härrör från, ur eller i samband med programvaran eller användningen eller annan handel med mjukvaran.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui by Redth
-Barcode scanning and generation for .NET MAUI applications.
-MIT License:
+    <value>ZXing.Net.Maui av Redth
+Streckkodsskanning och generering för .NET MAUI-applikationer.
+MIT-licens:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of Barcode Generator (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Tillstånd ges härmed kostnadsfritt till varje person som skaffar en kopia av Barcode Generator ("Programvaran") att handla med programvaran utan begränsningar, inklusive utan begränsning rätten att använda, kopiera, modifiera, slå samman, publicera, distribuera , underlicensiera och/eller sälja kopior av programvaran och för att tillåta personer till vilka programvaran tillhandahålls att göra det, i enlighet med följande villkor:
 
-The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.</value>
+Ovanstående copyrightmeddelande och detta tillståndsmeddelande (inklusive nästa stycke) ska inkluderas i alla kopior eller väsentliga delar av programvaran.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>License</value>
+    <value>Licens</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>This application may be used freely for non-commercial purposes.
-Use this program entirely at your own risk.</value>
+    <value>Denna applikation får användas fritt för icke-kommersiella ändamål.
+Använd detta program helt på egen risk.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
-    <value>No</value>
+    <value>Nej</value>
   </data>
   <data name="OpenLinkText_Text" xml:space="preserve">
-    <value>Open this link?</value>
+    <value>Öppna denna länk?</value>
   </data>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Website link</value>
+    <value>Webbplatslänk</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Privacy Policy:</value>
+    <value>Integritetspolicy:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>No personal and other data is stored or passed on to myself and others.</value>
+    <value>Inga personliga och andra uppgifter lagras eller vidarebefordras till mig själv och andra.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>The application will be restarted.</value>
+    <value>Applikationen kommer att startas om.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Återställa</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Some changed settings must be saved in order to apply them.</value>
+    <value>Vissa ändrade inställningar måste sparas för att de ska kunna tillämpas.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Spara</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Inställningar</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>The text contains one or more characters that are not allowed.
+    <value>Texten innehåller ett eller flera tecken som inte är tillåtna.
 
-Not allowed:</value>
+Inte tillåtet:</value>
   </data>
   <data name="TextToEncode_Text" xml:space="preserve">
-    <value>Text to encode:</value>
+    <value>Text att koda:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>Text till tal stöds inte på den här enheten.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Mörk</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Ljus</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>Systemet</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Tema:</value>
   </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copy text to the clipboard</value>
+    <value>Kopiera text till urklipp</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Go back</value>
+    <value>Gå tillbaka</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Go forward</value>
+    <value>Gå framåt</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Paste text from the clipboard</value>
+    <value>Klistra in text från urklipp</value>
   </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Flashlight</value>
+    <value>Ficklampa</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Hemsida</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Yes</value>
+    <value>Ja</value>
   </data>
 </root>

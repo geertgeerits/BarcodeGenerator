@@ -218,10 +218,10 @@ La cifra di controllo è stata corretta.</value>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>Il primo numero dovrebbe essere 0.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
+  <data name="ForegroundColor_Text" xml:space="preserve">
     <value>Colore di primo piano:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Opacità in primo piano:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">

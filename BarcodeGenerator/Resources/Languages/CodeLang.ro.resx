@@ -218,10 +218,10 @@ Cifra de verificare a fost corectată.</value>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>Primul număr ar trebui să fie 0.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
+  <data name="ForegroundColor_Text" xml:space="preserve">
     <value>Culoare prim plan:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Opacitatea primului plan:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">

@@ -218,10 +218,10 @@ El dígito de control ha sido corregido.</value>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>El primer número debe ser 0.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
+  <data name="ForegroundColor_Text" xml:space="preserve">
     <value>Color de primer plano:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Opacidad de primer plano:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">

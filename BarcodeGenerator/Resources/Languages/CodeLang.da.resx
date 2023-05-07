@@ -218,11 +218,11 @@ Kontrolcifferet er blevet rettet.</value>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>Det første tal skal være 0.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
+  <data name="ForegroundColor_Text" xml:space="preserve">
     <value>Forgrundsfarve:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
-    <value>Forgrunds gennemsigtighed:</value>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Forgrunds opacitet:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Vælg et format:</value>

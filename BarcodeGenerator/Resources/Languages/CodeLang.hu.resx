@@ -118,35 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Text to speech: Not all languages are supported that are provided in the application settings.
-Speech to text: Activate it through your device settings. A microphone will then appear in the virtual keyboard.
-Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
+    <value>Szövegfelolvasó: Nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
+Beszédből szöveggé: Aktiválja az eszköz beállításaiban. Ekkor egy mikrofon jelenik meg a virtuális billentyűzeten.
+Mindkét lehetőség készülékenként és a telepített nyelvektől függ. Lehetséges, hogy egyes nyelvek esetében a beszédre és beszédről történő fordítást az interneten keresztül végzik az érintett szolgálatok.
 
-Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
-The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Polish, Portuguese, Romanian, Spanish and Swedish.
+A szöveg fordításához a Google Fordítót használtuk. Ez nem garancia arra, hogy minden fordítás helyes.
+A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar, olasz, norvég, lengyel, portugál, román, spanyol és svéd.
 
-You can always contact me for any corrections.</value>
+Bármilyen javításért bármikor fordulhat hozzám.</value>
   </data>
   <data name="About_Text" xml:space="preserve">
-    <value>About</value>
+    <value>Erről</value>
   </data>
   <data name="Agree_Text" xml:space="preserve">
-    <value>Agree</value>
+    <value>Egyetért</value>
   </data>
   <data name="AllCodes_Text" xml:space="preserve">
-    <value>All codes</value>
+    <value>Minden kód</value>
   </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
-    <value>Not allowed:</value>
+    <value>Nem megengedett:</value>
   </data>
   <data name="AllowedChar_Text" xml:space="preserve">
-    <value>Allowed characters:</value>
+    <value>Engedélyezett karakterek:</value>
   </data>
   <data name="BackgroundColor_Text" xml:space="preserve">
-    <value>Background color:</value>
+    <value>Háttérszín:</value>
   </data>
   <data name="BackgroundOpacity_Text" xml:space="preserve">
-    <value>Background opacity:</value>
+    <value>Háttér átlátszatlansága:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
     <value>Barcode Generator</value>
@@ -155,213 +155,213 @@ You can always contact me for any corrections.</value>
     <value>Barcode Scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Bezárás</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
-    <value>Listen</value>
+    <value>Hallgat</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
-    <value>Share text</value>
+    <value>Szöveg megosztása</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Share</value>
+    <value>Ossza meg</value>
   </data>
   <data name="ButtonSpeak_Text" xml:space="preserve">
-    <value>Speak</value>
+    <value>Beszél</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>The code is wrong.
-The check digit has been corrected.</value>
+    <value>Hibás a kód.
+Az ellenőrző számjegy javítva.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Clear</value>
+    <value>Egyértelmű</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Please close the application.</value>
+    <value>Kérjük, zárja be az alkalmazást.</value>
   </data>
   <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>The code should be</value>
+    <value>A kódnak kell lennie</value>
   </data>
   <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(without checksum digit) or</value>
+    <value>(ellenőrző összeg számjegy nélkül) ill</value>
   </data>
   <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>digits long.</value>
+    <value>számjegyek hosszúak.</value>
   </data>
   <data name="Contact_Text" xml:space="preserve">
-    <value>Contact:</value>
+    <value>Kapcsolatba lépni:</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>Szerzői jog</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Default format generator:</value>
+    <value>Alapértelmezett formátumgenerátor:</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Default format scanner:</value>
+    <value>Alapértelmezett formátumú szkenner:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Default</value>
+    <value>Alapértelmezett</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Generate and scan various barcodes.</value>
+    <value>Különféle vonalkódok generálása és beolvasása.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Disagree</value>
+    <value>Nem ért egyet</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>Email:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Error</value>
+    <value>Hiba</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
-    <value>First number should be 0.</value>
+    <value>Az első szám 0 legyen.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
-    <value>Forground color:</value>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>Az előtér színe:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
-    <value>Forground opacity:</value>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Az előtér átlátszatlansága:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
-    <value>Select a format:</value>
+    <value>Válasszon formátumot:</value>
   </data>
   <data name="FormatNotSupported_Text" xml:space="preserve">
-    <value>is currently not supported.</value>
+    <value>jelenleg nem támogatott.</value>
   </data>
   <data name="FormatTitle_Text" xml:space="preserve">
-    <value>Format</value>
+    <value>Formátum</value>
   </data>
   <data name="GenerateCode_Text" xml:space="preserve">
-    <value>Generate</value>
+    <value>Generál</value>
   </data>
   <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
-    <value>Invalid start/end character:</value>
+    <value>Érvénytelen kezdő/vég karakter:</value>
   </data>
   <data name="GuardMissingEnd_Text" xml:space="preserve">
-    <value>Missing end character.</value>
+    <value>Hiányzik a végkarakter.</value>
   </data>
   <data name="GuardMissingStart_Text" xml:space="preserve">
-    <value>Missing start character.</value>
+    <value>Hiányzó kezdőkarakter.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
-    <value>Hexadecimal color codes:
+    <value>Hexadecimális színkódok:
 
-Characters 1-2: Opacity/Transparency
-Characters 3-4: Red
-Characters 5-6: Green
-Characters 7-8: Blue</value>
+1-2. karakter: Átlátszatlanság/Átlátszóság
+3-4. karakter: Piros
+5-6. karakter: Zöld
+7-8. karakter: Kék</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Language speech:</value>
+    <value>Nyelvi beszéd:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Language:</value>
+    <value>Nyelv:</value>
   </data>
   <data name="LengthInputEven_Text" xml:space="preserve">
-    <value>The length of the input should be even.</value>
+    <value>A bemenet hosszának egyenletesnek kell lennie.</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
+    <value>A szoftvert „adott állapotában” biztosítjuk, bármilyen kifejezett vagy hallgatólagos garancia nélkül, beleértve, de nem kizárólagosan az eladhatóságra, az adott célra való alkalmasságra és a jogsértésekre vonatkozó garanciákat. A szerző és/vagy a kiadó semmilyen esetben sem felelős semmilyen követelésért, kárért vagy egyéb felelősségért, akár szerződéses, károkozási vagy más jellegű, a szoftverből, a szoftver használatából vagy egyéb kereskedéséből eredő, abból származó vagy azzal kapcsolatos. a szoftver.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui by Redth
-Barcode scanning and generation for .NET MAUI applications.
-MIT License:
+    <value>ZXing.Net.Maui – Redth
+Vonalkód beolvasása és generálása .NET MAUI alkalmazásokhoz.
+MIT licenc:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of Barcode Generator (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Ezennel ingyenesen engedélyt adunk minden olyan személynek, aki a Barcode Generator (a „Szoftver”) másolatát szerzi be, hogy korlátozás nélkül kereskedjen a Szoftverrel, beleértve korlátozás nélkül a használati, másolási, módosítási, egyesítési, közzétételi, terjesztési jogokat. , allicencbe adni és/vagy eladni a Szoftver másolatait, és lehetővé tenni a Szoftverrel szállított személyek számára, hogy ezt megtegyék, a következő feltételekkel:
 
-The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.</value>
+A fenti szerzői jogi megjegyzést és ezt az engedélyt (beleértve a következő bekezdést is) a Szoftver minden másolata vagy jelentős része tartalmazza.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>License</value>
+    <value>Engedély</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>This application may be used freely for non-commercial purposes.
-Use this program entirely at your own risk.</value>
+    <value>Ez az alkalmazás szabadon felhasználható nem kereskedelmi célokra.
+Ezt a programot kizárólag saját felelősségére használja.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
-    <value>No</value>
+    <value>Nem</value>
   </data>
   <data name="OpenLinkText_Text" xml:space="preserve">
-    <value>Open this link?</value>
+    <value>Megnyitja ezt a linket?</value>
   </data>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Website link</value>
+    <value>Weboldal link</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Privacy Policy:</value>
+    <value>Adatvédelmi irányelvek:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>No personal and other data is stored or passed on to myself and others.</value>
+    <value>Személyes és egyéb adatokat nem tárolunk, illetve nem adunk át magamnak és másoknak.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>The application will be restarted.</value>
+    <value>Az alkalmazás újraindul.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Visszaállítás</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Some changed settings must be saved in order to apply them.</value>
+    <value>Néhány módosított beállítást el kell menteni az alkalmazásukhoz.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Megment</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Beállítások</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>The text contains one or more characters that are not allowed.
+    <value>A szöveg egy vagy több nem megengedett karaktert tartalmaz.
 
-Not allowed:</value>
+Nem megengedett:</value>
   </data>
   <data name="TextToEncode_Text" xml:space="preserve">
-    <value>Text to encode:</value>
+    <value>Kódolni kívánt szöveg:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>Ez az eszköz nem támogatja a szövegfelolvasást.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Sötét</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Fény</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>Rendszer</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Téma:</value>
   </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copy text to the clipboard</value>
+    <value>Szöveg másolása a vágólapra</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Go back</value>
+    <value>Menjen vissza</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Go forward</value>
+    <value>Menj előre</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Paste text from the clipboard</value>
+    <value>Szöveg beillesztése a vágólapról</value>
   </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Flashlight</value>
+    <value>Zseblámpa</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Változat:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Weboldal</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Yes</value>
+    <value>Igen</value>
   </data>
 </root>

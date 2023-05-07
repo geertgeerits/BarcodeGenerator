@@ -345,20 +345,20 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forground color:.
+        ///   Looks up a localized string similar to Foreground color:.
         /// </summary>
-        internal static string ForgroundColor_Text {
+        internal static string ForegroundColor_Text {
             get {
-                return ResourceManager.GetString("ForgroundColor_Text", resourceCulture);
+                return ResourceManager.GetString("ForegroundColor_Text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forground opacity:.
+        ///   Looks up a localized string similar to Foreground opacity:.
         /// </summary>
-        internal static string ForgroundOpacity_Text {
+        internal static string ForegroundOpacity_Text {
             get {
-                return ResourceManager.GetString("ForgroundOpacity_Text", resourceCulture);
+                return ResourceManager.GetString("ForegroundOpacity_Text", resourceCulture);
             }
         }
         

@@ -218,11 +218,11 @@ The check digit has been corrected.</value>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>First number should be 0.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
-    <value>Forground color:</value>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>Foreground color:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
-    <value>Forground opacity:</value>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Foreground opacity:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Select a format:</value>

@@ -218,10 +218,10 @@ Het controlecijfer is gecorrigeerd.</value>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>Het eerste cijfer moet 0 zijn.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
+  <data name="ForegroundColor_Text" xml:space="preserve">
     <value>Kleur voorgrond:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Dekking voorgrond:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">

@@ -229,7 +229,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate ForgroundOpacity_Text}">
+                    Text="{local:Translate ForegroundOpacity_Text}">
                 </Label>
 
                 <Slider
@@ -239,7 +239,7 @@
                     Grid.Column="2"
                     ThumbColor="Grey"
                     MinimumTrackColor="Black"
-                    ValueChanged="OnSliderColorForgroundValueChanged">
+                    ValueChanged="OnSliderColorForegroundValueChanged">
                 </Slider>
 
                 <Label
@@ -249,7 +249,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate ForgroundColor_Text}">
+                    Text="{local:Translate ForegroundColor_Text}">
                 </Label>
 
                 <Slider
@@ -259,7 +259,7 @@
                     Grid.Column="2"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
-                    ValueChanged="OnSliderColorForgroundValueChanged">
+                    ValueChanged="OnSliderColorForegroundValueChanged">
                 </Slider>
 
                 <Button
@@ -296,7 +296,7 @@
                     Grid.Column="2"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
-                    ValueChanged="OnSliderColorForgroundValueChanged">
+                    ValueChanged="OnSliderColorForegroundValueChanged">
                 </Slider>
 
                 <Border
@@ -324,7 +324,7 @@
                     Grid.Column="2"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
-                    ValueChanged="OnSliderColorForgroundValueChanged">
+                    ValueChanged="OnSliderColorForegroundValueChanged">
                 </Slider>
 
                 <Label

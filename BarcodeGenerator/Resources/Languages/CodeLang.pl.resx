@@ -218,10 +218,10 @@ Cyfra kontrolna została poprawiona.</value>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>Pierwsza liczba powinna wynosić 0.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
+  <data name="ForegroundColor_Text" xml:space="preserve">
     <value>Kolor pierwszego planu:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Krycie pierwszego planu:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">

@@ -218,11 +218,11 @@ Kontrolní číslice byla opravena.</value>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>První číslo by mělo být 0.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
+  <data name="ForegroundColor_Text" xml:space="preserve">
     <value>Barva popředí:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
-    <value>Neprůhlednost vpředu:</value>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Neprůhlednost popředí:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Vyberte formát:</value>
@@ -248,7 +248,7 @@ Kontrolní číslice byla opravena.</value>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadecimální barevné kódy:
 
-Znaky 1-2: Neprůhlednost/průhlednost
+Postavy 1-2: Neprůhlednost/průhlednost
 Postavy 3-4: Červená
 Postavy 5-6: Zelená
 Postavy 7-8: Modrá</value>
@@ -263,7 +263,7 @@ Postavy 7-8: Modrá</value>
     <value>Délka vstupu by měla být rovnoměrná.</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>Software je poskytován „tak, jak je“, bez záruky jakéhokoli druhu, výslovné nebo předpokládané, včetně, ale bez omezení na záruky prodejnosti, vhodnosti pro konkrétní účel a neporušení práv. V žádném případě nenese autor a/nebo vydavatel odpovědnost za jakýkoli nárok, škody nebo jinou odpovědnost, ať už v případě smluvního jednání, deliktu nebo jinak, vyplývající z nebo v souvislosti se softwarem nebo používáním či jinými jednáními v software.</value>
+    <value>Software je poskytován „tak, jak je“, bez záruky jakéhokoli druhu, výslovné nebo předpokládané, včetně, ale bez omezení na záruky prodejnosti, vhodnosti pro konkrétní účel a neporušení práv. V žádném případě nenese autor a/nebo vydavatel odpovědnost za jakýkoli nárok, škody nebo jinou odpovědnost, ať už v případě smluvního jednání, deliktu nebo jinak, vyplývající z, z nebo v souvislosti se softwarem nebo používáním či jinými jednáními v software.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
     <value>ZXing.Net.Maui od Redtha

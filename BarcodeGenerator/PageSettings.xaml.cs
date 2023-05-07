@@ -466,8 +466,8 @@ public partial class PageSettings : ContentPage
         return true;
     }
 
-    // Slider color barcode forground value change.
-    private void OnSliderColorForgroundValueChanged(object sender, ValueChangedEventArgs args)
+    // Slider color barcode Foreground value change.
+    private void OnSliderColorForegroundValueChanged(object sender, ValueChangedEventArgs args)
     {
         int nAmountOpacity = 0;
         int nColorRed = 0;

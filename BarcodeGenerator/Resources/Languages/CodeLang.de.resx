@@ -218,10 +218,10 @@ Die Prüfziffer wurde korrigiert.</value>
   <data name="FirstNumber0_Text" xml:space="preserve">
     <value>Die erste Zahl sollte 0 sein.</value>
   </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
+  <data name="ForegroundColor_Text" xml:space="preserve">
     <value>Vordergrundfarbe:</value>
   </data>
-  <data name="ForgroundOpacity_Text" xml:space="preserve">
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Vordergrundopazität:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
