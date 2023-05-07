@@ -149,10 +149,10 @@ Siempre puedes contactarme para cualquier corrección.</value>
     <value>Opacidad de fondo:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Generador de código de barras</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode Scanner</value>
+    <value>Escáner de código de barras</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Cerrar</value>

@@ -149,10 +149,10 @@ Voit aina ottaa minuun yhteyttä korjauksista.</value>
     <value>Taustan peittävyys:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Viivakoodigeneraattori</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode Scanner</value>
+    <value>Viivakoodinlukija</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Kiinni</value>
@@ -195,7 +195,7 @@ Tarkistusnumero on korjattu.</value>
     <value>Tekijänoikeus</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Oletusmuotogeneraattori</value>
+    <value>Oletusmuoto generaattori</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
     <value>Skannerin oletusmuoto:</value>
@@ -282,7 +282,7 @@ Yllä oleva tekijänoikeusilmoitus ja tämä lupailmoitus (mukaan lukien seuraav
 Käytä tätä ohjelmaa täysin omalla vastuullasi.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Viivakoodigeneraattori ja skanneri</value>
+    <value>Barcode Generator and Scanner</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Ei</value>

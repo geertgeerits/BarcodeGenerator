@@ -149,10 +149,10 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
     <value>Dekking achtergrond:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Barcode generator</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode Scanner</value>
+    <value>Barcode scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Sluiten</value>

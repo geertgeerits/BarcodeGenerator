@@ -149,10 +149,10 @@ Mă puteți contacta oricând pentru orice corecturi.</value>
     <value>Opacitatea fundalului:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Generator de coduri de bare</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode Scanner</value>
+    <value>Scanner de coduri de bare</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Închide</value>
@@ -248,10 +248,10 @@ Cifra de verificare a fost corectată.</value>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Coduri de culoare hexazecimale:
 
-Caracterele 1-2: Opacitate/Transparență
-Personajele 3-4: Roșu
-Personajele 5-6: Verde
-Personajele 7-8: Albastru</value>
+Caractere 1-2: Opacitate/Transparență
+Caractere 3-4: Roșu
+Caractere 5-6: Verde
+Caractere 7-8: Albastru</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Vorbirea limbajului:</value>

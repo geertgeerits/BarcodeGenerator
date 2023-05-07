@@ -149,10 +149,10 @@ Du kan alltid kontakta mig för eventuella korrigeringar.</value>
     <value>Bakgrundsopacitet:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Streckkodsgenerator</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode Scanner</value>
+    <value>Streckkodsläsare</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Stänga</value>
@@ -249,9 +249,9 @@ Kontrollsiffran har korrigerats.</value>
     <value>Hexadecimala färgkoder:
 
 Tecken 1-2: Opacitet/Transparens
-Karaktärer 3-4: Röd
-Karaktärer 5-6: Grön
-Karaktärerna 7-8: Blå</value>
+Tecken 3-4: Röd
+Tecken 5-6: Grön
+Tecken 7-8: Blå</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Språktal:</value>

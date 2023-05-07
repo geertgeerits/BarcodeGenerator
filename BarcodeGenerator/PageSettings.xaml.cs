@@ -83,8 +83,8 @@ public partial class PageSettings : ContentPage
             // Nederlands - Dutch.
             "nl" => 8,
 
-            // Norsk - Norwegian.
-            "no" => 9,
+            // Norsk Bokmål - Norwegian Bokmål.
+            "nb" => 9,
 
             // Polski - Polish.
             "pl" => 10,
@@ -193,8 +193,8 @@ public partial class PageSettings : ContentPage
                 // Nederlands - Dutch.
                 8 => "nl",
 
-                // Norsk - Norwegian.
-                9 => "no",
+                // Norsk Bokmål - Norwegian Bokmål.
+                9 => "nb",
 
                 // Polski - Polish.
                 10 => "pl",

@@ -149,10 +149,10 @@ Du kan alltid kontakte meg for eventuelle rettelser.</value>
     <value>Bakgrunnsopasitet:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Strekkodegenerator</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode Scanner</value>
+    <value>Strekkode skanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Lukk</value>

@@ -149,10 +149,10 @@ Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</valu
     <value>Krycie tła:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Generator kodów kreskowych</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode Scanner</value>
+    <value>Skaner kodów kreskowych</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Zamknąć</value>
@@ -248,7 +248,7 @@ Cyfra kontrolna została poprawiona.</value>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Szesnastkowe kody kolorów:
 
-Znaki 1-2: Nieprzezroczystość/Przezroczystość
+Postacie 1-2: Nieprzezroczystość/Przezroczystość
 Postacie 3-4: czerwony
 Postacie 5-6: Zielony
 Postacie 7-8: niebieski</value>

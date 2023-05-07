@@ -149,10 +149,10 @@ Pro případné opravy mě můžete vždy kontaktovat.</value>
     <value>Neprůhlednost pozadí:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Generátor čárových kódů</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode Scanner</value>
+    <value>Čtečka kódů</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Zavřít</value>

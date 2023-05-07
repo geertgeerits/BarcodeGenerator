@@ -149,10 +149,10 @@ Bármilyen javításért bármikor fordulhat hozzám.</value>
     <value>Háttér átlátszatlansága:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode Generator</value>
+    <value>Vonalkód generátor</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode Scanner</value>
+    <value>Vonalkód olvasó</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Bezárás</value>
@@ -248,10 +248,10 @@ Az ellenőrző számjegy javítva.</value>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadecimális színkódok:
 
-1-2. karakter: Átlátszatlanság/Átlátszóság
-3-4. karakter: Piros
-5-6. karakter: Zöld
-7-8. karakter: Kék</value>
+Karakterek 1-2: Átlátszatlanság/Átlátszóság
+Karakterek 3-4: Piros
+Karakterek 5-6: Zöld
+Karakterek 7-8: Kék</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Nyelvi beszéd:</value>
