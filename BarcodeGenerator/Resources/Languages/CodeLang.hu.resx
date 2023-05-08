@@ -128,7 +128,7 @@ A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar
 Bármilyen javításért bármikor fordulhat hozzám.</value>
   </data>
   <data name="About_Text" xml:space="preserve">
-    <value>Erről</value>
+    <value>Info</value>
   </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Egyetért</value>
@@ -155,7 +155,7 @@ Bármilyen javításért bármikor fordulhat hozzám.</value>
     <value>Vonalkód olvasó</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Bezárás</value>
+    <value>Zárja be</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
     <value>Hallgat</value>
@@ -329,7 +329,7 @@ Nem megengedett:</value>
     <value>Sötét</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Fény</value>
+    <value>Világos</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
     <value>Rendszer</value>
