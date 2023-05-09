@@ -155,7 +155,7 @@ Voit aina ottaa minuun yhteyttä korjauksista.</value>
     <value>Viivakoodinlukija</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Kiinni</value>
+    <value>Sulkea</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
     <value>Kuunnella</value>
@@ -207,7 +207,7 @@ Tarkistusnumero on korjattu.</value>
     <value>Luo ja skannaa erilaisia ​​viivakoodeja.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Eri mieltä</value>
+    <value>Olen eri mieltä</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
     <value>Sähköposti:</value>
@@ -329,7 +329,7 @@ Ei sallittu:</value>
     <value>Tumma</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Kevyt</value>
+    <value>Valo</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
     <value>Järjestelmä</value>
