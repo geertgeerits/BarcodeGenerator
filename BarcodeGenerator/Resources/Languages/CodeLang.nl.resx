@@ -127,9 +127,6 @@ De ondersteunende talen zijn: Tsjechisch, Deens, Nederlands, Engels, Fins, Frans
 
 Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Info</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Akkoord</value>
   </data>
@@ -252,6 +249,9 @@ Karakters 1-2: dekking/transparantie
 Karakters 3-4: rood
 Karakters 5-6: groen
 Karakters 7-8: blauw</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informatie</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Taal spraak:</value>

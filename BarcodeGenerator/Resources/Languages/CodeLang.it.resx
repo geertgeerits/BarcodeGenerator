@@ -127,9 +127,6 @@ Le lingue di supporto sono: ceco, danese, olandese, inglese, finlandese, frances
 
 Potete sempre contattarmi per eventuali correzioni.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Informazioni</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Accetto</value>
   </data>
@@ -155,7 +152,7 @@ Potete sempre contattarmi per eventuali correzioni.</value>
     <value>Scanner di codici a barre</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Chiudere</value>
+    <value>Chiudi</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
     <value>Ascolta</value>
@@ -174,7 +171,7 @@ Potete sempre contattarmi per eventuali correzioni.</value>
 La cifra di controllo è stata corretta.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Rimuovere</value>
+    <value>Rimuovi</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Si prega di chiudere l'applicazione.</value>
@@ -253,6 +250,9 @@ Caratteri 3-4: Rosso
 Caratteri 5-6: Verde
 Caratteri 7-8: Blu</value>
   </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informazione</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Discorso in lingua:</value>
   </data>
@@ -326,7 +326,7 @@ Non autorizzato:</value>
     <value>La sintesi vocale non è supportata su questo dispositivo.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Buio</value>
+    <value>Scuro</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
     <value>Leggero</value>

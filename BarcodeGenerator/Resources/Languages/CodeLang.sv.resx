@@ -127,9 +127,6 @@ Stödspråken är: tjeckiska, danska, holländska, engelska, finska, franska, ty
 
 Du kan alltid kontakta mig för eventuella korrigeringar.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Handla om</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Hålla med</value>
   </data>
@@ -252,6 +249,9 @@ Tecken 1-2: Opacitet/Transparens
 Tecken 3-4: Röd
 Tecken 5-6: Grön
 Tecken 7-8: Blå</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Handla om</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Språktal:</value>

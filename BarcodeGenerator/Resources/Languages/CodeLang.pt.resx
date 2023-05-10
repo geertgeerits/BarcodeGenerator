@@ -127,9 +127,6 @@ Os idiomas de suporte são: tcheco, dinamarquês, holandês, inglês, finlandês
 
 Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Sobre</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Concordar</value>
   </data>
@@ -155,7 +152,7 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
     <value>Leitor de códigos de barra</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Perto</value>
+    <value>Fechar</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
     <value>Ouço</value>
@@ -253,6 +250,9 @@ Caracteres 3-4: Vermelho
 Caracteres 5-6: Verde
 Caracteres 7-8: Azul</value>
   </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informação</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Linguagem de fala:</value>
   </data>
@@ -329,7 +329,7 @@ Não permitido:</value>
     <value>Escuro</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Clara</value>
+    <value>Claro</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
     <value>Sistema</value>

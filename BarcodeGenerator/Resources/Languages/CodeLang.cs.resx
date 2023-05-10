@@ -127,9 +127,6 @@ Podporované jazyky jsou: čeština, dánština, holandština, angličtina, fin�
 
 Pro případné opravy mě můžete vždy kontaktovat.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>O</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Souhlasit</value>
   </data>
@@ -174,7 +171,7 @@ Pro případné opravy mě můžete vždy kontaktovat.</value>
 Kontrolní číslice byla opravena.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Průhledná</value>
+    <value>Vymazat</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Zavřete aplikaci.</value>
@@ -253,6 +250,9 @@ Postavy 3-4: Červená
 Postavy 5-6: Zelená
 Postavy 7-8: Modrá</value>
   </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informace</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Jazyková řeč:</value>
   </data>
@@ -326,7 +326,7 @@ Nepovoleno:</value>
     <value>Převod textu na řeč není na tomto zařízení podporován.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Temný</value>
+    <value>Tmavá</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
     <value>Světlo</value>

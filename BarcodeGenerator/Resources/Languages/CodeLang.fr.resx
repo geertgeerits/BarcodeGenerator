@@ -127,9 +127,6 @@ Les langues de support sont les suivantes : tchèque, danois, néerlandais, ang
 
 Vous pouvez toujours me contacter pour toute correction.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Info</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>D 'accord</value>
   </data>
@@ -174,7 +171,7 @@ Vous pouvez toujours me contacter pour toute correction.</value>
 Le chiffre de contrôle a été corrigé.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Retirer</value>
+    <value>Effacer</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Veuillez fermer l'application.</value>
@@ -198,10 +195,10 @@ Le chiffre de contrôle a été corrigé.</value>
     <value>Générateur de format par défaut:</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Analyseur de format par défaut :</value>
+    <value>Analyseur de format par défaut:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Standard</value>
+    <value>Défaut</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
     <value>Générez et numérisez divers codes-barres.</value>
@@ -252,6 +249,9 @@ Caractères 1-2: Opacité/Transparence
 Caractères 3-4: Rouge
 Caractères 5-6: Vert
 Caractères 7-8: Bleu</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Information</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Discours de langue:</value>
@@ -329,7 +329,7 @@ Interdit:</value>
     <value>Sombre</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Léger</value>
+    <value>Clair</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
     <value>Système</value>

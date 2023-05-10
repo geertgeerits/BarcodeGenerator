@@ -127,9 +127,6 @@ A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar
 
 Bármilyen javításért bármikor fordulhat hozzám.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Info</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Egyetért</value>
   </data>
@@ -174,7 +171,7 @@ Bármilyen javításért bármikor fordulhat hozzám.</value>
 Az ellenőrző számjegy javítva.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Egyértelmű</value>
+    <value>Töröl</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Kérjük, zárja be az alkalmazást.</value>
@@ -189,7 +186,7 @@ Az ellenőrző számjegy javítva.</value>
     <value>számjegyek hosszúak.</value>
   </data>
   <data name="Contact_Text" xml:space="preserve">
-    <value>Kapcsolatba lépni:</value>
+    <value>Kontakt:</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Szerzői jog</value>
@@ -252,6 +249,9 @@ Karakterek 1-2: Átlátszatlanság/Átlátszóság
 Karakterek 3-4: Piros
 Karakterek 5-6: Zöld
 Karakterek 7-8: Kék</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Információ</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Nyelvi beszéd:</value>

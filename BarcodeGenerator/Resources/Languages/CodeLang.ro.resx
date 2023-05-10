@@ -127,9 +127,6 @@ Limbile suportate sunt: cehă, daneză, olandeză, engleză, finlandeză, france
 
 Mă puteți contacta oricând pentru orice corecturi.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Despre</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>De acord</value>
   </data>
@@ -174,7 +171,7 @@ Mă puteți contacta oricând pentru orice corecturi.</value>
 Cifra de verificare a fost corectată.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Clar</value>
+    <value>Elimina</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Vă rugăm să închideți aplicația.</value>
@@ -189,19 +186,19 @@ Cifra de verificare a fost corectată.</value>
     <value>cifre lungi.</value>
   </data>
   <data name="Contact_Text" xml:space="preserve">
-    <value>A lua legatura:</value>
+    <value>Contact:</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Drepturi de autor</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Generator de format implicit:</value>
+    <value>Generator de format standard:</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Scaner de format implicit:</value>
+    <value>Scaner de format standard:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Mod implicit</value>
+    <value>Standard</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
     <value>Generați și scanați diferite coduri de bare.</value>
@@ -252,6 +249,9 @@ Caractere 1-2: Opacitate/Transparență
 Caractere 3-4: Roșu
 Caractere 5-6: Verde
 Caractere 7-8: Albastru</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informație</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Vorbirea limbajului:</value>
@@ -326,7 +326,7 @@ Nepermis:</value>
     <value>Textul în vorbire nu este acceptat pe acest dispozitiv.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Întuneric</value>
+    <value>Întunecat</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
     <value>Ușoară</value>

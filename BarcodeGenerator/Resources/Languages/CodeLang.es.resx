@@ -127,9 +127,6 @@ Los idiomas de soporte son: checo, danés, holandés, inglés, finlandés, franc
 
 Siempre puedes contactarme para cualquier corrección.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Sobre</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>De acuerdo</value>
   </data>
@@ -174,7 +171,7 @@ Siempre puedes contactarme para cualquier corrección.</value>
 El dígito de control ha sido corregido.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Retirar</value>
+    <value>Borrar</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Cierra la aplicación.</value>
@@ -253,6 +250,9 @@ Caracteres 3-4: Rojo
 Caracteres 5-6: Verde
 Caracteres 7-8: Azul</value>
   </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Información</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Lenguaje de habla:</value>
   </data>
@@ -329,7 +329,7 @@ No permitido:</value>
     <value>Oscuro</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Ligero</value>
+    <value>Claro</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
     <value>Sistema</value>

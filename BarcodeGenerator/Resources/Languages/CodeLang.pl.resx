@@ -127,9 +127,6 @@ Obsługiwane języki to: czeski, duński, holenderski, angielski, fiński, franc
 
 Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>O</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Zgadzać się</value>
   </data>
@@ -174,7 +171,7 @@ Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</valu
 Cyfra kontrolna została poprawiona.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Jasne</value>
+    <value>Usunąć</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Proszę zamknąć aplikację.</value>
@@ -195,13 +192,13 @@ Cyfra kontrolna została poprawiona.</value>
     <value>Prawo autorskie</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Domyślny generator formatu:</value>
+    <value>Standard generator formatu:</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Domyślny format skanera:</value>
+    <value>Standard format skanera:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Domyślny</value>
+    <value>Standard</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
     <value>Generuj i skanuj różne kody kreskowe.</value>
@@ -252,6 +249,9 @@ Postacie 1-2: Nieprzezroczystość/Przezroczystość
 Postacie 3-4: czerwony
 Postacie 5-6: Zielony
 Postacie 7-8: niebieski</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informacje</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Mowa językowa:</value>
@@ -329,7 +329,7 @@ Niedozwolony:</value>
     <value>Ciemny</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Światło</value>
+    <value>Jasny</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
     <value>System</value>

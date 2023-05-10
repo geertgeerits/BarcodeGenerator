@@ -127,9 +127,6 @@ The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, Ge
 
 You can always contact me for any corrections.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>About</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Agree</value>
   </data>
@@ -252,6 +249,9 @@ Characters 1-2: Opacity/Transparency
 Characters 3-4: Red
 Characters 5-6: Green
 Characters 7-8: Blue</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Information</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Language speech:</value>

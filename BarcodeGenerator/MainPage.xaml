@@ -24,7 +24,7 @@
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
-                ToolTipProperties.Text="{local:Translate About_Text}"
+                ToolTipProperties.Text="{local:Translate Info_Text}"
                 Clicked="OnPageAboutClicked">
             </ImageButton>
 
