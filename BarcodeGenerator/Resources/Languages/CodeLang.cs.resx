@@ -117,16 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Převod textu na řeč: Nejsou podporovány všechny jazyky uvedené v nastavení aplikace.
-Převod řeči na text: Aktivujte ji prostřednictvím nastavení zařízení. Poté se na virtuální klávesnici objeví mikrofon.
-Obě tyto možnosti závisí na zařízení a na nainstalovaných jazycích. Je možné, že u některých jazyků je překlad do az řeči prováděn prostřednictvím internetu příslušnými službami.
-
-K překladu textu byl použit Google Translate. To nezaručuje, že všechny překlady jsou správné.
-Podporované jazyky jsou: čeština, dánština, holandština, angličtina, finština, francouzština, němčina, maďarština, italština, norština, polština, portugalština, rumunština, španělština a švédština.
-
-Pro případné opravy mě můžete vždy kontaktovat.</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Souhlasit</value>
   </data>
@@ -249,6 +239,16 @@ Postavy 1-2: Neprůhlednost/průhlednost
 Postavy 3-4: Červená
 Postavy 5-6: Zelená
 Postavy 7-8: Modrá</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Převod textu na řeč: Nejsou podporovány všechny jazyky uvedené v nastavení aplikace.
+Převod řeči na text: Aktivujte ji prostřednictvím nastavení zařízení. Poté se na virtuální klávesnici objeví mikrofon.
+Obě tyto možnosti závisí na zařízení a na nainstalovaných jazycích. Je možné, že u některých jazyků je překlad do az řeči prováděn prostřednictvím internetu příslušnými službami.
+
+K překladu textu byl použit Google Translate. To nezaručuje, že všechny překlady jsou správné.
+Podporované jazyky jsou: čeština, dánština, holandština, angličtina, finština, francouzština, němčina, maďarština, italština, norština, polština, portugalština, rumunština, španělština a švédština.
+
+Pro případné opravy mě můžete vždy kontaktovat.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informace</value>

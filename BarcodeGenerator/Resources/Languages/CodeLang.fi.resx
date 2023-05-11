@@ -117,16 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Teksti puheeksi: Kaikkia sovellusasetuksissa olevia kieliä ei tueta.
-Puhe tekstiksi: Aktivoi se laitteen asetuksista. Mikrofoni ilmestyy sitten virtuaaliseen näppäimistöön.
-Molemmat vaihtoehdot riippuvat laitteesta toiseen ja asennetuista kielistä. On mahdollista, että joillekin kielille käännös puheeseen ja puheesta tapahtuu Internetin kautta asianomaisten palveluiden toimesta.
-
-Tekstin kääntämiseen käytettiin Google Translatea. Tämä ei takaa, että kaikki käännökset ovat oikein.
-Tukikielet ovat: tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, unkari, italia, norja, puola, portugali, romania, espanja ja ruotsi.
-
-Voit aina ottaa minuun yhteyttä korjauksista.</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Olla samaa mieltä</value>
   </data>
@@ -249,6 +239,16 @@ Merkit 1-2: Läpinäkyvyys/läpinäkyvyys
 Hahmot 3-4: Punainen
 Hahmot 5-6: Vihreä
 Hahmot 7-8: Sininen</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Teksti puheeksi: Kaikkia sovellusasetuksissa olevia kieliä ei tueta.
+Puhe tekstiksi: Aktivoi se laitteen asetuksista. Mikrofoni ilmestyy sitten virtuaaliseen näppäimistöön.
+Molemmat vaihtoehdot riippuvat laitteesta toiseen ja asennetuista kielistä. On mahdollista, että joillekin kielille käännös puheeseen ja puheesta tapahtuu Internetin kautta asianomaisten palveluiden toimesta.
+
+Tekstin kääntämiseen käytettiin Google Translatea. Tämä ei takaa, että kaikki käännökset ovat oikein.
+Tukikielet ovat: tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, unkari, italia, norja, puola, portugali, romania, espanja ja ruotsi.
+
+Voit aina ottaa minuun yhteyttä korjauksista.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Tietoja</value>

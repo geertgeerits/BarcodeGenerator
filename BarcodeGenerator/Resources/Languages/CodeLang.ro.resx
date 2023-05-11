@@ -117,16 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Text în vorbire: nu sunt acceptate toate limbile care sunt furnizate în setările aplicației.
-Vorbire în text: activează-l prin setările dispozitivului. Un microfon va apărea apoi pe tastatura virtuală.
-Ambele opțiuni depind de la dispozitiv la dispozitiv și de la limbile instalate. Este posibil ca, pentru unele limbi, traducerea către și din vorbire să se facă prin internet de către serviciile respective.
-
-Google Translate a fost folosit pentru traducerea textului. Aceasta nu este o garanție că toate traducerile sunt corecte.
-Limbile suportate sunt: cehă, daneză, olandeză, engleză, finlandeză, franceză, germană, maghiară, italiană, norvegiană, poloneză, portugheză, română, spaniolă și suedeză.
-
-Mă puteți contacta oricând pentru orice corecturi.</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>De acord</value>
   </data>
@@ -249,6 +239,16 @@ Caractere 1-2: Opacitate/Transparență
 Caractere 3-4: Roșu
 Caractere 5-6: Verde
 Caractere 7-8: Albastru</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Text în vorbire: nu sunt acceptate toate limbile care sunt furnizate în setările aplicației.
+Vorbire în text: activează-l prin setările dispozitivului. Un microfon va apărea apoi pe tastatura virtuală.
+Ambele opțiuni depind de la dispozitiv la dispozitiv și de la limbile instalate. Este posibil ca, pentru unele limbi, traducerea către și din vorbire să se facă prin internet de către serviciile respective.
+
+Google Translate a fost folosit pentru traducerea textului. Aceasta nu este o garanție că toate traducerile sunt corecte.
+Limbile suportate sunt: cehă, daneză, olandeză, engleză, finlandeză, franceză, germană, maghiară, italiană, norvegiană, poloneză, portugheză, română, spaniolă și suedeză.
+
+Mă puteți contacta oricând pentru orice corecturi.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informație</value>

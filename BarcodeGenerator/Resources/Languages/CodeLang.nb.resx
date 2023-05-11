@@ -117,16 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Tekst til tale: Ikke alle språk støttes som er gitt i applikasjonsinnstillingene.
-Tale til tekst: Aktiver den via enhetsinnstillingene. En mikrofon vil da vises på det virtuelle tastaturet.
-Begge disse alternativene avhenger fra enhet til enhet og de installerte språkene. Det er mulig at for noen språk blir oversettelsen til og fra tale gjort over internett av de aktuelle tjenestene.
-
-Google Translate ble brukt til oversettelsen av teksten. Dette er ikke en garanti for at alle oversettelser er korrekte.
-Støttespråkene er: tsjekkisk, dansk, nederlandsk, engelsk, finsk, fransk, tysk, ungarsk, italiensk, norsk, polsk, portugisisk, rumensk, spansk og svensk.
-
-Du kan alltid kontakte meg for eventuelle rettelser.</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Bli enige</value>
   </data>
@@ -249,6 +239,16 @@ Tegn 1-2: Opasitet/gjennomsiktighet
 Tegn 3-4: Rød
 Tegn 5-6: Grønn
 Tegn 7-8: Blå</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Tekst til tale: Ikke alle språk støttes som er gitt i applikasjonsinnstillingene.
+Tale til tekst: Aktiver den via enhetsinnstillingene. En mikrofon vil da vises på det virtuelle tastaturet.
+Begge disse alternativene avhenger fra enhet til enhet og de installerte språkene. Det er mulig at for noen språk blir oversettelsen til og fra tale gjort over internett av de aktuelle tjenestene.
+
+Google Translate ble brukt til oversettelsen av teksten. Dette er ikke en garanti for at alle oversettelser er korrekte.
+Støttespråkene er: tsjekkisk, dansk, nederlandsk, engelsk, finsk, fransk, tysk, ungarsk, italiensk, norsk, polsk, portugisisk, rumensk, spansk og svensk.
+
+Du kan alltid kontakte meg for eventuelle rettelser.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informasjon</value>

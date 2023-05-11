@@ -117,16 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Texto para fala: Nem todos os idiomas são suportados fornecidos nas configurações do aplicativo.
-Fala para texto: ative-o nas configurações do seu dispositivo. Um microfone aparecerá no teclado virtual.
-Ambas as opções dependem de dispositivo para dispositivo e dos idiomas instalados. É possível que, para alguns idiomas, a tradução de e para fala seja feita pela Internet pelos serviços envolvidos.
-
-O Google Tradutor foi utilizado para a tradução do texto. Isso não é uma garantia de que todas as traduções estão corretas.
-Os idiomas de suporte são: tcheco, dinamarquês, holandês, inglês, finlandês, francês, alemão, húngaro, italiano, norueguês, polonês, português, romeno, espanhol e sueco.
-
-Você sempre pode entrar em contato comigo para quaisquer correções.</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Concordar</value>
   </data>
@@ -249,6 +239,16 @@ Caracteres 1-2: Opacidade/Transparência
 Caracteres 3-4: Vermelho
 Caracteres 5-6: Verde
 Caracteres 7-8: Azul</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Texto para fala: Nem todos os idiomas são suportados fornecidos nas configurações do aplicativo.
+Fala para texto: ative-o nas configurações do seu dispositivo. Um microfone aparecerá no teclado virtual.
+Ambas as opções dependem de dispositivo para dispositivo e dos idiomas instalados. É possível que, para alguns idiomas, a tradução de e para fala seja feita pela Internet pelos serviços envolvidos.
+
+O Google Tradutor foi utilizado para a tradução do texto. Isso não é uma garantia de que todas as traduções estão corretas.
+Os idiomas de suporte são: tcheco, dinamarquês, holandês, inglês, finlandês, francês, alemão, húngaro, italiano, norueguês, polonês, português, romeno, espanhol e sueco.
+
+Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informação</value>

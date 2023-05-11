@@ -61,19 +61,6 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Text to speech: Not all languages are supported that are provided in the application settings.
-        ///Speech to text: Activate it through your device settings. A microphone will then appear in the virtual keyboard.
-        ///Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
-        ///
-        ///Google Translate was used for the translation of the text. This is not a guarantee that all  [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string AboutExplanation_Text {
-            get {
-                return ResourceManager.GetString("AboutExplanation_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Agree.
         /// </summary>
         internal static string Agree_Text {
@@ -436,6 +423,19 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string Info_Text {
             get {
                 return ResourceManager.GetString("Info_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text to speech: Not all languages are supported that are provided in the application settings.
+        ///Speech to text: Activate it through your device settings. A microphone will then appear in the virtual keyboard.
+        ///Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
+        ///
+        ///Google Translate was used for the translation of the text. This is not a guarantee that all  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string InfoExplanation_Text {
+            get {
+                return ResourceManager.GetString("InfoExplanation_Text", resourceCulture);
             }
         }
         

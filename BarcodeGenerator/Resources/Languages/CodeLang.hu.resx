@@ -117,16 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Szövegfelolvasó: Nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
-Beszédből szöveggé: Aktiválja az eszköz beállításaiban. Ekkor egy mikrofon jelenik meg a virtuális billentyűzeten.
-Mindkét lehetőség készülékenként és a telepített nyelvektől függ. Lehetséges, hogy egyes nyelvek esetében a beszédre és beszédről történő fordítást az interneten keresztül végzik az érintett szolgálatok.
-
-A szöveg fordításához a Google Fordítót használtuk. Ez nem garancia arra, hogy minden fordítás helyes.
-A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar, olasz, norvég, lengyel, portugál, román, spanyol és svéd.
-
-Bármilyen javításért bármikor fordulhat hozzám.</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Egyetért</value>
   </data>
@@ -249,6 +239,16 @@ Karakterek 1-2: Átlátszatlanság/Átlátszóság
 Karakterek 3-4: Piros
 Karakterek 5-6: Zöld
 Karakterek 7-8: Kék</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Szövegfelolvasó: Nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
+Beszédből szöveggé: Aktiválja az eszköz beállításaiban. Ekkor egy mikrofon jelenik meg a virtuális billentyűzeten.
+Mindkét lehetőség készülékenként és a telepített nyelvektől függ. Lehetséges, hogy egyes nyelvek esetében a beszédre és beszédről történő fordítást az interneten keresztül végzik az érintett szolgálatok.
+
+A szöveg fordításához a Google Fordítót használtuk. Ez nem garancia arra, hogy minden fordítás helyes.
+A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar, olasz, norvég, lengyel, portugál, román, spanyol és svéd.
+
+Bármilyen javításért bármikor fordulhat hozzám.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Információ</value>
