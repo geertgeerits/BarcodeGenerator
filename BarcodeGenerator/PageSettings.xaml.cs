@@ -268,7 +268,8 @@ public partial class PageSettings : ContentPage
             _ => 0,
         };
 
-        //lblExplanation.Text = CodeLang.SettingsSaved_Text + "\n";  // Workaround for !!!BUG!!! auto sizing label for small screens.  Add a new line to solve the bug.
+        // Workaround for !!!BUG!!! auto sizing label for small screens.  Add a new line to solve the bug.
+        //lblExplanation.Text = CodeLang.SettingsSaved_Text + "\n";
     }
 
     // Fill the picker with the speech languages from the array.
