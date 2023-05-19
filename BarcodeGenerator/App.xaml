@@ -152,10 +152,9 @@
             </Style>
 
             <Style x:Key="labelStyleDefault" TargetType="Label">
-                <Setter Property="Margin" Value="10" />
+                <Setter Property="Margin" Value="0" />
                 <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
             </Style>
@@ -188,7 +187,7 @@
             <Style x:Key="buttonStyleDefault" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="MinimumHeightRequest" Value="40" />
                 <Setter Property="WidthRequest" Value="150" />
             </Style>
 
@@ -200,6 +199,7 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HeightRequest" Value="38" />
                 <Setter Property="WidthRequest" Value="38" />
+                <Setter Property="FontSize" Value="14" />
                 <Setter Property="Text" Value="?" />
             </Style>
 

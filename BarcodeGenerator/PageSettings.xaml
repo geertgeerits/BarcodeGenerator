@@ -16,7 +16,7 @@
         RowDefinitions="*, auto"
         ColumnDefinitions="150, 190*"
         HorizontalOptions="Center"
-        Margin="10"
+        Margin="5"
         ColumnSpacing="8"
         RowSpacing="0">
 
@@ -28,11 +28,9 @@
             Orientation="Vertical">
 
             <Grid
-                RowDefinitions="Auto, 40, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40"
+                RowDefinitions="Auto, 40*, 40*, 40*, 40*, 40*, 6, 40*, 40*, 40*, 40*, 6, 40*, 40*, 40*, 40*"
                 ColumnDefinitions="40, 110, 190*"
-                Margin="0"
                 ColumnSpacing="8"
-                RowSpacing="4"
                 x:Name="grdSettings">
 
                 <BoxView
@@ -50,10 +48,10 @@
                 </Label>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="1"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Center"
                     Text="{local:Translate Language_Text}">
                 </Label>
 
@@ -96,10 +94,10 @@
                 </Border>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Center"
                     Text="{local:Translate LanguageSpeech_Text}">
                 </Label>
 
@@ -123,10 +121,10 @@
                 </Border>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="3"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Center"
                     Text="{local:Translate Theme_Text}">
                 </Label>
 
@@ -157,10 +155,10 @@
                 </Border>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Center"
                     Text="{local:Translate DefaultFormatGenerator_Text}">
                 </Label>
 
@@ -190,10 +188,10 @@
                 </Border>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Center"
                     Text="{local:Translate DefaultFormatScanner_Text}">
                 </Label>
 
@@ -223,11 +221,10 @@
                 </Border>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="7"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
                     VerticalTextAlignment="Start"
                     Text="{local:Translate ForegroundOpacity_Text}">
                 </Label>
@@ -243,11 +240,10 @@
                 </Slider>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="8"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
                     VerticalTextAlignment="Start"
                     Text="{local:Translate ForegroundColor_Text}">
                 </Label>
@@ -328,11 +324,10 @@
                 </Slider>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="12"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
                     VerticalTextAlignment="Start"
                     Text="{local:Translate BackgroundOpacity_Text}">
                 </Label>
@@ -348,11 +343,10 @@
                 </Slider>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="13"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
                     VerticalTextAlignment="Start"
                     Text="{local:Translate BackgroundColor_Text}">
                 </Label>

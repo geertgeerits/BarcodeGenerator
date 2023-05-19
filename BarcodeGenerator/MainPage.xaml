@@ -65,11 +65,11 @@
 
     <ScrollView>
         <Grid
-            RowDefinitions="40, 40, 180, 46, 250, 46"
+            RowDefinitions="50*, 50*, 180, 50*, 250, 50*"
             ColumnDefinitions="140, 210*"
-            Margin="10,10,10,10"
+            Margin="5,5,5,5"
             ColumnSpacing="0"
-            RowSpacing="2">
+            RowSpacing="0">
 
             <Label
                 Grid.Row="0"
@@ -107,8 +107,8 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Start"
-                VerticalOptions="Center"
-                Margin="0,10,2,0"
+                VerticalOptions="End"
+                Margin="0,2,2,0"
                 Spacing="0">
                 
                 <ImageButton
@@ -122,7 +122,7 @@
 
                 <Label
                     HorizontalOptions="Start"
-                    VerticalOptions="End"
+                    VerticalOptions="Center"
                     VerticalTextAlignment="Start"
                     Text="{local:Translate TextToEncode_Text}">
                 </Label>
@@ -132,14 +132,14 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 HorizontalOptions="End"
-                VerticalOptions="Center"
-                Margin="0,10,2,0"
+                VerticalOptions="End"
+                Margin="0,2,2,0"
                 Spacing="10">
 
                 <Label
                     x:Name="lblTextToSpeech"
                     HorizontalOptions="End"
-                    VerticalOptions="End"
+                    VerticalOptions="Center"
                     HorizontalTextAlignment="End"
                     VerticalTextAlignment="End"
                     IsVisible="False"

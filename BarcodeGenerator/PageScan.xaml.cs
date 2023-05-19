@@ -531,11 +531,11 @@ public partial class PageScan : ContentPage
         {
             RowDefinitions =
             {
-                new RowDefinition { Height = new GridLength(40) },
+                new RowDefinition { Height = new GridLength(50, GridUnitType.Star) },
                 new RowDefinition { Height = new GridLength(10) },
                 new RowDefinition { Height = new GridLength(nCameraRowHeight) },
                 new RowDefinition { Height = new GridLength(10) },
-                new RowDefinition { Height = new GridLength(40) },
+                new RowDefinition { Height = new GridLength(50, GridUnitType.Star) },
                 new RowDefinition { Height = new GridLength(100, GridUnitType.Star) }
             }
         };
