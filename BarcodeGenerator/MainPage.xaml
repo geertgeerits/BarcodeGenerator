@@ -12,7 +12,6 @@
         <Grid
             RowDefinitions="50"
             ColumnDefinitions="60, 140*, 60, 60"
-            Margin="5"
             BackgroundColor="#00bfff">
 
             <ImageButton
@@ -65,11 +64,11 @@
 
     <ScrollView>
         <Grid
-            RowDefinitions="50*, 50*, 180, 50*, 250, 50*"
+            RowDefinitions="Auto, Auto, 180, Auto, 250, Auto"
             ColumnDefinitions="140, 210*"
-            Margin="5,5,5,5"
+            Margin="5"
             ColumnSpacing="6"
-            RowSpacing="6">
+            RowSpacing="2">
 
             <Label
                 Grid.Row="0"
