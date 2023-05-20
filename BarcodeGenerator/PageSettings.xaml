@@ -30,7 +30,8 @@
             <Grid
                 RowDefinitions="Auto, 40*, 40*, 40*, 40*, 40*, 6, 40*, 40*, 40*, 40*, 6, 40*, 40*, 40*, 40*"
                 ColumnDefinitions="40, 110, 190*"
-                ColumnSpacing="8"
+                ColumnSpacing="6"
+                RowSpacing="2"
                 x:Name="grdSettings">
 
                 <BoxView
@@ -258,12 +259,13 @@
                     ValueChanged="OnSliderColorForegroundValueChanged">
                 </Slider>
 
-                <Button
-                    Style="{StaticResource buttonStyleHelp}"
+                <ImageButton
+                    Style="{StaticResource imagebuttonStyleHelp}"
                     Grid.Row="9"
                     Grid.Column="0"
+                    ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
                     Clicked="OnSettingsHexColorClicked">
-                </Button>
+                </ImageButton>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -361,12 +363,13 @@
                     ValueChanged="OnSliderColorBackgroundValueChanged">
                 </Slider>
 
-                <Button
-                    Style="{StaticResource buttonStyleHelp}"
+                <ImageButton
+                    Style="{StaticResource imagebuttonStyleHelp}"
                     Grid.Row="14"
                     Grid.Column="0"
+                    ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
                     Clicked="OnSettingsHexColorClicked">
-                </Button>
+                </ImageButton>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"

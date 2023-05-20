@@ -349,6 +349,9 @@ Niedozwolony:</value>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
     <value>Idź naprzód</value>
   </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Wklej tekst ze schowka</value>
   </data>

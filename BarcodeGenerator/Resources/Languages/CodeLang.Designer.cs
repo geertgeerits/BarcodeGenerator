@@ -708,6 +708,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        internal static string ToolTipHelp_Text {
+            get {
+                return ResourceManager.GetString("ToolTipHelp_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paste text from the clipboard.
         /// </summary>
         internal static string ToolTipPaste_Text {

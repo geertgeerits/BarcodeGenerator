@@ -349,6 +349,9 @@ Non autorizzato:</value>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
     <value>Vai avanti</value>
   </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Aiuto</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Incolla il testo dagli appunti</value>
   </data>

@@ -349,6 +349,9 @@ Ikke tillatt:</value>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
     <value>Gå framover</value>
   </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Hjelp</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Lim inn tekst fra utklippstavlen</value>
   </data>

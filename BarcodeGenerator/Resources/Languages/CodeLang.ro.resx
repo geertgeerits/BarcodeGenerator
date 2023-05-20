@@ -349,6 +349,9 @@ Nepermis:</value>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
     <value>Mergi inainte</value>
   </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Ajutor</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Lipiți text din clipboard</value>
   </data>

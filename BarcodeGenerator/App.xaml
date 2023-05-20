@@ -191,18 +191,6 @@
                 <Setter Property="WidthRequest" Value="150" />
             </Style>
 
-            <Style x:Key="buttonStyleHelp" TargetType="Button">
-                <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
-                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
-                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="HeightRequest" Value="38" />
-                <Setter Property="WidthRequest" Value="38" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="Text" Value="?" />
-            </Style>
-
             <Style x:Key="buttonStyleWebsite" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="BorderColor" Value="Transparent" />
@@ -227,6 +215,30 @@
                         </VisualStateGroup>
                     </VisualStateGroupList>
                 </Setter>
+            </Style>
+
+            <!--<Style x:Key="buttonStyleHelp" TargetType="Button">
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="38" />
+                <Setter Property="WidthRequest" Value="38" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Text" Value="?" />
+            </Style>-->
+
+            <Style x:Key="imagebuttonStyleHelp" TargetType="ImageButton">
+                <Setter Property="BorderColor" Value="#969696" />
+                <Setter Property="BackgroundColor" Value="#f1f1f1" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="28" />
+                <Setter Property="WidthRequest" Value="28" />
+                <Setter Property="Source" Value="help_48p.png" />
             </Style>
 
             <Style x:Key="sliderStyleColor" TargetType="Slider">

@@ -349,6 +349,9 @@ Interdit:</value>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
     <value>Aller de l'avant</value>
   </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Aider</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Collez le texte du presse-papiers</value>
   </data>

@@ -349,6 +349,9 @@ Nem megengedett:</value>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
     <value>Menj előre</value>
   </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Segítség</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Szöveg beillesztése a vágólapról</value>
   </data>

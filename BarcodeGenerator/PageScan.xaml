@@ -40,8 +40,8 @@
             RowDefinitions="50*, 10, 520, 10, 50*, 100*"
             ColumnDefinitions="140, 210*"
             Margin="5,5,5,5"
-            ColumnSpacing="0"
-            RowSpacing="2"
+            ColumnSpacing="6"
+            RowSpacing="6"
             x:Name="grdScanner">
 
             <Label

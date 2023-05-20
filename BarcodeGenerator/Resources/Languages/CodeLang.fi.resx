@@ -349,6 +349,9 @@ Ei sallittu:</value>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
     <value>Mene eteenpäin</value>
   </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Auta</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Liitä teksti leikepöydältä</value>
   </data>

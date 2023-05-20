@@ -349,6 +349,9 @@ Não permitido:</value>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
     <value>Vá em frente</value>
   </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Cole o texto da área de transferência</value>
   </data>

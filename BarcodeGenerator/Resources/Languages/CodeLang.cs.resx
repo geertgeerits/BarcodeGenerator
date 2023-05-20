@@ -349,6 +349,9 @@ Nepovoleno:</value>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
     <value>Jdi dopředu</value>
   </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Vložte text ze schránky</value>
   </data>
