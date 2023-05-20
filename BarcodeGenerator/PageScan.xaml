@@ -112,7 +112,6 @@
                     x:Name="btnShare"
                     HorizontalOptions="Start"
                     VerticalOptions="End"
-                    HeightRequest="40"
                     MinimumWidthRequest="130"
                     MaximumWidthRequest="200"
                     LineBreakMode="TailTruncation"

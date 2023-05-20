@@ -227,7 +227,6 @@
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="Start"
-                HeightRequest="40"
                 MinimumWidthRequest="130"
                 Text="{local:Translate ButtonShare_Text}"
                 IsEnabled="False"

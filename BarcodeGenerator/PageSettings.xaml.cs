@@ -30,8 +30,8 @@ public partial class PageSettings : ContentPage
         {
             ColumnDefinitions =
             {
-                new ColumnDefinition { Width = new GridLength(40) },
-                new ColumnDefinition { Width = new GridLength(110) },
+                new ColumnDefinition { Width = new GridLength(30) },
+                new ColumnDefinition { Width = new GridLength(120) },
                 new ColumnDefinition { Width = new GridLength(188) }
             }
         };

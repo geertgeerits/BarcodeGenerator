@@ -25,7 +25,7 @@
 
             <Grid
                 RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 6, Auto, Auto, Auto, Auto, 6, Auto, Auto, Auto, Auto"
-                ColumnDefinitions="40, 110, 190*"
+                ColumnDefinitions="30, 120, 190*"
                 ColumnSpacing="6"
                 RowSpacing="2"
                 x:Name="grdSettings">

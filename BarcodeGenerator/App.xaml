@@ -181,13 +181,11 @@
                 <Setter Property="VerticalTextAlignment" Value="Center" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
                 <Setter Property="Padding" Value="5" />
-                <!--<Setter Property="Padding" Value="1" />-->
             </Style>
 
             <Style x:Key="buttonStyleDefault" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="MinimumHeightRequest" Value="40" />
                 <Setter Property="WidthRequest" Value="150" />
             </Style>
 
@@ -217,18 +215,6 @@
                 </Setter>
             </Style>
 
-            <!--<Style x:Key="buttonStyleHelp" TargetType="Button">
-                <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
-                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
-                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="HeightRequest" Value="38" />
-                <Setter Property="WidthRequest" Value="38" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="Text" Value="?" />
-            </Style>-->
-
             <Style x:Key="imagebuttonStyleHelp" TargetType="ImageButton">
                 <Setter Property="BorderColor" Value="#969696" />
                 <Setter Property="BackgroundColor" Value="#f1f1f1" />
@@ -245,6 +231,7 @@
                 <!--<Setter Property="HorizontalOptions" Value="Center" /> !!!BUG!!!-->
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HeightRequest" Value="40" />
+                <!--<Setter Property="MaximumWidthRequest" Value="300" /> !!!BUG!!!-->
                 <Setter Property="Margin" Value="0,0,6,0" />
                 <Setter Property="Minimum" Value="0" />
                 <Setter Property="Maximum" Value="255" />
