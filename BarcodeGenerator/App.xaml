@@ -244,6 +244,7 @@
             <Style x:Key="sliderStyleColor" TargetType="Slider">
                 <!--<Setter Property="HorizontalOptions" Value="Center" /> !!!BUG!!!-->
                 <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="40" />
                 <Setter Property="Margin" Value="0,0,6,0" />
                 <Setter Property="Minimum" Value="0" />
                 <Setter Property="Maximum" Value="255" />

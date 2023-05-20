@@ -13,22 +13,18 @@
     </NavigationPage.TitleView>
 
     <Grid
-        RowDefinitions="*, auto"
-        ColumnDefinitions="150, 190*"
+        RowDefinitions="Auto, *, Auto"
         HorizontalOptions="Center"
-        Margin="5"
-        ColumnSpacing="8"
-        RowSpacing="0">
+        Margin="5">
 
         <ScrollView
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="0"
-            Grid.ColumnSpan="2"
             VerticalOptions="FillAndExpand"
             Orientation="Vertical">
 
             <Grid
-                RowDefinitions="Auto, 40*, 40*, 40*, 40*, 40*, 6, 40*, 40*, 40*, 40*, 6, 40*, 40*, 40*, 40*"
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 6, Auto, Auto, Auto, Auto, 6, Auto, Auto, Auto, Auto"
                 ColumnDefinitions="40, 110, 190*"
                 ColumnSpacing="6"
                 RowSpacing="2"
@@ -301,6 +297,7 @@
                     Grid.Row="10"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
+                    HeightRequest="40"
                     BackgroundColor="Transparent"
                     Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
                     StrokeThickness="1"
@@ -405,6 +402,7 @@
                     Grid.Row="15"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
+                    HeightRequest="40"
                     BackgroundColor="Transparent"
                     Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
                     StrokeThickness="1"
@@ -434,10 +432,8 @@
 
         <Button
             x:Name="btnSettingsSave"
+            Grid.Row="2"
             Style="{StaticResource buttonStyleDefault}"
-            Grid.Row="1"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
             HorizontalOptions="Start"
             Text="{local:Translate SettingsSave_Text}"
             Clicked="OnSettingsSaveClicked">
@@ -445,8 +441,7 @@
 
         <Button
             Style="{StaticResource buttonStyleDefault}"
-            Grid.Row="1"
-            Grid.Column="1"
+            Grid.Row="2"
             HorizontalOptions="End"
             Text="{local:Translate SettingsReset_Text}"
             Clicked="OnSettingsResetClicked">
