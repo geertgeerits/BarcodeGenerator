@@ -432,8 +432,8 @@
 
         <Button
             x:Name="btnSettingsSave"
-            Grid.Row="2"
             Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="2"
             HorizontalOptions="Start"
             Text="{local:Translate SettingsSave_Text}"
             Clicked="OnSettingsSaveClicked">
