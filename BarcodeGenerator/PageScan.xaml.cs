@@ -422,6 +422,16 @@ public partial class PageScan : ContentPage
         lblTextToSpeech.Text = MainPage.GetIsoLanguageCode();
     }
 
+    // Turn off the torch if on, when going back to the mainpage.
+    private void OnPageDisappearing(object sender, EventArgs e)
+    {
+        if (barcodeReader.IsTorchOn)
+        {
+            barcodeReader.IsTorchOn = false;
+            Task.Delay(200).Wait();
+        }
+    }
+
     // Initialize text to speech.
     private async void InitializeTextToSpeech()
     {
@@ -541,5 +551,5 @@ public partial class PageScan : ContentPage
         };
         
         grdScanner.RowDefinitions = grid.RowDefinitions;
-    }    
+    }
 }

@@ -4,7 +4,8 @@
              xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.PageScan"
-             Appearing="OnPageAppearing">
+             Appearing="OnPageAppearing"
+             Disappearing="OnPageDisappearing">
 
     <NavigationPage.TitleView>
         <Grid
