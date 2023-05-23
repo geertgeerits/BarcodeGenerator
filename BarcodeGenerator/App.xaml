@@ -44,6 +44,7 @@
             </Style>
 
             <Style TargetType="Label">
+                <Setter Property="MinimumHeightRequest" Value="40"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
                 <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
                 <Setter Property="FontFamily" Value="OpenSansRegular" />
@@ -61,6 +62,7 @@
             </Style>
 
             <Style TargetType="Entry">
+                <Setter Property="MinimumHeightRequest" Value="40"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}" />
                 <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
                 <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource Light}}" />
@@ -71,6 +73,7 @@
             </Style>
 
             <Style TargetType="Button">
+                <Setter Property="MinimumHeightRequest" Value="40"/>
                 <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />
                 <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
@@ -125,6 +128,7 @@
             </Style>
 
             <Style TargetType="RadioButton">
+                <Setter Property="MinimumHeightRequest" Value="40"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
                 <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
                 <Setter Property="FontFamily" Value="OpenSansRegular"/>
@@ -133,6 +137,7 @@
             </Style>
 
             <Style TargetType="Picker">
+                <Setter Property="MinimumHeightRequest" Value="40"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}" />
                 <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
                 <Setter Property="FontFamily" Value="OpenSansRegular"/>
@@ -141,6 +146,7 @@
             </Style>
 
             <Style TargetType="Slider">
+                <Setter Property="MinimumHeightRequest" Value="40"/>
                 <Setter Property="MaximumTrackColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
             </Style>
 
@@ -176,7 +182,6 @@
                 <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="MinimumHeightRequest" Value="40" />
                 <Setter Property="HorizontalTextAlignment" Value="Start" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
@@ -230,7 +235,7 @@
             <Style x:Key="sliderStyleColor" TargetType="Slider">
                 <!--<Setter Property="HorizontalOptions" Value="Center" /> !!!BUG!!!-->
                 <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="HeightRequest" Value="40" />
+                <!--<Setter Property="HeightRequest" Value="40" />-->
                 <!--<Setter Property="MaximumWidthRequest" Value="300" /> !!!BUG!!!-->
                 <Setter Property="Margin" Value="0,0,6,0" />
                 <Setter Property="Minimum" Value="0" />
