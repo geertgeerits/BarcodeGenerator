@@ -71,11 +71,9 @@
             RowSpacing="6">
 
             <Label
+                Style="{StaticResource labelStyleDefault}"
                 Grid.Row="0"
                 Grid.Column="0"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"
-                VerticalTextAlignment="Center"
                 Text="{local:Translate FormatCode_Text}">
             </Label>
 
@@ -120,8 +118,7 @@
                 </ImageButton>
 
                 <Label
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
+                    Style="{StaticResource labelStyleDefault}"
                     Text="{local:Translate TextToEncode_Text}">
                 </Label>
             </HorizontalStackLayout>

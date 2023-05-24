@@ -530,7 +530,7 @@ public partial class PageScan : ContentPage
         double nDisplayResHeight = nDisplayHeight / nDisplayDensity;
 
         // Set the grid row height.
-        double nCameraRowHeight = 440;
+        double nCameraRowHeight = 460;
 
         if (nDisplayResHeight < 740)
         {

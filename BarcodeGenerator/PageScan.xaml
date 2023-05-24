@@ -45,10 +45,9 @@
             x:Name="grdScanner">
 
             <Label
+                Style="{StaticResource labelStyleDefault}"
                 Grid.Row="0"
                 Grid.Column="0"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"
                 Text="{x:Static resx:CodeLang.FormatCode_Text}">
             </Label>
 
@@ -112,7 +111,6 @@
                     VerticalOptions="End"
                     MinimumWidthRequest="130"
                     MaximumWidthRequest="200"
-                    LineBreakMode="TailTruncation"
                     Text="{x:Static resx:CodeLang.ButtonShare_Text}"
                     IsEnabled="False"
                     Clicked="OnShareClicked">
@@ -128,8 +126,8 @@
 
                 <Label
                     x:Name="lblTextToSpeech"
+                    Style="{StaticResource labelStyleDefault}"
                     HorizontalOptions="End"
-                    VerticalOptions="Center"
                     HorizontalTextAlignment="End"
                     IsVisible="False"
                     Text="en-US">
