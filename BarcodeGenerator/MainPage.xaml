@@ -68,7 +68,7 @@
             ColumnDefinitions="140, 210*"
             Margin="5"
             ColumnSpacing="6"
-            RowSpacing="2">
+            RowSpacing="6">
 
             <Label
                 Grid.Row="0"
@@ -122,7 +122,6 @@
                 <Label
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    VerticalTextAlignment="Start"
                     Text="{local:Translate TextToEncode_Text}">
                 </Label>
             </HorizontalStackLayout>
@@ -140,7 +139,6 @@
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     HorizontalTextAlignment="End"
-                    VerticalTextAlignment="End"
                     IsVisible="False"
                     Text="en-US">
                 </Label>

@@ -41,7 +41,7 @@
             ColumnDefinitions="140, 210*"
             Margin="5"
             ColumnSpacing="6"
-            RowSpacing="2"
+            RowSpacing="6"
             x:Name="grdScanner">
 
             <Label
@@ -49,7 +49,6 @@
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
-                VerticalTextAlignment="Center"
                 Text="{x:Static resx:CodeLang.FormatCode_Text}">
             </Label>
 
@@ -94,9 +93,7 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Start"
-                VerticalOptions="Center"
-                Margin="0,10,2,0"
-                Spacing="0">
+                VerticalOptions="Center">
 
                 <ImageButton
                     x:Name="imgbtnCopyToClipboard"
@@ -127,7 +124,6 @@
                 Grid.Column="1"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                Margin="0,10,2,0"
                 Spacing="10">
 
                 <Label
@@ -135,7 +131,6 @@
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     HorizontalTextAlignment="End"
-                    VerticalTextAlignment="End"
                     IsVisible="False"
                     Text="en-US">
                 </Label>
@@ -167,6 +162,7 @@
                     Padding="10"
                     HorizontalOptions="Start"
                     HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Start"
                     Text="">
                 </Label>
             </Border>
