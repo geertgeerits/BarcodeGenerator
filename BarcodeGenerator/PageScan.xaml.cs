@@ -28,10 +28,8 @@ public partial class PageScan : ContentPage
         // Code to run on Android, Windows and on the main thread for iOS\MacOS.
 #if IOS
         MainThread.BeginInvokeOnMainThread(SetGridRowHeightCamera);
-        //barcodeReader.HeightRequest = 400;
 #else
         SetGridRowHeightCamera();
-        //barcodeReader.HeightRequest = 400;
 #endif
 
         // Put text in the chosen language in the controls.
@@ -42,12 +40,6 @@ public partial class PageScan : ContentPage
 
         // Initialize text to speech.
         InitializeTextToSpeech();
-    }
-
-    // ImageButton torch clicked event.
-    private void OnTorchClicked(object sender, EventArgs e)
-    {
-        barcodeReader.IsTorchOn = !barcodeReader.IsTorchOn;
     }
 
     // Set the scanner properties for the selected format code.
@@ -422,32 +414,22 @@ public partial class PageScan : ContentPage
         lblTextToSpeech.Text = MainPage.GetIsoLanguageCode();
     }
 
+    // ImageButton torch clicked event.
+    private void OnTorchClicked(object sender, EventArgs e)
+    {
+        barcodeReader.IsTorchOn = !barcodeReader.IsTorchOn;
+    }
+
     // Turn off the torch if on, when going back to the mainpage.
+    // Called by the Disappearing and Unloaded event from the PageScan.xaml.
     // Does not works always on Android but works on iOS.
-    private void OnPageDisappearing(object sender, EventArgs e)
+    private void TurnOffTorch(object sender, EventArgs e)
     {
         if (barcodeReader.IsTorchOn)
         {
             barcodeReader.IsTorchOn = false;
-            Task.Delay(250).Wait();
+            Task.Delay(300).Wait();
         }
-    }
-
-    // Turn off the torch if on, when going back to the mainpage.
-    // Does not works on iOS but works on Android.
-    // Source: https://stackoverflow.com/questions/73362716/maui-net-display-a-pop-up-on-back-button-pressed
-    protected override bool OnBackButtonPressed()
-    {
-        Dispatcher.Dispatch(async () =>
-        {
-            if (barcodeReader.IsTorchOn)
-            {
-                barcodeReader.IsTorchOn = false;
-            }
-            await Navigation.PushAsync(new MainPage());
-        });
-
-        return true;
     }
 
     // Initialize text to speech.

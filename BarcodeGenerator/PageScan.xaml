@@ -5,7 +5,8 @@
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.PageScan"
              Appearing="OnPageAppearing"
-             Disappearing="OnPageDisappearing">
+             Disappearing="TurnOffTorch"
+             Unloaded="TurnOffTorch">
 
     <NavigationPage.TitleView>
         <Grid
