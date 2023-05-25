@@ -136,10 +136,10 @@
     <value>Opacidade de fundo:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Gerador de código de barras</value>
+    <value>Gerador</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Leitor de códigos de barra</value>
+    <value>Scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Fechar</value>

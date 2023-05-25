@@ -28,10 +28,10 @@ public partial class PageScan : ContentPage
         // Code to run on Android, Windows and on the main thread for iOS\MacOS.
 #if IOS
         MainThread.BeginInvokeOnMainThread(SetGridRowHeightCamera);
-        barcodeReader.HeightRequest = 400;
+        //barcodeReader.HeightRequest = 400;
 #else
         SetGridRowHeightCamera();
-        barcodeReader.HeightRequest = 300;
+        //barcodeReader.HeightRequest = 400;
 #endif
 
         // Put text in the chosen language in the controls.
@@ -423,13 +423,31 @@ public partial class PageScan : ContentPage
     }
 
     // Turn off the torch if on, when going back to the mainpage.
+    // Does not works always on Android but works on iOS.
     private void OnPageDisappearing(object sender, EventArgs e)
     {
         if (barcodeReader.IsTorchOn)
         {
             barcodeReader.IsTorchOn = false;
-            Task.Delay(200).Wait();
+            Task.Delay(250).Wait();
         }
+    }
+
+    // Turn off the torch if on, when going back to the mainpage.
+    // Does not works on iOS but works on Android.
+    // Source: https://stackoverflow.com/questions/73362716/maui-net-display-a-pop-up-on-back-button-pressed
+    protected override bool OnBackButtonPressed()
+    {
+        Dispatcher.Dispatch(async () =>
+        {
+            if (barcodeReader.IsTorchOn)
+            {
+                barcodeReader.IsTorchOn = false;
+            }
+            await Navigation.PushAsync(new MainPage());
+        });
+
+        return true;
     }
 
     // Initialize text to speech.
@@ -529,27 +547,16 @@ public partial class PageScan : ContentPage
 
         double nDisplayResHeight = nDisplayHeight / nDisplayDensity;
 
-        // Set the grid row height.
-        double nCameraRowHeight = 460;
+        // Set the HorizontalStackLayout height.
+        // Big screens.
+        double nStackLayoutHeight = 420;
 
+        // Small screens.
         if (nDisplayResHeight < 740)
         {
-            nCameraRowHeight = 540;
+            nStackLayoutHeight = 540;
         }
 
-        Grid grid = new()
-        {
-            RowDefinitions =
-            {
-                new RowDefinition { Height = new GridLength(50, GridUnitType.Star) },
-                new RowDefinition { Height = new GridLength(10) },
-                new RowDefinition { Height = new GridLength(nCameraRowHeight) },
-                new RowDefinition { Height = new GridLength(10) },
-                new RowDefinition { Height = new GridLength(50, GridUnitType.Star) },
-                new RowDefinition { Height = new GridLength(100, GridUnitType.Star) }
-            }
-        };
-        
-        grdScanner.RowDefinitions = grid.RowDefinitions;
+        hslScanner.HeightRequest = nStackLayoutHeight;
     }
 }

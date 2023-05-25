@@ -136,10 +136,10 @@
     <value>Hintergrundopazität:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Barcode-Generator</value>
+    <value>Generator</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Barcode-Scanner</value>
+    <value>Scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Schließen</value>

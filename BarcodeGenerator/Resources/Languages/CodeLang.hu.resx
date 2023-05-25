@@ -136,10 +136,10 @@
     <value>Háttér átlátszatlansága:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Vonalkód generátor</value>
+    <value>Generátor</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Vonalkód olvasó</value>
+    <value>Scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Zárja be</value>

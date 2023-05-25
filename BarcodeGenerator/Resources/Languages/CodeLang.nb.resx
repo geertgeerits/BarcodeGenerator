@@ -136,10 +136,10 @@
     <value>Bakgrunnsopasitet:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Strekkodegenerator</value>
+    <value>Generator</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Strekkode skanner</value>
+    <value>Skanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Lukk</value>

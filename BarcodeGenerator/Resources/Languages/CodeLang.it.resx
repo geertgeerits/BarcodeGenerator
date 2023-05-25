@@ -136,10 +136,10 @@
     <value>Opacità di sfondo:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Generatore di codici a barre</value>
+    <value>Generatore</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Scanner di codici a barre</value>
+    <value>Scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Chiudi</value>

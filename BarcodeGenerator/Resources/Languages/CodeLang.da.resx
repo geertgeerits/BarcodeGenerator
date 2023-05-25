@@ -136,10 +136,10 @@
     <value>Baggrunds gennemsigtighed:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Stregkodegenerator</value>
+    <value>Generator</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Stregkodescanner</value>
+    <value>Scanner</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Luk</value>

@@ -460,6 +460,7 @@
             Grid.Row="2"
             HorizontalOptions="Start"
             Text="{local:Translate SettingsSave_Text}"
+            ToolTipProperties.Text="{local:Translate SettingsSave_Text}"
             Clicked="OnSettingsSaveClicked">
         </Button>
 
@@ -469,6 +470,7 @@
             Grid.Row="2"
             HorizontalOptions="End"
             Text="{local:Translate SettingsReset_Text}"
+            ToolTipProperties.Text="{local:Translate SettingsReset_Text}"
             Clicked="OnSettingsResetClicked">
         </Button>
 

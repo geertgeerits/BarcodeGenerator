@@ -115,7 +115,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barcode Generator.
+        ///   Looks up a localized string similar to Generator.
         /// </summary>
         internal static string BarcodeGenerator_Text {
             get {
@@ -124,7 +124,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barcode Scanner.
+        ///   Looks up a localized string similar to Scanner.
         /// </summary>
         internal static string BarcodeScanner_Text {
             get {

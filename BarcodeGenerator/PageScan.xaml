@@ -36,135 +36,149 @@
     </NavigationPage.TitleView>
 
     <ScrollView>
-        <Grid
-            RowDefinitions="Auto, 10, 520, 10, Auto, Auto"
-            ColumnDefinitions="140, 210*"
-            Margin="5"
-            ColumnSpacing="6"
-            RowSpacing="6"
-            x:Name="grdScanner">
+        <StackLayout>
+            <Grid
+                RowDefinitions="Auto, 10"
+                ColumnDefinitions="140, 210*"
+                Margin="5"
+                ColumnSpacing="6"
+                RowSpacing="6">
 
-            <Label
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="0"
-                Grid.Column="0"
-                Text="{x:Static resx:CodeLang.FormatCode_Text}">
-            </Label>
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="{x:Static resx:CodeLang.FormatCode_Text}">
+                </Label>
 
-            <Border
-                Style="{StaticResource borderStyleDefault}"
-                Grid.Row="0"
-                Grid.Column="1"
-                HorizontalOptions="Start"
-                VerticalOptions="Center">
-
-                <Picker
-                    x:Name="pckFormatCodeScanner"
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
                     Grid.Row="0"
                     Grid.Column="1"
-                    MinimumWidthRequest="200"
-                    SelectedIndexChanged="OnPickerFormatCodeChanged">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Barcode 1</x:String>
-                            <x:String>Barcode 2</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-            </Border>
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
 
-            <zxing:CameraBarcodeReaderView
-                x:Name="barcodeReader"
-                Grid.Row="2"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
+                    <Picker
+                        x:Name="pckFormatCodeScanner"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        MinimumWidthRequest="200"
+                        SelectedIndexChanged="OnPickerFormatCodeChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Barcode 1</x:String>
+                                <x:String>Barcode 2</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Border>
+            </Grid>
+
+            <HorizontalStackLayout
+                x:Name="hslScanner"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                HeightRequest="400"
-                WidthRequest="300"
-                IsDetecting="True"
-                IsTorchOn="False"
-                BarcodesDetected="OnBarcodesDetected">
-            </zxing:CameraBarcodeReaderView>
+                HeightRequest="420">
+                
+                <zxing:CameraBarcodeReaderView
+                    x:Name="barcodeReader"
+                    HeightRequest="400"
+                    WidthRequest="300"
+                    IsDetecting="True"
+                    IsTorchOn="False"
+                    BarcodesDetected="OnBarcodesDetected">
+                </zxing:CameraBarcodeReaderView>
+            </HorizontalStackLayout>
             
-            <HorizontalStackLayout
-                Grid.Row="4"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
-                HorizontalOptions="Start"
-                VerticalOptions="Center">
-
-                <ImageButton
-                    x:Name="imgbtnCopyToClipboard"
-                    Source="copy_icon_48p_blue.png"
-                    HeightRequest="38"
-                    WidthRequest="38"
-                    VerticalOptions="End"
-                    ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCopy_Text}"
-                    IsEnabled="False"
-                    Clicked="OnCopyToClipboardClicked">
-                </ImageButton>
-
-                <Button
-                    x:Name="btnShare"
-                    HorizontalOptions="Start"
-                    VerticalOptions="End"
-                    MinimumWidthRequest="130"
-                    MaximumWidthRequest="200"
-                    Text="{x:Static resx:CodeLang.ButtonShare_Text}"
-                    IsEnabled="False"
-                    Clicked="OnShareClicked">
-                </Button>
-            </HorizontalStackLayout>
-                       
-            <HorizontalStackLayout
-                Grid.Row="4"
-                Grid.Column="1"
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-                Spacing="10">
-
-                <Label
-                    x:Name="lblTextToSpeech"
-                    Style="{StaticResource labelStyleDefault}"
-                    HorizontalOptions="End"
-                    HorizontalTextAlignment="End"
-                    IsVisible="False"
-                    Text="en-US">
-                </Label>
-
-                <ImageButton
-                    x:Name="imgbtnTextToSpeech"
-                    Source="speaker_64p_blue_green.png"
-                    HeightRequest="38"
-                    WidthRequest="38"
-                    IsVisible="False"
-                    Clicked="OnTextToSpeechClicked">
-                </ImageButton>
-            </HorizontalStackLayout>
-
-            <Border
-                Style="{StaticResource borderStyleDefault}"
-                Grid.Row="5"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
-
-                <Label
-                    x:Name="lblBarcodeResult"
-                    Grid.Row="5"
+            <Grid
+                RowDefinitions="10, Auto, Auto"
+                ColumnDefinitions="140, 210*"
+                Margin="5"
+                ColumnSpacing="6"
+                RowSpacing="6">
+            
+                <HorizontalStackLayout
+                    Grid.Row="1"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Padding="10"
                     HorizontalOptions="Start"
-                    HorizontalTextAlignment="Start"
-                    VerticalTextAlignment="Start"
-                    Text="">
-                </Label>
-            </Border>
-        </Grid>
+                    VerticalOptions="Center">
+
+                    <ImageButton
+                        x:Name="imgbtnCopyToClipboard"
+                        Source="copy_icon_48p_blue.png"
+                        HeightRequest="38"
+                        WidthRequest="38"
+                        VerticalOptions="End"
+                        ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCopy_Text}"
+                        IsEnabled="False"
+                        Clicked="OnCopyToClipboardClicked">
+                    </ImageButton>
+
+                    <Button
+                        x:Name="btnShare"
+                        HorizontalOptions="Start"
+                        VerticalOptions="End"
+                        MinimumWidthRequest="130"
+                        MaximumWidthRequest="200"
+                        Text="{x:Static resx:CodeLang.ButtonShare_Text}"
+                        ToolTipProperties.Text="{x:Static resx:CodeLang.ButtonShare_Text}"
+                        IsEnabled="False"
+                        Clicked="OnShareClicked">
+                    </Button>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Spacing="10">
+                    
+                    <Label
+                        x:Name="lblTextToSpeech"
+                        Style="{StaticResource labelStyleDefault}"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"
+                        IsVisible="False"
+                        Text="en-US">
+                    </Label>
+
+                    <ImageButton
+                        x:Name="imgbtnTextToSpeech"
+                        Source="speaker_64p_blue_green.png"
+                        HorizontalOptions="End"
+                        HeightRequest="38"
+                        WidthRequest="38"
+                        IsVisible="False"
+                        Clicked="OnTextToSpeechClicked">
+                    </ImageButton>
+                </HorizontalStackLayout>
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
+
+                    <Label
+                        x:Name="lblBarcodeResult"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Padding="5"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start"
+                        Text="">
+                    </Label>
+                </Border>
+            </Grid>
+        
+        </StackLayout>
     </ScrollView>
 </ContentPage>
     

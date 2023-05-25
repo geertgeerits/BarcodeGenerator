@@ -119,6 +119,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
+                    MaximumWidthRequest="200"
                     Text="{local:Translate TextToEncode_Text}">
                 </Label>
             </HorizontalStackLayout>
@@ -183,6 +184,7 @@
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
                 Text="{local:Translate GenerateCode_Text}"
+                ToolTipProperties.Text="{local:Translate GenerateCode_Text}"
                 Clicked="OnGenerateCodeClicked">
             </Button>
 
@@ -194,6 +196,7 @@
                 HorizontalOptions="End"
                 VerticalOptions="Start"
                 Text="{local:Translate ClearCode_Text}"
+                ToolTipProperties.Text="{local:Translate ClearCode_Text}"
                 Clicked="OnClearCodeClicked">
             </Button>
 
@@ -224,6 +227,7 @@
                 VerticalOptions="Start"
                 MinimumWidthRequest="130"
                 Text="{local:Translate ButtonShare_Text}"
+                ToolTipProperties.Text="{local:Translate ButtonShare_Text}"
                 IsEnabled="False"
                 Clicked="OnShareClicked">
             </Button>
