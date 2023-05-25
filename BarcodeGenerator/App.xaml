@@ -201,6 +201,7 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="FontAutoScalingEnabled" Value="False" />
                 <Setter Property="FontSize" Value="28" />
                 <Setter Property="IsEnabled" Value="False" />
                 <Setter Property="VisualStateManager.VisualStateGroups">
