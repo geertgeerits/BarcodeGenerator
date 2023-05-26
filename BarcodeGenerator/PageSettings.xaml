@@ -25,7 +25,7 @@
 
             <Grid
                 RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto"
-                ColumnDefinitions="30, 120, 190*"
+                ColumnDefinitions="40, 110, 190*"
                 ColumnSpacing="6"
                 RowSpacing="2"
                 x:Name="grdSettings">
@@ -255,13 +255,21 @@
                     ValueChanged="OnSliderColorForegroundValueChanged">
                 </Slider>
 
-                <ImageButton
+                <Button
+                    Style="{StaticResource buttonStyleHelp}"
+                    Grid.Row="9"
+                    Grid.Column="0"
+                    ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
+                    Clicked="OnSettingsHexColorClicked">
+                </Button>
+
+                <!--<ImageButton
                     Style="{StaticResource imagebuttonStyleHelp}"
                     Grid.Row="9"
                     Grid.Column="0"
                     ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
                     Clicked="OnSettingsHexColorClicked">
-                </ImageButton>
+                </ImageButton>-->
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -360,13 +368,21 @@
                     ValueChanged="OnSliderColorBackgroundValueChanged">
                 </Slider>
 
-                <ImageButton
+                <Button
+                    Style="{StaticResource buttonStyleHelp}"
+                    Grid.Row="14"
+                    Grid.Column="0"
+                    ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
+                    Clicked="OnSettingsHexColorClicked">
+                </Button>
+
+                <!--<ImageButton
                     Style="{StaticResource imagebuttonStyleHelp}"
                     Grid.Row="14"
                     Grid.Column="0"
                     ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
                     Clicked="OnSettingsHexColorClicked">
-                </ImageButton>
+                </ImageButton>-->
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"

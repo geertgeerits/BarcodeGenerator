@@ -24,14 +24,14 @@ public partial class PageSettings : ContentPage
 
         // Workaround for !!!BUG!!! in iOS.
 #if IOS
-        //Grid ColumnDefinitions="40, 110, 190*"
+        // Grid ColumnDefinitions="40, 110, 190*"
         // The last column with a star (*) is too wide (is beyond the right margin of the device). 
         Grid grid = new()
         {
             ColumnDefinitions =
             {
-                new ColumnDefinition { Width = new GridLength(30) },
-                new ColumnDefinition { Width = new GridLength(120) },
+                new ColumnDefinition { Width = new GridLength(40) },
+                new ColumnDefinition { Width = new GridLength(110) },
                 new ColumnDefinition { Width = new GridLength(188) }
             }
         };
