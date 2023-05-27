@@ -6,7 +6,6 @@
 
     <NavigationPage.TitleView>
         <Label
-            x:Name="lblTitle"
             Style="{StaticResource labelStyleTitleView}"
             Text="{local:Translate Settings_Text}">
         </Label>
