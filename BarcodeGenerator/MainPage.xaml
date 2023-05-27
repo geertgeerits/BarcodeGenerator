@@ -225,7 +225,7 @@
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="Start"
-                MinimumWidthRequest="130"
+                MinimumWidthRequest="160"
                 Text="{local:Translate ButtonShare_Text}"
                 ToolTipProperties.Text="{local:Translate ButtonShare_Text}"
                 IsEnabled="False"

@@ -120,7 +120,7 @@
                         x:Name="btnShare"
                         HorizontalOptions="Start"
                         VerticalOptions="End"
-                        MinimumWidthRequest="130"
+                        MinimumWidthRequest="160"
                         MaximumWidthRequest="200"
                         Text="{x:Static resx:CodeLang.ButtonShare_Text}"
                         ToolTipProperties.Text="{x:Static resx:CodeLang.ButtonShare_Text}"
