@@ -169,7 +169,7 @@
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
-            <Style x:Key="labelStyleShellTitleView" TargetType="Label">
+            <Style x:Key="labelStyleTitleView" TargetType="Label">
                 <Setter Property="Margin" Value="6" />
                 <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="VerticalOptions" Value="Center" />
@@ -177,7 +177,7 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontAutoScalingEnabled" Value="False" />
-                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontSize" Value="20" />
                 <Setter Property="LineBreakMode" Value="TailTruncation" />
             </Style>
 

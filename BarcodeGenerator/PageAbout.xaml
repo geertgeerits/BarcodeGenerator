@@ -6,7 +6,7 @@
 
     <NavigationPage.TitleView>
         <Label
-            Style="{StaticResource labelStyleShellTitleView}"
+            Style="{StaticResource labelStyleTitleView}"
             Text="{x:Static resx:CodeLang.Info_Text}">
         </Label>
     </NavigationPage.TitleView>
