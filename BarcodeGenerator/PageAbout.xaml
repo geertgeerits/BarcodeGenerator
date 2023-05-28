@@ -13,8 +13,7 @@
        
     <ScrollView>
         <StackLayout
-            Margin="15"
-            Spacing="4">
+            Margin="10">
 
             <Label
                 Style="{StaticResource labelStyleDefault}"
@@ -37,7 +36,7 @@
                 Style="{StaticResource labelStyleDefault}">
             </Label>
 
-            <HorizontalStackLayout Spacing="10">
+            <HorizontalStackLayout>
                 <Label
                     x:Name="lblEmail"
                     Style="{StaticResource labelStyleDefault}">
@@ -53,7 +52,7 @@
                 </ImageButton>
             </HorizontalStackLayout>
 
-            <HorizontalStackLayout Spacing="10">
+            <HorizontalStackLayout>
                 <Label
                     x:Name="lblWebsite"
                     Style="{StaticResource labelStyleDefault}">
