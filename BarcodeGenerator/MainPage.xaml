@@ -65,10 +65,13 @@
     <ScrollView>
         <Grid
             RowDefinitions="Auto, Auto, 180, Auto, 250, Auto"
-            ColumnDefinitions="140, 210*"
             Margin="5"
             ColumnSpacing="6"
             RowSpacing="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnIdiom 140, Phone=140, Tablet=190, Desktop=190}" />
+                <ColumnDefinition Width="{OnIdiom 210*, Phone=210*, Tablet=260*, Desktop=260*}" />
+            </Grid.ColumnDefinitions>
 
             <Label
                 Style="{StaticResource labelStyleDefault}"
@@ -225,7 +228,7 @@
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="Start"
-                MinimumWidthRequest="160"
+                MinimumWidthRequest="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}"
                 Text="{local:Translate ButtonShare_Text}"
                 ToolTipProperties.Text="{local:Translate ButtonShare_Text}"
                 IsEnabled="False"
