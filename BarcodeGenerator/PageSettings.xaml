@@ -22,7 +22,6 @@
             VerticalOptions="FillAndExpand"
             Orientation="Vertical">
             
-            <!--!!!BUG!!! in iOS.  Added a column 4.  The last column (3) with a star (*) is too wide (is beyond the right margin of the device).-->
             <Grid
                 x:Name="grdSettings"
                 RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto"
@@ -32,7 +31,6 @@
                     <ColumnDefinition Width="{OnIdiom 40, Phone=40, Tablet=40, Desktop=40}" />
                     <ColumnDefinition Width="{OnIdiom 110, Phone=110, Tablet=160, Desktop=160}" />
                     <ColumnDefinition Width="{OnIdiom 190*, Phone=190*, Tablet=240*, Desktop=240*}" />
-                    <ColumnDefinition Width="{OnIdiom 1, Phone=1, Tablet=1, Desktop=1}" />
                 </Grid.ColumnDefinitions>
 
                 <BoxView
@@ -70,7 +68,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="180"
+                        WidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerLanguageChanged">
                         <Picker.ItemsSource>
@@ -116,7 +114,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="180"
+                        WidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerLanguageSpeechChanged">
                     </Picker>
@@ -143,7 +141,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="180"
+                        WidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerThemeChanged">
                         <Picker.ItemsSource>
@@ -177,7 +175,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="180"
+                        WidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeGeneratorChanged">
                         <Picker.ItemsSource>
@@ -210,7 +208,7 @@
                         Grid.Column="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        WidthRequest="180"
+                        WidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
                         VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeScannerChanged">
                         <Picker.ItemsSource>
