@@ -153,7 +153,6 @@ public partial class MainPage : ContentPage
             bgvBarcode.Value = "";
             bgvBarcode.HeightRequest = 160;
             bgvBarcode.WidthRequest = -1;
-            bgvBarcode.MaximumWidthRequest = 700;
             bgvBarcode.HorizontalOptions = LayoutOptions.Fill;
 
             btnShare.Text = CodeLang.ButtonShare_Text;

@@ -91,7 +91,7 @@
                     x:Name="pckFormatCodeGenerator"
                     Grid.Row="0"
                     Grid.Column="1"
-                    MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
+                    MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}"
                     SelectedIndexChanged="OnPickerFormatCodeChanged">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -208,7 +208,7 @@
                 Grid.Row="4"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                MaximumWidthRequest="700"
+                MaximumWidthRequest="{OnIdiom 350, Phone=350, Tablet=700, Desktop=700}"
                 HorizontalOptions="Fill"
                 BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
 
@@ -217,7 +217,8 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HeightRequest="250">
+                    HeightRequest="250"
+                    MaximumWidthRequest="{OnIdiom 350, Phone=350, Tablet=700, Desktop=700}">
                 </zxing:BarcodeGeneratorView>
             </Border>
 
