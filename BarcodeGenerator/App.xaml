@@ -200,7 +200,7 @@
             <Style x:Key="buttonStyleDefault" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="WidthRequest" Value="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}" />
+                <Setter Property="WidthRequest" Value="{OnIdiom 160, Phone=160, Tablet=260, Desktop=260}" />
             </Style>
 
             <Style x:Key="buttonStyleHelp" TargetType="Button">
@@ -254,6 +254,13 @@
                 <Setter Property="WidthRequest" Value="28" />
                 <Setter Property="Source" Value="help_48p.png" />
             </Style>-->
+
+            <Style x:Key="pickerStyleSettings" TargetType="Picker">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="WidthRequest" Value="{OnIdiom 180, Phone=180, Tablet=280, Desktop=280}" />
+            </Style>
 
             <Style x:Key="sliderStyleColor" TargetType="Slider">
                 <!--<Setter Property="HorizontalOptions" Value="Center" /> !!!BUG!!!-->

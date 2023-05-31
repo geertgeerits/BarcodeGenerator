@@ -29,8 +29,8 @@
                 RowSpacing="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="{OnIdiom 40, Phone=40, Tablet=40, Desktop=40}" />
-                    <ColumnDefinition Width="{OnIdiom 110, Phone=110, Tablet=160, Desktop=160}" />
-                    <ColumnDefinition Width="{OnIdiom 190*, Phone=190*, Tablet=240*, Desktop=240*}" />
+                    <ColumnDefinition Width="{OnIdiom 110, Phone=110, Tablet=210, Desktop=210}" />
+                    <ColumnDefinition Width="{OnIdiom 190*, Phone=190*, Tablet=290*, Desktop=290*}" />
                 </Grid.ColumnDefinitions>
 
                 <BoxView
@@ -64,12 +64,9 @@
 
                     <Picker
                         x:Name="pckLanguage"
+                        Style="{StaticResource pickerStyleSettings}"
                         Grid.Row="1"
                         Grid.Column="2"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Center"
-                        WidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
-                        VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerLanguageChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -110,12 +107,9 @@
 
                     <Picker
                         x:Name="pckLanguageSpeech"
+                        Style="{StaticResource pickerStyleSettings}"
                         Grid.Row="2"
                         Grid.Column="2"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Center"
-                        WidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
-                        VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerLanguageSpeechChanged">
                     </Picker>
                 </Border>
@@ -137,12 +131,9 @@
 
                     <Picker
                         x:Name="pckTheme"
+                        Style="{StaticResource pickerStyleSettings}"
                         Grid.Row="3"
                         Grid.Column="2"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Center"
-                        WidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
-                        VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerThemeChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -171,12 +162,9 @@
 
                     <Picker
                         x:Name="pckFormatCodeGenerator"
+                        Style="{StaticResource pickerStyleSettings}"
                         Grid.Row="4"
                         Grid.Column="2"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Center"
-                        WidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
-                        VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeGeneratorChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -204,12 +192,9 @@
 
                     <Picker
                         x:Name="pckFormatCodeScanner"
+                        Style="{StaticResource pickerStyleSettings}"
                         Grid.Row="5"
                         Grid.Column="2"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Center"
-                        WidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
-                        VerticalTextAlignment="Center"
                         SelectedIndexChanged="OnPickerFormatCodeScannerChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">

@@ -1,11 +1,6 @@
-﻿using Android.Bluetooth;
-using Android.Hardware.Lights;
-using BarcodeGenerator.Resources.Languages;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.PlatformConfiguration;
+﻿using BarcodeGenerator.Resources.Languages;
 using System.Diagnostics;
 using System.Globalization;
-using static Android.Bluetooth.BluetoothClass;
 
 namespace BarcodeGenerator;
 
@@ -27,37 +22,25 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-        // Workaround for !!!BUG!!! in iOS.
-        // Added a column 4.  The last column(3) with a star(*) is too wide (is beyond the right margin of the device).
 #if IOS
+        // Workaround for !!!BUG!!! in iOS.
+        // The cause is probably the bug with the width setting in the sliders.
+        // The last column(3) with a star(*) is too wide (is beyond the right margin of the device).
         Grid grid = new()
         {
             ColumnDefinitions =
             {
                 new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 40, Phone = 40, Tablet = 40, Desktop = 40} },
-                new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 110, Phone = 110, Tablet = 160, Desktop = 160} },
-
-                new ColumnDefinition
-                {
-                    Width = new OnIdiom<GridLength>
-                    {
-                        Default = new GridLength(190, GridUnitType.Star),
-                        Phone = new GridLength(190, GridUnitType.Star),
-                        Tablet = new GridLength(240, GridUnitType.Star),
-                        Desktop = new GridLength(240, GridUnitType.Star)
-                    }
-                },
-
-                new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 1, Phone = 1, Tablet = 1, Desktop = 1} },
-           }
+                new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 110, Phone = 110, Tablet = 210, Desktop = 210} },
+                new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 188, Phone = 188, Tablet = 290, Desktop = 290} }
+            }
         };
-        
         grdSettings.ColumnDefinitions = grid.ColumnDefinitions;
 
         // Correction of the the Slider right margin.
         //Slider slider = new Slider
         //{
-        //    Margin = new Thickness(0, 0, 6, 0)
+        //    Margin = new Thickness(0, 0, 26, 0)
         //};
 
         //sldOpacityFg.Margin = slider.Margin;
