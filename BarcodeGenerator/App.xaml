@@ -156,8 +156,53 @@
                 <Setter Property="MaximumTrackColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
             </Style>
 
-            <Style x:Key="borderStyleDefault" TargetType="Border">
+            <Style x:Key="gridStyleSettings" TargetType="Grid">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup>
+                            <VisualState x:Name="Portrait">
+                                <VisualState.StateTriggers>
+                                    <OrientationStateTrigger Orientation="Portrait" />
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Property="ColumnDefinitions">
+                                        <Setter.Value>
+                                            <ColumnDefinitionCollection>
+                                                <ColumnDefinition Width="{OnIdiom 40, Phone=40, Tablet=40, Desktop=40}" />
+                                                <ColumnDefinition Width="{OnIdiom 110, Phone=110, Tablet=210, Desktop=210}" />
+                                                <ColumnDefinition Width="{OnIdiom 190, Phone=190, Tablet=290, Desktop=290}" />
+                                            </ColumnDefinitionCollection>
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Landscape">
+                                <VisualState.StateTriggers>
+                                    <OrientationStateTrigger Orientation="Landscape" />
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Property="ColumnDefinitions">
+                                        <Setter.Value>
+                                            <ColumnDefinitionCollection>
+                                                <ColumnDefinition Width="{OnIdiom 40, Phone=40, Tablet=40, Desktop=40}" />
+                                                <ColumnDefinition Width="{OnIdiom 210, Phone=210, Tablet=310, Desktop=310}" />
+                                                <ColumnDefinition Width="{OnIdiom 290, Phone=290, Tablet=390, Desktop=390}" />
+                                            </ColumnDefinitionCollection>
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
                 <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="{OnIdiom 5, Phone=5, Tablet=10, Desktop=10}" />
+                <Setter Property="ColumnSpacing" Value="{OnIdiom 5, Phone=5, Tablet=15, Desktop=15}" />
+                <Setter Property="RowSpacing" Value="2" />
+            </Style>
+
+            <Style x:Key="borderStyleDefault" TargetType="Border">
+                <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="StrokeShape" Value="RoundRectangle 5,5,5,5" />
                 <Setter Property="StrokeThickness" Value="1" />
@@ -198,7 +243,7 @@
             </Style>
 
             <Style x:Key="buttonStyleDefault" TargetType="Button">
-                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="{OnIdiom 160, Phone=160, Tablet=260, Desktop=260}" />
             </Style>
@@ -256,7 +301,6 @@
             </Style>-->
 
             <Style x:Key="pickerStyleSettings" TargetType="Picker">
-                <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
                 <Setter Property="WidthRequest" Value="{OnIdiom 180, Phone=180, Tablet=280, Desktop=280}" />

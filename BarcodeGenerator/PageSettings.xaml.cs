@@ -26,16 +26,16 @@ public partial class PageSettings : ContentPage
         // Workaround for !!!BUG!!! in iOS.
         // The cause is probably the bug with the width setting in the sliders.
         // The last column(3) with a star(*) is too wide (is beyond the right margin of the device).
-        Grid grid = new()
-        {
-            ColumnDefinitions =
-            {
-                new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 40, Phone = 40, Tablet = 40, Desktop = 40} },
-                new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 110, Phone = 110, Tablet = 210, Desktop = 210} },
-                new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 188, Phone = 188, Tablet = 290, Desktop = 290} }
-            }
-        };
-        grdSettings.ColumnDefinitions = grid.ColumnDefinitions;
+        //Grid grid = new()
+        //{
+        //    ColumnDefinitions =
+        //    {
+        //        new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 40, Phone = 40, Tablet = 40, Desktop = 40} },
+        //        new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 110, Phone = 110, Tablet = 210, Desktop = 210} },
+        //        new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 188, Phone = 188, Tablet = 290, Desktop = 290} }
+        //    }
+        //};
+        //grdSettings.ColumnDefinitions = grid.ColumnDefinitions;
 
         // Correction of the the Slider right margin.
         //Slider slider = new Slider

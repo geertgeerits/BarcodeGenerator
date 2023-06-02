@@ -24,14 +24,8 @@
             
             <Grid
                 x:Name="grdSettings"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto"
-                ColumnSpacing="6"
-                RowSpacing="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="{OnIdiom 40, Phone=40, Tablet=40, Desktop=40}" />
-                    <ColumnDefinition Width="{OnIdiom 110, Phone=110, Tablet=210, Desktop=210}" />
-                    <ColumnDefinition Width="{OnIdiom 190*, Phone=190*, Tablet=290*, Desktop=290*}" />
-                </Grid.ColumnDefinitions>
+                Style="{StaticResource gridStyleSettings}"
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto">
 
                 <BoxView
                     Grid.Row="0"
@@ -58,9 +52,7 @@
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="1"
-                    Grid.Column="2"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center">
+                    Grid.Column="2">
 
                     <Picker
                         x:Name="pckLanguage"
@@ -101,9 +93,7 @@
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="2"
-                    Grid.Column="2"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center">
+                    Grid.Column="2">
 
                     <Picker
                         x:Name="pckLanguageSpeech"
@@ -125,9 +115,7 @@
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="3"
-                    Grid.Column="2"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center">
+                    Grid.Column="2">
 
                     <Picker
                         x:Name="pckTheme"
@@ -156,9 +144,7 @@
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="4"
-                    Grid.Column="2"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center">
+                    Grid.Column="2">
 
                     <Picker
                         x:Name="pckFormatCodeGenerator"
@@ -186,9 +172,7 @@
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="5"
-                    Grid.Column="2"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center">
+                    Grid.Column="2">
 
                     <Picker
                         x:Name="pckFormatCodeScanner"
