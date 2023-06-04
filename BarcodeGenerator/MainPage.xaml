@@ -64,8 +64,14 @@
 
     <ScrollView>
         <Grid
-            Style="{StaticResource gridStyleMenuBarcode}"
-            RowDefinitions="Auto, Auto, 180, Auto, 250, Auto">
+            RowDefinitions="Auto, Auto, 180, Auto, 250, Auto"
+            Margin="5"
+            ColumnSpacing="6"
+            RowSpacing="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnIdiom 140, Phone=140, Tablet=190, Desktop=190}" />
+                <ColumnDefinition Width="{OnIdiom 200*, Phone=200*, Tablet=250*, Desktop=250*}" />
+            </Grid.ColumnDefinitions>
 
             <Label
                 Style="{StaticResource labelStyleDefault}"
@@ -77,10 +83,12 @@
             <Border
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="0"
-                Grid.Column="1">
+                Grid.Column="1"
+                VerticalOptions="Center">
 
                 <Picker
                     x:Name="pckFormatCodeGenerator"
+                    MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}"
                     SelectedIndexChanged="OnPickerFormatCodeChanged">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -111,7 +119,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=390, Desktop=390}"
+                    MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=400, Desktop=400}"
                     Text="{local:Translate TextToEncode_Text}">
                 </Label>
             </HorizontalStackLayout>
@@ -156,12 +164,9 @@
 
                     <Editor
                         x:Name="edtTextToCode"
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="180"
-                        MinimumWidthRequest="350"
+                        MinimumWidthRequest="340"
                         VerticalTextAlignment="Start"
                         Text="{Binding RecognitionText}">
                     </Editor>
@@ -173,6 +178,7 @@
                 Style="{StaticResource buttonStyleDefault}"
                 Grid.Row="3"
                 Grid.Column="0"
+                HorizontalOptions="Start"
                 VerticalOptions="Start"
                 Text="{local:Translate GenerateCode_Text}"
                 ToolTipProperties.Text="{local:Translate GenerateCode_Text}"
@@ -196,17 +202,14 @@
                 Grid.Row="4"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                MaximumWidthRequest="{OnIdiom 350, Phone=350, Tablet=700, Desktop=700}"
+                MaximumWidthRequest="{OnIdiom 340, Phone=340, Tablet=680, Desktop=680}"
                 HorizontalOptions="Fill"
                 BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
 
                 <zxing:BarcodeGeneratorView
                     x:Name="bgvBarcode"
-                    Grid.Row="4"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     HeightRequest="250"
-                    MaximumWidthRequest="{OnIdiom 350, Phone=350, Tablet=700, Desktop=700}">
+                    MaximumWidthRequest="{OnIdiom 340, Phone=340, Tablet=680, Desktop=680}">
                 </zxing:BarcodeGeneratorView>
             </Border>
 
@@ -217,7 +220,7 @@
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="Start"
-                MinimumWidthRequest="{OnIdiom 170, Phone=170, Tablet=270, Desktop=270}"
+                MinimumWidthRequest="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}"
                 Text="{local:Translate ButtonShare_Text}"
                 ToolTipProperties.Text="{local:Translate ButtonShare_Text}"
                 IsEnabled="False"
