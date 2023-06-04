@@ -39,14 +39,8 @@
     <ScrollView>
         <StackLayout>
             <Grid
-                RowDefinitions="Auto, 10"
-                Margin="5"
-                ColumnSpacing="6"
-                RowSpacing="6">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="{OnIdiom 140, Phone=140, Tablet=190, Desktop=190}" />
-                    <ColumnDefinition Width="{OnIdiom 210*, Phone=210*, Tablet=260*, Desktop=260*}" />
-                </Grid.ColumnDefinitions>
+                Style="{StaticResource gridStyleMenuBarcode}"
+                RowDefinitions="Auto, 10, 420, 10, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -58,15 +52,10 @@
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="0"
-                    Grid.Column="1"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center">
+                    Grid.Column="1">
 
                     <Picker
                         x:Name="pckFormatCodeScanner"
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}"
                         SelectedIndexChanged="OnPickerFormatCodeChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -76,33 +65,28 @@
                         </Picker.ItemsSource>
                     </Picker>
                 </Border>
-            </Grid>
 
-            <HorizontalStackLayout
-                x:Name="hslScanner"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="420">
-                
-                <zxing:CameraBarcodeReaderView
-                    x:Name="barcodeReader"
-                    HeightRequest="400"
-                    WidthRequest="300"
-                    IsDetecting="True"
-                    IsTorchOn="False"
-                    BarcodesDetected="OnBarcodesDetected">
-                </zxing:CameraBarcodeReaderView>
-            </HorizontalStackLayout>
-            
-            <Grid
-                RowDefinitions="10, Auto, Auto"
-                ColumnDefinitions="140, 210*"
-                Margin="5"
-                ColumnSpacing="6"
-                RowSpacing="6">
-            
                 <HorizontalStackLayout
-                    Grid.Row="1"
+                    x:Name="hslScanner"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HeightRequest="420">
+
+                    <zxing:CameraBarcodeReaderView
+                        x:Name="barcodeReader"
+                        HeightRequest="400"
+                        WidthRequest="300"
+                        IsDetecting="True"
+                        IsTorchOn="False"
+                        BarcodesDetected="OnBarcodesDetected">
+                    </zxing:CameraBarcodeReaderView>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
@@ -123,8 +107,8 @@
                         x:Name="btnShare"
                         HorizontalOptions="Start"
                         VerticalOptions="End"
-                        MinimumWidthRequest="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}"
-                        MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
+                        MinimumWidthRequest="{OnIdiom 170, Phone=170, Tablet=270, Desktop=270}"
+                        MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=340, Desktop=340}"
                         Text="{x:Static resx:CodeLang.ButtonShare_Text}"
                         ToolTipProperties.Text="{x:Static resx:CodeLang.ButtonShare_Text}"
                         IsEnabled="False"
@@ -133,7 +117,7 @@
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout
-                    Grid.Row="1"
+                    Grid.Row="4"
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
@@ -161,7 +145,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="2"
+                    Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="FillAndExpand"
@@ -170,7 +154,7 @@
 
                     <Label
                         x:Name="lblBarcodeResult"
-                        Grid.Row="2"
+                        Grid.Row="5"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         Padding="5"

@@ -64,14 +64,8 @@
 
     <ScrollView>
         <Grid
-            RowDefinitions="Auto, Auto, 180, Auto, 250, Auto"
-            Margin="5"
-            ColumnSpacing="6"
-            RowSpacing="6">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{OnIdiom 140, Phone=140, Tablet=190, Desktop=190}" />
-                <ColumnDefinition Width="{OnIdiom 210*, Phone=210*, Tablet=260*, Desktop=260*}" />
-            </Grid.ColumnDefinitions>
+            Style="{StaticResource gridStyleMenuBarcode}"
+            RowDefinitions="Auto, Auto, 180, Auto, 250, Auto">
 
             <Label
                 Style="{StaticResource labelStyleDefault}"
@@ -83,15 +77,10 @@
             <Border
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="0"
-                Grid.Column="1"
-                HorizontalOptions="Start"
-                VerticalOptions="Center">
+                Grid.Column="1">
 
                 <Picker
                     x:Name="pckFormatCodeGenerator"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}"
                     SelectedIndexChanged="OnPickerFormatCodeChanged">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -122,7 +111,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    MaximumWidthRequest="200"
+                    MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=390, Desktop=390}"
                     Text="{local:Translate TextToEncode_Text}">
                 </Label>
             </HorizontalStackLayout>
@@ -184,7 +173,6 @@
                 Style="{StaticResource buttonStyleDefault}"
                 Grid.Row="3"
                 Grid.Column="0"
-                HorizontalOptions="Start"
                 VerticalOptions="Start"
                 Text="{local:Translate GenerateCode_Text}"
                 ToolTipProperties.Text="{local:Translate GenerateCode_Text}"
@@ -229,7 +217,7 @@
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
                 VerticalOptions="Start"
-                MinimumWidthRequest="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}"
+                MinimumWidthRequest="{OnIdiom 170, Phone=170, Tablet=270, Desktop=270}"
                 Text="{local:Translate ButtonShare_Text}"
                 ToolTipProperties.Text="{local:Translate ButtonShare_Text}"
                 IsEnabled="False"

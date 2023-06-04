@@ -246,8 +246,7 @@
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="9"
-                    Grid.Column="1"
-                    HorizontalOptions="FillAndExpand">
+                    Grid.Column="1">
 
                     <Entry
                         x:Name="entHexColorFg"
@@ -359,8 +358,7 @@
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="14"
-                    Grid.Column="1"
-                    HorizontalOptions="FillAndExpand">
+                    Grid.Column="1">
 
                     <Entry
                         x:Name="entHexColorBg"
@@ -421,7 +419,6 @@
                     Grid.Row="17"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Start"
                     Text="{local:Translate SettingsSave_Text}"
                     ToolTipProperties.Text="{local:Translate SettingsSave_Text}"
                     Clicked="OnSettingsSaveClicked">
@@ -448,7 +445,6 @@
             Style="{StaticResource buttonStyleDefault}"
             IsVisible="{OnPlatform true, iOS=false, Android=true}"
             Grid.Row="2"
-            HorizontalOptions="Start"
             Text="{local:Translate SettingsSave_Text}"
             ToolTipProperties.Text="{local:Translate SettingsSave_Text}"
             Clicked="OnSettingsSaveClicked">
