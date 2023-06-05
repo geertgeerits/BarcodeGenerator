@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Speak</value>
   </data>
+  <data name="CameraPermission_Text" xml:space="preserve">
+    <value>Enable the permission to use the camera by manually adjusting the setting in the device settings screen of the application.</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>The code is wrong.
 The check digit has been corrected.</value>

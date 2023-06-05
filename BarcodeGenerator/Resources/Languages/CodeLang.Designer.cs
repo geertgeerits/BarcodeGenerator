@@ -178,6 +178,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable the permission to use the camera by manually adjusting the setting in the device settings screen of the application..
+        /// </summary>
+        internal static string CameraPermission_Text {
+            get {
+                return ResourceManager.GetString("CameraPermission_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The code is wrong.
         ///The check digit has been corrected..
         /// </summary>

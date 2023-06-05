@@ -39,14 +39,8 @@
     <ScrollView>
         <StackLayout>
             <Grid
-                RowDefinitions="Auto, 10"
-                Margin="5"
-                ColumnSpacing="6"
-                RowSpacing="6">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="{OnIdiom 140, Phone=140, Tablet=190, Desktop=190}" />
-                    <ColumnDefinition Width="{OnIdiom 200*, Phone=200*, Tablet=250*, Desktop=250*}" />
-                </Grid.ColumnDefinitions>
+                Style="{StaticResource gridStyleScanner}"
+                RowDefinitions="Auto, 10, Auto, 10, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -73,36 +67,27 @@
                         </Picker.ItemsSource>
                     </Picker>
                 </Border>
-            </Grid>
-
-            <HorizontalStackLayout
-                x:Name="hslScanner"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="420">
-                
-                <zxing:CameraBarcodeReaderView
-                    x:Name="barcodeReader"
-                    HeightRequest="400"
-                    WidthRequest="300"
-                    IsDetecting="True"
-                    IsTorchOn="False"
-                    BarcodesDetected="OnBarcodesDetected">
-                </zxing:CameraBarcodeReaderView>
-            </HorizontalStackLayout>
-            
-            <Grid
-                RowDefinitions="10, Auto, Auto"
-                Margin="5"
-                ColumnSpacing="6"
-                RowSpacing="6">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="{OnIdiom 140, Phone=140, Tablet=190, Desktop=190}" />
-                    <ColumnDefinition Width="{OnIdiom 200*, Phone=200*, Tablet=250*, Desktop=250*}" />
-                </Grid.ColumnDefinitions>
 
                 <HorizontalStackLayout
-                    Grid.Row="1"
+                    x:Name="hslScanner"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                
+                    <zxing:CameraBarcodeReaderView
+                        x:Name="barcodeReader"
+                        HeightRequest="400"
+                        WidthRequest="300"
+                        IsDetecting="True"
+                        IsTorchOn="False"
+                        BarcodesDetected="OnBarcodesDetected">
+                    </zxing:CameraBarcodeReaderView>
+                </HorizontalStackLayout>
+            
+                <HorizontalStackLayout
+                    Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
@@ -133,7 +118,7 @@
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout
-                    Grid.Row="1"
+                    Grid.Row="4"
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
@@ -161,7 +146,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="2"
+                    Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="FillAndExpand"

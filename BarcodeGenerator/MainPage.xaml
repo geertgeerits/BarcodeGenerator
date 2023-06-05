@@ -64,14 +64,8 @@
 
     <ScrollView>
         <Grid
-            RowDefinitions="Auto, Auto, 180, Auto, 250, Auto"
-            Margin="5"
-            ColumnSpacing="6"
-            RowSpacing="6">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{OnIdiom 140, Phone=140, Tablet=190, Desktop=190}" />
-                <ColumnDefinition Width="{OnIdiom 200*, Phone=200*, Tablet=250*, Desktop=250*}" />
-            </Grid.ColumnDefinitions>
+            Style="{StaticResource gridStyleGenerator}"
+            RowDefinitions="Auto, Auto, 180, Auto, 250, Auto">
 
             <Label
                 Style="{StaticResource labelStyleDefault}"
