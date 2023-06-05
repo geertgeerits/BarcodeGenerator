@@ -156,7 +156,7 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Spreek</value>
   </data>
-  <data name="CameraPermission_Text" xml:space="preserve">
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
     <value>Schakel de toestemming in om de camera te gebruiken door de instelling handmatig aan te passen in het toestel instellingenscherm van de applicatie.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">

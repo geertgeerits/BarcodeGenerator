@@ -23,9 +23,11 @@ public partial class PageScan : ContentPage
             return;
         }
 
-        // Check and request camera permission.
+        // Check and request camera permission for iOS.
+#if IOS
         Task<PermissionStatus> task = CheckAndRequestCameraPermission();
-
+#endif
+        
         // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
         // The camera sometimes overlaps adjacent rows in the grid.
         // Code to run on Android, Windows and on the main thread for iOS\MacOS.
@@ -545,7 +547,7 @@ public partial class PageScan : ContentPage
         hslScanner.HeightRequest = nStackLayoutHeight;
     }
 
-    // Check and request camera permission.
+    // Check and request camera permission for iOS.
     public async Task<PermissionStatus> CheckAndRequestCameraPermission()
     {
         PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Camera>();
@@ -557,7 +559,7 @@ public partial class PageScan : ContentPage
         
         if (DeviceInfo.Platform == DevicePlatform.iOS)
         {
-            await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraPermission_Text, CodeLang.ButtonClose_Text);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraPermissionIOS_Text, CodeLang.ButtonClose_Text);
             await Navigation.PopAsync();
             return status;
         }
