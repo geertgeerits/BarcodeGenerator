@@ -157,7 +157,7 @@
     <value>Tala</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Om inget tillstånd har givits för användning av kameran kan detta justeras manuellt i efterhand i enhetens inställningar genom att välja applikation och slå på kameran.
+    <value>Om tillstånd att använda kameran inte har getts kan kameran aktiveras i enhetsinställningarna, välj applikationen och aktivera kameran.
 Ett annat alternativ är att avinstallera och installera om programmet.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">

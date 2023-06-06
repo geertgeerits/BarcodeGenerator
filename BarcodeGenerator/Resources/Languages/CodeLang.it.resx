@@ -157,7 +157,7 @@
     <value>Parlare</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Se non è stata concessa alcuna autorizzazione per l'uso della fotocamera, questa può essere regolata manualmente in seguito nelle impostazioni del dispositivo selezionando l'applicazione e accendendo la fotocamera.
+    <value>Se non è stata concessa l'autorizzazione all'uso della fotocamera, è possibile abilitare la fotocamera nelle impostazioni del dispositivo, selezionare l'applicazione e abilitare la fotocamera.
 Un'altra opzione è disinstallare e reinstallare l'applicazione.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">

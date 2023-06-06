@@ -25,7 +25,7 @@ public partial class PageScan : ContentPage
 
         // Check and request camera permission for iOS.
 #if IOS
-        //Task<PermissionStatus> task = CheckAndRequestCameraPermission();
+        Task<PermissionStatus> task = CheckAndRequestCameraPermission();
 #endif
 
         // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
@@ -550,29 +550,14 @@ public partial class PageScan : ContentPage
         {
             return status;
         }
-
-        if (status == PermissionStatus.Denied && DeviceInfo.Platform == DevicePlatform.iOS)
+        
+        if (status == PermissionStatus.Unknown && DeviceInfo.Platform == DevicePlatform.iOS)
         {
-            // Prompt the user to turn on in settings
-            // On iOS once a permission has been denied it may not be requested again from the application
+            // Prompt the user to turn on in settings.
+            // On iOS once a permission has been denied it may not be requested again from the application.
             await DisplayAlert("", CodeLang.CameraPermissionIOS_Text, CodeLang.ButtonClose_Text);
-            await Navigation.PopAsync();
             return status;
         }
-
-        if (DeviceInfo.Platform == DevicePlatform.iOS)
-        {
-            await DisplayAlert("", CodeLang.CameraPermissionIOS_Text, CodeLang.ButtonClose_Text);
-            await Navigation.PopAsync();
-            return status;
-        }
-
-        if (Permissions.ShouldShowRationale<Permissions.Camera>())
-        {
-            // Prompt the user with additional information as to why the permission is needed
-        }
-
-        status = await Permissions.RequestAsync<Permissions.Camera>();
 
         return status;
     }

@@ -157,7 +157,7 @@
     <value>Mówić</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Jeśli nie udzielono zezwolenia na korzystanie z aparatu, można to później zmienić ręcznie w ustawieniach urządzenia, wybierając aplikację i włączając aparat.
+    <value>Jeśli nie udzielono zgody na korzystanie z kamery, można ją włączyć w ustawieniach urządzenia, wybrać aplikację i włączyć kamerę.
 Inną opcją jest odinstalowanie i ponowne zainstalowanie aplikacji.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">

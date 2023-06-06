@@ -157,7 +157,7 @@
     <value>Falar</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Se nenhuma permissão foi dada para o uso da câmera, isso pode ser ajustado manualmente posteriormente nas configurações do dispositivo, selecionando o aplicativo e ligando a câmera.
+    <value>Se a permissão para usar a câmera não foi concedida, a câmera pode ser ativada nas configurações do dispositivo, selecione o aplicativo e ative a câmera.
 Outra opção é desinstalar e reinstalar o aplicativo.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">

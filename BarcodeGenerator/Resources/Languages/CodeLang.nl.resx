@@ -157,7 +157,7 @@
     <value>Spreek</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Wanneer er geen toestemming gegeven werd voor het gebruik van de camera, dan kan dit achteraf handmatig aangepast worden bij de instellingen van het toestel door de toepassing the selecteren en de camera in te schakelen.
+    <value>Wanneer er geen toelating gegeven werd voor het gebruik van de camera, dan kan de camera aangezet worden in de instellingen van het toestel, selecteer de toepassing en schakel de camera in.
 Een andere mogelijkheid is de toepassing te verwijderen en opnieuw te installeren.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">

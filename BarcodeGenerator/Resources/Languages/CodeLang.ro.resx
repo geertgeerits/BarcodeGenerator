@@ -157,7 +157,7 @@
     <value>Vorbi</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Dacă nu a fost acordată permisiunea pentru utilizarea camerei, aceasta poate fi ajustată manual ulterior în setările dispozitivului, selectând aplicația și pornind camera.
+    <value>Dacă nu a fost acordată permisiunea de a utiliza camera, camera poate fi activată în setările dispozitivului, selectați aplicația și activați camera.
 O altă opțiune este să dezinstalați și să reinstalați aplicația.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
