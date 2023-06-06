@@ -157,7 +157,8 @@
     <value>Beszél</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Engedélyezze a kamera használatának engedélyét a beállítás manuális módosításával az alkalmazás eszközbeállítási képernyőjén.</value>
+    <value>Ha a kamera használatához nem adtak engedélyt, akkor ezt utólag manuálisan lehet beállítani a készülék beállításaiban az alkalmazás kiválasztásával és a kamera bekapcsolásával.
+Egy másik lehetőség az alkalmazás eltávolítása és újratelepítése.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Hibás a kód.

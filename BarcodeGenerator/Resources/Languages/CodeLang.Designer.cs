@@ -178,7 +178,8 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable the permission to use the camera by manually adjusting the setting in the device settings screen of the application..
+        ///   Looks up a localized string similar to If no permission has been given for the use of the camera, this can be adjusted manually afterwards in the settings of the device by selecting the application and switching on the camera.
+        ///Another option is to uninstall and reinstall the application..
         /// </summary>
         internal static string CameraPermissionIOS_Text {
             get {

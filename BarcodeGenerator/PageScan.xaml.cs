@@ -27,15 +27,16 @@ public partial class PageScan : ContentPage
 #if IOS
         //Task<PermissionStatus> task = CheckAndRequestCameraPermission();
 #endif
-        
+
         // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
-        // The camera sometimes overlaps adjacent rows in the grid.
-        // Code to run on Android, Windows and on the main thread for iOS\MacOS.
-#if IOS
-        MainThread.BeginInvokeOnMainThread(SetGridRowHeightCamera);
-#else
+        // The camera sometimes overlaps adjacent rows in the grid on Android.
+#if ANDROID
         SetGridRowHeightCamera();
 #endif
+
+//#if IOS
+//        MainThread.BeginInvokeOnMainThread(SetGridRowHeightCamera);
+//#endif
 
         // Put text in the chosen language in the controls.
         pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
@@ -507,8 +508,7 @@ public partial class PageScan : ContentPage
     }
 
     // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
-    // The camera sometimes overlaps adjacent rows in the grid.
-    // Code to run on Android, Windows and on the main thread for iOS\MacOS.
+    // The camera sometimes overlaps adjacent rows in the grid on Android phones.
     private void SetGridRowHeightCamera()
     {
         // Get the screen size.
@@ -534,19 +534,11 @@ public partial class PageScan : ContentPage
 
         double nDisplayResHeight = nDisplayHeight / nDisplayDensity;
 
-        // Set the HorizontalStackLayout height.
-        // Big screens.
-        //double nStackLayoutHeight = 420;
-        double nStackLayoutHeight;
-
-        // Small screens.
+        // Set the HorizontalStackLayout height for small screens.
         if (nDisplayResHeight < 740)
         {
-            nStackLayoutHeight = 540;
-            hslScanner.HeightRequest = nStackLayoutHeight;
+            hslScanner.HeightRequest = 530;
         }
-
-        //hslScanner.HeightRequest = nStackLayoutHeight;
     }
 
     // Check and request camera permission for iOS.
@@ -558,18 +550,20 @@ public partial class PageScan : ContentPage
         {
             return status;
         }
-        
-        if (DeviceInfo.Platform == DevicePlatform.iOS)
-        {
-            await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraPermissionIOS_Text, CodeLang.ButtonClose_Text);
-            await Navigation.PopAsync();
-            return status;
-        }
 
         if (status == PermissionStatus.Denied && DeviceInfo.Platform == DevicePlatform.iOS)
         {
             // Prompt the user to turn on in settings
             // On iOS once a permission has been denied it may not be requested again from the application
+            await DisplayAlert("", CodeLang.CameraPermissionIOS_Text, CodeLang.ButtonClose_Text);
+            await Navigation.PopAsync();
+            return status;
+        }
+
+        if (DeviceInfo.Platform == DevicePlatform.iOS)
+        {
+            await DisplayAlert("", CodeLang.CameraPermissionIOS_Text, CodeLang.ButtonClose_Text);
+            await Navigation.PopAsync();
             return status;
         }
 

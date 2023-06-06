@@ -157,7 +157,8 @@
     <value>Sprechen</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Aktivieren Sie die Berechtigung zur Verwendung der Kamera, indem Sie die Einstellung im Geräteeinstellungsbildschirm der Anwendung manuell anpassen.</value>
+    <value>Sollte für die Nutzung der Kamera keine Erlaubnis erteilt worden sein, kann diese nachträglich manuell in den Einstellungen des Geräts angepasst werden, indem man die Anwendung auswählt und die Kamera einschaltet.
+Eine andere Möglichkeit besteht darin, die Anwendung zu deinstallieren und erneut zu installieren.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Der Code ist falsch.

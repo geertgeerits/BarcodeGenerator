@@ -157,7 +157,8 @@
     <value>Puhua</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Salli kameran käyttöoikeus säätämällä asetusta manuaalisesti sovelluksen laiteasetusnäytössä.</value>
+    <value>Jos kameran käyttöön ei ole annettu lupaa, sitä voidaan säätää manuaalisesti laitteen asetuksista valitsemalla sovellus ja kytkemällä kamera päälle.
+Toinen vaihtoehto on poistaa sovellus ja asentaa se uudelleen.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Koodi on väärä.

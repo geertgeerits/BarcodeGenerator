@@ -157,7 +157,8 @@
     <value>Parlez</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Activez l'autorisation d'utiliser l'appareil photo en ajustant manuellement le paramètre dans l'écran des paramètres de l'appareil de l'application.</value>
+    <value>Si aucune autorisation n'a été donnée pour l'utilisation de la caméra, celle-ci peut ensuite être ajustée manuellement dans les paramètres de l'appareil en sélectionnant l'application et en allumant la caméra.
+Une autre option consiste à désinstaller et réinstaller l'application.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Le code est faux.

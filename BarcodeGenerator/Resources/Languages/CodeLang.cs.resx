@@ -157,7 +157,8 @@
     <value>Mluvit</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Povolte oprávnění k použití fotoaparátu ruční úpravou nastavení na obrazovce nastavení zařízení v aplikaci.</value>
+    <value>Pokud nebylo uděleno povolení k použití kamery, lze to později ručně upravit v nastavení zařízení výběrem aplikace a zapnutím kamery.
+Další možností je odinstalovat a znovu nainstalovat aplikaci.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Kód je špatný.

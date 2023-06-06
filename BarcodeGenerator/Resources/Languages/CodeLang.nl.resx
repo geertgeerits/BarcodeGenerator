@@ -157,7 +157,8 @@
     <value>Spreek</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Schakel de toestemming in om de camera te gebruiken door de instelling handmatig aan te passen in het toestel instellingenscherm van de applicatie.</value>
+    <value>Wanneer er geen toestemming gegeven werd voor het gebruik van de camera, dan kan dit achteraf handmatig aangepast worden bij de instellingen van het toestel door de toepassing the selecteren en de camera in te schakelen.
+Een andere mogelijkheid is de toepassing te verwijderen en opnieuw te installeren.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>De code is fout.

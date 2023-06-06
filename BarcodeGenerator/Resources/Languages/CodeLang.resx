@@ -157,7 +157,8 @@
     <value>Speak</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Enable the permission to use the camera by manually adjusting the setting in the device settings screen of the application.</value>
+    <value>If no permission has been given for the use of the camera, this can be adjusted manually afterwards in the settings of the device by selecting the application and switching on the camera.
+Another option is to uninstall and reinstall the application.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>The code is wrong.

@@ -157,7 +157,8 @@
     <value>Tale</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Aktiver tilladelsen til at bruge kameraet ved manuelt at justere indstillingen på skærmen for enhedsindstillinger i applikationen.</value>
+    <value>Hvis der ikke er givet tilladelse til brug af kameraet, kan dette justeres manuelt efterfølgende i indstillingerne på enheden ved at vælge applikationen og tænde for kameraet.
+En anden mulighed er at afinstallere og geninstallere programmet.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Koden er forkert.

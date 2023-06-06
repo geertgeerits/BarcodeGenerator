@@ -157,7 +157,8 @@
     <value>Snakke</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>Aktiver tillatelsen til å bruke kameraet ved å manuelt justere innstillingen i skjermbildet for enhetsinnstillinger i applikasjonen.</value>
+    <value>Dersom det ikke er gitt tillatelse til bruk av kameraet, kan dette justeres manuelt i etterkant i innstillingene på enheten ved å velge applikasjon og slå på kameraet.
+Et annet alternativ er å avinstallere og installere programmet på nytt.</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Koden er feil.

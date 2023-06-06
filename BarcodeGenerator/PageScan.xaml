@@ -75,7 +75,7 @@
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    HeightRequest="{OnIdiom 410, Phone=410, Tablet=620, Desktop=620}">
+                    HeightRequest="{OnIdiom 410, Phone=410, Tablet=610, Desktop=610}">
                 
                     <zxing:CameraBarcodeReaderView
                         x:Name="barcodeReader"
