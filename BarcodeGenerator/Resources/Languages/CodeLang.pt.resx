@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Falar</value>
   </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Habilite a permissão para usar a câmera ajustando manualmente a configuração na tela de configurações do dispositivo do aplicativo.</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>O código está errado.
 O dígito de verificação foi corrigido.</value>

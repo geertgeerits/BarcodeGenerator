@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Snakke</value>
   </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Aktiver tillatelsen til å bruke kameraet ved å manuelt justere innstillingen i skjermbildet for enhetsinnstillinger i applikasjonen.</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Koden er feil.
 Kontrollsifferet er rettet.</value>

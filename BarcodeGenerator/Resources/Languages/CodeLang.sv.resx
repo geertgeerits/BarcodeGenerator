@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Tala</value>
   </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Aktivera behörigheten att använda kameran genom att manuellt justera inställningen på skärmen för enhetsinställningar i programmet.</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Koden är fel.
 Kontrollsiffran har korrigerats.</value>

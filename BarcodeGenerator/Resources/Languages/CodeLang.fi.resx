@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Puhua</value>
   </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Salli kameran käyttöoikeus säätämällä asetusta manuaalisesti sovelluksen laiteasetusnäytössä.</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Koodi on väärä.
 Tarkistusnumero on korjattu.</value>

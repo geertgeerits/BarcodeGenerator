@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Vorbi</value>
   </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Activați permisiunea de a utiliza camera ajustând manual setarea din ecranul de setări al dispozitivului al aplicației.</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Codul este greșit.
 Cifra de verificare a fost corectată.</value>

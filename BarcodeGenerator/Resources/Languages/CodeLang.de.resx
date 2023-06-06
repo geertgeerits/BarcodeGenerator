@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Sprechen</value>
   </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Aktivieren Sie die Berechtigung zur Verwendung der Kamera, indem Sie die Einstellung im Geräteeinstellungsbildschirm der Anwendung manuell anpassen.</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Der Code ist falsch.
 Die Prüfziffer wurde korrigiert.</value>

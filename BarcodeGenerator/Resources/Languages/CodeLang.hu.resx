@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Beszél</value>
   </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Engedélyezze a kamera használatának engedélyét a beállítás manuális módosításával az alkalmazás eszközbeállítási képernyőjén.</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Hibás a kód.
 Az ellenőrző számjegy javítva.</value>

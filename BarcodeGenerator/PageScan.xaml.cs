@@ -25,7 +25,7 @@ public partial class PageScan : ContentPage
 
         // Check and request camera permission for iOS.
 #if IOS
-        Task<PermissionStatus> task = CheckAndRequestCameraPermission();
+        //Task<PermissionStatus> task = CheckAndRequestCameraPermission();
 #endif
         
         // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
@@ -536,15 +536,17 @@ public partial class PageScan : ContentPage
 
         // Set the HorizontalStackLayout height.
         // Big screens.
-        double nStackLayoutHeight = 420;
+        //double nStackLayoutHeight = 420;
+        double nStackLayoutHeight;
 
         // Small screens.
         if (nDisplayResHeight < 740)
         {
             nStackLayoutHeight = 540;
+            hslScanner.HeightRequest = nStackLayoutHeight;
         }
 
-        hslScanner.HeightRequest = nStackLayoutHeight;
+        //hslScanner.HeightRequest = nStackLayoutHeight;
     }
 
     // Check and request camera permission for iOS.

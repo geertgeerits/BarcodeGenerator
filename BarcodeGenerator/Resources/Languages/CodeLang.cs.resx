@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Mluvit</value>
   </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Povolte oprávnění k použití fotoaparátu ruční úpravou nastavení na obrazovce nastavení zařízení v aplikaci.</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Kód je špatný.
 Kontrolní číslice byla opravena.</value>
