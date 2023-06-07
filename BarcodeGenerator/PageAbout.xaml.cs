@@ -21,9 +21,10 @@ public partial class PageAbout : ContentPage
         lblCopyright.Text = CodeLang.Copyright_Text + " © 2022-2023 Geert Geerits";
         lblEmail.Text = CodeLang.Email_Text + " geertgeerits@gmail.com";
         lblWebsite.Text = CodeLang.Website_Text + ": ../barcodegenerator";
-        lblPrivacyPolicy.Text = CodeLang.PrivacyPolicyTitle_Text + " " + CodeLang.PrivacyPolicy_Text;
-        lblLicense.Text = CodeLang.LicenseTitle_Text + ": " + CodeLang.License_Text;
-        lblLicenseMit.Text = CodeLang.Copyright_Text + " © " + CodeLang.LicenseMit_Text + "\n\n" + CodeLang.LicenseMit2_Text;
+        lblPrivacyPolicy.Text = "\n" + CodeLang.PrivacyPolicyTitle_Text + " " + CodeLang.PrivacyPolicy_Text;
+        lblLicense.Text = "\n" + CodeLang.LicenseTitle_Text + ": " + CodeLang.License_Text;
+        lblExplanation.Text = "\n" + CodeLang.InfoExplanation_Text;
+        lblLicenseMit.Text = "\n" + CodeLang.Copyright_Text + " © " + CodeLang.LicenseMit_Text + "\n\n" + CodeLang.LicenseMit2_Text;
     }
 
     // Open the e-mail program.

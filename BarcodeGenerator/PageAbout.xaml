@@ -12,82 +12,93 @@
     </NavigationPage.TitleView>
        
     <ScrollView>
-        <StackLayout
-            Margin="10">
+        <StackLayout>
+            <Grid
+                Style="{StaticResource gridStyleInfo}"
+                RowDefinitions="Auto">
 
-            <Label
-                Style="{StaticResource labelStyleDefault}"
-                Text="{x:Static resx:CodeLang.NameProgram_Text}"
-                FontSize="18">
-            </Label>
+                <VerticalStackLayout>
+                    <Label
+                        Style="{StaticResource labelStyleInfo}"
+                        Text="{x:Static resx:CodeLang.NameProgram_Text}"
+                        FontSize="16">
+                    </Label>
 
-            <Label
-                Style="{StaticResource labelStyleDefault}"
-                Text="{x:Static resx:CodeLang.Description_Text}">
-            </Label>
+                    <Label
+                        Style="{StaticResource labelStyleInfo}"
+                        Text="{x:Static resx:CodeLang.Description_Text}">
+                    </Label>
 
-            <Label
-                x:Name="lblVersion"
-                Style="{StaticResource labelStyleDefault}">
-            </Label>
+                    <Label
+                        x:Name="lblVersion"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
 
-            <Label
-                x:Name="lblCopyright"
-                Style="{StaticResource labelStyleDefault}">
-            </Label>
+                    <Label
+                        x:Name="lblCopyright"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
 
-            <HorizontalStackLayout>
-                <Label
-                    x:Name="lblEmail"
-                    Style="{StaticResource labelStyleDefault}">
-                </Label>
+                    <HorizontalStackLayout>
+                        <Label
+                            x:Name="lblEmail"
+                            Style="{StaticResource labelStyleInfo}">
+                        </Label>
 
-                <ImageButton
-                    Source="circled_envelope_24p.png"                         
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HeightRequest="24"
-                    WidthRequest="24"
-                    Clicked="OnbtnEmailLinkClicked">
-                </ImageButton>
-            </HorizontalStackLayout>
+                        <ImageButton
+                            Source="circled_envelope_24p.png"                         
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            HeightRequest="24"
+                            WidthRequest="24"
+                            Clicked="OnbtnEmailLinkClicked">
+                        </ImageButton>
+                    </HorizontalStackLayout>
 
-            <HorizontalStackLayout>
-                <Label
-                    x:Name="lblWebsite"
-                    Style="{StaticResource labelStyleDefault}">
-                </Label>
+                    <HorizontalStackLayout>
+                        <Label
+                            x:Name="lblWebsite"
+                            Style="{StaticResource labelStyleInfo}">
+                        </Label>
 
-                <ImageButton
-                    Source="internet_24p.png"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HeightRequest="24"
-                    WidthRequest="24"
-                    Clicked="OnbtnWebsiteLinkClicked">
-                </ImageButton>
-            </HorizontalStackLayout>
+                        <ImageButton
+                            Source="internet_24p.png"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            HeightRequest="24"
+                            WidthRequest="24"
+                            Clicked="OnbtnWebsiteLinkClicked">
+                        </ImageButton>
+                    </HorizontalStackLayout>
 
-            <Label
-                x:Name="lblPrivacyPolicy"
-                Style="{StaticResource labelStyleInfo}">
-            </Label>
+                    <VerticalStackLayout>
+                        <Label
+                            x:Name="lblPrivacyPolicy"
+                            Style="{StaticResource labelStyleInfo}"
+                            FontSize="13">
+                        </Label>
 
-            <Label
-                x:Name="lblLicense"
-                Style="{StaticResource labelStyleInfo}">
-            </Label>
+                        <Label
+                            x:Name="lblLicense"
+                            Style="{StaticResource labelStyleInfo}"
+                            FontSize="13">
+                        </Label>
 
-            <Label
-                Style="{StaticResource labelStyleInfo}"
-                Text="{x:Static resx:CodeLang.InfoExplanation_Text}">
-            </Label>
+                        <Label
+                            x:Name="lblExplanation"
+                            Style="{StaticResource labelStyleInfo}"
+                            FontSize="13">
+                        </Label>
 
-            <Label
-                x:Name="lblLicenseMit"
-                Style="{StaticResource labelStyleInfo}">
-            </Label>
+                        <Label
+                            x:Name="lblLicenseMit"
+                            Style="{StaticResource labelStyleInfo}"
+                            FontSize="13">
+                        </Label>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
             
+            </Grid>               
         </StackLayout>
     </ScrollView>
 </ContentPage>
