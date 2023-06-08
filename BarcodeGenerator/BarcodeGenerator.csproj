@@ -29,6 +29,8 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<Authors>Geert Geerits</Authors>
+		<Copyright>Geert Geerits</Copyright>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -129,8 +131,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.32</ApplicationDisplayVersion>
-		<ApplicationVersion>32</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.33</ApplicationDisplayVersion>
+		<ApplicationVersion>33</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
@@ -149,8 +151,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.32</ApplicationDisplayVersion>
-		<ApplicationVersion>32</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.33</ApplicationDisplayVersion>
+		<ApplicationVersion>33</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
