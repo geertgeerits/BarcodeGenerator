@@ -1,4 +1,3 @@
-using BarcodeGenerator.Resources.Languages;
 using ZXing.Net.Maui;
 using System.Text.RegularExpressions;
 
@@ -39,10 +38,10 @@ public partial class PageScan : ContentPage
 //#endif
 
         // Put text in the chosen language in the controls.
-        pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
+        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScanner();
 
         // Default format code = All codes
-        pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
+        pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
         // Initialize text to speech.
         InitializeTextToSpeech();
@@ -417,7 +416,7 @@ public partial class PageScan : ContentPage
     // Set language text to speech using the Appearing event of the PageScan.xaml.
     private void OnPageAppearing(object sender, EventArgs e)
     {
-        lblTextToSpeech.Text = MainPage.GetIsoLanguageCode();
+        lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
     }
 
     // ImageButton torch clicked event.
@@ -441,7 +440,7 @@ public partial class PageScan : ContentPage
     // Initialize text to speech.
     private async void InitializeTextToSpeech()
     {
-        if (!MainPage.bLanguageLocalesExist)
+        if (!Globals.bLanguageLocalesExist)
         {
             return;
         }
@@ -470,7 +469,7 @@ public partial class PageScan : ContentPage
                 return;
 
             cts.Cancel();
-            imgbtnTextToSpeech.Source = MainPage.cImageTextToSpeech;
+            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
             return;
         }
 
@@ -478,7 +477,7 @@ public partial class PageScan : ContentPage
         if (lblBarcodeResult.Text != null && lblBarcodeResult.Text != "")
         {
             bTextToSpeechIsBusy = true;
-            imgbtnTextToSpeech.Source = MainPage.cImageTextToSpeechCancel;
+            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeechCancel;
 
             try
             {
@@ -486,7 +485,7 @@ public partial class PageScan : ContentPage
 
                 SpeechOptions options = new()
                 {
-                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == MainPage.cLanguageSpeech)
+                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == Globals.cLanguageSpeech)
                 };
 
                 await TextToSpeech.Default.SpeakAsync(lblBarcodeResult.Text, options, cancelToken: cts.Token);
@@ -497,7 +496,7 @@ public partial class PageScan : ContentPage
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }
 
-            imgbtnTextToSpeech.Source = MainPage.cImageTextToSpeech;
+            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
         }
     }
 

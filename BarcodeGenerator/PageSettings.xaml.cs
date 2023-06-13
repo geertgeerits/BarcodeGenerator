@@ -1,6 +1,4 @@
-﻿using BarcodeGenerator.Resources.Languages;
-using System.Diagnostics;
-using System.Globalization;
+﻿using System.Diagnostics;
 
 namespace BarcodeGenerator;
 
@@ -57,7 +55,7 @@ public partial class PageSettings : ContentPage
         SetLanguage();
 
         // Set the current language in the picker.
-        pckLanguage.SelectedIndex = MainPage.cLanguage switch
+        pckLanguage.SelectedIndex = Globals.cLanguage switch
         {
             // Čeština - Czech.
             "cs" => 0,
@@ -109,7 +107,7 @@ public partial class PageSettings : ContentPage
         FillPickerWithSpeechLanguages();
 
         // Set the current theme in the picker.
-        pckTheme.SelectedIndex = MainPage.cTheme switch
+        pckTheme.SelectedIndex = Globals.cTheme switch
         {
             // Light.
             "Light" => 1,
@@ -122,12 +120,12 @@ public partial class PageSettings : ContentPage
         };
 
         // Set the barcode list and the current default barcode format in the picker for the barcode generator.
-        pckFormatCodeGenerator.ItemsSource = MainPage.GetFormatCodeListGenerator();
-        pckFormatCodeGenerator.SelectedIndex = MainPage.nFormatGeneratorIndex;
+        pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
+        pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
 
         // Set the barcode list and the current default barcode format in the picker for the barcode scanner.
-        pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
-        pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
+        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScanner();
+        pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
         // Set the current color in the entry and on the sliders.
         int nOpacity = 0;
@@ -135,18 +133,18 @@ public partial class PageSettings : ContentPage
         int nGreen = 0;
         int nBlue = 0;
 
-        entHexColorFg.Text = MainPage.cCodeColorFg;
+        entHexColorFg.Text = Globals.cCodeColorFg;
 
-        HexToRgbColor(MainPage.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+        HexToRgbColor(Globals.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
         sldOpacityFg.Value = nOpacity;
         sldColorFgRed.Value = nRed;
         sldColorFgGreen.Value = nGreen;
         sldColorFgBlue.Value = nBlue;
 
-        entHexColorBg.Text = MainPage.cCodeColorBg;
+        entHexColorBg.Text = Globals.cCodeColorBg;
 
-        HexToRgbColor(MainPage.cCodeColorBg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+        HexToRgbColor(Globals.cCodeColorBg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
         sldOpacityBg.Value = nOpacity;
         sldColorBgRed.Value = nRed;
@@ -160,14 +158,14 @@ public partial class PageSettings : ContentPage
     // Picker language clicked event.
     private void OnPickerLanguageChanged(object sender, EventArgs e)
     {
-        string cLanguageOld = MainPage.cLanguage;
+        string cLanguageOld = Globals.cLanguage;
 
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
         {
-            MainPage.cLanguage = selectedIndex switch
+            Globals.cLanguage = selectedIndex switch
             {
                 // Čeština - Czech.
                 0 => "cs",
@@ -216,22 +214,22 @@ public partial class PageSettings : ContentPage
             };
         }
 
-        if (cLanguageOld != MainPage.cLanguage)
+        if (cLanguageOld != Globals.cLanguage)
         {
-            MainPage.bLanguageChanged = true;
+            Globals.bLanguageChanged = true;
 
             // Set the current UI culture of the selected language.
-            MainPage.SetCultureSelectedLanguage();
+            Globals.SetCultureSelectedLanguage();
 
             // Put text in the chosen language in the controls and variables.
             SetLanguage();
 
             // Search the new language in the cLanguageLocales array and select the new speech language.
-            int nTotalItems = MainPage.cLanguageLocales.Length;
+            int nTotalItems = Globals.cLanguageLocales.Length;
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)
             {
-                if (MainPage.cLanguageLocales[nItem].StartsWith(MainPage.cLanguage))
+                if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
                 {
                     pckLanguageSpeech.SelectedIndex = nItem;
                     break;
@@ -244,8 +242,8 @@ public partial class PageSettings : ContentPage
     private void SetLanguage()
     {
         // Set the barcode list and the current default barcode format in the picker for the barcode scanner.
-        pckFormatCodeScanner.ItemsSource = MainPage.GetFormatCodeListScanner();
-        pckFormatCodeScanner.SelectedIndex = MainPage.nFormatScannerIndex;
+        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScanner();
+        pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
         // Set the current theme in the picker.
         var ThemeList = new List<string>
@@ -256,7 +254,7 @@ public partial class PageSettings : ContentPage
         };
         pckTheme.ItemsSource = ThemeList;
 
-        pckTheme.SelectedIndex = MainPage.cTheme switch
+        pckTheme.SelectedIndex = Globals.cTheme switch
         {
             // Light.
             "Light" => 1,
@@ -279,20 +277,20 @@ public partial class PageSettings : ContentPage
         // If there are no locales then return.
         bool bIsSetSelectedIndex = false;
 
-        if (!MainPage.bLanguageLocalesExist)
+        if (!Globals.bLanguageLocalesExist)
         {
             pckLanguageSpeech.IsEnabled = false;           
             return;
         }
 
         // Put the sorted locales from the array in the picker and select the saved language.
-        int nTotalItems = MainPage.cLanguageLocales.Length;
+        int nTotalItems = Globals.cLanguageLocales.Length;
 
         for (int nItem = 0; nItem < nTotalItems; nItem++)
         {
-            pckLanguageSpeech.Items.Add(MainPage.cLanguageLocales[nItem]);
+            pckLanguageSpeech.Items.Add(Globals.cLanguageLocales[nItem]);
 
-            if (MainPage.cLanguageSpeech == MainPage.cLanguageLocales[nItem])
+            if (Globals.cLanguageSpeech == Globals.cLanguageLocales[nItem])
             {
                 pckLanguageSpeech.SelectedIndex = nItem;
                 bIsSetSelectedIndex = true;
@@ -314,7 +312,7 @@ public partial class PageSettings : ContentPage
 
         if (selectedIndex != -1)
         {
-            MainPage.cLanguageSpeech = picker.Items[selectedIndex];
+            Globals.cLanguageSpeech = picker.Items[selectedIndex];
         }
     }
 
@@ -326,7 +324,7 @@ public partial class PageSettings : ContentPage
 
         if (selectedIndex != -1)
         {
-            MainPage.cTheme = selectedIndex switch
+            Globals.cTheme = selectedIndex switch
             {
                 // Light.
                 1 => "Light",
@@ -348,7 +346,7 @@ public partial class PageSettings : ContentPage
 
         if (selectedIndex != -1)
         {
-            MainPage.nFormatGeneratorIndex = selectedIndex;
+            Globals.nFormatGeneratorIndex = selectedIndex;
         }
     }
 
@@ -360,7 +358,7 @@ public partial class PageSettings : ContentPage
 
         if (selectedIndex != -1)
         {
-            MainPage.nFormatScannerIndex = selectedIndex;
+            Globals.nFormatScannerIndex = selectedIndex;
         }
     }
 
@@ -414,9 +412,9 @@ public partial class PageSettings : ContentPage
 
         if (entry == entHexColorFg)
         {
-            MainPage.cCodeColorFg = entHexColorFg.Text;
+            Globals.cCodeColorFg = entHexColorFg.Text;
 
-            HexToRgbColor(MainPage.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+            HexToRgbColor(Globals.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
             sldOpacityFg.Value = nOpacity;
             sldColorFgRed.Value = nRed;
@@ -425,9 +423,9 @@ public partial class PageSettings : ContentPage
         }
         else
         {
-            MainPage.cCodeColorBg = entHexColorBg.Text;
+            Globals.cCodeColorBg = entHexColorBg.Text;
 
-            HexToRgbColor(MainPage.cCodeColorBg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+            HexToRgbColor(Globals.cCodeColorBg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
             sldOpacityBg.Value = nOpacity;
             sldColorBgRed.Value = nRed;
@@ -510,7 +508,7 @@ public partial class PageSettings : ContentPage
         entHexColorFg.Text = cColorFgHex;
         bxvColorFg.Color = Color.FromArgb(cColorFgHex);
 
-        MainPage.cCodeColorFg = cColorFgHex;
+        Globals.cCodeColorFg = cColorFgHex;
     }
 
     // Slider color barcode background value change.
@@ -556,7 +554,7 @@ public partial class PageSettings : ContentPage
         entHexColorBg.Text = cColorBgHex;
         bxvColorBg.Color = Color.FromArgb(cColorBgHex);
 
-        MainPage.cCodeColorBg = cColorBgHex;
+        Globals.cCodeColorBg = cColorBgHex;
     }
 
     // Convert OORRGGBB Hex color to RGB color.
@@ -577,13 +575,13 @@ public partial class PageSettings : ContentPage
     // Button save settings clicked event.
     private static void OnSettingsSaveClicked(object sender, EventArgs e)
     {
-        Preferences.Default.Set("SettingTheme", MainPage.cTheme);
-        Preferences.Default.Set("SettingFormatGeneratorIndex", MainPage.nFormatGeneratorIndex);
-        Preferences.Default.Set("SettingFormatScannerIndex", MainPage.nFormatScannerIndex);
-        Preferences.Default.Set("SettingCodeColorFg", MainPage.cCodeColorFg);
-        Preferences.Default.Set("SettingCodeColorBg", MainPage.cCodeColorBg);
-        Preferences.Default.Set("SettingLanguage", MainPage.cLanguage);
-        Preferences.Default.Set("SettingLanguageSpeech", MainPage.cLanguageSpeech);
+        Preferences.Default.Set("SettingTheme", Globals.cTheme);
+        Preferences.Default.Set("SettingFormatGeneratorIndex", Globals.nFormatGeneratorIndex);
+        Preferences.Default.Set("SettingFormatScannerIndex", Globals.nFormatScannerIndex);
+        Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
+        Preferences.Default.Set("SettingCodeColorBg", Globals.cCodeColorBg);
+        Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
+        Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
         Task.Delay(500).Wait();

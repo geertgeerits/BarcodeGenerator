@@ -1,5 +1,3 @@
-using BarcodeGenerator.Resources.Languages;
-
 namespace BarcodeGenerator;
 
 public partial class PageAbout : ContentPage

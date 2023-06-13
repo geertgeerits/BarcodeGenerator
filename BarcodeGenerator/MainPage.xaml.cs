@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.33
-// Date ........: 2023-06-08 (YYYY-MM-DD)
+// Date ........: 2023-06-13 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -10,28 +10,12 @@
 //                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.3.0-preview.1
 // Thanks to ...: Gerald Versluis
 
-using BarcodeGenerator.Resources.Languages;
-using System.Globalization;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator;
 
 public partial class MainPage : ContentPage
 {
-    // Global variables for all pages part of Barcode Generator.
-    public static string cTheme;
-    public static int nFormatGeneratorIndex;
-    public static int nFormatScannerIndex;
-    public static string cCodeColorFg;
-    public static string cCodeColorBg;
-    public static string cLanguage;
-    public static bool bLanguageChanged = false;
-    public static string cLanguageSpeech;
-    public static string[] cLanguageLocales;
-    public static bool bLanguageLocalesExist = false;
-    public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
-    public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
-
     // Local variables.
     private string cLicense;
     private readonly bool bLicense;
@@ -52,21 +36,21 @@ public partial class MainPage : ContentPage
         }
 
         // Get the saved settings.
-        cTheme = Preferences.Default.Get("SettingTheme", "System");
-        nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 15);
-        nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 21);
-        cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
-        cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
-        cLanguage = Preferences.Default.Get("SettingLanguage", "");
-        cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
+        Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
+        Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 15);
+        Globals.nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 21);
+        Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
+        Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
+        Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
+        Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
         bLicense = Preferences.Default.Get("SettingLicense", false);
 
         // Set the theme.
-        if (cTheme == "Light")
+        if (Globals.cTheme == "Light")
         {
             Application.Current.UserAppTheme = AppTheme.Light;
         }
-        else if (cTheme == "Dark")
+        else if (Globals.cTheme == "Dark")
         {
             Application.Current.UserAppTheme = AppTheme.Dark;
         }
@@ -76,9 +60,9 @@ public partial class MainPage : ContentPage
         }
 
         // Set the barcode list and the current default barcode format in the picker for the barcode generator.
-        pckFormatCodeGenerator.ItemsSource = MainPage.GetFormatCodeListGenerator();
+        pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
 
-        if (nFormatGeneratorIndex < 0 || nFormatGeneratorIndex > 20)
+        if (Globals.nFormatGeneratorIndex < 0 || Globals.nFormatGeneratorIndex > 20)
         {
             // Default format code = QrCode.
             pckFormatCodeGenerator.SelectedIndex = 15;
@@ -86,20 +70,20 @@ public partial class MainPage : ContentPage
         else
         {
             // Set the format barcode to the saved code.
-            pckFormatCodeGenerator.SelectedIndex = nFormatGeneratorIndex;
+            pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
         }
 
         // Get and set the system OS user language.
         try
         {
-            if (cLanguage == "")
+            if (Globals.cLanguage == "")
             {
-                cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+                Globals.cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
             }
         }
         catch (Exception)
         {
-            cLanguage = "en";
+            Globals.cLanguage = "en";
         }
 
         SetTextLanguage();
@@ -109,7 +93,7 @@ public partial class MainPage : ContentPage
 
         try
         {
-            if (cLanguageSpeech == "")
+            if (Globals.cLanguageSpeech == "")
             {
                 cCultureName = Thread.CurrentThread.CurrentCulture.Name;
             }
@@ -326,8 +310,8 @@ public partial class MainPage : ContentPage
         edtTextToCode.IsEnabled = true;
 
         // Set the barcode colors.
-        bgvBarcode.ForegroundColor = Color.FromArgb(cCodeColorFg);
-        bgvBarcode.BackgroundColor = Color.FromArgb(cCodeColorBg);
+        bgvBarcode.ForegroundColor = Color.FromArgb(Globals.cCodeColorFg);
+        bgvBarcode.BackgroundColor = Color.FromArgb(Globals.cCodeColorBg);
 
         // Miscellaneous.
         bgvBarcode.Value = "";
@@ -922,15 +906,15 @@ public partial class MainPage : ContentPage
     // Set language using the Appearing event of the MainPage.xaml.
     private void OnPageAppearing(object sender, EventArgs e)
     {
-        if (bLanguageChanged)
+        if (Globals.bLanguageChanged)
         {
             SetTextLanguage();
-            bLanguageChanged = false;
+            Globals.bLanguageChanged = false;
 
-            //DisplayAlert("bLanguageChanged", "true", "OK");  // For testing.
+            //DisplayAlert("Globals.bLanguageChanged", "true", "OK");  // For testing.
         }
 
-        lblTextToSpeech.Text = GetIsoLanguageCode();
+        lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
     }
 
     // Button share event - make screenshot of the barcode.
@@ -975,89 +959,16 @@ public partial class MainPage : ContentPage
     // Put text in the chosen language in the controls.
     private void SetTextLanguage()
     {
-        //cLanguage = "es";  // For testing.
-        //App.Current.MainPage.DisplayAlert("cLanguage", cLanguage, "OK");  // For testing.
+        //Globals.cLanguage = "es";  // For testing.
+        //App.Current.MainPage.DisplayAlert("Globals.cLanguage", Globals.cLanguage, "OK");  // For testing.
 
         // Set the current UI culture of the selected language.
-        SetCultureSelectedLanguage();
+        Globals.SetCultureSelectedLanguage();
 
         cLicense = CodeLang.License_Text + "\n\n" + CodeLang.LicenseMit2_Text;
         btnShare.Text = CodeLang.ButtonShare_Text + " " + pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex];
 
-        //App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, cLanguage, "OK");  // For testing.
-    }
-
-    // Set the current UI culture of the selected language.
-    public static void SetCultureSelectedLanguage()
-    {
-        try
-        {
-            var switchToCulture = new CultureInfo(cLanguage);
-            LocalizationResourceManager.Instance.SetCulture(switchToCulture);
-        }
-        catch
-        {
-            // Do nothing.
-        }
-    }
-
-    // Put the generator barcode formats in a List string.
-    public static List<string> GetFormatCodeListGenerator()
-    {
-        return new List<string>
-        {
-            "Aztec",
-            "Codabar",
-            "Code 128",
-            "Code 39",
-            "Code 93",
-            "Data Matrix",
-            "EAN-13",
-            "EAN-8",
-            "(IMb (Intelligent Mail))",
-            "ITF (Interleaved 2 of 5)",
-            "(MaxiCode)",
-            "MSI (Modified Plessey)",
-            "PDF417",
-            "(Pharmacode)",
-            "Plessey",
-            "QR Code",
-            "(RSS 14)",
-            "(RSS Expanded)",
-            "UPC-A",
-            "UPC-E",
-            "(UPC EAN Extension)"
-        };
-    }
-
-    // Put the scanner barcode formats in a List string.
-    public static List<string> GetFormatCodeListScanner()
-    {
-        return new List<string>
-        {
-            "Aztec",
-            "Codabar",
-            "Code 128",
-            "Code 39",
-            "Code 93",
-            "Data Matrix",
-            "EAN-13",
-            "EAN-8",
-            "(IMb (Intelligent Mail))",
-            "ITF (Interleaved 2 of 5)",
-            "(MaxiCode)",
-            "MSI (Modified Plessey)",
-            "PDF417",
-            "(Pharmacode)",
-            "Plessey",
-            "QR Code",
-            "RSS 14",
-            "RSS Expanded",
-            "UPC-A",
-            "UPC-E",
-            "(UPC EAN Extension)",
-            CodeLang.AllCodes_Text
-        };
+        //App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, Globals.cLanguage, "OK");  // For testing.
     }
 
     // Initialize text to speech and fill the the array with the speech languages.
@@ -1086,28 +997,28 @@ public partial class MainPage : ContentPage
        
         lblTextToSpeech.IsVisible = true;
         imgbtnTextToSpeech.IsVisible = true;
-        bLanguageLocalesExist = true;
+        Globals.bLanguageLocalesExist = true;
 
         // Put the locales in the array and sort the array.
-        cLanguageLocales = new string[nTotalItems];
+        Globals.cLanguageLocales = new string[nTotalItems];
         int nItem = 0;
 
         foreach (var l in locales)
         {
-            cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
+            Globals.cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
             nItem++;
         }
 
-        Array.Sort(cLanguageLocales);
+        Array.Sort(Globals.cLanguageLocales);
 
         // Search for the language after a first start or reset of the application.
-        if (cLanguageSpeech == "")
+        if (Globals.cLanguageSpeech == "")
         {
             SearchArrayWithSpeechLanguages(cCultureName);
         }
-        //await DisplayAlert("cLanguageSpeech", cLanguageSpeech, "OK");  // For testing.
+        //await DisplayAlert("Globals.cLanguageSpeech", Globals.cLanguageSpeech, "OK");  // For testing.
         
-        lblTextToSpeech.Text = GetIsoLanguageCode();
+        lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
     }
     
     // Search for the language after a first start or reset of the application.
@@ -1115,34 +1026,34 @@ public partial class MainPage : ContentPage
     {
         try
         {
-            int nTotalItems = cLanguageLocales.Length;
+            int nTotalItems = Globals.cLanguageLocales.Length;
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)
             {
-                if (cLanguageLocales[nItem].StartsWith(cCultureName))
+                if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
                 {
-                    cLanguageSpeech = cLanguageLocales[nItem];
+                    Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
                     break;
                 }
             }
 
-            // If the language is not found try it with the language (cLanguage) of the user setting for this app.
-            if (cLanguageSpeech == "")
+            // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app.
+            if (Globals.cLanguageSpeech == "")
             {
                 for (int nItem = 0; nItem < nTotalItems; nItem++)
                 {
-                    if (cLanguageLocales[nItem].StartsWith(cLanguage))
+                    if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
                     {
-                        cLanguageSpeech = cLanguageLocales[nItem];
+                        Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
                         break;
                     }
                 }
             }
 
             // If the language is still not found use the first language in the array.
-            if (cLanguageSpeech == "")
+            if (Globals.cLanguageSpeech == "")
             {
-                cLanguageSpeech = cLanguageLocales[0];
+                Globals.cLanguageSpeech = Globals.cLanguageLocales[0];
             }
         }
         catch (Exception ex)
@@ -1173,20 +1084,6 @@ public partial class MainPage : ContentPage
     //    }
     //}
 
-    // Get ISO language (and country) code from locales.
-    public static string GetIsoLanguageCode()
-    {
-        // Split before first space and remove last character '-' if there.
-        string cLanguageIso = cLanguageSpeech.Split(' ').First();
-
-        if (cLanguageIso.EndsWith("-"))
-        {
-            cLanguageIso = cLanguageIso.Remove(cLanguageIso.Length - 1, 1);
-        }
-
-        return cLanguageIso;
-    }
-
     // Button text to speech event.
     private async void OnTextToSpeechClicked(object sender, EventArgs e)
     {
@@ -1197,7 +1094,7 @@ public partial class MainPage : ContentPage
                 return;
 
             cts.Cancel();
-            imgbtnTextToSpeech.Source = cImageTextToSpeech;
+            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
             return;
         }
 
@@ -1205,7 +1102,7 @@ public partial class MainPage : ContentPage
         if (edtTextToCode.Text != null && edtTextToCode.Text != "")
         {
             bTextToSpeechIsBusy = true;
-            imgbtnTextToSpeech.Source = cImageTextToSpeechCancel;
+            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeechCancel;
 
             try
             {
@@ -1213,7 +1110,7 @@ public partial class MainPage : ContentPage
 
                 SpeechOptions options = new()
                 {
-                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
+                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == Globals.cLanguageSpeech)
                 };
 
                 await TextToSpeech.Default.SpeakAsync(edtTextToCode.Text, options, cancelToken: cts.Token);
@@ -1224,7 +1121,7 @@ public partial class MainPage : ContentPage
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }
 
-            imgbtnTextToSpeech.Source = cImageTextToSpeech;
+            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
         }
     }
 
