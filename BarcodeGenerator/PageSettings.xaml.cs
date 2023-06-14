@@ -20,37 +20,6 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-#if IOS
-        // Workaround for !!!BUG!!! in iOS.
-        // The cause is probably the bug with the width setting in the sliders.
-        // The last column(3) with a star(*) is too wide (is beyond the right margin of the device).
-        //Grid grid = new()
-        //{
-        //    ColumnDefinitions =
-        //    {
-        //        new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 40, Phone = 40, Tablet = 40, Desktop = 40} },
-        //        new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 110, Phone = 110, Tablet = 210, Desktop = 210} },
-        //        new ColumnDefinition { Width = new OnIdiom<GridLength>{Default = 188, Phone = 188, Tablet = 290, Desktop = 290} }
-        //    }
-        //};
-        //grdSettings.ColumnDefinitions = grid.ColumnDefinitions;
-
-        // Correction of the the Slider right margin.
-        //Slider slider = new Slider
-        //{
-        //    Margin = new Thickness(0, 0, 26, 0)
-        //};
-
-        //sldOpacityFg.Margin = slider.Margin;
-        //sldColorFgRed.Margin = slider.Margin;
-        //sldColorFgGreen.Margin = slider.Margin;
-        //sldColorFgBlue.Margin = slider.Margin;
-        //sldOpacityBg.Margin = slider.Margin;
-        //sldColorBgRed.Margin = slider.Margin;
-        //sldColorBgGreen.Margin = slider.Margin;
-        //sldColorBgBlue.Margin = slider.Margin;
-#endif
-
         // Put text in the chosen language in the controls and variables.
         SetLanguage();
 
@@ -265,9 +234,6 @@ public partial class PageSettings : ContentPage
             // System.
             _ => 0,
         };
-
-        // Workaround for !!!BUG!!! auto sizing label for small screens.  Add a new line to solve the bug.
-        //lblExplanation.Text = CodeLang.SettingsSaved_Text + "\n";
     }
 
     // Fill the picker with the speech languages from the array.

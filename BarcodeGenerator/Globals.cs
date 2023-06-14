@@ -27,7 +27,7 @@ static class Globals
     {
         try
         {
-            CultureInfo switchToCulture = new CultureInfo(cLanguage);
+            CultureInfo switchToCulture = new(cLanguage);
             LocalizationResourceManager.Instance.SetCulture(switchToCulture);
         }
         catch
