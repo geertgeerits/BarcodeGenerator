@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.33
-// Date ........: 2023-06-14 (YYYY-MM-DD)
+// Date ........: 2023-07-08 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -151,6 +151,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;
                     bgvBarcode.BarcodeMargin = 2;
+                    bgvBarcode.Format = BarcodeFormat.Aztec;
                     break;
 
                 // Codabar.
@@ -158,6 +159,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 43;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 4;
+                    bgvBarcode.Format = BarcodeFormat.Codabar;
                     break;
 
                 // Code128.
@@ -165,6 +167,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 20;
+                    bgvBarcode.Format = BarcodeFormat.Code128;
                     break;
 
                 // Code39.
@@ -172,6 +175,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 4;
+                    bgvBarcode.Format = BarcodeFormat.Code39;
                     break;
 
                 // Code93.
@@ -179,6 +183,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 4;
+                    bgvBarcode.Format = BarcodeFormat.Code93;
                     break;
 
                 // DataMatrix.
@@ -188,6 +193,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;
                     bgvBarcode.BarcodeMargin = 2;
+                    bgvBarcode.Format = BarcodeFormat.DataMatrix;
                     break;
 
                 // Ean13.
@@ -195,6 +201,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 13;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 4;
+                    bgvBarcode.Format = BarcodeFormat.Ean13;
                     break;
 
                 // Ean8.
@@ -202,6 +209,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 4;
+                    bgvBarcode.Format = BarcodeFormat.Ean8;
                     break;
 
                 // Imb.
@@ -209,6 +217,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 2730;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 0;
+                    bgvBarcode.Format = BarcodeFormat.Imb;
                     break;
 
                 // Itf.
@@ -216,6 +225,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 30;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 8;
+                    bgvBarcode.Format = BarcodeFormat.Itf;
                     break;
 
                 // MaxiCode.
@@ -225,6 +235,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;
                     bgvBarcode.BarcodeMargin = 8;
+                    bgvBarcode.Format = BarcodeFormat.MaxiCode;
                     break;
 
                 // Msi.
@@ -232,6 +243,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 255;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 10;
+                    bgvBarcode.Format = BarcodeFormat.Msi;
                     break;
 
                 // Pdf417.
@@ -239,6 +251,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 2710;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 10;
+                    bgvBarcode.Format = BarcodeFormat.Pdf417;
                     break;
 
                 // PharmaCode.
@@ -246,6 +259,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 6;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 0;
+                    bgvBarcode.Format = BarcodeFormat.PharmaCode;
                     break;
 
                 // Plessey.
@@ -253,6 +267,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 16;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 8;
+                    bgvBarcode.Format = BarcodeFormat.Plessey;
                     break;
 
                 // QrCode.
@@ -262,6 +277,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;
                     bgvBarcode.BarcodeMargin = 1;
+                    bgvBarcode.Format = BarcodeFormat.QrCode;
                     break;
 
                 // Rss14.
@@ -269,6 +285,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 14;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 0;
+                    bgvBarcode.Format = BarcodeFormat.Rss14;
                     break;
 
                 // RssExpanded.
@@ -276,6 +293,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 74;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 0;
+                    bgvBarcode.Format = BarcodeFormat.RssExpanded;
                     break;
 
                 // UpcA.
@@ -283,6 +301,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 12;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 0;
+                    bgvBarcode.Format = BarcodeFormat.UpcA;
                     break;
 
                 // UpcE.
@@ -290,6 +309,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 8;
+                    bgvBarcode.Format = BarcodeFormat.UpcE;
                     break;
 
                 // UpcEanExtension.
@@ -297,6 +317,7 @@ public partial class MainPage : ContentPage
                     edtTextToCode.MaxLength = 2;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 4;
+                    bgvBarcode.Format = BarcodeFormat.UpcEanExtension;
                     break;
             }
         }
@@ -347,7 +368,6 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvBarcode.Format = BarcodeFormat.Aztec;
                         break;
 
                     // Codabar.
@@ -364,7 +384,6 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvBarcode.Format = BarcodeFormat.Codabar;
                         break;
 
                     // Code128.
@@ -374,7 +393,6 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvBarcode.Format = BarcodeFormat.Code128;
                         break;
 
                     // Code39.
@@ -391,7 +409,6 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvBarcode.Format = BarcodeFormat.Code39;
                         break;
 
                     // Code93.
@@ -408,7 +425,6 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvBarcode.Format = BarcodeFormat.Code93;
                         break;
 
                     // DataMatrix.
@@ -418,7 +434,6 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvBarcode.Format = BarcodeFormat.DataMatrix;
                         break;
 
                     // Ean13.
@@ -451,7 +466,6 @@ public partial class MainPage : ContentPage
                         edtTextToCode.Text = cTextToCode;
                         //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 6));
 
-                        bgvBarcode.Format = BarcodeFormat.Ean13;
                         break;
 
                     // Ean8.
@@ -484,7 +498,6 @@ public partial class MainPage : ContentPage
                         edtTextToCode.Text = cTextToCode;
                         //cTextCode = string.Concat(cTextToCode[..4], " ", cTextToCode.Substring(4, 4));
 
-                        bgvBarcode.Format = BarcodeFormat.Ean8;
                         break;
 
                     // Imb.
@@ -492,8 +505,7 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("IMb");
                         return;
 
-                    //bgvBarcode.Format = BarcodeFormat.Imb;
-                    //break;
+                        //break;
 
                     // Itf.
                     case 9:
@@ -508,7 +520,6 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvBarcode.Format = BarcodeFormat.Itf;
                         break;
 
                     // MaxiCode.
@@ -516,8 +527,7 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("MaxiCode");
                         return;
 
-                    //bgvBarcode.Format = BarcodeFormat.MaxiCode;
-                    //break;
+                        //break;
 
                     // Msi.
                     case 11:
@@ -526,7 +536,6 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvBarcode.Format = BarcodeFormat.Msi;
                         break;
 
                     // Pdf417.
@@ -536,7 +545,6 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvBarcode.Format = BarcodeFormat.Pdf417;
                         break;
 
                     // PharmaCode.
@@ -544,8 +552,7 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("Pharmacode");
                         return;
 
-                    //bgvBarcode.Format = BarcodeFormat.PharmaCode;
-                    //break;
+                        //break;
 
                     // Plessey.
                     case 14:
@@ -556,12 +563,10 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        bgvBarcode.Format = BarcodeFormat.Plessey;
                         break;
 
                     // QrCode.
                     case 15:
-                        bgvBarcode.Format = BarcodeFormat.QrCode;
                         break;
 
                     // Rss14.
@@ -569,16 +574,14 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("RSS 14");
                         return;
 
-                    //bgvBarcode.Format = BarcodeFormat.Rss14;
-                    //break;
+                        //break;
 
                     // RssExpanded.
                     case 17:
                         DisplayMessageFormat("RSS Expanded");
                         return;
 
-                    //bgvBarcode.Format = BarcodeFormat.RssExpanded;
-                    //break;
+                        //break;
 
                     // UpcA.
                     case 18:
@@ -610,7 +613,6 @@ public partial class MainPage : ContentPage
                         edtTextToCode.Text = cTextToCode;
                         //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 5), " ", cTextToCode.Substring(6, 5), " ", cTextToCode.Substring(11, 1));
 
-                        bgvBarcode.Format = BarcodeFormat.UpcA;
                         break;
 
                     // UpcE.
@@ -677,7 +679,6 @@ public partial class MainPage : ContentPage
                         edtTextToCode.Text = cTextToCode;
                         //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 1));
 
-                        bgvBarcode.Format = BarcodeFormat.UpcE;
                         break;
 
                     // UpcEanExtension.
@@ -685,7 +686,6 @@ public partial class MainPage : ContentPage
                         DisplayMessageFormat("UPC EAN Extension");
                         return;
 
-                        //bgvBarcode.Format = BarcodeFormat.UpcEanExtension;
                         //break;
                 }
             }
