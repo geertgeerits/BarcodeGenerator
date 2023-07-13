@@ -341,6 +341,7 @@ public partial class MainPage : ContentPage
 
         if (string.IsNullOrEmpty(edtTextToCode.Text))
         {
+            edtTextToCode.Focus();
             return;
         }
 
