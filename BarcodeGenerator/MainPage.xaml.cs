@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.33
-// Date ........: 2023-07-13 (YYYY-MM-DD)
+// Date ........: 2023-07-18 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -76,7 +76,7 @@ public partial class MainPage : ContentPage
         // Get and set the system OS user language.
         try
         {
-            if (Globals.cLanguage == "")
+            if (string.IsNullOrEmpty(Globals.cLanguage))
             {
                 Globals.cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
             }
@@ -93,7 +93,7 @@ public partial class MainPage : ContentPage
 
         try
         {
-            if (Globals.cLanguageSpeech == "")
+            if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
             {
                 cCultureName = Thread.CurrentThread.CurrentCulture.Name;
             }
@@ -102,7 +102,7 @@ public partial class MainPage : ContentPage
         {
             cCultureName = "en-US";
         }
-        //DisplayAlert("cCultureName", "*" + cCultureName + "*", "OK");  // For testing.
+        //DisplayAlert("cCultureName", $"*{cCultureName}*", "OK");  // For testing.
 
         InitializeTextToSpeech(cCultureName);
 
@@ -664,7 +664,7 @@ public partial class MainPage : ContentPage
                             cUpcA = string.Concat(cUpcE.AsSpan(0, 5), "0000", cLastDigit);
                         }
 
-                        cUpcA = "0" + cUpcA;
+                        cUpcA = $"0{cUpcA}";
 
                         // Calculate and add the checksum of the UPC-A code.
                         cUpcA += CalculateChecksumEanUpcA(cUpcA);
@@ -684,6 +684,11 @@ public partial class MainPage : ContentPage
 
                     // UpcEanExtension.
                     case 20:
+                        //if (TestAllowedCharacters("0123456789", cTextToCode) == false)
+                        //{
+                        //    return;
+                        //}
+
                         DisplayMessageFormat("UPC EAN Extension");
                         return;
 
@@ -701,7 +706,7 @@ public partial class MainPage : ContentPage
         {
             bgvBarcode.Value = cTextToCode;
 
-            btnShare.Text = CodeLang.ButtonShare_Text + " " + pckFormatCodeGenerator.Items[selectedIndex];
+            btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[selectedIndex]}";
             btnShare.IsEnabled = true;
         }
         catch (Exception ex)
@@ -721,7 +726,7 @@ public partial class MainPage : ContentPage
 
             if (bResult == false)
             {
-                DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.AllowedChar_Text + "\n" + cAllowedCharacters + "\n\n" + CodeLang.AllowedCharNot_Text + " " + cChar, CodeLang.ButtonClose_Text);
+                DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.AllowedChar_Text}\n{cAllowedCharacters}\n\n{CodeLang.AllowedCharNot_Text} {cChar}", CodeLang.ButtonClose_Text);
                 
                 edtTextToCode.Focus();
                 return false;
@@ -738,7 +743,7 @@ public partial class MainPage : ContentPage
         {
             if (cChar < nMinAsciiValue || cChar > nMaxAsciiValue)
             {
-                DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.TextContainsChar_Text + " " + cChar, CodeLang.ButtonClose_Text);
+                DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.TextContainsChar_Text} {cChar}", CodeLang.ButtonClose_Text);
                 
                 edtTextToCode.Focus();
                 return false;
@@ -761,7 +766,7 @@ public partial class MainPage : ContentPage
 
             if (cStartEndGuards.Contains(cChar) && nPos > 0 && nPos < cTextToCode.Length - 1)
             {
-                DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardInvalidStartEnd_Text + " " + cChar, CodeLang.ButtonClose_Text);
+                DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.GuardInvalidStartEnd_Text} {cChar}", CodeLang.ButtonClose_Text);
                 
                 edtTextToCode.Focus();
                 return false;
@@ -845,7 +850,7 @@ public partial class MainPage : ContentPage
     // Display a message with no encoder available for format.
     private void DisplayMessageFormat(string cFormat)
     {
-        DisplayAlert(CodeLang.FormatTitle_Text, cFormat + " " + CodeLang.FormatNotSupported_Text, CodeLang.ButtonClose_Text);
+        DisplayAlert(CodeLang.FormatTitle_Text, $"{cFormat} {CodeLang.FormatNotSupported_Text}", CodeLang.ButtonClose_Text);
 
         edtTextToCode.Focus();
     }
@@ -861,7 +866,7 @@ public partial class MainPage : ContentPage
     // Display an error message with minimum and maximum length.
     private void DisplayErrorMessageLength(string cMinLength, string cMaxLength)
     {
-        DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CodeLengthPart1_Text + " " + cMinLength + " " + CodeLang.CodeLengthPart2_Text + " " + cMaxLength + " " + CodeLang.CodeLengthPart3_Text, CodeLang.ButtonClose_Text);
+        DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.CodeLengthPart1_Text} {cMinLength} {CodeLang.CodeLengthPart2_Text} {cMaxLength} {CodeLang.CodeLengthPart3_Text}", CodeLang.ButtonClose_Text);
 
         edtTextToCode.Focus();
     }
@@ -869,7 +874,7 @@ public partial class MainPage : ContentPage
     // Display an error message and restart the application.
     private async void RestartApplication(string cErrorMessage)
     {
-        await DisplayAlert(CodeLang.ErrorTitle_Text, cErrorMessage + "\n" + CodeLang.RestartApp_Text, CodeLang.ButtonClose_Text);
+        await DisplayAlert(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
 
         //Application.Current.MainPage = new AppShell();
         Application.Current.MainPage = new NavigationPage(new MainPage());
@@ -966,8 +971,8 @@ public partial class MainPage : ContentPage
         // Set the current UI culture of the selected language.
         Globals.SetCultureSelectedLanguage();
 
-        cLicense = CodeLang.License_Text + "\n\n" + CodeLang.LicenseMit2_Text;
-        btnShare.Text = CodeLang.ButtonShare_Text + " " + pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex];
+        cLicense = $"{CodeLang.License_Text}\n\n{CodeLang.LicenseMit2_Text}";
+        btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex]}";
 
         //App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, Globals.cLanguage, "OK");  // For testing.
     }
@@ -992,7 +997,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message + "\n\n" + CodeLang.TextToSpeechError_Text, CodeLang.ButtonClose_Text);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
             return;
         }
        
@@ -1006,14 +1011,14 @@ public partial class MainPage : ContentPage
 
         foreach (var l in locales)
         {
-            Globals.cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
+            Globals.cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
             nItem++;
         }
 
         Array.Sort(Globals.cLanguageLocales);
 
         // Search for the language after a first start or reset of the application.
-        if (Globals.cLanguageSpeech == "")
+        if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
         {
             SearchArrayWithSpeechLanguages(cCultureName);
         }
@@ -1039,7 +1044,7 @@ public partial class MainPage : ContentPage
             }
 
             // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app.
-            if (Globals.cLanguageSpeech == "")
+            if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
             {
                 for (int nItem = 0; nItem < nTotalItems; nItem++)
                 {
@@ -1052,7 +1057,7 @@ public partial class MainPage : ContentPage
             }
 
             // If the language is still not found use the first language in the array.
-            if (Globals.cLanguageSpeech == "")
+            if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
             {
                 Globals.cLanguageSpeech = Globals.cLanguageLocales[0];
             }
@@ -1070,7 +1075,7 @@ public partial class MainPage : ContentPage
     //    // There is a problem with the StartsWith->cCultureName:
     //    // string value = Array.Find(cLanguageLocales, element => element.StartsWith(cCultureName, StringComparison.OrdinalIgnoreCase));
 
-    //    if (cLanguageSpeech == "")
+    //    if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
     //    {
     //        try
     //        {
@@ -1111,7 +1116,7 @@ public partial class MainPage : ContentPage
 
                 SpeechOptions options = new()
                 {
-                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == Globals.cLanguageSpeech)
+                    Locale = locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
                 };
 
                 await TextToSpeech.Default.SpeakAsync(edtTextToCode.Text, options, cancelToken: cts.Token);
@@ -1131,7 +1136,14 @@ public partial class MainPage : ContentPage
     {
         if (Clipboard.Default.HasText)
         {
-            edtTextToCode.Text = await Clipboard.Default.GetTextAsync();
+            string cTextToCode = await Clipboard.Default.GetTextAsync();
+            
+            if (cTextToCode.Length > edtTextToCode.MaxLength)
+            {
+                cTextToCode = cTextToCode[..edtTextToCode.MaxLength];
+            }
+
+            edtTextToCode.Text = cTextToCode;
         }
     }
 }

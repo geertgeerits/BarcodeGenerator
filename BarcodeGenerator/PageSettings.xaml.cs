@@ -360,7 +360,7 @@ public partial class PageSettings : ContentPage
         // Add the opacity if length = 6 characters.
         if (entry.Text.Length == 6)
         {
-            entry.Text = "FF" + entry.Text;
+            entry.Text = $"FF{entry.Text}";
         }
 
         // Length must be 8 characters.
@@ -423,7 +423,7 @@ public partial class PageSettings : ContentPage
 
             if (bResult == false)
             {
-                DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.AllowedChar_Text + "\n" + cAllowedCharacters + "\n\n" + CodeLang.AllowedCharNot_Text + " " + cChar, CodeLang.ButtonClose_Text);
+                DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.AllowedChar_Text}\n{cAllowedCharacters}\n\n{CodeLang.AllowedCharNot_Text} {cChar}", CodeLang.ButtonClose_Text);
                 return false;
             }
         }

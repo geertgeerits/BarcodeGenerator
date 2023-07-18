@@ -317,7 +317,7 @@ public partial class PageScan : ContentPage
         {
             Dispatcher.Dispatch(() =>
             {
-                btnShare.Text = CodeLang.ButtonShare_Text + " " + e.Results[0].Format;
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} {e.Results[0].Format}";
                 lblBarcodeResult.Text = e.Results[0].Value;
 
                 imgbtnCopyToClipboard.IsEnabled = true;
@@ -351,7 +351,7 @@ public partial class PageScan : ContentPage
             {
                 if (match.Success)
                 {
-                    bool bAnswer = await DisplayAlert(CodeLang.OpenLinkTitle_Text, match.Value + "\n\n" + CodeLang.OpenLinkText_Text, CodeLang.Yes_Text, CodeLang.No_Text);
+                    bool bAnswer = await DisplayAlert(CodeLang.OpenLinkTitle_Text, $"{match.Value}\n\n{CodeLang.OpenLinkText_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
 
                     // Open link website.
                     if (bAnswer)
@@ -382,7 +382,7 @@ public partial class PageScan : ContentPage
     {
         if (cUrl[..4] is "www." or "WWW.")
         {
-            cUrl = "http://" + cUrl;
+            cUrl = $"http://{cUrl}";
         }
 
         try
@@ -485,7 +485,7 @@ public partial class PageScan : ContentPage
 
                 SpeechOptions options = new()
                 {
-                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == Globals.cLanguageSpeech)
+                    Locale = locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
                 };
 
                 await TextToSpeech.Default.SpeakAsync(lblBarcodeResult.Text, options, cancelToken: cts.Token);
