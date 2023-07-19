@@ -470,7 +470,7 @@ public partial class PageSettings : ContentPage
             nColorBlue = (int)args.NewValue;
         }
 
-        string cColorFgHex = nAmountOpacity.ToString("X2") + nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
+        string cColorFgHex = $"{nAmountOpacity.ToString("X2")}{nColorRed.ToString("X2")}{nColorGreen.ToString("X2")}{nColorBlue.ToString("X2")}";
         entHexColorFg.Text = cColorFgHex;
         bxvColorFg.Color = Color.FromArgb(cColorFgHex);
 
@@ -516,7 +516,7 @@ public partial class PageSettings : ContentPage
             nColorBlue = (int)args.NewValue;
         }
 
-        string cColorBgHex = nAmountOpacity.ToString("X2") + nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
+        string cColorBgHex = $"{nAmountOpacity.ToString("X2")}{nColorRed.ToString("X2")}{nColorGreen.ToString("X2")}{nColorBlue.ToString("X2")}";
         entHexColorBg.Text = cColorBgHex;
         bxvColorBg.Color = Color.FromArgb(cColorBgHex);
 

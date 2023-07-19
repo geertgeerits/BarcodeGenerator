@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.33
-// Date ........: 2023-07-18 (YYYY-MM-DD)
+// Date ........: 2023-07-19 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -684,13 +684,13 @@ public partial class MainPage : ContentPage
 
                     // UpcEanExtension.
                     case 20:
+                        DisplayMessageFormat("UPC EAN Extension");
+                        return;
+
                         //if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         //{
                         //    return;
                         //}
-
-                        DisplayMessageFormat("UPC EAN Extension");
-                        return;
 
                         //break;
                 }
@@ -1136,14 +1136,14 @@ public partial class MainPage : ContentPage
     {
         if (Clipboard.Default.HasText)
         {
-            string cTextToCode = await Clipboard.Default.GetTextAsync();
+            string cTextToPaste = await Clipboard.Default.GetTextAsync();
             
-            if (cTextToCode.Length > edtTextToCode.MaxLength)
+            if (cTextToPaste.Length > edtTextToCode.MaxLength)
             {
-                cTextToCode = cTextToCode[..edtTextToCode.MaxLength];
+                cTextToPaste = cTextToPaste[..edtTextToCode.MaxLength];
             }
 
-            edtTextToCode.Text = cTextToCode;
+            edtTextToCode.Text = cTextToPaste;
         }
     }
 }
