@@ -45,6 +45,11 @@ public partial class PageScan : ContentPage
 
         // Initialize text to speech.
         InitializeTextToSpeech();
+
+        // For testing crashes - DivideByZeroException.
+        //int a = 10;
+        //int b = 0;
+        //int c = a / b;
     }
 
     // Set the scanner properties for the selected format code.

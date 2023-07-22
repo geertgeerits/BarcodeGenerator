@@ -8,6 +8,8 @@
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.3.0-preview.1 ; https://github.com/redth/ZXing.Net.Maui
 //                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.3.0-preview.1
+//                NuGet Package: Microsoft.AppCenter version 5.0.2 ; https://azure.microsoft.com/en-us/products/app-center/
+//                NuGet Package: Microsoft.AppCenter.Crashes version 5.0.2 
 // Thanks to ...: Gerald Versluis
 
 using ZXing.Net.Maui;
@@ -108,6 +110,11 @@ public partial class MainPage : ContentPage
 
         // Set focus to the editor.
         edtTextToCode.Focus();
+
+        // For testing crashes - DivideByZeroException.
+        //int a = 10;
+        //int b = 0;
+        //int c = a / b;
     }
 
     // TitleView buttons clicked events.
@@ -704,7 +711,7 @@ public partial class MainPage : ContentPage
 
         try
         {
-            // For testing crashes.
+            // For testing crashes - DivideByZeroException.
             //int a = 10;
             //int b = 0;
             //int c = a / b;
@@ -1168,8 +1175,9 @@ public partial class MainPage : ContentPage
                     { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
                 };
                 Crashes.TrackError(ex, properties);
-            }
-            
+
+                await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+            }          
         }
     }
 }
