@@ -1,8 +1,8 @@
 ﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
-// Version .....: 1.0.33
-// Date ........: 2023-07-19 (YYYY-MM-DD)
+// Version .....: 1.0.34
+// Date ........: 2023-07-22 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -704,13 +704,26 @@ public partial class MainPage : ContentPage
 
         try
         {
-            bgvBarcode.Value = cTextToCode;
+            // For testing crashes.
+            //int a = 10;
+            //int b = 0;
+            //int c = a / b;
 
+            bgvBarcode.Value = cTextToCode;
+            
             btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[selectedIndex]}";
             btnShare.IsEnabled = true;
         }
         catch (Exception ex)
         {
+            var properties = new Dictionary<string, string> {
+                { "File:", "MainPage.xaml.cs" },
+                { "Method:", "OnGenerateCodeClicked" },
+                { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) },
+                { "BarcodeValue:", cTextToCode }
+            };
+            Crashes.TrackError(ex, properties);
+
             bgvBarcode.Value = "";
 
             RestartApplication(ex.Message);
@@ -1136,14 +1149,27 @@ public partial class MainPage : ContentPage
     {
         if (Clipboard.Default.HasText)
         {
-            string cTextToPaste = await Clipboard.Default.GetTextAsync();
-            
-            if (cTextToPaste.Length > edtTextToCode.MaxLength)
+            try
             {
-                cTextToPaste = cTextToPaste[..edtTextToCode.MaxLength];
-            }
+                string cTextToPaste = await Clipboard.Default.GetTextAsync();
 
-            edtTextToCode.Text = cTextToPaste;
+                if (cTextToPaste.Length > edtTextToCode.MaxLength)
+                {
+                    cTextToPaste = cTextToPaste[..edtTextToCode.MaxLength];
+                }
+
+                edtTextToCode.Text = cTextToPaste;
+            }
+            catch (Exception ex)
+            {
+                var properties = new Dictionary<string, string> {
+                    { "File:", "MainPage.xaml.cs" },
+                    { "Method:", "OnPasteFromClipboardClicked" },
+                    { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
+                };
+                Crashes.TrackError(ex, properties);
+            }
+            
         }
     }
 }

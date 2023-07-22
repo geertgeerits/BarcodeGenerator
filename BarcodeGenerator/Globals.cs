@@ -1,6 +1,7 @@
 ﻿// Global usings.
 global using BarcodeGenerator.Resources.Languages;
 global using System.Globalization;
+global using Microsoft.AppCenter.Crashes;
 
 namespace BarcodeGenerator;
 
