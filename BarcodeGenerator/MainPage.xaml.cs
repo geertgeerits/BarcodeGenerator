@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.34
-// Date ........: 2023-07-22 (YYYY-MM-DD)
+// Date ........: 2023-07-23 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -21,6 +21,7 @@ public partial class MainPage : ContentPage
     // Local variables.
     private string cLicense;
     private readonly bool bLicense;
+    private readonly bool bLogAlwaysSend;
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
     private bool bTextToSpeechIsBusy = false;
@@ -46,6 +47,24 @@ public partial class MainPage : ContentPage
         Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
         Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
         bLicense = Preferences.Default.Get("SettingLicense", false);
+        bLogAlwaysSend = Preferences.Default.Get("SettingLogAlwaysSend", false);
+
+        // For testing crashes - DivideByZeroException.
+        //int a = 10;
+        //int b = 0;
+        //int c = a / b;
+
+        // Crash log confirmation.
+        if (!bLogAlwaysSend)
+        {
+            Crashes.ShouldAwaitUserConfirmation = () =>
+            {
+                ConfirmationSendCrashLog();
+
+                // Return true if you built a UI for user consent and are waiting for user input on that custom UI, otherwise false.
+                return true;
+            };
+        }
 
         // Set the theme.
         if (Globals.cTheme == "Light")
@@ -110,11 +129,6 @@ public partial class MainPage : ContentPage
 
         // Set focus to the editor.
         edtTextToCode.Focus();
-
-        // For testing crashes - DivideByZeroException.
-        //int a = 10;
-        //int b = 0;
-        //int c = a / b;
     }
 
     // TitleView buttons clicked events.
@@ -1178,6 +1192,26 @@ public partial class MainPage : ContentPage
 
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }          
+        }
+    }
+
+    // Crash log confirmation.
+    private async void ConfirmationSendCrashLog()
+    {
+        string cAction = await DisplayActionSheet(CodeLang.LogTitle_Text, null, null, CodeLang.LogSend_Text, CodeLang.LogAlwaysSend_Text, CodeLang.LogDontSend_Text);
+
+        if (cAction == CodeLang.LogSend_Text)
+        {
+            Crashes.NotifyUserConfirmation(UserConfirmation.Send);
+        }
+        else if (cAction == CodeLang.LogAlwaysSend_Text)
+        {
+            Crashes.NotifyUserConfirmation(UserConfirmation.AlwaysSend);
+            Preferences.Default.Set("SettingLogAlwaysSend", true);
+        }
+        else if (cAction == CodeLang.LogDontSend_Text)
+        {
+            Crashes.NotifyUserConfirmation(UserConfirmation.DontSend);
         }
     }
 }

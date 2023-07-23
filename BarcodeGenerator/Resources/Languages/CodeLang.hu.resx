@@ -160,6 +160,9 @@
     <value>Ha nem kapott engedélyt a kamera használatára, akkor a készülék beállításainál engedélyezheti a kamerát, válassza ki az alkalmazást és engedélyezze a kamerát.
 Egy másik lehetőség az alkalmazás eltávolítása és újratelepítése.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Megszünteti</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Hibás a kód.
 Az ellenőrző számjegy javítva.</value>
@@ -283,6 +286,21 @@ A fenti szerzői jogi megjegyzést és ezt az engedélyt (beleértve a következ
   <data name="License_Text" xml:space="preserve">
     <value>Ez az alkalmazás szabadon felhasználható nem kereskedelmi célokra.
 Ezt a programot kizárólag saját felelősségére használja.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Mindig küldjön</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Ne küldj</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Küld</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Az alkalmazás hibát észlelt az előző munkamenetben.
+Az alkalmazás fejlesztése érdekében szeretném megkapni a naplót ezzel a hibával.
+Elküldhető a hibanapló?
+Előre is köszönöm.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

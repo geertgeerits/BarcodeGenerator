@@ -160,6 +160,9 @@
     <value>Pokud nebylo uděleno povolení k použití kamery, lze kameru povolit v nastavení zařízení, vybrat aplikaci a povolit kameru.
 Další možností je odinstalovat a znovu nainstalovat aplikaci.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Zrušení</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Kód je špatný.
 Kontrolní číslice byla opravena.</value>
@@ -283,6 +286,21 @@ Výše uvedené oznámení o autorských právech a toto oznámení o povolení 
   <data name="License_Text" xml:space="preserve">
     <value>Tuto aplikaci lze volně používat pro nekomerční účely.
 Používejte tento program zcela na vlastní nebezpečí.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Vždy posílejte</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Neposílejte</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Poslat</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Aplikace zjistila chybu v předchozí relaci.
+Pro vylepšení aplikace bych rád obdržel protokol s touto chybou.
+Je možné zaslat protokol o této chybě?
+Děkuji předem.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

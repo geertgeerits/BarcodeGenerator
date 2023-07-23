@@ -160,6 +160,9 @@
     <value>If permission to use the camera has not been given, the camera can be enabled in the device settings, select the application and enable the camera.
 Another option is to uninstall and reinstall the application.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>The code is wrong.
 The check digit has been corrected.</value>
@@ -283,6 +286,21 @@ The above copyright notice and this permission notice (including the next paragr
   <data name="License_Text" xml:space="preserve">
     <value>This application may be used freely for non-commercial purposes.
 Use this program entirely at your own risk.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Always send</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Don't send</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>The application detected an error in a previous session.
+To improve the application, I would like to receive the log with that error.
+May the log of that error be sent?
+Thank you in advance.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

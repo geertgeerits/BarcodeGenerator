@@ -188,6 +188,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Cancel_Text {
+            get {
+                return ResourceManager.GetString("Cancel_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The code is wrong.
         ///The check digit has been corrected..
         /// </summary>
@@ -513,6 +522,45 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string LicenseTitle_Text {
             get {
                 return ResourceManager.GetString("LicenseTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Always send.
+        /// </summary>
+        internal static string LogAlwaysSend_Text {
+            get {
+                return ResourceManager.GetString("LogAlwaysSend_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t send.
+        /// </summary>
+        internal static string LogDontSend_Text {
+            get {
+                return ResourceManager.GetString("LogDontSend_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        internal static string LogSend_Text {
+            get {
+                return ResourceManager.GetString("LogSend_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The application detected an error in a previous session.
+        ///To improve the application, I would like to receive the log with that error.
+        ///May the log of that error be sent?
+        ///Thank you in advance..
+        /// </summary>
+        internal static string LogTitle_Text {
+            get {
+                return ResourceManager.GetString("LogTitle_Text", resourceCulture);
             }
         }
         

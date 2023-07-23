@@ -160,6 +160,9 @@
     <value>Wanneer er geen toelating gegeven werd voor het gebruik van de camera, dan kan de camera aangezet worden in de instellingen van het toestel, selecteer de toepassing en schakel de camera in.
 Een andere mogelijkheid is de toepassing te verwijderen en opnieuw te installeren.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>De code is fout.
 Het controlecijfer is gecorrigeerd.</value>
@@ -283,6 +286,21 @@ De bovenstaande copyrightkennisgeving en deze toestemmingskennisgeving (inclusie
   <data name="License_Text" xml:space="preserve">
     <value>Deze applicatie mag vrij worden gebruikt voor niet-commerciële doeleinden.
 Gebruik dit programma geheel op eigen risico.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Verstuur altijd</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Niet versturen</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Versturen</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>De toepassing heeft in een vorige sessie een fout vastgesteld.
+Om de toepassing beter te maken had ik graag het logboek met die fout ontvangen.
+Mag het logboek van die fout verzonden worden?
+Alvast bedankt.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

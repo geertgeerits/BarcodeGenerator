@@ -160,6 +160,9 @@
     <value>Jeśli nie udzielono zgody na korzystanie z kamery, można ją włączyć w ustawieniach urządzenia, wybrać aplikację i włączyć kamerę.
 Inną opcją jest odinstalowanie i ponowne zainstalowanie aplikacji.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Anulować</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Kod jest błędny.
 Cyfra kontrolna została poprawiona.</value>
@@ -283,6 +286,21 @@ Powyższa informacja o prawach autorskich i niniejsza informacja o zezwoleniu (w
   <data name="License_Text" xml:space="preserve">
     <value>Z tej aplikacji można swobodnie korzystać w celach niekomercyjnych.
 Korzystaj z tego programu całkowicie na własne ryzyko.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Zawsze wysyłaj</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Nie wysyłaj</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Wysłać</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Aplikacja wykryła błąd w poprzedniej sesji.
+Aby ulepszyć aplikację, chciałbym otrzymać log z tym błędem.
+Czy można przesłać log z tego błędu?
+Z góry dziękuję.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

@@ -160,6 +160,9 @@
     <value>Dacă nu a fost acordată permisiunea de a utiliza camera, camera poate fi activată în setările dispozitivului, selectați aplicația și activați camera.
 O altă opțiune este să dezinstalați și să reinstalați aplicația.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Codul este greșit.
 Cifra de verificare a fost corectată.</value>
@@ -283,6 +286,21 @@ Nota privind drepturile de autor de mai sus și această notificare de permisiun
   <data name="License_Text" xml:space="preserve">
     <value>Această aplicație poate fi folosită gratuit în scopuri necomerciale.
 Utilizați acest program în întregime pe propriul risc.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Trimite mereu</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Nu trimite</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Trimite</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Aplicația a detectat o eroare într-o sesiune anterioară.
+Pentru a îmbunătăți aplicația, aș dori să primesc jurnalul cu acea eroare.
+Se poate trimite jurnalul acelei erori?
+Vă mulțumesc anticipat.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

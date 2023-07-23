@@ -160,6 +160,9 @@
     <value>Hvis tillatelse til å bruke kameraet ikke er gitt, kan kameraet aktiveres i enhetsinnstillingene, velg applikasjonen og aktiver kameraet.
 Et annet alternativ er å avinstallere og installere programmet på nytt.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Koden er feil.
 Kontrollsifferet er rettet.</value>
@@ -283,6 +286,21 @@ Merknaden om opphavsrett ovenfor og denne tillatelsesmeldingen (inkludert neste 
   <data name="License_Text" xml:space="preserve">
     <value>Denne applikasjonen kan brukes fritt til ikke-kommersielle formål.
 Bruk dette programmet helt på egen risiko.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Send alltid</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Ikke send</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Sende</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Applikasjonen oppdaget en feil i en tidligere økt.
+For å forbedre applikasjonen vil jeg gjerne motta loggen med den feilen.
+Kan loggen for den feilen sendes?
+Takk på forhånd.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

@@ -160,6 +160,9 @@
     <value>Se a permissão para usar a câmera não foi concedida, a câmera pode ser ativada nas configurações do dispositivo, selecione o aplicativo e ative a câmera.
 Outra opção é desinstalar e reinstalar o aplicativo.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>O código está errado.
 O dígito de verificação foi corrigido.</value>
@@ -283,6 +286,21 @@ O aviso de direitos autorais acima e este aviso de permissão (incluindo o próx
   <data name="License_Text" xml:space="preserve">
     <value>Este aplicativo pode ser usado livremente para fins não comerciais.
 Use este programa inteiramente por sua conta e risco.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Enviar sempre</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Não envie</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>O aplicativo detectou um erro em uma sessão anterior.
+Para melhorar o aplicativo, gostaria de receber o log com esse erro.
+O log desse erro pode ser enviado?
+Agradeço antecipadamente.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

@@ -160,6 +160,9 @@
     <value>Wenn keine Erlaubnis zur Nutzung der Kamera erteilt wurde, kann die Kamera in den Geräteeinstellungen aktiviert werden, die Anwendung auswählen und die Kamera aktivieren.
 Eine andere Möglichkeit besteht darin, die Anwendung zu deinstallieren und erneut zu installieren.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Stornieren</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Der Code ist falsch.
 Die Prüfziffer wurde korrigiert.</value>
@@ -283,6 +286,21 @@ Der obige Urheberrechtshinweis und dieser Genehmigungshinweis (einschließlich d
   <data name="License_Text" xml:space="preserve">
     <value>Diese Anwendung darf für nichtkommerzielle Zwecke frei verwendet werden.
 Verwenden Sie dieses Programm ausschließlich auf eigene Gefahr.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Immer senden</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Nicht senden</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Senden</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Die Anwendung hat in einer früheren Sitzung einen Fehler festgestellt.
+Um die Anwendung zu verbessern, möchte ich das Protokoll mit diesem Fehler erhalten.
+Darf das Protokoll dieses Fehlers gesendet werden?
+Vielen Dank im Voraus.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

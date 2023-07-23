@@ -160,6 +160,9 @@
     <value>Om tillstånd att använda kameran inte har getts kan kameran aktiveras i enhetsinställningarna, välj applikationen och aktivera kameran.
 Ett annat alternativ är att avinstallera och installera om programmet.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Annullera</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Koden är fel.
 Kontrollsiffran har korrigerats.</value>
@@ -283,6 +286,21 @@ Ovanstående copyrightmeddelande och detta tillståndsmeddelande (inklusive näs
   <data name="License_Text" xml:space="preserve">
     <value>Denna applikation får användas fritt för icke-kommersiella ändamål.
 Använd detta program helt på egen risk.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Skicka alltid</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Skicka inte</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Skicka</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Programmet upptäckte ett fel i en tidigare session.
+För att förbättra applikationen skulle jag vilja få loggen med det felet.
+Kan loggen för det felet skickas?
+Tack på förhand.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

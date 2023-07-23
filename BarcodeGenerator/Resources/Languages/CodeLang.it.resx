@@ -160,6 +160,9 @@
     <value>Se non è stata concessa l'autorizzazione all'uso della fotocamera, è possibile abilitare la fotocamera nelle impostazioni del dispositivo, selezionare l'applicazione e abilitare la fotocamera.
 Un'altra opzione è disinstallare e reinstallare l'applicazione.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Il codice è sbagliato.
 La cifra di controllo è stata corretta.</value>
@@ -283,6 +286,21 @@ L'avviso di copyright di cui sopra e questo avviso di autorizzazione (incluso il
   <data name="License_Text" xml:space="preserve">
     <value>Questa applicazione può essere utilizzata liberamente per scopi non commerciali.
 Utilizzare questo programma interamente a proprio rischio.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Invia sempre</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Non inviare</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Inviare</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>L'applicazione ha rilevato un errore in una sessione precedente.
+Per migliorare l'applicazione, vorrei ricevere il registro con quell'errore.
+Può essere inviato il log di quell'errore?
+Grazie in anticipo.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

@@ -160,6 +160,9 @@
     <value>Jos kameran käyttölupaa ei ole annettu, kamera voidaan ottaa käyttöön laitteen asetuksista, valita sovellus ja ottaa kamera käyttöön.
 Toinen vaihtoehto on poistaa sovellus ja asentaa se uudelleen.</value>
   </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Peruuttaa</value>
+  </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
     <value>Koodi on väärä.
 Tarkistusnumero on korjattu.</value>
@@ -283,6 +286,21 @@ Yllä oleva tekijänoikeusilmoitus ja tämä lupailmoitus (mukaan lukien seuraav
   <data name="License_Text" xml:space="preserve">
     <value>Tätä sovellusta voidaan käyttää vapaasti ei-kaupallisiin tarkoituksiin.
 Käytä tätä ohjelmaa täysin omalla vastuullasi.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Lähetä aina</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Älä lähetä</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Lähettää</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Sovellus havaitsi virheen edellisessä istunnossa.
+Sovelluksen parantamiseksi haluaisin saada lokin, jossa on tämä virhe.
+Voidaanko virheloki lähettää?
+Kiitos jo etukäteen.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>
