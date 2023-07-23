@@ -293,14 +293,17 @@ Bruk dette programmet helt på egen risiko.</value>
   <data name="LogDontSend_Text" xml:space="preserve">
     <value>Ikke send</value>
   </data>
-  <data name="LogSend_Text" xml:space="preserve">
-    <value>Sende</value>
-  </data>
-  <data name="LogTitle_Text" xml:space="preserve">
+  <data name="LogMessage_Text" xml:space="preserve">
     <value>Applikasjonen oppdaget en feil i en tidligere økt.
 For å forbedre applikasjonen vil jeg gjerne motta loggen med den feilen.
 Kan loggen for den feilen sendes?
 Takk på forhånd.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Sende</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Sender feilloggen</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

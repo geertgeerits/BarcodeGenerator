@@ -293,14 +293,17 @@ Používejte tento program zcela na vlastní nebezpečí.</value>
   <data name="LogDontSend_Text" xml:space="preserve">
     <value>Neposílejte</value>
   </data>
-  <data name="LogSend_Text" xml:space="preserve">
-    <value>Poslat</value>
-  </data>
-  <data name="LogTitle_Text" xml:space="preserve">
+  <data name="LogMessage_Text" xml:space="preserve">
     <value>Aplikace zjistila chybu v předchozí relaci.
 Pro vylepšení aplikace bych rád obdržel protokol s touto chybou.
 Je možné zaslat protokol o této chybě?
 Děkuji předem.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Poslat</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Odeslání protokolu chyb</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

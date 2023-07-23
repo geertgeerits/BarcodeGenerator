@@ -293,14 +293,17 @@ Korzystaj z tego programu całkowicie na własne ryzyko.</value>
   <data name="LogDontSend_Text" xml:space="preserve">
     <value>Nie wysyłaj</value>
   </data>
-  <data name="LogSend_Text" xml:space="preserve">
-    <value>Wysłać</value>
-  </data>
-  <data name="LogTitle_Text" xml:space="preserve">
+  <data name="LogMessage_Text" xml:space="preserve">
     <value>Aplikacja wykryła błąd w poprzedniej sesji.
 Aby ulepszyć aplikację, chciałbym otrzymać log z tym błędem.
 Czy można przesłać log z tego błędu?
 Z góry dziękuję.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Wysłać</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Wysyłanie dziennika błędów</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

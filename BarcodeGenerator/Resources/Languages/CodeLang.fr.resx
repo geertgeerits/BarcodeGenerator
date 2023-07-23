@@ -293,14 +293,17 @@ Utilisez ce programme entièrement à vos propres risques.</value>
   <data name="LogDontSend_Text" xml:space="preserve">
     <value>N'envoyez pas</value>
   </data>
-  <data name="LogSend_Text" xml:space="preserve">
-    <value>Envoyer</value>
-  </data>
-  <data name="LogTitle_Text" xml:space="preserve">
+  <data name="LogMessage_Text" xml:space="preserve">
     <value>L'application a détecté une erreur dans une session précédente.
 Pour améliorer l'application, je souhaite recevoir le journal avec cette erreur.
 Le journal de cette erreur peut-il être envoyé ?
 Merci d'avance.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Envoyer</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Envoi du journal des erreurs</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

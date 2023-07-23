@@ -293,14 +293,17 @@ Use este programa inteiramente por sua conta e risco.</value>
   <data name="LogDontSend_Text" xml:space="preserve">
     <value>Não envie</value>
   </data>
-  <data name="LogSend_Text" xml:space="preserve">
-    <value>Enviar</value>
-  </data>
-  <data name="LogTitle_Text" xml:space="preserve">
+  <data name="LogMessage_Text" xml:space="preserve">
     <value>O aplicativo detectou um erro em uma sessão anterior.
 Para melhorar o aplicativo, gostaria de receber o log com esse erro.
 O log desse erro pode ser enviado?
 Agradeço antecipadamente.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value />
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

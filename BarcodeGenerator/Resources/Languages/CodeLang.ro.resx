@@ -293,14 +293,17 @@ Utilizați acest program în întregime pe propriul risc.</value>
   <data name="LogDontSend_Text" xml:space="preserve">
     <value>Nu trimite</value>
   </data>
-  <data name="LogSend_Text" xml:space="preserve">
-    <value>Trimite</value>
-  </data>
-  <data name="LogTitle_Text" xml:space="preserve">
+  <data name="LogMessage_Text" xml:space="preserve">
     <value>Aplicația a detectat o eroare într-o sesiune anterioară.
 Pentru a îmbunătăți aplicația, aș dori să primesc jurnalul cu acea eroare.
 Se poate trimite jurnalul acelei erori?
 Vă mulțumesc anticipat.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Trimite</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Se trimite jurnalul de erori</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

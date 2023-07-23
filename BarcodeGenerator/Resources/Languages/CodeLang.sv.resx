@@ -293,14 +293,17 @@ Använd detta program helt på egen risk.</value>
   <data name="LogDontSend_Text" xml:space="preserve">
     <value>Skicka inte</value>
   </data>
-  <data name="LogSend_Text" xml:space="preserve">
-    <value>Skicka</value>
-  </data>
-  <data name="LogTitle_Text" xml:space="preserve">
+  <data name="LogMessage_Text" xml:space="preserve">
     <value>Programmet upptäckte ett fel i en tidigare session.
 För att förbättra applikationen skulle jag vilja få loggen med det felet.
 Kan loggen för det felet skickas?
 Tack på förhand.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Skicka</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Skickar felloggen</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

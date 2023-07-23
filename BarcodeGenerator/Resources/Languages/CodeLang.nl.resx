@@ -293,14 +293,17 @@ Gebruik dit programma geheel op eigen risico.</value>
   <data name="LogDontSend_Text" xml:space="preserve">
     <value>Niet versturen</value>
   </data>
-  <data name="LogSend_Text" xml:space="preserve">
-    <value>Versturen</value>
-  </data>
-  <data name="LogTitle_Text" xml:space="preserve">
+  <data name="LogMessage_Text" xml:space="preserve">
     <value>De toepassing heeft in een vorige sessie een fout vastgesteld.
 Om de toepassing beter te maken had ik graag het logboek met die fout ontvangen.
 Mag het logboek van die fout verzonden worden?
 Alvast bedankt.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Versturen</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Verzenden van het foutenlogboek</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>

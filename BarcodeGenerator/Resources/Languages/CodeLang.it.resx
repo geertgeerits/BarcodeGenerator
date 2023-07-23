@@ -293,14 +293,17 @@ Utilizzare questo programma interamente a proprio rischio.</value>
   <data name="LogDontSend_Text" xml:space="preserve">
     <value>Non inviare</value>
   </data>
-  <data name="LogSend_Text" xml:space="preserve">
-    <value>Inviare</value>
-  </data>
-  <data name="LogTitle_Text" xml:space="preserve">
+  <data name="LogMessage_Text" xml:space="preserve">
     <value>L'applicazione ha rilevato un errore in una sessione precedente.
 Per migliorare l'applicazione, vorrei ricevere il registro con quell'errore.
 Può essere inviato il log di quell'errore?
 Grazie in anticipo.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Inviare</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Invio del registro degli errori</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>
