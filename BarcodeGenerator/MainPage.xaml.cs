@@ -2,16 +2,17 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.34
-// Date ........: 2023-07-23 (YYYY-MM-DD)
+// Date ........: 2023-07-24 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.3.0-preview.1 ; https://github.com/redth/ZXing.Net.Maui
 //                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.3.0-preview.1
-//                NuGet Package: Microsoft.AppCenter version 5.0.2 ; https://azure.microsoft.com/en-us/products/app-center/
+//                NuGet Package: Microsoft.AppCenter version 5.0.2 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/
 //                NuGet Package: Microsoft.AppCenter.Crashes version 5.0.2 
 // Thanks to ...: Gerald Versluis
 
+using System;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator;
@@ -50,18 +51,15 @@ public partial class MainPage : ContentPage
         bLogAlwaysSend = Preferences.Default.Get("SettingLogAlwaysSend", false);
 
         // For testing crashes - DivideByZeroException.
-        //int a = 10;
-        //int b = 0;
-        //int c = a / b;
+        //int divByZero = 51 / int.Parse("0");
 
         // Crash log confirmation.
         if (!bLogAlwaysSend)
         {
             Crashes.ShouldAwaitUserConfirmation = () =>
             {
-                ConfirmationSendCrashLog();
-
                 // Return true if you built a UI for user consent and are waiting for user input on that custom UI, otherwise false.
+                ConfirmationSendCrashLog();
                 return true;
             };
         }
@@ -726,9 +724,7 @@ public partial class MainPage : ContentPage
         try
         {
             // For testing crashes - DivideByZeroException.
-            //int a = 10;
-            //int b = 0;
-            //int c = a / b;
+            //int divByZero = 51 / int.Parse("0");
 
             bgvBarcode.Value = cTextToCode;
             
@@ -744,6 +740,27 @@ public partial class MainPage : ContentPage
                 { "BarcodeValue:", cTextToCode }
             };
             Crashes.TrackError(ex, properties);
+
+            //if (Crashes.ShouldAwaitUserConfirmation())
+            //{
+            //    Crashes.TrackError(ex, properties);
+            //}
+
+            //Crashes.ShouldProcessErrorReport = (ErrorReport report) =>
+            //{
+            //    //DataLogger.Error("AppCenter process error");
+            //    // Return true if the crash report should be processed, otherwise false.
+            //    return true; 
+            //};
+
+            //if (bLogAlwaysSend)
+            //{
+            //    Crashes.TrackError(ex, properties);
+            //}
+            //else
+            //{
+            //    ConfirmationSendCrashLog();
+            //}
 
             bgvBarcode.Value = "";
 
@@ -1198,6 +1215,7 @@ public partial class MainPage : ContentPage
     // Crash log confirmation.
     private async void ConfirmationSendCrashLog()
     {
+        // Using the DisplayActionSheet with 3 choices.
         string cAction = await DisplayActionSheet(CodeLang.LogTitle_Text, null, null, CodeLang.LogSend_Text, CodeLang.LogAlwaysSend_Text, CodeLang.LogDontSend_Text);
 
         if (cAction == CodeLang.LogSend_Text)
@@ -1213,6 +1231,18 @@ public partial class MainPage : ContentPage
         {
             Crashes.NotifyUserConfirmation(UserConfirmation.DontSend);
         }
+
+        // Using the DisplayAlert with 2 choices.
+        //bool bAction = await DisplayAlert(CodeLang.LogTitle_Text, CodeLang.LogMessage_Text, CodeLang.LogSend_Text, CodeLang.LogDontSend_Text);
+
+        //if (bAction)
+        //{
+        //    Crashes.NotifyUserConfirmation(UserConfirmation.Send);
+        //}
+        //else
+        //{
+        //    Crashes.NotifyUserConfirmation(UserConfirmation.DontSend);
+        //}
     }
 }
 

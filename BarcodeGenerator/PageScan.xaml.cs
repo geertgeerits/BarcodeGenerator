@@ -47,9 +47,7 @@ public partial class PageScan : ContentPage
         InitializeTextToSpeech();
 
         // For testing crashes - DivideByZeroException.
-        //int a = 10;
-        //int b = 0;
-        //int c = a / b;
+        //int divByZero = 51 / int.Parse("0");
     }
 
     // Set the scanner properties for the selected format code.
