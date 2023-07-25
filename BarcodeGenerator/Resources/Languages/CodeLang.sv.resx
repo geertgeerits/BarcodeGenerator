@@ -303,7 +303,7 @@ Tack på förhand.</value>
     <value>Skicka</value>
   </data>
   <data name="LogTitle2_Text" xml:space="preserve">
-    <value>An error has been detected. Send the error log?</value>
+    <value>Ett fel har upptäckts. Skicka felloggen?</value>
   </data>
   <data name="LogTitle_Text" xml:space="preserve">
     <value>Skickar felloggen</value>

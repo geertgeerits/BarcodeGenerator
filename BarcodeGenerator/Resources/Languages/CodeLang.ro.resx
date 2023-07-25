@@ -303,7 +303,7 @@ Vă mulțumesc anticipat.</value>
     <value>Trimite</value>
   </data>
   <data name="LogTitle2_Text" xml:space="preserve">
-    <value>An error has been detected. Send the error log?</value>
+    <value>A fost detectată o eroare. Trimiteți jurnalul de erori?</value>
   </data>
   <data name="LogTitle_Text" xml:space="preserve">
     <value>Se trimite jurnalul de erori</value>

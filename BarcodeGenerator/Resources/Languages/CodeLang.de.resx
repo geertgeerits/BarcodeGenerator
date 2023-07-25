@@ -303,7 +303,7 @@ Vielen Dank im Voraus.</value>
     <value>Senden</value>
   </data>
   <data name="LogTitle2_Text" xml:space="preserve">
-    <value>An error has been detected. Send the error log?</value>
+    <value>Es wurde ein Fehler erkannt. Fehlerprotokoll senden?</value>
   </data>
   <data name="LogTitle_Text" xml:space="preserve">
     <value>Senden des Fehlerprotokolls</value>

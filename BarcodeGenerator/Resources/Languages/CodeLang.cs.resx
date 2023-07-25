@@ -303,7 +303,7 @@ Děkuji předem.</value>
     <value>Poslat</value>
   </data>
   <data name="LogTitle2_Text" xml:space="preserve">
-    <value>An error has been detected. Send the error log?</value>
+    <value>Byla zjištěna chyba. Odeslat protokol chyb?</value>
   </data>
   <data name="LogTitle_Text" xml:space="preserve">
     <value>Odeslání protokolu chyb</value>

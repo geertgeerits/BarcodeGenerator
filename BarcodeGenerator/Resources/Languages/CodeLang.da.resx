@@ -303,7 +303,7 @@ Tak på forhånd.</value>
     <value>Sende</value>
   </data>
   <data name="LogTitle2_Text" xml:space="preserve">
-    <value>An error has been detected. Send the error log?</value>
+    <value>Der er opdaget en fejl. Send fejlloggen?</value>
   </data>
   <data name="LogTitle_Text" xml:space="preserve">
     <value>Sender fejlloggen</value>

@@ -303,7 +303,7 @@ Előre is köszönöm.</value>
     <value>Küld</value>
   </data>
   <data name="LogTitle2_Text" xml:space="preserve">
-    <value>An error has been detected. Send the error log?</value>
+    <value>A rendszer hibát észlelt. Elküldöd a hibanaplót?</value>
   </data>
   <data name="LogTitle_Text" xml:space="preserve">
     <value>Hibanapló küldése</value>

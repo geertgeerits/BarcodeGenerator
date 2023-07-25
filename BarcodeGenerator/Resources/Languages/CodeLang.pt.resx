@@ -303,10 +303,10 @@ Agradeço antecipadamente.</value>
     <value>Enviar</value>
   </data>
   <data name="LogTitle2_Text" xml:space="preserve">
-    <value>An error has been detected. Send the error log?</value>
+    <value>Foi detectado um erro. Enviar o log de erros?</value>
   </data>
   <data name="LogTitle_Text" xml:space="preserve">
-    <value />
+    <value>Enviando o log de erros</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Barcode Generator and Scanner</value>
