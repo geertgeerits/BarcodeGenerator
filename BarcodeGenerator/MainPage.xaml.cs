@@ -61,6 +61,14 @@ public partial class MainPage : ContentPage
             };
         }
 
+        // The height of the title bar is lower when an iPhone is in horizontal position.
+#if IOS
+        imgbtnAbout.VerticalOptions = LayoutOptions.Start;
+        lblTitle.VerticalOptions = LayoutOptions.Start;
+        imgbtnScan.VerticalOptions = LayoutOptions.Start;
+        imgbtnSettings.VerticalOptions = LayoutOptions.Start;
+#endif
+
         // Set the theme.
         if (Globals.cTheme == "Light")
         {

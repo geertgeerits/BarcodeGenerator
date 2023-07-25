@@ -10,19 +10,22 @@
 
     <NavigationPage.TitleView>
         <Grid
-            RowDefinitions="50"
+            RowDefinitions="Auto"
             ColumnDefinitions="200*, 60, 60"
             BackgroundColor="#00bfff">
 
             <Label
+                x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
+                VerticalOptions="Center"
                 Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
             </Label>
 
             <ImageButton
+                x:Name="imgbtnTorch"
                 Grid.Row="0"
                 Grid.Column="2"
                 Source="torch_icon_64p.png"

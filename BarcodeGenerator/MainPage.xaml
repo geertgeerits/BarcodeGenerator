@@ -10,7 +10,7 @@
 
     <NavigationPage.TitleView>
         <Grid
-            RowDefinitions="50"
+            RowDefinitions="Auto"
             ColumnDefinitions="60, 140*, 60, 60"
             BackgroundColor="#00bfff">
 
@@ -28,9 +28,11 @@
             </ImageButton>
 
             <Label
+                x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
                 Grid.Row="0"
                 Grid.Column="1"
+                VerticalOptions="Center"
                 Text="{local:Translate BarcodeGenerator_Text}">
             </Label>
 

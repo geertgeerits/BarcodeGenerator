@@ -34,9 +34,15 @@ public partial class PageScan : ContentPage
         SetGridRowHeightCamera();
 #endif
 
-//#if IOS
-//        MainThread.BeginInvokeOnMainThread(SetGridRowHeightCamera);
-//#endif
+        //#if IOS
+        //        MainThread.BeginInvokeOnMainThread(SetGridRowHeightCamera);
+        //#endif
+        
+        // The height of the title bar is lower when an iPhone is in horizontal position.
+#if IOS
+        lblTitle.VerticalOptions = LayoutOptions.Start;
+        imgbtnTorch.VerticalOptions = LayoutOptions.Start;
+#endif
 
         // Put text in the chosen language in the controls.
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScanner();
@@ -376,8 +382,8 @@ public partial class PageScan : ContentPage
             await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
 
-        // Wait 500 milliseconds otherwise the ShareText() is not executed after the last opened link.
-        Task.Delay(500).Wait();
+        // Wait 1000 milliseconds otherwise the ShareText() is not executed after the last opened link.
+        Task.Delay(1000).Wait();
 
         // Open share interface.
         await ShareText(cText);
