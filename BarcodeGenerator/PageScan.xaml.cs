@@ -382,8 +382,8 @@ public partial class PageScan : ContentPage
             await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
 
-        // Wait 1000 milliseconds otherwise the ShareText() is not executed after the last opened link.
-        Task.Delay(1000).Wait();
+        // Wait 700 milliseconds otherwise the ShareText() is not executed after the last opened link.
+        Task.Delay(700).Wait();
 
         // Open share interface.
         await ShareText(cText);
