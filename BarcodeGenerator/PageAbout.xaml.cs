@@ -10,6 +10,7 @@ public partial class PageAbout : ContentPage
         }
         catch (Exception ex)
         {
+            Crashes.TrackError(ex);
             DisplayAlert("InitializeComponent: PageAbout", ex.Message, "OK");
             return;
         }

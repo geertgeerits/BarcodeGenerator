@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.34
-// Date ........: 2023-07-24 (YYYY-MM-DD)
+// Date ........: 2023-07-25 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -12,7 +12,6 @@
 //                NuGet Package: Microsoft.AppCenter.Crashes version 5.0.2 
 // Thanks to ...: Gerald Versluis
 
-using System;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator;
@@ -35,6 +34,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
+            Crashes.TrackError(ex);
             DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
             return;
         }
@@ -49,9 +49,6 @@ public partial class MainPage : ContentPage
         Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
         bLicense = Preferences.Default.Get("SettingLicense", false);
         bLogAlwaysSend = Preferences.Default.Get("SettingLogAlwaysSend", false);
-
-        // For testing crashes - DivideByZeroException.
-        //int divByZero = 51 / int.Parse("0");
 
         // Crash log confirmation.
         if (!bLogAlwaysSend)
@@ -736,31 +733,9 @@ public partial class MainPage : ContentPage
             var properties = new Dictionary<string, string> {
                 { "File:", "MainPage.xaml.cs" },
                 { "Method:", "OnGenerateCodeClicked" },
-                { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) },
-                { "BarcodeValue:", cTextToCode }
+                { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
             };
             Crashes.TrackError(ex, properties);
-
-            //if (Crashes.ShouldAwaitUserConfirmation())
-            //{
-            //    Crashes.TrackError(ex, properties);
-            //}
-
-            //Crashes.ShouldProcessErrorReport = (ErrorReport report) =>
-            //{
-            //    //DataLogger.Error("AppCenter process error");
-            //    // Return true if the crash report should be processed, otherwise false.
-            //    return true; 
-            //};
-
-            //if (bLogAlwaysSend)
-            //{
-            //    Crashes.TrackError(ex, properties);
-            //}
-            //else
-            //{
-            //    ConfirmationSendCrashLog();
-            //}
 
             bgvBarcode.Value = "";
 
@@ -1048,6 +1023,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
+            Crashes.TrackError(ex);
             await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
             return;
         }
@@ -1115,6 +1091,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
+            Crashes.TrackError(ex);
             DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
     }
@@ -1135,6 +1112,7 @@ public partial class MainPage : ContentPage
     //        }
     //        catch (Exception ex)
     //        {
+    //            Crashes.TrackError(ex);
     //            DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
     //            cLanguageSpeech = cLanguageLocales[0];
     //        }
@@ -1175,6 +1153,7 @@ public partial class MainPage : ContentPage
             }
             catch (Exception ex)
             {
+                Crashes.TrackError(ex);
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }
 
@@ -1216,7 +1195,7 @@ public partial class MainPage : ContentPage
     private async void ConfirmationSendCrashLog()
     {
         // Using the DisplayActionSheet with 3 choices.
-        string cAction = await DisplayActionSheet(CodeLang.LogTitle_Text, null, null, CodeLang.LogSend_Text, CodeLang.LogAlwaysSend_Text, CodeLang.LogDontSend_Text);
+        string cAction = await DisplayActionSheet(CodeLang.LogTitle2_Text, null, null, CodeLang.LogSend_Text, CodeLang.LogAlwaysSend_Text, CodeLang.LogDontSend_Text);
 
         if (cAction == CodeLang.LogSend_Text)
         {

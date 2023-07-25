@@ -574,6 +574,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An error has been detected. Send the error log?.
+        /// </summary>
+        internal static string LogTitle2_Text {
+            get {
+                return ResourceManager.GetString("LogTitle2_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Barcode Generator and Scanner.
         /// </summary>
         internal static string NameProgram_Text {

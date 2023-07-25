@@ -302,6 +302,9 @@ Alvast bedankt.</value>
   <data name="LogSend_Text" xml:space="preserve">
     <value>Versturen</value>
   </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>Er werd een fout vastgesteld.  Het foutenlogboek verzenden?</value>
+  </data>
   <data name="LogTitle_Text" xml:space="preserve">
     <value>Verzenden van het foutenlogboek</value>
   </data>

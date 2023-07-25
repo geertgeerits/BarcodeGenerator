@@ -302,6 +302,9 @@ Merci d'avance.</value>
   <data name="LogSend_Text" xml:space="preserve">
     <value>Envoyer</value>
   </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>An error has been detected. Send the error log?</value>
+  </data>
   <data name="LogTitle_Text" xml:space="preserve">
     <value>Envoi du journal des erreurs</value>
   </data>

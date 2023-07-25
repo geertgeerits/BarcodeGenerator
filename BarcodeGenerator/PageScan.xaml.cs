@@ -18,6 +18,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
+            Crashes.TrackError(ex);
             DisplayAlert("InitializeComponent: PageScan", ex.Message, "OK");
             return;
         }
@@ -330,6 +331,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
+            Crashes.TrackError(ex);
             await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
     }
@@ -370,6 +372,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
+            Crashes.TrackError(ex);
             await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
 
@@ -395,6 +398,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
+            Crashes.TrackError(ex);
             await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
     }
@@ -412,6 +416,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
+            Crashes.TrackError(ex);
             await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
     }
@@ -454,6 +459,7 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
+            Crashes.TrackError(ex);
             await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             return;
         }
@@ -496,6 +502,7 @@ public partial class PageScan : ContentPage
             }
             catch (Exception ex)
             {
+                Crashes.TrackError(ex);
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }
 
