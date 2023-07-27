@@ -188,6 +188,14 @@ Tarkistusnumero on korjattu.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Tekijänoikeus</value>
   </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Kaatumis- ja virheraportit: Auttaaksemme meitä korjaamaan kaikki ongelmat, sovellus lähettää automaattisesti nimettömiä kaatumis- ja virheraportteja, kun sovellus käynnistetään uudelleen.
+Raportit sisältävät tietoja kaatumisesta tai virheestä, mukaan lukien laitteen tekniset tiedot, käyttöjärjestelmä, sovellusversio, aikaleima ja anonyymi asennustunniste.
+Tiedot kerätään yksinomaan auttaaksemme meitä parantamaan sovellusta, eivätkä ne sisällä henkilötietoja. Muita tietoja ei kerätä.
+Nimettömät kaatumis- ja virheraportit tallennetaan Microsoft App Centeriin.
+Niitä ei jaeta kenellekään muulle kuin sovelluksen kehittäjälle.
+Analyysi- ja diagnostiikkatietoja säilytetään 28 päivää.</value>
+  </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Oletusmuoto generaattori</value>
   </data>

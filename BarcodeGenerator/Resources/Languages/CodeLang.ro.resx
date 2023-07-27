@@ -188,6 +188,14 @@ Cifra de verificare a fost corectată.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Drepturi de autor</value>
   </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Rapoarte de blocare și erori: pentru a ne ajuta să remediem orice probleme, aplicația va trimite automat rapoarte anonime de blocare și erori atunci când aplicația este repornită.
+Rapoartele conțin informații despre blocarea sau eroarea, inclusiv specificațiile dispozitivului, sistemul de operare, versiunea aplicației, marcajul de timp și identificatorul de instalare anonim.
+Datele sunt colectate doar cu scopul de a ne ajuta să îmbunătățim aplicația și nu includ nicio informație personală. Nu sunt colectate alte date.
+Rapoartele anonime de blocare și erori sunt stocate în Microsoft App Center.
+Ele nu sunt partajate cu nimeni altcineva din afara dezvoltatorului aplicației.
+Datele de analiză și diagnosticare sunt păstrate timp de 28 de zile.</value>
+  </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Generator de format standard:</value>
   </data>

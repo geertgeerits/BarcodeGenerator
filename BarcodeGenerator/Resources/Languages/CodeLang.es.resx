@@ -188,6 +188,14 @@ El dígito de control ha sido corregido.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Derechos de autor</value>
   </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Informes de fallas y errores: para ayudarnos a solucionar cualquier problema, la aplicación enviará automáticamente informes anónimos de fallas y errores cuando se reinicie la aplicación.
+Los informes contienen información sobre el bloqueo o error, incluidas las especificaciones del dispositivo, el sistema operativo, la versión de la aplicación, la marca de tiempo y el identificador de instalación anónimo.
+Los datos se recopilan con el único propósito de ayudarnos a mejorar la aplicación y no incluyen ninguna información personal. No se recopilan otros datos.
+Los informes de fallas y errores anónimos se almacenan en Microsoft App Center.
+No se comparten con nadie fuera del desarrollador de la aplicación.
+Los datos de análisis y diagnóstico se conservan durante 28 días.</value>
+  </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Generador de formato predeterminado:</value>
   </data>

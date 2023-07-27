@@ -188,6 +188,14 @@ Kontrollsiffran har korrigerats.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Upphovsrätt</value>
   </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Krasch- och felrapporter: För att hjälpa oss att åtgärda eventuella problem kommer applikationen automatiskt att skicka anonyma krasch- och felrapporter när applikationen startas om.
+Rapporterna innehåller information om kraschen eller felet, inklusive enhetsspecifikationer, operativsystem, programversion, tidsstämpel och anonym installationsidentifierare.
+Uppgifterna samlas in i det enda syftet att hjälpa oss att förbättra applikationen och innehåller ingen personlig information. Inga andra uppgifter samlas in.
+Anonyma krasch- och felrapporter lagras i Microsoft App Center.
+De delas inte med någon annan utanför applikationens utvecklare.
+Analys- och diagnostikdata sparas i 28 dagar.</value>
+  </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standardformat generator:</value>
   </data>

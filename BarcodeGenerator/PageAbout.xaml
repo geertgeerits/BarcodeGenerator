@@ -79,6 +79,12 @@
                         </Label>
 
                         <Label
+                            x:Name="lblCrashErrorReport"
+                            Style="{StaticResource labelStyleInfo}"
+                            FontSize="13">
+                        </Label>
+
+                        <Label
                             x:Name="lblLicense"
                             Style="{StaticResource labelStyleInfo}"
                             FontSize="13">

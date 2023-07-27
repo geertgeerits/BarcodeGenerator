@@ -188,6 +188,14 @@ Az ellenőrző számjegy javítva.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Szerzői jog</value>
   </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Összeomlási és hibajelentések: A probléma megoldása érdekében az alkalmazás automatikusan névtelen összeomlási és hibajelentéseket küld az alkalmazás újraindításakor.
+A jelentések információkat tartalmaznak az összeomlásról vagy hibáról, beleértve az eszköz specifikációit, az operációs rendszert, az alkalmazás verzióját, az időbélyeget és a névtelen telepítési azonosítót.
+Az adatokat kizárólag azzal a céllal gyűjtjük, hogy segítsünk az alkalmazás fejlesztésében, és nem tartalmaznak személyes adatokat. Más adatot nem gyűjtenek.
+A névtelen összeomlási és hibajelentéseket a Microsoft App Center tárolja.
+Nem osztják meg senki mással az alkalmazás fejlesztőjén kívül.
+Az elemzési és diagnosztikai adatokat 28 napig őrzik meg.</value>
+  </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Alapértelmezett formátumgenerátor:</value>
   </data>

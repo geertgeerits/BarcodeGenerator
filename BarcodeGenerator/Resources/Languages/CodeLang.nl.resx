@@ -188,6 +188,14 @@ Het controlecijfer is gecorrigeerd.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Auteursrechten</value>
   </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Crash- en foutrapporten: om ons te helpen eventuele problemen op te lossen, stuurt de applicatie automatisch anonieme crash- en foutrapporten wanneer de applicatie opnieuw wordt opgestart.
+De rapporten bevatten informatie over de crash of fout, inclusief apparaatspecificaties, besturingssysteem, applicatieversie, tijdstempel en anonieme installatie-ID.
+De gegevens worden uitsluitend verzameld om ons te helpen de applicatie te verbeteren en bevatten geen persoonlijke informatie. Er worden geen andere gegevens verzameld.
+Anonieme crash- en foutrapporten worden opgeslagen in het Microsoft App Center.
+Ze worden niet gedeeld met iemand anders buiten de ontwikkelaar van de applicatie.
+Analyse- en diagnostische gegevens worden 28 dagen bewaard.</value>
+  </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standaard formaat generator:</value>
   </data>

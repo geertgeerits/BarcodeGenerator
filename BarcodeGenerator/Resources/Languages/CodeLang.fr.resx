@@ -188,6 +188,14 @@ Le chiffre de contrôle a été corrigé.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Droits d'auteur</value>
   </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Rapports de plantage et d'erreur : Pour nous aider à résoudre tout problème, l'application enverra automatiquement des rapports de plantage et d'erreur anonymes au redémarrage de l'application.
+Les rapports contiennent des informations sur le plantage ou l'erreur, y compris les spécifications de l'appareil, le système d'exploitation, la version de l'application, l'horodatage et l'identifiant d'installation anonyme.
+Les données sont collectées dans le seul but de nous aider à améliorer l'application et ne comportent aucune information personnelle. Aucune autre donnée n'est collectée.
+Les rapports anonymes d'incidents et d'erreurs sont stockés dans Microsoft App Center.
+Ils ne sont partagés avec personne d'autre que le développeur de l'application.
+Les données d'analyse et de diagnostic sont conservées pendant 28 jours.</value>
+  </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Générateur de format par défaut:</value>
   </data>

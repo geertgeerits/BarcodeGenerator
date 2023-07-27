@@ -188,6 +188,14 @@ Kontrollsifferet er rettet.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Opphavsrett</value>
   </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Krasj- og feilrapporter: For å hjelpe oss med å fikse eventuelle problemer, vil applikasjonen automatisk sende anonyme krasj- og feilrapporter når applikasjonen startes på nytt.
+Rapportene inneholder informasjon om krasj eller feil, inkludert enhetsspesifikasjoner, operativsystem, programversjon, tidsstempel og anonym installasjonsidentifikator.
+Dataene samles inn for det eneste formål å hjelpe oss med å forbedre applikasjonen og inkluderer ingen personlig informasjon. Ingen andre data samles inn.
+Anonyme krasj- og feilrapporter lagres i Microsoft App Center.
+De deles ikke med noen andre utenfor utvikleren av applikasjonen.
+Analyse- og diagnostikkdata oppbevares i 28 dager.</value>
+  </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standard format generator:</value>
   </data>
