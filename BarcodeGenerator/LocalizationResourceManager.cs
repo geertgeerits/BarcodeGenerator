@@ -1,8 +1,7 @@
-﻿using BarcodeGenerator.Resources.Languages;
-using System.ComponentModel;
-using System.Globalization;
+﻿using System.ComponentModel;
 
-namespace BarcodeGenerator {
+namespace BarcodeGenerator
+{
     public class LocalizationResourceManager : INotifyPropertyChanged {
         private LocalizationResourceManager() {
             CodeLang.Culture = CultureInfo.CurrentCulture;
