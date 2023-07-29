@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.35
-// Date ........: 2023-07-28 (YYYY-MM-DD)
+// Date ........: 2023-07-29 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -742,6 +742,7 @@ public partial class MainPage : ContentPage
                 { "File:", "MainPage.xaml.cs" },
                 { "Method:", "OnGenerateCodeClicked" },
                 { "AppLanguage:", Globals.cLanguage },
+                { "AppLanguageSpeech:", Globals.cLanguageSpeech },
                 { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
             };
             Crashes.TrackError(ex, properties);
@@ -1032,7 +1033,14 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            Crashes.TrackError(ex);
+            var properties = new Dictionary<string, string> {
+                { "File:", "MainPage.xaml.cs" },
+                { "Method:", "InitializeTextToSpeech" },
+                { "AppLanguage:", Globals.cLanguage },
+                { "AppLanguageSpeech:", Globals.cLanguageSpeech }
+            };
+            Crashes.TrackError(ex, properties);
+
             await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
             return;
         }
@@ -1192,6 +1200,7 @@ public partial class MainPage : ContentPage
                     { "File:", "MainPage.xaml.cs" },
                     { "Method:", "OnPasteFromClipboardClicked" },
                     { "AppLanguage:", Globals.cLanguage },
+                    { "AppLanguageSpeech:", Globals.cLanguageSpeech },
                     { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
                 };
                 Crashes.TrackError(ex, properties);

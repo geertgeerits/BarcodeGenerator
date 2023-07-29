@@ -465,7 +465,14 @@ public partial class PageScan : ContentPage
         }
         catch (Exception ex)
         {
-            Crashes.TrackError(ex);
+            var properties = new Dictionary<string, string> {
+                { "File:", "PageScan.xaml.cs" },
+                { "Method:", "InitializeTextToSpeech" },
+                { "AppLanguage:", Globals.cLanguage },
+                { "AppLanguageSpeech:", Globals.cLanguageSpeech }
+            };
+            Crashes.TrackError(ex, properties);
+
             await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             return;
         }
