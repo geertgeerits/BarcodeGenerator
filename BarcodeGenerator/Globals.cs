@@ -28,6 +28,7 @@ static class Globals
     {
         try
         {
+            //CodeLang.Culture = new CultureInfo(cLanguage);
             CultureInfo switchToCulture = new(cLanguage);
             LocalizationResourceManager.Instance.SetCulture(switchToCulture);
         }
