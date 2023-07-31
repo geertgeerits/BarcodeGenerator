@@ -79,7 +79,6 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AppCenter" Version="5.0.2" />
 		<PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.2" />
-		<PackageReference Include="System.Speech" Version="8.0.0-preview.6.23329.7" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.3.0-preview.1" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.3.0-preview.1" />
 	</ItemGroup>
