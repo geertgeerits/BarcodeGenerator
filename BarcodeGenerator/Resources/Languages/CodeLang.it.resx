@@ -189,7 +189,7 @@ La cifra di controllo è stata corretta.</value>
     <value>Diritto d'autore</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Segnalazioni di arresti anomali ed errori: per aiutarci a risolvere eventuali problemi, l'applicazione invierà automaticamente segnalazioni anonime di arresti anomali ed errori al riavvio dell'applicazione.
+    <value>Segnalazioni di crash ed errori: Per aiutarci a risolvere eventuali problemi, l'applicazione invierà segnalazioni anonime di crash ed errori al riavvio dell'applicazione.
 I report contengono informazioni sull'arresto anomalo o sull'errore, incluse le specifiche del dispositivo, il sistema operativo, la versione dell'applicazione, il timestamp e l'identificatore di installazione anonimo.
 I dati vengono raccolti al solo scopo di aiutarci a migliorare l'applicazione e non includono alcuna informazione personale. Nessun altro dato viene raccolto.
 I rapporti anonimi sugli arresti anomali e sugli errori vengono archiviati nel Microsoft App Center.
@@ -256,7 +256,7 @@ Caratteri 5-6: Verde
 Caratteri 7-8: Blu</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Sintesi vocale: non sono supportate tutte le lingue fornite nelle impostazioni dell'applicazione.
+    <value>Sintesi vocale: Non sono supportate tutte le lingue fornite nelle impostazioni dell'applicazione.
 Discorso al testo: attivala tramite le impostazioni del tuo dispositivo. Un microfono apparirà quindi nella tastiera virtuale.
 Entrambe queste opzioni dipendono da dispositivo a dispositivo e dalle lingue installate. È possibile che per alcune lingue la traduzione da e verso il parlato venga effettuata tramite Internet dai servizi interessati.
 

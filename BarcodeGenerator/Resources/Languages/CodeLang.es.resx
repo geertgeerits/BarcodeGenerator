@@ -189,7 +189,7 @@ El dígito de control ha sido corregido.</value>
     <value>Derechos de autor</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Informes de fallas y errores: para ayudarnos a solucionar cualquier problema, la aplicación enviará automáticamente informes anónimos de fallas y errores cuando se reinicie la aplicación.
+    <value>Informes de fallas y errores: Para ayudarnos a solucionar cualquier problema, la aplicación enviará informes anónimos de fallas y errores cuando se reinicie la aplicación.
 Los informes contienen información sobre el bloqueo o error, incluidas las especificaciones del dispositivo, el sistema operativo, la versión de la aplicación, la marca de tiempo y el identificador de instalación anónimo.
 Los datos se recopilan con el único propósito de ayudarnos a mejorar la aplicación y no incluyen ninguna información personal. No se recopilan otros datos.
 Los informes de fallas y errores anónimos se almacenan en Microsoft App Center.
@@ -256,7 +256,7 @@ Caracteres 5-6: Verde
 Caracteres 7-8: Azul</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Texto a voz: no se admiten todos los idiomas que se proporcionan en la configuración de la aplicación.
+    <value>Texto a voz: No se admiten todos los idiomas que se proporcionan en la configuración de la aplicación.
 Voz a texto: Actívala a través de la configuración de tu dispositivo. Entonces aparecerá un micrófono en el teclado virtual.
 Ambas opciones dependen de un dispositivo a otro y de los idiomas instalados. Es posible que, para algunos idiomas, la traducción hacia y desde el habla la realicen los servicios correspondientes a través de Internet.
 

@@ -189,7 +189,7 @@ Die Prüfziffer wurde korrigiert.</value>
     <value>Urheberrechte</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Absturz- und Fehlerberichte: Um uns bei der Behebung etwaiger Probleme zu helfen, sendet die Anwendung automatisch anonyme Absturz- und Fehlerberichte, wenn die Anwendung neu gestartet wird.
+    <value>Absturz- und Fehlerberichte: Um uns bei der Behebung etwaiger Probleme zu helfen, sendet die Anwendung beim Neustart der Anwendung anonyme Absturz- und Fehlerberichte.
 Die Berichte enthalten Informationen zum Absturz oder Fehler, einschließlich Gerätespezifikationen, Betriebssystem, Anwendungsversion, Zeitstempel und anonymer Installationskennung.
 Die Daten werden ausschließlich zu dem Zweck erhoben, die Anwendung zu verbessern und enthalten keine personenbezogenen Daten. Es werden keine weiteren Daten erhoben.
 Anonyme Absturz- und Fehlerberichte werden im Microsoft App Center gespeichert.

@@ -189,7 +189,7 @@ The check digit has been corrected.</value>
     <value>Copyright</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Crash and error reports: To help us fixing any problems, the application will automatically send anonymous crash and error reports when the application is restarted.
+    <value>Crash and error reports: To help us fixing any problems, the application will send anonymous crash and error reports when the application is restarted.
 The reports contain information on the crash or error, including device specifications, operating system, application version, timestamp, and anonymous installation identifier.
 The data is collected for the sole purpose of helping us to improve the application and does not include any personal information.  No other data is collected.
 Anonymous crash and error reports are stored in the Microsoft App Center.

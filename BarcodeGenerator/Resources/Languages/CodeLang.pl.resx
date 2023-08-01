@@ -189,7 +189,7 @@ Cyfra kontrolna została poprawiona.</value>
     <value>Prawo autorskie</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Raporty o awariach i błędach: Aby pomóc nam rozwiązać wszelkie problemy, aplikacja automatycznie wysyła anonimowe raporty o awariach i błędach po ponownym uruchomieniu aplikacji.
+    <value>Raporty o awariach i błędach: Aby pomóc nam rozwiązać wszelkie problemy, aplikacja wyśle anonimowe raporty o awariach i błędach po ponownym uruchomieniu aplikacji.
 Raporty zawierają informacje o awarii lub błędzie, w tym specyfikacje urządzenia, system operacyjny, wersję aplikacji, znacznik czasu i anonimowy identyfikator instalacji.
 Dane są zbierane wyłącznie w celu pomocy nam w ulepszaniu aplikacji i nie zawierają żadnych danych osobowych. Żadne inne dane nie są gromadzone.
 Anonimowe raporty o awariach i błędach są przechowywane w Microsoft App Center.

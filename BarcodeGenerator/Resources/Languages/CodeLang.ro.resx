@@ -189,7 +189,7 @@ Cifra de verificare a fost corectată.</value>
     <value>Drepturi de autor</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Rapoarte de blocare și erori: pentru a ne ajuta să remediem orice probleme, aplicația va trimite automat rapoarte anonime de blocare și erori atunci când aplicația este repornită.
+    <value>Rapoarte de blocare și erori: Pentru a ne ajuta să remediem orice probleme, aplicația va trimite rapoarte anonime de blocare și erori atunci când aplicația este repornită.
 Rapoartele conțin informații despre blocarea sau eroarea, inclusiv specificațiile dispozitivului, sistemul de operare, versiunea aplicației, marcajul de timp și identificatorul de instalare anonim.
 Datele sunt colectate doar cu scopul de a ne ajuta să îmbunătățim aplicația și nu includ nicio informație personală. Nu sunt colectate alte date.
 Rapoartele anonime de blocare și erori sunt stocate în Microsoft App Center.
@@ -256,7 +256,7 @@ Caractere 5-6: Verde
 Caractere 7-8: Albastru</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text în vorbire: nu sunt acceptate toate limbile care sunt furnizate în setările aplicației.
+    <value>Text în vorbire: Nu sunt acceptate toate limbile care sunt furnizate în setările aplicației.
 Vorbire în text: activează-l prin setările dispozitivului. Un microfon va apărea apoi pe tastatura virtuală.
 Ambele opțiuni depind de la dispozitiv la dispozitiv și de la limbile instalate. Este posibil ca, pentru unele limbi, traducerea către și din vorbire să se facă prin internet de către serviciile respective.
 

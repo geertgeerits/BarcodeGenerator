@@ -189,7 +189,7 @@ Kontrolní číslice byla opravena.</value>
     <value>Autorská práva</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Zprávy o pádech a chybách: Aby nám pomohla opravit jakékoli problémy, aplikace bude automaticky odesílat anonymní zprávy o pádech a chybách, když je aplikace restartována.
+    <value>Zprávy o pádech a chybách: Aby nám pomohla opravit jakékoli problémy, aplikace bude po restartu odesílat anonymní zprávy o pádech a chybách.
 Zprávy obsahují informace o havárii nebo chybě, včetně specifikací zařízení, operačního systému, verze aplikace, časového razítka a anonymního identifikátoru instalace.
 Údaje jsou shromažďovány výhradně za účelem pomoci nám vylepšit aplikaci a neobsahují žádné osobní údaje. Žádné další údaje se neshromažďují.
 Anonymní zprávy o selhání a chybách jsou uloženy v Microsoft App Center.

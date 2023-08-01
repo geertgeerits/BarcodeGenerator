@@ -189,7 +189,7 @@ Tarkistusnumero on korjattu.</value>
     <value>Tekijänoikeus</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Kaatumis- ja virheraportit: Auttaaksemme meitä korjaamaan kaikki ongelmat, sovellus lähettää automaattisesti nimettömiä kaatumis- ja virheraportteja, kun sovellus käynnistetään uudelleen.
+    <value>Kaatumis- ja virheraportit: Sovellus lähettää anonyymejä kaatumis- ja virheraportteja, kun sovellus käynnistetään uudelleen, jotta voimme korjata mahdolliset ongelmat.
 Raportit sisältävät tietoja kaatumisesta tai virheestä, mukaan lukien laitteen tekniset tiedot, käyttöjärjestelmä, sovellusversio, aikaleima ja anonyymi asennustunniste.
 Tiedot kerätään yksinomaan auttaaksemme meitä parantamaan sovellusta, eivätkä ne sisällä henkilötietoja. Muita tietoja ei kerätä.
 Nimettömät kaatumis- ja virheraportit tallennetaan Microsoft App Centeriin.

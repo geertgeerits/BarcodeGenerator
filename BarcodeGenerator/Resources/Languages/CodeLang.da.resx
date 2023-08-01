@@ -189,7 +189,7 @@ Kontrolcifferet er blevet rettet.</value>
     <value>Ophavsret</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Nedbruds- og fejlrapporter: For at hjælpe os med at løse eventuelle problemer sender applikationen automatisk anonyme nedbruds- og fejlrapporter, når applikationen genstartes.
+    <value>Nedbruds- og fejlrapporter: For at hjælpe os med at løse eventuelle problemer sender applikationen anonyme nedbruds- og fejlrapporter, når applikationen genstartes.
 Rapporterne indeholder oplysninger om nedbruddet eller fejlen, herunder enhedsspecifikationer, operativsystem, applikationsversion, tidsstempel og anonym installationsidentifikator.
 Dataene indsamles udelukkende med det formål at hjælpe os med at forbedre applikationen og inkluderer ingen personlige oplysninger. Der indsamles ikke andre data.
 Anonyme nedbruds- og fejlrapporter gemmes i Microsoft App Center.
