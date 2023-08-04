@@ -194,7 +194,7 @@ Rapporterna innehåller information om kraschen eller felet, inklusive enhetsspe
 Uppgifterna samlas in i det enda syftet att hjälpa oss att förbättra applikationen och innehåller ingen personlig information. Inga andra uppgifter samlas in.
 Anonyma krasch- och felrapporter lagras i Microsoft App Center.
 De delas inte med någon annan utanför applikationens utvecklare.
-Analys- och diagnostikdata sparas i 28 dagar.</value>
+Rapportdata bevaras i 28 dagar.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standardformat generator:</value>

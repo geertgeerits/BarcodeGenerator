@@ -194,7 +194,7 @@ Die Berichte enthalten Informationen zum Absturz oder Fehler, einschließlich Ge
 Die Daten werden ausschließlich zu dem Zweck erhoben, die Anwendung zu verbessern und enthalten keine personenbezogenen Daten. Es werden keine weiteren Daten erhoben.
 Anonyme Absturz- und Fehlerberichte werden im Microsoft App Center gespeichert.
 Sie werden nicht an Dritte außerhalb des Entwicklers der Anwendung weitergegeben.
-Analyse- und Diagnosedaten werden 28 Tage lang aufbewahrt.</value>
+Die Berichtsdaten werden 28 Tage lang aufbewahrt.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standardformat Generator:</value>

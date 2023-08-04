@@ -194,7 +194,7 @@ Rapoartele conțin informații despre blocarea sau eroarea, inclusiv specificaț
 Datele sunt colectate doar cu scopul de a ne ajuta să îmbunătățim aplicația și nu includ nicio informație personală. Nu sunt colectate alte date.
 Rapoartele anonime de blocare și erori sunt stocate în Microsoft App Center.
 Ele nu sunt partajate cu nimeni altcineva din afara dezvoltatorului aplicației.
-Datele de analiză și diagnosticare sunt păstrate timp de 28 de zile.</value>
+Datele raportului sunt păstrate timp de 28 de zile.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Generator de format standard:</value>

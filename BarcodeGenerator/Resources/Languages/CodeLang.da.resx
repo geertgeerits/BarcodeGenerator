@@ -194,7 +194,7 @@ Rapporterne indeholder oplysninger om nedbruddet eller fejlen, herunder enhedssp
 Dataene indsamles udelukkende med det formål at hjælpe os med at forbedre applikationen og inkluderer ingen personlige oplysninger. Der indsamles ikke andre data.
 Anonyme nedbruds- og fejlrapporter gemmes i Microsoft App Center.
 De deles ikke med andre uden for udvikleren af applikationen.
-Analyse- og diagnostikdata opbevares i 28 dage.</value>
+Rapportdataene opbevares i 28 dage.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standard format generator:</value>

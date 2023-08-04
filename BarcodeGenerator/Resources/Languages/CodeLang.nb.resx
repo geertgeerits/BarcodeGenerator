@@ -194,7 +194,7 @@ Rapportene inneholder informasjon om krasj eller feil, inkludert enhetsspesifika
 Dataene samles inn for det eneste formål å hjelpe oss med å forbedre applikasjonen og inkluderer ingen personlig informasjon. Ingen andre data samles inn.
 Anonyme krasj- og feilrapporter lagres i Microsoft App Center.
 De deles ikke med noen andre utenfor utvikleren av applikasjonen.
-Analyse- og diagnostikkdata oppbevares i 28 dager.</value>
+Rapportdataene oppbevares i 28 dager.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standard format generator:</value>

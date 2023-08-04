@@ -194,7 +194,7 @@ Los informes contienen información sobre el bloqueo o error, incluidas las espe
 Los datos se recopilan con el único propósito de ayudarnos a mejorar la aplicación y no incluyen ninguna información personal. No se recopilan otros datos.
 Los informes de fallas y errores anónimos se almacenan en Microsoft App Center.
 No se comparten con nadie fuera del desarrollador de la aplicación.
-Los datos de análisis y diagnóstico se conservan durante 28 días.</value>
+Los datos del informe se conservan durante 28 días.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Generador de formato predeterminado:</value>

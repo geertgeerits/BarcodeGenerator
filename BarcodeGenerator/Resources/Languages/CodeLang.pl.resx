@@ -194,7 +194,7 @@ Raporty zawierają informacje o awarii lub błędzie, w tym specyfikacje urządz
 Dane są zbierane wyłącznie w celu pomocy nam w ulepszaniu aplikacji i nie zawierają żadnych danych osobowych. Żadne inne dane nie są gromadzone.
 Anonimowe raporty o awariach i błędach są przechowywane w Microsoft App Center.
 Nie są one udostępniane nikomu poza twórcą aplikacji.
-Dane analityczne i diagnostyczne są przechowywane przez 28 dni.</value>
+Dane z raportu są przechowywane przez 28 dni.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standard generator formatu:</value>

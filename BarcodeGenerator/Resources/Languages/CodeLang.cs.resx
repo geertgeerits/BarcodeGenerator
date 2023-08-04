@@ -194,7 +194,7 @@ Zprávy obsahují informace o havárii nebo chybě, včetně specifikací zaří
 Údaje jsou shromažďovány výhradně za účelem pomoci nám vylepšit aplikaci a neobsahují žádné osobní údaje. Žádné další údaje se neshromažďují.
 Anonymní zprávy o selhání a chybách jsou uloženy v Microsoft App Center.
 Nejsou sdíleny s nikým jiným mimo vývojáře aplikace.
-Analytická a diagnostická data jsou uchovávána po dobu 28 dnů.</value>
+Údaje přehledu jsou uchovávány po dobu 28 dnů.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Výchozí generátor formátu:</value>

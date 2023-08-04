@@ -194,7 +194,7 @@ De rapporten bevatten informatie over de crash of fout, inclusief apparaatspecif
 De gegevens worden uitsluitend verzameld om ons te helpen de applicatie te verbeteren en bevatten geen persoonlijke informatie. Er worden geen andere gegevens verzameld.
 Anonieme crash- en foutrapporten worden opgeslagen in het Microsoft App Center.
 Ze worden niet gedeeld met iemand anders buiten de ontwikkelaar van de applicatie.
-Analyse- en diagnostische gegevens worden 28 dagen bewaard.</value>
+De rapportgegevens worden 28 dagen bewaard.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standaard formaat generator:</value>

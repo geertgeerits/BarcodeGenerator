@@ -194,7 +194,7 @@ Les rapports contiennent des informations sur le plantage ou l'erreur, y compris
 Les données sont collectées dans le seul but de nous aider à améliorer l'application et ne comportent aucune information personnelle. Aucune autre donnée n'est collectée.
 Les rapports anonymes d'incidents et d'erreurs sont stockés dans Microsoft App Center.
 Ils ne sont partagés avec personne d'autre que le développeur de l'application.
-Les données d'analyse et de diagnostic sont conservées pendant 28 jours.</value>
+Les données du rapport sont conservées pendant 28 jours.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Générateur de format par défaut:</value>

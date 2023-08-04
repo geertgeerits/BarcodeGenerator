@@ -194,7 +194,7 @@ The reports contain information on the crash or error, including device specific
 The data is collected for the sole purpose of helping us to improve the application and does not include any personal information.  No other data is collected.
 Anonymous crash and error reports are stored in the Microsoft App Center.
 They are not shared with anyone else outside the developer of the appliciation.
-Analytics and diagnostics data is retained for 28 days.</value>
+The report data is retained for 28 days.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Default format generator:</value>

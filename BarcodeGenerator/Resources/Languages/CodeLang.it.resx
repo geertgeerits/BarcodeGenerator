@@ -194,7 +194,7 @@ I report contengono informazioni sull'arresto anomalo o sull'errore, incluse le 
 I dati vengono raccolti al solo scopo di aiutarci a migliorare l'applicazione e non includono alcuna informazione personale. Nessun altro dato viene raccolto.
 I rapporti anonimi sugli arresti anomali e sugli errori vengono archiviati nel Microsoft App Center.
 Non sono condivisi con nessun altro al di fuori dello sviluppatore dell'applicazione.
-I dati di analisi e diagnostica vengono conservati per 28 giorni.</value>
+I dati del rapporto vengono conservati per 28 giorni.</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Generatore di formati predefinito:</value>
