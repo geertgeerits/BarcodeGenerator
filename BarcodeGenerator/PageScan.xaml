@@ -79,15 +79,31 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     HeightRequest="{OnIdiom 410, Phone=410, Tablet=610, Desktop=610}">
-                
-                    <zxing:CameraBarcodeReaderView
+
+                    <Border
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        BackgroundColor="Transparent"
+                        StrokeThickness="0">
+
+                        <zxing:CameraBarcodeReaderView
+                            x:Name="barcodeReader"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" 
+                            IsDetecting="True"
+                            IsTorchOn="False"
+                            BarcodesDetected="OnBarcodesDetected">
+                        </zxing:CameraBarcodeReaderView>
+                    </Border>
+
+                    <!--<zxing:CameraBarcodeReaderView
                         x:Name="barcodeReader"
                         HeightRequest="{OnIdiom 400, Phone=400, Tablet=600, Desktop=600}"
                         WidthRequest="{OnIdiom 300, Phone=300, Tablet=450, Desktop=450}"
                         IsDetecting="True"
                         IsTorchOn="False"
                         BarcodesDetected="OnBarcodesDetected">
-                    </zxing:CameraBarcodeReaderView>
+                    </zxing:CameraBarcodeReaderView>-->
                 </HorizontalStackLayout>
             
                 <HorizontalStackLayout

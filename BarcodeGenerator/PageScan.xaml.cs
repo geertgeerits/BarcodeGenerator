@@ -31,7 +31,7 @@ public partial class PageScan : ContentPage
         // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
         // The camera sometimes overlaps adjacent rows in the grid on Android.
 #if ANDROID
-        SetGridRowHeightCamera();
+        //SetGridRowHeightCamera();
 #endif
 
         //#if IOS
