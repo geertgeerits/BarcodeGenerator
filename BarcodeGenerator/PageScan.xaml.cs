@@ -31,7 +31,7 @@ public partial class PageScan : ContentPage
         // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
         // The camera sometimes overlaps adjacent rows in the grid on Android.
 #if ANDROID
-        SetGridRowHeightCamera();
+        //SetGridRowHeightCamera();
 #endif
 
         //#if IOS
@@ -531,37 +531,37 @@ public partial class PageScan : ContentPage
 
     // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
     // The camera sometimes overlaps adjacent rows in the grid on Android phones.
-    private void SetGridRowHeightCamera()
-    {
-        // Get the screen size.
-        double nDisplayHeight;
-        double nDisplayDensity;
+    //private void SetGridRowHeightCamera()
+    //{
+    //    // Get the screen size.
+    //    double nDisplayHeight;
+    //    double nDisplayDensity;
 
-        try
-        {
-            nDisplayHeight = DeviceDisplay.Current.MainDisplayInfo.Height;
-            nDisplayDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
-        }
-        catch
-        {
-            // Default values voor a Samsung Galaxy S21 phone.
-            nDisplayHeight = 2340;
-            nDisplayDensity = 2.75;
-        }
+    //    try
+    //    {
+    //        nDisplayHeight = DeviceDisplay.Current.MainDisplayInfo.Height;
+    //        nDisplayDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
+    //    }
+    //    catch
+    //    {
+    //        // Default values voor a Samsung Galaxy S21 phone.
+    //        nDisplayHeight = 2340;
+    //        nDisplayDensity = 2.75;
+    //    }
 
-        if (nDisplayDensity == 0)
-        {
-            nDisplayDensity = 1;
-        }
+    //    if (nDisplayDensity == 0)
+    //    {
+    //        nDisplayDensity = 1;
+    //    }
 
-        double nDisplayResHeight = nDisplayHeight / nDisplayDensity;
+    //    double nDisplayResHeight = nDisplayHeight / nDisplayDensity;
 
-        // Set the HorizontalStackLayout height for small screens.
-        if (nDisplayResHeight < 740)
-        {
-            hslScanner.HeightRequest = 530;
-        }
-    }
+    //    // Set the HorizontalStackLayout height for small screens.
+    //    if (nDisplayResHeight < 740)
+    //    {
+    //        hslScanner.HeightRequest = 530;
+    //    }
+    //}
 
     // Check and request camera permission for iOS.
     public async Task<PermissionStatus> CheckAndRequestCameraPermission()

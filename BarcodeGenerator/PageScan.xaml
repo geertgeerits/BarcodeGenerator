@@ -8,6 +8,37 @@
              Disappearing="TurnOffTorch"
              Unloaded="TurnOffTorch">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="zxingCameraView" TargetType="zxing:CameraBarcodeReaderView">
+                    <Setter Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup>
+                            <VisualState x:Name="Portrait">
+                                <VisualState.StateTriggers>
+                                    <OrientationStateTrigger Orientation="Portrait" />
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Property="HeightRequest" Value="{OnIdiom 400, Phone=400, Tablet=600, Desktop=600}" />
+                                    <Setter Property="WidthRequest" Value="{OnIdiom 300, Phone=310, Tablet=450, Desktop=450}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Landscape">
+                                <VisualState.StateTriggers>
+                                    <OrientationStateTrigger Orientation="Landscape" />
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Property="HeightRequest" Value="{OnIdiom 300, Phone=300, Tablet=450, Desktop=450}" />
+                                    <Setter Property="WidthRequest" Value="{OnIdiom 400, Phone=510, Tablet=600, Desktop=600}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <NavigationPage.TitleView>
         <Grid
             RowDefinitions="Auto"
@@ -51,7 +82,7 @@
                     Grid.Column="0"
                     Text="{x:Static resx:CodeLang.FormatCode_Text}">
                 </Label>
-
+                
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="0"
@@ -79,15 +110,24 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     HeightRequest="{OnIdiom 410, Phone=410, Tablet=610, Desktop=610}">
-                
-                    <zxing:CameraBarcodeReaderView
-                        x:Name="barcodeReader"
-                        HeightRequest="{OnIdiom 400, Phone=400, Tablet=600, Desktop=600}"
-                        WidthRequest="{OnIdiom 300, Phone=300, Tablet=450, Desktop=450}"
-                        IsDetecting="True"
-                        IsTorchOn="False"
-                        BarcodesDetected="OnBarcodesDetected">
-                    </zxing:CameraBarcodeReaderView>
+
+                    <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320.-->
+                    <Frame
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent">
+
+                        <zxing:CameraBarcodeReaderView
+                            x:Name="barcodeReader"
+                            Style="{StaticResource zxingCameraView}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            IsDetecting="True"
+                            IsTorchOn="False"
+                            BarcodesDetected="OnBarcodesDetected">
+                        </zxing:CameraBarcodeReaderView>
+                    </Frame>
                 </HorizontalStackLayout>
             
                 <HorizontalStackLayout
