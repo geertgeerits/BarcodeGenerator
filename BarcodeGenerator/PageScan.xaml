@@ -28,7 +28,7 @@
                                     <OrientationStateTrigger Orientation="Landscape" />
                                 </VisualState.StateTriggers>
                                 <VisualState.Setters>
-                                    <Setter Property="HeightRequest" Value="{OnIdiom 300, Phone=300, Tablet=450, Desktop=450}" />
+                                    <Setter Property="HeightRequest" Value="{OnIdiom 300, Phone=400, Tablet=450, Desktop=450}" />
                                     <Setter Property="WidthRequest" Value="{OnIdiom 400, Phone=510, Tablet=600, Desktop=600}" />
                                 </VisualState.Setters>
                             </VisualState>
