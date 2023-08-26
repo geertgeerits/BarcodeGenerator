@@ -89,17 +89,10 @@
                     Grid.Column="1"
                     VerticalOptions="Center">
 
-                    <Picker
-                        x:Name="pckFormatCodeScanner"
-                        MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}"
-                        IsEnabled="False">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Barcode 1</x:String>
-                                <x:String>Barcode 2</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                    </Picker>
+                    <Label
+                        x:Name="lblFormatCodeScanner"
+                        MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}">
+                    </Label>
                 </Border>
 
                 <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320.-->

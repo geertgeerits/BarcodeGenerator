@@ -62,8 +62,13 @@ public partial class MainPage : ContentPage
             };
         }
 
-        // The height of the title bar is lower when an iPhone is in horizontal position.
+#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
+        // Enable the scan icon for Google Vision.
+        imgbtnScanGV.IsVisible = true;
+#endif  
+
 #if IOS
+        // The height of the title bar is lower when an iPhone is in horizontal position.
         imgbtnAbout.VerticalOptions = LayoutOptions.Start;
         lblTitle.VerticalOptions = LayoutOptions.Start;
         imgbtnScan.VerticalOptions = LayoutOptions.Start;
@@ -141,10 +146,14 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(new PageAbout());
     }
 
+    private async void OnPageScanGvClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new PageScanGV());
+    }
+
     private async void OnPageScanClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PageScan());
-        //await Navigation.PushAsync(new PageScanGV());
     }
 
     private async void OnPageSettingsClicked(object sender, EventArgs e)

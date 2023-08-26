@@ -11,7 +11,7 @@
     <NavigationPage.TitleView>
         <Grid
             RowDefinitions="Auto"
-            ColumnDefinitions="60, 140*, 60, 60"
+            ColumnDefinitions="60, 140*, 40, 40, 60"
             BackgroundColor="#00bfff">
 
             <ImageButton
@@ -37,9 +37,23 @@
             </Label>
 
             <ImageButton
-                x:Name="imgbtnScan"
+                x:Name="imgbtnScanGV"
                 Grid.Row="0"
                 Grid.Column="2"
+                Source="scan_barcode_icon_128p.png"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                HeightRequest="38"
+                WidthRequest="38"
+                IsVisible="False"
+                ToolTipProperties.Text="{local:Translate ToolTipBarcodeScanner_Text}"
+                Clicked="OnPageScanGvClicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="imgbtnScan"
+                Grid.Row="0"
+                Grid.Column="3"
                 Source="scan_barcode_icon_128p.png"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
@@ -52,7 +66,7 @@
             <ImageButton
                 x:Name="imgbtnSettings"
                 Grid.Row="0"
-                Grid.Column="3"
+                Grid.Column="4"
                 Source="settings_32p.png"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"

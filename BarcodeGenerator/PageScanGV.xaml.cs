@@ -14,7 +14,7 @@ public partial class PageScanGV : ContentPage
     {
         try
         {
-#if ANDROID || IOS            
+#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER            
             switch (Globals.nFormatScannerIndex)
             {
                 // Aztec.
@@ -146,11 +146,9 @@ public partial class PageScanGV : ContentPage
         imgbtnTorch.VerticalOptions = LayoutOptions.Start;
 #endif
 
-        // Put text in the chosen language in the controls.
-        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScanner();
-
-        // Default format code = All codes
-        pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
+        // Put the default barcode format in the label control.
+        string[] cFormatCode = Globals.GetFormatCodeListScanner().ToArray();
+        lblFormatCodeScanner.Text = cFormatCode[Globals.nFormatScannerIndex];
 
         // Initialize text to speech.
         InitializeTextToSpeech();
