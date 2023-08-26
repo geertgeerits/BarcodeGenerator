@@ -23,23 +23,11 @@ public partial class PageScan : ContentPage
             return;
         }
 
+#if IOS
         // Check and request camera permission for iOS.
-#if IOS
         Task<PermissionStatus> task = CheckAndRequestCameraPermission();
-#endif
 
-        // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
-        // The camera sometimes overlaps adjacent rows in the grid on Android.
-#if ANDROID
-        //SetGridRowHeightCamera();
-#endif
-
-        //#if IOS
-        //        MainThread.BeginInvokeOnMainThread(SetGridRowHeightCamera);
-        //#endif
-        
-        // The height of the title bar is lower when an iPhone is in horizontal position.
-#if IOS
+        // The height of the title bar is lower when an iPhone is in horizontal position (!!!BUG!!! ?). 
         lblTitle.VerticalOptions = LayoutOptions.Start;
         imgbtnTorch.VerticalOptions = LayoutOptions.Start;
 #endif
@@ -528,40 +516,6 @@ public partial class PageScan : ContentPage
     {
         await Clipboard.Default.SetTextAsync(lblBarcodeResult.Text);
     }
-
-    // Workaround for !!!BUG!!! in zxing:CameraBarcodeReaderView HeightRequest.
-    // The camera sometimes overlaps adjacent rows in the grid on Android phones.
-    //private void SetGridRowHeightCamera()
-    //{
-    //    // Get the screen size.
-    //    double nDisplayHeight;
-    //    double nDisplayDensity;
-
-    //    try
-    //    {
-    //        nDisplayHeight = DeviceDisplay.Current.MainDisplayInfo.Height;
-    //        nDisplayDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
-    //    }
-    //    catch
-    //    {
-    //        // Default values voor a Samsung Galaxy S21 phone.
-    //        nDisplayHeight = 2340;
-    //        nDisplayDensity = 2.75;
-    //    }
-
-    //    if (nDisplayDensity == 0)
-    //    {
-    //        nDisplayDensity = 1;
-    //    }
-
-    //    double nDisplayResHeight = nDisplayHeight / nDisplayDensity;
-
-    //    // Set the HorizontalStackLayout height for small screens.
-    //    if (nDisplayResHeight < 740)
-    //    {
-    //        hslScanner.HeightRequest = 530;
-    //    }
-    //}
 
     // Check and request camera permission for iOS.
     public async Task<PermissionStatus> CheckAndRequestCameraPermission()

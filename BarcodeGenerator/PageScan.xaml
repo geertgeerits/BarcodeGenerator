@@ -14,25 +14,25 @@
                     <Setter Property="VisualStateManager.VisualStateGroups">
                         <VisualStateGroupList>
                             <VisualStateGroup>
-                            <VisualState x:Name="Portrait">
-                                <VisualState.StateTriggers>
-                                    <OrientationStateTrigger Orientation="Portrait" />
-                                </VisualState.StateTriggers>
-                                <VisualState.Setters>
-                                    <Setter Property="HeightRequest" Value="{OnIdiom 400, Phone=400, Tablet=600, Desktop=600}" />
-                                    <Setter Property="WidthRequest" Value="{OnIdiom 300, Phone=310, Tablet=450, Desktop=450}" />
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Landscape">
-                                <VisualState.StateTriggers>
-                                    <OrientationStateTrigger Orientation="Landscape" />
-                                </VisualState.StateTriggers>
-                                <VisualState.Setters>
-                                    <Setter Property="HeightRequest" Value="{OnIdiom 300, Phone=400, Tablet=450, Desktop=450}" />
-                                    <Setter Property="WidthRequest" Value="{OnIdiom 400, Phone=510, Tablet=600, Desktop=600}" />
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
+                                <VisualState x:Name="Portrait">
+                                    <VisualState.StateTriggers>
+                                        <OrientationStateTrigger Orientation="Portrait" />
+                                    </VisualState.StateTriggers>
+                                    <VisualState.Setters>
+                                        <Setter Property="HeightRequest" Value="{OnIdiom 400, Phone=400, Tablet=600, Desktop=600}" />
+                                        <Setter Property="WidthRequest" Value="{OnIdiom 310, Phone=310, Tablet=600, Desktop=600}" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Landscape">
+                                    <VisualState.StateTriggers>
+                                        <OrientationStateTrigger Orientation="Landscape" />
+                                    </VisualState.StateTriggers>
+                                    <VisualState.Setters>
+                                        <Setter Property="HeightRequest" Value="{OnIdiom 310, Phone=310, Tablet=450, Desktop=450}" />
+                                        <Setter Property="WidthRequest" Value="{OnIdiom 510, Phone=510, Tablet=800, Desktop=800}" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
                         </VisualStateGroupList>
                     </Setter>
                 </Style>
@@ -74,7 +74,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleScanner}"
-                RowDefinitions="Auto, 10, Auto, 10, Auto, Auto">
+                RowDefinitions="Auto, 5, Auto, 5, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -102,33 +102,26 @@
                     </Picker>
                 </Border>
 
-                <HorizontalStackLayout
-                    x:Name="hslScanner"
+                <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320.-->
+                <Frame
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HeightRequest="{OnIdiom 410, Phone=410, Tablet=610, Desktop=610}">
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent">
 
-                    <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320.-->
-                    <Frame
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="FillAndExpand"
-                        BackgroundColor="Transparent"
-                        BorderColor="Transparent">
-
-                        <zxing:CameraBarcodeReaderView
-                            x:Name="barcodeReader"
-                            Style="{StaticResource zxingCameraView}"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            IsDetecting="True"
-                            IsTorchOn="False"
-                            BarcodesDetected="OnBarcodesDetected">
-                        </zxing:CameraBarcodeReaderView>
-                    </Frame>
-                </HorizontalStackLayout>
+                    <zxing:CameraBarcodeReaderView
+                        x:Name="barcodeReader"
+                        Style="{StaticResource zxingCameraView}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        IsDetecting="True"
+                        IsTorchOn="False"
+                        BarcodesDetected="OnBarcodesDetected">
+                    </zxing:CameraBarcodeReaderView>
+                </Frame>
             
                 <HorizontalStackLayout
                     Grid.Row="4"
