@@ -1,4 +1,5 @@
-﻿using ZXing.Net.Maui.Controls;
+﻿using BarcodeScanner.Mobile;
+using ZXing.Net.Maui.Controls;
 using Microsoft.AppCenter;
 
 namespace BarcodeGenerator;
@@ -15,6 +16,11 @@ public static class MauiProgram
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+            })
+            .ConfigureMauiHandlers(handlers =>
+            {
+                // Add the handlers
+                handlers.AddBarcodeScannerHandler();
             });
 
         AppCenter.Start("windowsdesktop=7b81fd09-0be8-45e0-a4f0-4a23dd20a00c;" +

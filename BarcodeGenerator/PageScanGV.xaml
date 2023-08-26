@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
+             xmlns:gv="clr-namespace:BarcodeScanner.Mobile;assembly=BarcodeScanner.Mobile.Maui"
+             x:Class="BarcodeGenerator.PageScanGV"
+             Appearing="OnPageAppearing"
+             Disappearing="TurnOffTorch"
+             Unloaded="TurnOffTorch">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="gvCameraView" TargetType="gv:CameraView">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup>
+                            <VisualState x:Name="Portrait">
+                                <VisualState.StateTriggers>
+                                    <OrientationStateTrigger Orientation="Portrait" />
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Property="HeightRequest" Value="{OnIdiom 400, Phone=400, Tablet=600, Desktop=600}" />
+                                    <Setter Property="WidthRequest" Value="{OnIdiom 310, Phone=310, Tablet=600, Desktop=600}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Landscape">
+                                <VisualState.StateTriggers>
+                                    <OrientationStateTrigger Orientation="Landscape" />
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Property="HeightRequest" Value="{OnIdiom 310, Phone=310, Tablet=450, Desktop=450}" />
+                                    <Setter Property="WidthRequest" Value="{OnIdiom 510, Phone=510, Tablet=800, Desktop=800}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <Grid
+            RowDefinitions="Auto"
+            ColumnDefinitions="200*, 60, 60"
+            BackgroundColor="#00bfff">
+
+            <Label
+                x:Name="lblTitle"
+                Style="{StaticResource labelStyleTitleView}"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                VerticalOptions="Center"
+                Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
+            </Label>
+
+            <ImageButton
+                x:Name="imgbtnTorch"
+                Grid.Row="0"
+                Grid.Column="2"
+                Source="torch_icon_64p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="36"
+                WidthRequest="36"
+                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTorch_Text}"
+                Clicked="OnTorchClicked">
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ScrollView>
+        <StackLayout>
+            <Grid
+                Style="{StaticResource gridStyleScanner}"
+                RowDefinitions="Auto, 5, Auto, 5, Auto, Auto">
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="{x:Static resx:CodeLang.FormatCode_Text}">
+                </Label>
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    VerticalOptions="Center">
+
+                    <Picker
+                        x:Name="pckFormatCodeScanner"
+                        MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}"
+                        IsEnabled="False">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Barcode 1</x:String>
+                                <x:String>Barcode 2</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Border>
+
+                <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320.-->
+                <Frame
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent">
+
+                    <gv:CameraView
+                        x:Name="barcodeReader"
+                        Style="{StaticResource gvCameraView}"
+                        OnDetected="OnBarcodesDetected"
+                        TorchOn="False"
+                        VibrationOnDetected="False"
+                        CaptureQuality="Medium"
+                        ScanInterval="500">
+                    </gv:CameraView>
+                </Frame>
+
+                <HorizontalStackLayout
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+
+                    <ImageButton
+                        x:Name="imgbtnCopyToClipboard"
+                        Source="copy_icon_48p_blue.png"
+                        HeightRequest="38"
+                        WidthRequest="38"
+                        VerticalOptions="End"
+                        ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCopy_Text}"
+                        IsEnabled="False"
+                        Clicked="OnCopyToClipboardClicked">
+                    </ImageButton>
+
+                    <Button
+                        x:Name="btnShare"
+                        HorizontalOptions="Start"
+                        VerticalOptions="End"
+                        MinimumWidthRequest="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}"
+                        MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
+                        Text="{x:Static resx:CodeLang.ButtonShare_Text}"
+                        ToolTipProperties.Text="{x:Static resx:CodeLang.ButtonShare_Text}"
+                        IsEnabled="False"
+                        Clicked="OnShareClicked">
+                    </Button>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Spacing="10">
+
+                    <Label
+                        x:Name="lblTextToSpeech"
+                        Style="{StaticResource labelStyleDefault}"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"
+                        IsVisible="False"
+                        Text="en-US">
+                    </Label>
+
+                    <ImageButton
+                        x:Name="imgbtnTextToSpeech"
+                        Source="speaker_64p_blue_green.png"
+                        HorizontalOptions="End"
+                        HeightRequest="38"
+                        WidthRequest="38"
+                        IsVisible="False"
+                        Clicked="OnTextToSpeechClicked">
+                    </ImageButton>
+                </HorizontalStackLayout>
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
+
+                    <Label
+                        x:Name="lblBarcodeResult"
+                        Padding="5"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start"
+                        Text="">
+                    </Label>
+                </Border>
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
+        
