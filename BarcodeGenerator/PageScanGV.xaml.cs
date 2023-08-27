@@ -1,5 +1,6 @@
 using BarcodeScanner.Mobile;
 using System.Text.RegularExpressions;
+using ZXing;
 
 namespace BarcodeGenerator;
 
@@ -164,7 +165,7 @@ public partial class PageScanGV : ContentPage
     }
 
     // Barcode detected event.
-    private async void OnBarcodesDetected(object sender, BarcodeScanner.Mobile.OnDetectedEventArg e)
+    private async void OnBarcodesDetected(object sender, OnDetectedEventArg e)
     {
         lblBarcodeResult.Text = "";
         btnShare.Text = CodeLang.ButtonShare_Text;
@@ -182,17 +183,15 @@ public partial class PageScanGV : ContentPage
 
             Dispatcher.Dispatch(() =>
             {
-                btnShare.Text = CodeLang.ButtonShare_Text + " " + cBarcodeFormat;
-                lblBarcodeResult.Text = cDisplayValue;
-
-                imgbtnCopyToClipboard.IsEnabled = true;
-                btnShare.IsEnabled = true;
-                imgbtnTextToSpeech.IsEnabled = true;
-
-                //Task.Delay(500).Wait();
-
                 barcodeReader.IsScanning = true;
             });
+
+            btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
+            lblBarcodeResult.Text = cDisplayValue;
+
+            imgbtnCopyToClipboard.IsEnabled = true;
+            btnShare.IsEnabled = true;
+            imgbtnTextToSpeech.IsEnabled = true;
         }
         catch (Exception ex)
         {
