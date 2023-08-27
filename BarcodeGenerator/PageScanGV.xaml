@@ -96,7 +96,8 @@
 
                     <Label
                         x:Name="lblFormatCodeScanner"
-                        MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}">
+                        MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}"
+                        Padding="5">
                     </Label>
                 </Border>
 

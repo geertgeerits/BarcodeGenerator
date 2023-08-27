@@ -11,7 +11,7 @@
     <NavigationPage.TitleView>
         <Grid
             RowDefinitions="Auto"
-            ColumnDefinitions="60, 140*, 40, 40, 60"
+            ColumnDefinitions="60, 140*, 42, 42, 60"
             BackgroundColor="#00bfff">
 
             <ImageButton
@@ -40,11 +40,11 @@
                 x:Name="imgbtnScanGV"
                 Grid.Row="0"
                 Grid.Column="2"
-                Source="scan_barcode_icon_128p.png"
+                Source="barcodegooglevision_48x48p.png"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                HeightRequest="38"
-                WidthRequest="38"
+                HeightRequest="39"
+                WidthRequest="39"
                 IsVisible="False"
                 Clicked="OnPageScanGvClicked">
             </ImageButton>
@@ -53,11 +53,11 @@
                 x:Name="imgbtnScanZX"
                 Grid.Row="0"
                 Grid.Column="3"
-                Source="scan_barcode_icon_128p.png"
+                Source="barcodezxingzebracrossing_48x48p.png"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                HeightRequest="38"
-                WidthRequest="38"
+                HeightRequest="36"
+                WidthRequest="36"
                 Clicked="OnPageScanClicked">
             </ImageButton>
 
