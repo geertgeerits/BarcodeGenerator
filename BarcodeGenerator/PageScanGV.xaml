@@ -51,8 +51,13 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                VerticalOptions="Center"
-                Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
+                VerticalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static resx:CodeLang.BarcodeScanner_Text}" />
+                        <Span Text=" (Google Vision)" FontSize="14" />
+                    </FormattedString>
+                </Label.FormattedText>
             </Label>
 
             <ImageButton
@@ -80,7 +85,7 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Text="{x:Static resx:CodeLang.FormatCode_Text}">
+                    Text="{x:Static resx:CodeLang.FormatCode2_Text}">
                 </Label>
 
                 <Border

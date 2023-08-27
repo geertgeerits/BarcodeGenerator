@@ -226,6 +226,9 @@ Raporttitietoja säilytetään 28 päivää.</value>
   <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Läpinäkymättömyys:</value>
   </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Muoto:</value>
+  </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Valitse muoto:</value>
   </data>

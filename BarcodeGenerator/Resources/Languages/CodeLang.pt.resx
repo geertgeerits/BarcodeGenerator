@@ -226,6 +226,9 @@ Os dados do relatório são retidos por 28 dias.</value>
   <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Opacidade do primeiro plano:</value>
   </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Formato:</value>
+  </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Selecione um formato:</value>
   </data>

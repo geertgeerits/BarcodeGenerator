@@ -3,14 +3,14 @@ using System.Text.RegularExpressions;
 
 namespace BarcodeGenerator;
 
-public partial class PageScan : ContentPage
+public partial class PageScanZX : ContentPage
 {
     // Local variables.
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
     private bool bTextToSpeechIsBusy = false;
 
-    public PageScan()
+    public PageScanZX()
     {
         try
         {

@@ -226,6 +226,9 @@ De rapportgegevens worden 28 dagen bewaard.</value>
   <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Dekking voorgrond:</value>
   </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Formaat:</value>
+  </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Selecteer formaat:</value>
   </data>

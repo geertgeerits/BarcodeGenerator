@@ -85,6 +85,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="PageScanZX.xaml.cs">
+	    <DependentUpon>PageScanZX.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Resources\Languages\CodeLang.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
@@ -103,7 +106,7 @@
 	  <MauiXaml Update="PageAbout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PageScan.xaml">
+	  <MauiXaml Update="PageScanZX.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PageScanGV.xaml">

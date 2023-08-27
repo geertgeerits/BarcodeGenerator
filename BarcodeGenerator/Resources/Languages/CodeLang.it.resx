@@ -226,6 +226,9 @@ I dati del rapporto vengono conservati per 28 giorni.</value>
   <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Opacità in primo piano:</value>
   </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Formato:</value>
+  </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Seleziona un formato:</value>
   </data>

@@ -226,6 +226,9 @@ Datele raportului sunt păstrate timp de 28 de zile.</value>
   <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Opacitatea primului plan:</value>
   </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Format:</value>
+  </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Selectați un format:</value>
   </data>

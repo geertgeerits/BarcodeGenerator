@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.35
-// Date ........: 2023-08-26 (YYYY-MM-DD)
+// Date ........: 2023-08-27 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -62,18 +62,23 @@ public partial class MainPage : ContentPage
             };
         }
 
-#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
-        // Enable the scan icon for Google Vision.
-        imgbtnScanGV.IsVisible = true;
-#endif  
-
 #if IOS
         // The height of the title bar is lower when an iPhone is in horizontal position.
         imgbtnAbout.VerticalOptions = LayoutOptions.Start;
         lblTitle.VerticalOptions = LayoutOptions.Start;
-        imgbtnScan.VerticalOptions = LayoutOptions.Start;
+        imgbtnScanGV.VerticalOptions = LayoutOptions.Start;
+        imgbtnScanZX.VerticalOptions = LayoutOptions.Start;
         imgbtnSettings.VerticalOptions = LayoutOptions.Start;
 #endif
+
+        // Set the tooltips for the scanner buttons.
+        ToolTipProperties.SetText(imgbtnScanGV, CodeLang.ToolTipBarcodeScanner_Text + " (Google Vision)");
+        ToolTipProperties.SetText(imgbtnScanZX, CodeLang.ToolTipBarcodeScanner_Text + " (ZXing Zebra Crossing)");
+
+#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
+        // Make the the scan icon for Google Vision visible.
+        imgbtnScanGV.IsVisible = true;
+#endif  
 
         // Set the theme.
         if (Globals.cTheme == "Light")
@@ -153,7 +158,7 @@ public partial class MainPage : ContentPage
 
     private async void OnPageScanClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PageScan());
+        await Navigation.PushAsync(new PageScanZX());
     }
 
     private async void OnPageSettingsClicked(object sender, EventArgs e)
@@ -944,7 +949,8 @@ public partial class MainPage : ContentPage
 #if IOS
                 //Thread.CurrentThread.Abort();  // Not allowed in iOS.
                 imgbtnAbout.IsEnabled = false;
-                imgbtnScan.IsEnabled = false;
+                imgbtnScanGV.IsEnabled = false;
+                imgbtnScanZX.IsEnabled = false;
                 imgbtnSettings.IsEnabled = false;
                 btnGenerateCode.IsEnabled = false;
 

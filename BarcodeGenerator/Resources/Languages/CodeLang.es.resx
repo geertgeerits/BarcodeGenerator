@@ -226,6 +226,9 @@ Los datos del informe se conservan durante 28 días.</value>
   <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Opacidad de primer plano:</value>
   </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Formato:</value>
+  </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Seleccione un formato:</value>
   </data>

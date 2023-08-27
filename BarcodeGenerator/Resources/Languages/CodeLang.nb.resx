@@ -226,6 +226,9 @@ Rapportdataene oppbevares i 28 dager.</value>
   <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Opasitet i forgrunnen:</value>
   </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Format:</value>
+  </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Velg et format:</value>
   </data>

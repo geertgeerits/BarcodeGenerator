@@ -226,6 +226,9 @@ The report data is retained for 28 days.</value>
   <data name="ForegroundOpacity_Text" xml:space="preserve">
     <value>Foreground opacity:</value>
   </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Format:</value>
+  </data>
   <data name="FormatCode_Text" xml:space="preserve">
     <value>Select a format:</value>
   </data>

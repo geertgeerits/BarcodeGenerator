@@ -381,6 +381,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Format:.
+        /// </summary>
+        internal static string FormatCode2_Text {
+            get {
+                return ResourceManager.GetString("FormatCode2_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to is currently not supported..
         /// </summary>
         internal static string FormatNotSupported_Text {
