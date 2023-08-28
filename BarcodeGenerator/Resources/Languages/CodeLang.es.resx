@@ -259,7 +259,10 @@ Caracteres 5-6: Verde
 Caracteres 7-8: Azul</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Texto a voz: No se admiten todos los idiomas que se proporcionan en la configuración de la aplicación.
+    <value>Para escanear códigos de barras, hay dos opciones: Google Vision y ZXing Zebra Crossing.
+Google Vision sólo se puede utilizar desde Android 12 o iOS 15.4.
+
+Texto a voz: No se admiten todos los idiomas que se proporcionan en la configuración de la aplicación.
 Voz a texto: Actívala a través de la configuración de tu dispositivo. Entonces aparecerá un micrófono en el teclado virtual.
 Ambas opciones dependen de un dispositivo a otro y de los idiomas instalados. Es posible que, para algunos idiomas, la traducción hacia y desde el habla la realicen los servicios correspondientes a través de Internet.
 

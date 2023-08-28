@@ -259,7 +259,10 @@ Caratteri 5-6: Verde
 Caratteri 7-8: Blu</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Sintesi vocale: Non sono supportate tutte le lingue fornite nelle impostazioni dell'applicazione.
+    <value>Per la scansione dei codici a barre, ci sono due scelte: Google Vision e ZXing Zebra Crossing.
+Google Vision può essere utilizzato solo da Android 12 o iOS 15.4.
+
+Sintesi vocale: Non sono supportate tutte le lingue fornite nelle impostazioni dell'applicazione.
 Discorso al testo: attivala tramite le impostazioni del tuo dispositivo. Un microfono apparirà quindi nella tastiera virtuale.
 Entrambe queste opzioni dipendono da dispositivo a dispositivo e dalle lingue installate. È possibile che per alcune lingue la traduzione da e verso il parlato venga effettuata tramite Internet dai servizi interessati.
 
