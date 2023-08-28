@@ -1,6 +1,4 @@
 using BarcodeScanner.Mobile;
-using System.Text.RegularExpressions;
-using ZXing;
 
 namespace BarcodeGenerator;
 
@@ -200,88 +198,9 @@ public partial class PageScanGV : ContentPage
     }
 
     // Button share event.
-    private async void OnShareClicked(object sender, EventArgs e)
+    private void OnShareClicked(object sender, EventArgs e)
     {
-        // For testing.
-        //lblBarcodeResult.Text = "http://www.google.com";
-        //lblBarcodeResult.Text = "url http://www.google.com, visit website url https://www.microsoft.com, www.yahou.com and WWW.MODEGEERITS.BE and geertgeerits@gmail.com address";
-        //lblBarcodeResult.Text = "Share text from barcode scanner";
-
-        string cText = lblBarcodeResult.Text;
-
-        //string cPattern = @"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?";
-        string cPattern = @"((https?|ftp|file)\://|www.)[A-Za-z0-9\.\-]+(/[A-Za-z0-9\?\&\=;\+!'\(\)\*\-\._~%]*)*";
-
-        // Call Matches method for case-insensitive matching.
-        try
-        {
-            foreach (Match match in Regex.Matches(cText, cPattern, RegexOptions.IgnoreCase).Cast<Match>())
-            {
-                if (match.Success)
-                {
-                    bool bAnswer = await DisplayAlert(CodeLang.OpenLinkTitle_Text, $"{match.Value}\n\n{CodeLang.OpenLinkText_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
-
-                    // Open link website.
-                    if (bAnswer)
-                    {
-                        await OpenWebsiteLink(match.Value);
-                    }
-                }
-                else
-                {
-                    break;
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Crashes.TrackError(ex);
-            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-        }
-
-        // Wait 700 milliseconds otherwise the ShareText() is not executed after the last opened link.
-        Task.Delay(700).Wait();
-
-        // Open share interface.
-        await ShareText(cText);
-    }
-
-    // Open the website link.
-    private async Task OpenWebsiteLink(string cUrl)
-    {
-        if (cUrl[..4] is "www." or "WWW.")
-        {
-            cUrl = $"http://{cUrl}";
-        }
-
-        try
-        {
-            Uri uri = new(cUrl);
-            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
-        }
-        catch (Exception ex)
-        {
-            Crashes.TrackError(ex);
-            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-        }
-    }
-
-    // Open the share interface.
-    private async Task ShareText(string cText)
-    {
-        try
-        {
-            await Share.Default.RequestAsync(new ShareTextRequest
-            {
-                Text = cText,
-                Title = "Barcode Scanner"
-            });
-        }
-        catch (Exception ex)
-        {
-            Crashes.TrackError(ex);
-            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-        }
+        Globals.ShareBarcodeResult(lblBarcodeResult.Text);
     }
 
     // Set language text to speech using the Appearing event of the PageScanGV.xaml.
@@ -387,23 +306,23 @@ public partial class PageScanGV : ContentPage
     }
 
     // Check and request camera permission for iOS.
-    public async Task<PermissionStatus> CheckAndRequestCameraPermission()
-    {
-        PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Camera>();
+    //public async Task<PermissionStatus> CheckAndRequestCameraPermission()
+    //{
+    //    PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Camera>();
 
-        if (status == PermissionStatus.Granted)
-        {
-            return status;
-        }
+    //    if (status == PermissionStatus.Granted)
+    //    {
+    //        return status;
+    //    }
 
-        if (status == PermissionStatus.Unknown && DeviceInfo.Platform == DevicePlatform.iOS)
-        {
-            // Prompt the user to turn on in settings.
-            // On iOS once a permission has been denied it may not be requested again from the application.
-            await DisplayAlert("", CodeLang.CameraPermissionIOS_Text, CodeLang.ButtonClose_Text);
-            return status;
-        }
+    //    if (status == PermissionStatus.Unknown && DeviceInfo.Platform == DevicePlatform.iOS)
+    //    {
+    //        // Prompt the user to turn on in settings.
+    //        // On iOS once a permission has been denied it may not be requested again from the application.
+    //        await DisplayAlert("", CodeLang.CameraPermissionIOS_Text, CodeLang.ButtonClose_Text);
+    //        return status;
+    //    }
 
-        return status;
-    }
+    //    return status;
+    //}
 }

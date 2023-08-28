@@ -3,6 +3,9 @@ global using BarcodeGenerator.Resources.Languages;
 global using System.Globalization;
 global using Microsoft.AppCenter.Crashes;
 
+// Local usings.
+using System.Text.RegularExpressions;
+
 namespace BarcodeGenerator;
 
 // Global variables and methods.
@@ -109,5 +112,89 @@ static class Globals
             "(UPC EAN Extension)",
             CodeLang.AllCodes_Text
         };
+    }
+
+    // Button share event: share the barcode result.
+    public static async void ShareBarcodeResult(string cText)
+    {
+        // For testing.
+        //cText = "http://www.google.com";
+        //cText = "url http://www.google.com, visit website url https://www.microsoft.com, www.yahou.com and WWW.MODEGEERITS.BE and geertgeerits@gmail.com address";
+        //cText = "Share text from barcode scanner";
+
+        //string cPattern = @"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?";
+        string cPattern = @"((https?|ftp|file)\://|www.)[A-Za-z0-9\.\-]+(/[A-Za-z0-9\?\&\=;\+!'\(\)\*\-\._~%]*)*";
+
+        // Call
+        // Matches method for case-insensitive matching.
+        try
+        {
+            foreach (Match match in Regex.Matches(cText, cPattern, RegexOptions.IgnoreCase).Cast<Match>())
+            {
+                if (match.Success)
+                {
+                    bool bAnswer = await App.Current.MainPage.DisplayAlert(CodeLang.OpenLinkTitle_Text, $"{match.Value}\n\n{CodeLang.OpenLinkText_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
+
+                    // Open link website.
+                    if (bAnswer)
+                    {
+                        await OpenWebsiteLink(match.Value);
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Crashes.TrackError(ex);
+            await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+        }
+
+        // Wait 700 milliseconds otherwise the ShareText() is not executed after the last opened link.
+        Task.Delay(700).Wait();
+
+        // Open share interface.
+        await ShareText(cText);
+    }
+
+    // Open the website link.
+    public static async Task OpenWebsiteLink(string cUrl)
+    {
+        if (cUrl[..4] is "www." or "WWW.")
+        {
+            cUrl = $"http://{cUrl}";
+        }
+
+        try
+        {
+            Uri uri = new(cUrl);
+            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+        }
+        catch (Exception ex)
+        {
+            Crashes.TrackError(ex);
+            await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+        }
+    }
+
+    // Open the share interface.
+    public static async Task ShareText(string cText)
+    {
+        try
+        {
+            await Share.Default.RequestAsync(new ShareTextRequest
+            {
+                Text = cText,
+                Title = "Barcode Scanner"
+            });
+        }
+        catch (Exception ex)
+        {
+            Crashes.TrackError(ex);
+            await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+        }
     }
 }
