@@ -259,7 +259,10 @@ Characters 5-6: Green
 Characters 7-8: Blue</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text to speech: Not all languages are supported that are provided in the application settings.
+    <value>For barcode scanning, there are two choices: Google Vision and ZXing Zebra Crossing.
+Google Vision can only be used from Android 12 or iOS 15.4.
+
+Text to speech: Not all languages are supported that are provided in the application settings.
 Speech to text: Activate it through your device settings. A microphone will then appear in the virtual keyboard.
 Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
 
