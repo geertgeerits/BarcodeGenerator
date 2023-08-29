@@ -259,7 +259,10 @@ Tecken 5-6: Grön
 Tecken 7-8: Blå</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text till tal: Alla språk som finns i programinställningarna stöds inte.
+    <value>För streckkodsskanning finns det två val: Google Vision och ZXing Zebra Crossing.
+Google Vision kan endast användas från Android 12 eller iOS 15.4.
+
+Text till tal: Alla språk som finns i programinställningarna stöds inte.
 Tal till text: Aktivera den via dina enhetsinställningar. En mikrofon kommer då att dyka upp på det virtuella tangentbordet.
 Båda dessa alternativ beror från enhet till enhet och de installerade språken. Det är möjligt att för vissa språk görs översättningen till och från tal över internet av de berörda tjänsterna.
 

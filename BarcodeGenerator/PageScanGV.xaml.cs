@@ -139,7 +139,6 @@ public partial class PageScanGV : ContentPage
 #if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
         // Ask for permission to use the camera.
         BarcodeScanner.Mobile.Methods.AskForRequiredPermission();
-        //_ = CheckAndRequestCameraPermission();
 #endif
 
 #if IOS

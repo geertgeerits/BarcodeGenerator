@@ -259,7 +259,10 @@ Tegn 5-6: Grønn
 Tegn 7-8: Blå</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Tekst til tale: Ikke alle språk støttes som er gitt i applikasjonsinnstillingene.
+    <value>For strekkodeskanning er det to valg: Google Vision og ZXing Zebra Crossing.
+Google Vision kan bare brukes fra Android 12 eller iOS 15.4.
+
+Tekst til tale: Ikke alle språk støttes som er gitt i applikasjonsinnstillingene.
 Tale til tekst: Aktiver den via enhetsinnstillingene. En mikrofon vil da vises på det virtuelle tastaturet.
 Begge disse alternativene avhenger fra enhet til enhet og de installerte språkene. Det er mulig at for noen språk blir oversettelsen til og fra tale gjort over internett av de aktuelle tjenestene.
 

@@ -259,7 +259,10 @@ Karakterek 5-6: Zöld
 Karakterek 7-8: Kék</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Szövegfelolvasó: Nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
+    <value>A vonalkód-leolvasáshoz két lehetőség közül választhat: Google Vision és ZXing Zebra Crossing.
+A Google Vision csak Android 12 vagy iOS 15.4 verziótól használható.
+
+Szövegfelolvasó: Nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
 Beszédből szöveggé: Aktiválja az eszköz beállításaiban. Ekkor egy mikrofon jelenik meg a virtuális billentyűzeten.
 Mindkét lehetőség készülékenként és a telepített nyelvektől függ. Lehetséges, hogy egyes nyelvek esetében a beszédre és beszédről történő fordítást az interneten keresztül végzik az érintett szolgálatok.
 
