@@ -259,10 +259,9 @@ Caractere 5-6: Verde
 Caractere 7-8: Albastru</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Pentru scanarea codurilor de bare, există două opțiuni: Google Vision și ZXing Zebra Crossing.
-Google Vision poate fi utilizat numai de pe Android 12 sau iOS 15.4.
+    <value>Scanarea codurilor de bare: există posibilitatea de a alege între „Google Vision” și „ZXing Zebra Crossing”. Google Vision este disponibil pentru Android 12 și iOS 15.4.
 
-Text în vorbire: Nu sunt acceptate toate limbile care sunt furnizate în setările aplicației.
+Text în vorbire: nu sunt acceptate toate limbile care sunt furnizate în setările aplicației.
 Vorbire în text: activează-l prin setările dispozitivului. Un microfon va apărea apoi pe tastatura virtuală.
 Ambele opțiuni depind de la dispozitiv la dispozitiv și de la limbile instalate. Este posibil ca, pentru unele limbi, traducerea către și din vorbire să se facă prin internet de către serviciile respective.
 

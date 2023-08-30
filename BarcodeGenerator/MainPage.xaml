@@ -56,8 +56,8 @@
                 Source="barcodezxingzebracrossing_48x48p.png"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                HeightRequest="36"
-                WidthRequest="36"
+                HeightRequest="33"
+                WidthRequest="33"
                 Clicked="OnPageScanClicked">
             </ImageButton>
 

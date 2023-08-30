@@ -259,10 +259,9 @@ Karakters 5-6: groen
 Karakters 7-8: blauw</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Voor het scannen van barcodes zijn er twee keuzes: Google Vision en ZXing Zebra Crossing.
-Google Vision kan enkel gebruikt worden vanaf Android 12 of iOS 15.4.
+    <value>Scannen van barcodes: er is keuze tussen 'Google Vision' en 'ZXing Zebra Crossing'.  Google Vision is beschikbaar vanaf Android 12 en vanaf iOS 15.4.
 
-Tekst naar spraak: Niet alle talen die beschikbaar zijn in de applicatie-instellingen worden ondersteund.
+Tekst naar spraak: niet alle talen die beschikbaar zijn in de applicatie-instellingen worden ondersteund.
 Spraak naar tekst: activeer het via uw apparaatinstellingen. Er verschijnt dan een microfoon in het virtuele toetsenbord.
 Beide opties zijn afhankelijk van apparaat tot apparaat en de geïnstalleerde talen. Het is mogelijk dat voor sommige talen de vertaling van en naar spraak via het internet wordt gedaan door de betrokken diensten.
 

@@ -259,8 +259,7 @@ Zeichen 5-6: Grün
 Zeichen 7-8: Blau</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Für das Barcode-Scannen gibt es zwei Möglichkeiten: Google Vision und ZXing Zebra Crossing.
-Google Vision ist erst ab Android 12 oder iOS 15.4 nutzbar.
+    <value>Barcodes scannen: Es besteht die Wahl zwischen „Google Vision“ und „ZXing Zebra Crossing“. Google Vision ist ab Android 12 und ab iOS 15.4 verfügbar.
 
 Text zu Sprache: Es werden nicht alle Sprachen unterstützt, die in den Anwendungseinstellungen bereitgestellt werden.
 Sprache zu Text: Aktivieren Sie es über Ihre Geräteeinstellungen. Auf der virtuellen Tastatur erscheint dann ein Mikrofon.

@@ -467,12 +467,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For barcode scanning, there are two choices: Google Vision and ZXing Zebra Crossing.
-        ///Google Vision can only be used from Android 12 or iOS 15.4.
+        ///   Looks up a localized string similar to Scanning barcodes: there is a choice between &apos;Google Vision&apos; and &apos;ZXing Zebra Crossing&apos;. Google Vision is available from Android 12 and from iOS 15.4.
         ///
-        ///Text to speech: Not all languages are supported that are provided in the application settings.
-        ///Speech to text: Activate it through your device settings. A microphone will then appear in the virtual keyboard.
-        ///Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech [rest of string was truncated]&quot;;.
+        ///Text to speech: not all languages are supported that are provided in the application settings.
+        ///Speech to text: activate it through your device settings. A microphone will then appear in the virtual keyboard.
+        ///Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from s [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InfoExplanation_Text {
             get {
