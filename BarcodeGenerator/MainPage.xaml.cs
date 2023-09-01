@@ -20,7 +20,7 @@
           Building for Android: include the following files: 'PageScanZX.xaml' and 'PageScanZX.xaml.cs'.
           Preprocessor directive '#if ANDROID31_0_OR_GREATER' was used to exclude the code for Google Vision in iOS in the files:
           'MauiProgram.cs' and 'MainPage.xaml.cs'.
-          The NuGet package 'BarcodeScanner.Mobile.Maui' have been excluded in the project file for iOS with this statement:
+          The NuGet package 'BarcodeScanner.Mobile.Maui' has been excluded in the project file for iOS with this statement:
           < PackageReference Include = "BarcodeScanner.Mobile.Maui" Version = "7.0.0.1-pre" Condition = "'$(TargetFramework)'=='net7.0-android'" />
 */
 
