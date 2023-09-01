@@ -77,7 +77,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="7.0.0.1-pre" />
+		<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="7.0.0.1-pre" Condition="'$(TargetFramework)'=='net7.0-android'" />
+		<!--<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="7.0.0.1-pre" />-->
 		<PackageReference Include="Microsoft.AppCenter" Version="5.0.2" />
 		<PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.2" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.3.0-preview.1" />
@@ -106,10 +107,10 @@
 	  <MauiXaml Update="PageAbout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PageScanZX.xaml">
+	  <MauiXaml Update="PageScanGV.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PageScanGV.xaml">
+	  <MauiXaml Update="PageScanZX.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PageSettings.xaml">

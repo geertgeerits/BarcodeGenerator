@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.35
-// Date ........: 2023-08-30 (YYYY-MM-DD)
+// Date ........: 2023-09-01 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -12,6 +12,17 @@
 //                NuGet Package: Microsoft.AppCenter version 5.0.2 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/
 //                NuGet Package: Microsoft.AppCenter.Crashes version 5.0.2 
 // Thanks to ...: Gerald Versluis
+
+/*
+!!!BUG!!! Google Vision can not be used in iOS due to the error while building the app:
+          MSB4018 The "ResolveNativeReferences" task failed unexpectedly.
+          Building for iOS: exclude from the project the following files: 'PageScanGV.xaml' and 'PageScanGV.xaml.cs'.
+          Building for Android: include the following files: 'PageScanZX.xaml' and 'PageScanZX.xaml.cs'.
+          Preprocessor directive '#if ANDROID31_0_OR_GREATER' was used to exclude the code for Google Vision in iOS in the files:
+          'MauiProgram.cs' and 'MainPage.xaml.cs'.
+          The NuGet package 'BarcodeScanner.Mobile.Maui' have been excluded in the project file for iOS with this statement:
+          < PackageReference Include = "BarcodeScanner.Mobile.Maui" Version = "7.0.0.1-pre" Condition = "'$(TargetFramework)'=='net7.0-android'" />
+*/
 
 using ZXing.Net.Maui;
 
@@ -75,7 +86,8 @@ public partial class MainPage : ContentPage
         ToolTipProperties.SetText(imgbtnScanGV, CodeLang.ToolTipBarcodeScanner_Text + " (Google Vision)");
         ToolTipProperties.SetText(imgbtnScanZX, CodeLang.ToolTipBarcodeScanner_Text + " (ZXing Zebra Crossing)");
 
-#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
+        //#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
+#if ANDROID31_0_OR_GREATER
         // Make the the scan icon for Google Vision visible.
         imgbtnScanGV.IsVisible = true;
 #endif  
@@ -153,7 +165,9 @@ public partial class MainPage : ContentPage
 
     private async void OnPageScanGvClicked(object sender, EventArgs e)
     {
+#if ANDROID31_0_OR_GREATER        
         await Navigation.PushAsync(new PageScanGV());
+#endif
     }
 
     private async void OnPageScanClicked(object sender, EventArgs e)
