@@ -377,6 +377,11 @@
                 <Setter Property="WidthRequest" Value="{OnIdiom 170, Phone=170, Tablet=270, Desktop=270}" />
             </Style>
 
+            <Style x:Key="buttonStyleFill" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
             <Style x:Key="buttonStyleHelp" TargetType="Button">
                 <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />

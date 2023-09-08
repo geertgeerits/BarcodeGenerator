@@ -16,7 +16,7 @@ public partial class PageWebsite : ContentPage
         }
 
         // Set WebView properties.
-        wvWebpage.Source = "https://geertgeerits.wixsite.com/barcodegenerator";
+        wvWebpage.Source = "https://geertgeerits.wixsite.com/geertgeerits/barcode-generator";
         wvWebpage.Navigating += OnNavigating;
         wvWebpage.Navigated += OnNavigated;
 
