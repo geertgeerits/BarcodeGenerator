@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.35
-// Date ........: 2023-09-08 (YYYY-MM-DD)
+// Date ........: 2023-09-12 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -14,14 +14,40 @@
 // Thanks to ...: Gerald Versluis
 
 /*
-!!!BUG!!! Google Vision can not be used in iOS due to the error while building the app:
-          MSB4018 The "ResolveNativeReferences" task failed unexpectedly.
-          Building for iOS: exclude from the project the following files: 'PageScanGV.xaml' and 'PageScanGV.xaml.cs'.
-          Building for Android: include the following files: 'PageScanZX.xaml' and 'PageScanZX.xaml.cs'.
-          Preprocessor directive '#if ANDROID31_0_OR_GREATER' was used to exclude the code for Google Vision in iOS in the files:
-          'MauiProgram.cs' and 'MainPage.xaml.cs'.
-          The NuGet package 'BarcodeScanner.Mobile.Maui' has been excluded in the project file for iOS with this statement:
-          < PackageReference Include = "BarcodeScanner.Mobile.Maui" Version = "7.0.0.1-pre" Condition = "'$(TargetFramework)'=='net7.0-android'" />
+!!!BUG!!!   Google Vision can not be used in iOS due to the error while building the app:
+            MSB4018 The "ResolveNativeReferences" task failed unexpectedly.
+            Building for iOS: exclude from the project the following files: 'PageScanGV.xaml' and 'PageScanGV.xaml.cs'.
+            Building for Android: include the following files: 'PageScanZX.xaml' and 'PageScanZX.xaml.cs'.
+            Preprocessor directive '#if ANDROID31_0_OR_GREATER' was used to exclude the code for Google Vision in iOS in the files:
+            'MauiProgram.cs' and 'MainPage.xaml.cs'.
+          
+            BarcodeGenerator.csproj
+            -----------------------
+    		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+	    	<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.4</SupportedOSPlatformVersion>-->
+            
+            The NuGet package 'BarcodeScanner.Mobile.Maui' has been excluded in the project file for iOS with this statement:
+    		<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="7.0.0.1-pre" Condition="'$(TargetFramework)'=='net7.0-android'" />
+	    	<!--<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="7.0.0.1-pre" />-->
+
+            MauiProgram.cs - line 1-3 and 24-27
+            -----------------------------------
+            #if ANDROID31_0_OR_GREATER
+            using BarcodeScanner.Mobile;
+            #endif
+          
+            #if ANDROID31_0_OR_GREATER
+                // Add the handlers
+                handlers.AddBarcodeScannerHandler();
+            #endif
+
+            MainPage.xaml.cs - line 115-119
+            -------------------------------
+            //#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
+            #if ANDROID31_0_OR_GREATER
+                // Make the the scan icon for Google Vision visible.
+                imgbtnScanGV.IsVisible = true;
+            #endif  
 */
 
 using ZXing.Net.Maui;
@@ -86,7 +112,7 @@ public partial class MainPage : ContentPage
         ToolTipProperties.SetText(imgbtnScanGV, CodeLang.ToolTipBarcodeScanner_Text + " (Google Vision)");
         ToolTipProperties.SetText(imgbtnScanZX, CodeLang.ToolTipBarcodeScanner_Text + " (ZXing Zebra Crossing)");
 
-        //#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
+//#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
 #if ANDROID31_0_OR_GREATER
         // Make the the scan icon for Google Vision visible.
         imgbtnScanGV.IsVisible = true;
