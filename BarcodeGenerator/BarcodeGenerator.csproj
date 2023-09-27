@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>BarcodeGenerator</ApplicationTitle>
+		<ApplicationTitle>Barcode Generator and Scanner</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.barcodegenerator</ApplicationId>
@@ -52,14 +52,6 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Remove="PageScanGV.xaml.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Remove="PageScanGV.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -114,6 +106,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="PageAbout.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PageScanGV.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PageScanZX.xaml">
