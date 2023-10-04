@@ -2,15 +2,15 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.35
-// Date ........: 2023-09-12 (YYYY-MM-DD)
+// Date ........: 2023-10-04 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.3.0-preview.1 ; https://github.com/redth/ZXing.Net.Maui
 //                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.3.0-preview.1
 //                NuGet Package: BarcodeScanner.Mobile.Maui version = "7.0.0.1-pre ; Google Vision ; https://github.com/JimmyPun610/BarcodeScanner.Mobile
-//                NuGet Package: Microsoft.AppCenter version 5.0.2 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/
-//                NuGet Package: Microsoft.AppCenter.Crashes version 5.0.2 
+//                NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/
+//                NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3 
 // Thanks to ...: Gerald Versluis
 
 /*
