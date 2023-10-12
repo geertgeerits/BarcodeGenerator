@@ -22,6 +22,7 @@ static class Globals
     public static string cLanguageSpeech;
     public static string[] cLanguageLocales;
     public static bool bLanguageLocalesExist = false;
+    public static bool bLicense;
     public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
     public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
 

@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-ios;net7.0-maccatalyst;net7.0-android</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-ios;net8.0-maccatalyst;net8.0-android</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>BarcodeGenerator</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -58,7 +58,7 @@
 	  <None Remove="PageSettings-Copy.xaml.Copy" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_128p.png" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_324p.png" />
-	  <None Remove="Resources\Images\barcodegenerator_icon_324p.svg" />
+	  <None Remove="Resources\Images\barcodegenerator_icon_324p2.svg" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_477x324p.png" />
 	  <None Remove="Resources\Images\cancel_close_icon_48p.png" />
 	  <None Remove="Resources\Images\cancel_close_icon_512p.png" />
@@ -78,7 +78,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="7.0.0.1-pre" Condition="'$(TargetFramework)'=='net7.0-android'" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="7.0.0.1-pre" Condition="'$(TargetFramework)'=='net8.0-android'" />
 		<!--<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="7.0.0.1-pre" />-->
 		<PackageReference Include="Microsoft.AppCenter" Version="5.0.3" />
 		<PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.3" />
@@ -144,7 +146,7 @@
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)'=='net7.0-ios'">
+	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
 	  <ProvisioningType>automatic</ProvisioningType>
 	  <CodesignKey>Apple Development: Created via API (KL96X68Q72)</CodesignKey>
 	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
@@ -164,7 +166,7 @@
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
 	  <MtouchLink>None</MtouchLink>
 	</PropertyGroup>
 

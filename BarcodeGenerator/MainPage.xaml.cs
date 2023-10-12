@@ -2,8 +2,8 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.35
-// Date ........: 2023-10-04 (YYYY-MM-DD)
-// Language ....: Microsoft Visual Studio 2022: .NET 7.0 MAUI C# 11.0
+// Date ........: 2023-10-12 (YYYY-MM-DD)
+// Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.3.0-preview.1 ; https://github.com/redth/ZXing.Net.Maui
@@ -58,7 +58,6 @@ public partial class MainPage : ContentPage
 {
     // Local variables.
     private string cLicense;
-    private readonly bool bLicense;
     private readonly bool bLogAlwaysSend;
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
@@ -85,7 +84,7 @@ public partial class MainPage : ContentPage
         Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
         Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
         Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
-        bLicense = Preferences.Default.Get("SettingLicense", false);
+        Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
         bLogAlwaysSend = Preferences.Default.Get("SettingLogAlwaysSend", false);
 
         // Crash log confirmation.
@@ -976,11 +975,11 @@ public partial class MainPage : ContentPage
     private async void OnPageLoaded(object sender, EventArgs e)
     {
         // Show license.
-        if (bLicense == false)
+        if (Globals.bLicense == false)
         {
-            bool bAnswer = await Application.Current.MainPage.DisplayAlert(CodeLang.LicenseTitle_Text, cLicense, CodeLang.Agree_Text, CodeLang.Disagree_Text);
+            Globals.bLicense = await Application.Current.MainPage.DisplayAlert(CodeLang.LicenseTitle_Text, cLicense, CodeLang.Agree_Text, CodeLang.Disagree_Text);
 
-            if (bAnswer)
+            if (Globals.bLicense)
             {
                 Preferences.Default.Set("SettingLicense", true);
             }
