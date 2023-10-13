@@ -1,4 +1,5 @@
-﻿#if ANDROID31_0_OR_GREATER
+﻿using Microsoft.Extensions.Logging;
+#if ANDROID31_0_OR_GREATER
 using BarcodeScanner.Mobile;
 #endif
 using ZXing.Net.Maui.Controls;
@@ -32,6 +33,10 @@ public static class MauiProgram
             "ios=e0281fe4-3662-46b5-a15f-fa0a73595d57;" +
             "macos={Your macOS App secret here};",
             typeof(Crashes));
+
+#if DEBUG
+    		builder.Logging.AddDebug();
+#endif
 
         return builder.Build();
     }
