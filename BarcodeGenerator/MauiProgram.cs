@@ -35,7 +35,7 @@ public static class MauiProgram
             typeof(Crashes));
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
         return builder.Build();
