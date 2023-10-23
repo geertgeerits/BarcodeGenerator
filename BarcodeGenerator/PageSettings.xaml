@@ -413,7 +413,7 @@
                     ValueChanged="OnSliderColorBackgroundValueChanged">
                 </Slider>
 
-                <Button
+                <!--<Button
                     Style="{StaticResource buttonStyleDefault}"
                     IsVisible="{OnPlatform false, iOS=true, Android=false}"
                     Grid.Row="17"
@@ -433,7 +433,7 @@
                     Text="{local:Translate SettingsReset_Text}"
                     ToolTipProperties.Text="{local:Translate SettingsReset_Text}"
                     Clicked="OnSettingsResetClicked">
-                </Button>
+                </Button>-->
 
             </Grid>
         </ScrollView>
@@ -443,7 +443,6 @@
         <Button
             x:Name="btnSettingsSave"
             Style="{StaticResource buttonStyleDefault}"
-            IsVisible="{OnPlatform true, iOS=false, Android=true}"
             Grid.Row="2"
             Text="{local:Translate SettingsSave_Text}"
             ToolTipProperties.Text="{local:Translate SettingsSave_Text}"
@@ -452,7 +451,6 @@
 
         <Button
             Style="{StaticResource buttonStyleDefault}"
-            IsVisible="{OnPlatform true, iOS=false, Android=true}"
             Grid.Row="2"
             HorizontalOptions="End"
             Text="{local:Translate SettingsReset_Text}"
