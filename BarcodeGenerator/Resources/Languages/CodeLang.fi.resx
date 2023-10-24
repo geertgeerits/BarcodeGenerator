@@ -258,6 +258,18 @@ Hahmot 3-4: Punainen
 Hahmot 5-6: Vihreä
 Hahmot 7-8: Sininen</value>
   </data>
+  <data name="InfoExplanationAndroid_Text" xml:space="preserve">
+    <value>Viivakoodien skannaus: voit valita 'Google Vision' tai 'ZXing Zebra Crossing' välillä. Google Vision on saatavilla Android 12:sta.
+
+Teksti puheeksi: kaikkia sovellusasetuksissa olevia kieliä ei tueta.
+Puhe tekstiksi: aktivoi se laitteen asetuksista. Mikrofoni ilmestyy sitten virtuaaliseen näppäimistöön.
+Molemmat vaihtoehdot riippuvat laitteesta toiseen ja asennetuista kielistä. On mahdollista, että joillekin kielille käännös puheeseen ja puheesta tapahtuu Internetin kautta asianomaisten palveluiden toimesta.
+
+Tekstin kääntämiseen käytettiin Google Translatea. Tämä ei takaa, että kaikki käännökset ovat oikein.
+Tukikielet ovat: tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, unkari, italia, norja, puola, portugali, romania, espanja ja ruotsi.
+
+Voit aina ottaa minuun yhteyttä korjauksista.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Viivakoodien skannaus: voit valita 'Google Vision' tai 'ZXing Zebra Crossing' välillä. Google Vision on saatavilla Android 12:sta ja iOS 15.4:stä.
 

@@ -258,6 +258,18 @@ Zeichen 3-4: Rot
 Zeichen 5-6: Grün
 Zeichen 7-8: Blau</value>
   </data>
+  <data name="InfoExplanationAndroid_Text" xml:space="preserve">
+    <value>Barcodes scannen: Es besteht die Wahl zwischen „Google Vision“ und „ZXing Zebra Crossing“. Google Vision ist ab Android 12 verfügbar.
+
+Text zu Sprache: Es werden nicht alle Sprachen unterstützt, die in den Anwendungseinstellungen bereitgestellt werden.
+Sprache zu Text: Aktivieren Sie es über Ihre Geräteeinstellungen. Auf der virtuellen Tastatur erscheint dann ein Mikrofon.
+Beide Optionen hängen von Gerät zu Gerät und den installierten Sprachen ab. Es ist möglich, dass für einige Sprachen die Übersetzung in und aus der Sprache von den betreffenden Diensten über das Internet durchgeführt wird.
+
+Für die Übersetzung des Textes wurde Google Translate verwendet. Dies ist keine Garantie dafür, dass alle Übersetzungen korrekt sind.
+Die unterstützten Sprachen sind: Tschechisch, Dänisch, Niederländisch, Englisch, Finnisch, Französisch, Deutsch, Ungarisch, Italienisch, Norwegisch, Polnisch, Portugiesisch, Rumänisch, Spanisch und Schwedisch.
+
+Sie können mich jederzeit für Korrekturen kontaktieren.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Barcodes scannen: Es besteht die Wahl zwischen „Google Vision“ und „ZXing Zebra Crossing“. Google Vision ist ab Android 12 und ab iOS 15.4 verfügbar.
 

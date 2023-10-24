@@ -258,6 +258,18 @@ Tegn 3-4: Rød
 Tegn 5-6: Grøn
 Tegn 7-8: Blå</value>
   </data>
+  <data name="InfoExplanationAndroid_Text" xml:space="preserve">
+    <value>Scanning af stregkoder: der er et valg mellem 'Google Vision' og 'ZXing Zebra Crossing'. Google Vision er tilgængelig fra Android 12.
+
+Tekst til tale: ikke alle sprog understøttes, som er angivet i applikationsindstillingerne.
+Tale til tekst: aktiver det via dine enhedsindstillinger. En mikrofon vises derefter på det virtuelle tastatur.
+Begge disse muligheder afhænger fra enhed til enhed og de installerede sprog. Det er muligt, at for nogle sprog udføres oversættelsen til og fra tale over internettet af de pågældende tjenester.
+
+Google Translate blev brugt til oversættelsen af teksten. Dette er ikke en garanti for, at alle oversættelser er korrekte.
+Understøttende sprog er: tjekkisk, dansk, hollandsk, engelsk, finsk, fransk, tysk, ungarsk, italiensk, norsk, polsk, portugisisk, rumænsk, spansk og svensk.
+
+Du kan altid kontakte mig for eventuelle rettelser.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Scanning af stregkoder: der er et valg mellem 'Google Vision' og 'ZXing Zebra Crossing'. Google Vision er tilgængelig fra Android 12 og fra iOS 15.4.
 

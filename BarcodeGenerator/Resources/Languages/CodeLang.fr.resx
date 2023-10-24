@@ -258,6 +258,18 @@ Caractères 3-4: Rouge
 Caractères 5-6: Vert
 Caractères 7-8: Bleu</value>
   </data>
+  <data name="InfoExplanationAndroid_Text" xml:space="preserve">
+    <value>Scanner des codes-barres : vous avez le choix entre « Google Vision » et « ZXing Zebra Crossing ». Google Vision est disponible depuis Android 12.
+
+Texte pour parler: toutes les langues fournies dans les paramètres de l'application ne sont pas prises en charge.
+Discours au texte: activez-le via les paramètres de votre appareil. Un microphone apparaît alors dans le clavier virtuel.
+Ces deux options dépendent d'un appareil à l'autre et des langues installées. Il est possible que pour certaines langues la traduction vers et depuis la parole se fasse via internet par les services concernés.
+
+Google Translate a été utilisé pour la traduction du texte. Ceci ne garantit pas que toutes les traductions sont correctes.
+Les langues de support sont les suivantes : tchèque, danois, néerlandais, anglais, finnois, français, allemand, hongrois, italien, norvégien, polonais, portugais, roumain, espagnol et suédois.
+
+Vous pouvez toujours me contacter pour toute correction.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Scanner des codes-barres : vous avez le choix entre « Google Vision » et « ZXing Zebra Crossing ». Google Vision est disponible depuis Android 12 et depuis iOS 15.4.
 

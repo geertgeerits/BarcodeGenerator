@@ -258,6 +258,18 @@ Postacie 3-4: czerwony
 Postacie 5-6: Zielony
 Postacie 7-8: niebieski</value>
   </data>
+  <data name="InfoExplanationAndroid_Text" xml:space="preserve">
+    <value>Skanowanie kodów kreskowych: istnieje możliwość wyboru pomiędzy „Google Vision” a „ZXing Zebra Crossing”. Google Vision jest dostępny w systemie Android 12.
+
+Tekst na mowę: nie wszystkie języki, które są dostępne w ustawieniach aplikacji, są obsługiwane.
+Mowa na tekst: aktywuj ją w ustawieniach urządzenia. Mikrofon pojawi się wtedy na wirtualnej klawiaturze.
+Obie te opcje zależą od urządzenia i zainstalowanych języków. Możliwe jest, że w przypadku niektórych języków tłumaczenie na mowę iz mowy odbywa się przez Internet przez odpowiednie służby.
+
+Do tłumaczenia tekstu użyto Tłumacza Google. Nie gwarantuje to, że wszystkie tłumaczenia są poprawne.
+Obsługiwane języki to: czeski, duński, holenderski, angielski, fiński, francuski, niemiecki, węgierski, włoski, norweski, polski, portugalski, rumuński, hiszpański i szwedzki.
+
+Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Skanowanie kodów kreskowych: istnieje możliwość wyboru pomiędzy „Google Vision” a „ZXing Zebra Crossing”. Google Vision jest dostępny w systemie Android 12 i iOS 15.4.
 

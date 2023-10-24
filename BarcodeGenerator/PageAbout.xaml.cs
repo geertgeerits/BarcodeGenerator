@@ -23,7 +23,8 @@ public partial class PageAbout : ContentPage
         lblPrivacyPolicy.Text = $"\n{CodeLang.PrivacyPolicyTitle_Text} {CodeLang.PrivacyPolicy_Text}";
         lblCrashErrorReport.Text = $"\n{CodeLang.CrashErrorReport_Text}";
         lblLicense.Text = $"\n{CodeLang.LicenseTitle_Text}: {CodeLang.License_Text}";
-        lblExplanation.Text = $"\n{CodeLang.InfoExplanation_Text}";
+        //lblExplanation.Text = $"\n{CodeLang.InfoExplanation_Text}";
+        lblExplanation.Text = $"\n{CodeLang.InfoExplanationAndroid_Text}";
         lblLicenseMit.Text = $"\n{CodeLang.Copyright_Text} © {CodeLang.LicenseMit_Text}\n\n{CodeLang.LicenseMit2_Text}";
     }
 

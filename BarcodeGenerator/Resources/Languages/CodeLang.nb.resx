@@ -258,6 +258,18 @@ Tegn 3-4: Rød
 Tegn 5-6: Grønn
 Tegn 7-8: Blå</value>
   </data>
+  <data name="InfoExplanationAndroid_Text" xml:space="preserve">
+    <value>Scansione di codici a barre: è possibile scegliere tra "Google Vision" e "ZXing Zebra Crossing". Google Vision è disponibile da Android 12.
+
+Tekst til tale: ikke alle språk støttes som er gitt i applikasjonsinnstillingene.
+Tale til tekst: aktiver den via enhetsinnstillingene. En mikrofon vil da vises på det virtuelle tastaturet.
+Begge disse alternativene avhenger fra enhet til enhet og de installerte språkene. Det er mulig at for noen språk blir oversettelsen til og fra tale gjort over internett av de aktuelle tjenestene.
+
+Google Translate ble brukt til oversettelsen av teksten. Dette er ikke en garanti for at alle oversettelser er korrekte.
+Støttespråkene er: tsjekkisk, dansk, nederlandsk, engelsk, finsk, fransk, tysk, ungarsk, italiensk, norsk, polsk, portugisisk, rumensk, spansk og svensk.
+
+Du kan alltid kontakte meg for eventuelle rettelser.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Scansione di codici a barre: è possibile scegliere tra "Google Vision" e "ZXing Zebra Crossing". Google Vision è disponibile da Android 12 e da iOS 15.4.
 
