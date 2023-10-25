@@ -198,6 +198,13 @@
                     Text="{local:Translate ForegroundOpacity_Text}">
                 </Label>
 
+                <Border
+                    Style="{StaticResource borderStyleGroup}"
+                    Grid.Row="7"
+                    Grid.Column="2"
+                    Grid.RowSpan="4">
+                </Border>
+                
                 <Slider
                     x:Name="sldOpacityFg"
                     Style="{StaticResource sliderStyleColor}"
@@ -310,6 +317,13 @@
                     Text="{local:Translate BackgroundOpacity_Text}">
                 </Label>
 
+                <Border
+                    Style="{StaticResource borderStyleGroup}"
+                    Grid.Row="12"
+                    Grid.Column="2"
+                    Grid.RowSpan="4">
+                </Border>
+                
                 <Slider
                     x:Name="sldOpacityBg"
                     Style="{StaticResource sliderStyleColor}"
