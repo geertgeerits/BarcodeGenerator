@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.35
-// Date ........: 2023-10-25 (YYYY-MM-DD)
+// Date ........: 2023-10-26 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -102,6 +102,7 @@ public partial class MainPage : ContentPage
         // The height of the title bar is lower when an iPhone is in horizontal position.
         imgbtnAbout.VerticalOptions = LayoutOptions.Start;
         lblTitle.VerticalOptions = LayoutOptions.Start;
+        lblTitle.VerticalTextAlignment = TextAlignment.Start;
         imgbtnScanGV.VerticalOptions = LayoutOptions.Start;
         imgbtnScanZX.VerticalOptions = LayoutOptions.Start;
         imgbtnSettings.VerticalOptions = LayoutOptions.Start;
