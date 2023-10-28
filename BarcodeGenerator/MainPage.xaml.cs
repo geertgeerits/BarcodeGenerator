@@ -2,12 +2,12 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.35
-// Date ........: 2023-10-26 (YYYY-MM-DD)
+// Date ........: 2023-10-28 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
-// Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.3.0-preview.1 ; https://github.com/redth/ZXing.Net.Maui
-//                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.3.0-preview.1
+// Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.4.0 ; https://github.com/redth/ZXing.Net.Maui
+//                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.4.0
 //                NuGet Package: BarcodeScanner.Mobile.Maui version = "7.0.0.1-pre ; Google Vision ; https://github.com/JimmyPun610/BarcodeScanner.Mobile
 //                NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/
 //                NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3 
@@ -60,8 +60,8 @@ public partial class MainPage : ContentPage
     private string cLicense;
     private readonly bool bLogAlwaysSend;
     private IEnumerable<Locale> locales;
-    private CancellationTokenSource cts;
-    private bool bTextToSpeechIsBusy = false;
+    //private CancellationTokenSource cts;
+    //private bool bTextToSpeechIsBusy = false;
 
     public MainPage()
     {
@@ -186,23 +186,27 @@ public partial class MainPage : ContentPage
     // TitleView buttons clicked events.
     private async void OnPageAboutClicked(object sender, EventArgs e)
     {
+        CancelTextToSpeech();
         await Navigation.PushAsync(new PageAbout());
     }
 
     private async void OnPageScanGvClicked(object sender, EventArgs e)
     {
 #if ANDROID31_0_OR_GREATER        
+        CancelTextToSpeech();
         await Navigation.PushAsync(new PageScanGV());
 #endif
     }
 
     private async void OnPageScanClicked(object sender, EventArgs e)
     {
+        CancelTextToSpeech();
         await Navigation.PushAsync(new PageScanZX());
     }
 
     private async void OnPageSettingsClicked(object sender, EventArgs e)
     {
+        CancelTextToSpeech();
         await Navigation.PushAsync(new PageSettings());
     }
 
@@ -1197,33 +1201,29 @@ public partial class MainPage : ContentPage
     private async void OnTextToSpeechClicked(object sender, EventArgs e)
     {
         // Cancel the text to speech.
-        if (bTextToSpeechIsBusy)
+        if (Globals.bTextToSpeechIsBusy)
         {
-            if (cts?.IsCancellationRequested ?? true)
-                return;
-
-            cts.Cancel();
-            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
+            CancelTextToSpeech();
             return;
         }
 
         // Start with the text to speech.
         if (edtTextToCode.Text != null && edtTextToCode.Text != "")
         {
-            bTextToSpeechIsBusy = true;
+            Globals.bTextToSpeechIsBusy = true;
             imgbtnTextToSpeech.Source = Globals.cImageTextToSpeechCancel;
 
             try
             {
-                cts = new CancellationTokenSource();
+                Globals.cts = new CancellationTokenSource();
 
                 SpeechOptions options = new()
                 {
                     Locale = locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
                 };
 
-                await TextToSpeech.Default.SpeakAsync(edtTextToCode.Text, options, cancelToken: cts.Token);
-                bTextToSpeechIsBusy = false;
+                await TextToSpeech.Default.SpeakAsync(edtTextToCode.Text, options, cancelToken: Globals.cts.Token);
+                Globals.bTextToSpeechIsBusy = false;
             }
             catch (Exception ex)
             {
@@ -1232,6 +1232,21 @@ public partial class MainPage : ContentPage
             }
 
             imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
+        }
+    }
+
+    // Cancel the text to speech.
+    private void CancelTextToSpeech()
+    {
+        // Cancel speech if a cancellation token exists & hasn't been already requested.
+        if (Globals.bTextToSpeechIsBusy)
+        {
+            if (Globals.cts?.IsCancellationRequested ?? true)
+                return;
+
+            Globals.cts.Cancel();
+            Globals.bTextToSpeechIsBusy = false;
+            imgbtnTextToSpeech.Source = "speaker_64p_blue_green.png";
         }
     }
 

@@ -4,6 +4,7 @@ using BarcodeScanner.Mobile;
 #endif
 using ZXing.Net.Maui.Controls;
 using Microsoft.AppCenter;
+using Microsoft.Maui.LifecycleEvents;
 
 namespace BarcodeGenerator;
 
@@ -20,12 +21,47 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             })
+            
             .ConfigureMauiHandlers(handlers =>
             {
 #if ANDROID31_0_OR_GREATER
                 // Add the handlers
                 handlers.AddBarcodeScannerHandler();
 #endif
+            })
+
+            .ConfigureLifecycleEvents(events =>
+            {
+#if ANDROID
+                events.AddAndroid(android => android
+                    .OnPause((activity) => ProcessEvent(nameof(AndroidLifecycle.OnPause))));
+#endif
+
+#if IOS
+                events.AddiOS(ios => ios
+                    .OnResignActivation((app) => ProcessEvent(nameof(iOSLifecycle.OnResignActivation))));
+#endif
+
+#if WINDOWS
+                events.AddWindows(windows => windows
+                    .OnVisibilityChanged((window, args) => ProcessEvent(nameof(WindowsLifecycle.OnVisibilityChanged))));
+#endif
+
+                static bool ProcessEvent(string eventName, string type = null)
+                {
+                    //System.Diagnostics.Debug.WriteLine($"Lifecycle event: {eventName}{(type == null ? string.Empty : $" ({type})")}");
+
+                    // Cancel speech if a cancellation token exists & hasn't been already requested.
+                    if (Globals.bTextToSpeechIsBusy)
+                    {
+                        if (Globals.cts?.IsCancellationRequested ?? true)
+                            return true;
+
+                        Globals.cts.Cancel();
+                        Globals.bTextToSpeechIsBusy = false;
+                    }
+                    return true;
+                }
             });
 
         AppCenter.Start("windowsdesktop=7b81fd09-0be8-45e0-a4f0-4a23dd20a00c;" +

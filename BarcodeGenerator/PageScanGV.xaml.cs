@@ -6,8 +6,8 @@ public partial class PageScanGV : ContentPage
 {
     // Local variables.
     private IEnumerable<Locale> locales;
-    private CancellationTokenSource cts;
-    private bool bTextToSpeechIsBusy = false;
+    //private CancellationTokenSource cts;
+    //private bool bTextToSpeechIsBusy = false;
 
     public PageScanGV()
     {
@@ -260,33 +260,29 @@ public partial class PageScanGV : ContentPage
     private async void OnTextToSpeechClicked(object sender, EventArgs e)
     {
         // Cancel the text to speech.
-        if (bTextToSpeechIsBusy)
+        if (Globals.bTextToSpeechIsBusy)
         {
-            if (cts?.IsCancellationRequested ?? true)
-                return;
-
-            cts.Cancel();
-            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
+            CancelTextToSpeech();
             return;
         }
 
         // Start with the text to speech.
         if (lblBarcodeResult.Text != null && lblBarcodeResult.Text != "")
         {
-            bTextToSpeechIsBusy = true;
+            Globals.bTextToSpeechIsBusy = true;
             imgbtnTextToSpeech.Source = Globals.cImageTextToSpeechCancel;
 
             try
             {
-                cts = new CancellationTokenSource();
+                Globals.cts = new CancellationTokenSource();
 
                 SpeechOptions options = new()
                 {
                     Locale = locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
                 };
 
-                await TextToSpeech.Default.SpeakAsync(lblBarcodeResult.Text, options, cancelToken: cts.Token);
-                bTextToSpeechIsBusy = false;
+                await TextToSpeech.Default.SpeakAsync(lblBarcodeResult.Text, options, cancelToken: Globals.cts.Token);
+                Globals.bTextToSpeechIsBusy = false;
             }
             catch (Exception ex)
             {
@@ -295,6 +291,21 @@ public partial class PageScanGV : ContentPage
             }
 
             imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
+        }
+    }
+
+    // Cancel the text to speech.
+    private void CancelTextToSpeech()
+    {
+        // Cancel speech if a cancellation token exists & hasn't been already requested.
+        if (Globals.bTextToSpeechIsBusy)
+        {
+            if (Globals.cts?.IsCancellationRequested ?? true)
+                return;
+
+            Globals.cts.Cancel();
+            Globals.bTextToSpeechIsBusy = false;
+            imgbtnTextToSpeech.Source = "speaker_64p_blue_green.png";
         }
     }
 
