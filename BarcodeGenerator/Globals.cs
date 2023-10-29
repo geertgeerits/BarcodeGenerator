@@ -23,10 +23,12 @@ static class Globals
     public static string[] cLanguageLocales;
     public static bool bLanguageLocalesExist = false;
     public static bool bTextToSpeechIsBusy = false;
+    public static IEnumerable<Locale> locales;
     public static CancellationTokenSource cts;
-    public static bool bLicense;
     public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
     public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
+    public static bool bLicense;
+    public static bool bResult;
 
     // Global methods.
     // Set the current UI culture of the selected language.
@@ -48,7 +50,7 @@ static class Globals
     public static string GetIsoLanguageCode()
     {
         // Split before first space and remove last character '-' if there.
-        string cLanguageIso = Globals.cLanguageSpeech.Split(' ').First();
+        string cLanguageIso = cLanguageSpeech.Split(' ').First();
 
         if (cLanguageIso.EndsWith("-"))
         {
@@ -201,17 +203,46 @@ static class Globals
         }
     }
 
+    // Initialize text to speech for the barcode scanner.
+    public static async void InitializeTextToSpeechScanner(string cPageName)
+    {
+        if (!bLanguageLocalesExist)
+        {
+            bResult = false;
+        }
+
+        try
+        {
+            locales = await TextToSpeech.Default.GetLocalesAsync();
+        }
+        catch (Exception ex)
+        {
+            var properties = new Dictionary<string, string> {
+                { "File:", "Globals.cs:" + cPageName },
+                { "Method:", "InitializeTextToSpeech" },
+                { "AppLanguage:", cLanguage },
+                { "AppLanguageSpeech:", cLanguageSpeech }
+            };
+            Crashes.TrackError(ex, properties);
+
+            await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+            bResult = false;
+        }
+
+        bResult = true;
+    }
+
     // Cancel the text to speech.
     public static string CancelTextToSpeech()
     {
         // Cancel speech if a cancellation token exists & hasn't been already requested.
-        if (Globals.bTextToSpeechIsBusy)
+        if (bTextToSpeechIsBusy)
         {
-            if (Globals.cts?.IsCancellationRequested ?? true)
+            if (cts?.IsCancellationRequested ?? true)
                 return cImageTextToSpeechCancel;
 
-            Globals.cts.Cancel();
-            Globals.bTextToSpeechIsBusy = false;
+            cts.Cancel();
+            bTextToSpeechIsBusy = false;
         }
         
         return cImageTextToSpeech;

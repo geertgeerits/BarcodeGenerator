@@ -119,17 +119,17 @@ public partial class MainPage : ContentPage
 #endif  
 
         // Set the theme.
-        if (Globals.cTheme == "Light")
+        switch (Globals.cTheme)
         {
-            Application.Current.UserAppTheme = AppTheme.Light;
-        }
-        else if (Globals.cTheme == "Dark")
-        {
-            Application.Current.UserAppTheme = AppTheme.Dark;
-        }
-        else
-        {
-            Application.Current.UserAppTheme = AppTheme.Unspecified;
+            case "Light":
+                Application.Current.UserAppTheme = AppTheme.Light;
+                break;
+            case "Dark":
+                Application.Current.UserAppTheme = AppTheme.Dark;
+                break;
+            default:
+                Application.Current.UserAppTheme = AppTheme.Unspecified;
+                break;
         }
 
         // Set the barcode list and the current default barcode format in the picker for the barcode generator.

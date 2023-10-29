@@ -60,6 +60,7 @@ public static class MauiProgram
                         Globals.cts.Cancel();
                         Globals.bTextToSpeechIsBusy = false;
                     }
+                    
                     return true;
                 }
             });

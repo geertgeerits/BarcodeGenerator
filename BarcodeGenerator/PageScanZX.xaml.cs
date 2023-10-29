@@ -5,7 +5,6 @@ namespace BarcodeGenerator;
 public partial class PageScanZX : ContentPage
 {
     // Local variables.
-    private IEnumerable<Locale> locales;
 
     public PageScanZX()
     {
@@ -36,7 +35,13 @@ public partial class PageScanZX : ContentPage
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
         // Initialize text to speech.
-        InitializeTextToSpeech();
+        Globals.InitializeTextToSpeechScanner("PageScanZX.xaml.cs");
+
+        if (Globals.bResult)
+        {
+            lblTextToSpeech.IsVisible = true;
+            imgbtnTextToSpeech.IsVisible = true;
+        }
 
         // For testing crashes - DivideByZeroException.
         //int divByZero = 51 / int.Parse("0");
@@ -359,36 +364,6 @@ public partial class PageScanZX : ContentPage
         }
     }
 
-    // Initialize text to speech.
-    private async void InitializeTextToSpeech()
-    {
-        if (!Globals.bLanguageLocalesExist)
-        {
-            return;
-        }
-
-        try
-        {
-            locales = await TextToSpeech.Default.GetLocalesAsync();
-        }
-        catch (Exception ex)
-        {
-            var properties = new Dictionary<string, string> {
-                { "File:", "PageScanZX.xaml.cs" },
-                { "Method:", "InitializeTextToSpeech" },
-                { "AppLanguage:", Globals.cLanguage },
-                { "AppLanguageSpeech:", Globals.cLanguageSpeech }
-            };
-            Crashes.TrackError(ex, properties);
-
-            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-            return;
-        }
-
-        lblTextToSpeech.IsVisible = true;
-        imgbtnTextToSpeech.IsVisible = true;
-    }
-
     // Button text to speech event.
     private async void OnTextToSpeechClicked(object sender, EventArgs e)
     {
@@ -411,7 +386,7 @@ public partial class PageScanZX : ContentPage
 
                 SpeechOptions options = new()
                 {
-                    Locale = locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
+                    Locale = Globals.locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
                 };
 
                 await TextToSpeech.Default.SpeakAsync(lblBarcodeResult.Text, options, cancelToken: Globals.cts.Token);
