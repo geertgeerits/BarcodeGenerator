@@ -6,8 +6,6 @@ public partial class PageScanZX : ContentPage
 {
     // Local variables.
     private IEnumerable<Locale> locales;
-    //private CancellationTokenSource cts;
-    //private bool bTextToSpeechIsBusy = false;
 
     public PageScanZX()
     {
@@ -347,11 +345,13 @@ public partial class PageScanZX : ContentPage
         barcodeReader.IsTorchOn = !barcodeReader.IsTorchOn;
     }
 
-    // Turn off the torch if on, when going back to the mainpage.
+    // Cancel the text to speech and turn off the torch if on, when going back to the mainpage.
     // Called by the Disappearing and Unloaded event from the PageScanZX.xaml.
-    // Does not works always on Android but works on iOS.
-    private void TurnOffTorch(object sender, EventArgs e)
+    // Does not always works on Android but works on iOS.
+    private void OnPageDisappearingUnloaded(object sender, EventArgs e)
     {
+        imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+
         if (barcodeReader.IsTorchOn)
         {
             barcodeReader.IsTorchOn = false;
@@ -395,7 +395,7 @@ public partial class PageScanZX : ContentPage
         // Cancel the text to speech.
         if (Globals.bTextToSpeechIsBusy)
         {
-            CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
             return;
         }
 
@@ -424,21 +424,6 @@ public partial class PageScanZX : ContentPage
             }
 
             imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
-        }
-    }
-
-    // Cancel the text to speech.
-    private void CancelTextToSpeech()
-    {
-        // Cancel speech if a cancellation token exists & hasn't been already requested.
-        if (Globals.bTextToSpeechIsBusy)
-        {
-            if (Globals.cts?.IsCancellationRequested ?? true)
-                return;
-
-            Globals.cts.Cancel();
-            Globals.bTextToSpeechIsBusy = false;
-            imgbtnTextToSpeech.Source = "speaker_64p_blue_green.png";
         }
     }
 

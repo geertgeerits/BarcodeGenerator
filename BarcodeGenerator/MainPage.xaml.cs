@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.35
-// Date ........: 2023-10-28 (YYYY-MM-DD)
+// Date ........: 2023-10-29 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -186,27 +186,27 @@ public partial class MainPage : ContentPage
     // TitleView buttons clicked events.
     private async void OnPageAboutClicked(object sender, EventArgs e)
     {
-        CancelTextToSpeech();
+        imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
         await Navigation.PushAsync(new PageAbout());
     }
 
     private async void OnPageScanGvClicked(object sender, EventArgs e)
     {
 #if ANDROID31_0_OR_GREATER        
-        CancelTextToSpeech();
+        imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
         await Navigation.PushAsync(new PageScanGV());
 #endif
     }
 
     private async void OnPageScanClicked(object sender, EventArgs e)
     {
-        CancelTextToSpeech();
+        imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
         await Navigation.PushAsync(new PageScanZX());
     }
 
     private async void OnPageSettingsClicked(object sender, EventArgs e)
     {
-        CancelTextToSpeech();
+        imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
         await Navigation.PushAsync(new PageSettings());
     }
 
@@ -1203,7 +1203,7 @@ public partial class MainPage : ContentPage
         // Cancel the text to speech.
         if (Globals.bTextToSpeechIsBusy)
         {
-            CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
             return;
         }
 
@@ -1232,21 +1232,6 @@ public partial class MainPage : ContentPage
             }
 
             imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
-        }
-    }
-
-    // Cancel the text to speech.
-    private void CancelTextToSpeech()
-    {
-        // Cancel speech if a cancellation token exists & hasn't been already requested.
-        if (Globals.bTextToSpeechIsBusy)
-        {
-            if (Globals.cts?.IsCancellationRequested ?? true)
-                return;
-
-            Globals.cts.Cancel();
-            Globals.bTextToSpeechIsBusy = false;
-            imgbtnTextToSpeech.Source = "speaker_64p_blue_green.png";
         }
     }
 

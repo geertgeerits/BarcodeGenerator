@@ -200,4 +200,20 @@ static class Globals
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
     }
+
+    // Cancel the text to speech.
+    public static string CancelTextToSpeech()
+    {
+        // Cancel speech if a cancellation token exists & hasn't been already requested.
+        if (Globals.bTextToSpeechIsBusy)
+        {
+            if (Globals.cts?.IsCancellationRequested ?? true)
+                return cImageTextToSpeechCancel;
+
+            Globals.cts.Cancel();
+            Globals.bTextToSpeechIsBusy = false;
+        }
+        
+        return cImageTextToSpeech;
+    }
 }
