@@ -5,8 +5,7 @@
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.PageScanZX"
              Appearing="OnPageAppearing"
-             Disappearing="OnPageDisappearingUnloaded"
-             Unloaded="OnPageDisappearingUnloaded">
+             Disappearing="OnPageDisappearing">
 
     <ContentPage.Resources>
         <ResourceDictionary>

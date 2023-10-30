@@ -5,8 +5,7 @@
              xmlns:gv="clr-namespace:BarcodeScanner.Mobile;assembly=BarcodeScanner.Mobile.Maui"
              x:Class="BarcodeGenerator.PageScanGV"
              Appearing="OnPageAppearing"
-             Disappearing="OnPageDisappearingUnloaded"
-             Unloaded="OnPageDisappearingUnloaded">
+             Disappearing="OnPageDisappearing">
 
     <ContentPage.Resources>
         <ResourceDictionary>

@@ -152,9 +152,7 @@ public partial class PageScanGV : ContentPage
         lblFormatCodeScanner.Text = cFormatCode[Globals.nFormatScannerIndex];
 
         // Initialize text to speech.
-        Globals.InitializeTextToSpeechScanner("PageScanGV.xaml.cs");
-
-        if (Globals.bResult)
+        if (Globals.InitializeTextToSpeechScanner("PageScanGV.xaml.cs").Result)
         {
             lblTextToSpeech.IsVisible = true;
             imgbtnTextToSpeech.IsVisible = true;
@@ -218,9 +216,8 @@ public partial class PageScanGV : ContentPage
     }
 
     // Cancel the text to speech and turn off the torch if on, when going back to the mainpage.
-    // Called by the Disappearing and Unloaded event from the PageScanGV.xaml.
-    // Does not always works on Android but works on iOS.
-    private void OnPageDisappearingUnloaded(object sender, EventArgs e)
+    // Called by the Disappearing event from the PageScanGV.xaml.
+    private void OnPageDisappearing(object sender, EventArgs e)
     {
         imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
 

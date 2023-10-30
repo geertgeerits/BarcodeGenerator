@@ -28,7 +28,6 @@ static class Globals
     public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
     public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
     public static bool bLicense;
-    public static bool bResult;
 
     // Global methods.
     // Set the current UI culture of the selected language.
@@ -204,11 +203,11 @@ static class Globals
     }
 
     // Initialize text to speech for the barcode scanner.
-    public static async void InitializeTextToSpeechScanner(string cPageName)
+    public static async Task<bool> InitializeTextToSpeechScanner(string cPageName)
     {
         if (!bLanguageLocalesExist)
         {
-            bResult = false;
+            return false;
         }
 
         try
@@ -226,10 +225,10 @@ static class Globals
             Crashes.TrackError(ex, properties);
 
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-            bResult = false;
+            return false;
         }
 
-        bResult = true;
+        return true;
     }
 
     // Cancel the text to speech.

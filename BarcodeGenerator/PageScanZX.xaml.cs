@@ -35,9 +35,7 @@ public partial class PageScanZX : ContentPage
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
         // Initialize text to speech.
-        Globals.InitializeTextToSpeechScanner("PageScanZX.xaml.cs");
-
-        if (Globals.bResult)
+        if (Globals.InitializeTextToSpeechScanner("PageScanZX.xaml.cs").Result)
         {
             lblTextToSpeech.IsVisible = true;
             imgbtnTextToSpeech.IsVisible = true;
@@ -351,9 +349,8 @@ public partial class PageScanZX : ContentPage
     }
 
     // Cancel the text to speech and turn off the torch if on, when going back to the mainpage.
-    // Called by the Disappearing and Unloaded event from the PageScanZX.xaml.
-    // Does not always works on Android but works on iOS.
-    private void OnPageDisappearingUnloaded(object sender, EventArgs e)
+    // Called by the Disappearing event from the PageScanZX.xaml.
+    private void OnPageDisappearing(object sender, EventArgs e)
     {
         imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
 
