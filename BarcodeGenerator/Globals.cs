@@ -51,7 +51,7 @@ static class Globals
         // Split before first space and remove last character '-' if there.
         string cLanguageIso = cLanguageSpeech.Split(' ').First();
 
-        if (cLanguageIso.EndsWith("-"))
+        if (cLanguageIso.EndsWith('-'))
         {
             cLanguageIso = cLanguageIso.Remove(cLanguageIso.Length - 1, 1);
         }
@@ -62,8 +62,8 @@ static class Globals
     // Put the generator barcode formats in a List string.
     public static List<string> GetFormatCodeListGenerator()
     {
-        return new List<string>
-        {
+        return
+        [
             "Aztec",
             "Codabar",
             "Code 128",
@@ -85,14 +85,14 @@ static class Globals
             "UPC-A",
             "UPC-E",
             "(UPC EAN Extension)"
-        };
+        ];
     }
 
     // Put the scanner barcode formats in a List string.
     public static List<string> GetFormatCodeListScanner()
     {
-        return new List<string>
-        {
+        return
+        [
             "Aztec",
             "Codabar",
             "Code 128",
@@ -115,7 +115,7 @@ static class Globals
             "UPC-E",
             "(UPC EAN Extension)",
             CodeLang.AllCodes_Text
-        };
+        ];
     }
 
     // Button share event: share the barcode result.
