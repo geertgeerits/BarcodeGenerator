@@ -231,6 +231,39 @@ static class Globals
         return true;
     }
 
+    // Button text to speech event - Convert text to speech.
+    public static async void ConvertTextToSpeech(object sender, string cText)
+    {
+        var imageButton = (ImageButton)sender;
+
+        // Start with the text to speech.
+        if (cText != null && cText != "")
+        {
+            bTextToSpeechIsBusy = true;
+            imageButton.Source = cImageTextToSpeechCancel;
+
+            try
+            {
+                cts = new CancellationTokenSource();
+
+                SpeechOptions options = new()
+                {
+                    Locale = locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == cLanguageSpeech)
+                };
+
+                await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
+                bTextToSpeechIsBusy = false;
+            }
+            catch (Exception ex)
+            {
+                Crashes.TrackError(ex);
+                await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+            }
+
+            imageButton.Source = cImageTextToSpeech;
+        }
+    }
+
     // Cancel the text to speech.
     public static string CancelTextToSpeech()
     {

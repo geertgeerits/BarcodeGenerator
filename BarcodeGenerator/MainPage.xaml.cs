@@ -1197,6 +1197,20 @@ public partial class MainPage : ContentPage
     //    }
     //}
 
+    // Button text to speech event - Convert text to speech.
+    //private void OnTextToSpeechClickedNEW(object sender, EventArgs e)
+    //{
+    //    // Cancel the text to speech.
+    //    if (Globals.bTextToSpeechIsBusy)
+    //    {
+    //        imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+    //        return;
+    //    }
+
+    //    // Convert the text to speech.
+    //    Globals.ConvertTextToSpeech(imgbtnTextToSpeech, edtTextToCode.Text);
+    //}
+
     // Button text to speech event.
     private async void OnTextToSpeechClicked(object sender, EventArgs e)
     {

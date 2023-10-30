@@ -1,4 +1,5 @@
 using ZXing.Net.Maui;
+using static Java.Util.Jar.Attributes;
 
 namespace BarcodeGenerator;
 
@@ -361,8 +362,8 @@ public partial class PageScanZX : ContentPage
         }
     }
 
-    // Button text to speech event.
-    private async void OnTextToSpeechClicked(object sender, EventArgs e)
+    // Button text to speech event - Convert text to speech.
+    private void OnTextToSpeechClicked(object sender, EventArgs e)
     {
         // Cancel the text to speech.
         if (Globals.bTextToSpeechIsBusy)
@@ -371,32 +372,8 @@ public partial class PageScanZX : ContentPage
             return;
         }
 
-        // Start with the text to speech.
-        if (lblBarcodeResult.Text != null && lblBarcodeResult.Text != "")
-        {
-            Globals.bTextToSpeechIsBusy = true;
-            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeechCancel;
-
-            try
-            {
-                Globals.cts = new CancellationTokenSource();
-
-                SpeechOptions options = new()
-                {
-                    Locale = Globals.locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
-                };
-
-                await TextToSpeech.Default.SpeakAsync(lblBarcodeResult.Text, options, cancelToken: Globals.cts.Token);
-                Globals.bTextToSpeechIsBusy = false;
-            }
-            catch (Exception ex)
-            {
-                Crashes.TrackError(ex);
-                await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-            }
-
-            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
-        }
+        // Convert the text to speech.
+        Globals.ConvertTextToSpeech(imgbtnTextToSpeech, lblBarcodeResult.Text);
     }
 
     // Copy text to the clipboard clicked event.
