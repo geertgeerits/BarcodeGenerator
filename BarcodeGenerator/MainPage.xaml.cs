@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.35
-// Date ........: 2023-10-30 (YYYY-MM-DD)
+// Date ........: 2023-10-31 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -59,9 +59,6 @@ public partial class MainPage : ContentPage
     // Local variables.
     private string cLicense;
     private readonly bool bLogAlwaysSend;
-    private IEnumerable<Locale> locales;
-    //private CancellationTokenSource cts;
-    //private bool bTextToSpeechIsBusy = false;
 
     public MainPage()
     {
@@ -175,8 +172,8 @@ public partial class MainPage : ContentPage
         {
             cCultureName = "en-US";
         }
-        //DisplayAlert("cCultureName", $"*{cCultureName}*", "OK");  // For testing.
 
+        // Initialize text to speech.
         InitializeTextToSpeech(cCultureName);
 
         // Set focus to the editor.
@@ -1013,8 +1010,6 @@ public partial class MainPage : ContentPage
         {
             SetTextLanguage();
             Globals.bLanguageChanged = false;
-
-            //DisplayAlert("Globals.bLanguageChanged", "true", "OK");  // For testing.
         }
 
         lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
@@ -1062,16 +1057,11 @@ public partial class MainPage : ContentPage
     // Put text in the chosen language in the controls.
     private void SetTextLanguage()
     {
-        //Globals.cLanguage = "es";  // For testing.
-        //App.Current.MainPage.DisplayAlert("Globals.cLanguage", Globals.cLanguage, "OK");  // For testing.
-
         // Set the current UI culture of the selected language.
         Globals.SetCultureSelectedLanguage();
 
         cLicense = $"{CodeLang.License_Text}\n\n{CodeLang.LicenseMit2_Text}";
         btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex]}";
-
-        //App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, Globals.cLanguage, "OK");  // For testing.
     }
 
     // Initialize text to speech and fill the the array with the speech languages.
@@ -1083,9 +1073,9 @@ public partial class MainPage : ContentPage
 
         try
         {
-            locales = await TextToSpeech.Default.GetLocalesAsync();
+            Globals.locales = await TextToSpeech.Default.GetLocalesAsync();
             
-            nTotalItems = locales.Count();           
+            nTotalItems = Globals.locales.Count();           
             
             if (nTotalItems == 0)
             {
@@ -1114,7 +1104,7 @@ public partial class MainPage : ContentPage
         Globals.cLanguageLocales = new string[nTotalItems];
         int nItem = 0;
 
-        foreach (var l in locales)
+        foreach (var l in Globals.locales)
         {
             Globals.cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
             nItem++;
@@ -1127,7 +1117,6 @@ public partial class MainPage : ContentPage
         {
             SearchArrayWithSpeechLanguages(cCultureName);
         }
-        //await DisplayAlert("Globals.cLanguageSpeech", Globals.cLanguageSpeech, "OK");  // For testing.
         
         lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
     }
@@ -1197,22 +1186,8 @@ public partial class MainPage : ContentPage
     //    }
     //}
 
-    // Button text to speech event - Convert text to speech.
-    //private void OnTextToSpeechClickedNEW(object sender, EventArgs e)
-    //{
-    //    // Cancel the text to speech.
-    //    if (Globals.bTextToSpeechIsBusy)
-    //    {
-    //        imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
-    //        return;
-    //    }
-
-    //    // Convert the text to speech.
-    //    Globals.ConvertTextToSpeech(imgbtnTextToSpeech, edtTextToCode.Text);
-    //}
-
-    // Button text to speech event.
-    private async void OnTextToSpeechClicked(object sender, EventArgs e)
+    //Button text to speech event - Convert text to speech.
+    private void OnTextToSpeechClicked(object sender, EventArgs e)
     {
         // Cancel the text to speech.
         if (Globals.bTextToSpeechIsBusy)
@@ -1221,32 +1196,8 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        // Start with the text to speech.
-        if (edtTextToCode.Text != null && edtTextToCode.Text != "")
-        {
-            Globals.bTextToSpeechIsBusy = true;
-            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeechCancel;
-
-            try
-            {
-                Globals.cts = new CancellationTokenSource();
-
-                SpeechOptions options = new()
-                {
-                    Locale = locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
-                };
-
-                await TextToSpeech.Default.SpeakAsync(edtTextToCode.Text, options, cancelToken: Globals.cts.Token);
-                Globals.bTextToSpeechIsBusy = false;
-            }
-            catch (Exception ex)
-            {
-                Crashes.TrackError(ex);
-                await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-            }
-
-            imgbtnTextToSpeech.Source = Globals.cImageTextToSpeech;
-        }
+        // Convert the text to speech.
+        _ = Globals.ConvertTextToSpeech(imgbtnTextToSpeech, edtTextToCode.Text);
     }
 
     // Paste text from the clipboard clicked event.

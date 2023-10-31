@@ -119,7 +119,7 @@ static class Globals
     }
 
     // Button share event: share the barcode result.
-    public static async void ShareBarcodeResult(string cText)
+    public static async Task ShareBarcodeResult(string cText)
     {
         // For testing.
         //cText = "http://www.google.com";
@@ -232,7 +232,7 @@ static class Globals
     }
 
     // Button text to speech event - Convert text to speech.
-    public static async void ConvertTextToSpeech(object sender, string cText)
+    public static async Task ConvertTextToSpeech(object sender, string cText)
     {
         var imageButton = (ImageButton)sender;
 

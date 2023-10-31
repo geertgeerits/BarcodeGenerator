@@ -1,5 +1,4 @@
 using ZXing.Net.Maui;
-using static Java.Util.Jar.Attributes;
 
 namespace BarcodeGenerator;
 
@@ -334,7 +333,7 @@ public partial class PageScanZX : ContentPage
     // Button share event.
     private void OnShareClicked(object sender, EventArgs e)
     {
-        Globals.ShareBarcodeResult(lblBarcodeResult.Text);
+        _ = Globals.ShareBarcodeResult(lblBarcodeResult.Text);
     }
 
     // Set language text to speech using the Appearing event of the PageScanZX.xaml.
@@ -373,7 +372,7 @@ public partial class PageScanZX : ContentPage
         }
 
         // Convert the text to speech.
-        Globals.ConvertTextToSpeech(imgbtnTextToSpeech, lblBarcodeResult.Text);
+        _ = Globals.ConvertTextToSpeech(imgbtnTextToSpeech, lblBarcodeResult.Text);
     }
 
     // Copy text to the clipboard clicked event.

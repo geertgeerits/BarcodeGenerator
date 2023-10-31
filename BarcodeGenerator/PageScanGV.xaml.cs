@@ -200,7 +200,7 @@ public partial class PageScanGV : ContentPage
     // Button share event.
     private void OnShareClicked(object sender, EventArgs e)
     {
-        Globals.ShareBarcodeResult(lblBarcodeResult.Text);
+        _ = Globals.ShareBarcodeResult(lblBarcodeResult.Text);
     }
 
     // Set language text to speech using the Appearing event of the PageScanGV.xaml.
@@ -239,7 +239,7 @@ public partial class PageScanGV : ContentPage
         }
 
         // Convert the text to speech.
-        Globals.ConvertTextToSpeech(imgbtnTextToSpeech, lblBarcodeResult.Text);
+        _ = Globals.ConvertTextToSpeech(imgbtnTextToSpeech, lblBarcodeResult.Text);
     }
 
     // Copy text to the clipboard clicked event.
