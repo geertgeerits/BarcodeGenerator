@@ -31,7 +31,7 @@ public partial class PageAbout : ContentPage
     // Open the e-mail program.
     private async void OnbtnEmailLinkClicked(object sender, EventArgs e)
     {
-#if IOS || MACCATALYST
+#if IOS
         string cAddress = "geertgeerits@gmail.com";
 
         try

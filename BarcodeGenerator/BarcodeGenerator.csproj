@@ -56,14 +56,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Remove="PageScanGV.xaml.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Remove="PageScanGV.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="PageSettings-Copy.xaml.Copy" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_128p.png" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_324p.png" />
@@ -118,6 +110,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="PageAbout.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PageScanGV.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PageScanZX.xaml">

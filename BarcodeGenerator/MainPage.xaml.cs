@@ -176,6 +176,9 @@ public partial class MainPage : ContentPage
         // Initialize text to speech.
         InitializeTextToSpeech(cCultureName);
 
+        // Clear the clipboard.
+        //Clipboard.Default.SetTextAsync(null);  // For testing.
+
         // Set focus to the editor.
         edtTextToCode.Focus();
     }
@@ -418,8 +421,8 @@ public partial class MainPage : ContentPage
         // Miscellaneous.
         bgvBarcode.Value = "";
         string cChecksum = "";
-        //string cTextCode = "";
 
+        // Validate the input.        
         if (string.IsNullOrEmpty(edtTextToCode.Text))
         {
             edtTextToCode.Focus();
@@ -427,8 +430,8 @@ public partial class MainPage : ContentPage
         }
 
         string cTextToCode = edtTextToCode.Text.Trim();
-
         int nLenTextToCode = cTextToCode.Length;
+        
         if (nLenTextToCode == 0)
         {
             return;
@@ -1209,11 +1212,15 @@ public partial class MainPage : ContentPage
             {
                 string cTextToPaste = await Clipboard.Default.GetTextAsync();
 
-                // !!!BUG!!! - Error on iOS
-                //if (cTextToPaste.Length > 0 && cTextToPaste.Length > edtTextToCode.MaxLength)
-                //{
-                //    cTextToPaste = cTextToPaste[..edtTextToCode.MaxLength];
-                //}
+                if (string.IsNullOrEmpty(cTextToPaste))
+                {
+                    return;
+                }
+
+                if (cTextToPaste.Length > edtTextToCode.MaxLength)
+                {
+                    cTextToPaste = cTextToPaste[..edtTextToCode.MaxLength];
+                }
 
                 edtTextToCode.Text = cTextToPaste;
             }
