@@ -1209,10 +1209,11 @@ public partial class MainPage : ContentPage
             {
                 string cTextToPaste = await Clipboard.Default.GetTextAsync();
 
-                if (cTextToPaste.Length > edtTextToCode.MaxLength)
-                {
-                    cTextToPaste = cTextToPaste[..edtTextToCode.MaxLength];
-                }
+                // !!!BUG!!! - Error on iOS
+                //if (cTextToPaste.Length > 0 && cTextToPaste.Length > edtTextToCode.MaxLength)
+                //{
+                //    cTextToPaste = cTextToPaste[..edtTextToCode.MaxLength];
+                //}
 
                 edtTextToCode.Text = cTextToPaste;
             }
