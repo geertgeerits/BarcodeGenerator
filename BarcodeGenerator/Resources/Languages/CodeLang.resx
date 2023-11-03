@@ -258,20 +258,8 @@ Characters 3-4: Red
 Characters 5-6: Green
 Characters 7-8: Blue</value>
   </data>
-  <data name="InfoExplanationAndroid_Text" xml:space="preserve">
-    <value>Scanning barcodes: there is a choice between 'Google Vision' and 'ZXing Zebra Crossing'. Google Vision is available from Android 12.
-
-Text to speech: not all languages are supported that are provided in the application settings.
-Speech to text: activate it through your device settings. A microphone will then appear in the virtual keyboard.
-Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
-
-Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
-The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Polish, Portuguese, Romanian, Spanish and Swedish.
-
-You can always contact me for any corrections.</value>
-  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Scanning barcodes: there is a choice between 'Google Vision' and 'ZXing Zebra Crossing'. Google Vision is available from Android 12 and from iOS 15.4.
+    <value>Scanning barcodes: there is a choice between 'Google Vision' and 'ZXing Zebra Crossing'.  Google Vision is not available on all devices.
 
 Text to speech: not all languages are supported that are provided in the application settings.
 Speech to text: activate it through your device settings. A microphone will then appear in the virtual keyboard.

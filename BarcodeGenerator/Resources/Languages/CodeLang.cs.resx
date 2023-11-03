@@ -258,20 +258,8 @@ Postavy 3-4: Červená
 Postavy 5-6: Zelená
 Postavy 7-8: Modrá</value>
   </data>
-  <data name="InfoExplanationAndroid_Text" xml:space="preserve">
-    <value>Skenování čárových kódů: je na výběr mezi „Google Vision“ a „ZXing Zebra Crossing“. Google Vision je k dispozici od Android 12.
-
-Převod textu na řeč: nejsou podporovány všechny jazyky uvedené v nastavení aplikace.
-Převod řeči na text: aktivujte ji prostřednictvím nastavení zařízení. Poté se na virtuální klávesnici objeví mikrofon.
-Obě tyto možnosti závisí na zařízení a na nainstalovaných jazycích. Je možné, že u některých jazyků je překlad do az řeči prováděn prostřednictvím internetu příslušnými službami.
-
-K překladu textu byl použit Google Translate. To nezaručuje, že všechny překlady jsou správné.
-Podporované jazyky jsou: čeština, dánština, holandština, angličtina, finština, francouzština, němčina, maďarština, italština, norština, polština, portugalština, rumunština, španělština a švédština.
-
-Pro případné opravy mě můžete vždy kontaktovat.</value>
-  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Skenování čárových kódů: je na výběr mezi „Google Vision“ a „ZXing Zebra Crossing“. Google Vision je k dispozici od Android 12 a od iOS 15.4.
+    <value>Skenování čárových kódů: je na výběr mezi „Google Vision“ a „ZXing Zebra Crossing“. Google Vision není k dispozici na všech zařízeních.
 
 Převod textu na řeč: nejsou podporovány všechny jazyky uvedené v nastavení aplikace.
 Převod řeči na text: aktivujte ji prostřednictvím nastavení zařízení. Poté se na virtuální klávesnici objeví mikrofon.

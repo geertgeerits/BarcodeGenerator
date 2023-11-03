@@ -258,20 +258,8 @@ Tecken 3-4: Röd
 Tecken 5-6: Grön
 Tecken 7-8: Blå</value>
   </data>
-  <data name="InfoExplanationAndroid_Text" xml:space="preserve">
-    <value>Skanna streckkoder: det finns ett val mellan "Google Vision" och "ZXing Zebra Crossing". Google Vision är tillgängligt från Android 12.
-
-Text till tal: alla språk som finns i programinställningarna stöds inte.
-Tal till text: aktivera den via dina enhetsinställningar. En mikrofon kommer då att dyka upp på det virtuella tangentbordet.
-Båda dessa alternativ beror från enhet till enhet och de installerade språken. Det är möjligt att för vissa språk görs översättningen till och från tal över internet av de berörda tjänsterna.
-
-Google Translate användes för översättningen av texten. Detta är inte en garanti för att alla översättningar är korrekta.
-Stödspråken är: tjeckiska, danska, holländska, engelska, finska, franska, tyska, ungerska, italienska, norska, polska, portugisiska, rumänska, spanska och svenska.
-
-Du kan alltid kontakta mig för eventuella korrigeringar.</value>
-  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Skanna streckkoder: det finns ett val mellan "Google Vision" och "ZXing Zebra Crossing". Google Vision är tillgängligt från Android 12 och från iOS 15.4.
+    <value>Skanna streckkoder: det finns ett val mellan "Google Vision" och "ZXing Zebra Crossing". Google Vision är inte tillgängligt på alla enheter.
 
 Text till tal: alla språk som finns i programinställningarna stöds inte.
 Tal till text: aktivera den via dina enhetsinställningar. En mikrofon kommer då att dyka upp på det virtuella tangentbordet.
