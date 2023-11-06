@@ -1,8 +1,8 @@
 ﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
-// Version .....: 1.0.35
-// Date ........: 2023-11-03 (YYYY-MM-DD)
+// Version .....: 1.0.36
+// Date ........: 2023-11-06 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -230,7 +230,7 @@ public partial class MainPage : ContentPage
             {
                 // Aztec.
                 case 0:
-                    edtTextToCode.MaxLength = 3832;
+                    edtTextToCode.MaxLength = 3700;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;
@@ -272,7 +272,7 @@ public partial class MainPage : ContentPage
 
                 // DataMatrix.
                 case 5:
-                    edtTextToCode.MaxLength = 2335;
+                    edtTextToCode.MaxLength = 2200;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;
@@ -298,7 +298,7 @@ public partial class MainPage : ContentPage
 
                 // Imb.
                 case 8:
-                    edtTextToCode.MaxLength = 2730;
+                    edtTextToCode.MaxLength = 2600;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 0;
                     bgvBarcode.Format = BarcodeFormat.Imb;
@@ -332,7 +332,7 @@ public partial class MainPage : ContentPage
 
                 // Pdf417.
                 case 12:
-                    edtTextToCode.MaxLength = 2710;
+                    edtTextToCode.MaxLength = 2200;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 10;
                     bgvBarcode.Format = BarcodeFormat.Pdf417;
@@ -356,7 +356,7 @@ public partial class MainPage : ContentPage
 
                 // QrCode.
                 case 15:
-                    edtTextToCode.MaxLength = 7089;
+                    edtTextToCode.MaxLength = 2800;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;

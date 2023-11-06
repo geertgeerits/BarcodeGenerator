@@ -16,7 +16,7 @@ public partial class PageAbout : ContentPage
         }
 
         // Put text in the chosen language in the controls.
-        lblVersion.Text = $"{CodeLang.Version_Text} 1.0.35";
+        lblVersion.Text = $"{CodeLang.Version_Text} 1.0.36";
         lblCopyright.Text = $"{CodeLang.Copyright_Text} © 2022-2023 Geert Geerits";
         lblEmail.Text = $"{CodeLang.Email_Text} geertgeerits@gmail.com";
         lblWebsite.Text = $"{CodeLang.Website_Text}: ../barcodegenerator";

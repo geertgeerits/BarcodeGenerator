@@ -56,14 +56,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Remove="PageScanGV.xaml.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Remove="PageScanGV.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="PageSettings-Copy.xaml.Copy" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_128p.png" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_324p.png" />
@@ -120,6 +112,9 @@
 	  <MauiXaml Update="PageAbout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="PageScanGV.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="PageScanZX.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -148,8 +143,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.35</ApplicationDisplayVersion>
-		<ApplicationVersion>35</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.36</ApplicationDisplayVersion>
+		<ApplicationVersion>36</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
@@ -168,8 +163,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.35</ApplicationDisplayVersion>
-		<ApplicationVersion>35</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.36</ApplicationDisplayVersion>
+		<ApplicationVersion>36</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
