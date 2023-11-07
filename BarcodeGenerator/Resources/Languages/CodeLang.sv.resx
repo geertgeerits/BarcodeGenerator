@@ -395,6 +395,15 @@ Inte tillåtet:</value>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Klistra in text från urklipp</value>
   </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Återställ inställningarna till deras standardvärden</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Spara inställningarna</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Text till tal: på eller av</value>
+  </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Ficklampa</value>
   </data>

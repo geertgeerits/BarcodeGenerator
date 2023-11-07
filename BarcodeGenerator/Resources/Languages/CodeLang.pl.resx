@@ -395,6 +395,15 @@ Niedozwolony:</value>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Wklej tekst ze schowka</value>
   </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Zresetuj ustawienia do wartości domyślnych</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Zapisz ustawienia</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Tekst na mowę: wł. lub wył</value>
+  </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Latarka</value>
   </data>

@@ -395,6 +395,15 @@ Nicht erlaubt:</value>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Text aus der Zwischenablage einfügen</value>
   </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Setzen Sie die Einstellungen auf ihre Standardwerte zurück</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Speichern Sie die Einstellungen</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Text zu Sprache: ein oder aus</value>
+  </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Taschenlampe</value>
   </data>

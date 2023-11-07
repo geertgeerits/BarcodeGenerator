@@ -395,6 +395,15 @@ Nepermis:</value>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Lipiți text din clipboard</value>
   </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Resetați setările la valorile implicite</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Salvați setările</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Text în vorbire: activat sau dezactivat</value>
+  </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Lanternă</value>
   </data>

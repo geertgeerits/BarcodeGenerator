@@ -395,6 +395,15 @@ Nepovoleno:</value>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Vložte text ze schránky</value>
   </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Obnovte nastavení na výchozí hodnoty</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Uložte nastavení</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Převod textu na řeč: zapnuto nebo vypnuto</value>
+  </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Svítilna</value>
   </data>

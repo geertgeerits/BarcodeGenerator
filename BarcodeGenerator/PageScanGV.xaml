@@ -68,6 +68,7 @@
                 VerticalOptions="Center"
                 HeightRequest="36"
                 WidthRequest="36"
+                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipTorch_Text}"
                 ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTorch_Text}"
                 Clicked="OnTorchClicked">
             </ImageButton>
@@ -134,6 +135,7 @@
                         HeightRequest="38"
                         WidthRequest="38"
                         VerticalOptions="End"
+                        SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCopy_Text}"
                         ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCopy_Text}"
                         IsEnabled="False"
                         Clicked="OnCopyToClipboardClicked">
@@ -146,6 +148,7 @@
                         MinimumWidthRequest="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}"
                         MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
                         Text="{x:Static resx:CodeLang.ButtonShare_Text}"
+                        SemanticProperties.Description="{x:Static resx:CodeLang.ButtonShare_Text}"
                         ToolTipProperties.Text="{x:Static resx:CodeLang.ButtonShare_Text}"
                         IsEnabled="False"
                         Clicked="OnShareClicked">
@@ -175,6 +178,8 @@
                         HeightRequest="38"
                         WidthRequest="38"
                         IsVisible="False"
+                        SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipTextToSpeech_Text}"
+                        ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTextToSpeech_Text}"
                         Clicked="OnTextToSpeechClicked">
                     </ImageButton>
                 </HorizontalStackLayout>

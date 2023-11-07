@@ -395,6 +395,15 @@ Niet toegestaan:</value>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Plak tekst van het klembord</value>
   </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Reset de instellingen naar hun standaardwaarden</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Sla de instellingen op</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Tekst naar spraak: aan of uit</value>
+  </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Zaklamp</value>
   </data>

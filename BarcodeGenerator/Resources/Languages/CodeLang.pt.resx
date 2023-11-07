@@ -395,6 +395,15 @@ Não permitido:</value>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Cole o texto da área de transferência</value>
   </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Redefinir as configurações para seus valores padrão</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Salve as configurações</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Texto para fala: ativado ou desativado</value>
+  </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Lanterna</value>
   </data>

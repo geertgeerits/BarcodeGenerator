@@ -23,6 +23,7 @@
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
+                SemanticProperties.Description="{local:Translate Info_Text}"
                 ToolTipProperties.Text="{local:Translate Info_Text}"
                 Clicked="OnPageAboutClicked">
             </ImageButton>
@@ -70,6 +71,7 @@
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
+                SemanticProperties.Description="{local:Translate Settings_Text}"
                 ToolTipProperties.Text="{local:Translate Settings_Text}"
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
@@ -122,6 +124,7 @@
                         Source="paste_icon_48p_blue.png"
                         HeightRequest="32"
                         WidthRequest="32"
+                        SemanticProperties.Description="{local:Translate ToolTipPaste_Text}"
                         ToolTipProperties.Text="{local:Translate ToolTipPaste_Text}"
                         Clicked="OnPasteFromClipboardClicked">
                     </ImageButton>
@@ -156,6 +159,8 @@
                         HeightRequest="38"
                         WidthRequest="38"
                         IsVisible="False"
+                        SemanticProperties.Description="{local:Translate ToolTipTextToSpeech_Text}"
+                        ToolTipProperties.Text="{local:Translate ToolTipTextToSpeech_Text}"
                         Clicked="OnTextToSpeechClicked">
                     </ImageButton>
                 </HorizontalStackLayout>
@@ -190,6 +195,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
                     Text="{local:Translate GenerateCode_Text}"
+                    SemanticProperties.Description="{local:Translate GenerateCode_Text}"
                     ToolTipProperties.Text="{local:Translate GenerateCode_Text}"
                     Clicked="OnGenerateCodeClicked">
                 </Button>
@@ -202,6 +208,7 @@
                     HorizontalOptions="End"
                     VerticalOptions="Start"
                     Text="{local:Translate ClearCode_Text}"
+                    SemanticProperties.Description="{local:Translate ClearCode_Text}"
                     ToolTipProperties.Text="{local:Translate ClearCode_Text}"
                     Clicked="OnClearCodeClicked">
                 </Button>
@@ -231,6 +238,7 @@
                     VerticalOptions="Start"
                     MinimumWidthRequest="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}"
                     Text="{local:Translate ButtonShare_Text}"
+                    SemanticProperties.Description="{local:Translate ButtonShare_Text}"
                     ToolTipProperties.Text="{local:Translate ButtonShare_Text}"
                     IsEnabled="False"
                     Clicked="OnShareClicked">

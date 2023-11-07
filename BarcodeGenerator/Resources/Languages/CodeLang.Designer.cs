@@ -822,6 +822,33 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset the settings to their default values.
+        /// </summary>
+        internal static string ToolTipSettingsReset_Text {
+            get {
+                return ResourceManager.GetString("ToolTipSettingsReset_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save the settings.
+        /// </summary>
+        internal static string ToolTipSettingsSave_Text {
+            get {
+                return ResourceManager.GetString("ToolTipSettingsSave_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text to speech: on or off.
+        /// </summary>
+        internal static string ToolTipTextToSpeech_Text {
+            get {
+                return ResourceManager.GetString("ToolTipTextToSpeech_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flashlight.
         /// </summary>
         internal static string ToolTipTorch_Text {

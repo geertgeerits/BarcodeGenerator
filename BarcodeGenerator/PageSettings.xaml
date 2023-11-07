@@ -238,17 +238,10 @@
                     Style="{StaticResource buttonStyleHelp}"
                     Grid.Row="9"
                     Grid.Column="0"
+                    SemanticProperties.Description="{local:Translate ToolTipHelp_Text}"
                     ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
                     Clicked="OnSettingsHexColorClicked">
                 </Button>
-
-                <!--<ImageButton
-                    Style="{StaticResource imagebuttonStyleHelp}"
-                    Grid.Row="9"
-                    Grid.Column="0"
-                    ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
-                    Clicked="OnSettingsHexColorClicked">
-                </ImageButton>-->
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -357,17 +350,10 @@
                     Style="{StaticResource buttonStyleHelp}"
                     Grid.Row="14"
                     Grid.Column="0"
+                    SemanticProperties.Description="{local:Translate ToolTipHelp_Text}"
                     ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
                     Clicked="OnSettingsHexColorClicked">
                 </Button>
-
-                <!--<ImageButton
-                    Style="{StaticResource imagebuttonStyleHelp}"
-                    Grid.Row="14"
-                    Grid.Column="0"
-                    ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
-                    Clicked="OnSettingsHexColorClicked">
-                </ImageButton>-->
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -427,39 +413,16 @@
                     ValueChanged="OnSliderColorBackgroundValueChanged">
                 </Slider>
 
-                <!--<Button
-                    Style="{StaticResource buttonStyleDefault}"
-                    IsVisible="{OnPlatform false, iOS=true, Android=false}"
-                    Grid.Row="17"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Text="{local:Translate SettingsSave_Text}"
-                    ToolTipProperties.Text="{local:Translate SettingsSave_Text}"
-                    Clicked="OnSettingsSaveClicked">
-                </Button>
-
-                <Button
-                    Style="{StaticResource buttonStyleDefault}"
-                    IsVisible="{OnPlatform false, iOS=true, Android=false}"
-                    Grid.Row="17"
-                    Grid.Column="2"
-                    HorizontalOptions="End"
-                    Text="{local:Translate SettingsReset_Text}"
-                    ToolTipProperties.Text="{local:Translate SettingsReset_Text}"
-                    Clicked="OnSettingsResetClicked">
-                </Button>-->
-
             </Grid>
         </ScrollView>
 
-        <!--!!!BUG!!! in IOS. The two buttons do not remain fixed at the bottom of the screen if the screen content is longer than the screen
-        (ie if scrolling is required). The two buttons are then no longer visible.-->
         <Button
             x:Name="btnSettingsSave"
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="2"
             Text="{local:Translate SettingsSave_Text}"
-            ToolTipProperties.Text="{local:Translate SettingsSave_Text}"
+            SemanticProperties.Description="{local:Translate ToolTipSettingsSave_Text}"
+            ToolTipProperties.Text="{local:Translate ToolTipSettingsSave_Text}"
             Clicked="OnSettingsSaveClicked">
         </Button>
 
@@ -468,7 +431,8 @@
             Grid.Row="2"
             HorizontalOptions="End"
             Text="{local:Translate SettingsReset_Text}"
-            ToolTipProperties.Text="{local:Translate SettingsReset_Text}"
+            SemanticProperties.Description="{local:Translate ToolTipSettingsReset_Text}"
+            ToolTipProperties.Text="{local:Translate ToolTipSettingsReset_Text}"
             Clicked="OnSettingsResetClicked">
         </Button>
 

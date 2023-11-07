@@ -395,6 +395,15 @@ No permitido:</value>
   <data name="ToolTipPaste_Text" xml:space="preserve">
     <value>Pegar texto desde el portapapeles</value>
   </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Restablecer la configuración a sus valores predeterminados</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Guardar la configuración</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Texto a voz: activado o desactivado</value>
+  </data>
   <data name="ToolTipTorch_Text" xml:space="preserve">
     <value>Linterna</value>
   </data>
