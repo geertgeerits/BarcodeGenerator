@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.36
-// Date ........: 2023-11-06 (YYYY-MM-DD)
+// Date ........: 2023-11-07 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -1087,15 +1087,15 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            var properties = new Dictionary<string, string> {
-                { "File:", "MainPage.xaml.cs" },
-                { "Method:", "InitializeTextToSpeech" },
-                { "AppLanguage:", Globals.cLanguage },
-                { "AppLanguageSpeech:", Globals.cLanguageSpeech }
-            };
-            Crashes.TrackError(ex, properties);
+            //var properties = new Dictionary<string, string> {
+            //    { "File:", "MainPage.xaml.cs" },
+            //    { "Method:", "InitializeTextToSpeech" },
+            //    { "AppLanguage:", Globals.cLanguage },
+            //    { "AppLanguageSpeech:", Globals.cLanguageSpeech }
+            //};
+            //Crashes.TrackError(ex, properties);
 
-            await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
+            //await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
             return;
         }
        

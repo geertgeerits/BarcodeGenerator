@@ -216,15 +216,15 @@ static class Globals
         }
         catch (Exception ex)
         {
-            var properties = new Dictionary<string, string> {
-                { "File:", "Globals.cs:" + cPageName },
-                { "Method:", "InitializeTextToSpeech" },
-                { "AppLanguage:", cLanguage },
-                { "AppLanguageSpeech:", cLanguageSpeech }
-            };
-            Crashes.TrackError(ex, properties);
+            //var properties = new Dictionary<string, string> {
+            //    { "File:", "Globals.cs:" + cPageName },
+            //    { "Method:", "InitializeTextToSpeech" },
+            //    { "AppLanguage:", cLanguage },
+            //    { "AppLanguageSpeech:", cLanguageSpeech }
+            //};
+            //Crashes.TrackError(ex, properties);
 
-            await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+            //await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             return false;
         }
 
