@@ -768,6 +768,24 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Send an email to the author of this application.
+        /// </summary>
+        internal static string ToolTipAppEmail_Text {
+            get {
+                return ResourceManager.GetString("ToolTipAppEmail_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open the website of this application.
+        /// </summary>
+        internal static string ToolTipAppWebsite_Text {
+            get {
+                return ResourceManager.GetString("ToolTipAppWebsite_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scanner.
         /// </summary>
         internal static string ToolTipBarcodeScanner_Text {
