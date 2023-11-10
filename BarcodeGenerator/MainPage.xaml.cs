@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.36
-// Date ........: 2023-11-08 (YYYY-MM-DD)
+// Date ........: 2023-11-10 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -230,7 +230,7 @@ public partial class MainPage : ContentPage
             {
                 // Aztec.
                 case 0:
-                    edtTextToCode.MaxLength = 3700;
+                    edtTextToCode.MaxLength = 3000;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;
@@ -272,7 +272,7 @@ public partial class MainPage : ContentPage
 
                 // DataMatrix.
                 case 5:
-                    edtTextToCode.MaxLength = 2200;
+                    edtTextToCode.MaxLength = 2300;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;
@@ -298,8 +298,8 @@ public partial class MainPage : ContentPage
 
                 // Imb.
                 case 8:
-                    edtTextToCode.MaxLength = 2600;
-                    edtTextToCode.Keyboard = Keyboard.Default;
+                    edtTextToCode.MaxLength = 31;
+                    edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 0;
                     bgvBarcode.Format = BarcodeFormat.Imb;
                     break;
@@ -332,7 +332,7 @@ public partial class MainPage : ContentPage
 
                 // Pdf417.
                 case 12:
-                    edtTextToCode.MaxLength = 2200;
+                    edtTextToCode.MaxLength = 1800;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 10;
                     bgvBarcode.Format = BarcodeFormat.Pdf417;
@@ -356,7 +356,7 @@ public partial class MainPage : ContentPage
 
                 // QrCode.
                 case 15:
-                    edtTextToCode.MaxLength = 2800;
+                    edtTextToCode.MaxLength = 1800;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
                     bgvBarcode.WidthRequest = 250;
@@ -1301,4 +1301,30 @@ UPC-E: 01326901 -> UPC-A: 013000002691
 UPC-E: 01810905 -> UPC-A: 018000001095
 
 Source: https://bytescout.com/blog/2013/10/upc-and-upc-e-purpose-advantages.html
+_____________________________________________________________________________________________
+
+edtTextToCode.MaxLength     Numeric     AlphaNumeric    Binary 8-bits   Kanji/Kana JIS X 0208
+-----------------------     -------     ------------    -------------   ---------------------
+
+Aztec               3000    3832        3067            1914
+Codabar               43      43          43
+Code128               48      48          48
+Code39                48      48          48
+Code93                48      48          48
+DataMatrix          2300    3116        2335            1555                     
+Ean13                 13      13
+Ean8                   8       8
+Imb                   31      31
+Itf                   30      30
+MaxiCode              93      93
+Msi                  255     255
+Pdf417              1800    2710        1850            1108
+PharmaCode             6       6
+Plessey               16      16          16
+QrCode              1800    7089        4296            2953            1817
+Rss14                 14      14
+RssExpanded           74      74
+UpcA                  12      12
+UpcE                   8       8
+UpcEanExtension        2       2
 */
