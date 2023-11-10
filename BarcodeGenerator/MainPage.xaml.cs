@@ -50,6 +50,7 @@
             #endif  
 */
 
+using Java.Util;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator;
@@ -1006,16 +1007,21 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Set language using the Appearing event of the MainPage.xaml.
+    // Set text and speech language and the generator format using the Appearing event of the MainPage.xaml.
     private void OnPageAppearing(object sender, EventArgs e)
     {
+        // Set the text language.
         if (Globals.bLanguageChanged)
         {
             SetTextLanguage();
             Globals.bLanguageChanged = false;
         }
 
+        // Set the speech language
         lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+
+        // Set the generator format in the picker.
+        pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
     }
 
     // Button share event - make screenshot of the barcode.
