@@ -838,21 +838,23 @@ public partial class MainPage : ContentPage
     {
         // Get the default encoding for the current system
         Encoding defaultEncoding = Encoding.Default;
-        //Console.WriteLine("The default encoding is: " + defaultEncoding.WebName);  // For testing.
+        Console.WriteLine($"{"The default encoding is:"} {defaultEncoding.WebName}");  // For testing.
 
-        // Convert the string into an array of bytes and then back to string.
+        // Convert utf-8 to ascii.
         string cEncodingName = defaultEncoding.WebName.ToLower();
 
-        if (cEncodingName == "utf-8" || cEncodingName == "utf8")
+        if (cEncodingName is "utf-8" or "utf8")
         {
-            byte[] bytes = Encoding.UTF8.GetBytes(cTextToCode);
-            cTextToCode = Encoding.ASCII.GetString(bytes);
+            cTextToCode = ConvertUtf8ToAscii(cTextToCode);
+            Console.WriteLine("Converted string cTextToCode: " + cTextToCode);  // For testing.
         }
+
+        Task.Delay(500).Wait();  // For testing.
 
         // Test for allowed minimum and maximum ASCII values.
         foreach (char cChar in cTextToCode)
         {
-            //Console.WriteLine($"{"ASCII value: "} {(int)cChar}");  // For testing.
+            Console.WriteLine($"{"ASCII value: "} {(int)cChar}");  // For testing.
 
             if (cChar < nMinAsciiValue || cChar > nMaxAsciiValue)
             {
@@ -864,6 +866,38 @@ public partial class MainPage : ContentPage
         }
 
         return true;
+    }
+
+    // Convert utf-8 to ascii.
+    private static string ConvertUtf8ToAscii(string cTextToCode)
+    {
+        // Convert the string into an array of bytes and then back to string.
+        //byte[] bytes = Encoding.UTF8.GetBytes(cTextToCode);
+        //cTextToCode = Encoding.ASCII.GetString(bytes);
+
+        // Create an UTF-8 string
+        string utf8String = cTextToCode;
+
+        // Get the UTF-8 encoding
+        Encoding utf8 = Encoding.UTF8;
+
+        // Get the ASCII encoding
+        Encoding ascii = Encoding.ASCII;
+
+        // Convert the UTF-8 string to a byte array
+        byte[] utf8Bytes = utf8.GetBytes(utf8String);
+
+        // Convert the UTF-8 byte array to an ASCII byte array
+        byte[] asciiBytes = Encoding.Convert(utf8, ascii, utf8Bytes);
+
+        // Convert the ASCII byte array to a string
+        string asciiString = ascii.GetString(asciiBytes);
+
+        // Print the original and the converted strings
+        Console.WriteLine("Original string: " + utf8String);
+        Console.WriteLine("Converted string: " + asciiString);
+
+        return asciiString;
     }
 
     // Test start & end guards.
