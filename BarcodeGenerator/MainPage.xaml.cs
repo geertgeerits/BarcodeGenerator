@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.36
-// Date ........: 2023-11-10 (YYYY-MM-DD)
+// Date ........: 2023-11-11 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -50,7 +50,7 @@
             #endif  
 */
 
-using Java.Util;
+using System.Text;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator;
@@ -836,12 +836,28 @@ public partial class MainPage : ContentPage
     // Test for allowed minimum and maximum ASCII values.
     private bool TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
     {
+        // Get the default encoding for the current system
+        Encoding defaultEncoding = Encoding.Default;
+        //Console.WriteLine("The default encoding is: " + defaultEncoding.WebName);  // For testing.
+
+        // Convert the string into an array of bytes and then back to string.
+        string cEncodingName = defaultEncoding.WebName.ToLower();
+
+        if (cEncodingName == "utf-8" || cEncodingName == "utf8")
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(cTextToCode);
+            cTextToCode = Encoding.ASCII.GetString(bytes);
+        }
+
+        // Test for allowed minimum and maximum ASCII values.
         foreach (char cChar in cTextToCode)
         {
+            //Console.WriteLine($"{"ASCII value: "} {(int)cChar}");  // For testing.
+
             if (cChar < nMinAsciiValue || cChar > nMaxAsciiValue)
             {
                 DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.TextContainsChar_Text} {cChar}", CodeLang.ButtonClose_Text);
-                
+
                 edtTextToCode.Focus();
                 return false;
             }
