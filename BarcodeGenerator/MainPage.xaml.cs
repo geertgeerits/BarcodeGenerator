@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.36
-// Date ........: 2023-11-11 (YYYY-MM-DD)
+// Date ........: 2023-11-12 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -50,7 +50,6 @@
             #endif  
 */
 
-using System.Text;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator;
@@ -449,6 +448,9 @@ public partial class MainPage : ContentPage
                 {
                     // Aztec.
                     case 0:
+                        cTextToCode = ReplaceCharacters(cTextToCode);
+                        edtTextToCode.Text = cTextToCode;
+
                         if (TestAllowedAsciiValues(1, 255, cTextToCode) == false)
                         {
                             return;
@@ -474,6 +476,9 @@ public partial class MainPage : ContentPage
 
                     // Code128.
                     case 2:
+                        cTextToCode = ReplaceCharacters(cTextToCode);
+                        edtTextToCode.Text = cTextToCode;
+
                         if (TestAllowedAsciiValues(1, 127, cTextToCode) == false)
                         {
                             return;
@@ -515,6 +520,9 @@ public partial class MainPage : ContentPage
 
                     // DataMatrix.
                     case 5:
+                        cTextToCode = ReplaceCharacters(cTextToCode);
+                        edtTextToCode.Text = cTextToCode;
+
                         if (TestAllowedAsciiValues(1, 255, cTextToCode) == false)
                         {
                             return;
@@ -626,6 +634,9 @@ public partial class MainPage : ContentPage
 
                     // Pdf417.
                     case 12:
+                        cTextToCode = ReplaceCharacters(cTextToCode);
+                        edtTextToCode.Text = cTextToCode;
+
                         if (TestAllowedAsciiValues(1, 255, cTextToCode) == false)
                         {
                             return;
@@ -836,25 +847,10 @@ public partial class MainPage : ContentPage
     // Test for allowed minimum and maximum ASCII values.
     private bool TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
     {
-        // Get the default encoding for the current system
-        Encoding defaultEncoding = Encoding.Default;
-        Console.WriteLine($"{"The default encoding is:"} {defaultEncoding.WebName}");  // For testing.
-
-        // Convert utf-8 to ascii.
-        string cEncodingName = defaultEncoding.WebName.ToLower();
-
-        if (cEncodingName is "utf-8" or "utf8")
-        {
-            cTextToCode = ConvertUtf8ToAscii(cTextToCode);
-            Console.WriteLine("Converted string cTextToCode: " + cTextToCode);  // For testing.
-        }
-
-        Task.Delay(500).Wait();  // For testing.
-
         // Test for allowed minimum and maximum ASCII values.
         foreach (char cChar in cTextToCode)
         {
-            Console.WriteLine($"{"ASCII value: "} {(int)cChar}");  // For testing.
+            //Console.WriteLine($"{"ASCII value: "} {(int)cChar}");  // For testing.
 
             if (cChar < nMinAsciiValue || cChar > nMaxAsciiValue)
             {
@@ -868,36 +864,16 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Convert utf-8 to ascii.
-    private static string ConvertUtf8ToAscii(string cTextToCode)
+    // Replace special characters in strings for ASCII output.
+    private static string ReplaceCharacters(string cText)
     {
-        // Convert the string into an array of bytes and then back to string.
-        //byte[] bytes = Encoding.UTF8.GetBytes(cTextToCode);
-        //cTextToCode = Encoding.ASCII.GetString(bytes);
+        // Convert characters from UTF-8 or ASCII extended to characters that are supported in ASCII.
+        cText = cText.Replace('‘', '\'');       // Left single quotation mark replaced with apostrophe.
+        cText = cText.Replace('’', '\'');       // Right single quotation mark replaced with apostrophe.
+        cText = cText.Replace('“', '"');        // Left double quotation mark replaced with quotation mark.
+        cText = cText.Replace('”', '"');        // Right double quotation mark replaced with quotation mark.
 
-        // Create an UTF-8 string
-        string utf8String = cTextToCode;
-
-        // Get the UTF-8 encoding
-        Encoding utf8 = Encoding.UTF8;
-
-        // Get the ASCII encoding
-        Encoding ascii = Encoding.ASCII;
-
-        // Convert the UTF-8 string to a byte array
-        byte[] utf8Bytes = utf8.GetBytes(utf8String);
-
-        // Convert the UTF-8 byte array to an ASCII byte array
-        byte[] asciiBytes = Encoding.Convert(utf8, ascii, utf8Bytes);
-
-        // Convert the ASCII byte array to a string
-        string asciiString = ascii.GetString(asciiBytes);
-
-        // Print the original and the converted strings
-        Console.WriteLine("Original string: " + utf8String);
-        Console.WriteLine("Converted string: " + asciiString);
-
-        return asciiString;
+        return cText;
     }
 
     // Test start & end guards.
