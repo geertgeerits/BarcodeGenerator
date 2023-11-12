@@ -41,7 +41,7 @@
                 handlers.AddBarcodeScannerHandler();
             #endif
 
-            MainPage.xaml.cs - line 115-119
+            MainPage.xaml.cs - line 112-116
             -------------------------------
             //#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
             #if ANDROID31_0_OR_GREATER
@@ -852,7 +852,7 @@ public partial class MainPage : ContentPage
         {
             //Console.WriteLine($"{"ASCII value: "} {(int)cChar}");  // For testing.
 
-            if (cChar < nMinAsciiValue || cChar > nMaxAsciiValue)
+            if ((int)cChar < nMinAsciiValue || (int)cChar > nMaxAsciiValue)
             {
                 DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.TextContainsChar_Text} {cChar}", CodeLang.ButtonClose_Text);
 
