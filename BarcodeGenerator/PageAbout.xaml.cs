@@ -16,7 +16,7 @@ public partial class PageAbout : ContentPage
         }
 
         // Put text in the chosen language in the controls.
-        lblVersion.Text = $"{CodeLang.Version_Text} 1.0.36";
+        lblVersion.Text = $"{CodeLang.Version_Text} 1.0.37";
         lblCopyright.Text = $"{CodeLang.Copyright_Text} © 2022-2023 Geert Geerits";
         lblEmail.Text = $"{CodeLang.Email_Text} geertgeerits@gmail.com";
         lblWebsite.Text = $"{CodeLang.Website_Text}: ../barcodegenerator";
@@ -69,22 +69,27 @@ public partial class PageAbout : ContentPage
     }
 
     // Open the page 'PageWebsite' to open the website in the WebView control.
+    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console.
     private async void OnbtnWebsiteLinkClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PageWebsite());
-    }
+#if ANDROID
+        try
+        {
+            Uri uri = new Uri("https://geertgeerits.wixsite.com/geertgeerits/barcode-generator");
+            BrowserLaunchOptions options = new BrowserLaunchOptions()
+            {
+                LaunchMode = BrowserLaunchMode.SystemPreferred,
+                TitleMode = BrowserTitleMode.Show
+            };
 
-    // Open the website in the default browser.
-    //private async void OnbtnWebsiteLinkClicked(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        Uri uri = new("https://geertgeerits.wixsite.com/barcodegenerator");
-    //        await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-    //    }
-    //}
+            await Browser.Default.OpenAsync(uri, options);
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+        }
+#else
+        await Navigation.PushAsync(new PageWebsite());
+#endif
+    }
 }

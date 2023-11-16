@@ -1,8 +1,8 @@
 ﻿// Program .....: BarcodeGenerator.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
-// Version .....: 1.0.36
-// Date ........: 2023-11-12 (YYYY-MM-DD)
+// Version .....: 1.0.37
+// Date ........: 2023-11-16 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -109,25 +109,14 @@ public partial class MainPage : ContentPage
         ToolTipProperties.SetText(imgbtnScanGV, CodeLang.ToolTipBarcodeScanner_Text + " (Google Vision)");
         ToolTipProperties.SetText(imgbtnScanZX, CodeLang.ToolTipBarcodeScanner_Text + " (ZXing Zebra Crossing)");
 
-//#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
+        //#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
 #if ANDROID31_0_OR_GREATER
         // Make the the scan icon for Google Vision visible.
         imgbtnScanGV.IsVisible = true;
-#endif  
+#endif
 
         // Set the theme.
-        switch (Globals.cTheme)
-        {
-            case "Light":
-                Application.Current.UserAppTheme = AppTheme.Light;
-                break;
-            case "Dark":
-                Application.Current.UserAppTheme = AppTheme.Dark;
-                break;
-            default:
-                Application.Current.UserAppTheme = AppTheme.Unspecified;
-                break;
-        }
+        Globals.SetTheme();
 
         // Set the barcode list and the current default barcode format in the picker for the barcode generator.
         pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
