@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-#if ANDROID31_0_OR_GREATER
 using BarcodeScanner.Mobile;
-#endif
 using ZXing.Net.Maui.Controls;
 using Microsoft.AppCenter;
 using Microsoft.Maui.LifecycleEvents;
@@ -24,10 +22,8 @@ public static class MauiProgram
             
             .ConfigureMauiHandlers(handlers =>
             {
-#if ANDROID31_0_OR_GREATER
                 // Add the handlers
                 handlers.AddBarcodeScannerHandler();
-#endif
             })
 
             .ConfigureLifecycleEvents(events =>
