@@ -33,20 +33,12 @@ static class Globals
     // Set the theme.
     public static void SetTheme()
     {
-        switch (cTheme)
+        Application.Current.UserAppTheme = cTheme switch
         {
-            case "Light":
-                Application.Current.UserAppTheme = AppTheme.Light;
-                break;
-
-            case "Dark":
-                Application.Current.UserAppTheme = AppTheme.Dark;
-                break;
-
-            default:
-                Application.Current.UserAppTheme = AppTheme.Unspecified;
-                break;
-        }
+            "Light" => AppTheme.Light,
+            "Dark" => AppTheme.Dark,
+            _ => AppTheme.Unspecified,
+        };
     }
     
     // Set the current UI culture of the selected language.

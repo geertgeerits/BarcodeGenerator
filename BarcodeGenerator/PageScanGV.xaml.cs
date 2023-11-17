@@ -148,7 +148,7 @@ public partial class PageScanGV : ContentPage
 #endif
 
         // Put the default barcode format in the label control.
-        string[] cFormatCode = Globals.GetFormatCodeListScanner().ToArray();
+        string[] cFormatCode = [.. Globals.GetFormatCodeListScanner()];
         lblFormatCodeScanner.Text = cFormatCode[Globals.nFormatScannerIndex];
 
         // Initialize text to speech.
