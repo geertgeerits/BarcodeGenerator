@@ -44,8 +44,8 @@
                 Source="barcodegooglevision_48x48p.png"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                HeightRequest="39"
-                WidthRequest="39"
+                HeightRequest="33"
+                WidthRequest="33"
                 IsVisible="False"
                 Clicked="OnPageScanGvClicked">
             </ImageButton>
