@@ -53,7 +53,7 @@
                             WidthRequest="24"
                             SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipAppEmail_Text}"
                             ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipAppEmail_Text}"
-                            Clicked="OnbtnEmailLinkClicked">
+                            Clicked="OnBtnEmailLinkClicked">
                         </ImageButton>
                     </HorizontalStackLayout>
 
@@ -71,7 +71,7 @@
                             WidthRequest="24"
                             SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipAppWebsite_Text}"
                             ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipAppWebsite_Text}"
-                            Clicked="OnbtnWebsiteLinkClicked">
+                            Clicked="OnBtnWebsiteLinkClicked">
                         </ImageButton>
                     </HorizontalStackLayout>
 

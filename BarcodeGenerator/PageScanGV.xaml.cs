@@ -140,7 +140,7 @@ public partial class PageScanGV : ContentPage
 
 #if IOS
         // Check and request camera permission for iOS.
-        //Task<PermissionStatus> task = CheckAndRequestCameraPermission();
+        //Task<PermissionStatus> task = CheckAndRequestCameraPermissionAsync();
 
         // The height of the title bar is lower when an iPhone is in horizontal position (!!!BUG!!! ?). 
         lblTitle.VerticalOptions = LayoutOptions.Start;
@@ -152,7 +152,7 @@ public partial class PageScanGV : ContentPage
         lblFormatCodeScanner.Text = cFormatCode[Globals.nFormatScannerIndex];
 
         // Initialize text to speech.
-        if (Globals.InitializeTextToSpeechScanner("PageScanGV.xaml.cs").Result)
+        if (Globals.InitializeTextToSpeechScannerAsync("PageScanGV.xaml.cs").Result)
         {
             lblTextToSpeech.IsVisible = true;
             imgbtnTextToSpeech.IsVisible = true;
@@ -200,7 +200,7 @@ public partial class PageScanGV : ContentPage
     // Button share event.
     private void OnShareClicked(object sender, EventArgs e)
     {
-        _ = Globals.ShareBarcodeResult(lblBarcodeResult.Text);
+        _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
     }
 
     // Set language text to speech using the Appearing event of the PageScanGV.xaml.
@@ -239,7 +239,7 @@ public partial class PageScanGV : ContentPage
         }
 
         // Convert the text to speech.
-        _ = Globals.ConvertTextToSpeech(imgbtnTextToSpeech, lblBarcodeResult.Text);
+        _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, lblBarcodeResult.Text);
     }
 
     // Copy text to the clipboard clicked event.
@@ -249,7 +249,7 @@ public partial class PageScanGV : ContentPage
     }
 
     // Check and request camera permission for iOS.
-    //public async Task<PermissionStatus> CheckAndRequestCameraPermission()
+    //public async Task<PermissionStatus> CheckAndRequestCameraPermissionAsync()
     //{
     //    PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Camera>();
 

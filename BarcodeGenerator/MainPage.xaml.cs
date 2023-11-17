@@ -1065,11 +1065,11 @@ public partial class MainPage : ContentPage
         inputStream.Dispose();
 
         // Open the share interface to share the file.
-        await OpenShareInterface(cFileName);
+        await OpenShareInterfaceAsync(cFileName);
     }
 
     // Open the share interface.
-    private static async Task OpenShareInterface(string cFile)
+    private static async Task OpenShareInterfaceAsync(string cFile)
     {
         await Share.Default.RequestAsync(new ShareFileRequest
         {
@@ -1221,7 +1221,7 @@ public partial class MainPage : ContentPage
         }
 
         // Convert the text to speech.
-        _ = Globals.ConvertTextToSpeech(imgbtnTextToSpeech, edtTextToCode.Text);
+        _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, edtTextToCode.Text);
     }
 
     // Paste text from the clipboard clicked event.

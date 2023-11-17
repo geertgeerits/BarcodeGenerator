@@ -130,7 +130,7 @@ static class Globals
     }
 
     // Button share event: share the barcode result.
-    public static async Task ShareBarcodeResult(string cText)
+    public static async Task ShareBarcodeResultAsync(string cText)
     {
         // For testing.
         //cText = "http://www.google.com";
@@ -153,7 +153,7 @@ static class Globals
                     // Open link website.
                     if (bAnswer)
                     {
-                        await OpenWebsiteLink(match.Value);
+                        await OpenWebsiteLinkAsync(match.Value);
                     }
                 }
                 else
@@ -172,11 +172,11 @@ static class Globals
         Task.Delay(700).Wait();
 
         // Open share interface.
-        await ShareText(cText);
+        await ShareTextAsync(cText);
     }
 
     // Open the website link.
-    public static async Task OpenWebsiteLink(string cUrl)
+    public static async Task OpenWebsiteLinkAsync(string cUrl)
     {
         if (cUrl[..4] is "www." or "WWW.")
         {
@@ -196,7 +196,7 @@ static class Globals
     }
 
     // Open the share interface.
-    public static async Task ShareText(string cText)
+    public static async Task ShareTextAsync(string cText)
     {
         try
         {
@@ -214,7 +214,7 @@ static class Globals
     }
 
     // Initialize text to speech for the barcode scanner.
-    public static async Task<bool> InitializeTextToSpeechScanner(string cPageName)
+    public static async Task<bool> InitializeTextToSpeechScannerAsync(string cPageName)
     {
         if (!bLanguageLocalesExist)
         {
@@ -243,7 +243,7 @@ static class Globals
     }
 
     // Button text to speech event - Convert text to speech.
-    public static async Task ConvertTextToSpeech(object sender, string cText)
+    public static async Task ConvertTextToSpeechAsync(object sender, string cText)
     {
         var imageButton = (ImageButton)sender;
 
