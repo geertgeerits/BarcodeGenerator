@@ -10,7 +10,6 @@ public partial class PageScanGV : ContentPage
     {
         try
         {
-#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
             switch (Globals.nFormatScannerIndex)
             {
                 // Aztec.
@@ -123,7 +122,7 @@ public partial class PageScanGV : ContentPage
                     //BarcodeScanner.Mobile.Methods.SetSupportBarcodeFormat(BarcodeScanner.Mobile.BarcodeFormats.All);
                     break;
             }
-#endif
+
             InitializeComponent();
         }
         catch (Exception ex)
@@ -133,10 +132,8 @@ public partial class PageScanGV : ContentPage
             return;
         }
 
-#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
         // Ask for permission to use the camera.
         BarcodeScanner.Mobile.Methods.AskForRequiredPermission();
-#endif
 
 #if IOS
         // Check and request camera permission for iOS.
@@ -144,6 +141,7 @@ public partial class PageScanGV : ContentPage
 
         // The height of the title bar is lower when an iPhone is in horizontal position (!!!BUG!!! ?). 
         lblTitle.VerticalOptions = LayoutOptions.Start;
+        lblTitle.VerticalTextAlignment = TextAlignment.Start;
         imgbtnTorch.VerticalOptions = LayoutOptions.Start;
 #endif
 
@@ -166,7 +164,6 @@ public partial class PageScanGV : ContentPage
     private async void OnBarcodesDetected(object sender, OnDetectedEventArg e)
     {
         lblBarcodeResult.Text = "";
-        btnShare.Text = CodeLang.ButtonShare_Text;
 
         imgbtnCopyToClipboard.IsEnabled = false;
         btnShare.IsEnabled = false;
@@ -179,17 +176,17 @@ public partial class PageScanGV : ContentPage
             string cBarcodeFormat = Convert.ToString(obj[0].BarcodeFormat);
             string cDisplayValue = obj[0].DisplayValue;
 
-            Dispatcher.Dispatch(() =>
+            _ = Dispatcher.Dispatch(() =>
             {
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
+                lblBarcodeResult.Text = cDisplayValue;
+
+                imgbtnCopyToClipboard.IsEnabled = true;
+                btnShare.IsEnabled = true;
+                imgbtnTextToSpeech.IsEnabled = true;
+
                 barcodeReader.IsScanning = true;
             });
-
-            btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
-            lblBarcodeResult.Text = cDisplayValue;
-
-            imgbtnCopyToClipboard.IsEnabled = true;
-            btnShare.IsEnabled = true;
-            imgbtnTextToSpeech.IsEnabled = true;
         }
         catch (Exception ex)
         {

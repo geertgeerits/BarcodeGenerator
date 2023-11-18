@@ -25,6 +25,7 @@ public partial class PageScanZX : ContentPage
 
         // The height of the title bar is lower when an iPhone is in horizontal position (!!!BUG!!! ?). 
         lblTitle.VerticalOptions = LayoutOptions.Start;
+        lblTitle.VerticalTextAlignment = TextAlignment.Start;
         imgbtnTorch.VerticalOptions = LayoutOptions.Start;
 #endif
 
