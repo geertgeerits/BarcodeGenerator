@@ -22,12 +22,14 @@ public partial class PageScanZX : ContentPage
 #if IOS
         // Check and request camera permission for iOS.
         Task<PermissionStatus> task = CheckAndRequestCameraPermissionAsync();
-
-        // The height of the title bar is lower when an iPhone is in horizontal position (!!!BUG!!! ?). 
-        lblTitle.VerticalOptions = LayoutOptions.Start;
-        lblTitle.VerticalTextAlignment = TextAlignment.Start;
-        imgbtnTorch.VerticalOptions = LayoutOptions.Start;
 #endif
+        // The height of the title bar is lower when an iPhone is in horizontal position.
+        if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
+        {
+            lblTitle.VerticalOptions = LayoutOptions.Start;
+            lblTitle.VerticalTextAlignment = TextAlignment.Start;
+            imgbtnTorch.VerticalOptions = LayoutOptions.Start;
+        }
 
         // Put text in the chosen language in the controls.
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScanner();

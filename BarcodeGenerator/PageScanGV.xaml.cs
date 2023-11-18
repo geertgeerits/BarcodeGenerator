@@ -135,15 +135,13 @@ public partial class PageScanGV : ContentPage
         // Ask for permission to use the camera.
         BarcodeScanner.Mobile.Methods.AskForRequiredPermission();
 
-#if IOS
-        // Check and request camera permission for iOS.
-        //Task<PermissionStatus> task = CheckAndRequestCameraPermissionAsync();
-
-        // The height of the title bar is lower when an iPhone is in horizontal position (!!!BUG!!! ?). 
-        lblTitle.VerticalOptions = LayoutOptions.Start;
-        lblTitle.VerticalTextAlignment = TextAlignment.Start;
-        imgbtnTorch.VerticalOptions = LayoutOptions.Start;
-#endif
+        // The height of the title bar is lower when an iPhone is in horizontal position.
+        if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
+        {
+            lblTitle.VerticalOptions = LayoutOptions.Start;
+            lblTitle.VerticalTextAlignment = TextAlignment.Start;
+            imgbtnTorch.VerticalOptions = LayoutOptions.Start;
+        }
 
         // Put the default barcode format in the label control.
         string[] cFormatCode = [.. Globals.GetFormatCodeListScanner()];
@@ -244,25 +242,4 @@ public partial class PageScanGV : ContentPage
     {
         await Clipboard.Default.SetTextAsync(lblBarcodeResult.Text);
     }
-
-    // Check and request camera permission for iOS.
-    //public async Task<PermissionStatus> CheckAndRequestCameraPermissionAsync()
-    //{
-    //    PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Camera>();
-
-    //    if (status == PermissionStatus.Granted)
-    //    {
-    //        return status;
-    //    }
-
-    //    if (status == PermissionStatus.Unknown && DeviceInfo.Platform == DevicePlatform.iOS)
-    //    {
-    //        // Prompt the user to turn on in settings.
-    //        // On iOS once a permission has been denied it may not be requested again from the application.
-    //        await DisplayAlert("", CodeLang.CameraPermissionIOS_Text, CodeLang.ButtonClose_Text);
-    //        return status;
-    //    }
-
-    //    return status;
-    //}
 }

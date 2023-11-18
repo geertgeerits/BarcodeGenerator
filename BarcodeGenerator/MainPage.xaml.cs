@@ -59,18 +59,19 @@ public partial class MainPage : ContentPage
             };
         }
 
-#if IOS
         // The height of the title bar is lower when an iPhone is in horizontal position.
-        imgbtnAbout.VerticalOptions = LayoutOptions.Start;
-        lblTitle.VerticalOptions = LayoutOptions.Start;
-        lblTitle.VerticalTextAlignment = TextAlignment.Start;
-        imgbtnScanGV.VerticalOptions = LayoutOptions.Start;
-        imgbtnScanZX.VerticalOptions = LayoutOptions.Start;
-        imgbtnSettings.VerticalOptions = LayoutOptions.Start;
-#endif
+        if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
+        {
+            imgbtnAbout.VerticalOptions = LayoutOptions.Start;
+            lblTitle.VerticalOptions = LayoutOptions.Start;
+            lblTitle.VerticalTextAlignment = TextAlignment.Start;
+            imgbtnScanGV.VerticalOptions = LayoutOptions.Start;
+            imgbtnScanZX.VerticalOptions = LayoutOptions.Start;
+            imgbtnSettings.VerticalOptions = LayoutOptions.Start;
+        }
 
-        // Set the tooltips for the scanner buttons.
-        ToolTipProperties.SetText(imgbtnScanGV, CodeLang.ToolTipBarcodeScanner_Text + " (Google Vision)");
+            // Set the tooltips for the scanner buttons.
+            ToolTipProperties.SetText(imgbtnScanGV, CodeLang.ToolTipBarcodeScanner_Text + " (Google Vision)");
         ToolTipProperties.SetText(imgbtnScanZX, CodeLang.ToolTipBarcodeScanner_Text + " (ZXing Zebra Crossing)");
 
 #if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
