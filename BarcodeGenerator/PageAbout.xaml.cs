@@ -30,18 +30,6 @@ public partial class PageAbout : ContentPage
     // Open the e-mail program.
     private async void OnBtnEmailLinkClicked(object sender, EventArgs e)
     {
-#if IOS
-        string cAddress = "geertgeerits@gmail.com";
-
-        try
-        {
-            await Launcher.OpenAsync(new Uri($"mailto:{cAddress}"));
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-        }
-#else
         if (Email.Default.IsComposeSupported)
         {
             string subject = "Barcode generator and scanner";
@@ -65,7 +53,6 @@ public partial class PageAbout : ContentPage
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }
         }
-#endif
     }
 
     // Open the page 'PageWebsite' to open the website in the WebView control.

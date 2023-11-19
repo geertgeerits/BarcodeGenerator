@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.37
-// Date ........: 2023-11-18 (YYYY-MM-DD)
+// Date ........: 2023-11-19 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -815,7 +815,7 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Replace special characters in strings for ASCII output.
+    // Replace special characters in strings for ASCII output (iOS keyboard marks are curved instead of straight).
     private static string ReplaceCharacters(string cText)
     {
         // Convert characters from UTF-8 or ASCII extended to characters that are supported in ASCII.
