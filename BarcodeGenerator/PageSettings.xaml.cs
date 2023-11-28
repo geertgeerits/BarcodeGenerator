@@ -94,7 +94,7 @@ public partial class PageSettings : ContentPage
         pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
 
         // Set the barcode list and the current default barcode format in the picker for the barcode scanner.
-        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScanner();
+        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNative();
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
         // Set the current color in the entry and on the sliders.
@@ -212,7 +212,7 @@ public partial class PageSettings : ContentPage
     private void SetLanguage()
     {
         // Set the barcode list and the current default barcode format in the picker for the barcode scanner.
-        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScanner();
+        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNative();
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
         // Set the current theme in the picker.

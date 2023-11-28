@@ -100,34 +100,106 @@ static class Globals
     }
 
     // Put the scanner barcode formats in a List string.
-    public static List<string> GetFormatCodeListScanner()
+    //public static List<string> GetFormatCodeListScanner()
+    //{
+    //    return
+    //    [
+    //        "Aztec",
+    //        "Codabar",
+    //        "Code 128",
+    //        "Code 39",
+    //        "Code 93",
+    //        "Data Matrix",
+    //        "EAN-13",
+    //        "EAN-8",
+    //        "(IMb (Intelligent Mail))",
+    //        "ITF (Interleaved 2 of 5)",
+    //        "(MaxiCode)",
+    //        "MSI (Modified Plessey)",
+    //        "PDF417",
+    //        "(Pharmacode)",
+    //        "Plessey",
+    //        "QR Code",
+    //        "RSS 14",
+    //        "RSS Expanded",
+    //        "UPC-A",
+    //        "UPC-E",
+    //        "(UPC EAN Extension)",
+    //        CodeLang.AllCodes_Text
+    //    ];
+    //}
+
+    // Put the scanner barcode formats in a List string for the Native scanner.
+    public static List<string> GetFormatCodeListScannerNative()
     {
         return
         [
             "Aztec",
             "Codabar",
-            "Code 128",
             "Code 39",
             "Code 93",
+            "Code 128",
             "Data Matrix",
-            "EAN-13",
             "EAN-8",
-            "(IMb (Intelligent Mail))",
-            "ITF (Interleaved 2 of 5)",
-            "(MaxiCode)",
-            "MSI (Modified Plessey)",
+            "EAN-13",
+            "GS1 DataBar",
+            "ITF",
+            "Micro PDF417",
+            "Micro QR Code",
             "PDF417",
-            "(Pharmacode)",
-            "Plessey",
             "QR Code",
-            "RSS 14",
-            "RSS Expanded",
             "UPC-A",
             "UPC-E",
-            "(UPC EAN Extension)",
             CodeLang.AllCodes_Text
         ];
     }
+
+    // Put the scanner barcode formats in a List string for the Native scanner for Android.
+    //public static List<string> GetFormatCodeListScannerNativeAndroid()
+    //{
+    //    return
+    //    [
+    //        "Aztec",
+    //        "Codabar",
+    //        "Code 39",
+    //        "Code 93",
+    //        "Code 128",
+    //        "Data Matrix",
+    //        "EAN-8",
+    //        "EAN-13",
+    //        "ITF",
+    //        "PDF417",
+    //        "QR Code",
+    //        "UPC-A",
+    //        "UPC-E",
+    //        CodeLang.AllCodes_Text
+    //    ];
+    //}
+
+    // Put the scanner barcode formats in a List string for the Native scanner for iOS.
+    //public static List<string> GetFormatCodeListScannerNativeIOS()
+    //{
+    //    return
+    //    [
+    //        "Aztec",
+    //        "Codabar",
+    //        "Code 39",
+    //        "Code 93",
+    //        "Code 128",
+    //        "Data Matrix",
+    //        "EAN-8",
+    //        "EAN-13",
+    //        "GS1 DataBar",
+    //        "ITF",
+    //        "MicroPDF417",
+    //        "MicroQR",
+    //        "PDF417",
+    //        "QR Code",
+    //        "UPC-A",
+    //        "UPC-E",
+    //        CodeLang.AllCodes_Text
+    //    ];
+    //}
 
     // Button share event: share the barcode result.
     public static async Task ShareBarcodeResultAsync(string cText)

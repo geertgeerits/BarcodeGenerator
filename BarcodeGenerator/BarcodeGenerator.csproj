@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net8.0-ios;net8.0-android</TargetFrameworks>
 		<!--<TargetFrameworks>net8.0-ios;net8.0-maccatalyst;net8.0-android</TargetFrameworks>-->
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>-->
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -28,9 +28,9 @@
 		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.4</SupportedOSPlatformVersion>-->
 		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>-->
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>-->
 		<Authors>Geert Geerits</Authors>
 		<Copyright>Geert Geerits</Copyright>
 	</PropertyGroup>
@@ -56,11 +56,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="PageScanGV.xaml.cs" />
+	  <Compile Remove="PageScanZX.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="PageScanGV.xaml" />
+	  <MauiXaml Remove="PageScanZX.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="PageSettings-Copy.xaml.Copy" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_128p.png" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_324p.png" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_324p2.svg" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_477x324p.png" />
+	  <None Remove="Resources\Images\camera_torch_64x64p.png" />
 	  <None Remove="Resources\Images\cancel_close_icon_48p.png" />
 	  <None Remove="Resources\Images\cancel_close_icon_512p.png" />
 	  <None Remove="Resources\Images\circled_envelope_24p.png" />
@@ -75,25 +86,20 @@
 	  <None Remove="Resources\Images\settings_32p.png" />
 	  <None Remove="Resources\Images\speaker_64p.png" />
 	  <None Remove="Resources\Images\speaker_cancel_64p.png" />
-	  <None Remove="Resources\Images\torch_icon_64p.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-		<!--<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="7.0.0.1-pre" Condition="'$(TargetFramework)'=='net8.0-android'" />-->
-		<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="8.0.0" />
 		<PackageReference Include="Microsoft.AppCenter" Version="5.0.3" />
 		<PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.3" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="PageScanZX.xaml.cs">
-	    <DependentUpon>PageScanZX.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="Resources\Languages\CodeLang.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
@@ -112,10 +118,7 @@
 	  <MauiXaml Update="PageAbout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PageScanGV.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="PageScanZX.xaml">
+	  <MauiXaml Update="PageScanNT.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PageSettings.xaml">

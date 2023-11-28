@@ -1,8 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
-using BarcodeScanner.Mobile;
+//using BarcodeScanner.Mobile;
 using ZXing.Net.Maui.Controls;
 using Microsoft.AppCenter;
 using Microsoft.Maui.LifecycleEvents;
+using BarcodeScanning;
 
 namespace BarcodeGenerator;
 
@@ -14,17 +15,18 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
             .UseBarcodeReader()
+            .UseBarcodeScanning()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             })
             
-            .ConfigureMauiHandlers(handlers =>
-            {
-                // Add the handlers
-                handlers.AddBarcodeScannerHandler();
-            })
+            //.ConfigureMauiHandlers(handlers =>
+            //{
+            //    // Add the handlers
+            //    handlers.AddBarcodeScannerHandler();
+            //})
 
             .ConfigureLifecycleEvents(events =>
             {
