@@ -138,6 +138,7 @@ public partial class PageScanNT : ContentPage
         barcodeReader.PauseScanning = false;
         barcodeReader.CameraEnabled = true;
         barcodeReader.CameraFacing = CameraFacing.Back;
+        barcodeReader.PoolingInterval = 500;
 
         Graphics.Drawable = _drawable;
 

@@ -156,7 +156,7 @@
                         <Grid ColumnDefinitions="*, *" >
                             <Picker x:Name="Quality" Title="Quality" Grid.Column="2" BackgroundColor="Transparent"  WidthRequest="45" HeightRequest="45" SelectedIndexChanged="OnCameraQualityChanged"/>
                             <Button Text="Q" Grid.Column="0" WidthRequest="50" HeightRequest="50" CornerRadius="25" InputTransparent="True"/>
-                            <Button Text="V" Grid.Column="1" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="OnCameraVibrateClicked"/>
+                            <Button Text="V" Grid.Column="13" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="OnCameraVibrateClicked"/>
                         </Grid>
                     </StackLayout>
                 </Frame>
