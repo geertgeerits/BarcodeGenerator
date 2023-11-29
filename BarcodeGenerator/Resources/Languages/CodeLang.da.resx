@@ -277,9 +277,7 @@ Tegn 5-6: Grøn
 Tegn 7-8: Blå</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Scanning af stregkoder: der er et valg mellem 'Google Vision' og 'ZXing Zebra Crossing'. Google Vision er ikke tilgængelig på alle enheder.
-
-Tekst til tale: ikke alle sprog understøttes, som er angivet i applikationsindstillingerne.
+    <value>Tekst til tale: ikke alle sprog understøttes, som er angivet i applikationsindstillingerne.
 Tale til tekst: aktiver det via dine enhedsindstillinger. En mikrofon vises derefter på det virtuelle tastatur.
 Begge disse muligheder afhænger fra enhed til enhed og de installerede sprog. Det er muligt, at for nogle sprog udføres oversættelsen til og fra tale over internettet af de pågældende tjenester.
 

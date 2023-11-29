@@ -76,7 +76,7 @@
                 WidthRequest="36"
                 InputTransparent="True">
             </ImageButton>
-            
+
             <Picker
                 x:Name="pckCameraQuality"
                 Grid.Row="0"
@@ -88,7 +88,8 @@
                 WidthRequest="45"
                 SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
                 ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                
-                SelectedIndexChanged="OnCameraQualityChanged"/>
+                SelectedIndexChanged="OnCameraQualityChanged">
+            </Picker>
 
             <ImageButton
                 x:Name="imgbtnCameraFacing"

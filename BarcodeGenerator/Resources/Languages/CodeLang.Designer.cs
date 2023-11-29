@@ -521,11 +521,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scanning barcodes: there is a choice between &apos;Google Vision&apos; and &apos;ZXing Zebra Crossing&apos;.  Google Vision is not available on all devices.
-        ///
-        ///Text to speech: not all languages are supported that are provided in the application settings.
+        ///   Looks up a localized string similar to Text to speech: not all languages are supported that are provided in the application settings.
         ///Speech to text: activate it through your device settings. A microphone will then appear in the virtual keyboard.
-        ///Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done  [rest of string was truncated]&quot;;.
+        ///Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
+        ///
+        ///Google Translate was used for the translation of the text. This is not a guarantee that all  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InfoExplanation_Text {
             get {

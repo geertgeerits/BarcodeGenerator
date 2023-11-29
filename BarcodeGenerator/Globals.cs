@@ -173,6 +173,11 @@ static class Globals
 // Button share event: share the barcode result.
 public static async Task ShareBarcodeResultAsync(string cText)
     {
+        if (cText is null or "")
+        {
+            return;
+        }
+
         // For testing.
         //cText = "http://www.google.com";
         //cText = "url http://www.google.com, visit website url https://www.microsoft.com, www.yahou.com and WWW.MODEGEERITS.BE and geertgeerits@gmail.com address";

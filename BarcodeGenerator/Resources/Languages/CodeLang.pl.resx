@@ -277,9 +277,7 @@ Postacie 5-6: Zielony
 Postacie 7-8: niebieski</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Skanowanie kodów kreskowych: istnieje możliwość wyboru pomiędzy „Google Vision” a „ZXing Zebra Crossing”. Usługa Google Vision nie jest dostępna na wszystkich urządzeniach.
-
-Tekst na mowę: nie wszystkie języki, które są dostępne w ustawieniach aplikacji, są obsługiwane.
+    <value>Tekst na mowę: nie wszystkie języki, które są dostępne w ustawieniach aplikacji, są obsługiwane.
 Mowa na tekst: aktywuj ją w ustawieniach urządzenia. Mikrofon pojawi się wtedy na wirtualnej klawiaturze.
 Obie te opcje zależą od urządzenia i zainstalowanych języków. Możliwe jest, że w przypadku niektórych języków tłumaczenie na mowę iz mowy odbywa się przez Internet przez odpowiednie służby.
 

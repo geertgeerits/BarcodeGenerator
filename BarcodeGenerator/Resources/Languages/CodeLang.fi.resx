@@ -277,9 +277,7 @@ Hahmot 5-6: Vihreä
 Hahmot 7-8: Sininen</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Viivakoodien skannaus: voit valita Google Visionin tai ZXing Zebra Crossingin välillä. Google Vision ei ole saatavilla kaikilla laitteilla.
-
-Teksti puheeksi: kaikkia sovellusasetuksissa olevia kieliä ei tueta.
+    <value>Teksti puheeksi: kaikkia sovellusasetuksissa olevia kieliä ei tueta.
 Puhe tekstiksi: aktivoi se laitteen asetuksista. Mikrofoni ilmestyy sitten virtuaaliseen näppäimistöön.
 Molemmat vaihtoehdot riippuvat laitteesta toiseen ja asennetuista kielistä. On mahdollista, että joillekin kielille käännös puheeseen ja puheesta tapahtuu Internetin kautta asianomaisten palveluiden toimesta.
 

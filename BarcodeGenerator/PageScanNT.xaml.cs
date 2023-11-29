@@ -28,6 +28,7 @@ public partial class PageScanNT : ContentPage
             lblTitle.VerticalOptions = LayoutOptions.Start;
             lblTitle.VerticalTextAlignment = TextAlignment.Start;
             imgbtnCameraStartStop.VerticalOptions = LayoutOptions.Start;
+            imgbtnCameraQuality.VerticalOptions = LayoutOptions.Start;
             imgbtnCameraFacing.VerticalOptions = LayoutOptions.Start;
             imgbtnCameraTorch.VerticalOptions = LayoutOptions.Start;
         }
@@ -136,11 +137,11 @@ public partial class PageScanNT : ContentPage
         await Methods.AskForRequiredPermissionAsync();
         base.OnAppearing();
 
-        barcodeReader.VibrationOnDetected = true;
         barcodeReader.PauseScanning = false;
-        barcodeReader.CameraEnabled = true;
         barcodeReader.CameraFacing = CameraFacing.Back;
         barcodeReader.PoolingInterval = 500;
+        barcodeReader.VibrationOnDetected = false;
+        barcodeReader.CameraEnabled = true;
 
         Graphics.Drawable = _drawable;
 
@@ -161,6 +162,12 @@ public partial class PageScanNT : ContentPage
     // CameraView OnDetected event.
     private void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
     {
+        lblBarcodeResult.Text = "";
+
+        imgbtnCopyToClipboard.IsEnabled = false;
+        btnShare.IsEnabled = false;
+        imgbtnTextToSpeech.IsEnabled = false;
+
         _drawable.barcodeResults = e.BarcodeResults;
         Graphics.Invalidate();
 
@@ -215,7 +222,7 @@ public partial class PageScanNT : ContentPage
                 _ => CaptureQuality.High
             };
 
-            string cTitle = CodeLang.CameraQualityTitle_Text + ": ";
+            string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
             pckCameraQuality.Title = selectedIndex switch
             {
                 0 => cTitle + CodeLang.CameraQualityLowest_Text,
@@ -241,10 +248,10 @@ public partial class PageScanNT : ContentPage
     }
 
     // ImageButton camera vibrite clicked event.
-    private void OnCameraVibrateClicked(object sender, EventArgs e)
-    {
-        barcodeReader.VibrationOnDetected = !barcodeReader.VibrationOnDetected;
-    }
+    //private void OnCameraVibrateClicked(object sender, EventArgs e)
+    //{
+    //    barcodeReader.VibrationOnDetected = !barcodeReader.VibrationOnDetected;
+    //}
 
     // Class for drawing the barcode bounding box.
     private class BarcodeDrawable : IDrawable
@@ -252,19 +259,18 @@ public partial class PageScanNT : ContentPage
         public HashSet<BarcodeResult>? barcodeResults;
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
-            if (barcodeResults is not null && barcodeResults.Count > 0)
-            {
-                canvas.StrokeSize = 15;
-                canvas.StrokeColor = Colors.Red;
-                var scale = 1 / canvas.DisplayScale;
-                canvas.Scale(scale, scale);
+            //if (barcodeResults is not null && barcodeResults.Count > 0)
+            //{
+            //    canvas.StrokeSize = 10;
+            //    canvas.StrokeColor = Colors.Green;
+            //    var scale = 1 / canvas.DisplayScale;
+            //    canvas.Scale(scale, scale);
 
-                foreach (var barcode in barcodeResults)
-                {
-                    canvas.DrawRectangle(barcode.BoundingBox);
-                    //Console.WriteLine(barcode.BarcodeFormat + ": " + barcode.DisplayValue);  // For testing.
-                }
-            }
+            //    foreach (var barcode in barcodeResults)
+            //    {
+            //        canvas.DrawRectangle(barcode.BoundingBox);
+            //    }
+            //}
         }
     }
 
@@ -291,6 +297,9 @@ public partial class PageScanNT : ContentPage
     // Copy text to the clipboard clicked event.
     private async void OnCopyToClipboardClicked(object sender, EventArgs e)
     {
-        await Clipboard.Default.SetTextAsync(lblBarcodeResult.Text);
+        if (lblBarcodeResult.Text.Length > 0)
+        {
+            await Clipboard.Default.SetTextAsync(lblBarcodeResult.Text);
+        }
     }
 }

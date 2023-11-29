@@ -277,9 +277,7 @@ Karakterek 5-6: Zöld
 Karakterek 7-8: Kék</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Vonalkódok beolvasása: választhat a „Google Vision” és a „ZXing Zebra Crossing” között. A Google Vision nem érhető el minden eszközön.
-
-Szövegfelolvasó: nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
+    <value>Szövegfelolvasó: nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
 Beszédből szöveggé: aktiválja az eszköz beállításaiban. Ekkor egy mikrofon jelenik meg a virtuális billentyűzeten.
 Mindkét lehetőség készülékenként és a telepített nyelvektől függ. Lehetséges, hogy egyes nyelvek esetében a beszédre és beszédről történő fordítást az interneten keresztül végzik az érintett szolgálatok.
 
