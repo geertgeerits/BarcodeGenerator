@@ -5,20 +5,22 @@ namespace BarcodeGenerator;
 public partial class PageScanNT : ContentPage
 {
     private readonly BarcodeDrawable _drawable = new();
-    private readonly List<string> qualitys = new();
+    private readonly List<string> qualitys = [];
 
     public PageScanNT()
 	{
-		InitializeComponent();
+        InitializeComponent();
 
-        // Set the qualitys for the picker.
-        qualitys.Add("Lowest");
-        qualitys.Add("Low");
-        qualitys.Add("Medium");
-        qualitys.Add("High");
-        qualitys.Add("Highest");
+        // Set the title and qualitys for the picker.
+        pckCameraQuality.Title = CodeLang.CameraQualityTitle_Text + ": " + CodeLang.CameraQualityHigh_Text;
 
-        Quality.ItemsSource = qualitys;
+        qualitys.Add(CodeLang.CameraQualityLowest_Text);
+        qualitys.Add(CodeLang.CameraQualityLow_Text);
+        qualitys.Add(CodeLang.CameraQualityMedium_Text);
+        qualitys.Add(CodeLang.CameraQualityHigh_Text);
+        qualitys.Add(CodeLang.CameraQualityHighest_Text);
+
+        pckCameraQuality.ItemsSource = qualitys;
 
         // The height of the title bar is lower when an iPhone is in horizontal position.
         if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
@@ -98,7 +100,7 @@ public partial class PageScanNT : ContentPage
             11 => BarcodeFormats.QRCode,
             12 => BarcodeFormats.Upca,
             13 => BarcodeFormats.Upce,
-            _ => BarcodeFormats.All,
+            _ => BarcodeFormats.All
         };
     }
 
@@ -124,7 +126,7 @@ public partial class PageScanNT : ContentPage
             14 => BarcodeFormats.QRCode,
             15 => BarcodeFormats.Upca,
             16 => BarcodeFormats.Upce,
-            _ => BarcodeFormats.All,
+            _ => BarcodeFormats.All
         };
     }
 
@@ -157,7 +159,7 @@ public partial class PageScanNT : ContentPage
     }
 
     // CameraView OnDetected event.
-    private void CameraView_OnDetectionFinished(object sender, OnDetectionFinishedEventArg e)
+    private void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
     {
         _drawable.barcodeResults = e.BarcodeResults;
         Graphics.Invalidate();
@@ -194,6 +196,38 @@ public partial class PageScanNT : ContentPage
         }
     }
 
+    // Picker quality changed event.
+    private void OnCameraQualityChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+
+        if (picker.SelectedIndex > -1 && picker.SelectedIndex < 5)
+        {
+            int selectedIndex = picker.SelectedIndex;
+
+            barcodeReader.CaptureQuality = selectedIndex switch
+            {
+                0 => CaptureQuality.Lowest,
+                1 => CaptureQuality.Low,
+                2 => CaptureQuality.Medium,
+                3 => CaptureQuality.High,
+                4 => CaptureQuality.Highest,
+                _ => CaptureQuality.High
+            };
+
+            string cTitle = CodeLang.CameraQualityTitle_Text + ": ";
+            pckCameraQuality.Title = selectedIndex switch
+            {
+                0 => cTitle + CodeLang.CameraQualityLowest_Text,
+                1 => cTitle + CodeLang.CameraQualityLow_Text,
+                2 => cTitle + CodeLang.CameraQualityMedium_Text,
+                3 => cTitle + CodeLang.CameraQualityHigh_Text,
+                4 => cTitle + CodeLang.CameraQualityHighest_Text,
+                _ => cTitle + CodeLang.CameraQualityHigh_Text
+            };
+        }
+    }
+
     // ImageButton camera facing clicked event.
     private void OnCameraFacingClicked(object sender, EventArgs e)
     {
@@ -210,17 +244,6 @@ public partial class PageScanNT : ContentPage
     private void OnCameraVibrateClicked(object sender, EventArgs e)
     {
         barcodeReader.VibrationOnDetected = !barcodeReader.VibrationOnDetected;
-    }
-
-    // Picker quality changed event.
-    private void OnCameraQualityChanged(object sender, EventArgs e)
-    {
-        var picker = (Picker)sender;
-
-        if (picker.SelectedIndex > -1 && picker.SelectedIndex < 5)
-        {
-            barcodeReader.CaptureQuality = (CaptureQuality)picker.SelectedIndex;
-        }           
     }
 
     // Class for drawing the barcode bounding box.

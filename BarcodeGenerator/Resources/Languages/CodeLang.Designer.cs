@@ -188,6 +188,60 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to High.
+        /// </summary>
+        internal static string CameraQualityHigh_Text {
+            get {
+                return ResourceManager.GetString("CameraQualityHigh_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Highest.
+        /// </summary>
+        internal static string CameraQualityHighest_Text {
+            get {
+                return ResourceManager.GetString("CameraQualityHighest_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low.
+        /// </summary>
+        internal static string CameraQualityLow_Text {
+            get {
+                return ResourceManager.GetString("CameraQualityLow_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lowest.
+        /// </summary>
+        internal static string CameraQualityLowest_Text {
+            get {
+                return ResourceManager.GetString("CameraQualityLowest_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium.
+        /// </summary>
+        internal static string CameraQualityMedium_Text {
+            get {
+                return ResourceManager.GetString("CameraQualityMedium_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quality.
+        /// </summary>
+        internal static string CameraQualityTitle_Text {
+            get {
+                return ResourceManager.GetString("CameraQualityTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string Cancel_Text {
@@ -795,6 +849,42 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select the rear or front camera.
+        /// </summary>
+        internal static string ToolTipCameraFacing_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCameraFacing_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set the quality of the camera.
+        /// </summary>
+        internal static string ToolTipCameraQuality_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCameraQuality_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start or stop the camera.
+        /// </summary>
+        internal static string ToolTipCameraStartStop_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCameraStartStop_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the camera torch on or off.
+        /// </summary>
+        internal static string ToolTipCameraTorch_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCameraTorch_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy text to the clipboard.
         /// </summary>
         internal static string ToolTipCopy_Text {
@@ -863,15 +953,6 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string ToolTipTextToSpeech_Text {
             get {
                 return ResourceManager.GetString("ToolTipTextToSpeech_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Flashlight.
-        /// </summary>
-        internal static string ToolTipTorch_Text {
-            get {
-                return ResourceManager.GetString("ToolTipTorch_Text", resourceCulture);
             }
         }
         

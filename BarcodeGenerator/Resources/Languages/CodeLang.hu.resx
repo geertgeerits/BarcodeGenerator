@@ -160,6 +160,24 @@
     <value>Ha nem kapott engedélyt a kamera használatára, akkor a készülék beállításainál engedélyezheti a kamerát, válassza ki az alkalmazást és engedélyezze a kamerát.
 Egy másik lehetőség az alkalmazás eltávolítása és újratelepítése.</value>
   </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Legmagasabb</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Magas</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Legalacsonyabb</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Alacsony</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Közepes</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Minőség</value>
+  </data>
   <data name="Cancel_Text" xml:space="preserve">
     <value>Megszünteti</value>
   </data>
@@ -380,6 +398,18 @@ Nem megengedett:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Válassza ki a hátsó vagy az elülső kamerát</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Állítsa be a kamera minőségét</value>
+  </data>
+  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
+    <value>Indítsa el vagy állítsa le a kamerát</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Kapcsolja be vagy ki a fényképezőgép zseblámpáját</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Szöveg másolása a vágólapra</value>
   </data>
@@ -403,9 +433,6 @@ Nem megengedett:</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Szövegfelolvasó: be vagy ki</value>
-  </data>
-  <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Zseblámpa</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Változat:</value>

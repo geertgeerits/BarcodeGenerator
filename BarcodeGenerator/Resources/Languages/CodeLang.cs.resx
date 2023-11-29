@@ -160,6 +160,24 @@
     <value>Pokud nebylo uděleno povolení k použití kamery, lze kameru povolit v nastavení zařízení, vybrat aplikaci a povolit kameru.
 Další možností je odinstalovat a znovu nainstalovat aplikaci.</value>
   </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Nejvyšší</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Vysoký</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Nejnižší</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Nízký</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Střední</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Kvalitní</value>
+  </data>
   <data name="Cancel_Text" xml:space="preserve">
     <value>Zrušení</value>
   </data>
@@ -380,6 +398,18 @@ Nepovoleno:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Skener</value>
   </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Vyberte zadní nebo přední fotoaparát</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Nastavte kvalitu fotoaparátu</value>
+  </data>
+  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
+    <value>Spusťte nebo zastavte fotoaparát</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Zapněte nebo vypněte svítilnu fotoaparátu</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Zkopírujte text do schránky</value>
   </data>
@@ -403,9 +433,6 @@ Nepovoleno:</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Převod textu na řeč: zapnuto nebo vypnuto</value>
-  </data>
-  <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Svítilna</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Verze:</value>

@@ -160,6 +160,24 @@
     <value>Dacă nu a fost acordată permisiunea de a utiliza camera, camera poate fi activată în setările dispozitivului, selectați aplicația și activați camera.
 O altă opțiune este să dezinstalați și să reinstalați aplicația.</value>
   </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Cel mai inalt</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Înalt</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Cel mai scăzut</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Scăzut</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Mediu</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Calitate</value>
+  </data>
   <data name="Cancel_Text" xml:space="preserve">
     <value>Anulare</value>
   </data>
@@ -380,6 +398,18 @@ Nepermis:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Selectați camera din spate sau din față</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Setați calitatea camerei</value>
+  </data>
+  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
+    <value>Porniți sau opriți camera</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Porniți sau opriți lanterna camerei</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiați textul în clipboard</value>
   </data>
@@ -403,9 +433,6 @@ Nepermis:</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Text în vorbire: activat sau dezactivat</value>
-  </data>
-  <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Lanternă</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Versiune:</value>

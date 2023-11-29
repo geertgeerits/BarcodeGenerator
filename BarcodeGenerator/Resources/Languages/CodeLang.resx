@@ -160,6 +160,24 @@
     <value>If permission to use the camera has not been given, the camera can be enabled in the device settings, select the application and enable the camera.
 Another option is to uninstall and reinstall the application.</value>
   </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Highest</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Lowest</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Quality</value>
+  </data>
   <data name="Cancel_Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -386,6 +404,18 @@ Not allowed:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Select the rear or front camera</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Set the quality of the camera</value>
+  </data>
+  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
+    <value>Start or stop the camera</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Turn the camera torch on or off</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copy text to the clipboard</value>
   </data>
@@ -409,9 +439,6 @@ Not allowed:</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Text to speech: on or off</value>
-  </data>
-  <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Flashlight</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>

@@ -160,6 +160,24 @@
     <value>Se a permissão para usar a câmera não foi concedida, a câmera pode ser ativada nas configurações do dispositivo, selecione o aplicativo e ative a câmera.
 Outra opção é desinstalar e reinstalar o aplicativo.</value>
   </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Altíssima</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Alto</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Mais baixo</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Baixo</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Médio</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Qualidade</value>
+  </data>
   <data name="Cancel_Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
@@ -380,6 +398,18 @@ Não permitido:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Selecione a câmera traseira ou frontal</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Defina a qualidade da câmera</value>
+  </data>
+  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
+    <value>Iniciar ou parar a câmera</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Ligar ou desligar a tocha da câmera</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copie o texto para a área de transferência</value>
   </data>
@@ -403,9 +433,6 @@ Não permitido:</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Texto para fala: ativado ou desativado</value>
-  </data>
-  <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Lanterna</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Versão:</value>

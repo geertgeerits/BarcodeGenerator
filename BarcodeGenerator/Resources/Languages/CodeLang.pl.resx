@@ -160,6 +160,24 @@
     <value>Jeśli nie udzielono zgody na korzystanie z kamery, można ją włączyć w ustawieniach urządzenia, wybrać aplikację i włączyć kamerę.
 Inną opcją jest odinstalowanie i ponowne zainstalowanie aplikacji.</value>
   </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Najwyższy</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Wysoki</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Najniższy</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Niski</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Średni</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Jakość</value>
+  </data>
   <data name="Cancel_Text" xml:space="preserve">
     <value>Anulować</value>
   </data>
@@ -380,6 +398,18 @@ Niedozwolony:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Skaner</value>
   </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Wybierz tylną lub przednią kamerę</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Ustaw jakość aparatu</value>
+  </data>
+  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
+    <value>Uruchom lub zatrzymaj kamerę</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Włącz lub wyłącz latarkę aparatu</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Skopiuj tekst do schowka</value>
   </data>
@@ -403,9 +433,6 @@ Niedozwolony:</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Tekst na mowę: wł. lub wył</value>
-  </data>
-  <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Latarka</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Wersja:</value>

@@ -160,6 +160,24 @@
     <value>Wenn keine Erlaubnis zur Nutzung der Kamera erteilt wurde, kann die Kamera in den Geräteeinstellungen aktiviert werden, die Anwendung auswählen und die Kamera aktivieren.
 Eine andere Möglichkeit besteht darin, die Anwendung zu deinstallieren und erneut zu installieren.</value>
   </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Höchste</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Hoch</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Am niedrigsten</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Niedrig</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Mittel</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Qualität</value>
+  </data>
   <data name="Cancel_Text" xml:space="preserve">
     <value>Stornieren</value>
   </data>
@@ -380,6 +398,18 @@ Nicht erlaubt:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Wählen Sie die hintere oder vordere Kamera</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Stellen Sie die Qualität der Kamera ein</value>
+  </data>
+  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
+    <value>Starten oder stoppen Sie die Kamera</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Schalten Sie die Taschenlampe der Kamera ein oder aus</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Text in die Zwischenablage kopieren</value>
   </data>
@@ -403,9 +433,6 @@ Nicht erlaubt:</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Text zu Sprache: ein oder aus</value>
-  </data>
-  <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Taschenlampe</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Ausführung:</value>

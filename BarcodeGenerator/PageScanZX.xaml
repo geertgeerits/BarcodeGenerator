@@ -67,8 +67,8 @@
                 VerticalOptions="Center"
                 HeightRequest="36"
                 WidthRequest="36"
-                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipTorch_Text}"
-                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTorch_Text}"
+                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
+                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
                 Clicked="OnTorchClicked">
             </ImageButton>
         </Grid>

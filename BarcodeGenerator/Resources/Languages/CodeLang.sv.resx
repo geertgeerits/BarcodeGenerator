@@ -160,6 +160,24 @@
     <value>Om tillstånd att använda kameran inte har getts kan kameran aktiveras i enhetsinställningarna, välj applikationen och aktivera kameran.
 Ett annat alternativ är att avinstallera och installera om programmet.</value>
   </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Högsta</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Hög</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Lägst</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Låg</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Kvalitet</value>
+  </data>
   <data name="Cancel_Text" xml:space="preserve">
     <value>Annullera</value>
   </data>
@@ -380,6 +398,18 @@ Inte tillåtet:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Välj den bakre eller främre kameran</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Ställ in kvaliteten på kameran</value>
+  </data>
+  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
+    <value>Starta eller stoppa kameran</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Slå på eller av kamerafacket</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopiera text till urklipp</value>
   </data>
@@ -403,9 +433,6 @@ Inte tillåtet:</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Text till tal: på eller av</value>
-  </data>
-  <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Ficklampa</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>

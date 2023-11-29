@@ -818,12 +818,12 @@ public partial class MainPage : ContentPage
     }
 
     // Display a message with no encoder available for format.
-    private void DisplayMessageFormat(string cFormat)
-    {
-        DisplayAlert(CodeLang.FormatTitle_Text, $"{cFormat} {CodeLang.FormatNotSupported_Text}", CodeLang.ButtonClose_Text);
+    //private void DisplayMessageFormat(string cFormat)
+    //{
+    //    DisplayAlert(CodeLang.FormatTitle_Text, $"{cFormat} {CodeLang.FormatNotSupported_Text}", CodeLang.ButtonClose_Text);
 
-        edtTextToCode.Focus();
-    }
+    //    edtTextToCode.Focus();
+    //}
 
     // Display an error message.
     private void DisplayErrorMessage(string cMessage)
@@ -867,8 +867,9 @@ public partial class MainPage : ContentPage
 #if IOS
                 //Thread.CurrentThread.Abort();  // Not allowed in iOS.
                 imgbtnAbout.IsEnabled = false;
-                imgbtnScanGV.IsEnabled = false;
-                imgbtnScanZX.IsEnabled = false;
+                imgbtnScanNT.IsEnabled = false;
+                //imgbtnScanGV.IsEnabled = false;
+                //imgbtnScanZX.IsEnabled = false;
                 imgbtnSettings.IsEnabled = false;
                 btnGenerateCode.IsEnabled = false;
 

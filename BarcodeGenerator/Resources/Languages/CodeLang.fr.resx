@@ -160,6 +160,24 @@
     <value>Si l'autorisation d'utiliser l'appareil photo n'a pas été donnée, l'appareil photo peut être activé dans les paramètres de l'appareil, sélectionnez l'application et activez l'appareil photo.
 Une autre option consiste à désinstaller et réinstaller l'application.</value>
   </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Le plus élevé</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Haut</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Le plus bas</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Bas</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Moyen</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Qualité</value>
+  </data>
   <data name="Cancel_Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
@@ -380,6 +398,18 @@ Interdit:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Sélectionnez la caméra arrière ou avant</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Définir la qualité de la caméra</value>
+  </data>
+  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
+    <value>Démarrer ou arrêter la caméra</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Allumer ou éteindre la lampe torche de l'appareil photo</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiez le texte dans le presse-papiers</value>
   </data>
@@ -403,9 +433,6 @@ Interdit:</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Synthèse vocale : activé ou désactivé</value>
-  </data>
-  <data name="ToolTipTorch_Text" xml:space="preserve">
-    <value>Lampe de poche</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>
