@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.37
-// Date ........: 2023-11-28 (YYYY-MM-DD)
+// Date ........: 2023-11-29 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator using ZXing
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -40,8 +40,8 @@ public partial class MainPage : ContentPage
 
         // Get the saved settings.
         Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
-        Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 15);
-        Globals.nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 21);
+        Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 12);
+        Globals.nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 0);
         Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
         Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
         Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
@@ -73,10 +73,10 @@ public partial class MainPage : ContentPage
             // Set the tooltips for the scanner buttons.
             ToolTipProperties.SetText(imgbtnScanNT, CodeLang.ToolTipBarcodeScanner_Text + " (Native)");
 
-#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
-        // Make the the scan icon for Google Vision visible.
-        imgbtnScanNT.IsVisible = true;
-#endif
+//#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
+//        // Make the the scan icon for Google Vision visible.
+//        imgbtnScanGV.IsVisible = true;
+//#endif
 
         // Set the theme.
         Globals.SetTheme();
@@ -84,10 +84,10 @@ public partial class MainPage : ContentPage
         // Set the barcode list and the current default barcode format in the picker for the barcode generator.
         pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
 
-        if (Globals.nFormatGeneratorIndex < 0 || Globals.nFormatGeneratorIndex > 20)
+        if (Globals.nFormatGeneratorIndex < 0 || Globals.nFormatGeneratorIndex > 14)
         {
             // Default format code = QrCode.
-            pckFormatCodeGenerator.SelectedIndex = 15;
+            pckFormatCodeGenerator.SelectedIndex = 12;
         }
         else
         {
@@ -190,16 +190,8 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Codabar;
                     break;
 
-                // Code128.
-                case 2:
-                    edtTextToCode.MaxLength = 48;
-                    edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.BarcodeMargin = 20;
-                    bgvBarcode.Format = BarcodeFormat.Code128;
-                    break;
-
                 // Code39.
-                case 3:
+                case 2:
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 4;
@@ -207,11 +199,19 @@ public partial class MainPage : ContentPage
                     break;
 
                 // Code93.
-                case 4:
+                case 3:
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Code93;
+                    break;
+
+                // Code128.
+                case 4:
+                    edtTextToCode.MaxLength = 48;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    bgvBarcode.BarcodeMargin = 20;
+                    bgvBarcode.Format = BarcodeFormat.Code128;
                     break;
 
                 // DataMatrix.
@@ -224,50 +224,32 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.DataMatrix;
                     break;
 
-                // Ean13.
-                case 6:
-                    edtTextToCode.MaxLength = 13;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 4;
-                    bgvBarcode.Format = BarcodeFormat.Ean13;
-                    break;
-
                 // Ean8.
-                case 7:
+                case 6:
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Ean8;
                     break;
 
-                // Imb.
-                case 8:
-                    edtTextToCode.MaxLength = 31;
+                // Ean13.
+                case 7:
+                    edtTextToCode.MaxLength = 13;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 0;
-                    bgvBarcode.Format = BarcodeFormat.Imb;
+                    bgvBarcode.BarcodeMargin = 4;
+                    bgvBarcode.Format = BarcodeFormat.Ean13;
                     break;
 
                 // Itf.
-                case 9:
+                case 8:
                     edtTextToCode.MaxLength = 30;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 8;
                     bgvBarcode.Format = BarcodeFormat.Itf;
                     break;
 
-                // MaxiCode.
-                case 10:
-                    edtTextToCode.MaxLength = 93;
-                    edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.HeightRequest = 250;
-                    bgvBarcode.WidthRequest = 250;
-                    bgvBarcode.BarcodeMargin = 8;
-                    bgvBarcode.Format = BarcodeFormat.MaxiCode;
-                    break;
-
                 // Msi.
-                case 11:
+                case 9:
                     edtTextToCode.MaxLength = 255;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 10;
@@ -275,23 +257,15 @@ public partial class MainPage : ContentPage
                     break;
 
                 // Pdf417.
-                case 12:
+                case 10:
                     edtTextToCode.MaxLength = 1800;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 10;
                     bgvBarcode.Format = BarcodeFormat.Pdf417;
                     break;
 
-                // PharmaCode.
-                case 13:
-                    edtTextToCode.MaxLength = 6;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 0;
-                    bgvBarcode.Format = BarcodeFormat.PharmaCode;
-                    break;
-
                 // Plessey.
-                case 14:
+                case 11:
                     edtTextToCode.MaxLength = 16;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 8;
@@ -299,7 +273,7 @@ public partial class MainPage : ContentPage
                     break;
 
                 // QrCode.
-                case 15:
+                case 12:
                     edtTextToCode.MaxLength = 1800;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = 250;
@@ -308,24 +282,8 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.QrCode;
                     break;
 
-                // Rss14.
-                case 16:
-                    edtTextToCode.MaxLength = 14;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 0;
-                    bgvBarcode.Format = BarcodeFormat.Rss14;
-                    break;
-
-                // RssExpanded.
-                case 17:
-                    edtTextToCode.MaxLength = 74;
-                    edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.BarcodeMargin = 0;
-                    bgvBarcode.Format = BarcodeFormat.RssExpanded;
-                    break;
-
                 // UpcA.
-                case 18:
+                case 13:
                     edtTextToCode.MaxLength = 12;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 0;
@@ -333,19 +291,11 @@ public partial class MainPage : ContentPage
                     break;
 
                 // UpcE.
-                case 19:
+                case 14:
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 8;
                     bgvBarcode.Format = BarcodeFormat.UpcE;
-                    break;
-
-                // UpcEanExtension.
-                case 20:
-                    edtTextToCode.MaxLength = 2;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 4;
-                    bgvBarcode.Format = BarcodeFormat.UpcEanExtension;
                     break;
             }
         }
@@ -418,20 +368,8 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Code128.
-                    case 2:
-                        cTextToCode = ReplaceCharacters(cTextToCode);
-                        edtTextToCode.Text = cTextToCode;
-
-                        if (TestAllowedAsciiValues(1, 127, cTextToCode) == false)
-                        {
-                            return;
-                        }
-
-                        break;
-
                     // Code39.
-                    case 3:
+                    case 2:
                         cTextToCode = cTextToCode.ToUpper();
 
                         if (TestAllowedCharacters("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*", cTextToCode) == false)
@@ -447,7 +385,7 @@ public partial class MainPage : ContentPage
                         break;
 
                     // Code93.
-                    case 4:
+                    case 3:
                         cTextToCode = cTextToCode.ToUpper();
 
                         if (TestAllowedCharacters("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*", cTextToCode) == false)
@@ -456,6 +394,18 @@ public partial class MainPage : ContentPage
                         }
 
                         if (TestStartEndGuards("*", cTextToCode) == false)
+                        {
+                            return;
+                        }
+
+                        break;
+
+                    // Code128.
+                    case 4:
+                        cTextToCode = ReplaceCharacters(cTextToCode);
+                        edtTextToCode.Text = cTextToCode;
+
+                        if (TestAllowedAsciiValues(1, 127, cTextToCode) == false)
                         {
                             return;
                         }
@@ -474,40 +424,8 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Ean13.
-                    case 6:
-                        if (TestAllowedCharacters("0123456789", cTextToCode) == false)
-                        {
-                            return;
-                        }
-
-                        if (nLenTextToCode < 12 || nLenTextToCode > 13)
-                        {
-                            DisplayErrorMessageLength("12", "13");
-                            return;
-                        }
-
-                        // Calculate, (correct) and add the checksum.
-                        if (nLenTextToCode == 13)
-                        {
-                            cChecksum = cTextToCode.Substring(12, 1);
-                        }
-
-                        cTextToCode = cTextToCode[..12];
-                        cTextToCode += CalculateChecksumEanUpcA(ReverseString(cTextToCode));
-
-                        if (nLenTextToCode == 13 && cChecksum != cTextToCode.Substring(12, 1))
-                        {
-                            DisplayErrorMessage(CodeLang.CheckDigitError_Text);
-                        }
-
-                        edtTextToCode.Text = cTextToCode;
-                        //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 6));
-
-                        break;
-
                     // Ean8.
-                    case 7:
+                    case 6:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
                             return;
@@ -538,15 +456,40 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Imb.
-                    case 8:
-                        DisplayMessageFormat("IMb");
-                        return;
+                    // Ean13.
+                    case 7:
+                        if (TestAllowedCharacters("0123456789", cTextToCode) == false)
+                        {
+                            return;
+                        }
 
-                        //break;
+                        if (nLenTextToCode < 12 || nLenTextToCode > 13)
+                        {
+                            DisplayErrorMessageLength("12", "13");
+                            return;
+                        }
+
+                        // Calculate, (correct) and add the checksum.
+                        if (nLenTextToCode == 13)
+                        {
+                            cChecksum = cTextToCode.Substring(12, 1);
+                        }
+
+                        cTextToCode = cTextToCode[..12];
+                        cTextToCode += CalculateChecksumEanUpcA(ReverseString(cTextToCode));
+
+                        if (nLenTextToCode == 13 && cChecksum != cTextToCode.Substring(12, 1))
+                        {
+                            DisplayErrorMessage(CodeLang.CheckDigitError_Text);
+                        }
+
+                        edtTextToCode.Text = cTextToCode;
+                        //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 6));
+
+                        break;
 
                     // Itf.
-                    case 9:
+                    case 8:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
                             return;
@@ -560,15 +503,8 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // MaxiCode.
-                    case 10:
-                        DisplayMessageFormat("MaxiCode");
-                        return;
-
-                        //break;
-
                     // Msi.
-                    case 11:
+                    case 9:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
                             return;
@@ -577,7 +513,7 @@ public partial class MainPage : ContentPage
                         break;
 
                     // Pdf417.
-                    case 12:
+                    case 10:
                         cTextToCode = ReplaceCharacters(cTextToCode);
                         edtTextToCode.Text = cTextToCode;
 
@@ -588,15 +524,8 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // PharmaCode.
-                    case 13:
-                        DisplayMessageFormat("Pharmacode");
-                        return;
-
-                        //break;
-
                     // Plessey.
-                    case 14:
+                    case 11:
                         cTextToCode = cTextToCode.ToUpper();
 
                         if (TestAllowedCharacters("0123456789ABCDEF", cTextToCode) == false)
@@ -607,25 +536,11 @@ public partial class MainPage : ContentPage
                         break;
 
                     // QrCode.
-                    case 15:
+                    case 12:
                         break;
 
-                    // Rss14.
-                    case 16:
-                        DisplayMessageFormat("RSS 14");
-                        return;
-
-                        //break;
-
-                    // RssExpanded.
-                    case 17:
-                        DisplayMessageFormat("RSS Expanded");
-                        return;
-
-                        //break;
-
                     // UpcA.
-                    case 18:
+                    case 13:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
                             return;
@@ -657,7 +572,7 @@ public partial class MainPage : ContentPage
                         break;
 
                     // UpcE.
-                    case 19:
+                    case 14:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
                             return;
@@ -721,18 +636,6 @@ public partial class MainPage : ContentPage
                         //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 1));
 
                         break;
-
-                    // UpcEanExtension.
-                    case 20:
-                        DisplayMessageFormat("UPC EAN Extension");
-                        return;
-
-                        //if (TestAllowedCharacters("0123456789", cTextToCode) == false)
-                        //{
-                        //    return;
-                        //}
-
-                        //break;
                 }
             }
             catch (Exception)

@@ -44,8 +44,8 @@
                 Source="scan_barcode_icon_128p.png"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                HeightRequest="33"
-                WidthRequest="33"
+                HeightRequest="36"
+                WidthRequest="36"
                 Clicked="OnPageScanClickedNT">
             </ImageButton>
 

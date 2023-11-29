@@ -25,13 +25,17 @@ public partial class PageScanNT : ContentPage
         {
             lblTitle.VerticalOptions = LayoutOptions.Start;
             lblTitle.VerticalTextAlignment = TextAlignment.Start;
-            imgbtnCameraFacing.VerticalOptions = LayoutOptions.Start;
             imgbtnCameraStartStop.VerticalOptions = LayoutOptions.Start;
+            imgbtnCameraFacing.VerticalOptions = LayoutOptions.Start;
             imgbtnCameraTorch.VerticalOptions = LayoutOptions.Start;
         }
 
         // Put text in the chosen language in the controls.
-        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNative();
+#if ANDROID        
+        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
+#elif IOS
+        pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeIOS();
+#endif
 
         // Default format code = All codes
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
@@ -65,96 +69,63 @@ public partial class PageScanNT : ContentPage
             btnShare.IsEnabled = false;
             imgbtnTextToSpeech.IsEnabled = false;
 
-            switch (selectedIndex)
-            {
-                // Aztec.
-                case 0:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.Aztec;
-                    break;
+#if ANDROID
+            SetScannerPropertiesAndroid(selectedIndex);
+#elif IOS
+            SetScannerPropertiesIOS(selectedIndex);
+#endif
 
-                // Codabar.
-                case 1:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.CodaBar;
-                    break;
-
-                // Code39.
-                case 2:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.Code39;
-                    break;
-
-                // Code93.
-                case 3:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.Code93;
-                    break;
-
-                // Code128.
-                case 4:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.Code128;
-                    break;
-
-                // DataMatrix.
-                case 5:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.DataMatrix;
-                    break;
-
-                // Ean8.
-                case 6:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.Ean8;
-                    break;
-
-                // Ean13.
-                case 7:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.Ean13;
-                    break;
-
-                // GS1DataBar.
-                case 8:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.GS1DataBar;
-                    break;
-
-                // Itf.
-                case 9:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.Itf;
-                    break;
-
-                // MicroPdf417.
-                case 10:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.MicroPdf417;
-                    break;
-
-                // MicroQR.
-                case 11:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.MicroQR;
-                    break;
-
-                // Pdf417.
-                case 12:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.Pdf417;
-                    break;
-
-                // QrCode.
-                case 13:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.QRCode;
-                    break;
-
-                // UpcA.
-                case 14:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.Upca;
-                    break;
-
-                // UpcE.
-                case 15:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.Upce;
-                    break;
-
-                // All.
-                case 16:
-                    barcodeReader.BarcodeSymbologies = BarcodeFormats.All;
-                    break;
-            }
-            
             barcodeReader.CameraEnabled = true;
         }
+    }
+
+    // Set the scanner properties for the selected format code for Android.
+    private void SetScannerPropertiesAndroid(int selectedIndex)
+    {
+        barcodeReader.BarcodeSymbologies = selectedIndex switch
+        {
+            0 => BarcodeFormats.All,
+            1 => BarcodeFormats.Aztec,
+            2 => BarcodeFormats.CodaBar,
+            3 => BarcodeFormats.Code39,
+            4 => BarcodeFormats.Code93,
+            5 => BarcodeFormats.Code128,
+            6 => BarcodeFormats.DataMatrix,
+            7 => BarcodeFormats.Ean8,
+            8 => BarcodeFormats.Ean13,
+            9 => BarcodeFormats.Itf,
+            10 => BarcodeFormats.Pdf417,
+            11 => BarcodeFormats.QRCode,
+            12 => BarcodeFormats.Upca,
+            13 => BarcodeFormats.Upce,
+            _ => BarcodeFormats.All,
+        };
+    }
+
+    // Set the scanner properties for the selected format code for iOS.
+    private void SetScannerPropertiesIOS(int selectedIndex)
+    {
+        barcodeReader.BarcodeSymbologies = selectedIndex switch
+        {
+            0 => BarcodeFormats.All,
+            1 => BarcodeFormats.Aztec,
+            2 => BarcodeFormats.CodaBar,
+            3 => BarcodeFormats.Code39,
+            4 => BarcodeFormats.Code93,
+            5 => BarcodeFormats.Code128,
+            6 => BarcodeFormats.DataMatrix,
+            7 => BarcodeFormats.Ean8,
+            8 => BarcodeFormats.Ean13,
+            9 => BarcodeFormats.GS1DataBar,
+            10 => BarcodeFormats.Itf,
+            11 => BarcodeFormats.MicroPdf417,
+            12 => BarcodeFormats.MicroQR,
+            13 => BarcodeFormats.Pdf417,
+            14 => BarcodeFormats.QRCode,
+            15 => BarcodeFormats.Upca,
+            16 => BarcodeFormats.Upce,
+            _ => BarcodeFormats.All,
+        };
     }
 
     // Called by the Appearing event from the PageScanNT.xaml.
@@ -207,12 +178,6 @@ public partial class PageScanNT : ContentPage
         imgbtnTextToSpeech.IsEnabled = true;
     }
 
-    // ImageButton camera facing clicked event.
-    private void OnCameraFacingClicked(object sender, EventArgs e)
-    {
-        barcodeReader.CameraFacing = barcodeReader.CameraFacing == CameraFacing.Back ? CameraFacing.Front : CameraFacing.Back;
-    }
-
     // ImageButton camera start/stop clicked event.
     private void OnCameraStartStopClicked(object sender, EventArgs e)
     {
@@ -228,6 +193,12 @@ public partial class PageScanNT : ContentPage
         }
     }
 
+    // ImageButton camera facing clicked event.
+    private void OnCameraFacingClicked(object sender, EventArgs e)
+    {
+        barcodeReader.CameraFacing = barcodeReader.CameraFacing == CameraFacing.Back ? CameraFacing.Front : CameraFacing.Back;
+    }
+
     // ImageButton torch clicked event.
     private void OnCameraTorchClicked(object sender, EventArgs e)
     {
@@ -235,17 +206,20 @@ public partial class PageScanNT : ContentPage
     }
 
     // ImageButton camera vibrite clicked event.
-    private void VibrateButton_Clicked(object sender, EventArgs e)
+    private void OnCameraVibrateClicked(object sender, EventArgs e)
     {
         barcodeReader.VibrationOnDetected = !barcodeReader.VibrationOnDetected;
     }
 
     // Picker quality changed event.
-    private void Quality_SelectedIndexChanged(object sender, EventArgs e)
+    private void OnCameraQualityChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
+
         if (picker.SelectedIndex > -1 && picker.SelectedIndex < 5)
+        {
             barcodeReader.CaptureQuality = (CaptureQuality)picker.SelectedIndex;
+        }           
     }
 
     // Class for drawing the barcode bounding box.

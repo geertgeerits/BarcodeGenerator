@@ -52,9 +52,23 @@
             </Label>
 
             <ImageButton
-                x:Name="imgbtnCameraFacing"
+                x:Name="imgbtnCameraStartStop"
                 Grid.Row="0"
                 Grid.Column="1"
+                Source="camera_stop_128x128p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="40"
+                WidthRequest="40"
+                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipTorch_Text}"
+                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTorch_Text}"
+                Clicked="OnCameraStartStopClicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="imgbtnCameraFacing"
+                Grid.Row="0"
+                Grid.Column="2"
                 Source="camera_facing_128x128p.png"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
@@ -63,20 +77,6 @@
                 SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipTorch_Text}"
                 ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTorch_Text}"
                 Clicked="OnCameraFacingClicked">
-            </ImageButton>
-
-            <ImageButton
-                x:Name="imgbtnCameraStartStop"
-                Grid.Row="0"
-                Grid.Column="2"
-                Source="camera_stop_128x128p.png"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="36"
-                WidthRequest="36"
-                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipTorch_Text}"
-                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTorch_Text}"
-                Clicked="OnCameraStartStopClicked">
             </ImageButton>
 
             <ImageButton
@@ -153,10 +153,10 @@
                             InputTransparent="True">
                         </GraphicsView>
 
-                        <Grid ColumnDefinitions="*, *, *" >
-                            <Picker x:Name="Quality" Title="Quality" Grid.Column="2" BackgroundColor="Transparent"  WidthRequest="45" HeightRequest="45" SelectedIndexChanged="Quality_SelectedIndexChanged"/>
-                            <Button Text="Q" Grid.Column="2" WidthRequest="50" HeightRequest="50" CornerRadius="25" InputTransparent="True"/>
-                            <Button Text="V" Grid.Column="3" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="VibrateButton_Clicked"/>
+                        <Grid ColumnDefinitions="*, *" >
+                            <Picker x:Name="Quality" Title="Quality" Grid.Column="2" BackgroundColor="Transparent"  WidthRequest="45" HeightRequest="45" SelectedIndexChanged="OnCameraQualityChanged"/>
+                            <Button Text="Q" Grid.Column="0" WidthRequest="50" HeightRequest="50" CornerRadius="25" InputTransparent="True"/>
+                            <Button Text="V" Grid.Column="1" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="OnCameraVibrateClicked"/>
                         </Grid>
                     </StackLayout>
                 </Frame>
@@ -261,12 +261,12 @@
                       InputTransparent="True"/>
 
         <Grid ColumnDefinitions="*, *, *, *, *" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,0.1">
-            <Picker x:Name="Quality" Title="Quality" Grid.Column="2" BackgroundColor="Transparent"  WidthRequest="45" HeightRequest="45" SelectedIndexChanged="Quality_SelectedIndexChanged"/>
+            <Picker x:Name="Quality" Title="Quality" Grid.Column="2" BackgroundColor="Transparent"  WidthRequest="45" HeightRequest="45" SelectedIndexChanged="OnCameraQualityChanged"/>
 
             <Button Text="C" Grid.Column="0" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="CameraButton_Clicked"/>
             <Button Text="T" Grid.Column="1" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="OnTorchClicked"/>
             <Button Text="Q" Grid.Column="2" WidthRequest="50" HeightRequest="50" CornerRadius="25" InputTransparent="True"/>
-            <Button Text="V" Grid.Column="3" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="VibrateButton_Clicked"/>
+            <Button Text="V" Grid.Column="3" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="OnCameraVibrateClicked"/>
             <Button Text="P" Grid.Column="4" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="PauseButton_Clicked"/>
         </Grid>
     </AbsoluteLayout>-->
