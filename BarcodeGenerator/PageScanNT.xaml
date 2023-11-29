@@ -74,8 +74,6 @@
                 VerticalOptions="Center"
                 HeightRequest="36"
                 WidthRequest="36"
-                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
-                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
                 InputTransparent="True">
             </ImageButton>
             
@@ -88,6 +86,8 @@
                 TextColor="Transparent"
                 HeightRequest="45"
                 WidthRequest="45"
+                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
+                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                
                 SelectedIndexChanged="OnCameraQualityChanged"/>
 
             <ImageButton
