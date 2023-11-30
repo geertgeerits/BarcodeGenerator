@@ -11,16 +11,20 @@ public partial class PageScanNT : ContentPage
 	{
         InitializeComponent();
 
-        // Set the title and qualitys for the picker.
+        // Set the title and quality for the picker.
         pckCameraQuality.Title = CodeLang.CameraQualityTitle_Text + ": " + CodeLang.CameraQualityHigh_Text;
 
         qualitys.Add(CodeLang.CameraQualityLowest_Text);
         qualitys.Add(CodeLang.CameraQualityLow_Text);
         qualitys.Add(CodeLang.CameraQualityMedium_Text);
         qualitys.Add(CodeLang.CameraQualityHigh_Text);
+#if ANDROID
+        // iOS does not support the highest quality. !!!BUG!!!?
         qualitys.Add(CodeLang.CameraQualityHighest_Text);
-
+#endif
         pckCameraQuality.ItemsSource = qualitys;
+        
+        pckCameraQuality.SelectedIndex = 3;
 
         // The height of the title bar is lower when an iPhone is in horizontal position.
         if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
@@ -33,11 +37,15 @@ public partial class PageScanNT : ContentPage
             imgbtnCameraTorch.VerticalOptions = LayoutOptions.Start;
         }
 
-        // Put text in the chosen language in the controls.
 #if ANDROID        
+        // Set the barcodes in the picker for Android.
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
+        // Set the barcodes in the picker for iOS.
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeIOS();
+
+        // Setting the image button property InputTransparent="True" does not work on iOS. !!!BUG!!!?
+        imgbtnCameraQuality.InputTransparent = false;
 #endif
 
         // Default format code = All codes
@@ -203,6 +211,15 @@ public partial class PageScanNT : ContentPage
         }
     }
 
+    // ImageButton camera quality clicked event to open the picker.
+    // Setting the image button property InputTransparent="True" does not work on iOS. !!!BUG!!!?
+    private void OnCameraQualityClicked(object sender, EventArgs e)
+    {
+#if IOS
+        pckCameraQuality.Focus();
+#endif  
+    }
+
     // Picker quality changed event.
     private void OnCameraQualityChanged(object sender, EventArgs e)
     {
@@ -223,7 +240,7 @@ public partial class PageScanNT : ContentPage
             };
 
             string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
-            pckCameraQuality.Title = selectedIndex switch
+            picker.Title = selectedIndex switch
             {
                 0 => cTitle + CodeLang.CameraQualityLowest_Text,
                 1 => cTitle + CodeLang.CameraQualityLow_Text,

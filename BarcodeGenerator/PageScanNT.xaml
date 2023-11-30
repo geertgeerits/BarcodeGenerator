@@ -65,18 +65,6 @@
                 Clicked="OnCameraStartStopClicked">
             </ImageButton>
 
-            <ImageButton
-                x:Name="imgbtnCameraQuality"
-                Grid.Row="0"
-                Grid.Column="2"
-                Source="camera_quality_128x128p.png"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="36"
-                WidthRequest="36"
-                InputTransparent="True">
-            </ImageButton>
-
             <Picker
                 x:Name="pckCameraQuality"
                 Grid.Row="0"
@@ -90,6 +78,21 @@
                 ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                
                 SelectedIndexChanged="OnCameraQualityChanged">
             </Picker>
+
+            <ImageButton
+                x:Name="imgbtnCameraQuality"
+                Grid.Row="0"
+                Grid.Column="2"
+                Source="camera_quality_128x128p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="36"
+                WidthRequest="36"
+                InputTransparent="True"
+                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
+                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                
+                Clicked="OnCameraQualityClicked">
+            </ImageButton>
 
             <ImageButton
                 x:Name="imgbtnCameraFacing"
