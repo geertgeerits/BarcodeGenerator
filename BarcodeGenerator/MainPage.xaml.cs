@@ -13,7 +13,7 @@
 //                NuGet Package: BarcodeSchanner.Native.Maui by Alen Friščić version 1.0.3 ; https://github.com/afriscic/BarcodeScanning.Native.Maui
 //                NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/
 //                NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3 
-// Thanks to ...: Gerald Versluis
+// Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun
 
 using ZXing.Net.Maui;
 

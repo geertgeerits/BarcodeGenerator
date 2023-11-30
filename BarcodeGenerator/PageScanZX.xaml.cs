@@ -381,7 +381,10 @@ public partial class PageScanZX : ContentPage
     // Copy text to the clipboard clicked event.
     private async void OnCopyToClipboardClicked(object sender, EventArgs e)
     {
-        await Clipboard.Default.SetTextAsync(lblBarcodeResult.Text);
+        if (lblBarcodeResult.Text.Length > 0)
+        {
+            await Clipboard.Default.SetTextAsync(lblBarcodeResult.Text);
+        }
     }
 
     // Check and request camera permission for iOS.

@@ -9,19 +9,34 @@ public partial class PageScanNT : ContentPage
 
     public PageScanNT()
 	{
-        InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception ex)
+        {
+            Crashes.TrackError(ex);
+            DisplayAlert("InitializeComponent: PageScanNT", ex.Message, "OK");
+            return;
+        }
 
         // Set the title and quality for the picker.
+        // iOS on an iPad does not support the highest quality. !!!BUG!!!?
         pckCameraQuality.Title = CodeLang.CameraQualityTitle_Text + ": " + CodeLang.CameraQualityHigh_Text;
 
         qualitys.Add(CodeLang.CameraQualityLowest_Text);
         qualitys.Add(CodeLang.CameraQualityLow_Text);
         qualitys.Add(CodeLang.CameraQualityMedium_Text);
         qualitys.Add(CodeLang.CameraQualityHigh_Text);
+
 #if ANDROID
-        // iOS does not support the highest quality. !!!BUG!!!?
         qualitys.Add(CodeLang.CameraQualityHighest_Text);
 #endif
+        if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
+        {
+            qualitys.Add(CodeLang.CameraQualityHighest_Text);
+        }
+
         pckCameraQuality.ItemsSource = qualitys;
         
         pckCameraQuality.SelectedIndex = 3;
@@ -81,17 +96,17 @@ public partial class PageScanNT : ContentPage
             imgbtnTextToSpeech.IsEnabled = false;
 
 #if ANDROID
-            SetScannerPropertiesAndroid(selectedIndex);
+            SetScannerBarcodeFormatAndroid(selectedIndex);
 #elif IOS
-            SetScannerPropertiesIOS(selectedIndex);
+            SetScannerBarcodeFormatIOS(selectedIndex);
 #endif
 
             barcodeReader.CameraEnabled = true;
         }
     }
 
-    // Set the scanner properties for the selected format code for Android.
-    private void SetScannerPropertiesAndroid(int selectedIndex)
+    // Set the scanner barcode format for Android.
+    private void SetScannerBarcodeFormatAndroid(int selectedIndex)
     {
         barcodeReader.BarcodeSymbologies = selectedIndex switch
         {
@@ -113,8 +128,8 @@ public partial class PageScanNT : ContentPage
         };
     }
 
-    // Set the scanner properties for the selected format code for iOS.
-    private void SetScannerPropertiesIOS(int selectedIndex)
+    // // Set the scanner barcode format for iOS.
+    private void SetScannerBarcodeFormatIOS(int selectedIndex)
     {
         barcodeReader.BarcodeSymbologies = selectedIndex switch
         {
@@ -168,7 +183,7 @@ public partial class PageScanNT : ContentPage
     }
 
     // CameraView OnDetected event.
-    private void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
+    private async void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
     {
         lblBarcodeResult.Text = "";
 
@@ -176,24 +191,32 @@ public partial class PageScanNT : ContentPage
         btnShare.IsEnabled = false;
         imgbtnTextToSpeech.IsEnabled = false;
 
-        _drawable.barcodeResults = e.BarcodeResults;
-        Graphics.Invalidate();
-
-        string cBarcodeFormat = "";
-        string cDisplayValue = "";
-
-        foreach (var barcode in _drawable.barcodeResults)
+        try
         {
-            cBarcodeFormat = barcode.BarcodeFormat.ToString();
-            cDisplayValue = barcode.DisplayValue;
+            _drawable.barcodeResults = e.BarcodeResults;
+            Graphics.Invalidate();
+
+            string cBarcodeFormat = "";
+            string cDisplayValue = "";
+
+            foreach (var barcode in _drawable.barcodeResults)
+            {
+                cBarcodeFormat = barcode.BarcodeFormat.ToString();
+                cDisplayValue = barcode.DisplayValue;
+            }
+
+            btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
+            lblBarcodeResult.Text = cDisplayValue;
+
+            imgbtnCopyToClipboard.IsEnabled = true;
+            btnShare.IsEnabled = true;
+            imgbtnTextToSpeech.IsEnabled = true;
         }
-
-        btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
-        lblBarcodeResult.Text = cDisplayValue;
-
-        imgbtnCopyToClipboard.IsEnabled = true;
-        btnShare.IsEnabled = true;
-        imgbtnTextToSpeech.IsEnabled = true;
+        catch (Exception ex)
+        {
+            Crashes.TrackError(ex);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+        }
     }
 
     // ImageButton camera start/stop clicked event.
@@ -221,7 +244,7 @@ public partial class PageScanNT : ContentPage
     }
 
     // Picker quality changed event.
-    private void OnCameraQualityChanged(object sender, EventArgs e)
+    private async void OnCameraQualityChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
 
@@ -229,15 +252,24 @@ public partial class PageScanNT : ContentPage
         {
             int selectedIndex = picker.SelectedIndex;
 
-            barcodeReader.CaptureQuality = selectedIndex switch
+            try
             {
-                0 => CaptureQuality.Lowest,
-                1 => CaptureQuality.Low,
-                2 => CaptureQuality.Medium,
-                3 => CaptureQuality.High,
-                4 => CaptureQuality.Highest,
-                _ => CaptureQuality.High
-            };
+                barcodeReader.CaptureQuality = selectedIndex switch
+                {
+                    0 => CaptureQuality.Lowest,
+                    1 => CaptureQuality.Low,
+                    2 => CaptureQuality.Medium,
+                    3 => CaptureQuality.High,
+                    4 => CaptureQuality.Highest,
+                    _ => CaptureQuality.High
+                };
+            }
+            catch (Exception ex)
+            {
+                Crashes.TrackError(ex);
+                await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                return;
+            }
 
             string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
             picker.Title = selectedIndex switch
