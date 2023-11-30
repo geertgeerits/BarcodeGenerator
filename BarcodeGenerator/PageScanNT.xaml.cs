@@ -163,7 +163,7 @@ public partial class PageScanNT : ContentPage
         barcodeReader.PauseScanning = false;
         barcodeReader.CameraFacing = CameraFacing.Back;
         barcodeReader.PoolingInterval = 500;
-        barcodeReader.VibrationOnDetected = false;
+        barcodeReader.VibrationOnDetected = true;
         barcodeReader.CameraEnabled = true;
 
         Graphics.Drawable = _drawable;
