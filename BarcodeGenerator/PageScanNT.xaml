@@ -170,11 +170,17 @@
                         <native:CameraView
                             x:Name="barcodeReader"
                             Style="{StaticResource nativeCameraView}"
-                            OnDetectionFinished="OnCameraDetectionFinished"
+                            BarcodeSymbologies="All"
+                            CameraFacing="Back"
                             CaptureQuality="High"
                             ForceInverted="False"
+                            PauseScanning="False"
+                            PoolingInterval="500"
                             TapToFocusEnabled="True"
-                            BarcodeSymbologies="All">
+                            TorchOn="False"
+                            VibrationOnDetected="False"
+                            CameraEnabled="True"
+                            OnDetectionFinished="OnCameraDetectionFinished">
                         </native:CameraView>
 
                         <GraphicsView

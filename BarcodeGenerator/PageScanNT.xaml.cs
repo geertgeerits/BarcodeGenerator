@@ -160,10 +160,10 @@ public partial class PageScanNT : ContentPage
         await Methods.AskForRequiredPermissionAsync();
         base.OnAppearing();
 
-        barcodeReader.PauseScanning = false;
         barcodeReader.CameraFacing = CameraFacing.Back;
-        barcodeReader.PoolingInterval = 500;
-        barcodeReader.VibrationOnDetected = true;
+        barcodeReader.PauseScanning = false;
+        barcodeReader.TorchOn = false;
+        barcodeReader.VibrationOnDetected = false;
         barcodeReader.CameraEnabled = true;
 
         Graphics.Drawable = _drawable;
