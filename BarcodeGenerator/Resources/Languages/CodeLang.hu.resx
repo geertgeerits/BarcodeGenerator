@@ -408,6 +408,9 @@ Nem megengedett:</value>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Kapcsolja be vagy ki a fényképezőgép zseblámpáját</value>
   </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>A kamera bemozdulásának engedélyezése vagy letiltása vonalkód észlelésekor</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Szöveg másolása a vágólapra</value>
   </data>

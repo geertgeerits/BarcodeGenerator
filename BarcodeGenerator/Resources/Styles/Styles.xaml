@@ -431,6 +431,18 @@
         </Setter>
     </Style>
 
+    <Style x:Key="imageButtonStyleCamera" TargetType="ImageButton">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="WidthRequest" Value="50" />
+        <Setter Property="BackgroundColor" Value="DeepSkyBlue" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="BorderColor" Value="DarkGray" />
+        <Setter Property="CornerRadius" Value="25" />
+        <Setter Property="Margin" Value="0,10,0,0" />
+    </Style>
+
     <Style x:Key="pickerStyleSettings" TargetType="Picker">
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="VerticalTextAlignment" Value="Center" />

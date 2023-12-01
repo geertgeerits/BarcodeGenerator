@@ -162,8 +162,8 @@ public partial class PageScanNT : ContentPage
 
         barcodeReader.CameraFacing = CameraFacing.Back;
         barcodeReader.PauseScanning = false;
-        barcodeReader.TorchOn = false;
         barcodeReader.VibrationOnDetected = false;
+        barcodeReader.TorchOn = false;
         barcodeReader.CameraEnabled = true;
 
         Graphics.Drawable = _drawable;
@@ -297,10 +297,10 @@ public partial class PageScanNT : ContentPage
     }
 
     // ImageButton camera vibrite clicked event.
-    //private void OnCameraVibrateClicked(object sender, EventArgs e)
-    //{
-    //    barcodeReader.VibrationOnDetected = !barcodeReader.VibrationOnDetected;
-    //}
+    private void OnCameraVibrateClicked(object sender, EventArgs e)
+    {
+        barcodeReader.VibrationOnDetected = !barcodeReader.VibrationOnDetected;
+    }
 
     // Class for drawing the barcode bounding box.
     private class BarcodeDrawable : IDrawable
@@ -308,18 +308,18 @@ public partial class PageScanNT : ContentPage
         public HashSet<BarcodeResult>? barcodeResults;
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
-            //if (barcodeResults is not null && barcodeResults.Count > 0)
-            //{
-            //    canvas.StrokeSize = 10;
-            //    canvas.StrokeColor = Colors.Green;
-            //    var scale = 1 / canvas.DisplayScale;
-            //    canvas.Scale(scale, scale);
+            if (barcodeResults is not null && barcodeResults.Count > 0)
+            {
+                canvas.StrokeSize = 15;
+                canvas.StrokeColor = Colors.Green;
+                var scale = 1 / canvas.DisplayScale;
+                canvas.Scale(scale, scale);
 
-            //    foreach (var barcode in barcodeResults)
-            //    {
-            //        canvas.DrawRectangle(barcode.BoundingBox);
-            //    }
-            //}
+                foreach (var barcode in barcodeResults)
+                {
+                    canvas.DrawRectangle(barcode.BoundingBox);
+                }
+            }
         }
     }
 

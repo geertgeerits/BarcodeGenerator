@@ -408,6 +408,9 @@ Não permitido:</value>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Ligar ou desligar a tocha da câmera</value>
   </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Ativar ou desativar a vibração da câmera quando um código de barras for detectado</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copie o texto para a área de transferência</value>
   </data>

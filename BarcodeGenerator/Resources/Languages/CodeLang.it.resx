@@ -408,6 +408,9 @@ Non autorizzato:</value>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Accendi o spegni la torcia della fotocamera</value>
   </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Abilita o disabilita il movimento della fotocamera quando viene rilevato un codice a barre</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copia il testo negli appunti</value>
   </data>

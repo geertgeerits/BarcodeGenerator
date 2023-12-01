@@ -408,6 +408,9 @@ Nepermis:</value>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Porniți sau opriți lanterna camerei</value>
   </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Activați sau dezactivați mișcarea camerei atunci când este detectat un cod de bare</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiați textul în clipboard</value>
   </data>

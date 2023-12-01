@@ -408,6 +408,9 @@ No permitido:</value>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Encender o apagar la linterna de la cámara</value>
   </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Activar o desactivar el movimiento de la cámara cuando se detecta un código de barras</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copie el texto en el portapapeles</value>
   </data>

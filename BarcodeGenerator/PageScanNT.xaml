@@ -39,8 +39,8 @@
     <NavigationPage.TitleView>
         <Grid
             RowDefinitions="Auto"
-            ColumnDefinitions="140*, 50, 50, 50, 50"
-            BackgroundColor="#00bfff">
+            ColumnDefinitions="Auto"
+            BackgroundColor="DeepSkyBlue">
 
             <Label
                 x:Name="lblTitle"
@@ -50,77 +50,6 @@
                 Grid.ColumnSpan="2"
                 Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
             </Label>
-
-            <ImageButton
-                x:Name="imgbtnCameraStartStop"
-                Grid.Row="0"
-                Grid.Column="1"
-                Source="camera_stop_128x128p.png"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="40"
-                WidthRequest="40"
-                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraStartStop_Text}"
-                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraStartStop_Text}"
-                Clicked="OnCameraStartStopClicked">
-            </ImageButton>
-
-            <Picker
-                x:Name="pckCameraQuality"
-                Grid.Row="0"
-                Grid.Column="2"
-                Opacity="0"
-                BackgroundColor="Transparent"
-                TextColor="Transparent"
-                HeightRequest="45"
-                WidthRequest="45"
-                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
-                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                
-                SelectedIndexChanged="OnCameraQualityChanged">
-            </Picker>
-
-            <ImageButton
-                x:Name="imgbtnCameraQuality"
-                Grid.Row="0"
-                Grid.Column="2"
-                Source="camera_quality_128x128p.png"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="36"
-                WidthRequest="36"
-                InputTransparent="True"
-                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
-                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                
-                Clicked="OnCameraQualityClicked">
-            </ImageButton>
-
-            <ImageButton
-                x:Name="imgbtnCameraFacing"
-                Grid.Row="0"
-                Grid.Column="3"
-                Source="camera_facing_128x128p.png"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="32"
-                WidthRequest="32"
-                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraFacing_Text}"
-                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraFacing_Text}"
-                Clicked="OnCameraFacingClicked">
-            </ImageButton>
-
-            <ImageButton
-                x:Name="imgbtnCameraTorch"
-                Grid.Row="0"
-                Grid.Column="4"
-                Source="camera_torch_64x64p.png"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="36"
-                WidthRequest="36"
-                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
-                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
-                Clicked="OnCameraTorchClicked">
-            </ImageButton>
         </Grid>
     </NavigationPage.TitleView>
 
@@ -156,7 +85,6 @@
                     </Picker>
                 </Border>
 
-                <!--Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320.-->
                 <Frame
                     Grid.Row="2"
                     Grid.Column="0"
@@ -166,10 +94,11 @@
                     BackgroundColor="Transparent"
                     BorderColor="Transparent">
 
-                    <StackLayout>
+                    <AbsoluteLayout>
                         <native:CameraView
                             x:Name="barcodeReader"
-                            Style="{StaticResource nativeCameraView}"
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="0,0,1,1"
                             BarcodeSymbologies="All"
                             CameraFacing="Back"
                             CaptureQuality="High"
@@ -184,10 +113,80 @@
                         </native:CameraView>
 
                         <GraphicsView
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="0,0,1,1"
                             x:Name="Graphics"
                             InputTransparent="True">
                         </GraphicsView>
-                    </StackLayout>
+
+                        <Grid
+                            ColumnDefinitions="*, *, *, *, *"
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="0,0,1,0.1">
+
+                            <Picker
+                                x:Name="pckCameraQuality"
+                                Grid.Column="0"
+                                BackgroundColor="Transparent"
+                                WidthRequest="45"
+                                HeightRequest="45"
+                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                                                
+                                SelectedIndexChanged="OnCameraQualityChanged">
+                            </Picker>
+
+                            <ImageButton
+                                x:Name="imgbtnCameraQuality"
+                                Style="{StaticResource imageButtonStyleCamera}"
+                                Grid.Column="0"
+                                InputTransparent="True"
+                                Source="camera_quality_128x128p.png"
+                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                
+                                Clicked="OnCameraQualityClicked">
+                            </ImageButton>
+
+                            <ImageButton
+                                x:Name="imgbtnCameraFacing"
+                                Style="{StaticResource imageButtonStyleCamera}"
+                                Grid.Column="1"
+                                Source="camera_facing_128x128p.png"
+                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraFacing_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraFacing_Text}"
+                                Clicked="OnCameraFacingClicked">
+                            </ImageButton>
+
+                            <ImageButton
+                                x:Name="imgbtnCameraStartStop"
+                                Style="{StaticResource imageButtonStyleCamera}"
+                                Grid.Column="2"
+                                Source="camera_stop_128x128p.png"
+                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraStartStop_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraStartStop_Text}"
+                                Clicked="OnCameraStartStopClicked">
+                            </ImageButton>
+
+                            <ImageButton
+                                x:Name="imgbtnCameraVibrate"
+                                Style="{StaticResource imageButtonStyleCamera}"
+                                Grid.Column="3"
+                                Source="camera_vibrate_128x128p.png"
+                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraVibrate_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraVibrate_Text}"                                
+                                Clicked="OnCameraVibrateClicked">
+                            </ImageButton>
+
+                            <ImageButton
+                                x:Name="imgbtnCameraTorch"
+                                Style="{StaticResource imageButtonStyleCamera}"
+                                Grid.Column="4"
+                                Source="camera_torch_64x64p.png"
+                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
+                                Clicked="OnCameraTorchClicked">
+                            </ImageButton>
+                        </Grid>
+                    </AbsoluteLayout>
                 </Frame>
 
                 <HorizontalStackLayout
@@ -273,31 +272,4 @@
 
         </StackLayout>
     </ScrollView>
-
-    <!--<AbsoluteLayout>
-        <native:CameraView AbsoluteLayout.LayoutFlags="All"
-                            AbsoluteLayout.LayoutBounds="0,0,1,1"
-                            OnDetectionFinished="OnCameraDetectionFinished"
-                            CaptureQuality="High"
-                            ForceInverted="False"
-                            TapToFocusEnabled="True"
-                            BarcodeSymbologies="All"
-                            x:Name="barcodeReader"/>
-
-        <GraphicsView AbsoluteLayout.LayoutFlags="All"
-                      AbsoluteLayout.LayoutBounds="0,0,1,1"
-                      x:Name="Graphics"
-                      InputTransparent="True"/>
-
-        <Grid ColumnDefinitions="*, *, *, *, *" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,0.1">
-            <Picker x:Name="Quality" Title="Quality" Grid.Column="2" BackgroundColor="Transparent"  WidthRequest="45" HeightRequest="45" SelectedIndexChanged="OnCameraQualityChanged"/>
-
-            <Button Text="C" Grid.Column="0" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="OnCameraFacingClicked"/>
-            <Button Text="T" Grid.Column="1" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="OnCameraTorchClicked"/>
-            <Button Text="Q" Grid.Column="2" WidthRequest="50" HeightRequest="50" CornerRadius="25" InputTransparent="True"/>
-            <Button Text="V" Grid.Column="3" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="OnCameraVibrateClicked"/>
-            <Button Text="P" Grid.Column="4" WidthRequest="50" HeightRequest="50" CornerRadius="25" Clicked="OnCameraStartStopClicked"/>
-        </Grid>
-    </AbsoluteLayout>-->
-
 </ContentPage>

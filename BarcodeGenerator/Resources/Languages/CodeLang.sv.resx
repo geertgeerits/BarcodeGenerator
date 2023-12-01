@@ -408,6 +408,9 @@ Inte tillåtet:</value>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Slå på eller av kamerafacket</value>
   </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Aktivera eller inaktivera kameraskakning när en streckkod upptäcks</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopiera text till urklipp</value>
   </data>

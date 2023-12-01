@@ -414,6 +414,9 @@ Not allowed:</value>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Turn the camera torch on or off</value>
   </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Enable or disable camera shake when a barcode is detected</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copy text to the clipboard</value>
   </data>

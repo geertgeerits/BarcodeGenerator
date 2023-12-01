@@ -408,6 +408,9 @@ Nicht erlaubt:</value>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Schalten Sie die Taschenlampe der Kamera ein oder aus</value>
   </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Aktivieren oder deaktivieren Sie Kameraverwacklungen, wenn ein Barcode erkannt wird</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Text in die Zwischenablage kopieren</value>
   </data>

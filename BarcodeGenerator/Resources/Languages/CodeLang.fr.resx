@@ -408,6 +408,9 @@ Interdit:</value>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Allumer ou éteindre la lampe torche de l'appareil photo</value>
   </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Activer ou désactiver le bougé de l'appareil photo lorsqu'un code-barres est détecté</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiez le texte dans le presse-papiers</value>
   </data>

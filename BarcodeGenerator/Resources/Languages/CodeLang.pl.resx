@@ -408,6 +408,9 @@ Niedozwolony:</value>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Włącz lub wyłącz latarkę aparatu</value>
   </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Włącz lub wyłącz drgania aparatu po wykryciu kodu kreskowego</value>
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Skopiuj tekst do schowka</value>
   </data>
