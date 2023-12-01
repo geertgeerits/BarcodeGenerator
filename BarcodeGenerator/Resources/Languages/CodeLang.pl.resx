@@ -403,7 +403,7 @@ Niedozwolony:</value>
     <value>Ustaw jakość aparatu</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Uruchom lub zatrzymaj kamerę</value>
+    <value>Rozpocznij lub zatrzymaj skanowanie kodów kreskowych</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Włącz lub wyłącz latarkę aparatu</value>

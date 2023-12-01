@@ -157,15 +157,12 @@ public partial class PageScanNT : ContentPage
     // Called by the Appearing event from the PageScanNT.xaml.
     protected override async void OnAppearing()
     {
-        await Methods.AskForRequiredPermissionAsync();
+        // Ask for permission to use the camera.
+        _ = await Methods.AskForRequiredPermissionAsync();
         base.OnAppearing();
-
-        barcodeReader.CameraFacing = CameraFacing.Back;
-        barcodeReader.PauseScanning = false;
-        barcodeReader.VibrationOnDetected = false;
-        barcodeReader.TorchOn = false;
+        
+        // Enable the camera.
         barcodeReader.CameraEnabled = true;
-
         Graphics.Drawable = _drawable;
 
         // Set language text to speech using the Appearing event of the PageScanNT.xaml.
@@ -302,27 +299,6 @@ public partial class PageScanNT : ContentPage
         barcodeReader.VibrationOnDetected = !barcodeReader.VibrationOnDetected;
     }
 
-    // Class for drawing the barcode bounding box.
-    private class BarcodeDrawable : IDrawable
-    {
-        public HashSet<BarcodeResult>? barcodeResults;
-        public void Draw(ICanvas canvas, RectF dirtyRect)
-        {
-            if (barcodeResults is not null && barcodeResults.Count > 0)
-            {
-                canvas.StrokeSize = 15;
-                canvas.StrokeColor = Colors.Green;
-                var scale = 1 / canvas.DisplayScale;
-                canvas.Scale(scale, scale);
-
-                foreach (var barcode in barcodeResults)
-                {
-                    canvas.DrawRectangle(barcode.BoundingBox);
-                }
-            }
-        }
-    }
-
     // Button share event.
     private void OnShareClicked(object sender, EventArgs e)
     {
@@ -349,6 +325,27 @@ public partial class PageScanNT : ContentPage
         if (lblBarcodeResult.Text.Length > 0)
         {
             await Clipboard.Default.SetTextAsync(lblBarcodeResult.Text);
+        }
+    }
+
+    // Class for drawing the barcode bounding box.
+    private class BarcodeDrawable : IDrawable
+    {
+        public HashSet<BarcodeResult>? barcodeResults;
+        public void Draw(ICanvas canvas, RectF dirtyRect)
+        {
+            if (barcodeResults is not null && barcodeResults.Count > 0)
+            {
+                canvas.StrokeSize = 15;
+                canvas.StrokeColor = Colors.Green;
+                var scale = 1 / canvas.DisplayScale;
+                canvas.Scale(scale, scale);
+
+                foreach (var barcode in barcodeResults)
+                {
+                    canvas.DrawRectangle(barcode.BoundingBox);
+                }
+            }
         }
     }
 }

@@ -403,7 +403,7 @@ Nepovoleno:</value>
     <value>Nastavte kvalitu fotoaparátu</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Spusťte nebo zastavte fotoaparát</value>
+    <value>Spusťte nebo zastavte skenování čárových kódů</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Zapněte nebo vypněte svítilnu fotoaparátu</value>

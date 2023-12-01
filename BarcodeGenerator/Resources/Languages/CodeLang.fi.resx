@@ -403,7 +403,7 @@ Ei sallittu:</value>
     <value>Aseta kameran laatu</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Käynnistä tai pysäytä kamera</value>
+    <value>Aloita tai lopeta viivakoodien skannaus</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Kytke kameran taskulamppu päälle tai pois päältä</value>

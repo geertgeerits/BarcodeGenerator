@@ -403,7 +403,7 @@ Interdit:</value>
     <value>Définir la qualité de la caméra</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Démarrer ou arrêter la caméra</value>
+    <value>Démarrer ou arrêter la numérisation des codes-barres</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Allumer ou éteindre la lampe torche de l'appareil photo</value>

@@ -403,7 +403,7 @@ Non autorizzato:</value>
     <value>Imposta la qualità della fotocamera</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Avvia o arresta la fotocamera</value>
+    <value>Avvia o interrompi la scansione dei codici a barre</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Accendi o spegni la torcia della fotocamera</value>

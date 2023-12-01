@@ -403,7 +403,7 @@ Nepermis:</value>
     <value>Setați calitatea camerei</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Porniți sau opriți camera</value>
+    <value>Porniți sau opriți scanarea codurilor de bare</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Porniți sau opriți lanterna camerei</value>

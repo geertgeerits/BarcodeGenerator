@@ -403,7 +403,7 @@ Nicht erlaubt:</value>
     <value>Stellen Sie die Qualität der Kamera ein</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Starten oder stoppen Sie die Kamera</value>
+    <value>Starten oder stoppen Sie das Scannen nach Barcodes</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Schalten Sie die Taschenlampe der Kamera ein oder aus</value>

@@ -403,7 +403,7 @@ Ikke tilladt:</value>
     <value>Indstil kameraets kvalitet</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Start eller stop kameraet</value>
+    <value>Start eller stop scanning efter stregkoder</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Tænd eller sluk for kameralygten</value>

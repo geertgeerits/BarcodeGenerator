@@ -403,7 +403,7 @@ No permitido:</value>
     <value>Establecer la calidad de la cámara</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Iniciar o detener la cámara</value>
+    <value>Iniciar o detener el escaneo de códigos de barras</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Encender o apagar la linterna de la cámara</value>

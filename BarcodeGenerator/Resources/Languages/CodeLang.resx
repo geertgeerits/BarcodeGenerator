@@ -409,7 +409,7 @@ Not allowed:</value>
     <value>Set the quality of the camera</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Start or stop the camera</value>
+    <value>Start or stop scanning for barcodes</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Turn the camera torch on or off</value>

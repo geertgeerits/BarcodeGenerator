@@ -403,7 +403,7 @@ Nem megengedett:</value>
     <value>Állítsa be a kamera minőségét</value>
   </data>
   <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Indítsa el vagy állítsa le a kamerát</value>
+    <value>Indítsa el vagy állítsa le a vonalkódok keresését</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Kapcsolja be vagy ki a fényképezőgép zseblámpáját</value>

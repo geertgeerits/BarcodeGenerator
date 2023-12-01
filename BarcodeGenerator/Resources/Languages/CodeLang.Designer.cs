@@ -867,7 +867,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start or stop the camera.
+        ///   Looks up a localized string similar to Start or stop scanning for barcodes.
         /// </summary>
         internal static string ToolTipCameraStartStop_Text {
             get {
