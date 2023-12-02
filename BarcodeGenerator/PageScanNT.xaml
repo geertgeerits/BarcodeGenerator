@@ -5,41 +5,10 @@
              xmlns:native="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
              x:Class="BarcodeGenerator.PageScanNT">
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="nativeCameraView" TargetType="native:CameraView">
-                <Setter Property="VisualStateManager.VisualStateGroups">
-                    <VisualStateGroupList>
-                        <VisualStateGroup>
-                            <VisualState x:Name="Portrait">
-                                <VisualState.StateTriggers>
-                                    <OrientationStateTrigger Orientation="Portrait" />
-                                </VisualState.StateTriggers>
-                                <VisualState.Setters>
-                                    <Setter Property="HeightRequest" Value="{OnIdiom 400, Phone=400, Tablet=600, Desktop=600}" />
-                                    <Setter Property="WidthRequest" Value="{OnIdiom 310, Phone=310, Tablet=600, Desktop=600}" />
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Landscape">
-                                <VisualState.StateTriggers>
-                                    <OrientationStateTrigger Orientation="Landscape" />
-                                </VisualState.StateTriggers>
-                                <VisualState.Setters>
-                                    <Setter Property="HeightRequest" Value="{OnIdiom 310, Phone=310, Tablet=450, Desktop=450}" />
-                                    <Setter Property="WidthRequest" Value="{OnIdiom 510, Phone=510, Tablet=800, Desktop=800}" />
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter>
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     <NavigationPage.TitleView>
         <Grid
             RowDefinitions="Auto"
-            ColumnDefinitions="Auto"
+            ColumnDefinitions="*"
             BackgroundColor="DeepSkyBlue">
 
             <Label
@@ -76,12 +45,6 @@
                         x:Name="pckFormatCodeScanner"
                         MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}"
                         SelectedIndexChanged="OnPickerFormatCodeChanged">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Barcode 1</x:String>
-                                <x:String>Barcode 2</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
                     </Picker>
                 </Border>
 

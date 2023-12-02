@@ -219,6 +219,10 @@ public partial class PageScanNT : ContentPage
                 btnShare.Text = CodeLang.ButtonShare_Text;
                 lblBarcodeResult.Text = cBarcodeResult;
             }
+            else
+            {
+                return;
+            }
 
             imgbtnCopyToClipboard.IsEnabled = true;
             btnShare.IsEnabled = true;

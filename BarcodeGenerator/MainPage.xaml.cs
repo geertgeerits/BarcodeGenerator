@@ -1181,22 +1181,27 @@ UPC-E: 01326901 -> UPC-A: 013000002691
 UPC-E: 01810905 -> UPC-A: 018000001095
 
 Source: https://bytescout.com/blog/2013/10/upc-and-upc-e-purpose-advantages.html
-_____________________________________________________________________________________________
-
+*/
+//___________________________________________________________________________________________
+/*
+Barcode formats and maximum length of the text to encode.
 edtTextToCode.MaxLength     Numeric     AlphaNumeric    Binary 8-bits   Kanji/Kana JIS X 0208
 -----------------------     -------     ------------    -------------   ---------------------
 
 Aztec               3000    3832        3067            1914
 Codabar               43      43          43
-Code128               48      48          48
 Code39                48      48          48
 Code93                48      48          48
+Code128               48      48          48
 DataMatrix          2300    3116        2335            1555                     
-Ean13                 13      13
 Ean8                   8       8
+Ean13                 13      13
+GS1 DataBar
 Imb                   31      31
 Itf                   30      30
 MaxiCode              93      93
+MicroPDF417                  366         250             150
+MicroQR                       35          21              15
 Msi                  255     255
 Pdf417              1800    2710        1850            1108
 PharmaCode             6       6
@@ -1208,3 +1213,4 @@ UpcA                  12      12
 UpcE                   8       8
 UpcEanExtension        2       2
 */
+//___________________________________________________________________________________________
