@@ -157,7 +157,7 @@ public partial class PageScanNT : ContentPage
         _ = await Methods.AskForRequiredPermissionAsync();
         base.OnAppearing();
 
-        // Set the camera torch off.
+        // Set the camera torch off - (does not work - !!!BUG!!!?).
         barcodeReader.TorchOn = false;
         imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
 
@@ -172,7 +172,7 @@ public partial class PageScanNT : ContentPage
     // Called by the Disappearing event from the PageScanNT.xaml.
     protected override void OnDisappearing()
     {
-        // Set the camera torch off.
+        // Set the camera torch off - (does not work - !!!BUG!!!?).
         barcodeReader.TorchOn = false;
         imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
 
@@ -200,15 +200,25 @@ public partial class PageScanNT : ContentPage
 
             string cBarcodeFormat = "";
             string cDisplayValue = "";
+            string cBarcodeResult = "";
 
             foreach (var barcode in _drawable.barcodeResults)
             {
                 cBarcodeFormat = barcode.BarcodeFormat.ToString();
                 cDisplayValue = barcode.DisplayValue;
+                cBarcodeResult = $"{cBarcodeResult}{cBarcodeFormat}:\n{cDisplayValue}\n\n";
             }
 
-            btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
-            lblBarcodeResult.Text = cDisplayValue;
+            if (_drawable.barcodeResults.Count == 1)
+            {
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
+                lblBarcodeResult.Text = cDisplayValue;
+            }
+            else if (_drawable.barcodeResults.Count > 1)
+            {
+                btnShare.Text = CodeLang.ButtonShare_Text;
+                lblBarcodeResult.Text = cBarcodeResult;
+            }
 
             imgbtnCopyToClipboard.IsEnabled = true;
             btnShare.IsEnabled = true;
