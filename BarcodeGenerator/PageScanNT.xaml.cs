@@ -46,10 +46,6 @@ public partial class PageScanNT : ContentPage
         {
             lblTitle.VerticalOptions = LayoutOptions.Start;
             lblTitle.VerticalTextAlignment = TextAlignment.Start;
-            imgbtnCameraStartStop.VerticalOptions = LayoutOptions.Start;
-            imgbtnCameraQuality.VerticalOptions = LayoutOptions.Start;
-            imgbtnCameraFacing.VerticalOptions = LayoutOptions.Start;
-            imgbtnCameraTorch.VerticalOptions = LayoutOptions.Start;
         }
 
 #if ANDROID        
@@ -160,7 +156,11 @@ public partial class PageScanNT : ContentPage
         // Ask for permission to use the camera.
         _ = await Methods.AskForRequiredPermissionAsync();
         base.OnAppearing();
-        
+
+        // Set the camera torch off.
+        barcodeReader.TorchOn = false;
+        imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
+
         // Enable the camera.
         barcodeReader.CameraEnabled = true;
         Graphics.Drawable = _drawable;
@@ -172,6 +172,11 @@ public partial class PageScanNT : ContentPage
     // Called by the Disappearing event from the PageScanNT.xaml.
     protected override void OnDisappearing()
     {
+        // Set the camera torch off.
+        barcodeReader.TorchOn = false;
+        imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
+
+        // Disable the camera.
         base.OnDisappearing();
         barcodeReader.CameraEnabled = false;
 
@@ -213,21 +218,6 @@ public partial class PageScanNT : ContentPage
         {
             Crashes.TrackError(ex);
             await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-        }
-    }
-
-    // ImageButton camera start/stop clicked event.
-    private void OnCameraStartStopClicked(object sender, EventArgs e)
-    {
-        if (barcodeReader.PauseScanning)
-        {
-            barcodeReader.PauseScanning = false;
-            imgbtnCameraStartStop.Source = "camera_stop_128x128p.png";
-        }
-        else
-        {
-            barcodeReader.PauseScanning = true;
-            imgbtnCameraStartStop.Source = "camera_start_128x128p.png";
         }
     }
 
@@ -287,16 +277,49 @@ public partial class PageScanNT : ContentPage
         barcodeReader.CameraFacing = barcodeReader.CameraFacing == CameraFacing.Back ? CameraFacing.Front : CameraFacing.Back;
     }
 
-    // ImageButton torch clicked event.
-    private void OnCameraTorchClicked(object sender, EventArgs e)
+    // ImageButton camera detecting clicked event.
+    private void OnCameraDetectingClicked(object sender, EventArgs e)
     {
-        barcodeReader.TorchOn = !barcodeReader.TorchOn;
+        if (barcodeReader.PauseScanning)
+        {
+            barcodeReader.PauseScanning = false;
+            imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
+        }
+        else
+        {
+            barcodeReader.PauseScanning = true;
+            imgbtnCameraDetecting.Source = "camera_detect_on_128x128p.png";
+        }
     }
 
     // ImageButton camera vibrite clicked event.
     private void OnCameraVibrateClicked(object sender, EventArgs e)
     {
-        barcodeReader.VibrationOnDetected = !barcodeReader.VibrationOnDetected;
+        if (barcodeReader.VibrationOnDetected)
+        {
+            barcodeReader.VibrationOnDetected = false;
+            imgbtnCameraVibrate.Source = "camera_vibrate_off_128x128p.png";
+        }
+        else
+        {
+            barcodeReader.VibrationOnDetected = true;
+            imgbtnCameraVibrate.Source = "camera_vibrate_on_128x128p.png";
+        }
+    }
+
+    // ImageButton torch clicked event.
+    private void OnCameraTorchClicked(object sender, EventArgs e)
+    {
+        if (barcodeReader.TorchOn)
+        {
+            barcodeReader.TorchOn = false;
+            imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
+        }
+        else
+        {
+            barcodeReader.TorchOn = true;
+            imgbtnCameraTorch.Source = "camera_torch_on_64x64p.png";
+        }
     }
 
     // Button share event.

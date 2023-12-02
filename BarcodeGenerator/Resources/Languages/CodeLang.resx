@@ -402,14 +402,14 @@ Not allowed:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Start or stop scanning for barcodes</value>
+  </data>
   <data name="ToolTipCameraFacing_Text" xml:space="preserve">
     <value>Select the rear or front camera</value>
   </data>
   <data name="ToolTipCameraQuality_Text" xml:space="preserve">
     <value>Set the quality of the camera</value>
-  </data>
-  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Start or stop scanning for barcodes</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Turn the camera torch on or off</value>

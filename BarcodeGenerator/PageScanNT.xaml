@@ -157,20 +157,20 @@
                             </ImageButton>
 
                             <ImageButton
-                                x:Name="imgbtnCameraStartStop"
+                                x:Name="imgbtnCameraDetecting"
                                 Style="{StaticResource imageButtonStyleCamera}"
                                 Grid.Column="2"
-                                Source="camera_stop_128x128p.png"
-                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraStartStop_Text}"
-                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraStartStop_Text}"
-                                Clicked="OnCameraStartStopClicked">
+                                Source="camera_detect_off_128x128p.png"
+                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraDetecting_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraDetecting_Text}"
+                                Clicked="OnCameraDetectingClicked">
                             </ImageButton>
 
                             <ImageButton
                                 x:Name="imgbtnCameraVibrate"
                                 Style="{StaticResource imageButtonStyleCamera}"
                                 Grid.Column="3"
-                                Source="camera_vibrate_128x128p.png"
+                                Source="camera_vibrate_off_128x128p.png"
                                 SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraVibrate_Text}"
                                 ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraVibrate_Text}"                                
                                 Clicked="OnCameraVibrateClicked">
@@ -180,7 +180,7 @@
                                 x:Name="imgbtnCameraTorch"
                                 Style="{StaticResource imageButtonStyleCamera}"
                                 Grid.Column="4"
-                                Source="camera_torch_64x64p.png"
+                                Source="camera_torch_off_64x64p.png"
                                 SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
                                 ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
                                 Clicked="OnCameraTorchClicked">

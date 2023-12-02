@@ -396,14 +396,14 @@ No permitido:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Escáner</value>
   </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Iniciar o detener el escaneo de códigos de barras</value>
+  </data>
   <data name="ToolTipCameraFacing_Text" xml:space="preserve">
     <value>Seleccione la cámara trasera o frontal</value>
   </data>
   <data name="ToolTipCameraQuality_Text" xml:space="preserve">
     <value>Establecer la calidad de la cámara</value>
-  </data>
-  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Iniciar o detener el escaneo de códigos de barras</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Encender o apagar la linterna de la cámara</value>

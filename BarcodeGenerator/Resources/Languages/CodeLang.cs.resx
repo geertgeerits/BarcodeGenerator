@@ -396,14 +396,14 @@ Nepovoleno:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Skener</value>
   </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Spusťte nebo zastavte skenování čárových kódů</value>
+  </data>
   <data name="ToolTipCameraFacing_Text" xml:space="preserve">
     <value>Vyberte zadní nebo přední fotoaparát</value>
   </data>
   <data name="ToolTipCameraQuality_Text" xml:space="preserve">
     <value>Nastavte kvalitu fotoaparátu</value>
-  </data>
-  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Spusťte nebo zastavte skenování čárových kódů</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Zapněte nebo vypněte svítilnu fotoaparátu</value>

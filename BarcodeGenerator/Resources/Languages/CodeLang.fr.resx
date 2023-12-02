@@ -396,14 +396,14 @@ Interdit:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Démarrer ou arrêter la numérisation des codes-barres</value>
+  </data>
   <data name="ToolTipCameraFacing_Text" xml:space="preserve">
     <value>Sélectionnez la caméra arrière ou avant</value>
   </data>
   <data name="ToolTipCameraQuality_Text" xml:space="preserve">
     <value>Définir la qualité de la caméra</value>
-  </data>
-  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Démarrer ou arrêter la numérisation des codes-barres</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Allumer ou éteindre la lampe torche de l'appareil photo</value>

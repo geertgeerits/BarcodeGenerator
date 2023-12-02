@@ -396,14 +396,14 @@ Niet toegestaan:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Start of stop het scannen naar barcodes</value>
+  </data>
   <data name="ToolTipCameraFacing_Text" xml:space="preserve">
     <value>Selecteer de camera aan de achterzijde of aan de voorzijde</value>
   </data>
   <data name="ToolTipCameraQuality_Text" xml:space="preserve">
     <value>Stel de kwaliteit van de camera in</value>
-  </data>
-  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Start of stop het scannen naar barcodes</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Schakel de camerazaklamp in of uit</value>

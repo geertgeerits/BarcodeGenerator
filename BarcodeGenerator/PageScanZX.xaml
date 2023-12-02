@@ -62,7 +62,7 @@
                 x:Name="imgbtnTorch"
                 Grid.Row="0"
                 Grid.Column="2"
-                Source="torch_icon_64p.png"
+                Source="camera_torch_on_64x64p.png"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 HeightRequest="36"

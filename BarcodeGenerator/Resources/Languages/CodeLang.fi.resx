@@ -396,14 +396,14 @@ Ei sallittu:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Skanneri</value>
   </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Aloita tai lopeta viivakoodien skannaus</value>
+  </data>
   <data name="ToolTipCameraFacing_Text" xml:space="preserve">
     <value>Valitse taka- tai etukamera</value>
   </data>
   <data name="ToolTipCameraQuality_Text" xml:space="preserve">
     <value>Aseta kameran laatu</value>
-  </data>
-  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Aloita tai lopeta viivakoodien skannaus</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Kytke kameran taskulamppu päälle tai pois päältä</value>

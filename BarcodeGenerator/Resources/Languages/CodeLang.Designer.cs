@@ -849,6 +849,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start or stop scanning for barcodes.
+        /// </summary>
+        internal static string ToolTipCameraDetecting_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCameraDetecting_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select the rear or front camera.
         /// </summary>
         internal static string ToolTipCameraFacing_Text {
@@ -863,15 +872,6 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string ToolTipCameraQuality_Text {
             get {
                 return ResourceManager.GetString("ToolTipCameraQuality_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start or stop scanning for barcodes.
-        /// </summary>
-        internal static string ToolTipCameraStartStop_Text {
-            get {
-                return ResourceManager.GetString("ToolTipCameraStartStop_Text", resourceCulture);
             }
         }
         

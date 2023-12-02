@@ -71,7 +71,7 @@
 	  <None Remove="Resources\Images\barcodegenerator_icon_324p.png" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_324p2.svg" />
 	  <None Remove="Resources\Images\barcodegenerator_icon_477x324p.png" />
-	  <None Remove="Resources\Images\camera_torch_64x64p.png" />
+	  <None Remove="Resources\Images\camera_torch_on_64x64p.png" />
 	  <None Remove="Resources\Images\cancel_close_icon_48p.png" />
 	  <None Remove="Resources\Images\cancel_close_icon_512p.png" />
 	  <None Remove="Resources\Images\circled_envelope_24p.png" />

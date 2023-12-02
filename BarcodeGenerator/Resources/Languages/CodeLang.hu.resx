@@ -396,14 +396,14 @@ Nem megengedett:</value>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Indítsa el vagy állítsa le a vonalkódok keresését</value>
+  </data>
   <data name="ToolTipCameraFacing_Text" xml:space="preserve">
     <value>Válassza ki a hátsó vagy az elülső kamerát</value>
   </data>
   <data name="ToolTipCameraQuality_Text" xml:space="preserve">
     <value>Állítsa be a kamera minőségét</value>
-  </data>
-  <data name="ToolTipCameraStartStop_Text" xml:space="preserve">
-    <value>Indítsa el vagy állítsa le a vonalkódok keresését</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
     <value>Kapcsolja be vagy ki a fényképezőgép zseblámpáját</value>
