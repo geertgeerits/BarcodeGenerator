@@ -409,7 +409,7 @@ Nepovoleno:</value>
     <value>Zapněte nebo vypněte svítilnu fotoaparátu</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Povolit nebo zakázat chvění fotoaparátu při detekci čárového kódu</value>
+    <value>Povolit nebo zakázat vibrace zařízení během skenování</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Zkopírujte text do schránky</value>

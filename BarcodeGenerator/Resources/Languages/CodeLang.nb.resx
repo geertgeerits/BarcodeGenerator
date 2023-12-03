@@ -409,7 +409,7 @@ Ikke tillatt:</value>
     <value>Slå kameralykten på eller av</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Aktiver eller deaktiver kamerarystelse når en strekkode oppdages</value>
+    <value>Aktiver eller deaktiver enhetsvibrasjon under skanning</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopier tekst til utklippstavlen</value>

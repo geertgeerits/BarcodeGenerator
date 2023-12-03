@@ -409,7 +409,7 @@ Ikke tilladt:</value>
     <value>Tænd eller sluk for kameralygten</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Aktiver eller deaktiver kamerarystelser, når der registreres en stregkode</value>
+    <value>Aktiver eller deaktiver enhedsvibration under scanning</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopier tekst til udklipsholderen</value>

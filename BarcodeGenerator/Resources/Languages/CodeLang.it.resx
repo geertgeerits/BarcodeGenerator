@@ -409,7 +409,7 @@ Non autorizzato:</value>
     <value>Accendi o spegni la torcia della fotocamera</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Abilita o disabilita il movimento della fotocamera quando viene rilevato un codice a barre</value>
+    <value>Abilita o disabilita la vibrazione del dispositivo durante la scansione</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copia il testo negli appunti</value>

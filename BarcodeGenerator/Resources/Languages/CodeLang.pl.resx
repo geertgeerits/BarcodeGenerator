@@ -409,7 +409,7 @@ Niedozwolony:</value>
     <value>Włącz lub wyłącz latarkę aparatu</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Włącz lub wyłącz drgania aparatu po wykryciu kodu kreskowego</value>
+    <value>Włącz lub wyłącz wibracje urządzenia podczas skanowania</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Skopiuj tekst do schowka</value>
