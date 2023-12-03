@@ -39,7 +39,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app needs access to the photo gallery to save photos and videos.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>This app needs to scan barcodes.</string>
+	<string>This app needs access to the camera to scan barcodes.</string>
 	<key>CFBundleDisplayName</key>
 	<string>Barcode Generator and Scanner</string>
 	<key>CFBundleShortVersionString</key>

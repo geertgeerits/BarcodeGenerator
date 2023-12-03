@@ -2,15 +2,15 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.37
-// Date ........: 2023-12-02 (YYYY-MM-DD)
+// Date ........: 2023-12-03 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
-// Description .: Barcode Generator using ZXing
+// Description .: Barcode Generator using ZXing - Barcode Scanner using Native.
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
 //                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
 // Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.4.0 ; https://github.com/redth/ZXing.Net.Maui
 //                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.4.0
 //                NuGet Package: BarcodeScanner.Mobile.Maui version = "8.0.0 ; Google Vision ; https://github.com/JimmyPun610/BarcodeScanner.Mobile
-//                NuGet Package: BarcodeSchanner.Native.Maui by Alen Friščić version 1.0.3 ; https://github.com/afriscic/BarcodeScanning.Native.Maui
+//                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 1.0.3 ; https://github.com/afriscic/BarcodeScanning.Native.Maui
 //                NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/
 //                NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3 
 // Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun

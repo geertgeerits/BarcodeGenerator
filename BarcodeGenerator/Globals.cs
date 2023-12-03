@@ -124,6 +124,7 @@ static class Globals
     //}
 
     // Put the scanner barcode formats in a List string for the Native scanner for Android.
+    // https://developers.google.com/ml-kit/vision/barcode-scanning/android
     public static List<string> GetFormatCodeListScannerNativeAndroid()
     {
         return
@@ -146,6 +147,7 @@ static class Globals
     }
 
     // Put the scanner barcode formats in a List string for the Native scanner for iOS.
+    // https://developer.apple.com/documentation/avfoundation/avmetadataobject/objecttype
     public static List<string> GetFormatCodeListScannerNativeIOS()
     {
         return
