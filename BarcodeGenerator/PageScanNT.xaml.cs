@@ -20,6 +20,13 @@ public partial class PageScanNT : ContentPage
             return;
         }
 
+        // Set the camera enabled off and on because after opening the page for the first time the scanning is not always working.
+        barcodeReader.PauseScanning = true;
+        barcodeReader.CameraEnabled = false;
+        Task.Delay(400).Wait();
+        barcodeReader.CameraEnabled = true;
+        barcodeReader.PauseScanning = false;
+
         // Set the title and quality for the picker.
         // iOS on an iPad does not support the highest quality. !!!BUG!!!?
         pckCameraQuality.Title = CodeLang.CameraQualityTitle_Text + ": " + CodeLang.CameraQualityHigh_Text;
@@ -306,7 +313,7 @@ public partial class PageScanNT : ContentPage
         }
     }
 
-    // ImageButton camera vibrite clicked event.
+    // ImageButton camera vibrate clicked event.
     private void OnCameraVibrateClicked(object sender, EventArgs e)
     {
         if (barcodeReader.VibrationOnDetected)

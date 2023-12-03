@@ -41,7 +41,11 @@ public partial class MainPage : ContentPage
         // Get the saved settings.
         Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
         Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 12);
-        Globals.nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 0);
+#if ANDROID
+        Globals.nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 11);
+#elif IOS
+        Globals.nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 14);
+#endif
         Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
         Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
         Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
