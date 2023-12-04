@@ -30,12 +30,6 @@ public partial class PageScanNT : ContentPage
         // Set the title and quality for the picker.
         // iOS on an iPad does not support the highest quality. !!!BUG!!!?
         pckCameraQuality.Title = CodeLang.CameraQualityTitle_Text + ": " + CodeLang.CameraQualityHigh_Text;
-
-        qualitys.Add(CodeLang.CameraQualityLowest_Text);
-        qualitys.Add(CodeLang.CameraQualityLow_Text);
-        qualitys.Add(CodeLang.CameraQualityMedium_Text);
-        qualitys.Add(CodeLang.CameraQualityHigh_Text);
-
 #if ANDROID
         qualitys.Add(CodeLang.CameraQualityHighest_Text);
 #endif
@@ -43,10 +37,13 @@ public partial class PageScanNT : ContentPage
         {
             qualitys.Add(CodeLang.CameraQualityHighest_Text);
         }
+        qualitys.Add(CodeLang.CameraQualityHigh_Text);
+        qualitys.Add(CodeLang.CameraQualityMedium_Text);
+        qualitys.Add(CodeLang.CameraQualityLow_Text);
+        qualitys.Add(CodeLang.CameraQualityLowest_Text);
 
-        pckCameraQuality.ItemsSource = qualitys;
-        
-        pckCameraQuality.SelectedIndex = 3;
+        pckCameraQuality.ItemsSource = qualitys;        
+        pckCameraQuality.SelectedIndex = 1;
 
         // The height of the title bar is lower when an iPhone is in horizontal position.
         if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
@@ -194,37 +191,37 @@ public partial class PageScanNT : ContentPage
     // CameraView OnDetected event.
     private async void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
     {
-        lblBarcodeResult.Text = "";
-
         imgbtnCopyToClipboard.IsEnabled = false;
         btnShare.IsEnabled = false;
         imgbtnTextToSpeech.IsEnabled = false;
+
+        lblBarcodeResult.Text = "";
+        List<string> listBarcodes = [];
 
         try
         {
             _drawable.barcodeResults = e.BarcodeResults;
             Graphics.Invalidate();
 
-            string cBarcodeFormat = "";
-            string cDisplayValue = "";
-            string cBarcodeResult = "";
-
             foreach (var barcode in _drawable.barcodeResults)
             {
-                cBarcodeFormat = barcode.BarcodeFormat.ToString();
-                cDisplayValue = barcode.DisplayValue;
-                cBarcodeResult = $"{cBarcodeResult}{cBarcodeFormat}:\n{cDisplayValue}\n\n";
+                // Add the barcode format and display value to the list 'listBarcodes'.
+                listBarcodes.Add($"{barcode.BarcodeFormat}:\n{barcode.DisplayValue}");
             }
 
-            if (_drawable.barcodeResults.Count == 1)
+            // Remove duplicates.
+            listBarcodes = listBarcodes.Distinct().ToList();
+
+            // Sort the list.
+            listBarcodes.Sort();
+
+            // Set the barcode results in the label 'lblBarcodeResult.Text'.
+            if (listBarcodes.Count > 0)
             {
-                btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
-                lblBarcodeResult.Text = cDisplayValue;
-            }
-            else if (_drawable.barcodeResults.Count > 1)
-            {
-                btnShare.Text = CodeLang.ButtonShare_Text;
-                lblBarcodeResult.Text = cBarcodeResult;
+                foreach (string barcode in listBarcodes)
+                {
+                    lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode}\n\n";
+                }
             }
             else
             {
@@ -264,11 +261,11 @@ public partial class PageScanNT : ContentPage
             {
                 barcodeReader.CaptureQuality = selectedIndex switch
                 {
-                    0 => CaptureQuality.Lowest,
-                    1 => CaptureQuality.Low,
+                    0 => CaptureQuality.Highest,
+                    1 => CaptureQuality.High,
                     2 => CaptureQuality.Medium,
-                    3 => CaptureQuality.High,
-                    4 => CaptureQuality.Highest,
+                    3 => CaptureQuality.Low,
+                    4 => CaptureQuality.Lowest,
                     _ => CaptureQuality.High
                 };
             }
@@ -282,11 +279,11 @@ public partial class PageScanNT : ContentPage
             string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
             picker.Title = selectedIndex switch
             {
-                0 => cTitle + CodeLang.CameraQualityLowest_Text,
-                1 => cTitle + CodeLang.CameraQualityLow_Text,
+                0 => cTitle + CodeLang.CameraQualityHighest_Text,
+                1 => cTitle + CodeLang.CameraQualityHigh_Text,
                 2 => cTitle + CodeLang.CameraQualityMedium_Text,
-                3 => cTitle + CodeLang.CameraQualityHigh_Text,
-                4 => cTitle + CodeLang.CameraQualityHighest_Text,
+                3 => cTitle + CodeLang.CameraQualityLow_Text,
+                4 => cTitle + CodeLang.CameraQualityLowest_Text,
                 _ => cTitle + CodeLang.CameraQualityHigh_Text
             };
         }
