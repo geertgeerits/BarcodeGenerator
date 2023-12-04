@@ -302,8 +302,7 @@ Bármilyen javításért bármikor fordulhat hozzám.</value>
     <value>A szoftvert „adott állapotában” biztosítjuk, bármilyen kifejezett vagy hallgatólagos garancia nélkül, beleértve, de nem kizárólagosan az eladhatóságra, az adott célra való alkalmasságra és a jogsértésekre vonatkozó garanciákat. A szerző és/vagy a kiadó semmilyen esetben sem felelős semmilyen követelésért, kárért vagy egyéb felelősségért, akár szerződéses, károkozási vagy más jellegű, a szoftverből, a szoftver használatából vagy egyéb kereskedéséből eredő, abból származó vagy azzal kapcsolatos. a szoftver.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui – Redth
-Vonalkód beolvasása és generálása .NET MAUI alkalmazásokhoz.
+    <value>Vonalkód beolvasása és generálása .NET MAUI alkalmazásokhoz.
 MIT licenc:
 A szoftver és a kapcsolódó dokumentációs fájlok (a "Szoftver") másolatát megszerző bármely személy számára ingyenes engedélyt adunk, hogy korlátozás nélkül kereskedjen a Szoftverrel, beleértve korlátozás nélkül a használati, másolási, módosítási, egyesítési jogokat. , közzéteszi, terjeszteni, allicencbe adni és/vagy eladni a Szoftver másolatait, és lehetővé tenni a szoftverrel ellátott személyek számára, hogy ezt megtegyék, a következő feltételekkel:
 

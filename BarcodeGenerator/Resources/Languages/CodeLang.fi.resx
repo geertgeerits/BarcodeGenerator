@@ -302,8 +302,7 @@ Voit aina ottaa minuun yhteyttä korjauksista.</value>
     <value>Ohjelmisto toimitetaan sellaisenaan, ilman minkäänlaista nimenomaista tai oletettua takuuta, mukaan lukien mutta ei rajoittuen takuut kaupallisuudesta, sopivuudesta tiettyyn tarkoitukseen ja loukkaamattomuuteen. Tekijä ja/tai julkaisija ei ole missään tapauksessa vastuussa mistään vaatimuksista, vahingoista tai muusta vastuusta, olipa kyseessä sopimus-, vahingonkorvaus- tai muu vastuu, joka johtuu ohjelmistosta, ohjelmistosta tai sen käytöstä tai muusta kaupasta tai sen yhteydessä. ohjelmisto.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui, kirjoittanut Redth
-Viivakoodin skannaus ja generointi .NET MAUI -sovelluksille.
+    <value>Viivakoodin skannaus ja generointi .NET MAUI -sovelluksille.
 MIT-lisenssi:
 Täten myönnetään maksutta kaikille henkilöille, jotka hankkivat kopion tästä ohjelmistosta ja siihen liittyvistä dokumentaatiotiedostoista ("Ohjelmisto"), käsitellä Ohjelmistoa rajoituksetta, mukaan lukien rajoituksetta käyttö-, kopiointi-, muokkaamis-, yhdistämisoikeudet. , julkaista, jakaa, alilisensoida ja/tai myydä ohjelmiston kopioita ja sallia henkilöiden, joille ohjelmisto on toimitettu, tehdä niin seuraavin ehdoin:
 

@@ -302,8 +302,7 @@ Du kan alltid kontakta mig för eventuella korrigeringar.</value>
     <value>Programvaran tillhandahålls "i befintligt skick", utan garantier av något slag, uttryckliga eller underförstådda, inklusive men inte begränsat till garantier om säljbarhet, lämplighet för ett visst ändamål och icke-intrång. Under inga omständigheter ska författaren och/eller utgivaren hållas ansvariga för något anspråk, skadestånd eller annat ansvar, vare sig i en åtgärd av kontrakt, skadestånd eller på annat sätt, som härrör från, ur eller i samband med programvaran eller användningen eller annan handel med mjukvaran.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui av Redth
-Streckkodsskanning och generering för .NET MAUI-applikationer.
+    <value>Streckkodsskanning och generering för .NET MAUI-applikationer.
 MIT-licens:
 Tillstånd ges härmed kostnadsfritt till varje person som skaffar en kopia av denna programvara och tillhörande dokumentationsfiler ("Programvaran") att handla med programvaran utan begränsningar, inklusive utan begränsning rätten att använda, kopiera, modifiera, slå samman , publicera, distribuera, underlicensiera och/eller sälja kopior av programvaran och att tillåta personer till vilka programvaran tillhandahålls att göra det, med förbehåll för följande villkor:
 

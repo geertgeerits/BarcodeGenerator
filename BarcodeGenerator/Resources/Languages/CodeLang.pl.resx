@@ -302,8 +302,7 @@ Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</valu
     <value>Oprogramowanie jest dostarczane „tak jak jest”, bez jakiejkolwiek gwarancji, wyraźnej lub dorozumianej, w tym między innymi gwarancji przydatności handlowej, przydatności do określonego celu i nienaruszalności. W żadnym wypadku autor i/lub wydawca nie będzie ponosić odpowiedzialności za jakiekolwiek roszczenia, szkody lub inną odpowiedzialność wynikającą z umowy, czynu niedozwolonego lub w inny sposób, wynikającą z lub w związku z oprogramowaniem lub użytkowaniem lub innymi działaniami w oprogramowanie.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui autorstwa Redth
-Skanowanie i generowanie kodów kreskowych dla aplikacji .NET MAUI.
+    <value>Skanowanie i generowanie kodów kreskowych dla aplikacji .NET MAUI.
 Licencja MIT:
 Niniejszym udziela się bezpłatnej zgody każdej osobie, która otrzyma kopię tego oprogramowania i związanych z nim plików dokumentacji („Oprogramowanie”), na obrót Oprogramowaniem bez ograniczeń, w tym między innymi praw do używania, kopiowania, modyfikowania, łączenia publikować, rozpowszechniać, udzielać sublicencji i/lub sprzedawać kopii Oprogramowania oraz zezwalać na to osobom, którym Oprogramowanie jest dostarczane, z zastrzeżeniem następujących warunków:
 

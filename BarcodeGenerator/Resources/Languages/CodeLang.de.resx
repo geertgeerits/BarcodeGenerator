@@ -302,8 +302,7 @@ Sie können mich jederzeit für Korrekturen kontaktieren.</value>
     <value>Die Software wird „wie besehen“ bereitgestellt, ohne Gewährleistung jeglicher Art, weder ausdrücklich noch stillschweigend, einschließlich, aber nicht beschränkt auf die Gewährleistung der Marktgängigkeit, Eignung für einen bestimmten Zweck und Nichtverletzung. In keinem Fall haften der Autor und/oder Herausgeber für Ansprüche, Schäden oder andere Haftungen, sei es aus einem Vertrag, aus unerlaubter Handlung oder auf andere Weise, die sich aus, aus oder im Zusammenhang mit der Software oder der Verwendung oder sonstigen Handlungen ergeben die Software.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>ZXing.Net.Maui von Redth
-Scannen und Generieren von Barcodes für .NET MAUI-Anwendungen.
+    <value>Scannen und Generieren von Barcodes für .NET MAUI-Anwendungen.
 MIT-Lizenz:
 Hiermit wird jeder Person, die eine Kopie dieser Software und der dazugehörigen Dokumentationsdateien (die „Software“) erhält, kostenlos die Erlaubnis erteilt, mit der Software uneingeschränkt zu handeln, einschließlich, aber nicht beschränkt auf die Rechte zur Nutzung, Vervielfältigung, Änderung und Zusammenführung , Kopien der Software zu veröffentlichen, zu verteilen, unterzulizenzieren und/oder zu verkaufen und Personen, denen die Software zur Verfügung gestellt wird, dies zu gestatten, vorbehaltlich der folgenden Bedingungen:
 
