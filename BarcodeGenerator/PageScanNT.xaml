@@ -207,6 +207,7 @@
                         HeightRequest="38"
                         WidthRequest="38"
                         IsVisible="False"
+                        IsEnabled="False"
                         SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipTextToSpeech_Text}"
                         ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTextToSpeech_Text}"
                         Clicked="OnTextToSpeechClicked">

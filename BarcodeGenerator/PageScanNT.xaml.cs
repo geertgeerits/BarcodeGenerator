@@ -196,6 +196,8 @@ public partial class PageScanNT : ContentPage
         imgbtnTextToSpeech.IsEnabled = false;
 
         lblBarcodeResult.Text = "";
+        string cBarcodeFormat = "";
+        string cDisplayValue = "";
         List<string> listBarcodes = [];
 
         try
@@ -205,8 +207,11 @@ public partial class PageScanNT : ContentPage
 
             foreach (var barcode in _drawable.barcodeResults)
             {
+                cBarcodeFormat = barcode.BarcodeFormat.ToString();
+                cDisplayValue = barcode.DisplayValue;
+
                 // Add the barcode format and display value to the list 'listBarcodes'.
-                listBarcodes.Add($"{barcode.BarcodeFormat}:\n{barcode.DisplayValue}");
+                listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
             }
 
             // Remove duplicates.
@@ -216,8 +221,14 @@ public partial class PageScanNT : ContentPage
             listBarcodes.Sort();
 
             // Set the barcode results in the label 'lblBarcodeResult.Text'.
-            if (listBarcodes.Count > 0)
+            if (listBarcodes.Count == 1)
             {
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
+                lblBarcodeResult.Text = cDisplayValue;
+            }
+            else if (listBarcodes.Count > 1)
+            {
+                btnShare.Text = CodeLang.ButtonShare_Text;
                 foreach (string barcode in listBarcodes)
                 {
                     lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode}\n\n";
