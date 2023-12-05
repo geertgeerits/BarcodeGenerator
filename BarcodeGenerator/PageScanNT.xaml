@@ -48,11 +48,12 @@
                     </Picker>
                 </Border>
 
-                <Border
+                <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320.-->
+                <Frame
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    BackgroundColor="Transparent">
+                    Padding="0">
 
                     <AbsoluteLayout>
                         <native:CameraView
@@ -147,7 +148,7 @@
                             </ImageButton>
                         </Grid>
                     </AbsoluteLayout>
-                </Border>
+                </Frame>
 
                 <HorizontalStackLayout
                     Grid.Row="4"

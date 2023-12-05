@@ -6,6 +6,7 @@ public partial class PageScanNT : ContentPage
 {
     private readonly BarcodeDrawable _drawable = new();
     private readonly List<string> qualitys = [];
+    private int nQualityCameraBack = 3;
 
     public PageScanNT()
 	{
@@ -29,22 +30,27 @@ public partial class PageScanNT : ContentPage
         barcodeReader.PauseScanning = false;
 
         // Set the title and quality for the picker.
-        // iOS on an iPad does not support the highest quality. !!!BUG!!!?
+        // No support for the highest quality:
+        // - iPad 8, iOS version 17.1.1 (back and front camera)
+        // - iPhone 7, iOS version 15.8 (only front camera).
         pckCameraQuality.Title = CodeLang.CameraQualityTitle_Text + ": " + CodeLang.CameraQualityHigh_Text;
+
+        qualitys.Add(CodeLang.CameraQualityLowest_Text);
+        qualitys.Add(CodeLang.CameraQualityLow_Text);
+        qualitys.Add(CodeLang.CameraQualityMedium_Text);
+        qualitys.Add(CodeLang.CameraQualityHigh_Text);
 #if ANDROID
         qualitys.Add(CodeLang.CameraQualityHighest_Text);
 #endif
-        if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
-        {
-            qualitys.Add(CodeLang.CameraQualityHighest_Text);
-        }
-        qualitys.Add(CodeLang.CameraQualityHigh_Text);
-        qualitys.Add(CodeLang.CameraQualityMedium_Text);
-        qualitys.Add(CodeLang.CameraQualityLow_Text);
-        qualitys.Add(CodeLang.CameraQualityLowest_Text);
+        //if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
+        //{
+        //    qualitys.Add(CodeLang.CameraQualityHighest_Text);
+        //}
 
-        pckCameraQuality.ItemsSource = qualitys;        
-        pckCameraQuality.SelectedIndex = 1;
+        pckCameraQuality.ItemsSource = qualitys;
+        
+        // Set the default quality for the back camera to high.
+        pckCameraQuality.SelectedIndex = 3;
 
         // The height of the title bar is lower when an iPhone is in horizontal position.
         if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
@@ -53,7 +59,7 @@ public partial class PageScanNT : ContentPage
             lblTitle.VerticalTextAlignment = TextAlignment.Start;
         }
 
-#if ANDROID        
+#if ANDROID
         // Set the barcodes in the picker for Android.
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
@@ -259,45 +265,58 @@ public partial class PageScanNT : ContentPage
     {
 #if IOS
         pckCameraQuality.Focus();
-#endif  
+#endif
     }
 
     // Picker quality changed event.
     private async void OnCameraQualityChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
+        int selectedIndex = picker.SelectedIndex;
 
-        if (picker.SelectedIndex > -1 && picker.SelectedIndex < 5)
+        // If (the high) or the highest quality is selected and the front camera is used then set the quality to medium.
+        // The high and highest quality are not on every device supported by the front camera.
+        if (selectedIndex > 2 && barcodeReader.CameraFacing == CameraFacing.Front)
         {
-            int selectedIndex = picker.SelectedIndex;
-
+            barcodeReader.CaptureQuality = CaptureQuality.Medium;
+        }
+        // Set the quality for the camera.
+        else if (selectedIndex > -1 && selectedIndex < 5)
+        {
             try
             {
                 barcodeReader.CaptureQuality = selectedIndex switch
                 {
-                    0 => CaptureQuality.Highest,
-                    1 => CaptureQuality.High,
+                    0 => CaptureQuality.Lowest,
+                    1 => CaptureQuality.Low,
                     2 => CaptureQuality.Medium,
-                    3 => CaptureQuality.Low,
-                    4 => CaptureQuality.Lowest,
+                    3 => CaptureQuality.High,
+                    4 => CaptureQuality.Highest,
                     _ => CaptureQuality.High
                 };
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                var properties = new Dictionary<string, string> {
+                    { "File:", "PageScanNT.xaml.cs" },
+                    { "Method:", "OnCameraQualityChanged" },
+                    { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
+                    { "selectedIndex:", Convert.ToString(selectedIndex) }
+                };
+                Crashes.TrackError(ex, properties);
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
                 return;
             }
 
+            // Set the title for the picker.
             string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
             picker.Title = selectedIndex switch
             {
-                0 => cTitle + CodeLang.CameraQualityHighest_Text,
-                1 => cTitle + CodeLang.CameraQualityHigh_Text,
+                0 => cTitle + CodeLang.CameraQualityLowest_Text,
+                1 => cTitle + CodeLang.CameraQualityLow_Text,
                 2 => cTitle + CodeLang.CameraQualityMedium_Text,
-                3 => cTitle + CodeLang.CameraQualityLow_Text,
-                4 => cTitle + CodeLang.CameraQualityLowest_Text,
+                3 => cTitle + CodeLang.CameraQualityHigh_Text,
+                4 => cTitle + CodeLang.CameraQualityHighest_Text,
                 _ => cTitle + CodeLang.CameraQualityHigh_Text
             };
         }
@@ -306,7 +325,26 @@ public partial class PageScanNT : ContentPage
     // ImageButton camera facing clicked event.
     private void OnCameraFacingClicked(object sender, EventArgs e)
     {
-        barcodeReader.CameraFacing = barcodeReader.CameraFacing == CameraFacing.Back ? CameraFacing.Front : CameraFacing.Back;
+        // If (the high) or the highest quality is selected and the front camera is used then set the quality to medium.
+        // The high and highest quality are not on every device supported by the front camera.
+        if (barcodeReader.CameraFacing == CameraFacing.Back)
+        {
+            nQualityCameraBack = pckCameraQuality.SelectedIndex;
+
+            // Set the quality to medium when the front camera is used.
+            if (pckCameraQuality.SelectedIndex > 2)
+            {
+                pckCameraQuality.SelectedIndex = 2;
+            }
+
+            barcodeReader.CameraFacing = CameraFacing.Front;
+        }
+        else
+        {          
+            // Set the quality to the saved setting from the back camera.
+            barcodeReader.CameraFacing = CameraFacing.Back;
+            pckCameraQuality.SelectedIndex = nQualityCameraBack;
+        }
     }
 
     // ImageButton camera detecting clicked event.
