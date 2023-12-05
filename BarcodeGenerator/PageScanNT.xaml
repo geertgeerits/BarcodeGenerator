@@ -26,7 +26,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleScanner}"
-                RowDefinitions="Auto, 5, 500, 5, Auto, Auto">
+                RowDefinitions="Auto, 1, 500, 1, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -48,14 +48,11 @@
                     </Picker>
                 </Border>
 
-                <Frame
+                <Border
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
+                    BackgroundColor="Transparent">
 
                     <AbsoluteLayout>
                         <native:CameraView
@@ -150,7 +147,7 @@
                             </ImageButton>
                         </Grid>
                     </AbsoluteLayout>
-                </Frame>
+                </Border>
 
                 <HorizontalStackLayout
                     Grid.Row="4"

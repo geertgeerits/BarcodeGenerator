@@ -21,6 +21,7 @@ public partial class PageScanNT : ContentPage
         }
 
         // Set the camera enabled off and on because after opening the page for the first time the scanning is not always working.
+        // Does also not help always.
         barcodeReader.PauseScanning = true;
         barcodeReader.CameraEnabled = false;
         Task.Delay(400).Wait();
@@ -102,6 +103,8 @@ public partial class PageScanNT : ContentPage
 #endif
 
             barcodeReader.CameraEnabled = true;
+            barcodeReader.PauseScanning = false;
+            imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
         }
     }
 
@@ -205,7 +208,7 @@ public partial class PageScanNT : ContentPage
             _drawable.barcodeResults = e.BarcodeResults;
             Graphics.Invalidate();
 
-            foreach (var barcode in _drawable.barcodeResults)
+            foreach (var barcode in e.BarcodeResults)
             {
                 cBarcodeFormat = barcode.BarcodeFormat.ToString();
                 cDisplayValue = barcode.DisplayValue;
