@@ -6,7 +6,8 @@ public partial class PageScanNT : ContentPage
 {
     private readonly BarcodeDrawable _drawable = new();
     private readonly List<string> qualitys = [];
-    private int nQualityCameraBack = 3;
+    private int nQualityCameraBack;
+    private int nQualityCameraFront;
 
     public PageScanNT()
 	{
@@ -20,6 +21,10 @@ public partial class PageScanNT : ContentPage
             DisplayAlert("InitializeComponent: PageScanNT", ex.Message, "OK");
             return;
         }
+        
+        // Get the saved settings.
+        nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 3);
+        nQualityCameraFront = Preferences.Default.Get("SettingQualityCameraFront", 2);
 
         // Set the camera enabled off and on because after opening the page for the first time the scanning is not always working.
         // Does also not help always.
@@ -33,8 +38,6 @@ public partial class PageScanNT : ContentPage
         // No support for the highest quality:
         // - iPad 8, iOS version 17.1.1 (back and front camera)
         // - iPhone 7, iOS version 15.8 (only front camera).
-        pckCameraQuality.Title = CodeLang.CameraQualityTitle_Text + ": " + CodeLang.CameraQualityHigh_Text;
-
         qualitys.Add(CodeLang.CameraQualityLowest_Text);
         qualitys.Add(CodeLang.CameraQualityLow_Text);
         qualitys.Add(CodeLang.CameraQualityMedium_Text);
@@ -49,8 +52,8 @@ public partial class PageScanNT : ContentPage
 
         pckCameraQuality.ItemsSource = qualitys;
         
-        // Set the default quality for the back camera to high.
-        pckCameraQuality.SelectedIndex = 3;
+        // Set the quality for the back camera.
+        pckCameraQuality.SelectedIndex = nQualityCameraBack;
 
         // The height of the title bar is lower when an iPhone is in horizontal position.
         if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
@@ -185,6 +188,13 @@ public partial class PageScanNT : ContentPage
     // Called by the Disappearing event from the PageScanNT.xaml.
     protected override void OnDisappearing()
     {
+        // Save the settings.
+        Preferences.Default.Set("SettingQualityCameraBack", nQualityCameraBack);
+        Preferences.Default.Set("SettingQualityCameraFront", nQualityCameraFront);
+        
+        // Wait 500 milliseconds otherwise the settings are not saved in Android.
+        Task.Delay(500).Wait();
+
         // Set the camera torch off - (does not work - !!!BUG!!!?).
         barcodeReader.TorchOn = false;
         imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
@@ -271,21 +281,21 @@ public partial class PageScanNT : ContentPage
     // Picker quality changed event.
     private async void OnCameraQualityChanged(object sender, EventArgs e)
     {
-        var picker = (Picker)sender;
-        int selectedIndex = picker.SelectedIndex;
+        int nSelectedIndex = pckCameraQuality.SelectedIndex;
 
         // If (the high) or the highest quality is selected and the front camera is used then set the quality to medium.
         // The high and highest quality are not on every device supported by the front camera.
-        if (selectedIndex > 2 && barcodeReader.CameraFacing == CameraFacing.Front)
+        if (nSelectedIndex > 2 && barcodeReader.CameraFacing == CameraFacing.Front)
         {
             barcodeReader.CaptureQuality = CaptureQuality.Medium;
+            nSelectedIndex = 2;
         }
         // Set the quality for the camera.
-        else if (selectedIndex > -1 && selectedIndex < 5)
+        else if (nSelectedIndex > -1 && nSelectedIndex < 5)
         {
             try
             {
-                barcodeReader.CaptureQuality = selectedIndex switch
+                barcodeReader.CaptureQuality = nSelectedIndex switch
                 {
                     0 => CaptureQuality.Lowest,
                     1 => CaptureQuality.Low,
@@ -301,7 +311,7 @@ public partial class PageScanNT : ContentPage
                     { "File:", "PageScanNT.xaml.cs" },
                     { "Method:", "OnCameraQualityChanged" },
                     { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
-                    { "selectedIndex:", Convert.ToString(selectedIndex) }
+                    { "selectedIndex:", Convert.ToString(nSelectedIndex) }
                 };
                 Crashes.TrackError(ex, properties);
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -310,7 +320,7 @@ public partial class PageScanNT : ContentPage
 
             // Set the title for the picker.
             string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
-            picker.Title = selectedIndex switch
+            pckCameraQuality.Title = nSelectedIndex switch
             {
                 0 => cTitle + CodeLang.CameraQualityLowest_Text,
                 1 => cTitle + CodeLang.CameraQualityLow_Text,
@@ -319,6 +329,15 @@ public partial class PageScanNT : ContentPage
                 4 => cTitle + CodeLang.CameraQualityHighest_Text,
                 _ => cTitle + CodeLang.CameraQualityHigh_Text
             };
+        }
+        
+        if (barcodeReader.CameraFacing == CameraFacing.Back)
+        {
+            nQualityCameraBack = nSelectedIndex;
+        }
+        else if (barcodeReader.CameraFacing == CameraFacing.Front)
+        {
+            nQualityCameraFront = nSelectedIndex;
         }
     }
 
@@ -335,13 +354,14 @@ public partial class PageScanNT : ContentPage
             if (pckCameraQuality.SelectedIndex > 2)
             {
                 pckCameraQuality.SelectedIndex = 2;
+                nQualityCameraFront = 2;
             }
-
             barcodeReader.CameraFacing = CameraFacing.Front;
         }
-        else
-        {          
+        else if (barcodeReader.CameraFacing == CameraFacing.Front)
+        {
             // Set the quality to the saved setting from the back camera.
+            nQualityCameraFront = pckCameraQuality.SelectedIndex;
             barcodeReader.CameraFacing = CameraFacing.Back;
             pckCameraQuality.SelectedIndex = nQualityCameraBack;
         }
