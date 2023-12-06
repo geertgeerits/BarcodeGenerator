@@ -160,6 +160,9 @@
     <value>Dacă nu a fost acordată permisiunea de a utiliza camera, camera poate fi activată în setările dispozitivului, selectați aplicația și activați camera.
 O altă opțiune este să dezinstalați și să reinstalați aplicația.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Această calitate nu este acceptată de această cameră. Reduceți calitatea.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Cel mai inalt</value>
   </data>

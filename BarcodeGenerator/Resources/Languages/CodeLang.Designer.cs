@@ -188,6 +188,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to That quality is not supported by this camera. Set the quality lower..
+        /// </summary>
+        internal static string CameraQualityError_Text {
+            get {
+                return ResourceManager.GetString("CameraQualityError_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to High.
         /// </summary>
         internal static string CameraQualityHigh_Text {

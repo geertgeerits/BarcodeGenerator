@@ -160,6 +160,9 @@
     <value>Si l'autorisation d'utiliser l'appareil photo n'a pas été donnée, l'appareil photo peut être activé dans les paramètres de l'appareil, sélectionnez l'application et activez l'appareil photo.
 Une autre option consiste à désinstaller et réinstaller l'application.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Cette qualité n'est pas prise en charge par cet appareil photo. Baissez la qualité.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Le plus élevé</value>
   </data>

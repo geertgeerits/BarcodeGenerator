@@ -160,6 +160,9 @@
     <value>Hvis tillatelse til å bruke kameraet ikke er gitt, kan kameraet aktiveres i enhetsinnstillingene, velg applikasjonen og aktiver kameraet.
 Et annet alternativ er å avinstallere og installere programmet på nytt.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Denne kvaliteten støttes ikke av dette kameraet. Skru ned kvaliteten.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Høyest</value>
   </data>

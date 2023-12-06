@@ -160,6 +160,9 @@
     <value>Pokud nebylo uděleno povolení k použití kamery, lze kameru povolit v nastavení zařízení, vybrat aplikaci a povolit kameru.
 Další možností je odinstalovat a znovu nainstalovat aplikaci.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Tato kvalita není tímto fotoaparátem podporována. Snižte kvalitu.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Nejvyšší</value>
   </data>

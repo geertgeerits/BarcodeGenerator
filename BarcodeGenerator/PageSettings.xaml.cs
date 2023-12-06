@@ -601,6 +601,8 @@ public partial class PageSettings : ContentPage
             Preferences.Default.Remove("SettingCodeColorBg");
             Preferences.Default.Remove("SettingLanguage");
             Preferences.Default.Remove("SettingLanguageSpeech");
+            Preferences.Default.Remove("SettingQualityCameraBack");
+            Preferences.Default.Remove("SettingQualityCameraFront");
         }
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.

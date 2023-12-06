@@ -160,6 +160,9 @@
     <value>Wenn keine Erlaubnis zur Nutzung der Kamera erteilt wurde, kann die Kamera in den Geräteeinstellungen aktiviert werden, die Anwendung auswählen und die Kamera aktivieren.
 Eine andere Möglichkeit besteht darin, die Anwendung zu deinstallieren und erneut zu installieren.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Diese Qualität wird von dieser Kamera nicht unterstützt. Verringern Sie die Qualität.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Höchste</value>
   </data>

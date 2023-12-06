@@ -160,6 +160,9 @@
     <value>If permission to use the camera has not been given, the camera can be enabled in the device settings, select the application and enable the camera.
 Another option is to uninstall and reinstall the application.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>That quality is not supported by this camera. Set the quality lower.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Highest</value>
   </data>

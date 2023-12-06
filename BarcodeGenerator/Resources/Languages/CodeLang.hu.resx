@@ -160,6 +160,9 @@
     <value>Ha nem kapott engedélyt a kamera használatára, akkor a készülék beállításainál engedélyezheti a kamerát, válassza ki az alkalmazást és engedélyezze a kamerát.
 Egy másik lehetőség az alkalmazás eltávolítása és újratelepítése.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Ezt a minőséget ez a fényképezőgép nem támogatja. Csökkentse a minőséget.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Legmagasabb</value>
   </data>

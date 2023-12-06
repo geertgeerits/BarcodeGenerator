@@ -160,6 +160,9 @@
     <value>Jos kameran käyttölupaa ei ole annettu, kamera voidaan ottaa käyttöön laitteen asetuksista, valita sovellus ja ottaa kamera käyttöön.
 Toinen vaihtoehto on poistaa sovellus ja asentaa se uudelleen.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Tämä kamera ei tue tätä laatua. Vähennä laatua.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Korkein</value>
   </data>

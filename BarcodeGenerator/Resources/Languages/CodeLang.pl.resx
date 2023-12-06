@@ -160,6 +160,9 @@
     <value>Jeśli nie udzielono zgody na korzystanie z kamery, można ją włączyć w ustawieniach urządzenia, wybrać aplikację i włączyć kamerę.
 Inną opcją jest odinstalowanie i ponowne zainstalowanie aplikacji.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Ta jakość nie jest obsługiwana przez ten aparat. Zmniejsz jakość.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Najwyższy</value>
   </data>

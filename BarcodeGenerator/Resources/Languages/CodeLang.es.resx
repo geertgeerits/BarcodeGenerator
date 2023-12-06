@@ -160,6 +160,9 @@
     <value>Si no se ha otorgado permiso para usar la cámara, la cámara se puede habilitar en la configuración del dispositivo, seleccione la aplicación y habilite la cámara.
 Otra opción es desinstalar y reinstalar la aplicación.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Esa calidad no es compatible con esta cámara. Baja la calidad.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Más alto</value>
   </data>

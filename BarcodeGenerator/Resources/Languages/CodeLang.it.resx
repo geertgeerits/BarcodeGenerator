@@ -160,6 +160,9 @@
     <value>Se non è stata concessa l'autorizzazione all'uso della fotocamera, è possibile abilitare la fotocamera nelle impostazioni del dispositivo, selezionare l'applicazione e abilitare la fotocamera.
 Un'altra opzione è disinstallare e reinstallare l'applicazione.</value>
   </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Questa qualità non è supportata da questa fotocamera. Abbassa la qualità.</value>
+  </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
     <value>Più alto</value>
   </data>
