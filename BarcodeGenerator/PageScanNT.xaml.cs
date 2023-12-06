@@ -4,6 +4,7 @@ namespace BarcodeGenerator;
 
 public partial class PageScanNT : ContentPage
 {
+    // Local variables
     private readonly BarcodeDrawable _drawable = new();
     private readonly List<string> qualitys = [];
     private int nQualityCameraBack;
@@ -359,7 +360,7 @@ public partial class PageScanNT : ContentPage
                 nQualityCameraFront = 2;
             }
             
-            pckCameraQuality.SelectedIndex = nQualityCameraFront;           
+            pckCameraQuality.SelectedIndex = nQualityCameraFront;
             barcodeReader.CameraFacing = CameraFacing.Front;
         }
         else if (barcodeReader.CameraFacing == CameraFacing.Front)

@@ -4,8 +4,6 @@ namespace BarcodeGenerator;
 
 public partial class PageScanZX : ContentPage
 {
-    // Local variables.
-
     public PageScanZX()
     {
         try
