@@ -21,7 +21,7 @@ public partial class PageScanNT : ContentPage
             DisplayAlert("InitializeComponent: PageScanNT", ex.Message, "OK");
             return;
         }
-        
+
         // Get the saved settings.
         nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 3);
         nQualityCameraFront = Preferences.Default.Get("SettingQualityCameraFront", 2);
@@ -283,17 +283,17 @@ public partial class PageScanNT : ContentPage
     {
         int nSelectedIndex = pckCameraQuality.SelectedIndex;
 
-        // If (the high) or the highest quality is selected and the front camera is used then set the quality to medium.
-        // The high and highest quality are not on every device supported by the front camera.
-        if (nSelectedIndex > 2 && barcodeReader.CameraFacing == CameraFacing.Front)
+        try
         {
-            barcodeReader.CaptureQuality = CaptureQuality.Medium;
-            nSelectedIndex = 2;
-        }
-        // Set the quality for the camera.
-        else if (nSelectedIndex > -1 && nSelectedIndex < 5)
-        {
-            try
+            // If (the high) or the highest quality is selected and the front camera is used then set the quality to medium.
+            // The high and highest quality are not on every device supported by the front camera.
+            if (nSelectedIndex > 2 && barcodeReader.CameraFacing == CameraFacing.Front)
+            {
+                barcodeReader.CaptureQuality = CaptureQuality.Medium;
+                nSelectedIndex = 2;
+            }
+            // Set the quality for the camera.
+            else if (nSelectedIndex > -1 && nSelectedIndex < 5)
             {
                 barcodeReader.CaptureQuality = nSelectedIndex switch
                 {
@@ -305,32 +305,32 @@ public partial class PageScanNT : ContentPage
                     _ => CaptureQuality.High
                 };
             }
-            catch (Exception ex)
-            {
-                var properties = new Dictionary<string, string> {
+        }
+        catch (Exception ex)
+        {
+            var properties = new Dictionary<string, string> {
                     { "File:", "PageScanNT.xaml.cs" },
                     { "Method:", "OnCameraQualityChanged" },
                     { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
                     { "selectedIndex:", Convert.ToString(nSelectedIndex) }
                 };
-                Crashes.TrackError(ex, properties);
-                await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-                return;
-            }
-
-            // Set the title for the picker.
-            string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
-            pckCameraQuality.Title = nSelectedIndex switch
-            {
-                0 => cTitle + CodeLang.CameraQualityLowest_Text,
-                1 => cTitle + CodeLang.CameraQualityLow_Text,
-                2 => cTitle + CodeLang.CameraQualityMedium_Text,
-                3 => cTitle + CodeLang.CameraQualityHigh_Text,
-                4 => cTitle + CodeLang.CameraQualityHighest_Text,
-                _ => cTitle + CodeLang.CameraQualityHigh_Text
-            };
+            Crashes.TrackError(ex, properties);
+            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+            return;
         }
-        
+
+        // Set the title for the picker.
+        string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
+        pckCameraQuality.Title = nSelectedIndex switch
+        {
+            0 => cTitle + CodeLang.CameraQualityLowest_Text,
+            1 => cTitle + CodeLang.CameraQualityLow_Text,
+            2 => cTitle + CodeLang.CameraQualityMedium_Text,
+            3 => cTitle + CodeLang.CameraQualityHigh_Text,
+            4 => cTitle + CodeLang.CameraQualityHighest_Text,
+            _ => cTitle + CodeLang.CameraQualityHigh_Text
+        };
+
         if (barcodeReader.CameraFacing == CameraFacing.Back)
         {
             nQualityCameraBack = nSelectedIndex;
@@ -339,6 +339,7 @@ public partial class PageScanNT : ContentPage
         {
             nQualityCameraFront = nSelectedIndex;
         }
+        await DisplayAlert("nSelectedIndex", Convert.ToString(nSelectedIndex), "OK");
     }
 
     // ImageButton camera facing clicked event.
@@ -348,22 +349,26 @@ public partial class PageScanNT : ContentPage
         // The high and highest quality are not on every device supported by the front camera.
         if (barcodeReader.CameraFacing == CameraFacing.Back)
         {
-            nQualityCameraBack = pckCameraQuality.SelectedIndex;
-
             // Set the quality to medium when the front camera is used.
-            if (pckCameraQuality.SelectedIndex > 2)
+            if (nQualityCameraFront > 2)
             {
-                pckCameraQuality.SelectedIndex = 2;
                 nQualityCameraFront = 2;
+                pckCameraQuality.SelectedIndex = 2;
+                barcodeReader.CaptureQuality = CaptureQuality.Medium;
+            }
+            else
+            {
+                pckCameraQuality.SelectedIndex = nQualityCameraFront;
             }
             barcodeReader.CameraFacing = CameraFacing.Front;
         }
         else if (barcodeReader.CameraFacing == CameraFacing.Front)
         {
             // Set the quality to the saved setting from the back camera.
-            nQualityCameraFront = pckCameraQuality.SelectedIndex;
+            //nQualityCameraFront = pckCameraQuality.SelectedIndex;
             barcodeReader.CameraFacing = CameraFacing.Back;
             pckCameraQuality.SelectedIndex = nQualityCameraBack;
+            OnCameraQualityChanged(sender, e);
         }
     }
 
