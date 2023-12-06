@@ -86,21 +86,31 @@
                             AbsoluteLayout.LayoutBounds="0,0,1,0.1">
 
                             <Picker
-                                x:Name="pckCameraQuality"
+                                x:Name="pckCameraQualityBack"
                                 Grid.Column="0"
                                 BackgroundColor="Transparent"
                                 WidthRequest="45"
                                 HeightRequest="45"
                                 SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
                                 ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                                                
-                                SelectedIndexChanged="OnCameraQualityChanged">
+                                SelectedIndexChanged="OnCameraQualityBackChanged">
+                            </Picker>
+
+                            <Picker
+                                x:Name="pckCameraQualityFront"
+                                Grid.Column="0"
+                                BackgroundColor="Transparent"
+                                WidthRequest="45"
+                                HeightRequest="45"
+                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                                                
+                                SelectedIndexChanged="OnCameraQualityFrontChanged">
                             </Picker>
 
                             <ImageButton
                                 x:Name="imgbtnCameraQuality"
                                 Style="{StaticResource imageButtonStyleCamera}"
                                 Grid.Column="0"
-                                InputTransparent="True"
                                 Source="camera_quality_128x128p.png"
                                 SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
                                 ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                
