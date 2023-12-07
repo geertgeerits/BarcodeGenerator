@@ -572,8 +572,8 @@ public partial class PageSettings : ContentPage
         Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
         Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
 
-        // Wait 500 milliseconds otherwise the settings are not saved in Android.
-        Task.Delay(500).Wait();
+        // Give it some time to save the settings.
+        Task.Delay(400).Wait();
 
         // Restart the application.
         //Application.Current.MainPage = new AppShell();
@@ -606,7 +606,7 @@ public partial class PageSettings : ContentPage
         }
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
-        Task.Delay(500).Wait();
+        //Task.Delay(500).Wait();
 
         // Restart the application.
         //Application.Current.MainPage = new AppShell();
