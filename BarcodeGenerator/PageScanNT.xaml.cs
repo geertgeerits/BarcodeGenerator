@@ -6,7 +6,7 @@ public partial class PageScanNT : ContentPage
 {
     // Local variables
     private readonly BarcodeDrawable _drawable = new();
-    private readonly List<string> qualitys = [];
+    private readonly List<string> qualities = [];
     private int nQualityCameraBack;
     private int nQualityCameraFront;
 
@@ -24,8 +24,8 @@ public partial class PageScanNT : ContentPage
         }
 
         // Get the saved settings.
-        nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 3);
-        nQualityCameraFront = Preferences.Default.Get("SettingQualityCameraFront", 2);
+        nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 2);
+        nQualityCameraFront = Preferences.Default.Get("SettingQualityCameraFront", 1);
 
         // Set the camera enabled off and on: after opening the page for the first time the scanning is not always working.
         // Does also not help always.
@@ -35,24 +35,24 @@ public partial class PageScanNT : ContentPage
         barcodeReader.CameraEnabled = true;
         barcodeReader.PauseScanning = false;
 
-        // Set the title and quality for the picker.
+        // Set the title and quality for the pickers
         // No support for the highest quality:
         // - iPad 8, iOS version 17.1.1 (back and front camera)
         // - iPhone 7, iOS version 15.8 (front camera).
-        qualitys.Add(CodeLang.CameraQualityLowest_Text);
-        qualitys.Add(CodeLang.CameraQualityLow_Text);
-        qualitys.Add(CodeLang.CameraQualityMedium_Text);
-        qualitys.Add(CodeLang.CameraQualityHigh_Text);
-#if ANDROID
-        qualitys.Add(CodeLang.CameraQualityHighest_Text);
-#endif
+        qualities.Add(CodeLang.CameraQualityLow_Text);
+        qualities.Add(CodeLang.CameraQualityMedium_Text);
+        qualities.Add(CodeLang.CameraQualityHigh_Text);
+
+        pckCameraQualityFront.ItemsSource = qualities;
+
+        qualities.Add(CodeLang.CameraQualityHighest_Text);
+
         //if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
         //{
-        //    qualitys.Add(CodeLang.CameraQualityHighest_Text);
+        //    qualities.Add(CodeLang.CameraQualityHighest_Text);
         //}
 
-        pckCameraQualityBack.ItemsSource = qualitys;
-        pckCameraQualityFront.ItemsSource = qualitys;
+        pckCameraQualityBack.ItemsSource = qualities;
         
         // Set the quality for the camera.
         pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
@@ -92,9 +92,9 @@ public partial class PageScanNT : ContentPage
     private void OnPickerFormatCodeChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
-        int selectedIndex = picker.SelectedIndex;
+        int nSelectedIndex = picker.SelectedIndex;
 
-        if (selectedIndex != -1)
+        if (nSelectedIndex != -1)
         {
             barcodeReader.CameraEnabled = false;
             
@@ -106,9 +106,9 @@ public partial class PageScanNT : ContentPage
             imgbtnTextToSpeech.IsEnabled = false;
 
 #if ANDROID
-            SetScannerBarcodeFormatAndroid(selectedIndex);
+            SetScannerBarcodeFormatAndroid(nSelectedIndex);
 #elif IOS
-            SetScannerBarcodeFormatIOS(selectedIndex);
+            SetScannerBarcodeFormatIOS(nSelectedIndex);
 #endif
 
             barcodeReader.CameraEnabled = true;
@@ -118,9 +118,9 @@ public partial class PageScanNT : ContentPage
     }
 
     // Set the scanner barcode format for Android.
-    private void SetScannerBarcodeFormatAndroid(int selectedIndex)
+    private void SetScannerBarcodeFormatAndroid(int nSelectedIndex)
     {
-        barcodeReader.BarcodeSymbologies = selectedIndex switch
+        barcodeReader.BarcodeSymbologies = nSelectedIndex switch
         {
             0 => BarcodeFormats.All,
             1 => BarcodeFormats.Aztec,
@@ -141,9 +141,9 @@ public partial class PageScanNT : ContentPage
     }
 
     // Set the scanner barcode format for iOS.
-    private void SetScannerBarcodeFormatIOS(int selectedIndex)
+    private void SetScannerBarcodeFormatIOS(int nSelectedIndex)
     {
-        barcodeReader.BarcodeSymbologies = selectedIndex switch
+        barcodeReader.BarcodeSymbologies = nSelectedIndex switch
         {
             0 => BarcodeFormats.All,
             1 => BarcodeFormats.Aztec,
@@ -188,14 +188,14 @@ public partial class PageScanNT : ContentPage
     // Called by the Disappearing event from the PageScanNT.xaml.
     protected override void OnDisappearing()
     {
-        // Save the settings.
+        // Save the quality settings.
         Preferences.Default.Set("SettingQualityCameraBack", nQualityCameraBack);
         Preferences.Default.Set("SettingQualityCameraFront", nQualityCameraFront);
         
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
         Task.Delay(500).Wait();
 
-        // Set the camera torch off - (does not work - !!!BUG!!!?).
+        // Set the camera torch off.
         barcodeReader.TorchOn = false;
         imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
 
@@ -297,11 +297,10 @@ public partial class PageScanNT : ContentPage
             {
                 barcodeReader.CaptureQuality = nSelectedIndex switch
                 {
-                    0 => CaptureQuality.Lowest,
-                    1 => CaptureQuality.Low,
-                    2 => CaptureQuality.Medium,
-                    3 => CaptureQuality.High,
-                    4 => CaptureQuality.Highest,
+                    0 => CaptureQuality.Low,
+                    1 => CaptureQuality.Medium,
+                    2 => CaptureQuality.High,
+                    3 => CaptureQuality.Highest,
                     _ => CaptureQuality.Medium
                 };
             }
@@ -322,11 +321,10 @@ public partial class PageScanNT : ContentPage
         string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
         pckCameraQualityBack.Title = nSelectedIndex switch
         {
-            0 => cTitle + CodeLang.CameraQualityLowest_Text,
-            1 => cTitle + CodeLang.CameraQualityLow_Text,
-            2 => cTitle + CodeLang.CameraQualityMedium_Text,
-            3 => cTitle + CodeLang.CameraQualityHigh_Text,
-            4 => cTitle + CodeLang.CameraQualityHighest_Text,
+            0 => cTitle + CodeLang.CameraQualityLow_Text,
+            1 => cTitle + CodeLang.CameraQualityMedium_Text,
+            2 => cTitle + CodeLang.CameraQualityHigh_Text,
+            3 => cTitle + CodeLang.CameraQualityHighest_Text,
             _ => cTitle + CodeLang.CameraQualityMedium_Text
         };
 
@@ -338,11 +336,11 @@ public partial class PageScanNT : ContentPage
     {
         int nSelectedIndex = pckCameraQualityFront.SelectedIndex;
 
-        // If (the high) or the highest quality is selected and the front camera is used then set the quality to medium.
+        // If the high or the highest quality is selected and the front camera is used then set the quality to medium.
         // The high and highest quality are not on every device supported by the front camera.
-        if (nSelectedIndex > 2)
+        if (nSelectedIndex > 1)
         {
-            nSelectedIndex = 2;
+            nSelectedIndex = 1;
         }
 
         try
@@ -352,11 +350,10 @@ public partial class PageScanNT : ContentPage
             {
                 barcodeReader.CaptureQuality = nSelectedIndex switch
                 {
-                    0 => CaptureQuality.Lowest,
-                    1 => CaptureQuality.Low,
-                    2 => CaptureQuality.Medium,
-                    3 => CaptureQuality.High,
-                    4 => CaptureQuality.Highest,
+                    0 => CaptureQuality.Low,
+                    1 => CaptureQuality.Medium,
+                    2 => CaptureQuality.High,
+                    3 => CaptureQuality.Highest,
                     _ => CaptureQuality.Medium
                 };
             }
@@ -377,39 +374,46 @@ public partial class PageScanNT : ContentPage
         string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
         pckCameraQualityFront.Title = nSelectedIndex switch
         {
-            0 => cTitle + CodeLang.CameraQualityLowest_Text,
-            1 => cTitle + CodeLang.CameraQualityLow_Text,
-            2 => cTitle + CodeLang.CameraQualityMedium_Text,
-            3 => cTitle + CodeLang.CameraQualityHigh_Text,
-            4 => cTitle + CodeLang.CameraQualityHighest_Text,
+            0 => cTitle + CodeLang.CameraQualityLow_Text,
+            1 => cTitle + CodeLang.CameraQualityMedium_Text,
+            2 => cTitle + CodeLang.CameraQualityHigh_Text,
+            3 => cTitle + CodeLang.CameraQualityHighest_Text,
             _ => cTitle + CodeLang.CameraQualityMedium_Text
         };
 
         nQualityCameraFront = nSelectedIndex;
+        
+        //await DisplayAlert("nSelectedIndex", Convert.ToString(nSelectedIndex), "OK");  // For testing.
     }
 
     // ImageButton camera facing clicked event.
     private void OnCameraFacingClicked(object sender, EventArgs e)
     {
-        // If (the high) or the highest quality is selected and the front camera is used then set the quality to medium.
+        barcodeReader.CameraEnabled = false;
+
+        // If the high or the highest quality is selected and the front camera is used then set the quality to medium.
         // The high and highest quality are not on every device supported by the front camera.
         if (barcodeReader.CameraFacing == CameraFacing.Back)
         {
             // Set the quality to medium when the front camera is used.
-            if (nQualityCameraFront > 2)
+            if (nQualityCameraFront > 1)
             {
-                nQualityCameraFront = 2;
+                nQualityCameraFront = 1;
             }
-            
+
+            pckCameraQualityBack.Unfocus();
             pckCameraQualityFront.SelectedIndex = nQualityCameraFront;
             barcodeReader.CameraFacing = CameraFacing.Front;
         }
         else if (barcodeReader.CameraFacing == CameraFacing.Front)
         {
             // Set the quality to the saved setting from the back camera.
+            pckCameraQualityFront.Unfocus();
             barcodeReader.CameraFacing = CameraFacing.Back;
             pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
         }
+
+        barcodeReader.CameraEnabled = true;
     }
 
     // ImageButton camera detecting clicked event.
