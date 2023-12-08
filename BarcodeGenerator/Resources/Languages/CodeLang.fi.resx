@@ -411,7 +411,7 @@ Ei sallittu:</value>
     <value>Kytke kameran taskulamppu päälle tai pois päältä</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Ota laitteen värinä käyttöön tai poista se käytöstä skannauksen aikana</value>
+    <value>Ota käyttöön tai poista käytöstä laitteen värinä, kun etsit viivakoodia</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopioi teksti leikepöydälle</value>

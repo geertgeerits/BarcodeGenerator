@@ -411,7 +411,7 @@ Nem megengedett:</value>
     <value>Kapcsolja be vagy ki a fényképezőgép zseblámpáját</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Az eszköz rezgésének engedélyezése vagy letiltása szkennelés közben</value>
+    <value>Az eszköz rezgésének engedélyezése vagy letiltása vonalkód megtalálásakor</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Szöveg másolása a vágólapra</value>

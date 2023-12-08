@@ -411,7 +411,7 @@ Inte tillåtet:</value>
     <value>Slå på eller av kamerafacket</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Aktivera eller inaktivera enhetsvibrationer under skanning</value>
+    <value>Aktivera eller inaktivera enhetsvibrationer när du hittar en streckkod</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopiera text till urklipp</value>

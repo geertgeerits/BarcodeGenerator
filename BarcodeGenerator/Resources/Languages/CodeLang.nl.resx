@@ -411,7 +411,7 @@ Niet toegestaan:</value>
     <value>Schakel de camerazaklamp in of uit</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Schakel apparaattrillingen tijdens het scannen in of uit</value>
+    <value>Schakel apparaattrilling in of uit bij het vinden van een barcode</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopieer tekst naar het klembord</value>

@@ -411,7 +411,7 @@ Nicht erlaubt:</value>
     <value>Schalten Sie die Taschenlampe der Kamera ein oder aus</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Aktivieren oder deaktivieren Sie die Gerätevibration beim Scannen</value>
+    <value>Aktivieren oder deaktivieren Sie die Gerätevibration beim Finden eines Barcodes</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Text in die Zwischenablage kopieren</value>

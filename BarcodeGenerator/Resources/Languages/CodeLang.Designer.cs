@@ -895,7 +895,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable or disable device vibration while scanning.
+        ///   Looks up a localized string similar to Enable or disable device vibration when finding a barcode.
         /// </summary>
         internal static string ToolTipCameraVibrate_Text {
             get {

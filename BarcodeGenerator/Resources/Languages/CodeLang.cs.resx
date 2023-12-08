@@ -411,7 +411,7 @@ Nepovoleno:</value>
     <value>Zapněte nebo vypněte svítilnu fotoaparátu</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Povolit nebo zakázat vibrace zařízení během skenování</value>
+    <value>Povolit nebo zakázat vibrace zařízení při hledání čárového kódu</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Zkopírujte text do schránky</value>

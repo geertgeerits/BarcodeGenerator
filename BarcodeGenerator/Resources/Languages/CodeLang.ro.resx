@@ -411,7 +411,7 @@ Nepermis:</value>
     <value>Porniți sau opriți lanterna camerei</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Activați sau dezactivați vibrația dispozitivului în timpul scanării</value>
+    <value>Activați sau dezactivați vibrația dispozitivului când găsiți un cod de bare</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiați textul în clipboard</value>

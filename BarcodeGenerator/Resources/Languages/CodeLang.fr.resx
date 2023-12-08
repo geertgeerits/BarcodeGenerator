@@ -411,7 +411,7 @@ Interdit:</value>
     <value>Allumer ou éteindre la lampe torche de l'appareil photo</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Activer ou désactiver les vibrations de l'appareil pendant la numérisation</value>
+    <value>Activer ou désactiver les vibrations de l'appareil lors de la recherche d'un code-barres</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiez le texte dans le presse-papiers</value>

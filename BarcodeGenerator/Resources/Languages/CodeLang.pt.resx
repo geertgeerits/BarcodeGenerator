@@ -411,7 +411,7 @@ Não permitido:</value>
     <value>Ligar ou desligar a tocha da câmera</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Ativar ou desativar a vibração do dispositivo durante a digitalização</value>
+    <value>Ative ou desative a vibração do dispositivo ao encontrar um código de barras</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copie o texto para a área de transferência</value>
