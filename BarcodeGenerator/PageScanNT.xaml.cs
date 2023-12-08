@@ -374,6 +374,8 @@ public partial class PageScanNT : ContentPage
             barcodeReader.CameraFacing = CameraFacing.Back;
             pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
         }
+
+        imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
     }
 
     // ImageButton camera detecting clicked event.
