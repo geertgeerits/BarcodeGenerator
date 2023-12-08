@@ -213,7 +213,9 @@ public static async Task ShareBarcodeResultAsync(string cText)
         catch (Exception ex)
         {
             Crashes.TrackError(ex);
+#if DEBUG
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
         }
 
         // Wait 700 milliseconds otherwise the ShareText() is not executed after the last opened link.
@@ -239,7 +241,9 @@ public static async Task ShareBarcodeResultAsync(string cText)
         catch (Exception ex)
         {
             Crashes.TrackError(ex);
+#if DEBUG
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
         }
     }
 
@@ -257,7 +261,9 @@ public static async Task ShareBarcodeResultAsync(string cText)
         catch (Exception ex)
         {
             Crashes.TrackError(ex);
+#if DEBUG
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
         }
     }
 
@@ -282,8 +288,9 @@ public static async Task ShareBarcodeResultAsync(string cText)
             //    { "AppLanguageSpeech:", cLanguageSpeech }
             //};
             //Crashes.TrackError(ex, properties);
-
-            //await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#if DEBUG
+            await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
             return false;
         }
 
@@ -316,7 +323,9 @@ public static async Task ShareBarcodeResultAsync(string cText)
             catch (Exception ex)
             {
                 Crashes.TrackError(ex);
+#if DEBUG
                 await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
             }
 
             imageButton.Source = cImageTextToSpeech;

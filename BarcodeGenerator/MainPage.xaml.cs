@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2023
 // Version .....: 1.0.37
-// Date ........: 2023-12-07 (YYYY-MM-DD)
+// Date ........: 2023-12-08 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -35,7 +35,9 @@ public partial class MainPage : ContentPage
         catch (Exception ex)
         {
             Crashes.TrackError(ex);
+#if DEBUG
             DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
+#endif
             return;
         }
 
@@ -975,8 +977,9 @@ public partial class MainPage : ContentPage
             //    { "AppLanguageSpeech:", Globals.cLanguageSpeech }
             //};
             //Crashes.TrackError(ex, properties);
-
-            //await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
+#if DEBUG
+            await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
+#endif
             return;
         }
        
@@ -1006,7 +1009,7 @@ public partial class MainPage : ContentPage
     }
     
     // Search for the language after a first start or reset of the application.
-    private void SearchArrayWithSpeechLanguages(string cCultureName)
+    private static void SearchArrayWithSpeechLanguages(string cCultureName)
     {
         try
         {
@@ -1043,7 +1046,9 @@ public partial class MainPage : ContentPage
         catch (Exception ex)
         {
             Crashes.TrackError(ex);
-            DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#if DEBUG
+            _ = Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
         }
     }
 
@@ -1064,7 +1069,7 @@ public partial class MainPage : ContentPage
     //        catch (Exception ex)
     //        {
     //            Crashes.TrackError(ex);
-    //            DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+    //            //DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
     //            cLanguageSpeech = cLanguageLocales[0];
     //        }
     //    }
@@ -1115,9 +1120,10 @@ public partial class MainPage : ContentPage
                     { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
                 };
                 Crashes.TrackError(ex, properties);
-
+#if DEBUG
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-            }          
+#endif
+            }
         }
     }
 

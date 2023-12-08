@@ -19,7 +19,9 @@ public partial class PageScanNT : ContentPage
         catch (Exception ex)
         {
             Crashes.TrackError(ex);
+#if DEBUG
             DisplayAlert("InitializeComponent: PageScanNT", ex.Message, "OK");
+#endif
             return;
         }
 
@@ -83,15 +85,6 @@ public partial class PageScanNT : ContentPage
 
         if (nSelectedIndex != -1)
         {
-            barcodeReader.CameraEnabled = false;
-            
-            lblBarcodeResult.Text = "";
-            btnShare.Text = CodeLang.ButtonShare_Text;
-
-            imgbtnCopyToClipboard.IsEnabled = false;
-            btnShare.IsEnabled = false;
-            imgbtnTextToSpeech.IsEnabled = false;
-
 #if ANDROID
             barcodeReader.BarcodeSymbologies = nSelectedIndex switch
             {
@@ -134,9 +127,6 @@ public partial class PageScanNT : ContentPage
                 _ => BarcodeFormats.All
             };
 #endif
-            barcodeReader.CameraEnabled = true;
-            barcodeReader.PauseScanning = false;
-            imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
         }
     }
 
@@ -178,7 +168,7 @@ public partial class PageScanNT : ContentPage
     }
 
     // CameraView OnDetected event.
-    private async void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
+    private void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
     {
         imgbtnCopyToClipboard.IsEnabled = false;
         btnShare.IsEnabled = false;
@@ -235,7 +225,9 @@ public partial class PageScanNT : ContentPage
         catch (Exception ex)
         {
             Crashes.TrackError(ex);
-            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#if DEBUG
+            _ = DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
         }
     }
 
@@ -278,12 +270,13 @@ public partial class PageScanNT : ContentPage
         catch (Exception ex)
         {
             var properties = new Dictionary<string, string> {
-                    { "File:", "PageScanNT.xaml.cs" },
-                    { "Method:", "OnCameraQualityBackChanged" },
-                    { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
-                    { "selectedIndex:", Convert.ToString(nSelectedIndex) }
-                };
+                { "File:", "PageScanNT.xaml.cs" },
+                { "Method:", "OnCameraQualityBackChanged" },
+                { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
+                { "selectedIndex:", Convert.ToString(nSelectedIndex) }
+            };
             Crashes.TrackError(ex, properties);
+            
             await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraQualityError_Text, CodeLang.ButtonClose_Text);
         }
 
@@ -331,12 +324,13 @@ public partial class PageScanNT : ContentPage
         catch (Exception ex)
         {
             var properties = new Dictionary<string, string> {
-                    { "File:", "PageScanNT.xaml.cs" },
-                    { "Method:", "OnCameraQualityFrontChanged" },
-                    { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
-                    { "selectedIndex:", Convert.ToString(nSelectedIndex) }
-                };
+                { "File:", "PageScanNT.xaml.cs" },
+                { "Method:", "OnCameraQualityFrontChanged" },
+                { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
+                { "selectedIndex:", Convert.ToString(nSelectedIndex) }
+            };
             Crashes.TrackError(ex, properties);
+            
             await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraQualityError_Text, CodeLang.ButtonClose_Text);
         }
 
@@ -359,8 +353,6 @@ public partial class PageScanNT : ContentPage
     // ImageButton camera facing clicked event.
     private void OnCameraFacingClicked(object sender, EventArgs e)
     {
-        //barcodeReader.CameraEnabled = false;
-
         // If the high or the highest quality is selected and the front camera is used then set the quality to medium.
         // The high and highest quality are not on every device supported by the front camera.
         if (barcodeReader.CameraFacing == CameraFacing.Back)
@@ -382,8 +374,6 @@ public partial class PageScanNT : ContentPage
             barcodeReader.CameraFacing = CameraFacing.Back;
             pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
         }
-
-        //barcodeReader.CameraEnabled = true;
     }
 
     // ImageButton camera detecting clicked event.
@@ -473,10 +463,24 @@ public partial class PageScanNT : ContentPage
                 var scale = 1 / canvas.DisplayScale;
                 canvas.Scale(scale, scale);
 
-                foreach (var barcode in barcodeResults)
+                try
                 {
-                    canvas.DrawRectangle(barcode.BoundingBox);
+                    foreach (var barcode in barcodeResults)
+                    {
+                        canvas.DrawRectangle(barcode.BoundingBox);
+                    }
                 }
+                catch (Exception ex)
+                {
+                    var properties = new Dictionary<string, string> {
+                        { "File:", "PageScanNT.xaml.cs" },
+                        { "Class.Method:", "BarcodeDrawable.Draw" }
+                    };
+                    Crashes.TrackError(ex, properties);
+#if DEBUG                    
+                    Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
+                }               
             }
         }
     }
