@@ -162,7 +162,7 @@
 		<!-- Only needed when you have a need for entitlements -->
 		<!-- <CodesignEntitlement>Entitlements.plist</CodesignEntitlement> -->
 		<CodesignKey>iPhone Distribution: Geert Geerits (S6CWMSSJ54)</CodesignKey>
-		<CodesignProvision>provisioningprofile01iOSBarcodeGenerator</CodesignProvision>
+		<CodesignProvision>provisioningprofile03iOSBarcodeGenerator</CodesignProvision>
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
