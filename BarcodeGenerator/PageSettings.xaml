@@ -253,7 +253,6 @@
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
                         ReturnType="Next"
-                        Completed="EntryHexColorUnfocused"
                         MaxLength="8"
                         TextChanged="EntryHexColorTextChanged"
                         Unfocused="EntryHexColorUnfocused">
@@ -365,7 +364,6 @@
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
                         ReturnType="Done"
-                        Completed="EntryHexColorUnfocused"
                         MaxLength="8"
                         TextChanged="EntryHexColorTextChanged"
                         Unfocused="EntryHexColorUnfocused">

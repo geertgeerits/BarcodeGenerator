@@ -136,7 +136,7 @@ public partial class PageSettings : ContentPage
     {
         string cLanguageOld = Globals.cLanguage;
 
-        var picker = (Picker)sender;
+        Picker picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
@@ -226,7 +226,7 @@ public partial class PageSettings : ContentPage
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
         // Set the current theme in the picker.
-        var ThemeList = new List<string>
+        List<string> ThemeList = new()
         {
             CodeLang.ThemeSystem_Text,
             CodeLang.ThemeLight_Text,
@@ -284,7 +284,7 @@ public partial class PageSettings : ContentPage
     // Picker speech language clicked event.
     private void OnPickerLanguageSpeechChanged(object sender, EventArgs e)
     {
-        var picker = (Picker)sender;
+        Picker picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
@@ -296,7 +296,7 @@ public partial class PageSettings : ContentPage
     // Picker theme clicked event.
     private void OnPickerThemeChanged(object sender, EventArgs e)
     {
-        var picker = (Picker)sender;
+        Picker picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
@@ -321,7 +321,7 @@ public partial class PageSettings : ContentPage
     // Picker format generator clicked event.
     private void OnPickerFormatCodeGeneratorChanged(object sender, EventArgs e)
     {
-        var picker = (Picker)sender;
+        Picker picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
@@ -333,7 +333,7 @@ public partial class PageSettings : ContentPage
     // Picker format scanner clicked event.
     private void OnPickerFormatCodeScannerChanged(object sender, EventArgs e)
     {
-        var picker = (Picker)sender;
+        Picker picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
@@ -342,13 +342,16 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // On entry HexColor text changed event.
-    private void EntryHexColorTextChanged(object sender, EventArgs e)
+    // On entry HexColor text changed event
+    private void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
     {
-        var entry = (Entry)sender;
+        Entry entry = (Entry)sender;
+
+        string oldText = e.OldTextValue;
 
         if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
         {
+            entry.Text = oldText;
             entry.Focus();
         }
     }
@@ -362,7 +365,7 @@ public partial class PageSettings : ContentPage
     // Entry HexColor Unfocused event.
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {
-        var entry = (Entry)sender;
+        Entry entry = (Entry)sender;
 
         //Test for allowed characters.
         if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
@@ -453,7 +456,7 @@ public partial class PageSettings : ContentPage
         int nColorGreen = 0;
         int nColorBlue = 0;
 
-        var slider = (Slider)sender;
+        Slider slider = (Slider)sender;
 
         if (slider == sldOpacityFg)
         {
@@ -510,7 +513,7 @@ public partial class PageSettings : ContentPage
         int nColorGreen = 0;
         int nColorBlue = 0;
 
-        var slider = (Slider)sender;
+        Slider slider = (Slider)sender;
 
         if (slider == sldOpacityBg)
         {
