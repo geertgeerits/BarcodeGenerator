@@ -5,7 +5,7 @@ namespace BarcodeGenerator;
 public partial class PageSettings : ContentPage
 {
     // Local variables.
-    private readonly string cHexCharacters = "0123456789ABCDEFabcdef";
+    private const string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
     public PageSettings()
@@ -367,13 +367,6 @@ public partial class PageSettings : ContentPage
     {
         Entry entry = (Entry)sender;
 
-        //Test for allowed characters.
-        if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
-        {
-            entry.Focus();
-            return;
-        }
-
         // Add the opacity if length = 6 characters.
         if (entry.Text.Length == 6)
         {
@@ -427,7 +420,7 @@ public partial class PageSettings : ContentPage
             entry.IsEnabled = false;
             entry.IsEnabled = true;
 
-            //_ = btnSettingsSave.Focus();
+            _ = btnSettingsSave.Focus();
         }
     }
 
