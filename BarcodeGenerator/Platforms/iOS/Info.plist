@@ -72,7 +72,7 @@
 				<string>E174.1</string>
 			</array>
 			<key>NSPrivacyAccessedAPIReason</key>
-			<string>We check available disk space to ensure there is enough space before attempting to save a document file.</string>
+			<string>We check available disk space to ensure there is enough space before attempting to save a barcode image file.</string>
 		</dict>
 	</array>
 </dict>
