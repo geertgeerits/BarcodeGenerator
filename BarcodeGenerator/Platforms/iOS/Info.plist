@@ -54,6 +54,8 @@
 		<dict>
 			<key>NSPrivacyAccessedAPICategorySystemBootTime</key>
 			<string>35F9.1</string>
+			<key>NSPrivacyAccessedAPIReason</key>
+			<string>We use the system boot time to calculate uptime for diagnostic purposes.</string>
 		</dict>
 		<dict>
 			<key>NSPrivacyAccessedAPICategoryFileTimestamp</key>
@@ -61,13 +63,17 @@
 				<string>DDA9.1</string>
 				<string>3B52.1</string>
 			</array>
+			<key>NSPrivacyAccessedAPIReason</key>
+			<string>We access file timestamps to keep track of when files in our app were last modified for data integrity purposes.</string>
 		</dict>
 		<dict>
 			<key>NSPrivacyAccessedAPICategoryDiskSpace</key>
 			<array>
 				<string>E174.1</string>
 			</array>
+			<key>NSPrivacyAccessedAPIReason</key>
+			<string>We check available disk space to ensure there is enough space before attempting to save a document file.</string>
 		</dict>
-	</array>	
+	</array>
 </dict>
 </plist>
