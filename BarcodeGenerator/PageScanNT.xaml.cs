@@ -166,6 +166,12 @@ public partial class PageScanNT : ContentPage
         // Cancel the text to speech when going back to the mainpage.
         imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
     }
+    
+    // Unloaded event to disconnect the barcode handler.
+    private void ContentPage_Unloaded(object sender, EventArgs e)
+    {
+        barcodeReader.Handler?.DisconnectHandler();
+    }
 
     // CameraView OnDetected event.
     private void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
@@ -181,6 +187,9 @@ public partial class PageScanNT : ContentPage
 
         try
         {
+            //_drawable.barcodeResults = e.BarcodeResults;
+            //Graphics.Invalidate();
+
             _drawable.barcodeResults = e.BarcodeResults;
             Graphics.Invalidate();
 
@@ -455,12 +464,14 @@ public partial class PageScanNT : ContentPage
     // Class for drawing the barcode bounding box.
     private class BarcodeDrawable : IDrawable
     {
-        public BarcodeResult[]? barcodeResults;
-        
+        //public BarcodeResult[]? barcodeResults;
+        public HashSet<BarcodeResult>? barcodeResults;
+
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
-            if (barcodeResults is not null && barcodeResults.Length > 0)
-            {
+            //if (barcodeResults is not null && barcodeResults.Length > 0)
+            if (barcodeResults is not null && barcodeResults.Count > 0)
+                {
                 canvas.StrokeSize = 15;
                 canvas.StrokeColor = Colors.Green;
                 var scale = 1 / canvas.DisplayScale;
