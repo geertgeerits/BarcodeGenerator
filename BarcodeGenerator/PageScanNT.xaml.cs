@@ -455,10 +455,11 @@ public partial class PageScanNT : ContentPage
     // Class for drawing the barcode bounding box.
     private class BarcodeDrawable : IDrawable
     {
-        public HashSet<BarcodeResult>? barcodeResults;
+        public BarcodeResult[]? barcodeResults;
+        
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
-            if (barcodeResults is not null && barcodeResults.Count > 0)
+            if (barcodeResults is not null && barcodeResults.Length > 0)
             {
                 canvas.StrokeSize = 15;
                 canvas.StrokeColor = Colors.Green;

@@ -48,7 +48,6 @@
 	<string>38</string>
 	<key>CFBundleIdentifier</key>
 	<string></string>
-
 	<key>NSPrivacyAccessedAPITypes</key>
 	<array>
 		<dict>
