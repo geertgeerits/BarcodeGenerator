@@ -187,9 +187,6 @@ public partial class PageScanNT : ContentPage
 
         try
         {
-            //_drawable.barcodeResults = e.BarcodeResults;
-            //Graphics.Invalidate();
-
             _drawable.barcodeResults = e.BarcodeResults;
             Graphics.Invalidate();
 
@@ -462,16 +459,17 @@ public partial class PageScanNT : ContentPage
     }
 
     // Class for drawing the barcode bounding box.
+    // !!!BUG!!! from version 1.4.0: the scan page freezes on an iPhone 7 when the scan page is opened.
     private class BarcodeDrawable : IDrawable
     {
-        //public BarcodeResult[]? barcodeResults;
-        public HashSet<BarcodeResult>? barcodeResults;
+        public HashSet<BarcodeResult>? barcodeResults;    // Till version 1.3.1
+        //public BarcodeResult[]? barcodeResults;         // From version 1.4.0
 
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
-            //if (barcodeResults is not null && barcodeResults.Length > 0)
-            if (barcodeResults is not null && barcodeResults.Count > 0)
-                {
+            if (barcodeResults is not null && barcodeResults.Count > 0)       // Till version 1.3.1
+            //if (barcodeResults is not null && barcodeResults.Length > 0)    // From version 1.4.0
+            {
                 canvas.StrokeSize = 15;
                 canvas.StrokeColor = Colors.Green;
                 var scale = 1 / canvas.DisplayScale;
