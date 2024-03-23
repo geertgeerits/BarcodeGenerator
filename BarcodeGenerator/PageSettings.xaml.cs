@@ -4,7 +4,7 @@ namespace BarcodeGenerator;
 
 public partial class PageSettings : ContentPage
 {
-    // Local variables.
+    // Local variables
     private const string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
@@ -23,79 +23,79 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-        // Put text in the chosen language in the controls and variables.
+        // Put text in the chosen language in the controls and variables
         SetLanguage();
 
-        // Set the current language in the picker.
+        // Set the current language in the picker
         pckLanguage.SelectedIndex = Globals.cLanguage switch
         {
-            // Čeština - Czech.
+            // Čeština - Czech
             "cs" => 0,
 
-            // Dansk - Danish.
+            // Dansk - Danish
             "da" => 1,
 
-            // Deutsch - German.
+            // Deutsch - German
             "de" => 2,
 
-            // Español - Spanish.
+            // Español - Spanish
             "es" => 4,
 
-            // Français - French.
+            // Français - French
             "fr" => 5,
 
-            // Italiano - Italian.
+            // Italiano - Italian
             "it" => 6,
 
-            // Magyar - Hungarian.
+            // Magyar - Hungarian
             "hu" => 7,
 
-            // Nederlands - Dutch.
+            // Nederlands - Dutch
             "nl" => 8,
 
-            // Norsk Bokmål - Norwegian Bokmål.
+            // Norsk Bokmål - Norwegian Bokmål
             "nb" => 9,
 
-            // Polski - Polish.
+            // Polski - Polish
             "pl" => 10,
 
-            // Português - Portuguese.
+            // Português - Portuguese
             "pt" => 11,
 
-            // Română - Romanian.
+            // Română - Romanian
             "ro" => 12,
 
-            // Suomi - Finnish.
+            // Suomi - Finnish
             "fi" => 13,
 
-            // Svenska - Swedish.
+            // Svenska - Swedish
             "sv" => 14,
 
             // English.
             _ => 3,
         };
 
-        // Fill the picker with the speech languages and set the saved language in the picker.
+        // Fill the picker with the speech languages and set the saved language in the picker
         FillPickerWithSpeechLanguages();
 
-        // Set the current theme in the picker.
+        // Set the current theme in the picker
         pckTheme.SelectedIndex = Globals.cTheme switch
         {
-            // Light.
+            // Light
             "Light" => 1,
 
-            // Dark.
+            // Dark
             "Dark" => 2,
 
-            // System.
+            // System
             _ => 0,
         };
 
-        // Set the barcode list and the current default barcode format in the picker for the barcode generator.
+        // Set the barcode list and the current default barcode format in the picker for the barcode generator
         pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
         pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
 
-        // Set the barcode list and the current default barcode format in the picker for the barcode scanner.
+        // Set the barcode list and the current default barcode format in the picker for the barcode scanner
 #if ANDROID        
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
@@ -103,7 +103,7 @@ public partial class PageSettings : ContentPage
 #endif
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
-        // Set the current color in the entry and on the sliders.
+        // Set the current color in the entry and on the sliders
         int nOpacity = 0;
         int nRed = 0;
         int nGreen = 0;
@@ -127,11 +127,11 @@ public partial class PageSettings : ContentPage
         sldColorBgGreen.Value = nGreen;
         sldColorBgBlue.Value = nBlue;
 
-        // Start the stopWatch for resetting all the settings.
+        // Start the stopWatch for resetting all the settings
         stopWatch.Start();
     }
 
-    // Picker language clicked event.
+    // Picker language clicked event
     private void OnPickerLanguageChanged(object sender, EventArgs e)
     {
         string cLanguageOld = Globals.cLanguage;
@@ -143,49 +143,49 @@ public partial class PageSettings : ContentPage
         {
             Globals.cLanguage = selectedIndex switch
             {
-                // Čeština - Czech.
+                // Čeština - Czech
                 0 => "cs",
 
-                // Dansk - Danish.
+                // Dansk - Danish
                 1 => "da",
 
-                // Deutsch - German.
+                // Deutsch - German
                 2 => "de",
 
-                // Español - Spanish.
+                // Español - Spanish
                 4 => "es",
 
-                // Français - French.
+                // Français - French
                 5 => "fr",
 
-                // Italiano - Italian.
+                // Italiano - Italian
                 6 => "it",
 
-                // Magyar - Hungarian.
+                // Magyar - Hungarian
                 7 => "hu",
 
-                // Nederlands - Dutch.
+                // Nederlands - Dutch
                 8 => "nl",
 
-                // Norsk Bokmål - Norwegian Bokmål.
+                // Norsk Bokmål - Norwegian Bokmål
                 9 => "nb",
 
-                // Polski - Polish.
+                // Polski - Polish
                 10 => "pl",
 
-                // Português - Portuguese.
+                // Português - Portuguese
                 11 => "pt",
 
-                // Română - Romanian.
+                // Română - Romanian
                 12 => "ro",
 
-                // Suomi - Finnish.
+                // Suomi - Finnish
                 13 => "fi",
 
-                // Svenska - Swedish.
+                // Svenska - Swedish
                 14 => "sv",
 
-                // English.
+                // English
                 _ => "en",
             };
         }
@@ -194,13 +194,13 @@ public partial class PageSettings : ContentPage
         {
             Globals.bLanguageChanged = true;
 
-            // Set the current UI culture of the selected language.
+            // Set the current UI culture of the selected language
             Globals.SetCultureSelectedLanguage();
 
-            // Put text in the chosen language in the controls and variables.
+            // Put text in the chosen language in the controls and variables
             SetLanguage();
 
-            // Search the new language in the cLanguageLocales array and select the new speech language.
+            // Search the new language in the cLanguageLocales array and select the new speech language
             int nTotalItems = Globals.cLanguageLocales.Length;
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)
@@ -214,10 +214,10 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Put text in the chosen language in the controls and variables.
+    // Put text in the chosen language in the controls and variables
     private void SetLanguage()
     {
-        // Set the barcode list and the current default barcode format in the picker for the barcode scanner.
+        // Set the barcode list and the current default barcode format in the picker for the barcode scanner
 #if ANDROID        
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
@@ -225,7 +225,7 @@ public partial class PageSettings : ContentPage
 #endif
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
-        // Set the current theme in the picker.
+        // Set the current theme in the picker
         List<string> ThemeList = new()
         {
             CodeLang.ThemeSystem_Text,
@@ -236,22 +236,22 @@ public partial class PageSettings : ContentPage
 
         pckTheme.SelectedIndex = Globals.cTheme switch
         {
-            // Light.
+            // Light
             "Light" => 1,
 
-            // Dark.
+            // Dark
             "Dark" => 2,
 
-            // System.
+            // System
             _ => 0,
         };
     }
 
-    // Fill the picker with the speech languages from the array.
+    // Fill the picker with the speech languages from the array
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
     private void FillPickerWithSpeechLanguages()
     {
-        // If there are no locales then return.
+        // If there are no locales then return
         bool bIsSetSelectedIndex = false;
 
         if (!Globals.bLanguageLocalesExist)
@@ -260,7 +260,7 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-        // Put the sorted locales from the array in the picker and select the saved language.
+        // Put the sorted locales from the array in the picker and select the saved language
         int nTotalItems = Globals.cLanguageLocales.Length;
 
         for (int nItem = 0; nItem < nTotalItems; nItem++)
@@ -274,14 +274,14 @@ public partial class PageSettings : ContentPage
             }
         }
 
-        // If the language is not found set the picker to the first item.
+        // If the language is not found set the picker to the first item
         if (!bIsSetSelectedIndex)
         {
             pckLanguageSpeech.SelectedIndex = 0;
         }
     }
 
-    // Picker speech language clicked event.
+    // Picker speech language clicked event
     private void OnPickerLanguageSpeechChanged(object sender, EventArgs e)
     {
         Picker picker = (Picker)sender;
@@ -293,7 +293,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Picker theme clicked event.
+    // Picker theme clicked event
     private void OnPickerThemeChanged(object sender, EventArgs e)
     {
         Picker picker = (Picker)sender;
@@ -303,22 +303,22 @@ public partial class PageSettings : ContentPage
         {
             Globals.cTheme = selectedIndex switch
             {
-                // Light.
+                // Light
                 1 => "Light",
 
-                // Dark.
+                // Dark
                 2 => "Dark",
 
-                // System.
+                // System
                 _ => "System",
             };
 
-            // Set the theme.
+            // Set the theme
             Globals.SetTheme();
         }
     }
 
-    // Picker format generator clicked event.
+    // Picker format generator clicked event
     private void OnPickerFormatCodeGeneratorChanged(object sender, EventArgs e)
     {
         Picker picker = (Picker)sender;
@@ -330,7 +330,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Picker format scanner clicked event.
+    // Picker format scanner clicked event
     private void OnPickerFormatCodeScannerChanged(object sender, EventArgs e)
     {
         Picker picker = (Picker)sender;
@@ -356,31 +356,31 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Display help for Hex color.
+    // Display help for Hex color
     private async void OnSettingsHexColorClicked(object sender, EventArgs e)
     {
         await DisplayAlert("?", CodeLang.HexColorCodes_Text, CodeLang.ButtonClose_Text);
     }
 
-    // Entry HexColor Unfocused event.
+    // Entry HexColor Unfocused event
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {
         Entry entry = (Entry)sender;
 
-        // Add the opacity if length = 6 characters.
+        // Add the opacity if length = 6 characters
         if (entry.Text.Length == 6)
         {
             entry.Text = $"FF{entry.Text}";
         }
 
-        // Length must be 8 characters.
+        // Length must be 8 characters
         if (entry.Text.Length != 8)
         {
             entry.Focus();
             return;
         }
 
-        // Set the sliders position.
+        // Set the sliders position
         int nOpacity = 0;
         int nRed = 0;
         int nGreen = 0;
@@ -409,14 +409,14 @@ public partial class PageSettings : ContentPage
             sldColorBgBlue.Value = nBlue;
         }
 
-        // Set focus to the next or save button.
+        // Set focus to the next or save button
         if (sender.Equals(entHexColorFg))
         {
             entHexColorBg.Focus();
         }
         else
         {
-            // Hide the keyboard.
+            // Hide the keyboard
             entry.IsEnabled = false;
             entry.IsEnabled = true;
 
@@ -424,7 +424,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Test for allowed characters.
+    // Test for allowed characters
     private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
     {
         foreach (char cChar in cTextToCode)
@@ -441,7 +441,7 @@ public partial class PageSettings : ContentPage
         return true;
     }
 
-    // Slider color barcode Foreground value change.
+    // Slider color barcode Foreground value change
     private void OnSliderColorForegroundValueChanged(object sender, ValueChangedEventArgs args)
     {
         int nAmountOpacity = 0;
@@ -486,19 +486,19 @@ public partial class PageSettings : ContentPage
 
         Globals.cCodeColorFg = cColorFgHex;
 
-        /* Explanation of the line below.
+        /* Explanation of the line below
         string cColorFgHex = $"{nAmountOpacity:X2}{nColorRed:X2}{nColorGreen:X2}{nColorBlue:X2}";
 
-        The code you provided is using string interpolation in C#.
-        The $ sign is used to indicate that the string is an interpolated string.
-        The X2 format specifier formats the number as a hexadecimal value with a minimum width of 2 digits.
-        The nAmountOpacity, nColorRed, nColorGreen, and nColorBlue are variables that are being formatted into a single string.
-        So, the resulting string will be a concatenation of the hexadecimal values of nAmountOpacity, nColorRed, nColorGreen, and nColorBlue.
-        The resulting string will have a length of 8 characters (2 characters for each variable).
+        The code you provided is using string interpolation in C#
+        The $ sign is used to indicate that the string is an interpolated string
+        The X2 format specifier formats the number as a hexadecimal value with a minimum width of 2 digits
+        The nAmountOpacity, nColorRed, nColorGreen, and nColorBlue are variables that are being formatted into a single string
+        So, the resulting string will be a concatenation of the hexadecimal values of nAmountOpacity, nColorRed, nColorGreen, and nColorBlue
+        The resulting string will have a length of 8 characters (2 characters for each variable)
         */
     }
 
-    // Slider color barcode background value change.
+    // Slider color barcode background value change
     private void OnSliderColorBackgroundValueChanged(object sender, ValueChangedEventArgs args)
     {
         int nAmountOpacity = 0;
@@ -544,10 +544,10 @@ public partial class PageSettings : ContentPage
         Globals.cCodeColorBg = cColorBgHex;
     }
 
-    // Convert OORRGGBB Hex color to RGB color.
+    // Convert OORRGGBB Hex color to RGB color
     private static void HexToRgbColor(string cHexColor, ref int nOpacity, ref int nRed, ref int nGreen, ref int nBlue)
     {
-        // Remove leading # if present.
+        // Remove leading # if present
         if (cHexColor[..1] == "#")
         {
             cHexColor = cHexColor[1..];
@@ -559,7 +559,7 @@ public partial class PageSettings : ContentPage
         nBlue = int.Parse(cHexColor.Substring(6, 2), NumberStyles.AllowHexSpecifier);
     }
 
-    // Button save settings clicked event.
+    // Button save settings clicked event
     private static void OnSettingsSaveClicked(object sender, EventArgs e)
     {
         Preferences.Default.Set("SettingTheme", Globals.cTheme);
@@ -570,28 +570,28 @@ public partial class PageSettings : ContentPage
         Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
         Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
 
-        // Give it some time to save the settings.
+        // Give it some time to save the settings
         Task.Delay(400).Wait();
 
-        // Restart the application.
+        // Restart the application
         //Application.Current.MainPage = new AppShell();
         Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
-    // Button reset settings clicked event.
+    // Button reset settings clicked event
     private void OnSettingsResetClicked(object sender, EventArgs e)
     {
-        // Get the elapsed time in milli seconds.
+        // Get the elapsed time in milli seconds
         stopWatch.Stop();
 
         if (stopWatch.ElapsedMilliseconds < 2001)
         {
-            // Clear all settings after the first clicked event within the first 2 seconds after opening the setting page.
+            // Clear all settings after the first clicked event within the first 2 seconds after opening the setting page
             Preferences.Default.Clear();
         }
         else
         {
-            // Reset some settings.
+            // Reset some settings
             Preferences.Default.Remove("SettingTheme");
             Preferences.Default.Remove("SettingFormatGeneratorIndex");
             Preferences.Default.Remove("SettingFormatScannerIndex");
@@ -603,10 +603,10 @@ public partial class PageSettings : ContentPage
             Preferences.Default.Remove("SettingQualityCameraFront");
         }
 
-        // Give it some time to remove the settings.
+        // Give it some time to remove the settings
         Task.Delay(400).Wait();
 
-        // Restart the application.
+        // Restart the application
         //Application.Current.MainPage = new AppShell();
         Application.Current.MainPage = new NavigationPage(new MainPage());
     }

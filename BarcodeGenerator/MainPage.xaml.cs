@@ -22,7 +22,7 @@ namespace BarcodeGenerator;
 
 public partial class MainPage : ContentPage
 {
-    // Local variables.
+    // Local variables
     private string cLicense;
     private readonly bool bLogAlwaysSend;
 
@@ -41,7 +41,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        // Get the saved settings.
+        // Get the saved settings
         Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
         Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 12);
         Globals.nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 0);
@@ -52,18 +52,18 @@ public partial class MainPage : ContentPage
         Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
         bLogAlwaysSend = Preferences.Default.Get("SettingLogAlwaysSend", false);
 
-        // Crash log confirmation.
+        // Crash log confirmation
         if (!bLogAlwaysSend)
         {
             Crashes.ShouldAwaitUserConfirmation = () =>
             {
-                // Return true if you built a UI for user consent and are waiting for user input on that custom UI, otherwise false.
+                // Return true if you built a UI for user consent and are waiting for user input on that custom UI, otherwise false
                 ConfirmationSendCrashLog();
                 return true;
             };
         }
 
-        // The height of the title bar is lower when an iPhone is in horizontal position.
+        // The height of the title bar is lower when an iPhone is in horizontal position
         if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
         {
             imgbtnAbout.VerticalOptions = LayoutOptions.Start;
@@ -73,32 +73,32 @@ public partial class MainPage : ContentPage
             imgbtnSettings.VerticalOptions = LayoutOptions.Start;
         }
 
-            // Set the tooltips for the scanner buttons.
+            // Set the tooltips for the scanner buttons
             ToolTipProperties.SetText(imgbtnScanNT, CodeLang.ToolTipBarcodeScanner_Text + " (Native)");
 
 //#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
-//        // Make the the scan icon for Google Vision visible.
+//        // Make the the scan icon for Google Vision visible
 //        imgbtnScanGV.IsVisible = true;
 //#endif
 
-        // Set the theme.
+        // Set the theme
         Globals.SetTheme();
 
-        // Set the barcode list and the current default barcode format in the picker for the barcode generator.
+        // Set the barcode list and the current default barcode format in the picker for the barcode generator
         pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
 
         if (Globals.nFormatGeneratorIndex < 0 || Globals.nFormatGeneratorIndex > 14)
         {
-            // Default format code = QrCode.
+            // Default format code = QrCode
             pckFormatCodeGenerator.SelectedIndex = 12;
         }
         else
         {
-            // Set the format barcode to the saved code.
+            // Set the format barcode to the saved code
             pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
         }
 
-        // Get and set the system OS user language.
+        // Get and set the system OS user language
         try
         {
             if (string.IsNullOrEmpty(Globals.cLanguage))
@@ -113,7 +113,7 @@ public partial class MainPage : ContentPage
 
         SetTextLanguage();
 
-        // Initialize text to speech and get and set the speech language.
+        // Initialize text to speech and get and set the speech language
         string cCultureName = "";
 
         try
@@ -128,17 +128,17 @@ public partial class MainPage : ContentPage
             cCultureName = "en-US";
         }
 
-        // Initialize text to speech.
+        // Initialize text to speech
         InitializeTextToSpeech(cCultureName);
 
-        // Clear the clipboard.
-        //Clipboard.Default.SetTextAsync(null);  // For testing.
+        // Clear the clipboard
+        //Clipboard.Default.SetTextAsync(null);  // For testing
 
-        // Set focus to the editor.
+        // Set focus to the editor
         edtTextToCode.Focus();
     }
 
-    // TitleView buttons clicked events.
+    // TitleView buttons clicked events
     private async void OnPageAboutClicked(object sender, EventArgs e)
     {
         imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
@@ -157,7 +157,7 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(new PageSettings());
     }
 
-    // Set the editor properties for the selected format code.
+    // Set the editor properties for the selected format code
     private void OnPickerFormatCodeChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
@@ -175,7 +175,7 @@ public partial class MainPage : ContentPage
 
             switch (selectedIndex)
             {
-                // Aztec.
+                // Aztec
                 case 0:
                     edtTextToCode.MaxLength = 3000;
                     edtTextToCode.Keyboard = Keyboard.Default;
@@ -185,7 +185,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Aztec;
                     break;
 
-                // Codabar.
+                // Codabar
                 case 1:
                     edtTextToCode.MaxLength = 43;
                     edtTextToCode.Keyboard = Keyboard.Default;
@@ -193,7 +193,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Codabar;
                     break;
 
-                // Code39.
+                // Code39
                 case 2:
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
@@ -201,7 +201,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Code39;
                     break;
 
-                // Code93.
+                // Code93
                 case 3:
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
@@ -209,7 +209,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Code93;
                     break;
 
-                // Code128.
+                // Code128
                 case 4:
                     edtTextToCode.MaxLength = 48;
                     edtTextToCode.Keyboard = Keyboard.Default;
@@ -217,7 +217,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Code128;
                     break;
 
-                // DataMatrix.
+                // DataMatrix
                 case 5:
                     edtTextToCode.MaxLength = 2300;
                     edtTextToCode.Keyboard = Keyboard.Default;
@@ -227,7 +227,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.DataMatrix;
                     break;
 
-                // Ean8.
+                // Ean8
                 case 6:
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
@@ -235,7 +235,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Ean8;
                     break;
 
-                // Ean13.
+                // Ean13
                 case 7:
                     edtTextToCode.MaxLength = 13;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
@@ -243,7 +243,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Ean13;
                     break;
 
-                // Itf.
+                // Itf
                 case 8:
                     edtTextToCode.MaxLength = 30;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
@@ -251,7 +251,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Itf;
                     break;
 
-                // Msi.
+                // Msi
                 case 9:
                     edtTextToCode.MaxLength = 255;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
@@ -259,7 +259,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Msi;
                     break;
 
-                // Pdf417.
+                // Pdf417
                 case 10:
                     edtTextToCode.MaxLength = 1800;
                     edtTextToCode.Keyboard = Keyboard.Default;
@@ -267,7 +267,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Pdf417;
                     break;
 
-                // Plessey.
+                // Plessey
                 case 11:
                     edtTextToCode.MaxLength = 16;
                     edtTextToCode.Keyboard = Keyboard.Default;
@@ -275,7 +275,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.Plessey;
                     break;
 
-                // QrCode.
+                // QrCode
                 case 12:
                     edtTextToCode.MaxLength = 1800;
                     edtTextToCode.Keyboard = Keyboard.Default;
@@ -285,7 +285,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.QrCode;
                     break;
 
-                // UpcA.
+                // UpcA
                 case 13:
                     edtTextToCode.MaxLength = 12;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
@@ -293,7 +293,7 @@ public partial class MainPage : ContentPage
                     bgvBarcode.Format = BarcodeFormat.UpcA;
                     break;
 
-                // UpcE.
+                // UpcE
                 case 14:
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
@@ -304,22 +304,22 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // OnGenerateCodeClicked event.
+    // OnGenerateCodeClicked event
     private void OnGenerateCodeClicked(object sender, EventArgs e)
     {
-        // Hide the keyboard.
+        // Hide the keyboard
         edtTextToCode.IsEnabled = false;
         edtTextToCode.IsEnabled = true;
 
-        // Set the barcode colors.
+        // Set the barcode colors
         bgvBarcode.ForegroundColor = Color.FromArgb(Globals.cCodeColorFg);
         bgvBarcode.BackgroundColor = Color.FromArgb(Globals.cCodeColorBg);
 
-        // Miscellaneous.
+        // Miscellaneous
         bgvBarcode.Value = "";
         string cChecksum = "";
 
-        // Validate the input.        
+        // Validate the input
         if (string.IsNullOrEmpty(edtTextToCode.Text))
         {
             edtTextToCode.Focus();
@@ -334,7 +334,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        // Validate the text input and set the format.
+        // Validate the text input and set the format
         int selectedIndex = pckFormatCodeGenerator.SelectedIndex;
 
         if (selectedIndex != -1)
@@ -343,7 +343,7 @@ public partial class MainPage : ContentPage
             {
                 switch (selectedIndex)
                 {
-                    // Aztec.
+                    // Aztec
                     case 0:
                         cTextToCode = ReplaceCharacters(cTextToCode);
                         edtTextToCode.Text = cTextToCode;
@@ -355,7 +355,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Codabar.
+                    // Codabar
                     case 1:
                         cTextToCode = cTextToCode.ToUpper();
 
@@ -371,7 +371,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Code39.
+                    // Code39
                     case 2:
                         cTextToCode = cTextToCode.ToUpper();
 
@@ -387,7 +387,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Code93.
+                    // Code93
                     case 3:
                         cTextToCode = cTextToCode.ToUpper();
 
@@ -403,7 +403,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Code128.
+                    // Code128
                     case 4:
                         cTextToCode = ReplaceCharacters(cTextToCode);
                         edtTextToCode.Text = cTextToCode;
@@ -415,7 +415,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // DataMatrix.
+                    // DataMatrix
                     case 5:
                         cTextToCode = ReplaceCharacters(cTextToCode);
                         edtTextToCode.Text = cTextToCode;
@@ -427,7 +427,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Ean8.
+                    // Ean8
                     case 6:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
@@ -440,7 +440,7 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        // Calculate, (correct) and add the checksum.
+                        // Calculate, (correct) and add the checksum
                         if (nLenTextToCode == 8)
                         {
                             cChecksum = cTextToCode.Substring(7, 1);
@@ -459,7 +459,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Ean13.
+                    // Ean13
                     case 7:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
@@ -472,7 +472,7 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        // Calculate, (correct) and add the checksum.
+                        // Calculate, (correct) and add the checksum
                         if (nLenTextToCode == 13)
                         {
                             cChecksum = cTextToCode.Substring(12, 1);
@@ -491,7 +491,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Itf.
+                    // Itf
                     case 8:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
@@ -506,7 +506,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Msi.
+                    // Msi
                     case 9:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
@@ -515,7 +515,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Pdf417.
+                    // Pdf417
                     case 10:
                         cTextToCode = ReplaceCharacters(cTextToCode);
                         edtTextToCode.Text = cTextToCode;
@@ -527,7 +527,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // Plessey.
+                    // Plessey
                     case 11:
                         cTextToCode = cTextToCode.ToUpper();
 
@@ -538,11 +538,11 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // QrCode.
+                    // QrCode
                     case 12:
                         break;
 
-                    // UpcA.
+                    // UpcA
                     case 13:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
@@ -555,7 +555,7 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        // Calculate, (correct) and add the checksum.
+                        // Calculate, (correct) and add the checksum
                         if (nLenTextToCode == 12)
                         {
                             cChecksum = cTextToCode.Substring(11, 1);
@@ -574,7 +574,7 @@ public partial class MainPage : ContentPage
 
                         break;
 
-                    // UpcE.
+                    // UpcE
                     case 14:
                         if (TestAllowedCharacters("0123456789", cTextToCode) == false)
                         {
@@ -593,7 +593,7 @@ public partial class MainPage : ContentPage
                             return;
                         }
 
-                        // Convert UPC-E to UPC-A code.
+                        // Convert UPC-E to UPC-A code
                         if (nLenTextToCode == 8)
                         {
                             cChecksum = cTextToCode.Substring(7, 1);
@@ -624,10 +624,10 @@ public partial class MainPage : ContentPage
 
                         cUpcA = $"0{cUpcA}";
 
-                        // Calculate and add the checksum of the UPC-A code.
+                        // Calculate and add the checksum of the UPC-A code
                         cUpcA += CalculateChecksumEanUpcA(cUpcA);
 
-                        // Add the checksum from the UPC-A code to the UPC-E code.
+                        // Add the checksum from the UPC-A code to the UPC-E code
                         cTextToCode = string.Concat(cTextToCode.AsSpan(0, 7), cUpcA.AsSpan(11, 1));
 
                         if (nLenTextToCode == 8 && cChecksum != cTextToCode.Substring(7, 1))
@@ -650,7 +650,7 @@ public partial class MainPage : ContentPage
 
         try
         {
-            // For testing crashes - DivideByZeroException.
+            // For testing crashes - DivideByZeroException
             //int divByZero = 51 / int.Parse("0");
 
             bgvBarcode.Value = cTextToCode;
@@ -675,7 +675,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Test for allowed characters.
+    // Test for allowed characters
     private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
     {
         foreach (char cChar in cTextToCode)
@@ -694,13 +694,13 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Test for allowed minimum and maximum ASCII values.
+    // Test for allowed minimum and maximum ASCII values
     private bool TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
     {
-        // Test for allowed minimum and maximum ASCII values.
+        // Test for allowed minimum and maximum ASCII values
         foreach (char cChar in cTextToCode)
         {
-            //Console.WriteLine($"{"ASCII value: "} {(int)cChar}");  // For testing.
+            //Console.WriteLine($"{"ASCII value: "} {(int)cChar}");  // For testing
 
             if ((int)cChar < nMinAsciiValue || (int)cChar > nMaxAsciiValue)
             {
@@ -714,25 +714,25 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Replace special characters in strings for ASCII output (iOS keyboard marks are curved instead of straight).
+    // Replace special characters in strings for ASCII output (iOS keyboard marks are curved instead of straight)
     private static string ReplaceCharacters(string cText)
     {
-        // Convert characters from UTF-8 or ASCII extended to characters that are supported in ASCII.
-        cText = cText.Replace('‘', '\'');       // Left single quotation mark replaced with apostrophe.
-        cText = cText.Replace('’', '\'');       // Right single quotation mark replaced with apostrophe.
-        cText = cText.Replace('“', '"');        // Left double quotation mark replaced with quotation mark.
-        cText = cText.Replace('”', '"');        // Right double quotation mark replaced with quotation mark.
+        // Convert characters from UTF-8 or ASCII extended to characters that are supported in ASCII
+        cText = cText.Replace('‘', '\'');       // Left single quotation mark replaced with apostrophe
+        cText = cText.Replace('’', '\'');       // Right single quotation mark replaced with apostrophe
+        cText = cText.Replace('“', '"');        // Left double quotation mark replaced with quotation mark
+        cText = cText.Replace('”', '"');        // Right double quotation mark replaced with quotation mark
 
         return cText;
     }
 
-    // Test start & end guards.
+    // Test start & end guards
     private bool TestStartEndGuards(string cStartEndGuards, string cTextToCode)
     {
         int nPos;
         char cChar;
 
-        // Control of start and end guards in the wrong place.
+        // Control of start and end guards in the wrong place
         for (nPos = 0; nPos < cTextToCode.Length; nPos++)
         {
             cChar = cTextToCode[nPos];
@@ -746,7 +746,7 @@ public partial class MainPage : ContentPage
             }
         }
 
-        // Control of missing start or end guard.
+        // Control of missing start or end guard
         if (cStartEndGuards.Contains(cTextToCode[..1]) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
         {
             DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingEnd_Text, CodeLang.ButtonClose_Text);
@@ -765,7 +765,7 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Reverse the characters in a string.
+    // Reverse the characters in a string
     private static string ReverseString(string cText)
     {
         char[] charArray = cText.ToCharArray();
@@ -774,7 +774,7 @@ public partial class MainPage : ContentPage
         return string.Concat(charArray);
     }
 
-    // Calculate the checksum of an EAN-13, EAN-8 and UPC-A code.
+    // Calculate the checksum of an EAN-13, EAN-8 and UPC-A code
     private static string CalculateChecksumEanUpcA(string cTextToCode)
     {
         int nPos;
@@ -782,7 +782,7 @@ public partial class MainPage : ContentPage
         int nChecksum = 0;
         int nCheckDigit = 0;
 
-        // Loop over string.
+        // Loop over string
         for (nPos = 0; nPos < cTextToCode.Length; nPos++)
         {
             if ((nPos + 1) % 2 == 0)
@@ -809,7 +809,7 @@ public partial class MainPage : ContentPage
         return Convert.ToString(nCheckDigit);
     }
 
-    // OnClearCodeClicked event.
+    // OnClearCodeClicked event
     private void OnClearCodeClicked(object sender, EventArgs e)
     {
         edtTextToCode.Text = "";
@@ -820,7 +820,7 @@ public partial class MainPage : ContentPage
         edtTextToCode.Focus();
     }
 
-    // Display a message with no encoder available for format.
+    // Display a message with no encoder available for format
     //private void DisplayMessageFormat(string cFormat)
     //{
     //    DisplayAlert(CodeLang.FormatTitle_Text, $"{cFormat} {CodeLang.FormatNotSupported_Text}", CodeLang.ButtonClose_Text);
@@ -828,7 +828,7 @@ public partial class MainPage : ContentPage
     //    edtTextToCode.Focus();
     //}
 
-    // Display an error message.
+    // Display an error message
     private void DisplayErrorMessage(string cMessage)
     {
         DisplayAlert(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
@@ -836,7 +836,7 @@ public partial class MainPage : ContentPage
         edtTextToCode.Focus();
     }
 
-    // Display an error message with minimum and maximum length.
+    // Display an error message with minimum and maximum length
     private void DisplayErrorMessageLength(string cMinLength, string cMaxLength)
     {
         DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.CodeLengthPart1_Text} {cMinLength} {CodeLang.CodeLengthPart2_Text} {cMaxLength} {CodeLang.CodeLengthPart3_Text}", CodeLang.ButtonClose_Text);
@@ -844,7 +844,7 @@ public partial class MainPage : ContentPage
         edtTextToCode.Focus();
     }
 
-    // Display an error message and restart the application.
+    // Display an error message and restart the application
     private async void RestartApplication(string cErrorMessage)
     {
         await DisplayAlert(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
@@ -853,10 +853,10 @@ public partial class MainPage : ContentPage
         Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
-    // Show license using the Loaded event of the MainPage.xaml.
+    // Show license using the Loaded event of the MainPage.xaml
     private async void OnPageLoaded(object sender, EventArgs e)
     {
-        // Show license.
+        // Show license
         if (Globals.bLicense == false)
         {
             Globals.bLicense = await Application.Current.MainPage.DisplayAlert(CodeLang.LicenseTitle_Text, cLicense, CodeLang.Agree_Text, CodeLang.Disagree_Text);
@@ -868,7 +868,7 @@ public partial class MainPage : ContentPage
             else
             {
 #if IOS
-                //Thread.CurrentThread.Abort();  // Not allowed in iOS.
+                //Thread.CurrentThread.Abort();  // Not allowed in iOS
                 imgbtnAbout.IsEnabled = false;
                 imgbtnScanNT.IsEnabled = false;
                 //imgbtnScanGV.IsEnabled = false;
@@ -884,10 +884,10 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Set text and speech language and the generator format using the Appearing event of the MainPage.xaml.
+    // Set text and speech language and the generator format using the Appearing event of the MainPage.xaml
     private void OnPageAppearing(object sender, EventArgs e)
     {
-        // Set the text language.
+        // Set the text language
         if (Globals.bLanguageChanged)
         {
             SetTextLanguage();
@@ -897,11 +897,11 @@ public partial class MainPage : ContentPage
         // Set the speech language
         lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
-        // Set the generator format in the picker.
+        // Set the generator format in the picker
         pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
     }
 
-    // Button share event - make screenshot of the barcode.
+    // Button share event - make screenshot of the barcode
     private async void OnShareClicked(object sender, EventArgs e)
     {
         if (Screenshot.Default.IsCaptureSupported)
@@ -913,10 +913,10 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Save the barcode as an image file.
+    // Save the barcode as an image file
     private static async void SaveStreamAsFile(Stream inputStream)
     {
-        // Save the image file.
+        // Save the image file
         string cFileName = Path.Combine(FileSystem.CacheDirectory, "BarcodeGenerator.png");
 
         using (FileStream outputFileStream = new(cFileName, FileMode.Create))
@@ -926,11 +926,11 @@ public partial class MainPage : ContentPage
 
         inputStream.Dispose();
 
-        // Open the share interface to share the file.
+        // Open the share interface to share the file
         await OpenShareInterfaceAsync(cFileName);
     }
 
-    // Open the share interface.
+    // Open the share interface
     private static async Task OpenShareInterfaceAsync(string cFile)
     {
         await Share.Default.RequestAsync(new ShareFileRequest
@@ -940,21 +940,21 @@ public partial class MainPage : ContentPage
         });
     }
 
-    // Put text in the chosen language in the controls.
+    // Put text in the chosen language in the controls
     private void SetTextLanguage()
     {
-        // Set the current UI culture of the selected language.
+        // Set the current UI culture of the selected language
         Globals.SetCultureSelectedLanguage();
 
         cLicense = $"{CodeLang.License_Text}\n\n{CodeLang.LicenseMit2_Text}";
         btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex]}";
     }
 
-    // Initialize text to speech and fill the the array with the speech languages.
+    // Initialize text to speech and fill the the array with the speech languages
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
     private async void InitializeTextToSpeech(string cCultureName)
     {
-        // Initialize text to speech.
+        // Initialize text to speech
         int nTotalItems;
 
         try
@@ -987,7 +987,7 @@ public partial class MainPage : ContentPage
         imgbtnTextToSpeech.IsVisible = true;
         Globals.bLanguageLocalesExist = true;
 
-        // Put the locales in the array and sort the array.
+        // Put the locales in the array and sort the array
         Globals.cLanguageLocales = new string[nTotalItems];
         int nItem = 0;
 
@@ -999,7 +999,7 @@ public partial class MainPage : ContentPage
 
         Array.Sort(Globals.cLanguageLocales);
 
-        // Search for the language after a first start or reset of the application.
+        // Search for the language after a first start or reset of the application
         if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
         {
             SearchArrayWithSpeechLanguages(cCultureName);
@@ -1008,7 +1008,7 @@ public partial class MainPage : ContentPage
         lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
     }
     
-    // Search for the language after a first start or reset of the application.
+    // Search for the language after a first start or reset of the application
     private static void SearchArrayWithSpeechLanguages(string cCultureName)
     {
         try
@@ -1024,7 +1024,7 @@ public partial class MainPage : ContentPage
                 }
             }
 
-            // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app.
+            // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app
             if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
             {
                 for (int nItem = 0; nItem < nTotalItems; nItem++)
@@ -1037,7 +1037,7 @@ public partial class MainPage : ContentPage
                 }
             }
 
-            // If the language is still not found use the first language in the array.
+            // If the language is still not found use the first language in the array
             if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
             {
                 Globals.cLanguageSpeech = Globals.cLanguageLocales[0];
@@ -1052,10 +1052,10 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Search for the language after a first start or reset of the application.
+    // Search for the language after a first start or reset of the application
     //private void SearchArrayWithSpeechLanguages(string cCultureName)
     //{
-    //    // Does not works on Android 13 (works on Android 8) - App is closing after starting.
+    //    // Does not works on Android 13 (works on Android 8) - App is closing after starting
     //    // There is a problem with the StartsWith->cCultureName:
     //    // string value = Array.Find(cLanguageLocales, element => element.StartsWith(cCultureName, StringComparison.OrdinalIgnoreCase));
 
@@ -1075,21 +1075,21 @@ public partial class MainPage : ContentPage
     //    }
     //}
 
-    //Button text to speech event - Convert text to speech.
+    //Button text to speech event - Convert text to speech
     private void OnTextToSpeechClicked(object sender, EventArgs e)
     {
-        // Cancel the text to speech.
+        // Cancel the text to speech
         if (Globals.bTextToSpeechIsBusy)
         {
             imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
             return;
         }
 
-        // Convert the text to speech.
+        // Convert the text to speech
         _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, edtTextToCode.Text);
     }
 
-    // Paste text from the clipboard clicked event.
+    // Paste text from the clipboard clicked event
     private async void OnPasteFromClipboardClicked(object sender, EventArgs e)
     {
         if (Clipboard.Default.HasText)
@@ -1127,10 +1127,10 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Crash log confirmation.
+    // Crash log confirmation
     private async void ConfirmationSendCrashLog()
     {
-        // Using the DisplayActionSheet with 3 choices.
+        // Using the DisplayActionSheet with 3 choices
         string cAction = await DisplayActionSheet(CodeLang.LogTitle2_Text, null, null, CodeLang.LogSend_Text, CodeLang.LogAlwaysSend_Text, CodeLang.LogDontSend_Text);
 
         if (cAction == CodeLang.LogSend_Text)
@@ -1147,7 +1147,7 @@ public partial class MainPage : ContentPage
             Crashes.NotifyUserConfirmation(UserConfirmation.DontSend);
         }
 
-        // Using the DisplayAlert with 2 choices.
+        // Using the DisplayAlert with 2 choices
         //bool bAction = await DisplayAlert(CodeLang.LogTitle_Text, CodeLang.LogMessage_Text, CodeLang.LogSend_Text, CodeLang.LogDontSend_Text);
 
         //if (bAction)

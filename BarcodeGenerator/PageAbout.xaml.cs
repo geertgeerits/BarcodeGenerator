@@ -17,7 +17,7 @@ public partial class PageAbout : ContentPage
             return;
         }
 
-        // Put text in the chosen language in the controls.
+        // Put text in the chosen language in the controls
         lblVersion.Text = $"{CodeLang.Version_Text} 1.0.39";
         lblCopyright.Text = $"{CodeLang.Copyright_Text} © 2022-2024 Geert Geerits";
         lblEmail.Text = $"{CodeLang.Email_Text} geertgeerits@gmail.com";
@@ -29,7 +29,7 @@ public partial class PageAbout : ContentPage
         lblLicenseMit.Text = $"\n{CodeLang.Copyright_Text} © {CodeLang.LicenseMit_Text}\n\n{CodeLang.LicenseMit2_Text}";
     }
 
-    // Open the e-mail program.
+    // Open the e-mail program
     private async void OnBtnEmailLinkClicked(object sender, EventArgs e)
     {
         if (Email.Default.IsComposeSupported)
@@ -57,8 +57,8 @@ public partial class PageAbout : ContentPage
         }
     }
 
-    // Open the page 'PageWebsite' to open the website in the WebView control.
-    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console.
+    // Open the page 'PageWebsite' to open the website in the WebView control
+    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console
     private async void OnBtnWebsiteLinkClicked(object sender, EventArgs e)
     {
 #if ANDROID

@@ -63,7 +63,7 @@
                             AbsoluteLayout.LayoutBounds="0,0,1,1"
                             BarcodeSymbologies="All"
                             CameraFacing="Back"
-                            CaptureQuality="High"
+                            CaptureQuality="Medium"
                             ForceInverted="False"
                             PauseScanning="False"
                             PoolingInterval="500"
