@@ -1,4 +1,5 @@
 using BarcodeScanning;
+using System.Diagnostics;
 
 namespace BarcodeGenerator;
 
@@ -174,6 +175,7 @@ public partial class PageScanNT : ContentPage
     private void ContentPage_Unloaded(object sender, EventArgs e)
     {
         barcodeReader.Handler?.DisconnectHandler();
+        //Debug.WriteLine("Unloaded: Handler disconnected");
     }
 
     // CameraView OnDetected event
