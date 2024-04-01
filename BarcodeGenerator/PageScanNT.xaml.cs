@@ -1,5 +1,4 @@
 using BarcodeScanning;
-using System.Diagnostics;
 
 namespace BarcodeGenerator;
 
@@ -19,7 +18,8 @@ public partial class PageScanNT : ContentPage
         }
         catch (Exception ex)
         {
-            Crashes.TrackError(ex);
+            //Crashes.TrackError(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG
             DisplayAlert("InitializeComponent: PageScanNT", ex.Message, "OK");
 #endif
@@ -235,7 +235,8 @@ public partial class PageScanNT : ContentPage
         }
         catch (Exception ex)
         {
-            Crashes.TrackError(ex);
+            //Crashes.TrackError(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG
             _ = DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -286,8 +287,9 @@ public partial class PageScanNT : ContentPage
                 { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
                 { "selectedIndex:", Convert.ToString(nSelectedIndex) }
             };
-            Crashes.TrackError(ex, properties);
-            
+            //Crashes.TrackError(ex, properties);
+            _ = SentrySdk.CaptureException(ex);
+
             await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraQualityError_Text, CodeLang.ButtonClose_Text);
         }
 
@@ -340,8 +342,9 @@ public partial class PageScanNT : ContentPage
                 { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
                 { "selectedIndex:", Convert.ToString(nSelectedIndex) }
             };
-            Crashes.TrackError(ex, properties);
-            
+            //Crashes.TrackError(ex, properties);
+            _ = SentrySdk.CaptureException(ex);
+
             await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraQualityError_Text, CodeLang.ButtonClose_Text);
         }
 
@@ -493,7 +496,8 @@ public partial class PageScanNT : ContentPage
                         { "File:", "PageScanNT.xaml.cs" },
                         { "Class.Method:", "BarcodeDrawable.Draw" }
                     };
-                    Crashes.TrackError(ex, properties);
+                    //Crashes.TrackError(ex, properties);
+                    SentrySdk.CaptureException(ex);
 #if DEBUG                    
                     Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif

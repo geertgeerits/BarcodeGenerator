@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2024
 // Version .....: 1.0.39
-// Date ........: 2024-03-28 (YYYY-MM-DD)
+// Date ........: 2024-04-01 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -13,7 +13,8 @@
 //                NuGet Package: BarcodeScanner.Mobile.Maui version = "8.0.0 ; Google Vision ; https://github.com/JimmyPun610/BarcodeScanner.Mobile
 //                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 1.3.1 ; https://github.com/afriscic/BarcodeScanning.Native.Maui
 //                NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/
-//                NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3 
+//                (NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3)
+//                NuGet Package: Sentry.Maui version 4.2.1 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
 // Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun
 
 using ZXing.Net.Maui;
@@ -34,7 +35,8 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            Crashes.TrackError(ex);
+            //Crashes.TrackError(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG
             DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
 #endif
@@ -53,15 +55,15 @@ public partial class MainPage : ContentPage
         bLogAlwaysSend = Preferences.Default.Get("SettingLogAlwaysSend", false);
 
         // Crash log confirmation
-        if (!bLogAlwaysSend)
-        {
-            Crashes.ShouldAwaitUserConfirmation = () =>
-            {
-                // Return true if you built a UI for user consent and are waiting for user input on that custom UI, otherwise false
-                ConfirmationSendCrashLog();
-                return true;
-            };
-        }
+        //if (!bLogAlwaysSend)
+        //{
+        //    Crashes.ShouldAwaitUserConfirmation = () =>
+        //    {
+        //        // Return true if you built a UI for user consent and are waiting for user input on that custom UI, otherwise false
+        //        ConfirmationSendCrashLog();
+        //        return true;
+        //    };
+        //}
 
         // The height of the title bar is lower when an iPhone is in horizontal position
         if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
@@ -136,6 +138,9 @@ public partial class MainPage : ContentPage
 
         // Set focus to the editor
         edtTextToCode.Focus();
+
+        //SentrySdk.CaptureMessage("Hello Sentry");
+        //throw new Exception("This is a test exception");
     }
 
     // TitleView buttons clicked events
@@ -667,7 +672,8 @@ public partial class MainPage : ContentPage
                 { "AppLanguageSpeech:", Globals.cLanguageSpeech },
                 { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
             };
-            Crashes.TrackError(ex, properties);
+            //Crashes.TrackError(ex, properties);
+            _ = SentrySdk.CaptureException(ex);
 
             bgvBarcode.Value = "";
 
@@ -977,6 +983,7 @@ public partial class MainPage : ContentPage
             //    { "AppLanguageSpeech:", Globals.cLanguageSpeech }
             //};
             //Crashes.TrackError(ex, properties);
+            //SentrySdk.CaptureException(ex);
 #if DEBUG
             await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
 #endif
@@ -1045,7 +1052,8 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            Crashes.TrackError(ex);
+            //Crashes.TrackError(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG
             _ = Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -1068,7 +1076,8 @@ public partial class MainPage : ContentPage
     //        }
     //        catch (Exception ex)
     //        {
-    //            Crashes.TrackError(ex);
+    //            //Crashes.TrackError(ex);
+    //            SentrySdk.CaptureException(ex);
     //            //DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
     //            cLanguageSpeech = cLanguageLocales[0];
     //        }
@@ -1119,7 +1128,8 @@ public partial class MainPage : ContentPage
                     { "AppLanguageSpeech:", Globals.cLanguageSpeech },
                     { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
                 };
-                Crashes.TrackError(ex, properties);
+                //Crashes.TrackError(ex, properties);
+                SentrySdk.CaptureException(ex);
 #if DEBUG
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -1128,37 +1138,37 @@ public partial class MainPage : ContentPage
     }
 
     // Crash log confirmation
-    private async void ConfirmationSendCrashLog()
-    {
-        // Using the DisplayActionSheet with 3 choices
-        string cAction = await DisplayActionSheet(CodeLang.LogTitle2_Text, null, null, CodeLang.LogSend_Text, CodeLang.LogAlwaysSend_Text, CodeLang.LogDontSend_Text);
+    //private async void ConfirmationSendCrashLog()
+    //{
+    //    // Using the DisplayActionSheet with 3 choices
+    //    string cAction = await DisplayActionSheet(CodeLang.LogTitle2_Text, null, null, CodeLang.LogSend_Text, CodeLang.LogAlwaysSend_Text, CodeLang.LogDontSend_Text);
 
-        if (cAction == CodeLang.LogSend_Text)
-        {
-            Crashes.NotifyUserConfirmation(UserConfirmation.Send);
-        }
-        else if (cAction == CodeLang.LogAlwaysSend_Text)
-        {
-            Crashes.NotifyUserConfirmation(UserConfirmation.AlwaysSend);
-            Preferences.Default.Set("SettingLogAlwaysSend", true);
-        }
-        else if (cAction == CodeLang.LogDontSend_Text)
-        {
-            Crashes.NotifyUserConfirmation(UserConfirmation.DontSend);
-        }
+    //    if (cAction == CodeLang.LogSend_Text)
+    //    {
+    //        Crashes.NotifyUserConfirmation(UserConfirmation.Send);
+    //    }
+    //    else if (cAction == CodeLang.LogAlwaysSend_Text)
+    //    {
+    //        Crashes.NotifyUserConfirmation(UserConfirmation.AlwaysSend);
+    //        Preferences.Default.Set("SettingLogAlwaysSend", true);
+    //    }
+    //    else if (cAction == CodeLang.LogDontSend_Text)
+    //    {
+    //        Crashes.NotifyUserConfirmation(UserConfirmation.DontSend);
+    //    }
 
-        // Using the DisplayAlert with 2 choices
-        //bool bAction = await DisplayAlert(CodeLang.LogTitle_Text, CodeLang.LogMessage_Text, CodeLang.LogSend_Text, CodeLang.LogDontSend_Text);
+    //    // Using the DisplayAlert with 2 choices
+    //    //bool bAction = await DisplayAlert(CodeLang.LogTitle_Text, CodeLang.LogMessage_Text, CodeLang.LogSend_Text, CodeLang.LogDontSend_Text);
 
-        //if (bAction)
-        //{
-        //    Crashes.NotifyUserConfirmation(UserConfirmation.Send);
-        //}
-        //else
-        //{
-        //    Crashes.NotifyUserConfirmation(UserConfirmation.DontSend);
-        //}
-    }
+    //    //if (bAction)
+    //    //{
+    //    //    Crashes.NotifyUserConfirmation(UserConfirmation.Send);
+    //    //}
+    //    //else
+    //    //{
+    //    //    Crashes.NotifyUserConfirmation(UserConfirmation.DontSend);
+    //    //}
+    //}
 }
 
 /*

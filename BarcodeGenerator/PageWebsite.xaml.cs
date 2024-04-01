@@ -10,7 +10,8 @@ public partial class PageWebsite : ContentPage
         }
         catch (Exception ex)
         {
-            Crashes.TrackError(ex);
+            //Crashes.TrackError(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG
             DisplayAlert("InitializeComponent: PageWebsite", ex.Message, "OK");
 #endif

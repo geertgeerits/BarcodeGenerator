@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 //using BarcodeScanner.Mobile;
 using ZXing.Net.Maui.Controls;
-using Microsoft.AppCenter;
+//using Microsoft.AppCenter;
 using Microsoft.Maui.LifecycleEvents;
 using BarcodeScanning;
 
@@ -16,6 +16,10 @@ public static class MauiProgram
             .UseMauiApp<App>()
             .UseBarcodeReader()
             .UseBarcodeScanning()
+            .UseSentry(options =>
+            {
+                options.Dsn = "https://988f47dd765ca32afe832320e77a3a7d@o4507011442933760.ingest.us.sentry.io/4507011456565248";
+            })
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -63,11 +67,11 @@ public static class MauiProgram
                 }
             });
 
-        AppCenter.Start("windowsdesktop=7b81fd09-0be8-45e0-a4f0-4a23dd20a00c;" +
-            "android=a7116ecb-f402-403c-8a9d-58e295913d73;" +
-            "ios=e0281fe4-3662-46b5-a15f-fa0a73595d57;" +
-            "macos={Your macOS App secret here};",
-            typeof(Crashes));
+        //AppCenter.Start("windowsdesktop=7b81fd09-0be8-45e0-a4f0-4a23dd20a00c;" +
+        //    "android=a7116ecb-f402-403c-8a9d-58e295913d73;" +
+        //    "ios=e0281fe4-3662-46b5-a15f-fa0a73595d57;" +
+        //    "macos={Your macOS App secret here};",
+        //    typeof(Crashes));
 
 #if DEBUG
         builder.Logging.AddDebug();

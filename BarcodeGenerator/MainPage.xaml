@@ -168,8 +168,7 @@
                             HorizontalOptions="FillAndExpand"
                             HeightRequest="180"
                             MinimumWidthRequest="340"
-                            VerticalTextAlignment="Start"
-                            Text="{Binding RecognitionText}">
+                            VerticalTextAlignment="Start">
                         </Editor>
                     </ScrollView>
                 </Border>
