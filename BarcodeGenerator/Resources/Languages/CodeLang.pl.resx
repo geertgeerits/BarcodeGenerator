@@ -209,13 +209,38 @@ Cyfra kontrolna została poprawiona.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Prawo autorskie</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Raporty o awariach i błędach: Aby pomóc nam rozwiązać wszelkie problemy, aplikacja wyśle anonimowe raporty o awariach i błędach po ponownym uruchomieniu aplikacji.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Aby pomóc nam rozwiązać wszelkie problemy, aplikacja wyśle anonimowe raporty o awariach i błędach po ponownym uruchomieniu aplikacji.
 Raporty zawierają informacje o awarii lub błędzie, w tym specyfikacje urządzenia, system operacyjny, wersję aplikacji, znacznik czasu i anonimowy identyfikator instalacji.
 Dane są zbierane wyłącznie w celu pomocy nam w ulepszaniu aplikacji i nie zawierają żadnych danych osobowych. Żadne inne dane nie są gromadzone.
 Anonimowe raporty o awariach i błędach są przechowywane w Microsoft App Center.
 Nie są one udostępniane nikomu poza twórcą aplikacji.
 Dane z raportu są przechowywane przez 28 dni.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Oświadczenie o ochronie prywatności: Zgłaszanie awarii za pomocą Sentry.
+
+Generator kodów kreskowych korzysta z usługi Sentry, strony trzeciej, w celu gromadzenia raportów o awariach i zarządzania nimi w celu poprawy stabilności i wydajności naszej aplikacji. Dokładamy wszelkich starań, aby chronić Twoją prywatność i zapewniać przejrzystość sposobu postępowania z Twoimi danymi.
+
+Jakie dane są gromadzone:
+Kiedy w tej aplikacji wystąpi awaria, pewne informacje mogą zostać zebrane i przesłane do Sentry, w tym między innymi:
+Informacje o urządzeniu, takie jak model, wersja systemu operacyjnego i konfiguracja sprzętu.
+Dzienniki aplikacji i komunikaty o błędach prowadzące do awarii.
+Informacje o stanie aplikacji w momencie awarii, w tym o działaniach użytkownika.
+
+Jak wykorzystujemy te dane:
+Dane zbierane przez Sentry są wykorzystywane wyłącznie w celu identyfikowania i naprawiania błędów w naszej aplikacji. Informacje te pomagają nam zrozumieć główne przyczyny awarii, co pozwala nam zapewnić naszym użytkownikom bardziej stabilne i niezawodne działanie.
+
+Bezpieczeństwo i przechowywanie danych:
+Poważnie podchodzimy do bezpieczeństwa Twoich danych. Sentry stosuje standardowe w branży środki bezpieczeństwa w celu ochrony zebranych informacji przed nieautoryzowanym dostępem lub ujawnieniem.
+
+Raporty o awariach zebrane przez firmę Sentry mogą być przechowywane zgodnie z polityką firmy Sentry dotyczącą przechowywania danych (30 dni w przypadku tej aplikacji). Więcej informacji na temat praktyk firmy Sentry w zakresie przetwarzania danych można znaleźć w jej Polityce prywatności pod adresem https://sentry.io/welcome/.
+
+Twoja zgoda:
+Korzystając z tej aplikacji, wyrażasz zgodę na gromadzenie i przetwarzanie danych z raportów o awariach przez firmę Sentry zgodnie z opisem w niniejszym oświadczeniu o ochronie prywatności.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Raporty o awariach i błędach: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standard generator formatu:</value>
@@ -233,7 +258,7 @@ Dane z raportu są przechowywane przez 28 dni.</value>
     <value>Nie zgadzać się</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Błąd</value>
@@ -441,7 +466,7 @@ Niedozwolony:</value>
     <value>Wersja:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Strona internetowa</value>
+    <value>Strona internetowa: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Tak</value>

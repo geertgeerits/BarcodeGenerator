@@ -209,13 +209,38 @@ Het controlecijfer is gecorrigeerd.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Auteursrechten</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Crash- en foutrapporten: Om ons te helpen eventuele problemen op te lossen, stuurt de applicatie anonieme crash- en foutrapporten wanneer de applicatie opnieuw wordt opgestart.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Om ons te helpen eventuele problemen op te lossen, stuurt de applicatie anonieme crash- en foutrapporten wanneer de applicatie opnieuw wordt opgestart.
 De rapporten bevatten informatie over de crash of fout, inclusief apparaatspecificaties, besturingssysteem, applicatieversie, tijdstempel en anonieme installatie-ID.
 De gegevens worden uitsluitend verzameld om ons te helpen de applicatie te verbeteren en bevatten geen persoonlijke informatie. Er worden geen andere gegevens verzameld.
 Anonieme crash- en foutrapporten worden opgeslagen in het Microsoft App Center.
 Ze worden niet gedeeld met iemand anders buiten de ontwikkelaar van de applicatie.
 De rapportgegevens worden 28 dagen bewaard.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Privacyverklaring: Crashrapportage met Sentry.
+
+Barcode Generator maakt gebruik van Sentry, een service van derden, om crashrapporten te verzamelen en te beheren om de stabiliteit en prestaties van onze applicatie te verbeteren. Wij doen er alles aan om uw privacy te beschermen en transparantie te bieden over de manier waarop met uw gegevens wordt omgegaan.
+
+Welke gegevens worden verzameld:
+Wanneer er een crash optreedt binnen deze applicatie, kan bepaalde informatie worden verzameld en naar Sentry worden verzonden, inclusief maar niet beperkt tot:
+Apparaatinformatie zoals model, versie van het besturingssysteem en hardwareconfiguratie.
+Applicatielogboeken en foutmeldingen die tot de crash hebben geleid.
+Informatie over de status van de applicatie op het moment van de crash, inclusief gebruikersacties.
+
+Hoe wij deze gegevens gebruiken:
+De door Sentry verzamelde gegevens worden uitsluitend gebruikt voor het identificeren en oplossen van bugs en fouten binnen onze applicatie. Deze informatie helpt ons de hoofdoorzaken van crashes te begrijpen, waardoor we onze gebruikers een stabielere en betrouwbaardere ervaring kunnen bieden.
+
+Gegevensbeveiliging en retentie:
+Wij nemen de veiligheid van uw gegevens serieus. Sentry maakt gebruik van industriestandaard beveiligingsmaatregelen om de verzamelde informatie te beschermen tegen ongeoorloofde toegang of openbaarmaking.
+
+Door Sentry verzamelde crashrapporten kunnen worden bewaard in overeenstemming met het gegevensbewaarbeleid van Sentry (30 dagen voor deze toepassing). Voor meer informatie over de gegevensverwerkingspraktijken van Sentry kunt u hun privacybeleid raadplegen op https://sentry.io/welcome/.
+
+Uw toestemming:
+Door deze applicatie te gebruiken, geeft u toestemming voor het verzamelen en verwerken van crashrapportgegevens door Sentry zoals beschreven in deze privacyverklaring.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Crash- en foutrapporten: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standaard formaat generator:</value>
@@ -233,7 +258,7 @@ De rapportgegevens worden 28 dagen bewaard.</value>
     <value>Niet akkoord</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Fout</value>
@@ -441,7 +466,7 @@ Niet toegestaan:</value>
     <value>Versie:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Website: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Ja</value>

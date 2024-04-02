@@ -209,13 +209,38 @@ Tarkistusnumero on korjattu.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Tekijänoikeus</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Kaatumis- ja virheraportit: Sovellus lähettää anonyymejä kaatumis- ja virheraportteja, kun sovellus käynnistetään uudelleen, jotta voimme korjata mahdolliset ongelmat.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Sovellus lähettää anonyymejä kaatumis- ja virheraportteja, kun sovellus käynnistetään uudelleen, jotta voimme korjata mahdolliset ongelmat.
 Raportit sisältävät tietoja kaatumisesta tai virheestä, mukaan lukien laitteen tekniset tiedot, käyttöjärjestelmä, sovellusversio, aikaleima ja anonyymi asennustunniste.
 Tiedot kerätään yksinomaan auttaaksemme meitä parantamaan sovellusta, eivätkä ne sisällä henkilötietoja. Muita tietoja ei kerätä.
 Nimettömät kaatumis- ja virheraportit tallennetaan Microsoft App Center.
 Niitä ei jaeta kenellekään muulle kuin sovelluksen kehittäjälle.
 Raporttitietoja säilytetään 28 päivää.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Tietosuojalausunto: Sentryn kaatumisraportointi.
+
+Barcode Generator käyttää Sentryä, kolmannen osapuolen palvelua, keräämään ja hallitsemaan kaatumisraportteja sovelluksemme vakauden ja suorituskyvyn parantamiseksi. Olemme sitoutuneet suojelemaan yksityisyyttäsi ja tarjoamaan läpinäkyvyyttä siitä, miten tietojasi käsitellään.
+
+Mitä tietoja kerätään:
+Kun tässä sovelluksessa tapahtuu kaatuminen, tiettyjä tietoja voidaan kerätä ja lähettää Sentrylle, mukaan lukien, mutta ei rajoittuen:
+Laitteen tiedot, kuten malli, käyttöjärjestelmän versio ja laitteistokokoonpano.
+Sovelluslokit ja virheilmoitukset, jotka johtavat kaatumiseen.
+Tietoja sovelluksen tilasta kaatumisen hetkellä, mukaan lukien käyttäjän toimet.
+
+Kuinka käytämme näitä tietoja:
+Sentryn keräämiä tietoja käytetään yksinomaan sovelluksemme vikojen ja virheiden tunnistamiseen ja korjaamiseen. Nämä tiedot auttavat meitä ymmärtämään kaatumisten perimmäisiä syitä, minkä ansiosta voimme tarjota käyttäjillemme vakaamman ja luotettavamman kokemuksen.
+
+Tietoturva ja -säilytys:
+Otamme tietojesi turvallisuuden vakavasti. Sentry käyttää alan standardien mukaisia turvatoimia suojellakseen kerättyjä tietoja luvattomalta käytöltä tai paljastamiselta.
+
+Sentryn keräämät virheraportit voidaan säilyttää Sentryn tietojen säilytyskäytäntöjen mukaisesti (tälle sovellukselle 30 päivää). Lisätietoja Sentryn tietojenkäsittelykäytännöistä on sen tietosuojakäytännössä osoitteessa https://sentry.io/welcome/.
+
+Sinun suostumuksesi:
+Käyttämällä tätä sovellusta hyväksyt sen, että Sentry kerää ja käsittelee virheraporttitietoja tässä tietosuojaselosteessa kuvatulla tavalla.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Kaatumis- ja virheraportit: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Oletusmuoto generaattori</value>
@@ -233,7 +258,7 @@ Raporttitietoja säilytetään 28 päivää.</value>
     <value>Olen eri mieltä</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>Sähköposti:</value>
+    <value>Sähköposti: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Virhe</value>
@@ -441,7 +466,7 @@ Ei sallittu:</value>
     <value>Versio:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Verkkosivusto</value>
+    <value>Verkkosivusto: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Joo</value>

@@ -209,13 +209,38 @@ Le chiffre de contrôle a été corrigé.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Droits d'auteur</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Rapports de plantage et d'erreur: Pour nous aider à résoudre tout problème, l'application enverra des rapports de plantage et d'erreur anonymes au redémarrage de l'application.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Pour nous aider à résoudre tout problème, l'application enverra des rapports de plantage et d'erreur anonymes au redémarrage de l'application.
 Les rapports contiennent des informations sur le plantage ou l'erreur, y compris les spécifications de l'appareil, le système d'exploitation, la version de l'application, l'horodatage et l'identifiant d'installation anonyme.
 Les données sont collectées dans le seul but de nous aider à améliorer l'application et ne comportent aucune information personnelle. Aucune autre donnée n'est collectée.
 Les rapports anonymes d'incidents et d'erreurs sont stockés dans Microsoft App Center.
 Ils ne sont partagés avec personne d'autre que le développeur de l'application.
 Les données du rapport sont conservées pendant 28 jours.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Déclaration de confidentialité : rapport d'incidents avec Sentry.
+
+Barcode Generator utilise Sentry, un service tiers, pour collecter et gérer les rapports d'erreur afin d'améliorer la stabilité et les performances de notre application. Nous nous engageons à protéger votre vie privée et à assurer la transparence sur la manière dont vos données sont traitées.
+
+Quelles données sont collectées :
+Lorsqu'un crash survient au sein de cette application, certaines informations peuvent être collectées et transmises à Sentry, notamment, mais sans s'y limiter :
+Informations sur l'appareil telles que le modèle, la version du système d'exploitation et la configuration matérielle.
+Journaux d’application et messages d’erreur menant au crash.
+Informations sur l'état de l'application au moment du crash, y compris les actions de l'utilisateur.
+
+Comment nous utilisons ces données :
+Les données collectées par Sentry sont utilisées uniquement dans le but d'identifier et de corriger les bugs et erreurs au sein de notre application. Ces informations nous aident à comprendre les causes profondes des plantages, nous permettant ainsi d'offrir une expérience plus stable et plus fiable à nos utilisateurs.
+
+Sécurité et conservation des données :
+Nous prenons la sécurité de vos données au sérieux. Sentry utilise des mesures de sécurité conformes aux normes de l'industrie pour protéger les informations collectées contre tout accès ou divulgation non autorisés.
+
+Les rapports d'incident collectés par Sentry peuvent être conservés conformément aux politiques de conservation des données de Sentry (30 jours pour cette application). Pour plus d'informations sur les pratiques de traitement des données de Sentry, veuillez vous référer à leur politique de confidentialité sur https://sentry.io/welcome/.
+
+Votre consentement:
+En utilisant cette application, vous consentez à la collecte et au traitement des données des rapports d'erreur par Sentry comme décrit dans cette déclaration de confidentialité.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Rapports de plantage et d'erreur: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Générateur de format par défaut:</value>
@@ -233,7 +258,7 @@ Les données du rapport sont conservées pendant 28 jours.</value>
     <value>Désaccord</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Erreur</value>
@@ -441,7 +466,7 @@ Interdit:</value>
     <value>Version:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Site Internet</value>
+    <value>Site Internet: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Oui</value>

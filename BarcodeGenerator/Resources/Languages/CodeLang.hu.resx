@@ -209,13 +209,38 @@ Az ellenőrző számjegy javítva.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Szerzői jog</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Összeomlási és hibajelentések: A probléma megoldása érdekében az alkalmazás névtelen összeomlási és hibajelentéseket küld az alkalmazás újraindításakor.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>A probléma megoldása érdekében az alkalmazás névtelen összeomlási és hibajelentéseket küld az alkalmazás újraindításakor.
 A jelentések információkat tartalmaznak az összeomlásról vagy hibáról, beleértve az eszköz specifikációit, az operációs rendszert, az alkalmazás verzióját, az időbélyeget és a névtelen telepítési azonosítót.
 Az adatokat kizárólag azzal a céllal gyűjtjük, hogy segítsünk az alkalmazás fejlesztésében, és nem tartalmaznak személyes adatokat. Más adatot nem gyűjtenek.
 A névtelen összeomlási és hibajelentéseket a Microsoft App Center tárolja.
 Nem osztják meg senki mással az alkalmazás fejlesztőjén kívül.
 A jelentés adatait 28 napig őrzik meg.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Adatvédelmi nyilatkozat: Összeomlásjelentés a Sentry segítségével.
+
+A Barcode Generator egy harmadik féltől származó Sentry szolgáltatást használ a hibajelentések összegyűjtésére és kezelésére, hogy javítsa alkalmazásunk stabilitását és teljesítményét. Elkötelezettek vagyunk az Ön adatainak védelme és az adatok kezelésének átláthatósága mellett.
+
+Milyen adatokat gyűjtenek:
+Ha az alkalmazáson belül összeomlik, bizonyos információkat összegyűjthet és továbbíthat a Sentry-nek, beleértve, de nem kizárólagosan:
+Az eszközre vonatkozó információk, például a modell, az operációs rendszer verziója és a hardverkonfiguráció.
+Az összeomláshoz vezető alkalmazásnaplók és hibaüzenetek.
+Információ az alkalmazás állapotáról az összeomlás idején, beleértve a felhasználói műveleteket.
+
+Hogyan használjuk ezeket az adatokat:
+A Sentry által gyűjtött adatokat kizárólag az alkalmazásunkon belüli hibák és hibák azonosítása és kijavítása céljából használjuk fel. Ezek az információk segítenek megérteni az összeomlások kiváltó okait, lehetővé téve számunkra, hogy stabilabb és megbízhatóbb élményt nyújtsunk felhasználóinknak.
+
+Adatbiztonság és adatmegőrzés:
+Komolyan vesszük adatai biztonságát. A Sentry iparági szabványos biztonsági intézkedéseket alkalmaz, hogy megvédje az összegyűjtött információkat a jogosulatlan hozzáféréstől vagy nyilvánosságra hozataltól.
+
+A Sentry által gyűjtött összeomlási jelentések a Sentry adatmegőrzési szabályzatának megfelelően megőrizhetők (ennél az alkalmazásnál 30 nap). A Sentry adatkezelési gyakorlatával kapcsolatos további információkért tekintse meg adatvédelmi szabályzatukat a https://sentry.io/welcome/ címen.
+
+Az Ön hozzájárulása:
+Az alkalmazás használatával Ön hozzájárul ahhoz, hogy a Sentry összegyűjtse és feldolgozza a hibajelentések adatait az adatvédelmi nyilatkozatban leírtak szerint.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Összeomlási és hibajelentések: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Alapértelmezett formátumgenerátor:</value>
@@ -233,7 +258,7 @@ A jelentés adatait 28 napig őrzik meg.</value>
     <value>Nem ért egyet</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>Email: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Hiba</value>
@@ -441,7 +466,7 @@ Nem megengedett:</value>
     <value>Változat:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Weboldal</value>
+    <value>Weboldal: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Igen</value>

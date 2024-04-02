@@ -209,13 +209,38 @@ Cifra de verificare a fost corectată.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Drepturi de autor</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Rapoarte de blocare și erori: Pentru a ne ajuta să remediem orice probleme, aplicația va trimite rapoarte anonime de blocare și erori atunci când aplicația este repornită.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Pentru a ne ajuta să remediem orice probleme, aplicația va trimite rapoarte anonime de blocare și erori atunci când aplicația este repornită.
 Rapoartele conțin informații despre blocarea sau eroarea, inclusiv specificațiile dispozitivului, sistemul de operare, versiunea aplicației, marcajul de timp și identificatorul de instalare anonim.
 Datele sunt colectate doar cu scopul de a ne ajuta să îmbunătățim aplicația și nu includ nicio informație personală. Nu sunt colectate alte date.
 Rapoartele anonime de blocare și erori sunt stocate în Microsoft App Center.
 Ele nu sunt partajate cu nimeni altcineva din afara dezvoltatorului aplicației.
 Datele raportului sunt păstrate timp de 28 de zile.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Declarație de confidențialitate: Raportarea accidentelor cu Sentry.
+
+Generatorul de coduri de bare folosește Sentry, un serviciu terță parte, pentru a colecta și gestiona rapoartele de blocare pentru a îmbunătăți stabilitatea și performanța aplicației noastre. Ne angajăm să vă protejăm confidențialitatea și să vă oferim transparență cu privire la modul în care sunt gestionate datele dumneavoastră.
+
+Ce date sunt colectate:
+Când are loc un accident în cadrul acestei aplicații, anumite informații pot fi colectate și transmise către Sentry, inclusiv, dar fără a se limita la:
+Informații despre dispozitiv, cum ar fi modelul, versiunea sistemului de operare și configurația hardware.
+Jurnalele aplicației și mesajele de eroare care au dus la blocarea.
+Informații despre starea aplicației la momentul accidentului, inclusiv acțiunile utilizatorului.
+
+Cum folosim aceste date:
+Datele colectate de Sentry sunt folosite exclusiv în scopul identificării și remedierii erorilor și erorilor din aplicația noastră. Aceste informații ne ajută să înțelegem cauzele principale ale blocărilor, permițându-ne să oferim o experiență mai stabilă și mai fiabilă pentru utilizatorii noștri.
+
+Securitatea și păstrarea datelor:
+Luăm în serios securitatea datelor dvs. Sentry folosește măsuri de securitate standard din industrie pentru a proteja informațiile colectate împotriva accesului sau dezvăluirii neautorizate.
+
+Rapoartele de blocare colectate de Sentry pot fi păstrate în conformitate cu politicile Sentry de păstrare a datelor (30 de zile pentru această aplicație). Pentru mai multe informații despre practicile Sentry de prelucrare a datelor, vă rugăm să consultați Politica de confidențialitate la https://sentry.io/welcome/.
+
+Consimțământul dvs.:
+Folosind această aplicație, sunteți de acord cu colectarea și procesarea de către Sentry a datelor din rapoartele de accident, așa cum este descris în această declarație de confidențialitate.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Rapoarte de blocare și erori: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Generator de format standard:</value>
@@ -233,7 +258,7 @@ Datele raportului sunt păstrate timp de 28 de zile.</value>
     <value>Dezacord</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Eroare</value>
@@ -441,7 +466,7 @@ Nepermis:</value>
     <value>Versiune:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Site-ul web</value>
+    <value>Site-ul web: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Da</value>

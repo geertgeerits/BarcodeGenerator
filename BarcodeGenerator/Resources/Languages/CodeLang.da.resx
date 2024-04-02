@@ -209,13 +209,38 @@ Kontrolcifferet er blevet rettet.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Ophavsret</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Nedbruds- og fejlrapporter: For at hjælpe os med at løse eventuelle problemer sender applikationen anonyme nedbruds- og fejlrapporter, når applikationen genstartes.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>For at hjælpe os med at løse eventuelle problemer sender applikationen anonyme nedbruds- og fejlrapporter, når applikationen genstartes.
 Rapporterne indeholder oplysninger om nedbruddet eller fejlen, herunder enhedsspecifikationer, operativsystem, applikationsversion, tidsstempel og anonym installationsidentifikator.
 Dataene indsamles udelukkende med det formål at hjælpe os med at forbedre applikationen og inkluderer ingen personlige oplysninger. Der indsamles ikke andre data.
 Anonyme nedbruds- og fejlrapporter gemmes i Microsoft App Center.
 De deles ikke med andre uden for udvikleren af applikationen.
 Rapportdataene opbevares i 28 dage.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Fortrolighedserklæring: Crash Reporting med Sentry.
+
+Barcode Generator bruger Sentry, en tredjepartstjeneste, til at indsamle og administrere nedbrudsrapporter for at forbedre stabiliteten og ydeevnen af vores applikation. Vi er forpligtet til at beskytte dit privatliv og give gennemsigtighed om, hvordan dine data håndteres.
+
+Hvilke data indsamles:
+Når der opstår et nedbrud i denne applikation, kan visse oplysninger indsamles og sendes til Sentry, herunder men ikke begrænset til:
+Enhedsoplysninger såsom model, operativsystemversion og hardwarekonfiguration.
+Applikationslogfiler og fejlmeddelelser, der førte til nedbruddet.
+Oplysninger om applikationens tilstand på tidspunktet for nedbruddet, herunder brugerhandlinger.
+
+Sådan bruger vi disse data:
+De data, der indsamles af Sentry, bruges udelukkende med det formål at identificere og rette fejl og fejl i vores applikation. Disse oplysninger hjælper os med at forstå de grundlæggende årsager til nedbrud, hvilket giver os mulighed for at give vores brugere en mere stabil og pålidelig oplevelse.
+
+Datasikkerhed og opbevaring:
+Vi tager sikkerheden af dine data seriøst. Sentry anvender branchestandard sikkerhedsforanstaltninger for at beskytte de indsamlede oplysninger mod uautoriseret adgang eller offentliggørelse.
+
+Nedbrudsrapporter indsamlet af Sentry kan opbevares i overensstemmelse med Sentrys dataopbevaringspolitikker (30 dage for denne applikation). For mere information om Sentrys datahåndteringspraksis, se venligst deres privatlivspolitik på https://sentry.io/welcome/.
+
+Dit samtykke:
+Ved at bruge denne applikation giver du samtykke til indsamling og behandling af nedbrudsrapportdata af Sentry som beskrevet i denne fortrolighedserklæring.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Nedbruds- og fejlrapporter: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standard format generator:</value>
@@ -233,7 +258,7 @@ Rapportdataene opbevares i 28 dage.</value>
     <value>Være uenig</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Fejl</value>
@@ -441,7 +466,7 @@ Ikke tilladt:</value>
     <value>Version:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Internet side</value>
+    <value>Internet side: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Ja</value>

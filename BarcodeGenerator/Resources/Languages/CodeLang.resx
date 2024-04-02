@@ -209,13 +209,38 @@ The check digit has been corrected.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Copyright</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Crash and error reports: To help us fixing any problems, the application will send anonymous crash and error reports when the application is restarted.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>To help us fixing any problems, the application will send anonymous crash and error reports when the application is restarted.
 The reports contain information on the crash or error, including device specifications, operating system, application version, timestamp, and anonymous installation identifier.
 The data is collected for the sole purpose of helping us to improve the application and does not include any personal information.  No other data is collected.
 Anonymous crash and error reports are stored in the Microsoft App Center.
 They are not shared with anyone else outside the developer of the appliciation.
 The report data is retained for 28 days.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Privacy Statement: Crash Reporting with Sentry.
+
+Barcode Generator uses Sentry, a third-party service, to collect and manage crash reports in order to improve the stability and performance of our application. We are committed to protecting your privacy and providing transparency about how your data is handled.
+
+What data is collected:
+When a crash occurs within this application, certain information may be collected and transmitted to Sentry, including but not limited to:
+Device information such as model, operating system version, and hardware configuration.
+Application logs and error messages leading up to the crash.
+Information about the state of the application at the time of the crash, including user actions.
+
+How we use this data:
+The data collected by Sentry is used solely for the purpose of identifying and fixing bugs and errors within our application. This information helps us understand the root causes of crashes, allowing us to provide a more stable and reliable experience for our users.
+
+Data security and retention:
+We take the security of your data seriously. Sentry employs industry-standard security measures to protect the information collected from unauthorized access or disclosure.
+
+Crash reports collected by Sentry may be retained in accordance with Sentry's data retention policies (30 days for this application). For more information about Sentry's data handling practices, please refer to their Privacy Policy at https://sentry.io/welcome/.
+
+Your consent:
+By using this application, you consent to the collection and processing of crash report data by Sentry as described in this privacy statement.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Crash and error reports: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Default format generator:</value>
@@ -233,7 +258,7 @@ The report data is retained for 28 days.</value>
     <value>Disagree</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Error</value>
@@ -422,6 +447,9 @@ Not allowed:</value>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copy text to the clipboard</value>
   </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>ToolTip</value>
+  </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Go back</value>
   </data>
@@ -447,7 +475,7 @@ Not allowed:</value>
     <value>Version:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Website: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Yes</value>

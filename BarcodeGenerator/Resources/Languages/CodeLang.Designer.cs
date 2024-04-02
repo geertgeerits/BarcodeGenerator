@@ -333,14 +333,38 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crash and error reports: To help us fixing any problems, the application will send anonymous crash and error reports when the application is restarted.
-        ///The reports contain information on the crash or error, including device specifications, operating system, application version, timestamp, and anonymous installation identifier.
-        ///The data is collected for the sole purpose of helping us to improve the application and does not include any personal information.  No other data is collected.
-        ///Anonymous crash and  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Crash and error reports: .
         /// </summary>
         internal static string CrashErrorReport_Text {
             get {
                 return ResourceManager.GetString("CrashErrorReport_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To help us fixing any problems, the application will send anonymous crash and error reports when the application is restarted.
+        ///The reports contain information on the crash or error, including device specifications, operating system, application version, timestamp, and anonymous installation identifier.
+        ///The data is collected for the sole purpose of helping us to improve the application and does not include any personal information.  No other data is collected.
+        ///Anonymous crash and error reports are stored  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string CrashErrorReportAppCenter_Text {
+            get {
+                return ResourceManager.GetString("CrashErrorReportAppCenter_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy Statement: Crash Reporting with Sentry.
+        ///
+        ///Barcode Generator uses Sentry, a third-party service, to collect and manage crash reports in order to improve the stability and performance of our application. We are committed to protecting your privacy and providing transparency about how your data is handled.
+        ///
+        ///What data is collected:
+        ///When a crash occurs within this application, certain information may be collected and transmitted to Sentry, including but not limited to:
+        ///Device information such as mod [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string CrashErrorReportSentry_Text {
+            get {
+                return ResourceManager.GetString("CrashErrorReportSentry_Text", resourceCulture);
             }
         }
         
@@ -390,7 +414,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-mail:.
+        ///   Looks up a localized string similar to E-mail: .
         /// </summary>
         internal static string Email_Text {
             get {
@@ -913,6 +937,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ToolTip.
+        /// </summary>
+        internal static string ToolTipCrashErrorReport_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCrashErrorReport_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go back.
         /// </summary>
         internal static string ToolTipGoBack_Text {
@@ -985,7 +1018,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Website.
+        ///   Looks up a localized string similar to Website: .
         /// </summary>
         internal static string Website_Text {
             get {

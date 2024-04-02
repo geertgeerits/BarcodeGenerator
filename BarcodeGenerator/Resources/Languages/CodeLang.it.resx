@@ -209,13 +209,38 @@ La cifra di controllo è stata corretta.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Diritto d'autore</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Segnalazioni di crash ed errori: Per aiutarci a risolvere eventuali problemi, l'applicazione invierà segnalazioni anonime di crash ed errori al riavvio dell'applicazione.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Per aiutarci a risolvere eventuali problemi, l'applicazione invierà segnalazioni anonime di crash ed errori al riavvio dell'applicazione.
 I report contengono informazioni sull'arresto anomalo o sull'errore, incluse le specifiche del dispositivo, il sistema operativo, la versione dell'applicazione, il timestamp e l'identificatore di installazione anonimo.
 I dati vengono raccolti al solo scopo di aiutarci a migliorare l'applicazione e non includono alcuna informazione personale. Nessun altro dato viene raccolto.
 I rapporti anonimi sugli arresti anomali e sugli errori vengono archiviati nel Microsoft App Center.
 Non sono condivisi con nessun altro al di fuori dello sviluppatore dell'applicazione.
 I dati del rapporto vengono conservati per 28 giorni.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Informativa sulla privacy: segnalazione degli arresti anomali con Sentry.
+
+Barcode Generator utilizza Sentry, un servizio di terze parti, per raccogliere e gestire i rapporti sugli arresti anomali al fine di migliorare la stabilità e le prestazioni della nostra applicazione. Ci impegniamo a proteggere la tua privacy e a fornire trasparenza su come vengono gestiti i tuoi dati.
+
+Quali dati vengono raccolti:
+Quando si verifica un arresto anomalo dell'applicazione, alcune informazioni potrebbero essere raccolte e trasmesse a Sentry, incluse ma non limitate a:
+Informazioni sul dispositivo come modello, versione del sistema operativo e configurazione hardware.
+Registri dell'applicazione e messaggi di errore che hanno portato all'arresto anomalo.
+Informazioni sullo stato dell'applicazione al momento dell'arresto anomalo, comprese le azioni dell'utente.
+
+Come utilizziamo questi dati:
+I dati raccolti da Sentry vengono utilizzati esclusivamente allo scopo di identificare e correggere bug ed errori all'interno della nostra applicazione. Queste informazioni ci aiutano a comprendere le cause profonde degli arresti anomali, consentendoci di fornire un'esperienza più stabile e affidabile ai nostri utenti.
+
+Sicurezza e conservazione dei dati:
+Prendiamo sul serio la sicurezza dei tuoi dati. Sentry utilizza misure di sicurezza standard del settore per proteggere le informazioni raccolte da accesso o divulgazione non autorizzati.
+
+I rapporti sugli arresti anomali raccolti da Sentry possono essere conservati in conformità con le politiche di conservazione dei dati di Sentry (30 giorni per questa applicazione). Per ulteriori informazioni sulle pratiche di gestione dei dati di Sentry, fare riferimento alla loro Informativa sulla privacy all'indirizzo https://sentry.io/welcome/.
+
+Il tuo consenso:
+Utilizzando questa applicazione, acconsenti alla raccolta e all'elaborazione dei dati dei rapporti sugli arresti anomali da parte di Sentry come descritto nella presente informativa sulla privacy.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Segnalazioni di crash ed errori: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Generatore di formati predefinito:</value>
@@ -233,7 +258,7 @@ I dati del rapporto vengono conservati per 28 giorni.</value>
     <value>Non accetto</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Errore</value>
@@ -441,7 +466,7 @@ Non autorizzato:</value>
     <value>Versione:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Sito web</value>
+    <value>Sito web: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Sì</value>

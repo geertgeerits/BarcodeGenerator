@@ -209,13 +209,38 @@ Die Prüfziffer wurde korrigiert.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Urheberrechte</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Absturz- und Fehlerberichte: Um uns bei der Behebung etwaiger Probleme zu helfen, sendet die Anwendung beim Neustart der Anwendung anonyme Absturz- und Fehlerberichte.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Um uns bei der Behebung etwaiger Probleme zu helfen, sendet die Anwendung beim Neustart der Anwendung anonyme Absturz- und Fehlerberichte.
 Die Berichte enthalten Informationen zum Absturz oder Fehler, einschließlich Gerätespezifikationen, Betriebssystem, Anwendungsversion, Zeitstempel und anonymer Installationskennung.
 Die Daten werden ausschließlich zu dem Zweck erhoben, die Anwendung zu verbessern und enthalten keine personenbezogenen Daten. Es werden keine weiteren Daten erhoben.
 Anonyme Absturz- und Fehlerberichte werden im Microsoft App Center gespeichert.
 Sie werden nicht an Dritte außerhalb des Entwicklers der Anwendung weitergegeben.
 Die Berichtsdaten werden 28 Tage lang aufbewahrt.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Datenschutzerklärung: Absturzmeldung mit Sentry.
+
+Barcode Generator nutzt Sentry, einen Drittanbieterdienst, um Absturzberichte zu sammeln und zu verwalten und so die Stabilität und Leistung unserer Anwendung zu verbessern. Wir legen Wert auf den Schutz Ihrer Privatsphäre und sorgen für Transparenz über den Umgang mit Ihren Daten.
+
+Welche Daten werden erhoben:
+Wenn innerhalb dieser Anwendung ein Absturz auftritt, können bestimmte Informationen erfasst und an Sentry übermittelt werden, einschließlich, aber nicht beschränkt auf:
+Geräteinformationen wie Modell, Betriebssystemversion und Hardwarekonfiguration.
+Anwendungsprotokolle und Fehlermeldungen, die zum Absturz führten.
+Informationen zum Status der Anwendung zum Zeitpunkt des Absturzes, einschließlich Benutzeraktionen.
+
+Wie wir diese Daten verwenden:
+Die von Sentry erfassten Daten werden ausschließlich zum Zweck der Identifizierung und Behebung von Fehlern und Fehlern in unserer Anwendung verwendet. Diese Informationen helfen uns, die Grundursachen von Abstürzen zu verstehen, und ermöglichen es uns, unseren Benutzern ein stabileres und zuverlässigeres Erlebnis zu bieten.
+
+Datensicherheit und -speicherung:
+Wir nehmen die Sicherheit Ihrer Daten ernst. Sentry setzt branchenübliche Sicherheitsmaßnahmen ein, um die gesammelten Informationen vor unbefugtem Zugriff oder Offenlegung zu schützen.
+
+Von Sentry gesammelte Absturzberichte können gemäß den Datenaufbewahrungsrichtlinien von Sentry (30 Tage für diese Anwendung) aufbewahrt werden. Weitere Informationen zu den Datenverarbeitungspraktiken von Sentry finden Sie in deren Datenschutzrichtlinie unter https://sentry.io/welcome/.
+
+Ihre Einwilligung:
+Durch die Nutzung dieser Anwendung stimmen Sie der Erfassung und Verarbeitung von Absturzberichtsdaten durch Sentry zu, wie in dieser Datenschutzerklärung beschrieben.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Absturz- und Fehlerberichte: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standardformat Generator:</value>
@@ -233,7 +258,7 @@ Die Berichtsdaten werden 28 Tage lang aufbewahrt.</value>
     <value>Nicht zustimmen</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Fehler</value>
@@ -441,7 +466,7 @@ Nicht erlaubt:</value>
     <value>Ausführung:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Webseite</value>
+    <value>Webseite: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Ja</value>

@@ -209,13 +209,38 @@ Kontrollsiffran har korrigerats.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Upphovsrätt</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Krasch- och felrapporter: För att hjälpa oss att åtgärda eventuella problem kommer applikationen att skicka anonyma krasch- och felrapporter när applikationen startas om.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>För att hjälpa oss att åtgärda eventuella problem kommer applikationen att skicka anonyma krasch- och felrapporter när applikationen startas om.
 Rapporterna innehåller information om kraschen eller felet, inklusive enhetsspecifikationer, operativsystem, programversion, tidsstämpel och anonym installationsidentifierare.
 Uppgifterna samlas in i det enda syftet att hjälpa oss att förbättra applikationen och innehåller ingen personlig information. Inga andra uppgifter samlas in.
 Anonyma krasch- och felrapporter lagras i Microsoft App Center.
 De delas inte med någon annan utanför applikationens utvecklare.
 Rapportdata bevaras i 28 dagar.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Sekretesspolicy: Kraschrapportering med Sentry.
+
+Barcode Generator använder Sentry, en tredjepartstjänst, för att samla in och hantera kraschrapporter för att förbättra stabiliteten och prestandan för vår applikation. Vi är angelägna om att skydda din integritet och tillhandahålla transparens om hur din data hanteras.
+
+Vilken data samlas in:
+När en krasch inträffar inom denna applikation kan viss information samlas in och överföras till Sentry, inklusive men inte begränsat till:
+Enhetsinformation som modell, operativsystemversion och hårdvarukonfiguration.
+Programloggar och felmeddelanden som ledde fram till kraschen.
+Information om applikationens tillstånd vid tidpunkten för kraschen, inklusive användaråtgärder.
+
+Hur vi använder denna data:
+Uppgifterna som samlas in av Sentry används enbart i syfte att identifiera och åtgärda buggar och fel i vår applikation. Den här informationen hjälper oss att förstå grundorsakerna till krascher, vilket gör att vi kan tillhandahålla en mer stabil och pålitlig upplevelse för våra användare.
+
+Datasäkerhet och lagring:
+Vi tar säkerheten för dina uppgifter på allvar. Sentry använder branschstandardiserade säkerhetsåtgärder för att skydda den information som samlas in från obehörig åtkomst eller avslöjande.
+
+Kraschrapporter som samlas in av Sentry kan sparas i enlighet med Sentrys policy för datalagring (30 dagar för denna applikation). För mer information om Sentrys datahanteringsmetoder, se deras integritetspolicy på https://sentry.io/welcome/.
+
+Ditt samtycke:
+Genom att använda denna applikation samtycker du till insamling och bearbetning av kraschrapportdata av Sentry enligt beskrivningen i denna sekretesspolicy.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Krasch- och felrapporter: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Standardformat generator:</value>
@@ -233,7 +258,7 @@ Rapportdata bevaras i 28 dagar.</value>
     <value>Instämmer inte alls</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-post:</value>
+    <value>E-post: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Fel</value>
@@ -441,7 +466,7 @@ Inte tillåtet:</value>
     <value>Version:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Hemsida</value>
+    <value>Hemsida: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Ja</value>

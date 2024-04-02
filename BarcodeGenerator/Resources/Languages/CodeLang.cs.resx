@@ -209,13 +209,38 @@ Kontrolní číslice byla opravena.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Autorská práva</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Zprávy o pádech a chybách: Aby nám pomohla opravit jakékoli problémy, aplikace bude po restartu odesílat anonymní zprávy o pádech a chybách.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Aby nám pomohla opravit jakékoli problémy, aplikace bude po restartu odesílat anonymní zprávy o pádech a chybách.
 Zprávy obsahují informace o havárii nebo chybě, včetně specifikací zařízení, operačního systému, verze aplikace, časového razítka a anonymního identifikátoru instalace.
 Údaje jsou shromažďovány výhradně za účelem pomoci nám vylepšit aplikaci a neobsahují žádné osobní údaje. Žádné další údaje se neshromažďují.
 Anonymní zprávy o selhání a chybách jsou uloženy v Microsoft App Center.
 Nejsou sdíleny s nikým jiným mimo vývojáře aplikace.
 Údaje přehledu jsou uchovávány po dobu 28 dnů.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Prohlášení o ochraně osobních údajů: Hlášení o selhání s Sentry.
+
+Barcode Generator využívá Sentry, službu třetí strany, ke shromažďování a správě zpráv o selhání s cílem zlepšit stabilitu a výkon naší aplikace. Zavázali jsme se chránit vaše soukromí a poskytovat transparentnost ohledně toho, jak je s vašimi údaji nakládáno.
+
+Jaká data se shromažďují:
+Když dojde k selhání této aplikace, mohou být shromážděny a přeneseny určité informace do Sentry, včetně, ale nejen:
+Informace o zařízení, jako je model, verze operačního systému a konfigurace hardwaru.
+Protokoly aplikací a chybové zprávy vedoucí k selhání.
+Informace o stavu aplikace v době havárie, včetně akcí uživatele.
+
+Jak tato data používáme:
+Údaje shromážděné Sentry se používají výhradně za účelem identifikace a opravy chyb a chyb v naší aplikaci. Tyto informace nám pomáhají porozumět hlavním příčinám selhání a umožňují nám poskytovat stabilnější a spolehlivější prostředí pro naše uživatele.
+
+Zabezpečení a uchovávání dat:
+Bezpečnost vašich dat bereme vážně. Sentry využívá standardní bezpečnostní opatření k ochraně shromážděných informací před neoprávněným přístupem nebo zveřejněním.
+
+Zprávy o selhání shromážděné společností Sentry mohou být uchovávány v souladu se zásadami uchovávání dat společnosti Sentry (30 dní pro tuto aplikaci). Další informace o postupech nakládání s daty společnosti Sentry naleznete v jejích zásadách ochrany osobních údajů na adrese https://sentry.io/welcome/.
+
+Váš souhlas:
+Používáním této aplikace souhlasíte se shromažďováním a zpracováním dat zpráv o selhání společností Sentry, jak je popsáno v tomto prohlášení o ochraně osobních údajů.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Zprávy o pádech a chybách: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Výchozí generátor formátu:</value>
@@ -233,7 +258,7 @@ Nejsou sdíleny s nikým jiným mimo vývojáře aplikace.
     <value>Nesouhlasit</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mailem:</value>
+    <value>E-mailem: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Chyba</value>
@@ -441,7 +466,7 @@ Nepovoleno:</value>
     <value>Verze:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Webová stránka</value>
+    <value>Webová stránka: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Ano</value>

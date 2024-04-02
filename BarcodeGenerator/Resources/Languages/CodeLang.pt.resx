@@ -209,13 +209,38 @@ O dígito de verificação foi corrigido.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Direito autoral</value>
   </data>
-  <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Relatórios de falhas e erros: Para nos ajudar a corrigir quaisquer problemas, o aplicativo enviará relatórios anônimos de falhas e erros quando o aplicativo for reiniciado.
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Para nos ajudar a corrigir quaisquer problemas, o aplicativo enviará relatórios anônimos de falhas e erros quando o aplicativo for reiniciado.
 Os relatórios contêm informações sobre a falha ou erro, incluindo especificações do dispositivo, sistema operacional, versão do aplicativo, registro de data e hora e identificador de instalação anônimo.
 Os dados são coletados com o único objetivo de nos ajudar a melhorar o aplicativo e não incluem nenhuma informação pessoal. Nenhum outro dado é coletado.
 Relatórios de falhas e erros anônimos são armazenados no Microsoft App Center.
 Eles não são compartilhados com ninguém fora do desenvolvedor do aplicativo.
 Os dados do relatório são retidos por 28 dias.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Declaração de privacidade: Relatório de falhas com Sentry.
+
+O Barcode Generator usa o Sentry, um serviço de terceiros, para coletar e gerenciar relatórios de falhas, a fim de melhorar a estabilidade e o desempenho do nosso aplicativo. Temos o compromisso de proteger sua privacidade e fornecer transparência sobre como seus dados são tratados.
+
+Quais dados são coletados:
+Quando ocorre uma falha neste aplicativo, certas informações podem ser coletadas e transmitidas ao Sentry, incluindo, mas não se limitando a:
+Informações do dispositivo, como modelo, versão do sistema operacional e configuração de hardware.
+Logs de aplicativos e mensagens de erro que levaram à falha.
+Informações sobre o estado do aplicativo no momento da falha, incluindo ações do usuário.
+
+Como usamos esses dados:
+Os dados coletados pelo Sentry são utilizados exclusivamente com a finalidade de identificar e corrigir bugs e erros em nosso aplicativo. Essas informações nos ajudam a entender as causas principais das falhas, permitindo-nos oferecer uma experiência mais estável e confiável aos nossos usuários.
+
+Segurança e retenção de dados:
+Levamos a segurança dos seus dados a sério. A Sentry emprega medidas de segurança padrão da indústria para proteger as informações coletadas contra acesso ou divulgação não autorizada.
+
+Os relatórios de falhas coletados pelo Sentry podem ser retidos de acordo com as políticas de retenção de dados do Sentry (30 dias para este aplicativo). Para obter mais informações sobre as práticas de tratamento de dados da Sentry, consulte sua Política de Privacidade em https://sentry.io/welcome/.
+
+Sua permissão:
+Ao usar este aplicativo, você concorda com a coleta e processamento de dados de relatórios de falhas pelo Sentry, conforme descrito nesta declaração de privacidade.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Relatórios de falhas e erros: </value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
     <value>Gerador de formato padrão:</value>
@@ -233,7 +258,7 @@ Os dados do relatório são retidos por 28 dias.</value>
     <value>Discordar</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Erro</value>
@@ -441,7 +466,7 @@ Não permitido:</value>
     <value>Versão:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Site</value>
+    <value>Site: </value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Sim</value>
