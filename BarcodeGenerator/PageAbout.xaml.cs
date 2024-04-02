@@ -4,8 +4,8 @@ namespace BarcodeGenerator;
 
 public partial class PageAbout : ContentPage
 {
-    // Launcher.OpenAsync is provided by Essentials.
-    public ICommand TapCommand => new Command<string>(async (url) => await DisplayAlert(CodeLang.CrashErrorReport_Text, CodeLang.CrashErrorReportSentry_Text, CodeLang.ButtonClose_Text));
+    // TapCommand to open the crash and error report privacy information (Launcher.OpenAsync is provided by Essentials)
+    public ICommand TapCommand => new Command(async () => await DisplayAlert(CodeLang.CrashErrorReport_Text, CodeLang.CrashErrorReportSentry_Text, CodeLang.ButtonClose_Text));
 
     public PageAbout()
 	{
@@ -32,67 +32,9 @@ public partial class PageAbout : ContentPage
         lblExplanation.Text = $"\n{CodeLang.InfoExplanation_Text}";
         lblLicenseMit.Text = $"\n{CodeLang.Copyright_Text} © {CodeLang.LicenseMit_Text}\n\n{CodeLang.LicenseMit2_Text}";
     }
-
-    // Open the e-mail program
-    private async void OnBtnEmailLinkClicked(object sender, EventArgs e)
-    {
-        if (Email.Default.IsComposeSupported)
-        {
-            string subject = "Barcode generator and scanner";
-            string body = "";
-            string[] recipients = ["geertgeerits@gmail.com"];
-
-            var message = new EmailMessage
-            {
-                Subject = subject,
-                Body = body,
-                BodyFormat = EmailBodyFormat.PlainText,
-                To = new List<string>(recipients)
-            };
-
-            try
-            {
-                await Email.Default.ComposeAsync(message);
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-            }
-        }
-    }
-
-    // Open the page 'PageWebsite' to open the website in the WebView control
-    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console
-    private async void OnBtnWebsiteLinkClicked(object sender, EventArgs e)
-    {
-#if ANDROID
-        try
-        {
-            Uri uri = new("https://geertgeerits.wixsite.com/geertgeerits/barcode-generator");
-            BrowserLaunchOptions options = new()
-            {
-                LaunchMode = BrowserLaunchMode.SystemPreferred,
-                TitleMode = BrowserTitleMode.Show
-            };
-
-            await Browser.Default.OpenAsync(uri, options);
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-        }
-#else
-        await Navigation.PushAsync(new PageWebsite());
-#endif
-    }
-
-    private void OnCrashErrorReportClicked(object sender, EventArgs e)
-    {
-        DisplayAlert(CodeLang.CrashErrorReport_Text, CodeLang.CrashErrorReportAppCenter_Text, CodeLang.ButtonClose_Text);
-    }
 }
 
-// Reusable hyperlink class
+// Open e-mail app and open webpage (reusable hyperlink class)
 public class HyperlinkSpan : Span
 {
     public static readonly BindableProperty UrlProperty =
@@ -110,7 +52,7 @@ public class HyperlinkSpan : Span
         TextDecorations = TextDecorations.Underline;
         GestureRecognizers.Add(new TapGestureRecognizer
         {
-            // Launcher.OpenAsync is provided by Essentials.
+            // Launcher.OpenAsync is provided by Essentials
             Command = new Command(async () => await Launcher.OpenAsync(Url))
         });
     }

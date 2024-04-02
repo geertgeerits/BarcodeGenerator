@@ -68,11 +68,10 @@
                             <FormattedString>
                                 <Span Text="{x:Static resx:CodeLang.CrashErrorReport_Text}" />
                                 <Span Text="{x:Static resx:CodeLang.Info_Text}"
-                                    FontAttributes="Bold"
-                                    TextDecorations="Underline">
+                                      FontAttributes="Bold"
+                                      TextDecorations="Underline">
                                     <Span.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding TapCommand}"
-                                         CommandParameter="https://geertgeerits.com" />
+                                        <TapGestureRecognizer Command="{Binding TapCommand}" />
                                     </Span.GestureRecognizers>
                                 </Span>
                             </FormattedString>
