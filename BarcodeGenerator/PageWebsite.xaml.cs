@@ -2,7 +2,7 @@ namespace BarcodeGenerator;
 
 public partial class PageWebsite : ContentPage
 {
-    public PageWebsite()
+    public PageWebsite(string url)
     {
         try
         {
@@ -19,7 +19,7 @@ public partial class PageWebsite : ContentPage
         }
 
         // Set WebView properties
-        wvWebpage.Source = "https://geertgeerits.wixsite.com/geertgeerits/barcode-generator";
+        wvWebpage.Source = url;
         wvWebpage.Navigating += OnNavigating;
         wvWebpage.Navigated += OnNavigated;
     }
@@ -27,8 +27,8 @@ public partial class PageWebsite : ContentPage
     // Navigating event that's raised when page navigation starts
     private async void OnNavigating(object sender, WebNavigatingEventArgs e)
     {
-        // If 'mailto' link in webpage then open the e-mail app
-        if (e.Url.StartsWith("mailto"))
+        // If 'mailto:' link in webpage then open the e-mail app
+        if (e.Url.StartsWith("mailto:"))
         {
             await Launcher.TryOpenAsync(e.Url);
             e.Cancel = true;

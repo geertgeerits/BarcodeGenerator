@@ -50,10 +50,77 @@ public class HyperlinkSpan : Span
     {
         FontAttributes = FontAttributes.Bold;
         TextDecorations = TextDecorations.Underline;
+        
         GestureRecognizers.Add(new TapGestureRecognizer
         {
             // Launcher.OpenAsync is provided by Essentials
-            Command = new Command(async () => await Launcher.OpenAsync(Url))
+            //Command = new Command(async () => await Launcher.OpenAsync(Url))
+            Command = new Command(async () => await OpenHyperlink(Url))
         });
+    }
+
+    private static async Task OpenHyperlink(string url)
+    {
+        if (url.StartsWith("mailto:"))
+        {
+            await OpenEmailLink(url[7..]);
+        }
+        else
+        {
+            await OpenWebsiteLink(url);
+        }
+    }
+
+    // Open the e-mail program
+    private static async Task OpenEmailLink(string url)
+    {
+        if (Email.Default.IsComposeSupported)
+        {
+            string subject = "Barcode generator and scanner";
+            string body = "";
+            string[] recipients = [url];
+
+            var message = new EmailMessage
+            {
+                Subject = subject,
+                Body = body,
+                BodyFormat = EmailBodyFormat.PlainText,
+                To = new List<string>(recipients)
+            };
+
+            try
+            {
+                await Email.Default.ComposeAsync(message);
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+            }
+        }
+    }
+
+    // Open the page 'PageWebsite' to open the website in the WebView control
+    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console
+    private static async Task OpenWebsiteLink(string url)
+    {
+#if ANDROID
+        try
+        {
+            Uri uri = new(url);
+            BrowserLaunchOptions options = new()
+            {
+                LaunchMode = BrowserLaunchMode.SystemPreferred,
+                TitleMode = BrowserTitleMode.Show
+            };
+
+            await Browser.Default.OpenAsync(uri, options);
+        }
+        catch (Exception ex)
+        {
+            await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+        }
+#else
+        await Application.Current.MainPage.Navigation.PushAsync(new PageWebsite(url));
+#endif
     }
 }
