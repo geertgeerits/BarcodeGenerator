@@ -68,6 +68,7 @@
                             PauseScanning="False"
                             PoolingInterval="500"
                             TapToFocusEnabled="True"
+                            AimMode="False"
                             TorchOn="False"
                             VibrationOnDetected="False"
                             CameraEnabled="True"
