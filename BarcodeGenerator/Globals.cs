@@ -213,7 +213,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         catch (Exception ex)
         {
             //Crashes.TrackError(ex);
-            SentrySdk.CaptureException(ex);
+            //SentrySdk.CaptureException(ex);
 #if DEBUG
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -242,7 +242,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         catch (Exception ex)
         {
             //Crashes.TrackError(ex);
-            SentrySdk.CaptureException(ex);
+            //SentrySdk.CaptureException(ex);
 #if DEBUG
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -263,7 +263,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         catch (Exception ex)
         {
             //Crashes.TrackError(ex);
-            SentrySdk.CaptureException(ex);
+            //SentrySdk.CaptureException(ex);
 #if DEBUG
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -326,7 +326,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
             catch (Exception ex)
             {
                 //Crashes.TrackError(ex);
-                SentrySdk.CaptureException(ex);
+                //SentrySdk.CaptureException(ex);
 #if DEBUG
                 await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
