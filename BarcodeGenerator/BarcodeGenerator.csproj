@@ -148,8 +148,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.39</ApplicationDisplayVersion>
-		<ApplicationVersion>39</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.40</ApplicationDisplayVersion>
+		<ApplicationVersion>40</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
@@ -168,8 +168,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.39</ApplicationDisplayVersion>
-		<ApplicationVersion>39</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.40</ApplicationDisplayVersion>
+		<ApplicationVersion>40</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
