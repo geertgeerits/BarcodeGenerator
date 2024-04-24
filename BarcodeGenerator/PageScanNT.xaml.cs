@@ -470,13 +470,13 @@ public partial class PageScanNT : ContentPage
     // !!!BUG!!! from version 1.4.0: the scan page freezes on an iPhone 7 when the scan page is opened
     private class BarcodeDrawable : IDrawable
     {
-        public HashSet<BarcodeResult>? barcodeResults;    // Till version 1.3.1
-        //public BarcodeResult[]? barcodeResults;         // From version 1.4.0
+        //public HashSet<BarcodeResult>? barcodeResults;    // Till version 1.3.1
+        public BarcodeResult[]? barcodeResults;         // From version 1.4.0
 
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
-            if (barcodeResults is not null && barcodeResults.Count > 0)       // Till version 1.3.1
-            //if (barcodeResults is not null && barcodeResults.Length > 0)    // From version 1.4.0
+            //if (barcodeResults is not null && barcodeResults.Count > 0)       // Till version 1.3.1
+            if (barcodeResults is not null && barcodeResults.Length > 0)    // From version 1.4.0
             {
                 canvas.StrokeSize = 15;
                 canvas.StrokeColor = Colors.Green;
@@ -487,7 +487,8 @@ public partial class PageScanNT : ContentPage
                 {
                     foreach (var barcode in barcodeResults)
                     {
-                        canvas.DrawRectangle(barcode.BoundingBox);
+                        //canvas.DrawRectangle(barcode.BoundingBox);    // Till version 1.4.3
+                        canvas.DrawRectangle(barcode.PreviewBoundingBox);  // From version 1.5.0
                     }
                 }
                 catch (Exception ex)
@@ -506,3 +507,8 @@ public partial class PageScanNT : ContentPage
         }
     }
 }
+
+/*
+From NuGet Package BarcodeScanner.Native.Maui version 1.4.0 the app hangs or exit on the splash screen
+when the app is opened on a Samsung A320 phone with Android 8.0
+*/

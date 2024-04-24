@@ -14,14 +14,14 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
-            .UseBarcodeReader()
-            .UseBarcodeScanning()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             })
-            
+            .UseBarcodeReader()
+            .UseBarcodeScanning()
+
             //.ConfigureMauiHandlers(handlers =>
             //{
             //    // Add the handlers
