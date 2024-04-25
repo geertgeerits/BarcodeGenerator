@@ -17,7 +17,7 @@ public partial class PageSettings : ContentPage
         catch (Exception ex)
         {
             //Crashes.TrackError(ex);
-            //SentrySdk.CaptureException(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG            
             DisplayAlert("InitializeComponent: PageSettings", ex.Message, "OK");
 #endif

@@ -14,10 +14,11 @@
 //                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 1.3.1 ; https://github.com/afriscic/BarcodeScanning.Native.Maui
 //                (NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/)
 //                (NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3)
-//                (NuGet Package: Sentry.Maui version 4.2.1 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA)
+//                NuGet Package: Sentry.Maui version 4.4.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
 // Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun
 
 using ZXing.Net.Maui;
+//using Microsoft.AppCenter.Crashes;
 
 namespace BarcodeGenerator;
 
@@ -36,7 +37,7 @@ public partial class MainPage : ContentPage
         catch (Exception ex)
         {
             //Crashes.TrackError(ex);
-            //SentrySdk.CaptureException(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG
             DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
 #endif
@@ -139,6 +140,7 @@ public partial class MainPage : ContentPage
         // Set focus to the editor
         edtTextToCode.Focus();
 
+        // Test for crashes
         //SentrySdk.CaptureMessage("Hello Sentry");
         //throw new Exception("This is a test exception");
     }
@@ -665,15 +667,15 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            var properties = new Dictionary<string, string> {
-                { "File:", "MainPage.xaml.cs" },
-                { "Method:", "OnGenerateCodeClicked" },
-                { "AppLanguage:", Globals.cLanguage },
-                { "AppLanguageSpeech:", Globals.cLanguageSpeech },
-                { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
-            };
+            //var properties = new Dictionary<string, string> {
+            //    { "File:", "MainPage.xaml.cs" },
+            //    { "Method:", "OnGenerateCodeClicked" },
+            //    { "AppLanguage:", Globals.cLanguage },
+            //    { "AppLanguageSpeech:", Globals.cLanguageSpeech },
+            //    { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
+            //};
             //Crashes.TrackError(ex, properties);
-            //_ = SentrySdk.CaptureException(ex);
+            _ = SentrySdk.CaptureException(ex);
 
             bgvBarcode.Value = "";
 
@@ -983,7 +985,7 @@ public partial class MainPage : ContentPage
             //    { "AppLanguageSpeech:", Globals.cLanguageSpeech }
             //};
             //Crashes.TrackError(ex, properties);
-            //SentrySdk.CaptureException(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG
             await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
 #endif
@@ -1053,7 +1055,7 @@ public partial class MainPage : ContentPage
         catch (Exception ex)
         {
             //Crashes.TrackError(ex);
-            //SentrySdk.CaptureException(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG
             _ = Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -1121,15 +1123,15 @@ public partial class MainPage : ContentPage
             }
             catch (Exception ex)
             {
-                var properties = new Dictionary<string, string> {
-                    { "File:", "MainPage.xaml.cs" },
-                    { "Method:", "OnPasteFromClipboardClicked" },
-                    { "AppLanguage:", Globals.cLanguage },
-                    { "AppLanguageSpeech:", Globals.cLanguageSpeech },
-                    { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
-                };
+                //var properties = new Dictionary<string, string> {
+                //    { "File:", "MainPage.xaml.cs" },
+                //    { "Method:", "OnPasteFromClipboardClicked" },
+                //    { "AppLanguage:", Globals.cLanguage },
+                //    { "AppLanguageSpeech:", Globals.cLanguageSpeech },
+                //    { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
+                //};
                 //Crashes.TrackError(ex, properties);
-                //SentrySdk.CaptureException(ex);
+                SentrySdk.CaptureException(ex);
 #if DEBUG
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif

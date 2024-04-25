@@ -2,6 +2,7 @@
 //using BarcodeScanner.Mobile;
 using ZXing.Net.Maui.Controls;
 //using Microsoft.AppCenter;
+//using Microsoft.AppCenter.Crashes;
 using Microsoft.Maui.LifecycleEvents;
 using BarcodeScanning;
 
@@ -21,6 +22,11 @@ public static class MauiProgram
             })
             .UseBarcodeReader()
             .UseBarcodeScanning()
+
+            .UseSentry(options =>
+            {
+                options.Dsn = "https://988f47dd765ca32afe832320e77a3a7d@o4507011442933760.ingest.us.sentry.io/4507011456565248";
+            })
 
             //.ConfigureMauiHandlers(handlers =>
             //{

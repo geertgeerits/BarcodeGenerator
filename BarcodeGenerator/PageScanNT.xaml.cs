@@ -19,7 +19,7 @@ public partial class PageScanNT : ContentPage
         catch (Exception ex)
         {
             //Crashes.TrackError(ex);
-            //SentrySdk.CaptureException(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG
             DisplayAlert("InitializeComponent: PageScanNT", ex.Message, "OK");
 #endif
@@ -236,7 +236,7 @@ public partial class PageScanNT : ContentPage
         catch (Exception ex)
         {
             //Crashes.TrackError(ex);
-            //SentrySdk.CaptureException(ex);
+            SentrySdk.CaptureException(ex);
 #if DEBUG
             _ = DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -281,14 +281,14 @@ public partial class PageScanNT : ContentPage
         }
         catch (Exception ex)
         {
-            var properties = new Dictionary<string, string> {
-                { "File:", "PageScanNT.xaml.cs" },
-                { "Method:", "OnCameraQualityBackChanged" },
-                { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
-                { "selectedIndex:", Convert.ToString(nSelectedIndex) }
-            };
+            //var properties = new Dictionary<string, string> {
+            //    { "File:", "PageScanNT.xaml.cs" },
+            //    { "Method:", "OnCameraQualityBackChanged" },
+            //    { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
+            //    { "selectedIndex:", Convert.ToString(nSelectedIndex) }
+            //};
             //Crashes.TrackError(ex, properties);
-            //_ = SentrySdk.CaptureException(ex);
+            _ = SentrySdk.CaptureException(ex);
 
             await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraQualityError_Text, CodeLang.ButtonClose_Text);
         }
@@ -336,14 +336,14 @@ public partial class PageScanNT : ContentPage
         }
         catch (Exception ex)
         {
-            var properties = new Dictionary<string, string> {
-                { "File:", "PageScanNT.xaml.cs" },
-                { "Method:", "OnCameraQualityFrontChanged" },
-                { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
-                { "selectedIndex:", Convert.ToString(nSelectedIndex) }
-            };
+            //var properties = new Dictionary<string, string> {
+            //    { "File:", "PageScanNT.xaml.cs" },
+            //    { "Method:", "OnCameraQualityFrontChanged" },
+            //    { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
+            //    { "selectedIndex:", Convert.ToString(nSelectedIndex) }
+            //};
             //Crashes.TrackError(ex, properties);
-            //_ = SentrySdk.CaptureException(ex);
+            _ = SentrySdk.CaptureException(ex);
 
             await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraQualityError_Text, CodeLang.ButtonClose_Text);
         }
@@ -493,12 +493,12 @@ public partial class PageScanNT : ContentPage
                 }
                 catch (Exception ex)
                 {
-                    var properties = new Dictionary<string, string> {
-                        { "File:", "PageScanNT.xaml.cs" },
-                        { "Class.Method:", "BarcodeDrawable.Draw" }
-                    };
+                    //var properties = new Dictionary<string, string> {
+                    //    { "File:", "PageScanNT.xaml.cs" },
+                    //    { "Class.Method:", "BarcodeDrawable.Draw" }
+                    //};
                     //Crashes.TrackError(ex, properties);
-                    //SentrySdk.CaptureException(ex);
+                    SentrySdk.CaptureException(ex);
 #if DEBUG                    
                     Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
