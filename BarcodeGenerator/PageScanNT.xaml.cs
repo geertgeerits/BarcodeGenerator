@@ -1,5 +1,4 @@
 using BarcodeScanning;
-using ZXing;
 
 namespace BarcodeGenerator;
 

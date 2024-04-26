@@ -237,7 +237,12 @@ public static async Task ShareBarcodeResultAsync(string cText)
         try
         {
             Uri uri = new(cUrl);
+#if IOS
+            // !!!BUG!!! in iOS. The camera is disabled after opening the website link using BrowserLaunchMode.SystemPreferred
+            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.External);
+#else
             await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+#endif
         }
         catch (Exception ex)
         {
