@@ -99,11 +99,9 @@ public class HyperlinkSpan : Span
         }
     }
 
-    // Open the page 'PageWebsite' to open the website in the WebView control
-    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console
+    // Open the website link in the default browser
     private static async Task OpenWebsiteLink(string url)
     {
-#if ANDROID
         try
         {
             Uri uri = new(url);
@@ -117,10 +115,9 @@ public class HyperlinkSpan : Span
         }
         catch (Exception ex)
         {
+#if DEBUG
             await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-        }
-#else
-        await Application.Current.MainPage.Navigation.PushAsync(new PageWebsite(url));
 #endif
+        }
     }
 }

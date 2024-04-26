@@ -58,11 +58,13 @@
 	<ItemGroup>
 	  <Compile Remove="PageScanGV.xaml.cs" />
 	  <Compile Remove="PageScanZX.xaml.cs" />
+	  <Compile Remove="PageWebsite.xaml.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Remove="PageScanGV.xaml" />
 	  <MauiXaml Remove="PageScanZX.xaml" />
+	  <MauiXaml Remove="PageWebsite.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -121,9 +123,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PageSettings.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="PageWebsite.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -36,16 +36,18 @@ public partial class PageWebsite : ContentPage
     }
 
     // Navigated event that's raised when page navigation completes
-    private void OnNavigated(object sender, WebNavigatedEventArgs e)
+    private async void OnNavigated(object sender, WebNavigatedEventArgs e)
     {
         // Enable or disable the back and forward buttons
         btnGoBack.IsEnabled = wvWebpage.CanGoBack;
         btnGoForward.IsEnabled = wvWebpage.CanGoForward;
 
         // Changes the target of all the links in _self
+        string result = "";
+        
         try
         {
-            wvWebpage.EvaluateJavaScriptAsync(@"(function() {
+            result = await wvWebpage.EvaluateJavaScriptAsync(@"(function() {
                 var links = document.getElementsByTagName('a');
                 for (var i = 0; i < links.length; i++)
                 {
@@ -56,7 +58,7 @@ public partial class PageWebsite : ContentPage
         catch (Exception ex)
         {
 #if DEBUG
-            DisplayAlert("PageWebsite - OnNavigated", ex.Message, "OK");
+            await DisplayAlert($"PageWebsite, OnNavigated, result = {result}", ex.Message, "OK");
 #endif        
         }
     }
