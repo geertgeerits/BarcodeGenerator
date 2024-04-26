@@ -43,13 +43,22 @@ public partial class PageWebsite : ContentPage
         btnGoForward.IsEnabled = wvWebpage.CanGoForward;
 
         // Changes the target of all the links in _self
-        wvWebpage.EvaluateJavaScriptAsync(@"(function() {
-            var links = document.getElementsByTagName('a');
-            for (var i = 0; i < links.length; i++)
-            {
-                links[i].setAttribute('target', '_self');
-            }
-        })()");
+        try
+        {
+            wvWebpage.EvaluateJavaScriptAsync(@"(function() {
+                var links = document.getElementsByTagName('a');
+                for (var i = 0; i < links.length; i++)
+                {
+                    links[i].setAttribute('target', '_self');
+                }
+            })()");
+        }
+        catch (Exception ex)
+        {
+#if DEBUG
+            DisplayAlert("PageWebsite - OnNavigated", ex.Message, "OK");
+#endif        
+        }
     }
 
     // Go backwards, if allowed
