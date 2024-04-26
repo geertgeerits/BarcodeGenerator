@@ -99,9 +99,11 @@ public class HyperlinkSpan : Span
         }
     }
 
-    // Open the website link in the default browser
+    // Open the page 'PageWebsite' to open the website in the WebView control
+    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console
     private static async Task OpenWebsiteLink(string url)
     {
+#if ANDROID
         try
         {
             Uri uri = new(url);
@@ -115,9 +117,34 @@ public class HyperlinkSpan : Span
         }
         catch (Exception ex)
         {
-#if DEBUG
             await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-#endif
         }
+#else
+        // !!!BUG!!! in iOS: when closing the WebView control, the camera is disabled
+        await Application.Current.MainPage.Navigation.PushAsync(new PageWebsite(url));
+#endif
     }
+
+    // Open the website link in the default browser
+    // !!!BUG!!! in iOS: when closing the default browser, the camera is disabled
+    //    private static async Task OpenWebsiteLink(string url)
+    //    {
+    //        try
+    //        {
+    //            Uri uri = new(url);
+    //            BrowserLaunchOptions options = new()
+    //            {
+    //                LaunchMode = BrowserLaunchMode.SystemPreferred,
+    //                TitleMode = BrowserTitleMode.Show
+    //            };
+
+    //            await Browser.Default.OpenAsync(uri, options);
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //#if DEBUG
+    //            await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+    //#endif
+    //        }
+    //    }
 }
