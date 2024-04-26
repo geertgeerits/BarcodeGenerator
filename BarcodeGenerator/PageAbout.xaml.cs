@@ -16,7 +16,7 @@ public partial class PageAbout : ContentPage
         }
         catch (Exception ex)
         {
-            //Crashes.TrackError(ex);
+            //Crashes.TrackError(ex);  // Microsoft.AppCenter
             SentrySdk.CaptureException(ex);
 #if DEBUG
             DisplayAlert("InitializeComponent: PageAbout", ex.Message, "OK");

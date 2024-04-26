@@ -212,7 +212,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         }
         catch (Exception ex)
         {
-            //Crashes.TrackError(ex);
+            //Crashes.TrackError(ex);  // Microsoft.AppCenter
             //SentrySdk.CaptureException(ex);
 #if DEBUG
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -241,7 +241,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         }
         catch (Exception ex)
         {
-            //Crashes.TrackError(ex);
+            //Crashes.TrackError(ex);  // Microsoft.AppCenter
             //SentrySdk.CaptureException(ex);
 #if DEBUG
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -262,7 +262,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         }
         catch (Exception ex)
         {
-            //Crashes.TrackError(ex);
+            //Crashes.TrackError(ex);  // Microsoft.AppCenter
             //SentrySdk.CaptureException(ex);
 #if DEBUG
             await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -290,7 +290,8 @@ public static async Task ShareBarcodeResultAsync(string cText)
             //    { "AppLanguage:", cLanguage },
             //    { "AppLanguageSpeech:", cLanguageSpeech }
             //};
-            //Crashes.TrackError(ex, properties);
+            //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
+            //SentrySdk.CaptureException(ex);
 #if DEBUG
             await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -325,7 +326,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
             }
             catch (Exception ex)
             {
-                //Crashes.TrackError(ex);
+                //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 //SentrySdk.CaptureException(ex);
 #if DEBUG
                 await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);

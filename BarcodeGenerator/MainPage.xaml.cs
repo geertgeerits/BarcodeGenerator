@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2024
 // Version .....: 1.0.40
-// Date ........: 2024-04-25 (YYYY-MM-DD)
+// Date ........: 2024-04-26 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -18,7 +18,6 @@
 // Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun
 
 using ZXing.Net.Maui;
-//using Microsoft.AppCenter.Crashes;
 
 namespace BarcodeGenerator;
 
@@ -26,7 +25,7 @@ public partial class MainPage : ContentPage
 {
     // Local variables
     private string cLicense;
-    private readonly bool bLogAlwaysSend;
+    //private readonly bool bLogAlwaysSend;  // Microsoft.AppCenter
 
     public MainPage()
     {
@@ -36,7 +35,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            //Crashes.TrackError(ex);
+            //Crashes.TrackError(ex);  // Microsoft.AppCenter
             SentrySdk.CaptureException(ex);
 #if DEBUG
             DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
@@ -53,9 +52,9 @@ public partial class MainPage : ContentPage
         Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
         Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
         Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
-        bLogAlwaysSend = Preferences.Default.Get("SettingLogAlwaysSend", false);
+        //bLogAlwaysSend = Preferences.Default.Get("SettingLogAlwaysSend", false);  // Microsoft.AppCenter
 
-        // Crash log confirmation
+        // Crash log confirmation (Microsoft.AppCenter)
         //if (!bLogAlwaysSend)
         //{
         //    Crashes.ShouldAwaitUserConfirmation = () =>
@@ -140,7 +139,7 @@ public partial class MainPage : ContentPage
         // Set focus to the editor
         edtTextToCode.Focus();
 
-        // Test for crashes
+        // Test for crashes Sentry
         //SentrySdk.CaptureMessage("Hello Sentry");
         //throw new Exception("This is a test exception");
     }
@@ -674,7 +673,7 @@ public partial class MainPage : ContentPage
             //    { "AppLanguageSpeech:", Globals.cLanguageSpeech },
             //    { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
             //};
-            //Crashes.TrackError(ex, properties);
+            //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
             _ = SentrySdk.CaptureException(ex);
 
             bgvBarcode.Value = "";
@@ -984,8 +983,8 @@ public partial class MainPage : ContentPage
             //    { "AppLanguage:", Globals.cLanguage },
             //    { "AppLanguageSpeech:", Globals.cLanguageSpeech }
             //};
-            //Crashes.TrackError(ex, properties);
-            SentrySdk.CaptureException(ex);
+            //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
+            //SentrySdk.CaptureException(ex);
 #if DEBUG
             await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
 #endif
@@ -1054,8 +1053,8 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            //Crashes.TrackError(ex);
-            SentrySdk.CaptureException(ex);
+            //Crashes.TrackError(ex);  // Microsoft.AppCenter
+            //SentrySdk.CaptureException(ex);
 #if DEBUG
             _ = Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -1078,7 +1077,7 @@ public partial class MainPage : ContentPage
     //        }
     //        catch (Exception ex)
     //        {
-    //            //Crashes.TrackError(ex);
+    //            //Crashes.TrackError(ex);  // Microsoft.AppCenter
     //            //SentrySdk.CaptureException(ex);
     //            //DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
     //            cLanguageSpeech = cLanguageLocales[0];
@@ -1130,7 +1129,7 @@ public partial class MainPage : ContentPage
                 //    { "AppLanguageSpeech:", Globals.cLanguageSpeech },
                 //    { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
                 //};
-                //Crashes.TrackError(ex, properties);
+                //Crashes.TrackError(ex, properties);   // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -1139,7 +1138,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Crash log confirmation
+    // Crash log confirmation (Microsoft.AppCenter)
     //private async void ConfirmationSendCrashLog()
     //{
     //    // Using the DisplayActionSheet with 3 choices
