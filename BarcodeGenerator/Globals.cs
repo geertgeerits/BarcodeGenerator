@@ -1,17 +1,18 @@
-﻿// Global usings
+﻿//// Global usings
 global using BarcodeGenerator.Resources.Languages;
 global using System.Globalization;
+
 //global using Microsoft.AppCenter.Crashes;
 
-// Local usings
+//// Local usings
 using System.Text.RegularExpressions;
 
 namespace BarcodeGenerator;
 
-// Global variables and methods
+//// Global variables and methods
 static class Globals
 {
-    // Global variables
+    //// Global variables
     public static string cTheme;
     public static int nFormatGeneratorIndex;
     public static int nFormatScannerIndex;
@@ -29,8 +30,8 @@ static class Globals
     public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
     public static bool bLicense;
 
-    // Global methods
-    // Set the theme
+    //// Global methods
+    //// Set the theme
     public static void SetTheme()
     {
         Application.Current.UserAppTheme = cTheme switch
@@ -41,7 +42,7 @@ static class Globals
         };
     }
     
-    // Set the current UI culture of the selected language
+    //// Set the current UI culture of the selected language
     public static void SetCultureSelectedLanguage()
     {
         try
@@ -56,7 +57,7 @@ static class Globals
         }
     }
 
-    // Get ISO language (and country) code from locales
+    //// Get ISO language (and country) code from locales
     public static string GetIsoLanguageCode()
     {
         // Split before first space and remove last character '-' if there
@@ -70,7 +71,7 @@ static class Globals
         return cLanguageIso;
     }
 
-    // Put the generator barcode formats in a List string
+    //// Put the generator barcode formats in a List string
     public static List<string> GetFormatCodeListGenerator()
     {
         return
@@ -93,7 +94,7 @@ static class Globals
         ];
     }
 
-    // Put the scanner barcode formats in a List string
+    //// Put the scanner barcode formats in a List string
     //public static List<string> GetFormatCodeListScanner()
     //{
     //    return
@@ -123,8 +124,8 @@ static class Globals
     //    ];
     //}
 
-    // Put the scanner barcode formats in a List string for the Native scanner for Android
-    // https://developers.google.com/ml-kit/vision/barcode-scanning/android
+    //// Put the scanner barcode formats in a List string for the Native scanner for Android
+    //   https://developers.google.com/ml-kit/vision/barcode-scanning/android
     public static List<string> GetFormatCodeListScannerNativeAndroid()
     {
         return
@@ -146,8 +147,8 @@ static class Globals
         ];
     }
 
-    // Put the scanner barcode formats in a List string for the Native scanner for iOS
-    // https://developer.apple.com/documentation/avfoundation/avmetadataobject/objecttype
+    //// Put the scanner barcode formats in a List string for the Native scanner for iOS
+    //   https://developer.apple.com/documentation/avfoundation/avmetadataobject/objecttype
     public static List<string> GetFormatCodeListScannerNativeIOS()
     {
         return
@@ -172,8 +173,8 @@ static class Globals
         ];
     }
 
-// Button share event: share the barcode result
-public static async Task ShareBarcodeResultAsync(string cText)
+    //// Button share event: share the barcode result
+    public static async Task ShareBarcodeResultAsync(string cText)
     {
         if (cText is null or "")
         {
@@ -226,7 +227,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         await ShareTextAsync(cText);
     }
 
-    // Open the website link
+    //// Open the website link
     public static async Task OpenWebsiteLinkAsync(string cUrl)
     {
         if (cUrl[..4] is "www." or "WWW.")
@@ -238,8 +239,10 @@ public static async Task ShareBarcodeResultAsync(string cText)
         {
             Uri uri = new(cUrl);
 #if IOS
-            // !!!BUG!!! in iOS. The camera is disabled after opening the website link using BrowserLaunchMode.SystemPreferred
+            // !!!BUG!!! in iOS. The camera is disabled after opening the website link
+            // using the BrowserLaunchMode.SystemPreferred or the new PageWebsite(cUrl)
             await Browser.Default.OpenAsync(uri, BrowserLaunchMode.External);
+
 #else
             await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
 #endif
@@ -254,7 +257,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         }
     }
 
-    // Open the share interface
+    //// Open the share interface
     public static async Task ShareTextAsync(string cText)
     {
         try
@@ -275,7 +278,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         }
     }
 
-    // Initialize text to speech for the barcode scanner
+    //// Initialize text to speech for the barcode scanner
     public static async Task<bool> InitializeTextToSpeechScannerAsync(string cPageName)
     {
         if (!bLanguageLocalesExist)
@@ -306,7 +309,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         return true;
     }
 
-    // Button text to speech event - Convert text to speech
+    //// Button text to speech event - Convert text to speech
     public static async Task ConvertTextToSpeechAsync(object sender, string cText)
     {
         var imageButton = (ImageButton)sender;
@@ -342,7 +345,7 @@ public static async Task ShareBarcodeResultAsync(string cText)
         }
     }
 
-    // Cancel the text to speech
+    //// Cancel the text to speech
     public static string CancelTextToSpeech()
     {
         // Cancel speech if a cancellation token exists & hasn't been already requested

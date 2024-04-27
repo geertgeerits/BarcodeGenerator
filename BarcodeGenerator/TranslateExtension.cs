@@ -1,22 +1,23 @@
-﻿namespace BarcodeGenerator;
-
-[ContentProperty(nameof(Name))]
-public class TranslateExtension : IMarkupExtension<BindingBase>
+﻿namespace BarcodeGenerator
 {
-    public string Name { get; set; }
-
-    public BindingBase ProvideValue(IServiceProvider serviceProvider)
+    [ContentProperty(nameof(Name))]
+    public class TranslateExtension : IMarkupExtension<BindingBase>
     {
-        return new Binding
+        public string Name { get; set; }
+
+        public BindingBase ProvideValue(IServiceProvider serviceProvider)
         {
-            Mode = BindingMode.OneWay,
-            Path = $"[{Name}]",
-            Source = LocalizationResourceManager.Instance
-        };
-    }
+            return new Binding
+            {
+                Mode = BindingMode.OneWay,
+                Path = $"[{Name}]",
+                Source = LocalizationResourceManager.Instance
+            };
+        }
 
-    object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
-    {
-        return ProvideValue(serviceProvider);
+        object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
+        {
+            return ProvideValue(serviceProvider);
+        }
     }
 }

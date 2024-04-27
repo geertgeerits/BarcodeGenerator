@@ -4,7 +4,7 @@ namespace BarcodeGenerator;
 
 public partial class PageAbout : ContentPage
 {
-    // TapCommand to open the crash and error report privacy information (Launcher.OpenAsync is provided by Essentials)
+    //// TapCommand to open the crash and error report privacy information (Launcher.OpenAsync is provided by Essentials)
     public ICommand TapCommand => new Command(async () => await DisplayAlert(CodeLang.CrashErrorReport_Text, CodeLang.CrashErrorReportSentry_Text, CodeLang.ButtonClose_Text));
 
     public PageAbout()
@@ -34,7 +34,7 @@ public partial class PageAbout : ContentPage
     }
 }
 
-// Open e-mail app and open webpage (reusable hyperlink class)
+//// Open e-mail app and open webpage (reusable hyperlink class)
 public class HyperlinkSpan : Span
 {
     public static readonly BindableProperty UrlProperty =
@@ -71,7 +71,7 @@ public class HyperlinkSpan : Span
         }
     }
 
-    // Open the e-mail program
+    //// Open the e-mail program
     private static async Task OpenEmailLink(string url)
     {
         if (Email.Default.IsComposeSupported)
@@ -99,11 +99,9 @@ public class HyperlinkSpan : Span
         }
     }
 
-    // Open the page 'PageWebsite' to open the website in the WebView control
-    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console
+    //// Open the website link in the default browser
     private static async Task OpenWebsiteLink(string url)
     {
-#if ANDROID
         try
         {
             Uri uri = new(url);
@@ -119,32 +117,5 @@ public class HyperlinkSpan : Span
         {
             await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         }
-#else
-        // !!!BUG!!! in iOS: when closing the WebView control, the camera is disabled
-        await Application.Current.MainPage.Navigation.PushAsync(new PageWebsite(url));
-#endif
     }
-
-    // Open the website link in the default browser
-    // !!!BUG!!! in iOS: when closing the default browser, the camera is disabled
-    //    private static async Task OpenWebsiteLink(string url)
-    //    {
-    //        try
-    //        {
-    //            Uri uri = new(url);
-    //            BrowserLaunchOptions options = new()
-    //            {
-    //                LaunchMode = BrowserLaunchMode.SystemPreferred,
-    //                TitleMode = BrowserTitleMode.Show
-    //            };
-
-    //            await Browser.Default.OpenAsync(uri, options);
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //#if DEBUG
-    //            await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-    //#endif
-    //        }
-    //    }
 }
