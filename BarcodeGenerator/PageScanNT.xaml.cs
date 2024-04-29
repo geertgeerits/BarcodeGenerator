@@ -4,7 +4,7 @@ namespace BarcodeGenerator;
 
 public partial class PageScanNT : ContentPage
 {
-    // Local variables
+    //// Local variables
     private readonly BarcodeDrawable _drawable = new();
     private readonly List<string> qualities = [];
     private int nQualityCameraBack;
@@ -26,14 +26,14 @@ public partial class PageScanNT : ContentPage
             return;
         }
 
-        // Get the saved quality settings
+        //// Get the saved quality settings
         nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 2);
         nQualityCameraFront = Preferences.Default.Get("SettingQualityCameraFront", 1);
 
         //nQualityCameraBack = 0;     // For testing
         //nQualityCameraFront = 0;    // For testing
 
-        // Set the quality for the pickers
+        //// Set the quality for the pickers
         // No support for the highest quality:
         // - iPad 8, iOS version 17.1.1 (back and front camera)
         // - iPhone 7, iOS version 15.8 (front camera)
@@ -47,11 +47,11 @@ public partial class PageScanNT : ContentPage
 
         pckCameraQualityBack.ItemsSource = qualities;
         
-        // Set the quality for the camera
+        //// Set the quality for the camera
         pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
         pckCameraQualityFront.SelectedIndex = nQualityCameraFront;
 
-        // The height of the title bar is lower when an iPhone is in horizontal position
+        //// The height of the title bar is lower when an iPhone is in horizontal position
         if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
         {
             lblTitle.VerticalOptions = LayoutOptions.Start;
@@ -59,29 +59,29 @@ public partial class PageScanNT : ContentPage
         }
 
 #if ANDROID
-        // Set the barcodes in the picker for Android
+        //// Set the barcodes in the picker for Android
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
-        // Set the barcodes in the picker for iOS
+        //// Set the barcodes in the picker for iOS
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeIOS();
 #endif
 
-        // Default format code = All codes
+        //// Default format code = All codes
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
-        // Initialize text to speech
+        //// Initialize text to speech
         if (Globals.InitializeTextToSpeechScannerAsync("PageScanNT.xaml.cs").Result)
         {
             lblTextToSpeech.IsVisible = true;
             imgbtnTextToSpeech.IsVisible = true;
         }
 
-        // For testing crashes - DivideByZeroException
+        //// For testing crashes - DivideByZeroException
         //int divByZero = 51 / int.Parse("0");
     }
 
-    // Set the scanner properties for the selected format code
-    // Native nativeCameraView options
+    //// Set the scanner properties for the selected format code
+    //   Native nativeCameraView options
     private void OnPickerFormatCodeChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
@@ -134,7 +134,7 @@ public partial class PageScanNT : ContentPage
         }
     }
 
-    // Called by the Appearing event from the PageScanNT.xaml
+    //// Called by the Appearing event from the PageScanNT.xaml
     protected override async void OnAppearing()
     {
         // Ask for permission to use the camera
@@ -149,7 +149,7 @@ public partial class PageScanNT : ContentPage
         lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
     }
 
-    // Called by the Disappearing event from the PageScanNT.xaml
+    //// Called by the Disappearing event from the PageScanNT.xaml
     protected override void OnDisappearing()
     {
         // Disable the camera
@@ -171,14 +171,14 @@ public partial class PageScanNT : ContentPage
         imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
     }
     
-    // Unloaded event to disconnect the barcode handler
+    //// Unloaded event to disconnect the barcode handler
     private void ContentPage_Unloaded(object sender, EventArgs e)
     {
         barcodeReader.Handler?.DisconnectHandler();
         //Debug.WriteLine("Unloaded: Handler disconnected");
     }
 
-    // CameraView OnDetected event
+    //// CameraView OnDetected event
     private void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
     {
         imgbtnCopyToClipboard.IsEnabled = false;
@@ -243,7 +243,7 @@ public partial class PageScanNT : ContentPage
         }
     }
 
-    // ImageButton camera quality clicked event to open the picker
+    //// ImageButton camera quality clicked event to open the picker
     private void OnCameraQualityClicked(object sender, EventArgs e)
     {
         if (barcodeReader.CameraFacing == CameraFacing.Back)
@@ -259,7 +259,7 @@ public partial class PageScanNT : ContentPage
         }
     }
 
-    // Picker quality changed event for the back camera
+    //// Picker quality changed event for the back camera
     private async void OnCameraQualityBackChanged(object sender, EventArgs e)
     {
         int nSelectedIndex = pckCameraQualityBack.SelectedIndex;
@@ -307,7 +307,7 @@ public partial class PageScanNT : ContentPage
         nQualityCameraBack = nSelectedIndex;
     }
 
-    // Picker quality changed event for the front camera
+    //// Picker quality changed event for the front camera
     private async void OnCameraQualityFrontChanged(object sender, EventArgs e)
     {
         int nSelectedIndex = pckCameraQualityFront.SelectedIndex;
@@ -364,7 +364,7 @@ public partial class PageScanNT : ContentPage
         //await DisplayAlert("nSelectedIndex", Convert.ToString(nSelectedIndex), "OK");  // For testing
     }
 
-    // ImageButton camera facing clicked event
+    //// ImageButton camera facing clicked event
     private void OnCameraFacingClicked(object sender, EventArgs e)
     {
         // If the high or the highest quality is selected and the front camera is used then set the quality to medium
@@ -392,7 +392,7 @@ public partial class PageScanNT : ContentPage
         imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
     }
 
-    // ImageButton camera detecting clicked event
+    //// ImageButton camera detecting clicked event
     private void OnCameraDetectingClicked(object sender, EventArgs e)
     {
         if (barcodeReader.PauseScanning)
@@ -407,7 +407,7 @@ public partial class PageScanNT : ContentPage
         }
     }
 
-    // ImageButton camera vibrate clicked event
+    //// ImageButton camera vibrate clicked event
     private void OnCameraVibrateClicked(object sender, EventArgs e)
     {
         if (barcodeReader.VibrationOnDetected)
@@ -422,7 +422,7 @@ public partial class PageScanNT : ContentPage
         }
     }
 
-    // ImageButton torch clicked event
+    //// ImageButton torch clicked event
     private void OnCameraTorchClicked(object sender, EventArgs e)
     {
         if (barcodeReader.TorchOn)
@@ -437,13 +437,13 @@ public partial class PageScanNT : ContentPage
         }
     }
 
-    // Button share event
+    //// Button share event
     private void OnShareClicked(object sender, EventArgs e)
     {
         _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
     }
 
-    // Button text to speech event - Convert text to speech
+    //// Button text to speech event - Convert text to speech
     private void OnTextToSpeechClicked(object sender, EventArgs e)
     {
         // Cancel the text to speech
@@ -457,7 +457,7 @@ public partial class PageScanNT : ContentPage
         _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, lblBarcodeResult.Text);
     }
 
-    // Copy text to the clipboard clicked event
+    //// Copy text to the clipboard clicked event
     private async void OnCopyToClipboardClicked(object sender, EventArgs e)
     {
         if (lblBarcodeResult.Text.Length > 0)
@@ -466,8 +466,7 @@ public partial class PageScanNT : ContentPage
         }
     }
 
-    // Class for drawing the barcode bounding box
-    // !!!BUG!!! from version 1.4.0: the scan page freezes on an iPhone 7 when the scan page is opened
+    //// Class for drawing the barcode bounding box
     private class BarcodeDrawable : IDrawable
     {
         //public HashSet<BarcodeResult>? barcodeResults;    // Till version 1.3.1
@@ -510,5 +509,6 @@ public partial class PageScanNT : ContentPage
 
 /*
 From NuGet Package BarcodeScanner.Native.Maui version 1.4.0 the app hangs or exit on the splash screen
-when the app is opened on a Samsung A320 phone with Android 8.0
+when the app is opened on a Samsung A320 phone with Android 8.0 when using Android local devices.
+Does nog hangs or exit on the splash screen when using the released published .apk file.
 */

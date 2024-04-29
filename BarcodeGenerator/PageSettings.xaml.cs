@@ -4,7 +4,7 @@ namespace BarcodeGenerator;
 
 public partial class PageSettings : ContentPage
 {
-    // Local variables
+    //// Local variables
     private const string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
@@ -24,10 +24,10 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-        // Put text in the chosen language in the controls and variables
+        //// Put text in the chosen language in the controls and variables
         SetLanguage();
 
-        // Set the current language in the picker
+        //// Set the current language in the picker
         pckLanguage.SelectedIndex = Globals.cLanguage switch
         {
             // Čeština - Czech
@@ -76,10 +76,10 @@ public partial class PageSettings : ContentPage
             _ => 3,
         };
 
-        // Fill the picker with the speech languages and set the saved language in the picker
+        //// Fill the picker with the speech languages and set the saved language in the picker
         FillPickerWithSpeechLanguages();
 
-        // Set the current theme in the picker
+        //// Set the current theme in the picker
         pckTheme.SelectedIndex = Globals.cTheme switch
         {
             // Light
@@ -92,11 +92,11 @@ public partial class PageSettings : ContentPage
             _ => 0,
         };
 
-        // Set the barcode list and the current default barcode format in the picker for the barcode generator
+        //// Set the barcode list and the current default barcode format in the picker for the barcode generator
         pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
         pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
 
-        // Set the barcode list and the current default barcode format in the picker for the barcode scanner
+        //// Set the barcode list and the current default barcode format in the picker for the barcode scanner
 #if ANDROID        
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
@@ -104,7 +104,7 @@ public partial class PageSettings : ContentPage
 #endif
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
-        // Set the current color in the entry and on the sliders
+        //// Set the current color in the entry and on the sliders
         int nOpacity = 0;
         int nRed = 0;
         int nGreen = 0;
@@ -128,11 +128,11 @@ public partial class PageSettings : ContentPage
         sldColorBgGreen.Value = nGreen;
         sldColorBgBlue.Value = nBlue;
 
-        // Start the stopWatch for resetting all the settings
+        //// Start the stopWatch for resetting all the settings
         stopWatch.Start();
     }
 
-    // Picker language clicked event
+    //// Picker language clicked event
     private void OnPickerLanguageChanged(object sender, EventArgs e)
     {
         string cLanguageOld = Globals.cLanguage;
@@ -215,7 +215,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Put text in the chosen language in the controls and variables
+    //// Put text in the chosen language in the controls and variables
     private void SetLanguage()
     {
         // Set the barcode list and the current default barcode format in the picker for the barcode scanner
@@ -248,8 +248,8 @@ public partial class PageSettings : ContentPage
         };
     }
 
-    // Fill the picker with the speech languages from the array
-    // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+    //// Fill the picker with the speech languages from the array
+    //   .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
     private void FillPickerWithSpeechLanguages()
     {
         // If there are no locales then return
@@ -282,7 +282,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Picker speech language clicked event
+    //// Picker speech language clicked event
     private void OnPickerLanguageSpeechChanged(object sender, EventArgs e)
     {
         Picker picker = (Picker)sender;
@@ -294,7 +294,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Picker theme clicked event
+    //// Picker theme clicked event
     private void OnPickerThemeChanged(object sender, EventArgs e)
     {
         Picker picker = (Picker)sender;
@@ -319,7 +319,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Picker format generator clicked event
+    //// Picker format generator clicked event
     private void OnPickerFormatCodeGeneratorChanged(object sender, EventArgs e)
     {
         Picker picker = (Picker)sender;
@@ -331,7 +331,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Picker format scanner clicked event
+    //// Picker format scanner clicked event
     private void OnPickerFormatCodeScannerChanged(object sender, EventArgs e)
     {
         Picker picker = (Picker)sender;
@@ -343,7 +343,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // On entry HexColor text changed event
+    //// On entry HexColor text changed event
     private void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
     {
         Entry entry = (Entry)sender;
@@ -357,13 +357,13 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Display help for Hex color
+    //// Display help for Hex color
     private async void OnSettingsHexColorClicked(object sender, EventArgs e)
     {
         await DisplayAlert("?", CodeLang.HexColorCodes_Text, CodeLang.ButtonClose_Text);
     }
 
-    // Entry HexColor Unfocused event
+    //// Entry HexColor Unfocused event
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {
         Entry entry = (Entry)sender;
@@ -425,7 +425,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Test for allowed characters
+    //// Test for allowed characters
     private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
     {
         foreach (char cChar in cTextToCode)
@@ -442,7 +442,7 @@ public partial class PageSettings : ContentPage
         return true;
     }
 
-    // Slider color barcode Foreground value change
+    //// Slider color barcode Foreground value change
     private void OnSliderColorForegroundValueChanged(object sender, ValueChangedEventArgs args)
     {
         int nAmountOpacity = 0;
@@ -499,7 +499,7 @@ public partial class PageSettings : ContentPage
         */
     }
 
-    // Slider color barcode background value change
+    //// Slider color barcode background value change
     private void OnSliderColorBackgroundValueChanged(object sender, ValueChangedEventArgs args)
     {
         int nAmountOpacity = 0;
@@ -545,7 +545,7 @@ public partial class PageSettings : ContentPage
         Globals.cCodeColorBg = cColorBgHex;
     }
 
-    // Convert OORRGGBB Hex color to RGB color
+    //// Convert OORRGGBB Hex color to RGB color
     private static void HexToRgbColor(string cHexColor, ref int nOpacity, ref int nRed, ref int nGreen, ref int nBlue)
     {
         // Remove leading # if present
@@ -560,7 +560,7 @@ public partial class PageSettings : ContentPage
         nBlue = int.Parse(cHexColor.Substring(6, 2), NumberStyles.AllowHexSpecifier);
     }
 
-    // Button save settings clicked event
+    //// Button save settings clicked event
     private static void OnSettingsSaveClicked(object sender, EventArgs e)
     {
         Preferences.Default.Set("SettingTheme", Globals.cTheme);
@@ -579,7 +579,7 @@ public partial class PageSettings : ContentPage
         Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
-    // Button reset settings clicked event
+    //// Button reset settings clicked event
     private void OnSettingsResetClicked(object sender, EventArgs e)
     {
         // Get the elapsed time in milli seconds

@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 2022-2024
 // Version .....: 1.0.40
-// Date ........: 2024-04-27 (YYYY-MM-DD)
+// Date ........: 2024-04-29 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
 // Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
 // Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -23,7 +23,7 @@ namespace BarcodeGenerator;
 
 public partial class MainPage : ContentPage
 {
-    // Local variables
+    //// Local variables
     private string cLicense;
     //private readonly bool bLogAlwaysSend;  // Microsoft.AppCenter
 
@@ -43,7 +43,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        // Get the saved settings
+        //// Get the saved settings
         Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
         Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 12);
         Globals.nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 0);
@@ -54,7 +54,7 @@ public partial class MainPage : ContentPage
         Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
         //bLogAlwaysSend = Preferences.Default.Get("SettingLogAlwaysSend", false);  // Microsoft.AppCenter
 
-        // Crash log confirmation (Microsoft.AppCenter)
+        //// Crash log confirmation (Microsoft.AppCenter)
         //if (!bLogAlwaysSend)
         //{
         //    Crashes.ShouldAwaitUserConfirmation = () =>
@@ -65,7 +65,7 @@ public partial class MainPage : ContentPage
         //    };
         //}
 
-        // The height of the title bar is lower when an iPhone is in horizontal position
+        //// The height of the title bar is lower when an iPhone is in horizontal position
         if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
         {
             imgbtnAbout.VerticalOptions = LayoutOptions.Start;
@@ -75,18 +75,18 @@ public partial class MainPage : ContentPage
             imgbtnSettings.VerticalOptions = LayoutOptions.Start;
         }
 
-            // Set the tooltips for the scanner buttons
-            ToolTipProperties.SetText(imgbtnScanNT, CodeLang.ToolTipBarcodeScanner_Text + " (Native)");
+        //// Set the tooltips for the scanner buttons
+        ToolTipProperties.SetText(imgbtnScanNT, CodeLang.ToolTipBarcodeScanner_Text + " (Native)");
 
 //#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
-//        // Make the the scan icon for Google Vision visible
+//        //// Make the the scan icon for Google Vision visible
 //        imgbtnScanGV.IsVisible = true;
 //#endif
 
-        // Set the theme
+        //// Set the theme
         Globals.SetTheme();
 
-        // Set the barcode list and the current default barcode format in the picker for the barcode generator
+        //// Set the barcode list and the current default barcode format in the picker for the barcode generator
         pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
 
         if (Globals.nFormatGeneratorIndex < 0 || Globals.nFormatGeneratorIndex > 14)
@@ -100,7 +100,7 @@ public partial class MainPage : ContentPage
             pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
         }
 
-        // Get and set the system OS user language
+        //// Get and set the system OS user language
         try
         {
             if (string.IsNullOrEmpty(Globals.cLanguage))
@@ -115,7 +115,7 @@ public partial class MainPage : ContentPage
 
         SetTextLanguage();
 
-        // Initialize text to speech and get and set the speech language
+        //// Initialize text to speech and get and set the speech language
         string cCultureName = "";
 
         try
@@ -130,21 +130,21 @@ public partial class MainPage : ContentPage
             cCultureName = "en-US";
         }
 
-        // Initialize text to speech
+        //// Initialize text to speech
         InitializeTextToSpeech(cCultureName);
 
-        // Clear the clipboard
+        //// Clear the clipboard
         //Clipboard.Default.SetTextAsync(null);  // For testing
 
-        // Set focus to the editor
+        //// Set focus to the editor
         edtTextToCode.Focus();
 
-        // Test for crashes Sentry
+        //// Test for crashes Sentry
         //SentrySdk.CaptureMessage("Hello Sentry");
         //throw new Exception("This is a test exception");
     }
 
-    // TitleView buttons clicked events
+    //// TitleView buttons clicked events
     private async void OnPageAboutClicked(object sender, EventArgs e)
     {
         imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
@@ -163,7 +163,7 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(new PageSettings());
     }
 
-    // Set the editor properties for the selected format code
+    //// Set the editor properties for the selected format code
     private void OnPickerFormatCodeChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
@@ -310,7 +310,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // OnGenerateCodeClicked event
+    //// OnGenerateCodeClicked event
     private void OnGenerateCodeClicked(object sender, EventArgs e)
     {
         // Hide the keyboard
@@ -682,7 +682,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Test for allowed characters
+    //// Test for allowed characters
     private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
     {
         foreach (char cChar in cTextToCode)
@@ -701,7 +701,7 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Test for allowed minimum and maximum ASCII values
+    //// Test for allowed minimum and maximum ASCII values
     private bool TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
     {
         // Test for allowed minimum and maximum ASCII values
@@ -721,7 +721,7 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Replace special characters in strings for ASCII output (iOS keyboard marks are curved instead of straight)
+    //// Replace special characters in strings for ASCII output (iOS keyboard marks are curved instead of straight)
     private static string ReplaceCharacters(string cText)
     {
         // Convert characters from UTF-8 or ASCII extended to characters that are supported in ASCII
@@ -733,7 +733,7 @@ public partial class MainPage : ContentPage
         return cText;
     }
 
-    // Test start & end guards
+    //// Test start & end guards
     private bool TestStartEndGuards(string cStartEndGuards, string cTextToCode)
     {
         int nPos;
@@ -772,7 +772,7 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Reverse the characters in a string
+    //// Reverse the characters in a string
     private static string ReverseString(string cText)
     {
         char[] charArray = cText.ToCharArray();
@@ -781,7 +781,7 @@ public partial class MainPage : ContentPage
         return string.Concat(charArray);
     }
 
-    // Calculate the checksum of an EAN-13, EAN-8 and UPC-A code
+    //// Calculate the checksum of an EAN-13, EAN-8 and UPC-A code
     private static string CalculateChecksumEanUpcA(string cTextToCode)
     {
         int nPos;
@@ -816,7 +816,7 @@ public partial class MainPage : ContentPage
         return Convert.ToString(nCheckDigit);
     }
 
-    // OnClearCodeClicked event
+    //// OnClearCodeClicked event
     private void OnClearCodeClicked(object sender, EventArgs e)
     {
         edtTextToCode.Text = "";
@@ -827,7 +827,7 @@ public partial class MainPage : ContentPage
         edtTextToCode.Focus();
     }
 
-    // Display a message with no encoder available for format
+    //// Display a message with no encoder available for format
     //private void DisplayMessageFormat(string cFormat)
     //{
     //    DisplayAlert(CodeLang.FormatTitle_Text, $"{cFormat} {CodeLang.FormatNotSupported_Text}", CodeLang.ButtonClose_Text);
@@ -835,7 +835,7 @@ public partial class MainPage : ContentPage
     //    edtTextToCode.Focus();
     //}
 
-    // Display an error message
+    //// Display an error message
     private void DisplayErrorMessage(string cMessage)
     {
         DisplayAlert(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
@@ -843,7 +843,7 @@ public partial class MainPage : ContentPage
         edtTextToCode.Focus();
     }
 
-    // Display an error message with minimum and maximum length
+    //// Display an error message with minimum and maximum length
     private void DisplayErrorMessageLength(string cMinLength, string cMaxLength)
     {
         DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.CodeLengthPart1_Text} {cMinLength} {CodeLang.CodeLengthPart2_Text} {cMaxLength} {CodeLang.CodeLengthPart3_Text}", CodeLang.ButtonClose_Text);
@@ -851,7 +851,7 @@ public partial class MainPage : ContentPage
         edtTextToCode.Focus();
     }
 
-    // Display an error message and restart the application
+    //// Display an error message and restart the application
     private async void RestartApplication(string cErrorMessage)
     {
         await DisplayAlert(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
@@ -860,7 +860,7 @@ public partial class MainPage : ContentPage
         Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
-    // Show license using the Loaded event of the MainPage.xaml
+    //// Show license using the Loaded event of the MainPage.xaml
     private async void OnPageLoaded(object sender, EventArgs e)
     {
         // Show license
@@ -891,7 +891,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Set text and speech language and the generator format using the Appearing event of the MainPage.xaml
+    //// Set text and speech language and the generator format using the Appearing event of the MainPage.xaml
     private void OnPageAppearing(object sender, EventArgs e)
     {
         // Set the text language
@@ -908,7 +908,7 @@ public partial class MainPage : ContentPage
         pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
     }
 
-    // Button share event - make screenshot of the barcode
+    //// Button share event - make screenshot of the barcode
     private async void OnShareClicked(object sender, EventArgs e)
     {
         if (Screenshot.Default.IsCaptureSupported)
@@ -920,7 +920,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Save the barcode as an image file
+    //// Save the barcode as an image file
     private static async void SaveStreamAsFile(Stream inputStream)
     {
         // Save the image file
@@ -937,7 +937,7 @@ public partial class MainPage : ContentPage
         await OpenShareInterfaceAsync(cFileName);
     }
 
-    // Open the share interface
+    //// Open the share interface
     private static async Task OpenShareInterfaceAsync(string cFile)
     {
         await Share.Default.RequestAsync(new ShareFileRequest
@@ -947,7 +947,7 @@ public partial class MainPage : ContentPage
         });
     }
 
-    // Put text in the chosen language in the controls
+    //// Put text in the chosen language in the controls
     private void SetTextLanguage()
     {
         // Set the current UI culture of the selected language
@@ -957,7 +957,7 @@ public partial class MainPage : ContentPage
         btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex]}";
     }
 
-    // Initialize text to speech and fill the the array with the speech languages
+    //// Initialize text to speech and fill the the array with the speech languages
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
     private async void InitializeTextToSpeech(string cCultureName)
     {
@@ -1016,7 +1016,7 @@ public partial class MainPage : ContentPage
         lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
     }
     
-    // Search for the language after a first start or reset of the application
+    //// Search for the language after a first start or reset of the application
     private static void SearchArrayWithSpeechLanguages(string cCultureName)
     {
         try
@@ -1061,7 +1061,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Search for the language after a first start or reset of the application
+    //// Search for the language after a first start or reset of the application
     //private void SearchArrayWithSpeechLanguages(string cCultureName)
     //{
     //    // Does not works on Android 13 (works on Android 8) - App is closing after starting
@@ -1085,7 +1085,7 @@ public partial class MainPage : ContentPage
     //    }
     //}
 
-    //Button text to speech event - Convert text to speech
+    //// Button text to speech event - Convert text to speech
     private void OnTextToSpeechClicked(object sender, EventArgs e)
     {
         // Cancel the text to speech
@@ -1099,7 +1099,7 @@ public partial class MainPage : ContentPage
         _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, edtTextToCode.Text);
     }
 
-    // Paste text from the clipboard clicked event
+    //// Paste text from the clipboard clicked event
     private async void OnPasteFromClipboardClicked(object sender, EventArgs e)
     {
         if (Clipboard.Default.HasText)
@@ -1138,7 +1138,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Crash log confirmation (Microsoft.AppCenter)
+    //// Crash log confirmation (Microsoft.AppCenter)
     //private async void ConfirmationSendCrashLog()
     //{
     //    // Using the DisplayActionSheet with 3 choices
