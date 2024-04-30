@@ -30,23 +30,43 @@ public partial class PageScanNT : ContentPage
         nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 2);
         nQualityCameraFront = Preferences.Default.Get("SettingQualityCameraFront", 1);
 
-        //nQualityCameraBack = 0;     // For testing
-        //nQualityCameraFront = 0;    // For testing
-
+#if DEBUG
+        //// Read the device information
+        //ReadDeviceInfo();
+#endif
         //// Set the quality for the pickers
         // No support for the highest quality:
         // - iPad 8, iOS version 17.1.1 (back and front camera)
+        // No support for the high and the highest quality:
         // - iPhone 7, iOS version 15.8 (front camera)
+#if IOS
+        // iOS front camera quality settings
+        qualities.Add(CodeLang.CameraQualityLow_Text);
+        qualities.Add(CodeLang.CameraQualityMedium_Text);
+        pckCameraQualityFront.ItemsSource = qualities;
+
+        // iOS back camera quality settings
+        qualities.Clear();
         qualities.Add(CodeLang.CameraQualityLow_Text);
         qualities.Add(CodeLang.CameraQualityMedium_Text);
         qualities.Add(CodeLang.CameraQualityHigh_Text);
+        pckCameraQualityBack.ItemsSource = qualities;
 
+#else
+        // Front camera quality settings
+        qualities.Add(CodeLang.CameraQualityLow_Text);
+        qualities.Add(CodeLang.CameraQualityMedium_Text);
+        qualities.Add(CodeLang.CameraQualityHigh_Text);
         pckCameraQualityFront.ItemsSource = qualities;
 
+        // Back camera quality settings
+        qualities.Clear();
+        qualities.Add(CodeLang.CameraQualityLow_Text);
+        qualities.Add(CodeLang.CameraQualityMedium_Text);
+        qualities.Add(CodeLang.CameraQualityHigh_Text);
         qualities.Add(CodeLang.CameraQualityHighest_Text);
-
         pckCameraQualityBack.ItemsSource = qualities;
-        
+#endif
         //// Set the quality for the camera
         pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
         pckCameraQualityFront.SelectedIndex = nQualityCameraFront;
@@ -152,10 +172,6 @@ public partial class PageScanNT : ContentPage
     //// Called by the Disappearing event from the PageScanNT.xaml
     protected override void OnDisappearing()
     {
-        // Disable the camera
-        base.OnDisappearing();
-        barcodeReader.CameraEnabled = false;
-
         // Save the quality settings
         Preferences.Default.Set("SettingQualityCameraBack", nQualityCameraBack);
         Preferences.Default.Set("SettingQualityCameraFront", nQualityCameraFront);
@@ -169,8 +185,26 @@ public partial class PageScanNT : ContentPage
 
         // Cancel the text to speech when going back to the mainpage
         imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+
+        // Disable the camera and set the capture quality to low (otherwise the app quit on an iPhone 7)
+        try
+        {
+            barcodeReader.CaptureQuality = CaptureQuality.Low;
+            Task.Delay(300).Wait();
+            
+            base.OnDisappearing();
+            barcodeReader.CameraEnabled = false;
+        }
+        catch (Exception ex)
+        {
+//#if DEBUG
+            DisplayAlert("OnDisappearing", ex.Message, "OK");
+//#endif
+            //Crashes.TrackError(ex);  // Microsoft.AppCenter
+            SentrySdk.CaptureException(ex);
+        }
     }
-    
+
     //// Unloaded event to disconnect the barcode handler
     private void ContentPage_Unloaded(object sender, EventArgs e)
     {
@@ -311,13 +345,6 @@ public partial class PageScanNT : ContentPage
     private async void OnCameraQualityFrontChanged(object sender, EventArgs e)
     {
         int nSelectedIndex = pckCameraQualityFront.SelectedIndex;
-
-        // If the high or the highest quality is selected and the front camera is used then set the quality to medium
-        // The high and highest quality are not on every device supported by the front camera
-        if (nSelectedIndex > 1)
-        {
-            nSelectedIndex = 1;
-        }
 
         try
         {
@@ -498,12 +525,36 @@ public partial class PageScanNT : ContentPage
                     //};
                     //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
                     SentrySdk.CaptureException(ex);
-#if DEBUG                    
+#if DEBUG
                     Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
                 }               
             }
         }
+    }
+
+    //// Read the device information
+    private void ReadDeviceInfo()
+    {
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+        sb.AppendLine($"Model: {DeviceInfo.Current.Model}");
+        sb.AppendLine($"Manufacturer: {DeviceInfo.Current.Manufacturer}");
+        sb.AppendLine($"Name: {DeviceInfo.Current.Name}");
+        sb.AppendLine($"OS Version: {DeviceInfo.Current.VersionString}");
+        sb.AppendLine($"Idiom: {DeviceInfo.Current.Idiom}");
+        sb.AppendLine($"Platform: {DeviceInfo.Current.Platform}");
+
+        bool isVirtual = DeviceInfo.Current.DeviceType switch
+        {
+            DeviceType.Physical => false,
+            DeviceType.Virtual => true,
+            _ => false
+        };
+
+        sb.AppendLine($"Virtual device? {isVirtual}");
+
+        _ = DisplayAlert("Device info", sb.ToString(), "OK");
     }
 }
 
