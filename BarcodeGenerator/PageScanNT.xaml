@@ -4,20 +4,34 @@
              xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:native="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
              x:Class="BarcodeGenerator.PageScanNT"
+             NavigationPage.HasBackButton="false"
              Unloaded="ContentPage_Unloaded">
 
     <NavigationPage.TitleView>
         <Grid
             RowDefinitions="Auto"
-            ColumnDefinitions="*"
+            ColumnDefinitions="60, *"
             BackgroundColor="DeepSkyBlue">
+
+            <ImageButton
+                x:Name="imgbtnBackButton"
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                HeightRequest="24"
+                WidthRequest="24"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                Source="arrow_left_32p.png"
+                Clicked="OnBackButtonPressed2">
+            </ImageButton>
 
             <Label
                 x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
                 Grid.Row="0"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
+                Grid.Column="1"
                 Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
             </Label>
         </Grid>
@@ -95,7 +109,7 @@
                                 HeightRequest="45"
                                 SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
                                 ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                                                
-                                SelectedIndexChanged="OnCameraQualityBackChanged">
+                                SelectedIndexChanged="OnCameraQualityChanged">
                             </Picker>
 
                             <Picker
@@ -106,7 +120,7 @@
                                 HeightRequest="45"
                                 SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
                                 ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                                                
-                                SelectedIndexChanged="OnCameraQualityFrontChanged">
+                                SelectedIndexChanged="OnCameraQualityChanged">
                             </Picker>
 
                             <ImageButton
