@@ -19,11 +19,11 @@
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
-                HeightRequest="24"
-                WidthRequest="24"
+                HeightRequest="50"
+                WidthRequest="50"
                 BackgroundColor="Transparent"
                 BorderColor="Transparent"
-                Source="arrow_left_32p.png"
+                Source="arrow_left_50p.png"
                 Clicked="OnBackButtonPressed2">
             </ImageButton>
 
