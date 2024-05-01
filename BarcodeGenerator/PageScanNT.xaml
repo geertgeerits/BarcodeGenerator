@@ -8,7 +8,6 @@
 
     <NavigationPage.TitleView>
         <Grid
-            x:Name="gridLayout"
             RowDefinitions="Auto"
             ColumnDefinitions="60, *"
             BackgroundColor="DeepSkyBlue">
