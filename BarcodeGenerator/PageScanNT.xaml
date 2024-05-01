@@ -4,11 +4,12 @@
              xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:native="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
              x:Class="BarcodeGenerator.PageScanNT"
-             NavigationPage.HasBackButton="false"
+             NavigationPage.HasBackButton="True"
              Unloaded="ContentPage_Unloaded">
 
     <NavigationPage.TitleView>
         <Grid
+            x:Name="gridLayout"
             RowDefinitions="Auto"
             ColumnDefinitions="60, *"
             BackgroundColor="DeepSkyBlue">
@@ -24,6 +25,7 @@
                 BackgroundColor="Transparent"
                 BorderColor="Transparent"
                 Source="arrow_left_50p.png"
+                IsVisible="False"
                 Clicked="OnBackButtonPressed2">
             </ImageButton>
 
