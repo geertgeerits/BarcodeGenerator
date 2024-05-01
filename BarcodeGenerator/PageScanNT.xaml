@@ -14,20 +14,22 @@
             ColumnDefinitions="60, *"
             BackgroundColor="DeepSkyBlue">
 
-            <ImageButton
-                x:Name="imgbtnBackButton"
+            <Button
+                x:Name="btnBackButton"
                 Grid.Row="0"
                 Grid.Column="0"
                 HorizontalOptions="Start"
-                VerticalOptions="Center"
-                HeightRequest="50"
-                WidthRequest="50"
+                VerticalOptions="Start"
+                HeightRequest="40"
+                WidthRequest="58"
                 BackgroundColor="Transparent"
                 BorderColor="Transparent"
-                Source="arrow_left_50p.png"
+                TextColor="Black"
+                Text="&lt;  "
+                FontSize="34"
                 IsVisible="False"
                 Clicked="OnBackButtonPressed2">
-            </ImageButton>
+            </Button>
 
             <Label
                 x:Name="lblTitle"

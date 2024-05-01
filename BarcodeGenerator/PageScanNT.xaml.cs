@@ -21,7 +21,7 @@ public partial class PageScanNT : ContentPage
 #if IOS
             // Set the HasBackButton property to false and show the new back button
             NavigationPage.SetHasBackButton(this, false);
-            imgbtnBackButton.IsVisible = true;
+            btnBackButton.IsVisible = true;
 #endif
         }
         catch (Exception ex)
@@ -73,7 +73,6 @@ public partial class PageScanNT : ContentPage
         //// The height of the title bar is lower when an iPhone is in horizontal position
         if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
         {
-            //imgbtnBackButton.VerticalOptions = LayoutOptions.Center;
             lblTitle.VerticalOptions = LayoutOptions.Start;
             lblTitle.VerticalTextAlignment = TextAlignment.Start;
         }
@@ -593,16 +592,17 @@ when the app is opened on a Samsung A320 phone with Android 8.0 when using Andro
 Does not hangs or exit on the splash screen when using the released published .apk file.
 
 Order when leaving this page:
-Android:
+Android
 1. Method: OnBackButtonPressed
 2. Method: OnDisappearing
 3. Method: ContentPage_Unloaded
 
-iOs - iPhone 7 with original back button - the back button is not called !!!:
+iOs - iPhone 7 with original back button
+method 'protected override bool OnBackButtonPressed()' is not called !!!
 1. Method: ContentPage_Unloaded
 2. Method: OnDisappearing
 
-iOs - iPhone 7 with the new back button:
+iOs - iPhone 7 with the new back button
 1. Method: OnBackButtonPressed2
 2. Method: OnDisappearing
 3. Method: ContentPage_Unloaded
