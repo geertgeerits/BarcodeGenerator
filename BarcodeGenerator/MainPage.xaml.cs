@@ -14,7 +14,7 @@
 //                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 1.5.0 ; https://github.com/afriscic/BarcodeScanning.Native.Maui
 //                (NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/)
 //                (NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3)
-//                NuGet Package: Sentry.Maui version 4.4.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
+//                NuGet Package: Sentry.Maui version 4.5.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
 // Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun
 
 using ZXing.Net.Maui;
