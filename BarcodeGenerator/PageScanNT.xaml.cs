@@ -17,7 +17,6 @@ public partial class PageScanNT : ContentPage
         try
         {
             InitializeComponent();
-
 #if IOS
             // Set the HasBackButton property to false and show the new back button
             NavigationPage.SetHasBackButton(this, false);
@@ -54,7 +53,6 @@ public partial class PageScanNT : ContentPage
         // iOS back camera quality settings
         qualities.Add(CodeLang.CameraQualityHigh_Text);
         pckCameraQualityBack.ItemsSource = qualities;
-
 #else
         // Front camera quality settings
         qualities.Add(CodeLang.CameraQualityLow_Text);
@@ -84,7 +82,6 @@ public partial class PageScanNT : ContentPage
         //// Set the barcodes in the picker for iOS
         pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeIOS();
 #endif
-
         //// Default format code = All codes
         pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
@@ -165,7 +162,7 @@ public partial class PageScanNT : ContentPage
         return base.OnBackButtonPressed();
     }
 
-    //// On BackButton pressed event with new created back button
+    //// On BackButton pressed event with new created back button (for iOS)
     private async void OnBackButtonPressed2(object sender, EventArgs e)
     {
         // To do before leaving this page
@@ -562,28 +559,28 @@ public partial class PageScanNT : ContentPage
     }
 
     //// Read the device information
-    private void ReadDeviceInfo()
-    {
-        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+    //private void ReadDeviceInfo()
+    //{
+    //    System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
-        sb.AppendLine($"Model: {DeviceInfo.Current.Model}");
-        sb.AppendLine($"Manufacturer: {DeviceInfo.Current.Manufacturer}");
-        sb.AppendLine($"Name: {DeviceInfo.Current.Name}");
-        sb.AppendLine($"OS Version: {DeviceInfo.Current.VersionString}");
-        sb.AppendLine($"Idiom: {DeviceInfo.Current.Idiom}");
-        sb.AppendLine($"Platform: {DeviceInfo.Current.Platform}");
+    //    sb.AppendLine($"Model: {DeviceInfo.Current.Model}");
+    //    sb.AppendLine($"Manufacturer: {DeviceInfo.Current.Manufacturer}");
+    //    sb.AppendLine($"Name: {DeviceInfo.Current.Name}");
+    //    sb.AppendLine($"OS Version: {DeviceInfo.Current.VersionString}");
+    //    sb.AppendLine($"Idiom: {DeviceInfo.Current.Idiom}");
+    //    sb.AppendLine($"Platform: {DeviceInfo.Current.Platform}");
 
-        bool isVirtual = DeviceInfo.Current.DeviceType switch
-        {
-            DeviceType.Physical => false,
-            DeviceType.Virtual => true,
-            _ => false
-        };
+    //    bool isVirtual = DeviceInfo.Current.DeviceType switch
+    //    {
+    //        DeviceType.Physical => false,
+    //        DeviceType.Virtual => true,
+    //        _ => false
+    //    };
 
-        sb.AppendLine($"Virtual device? {isVirtual}");
+    //    sb.AppendLine($"Virtual device? {isVirtual}");
 
-        _ = DisplayAlert("Device info", sb.ToString(), "OK");
-    }
+    //    _ = DisplayAlert("Device info", sb.ToString(), "OK");
+    //}
 }
 
 /*

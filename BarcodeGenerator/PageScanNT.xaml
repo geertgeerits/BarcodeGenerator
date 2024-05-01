@@ -4,7 +4,6 @@
              xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:native="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
              x:Class="BarcodeGenerator.PageScanNT"
-             NavigationPage.HasBackButton="True"
              Unloaded="ContentPage_Unloaded">
 
     <NavigationPage.TitleView>
