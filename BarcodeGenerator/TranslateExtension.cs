@@ -1,7 +1,7 @@
 ﻿namespace BarcodeGenerator
 {
     [ContentProperty(nameof(Name))]
-    public class TranslateExtension : IMarkupExtension<BindingBase>
+    public sealed class TranslateExtension : IMarkupExtension<BindingBase>
     {
         public string Name { get; set; }
 

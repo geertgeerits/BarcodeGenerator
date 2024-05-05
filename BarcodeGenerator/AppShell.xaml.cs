@@ -1,9 +1,10 @@
-﻿namespace BarcodeGenerator;
-
-public partial class AppShell : Shell
+﻿namespace BarcodeGenerator
 {
-	public AppShell()
-	{
-		InitializeComponent();
-	}
+    public sealed partial class AppShell : Shell
+    {
+    	public AppShell()
+    	{
+    		InitializeComponent();
+    	}
+    }
 }

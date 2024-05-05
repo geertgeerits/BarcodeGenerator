@@ -1,35 +1,36 @@
-﻿namespace BarcodeGenerator;
-
-public partial class App : Application
+﻿namespace BarcodeGenerator
 {
-    public App()
-	{
-		InitializeComponent();
-
-        // Set the language to test the application, otherwise comment out the next line.
-        //System.Globalization.CultureInfo.CurrentCulture = new System.Globalization.CultureInfo("nl-BE");
-
-        //MainPage = new AppShell();
-        MainPage = new NavigationPage(new MainPage());
-    }
-
-    // Window dimensions and location for desktop apps.
-    protected override Window CreateWindow(IActivationState activationState)
+    public sealed partial class App : Application
     {
-        var window = base.CreateWindow(activationState);
+        public App()
+    	{
+    		InitializeComponent();
 
-        const int newHeight = 900;
-        const int newWidth = 900;
+            // Set the language to test the application, otherwise comment out the next line.
+            //System.Globalization.CultureInfo.CurrentCulture = new System.Globalization.CultureInfo("nl-BE");
 
-        window.X = 200;
-        window.Y = 50;
+            //MainPage = new AppShell();
+            MainPage = new NavigationPage(new MainPage());
+        }
 
-        window.Height = newHeight;
-        window.Width = newWidth;
+        // Window dimensions and location for desktop apps.
+        protected override Window CreateWindow(IActivationState activationState)
+        {
+            var window = base.CreateWindow(activationState);
 
-        window.MinimumHeight = 800;
-        window.MinimumWidth = 900;
+            const int newHeight = 900;
+            const int newWidth = 900;
 
-        return window;
+            window.X = 200;
+            window.Y = 50;
+
+            window.Height = newHeight;
+            window.Width = newWidth;
+
+            window.MinimumHeight = 800;
+            window.MinimumWidth = 900;
+
+            return window;
+        }
     }
 }
