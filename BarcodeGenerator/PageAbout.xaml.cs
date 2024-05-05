@@ -35,7 +35,7 @@ namespace BarcodeGenerator
     }
 
     //// Open e-mail app and open webpage (reusable hyperlink class)
-    public class HyperlinkSpan : Span
+    public sealed class HyperlinkSpan : Span
     {
         public static readonly BindableProperty UrlProperty =
             BindableProperty.Create(nameof(Url), typeof(string), typeof(HyperlinkSpan), null);

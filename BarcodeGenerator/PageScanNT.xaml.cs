@@ -519,7 +519,7 @@ namespace BarcodeGenerator
         }
 
         //// Class for drawing the barcode bounding box
-        private class BarcodeDrawable : IDrawable
+        private sealed class BarcodeDrawable : IDrawable
         {
             //public HashSet<BarcodeResult>? barcodeResults;    // Till version 1.3.1
             public BarcodeResult[]? barcodeResults;         // From version 1.4.0
