@@ -25,6 +25,7 @@
                 TextColor="Black"
                 Text="&lt;  "
                 FontSize="34"
+                FontAutoScalingEnabled="False"
                 IsVisible="False"
                 Clicked="OnBackButtonPressed2">
             </Button>

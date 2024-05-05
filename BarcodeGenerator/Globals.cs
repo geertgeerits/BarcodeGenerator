@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 namespace BarcodeGenerator;
 
 //// Global variables and methods
-static class Globals
+internal static class Globals
 {
     //// Global variables
     public static string cTheme;
