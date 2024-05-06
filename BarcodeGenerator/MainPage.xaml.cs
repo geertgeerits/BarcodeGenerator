@@ -985,7 +985,7 @@ namespace BarcodeGenerator
                 //    { "AppLanguageSpeech:", Globals.cLanguageSpeech }
                 //};
                 //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
-                //SentrySdk.CaptureException(ex);
+                SentrySdk.CaptureException(ex);
 #if DEBUG
                 await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
 #endif
@@ -1055,7 +1055,7 @@ namespace BarcodeGenerator
             catch (Exception ex)
             {
                 //Crashes.TrackError(ex);  // Microsoft.AppCenter
-                //SentrySdk.CaptureException(ex);
+                SentrySdk.CaptureException(ex);
 #if DEBUG
                 _ = Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -1079,7 +1079,7 @@ namespace BarcodeGenerator
         //        catch (Exception ex)
         //        {
         //            //Crashes.TrackError(ex);  // Microsoft.AppCenter
-        //            //SentrySdk.CaptureException(ex);
+        //            SentrySdk.CaptureException(ex);
         //            //DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
         //            cLanguageSpeech = cLanguageLocales[0];
         //        }

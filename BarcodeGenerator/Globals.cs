@@ -214,7 +214,7 @@ namespace BarcodeGenerator
             catch (Exception ex)
             {
                 //Crashes.TrackError(ex);  // Microsoft.AppCenter
-                //SentrySdk.CaptureException(ex);
+                SentrySdk.CaptureException(ex);
 #if DEBUG
                 await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -250,7 +250,7 @@ namespace BarcodeGenerator
             catch (Exception ex)
             {
                 //Crashes.TrackError(ex);  // Microsoft.AppCenter
-                //SentrySdk.CaptureException(ex);
+                SentrySdk.CaptureException(ex);
 #if DEBUG
                 await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -271,7 +271,7 @@ namespace BarcodeGenerator
             catch (Exception ex)
             {
                 //Crashes.TrackError(ex);  // Microsoft.AppCenter
-                //SentrySdk.CaptureException(ex);
+                SentrySdk.CaptureException(ex);
 #if DEBUG
                 await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -299,7 +299,7 @@ namespace BarcodeGenerator
                 //    { "AppLanguageSpeech:", cLanguageSpeech }
                 //};
                 //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
-                //SentrySdk.CaptureException(ex);
+                SentrySdk.CaptureException(ex);
 #if DEBUG
                 await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -335,7 +335,7 @@ namespace BarcodeGenerator
                 catch (Exception ex)
                 {
                     //Crashes.TrackError(ex);  // Microsoft.AppCenter
-                    //SentrySdk.CaptureException(ex);
+                    SentrySdk.CaptureException(ex);
 #if DEBUG
                     await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
