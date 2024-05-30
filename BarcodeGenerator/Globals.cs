@@ -31,7 +31,10 @@ namespace BarcodeGenerator
         public static bool bLicense;
 
         //// Global methods
-        //// Set the theme
+
+        /// <summary>
+        /// Set the theme
+        /// </summary>
         public static void SetTheme()
         {
             Application.Current.UserAppTheme = cTheme switch
@@ -41,8 +44,10 @@ namespace BarcodeGenerator
                 _ => AppTheme.Unspecified,
             };
         }
-    
-        //// Set the current UI culture of the selected language
+
+        /// <summary>
+        /// Set the current UI culture of the selected language
+        /// </summary>
         public static void SetCultureSelectedLanguage()
         {
             try
@@ -57,7 +62,10 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Get ISO language (and country) code from locales
+        /// <summary>
+        /// Get ISO language (and country) code from locales
+        /// </summary>
+        /// <returns></returns>
         public static string GetIsoLanguageCode()
         {
             // Split before first space and remove last character '-' if there
@@ -71,7 +79,10 @@ namespace BarcodeGenerator
             return cLanguageIso;
         }
 
-        //// Put the generator barcode formats in a List string
+        /// <summary>
+        /// Put the generator barcode formats in a List string
+        /// </summary>
+        /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator()
         {
             return
@@ -94,7 +105,10 @@ namespace BarcodeGenerator
             ];
         }
 
-        //// Put the scanner barcode formats in a List string
+        ///// <summary>
+        ///// Put the scanner barcode formats in a List string
+        ///// </summary>
+        ///// <returns></returns>
         //public static List<string> GetFormatCodeListScanner()
         //{
         //    return
@@ -124,8 +138,11 @@ namespace BarcodeGenerator
         //    ];
         //}
 
-        //// Put the scanner barcode formats in a List string for the Native scanner for Android
-        //   https://developers.google.com/ml-kit/vision/barcode-scanning/android
+        /// <summary>
+        /// Put the scanner barcode formats in a List string for the Native scanner for Android
+        /// https://developers.google.com/ml-kit/vision/barcode-scanning/android
+        /// </summary>
+        /// <returns></returns>
         public static List<string> GetFormatCodeListScannerNativeAndroid()
         {
             return
@@ -147,8 +164,11 @@ namespace BarcodeGenerator
             ];
         }
 
-        //// Put the scanner barcode formats in a List string for the Native scanner for iOS
-        //   https://developer.apple.com/documentation/avfoundation/avmetadataobject/objecttype
+        /// <summary>
+        /// Put the scanner barcode formats in a List string for the Native scanner for iOS
+        /// https://developer.apple.com/documentation/avfoundation/avmetadataobject/objecttype
+        /// </summary>
+        /// <returns></returns>
         public static List<string> GetFormatCodeListScannerNativeIOS()
         {
             return
@@ -173,7 +193,11 @@ namespace BarcodeGenerator
             ];
         }
 
-        //// Button share event: share the barcode result
+        /// <summary>
+        /// Button share event: share the barcode result
+        /// </summary>
+        /// <param name="cText"></param>
+        /// <returns></returns>
         public static async Task ShareBarcodeResultAsync(string cText)
         {
             if (cText is null or "")
@@ -227,7 +251,11 @@ namespace BarcodeGenerator
             await ShareTextAsync(cText);
         }
 
-        //// Open the website link
+        /// <summary>
+        /// Open the website link
+        /// </summary>
+        /// <param name="cUrl"></param>
+        /// <returns></returns>
         public static async Task OpenWebsiteLinkAsync(string cUrl)
         {
             if (cUrl[..4] is "www." or "WWW.")
@@ -257,7 +285,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Open the share interface
+        /// <summary>
+        /// Open the share interface
+        /// </summary>
+        /// <param name="cText"></param>
+        /// <returns></returns>
         public static async Task ShareTextAsync(string cText)
         {
             try
@@ -278,7 +310,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Initialize text to speech for the barcode scanner
+        /// <summary>
+        /// Initialize text to speech for the barcode scanner
+        /// </summary>
+        /// <param name="cPageName"></param>
+        /// <returns></returns>
         public static async Task<bool> InitializeTextToSpeechScannerAsync(string cPageName)
         {
             if (!bLanguageLocalesExist)
@@ -309,7 +345,12 @@ namespace BarcodeGenerator
             return true;
         }
 
-        //// Button text to speech event - Convert text to speech
+        /// <summary>
+        /// Button text to speech event - Convert text to speech
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="cText"></param>
+        /// <returns></returns>
         public static async Task ConvertTextToSpeechAsync(object sender, string cText)
         {
             var imageButton = (ImageButton)sender;
@@ -345,7 +386,10 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Cancel the text to speech
+        /// <summary>
+        /// Cancel the text to speech
+        /// </summary>
+        /// <returns></returns>
         public static string CancelTextToSpeech()
         {
             // Cancel speech if a cancellation token exists & hasn't been already requested

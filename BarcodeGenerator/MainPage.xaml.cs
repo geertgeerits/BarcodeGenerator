@@ -1,21 +1,21 @@
-﻿// Program .....: BarcodeGenerator.sln
-// Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
-// Copyright ...: (C) 2022-2024
-// Version .....: 1.0.41
-// Date ........: 2024-05-23 (YYYY-MM-DD)
-// Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
-// Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
-// Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
-//                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
-//                Google ML Kit: https://developers.google.com/ml-kit
-// Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.4.0 ; https://github.com/redth/ZXing.Net.Maui
-//                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.4.0
-//                (NuGet Package: BarcodeScanner.Mobile.Maui version = "8.0.0 ; Google Vision ; https://github.com/JimmyPun610/BarcodeScanner.Mobile)
-//                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 1.5.2 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
-//                (NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/)
-//                (NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3)
-//                NuGet Package: Sentry.Maui version 4.6.2 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
-// Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun
+﻿/* Program .....: BarcodeGenerator.sln
+ * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
+ * Copyright ...: (C) 2022-2024
+ * Version .....: 1.0.41
+ * Date ........: 2024-05-30 (YYYY-MM-DD)
+ * Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
+ * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
+ * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
+ *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
+ *                Google ML Kit: https://developers.google.com/ml-kit
+ * Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.4.0 ; https://github.com/redth/ZXing.Net.Maui
+ *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.4.0
+ *                (NuGet Package: BarcodeScanner.Mobile.Maui version = "8.0.0 ; Google Vision ; https://github.com/JimmyPun610/BarcodeScanner.Mobile)
+ *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 1.5.3 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
+ *                (NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/)
+ *                (NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3)
+ *                NuGet Package: Sentry.Maui version 4.7.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
+ * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
 
@@ -163,7 +163,11 @@ namespace BarcodeGenerator
             await Navigation.PushAsync(new PageSettings());
         }
 
-        //// Set the editor properties for the selected format code
+        /// <summary>
+        /// Set the editor properties for the selected format code
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerFormatCodeChanged(object sender, EventArgs e)
         {
             var picker = (Picker)sender;
@@ -310,7 +314,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// OnGenerateCodeClicked event
+        /// <summary>
+        /// OnGenerateCodeClicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnGenerateCodeClicked(object sender, EventArgs e)
         {
             // Hide the keyboard
@@ -682,7 +690,12 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Test for allowed characters
+        /// <summary>
+        /// Test for allowed characters
+        /// </summary>
+        /// <param name="cAllowedCharacters"></param>
+        /// <param name="cTextToCode"></param>
+        /// <returns></returns>
         private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
         {
             foreach (char cChar in cTextToCode)
@@ -701,7 +714,13 @@ namespace BarcodeGenerator
             return true;
         }
 
-        //// Test for allowed minimum and maximum ASCII values
+        /// <summary>
+        /// Test for allowed minimum and maximum ASCII values
+        /// </summary>
+        /// <param name="nMinAsciiValue"></param>
+        /// <param name="nMaxAsciiValue"></param>
+        /// <param name="cTextToCode"></param>
+        /// <returns></returns>
         private bool TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
         {
             // Test for allowed minimum and maximum ASCII values
@@ -721,7 +740,11 @@ namespace BarcodeGenerator
             return true;
         }
 
-        //// Replace special characters in strings for ASCII output (iOS keyboard marks are curved instead of straight)
+        /// <summary>
+        /// Replace special characters in strings for ASCII output (iOS keyboard marks are curved instead of straight)
+        /// </summary>
+        /// <param name="cText"></param>
+        /// <returns></returns>
         private static string ReplaceCharacters(string cText)
         {
             // Convert characters from UTF-8 or ASCII extended to characters that are supported in ASCII
@@ -733,7 +756,12 @@ namespace BarcodeGenerator
             return cText;
         }
 
-        //// Test start & end guards
+        /// <summary>
+        /// Test start & end guards
+        /// </summary>
+        /// <param name="cStartEndGuards"></param>
+        /// <param name="cTextToCode"></param>
+        /// <returns></returns>
         private bool TestStartEndGuards(string cStartEndGuards, string cTextToCode)
         {
             int nPos;
@@ -772,7 +800,11 @@ namespace BarcodeGenerator
             return true;
         }
 
-        //// Reverse the characters in a string
+        /// <summary>
+        /// Reverse the characters in a string
+        /// </summary>
+        /// <param name="cText"></param>
+        /// <returns></returns>
         private static string ReverseString(string cText)
         {
             char[] charArray = cText.ToCharArray();
@@ -781,7 +813,11 @@ namespace BarcodeGenerator
             return string.Concat(charArray);
         }
 
-        //// Calculate the checksum of an EAN-13, EAN-8 and UPC-A code
+        /// <summary>
+        /// Calculate the checksum of an EAN-13, EAN-8 and UPC-A code
+        /// </summary>
+        /// <param name="cTextToCode"></param>
+        /// <returns></returns>
         private static string CalculateChecksumEanUpcA(string cTextToCode)
         {
             int nPos;
@@ -816,7 +852,11 @@ namespace BarcodeGenerator
             return Convert.ToString(nCheckDigit);
         }
 
-        //// OnClearCodeClicked event
+        /// <summary>
+        /// OnClearCodeClicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClearCodeClicked(object sender, EventArgs e)
         {
             edtTextToCode.Text = "";
@@ -827,7 +867,10 @@ namespace BarcodeGenerator
             edtTextToCode.Focus();
         }
 
-        //// Display a message with no encoder available for format
+        ///// <summary>
+        ///// Display a message with no encoder available for format
+        ///// </summary>
+        ///// <param name="cFormat"></param>
         //private void DisplayMessageFormat(string cFormat)
         //{
         //    DisplayAlert(CodeLang.FormatTitle_Text, $"{cFormat} {CodeLang.FormatNotSupported_Text}", CodeLang.ButtonClose_Text);
@@ -835,7 +878,10 @@ namespace BarcodeGenerator
         //    edtTextToCode.Focus();
         //}
 
-        //// Display an error message
+        /// <summary>
+        /// Display an error message
+        /// </summary>
+        /// <param name="cMessage"></param>
         private void DisplayErrorMessage(string cMessage)
         {
             DisplayAlert(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
@@ -843,7 +889,11 @@ namespace BarcodeGenerator
             edtTextToCode.Focus();
         }
 
-        //// Display an error message with minimum and maximum length
+        /// <summary>
+        /// Display an error message with minimum and maximum length
+        /// </summary>
+        /// <param name="cMinLength"></param>
+        /// <param name="cMaxLength"></param>
         private void DisplayErrorMessageLength(string cMinLength, string cMaxLength)
         {
             DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.CodeLengthPart1_Text} {cMinLength} {CodeLang.CodeLengthPart2_Text} {cMaxLength} {CodeLang.CodeLengthPart3_Text}", CodeLang.ButtonClose_Text);
@@ -851,7 +901,10 @@ namespace BarcodeGenerator
             edtTextToCode.Focus();
         }
 
-        //// Display an error message and restart the application
+        /// <summary>
+        /// Display an error message and restart the application
+        /// </summary>
+        /// <param name="cErrorMessage"></param>
         private async void RestartApplication(string cErrorMessage)
         {
             await DisplayAlert(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
@@ -860,7 +913,11 @@ namespace BarcodeGenerator
             Application.Current.MainPage = new NavigationPage(new MainPage());
         }
 
-        //// Show license using the Loaded event of the MainPage.xaml
+        /// <summary>
+        /// Show license using the Loaded event of the MainPage.xaml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnPageLoaded(object sender, EventArgs e)
         {
             // Show license
@@ -891,7 +948,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Set text and speech language and the generator format using the Appearing event of the MainPage.xaml
+        /// <summary>
+        /// Set text and speech language and the generator format using the Appearing event of the MainPage.xaml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPageAppearing(object sender, EventArgs e)
         {
             // Set the text language
@@ -908,7 +969,11 @@ namespace BarcodeGenerator
             pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
         }
 
-        //// Button share event - make screenshot of the barcode
+        /// <summary>
+        /// Button share event - make screenshot of the barcode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnShareClicked(object sender, EventArgs e)
         {
             if (Screenshot.Default.IsCaptureSupported)
@@ -920,7 +985,10 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Save the barcode as an image file
+        /// <summary>
+        /// Save the barcode as an image file
+        /// </summary>
+        /// <param name="inputStream"></param>
         private static async void SaveStreamAsFile(Stream inputStream)
         {
             // Save the image file
@@ -937,7 +1005,11 @@ namespace BarcodeGenerator
             await OpenShareInterfaceAsync(cFileName);
         }
 
-        //// Open the share interface
+        /// <summary>
+        /// Open the share interface
+        /// </summary>
+        /// <param name="cFile"></param>
+        /// <returns></returns>
         private static async Task OpenShareInterfaceAsync(string cFile)
         {
             await Share.Default.RequestAsync(new ShareFileRequest
@@ -947,7 +1019,9 @@ namespace BarcodeGenerator
             });
         }
 
-        //// Put text in the chosen language in the controls
+        /// <summary>
+        /// Put text in the chosen language in the controls
+        /// </summary>
         private void SetTextLanguage()
         {
             // Set the current UI culture of the selected language
@@ -957,8 +1031,11 @@ namespace BarcodeGenerator
             btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex]}";
         }
 
-        //// Initialize text to speech and fill the the array with the speech languages
-        // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+        /// <summary>
+        /// Initialize text to speech and fill the the array with the speech languages
+        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+        /// </summary>
+        /// <param name="cCultureName"></param>
         private async void InitializeTextToSpeech(string cCultureName)
         {
             // Initialize text to speech
@@ -1015,8 +1092,11 @@ namespace BarcodeGenerator
         
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
         }
-    
-        //// Search for the language after a first start or reset of the application
+
+        /// <summary>
+        /// Search for the language after a first start or reset of the application
+        /// </summary>
+        /// <param name="cCultureName"></param>
         private static void SearchArrayWithSpeechLanguages(string cCultureName)
         {
             try
@@ -1061,7 +1141,10 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Search for the language after a first start or reset of the application
+        ///// <summary>
+        ///// Search for the language after a first start or reset of the application 
+        ///// </summary>
+        ///// <param name="cCultureName"></param>
         //private void SearchArrayWithSpeechLanguages(string cCultureName)
         //{
         //    // Does not works on Android 13 (works on Android 8) - App is closing after starting
@@ -1085,7 +1168,11 @@ namespace BarcodeGenerator
         //    }
         //}
 
-        //// Button text to speech event - Convert text to speech
+        /// <summary>
+        /// Button text to speech event - Convert text to speech
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTextToSpeechClicked(object sender, EventArgs e)
         {
             // Cancel the text to speech
@@ -1099,7 +1186,11 @@ namespace BarcodeGenerator
             _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, edtTextToCode.Text);
         }
 
-        //// Paste text from the clipboard clicked event
+        /// <summary>
+        /// Paste text from the clipboard clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnPasteFromClipboardClicked(object sender, EventArgs e)
         {
             if (Clipboard.Default.HasText)
@@ -1138,7 +1229,9 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Crash log confirmation (Microsoft.AppCenter)
+        ///// <summary>
+        ///// Crash log confirmation (Microsoft.AppCenter)
+        ///// </summary>
         //private async void ConfirmationSendCrashLog()
         //{
         //    // Using the DisplayActionSheet with 3 choices
@@ -1171,66 +1264,62 @@ namespace BarcodeGenerator
         //    //}
         //}
     }
-
-
-    /*
-    How to convert a UPC-E code back to UPC-A ?
-    A 6-digit UPC-E code is derived from a UPC-A 12-digit code.
-    You can convert a UPC-E code back to its UPC-A format using the following scenarios.
-
-    If the UPC-E code ends in 0, 1, or 2:
-    Convert the UPC-E back to UPC-A code by picking the first two digits in the UPC-E code.
-    Add the last digit (still of using the UPC-E code) and then four zeros(0).
-    Complete the conversion by adding characters 3 -5 of your UPC-E code.
-
-    If the UPC-E code ends in 3:
-    Determine what the UPC-A code is by picking the first three digits used in your UPC-E code.
-    Add five zeros (0), and then characters 4 and 5 of the UPC-E.
-
-    Where the UPC-E code ends in 4:
-    Determine the UPC-A code in this way: take the UPC-E code and write out the first four digits.
-    Add five zeros (0), then the fifth character of the UPC-E code.
-
-    If the UPC-E code ends in any of 5, 6, 7, 8, or 9:
-    Convert the UPC-E code to UPC-A by first picking the leading five digits in the UPC-E code.
-    Add four 0 digits and the last character of the UPC-E code.
-
-    Samples:
-    UPC-E: 01326901 -> UPC-A: 013000002691
-    UPC-E: 01810905 -> UPC-A: 018000001095
-
-    Source: https://bytescout.com/blog/2013/10/upc-and-upc-e-purpose-advantages.html
-    */
-    //___________________________________________________________________________________________
-    /*
-    Barcode formats and maximum length of the text to encode.
-    edtTextToCode.MaxLength     Numeric     AlphaNumeric    Binary 8-bits   Kanji/Kana JIS X 0208
-    -----------------------     -------     ------------    -------------   ---------------------
-
-    Aztec               3000    3832        3067            1914
-    Codabar               43      43          43
-    Code39                48      48          48
-    Code93                48      48          48
-    Code128               48      48          48
-    DataMatrix          2300    3116        2335            1555                     
-    Ean8                   8       8
-    Ean13                 13      13
-    GS1 DataBar
-    Imb                   31      31
-    Itf                   30      30
-    MaxiCode              93      93
-    MicroPDF417                  366         250             150
-    MicroQR                       35          21              15
-    Msi                  255     255
-    Pdf417              1800    2710        1850            1108
-    PharmaCode             6       6
-    Plessey               16      16          16
-    QrCode              1800    7089        4296            2953            1817
-    Rss14                 14      14
-    RssExpanded           74      74
-    UpcA                  12      12
-    UpcE                   8       8
-    UpcEanExtension        2       2
-    */
-    //___________________________________________________________________________________________
 }
+
+/* How to convert a UPC-E code back to UPC-A ?
+   A 6-digit UPC-E code is derived from a UPC-A 12-digit code.
+   You can convert a UPC-E code back to its UPC-A format using the following scenarios.
+
+   If the UPC-E code ends in 0, 1, or 2:
+   Convert the UPC-E back to UPC-A code by picking the first two digits in the UPC-E code.
+   Add the last digit (still of using the UPC-E code) and then four zeros(0).
+   Complete the conversion by adding characters 3 -5 of your UPC-E code.
+
+   If the UPC-E code ends in 3:
+   Determine what the UPC-A code is by picking the first three digits used in your UPC-E code.
+   Add five zeros (0), and then characters 4 and 5 of the UPC-E.
+
+   Where the UPC-E code ends in 4:
+   Determine the UPC-A code in this way: take the UPC-E code and write out the first four digits.
+   Add five zeros (0), then the fifth character of the UPC-E code.
+
+   If the UPC-E code ends in any of 5, 6, 7, 8, or 9:
+   Convert the UPC-E code to UPC-A by first picking the leading five digits in the UPC-E code.
+   Add four 0 digits and the last character of the UPC-E code.
+
+   Samples:
+   UPC-E: 01326901 -> UPC-A: 013000002691
+   UPC-E: 01810905 -> UPC-A: 018000001095
+
+   Source: https://bytescout.com/blog/2013/10/upc-and-upc-e-purpose-advantages.html
+   _____________________________________________________________________________________________ */
+
+/* Barcode formats and maximum length of the text to encode.
+   edtTextToCode.MaxLength     Numeric     AlphaNumeric    Binary 8-bits   Kanji/Kana JIS X 0208
+   -----------------------     -------     ------------    -------------   ---------------------
+
+   Aztec              3000     3832        3067            1914
+   Codabar              43       43          43
+   Code39               48       48          48
+   Code93               48       48          48
+   Code128              48       48          48
+   DataMatrix         2300     3116        2335            1555                     
+   Ean8                  8        8
+   Ean13                13       13
+   GS1 DataBar
+   Imb                  31       31
+   Itf                  30       30
+   MaxiCode             93       93
+   MicroPDF417                  366         250             150
+   MicroQR                       35          21              15
+   Msi                  255     255
+   Pdf417              1800    2710        1850            1108
+   PharmaCode             6       6
+   Plessey               16      16          16
+   QrCode              1800    7089        4296            2953            1817
+   Rss14                 14      14
+   RssExpanded           74      74
+   UpcA                  12      12
+   UpcE                   8       8
+   UpcEanExtension        2       2
+   _____________________________________________________________________________________________ */

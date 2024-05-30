@@ -34,7 +34,9 @@ namespace BarcodeGenerator
         }
     }
 
-    //// Open e-mail app and open webpage (reusable hyperlink class)
+    /// <summary>
+    /// Open e-mail app and open webpage (reusable hyperlink class)
+    /// </summary>
     public sealed class HyperlinkSpan : Span
     {
         public static readonly BindableProperty UrlProperty =
@@ -59,6 +61,11 @@ namespace BarcodeGenerator
             });
         }
 
+        /// <summary>
+        /// Open the e-mail program or the website link
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
         private static async Task OpenHyperlink(string url)
         {
             if (url.StartsWith("mailto:"))
@@ -71,7 +78,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Open the e-mail program
+        /// <summary>
+        /// Open the e-mail program
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
         private static async Task OpenEmailLink(string url)
         {
             if (Email.Default.IsComposeSupported)
@@ -99,7 +110,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Open the website link in the default browser
+        /// <summary>
+        /// Open the website link in the default browser
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
         private static async Task OpenWebsiteLink(string url)
         {
             try

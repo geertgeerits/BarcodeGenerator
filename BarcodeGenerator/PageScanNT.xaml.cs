@@ -96,8 +96,12 @@ namespace BarcodeGenerator
             //int divByZero = 51 / int.Parse("0");
         }
 
-        //// Set the scanner properties for the selected format code
-        //   Native nativeCameraView options
+        /// <summary>
+        /// Set the scanner properties for the selected format code
+        /// Native nativeCameraView options
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerFormatCodeChanged(object sender, EventArgs e)
         {
             var picker = (Picker)sender;
@@ -150,7 +154,10 @@ namespace BarcodeGenerator
             }
         }
 
-        //// On BackButton pressed event (does not work in iOS)
+        /// <summary>
+        /// On BackButton pressed event (does not work in iOS)
+        /// </summary>
+        /// <returns></returns>
         protected override bool OnBackButtonPressed()
         {
             // To do before leaving this page
@@ -162,7 +169,11 @@ namespace BarcodeGenerator
             return base.OnBackButtonPressed();
         }
 
-        //// On BackButton pressed event with new created back button (for iOS)
+        /// <summary>
+        /// On BackButton pressed event with new created back button (for iOS)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnBackButtonPressed2(object sender, EventArgs e)
         {
             // To do before leaving this page
@@ -174,7 +185,9 @@ namespace BarcodeGenerator
             await Navigation.PopAsync();
         }
 
-        //// Called by the Appearing event from the PageScanNT.xaml
+        /// <summary>
+        /// Called by the Appearing event from the PageScanNT.xaml
+        /// </summary>
         protected override async void OnAppearing()
         {
             // Ask for permission to use the camera
@@ -189,7 +202,9 @@ namespace BarcodeGenerator
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
         }
 
-        //// Called by the Disappearing event from the PageScanNT.xaml
+        /// <summary>
+        /// Called by the Disappearing event from the PageScanNT.xaml
+        /// </summary>
         protected override void OnDisappearing()
         {
             // To do before leaving this page
@@ -202,7 +217,9 @@ namespace BarcodeGenerator
             Debug.WriteLine("Method: OnDisappearing");
         }
 
-        //// To do before leaving this page
+        /// <summary>
+        /// To do before leaving this page
+        /// </summary>
         private void BeforeLeavingPageScanNT()
         {
             // Check if this method has or not been called
@@ -234,14 +251,22 @@ namespace BarcodeGenerator
             Debug.WriteLine("Method: BeforeLeavingPageScanNT");
         }
 
-        //// Unloaded event to disconnect the barcode handler
+        /// <summary>
+        /// Unloaded event to disconnect the barcode handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ContentPage_Unloaded(object sender, EventArgs e)
         {
             barcodeReader.Handler?.DisconnectHandler();
             Debug.WriteLine("Method: ContentPage_Unloaded");
         }
 
-        //// CameraView OnDetected event
+        /// <summary>
+        /// CameraView OnDetected event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
         {
             imgbtnCopyToClipboard.IsEnabled = false;
@@ -306,7 +331,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// ImageButton camera quality clicked event to open the picker
+        /// <summary>
+        /// ImageButton camera quality clicked event to open the picker
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnCameraQualityClicked(object sender, EventArgs e)
         {
             if (barcodeReader.CameraFacing == CameraFacing.Back)
@@ -325,7 +354,11 @@ namespace BarcodeGenerator
             SetTitleCameraQualityPicker();
         }
 
-        //// Picker quality changed event for the camera
+        /// <summary>
+        /// Picker quality changed event for the camera
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnCameraQualityChanged(object sender, EventArgs e)
         {
             int nSelectedIndex = 0;
@@ -383,7 +416,9 @@ namespace BarcodeGenerator
             //await DisplayAlert("nSelectedIndex", Convert.ToString(nSelectedIndex), "OK");  // For testing
         }
 
-        //// Set the title for the picker
+        /// <summary>
+        /// Set the title for the picker
+        /// </summary>
         private void SetTitleCameraQualityPicker()
         {
             string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
@@ -414,7 +449,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// ImageButton camera facing clicked event
+        /// <summary>
+        /// ImageButton camera facing clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnCameraFacingClicked(object sender, EventArgs e)
         {
             // If the high or the highest quality is selected and the front camera is used then set the quality to medium
@@ -444,7 +483,11 @@ namespace BarcodeGenerator
             imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
         }
 
-        //// ImageButton camera detecting clicked event
+        /// <summary>
+        /// ImageButton camera detecting clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnCameraDetectingClicked(object sender, EventArgs e)
         {
             if (barcodeReader.PauseScanning)
@@ -459,7 +502,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// ImageButton camera vibrate clicked event
+        /// <summary>
+        /// ImageButton camera vibrate clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnCameraVibrateClicked(object sender, EventArgs e)
         {
             if (barcodeReader.VibrationOnDetected)
@@ -474,7 +521,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// ImageButton torch clicked event
+        /// <summary>
+        /// ImageButton torch clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnCameraTorchClicked(object sender, EventArgs e)
         {
             if (barcodeReader.TorchOn)
@@ -489,13 +540,21 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Button share event
+        /// <summary>
+        /// Button share event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnShareClicked(object sender, EventArgs e)
         {
             _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
         }
 
-        //// Button text to speech event - Convert text to speech
+        /// <summary>
+        /// Button text to speech event - Convert text to speech
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTextToSpeechClicked(object sender, EventArgs e)
         {
             // Cancel the text to speech
@@ -509,7 +568,11 @@ namespace BarcodeGenerator
             _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, lblBarcodeResult.Text);
         }
 
-        //// Copy text to the clipboard clicked event
+        /// <summary>
+        /// Copy text to the clipboard clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnCopyToClipboardClicked(object sender, EventArgs e)
         {
             if (lblBarcodeResult.Text.Length > 0)
@@ -518,7 +581,9 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Class for drawing the barcode bounding box
+        /// <summary>
+        /// Class for drawing the barcode bounding box
+        /// </summary>
         private sealed class BarcodeDrawable : IDrawable
         {
             //public HashSet<BarcodeResult>? barcodeResults;    // Till version 1.3.1
@@ -558,7 +623,9 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Read the device information
+        ///// <summary>
+        ///// Read the device information
+        ///// </summary>
         //private void ReadDeviceInfo()
         //{
         //    System.Text.StringBuilder sb = new System.Text.StringBuilder();
@@ -582,26 +649,24 @@ namespace BarcodeGenerator
         //    _ = DisplayAlert("Device info", sb.ToString(), "OK");
         //}
     }
-
-    /*
-    From NuGet Package BarcodeScanner.Native.Maui version 1.4.0 the app hangs or exit on the splash screen
-    when the app is opened on a Samsung A320 phone with Android 8.0 when using Android local devices.
-    Does not hangs or exit on the splash screen when using the released published .apk file.
-
-    Order when leaving this page:
-    Android
-    1. Method: OnBackButtonPressed
-    2. Method: OnDisappearing
-    3. Method: ContentPage_Unloaded
-
-    iOs - iPhone 7 with original back button
-    method 'protected override bool OnBackButtonPressed()' is not called !!!
-    1. Method: ContentPage_Unloaded
-    2. Method: OnDisappearing
-
-    iOs - iPhone 7 with the new back button
-    1. Method: OnBackButtonPressed2
-    2. Method: OnDisappearing
-    3. Method: ContentPage_Unloaded
-    */
 }
+
+/* From NuGet Package BarcodeScanner.Native.Maui version 1.4.0 the app hangs or exit on the splash screen
+   when the app is opened on a Samsung A320 phone with Android 8.0 when using Android local devices.
+   Does not hangs or exit on the splash screen when using the released published .apk file.
+
+   Order when leaving this page:
+   Android
+   1. Method: OnBackButtonPressed
+   2. Method: OnDisappearing
+   3. Method: ContentPage_Unloaded
+
+   iOs - iPhone 7 with original back button
+   method 'protected override bool OnBackButtonPressed()' is not called !!!
+   1. Method: ContentPage_Unloaded
+   2. Method: OnDisappearing
+
+   iOs - iPhone 7 with the new back button
+   1. Method: OnBackButtonPressed2
+   2. Method: OnDisappearing
+   3. Method: ContentPage_Unloaded */

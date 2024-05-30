@@ -132,7 +132,11 @@ namespace BarcodeGenerator
             stopWatch.Start();
         }
 
-        //// Picker language clicked event
+        /// <summary>
+        /// Picker language clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerLanguageChanged(object sender, EventArgs e)
         {
             string cLanguageOld = Globals.cLanguage;
@@ -215,7 +219,9 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Put text in the chosen language in the controls and variables
+        /// <summary>
+        /// Put text in the chosen language in the controls and variables
+        /// </summary>
         private void SetLanguage()
         {
             // Set the barcode list and the current default barcode format in the picker for the barcode scanner
@@ -248,8 +254,10 @@ namespace BarcodeGenerator
             };
         }
 
-        //// Fill the picker with the speech languages from the array
-        //   .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+        /// <summary>
+        /// Fill the picker with the speech languages from the array
+        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;
+        /// </summary>
         private void FillPickerWithSpeechLanguages()
         {
             // If there are no locales then return
@@ -282,7 +290,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Picker speech language clicked event
+        /// <summary>
+        /// Picker speech language clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerLanguageSpeechChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
@@ -294,7 +306,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Picker theme clicked event
+        /// <summary>
+        /// Picker theme clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerThemeChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
@@ -319,7 +335,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Picker format generator clicked event
+        /// <summary>
+        /// Picker format generator clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerFormatCodeGeneratorChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
@@ -331,7 +351,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Picker format scanner clicked event
+        /// <summary>
+        /// Picker format scanner clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerFormatCodeScannerChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
@@ -343,7 +367,11 @@ namespace BarcodeGenerator
             }
         }
 
-        //// On entry HexColor text changed event
+        /// <summary>
+        /// On entry HexColor text changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
         {
             Entry entry = (Entry)sender;
@@ -357,13 +385,21 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Display help for Hex color
+        /// <summary>
+        /// Display help for Hex color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnSettingsHexColorClicked(object sender, EventArgs e)
         {
             await DisplayAlert("?", CodeLang.HexColorCodes_Text, CodeLang.ButtonClose_Text);
         }
 
-        //// Entry HexColor Unfocused event
+        /// <summary>
+        /// Entry HexColor Unfocused event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EntryHexColorUnfocused(object sender, EventArgs e)
         {
             Entry entry = (Entry)sender;
@@ -425,7 +461,12 @@ namespace BarcodeGenerator
             }
         }
 
-        //// Test for allowed characters
+        /// <summary>
+        /// Test for allowed characters
+        /// </summary>
+        /// <param name="cAllowedCharacters"></param>
+        /// <param name="cTextToCode"></param>
+        /// <returns></returns>
         private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
         {
             foreach (char cChar in cTextToCode)
@@ -442,7 +483,11 @@ namespace BarcodeGenerator
             return true;
         }
 
-        //// Slider color barcode Foreground value change
+        /// <summary>
+        /// Slider color barcode Foreground value change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSliderColorForegroundValueChanged(object sender, ValueChangedEventArgs args)
         {
             int nAmountOpacity = 0;
@@ -499,7 +544,11 @@ namespace BarcodeGenerator
             */
         }
 
-        //// Slider color barcode background value change
+        /// <summary>
+        /// Slider color barcode background value change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSliderColorBackgroundValueChanged(object sender, ValueChangedEventArgs args)
         {
             int nAmountOpacity = 0;
@@ -545,7 +594,14 @@ namespace BarcodeGenerator
             Globals.cCodeColorBg = cColorBgHex;
         }
 
-        //// Convert OORRGGBB Hex color to RGB color
+        /// <summary>
+        /// Convert OORRGGBB Hex color to RGB color
+        /// </summary>
+        /// <param name="cHexColor"></param>
+        /// <param name="nOpacity"></param>
+        /// <param name="nRed"></param>
+        /// <param name="nGreen"></param>
+        /// <param name="nBlue"></param>
         private static void HexToRgbColor(string cHexColor, ref int nOpacity, ref int nRed, ref int nGreen, ref int nBlue)
         {
             // Remove leading # if present
@@ -560,7 +616,11 @@ namespace BarcodeGenerator
             nBlue = int.Parse(cHexColor.Substring(6, 2), NumberStyles.AllowHexSpecifier);
         }
 
-        //// Button save settings clicked event
+        /// <summary>
+        /// Button save settings clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private static void OnSettingsSaveClicked(object sender, EventArgs e)
         {
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
@@ -579,7 +639,11 @@ namespace BarcodeGenerator
             Application.Current.MainPage = new NavigationPage(new MainPage());
         }
 
-        //// Button reset settings clicked event
+        /// <summary>
+        /// Button reset settings clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSettingsResetClicked(object sender, EventArgs e)
         {
             // Get the elapsed time in milli seconds
