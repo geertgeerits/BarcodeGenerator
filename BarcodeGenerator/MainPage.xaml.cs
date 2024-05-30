@@ -757,7 +757,7 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Test start & end guards
+        /// Test start and end guards
         /// </summary>
         /// <param name="cStartEndGuards"></param>
         /// <param name="cTextToCode"></param>
