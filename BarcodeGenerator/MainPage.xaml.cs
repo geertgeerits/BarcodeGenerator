@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
  * Version .....: 1.0.41
- * Date ........: 2024-06-20 (YYYY-MM-DD)
+ * Date ........: 2024-06-27 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -14,7 +14,7 @@
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 1.5.6 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
  *                (NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/)
  *                (NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3)
- *                NuGet Package: Sentry.Maui version 4.7.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
+ *                NuGet Package: Sentry.Maui version 4.8.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
