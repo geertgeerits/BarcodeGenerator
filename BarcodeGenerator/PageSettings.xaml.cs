@@ -233,12 +233,12 @@ namespace BarcodeGenerator
             pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
             // Set the current theme in the picker
-            List<string> ThemeList = new()
-            {
+            List<string> ThemeList =
+            [
                 CodeLang.ThemeSystem_Text,
                 CodeLang.ThemeLight_Text,
                 CodeLang.ThemeDark_Text
-            };
+            ];
             pckTheme.ItemsSource = ThemeList;
 
             pckTheme.SelectedIndex = Globals.cTheme switch

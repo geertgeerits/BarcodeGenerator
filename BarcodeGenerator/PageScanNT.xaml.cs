@@ -587,7 +587,7 @@ namespace BarcodeGenerator
         private sealed class BarcodeDrawable : IDrawable
         {
             //public HashSet<BarcodeResult>? barcodeResults;    // Till version 1.3.1
-            public BarcodeResult[]? barcodeResults;         // From version 1.4.0
+            public BarcodeResult[] barcodeResults;         // From version 1.4.0
 
             public void Draw(ICanvas canvas, RectF dirtyRect)
             {
