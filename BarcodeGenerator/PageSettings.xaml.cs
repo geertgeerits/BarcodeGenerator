@@ -30,50 +30,21 @@ namespace BarcodeGenerator
             //// Set the current language in the picker
             pckLanguage.SelectedIndex = Globals.cLanguage switch
             {
-                // Čeština - Czech
-                "cs" => 0,
-
-                // Dansk - Danish
-                "da" => 1,
-
-                // Deutsch - German
-                "de" => 2,
-
-                // Español - Spanish
-                "es" => 4,
-
-                // Français - French
-                "fr" => 5,
-
-                // Italiano - Italian
-                "it" => 6,
-
-                // Magyar - Hungarian
-                "hu" => 7,
-
-                // Nederlands - Dutch
-                "nl" => 8,
-
-                // Norsk Bokmål - Norwegian Bokmål
-                "nb" => 9,
-
-                // Polski - Polish
-                "pl" => 10,
-
-                // Português - Portuguese
-                "pt" => 11,
-
-                // Română - Romanian
-                "ro" => 12,
-
-                // Suomi - Finnish
-                "fi" => 13,
-
-                // Svenska - Swedish
-                "sv" => 14,
-
-                // English.
-                _ => 3,
+                "cs" => 0,      // Čeština - Czech
+                "da" => 1,      // Dansk - Danish
+                "de" => 2,      // Deutsch - German
+                "es" => 4,      // Español - Spanish
+                "fr" => 5,      // Français - French
+                "it" => 6,      // Italiano - Italian
+                "hu" => 7,      // Magyar - Hungarian
+                "nl" => 8,      // Nederlands - Dutch
+                "nb" => 9,      // Norsk Bokmål - Norwegian Bokmål
+                "pl" => 10,     // Polski - Polish
+                "pt" => 11,     // Português - Portuguese
+                "ro" => 12,     // Română - Romanian
+                "fi" => 13,     // Suomi - Finnish
+                "sv" => 14,     // Svenska - Swedish
+                _ => 3,         // English
             };
 
             //// Fill the picker with the speech languages and set the saved language in the picker
@@ -82,14 +53,9 @@ namespace BarcodeGenerator
             //// Set the current theme in the picker
             pckTheme.SelectedIndex = Globals.cTheme switch
             {
-                // Light
-                "Light" => 1,
-
-                // Dark
-                "Dark" => 2,
-
-                // System
-                _ => 0,
+                "Light" => 1,   // Light
+                "Dark" => 2,    // Dark
+                _ => 0,         // System
             };
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode generator
@@ -148,50 +114,21 @@ namespace BarcodeGenerator
             {
                 Globals.cLanguage = selectedIndex switch
                 {
-                    // Čeština - Czech
-                    0 => "cs",
-
-                    // Dansk - Danish
-                    1 => "da",
-
-                    // Deutsch - German
-                    2 => "de",
-
-                    // Español - Spanish
-                    4 => "es",
-
-                    // Français - French
-                    5 => "fr",
-
-                    // Italiano - Italian
-                    6 => "it",
-
-                    // Magyar - Hungarian
-                    7 => "hu",
-
-                    // Nederlands - Dutch
-                    8 => "nl",
-
-                    // Norsk Bokmål - Norwegian Bokmål
-                    9 => "nb",
-
-                    // Polski - Polish
-                    10 => "pl",
-
-                    // Português - Portuguese
-                    11 => "pt",
-
-                    // Română - Romanian
-                    12 => "ro",
-
-                    // Suomi - Finnish
-                    13 => "fi",
-
-                    // Svenska - Swedish
-                    14 => "sv",
-
-                    // English
-                    _ => "en",
+                    0 => "cs",      // Čeština - Czech
+                    1 => "da",      // Dansk - Danish
+                    2 => "de",      // Deutsch - German
+                    4 => "es",      // Español - Spanish
+                    5 => "fr",      // Français - French
+                    6 => "it",      // Italiano - Italian
+                    7 => "hu",      // Magyar - Hungarian
+                    8 => "nl",      // Nederlands - Dutch
+                    9 => "nb",      // Norsk Bokmål - Norwegian Bokmål
+                    10 => "pl",     // Polski - Polish
+                    11 => "pt",     // Português - Portuguese
+                    12 => "ro",     // Română - Romanian
+                    13 => "fi",     // Suomi - Finnish
+                    14 => "sv",     // Svenska - Swedish
+                    _ => "en",      // English
                 };
             }
 
@@ -243,14 +180,9 @@ namespace BarcodeGenerator
 
             pckTheme.SelectedIndex = Globals.cTheme switch
             {
-                // Light
-                "Light" => 1,
-
-                // Dark
-                "Dark" => 2,
-
-                // System
-                _ => 0,
+                "Light" => 1,   // Light
+                "Dark" => 2,    // Dark
+                _ => 0,         // System
             };
         }
 
@@ -320,14 +252,9 @@ namespace BarcodeGenerator
             {
                 Globals.cTheme = selectedIndex switch
                 {
-                    // Light
-                    1 => "Light",
-
-                    // Dark
-                    2 => "Dark",
-
-                    // System
-                    _ => "System",
+                    1 => "Light",   // Light
+                    2 => "Dark",    // Dark
+                    _ => "System",  // System
                 };
 
                 // Set the theme
