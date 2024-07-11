@@ -13,19 +13,19 @@ namespace BarcodeGenerator
     internal static class Globals
     {
         //// Global variables
-        public static string cTheme;
+        public static string cTheme = "";
         public static int nFormatGeneratorIndex;
         public static int nFormatScannerIndex;
-        public static string cCodeColorFg;
-        public static string cCodeColorBg;
-        public static string cLanguage;
-        public static bool bLanguageChanged = false;
-        public static string cLanguageSpeech;
-        public static string[] cLanguageLocales;
-        public static bool bLanguageLocalesExist = false;
-        public static bool bTextToSpeechIsBusy = false;
-        public static IEnumerable<Locale> locales;
-        public static CancellationTokenSource cts;
+        public static string cCodeColorFg = "";
+        public static string cCodeColorBg = "";
+        public static string cLanguage= "";
+        public static bool bLanguageChanged;
+        public static string cLanguageSpeech = "";
+        public static string[]? cLanguageLocales;
+        public static bool bLanguageLocalesExist;
+        public static bool bTextToSpeechIsBusy;
+        public static IEnumerable<Locale>? locales;
+        public static CancellationTokenSource? cts;
         public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
         public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
         public static bool bLicense;
@@ -37,7 +37,7 @@ namespace BarcodeGenerator
         /// </summary>
         public static void SetTheme()
         {
-            Application.Current.UserAppTheme = cTheme switch
+            Application.Current!.UserAppTheme = cTheme switch
             {
                 "Light" => AppTheme.Light,
                 "Dark" => AppTheme.Dark,
@@ -221,7 +221,7 @@ namespace BarcodeGenerator
                 {
                     if (match.Success)
                     {
-                        bool bAnswer = await App.Current.MainPage.DisplayAlert(CodeLang.OpenLinkTitle_Text, $"{match.Value}\n\n{CodeLang.OpenLinkText_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
+                        bool bAnswer = await Application.Current!.MainPage!.DisplayAlert(CodeLang.OpenLinkTitle_Text, $"{match.Value}\n\n{CodeLang.OpenLinkText_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
 
                         // Open link website
                         if (bAnswer)
@@ -240,7 +240,7 @@ namespace BarcodeGenerator
                 //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
 
@@ -280,7 +280,7 @@ namespace BarcodeGenerator
                 //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -305,7 +305,7 @@ namespace BarcodeGenerator
                 //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -337,7 +337,7 @@ namespace BarcodeGenerator
                 //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
                 return false;
             }
@@ -367,7 +367,7 @@ namespace BarcodeGenerator
 
                     SpeechOptions options = new()
                     {
-                        Locale = locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == cLanguageSpeech)
+                        Locale = locales?.Single(l => $"{l.Language}-{l.Country} {l.Name}" == cLanguageSpeech)
                     };
 
                     await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
@@ -378,7 +378,7 @@ namespace BarcodeGenerator
                     //Crashes.TrackError(ex);  // Microsoft.AppCenter
                     SentrySdk.CaptureException(ex);
 #if DEBUG
-                    await App.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                    await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
                 }
 

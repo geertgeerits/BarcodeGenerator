@@ -24,7 +24,7 @@ namespace BarcodeGenerator
     public sealed partial class MainPage : ContentPage
     {
         //// Local variables
-        private string cLicense;
+        private string cLicense = "";
         //private readonly bool bLogAlwaysSend;  // Microsoft.AppCenter
 
         public MainPage()
@@ -910,7 +910,7 @@ namespace BarcodeGenerator
             await DisplayAlert(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
 
             //Application.Current.MainPage = new AppShell();
-            Application.Current.MainPage = new NavigationPage(new MainPage());
+            Application.Current!.MainPage = new NavigationPage(new MainPage());
         }
 
         /// <summary>
@@ -923,7 +923,7 @@ namespace BarcodeGenerator
             // Show license
             if (Globals.bLicense == false)
             {
-                Globals.bLicense = await Application.Current.MainPage.DisplayAlert(CodeLang.LicenseTitle_Text, cLicense, CodeLang.Agree_Text, CodeLang.Disagree_Text);
+                Globals.bLicense = await Application.Current!.MainPage!.DisplayAlert(CodeLang.LicenseTitle_Text, cLicense, CodeLang.Agree_Text, CodeLang.Disagree_Text);
 
                 if (Globals.bLicense)
                 {
@@ -978,8 +978,8 @@ namespace BarcodeGenerator
         {
             if (Screenshot.Default.IsCaptureSupported)
             {
-                IScreenshotResult screen = await bgvBarcode.CaptureAsync();
-                Stream stream = await screen.OpenReadAsync();
+                IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
+                Stream stream = await screen!.OpenReadAsync();
 
                 SaveStreamAsFile(stream);
             }
@@ -1101,26 +1101,29 @@ namespace BarcodeGenerator
         {
             try
             {
-                int nTotalItems = Globals.cLanguageLocales.Length;
-
-                for (int nItem = 0; nItem < nTotalItems; nItem++)
+                if (Globals.cLanguageLocales is not null)
                 {
-                    if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
-                    {
-                        Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                        break;
-                    }
-                }
+                    int nTotalItems = Globals.cLanguageLocales.Length;
 
-                // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app
-                if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-                {
                     for (int nItem = 0; nItem < nTotalItems; nItem++)
                     {
-                        if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
+                        if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
                         {
                             Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
                             break;
+                        }
+                    }
+
+                    // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app
+                    if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
+                    {
+                        for (int nItem = 0; nItem < nTotalItems; nItem++)
+                        {
+                            if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
+                            {
+                                Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
+                                break;
+                            }
                         }
                     }
                 }
@@ -1128,7 +1131,7 @@ namespace BarcodeGenerator
                 // If the language is still not found use the first language in the array
                 if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
                 {
-                    Globals.cLanguageSpeech = Globals.cLanguageLocales[0];
+                    Globals.cLanguageSpeech = Globals.cLanguageLocales![0];
                 }
             }
             catch (Exception ex)
@@ -1136,7 +1139,7 @@ namespace BarcodeGenerator
                 //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                _ = Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                _ = Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -1197,7 +1200,7 @@ namespace BarcodeGenerator
             {
                 try
                 {
-                    string cTextToPaste = await Clipboard.Default.GetTextAsync();
+                    string cTextToPaste = await Clipboard.Default.GetTextAsync() ?? string.Empty;
 
                     if (string.IsNullOrEmpty(cTextToPaste))
                     {

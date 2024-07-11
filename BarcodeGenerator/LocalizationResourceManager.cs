@@ -13,7 +13,7 @@ namespace BarcodeGenerator
         public object this[string resourceKey]
             => CodeLang.ResourceManager.GetObject(resourceKey, CodeLang.Culture) ?? Array.Empty<byte>();
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public void SetCulture(CultureInfo culture) {
             CodeLang.Culture = culture;
