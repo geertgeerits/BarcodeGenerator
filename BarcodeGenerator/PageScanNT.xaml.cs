@@ -587,7 +587,7 @@ namespace BarcodeGenerator
         private sealed class BarcodeDrawable : IDrawable
         {
             //public HashSet<BarcodeResult>? barcodeResults;    // Till version 1.3.1
-            public BarcodeResult[] barcodeResults;         // From version 1.4.0
+            public BarcodeResult[]? barcodeResults;         // From version 1.4.0
 
             public void Draw(ICanvas canvas, RectF dirtyRect)
             {
@@ -616,7 +616,7 @@ namespace BarcodeGenerator
                         //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
                         SentrySdk.CaptureException(ex);
 #if DEBUG
-                        Application.Current.MainPage.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                        Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
                     }               
                 }
