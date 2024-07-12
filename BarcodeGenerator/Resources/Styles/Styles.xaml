@@ -382,7 +382,7 @@
         <Setter Property="HeightRequest" Value="38" />
         <Setter Property="WidthRequest" Value="38" />
         <Setter Property="FontAutoScalingEnabled" Value="False" />
-        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontSize" Value="12" />
         <Setter Property="Text" Value="?" />
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
