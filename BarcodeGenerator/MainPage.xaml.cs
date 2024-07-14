@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
  * Version .....: 1.0.41
- * Date ........: 2024-07-13 (YYYY-MM-DD)
+ * Date ........: 2024-07-14 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -12,8 +12,6 @@
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.4.0
  *                (NuGet Package: BarcodeScanner.Mobile.Maui version = "8.0.0 ; Google Vision ; https://github.com/JimmyPun610/BarcodeScanner.Mobile)
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 1.5.7 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
- *                (NuGet Package: Microsoft.AppCenter version 5.0.3 ; https://appcenter.ms/apps ; https://azure.microsoft.com/en-us/products/app-center/)
- *                (NuGet Package: Microsoft.AppCenter.Crashes version 5.0.3)
  *                NuGet Package: Sentry.Maui version 4.9.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
@@ -25,7 +23,6 @@ namespace BarcodeGenerator
     {
         //// Local variables
         private string cLicense = "";
-        //private readonly bool bLogAlwaysSend;  // Microsoft.AppCenter
 
         public MainPage()
         {
@@ -35,7 +32,6 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
@@ -52,18 +48,6 @@ namespace BarcodeGenerator
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
-            //bLogAlwaysSend = Preferences.Default.Get("SettingLogAlwaysSend", false);  // Microsoft.AppCenter
-
-            //// Crash log confirmation (Microsoft.AppCenter)
-            //if (!bLogAlwaysSend)
-            //{
-            //    Crashes.ShouldAwaitUserConfirmation = () =>
-            //    {
-            //        // Return true if you built a UI for user consent and are waiting for user input on that custom UI, otherwise false
-            //        ConfirmationSendCrashLog();
-            //        return true;
-            //    };
-            //}
 
             //// The height of the title bar is lower when an iPhone is in horizontal position
             if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
@@ -674,14 +658,6 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //var properties = new Dictionary<string, string> {
-                //    { "File:", "MainPage.xaml.cs" },
-                //    { "Method:", "OnGenerateCodeClicked" },
-                //    { "AppLanguage:", Globals.cLanguage },
-                //    { "AppLanguageSpeech:", Globals.cLanguageSpeech },
-                //    { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
-                //};
-                //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
                 _ = SentrySdk.CaptureException(ex);
 
                 bgvBarcode.Value = "";
@@ -867,17 +843,6 @@ namespace BarcodeGenerator
             edtTextToCode.Focus();
         }
 
-        ///// <summary>
-        ///// Display a message with no encoder available for format
-        ///// </summary>
-        ///// <param name="cFormat"></param>
-        //private void DisplayMessageFormat(string cFormat)
-        //{
-        //    DisplayAlert(CodeLang.FormatTitle_Text, $"{cFormat} {CodeLang.FormatNotSupported_Text}", CodeLang.ButtonClose_Text);
-
-        //    edtTextToCode.Focus();
-        //}
-
         /// <summary>
         /// Display an error message
         /// </summary>
@@ -1054,13 +1019,6 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //var properties = new Dictionary<string, string> {
-                //    { "File:", "MainPage.xaml.cs" },
-                //    { "Method:", "InitializeTextToSpeech" },
-                //    { "AppLanguage:", Globals.cLanguage },
-                //    { "AppLanguageSpeech:", Globals.cLanguageSpeech }
-                //};
-                //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
@@ -1136,40 +1094,12 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 _ = Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
-
-        ///// <summary>
-        ///// Search for the language after a first start or reset of the application 
-        ///// </summary>
-        ///// <param name="cCultureName"></param>
-        //private void SearchArrayWithSpeechLanguages(string cCultureName)
-        //{
-        //    // Does not works on Android 13 (works on Android 8) - App is closing after starting
-        //    // There is a problem with the StartsWith->cCultureName:
-        //    // string value = Array.Find(cLanguageLocales, element => element.StartsWith(cCultureName, StringComparison.OrdinalIgnoreCase));
-
-        //    if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-        //    {
-        //        try
-        //        {
-        //            string value = Array.Find(cLanguageLocales, element => element.StartsWith(cCultureName, StringComparison.OrdinalIgnoreCase));
-        //            cLanguageSpeech = value;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            //Crashes.TrackError(ex);  // Microsoft.AppCenter
-        //            SentrySdk.CaptureException(ex);
-        //            //DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-        //            cLanguageSpeech = cLanguageLocales[0];
-        //        }
-        //    }
-        //}
 
         /// <summary>
         /// Button text to speech event - Convert text to speech
@@ -1216,14 +1146,6 @@ namespace BarcodeGenerator
                 }
                 catch (Exception ex)
                 {
-                    //var properties = new Dictionary<string, string> {
-                    //    { "File:", "MainPage.xaml.cs" },
-                    //    { "Method:", "OnPasteFromClipboardClicked" },
-                    //    { "AppLanguage:", Globals.cLanguage },
-                    //    { "AppLanguageSpeech:", Globals.cLanguageSpeech },
-                    //    { "BarcodeFormat:", Convert.ToString(bgvBarcode.Format) }
-                    //};
-                    //Crashes.TrackError(ex, properties);   // Microsoft.AppCenter
                     SentrySdk.CaptureException(ex);
 #if DEBUG
                     await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -1231,41 +1153,6 @@ namespace BarcodeGenerator
                 }
             }
         }
-
-        ///// <summary>
-        ///// Crash log confirmation (Microsoft.AppCenter)
-        ///// </summary>
-        //private async void ConfirmationSendCrashLog()
-        //{
-        //    // Using the DisplayActionSheet with 3 choices
-        //    string cAction = await DisplayActionSheet(CodeLang.LogTitle2_Text, null, null, CodeLang.LogSend_Text, CodeLang.LogAlwaysSend_Text, CodeLang.LogDontSend_Text);
-
-        //    if (cAction == CodeLang.LogSend_Text)
-        //    {
-        //        Crashes.NotifyUserConfirmation(UserConfirmation.Send);
-        //    }
-        //    else if (cAction == CodeLang.LogAlwaysSend_Text)
-        //    {
-        //        Crashes.NotifyUserConfirmation(UserConfirmation.AlwaysSend);
-        //        Preferences.Default.Set("SettingLogAlwaysSend", true);
-        //    }
-        //    else if (cAction == CodeLang.LogDontSend_Text)
-        //    {
-        //        Crashes.NotifyUserConfirmation(UserConfirmation.DontSend);
-        //    }
-
-        //    // Using the DisplayAlert with 2 choices
-        //    //bool bAction = await DisplayAlert(CodeLang.LogTitle_Text, CodeLang.LogMessage_Text, CodeLang.LogSend_Text, CodeLang.LogDontSend_Text);
-
-        //    //if (bAction)
-        //    //{
-        //    //    Crashes.NotifyUserConfirmation(UserConfirmation.Send);
-        //    //}
-        //    //else
-        //    //{
-        //    //    Crashes.NotifyUserConfirmation(UserConfirmation.DontSend);
-        //    //}
-        //}
     }
 }
 

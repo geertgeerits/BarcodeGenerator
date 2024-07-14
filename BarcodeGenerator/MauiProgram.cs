@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 //using BarcodeScanner.Mobile;
 using ZXing.Net.Maui.Controls;
-//using Microsoft.AppCenter;
-//using Microsoft.AppCenter.Crashes;
 using Microsoft.Maui.LifecycleEvents;
 using BarcodeScanning;
 
@@ -68,12 +66,6 @@ namespace BarcodeGenerator
                         return true;
                     }
                 });
-
-            //AppCenter.Start("windowsdesktop=7b81fd09-0be8-45e0-a4f0-4a23dd20a00c;" +
-            //    "android=a7116ecb-f402-403c-8a9d-58e295913d73;" +
-            //    "ios=e0281fe4-3662-46b5-a15f-fa0a73595d57;" +
-            //    "macos={Your macOS App secret here};",
-            //    typeof(Crashes));
 
 #if DEBUG
             builder.Logging.AddDebug();

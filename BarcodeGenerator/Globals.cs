@@ -1,7 +1,6 @@
 ﻿//// Global usings
 global using BarcodeGenerator.Resources.Languages;
 global using System.Globalization;
-//global using Microsoft.AppCenter.Crashes;
 global using Sentry;
 
 //// Local usings
@@ -237,7 +236,6 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -277,7 +275,6 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -302,7 +299,6 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -328,13 +324,6 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //var properties = new Dictionary<string, string> {
-                //    { "File:", "Globals.cs:" + cPageName },
-                //    { "Method:", "InitializeTextToSpeech" },
-                //    { "AppLanguage:", cLanguage },
-                //    { "AppLanguageSpeech:", cLanguageSpeech }
-                //};
-                //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -375,7 +364,6 @@ namespace BarcodeGenerator
                 }
                 catch (Exception ex)
                 {
-                    //Crashes.TrackError(ex);  // Microsoft.AppCenter
                     SentrySdk.CaptureException(ex);
 #if DEBUG
                     await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);

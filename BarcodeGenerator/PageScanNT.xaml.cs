@@ -25,7 +25,6 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 DisplayAlert("InitializeComponent: PageScanNT", ex.Message, "OK");
@@ -323,7 +322,6 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //Crashes.TrackError(ex);  // Microsoft.AppCenter
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 _ = DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
@@ -390,13 +388,6 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                //var properties = new Dictionary<string, string> {
-                //    { "File:", "PageScanNT.xaml.cs" },
-                //    { "Method:", "OnCameraQualityChanged" },
-                //    { "CameraFacing:", Convert.ToString(barcodeReader.CameraFacing) },
-                //    { "selectedIndex:", Convert.ToString(nSelectedIndex) }
-                //};
-                //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
                 _ = SentrySdk.CaptureException(ex);
 
                 await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraQualityError_Text, CodeLang.ButtonClose_Text);
@@ -591,8 +582,7 @@ namespace BarcodeGenerator
 
             public void Draw(ICanvas canvas, RectF dirtyRect)
             {
-                //if (barcodeResults is not null && barcodeResults.Count > 0)       // Till version 1.3.1
-                if (barcodeResults is not null && barcodeResults.Length > 0)    // From version 1.4.0
+                if (barcodeResults is not null && barcodeResults.Length > 0)
                 {
                     canvas.StrokeSize = 15;
                     canvas.StrokeColor = Colors.Green;
@@ -603,17 +593,11 @@ namespace BarcodeGenerator
                     {
                         foreach (var barcode in barcodeResults)
                         {
-                            //canvas.DrawRectangle(barcode.BoundingBox);    // Till version 1.4.3
-                            canvas.DrawRectangle(barcode.PreviewBoundingBox);  // From version 1.5.0
+                            canvas.DrawRectangle(barcode.PreviewBoundingBox);
                         }
                     }
                     catch (Exception ex)
                     {
-                        //var properties = new Dictionary<string, string> {
-                        //    { "File:", "PageScanNT.xaml.cs" },
-                        //    { "Class.Method:", "BarcodeDrawable.Draw" }
-                        //};
-                        //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
                         SentrySdk.CaptureException(ex);
 #if DEBUG
                         Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
