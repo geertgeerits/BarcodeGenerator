@@ -1,8 +1,8 @@
 ﻿/* Program .....: BarcodeGenerator.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
- * Version .....: 1.0.41
- * Date ........: 2024-07-14 (YYYY-MM-DD)
+ * Version .....: 1.0.42
+ * Date ........: 2024-09-26 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -320,7 +320,7 @@ namespace BarcodeGenerator
             // Validate the input
             if (string.IsNullOrEmpty(edtTextToCode.Text))
             {
-                edtTextToCode.Focus();
+                _ = edtTextToCode.Focus();
                 return;
             }
 
@@ -681,8 +681,8 @@ namespace BarcodeGenerator
                 if (bResult == false)
                 {
                     DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.AllowedChar_Text}\n{cAllowedCharacters}\n\n{CodeLang.AllowedCharNot_Text} {cChar}", CodeLang.ButtonClose_Text);
-                
-                    edtTextToCode.Focus();
+
+                    _ = edtTextToCode.Focus();
                     return false;
                 }
             }
@@ -708,7 +708,7 @@ namespace BarcodeGenerator
                 {
                     DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.TextContainsChar_Text} {cChar}", CodeLang.ButtonClose_Text);
 
-                    edtTextToCode.Focus();
+                    _ = edtTextToCode.Focus();
                     return false;
                 }
             }
@@ -751,8 +751,8 @@ namespace BarcodeGenerator
                 if (cStartEndGuards.Contains(cChar) && nPos > 0 && nPos < cTextToCode.Length - 1)
                 {
                     DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.GuardInvalidStartEnd_Text} {cChar}", CodeLang.ButtonClose_Text);
-                
-                    edtTextToCode.Focus();
+
+                    _ = edtTextToCode.Focus();
                     return false;
                 }
             }
@@ -761,15 +761,15 @@ namespace BarcodeGenerator
             if (cStartEndGuards.Contains(cTextToCode[..1]) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
             {
                 DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingEnd_Text, CodeLang.ButtonClose_Text);
-            
-                edtTextToCode.Focus();
+
+                _ = edtTextToCode.Focus();
                 return false;
             }
             else if (cStartEndGuards.Contains(cTextToCode[..1]) == false && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)))
             {
                 DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingStart_Text, CodeLang.ButtonClose_Text);
-            
-                edtTextToCode.Focus();
+
+                _ = edtTextToCode.Focus();
                 return false;
             }
 
@@ -840,7 +840,7 @@ namespace BarcodeGenerator
             btnShare.Text = CodeLang.ButtonShare_Text;
             btnShare.IsEnabled = false;
 
-            edtTextToCode.Focus();
+            _ = edtTextToCode.Focus();
         }
 
         /// <summary>
@@ -851,7 +851,7 @@ namespace BarcodeGenerator
         {
             DisplayAlert(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
 
-            edtTextToCode.Focus();
+            _ = edtTextToCode.Focus();
         }
 
         /// <summary>
@@ -863,7 +863,7 @@ namespace BarcodeGenerator
         {
             DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.CodeLengthPart1_Text} {cMinLength} {CodeLang.CodeLengthPart2_Text} {cMaxLength} {CodeLang.CodeLengthPart3_Text}", CodeLang.ButtonClose_Text);
 
-            edtTextToCode.Focus();
+            _ = edtTextToCode.Focus();
         }
 
         /// <summary>

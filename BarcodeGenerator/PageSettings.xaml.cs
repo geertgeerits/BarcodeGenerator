@@ -313,7 +313,7 @@ namespace BarcodeGenerator
             if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
             {
                 entry.Text = oldText;
-                entry.Focus();
+                _ = entry.Focus();
             }
         }
 
@@ -345,7 +345,7 @@ namespace BarcodeGenerator
             // Length must be 8 characters
             if (entry.Text.Length != 8)
             {
-                entry.Focus();
+                _ = entry.Focus();
                 return;
             }
 
@@ -381,7 +381,7 @@ namespace BarcodeGenerator
             // Set focus to the next or save button
             if (sender.Equals(entHexColorFg))
             {
-                entHexColorBg.Focus();
+                _ = entHexColorBg.Focus();
             }
             else
             {
