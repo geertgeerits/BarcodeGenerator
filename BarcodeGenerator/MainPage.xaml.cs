@@ -171,7 +171,7 @@ namespace BarcodeGenerator
                 {
                     // Aztec
                     case 0:
-                        edtTextToCode.MaxLength = 3000;
+                        edtTextToCode.MaxLength = 1900;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.HeightRequest = 250;
                         bgvBarcode.WidthRequest = 250;
@@ -213,7 +213,7 @@ namespace BarcodeGenerator
 
                     // DataMatrix
                     case 5:
-                        edtTextToCode.MaxLength = 2300;
+                        edtTextToCode.MaxLength = 1500;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.HeightRequest = 250;
                         bgvBarcode.WidthRequest = 250;
@@ -255,7 +255,7 @@ namespace BarcodeGenerator
 
                     // Pdf417
                     case 10:
-                        edtTextToCode.MaxLength = 1800;
+                        edtTextToCode.MaxLength = 1100;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.BarcodeMargin = 10;
                         bgvBarcode.Format = BarcodeFormat.Pdf417;
@@ -1188,12 +1188,12 @@ namespace BarcodeGenerator
    edtTextToCode.MaxLength     Numeric     AlphaNumeric    Binary 8-bits   Kanji/Kana JIS X 0208
    -----------------------     -------     ------------    -------------   ---------------------
 
-   Aztec              3000     3832        3067            1914
+   Aztec              1900     3832        3067            1914
    Codabar              43       43          43
    Code39               48       48          48
    Code93               48       48          48
    Code128              48       48          48
-   DataMatrix         2300     3116        2335            1555                     
+   DataMatrix         1500     3116        2335            1555                     
    Ean8                  8        8
    Ean13                13       13
    GS1 DataBar
@@ -1203,7 +1203,7 @@ namespace BarcodeGenerator
    MicroPDF417                  366         250             150
    MicroQR                       35          21              15
    Msi                  255     255
-   Pdf417              1800    2710        1850            1108
+   Pdf417              1100    2710        1850            1108
    PharmaCode             6       6
    Plessey               16      16          16
    QrCode              1800    7089        4296            2953            1817
