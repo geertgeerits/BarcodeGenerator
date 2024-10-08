@@ -15,6 +15,7 @@
  *                NuGet Package: Sentry.Maui version 4.12.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
+using System.Diagnostics;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator
@@ -29,6 +30,12 @@ namespace BarcodeGenerator
             try
             {
                 InitializeComponent();
+#if IOS
+                //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+                //// Word wrap in editor is not working when going from landscape to portrait
+                //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait
+                DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+#endif
             }
             catch (Exception ex)
             {
@@ -127,7 +134,42 @@ namespace BarcodeGenerator
             //SentrySdk.CaptureMessage("Hello Sentry");
             //throw new Exception("This is a test exception");
         }
+#if IOS
+        /// <summary>
+        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+        /// Word wrap in editor is not working when going from landscape to portrait
+        /// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+        {
+            DisplayOrientation orientation = e.DisplayInfo.Orientation;
 
+            switch (orientation)
+            {
+                case DisplayOrientation.Portrait:
+                    // Handle logic for portrait orientation
+                    string cTextP = edtTextToCode.Text;
+                    edtTextToCode.Text = "";
+                    await Task.Delay(100);
+                    edtTextToCode.Text = cTextP;
+                    Debug.WriteLine("Portrait");
+                    break;
+                case DisplayOrientation.Landscape:
+                    // Handle logic for landscape orientation
+                    Grid.SetColumn(edtTextToCode, 0);
+                    Grid.SetRow(edtTextToCode, 0);
+                    edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
+                    string cTextL = edtTextToCode.Text;
+                    edtTextToCode.Text = "";
+                    await Task.Delay(100);
+                    edtTextToCode.Text = cTextL;
+                    Debug.WriteLine("Landscape");
+                    break;
+            }
+        }
+#endif
         //// TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {

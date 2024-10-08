@@ -157,7 +157,7 @@
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="FillAndExpand"
+                    HorizontalOptions="Fill"
                     VerticalOptions="Start">
 
                     <ScrollView 
@@ -165,10 +165,11 @@
 
                         <Editor
                             x:Name="edtTextToCode"
-                            HorizontalOptions="FillAndExpand"
+                            HorizontalOptions="Fill"
                             HeightRequest="180"
                             MinimumWidthRequest="340"
-                            VerticalTextAlignment="Start">
+                            VerticalTextAlignment="Start"
+                            Text="">
                         </Editor>
                     </ScrollView>
                 </Border>
