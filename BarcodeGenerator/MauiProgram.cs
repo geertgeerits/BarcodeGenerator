@@ -49,7 +49,7 @@ namespace BarcodeGenerator
                         .OnVisibilityChanged((window, args) => ProcessEvent(nameof(WindowsLifecycle.OnVisibilityChanged))));
 #endif
 
-                    static bool ProcessEvent(string eventName, string type = null)
+                    static bool ProcessEvent(string eventName, string? type = null)
                     {
                         //System.Diagnostics.Debug.WriteLine($"Lifecycle event: {eventName}{(type == null ? string.Empty : $" ({type})")}");
 
