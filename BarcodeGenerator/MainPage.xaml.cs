@@ -32,9 +32,8 @@ namespace BarcodeGenerator
                 InitializeComponent();
 #if IOS
                 //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-                //// Word wrap in editor is not working when going from landscape to portrait
-                //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait
-                //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+                //// HorizontalOptions in editor is not working when going from landscape to portrait
+                DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
 #endif
             }
             catch (Exception ex)
@@ -45,10 +44,12 @@ namespace BarcodeGenerator
 #endif
                 return;
             }
-#if IOS
-            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-            grdMain.HorizontalOptions = LayoutOptions.Fill;
-#endif
+
+            //#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
+            //            //// Make the the scan icon for Google Vision visible
+            //            imgbtnScanGV.IsVisible = true;
+            //#endif
+
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 12);
@@ -71,11 +72,6 @@ namespace BarcodeGenerator
 
             //// Set the tooltips for the scanner buttons
             ToolTipProperties.SetText(imgbtnScanNT, CodeLang.ToolTipBarcodeScanner_Text + " (Native)");
-
-//#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
-//            //// Make the the scan icon for Google Vision visible
-//            imgbtnScanGV.IsVisible = true;
-//#endif
 
             //// Set the theme
             Globals.SetTheme();
@@ -140,12 +136,11 @@ namespace BarcodeGenerator
 #if IOS
         /// <summary>
         /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-        /// Word wrap in editor is not working when going from landscape to portrait
-        /// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait
+        /// HorizontalOptions in editor is not working when going from landscape to portrait
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
         {
             DisplayOrientation orientation = e.DisplayInfo.Orientation;
 
@@ -153,15 +148,21 @@ namespace BarcodeGenerator
             {
                 case DisplayOrientation.Portrait:
                     // Handle logic for portrait orientation
-                    //string cTextP = edtTextToCode.Text;
-                    //edtTextToCode.Text = "";
-                    //await Task.Delay(100);
-                    //edtTextToCode.Text = cTextP;
+                    edtTextToCode.WidthRequest = -1;
+
                     Debug.WriteLine("Portrait");
                     break;
                 case DisplayOrientation.Landscape:
                     // Handle logic for landscape orientation
-                    grdMain.HorizontalOptions = LayoutOptions.Fill;
+                    if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+                    {
+                        edtTextToCode.WidthRequest = 540;
+                    }
+                    if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
+                    {
+                        edtTextToCode.WidthRequest = 820;
+                    }
+
                     Debug.WriteLine("Landscape");
                     break;
             }

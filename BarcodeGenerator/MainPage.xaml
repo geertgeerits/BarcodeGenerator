@@ -68,7 +68,6 @@
     <ScrollView>
         <StackLayout>
             <Grid
-                x:Name="grdMain"
                 Style="{StaticResource gridStyleGenerator}"
                 RowDefinitions="Auto, Auto, 180, Auto, 250, Auto"
                 HorizontalOptions="CenterAndExpand">
@@ -107,7 +106,7 @@
                     VerticalOptions="End"
                     Margin="0,2,2,0"
                     Spacing="0">
-                
+
                     <ImageButton
                         x:Name="imgbtnPasteFromClipboard"
                         Source="paste_icon_48p_blue.png"
@@ -163,7 +162,8 @@
                     VerticalOptions="Start">
 
                     <ScrollView 
-                        Orientation="Vertical" VerticalScrollBarVisibility="Default">
+                        Orientation="Vertical"
+                        VerticalScrollBarVisibility="Default">
 
                         <Editor
                             x:Name="edtTextToCode"
