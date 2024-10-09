@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
  * Version .....: 1.0.42
- * Date ........: 2024-10-08 (YYYY-MM-DD)
+ * Date ........: 2024-10-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -34,7 +34,7 @@ namespace BarcodeGenerator
                 //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
                 //// Word wrap in editor is not working when going from landscape to portrait
                 //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait
-                DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+                //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
 #endif
             }
             catch (Exception ex)
@@ -45,7 +45,10 @@ namespace BarcodeGenerator
 #endif
                 return;
             }
-
+#if IOS
+            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+            grdMain.HorizontalOptions = LayoutOptions.Fill;
+#endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 12);
@@ -150,21 +153,15 @@ namespace BarcodeGenerator
             {
                 case DisplayOrientation.Portrait:
                     // Handle logic for portrait orientation
-                    string cTextP = edtTextToCode.Text;
-                    edtTextToCode.Text = "";
-                    await Task.Delay(100);
-                    edtTextToCode.Text = cTextP;
+                    //string cTextP = edtTextToCode.Text;
+                    //edtTextToCode.Text = "";
+                    //await Task.Delay(100);
+                    //edtTextToCode.Text = cTextP;
                     Debug.WriteLine("Portrait");
                     break;
                 case DisplayOrientation.Landscape:
                     // Handle logic for landscape orientation
-                    Grid.SetColumn(edtTextToCode, 0);
-                    Grid.SetRow(edtTextToCode, 0);
-                    edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
-                    string cTextL = edtTextToCode.Text;
-                    edtTextToCode.Text = "";
-                    await Task.Delay(100);
-                    edtTextToCode.Text = cTextL;
+                    grdMain.HorizontalOptions = LayoutOptions.Fill;
                     Debug.WriteLine("Landscape");
                     break;
             }

@@ -68,8 +68,10 @@
     <ScrollView>
         <StackLayout>
             <Grid
+                x:Name="grdMain"
                 Style="{StaticResource gridStyleGenerator}"
-                RowDefinitions="Auto, Auto, 180, Auto, 250, Auto">
+                RowDefinitions="Auto, Auto, 180, Auto, 250, Auto"
+                HorizontalOptions="CenterAndExpand">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
