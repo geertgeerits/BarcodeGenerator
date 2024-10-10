@@ -1,5 +1,4 @@
 using BarcodeScanning;
-using System.Diagnostics;
 
 namespace BarcodeGenerator
 {
