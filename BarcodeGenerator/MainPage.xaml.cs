@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
  * Version .....: 1.0.42
- * Date ........: 2024-10-10 (YYYY-MM-DD)
+ * Date ........: 2024-10-11 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -141,30 +141,35 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
         {
-            DisplayOrientation orientation = e.DisplayInfo.Orientation;
+            // Solution 1
+            edtTextToCode.HorizontalOptions = LayoutOptions.Center;
+            edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
 
-            switch (orientation)
-            {
-                case DisplayOrientation.Portrait:
-                    // Handle logic for portrait orientation
-                    edtTextToCode.WidthRequest = -1;
+            // Solution 2
+            //DisplayOrientation orientation = e.DisplayInfo.Orientation;
 
-                    Debug.WriteLine("Portrait");
-                    break;
-                case DisplayOrientation.Landscape:
-                    // Handle logic for landscape orientation
-                    if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-                    {
-                        edtTextToCode.WidthRequest = 540;
-                    }
-                    if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
-                    {
-                        edtTextToCode.WidthRequest = 830;
-                    }
+            //switch (orientation)
+            //{
+            //    case DisplayOrientation.Portrait:
+            //        // Handle logic for portrait orientation
+            //        edtTextToCode.WidthRequest = -1;
 
-                    Debug.WriteLine("Landscape");
-                    break;
-            }
+            //        Debug.WriteLine("Portrait");
+            //        break;
+            //    case DisplayOrientation.Landscape:
+            //        // Handle logic for landscape orientation
+            //        if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+            //        {
+            //            edtTextToCode.WidthRequest = 540;
+            //        }
+            //        if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
+            //        {
+            //            edtTextToCode.WidthRequest = 830;
+            //        }
+
+            //        Debug.WriteLine("Landscape");
+            //        break;
+            //}
         }
 #endif
         //// TitleView buttons clicked events
