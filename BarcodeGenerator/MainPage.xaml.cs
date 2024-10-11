@@ -29,11 +29,6 @@ namespace BarcodeGenerator
             try
             {
                 InitializeComponent();
-#if IOS
-                //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-                //// HorizontalOptions in editor is not working when going from portrait to landscape
-                DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
-#endif
             }
             catch (Exception ex)
             {
@@ -44,11 +39,11 @@ namespace BarcodeGenerator
                 return;
             }
 
-            //#if ANDROID31_0_OR_GREATER || IOS15_4_OR_GREATER
-            //            //// Make the the scan icon for Google Vision visible
-            //            imgbtnScanGV.IsVisible = true;
-            //#endif
-
+#if IOS
+            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+            //// HorizontalOptions in editor is not working when going from portrait to landscape
+            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+#endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 12);
@@ -142,8 +137,12 @@ namespace BarcodeGenerator
         private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
         {
             // Solution 1
+            edtTextToCode.IsVisible = false;
+            Task.Delay(100).Wait();
             edtTextToCode.HorizontalOptions = LayoutOptions.Center;
             edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
+            Task.Delay(300).Wait();
+            edtTextToCode.IsVisible = true;
 
             // Solution 2
             //DisplayOrientation orientation = e.DisplayInfo.Orientation;
@@ -153,8 +152,6 @@ namespace BarcodeGenerator
             //    case DisplayOrientation.Portrait:
             //        // Handle logic for portrait orientation
             //        edtTextToCode.WidthRequest = -1;
-
-            //        Debug.WriteLine("Portrait");
             //        break;
             //    case DisplayOrientation.Landscape:
             //        // Handle logic for landscape orientation
@@ -166,8 +163,6 @@ namespace BarcodeGenerator
             //        {
             //            edtTextToCode.WidthRequest = 830;
             //        }
-
-            //        Debug.WriteLine("Landscape");
             //        break;
             //}
         }
@@ -944,8 +939,6 @@ namespace BarcodeGenerator
                     //Thread.CurrentThread.Abort();  // Not allowed in iOS
                     imgbtnAbout.IsEnabled = false;
                     imgbtnScanNT.IsEnabled = false;
-                    //imgbtnScanGV.IsEnabled = false;
-                    //imgbtnScanZX.IsEnabled = false;
                     imgbtnSettings.IsEnabled = false;
                     btnGenerateCode.IsEnabled = false;
 
