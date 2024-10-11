@@ -38,7 +38,6 @@ namespace BarcodeGenerator
 #endif
                 return;
             }
-
 #if IOS
             //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
             //// HorizontalOptions in editor is not working when going from portrait to landscape
