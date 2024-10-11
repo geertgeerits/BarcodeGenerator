@@ -135,35 +135,12 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
         {
-            // Solution 1
             edtTextToCode.IsVisible = false;
             Task.Delay(100).Wait();
             edtTextToCode.HorizontalOptions = LayoutOptions.Center;
             edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
             Task.Delay(300).Wait();
             edtTextToCode.IsVisible = true;
-
-            // Solution 2
-            //DisplayOrientation orientation = e.DisplayInfo.Orientation;
-
-            //switch (orientation)
-            //{
-            //    case DisplayOrientation.Portrait:
-            //        // Handle logic for portrait orientation
-            //        edtTextToCode.WidthRequest = -1;
-            //        break;
-            //    case DisplayOrientation.Landscape:
-            //        // Handle logic for landscape orientation
-            //        if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-            //        {
-            //            edtTextToCode.WidthRequest = 540;
-            //        }
-            //        if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
-            //        {
-            //            edtTextToCode.WidthRequest = 830;
-            //        }
-            //        break;
-            //}
         }
 #endif
         //// TitleView buttons clicked events
