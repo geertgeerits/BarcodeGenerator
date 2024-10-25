@@ -16,11 +16,6 @@ namespace BarcodeGenerator
             try
             {
                 InitializeComponent();
-#if IOS
-                // Set the HasBackButton property to false and show the new back button
-                NavigationPage.SetHasBackButton(this, false);
-                btnBackButton.IsVisible = true;
-#endif
             }
             catch (Exception ex)
             {
@@ -30,6 +25,12 @@ namespace BarcodeGenerator
 #endif
                 return;
             }
+
+#if IOS
+            //// Set the HasBackButton property to false and show the new back button
+            NavigationPage.SetHasBackButton(this, false);
+            btnBackButton.IsVisible = true;
+#endif
 
             //// Get the saved quality settings
             nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 2);
