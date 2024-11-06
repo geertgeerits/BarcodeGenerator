@@ -2,8 +2,8 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
  * Version .....: 1.0.42
- * Date ........: 2024-10-25 (YYYY-MM-DD)
- * Language ....: Microsoft Visual Studio 2022: .NET 8.0 MAUI C# 12.0
+ * Date ........: 2024-11-06 (YYYY-MM-DD)
+ * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
  *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
@@ -12,7 +12,7 @@
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.4.0
  *                (NuGet Package: BarcodeScanner.Mobile.Maui version = "8.0.0 ; Google Vision ; https://github.com/JimmyPun610/BarcodeScanner.Mobile)
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 1.5.9 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
- *                NuGet Package: Sentry.Maui version 4.12.1 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
+ *                NuGet Package: Sentry.Maui version 4.13.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
@@ -890,7 +890,7 @@ namespace BarcodeGenerator
             await DisplayAlert(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
 
             //Application.Current.MainPage = new AppShell();
-            Application.Current!.MainPage = new NavigationPage(new MainPage());
+            Application.Current!.Windows[0].Page = new NavigationPage(new MainPage());
         }
 
         /// <summary>
@@ -903,7 +903,7 @@ namespace BarcodeGenerator
             // Show license
             if (Globals.bLicense == false)
             {
-                Globals.bLicense = await Application.Current!.MainPage!.DisplayAlert(CodeLang.LicenseTitle_Text, cLicense, CodeLang.Agree_Text, CodeLang.Disagree_Text);
+                Globals.bLicense = await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.LicenseTitle_Text, cLicense, CodeLang.Agree_Text, CodeLang.Disagree_Text);
 
                 if (Globals.bLicense)
                 {
@@ -1109,7 +1109,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                _ = Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                _ = Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }

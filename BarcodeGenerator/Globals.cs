@@ -221,7 +221,7 @@ namespace BarcodeGenerator
                 {
                     if (match.Success)
                     {
-                        bool bAnswer = await Application.Current!.MainPage!.DisplayAlert(CodeLang.OpenLinkTitle_Text, $"{match.Value}\n\n{CodeLang.OpenLinkText_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
+                        bool bAnswer = await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.OpenLinkTitle_Text, $"{match.Value}\n\n{CodeLang.OpenLinkText_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
 
                         // Open link website
                         if (bAnswer)
@@ -239,7 +239,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
 
@@ -278,7 +278,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -302,7 +302,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -327,7 +327,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
                 return false;
             }
@@ -367,7 +367,7 @@ namespace BarcodeGenerator
                 {
                     SentrySdk.CaptureException(ex);
 #if DEBUG
-                    await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
                 }
 

@@ -600,7 +600,7 @@ namespace BarcodeGenerator
                     {
                         SentrySdk.CaptureException(ex);
 #if DEBUG
-                        Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                        Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
                     }               
                 }

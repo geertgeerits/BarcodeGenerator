@@ -104,7 +104,7 @@ namespace BarcodeGenerator
                 }
                 catch (Exception ex)
                 {
-                    await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
                 }
             }
         }
@@ -129,7 +129,7 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                await Application.Current!.MainPage!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }
         }
     }
