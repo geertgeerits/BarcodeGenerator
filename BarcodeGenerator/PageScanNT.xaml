@@ -6,15 +6,17 @@
              x:Class="BarcodeGenerator.PageScanNT"
              Unloaded="ContentPage_Unloaded">
 
-    <NavigationPage.TitleView>
+    <NavigationPage.TitleView
+        BackgroundColor="#00bfff">
+        
         <Grid
-            RowDefinitions="Auto"
-            ColumnDefinitions="60, *"
-            BackgroundColor="DeepSkyBlue">
+            x:Name="grdTitleView"
+            RowDefinitions="Auto, Auto"
+            ColumnDefinitions="60, *">
 
             <Button
                 x:Name="btnBackButton"
-                Grid.Row="0"
+                Grid.Row="1"
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
@@ -33,7 +35,7 @@
             <Label
                 x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
-                Grid.Row="0"
+                Grid.Row="1"
                 Grid.Column="1"
                 Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
             </Label>

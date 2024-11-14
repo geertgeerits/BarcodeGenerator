@@ -8,15 +8,17 @@
              Loaded="OnPageLoaded"
              Appearing="OnPageAppearing">
 
-    <NavigationPage.TitleView>
+    <NavigationPage.TitleView
+        BackgroundColor="#00bfff">
+
         <Grid
-            RowDefinitions="Auto"
-            ColumnDefinitions="60, 140*, 42, 60"
-            BackgroundColor="#00bfff">
+            x:Name="grdTitleView"
+            RowDefinitions="Auto, Auto"
+            ColumnDefinitions="60, 140*, 42, 60">
 
             <ImageButton
                 x:Name="imgbtnAbout"
-                Grid.Row="0"
+                Grid.Row="1"
                 Grid.Column="0"
                 Source="info_32p.png"
                 HorizontalOptions="Start"
@@ -31,7 +33,7 @@
             <Label
                 x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
-                Grid.Row="0"
+                Grid.Row="1"
                 Grid.Column="1"
                 VerticalOptions="Center"
                 Text="{local:Translate BarcodeGenerator_Text}">
@@ -39,7 +41,7 @@
 
             <ImageButton
                 x:Name="imgbtnScanNT"
-                Grid.Row="0"
+                Grid.Row="1"
                 Grid.Column="2"
                 Source="scan_barcode_icon_128p.png"
                 HorizontalOptions="End"
@@ -51,7 +53,7 @@
 
             <ImageButton
                 x:Name="imgbtnSettings"
-                Grid.Row="0"
+                Grid.Row="1"
                 Grid.Column="3"
                 Source="settings_32p.png"
                 HorizontalOptions="Center"
