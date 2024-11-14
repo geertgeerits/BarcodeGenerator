@@ -13,24 +13,6 @@
             RowDefinitions="Auto"
             ColumnDefinitions="60, *">
 
-            <Button
-                x:Name="btnBackButton"
-                Grid.Row="0"
-                Grid.Column="0"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                HeightRequest="40"
-                WidthRequest="58"
-                BackgroundColor="Transparent"
-                BorderColor="Transparent"
-                TextColor="Black"
-                Text="&lt;  "
-                FontSize="34"
-                FontAutoScalingEnabled="False"
-                IsVisible="False"
-                Clicked="OnBackButtonPressed2">
-            </Button>
-
             <Label
                 x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"

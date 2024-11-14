@@ -21,13 +21,6 @@
                 return;
             }
 
-//#if ANDROID35_0_OR_GREATER
-//            //// Set the title view for Android 15 (API 351) and higher
-//            //// !!!BUG!!! in Android Emulator 15 (API 351) and higher
-//            //// The satus bar is visible in the NavigationPage.TitleView
-//            lblTitle.VerticalOptions = LayoutOptions.End;
-//            lblTitle.Margin = 0;
-//#endif
             //// Put text in the chosen language in the controls and variables
             SetLanguage();
 
@@ -573,7 +566,6 @@
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
-            //Application.Current!.Windows[0].Page = new NavigationPage(new MainPage());
         }
 
         /// <summary>
@@ -610,7 +602,6 @@
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
-            //Application.Current!.Windows[0].Page = new NavigationPage(new MainPage());
         }
     }
 }

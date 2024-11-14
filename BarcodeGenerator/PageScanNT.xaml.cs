@@ -26,22 +26,6 @@ namespace BarcodeGenerator
                 return;
             }
 
-//#if ANDROID35_0_OR_GREATER
-//            //// Set the title view for Android 15 (API 351) and higher
-//            //// !!!BUG!!! in Android Emulator 15 (API 351) and higher
-//            //// The satus bar is visible in the NavigationPage.TitleView
-//            grdTitleView.RowDefinitions = new RowDefinitionCollection
-//            {
-//                new RowDefinition { Height = new GridLength(12) },
-//                new RowDefinition { Height = GridLength.Auto }
-//            };
-//#endif
-#if IOS
-            //// Set the HasBackButton property to false and show the new back button
-            //NavigationPage.SetHasBackButton(this, false);
-            //btnBackButton.IsVisible = true;
-#endif
-
             //// Get the saved quality settings
             nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 2);
             nQualityCameraFront = Preferences.Default.Get("SettingQualityCameraFront", 1);
@@ -176,22 +160,6 @@ namespace BarcodeGenerator
 
             // Allow the default back button action
             return base.OnBackButtonPressed();
-        }
-
-        /// <summary>
-        /// On BackButton pressed event with new created back button (for iOS)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnBackButtonPressed2(object sender, EventArgs e)
-        {
-            // To do before leaving this page
-            BeforeLeavingPageScanNT();
-
-            Debug.WriteLine("Method: OnBackButtonPressed2");
-
-            // Allow the default back button action
-            await Navigation.PopAsync();
         }
 
         /// <summary>

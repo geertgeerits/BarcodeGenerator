@@ -23,13 +23,6 @@ namespace BarcodeGenerator
                 return;
             }
 
-//#if ANDROID35_0_OR_GREATER
-//            //// Set the title view for Android 15 (API 351) and higher
-//            //// !!!BUG!!! in Android Emulator 15 (API 351) and higher
-//            //// The satus bar is visible in the NavigationPage.TitleView
-//            lblTitle.VerticalOptions = LayoutOptions.End;
-//            lblTitle.Margin = 0;
-//#endif
             // Put text in the chosen language in the controls
             lblVersion.Text = $"{CodeLang.Version_Text} 1.0.42";
             lblCopyright.Text = $"{CodeLang.Copyright_Text} © 2022-2024 Geert Geerits";
