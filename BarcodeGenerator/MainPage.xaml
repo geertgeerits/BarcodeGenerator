@@ -6,19 +6,18 @@
              x:Class="BarcodeGenerator.MainPage"
              NavigationPage.HasBackButton="False"
              Loaded="OnPageLoaded"
-             Appearing="OnPageAppearing">
+             Appearing="OnPageAppearing"
+             Shell.BackgroundColor="#00bfff">
 
-    <NavigationPage.TitleView
-        BackgroundColor="#00bfff">
-
+    <Shell.TitleView>
         <Grid
             x:Name="grdTitleView"
-            RowDefinitions="Auto, Auto"
+            RowDefinitions="Auto"
             ColumnDefinitions="60, 140*, 42, 60">
 
             <ImageButton
                 x:Name="imgbtnAbout"
-                Grid.Row="1"
+                Grid.Row="0"
                 Grid.Column="0"
                 Source="info_32p.png"
                 HorizontalOptions="Start"
@@ -33,7 +32,7 @@
             <Label
                 x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
-                Grid.Row="1"
+                Grid.Row="0"
                 Grid.Column="1"
                 VerticalOptions="Center"
                 Text="{local:Translate BarcodeGenerator_Text}">
@@ -41,7 +40,7 @@
 
             <ImageButton
                 x:Name="imgbtnScanNT"
-                Grid.Row="1"
+                Grid.Row="0"
                 Grid.Column="2"
                 Source="scan_barcode_icon_128p.png"
                 HorizontalOptions="End"
@@ -53,7 +52,7 @@
 
             <ImageButton
                 x:Name="imgbtnSettings"
-                Grid.Row="1"
+                Grid.Row="0"
                 Grid.Column="3"
                 Source="settings_32p.png"
                 HorizontalOptions="Center"
@@ -65,7 +64,7 @@
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
         </Grid>
-    </NavigationPage.TitleView>
+    </Shell.TitleView>
 
     <ScrollView>
         <StackLayout>

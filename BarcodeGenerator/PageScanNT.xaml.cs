@@ -26,20 +26,20 @@ namespace BarcodeGenerator
                 return;
             }
 
-#if ANDROID35_0_OR_GREATER
-            //// Set the title view for Android 15 (API 351) and higher
-            //// !!!BUG!!! in Android Emulator 15 (API 351) and higher
-            //// The satus bar is visible in the NavigationPage.TitleView
-            grdTitleView.RowDefinitions = new RowDefinitionCollection
-            {
-                new RowDefinition { Height = new GridLength(12) },
-                new RowDefinition { Height = GridLength.Auto }
-            };
-#endif
+//#if ANDROID35_0_OR_GREATER
+//            //// Set the title view for Android 15 (API 351) and higher
+//            //// !!!BUG!!! in Android Emulator 15 (API 351) and higher
+//            //// The satus bar is visible in the NavigationPage.TitleView
+//            grdTitleView.RowDefinitions = new RowDefinitionCollection
+//            {
+//                new RowDefinition { Height = new GridLength(12) },
+//                new RowDefinition { Height = GridLength.Auto }
+//            };
+//#endif
 #if IOS
             //// Set the HasBackButton property to false and show the new back button
-            NavigationPage.SetHasBackButton(this, false);
-            btnBackButton.IsVisible = true;
+            //NavigationPage.SetHasBackButton(this, false);
+            //btnBackButton.IsVisible = true;
 #endif
 
             //// Get the saved quality settings

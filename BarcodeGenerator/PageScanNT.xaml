@@ -4,19 +4,18 @@
              xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:native="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
              x:Class="BarcodeGenerator.PageScanNT"
-             Unloaded="ContentPage_Unloaded">
+             Unloaded="ContentPage_Unloaded"
+             Shell.BackgroundColor="#00bfff">
 
-    <NavigationPage.TitleView
-        BackgroundColor="#00bfff">
-        
+    <Shell.TitleView>
         <Grid
             x:Name="grdTitleView"
-            RowDefinitions="Auto, Auto"
+            RowDefinitions="Auto"
             ColumnDefinitions="60, *">
 
             <Button
                 x:Name="btnBackButton"
-                Grid.Row="1"
+                Grid.Row="0"
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
@@ -35,12 +34,12 @@
             <Label
                 x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
-                Grid.Row="1"
+                Grid.Row="0"
                 Grid.Column="1"
                 Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
             </Label>
         </Grid>
-    </NavigationPage.TitleView>
+    </Shell.TitleView>
 
     <ScrollView>
         <StackLayout>

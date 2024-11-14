@@ -43,16 +43,16 @@ namespace BarcodeGenerator
             //// HorizontalOptions in editor is not working when going from portrait to landscape
             DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
 #endif
-#if ANDROID35_0_OR_GREATER
-            //// Set the title view for Android 15 (API 351) and higher
-            //// !!!BUG!!! in Android Emulator 15 (API 351) and higher
-            //// The satus bar is visible in the NavigationPage.TitleView
-            grdTitleView.RowDefinitions = new RowDefinitionCollection
-            {
-                new RowDefinition { Height = new GridLength(12) },
-                new RowDefinition { Height = GridLength.Auto }
-            };
-#endif
+//#if ANDROID35_0_OR_GREATER
+//            //// Set the title view for Android 15 (API 351) and higher
+//            //// !!!BUG!!! in Android Emulator 15 (API 351) and higher
+//            //// The satus bar is visible in the NavigationPage.TitleView
+//            grdTitleView.RowDefinitions = new RowDefinitionCollection
+//            {
+//                new RowDefinition { Height = new GridLength(12) },
+//                new RowDefinition { Height = GridLength.Auto }
+//            };
+//#endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 12);
@@ -899,8 +899,8 @@ namespace BarcodeGenerator
         {
             await DisplayAlert(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
 
-            //Application.Current.MainPage = new AppShell();
-            Application.Current!.Windows[0].Page = new NavigationPage(new MainPage());
+            Application.Current!.Windows[0].Page = new AppShell();
+            //Application.Current!.Windows[0].Page = new NavigationPage(new MainPage());
         }
 
         /// <summary>

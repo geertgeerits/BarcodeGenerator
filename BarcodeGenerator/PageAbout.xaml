@@ -4,15 +4,16 @@
              xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:link="clr-namespace:BarcodeGenerator"
              x:Class="BarcodeGenerator.PageAbout"
-             x:DataType="link:PageAbout">
+             x:DataType="link:PageAbout"
+             Shell.BackgroundColor="#00bfff">
 
-    <NavigationPage.TitleView>
+    <Shell.TitleView>
         <Label
             x:Name="lblTitle"
             Style="{StaticResource labelStyleTitleView}"
             Text="{x:Static resx:CodeLang.Info_Text}">
         </Label>
-    </NavigationPage.TitleView>
+    </Shell.TitleView>
        
     <ScrollView>
         <StackLayout>
