@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-//using BarcodeScanner.Mobile;
 using ZXing.Net.Maui.Controls;
 using Microsoft.Maui.LifecycleEvents;
 using BarcodeScanning;
@@ -26,12 +25,6 @@ namespace BarcodeGenerator
                     options.Dsn = "https://988f47dd765ca32afe832320e77a3a7d@o4507011442933760.ingest.us.sentry.io/4507011456565248";
                 })
 
-                //.ConfigureMauiHandlers(handlers =>
-                //{
-                //    // Add the handlers
-                //    handlers.AddBarcodeScannerHandler();
-                //})
-
                 .ConfigureLifecycleEvents(events =>
                 {
 #if ANDROID
@@ -53,7 +46,7 @@ namespace BarcodeGenerator
                     {
                         //System.Diagnostics.Debug.WriteLine($"Lifecycle event: {eventName}{(type == null ? string.Empty : $" ({type})")}");
 
-                        // Cancel speech if a cancellation token exists & hasn't been already requested.
+                        // Cancel speech if a cancellation token exists & hasn't been already requested
                         if (Globals.bTextToSpeechIsBusy)
                         {
                             if (Globals.cts?.IsCancellationRequested ?? true)
