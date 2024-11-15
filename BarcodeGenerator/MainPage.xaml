@@ -6,8 +6,7 @@
              x:Class="BarcodeGenerator.MainPage"
              NavigationPage.HasBackButton="False"
              Loaded="OnPageLoaded"
-             Appearing="OnPageAppearing"
-             Shell.BackgroundColor="#00bfff">
+             Appearing="OnPageAppearing">
 
     <Shell.TitleView>
         <Grid
