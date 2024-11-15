@@ -4,40 +4,15 @@
              xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:native="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
              x:Class="BarcodeGenerator.PageScanNT"
-             Unloaded="ContentPage_Unloaded"
-             Shell.BackgroundColor="#00bfff">
+             Unloaded="ContentPage_Unloaded">
 
-    <NavigationPage.TitleView>
-        <Grid
-            x:Name="grdTitleView"
-            RowDefinitions="Auto"
-            ColumnDefinitions="Auto, Auto">
-
-            <Button
-                x:Name="btnBackButton"
-                Grid.Column="0"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                HeightRequest="40"
-                WidthRequest="58"
-                BackgroundColor="Transparent"
-                BorderColor="Transparent"
-                TextColor="Black"
-                Text="&lt;  "
-                FontSize="34"
-                FontAutoScalingEnabled="False"
-                IsVisible="False"
-                Clicked="OnBackButtonPressed2">
-            </Button>
-
-            <Label
-                x:Name="lblTitle"
-                Style="{StaticResource labelStyleTitleView}"
-                Grid.Column="1"
-                Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
-            </Label>
-        </Grid>
-    </NavigationPage.TitleView>
+    <Shell.TitleView>
+        <Label
+            x:Name="lblTitle"
+            Style="{StaticResource labelStyleTitleView}"
+            Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
+        </Label>
+    </Shell.TitleView>
 
     <ScrollView>
         <StackLayout>
@@ -65,8 +40,8 @@
                     </Picker>
                 </Border>
 
-                <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320.-->
-                <Frame
+                <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320: use Frame.-->
+                <Border
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -176,7 +151,7 @@
                             </ImageButton>
                         </Grid>
                     </AbsoluteLayout>
-                </Frame>
+                </Border>
 
                 <HorizontalStackLayout
                     Grid.Row="4"

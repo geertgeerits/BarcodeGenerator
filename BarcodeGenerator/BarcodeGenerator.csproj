@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>net9.0-ios;net9.0-android</TargetFrameworks>
+		<!--<TargetFrameworks>net9.0-ios;net9.0-android34.0</TargetFrameworks>-->
 		<!--<TargetFrameworks>net9.0-ios;net9.0-maccatalyst;net9.0-android</TargetFrameworks>-->
 		<!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>-->
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
@@ -178,5 +179,10 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
 	  <MtouchLink>None</MtouchLink>
 	</PropertyGroup>
+
+	<!--ADB0020: Mono.AndroidTools.IncompatibleCpuAbiException: The package does not support the CPU architecture of this device.-->
+	<!--<PropertyGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
+		<AndroidSupportedAbis>armeabi-v7a;arm64-v8a;x86;x86_64</AndroidSupportedAbis>
+	</PropertyGroup>-->
 
 </Project>

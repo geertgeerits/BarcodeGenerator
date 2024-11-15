@@ -565,8 +565,7 @@
             Task.Delay(400).Wait();
 
             // Restart the application
-            //Application.Current!.Windows[0].Page = new AppShell();
-            Application.Current!.Windows[0].Page = new NavigationPage(new MainPage());
+            Application.Current!.Windows[0].Page = new AppShell();
         }
 
         /// <summary>
@@ -602,8 +601,7 @@
             Task.Delay(400).Wait();
 
             // Restart the application
-            //Application.Current!.Windows[0].Page = new AppShell();
-            Application.Current!.Windows[0].Page = new NavigationPage(new MainPage());
+            Application.Current!.Windows[0].Page = new AppShell();
         }
     }
 }

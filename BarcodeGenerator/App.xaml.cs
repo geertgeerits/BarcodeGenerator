@@ -26,7 +26,7 @@
                 MaximumWidth = 900
             };
 
-            return window;
+            return new Window(new AppShell());
         }
     }
 }

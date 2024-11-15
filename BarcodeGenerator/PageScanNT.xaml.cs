@@ -25,11 +25,6 @@ namespace BarcodeGenerator
 #endif
                 return;
             }
-#if IOS
-            //// Set the HasBackButton property to false and show the new back button
-            NavigationPage.SetHasBackButton(this, false);
-            btnBackButton.IsVisible = true;
-#endif
 
             //// Get the saved quality settings
             nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 2);
@@ -168,22 +163,6 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// On BackButton pressed event with new created back button (for iOS)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnBackButtonPressed2(object sender, EventArgs e)
-        {
-            // To do before leaving this page
-            BeforeLeavingPageScanNT();
-
-            Debug.WriteLine("Method: OnBackButtonPressed2");
-
-            // Allow the default back button action
-            await Navigation.PopAsync();
-        }
-
-        /// <summary>
         /// Called by the Appearing event from the PageScanNT.xaml
         /// </summary>
         protected override async void OnAppearing()
@@ -241,7 +220,7 @@ namespace BarcodeGenerator
             imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
 
             // Give it some time to save the settings
-            Task.Delay(400).Wait();
+            Task.Delay(100).Wait();
 
             // This method has been called
             bBeforeLeavingPage = true;
@@ -644,7 +623,7 @@ namespace BarcodeGenerator
    2. Method: OnDisappearing
    3. Method: ContentPage_Unloaded
 
-   iOs - iPhone 7 with original back button
+   iOs - iPhone 7 with original back button - Solved when using Shell instead of NavigationPage
    method 'protected override bool OnBackButtonPressed()' is not called !!!
    1. Method: ContentPage_Unloaded
    2. Method: OnDisappearing

@@ -889,8 +889,7 @@ namespace BarcodeGenerator
         {
             await DisplayAlert(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
 
-            //Application.Current!.Windows[0].Page = new AppShell();
-            Application.Current!.Windows[0].Page = new NavigationPage(new MainPage());
+            Application.Current!.Windows[0].Page = new AppShell();
         }
 
         /// <summary>
