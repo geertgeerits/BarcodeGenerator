@@ -7,13 +7,13 @@
              x:DataType="link:PageAbout"
              Shell.BackgroundColor="#00bfff">
 
-    <Shell.TitleView>
+    <NavigationPage.TitleView>
         <Label
             x:Name="lblTitle"
             Style="{StaticResource labelStyleTitleView}"
             Text="{x:Static resx:CodeLang.Info_Text}">
         </Label>
-    </Shell.TitleView>
+    </NavigationPage.TitleView>
        
     <ScrollView>
         <StackLayout>

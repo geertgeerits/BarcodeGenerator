@@ -5,13 +5,13 @@
              x:Class="BarcodeGenerator.PageSettings"
              Shell.BackgroundColor="#00bfff">
 
-    <Shell.TitleView>
+    <NavigationPage.TitleView>
         <Label
             x:Name="lblTitle"
             Style="{StaticResource labelStyleTitleView}"
             Text="{local:Translate Settings_Text}">
         </Label>
-    </Shell.TitleView>
+    </NavigationPage.TitleView>
 
     <Grid
         RowDefinitions="Auto, *, Auto"

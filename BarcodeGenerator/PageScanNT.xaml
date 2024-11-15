@@ -7,15 +7,14 @@
              Unloaded="ContentPage_Unloaded"
              Shell.BackgroundColor="#00bfff">
 
-    <Shell.TitleView>
+    <NavigationPage.TitleView>
         <Grid
             x:Name="grdTitleView"
             RowDefinitions="Auto"
-            ColumnDefinitions="60, *">
+            ColumnDefinitions="Auto, Auto">
 
             <Button
                 x:Name="btnBackButton"
-                Grid.Row="0"
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
@@ -34,12 +33,11 @@
             <Label
                 x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
-                Grid.Row="0"
                 Grid.Column="1"
                 Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
             </Label>
         </Grid>
-    </Shell.TitleView>
+    </NavigationPage.TitleView>
 
     <ScrollView>
         <StackLayout>

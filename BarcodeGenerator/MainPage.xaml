@@ -9,7 +9,7 @@
              Appearing="OnPageAppearing"
              Shell.BackgroundColor="#00bfff">
 
-    <Shell.TitleView>
+    <NavigationPage.TitleView>
         <Grid
             x:Name="grdTitleView"
             RowDefinitions="Auto"
@@ -17,7 +17,6 @@
 
             <ImageButton
                 x:Name="imgbtnAbout"
-                Grid.Row="0"
                 Grid.Column="0"
                 Source="info_32p.png"
                 HorizontalOptions="Start"
@@ -32,15 +31,12 @@
             <Label
                 x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
-                Grid.Row="0"
                 Grid.Column="1"
-                VerticalOptions="Center"
                 Text="{local:Translate BarcodeGenerator_Text}">
             </Label>
 
             <ImageButton
                 x:Name="imgbtnScanNT"
-                Grid.Row="0"
                 Grid.Column="2"
                 Source="scan_barcode_icon_128p.png"
                 HorizontalOptions="End"
@@ -52,7 +48,6 @@
 
             <ImageButton
                 x:Name="imgbtnSettings"
-                Grid.Row="0"
                 Grid.Column="3"
                 Source="settings_32p.png"
                 HorizontalOptions="Center"
@@ -64,7 +59,7 @@
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
         </Grid>
-    </Shell.TitleView>
+    </NavigationPage.TitleView>
 
     <ScrollView>
         <StackLayout>
