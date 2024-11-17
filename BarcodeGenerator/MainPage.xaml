@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:BarcodeGenerator"
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.MainPage"
-             NavigationPage.HasBackButton="False"
              Loaded="OnPageLoaded"
              Appearing="OnPageAppearing">
 
