@@ -47,7 +47,7 @@
 	<key>CFBundleVersion</key>
 	<string>42</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.barcodegenerator</string>
+	<string>com.geertgeerits.barcodegenerator</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	
