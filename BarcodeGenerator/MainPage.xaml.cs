@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
  * Version .....: 1.0.42
- * Date ........: 2024-11-17 (YYYY-MM-DD)
+ * Date ........: 2024-11-19 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -39,9 +39,9 @@ namespace BarcodeGenerator
                 return;
             }
 #if IOS
-            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+? - Solved in .NET 9 Maui 9.0.10
             //// HorizontalOptions in editor is not working when going from portrait to landscape
-            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+            //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
 #endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
@@ -126,23 +126,23 @@ namespace BarcodeGenerator
             //SentrySdk.CaptureMessage("Hello Sentry");
             //throw new Exception("This is a test exception");
         }
-#if IOS
-        /// <summary>
-        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-        /// HorizontalOptions in editor is not working when going from portrait to landscape
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
-        {
-            edtTextToCode.IsVisible = false;
-            Task.Delay(100).Wait();
-            edtTextToCode.HorizontalOptions = LayoutOptions.Center;
-            edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
-            Task.Delay(300).Wait();
-            edtTextToCode.IsVisible = true;
-        }
-#endif
+//#if IOS
+//        /// <summary>
+//        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+//        /// HorizontalOptions in editor is not working when going from portrait to landscape
+//        /// </summary>
+//        /// <param name="sender"></param>
+//        /// <param name="e"></param>
+//        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+//        {
+//            edtTextToCode.IsVisible = false;
+//            Task.Delay(100).Wait();
+//            edtTextToCode.HorizontalOptions = LayoutOptions.Center;
+//            edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
+//            Task.Delay(300).Wait();
+//            edtTextToCode.IsVisible = true;
+//        }
+//#endif
         //// TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
@@ -695,7 +695,7 @@ namespace BarcodeGenerator
 
                 if (bResult == false)
                 {
-                    DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.AllowedChar_Text}\n{cAllowedCharacters}\n\n{CodeLang.AllowedCharNot_Text} {cChar}", CodeLang.ButtonClose_Text);
+                    _ = DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.AllowedChar_Text}\n{cAllowedCharacters}\n\n{CodeLang.AllowedCharNot_Text} {cChar}", CodeLang.ButtonClose_Text);
 
                     _ = edtTextToCode.Focus();
                     return false;
@@ -721,7 +721,7 @@ namespace BarcodeGenerator
 
                 if ((int)cChar < nMinAsciiValue || (int)cChar > nMaxAsciiValue)
                 {
-                    DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.TextContainsChar_Text} {cChar}", CodeLang.ButtonClose_Text);
+                    _ = DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.TextContainsChar_Text} {cChar}", CodeLang.ButtonClose_Text);
 
                     _ = edtTextToCode.Focus();
                     return false;
@@ -765,7 +765,7 @@ namespace BarcodeGenerator
 
                 if (cStartEndGuards.Contains(cChar) && nPos > 0 && nPos < cTextToCode.Length - 1)
                 {
-                    DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.GuardInvalidStartEnd_Text} {cChar}", CodeLang.ButtonClose_Text);
+                    _ = DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.GuardInvalidStartEnd_Text} {cChar}", CodeLang.ButtonClose_Text);
 
                     _ = edtTextToCode.Focus();
                     return false;
@@ -775,14 +775,14 @@ namespace BarcodeGenerator
             // Control of missing start or end guard
             if (cStartEndGuards.Contains(cTextToCode[..1]) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
             {
-                DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingEnd_Text, CodeLang.ButtonClose_Text);
+                _ = DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingEnd_Text, CodeLang.ButtonClose_Text);
 
                 _ = edtTextToCode.Focus();
                 return false;
             }
             else if (cStartEndGuards.Contains(cTextToCode[..1]) == false && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)))
             {
-                DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingStart_Text, CodeLang.ButtonClose_Text);
+                _ = DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingStart_Text, CodeLang.ButtonClose_Text);
 
                 _ = edtTextToCode.Focus();
                 return false;
@@ -827,18 +827,18 @@ namespace BarcodeGenerator
                 {
                     nPartialSum = (int)char.GetNumericValue(cTextToCode[nPos]) * 3;
                 }
-                //DisplayAlert("nPartialSum", Convert.ToString(nPartialSum), "OK");
+                Debug.WriteLine($"{"nPartialSum: "} {nPartialSum}");  // For testing
 
                 nChecksum += nPartialSum;
             }
-            //DisplayAlert("nChecksum", Convert.ToString(nChecksum), "OK");
+            Debug.WriteLine($"{"nChecksum: "} {nChecksum}");  // For testing
 
             int nRemainder = nChecksum % 10;
             if (nRemainder != 0)
             {
                 nCheckDigit = 10 - nRemainder;
             }
-            //DisplayAlert("nCheckDigit", Convert.ToString(nCheckDigit), "OK");
+            Debug.WriteLine($"{"nCheckDigit: "} {nCheckDigit}");  // For testing
 
             return Convert.ToString(nCheckDigit);
         }
@@ -864,7 +864,7 @@ namespace BarcodeGenerator
         /// <param name="cMessage"></param>
         private void DisplayErrorMessage(string cMessage)
         {
-            DisplayAlert(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
+            _ = DisplayAlert(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
 
             _ = edtTextToCode.Focus();
         }
@@ -876,7 +876,7 @@ namespace BarcodeGenerator
         /// <param name="cMaxLength"></param>
         private void DisplayErrorMessageLength(string cMinLength, string cMaxLength)
         {
-            DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.CodeLengthPart1_Text} {cMinLength} {CodeLang.CodeLengthPart2_Text} {cMaxLength} {CodeLang.CodeLengthPart3_Text}", CodeLang.ButtonClose_Text);
+            _ = DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.CodeLengthPart1_Text} {cMinLength} {CodeLang.CodeLengthPart2_Text} {cMaxLength} {CodeLang.CodeLengthPart3_Text}", CodeLang.ButtonClose_Text);
 
             _ = edtTextToCode.Focus();
         }

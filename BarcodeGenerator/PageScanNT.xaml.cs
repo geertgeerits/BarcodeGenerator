@@ -382,7 +382,7 @@ namespace BarcodeGenerator
                     break;
             }
 
-            //await DisplayAlert("nSelectedIndex", Convert.ToString(nSelectedIndex), "OK");  // For testing
+            Debug.WriteLine("nSelectedIndex: " + nSelectedIndex);  // For testing
         }
 
         /// <summary>
