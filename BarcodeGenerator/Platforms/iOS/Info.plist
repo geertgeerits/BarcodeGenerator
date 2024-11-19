@@ -47,6 +47,9 @@
 	<key>CFBundleVersion</key>
 	<string>42</string>
 	<key>CFBundleIdentifier</key>
-	<string></string>
+	<string>com.companyname.barcodegenerator</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	
 </dict>
 </plist>
