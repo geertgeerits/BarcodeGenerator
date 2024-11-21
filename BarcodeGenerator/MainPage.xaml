@@ -147,27 +147,34 @@
                     </ImageButton>
                 </HorizontalStackLayout>
 
+                <!--// https://stackoverflow.com/questions/72839872/expandable-editor-in-scrollview-cutting-text-in-maui
+                // 'AutoSize="TextChanges"' must be set in the Editor and do not use 'HeightRequest' in the Editor-->
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Fill"
-                    VerticalOptions="Start">
+                    VerticalOptions="Fill"
+                    Margin="{OnIdiom 5, Phone='5,0,5,0', Tablet=0, Desktop=0}">
+                
+                    <Grid
+                        RowDefinitions="100*"
+                        ColumnDefinitions="100*">
 
-                    <ScrollView 
-                        Orientation="Vertical"
-                        VerticalScrollBarVisibility="Default">
-
-                        <Editor
-                            x:Name="edtTextToCode"
+                        <ScrollView
                             HorizontalOptions="Fill"
-                            HeightRequest="180"
-                            MinimumWidthRequest="340"
-                            VerticalTextAlignment="Start"
-                            Text="">
-                        </Editor>
-                    </ScrollView>
+                            VerticalScrollBarVisibility="Default">
+
+                            <Editor
+                                x:Name="edtTextToCode"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                AutoSize="TextChanges"
+                                Text="">
+                            </Editor>
+                        </ScrollView>
+                    </Grid>
                 </Border>
 
                 <Button
