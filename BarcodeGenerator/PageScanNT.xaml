@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:native="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
-             x:Class="BarcodeGenerator.PageScanNT"
-             Unloaded="ContentPage_Unloaded">
+             x:Class="BarcodeGenerator.PageScanNT">
 
     <Shell.TitleView>
         <Label

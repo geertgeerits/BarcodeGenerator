@@ -229,23 +229,17 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Unloaded event to disconnect the barcode handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ContentPage_Unloaded(object sender, EventArgs e)
-        {
-            barcodeReader.Handler?.DisconnectHandler();
-            Debug.WriteLine("Method: ContentPage_Unloaded");
-        }
-
-        /// <summary>
         /// CameraView OnDetected event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
         {
+            if (e.BarcodeResults.Count == 0)
+            {
+                return;
+            }
+
             imgbtnCopyToClipboard.IsEnabled = false;
             btnShare.IsEnabled = false;
             imgbtnTextToSpeech.IsEnabled = false;
@@ -257,7 +251,7 @@ namespace BarcodeGenerator
 
             try
             {
-                _drawable.barcodeResults = e.BarcodeResults;
+                _drawable.barcodeResults = [.. e.BarcodeResults];
                 Graphics.Invalidate();
 
                 foreach (var barcode in e.BarcodeResults)
@@ -555,8 +549,7 @@ namespace BarcodeGenerator
         /// </summary>
         private sealed class BarcodeDrawable : IDrawable
         {
-            //public HashSet<BarcodeResult>? barcodeResults;    // Till version 1.3.1
-            public BarcodeResult[]? barcodeResults;         // From version 1.4.0
+            public BarcodeResult[]? barcodeResults;
 
             public void Draw(ICanvas canvas, RectF dirtyRect)
             {
