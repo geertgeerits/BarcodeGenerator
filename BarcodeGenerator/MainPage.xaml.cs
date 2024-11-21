@@ -16,6 +16,10 @@
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
+#if IOS
+using UIKit;
+using Microsoft.Maui.Platform;
+#endif
 
 namespace BarcodeGenerator
 {
@@ -42,6 +46,9 @@ namespace BarcodeGenerator
             //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+? - Solved in .NET 9 Maui 9.0.10
             //// HorizontalOptions in editor is not working when going from portrait to landscape
             //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+
+            // Disable the default behavior of automatically scrolling the view when the keyboard appears
+            //this.DisconnectKeyboardAutoScroll();
 #endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
@@ -126,23 +133,34 @@ namespace BarcodeGenerator
             //SentrySdk.CaptureMessage("Hello Sentry");
             //throw new Exception("This is a test exception");
         }
-//#if IOS
-//        /// <summary>
-//        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-//        /// HorizontalOptions in editor is not working when going from portrait to landscape
-//        /// </summary>
-//        /// <param name="sender"></param>
-//        /// <param name="e"></param>
-//        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
-//        {
-//            edtTextToCode.IsVisible = false;
-//            Task.Delay(100).Wait();
-//            edtTextToCode.HorizontalOptions = LayoutOptions.Center;
-//            edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
-//            Task.Delay(300).Wait();
-//            edtTextToCode.IsVisible = true;
-//        }
-//#endif
+#if IOS
+        ///// <summary>
+        ///// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+        ///// HorizontalOptions in editor is not working when going from portrait to landscape
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+        //{
+        //    edtTextToCode.IsVisible = false;
+        //    Task.Delay(100).Wait();
+        //    edtTextToCode.HorizontalOptions = LayoutOptions.Center;
+        //    edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
+        //    Task.Delay(300).Wait();
+        //    edtTextToCode.IsVisible = true;
+        //}
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void DisconnectKeyboardAutoScroll()
+        {
+            if (this.Handler?.PlatformView is UIView view)
+            {
+                KeyboardAutoManagerScroll.Disconnect();
+            }
+        }
+#endif
         //// TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
