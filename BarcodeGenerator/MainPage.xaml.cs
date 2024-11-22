@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
  * Version .....: 1.0.42
- * Date ........: 2024-11-21 (YYYY-MM-DD)
+ * Date ........: 2024-11-22 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -16,10 +16,10 @@
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
-#if IOS
-using UIKit;
-using Microsoft.Maui.Platform;
-#endif
+//#if IOS
+//using UIKit;
+//using Microsoft.Maui.Platform;
+//#endif
 
 namespace BarcodeGenerator
 {
@@ -42,14 +42,14 @@ namespace BarcodeGenerator
 #endif
                 return;
             }
-#if IOS
-            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+? - Solved in .NET 9 Maui 9.0.10
-            //// HorizontalOptions in editor is not working when going from portrait to landscape
-            //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+//#if IOS
+//            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+? - Solved in .NET 9 Maui 9.0.10
+//            //// HorizontalOptions in editor is not working when going from portrait to landscape
+//            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
 
-            // Disable the default behavior of automatically scrolling the view when the keyboard appears
-            //this.DisconnectKeyboardAutoScroll();
-#endif
+//            // Disable the default behavior of automatically scrolling the view when the keyboard appears
+//            DisconnectKeyboardAutoScroll();
+//#endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 12);
@@ -133,34 +133,34 @@ namespace BarcodeGenerator
             //SentrySdk.CaptureMessage("Hello Sentry");
             //throw new Exception("This is a test exception");
         }
-#if IOS
-        ///// <summary>
-        ///// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-        ///// HorizontalOptions in editor is not working when going from portrait to landscape
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
-        //{
-        //    edtTextToCode.IsVisible = false;
-        //    Task.Delay(100).Wait();
-        //    edtTextToCode.HorizontalOptions = LayoutOptions.Center;
-        //    edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
-        //    Task.Delay(300).Wait();
-        //    edtTextToCode.IsVisible = true;
-        //}
+//#if IOS
+//        /// <summary>
+//        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+//        /// HorizontalOptions in editor is not working when going from portrait to landscape
+//        /// </summary>
+//        /// <param name="sender"></param>
+//        /// <param name="e"></param>
+//        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+//        {
+//            edtTextToCode.IsVisible = false;
+//            Task.Delay(100).Wait();
+//            edtTextToCode.HorizontalOptions = LayoutOptions.Center;
+//            edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
+//            Task.Delay(300).Wait();
+//            edtTextToCode.IsVisible = true;
+//        }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private void DisconnectKeyboardAutoScroll()
-        {
-            if (this.Handler?.PlatformView is UIView view)
-            {
-                KeyboardAutoManagerScroll.Disconnect();
-            }
-        }
-#endif
+//        /// <summary>
+//        /// Disable the default behavior of automatically scrolling the view when the keyboard appears
+//        /// </summary>
+//        private void DisconnectKeyboardAutoScroll()
+//        {
+//            if (Handler?.PlatformView is UIView)
+//            {
+//                KeyboardAutoManagerScroll.Disconnect();
+//            }
+//        }
+//#endif
         //// TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
