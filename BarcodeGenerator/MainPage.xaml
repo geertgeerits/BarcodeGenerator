@@ -162,15 +162,11 @@
                         RowDefinitions="100*"
                         ColumnDefinitions="100*">
 
-                        <ScrollView
-                            HorizontalOptions="Fill"
-                            VerticalScrollBarVisibility="Default">
-
+                        <ScrollView>
                             <Editor
                                 x:Name="edtTextToCode"
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="FillAndExpand"
-                                AutoSize="TextChanges"
                                 Text="">
                             </Editor>
                         </ScrollView>
