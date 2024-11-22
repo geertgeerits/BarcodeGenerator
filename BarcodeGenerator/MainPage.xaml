@@ -147,8 +147,7 @@
                     </ImageButton>
                 </HorizontalStackLayout>
 
-                <!--// https://stackoverflow.com/questions/72839872/expandable-editor-in-scrollview-cutting-text-in-maui
-                // 'AutoSize="TextChanges"' must be set in the Editor and do not use 'HeightRequest' in the Editor-->
+                <!--// https://stackoverflow.com/questions/72839872/expandable-editor-in-scrollview-cutting-text-in-maui-->
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="2"
