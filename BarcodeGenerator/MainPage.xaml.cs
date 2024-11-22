@@ -42,14 +42,17 @@ namespace BarcodeGenerator
 #endif
                 return;
             }
-//#if IOS
-//            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+? - Solved in .NET 9 Maui 9.0.10
-//            //// HorizontalOptions in editor is not working when going from portrait to landscape
-//            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+#if IOS
+            //// AutoSize has to be disabled for iOS
+            //edtTextToCode.AutoSize = EditorAutoSizeOption.Disabled;
 
-//            // Disable the default behavior of automatically scrolling the view when the keyboard appears
-//            DisconnectKeyboardAutoScroll();
-//#endif
+            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+? - Solved in .NET 9 Maui 9.0.10
+            //// HorizontalOptions in editor is not working when going from portrait to landscape
+            //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+
+            // Disable the default behavior of automatically scrolling the view when the keyboard appears
+            //DisconnectKeyboardAutoScroll();
+#endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 12);
