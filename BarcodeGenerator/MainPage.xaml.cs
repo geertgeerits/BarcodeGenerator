@@ -2,10 +2,11 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
  * Version .....: 1.0.42
- * Date ........: 2024-11-22 (YYYY-MM-DD)
+ * Date ........: 2024-11-23 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
- * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS.
- * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
+ * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
+ * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS)
+ *                zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
  *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
  *                Google ML Kit: https://developers.google.com/ml-kit
  * Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.4.0 ; https://github.com/redth/ZXing.Net.Maui
@@ -44,13 +45,13 @@ namespace BarcodeGenerator
             }
 #if IOS
             //// AutoSize has to be disabled for iOS
-            //edtTextToCode.AutoSize = EditorAutoSizeOption.Disabled;
+            edtTextToCode.AutoSize = EditorAutoSizeOption.Disabled;
 
-            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+? - Solved in .NET 9 Maui 9.0.10
-            //// HorizontalOptions in editor is not working when going from portrait to landscape
+            //// Workaround for the !!!BUG!!! in iOS
+            //// VerticalOptions in editor is not working when going from portrait to landscape
             //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
 
-            // Disable the default behavior of automatically scrolling the view when the keyboard appears
+            //// Disable the default behavior of automatically scrolling the view when the keyboard appears
             //DisconnectKeyboardAutoScroll();
 #endif
             //// Get the saved settings
@@ -139,16 +140,21 @@ namespace BarcodeGenerator
 //#if IOS
 //        /// <summary>
 //        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-//        /// HorizontalOptions in editor is not working when going from portrait to landscape
+//        /// VerticalOptions in editor is not working when going from portrait to landscape
 //        /// </summary>
 //        /// <param name="sender"></param>
 //        /// <param name="e"></param>
-//        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+//        private async void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
 //        {
+//            if (edtTextToCode.IsSoftInputShowing())
+//            {
+//                await edtTextToCode.HideSoftInputAsync(System.Threading.CancellationToken.None);
+//            }
+
 //            edtTextToCode.IsVisible = false;
 //            Task.Delay(100).Wait();
-//            edtTextToCode.HorizontalOptions = LayoutOptions.Center;
-//            edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
+//            //edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
+//            edtTextToCode.VerticalOptions = LayoutOptions.Fill;
 //            Task.Delay(300).Wait();
 //            edtTextToCode.IsVisible = true;
 //        }

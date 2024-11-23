@@ -64,7 +64,7 @@
             <Grid
                 Style="{StaticResource gridStyleGenerator}"
                 RowDefinitions="Auto, Auto, 180, Auto, 250, Auto"
-                HorizontalOptions="CenterAndExpand">
+                HorizontalOptions="Center">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -161,11 +161,14 @@
                         RowDefinitions="100*"
                         ColumnDefinitions="100*">
 
-                        <ScrollView>
+                        <ScrollView
+                            VerticalScrollBarVisibility="Always">
+                            
                             <Editor
                                 x:Name="edtTextToCode"
-                                HorizontalOptions="FillAndExpand"
-                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Fill"
+                                AutoSize="TextChanges"
                                 Text="">
                             </Editor>
                         </ScrollView>
