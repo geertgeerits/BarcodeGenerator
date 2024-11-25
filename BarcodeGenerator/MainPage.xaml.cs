@@ -2,10 +2,10 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
  * Version .....: 1.0.42
- * Date ........: 2024-11-24 (YYYY-MM-DD)
+ * Date ........: 2024-11-25 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
- * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS)
+ * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
  *                zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
  *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
  *                Google ML Kit: https://developers.google.com/ml-kit
