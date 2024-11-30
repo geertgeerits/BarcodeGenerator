@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2024
  * Version .....: 1.0.42
- * Date ........: 2024-11-29 (YYYY-MM-DD)
+ * Date ........: 2024-11-30 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -994,6 +994,20 @@ namespace BarcodeGenerator
 
             // Set the generator format in the picker
             pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
+        }
+
+        /// <summary>
+        ///  On page disappearing event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnPageDisappearing(object sender, EventArgs e)
+        {
+            // Hide the soft keyboard when the page disappears
+            if (edtTextToCode.IsSoftInputShowing())
+            {
+                await edtTextToCode.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            }
         }
 
         /// <summary>
