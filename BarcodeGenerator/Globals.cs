@@ -269,7 +269,6 @@ namespace BarcodeGenerator
                 // !!!BUG!!! in iOS. The camera is disabled after opening the website link
                 // using the BrowserLaunchMode.SystemPreferred or the new PageWebsite(cUrl)
                 await Browser.Default.OpenAsync(uri, BrowserLaunchMode.External);
-
 #else
                 await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
 #endif

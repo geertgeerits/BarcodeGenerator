@@ -157,7 +157,7 @@
 	<PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
 	  <ProvisioningType>automatic</ProvisioningType>
 	  <CodesignKey>Apple Development: Created via API (KL96X68Q72)</CodesignKey>
-	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
+	  <CodesignProvision>VS: com.geertgeerits.barcodegenerator Development</CodesignProvision>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
