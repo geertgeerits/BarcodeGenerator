@@ -23,6 +23,7 @@ namespace BarcodeGenerator
                 .UseSentry(options =>
                 {
                     options.Dsn = "https://988f47dd765ca32afe832320e77a3a7d@o4507011442933760.ingest.us.sentry.io/4507011456565248";
+                    //options.ShutdownTimeout = System.TimeSpan.FromSeconds(5);
                 })
 
                 .ConfigureLifecycleEvents(events =>
