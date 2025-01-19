@@ -251,7 +251,7 @@ namespace BarcodeGenerator
 
             try
             {
-                _drawable.barcodeResults = [.. e.BarcodeResults];
+                _drawable.barcodeResults = e.BarcodeResults;
                 Graphics.Invalidate();
 
                 foreach (var barcode in e.BarcodeResults)
@@ -549,11 +549,11 @@ namespace BarcodeGenerator
         /// </summary>
         private sealed class BarcodeDrawable : IDrawable
         {
-            public BarcodeResult[]? barcodeResults;
+            public IReadOnlySet<BarcodeResult>? barcodeResults;
 
             public void Draw(ICanvas canvas, RectF dirtyRect)
             {
-                if (barcodeResults is not null && barcodeResults.Length > 0)
+                if (barcodeResults is not null && barcodeResults.Count > 0)
                 {
                     canvas.StrokeSize = 15;
                     canvas.StrokeColor = Colors.Green;
