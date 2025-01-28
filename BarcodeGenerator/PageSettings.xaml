@@ -226,8 +226,8 @@
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="8"
                     Grid.Column="2"
-                    ThumbColor="#FF0000"
-                    MinimumTrackColor="#FF0000"
+                    ThumbColor="Red"
+                    MinimumTrackColor="Red"
                     ValueChanged="OnSliderColorForegroundValueChanged">
                 </Slider>
 
@@ -237,7 +237,7 @@
                     Grid.Column="0"
                     SemanticProperties.Description="{local:Translate ToolTipHelp_Text}"
                     ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
-                    Clicked="OnSettingsHexColorClicked">
+                    Clicked="OnSettingsHexColorHelpClicked">
                 </Button>
 
                 <Border
@@ -253,6 +253,7 @@
                         Keyboard="Text"
                         ReturnType="Next"
                         MaxLength="8"
+                        TextTransform="Uppercase"
                         TextChanged="EntryHexColorTextChanged"
                         Unfocused="EntryHexColorUnfocused">
                     </Entry>
@@ -263,8 +264,8 @@
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="9"
                     Grid.Column="2"
-                    ThumbColor="#00FF00"
-                    MinimumTrackColor="#00FF00"
+                    ThumbColor="Green"
+                    MinimumTrackColor="Green"
                     ValueChanged="OnSliderColorForegroundValueChanged">
                 </Slider>
 
@@ -292,8 +293,8 @@
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="10"
                     Grid.Column="2"
-                    ThumbColor="#0000FF"
-                    MinimumTrackColor="#0000FF"
+                    ThumbColor="Blue"
+                    MinimumTrackColor="Blue"
                     ValueChanged="OnSliderColorForegroundValueChanged">
                 </Slider>
 
@@ -337,8 +338,8 @@
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="13"
                     Grid.Column="2"
-                    ThumbColor="#FF0000"
-                    MinimumTrackColor="#FF0000"
+                    ThumbColor="Red"
+                    MinimumTrackColor="Red"
                     ValueChanged="OnSliderColorBackgroundValueChanged">
                 </Slider>
 
@@ -348,7 +349,7 @@
                     Grid.Column="0"
                     SemanticProperties.Description="{local:Translate ToolTipHelp_Text}"
                     ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
-                    Clicked="OnSettingsHexColorClicked">
+                    Clicked="OnSettingsHexColorHelpClicked">
                 </Button>
 
                 <Border
@@ -364,6 +365,7 @@
                         Keyboard="Text"
                         ReturnType="Done"
                         MaxLength="8"
+                        TextTransform="Uppercase"
                         TextChanged="EntryHexColorTextChanged"
                         Unfocused="EntryHexColorUnfocused">
                     </Entry>
@@ -374,8 +376,8 @@
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="14"
                     Grid.Column="2"
-                    ThumbColor="#00FF00"
-                    MinimumTrackColor="#00FF00"
+                    ThumbColor="Green"
+                    MinimumTrackColor="Green"
                     ValueChanged="OnSliderColorBackgroundValueChanged">
                 </Slider>
 
@@ -403,8 +405,8 @@
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="15"
                     Grid.Column="2"
-                    ThumbColor="#0000FF"
-                    MinimumTrackColor="#0000FF"
+                    ThumbColor="Blue"
+                    MinimumTrackColor="Blue"
                     ValueChanged="OnSliderColorBackgroundValueChanged">
                 </Slider>
 

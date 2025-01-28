@@ -1,4 +1,6 @@
-﻿namespace BarcodeGenerator
+﻿using BarcodeGenerator.Resources.Languages;
+
+namespace BarcodeGenerator
 {
     public sealed partial class PageSettings : ContentPage
     {
@@ -304,15 +306,28 @@
         /// <param name="e"></param>
         private void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
         {
-            Entry entry = (Entry)sender;
-
-            string oldText = e.OldTextValue;
-
-            if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
+            if (!IsHex(e.NewTextValue))
             {
-                entry.Text = oldText;
-                _ = entry.Focus();
+                ((Entry)sender).Text = e.OldTextValue;
             }
+        }
+
+        /// <summary>
+        /// Test if the text is a hex value
+        /// </summary>
+        /// <param name="cText"></param>
+        /// <returns></returns>
+        private static bool IsHex(string cText)
+        {
+            foreach (char c in cText)
+            {
+                if (!cHexCharacters.Contains(c))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -320,9 +335,9 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnSettingsHexColorClicked(object sender, EventArgs e)
+        private async void OnSettingsHexColorHelpClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("?", CodeLang.HexColorCodes_Text, CodeLang.ButtonClose_Text);
+            await DisplayAlert("?", $"{CodeLang.HexColorCodes_Text}\n\n{CodeLang.AllowedChar_Text}\n{cHexCharacters}", CodeLang.ButtonClose_Text);
         }
 
         /// <summary>
@@ -389,28 +404,6 @@
 
                 _ = btnSettingsSave.Focus();
             }
-        }
-
-        /// <summary>
-        /// Test for allowed characters
-        /// </summary>
-        /// <param name="cAllowedCharacters"></param>
-        /// <param name="cTextToCode"></param>
-        /// <returns></returns>
-        private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
-        {
-            foreach (char cChar in cTextToCode)
-            {
-                bool bResult = cAllowedCharacters.Contains(cChar);
-
-                if (bResult == false)
-                {
-                    _ = DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.AllowedChar_Text}\n{cAllowedCharacters}\n\n{CodeLang.AllowedCharNot_Text} {cChar}", CodeLang.ButtonClose_Text);
-                    return false;
-                }
-            }
-
-            return true;
         }
 
         /// <summary>
