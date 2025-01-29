@@ -26,7 +26,6 @@ namespace BarcodeGenerator
             // !!!BUG!!! in Android - Return typ 'Done' is not working on Android
             entHexColorBg.ReturnType = ReturnType.Next;
 #endif
-
             //// Put text in the chosen language in the controls and variables
             SetLanguage();
 
