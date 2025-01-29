@@ -401,6 +401,7 @@ namespace BarcodeGenerator
             }
             else
             {
+                entDummy.IsEnabled = true;
                 _ = entDummy.Focus();
             }
         }
@@ -413,7 +414,6 @@ namespace BarcodeGenerator
         private void EntDummyFocused(object sender, FocusEventArgs e)
         {
             entDummy.IsEnabled = false;
-            entDummy.IsEnabled = true;
         }
 
         /// <summary>
