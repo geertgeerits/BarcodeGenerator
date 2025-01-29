@@ -22,6 +22,10 @@ namespace BarcodeGenerator
 #endif
                 return;
             }
+#if ANDROID
+            // !!!BUG!!! in Android - Return typ 'Done' is not working on Android
+            entHexColorBg.ReturnType = ReturnType.Next;
+#endif
 
             //// Put text in the chosen language in the controls and variables
             SetLanguage();
@@ -62,7 +66,7 @@ namespace BarcodeGenerator
             pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode scanner
-#if ANDROID        
+#if ANDROID
             pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
             pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeIOS();
@@ -164,7 +168,7 @@ namespace BarcodeGenerator
         private void SetLanguage()
         {
             // Set the barcode list and the current default barcode format in the picker for the barcode scanner
-#if ANDROID        
+#if ANDROID
             pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
             pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeIOS();
@@ -391,19 +395,26 @@ namespace BarcodeGenerator
                 sldColorBgBlue.Value = nBlue;
             }
 
-            // Set focus to the next or save button
+            // Set focus to the next button
             if (sender.Equals(entHexColorFg))
             {
                 _ = entHexColorBg.Focus();
             }
             else
             {
-                // Hide the keyboard
-                entry.IsEnabled = false;
-                entry.IsEnabled = true;
-
-                _ = btnSettingsSave.Focus();
+                _ = entDummy.Focus();
             }
+        }
+
+        /// <summary>
+        /// Hide the keyboard when the dummy entry is focused
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EntDummyFocused(object sender, FocusEventArgs e)
+        {
+            entDummy.IsEnabled = false;
+            entDummy.IsEnabled = true;
         }
 
         /// <summary>
