@@ -510,6 +510,8 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnShareClicked(object sender, EventArgs e)
         {
+            // InvalidCastException when running on a MacBook Air M1:
+            // System.InvalidCastException: Unable to cast object of type 'Foundation.NSString' to type 'Foundation.NSExtensionItem'.
             try
             {
                 _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
