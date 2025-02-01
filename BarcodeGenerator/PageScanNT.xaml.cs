@@ -513,6 +513,7 @@ namespace BarcodeGenerator
             try
             {
                 _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
+                //_ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text.ToString());
             }
             catch (Exception ex)
             {
