@@ -510,7 +510,18 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnShareClicked(object sender, EventArgs e)
         {
-            _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
+            try
+            {
+                _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+#if DEBUG
+                _ = DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
+                return;
+            }
         }
 
         /// <summary>
