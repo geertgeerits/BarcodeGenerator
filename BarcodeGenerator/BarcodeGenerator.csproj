@@ -35,6 +35,8 @@
 		<Authors>Geert Geerits</Authors>
 		<Copyright>Geert Geerits</Copyright>
 		<Nullable>enable</Nullable>
+		<NeutralLanguage>en-US</NeutralLanguage>
+
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -92,12 +94,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="2.1.6" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.30" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.1" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="2.1.7" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
-		<PackageReference Include="Sentry.Maui" Version="5.0.1" />
+		<PackageReference Include="Sentry.Maui" Version="5.4.0" />
 	</ItemGroup>
 
 	<ItemGroup>

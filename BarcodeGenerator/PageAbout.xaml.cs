@@ -49,9 +49,11 @@ namespace BarcodeGenerator
 
         public HyperlinkSpan()
         {
+            FontFamily = "OpenSansRegular";
             FontAttributes = FontAttributes.Bold;
+            FontSize = 16;
             TextDecorations = TextDecorations.Underline;
-        
+
             GestureRecognizers.Add(new TapGestureRecognizer
             {
                 // Launcher.OpenAsync is provided by Essentials
@@ -95,7 +97,7 @@ namespace BarcodeGenerator
                     Subject = subject,
                     Body = body,
                     BodyFormat = EmailBodyFormat.PlainText,
-                    To = new List<string>(recipients)
+                    To = [.. recipients]
                 };
 
                 try
