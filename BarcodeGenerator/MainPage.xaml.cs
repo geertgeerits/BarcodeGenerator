@@ -97,12 +97,12 @@ namespace BarcodeGenerator
                 pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
             }
 
-            //// Get and set the system OS user language
+            //// Get and set the user interface language
             try
             {
                 if (string.IsNullOrEmpty(Globals.cLanguage))
                 {
-                    Globals.cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+                    Globals.cLanguage = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
                 }
             }
             catch (Exception)
@@ -119,7 +119,7 @@ namespace BarcodeGenerator
             {
                 if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
                 {
-                    cCultureName = Thread.CurrentThread.CurrentCulture.Name;
+                    cCultureName = Thread.CurrentThread.CurrentUICulture.Name;
                 }
             }
             catch (Exception)
@@ -127,7 +127,6 @@ namespace BarcodeGenerator
                 cCultureName = "en-US";
             }
 
-            //// Initialize text to speech
             InitializeTextToSpeech(cCultureName);
 
             //// Clear the clipboard
@@ -1142,12 +1141,15 @@ namespace BarcodeGenerator
                 {
                     int nTotalItems = Globals.cLanguageLocales.Length;
 
-                    for (int nItem = 0; nItem < nTotalItems; nItem++)
+                    if (!string.IsNullOrEmpty(cCultureName))
                     {
-                        if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
+                        for (int nItem = 0; nItem < nTotalItems; nItem++)
                         {
-                            Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                            break;
+                            if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
+                            {
+                                Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
+                                break;
+                            }
                         }
                     }
 
