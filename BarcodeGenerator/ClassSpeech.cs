@@ -258,14 +258,21 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Initialize text to speech
+        /// </summary>
+        public static async void InitializeTextToSpeech(string cCultureName)
+        {
+            Globals.bTextToSpeechAvailable = await InitializeTextToSpeechAsync(cCultureName);
+        }
+
+        /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
         /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
         /// </summary>
         /// <param name="cCultureName"></param>
-        public static async void InitializeTextToSpeech(string cCultureName)
+        public static async Task<bool> InitializeTextToSpeechAsync(string cCultureName)
         {
             // Initialize text to speech
-            Globals.bTextToSpeechAvailable = false;
             int nTotalItems;
 
             try
@@ -276,7 +283,7 @@ namespace BarcodeGenerator
 
                 if (nTotalItems == 0)
                 {
-                    return;
+                    return false;
                 }
             }
             catch (Exception ex)
@@ -285,7 +292,7 @@ namespace BarcodeGenerator
 #if DEBUG
                 await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
 #endif
-                return;
+                return false;
             }
 
             Globals.bLanguageLocalesExist = true;
@@ -302,13 +309,13 @@ namespace BarcodeGenerator
 
             Array.Sort(cLanguageLocales);
 
-            Globals.bTextToSpeechAvailable = true;
-
             // Search for the language after a first start or reset of the application
             if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
             {
                 SearchArrayWithSpeechLanguages(cCultureName);
             }
+
+            return true;
         }
     }
 }

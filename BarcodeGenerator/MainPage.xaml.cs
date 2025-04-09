@@ -151,7 +151,7 @@ namespace BarcodeGenerator
 
             ClassSpeech.InitializeTextToSpeech(cCultureName);
 
-            Globals.bTextToSpeechAvailable = true;  // returns always false. Why ???. Needs an await ???
+            Globals.bTextToSpeechAvailable = true;  // returns always false - why ???
             if (Globals.bTextToSpeechAvailable)
             {
                 lblTextToSpeech.IsVisible = true;
