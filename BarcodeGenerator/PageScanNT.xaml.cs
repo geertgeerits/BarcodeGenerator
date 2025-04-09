@@ -79,7 +79,6 @@ namespace BarcodeGenerator
             pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
             //// Initialize text to speech
-            Globals.bTextToSpeechAvailable = true;
             if (Globals.bTextToSpeechAvailable)
             {
                 lblTextToSpeech.IsVisible = true;

@@ -141,8 +141,31 @@ namespace BarcodeGenerator
             {
                 cCultureName = "en-US";
             }
+            //Globals.cLanguageSpeech = cCultureName;
 
-            InitializeTextToSpeech(cCultureName);
+            //InitializeTextToSpeech(cCultureName);
+
+            // Fix for CS0120: Convert the non-static method call to an instance method call by creating an instance of ClassSpeech.
+            //ClassSpeech classSpeechInstance = new ClassSpeech(); // Create an instance of ClassSpeech
+            //classSpeechInstance.InitializeTextToSpeech(cCultureName); // Call the instance method
+
+            ClassSpeech.InitializeTextToSpeech(cCultureName);
+
+            Globals.bTextToSpeechAvailable = true;  // returns always false. Why ???. Needs an await ???
+            if (Globals.bTextToSpeechAvailable)
+            {
+                lblTextToSpeech.IsVisible = true;
+                imgbtnTextToSpeech.IsVisible = true;
+                Globals.bLanguageLocalesExist = true;
+                lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+            }
+            Debug.WriteLine("Globals.bTextToSpeechAvailable: " + Globals.bTextToSpeechAvailable);
+
+            //ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
+            Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
+            Debug.WriteLine("Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
+
+            //ClassSpeech.InitializeTextToSpeech(cCultureName);
 
             ////// Initialize text to speech
             //ClassSpeech.InitializeTextToSpeech();
@@ -1118,61 +1141,6 @@ namespace BarcodeGenerator
 
             cLicense = $"{CodeLang.License_Text}\n\n{CodeLang.LicenseMit2_Text}";
             btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex]}";
-        }
-
-        /// <summary>
-        /// Initialize text to speech and fill the the array with the speech languages
-        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
-        /// </summary>
-        /// <param name="cCultureName"></param>
-        private async void InitializeTextToSpeech(string cCultureName)
-        {
-            // Initialize text to speech
-            int nTotalItems;
-
-            try
-            {
-                Globals.locales = await TextToSpeech.Default.GetLocalesAsync();
-            
-                nTotalItems = Globals.locales.Count();           
-            
-                if (nTotalItems == 0)
-                {
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureException(ex);
-#if DEBUG
-                await DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
-#endif
-                return;
-            }
-       
-            lblTextToSpeech.IsVisible = true;
-            imgbtnTextToSpeech.IsVisible = true;
-            Globals.bLanguageLocalesExist = true;
-
-            // Put the locales in the array and sort the array
-            Globals.cLanguageLocales = new string[nTotalItems];
-            int nItem = 0;
-
-            foreach (var l in Globals.locales)
-            {
-                Globals.cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
-                nItem++;
-            }
-
-            Array.Sort(Globals.cLanguageLocales);
-
-            // Search for the language after a first start or reset of the application
-            if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-            {
-                ClassSpeech.SearchArrayWithSpeechLanguages(cCultureName);
-            }
-        
-            lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
         }
 
         /// <summary>

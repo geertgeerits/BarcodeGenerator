@@ -1,27 +1,26 @@
 ﻿using System.Diagnostics;
-using static BarcodeGenerator.Globals;
 
 namespace BarcodeGenerator
 {
     internal sealed class ClassSpeech
     {
-        //private static string[]? cLanguageLocales;
-        //private static IEnumerable<Locale>? locales;
+        private static string[]? cLanguageLocales;
+        private static IEnumerable<Locale>? locales;
         private static CancellationTokenSource? cts;
 
         /// <summary>
         /// Initialize text to speech
         /// </summary>
-        public static async void InitializeTextToSpeech()
+        public static async void InitializeTextToSpeechZZZ()
         {
-            Globals.bTextToSpeechAvailable = await InitializeTextToSpeechAsync();
+            Globals.bTextToSpeechAvailable = await InitializeTextToSpeechAsyncZZZ();
         }
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
         /// <para>.Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;</para>
         /// </summary>
-        public static async Task<bool> InitializeTextToSpeechAsync()
+        public static async Task<bool> InitializeTextToSpeechAsyncZZZ()
         {
             // Initialize text to speech
             int nTotalItems;
@@ -203,14 +202,17 @@ namespace BarcodeGenerator
 
                 cts.Cancel();
             }
-            
+
             var imageButton = (ImageButton)sender;
-            
+
             // Start with the text to speech
+            Debug.WriteLine("ConvertTextToSpeechAsync + cText: " + cText);
+            Debug.WriteLine("ConvertTextToSpeechAsync + Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
+
             if (cText is not null and not "")
             {
                 Globals.bTextToSpeechIsBusy = true;
-                imageButton.Source = cImageTextToSpeechCancel;
+                imageButton.Source = Globals.cImageTextToSpeechCancel;
 
                 try
                 {
@@ -232,7 +234,7 @@ namespace BarcodeGenerator
 #endif
                 }
 
-                imageButton.Source = cImageTextToSpeech;
+                imageButton.Source = Globals.cImageTextToSpeech;
             }
         }
 
@@ -245,14 +247,68 @@ namespace BarcodeGenerator
             {
                 if (cts?.IsCancellationRequested ?? true)
                 {
-                    return cImageTextToSpeechCancel;
+                    return Globals.cImageTextToSpeechCancel;
                 }
 
                 cts.Cancel();
                 Globals.bTextToSpeechIsBusy = false;
             }
 
-            return cImageTextToSpeech;
+            return Globals.cImageTextToSpeech;
+        }
+
+        /// <summary>
+        /// Initialize text to speech and fill the the array with the speech languages
+        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+        /// </summary>
+        /// <param name="cCultureName"></param>
+        public static async void InitializeTextToSpeech(string cCultureName)
+        {
+            // Initialize text to speech
+            Globals.bTextToSpeechAvailable = false;
+            int nTotalItems;
+
+            try
+            {
+                locales = await TextToSpeech.Default.GetLocalesAsync();
+
+                nTotalItems = locales.Count();
+
+                if (nTotalItems == 0)
+                {
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+#if DEBUG
+                await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
+#endif
+                return;
+            }
+
+            Globals.bLanguageLocalesExist = true;
+
+            // Put the locales in the array and sort the array
+            cLanguageLocales = new string[nTotalItems];
+            int nItem = 0;
+
+            foreach (var l in locales)
+            {
+                cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
+                nItem++;
+            }
+
+            Array.Sort(cLanguageLocales);
+
+            Globals.bTextToSpeechAvailable = true;
+
+            // Search for the language after a first start or reset of the application
+            if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
+            {
+                SearchArrayWithSpeechLanguages(cCultureName);
+            }
         }
     }
 }
