@@ -1,6 +1,4 @@
-﻿using BarcodeGenerator.Resources.Languages;
-
-namespace BarcodeGenerator
+﻿namespace BarcodeGenerator
 {
     public sealed partial class PageSettings : ContentPage
     {
@@ -49,8 +47,8 @@ namespace BarcodeGenerator
                 _ => 3,         // English
             };
 
-            //// Fill the picker with the speech languages and set the saved language in the picker
-            FillPickerWithSpeechLanguages();
+            //// Fill the picker with the speech languages and select the saved language in the picker
+            ClassSpeech.FillPickerWithSpeechLanguages(pckLanguageSpeech);
 
             //// Set the current theme in the picker
             pckTheme.SelectedIndex = Globals.cTheme switch
@@ -139,25 +137,14 @@ namespace BarcodeGenerator
                 Globals.bLanguageChanged = true;
 
                 // Set the current UI culture of the selected language
-                Globals.SetCultureSelectedLanguage();
+                Globals.SetCultureSelectedLanguage(Globals.cLanguage);
 
                 // Put text in the chosen language in the controls and variables
                 SetLanguage();
 
-                // Search the new language in the cLanguageLocales array and select the new speech language
-                if (Globals.cLanguageLocales is not null)
-                {
-                    int nTotalItems = Globals.cLanguageLocales.Length;
-
-                    for (int nItem = 0; nItem < nTotalItems; nItem++)
-                    {
-                        if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
-                        {
-                            pckLanguageSpeech.SelectedIndex = nItem;
-                            break;
-                        }
-                    }
-                }
+                // Search the selected language in the cLanguageLocales array and select the new speech language
+                pckLanguageSpeech.SelectedIndex = ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguage);
+                Debug.WriteLine("pckLanguageSpeech.SelectedIndex OUT: " + pckLanguageSpeech.SelectedIndex);
             }
         }
 
@@ -189,45 +176,6 @@ namespace BarcodeGenerator
                 "Dark" => 2,    // Dark
                 _ => 0,         // System
             };
-        }
-
-        /// <summary>
-        /// Fill the picker with the speech languages from the array
-        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;
-        /// </summary>
-        private void FillPickerWithSpeechLanguages()
-        {
-            // If there are no locales then return
-            bool bIsSetSelectedIndex = false;
-
-            if (!Globals.bLanguageLocalesExist)
-            {
-                pckLanguageSpeech.IsEnabled = false;           
-                return;
-            }
-
-            // Put the sorted locales from the array in the picker and select the saved language
-            if (Globals.cLanguageLocales is not null)
-            {
-                int nTotalItems = Globals.cLanguageLocales.Length;
-
-                for (int nItem = 0; nItem < nTotalItems; nItem++)
-                {
-                    pckLanguageSpeech.Items.Add(Globals.cLanguageLocales[nItem]);
-
-                    if (Globals.cLanguageSpeech == Globals.cLanguageLocales[nItem])
-                    {
-                        pckLanguageSpeech.SelectedIndex = nItem;
-                        bIsSetSelectedIndex = true;
-                    }
-                }
-            }
-
-            // If the language is not found set the picker to the first item
-            if (!bIsSetSelectedIndex)
-            {
-                pckLanguageSpeech.SelectedIndex = 0;
-            }
         }
 
         /// <summary>

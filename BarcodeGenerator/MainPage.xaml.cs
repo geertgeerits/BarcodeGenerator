@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2025
  * Version .....: 1.0.43
- * Date ........: 2025-03-19 (YYYY-MM-DD)
+ * Date ........: 2025-04-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -12,8 +12,8 @@
  * Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.4.0 ; https://github.com/redth/ZXing.Net.Maui
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.4.0
  *                (NuGet Package: BarcodeScanner.Mobile.Maui version = "8.0.0 ; Google Vision ; https://github.com/JimmyPun610/BarcodeScanner.Mobile)
- *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 2.1.7 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
- *                NuGet Package: Sentry.Maui version 5.4.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
+ *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 2.1.8 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
+ *                NuGet Package: Sentry.Maui version 5.5.1 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
@@ -97,17 +97,32 @@ namespace BarcodeGenerator
                 pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
             }
 
-            //// Get and set the user interface language
+            //// Get and set the user interface language after a first start or reset of the application
+            // For testing the Indonesian language
+            //Globals.cLanguage = "id";
+            //Globals.cLanguageSpeech = "id-ID";
+            //Globals.SetCultureSelectedLanguage("id-ID");
             try
             {
                 if (string.IsNullOrEmpty(Globals.cLanguage))
                 {
                     Globals.cLanguage = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+
+                    // Chinese needs the language code as zh-CN and zh-TW
+                    if (Globals.cLanguage == "zh")
+                    {
+                        Globals.cLanguage = Thread.CurrentThread.CurrentUICulture.Name;
+                    }
                 }
             }
             catch (Exception)
             {
                 Globals.cLanguage = "en";
+            }
+            finally
+            {
+                Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
+                Debug.WriteLine("Globals.cLanguage: " + Globals.cLanguage);
             }
 
             SetTextLanguage();
@@ -128,6 +143,36 @@ namespace BarcodeGenerator
             }
 
             InitializeTextToSpeech(cCultureName);
+
+            ////// Initialize text to speech
+            //ClassSpeech.InitializeTextToSpeech();
+
+            //if (!Globals.bTextToSpeechAvailable)
+            //{
+            //    //Globals.bExplainSpeech = false;
+            //}
+            //lblTextToSpeech.IsVisible = true;
+            //imgbtnTextToSpeech.IsVisible = true;
+            //Globals.bLanguageLocalesExist = true;
+
+            //// Search for the speech language after a first start or reset of the application
+            //try
+            //{
+            //    if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
+            //    {
+            //        Globals.cLanguageSpeech = Thread.CurrentThread.CurrentUICulture.Name;
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    Globals.cLanguageSpeech = "en-US";
+            //}
+            //finally
+            //{
+            //    ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
+            //    Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
+            //    Debug.WriteLine("Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
+            //}
 
             //// Clear the clipboard
             //Clipboard.Default.SetTextAsync(null);  // For testing
@@ -198,19 +243,19 @@ namespace BarcodeGenerator
         //// TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
-            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
             await Navigation.PushAsync(new PageAbout());
         }
 
         private async void OnPageScanClickedNT(object sender, EventArgs e)
         {
-            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
             await Navigation.PushAsync(new PageScanNT());
         }
 
         private async void OnPageSettingsClicked(object sender, EventArgs e)
         {
-            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
             await Navigation.PushAsync(new PageSettings());
         }
 
@@ -1068,7 +1113,7 @@ namespace BarcodeGenerator
         private void SetTextLanguage()
         {
             // Set the current UI culture of the selected language
-            Globals.SetCultureSelectedLanguage();
+            Globals.SetCultureSelectedLanguage(Globals.cLanguage);
 
             cLicense = $"{CodeLang.License_Text}\n\n{CodeLang.LicenseMit2_Text}";
             btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex]}";
@@ -1123,63 +1168,10 @@ namespace BarcodeGenerator
             // Search for the language after a first start or reset of the application
             if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
             {
-                SearchArrayWithSpeechLanguages(cCultureName);
+                ClassSpeech.SearchArrayWithSpeechLanguages(cCultureName);
             }
         
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
-        }
-
-        /// <summary>
-        /// Search for the language after a first start or reset of the application
-        /// </summary>
-        /// <param name="cCultureName"></param>
-        private static void SearchArrayWithSpeechLanguages(string cCultureName)
-        {
-            try
-            {
-                if (Globals.cLanguageLocales is not null)
-                {
-                    int nTotalItems = Globals.cLanguageLocales.Length;
-
-                    if (!string.IsNullOrEmpty(cCultureName))
-                    {
-                        for (int nItem = 0; nItem < nTotalItems; nItem++)
-                        {
-                            if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
-                            {
-                                Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                                break;
-                            }
-                        }
-                    }
-
-                    // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app
-                    if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-                    {
-                        for (int nItem = 0; nItem < nTotalItems; nItem++)
-                        {
-                            if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
-                            {
-                                Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                                break;
-                            }
-                        }
-                    }
-                }
-
-                // If the language is still not found use the first language in the array
-                if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-                {
-                    Globals.cLanguageSpeech = Globals.cLanguageLocales![0];
-                }
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureException(ex);
-#if DEBUG
-                _ = Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-#endif
-            }
         }
 
         /// <summary>
@@ -1192,12 +1184,12 @@ namespace BarcodeGenerator
             // Cancel the text to speech
             if (Globals.bTextToSpeechIsBusy)
             {
-                imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+                imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
                 return;
             }
 
             // Convert the text to speech
-            _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, edtTextToCode.Text);
+            _ = ClassSpeech.ConvertTextToSpeechAsync(imgbtnTextToSpeech, edtTextToCode.Text);
         }
 
         /// <summary>

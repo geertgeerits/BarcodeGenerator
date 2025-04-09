@@ -79,7 +79,8 @@ namespace BarcodeGenerator
             pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
             //// Initialize text to speech
-            if (Globals.InitializeTextToSpeechScannerAsync("PageScanNT.xaml.cs").Result)
+            Globals.bTextToSpeechAvailable = true;
+            if (Globals.bTextToSpeechAvailable)
             {
                 lblTextToSpeech.IsVisible = true;
                 imgbtnTextToSpeech.IsVisible = true;
@@ -217,7 +218,7 @@ namespace BarcodeGenerator
             imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
 
             // Cancel the text to speech when going back to the mainpage
-            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
 
             // Give it some time to save the settings
             Task.Delay(100).Wait();
@@ -537,12 +538,12 @@ namespace BarcodeGenerator
             // Cancel the text to speech
             if (Globals.bTextToSpeechIsBusy)
             {
-                imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+                imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
                 return;
             }
 
             // Convert the text to speech
-            _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, lblBarcodeResult.Text);
+            _ = ClassSpeech.ConvertTextToSpeechAsync(imgbtnTextToSpeech, lblBarcodeResult.Text);
         }
 
         /// <summary>
