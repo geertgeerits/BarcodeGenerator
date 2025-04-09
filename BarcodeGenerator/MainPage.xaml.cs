@@ -147,13 +147,14 @@ namespace BarcodeGenerator
             ////// Initialize text to speech
             //ClassSpeech.InitializeTextToSpeech();
 
-            //if (!Globals.bTextToSpeechAvailable)
+            //Globals.bTextToSpeechAvailable = true;
+            //if (Globals.bTextToSpeechAvailable)
             //{
-            //    //Globals.bExplainSpeech = false;
+            //    lblTextToSpeech.IsVisible = true;
+            //    imgbtnTextToSpeech.IsVisible = true;
+            //    Globals.bLanguageLocalesExist = true;
+            //    lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
             //}
-            //lblTextToSpeech.IsVisible = true;
-            //imgbtnTextToSpeech.IsVisible = true;
-            //Globals.bLanguageLocalesExist = true;
 
             //// Search for the speech language after a first start or reset of the application
             //try

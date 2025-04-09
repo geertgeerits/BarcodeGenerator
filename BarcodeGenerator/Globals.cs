@@ -26,7 +26,6 @@ namespace BarcodeGenerator
         public static bool bLanguageLocalesExist;
         public static bool bTextToSpeechIsBusy;
         public static IEnumerable<Locale>? locales;
-        public static CancellationTokenSource? cts;
         public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
         public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
         public static bool bLicense;

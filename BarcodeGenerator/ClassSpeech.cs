@@ -7,7 +7,7 @@ namespace BarcodeGenerator
     {
         //private static string[]? cLanguageLocales;
         //private static IEnumerable<Locale>? locales;
-        //private static CancellationTokenSource? cts;
+        private static CancellationTokenSource? cts;
 
         /// <summary>
         /// Initialize text to speech
@@ -53,7 +53,7 @@ namespace BarcodeGenerator
 
             foreach (var l in locales)
             {
-                cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
+                cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
                 nItem++;
             }
 
@@ -218,7 +218,7 @@ namespace BarcodeGenerator
 
                     SpeechOptions options = new()
                     {
-                        Locale = locales?.Single(static l => l.Language + "-" + l.Country + " " + l.Name == Globals.cLanguageSpeech)
+                        Locale = locales?.Single(static l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
                     };
 
                     await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
