@@ -106,6 +106,7 @@ namespace BarcodeGenerator
             }
             finally
             {
+                // Save the UI language
                 Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
                 Debug.WriteLine("MainPage - Globals.cLanguage: " + Globals.cLanguage);
             }
@@ -134,30 +135,31 @@ namespace BarcodeGenerator
         /// </summary>
         private async void InitializeTextToSpeechAsync()
         {
-            string cCultureName = "";
-
             try
             {
                 if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
                 {
-                    cCultureName = Thread.CurrentThread.CurrentUICulture.Name;
+                    Globals.cLanguageSpeech = Thread.CurrentThread.CurrentUICulture.Name;
                 }
             }
             catch (Exception)
             {
-                cCultureName = "en-US";
+                Globals.cLanguageSpeech = "en-US";
             }
 
-            Globals.bTextToSpeechAvailable = await ClassSpeech.InitializeTextToSpeechAsync(cCultureName);
+            // Initialize text to speech
+            Globals.bTextToSpeechAvailable = await ClassSpeech.InitializeTextToSpeechAsync();
 
             if (Globals.bTextToSpeechAvailable)
             {
                 lblTextToSpeech.IsVisible = true;
                 imgbtnTextToSpeech.IsVisible = true;
-                Globals.bLanguageLocalesExist = true;
                 lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
-                //ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
+                // Search the selected language in the cLanguageLocales array
+                ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
+
+                // Save the speech language
                 Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
             }
             

@@ -12,11 +12,11 @@ namespace BarcodeGenerator
         /// Initialize text to speech and fill the the array with the speech languages
         /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
         /// </summary>
-        /// <param name="cCultureName"></param>
-        public static async Task<bool> InitializeTextToSpeechAsync(string cCultureName)
+        public static async Task<bool> InitializeTextToSpeechAsync()
         {
             try
             {
+                // Initialize text to speech
                 locales = await TextToSpeech.Default.GetLocalesAsync();
                 int nTotalItems = locales.Count();
 
@@ -27,8 +27,6 @@ namespace BarcodeGenerator
                     Debug.WriteLine("No locales found. Text-to-speech may not be supported on this device.");
                     return false;
                 }
-
-                Globals.bLanguageLocalesExist = true;
 
                 // Populate and sort locales
                 cLanguageLocales = new string[nTotalItems];
@@ -42,17 +40,11 @@ namespace BarcodeGenerator
 
                 Array.Sort(cLanguageLocales);
 
-                // Search for the language after a first start or reset of the application
-                if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-                {
-                    SearchArrayWithSpeechLanguages(cCultureName);
-                }
-
                 return true;
             }
             catch (Exception ex)
             {
-                //SentrySdk.CaptureException(ex)
+                SentrySdk.CaptureException(ex);
 #if DEBUG
                 Debug.WriteLine($"Error in InitializeTextToSpeechAsync: {ex.Message}");
                 await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
@@ -154,6 +146,7 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
+                SentrySdk.CaptureException(ex);
 #if DEBUG
                 Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
@@ -228,7 +221,7 @@ namespace BarcodeGenerator
                 }
                 catch (Exception ex)
                 {
-                    //SentrySdk.CaptureException(ex);
+                    SentrySdk.CaptureException(ex);
 #if DEBUG
                     await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CodeLang.ButtonClose_Text);
 #endif
