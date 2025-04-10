@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2025
  * Version .....: 1.0.43
- * Date ........: 2025-04-09 (YYYY-MM-DD)
+ * Date ........: 2025-04-10 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -17,10 +17,6 @@
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
-//#if IOS
-//using UIKit;
-//using Microsoft.Maui.Platform;
-//#endif
 
 namespace BarcodeGenerator
 {
@@ -49,13 +45,6 @@ namespace BarcodeGenerator
 #if IOS
             //// AutoSize has to be disabled for iOS
             edtTextToCode.AutoSize = EditorAutoSizeOption.Disabled;
-
-            //// Workaround for the !!!BUG!!! in iOS
-            //// VerticalOptions in editor is not working when going from portrait to landscape
-            //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
-
-            //// Disable the default behavior of automatically scrolling the view when the keyboard appears
-            //DisconnectKeyboardAutoScroll();
 #endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
@@ -98,10 +87,6 @@ namespace BarcodeGenerator
             }
 
             //// Get and set the user interface language after a first start or reset of the application
-            // For testing the Indonesian language
-            //Globals.cLanguage = "id";
-            //Globals.cLanguageSpeech = "id-ID";
-            //Globals.SetCultureSelectedLanguage("id-ID");
             try
             {
                 if (string.IsNullOrEmpty(Globals.cLanguage))
@@ -122,12 +107,33 @@ namespace BarcodeGenerator
             finally
             {
                 Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
-                Debug.WriteLine("Globals.cLanguage: " + Globals.cLanguage);
+                Debug.WriteLine("MainPage - Globals.cLanguage: " + Globals.cLanguage);
             }
 
             SetTextLanguage();
 
             //// Initialize text to speech and get and set the speech language
+            InitializeTextToSpeechAsync();
+
+            //// Clear the clipboard
+            //Clipboard.Default.SetTextAsync(null);  // For testing
+
+            //// Set focus to the editor
+            edtTextToCode.Focus();
+
+            //// Test for crashes Sentry
+            //SentrySdk.CaptureMessage("Hello Sentry");
+            //throw new Exception("This is a test exception");
+        }
+
+        /// <summary>
+        /// Initialize text to speech and get and set the speech language
+        /// Must be called in the constructor of the MainPage and not in the ClassSpeech.cs
+        /// The InitializeTextToSpeechAsync method is called asynchronously after the UI components are initialized
+        /// Once the asynchronous operation completes, the Globals.bTextToSpeechAvailable value is checked, and the UI is updated accordingly
+        /// </summary>
+        private async void InitializeTextToSpeechAsync()
+        {
             string cCultureName = "";
 
             try
@@ -141,129 +147,24 @@ namespace BarcodeGenerator
             {
                 cCultureName = "en-US";
             }
-            //Globals.cLanguageSpeech = cCultureName;
 
-            //InitializeTextToSpeech(cCultureName);
+            Globals.bTextToSpeechAvailable = await ClassSpeech.InitializeTextToSpeechAsync(cCultureName);
 
-            // Fix for CS0120: Convert the non-static method call to an instance method call by creating an instance of ClassSpeech.
-            //ClassSpeech classSpeechInstance = new ClassSpeech(); // Create an instance of ClassSpeech
-            //classSpeechInstance.InitializeTextToSpeech(cCultureName); // Call the instance method
-
-            ClassSpeech.InitializeTextToSpeech(cCultureName);
-
-            Globals.bTextToSpeechAvailable = true;  // returns always false - why ???
             if (Globals.bTextToSpeechAvailable)
             {
                 lblTextToSpeech.IsVisible = true;
                 imgbtnTextToSpeech.IsVisible = true;
                 Globals.bLanguageLocalesExist = true;
                 lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+
+                //ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
+                Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
             }
-            Debug.WriteLine("Globals.bTextToSpeechAvailable: " + Globals.bTextToSpeechAvailable);
-
-            //ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
-            Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
-            Debug.WriteLine("Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
-
-            //ClassSpeech.InitializeTextToSpeech(cCultureName);
-
-            ////// Initialize text to speech
-            //ClassSpeech.InitializeTextToSpeech();
-
-            //Globals.bTextToSpeechAvailable = true;
-            //if (Globals.bTextToSpeechAvailable)
-            //{
-            //    lblTextToSpeech.IsVisible = true;
-            //    imgbtnTextToSpeech.IsVisible = true;
-            //    Globals.bLanguageLocalesExist = true;
-            //    lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
-            //}
-
-            //// Search for the speech language after a first start or reset of the application
-            //try
-            //{
-            //    if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-            //    {
-            //        Globals.cLanguageSpeech = Thread.CurrentThread.CurrentUICulture.Name;
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    Globals.cLanguageSpeech = "en-US";
-            //}
-            //finally
-            //{
-            //    ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
-            //    Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
-            //    Debug.WriteLine("Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
-            //}
-
-            //// Clear the clipboard
-            //Clipboard.Default.SetTextAsync(null);  // For testing
-
-            //// Set focus to the editor
-            edtTextToCode.Focus();
-
-            //// Test for crashes Sentry
-            //SentrySdk.CaptureMessage("Hello Sentry");
-            //throw new Exception("This is a test exception");
+            
+            Debug.WriteLine("MainPage - Globals.bTextToSpeechAvailable: " + Globals.bTextToSpeechAvailable);
+            Debug.WriteLine("MainPage - Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
         }
 
-        //        /// <summary>
-        //        /// Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
-        //        /// </summary>
-        //        protected override void OnAppearing()
-        //        {
-        //            base.OnAppearing();
-        //#if IOS
-        //            AppDelegate.CurrentPage = "MainPage";
-        //#endif
-        //        }
-
-//        /// <summary>
-//        /// // Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
-//        /// </summary>
-//        protected override void OnDisappearing()
-//        {
-//            base.OnDisappearing();
-//#if IOS
-//            AppDelegate.CurrentPage = string.Empty;
-//#endif
-//        }
-
-        //#if IOS
-        //        /// <summary>
-        //        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-        //        /// VerticalOptions in editor is not working when going from portrait to landscape
-        //        /// </summary>
-        //        /// <param name="sender"></param>
-        //        /// <param name="e"></param>
-        //        private async void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
-        //        {
-        //            if (edtTextToCode.IsSoftInputShowing())
-        //            {
-        //                await edtTextToCode.HideSoftInputAsync(System.Threading.CancellationToken.None);
-        //            }
-
-        //            edtTextToCode.IsVisible = false;
-        //            Task.Delay(100).Wait();
-        //            //edtTextToCode.HorizontalOptions = LayoutOptions.Fill;
-        //            edtTextToCode.VerticalOptions = LayoutOptions.Fill;
-        //            Task.Delay(300).Wait();
-        //            edtTextToCode.IsVisible = true;
-        //        }
-
-        //        /// <summary>
-        //        /// Disable the default behavior of automatically scrolling the view when the keyboard appears
-        //        /// </summary>
-        //        private void DisconnectKeyboardAutoScroll()
-        //        {
-        //            if (Handler?.PlatformView is UIView)
-        //            {
-        //                KeyboardAutoManagerScroll.Disconnect();
-        //            }
-        //        }
-        //#endif
         //// TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
