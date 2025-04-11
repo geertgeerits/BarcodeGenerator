@@ -26,7 +26,7 @@ namespace BarcodeGenerator
                     //options.ShutdownTimeout = System.TimeSpan.FromSeconds(5);
                 })
 
-                .ConfigureLifecycleEvents(events =>
+                .ConfigureLifecycleEvents(static events =>
                 {
 #if ANDROID
                     events.AddAndroid(android => android

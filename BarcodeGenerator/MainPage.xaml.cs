@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2025
  * Version .....: 1.0.43
- * Date ........: 2025-04-10 (YYYY-MM-DD)
+ * Date ........: 2025-04-11 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -111,6 +111,7 @@ namespace BarcodeGenerator
                 Debug.WriteLine("MainPage - Globals.cLanguage: " + Globals.cLanguage);
             }
 
+            //// Set the text language
             SetTextLanguage();
 
             //// Initialize text to speech and get and set the speech language
