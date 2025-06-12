@@ -407,22 +407,12 @@
                 nColorBlue = (int)args.NewValue;
             }
 
+            // The X2 format specifier formats the number as a hexadecimal value with a minimum width of 2 digits
             string cColorFgHex = $"{nAmountOpacity:X2}{nColorRed:X2}{nColorGreen:X2}{nColorBlue:X2}";
             entHexColorFg.Text = cColorFgHex;
             bxvColorFg.Color = Color.FromArgb(cColorFgHex);
 
             Globals.cCodeColorFg = cColorFgHex;
-
-            /* Explanation of the line below
-            string cColorFgHex = $"{nAmountOpacity:X2}{nColorRed:X2}{nColorGreen:X2}{nColorBlue:X2}";
-
-            The code you provided is using string interpolation in C#
-            The $ sign is used to indicate that the string is an interpolated string
-            The X2 format specifier formats the number as a hexadecimal value with a minimum width of 2 digits
-            The nAmountOpacity, nColorRed, nColorGreen, and nColorBlue are variables that are being formatted into a single string
-            So, the resulting string will be a concatenation of the hexadecimal values of nAmountOpacity, nColorRed, nColorGreen, and nColorBlue
-            The resulting string will have a length of 8 characters (2 characters for each variable)
-            */
         }
 
         /// <summary>
