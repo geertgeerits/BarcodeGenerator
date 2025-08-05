@@ -60,9 +60,6 @@ namespace BarcodeGenerator
             pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
             pckCameraQualityFront.SelectedIndex = nQualityCameraFront;
 
-            //// Set the title for the picker
-            //SetTitleCameraQualityPicker();
-
             //// The height of the title bar is lower when an iPhone is in horizontal position
             if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
@@ -297,9 +294,6 @@ namespace BarcodeGenerator
                 pckCameraQualityFront.Unfocus();
                 pckCameraQualityFront.Focus();
             }
-
-            // Set the title for the picker
-            SetTitleCameraQualityPicker();
         }
 
         /// <summary>
@@ -355,6 +349,9 @@ namespace BarcodeGenerator
             }
 
             Debug.WriteLine("nSelectedIndex: " + nSelectedIndex);  // For testing
+
+            // Set the title for the picker
+            SetTitleCameraQualityPicker();
         }
 
         /// <summary>
