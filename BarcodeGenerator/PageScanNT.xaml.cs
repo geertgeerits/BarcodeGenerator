@@ -33,7 +33,7 @@ namespace BarcodeGenerator
             //// Read the device information
             //ReadDeviceInfo();
 #endif
-            //// Set the quality for the pickers
+            //// Set the quality for the camera pickers
             // No support for the highest quality: iPad 8, iOS version 17.1.1 (back and front camera)
             // No support for the high and the highest quality: iPhone 7, iOS version 15.8 (front camera)
 #if IOS
@@ -56,7 +56,7 @@ namespace BarcodeGenerator
             qualities.Add(CodeLang.CameraQualityHighest_Text);
             pckCameraQualityBack.ItemsSource = qualities;
 #endif
-            //// Set the quality for the camera
+            // Set the quality for the camera pickers
             pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
             pckCameraQualityFront.SelectedIndex = nQualityCameraFront;
 
@@ -183,8 +183,6 @@ namespace BarcodeGenerator
         /// </summary>
         private void BeforeLeavingPageScanNT()
         {
-            Debug.WriteLine("Method: BeforeLeavingPageScanNT");
-
             // Save the quality settings
             Preferences.Default.Set("SettingQualityCameraBack", nQualityCameraBack);
             Preferences.Default.Set("SettingQualityCameraFront", nQualityCameraFront);
@@ -355,39 +353,6 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Set the title for the quality picker
-        /// </summary>
-        private void SetTitleCameraQualityPicker()
-        {
-            string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
-
-            switch (barcodeReader.CameraFacing)
-            {
-                case CameraFacing.Back:
-                    pckCameraQualityBack.Title = nQualityCameraBack switch
-                    {
-                        0 => cTitle + CodeLang.CameraQualityLow_Text,
-                        1 => cTitle + CodeLang.CameraQualityMedium_Text,
-                        2 => cTitle + CodeLang.CameraQualityHigh_Text,
-                        3 => cTitle + CodeLang.CameraQualityHighest_Text,
-                        _ => cTitle + CodeLang.CameraQualityMedium_Text
-                    };
-                    break;
-
-                case CameraFacing.Front:
-                    pckCameraQualityFront.Title = nQualityCameraFront switch
-                    {
-                        0 => cTitle + CodeLang.CameraQualityLow_Text,
-                        1 => cTitle + CodeLang.CameraQualityMedium_Text,
-                        2 => cTitle + CodeLang.CameraQualityHigh_Text,
-                        3 => cTitle + CodeLang.CameraQualityHighest_Text,
-                        _ => cTitle + CodeLang.CameraQualityMedium_Text
-                    };
-                    break;
-            }
-        }
-
-        /// <summary>
         /// ImageButton camera facing clicked event
         /// </summary>
         /// <param name="sender"></param>
@@ -422,6 +387,39 @@ namespace BarcodeGenerator
 
             // Set the title for the quality picker
             SetTitleCameraQualityPicker();
+        }
+
+        /// <summary>
+        /// Set the title for the quality picker
+        /// </summary>
+        private void SetTitleCameraQualityPicker()
+        {
+            string cTitle = $"{CodeLang.CameraQualityTitle_Text}: ";
+
+            switch (barcodeReader.CameraFacing)
+            {
+                case CameraFacing.Back:
+                    pckCameraQualityBack.Title = nQualityCameraBack switch
+                    {
+                        0 => cTitle + CodeLang.CameraQualityLow_Text,
+                        1 => cTitle + CodeLang.CameraQualityMedium_Text,
+                        2 => cTitle + CodeLang.CameraQualityHigh_Text,
+                        3 => cTitle + CodeLang.CameraQualityHighest_Text,
+                        _ => cTitle + CodeLang.CameraQualityMedium_Text
+                    };
+                    break;
+
+                case CameraFacing.Front:
+                    pckCameraQualityFront.Title = nQualityCameraFront switch
+                    {
+                        0 => cTitle + CodeLang.CameraQualityLow_Text,
+                        1 => cTitle + CodeLang.CameraQualityMedium_Text,
+                        2 => cTitle + CodeLang.CameraQualityHigh_Text,
+                        3 => cTitle + CodeLang.CameraQualityHighest_Text,
+                        _ => cTitle + CodeLang.CameraQualityMedium_Text
+                    };
+                    break;
+            }
         }
 
         /// <summary>

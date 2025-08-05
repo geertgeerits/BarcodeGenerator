@@ -11,9 +11,8 @@
  *                Google ML Kit: https://developers.google.com/ml-kit
  * Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.4.0 ; https://github.com/redth/ZXing.Net.Maui
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.4.0
- *                (NuGet Package: BarcodeScanner.Mobile.Maui version = "8.0.0 ; Google Vision ; https://github.com/JimmyPun610/BarcodeScanner.Mobile)
- *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 2.1.6 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
- *                NuGet Package: Sentry.Maui version 5.5.1 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
+ *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 2.2.1 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
+ *                NuGet Package: Sentry.Maui version 5.13.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
