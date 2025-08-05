@@ -350,12 +350,12 @@ namespace BarcodeGenerator
 
             Debug.WriteLine("nSelectedIndex: " + nSelectedIndex);  // For testing
 
-            // Set the title for the picker
+            // Set the title for the quality picker
             SetTitleCameraQualityPicker();
         }
 
         /// <summary>
-        /// Set the title for the picker
+        /// Set the title for the quality picker
         /// </summary>
         private void SetTitleCameraQualityPicker()
         {
@@ -419,6 +419,9 @@ namespace BarcodeGenerator
             }
 
             imgbtnCameraTorch.Source = "camera_torch_off_64x64p.png";
+
+            // Set the title for the quality picker
+            SetTitleCameraQualityPicker();
         }
 
         /// <summary>
