@@ -9,7 +9,6 @@ namespace BarcodeGenerator
         private readonly List<string> qualities = [];
         private int nQualityCameraBack;
         private int nQualityCameraFront;
-        private bool bBeforeLeavingPage;
 
         public PageScanNT()
     	{
@@ -60,6 +59,9 @@ namespace BarcodeGenerator
             //// Set the quality for the camera
             pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
             pckCameraQualityFront.SelectedIndex = nQualityCameraFront;
+
+            //// Set the title for the picker
+            //SetTitleCameraQualityPicker();
 
             //// The height of the title bar is lower when an iPhone is in horizontal position
             if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
@@ -148,21 +150,6 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// On BackButton pressed event (does not work in iOS)
-        /// </summary>
-        /// <returns></returns>
-        protected override bool OnBackButtonPressed()
-        {
-            // To do before leaving this page
-            BeforeLeavingPageScanNT();
-
-            Debug.WriteLine("Method: OnBackButtonPressed");
-
-            // Allow the default back button action
-            return base.OnBackButtonPressed();
-        }
-
-        /// <summary>
         /// Called by the Appearing event from the PageScanNT.xaml
         /// </summary>
         protected override async void OnAppearing()
@@ -184,14 +171,14 @@ namespace BarcodeGenerator
         /// </summary>
         protected override void OnDisappearing()
         {
-            // To do before leaving this page
-            BeforeLeavingPageScanNT();
+            Debug.WriteLine("Method: OnDisappearing");
 
             // Disable the camera
             base.OnDisappearing();
             barcodeReader.CameraEnabled = false;
 
-            Debug.WriteLine("Method: OnDisappearing");
+            // To do before leaving this page
+            BeforeLeavingPageScanNT();
         }
 
         /// <summary>
@@ -199,11 +186,7 @@ namespace BarcodeGenerator
         /// </summary>
         private void BeforeLeavingPageScanNT()
         {
-            // Check if this method has or not been called
-            if (bBeforeLeavingPage)
-            {
-                return;
-            }
+            Debug.WriteLine("Method: BeforeLeavingPageScanNT");
 
             // Save the quality settings
             Preferences.Default.Set("SettingQualityCameraBack", nQualityCameraBack);
@@ -221,11 +204,6 @@ namespace BarcodeGenerator
 
             // Give it some time to save the settings
             Task.Delay(100).Wait();
-
-            // This method has been called
-            bBeforeLeavingPage = true;
-
-            Debug.WriteLine("Method: BeforeLeavingPageScanNT");
         }
 
         /// <summary>
@@ -619,23 +597,3 @@ namespace BarcodeGenerator
         //}
     }
 }
-
-/* From NuGet Package BarcodeScanner.Native.Maui version 1.4.0 the app hangs or exit on the splash screen
-   when the app is opened on a Samsung A320 phone with Android 8.0 when using Android local devices.
-   Does not hangs or exit on the splash screen when using the released published .apk file.
-
-   Order when leaving this page:
-   Android
-   1. Method: OnBackButtonPressed
-   2. Method: OnDisappearing
-   3. Method: ContentPage_Unloaded
-
-   iOs - iPhone 7 with original back button - Solved when using Shell instead of NavigationPage
-   method 'protected override bool OnBackButtonPressed()' is not called !!!
-   1. Method: ContentPage_Unloaded
-   2. Method: OnDisappearing
-
-   iOs - iPhone 7 with the new back button
-   1. Method: OnBackButtonPressed2
-   2. Method: OnDisappearing
-   3. Method: ContentPage_Unloaded */
