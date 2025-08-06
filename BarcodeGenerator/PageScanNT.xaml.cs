@@ -37,7 +37,7 @@ namespace BarcodeGenerator
             // No support for the highest quality: iPad 8, iOS version 17.1.1 (back and front camera)
             // No support for the high and the highest quality: iPhone 7, iOS version 15.8 (front camera)
 #if IOS
-            // iOS front camera quality settings
+            // iOS front and back camera quality settings
             qualities.Add(CodeLang.CameraQualityLow_Text);
             qualities.Add(CodeLang.CameraQualityMedium_Text);
             pckCameraQualityFront.ItemsSource = qualities;
@@ -46,7 +46,7 @@ namespace BarcodeGenerator
             qualities.Add(CodeLang.CameraQualityHigh_Text);
             pckCameraQualityBack.ItemsSource = qualities;
 #else
-            // Front camera quality settings
+            // Front and back camera quality settings
             qualities.Add(CodeLang.CameraQualityLow_Text);
             qualities.Add(CodeLang.CameraQualityMedium_Text);
             qualities.Add(CodeLang.CameraQualityHigh_Text);
