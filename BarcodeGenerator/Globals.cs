@@ -69,7 +69,7 @@ namespace BarcodeGenerator
 
             if (cLanguageIso.EndsWith('-'))
             {
-                cLanguageIso = cLanguageIso.Remove(cLanguageIso.Length - 1, 1);
+                cLanguageIso = cLanguageIso[..^1];
             }
 
             return cLanguageIso;

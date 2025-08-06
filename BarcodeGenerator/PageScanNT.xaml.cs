@@ -237,7 +237,7 @@ namespace BarcodeGenerator
                 }
 
                 // Remove duplicates
-                listBarcodes = listBarcodes.Distinct().ToList();
+                listBarcodes = [.. listBarcodes.Distinct()];
 
                 // Sort the list
                 listBarcodes.Sort();

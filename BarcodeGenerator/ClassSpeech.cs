@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace BarcodeGenerator
+﻿namespace BarcodeGenerator
 {
     internal sealed class ClassSpeech
     {
