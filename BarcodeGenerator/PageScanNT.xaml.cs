@@ -499,7 +499,6 @@ namespace BarcodeGenerator
 #if DEBUG
                 _ = DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
-                return;
             }
         }
 

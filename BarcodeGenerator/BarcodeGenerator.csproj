@@ -22,9 +22,9 @@
 		<ApplicationIdGuid>7A6A918B-29C3-433A-82AE-16D589F3D8A2</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<PackageVersion>1.0.43</PackageVersion>
-		<ApplicationDisplayVersion>1.0.43</ApplicationDisplayVersion>
-		<ApplicationVersion>43</ApplicationVersion>
+		<PackageVersion>1.0.44</PackageVersion>
+		<ApplicationDisplayVersion>1.0.44</ApplicationDisplayVersion>
+		<ApplicationVersion>44</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">12.2</SupportedOSPlatformVersion>
 		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.4</SupportedOSPlatformVersion>-->
@@ -95,12 +95,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.90" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" />
-		<PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
-		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.100" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
+		<PackageReference Include="ZXing.Net.Maui" Version="0.5.0" />
+		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.5.0" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="2.2.1" />
-		<PackageReference Include="Sentry.Maui" Version="5.13.0" />
+		<PackageReference Include="Sentry.Maui" Version="5.14.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -151,8 +151,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.43</ApplicationDisplayVersion>
-		<ApplicationVersion>43</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.44</ApplicationDisplayVersion>
+		<ApplicationVersion>44</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
@@ -171,8 +171,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.43</ApplicationDisplayVersion>
-		<ApplicationVersion>43</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.44</ApplicationDisplayVersion>
+		<ApplicationVersion>44</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 

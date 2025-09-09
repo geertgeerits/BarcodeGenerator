@@ -1,18 +1,18 @@
 ﻿/* Program .....: BarcodeGenerator.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2025
- * Version .....: 1.0.43
- * Date ........: 2025-08-06 (YYYY-MM-DD)
+ * Version .....: 1.0.44
+ * Date ........: 2025-09-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
  *                zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
  *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
  *                Google ML Kit: https://developers.google.com/ml-kit
- * Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.4.0 ; https://github.com/redth/ZXing.Net.Maui
- *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.4.0
+ * Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.5.0 ; https://github.com/redth/ZXing.Net.Maui
+ *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.5.0
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 2.2.1 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
- *                NuGet Package: Sentry.Maui version 5.13.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
+ *                NuGet Package: Sentry.Maui version 5.14.1 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
@@ -991,12 +991,25 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnShareClicked(object sender, EventArgs e)
         {
-            if (Screenshot.Default.IsCaptureSupported)
+            // Sometimes an InvalidCastException when running on a MacBook Air M1:
+            // System.InvalidCastException: Unable to cast object of type 'Foundation.NSString' to type 'Foundation.NSExtensionItem'.
+            try
             {
-                IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
-                Stream stream = await screen!.OpenReadAsync();
+                if (Screenshot.Default.IsCaptureSupported)
+                {
+                    IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
+                    Stream stream = await screen!.OpenReadAsync();
 
-                SaveStreamAsFile(stream);
+                    SaveStreamAsFile(stream);
+                }
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+
+#if DEBUG
+                _ = DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
             }
         }
 
