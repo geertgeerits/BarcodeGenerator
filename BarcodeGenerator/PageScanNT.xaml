@@ -17,7 +17,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleScanner}"
-                RowDefinitions="Auto, 1, 500, 1, Auto, Auto">
+                RowDefinitions="Auto, 10, 500, 1, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -38,6 +38,17 @@
                         SelectedIndexChanged="OnPickerFormatCodeChanged">
                     </Picker>
                 </Border>
+
+                <Slider
+                    x:Name="sldCameraZoom"
+                    Style="{StaticResource sliderStyleColor}"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    ThumbColor="Grey"
+                    MinimumTrackColor="Black"
+                    ValueChanged="OnSliderCameraZoomValueChanged">
+                </Slider>
 
                 <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320: use Frame.-->
                 <Border
@@ -61,6 +72,7 @@
                             AimMode="False"
                             TorchOn="False"
                             VibrationOnDetected="False"
+                            RequestZoomFactor="1"
                             CameraEnabled="True"
                             OnDetectionFinished="OnCameraDetectionFinished">
                         </native:CameraView>

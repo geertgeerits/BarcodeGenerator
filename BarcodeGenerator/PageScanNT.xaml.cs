@@ -567,6 +567,16 @@ namespace BarcodeGenerator
             }
         }
 
+        /// <summary>
+        /// Handles the event triggered when the camera zoom slider value changes
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the slider control.</param>
+        /// <param name="e">The event data containing the old and new values of the slider.</param>
+        private void OnSliderCameraZoomValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            barcodeReader.RequestZoomFactor = 2;
+        }
+
         ///// <summary>
         ///// Read the device information
         ///// </summary>
