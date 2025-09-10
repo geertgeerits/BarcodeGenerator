@@ -438,12 +438,11 @@ Nepermis:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Activați sau dezactivați vibrația dispozitivului când găsiți un cod de bare</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ToolTipCameraZoomIn_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
+    <value>Mărire cameră</value>
   </data>
-  <data name="ToolTipCameraZoomOut_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
+    <value>Mărire cameră</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiați textul în clipboard</value>

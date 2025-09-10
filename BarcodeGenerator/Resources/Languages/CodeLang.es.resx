@@ -438,12 +438,11 @@ No permitido:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Habilite o deshabilite la vibración del dispositivo al encontrar un código de barras</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ToolTipCameraZoomIn_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
+    <value>Acercar la cámara</value>
   </data>
-  <data name="ToolTipCameraZoomOut_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
+    <value>Alejar la cámara</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copie el texto en el portapapeles</value>

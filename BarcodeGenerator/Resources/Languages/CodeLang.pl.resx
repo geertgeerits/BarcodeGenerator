@@ -438,12 +438,11 @@ Niedozwolony:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Włącz lub wyłącz wibracje urządzenia podczas wyszukiwania kodu kreskowego</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ToolTipCameraZoomIn_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
+    <value>Przybliżenie kamery</value>
   </data>
-  <data name="ToolTipCameraZoomOut_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
+    <value>Oddalenie kamery</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Skopiuj tekst do schowka</value>

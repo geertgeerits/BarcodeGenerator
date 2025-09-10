@@ -438,12 +438,11 @@ Ikke tilladt:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Aktiver eller deaktiver enhedsvibration, når du finder en stregkode</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ToolTipCameraZoomIn_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
+    <value>Kamera zoom ind</value>
   </data>
-  <data name="ToolTipCameraZoomOut_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
+    <value>Kamera zoom ud</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopier tekst til udklipsholderen</value>

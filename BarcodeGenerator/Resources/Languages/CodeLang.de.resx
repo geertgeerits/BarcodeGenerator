@@ -438,12 +438,11 @@ Nicht erlaubt:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Aktivieren oder deaktivieren Sie die Gerätevibration beim Finden eines Barcodes</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ToolTipCameraZoomIn_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
+    <value>Kamera vergrößern</value>
   </data>
-  <data name="ToolTipCameraZoomOut_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
+    <value>Kamera verkleinern</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Text in die Zwischenablage kopieren</value>

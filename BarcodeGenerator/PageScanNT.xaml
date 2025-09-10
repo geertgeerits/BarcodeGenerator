@@ -17,7 +17,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleScanner}"
-                RowDefinitions="Auto, 30, 500, 1, Auto, Auto">
+                RowDefinitions="Auto, 28, 500, 1, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -52,7 +52,7 @@
                         HeightRequest="20"
                         WidthRequest="20"
                         VerticalOptions="Start"
-                        HorizontalOptions="End"
+                        HorizontalOptions="Start"
                         Source="camera_zoom_out_48p.png"
                         SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraZoomOut_Text}"
                         ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraZoomOut_Text}">

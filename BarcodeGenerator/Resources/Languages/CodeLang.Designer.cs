@@ -955,7 +955,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ToolTip.
+        ///   Looks up a localized string similar to Crash error report.
         /// </summary>
         internal static string ToolTipCrashErrorReport_Text {
             get {
