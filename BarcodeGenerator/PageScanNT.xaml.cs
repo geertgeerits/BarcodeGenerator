@@ -275,6 +275,16 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Handles the event triggered when the camera zoom slider value changes
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the slider control.</param>
+        /// <param name="e">The event data containing the old and new values of the slider.</param>
+        private void OnSliderCameraZoomValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            barcodeReader.RequestZoomFactor = (float)sldCameraZoom.Value;
+        }
+
+        /// <summary>
         /// ImageButton camera quality clicked event to open the picker
         /// </summary>
         /// <param name="sender"></param>
@@ -565,16 +575,6 @@ namespace BarcodeGenerator
                     }               
                 }
             }
-        }
-
-        /// <summary>
-        /// Handles the event triggered when the camera zoom slider value changes
-        /// </summary>
-        /// <param name="sender">The source of the event, typically the slider control.</param>
-        /// <param name="e">The event data containing the old and new values of the slider.</param>
-        private void OnSliderCameraZoomValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            barcodeReader.RequestZoomFactor = (float)sldCameraZoom.Value;
         }
 
         ///// <summary>
