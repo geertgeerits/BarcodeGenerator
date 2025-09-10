@@ -438,11 +438,8 @@ Não permitido:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Ative ou desative a vibração do dispositivo ao encontrar um código de barras</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Zoom da câmera para mais zoom</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Zoom da câmera para menos zoom</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Câmera: zoom in e out</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copie o texto para a área de transferência</value>

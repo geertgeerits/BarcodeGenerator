@@ -17,7 +17,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleScanner}"
-                RowDefinitions="Auto, 28, 500, 1, Auto, Auto">
+                RowDefinitions="Auto, 24, 500, 1, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -39,51 +39,23 @@
                     </Picker>
                 </Border>
 
-                <Grid
-                    RowDefinitions="Auto"
-                    ColumnDefinitions="Auto, *, Auto"
+                <Slider
+                    x:Name="sldCameraZoom"
+                    Style="{StaticResource sliderStyleColor}"
                     Grid.Row="1"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2">
-
-                    <ImageButton
-                        Style="{StaticResource imageButtonStyleCamera}"
-                        Grid.Column="0"
-                        HeightRequest="20"
-                        WidthRequest="20"
-                        VerticalOptions="Start"
-                        HorizontalOptions="Start"
-                        Source="camera_zoom_out_48p.png"
-                        SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraZoomOut_Text}"
-                        ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraZoomOut_Text}">
-                    </ImageButton>
-
-                    <Slider
-                        x:Name="sldCameraZoom"
-                        Style="{StaticResource sliderStyleColor}"
-                        Grid.Column="1"
-                        HeightRequest="20"
-                        VerticalOptions="End"
-                        ThumbColor="DeepSkyBlue"
-                        MinimumTrackColor="DeepSkyBlue"
-                        Value="1"
-                        Minimum="0"
-                        Maximum="10"                    
-                        ValueChanged="OnSliderCameraZoomValueChanged">
-                    </Slider>
-
-                    <ImageButton
-                        Style="{StaticResource imageButtonStyleCamera}"
-                        Grid.Column="2"
-                        HeightRequest="20"
-                        WidthRequest="20"
-                        VerticalOptions="Start"
-                        HorizontalOptions="End"
-                        Source="camera_zoom_in_48p.png"
-                        SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraZoomIn_Text}"
-                        ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraZoomIn_Text}">
-                    </ImageButton>
-                </Grid>
+                    Grid.ColumnSpan="2"
+                    HeightRequest="24"
+                    VerticalOptions="Center"
+                    ThumbColor="DeepSkyBlue"
+                    MinimumTrackColor="DeepSkyBlue"
+                    Value="1"
+                    Minimum="0"
+                    Maximum="10"
+                    SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraZoom_Text}"
+                    ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraZoom_Text}"
+                    ValueChanged="OnSliderCameraZoomValueChanged">
+                </Slider>
 
                 <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320: use Frame.-->
                 <Border

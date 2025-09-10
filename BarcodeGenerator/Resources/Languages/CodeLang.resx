@@ -444,11 +444,8 @@ Not allowed:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Enable or disable device vibration when finding a barcode</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Camera zoom in</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Camera zoom out</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Camera: zoom in and out</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copy text to the clipboard</value>

@@ -438,11 +438,8 @@ Nepermis:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Activați sau dezactivați vibrația dispozitivului când găsiți un cod de bare</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Mărire cameră</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Mărire cameră</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Cameră: mărire și micșorare</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiați textul în clipboard</value>

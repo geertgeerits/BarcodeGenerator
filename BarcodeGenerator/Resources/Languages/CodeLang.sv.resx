@@ -438,11 +438,8 @@ Inte tillåtet:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Aktivera eller inaktivera enhetsvibrationer när du hittar en streckkod</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Kamerazoom in</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Kamerazoom ut</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Kamera: zooma in och ut</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopiera text till urklipp</value>

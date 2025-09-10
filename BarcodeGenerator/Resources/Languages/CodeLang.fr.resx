@@ -438,11 +438,8 @@ Interdit:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Activer ou désactiver les vibrations de l'appareil lors de la recherche d'un code-barres</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Zoom avant</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Zoom arrière</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Appareil photo : zoom avant et arrière</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiez le texte dans le presse-papiers</value>

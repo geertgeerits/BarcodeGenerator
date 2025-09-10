@@ -438,11 +438,8 @@ Ei sallittu:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Ota käyttöön tai poista käytöstä laitteen värinä, kun etsit viivakoodia</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Kameran zoomaus sisään</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Kameran zoomaus ulos</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Kamera: zoomaus sisään ja ulos</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopioi teksti leikepöydälle</value>

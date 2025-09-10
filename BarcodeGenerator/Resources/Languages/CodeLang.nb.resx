@@ -438,11 +438,8 @@ Ikke tillatt:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Aktiver eller deaktiver enhetsvibrasjon når du finner en strekkode</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Kamerazoom inn</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Kamerazzoom ut</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Kamera: zoom inn og ut</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopier tekst til utklippstavlen</value>

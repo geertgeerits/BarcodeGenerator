@@ -444,11 +444,8 @@ Nepovoleno:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Povolit nebo zakázat vibrace zařízení při hledání čárového kódu</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Přiblížení fotoaparátu</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Oddálení fotoaparátu</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Fotoaparát: přiblížení a oddálení</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Zkopírujte text do schránky</value>

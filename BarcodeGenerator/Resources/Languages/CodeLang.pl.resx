@@ -438,11 +438,8 @@ Niedozwolony:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Włącz lub wyłącz wibracje urządzenia podczas wyszukiwania kodu kreskowego</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Przybliżenie kamery</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Oddalenie kamery</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Kamera: przybliżanie i oddalanie</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Skopiuj tekst do schowka</value>

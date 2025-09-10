@@ -438,11 +438,8 @@ Niet toegestaan:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Schakel apparaattrilling in of uit bij het vinden van een barcode</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Camera inzoomen</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Camera uitzoomen</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Camera: in- en uitzoomen</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopieer tekst naar het klembord</value>

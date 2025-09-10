@@ -438,11 +438,8 @@ Nem megengedett:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Az eszköz rezgésének engedélyezése vagy letiltása vonalkód megtalálásakor</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Kamera zoomolása</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Kamera zoomolása</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Kamera: nagyítás és kicsinyítés</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Szöveg másolása a vágólapra</value>

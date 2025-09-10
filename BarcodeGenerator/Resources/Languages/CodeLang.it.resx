@@ -438,11 +438,8 @@ Non autorizzato:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Abilita o disabilita la vibrazione del dispositivo quando trovi un codice a barre</value>
   </data>
-  <data name="ToolTipCameraZoomIn_Text" xml:space="preserve">
-    <value>Zoom avanti della fotocamera</value>
-  </data>
-  <data name="ToolTipCameraZoomOut_Text" xml:space="preserve">
-    <value>Zoom indietro della fotocamera</value>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Fotocamera: zoom avanti e indietro</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copia il testo negli appunti</value>
