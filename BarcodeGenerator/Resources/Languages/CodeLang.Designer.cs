@@ -928,6 +928,24 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Camera zoom in.
+        /// </summary>
+        internal static string ToolTipCameraZoomIn_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCameraZoomIn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Camera zoom out.
+        /// </summary>
+        internal static string ToolTipCameraZoomOut_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCameraZoomOut_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy text to the clipboard.
         /// </summary>
         internal static string ToolTipCopy_Text {

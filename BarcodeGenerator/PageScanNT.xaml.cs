@@ -574,7 +574,7 @@ namespace BarcodeGenerator
         /// <param name="e">The event data containing the old and new values of the slider.</param>
         private void OnSliderCameraZoomValueChanged(object sender, ValueChangedEventArgs e)
         {
-            barcodeReader.RequestZoomFactor = 2;
+            barcodeReader.RequestZoomFactor = (float)sldCameraZoom.Value;
         }
 
         ///// <summary>

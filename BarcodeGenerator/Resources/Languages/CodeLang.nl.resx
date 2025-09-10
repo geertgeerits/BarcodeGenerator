@@ -438,6 +438,13 @@ Niet toegestaan:</value>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
     <value>Schakel apparaattrilling in of uit bij het vinden van een barcode</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ToolTipCameraZoomIn_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ToolTipCameraZoomOut_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopieer tekst naar het klembord</value>
   </data>
