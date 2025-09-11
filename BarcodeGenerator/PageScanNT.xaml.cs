@@ -269,7 +269,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                _ = DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                _ = DisplayAlert("OnCameraDetectionFinished", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -496,18 +496,17 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnShareClicked(object sender, EventArgs e)
         {
-            // InvalidCastException when running on a MacBook Air M1:
+            // Sometimes InvalidCastException when running on a MacBook Air M1:
             // System.InvalidCastException: Unable to cast object of type 'Foundation.NSString' to type 'Foundation.NSExtensionItem'.
             try
             {
                 _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
-                //_ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text.ToString());
             }
             catch (Exception ex)
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                _ = DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                _ = DisplayAlert("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -570,7 +569,7 @@ namespace BarcodeGenerator
                     {
                         SentrySdk.CaptureException(ex);
 #if DEBUG
-                        Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                        Application.Current!.Windows[0].Page!.DisplayAlert("Draw", ex.Message, CodeLang.ButtonClose_Text);
 #endif
                     }               
                 }
