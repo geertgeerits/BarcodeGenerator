@@ -1006,9 +1006,8 @@ namespace BarcodeGenerator
             catch (Exception ex)
             {
                 SentrySdk.CaptureException(ex);
-
 #if DEBUG
-                _ = DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                _ = DisplayAlert("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -1106,7 +1105,7 @@ namespace BarcodeGenerator
                 {
                     SentrySdk.CaptureException(ex);
 #if DEBUG
-                    await DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                    await DisplayAlert("OnPasteFromClipboardClicked", ex.Message, CodeLang.ButtonClose_Text);
 #endif
                 }
             }
