@@ -33,7 +33,8 @@ namespace BarcodeGenerator
             //// Read the device information
             //ReadDeviceInfo();
 #endif
-            //// Set the quality for the camera pickers
+            //// Settings for iOS and Android
+            // Set the quality for the camera pickers
             // No support for the highest quality: iPad 8, iOS version 17.1.1 (back and front camera)
             // No support for the high and the highest quality: iPhone 7, iOS version 15.8 (front camera)
 #if IOS
@@ -45,6 +46,9 @@ namespace BarcodeGenerator
             // iOS back camera quality settings
             qualities.Add(CodeLang.CameraQualityHigh_Text);
             pckCameraQualityBack.ItemsSource = qualities;
+
+            // iOS camera zoom settings
+            sldCameraZoom.Minimum = 1;
 #else
             // Front and back camera quality settings
             qualities.Add(CodeLang.CameraQualityLow_Text);
