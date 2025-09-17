@@ -30,6 +30,7 @@ namespace BarcodeGenerator
             lblLicense.Text = $"\n{CodeLang.LicenseTitle_Text}: {CodeLang.License_Text}";
             lblExplanation.Text = $"\n{CodeLang.InfoExplanation_Text}";
             lblLicenseMit.Text = $"\n{CodeLang.Copyright_Text} © {CodeLang.LicenseMit_Text}\n\n{CodeLang.LicenseMit2_Text}";
+            lblTrademarks.Text = $"\n{CodeLang.Trademarks_Text}";
         }
     }
 

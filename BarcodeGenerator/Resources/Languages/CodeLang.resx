@@ -474,6 +474,9 @@ Not allowed:</value>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Text to speech: on or off</value>
   </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>
   </data>
