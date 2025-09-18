@@ -1018,7 +1018,9 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Apple, App Store and the App Store logo are trademarks of Apple Inc., registered in the U.S. and other countries and regions.
+        ///Google, Google Play, the Google Play logo and Android are trademarks of Google LLC.
+        ///Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks of Microsoft Corporation..
         /// </summary>
         internal static string Trademarks_Text {
             get {
