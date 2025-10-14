@@ -20,7 +20,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                DisplayAlert("InitializeComponent: PageScanNT", ex.Message, "OK");
+                DisplayAlertAsync("InitializeComponent: PageScanNT", ex.Message, "OK");
 #endif
                 return;
             }
@@ -273,7 +273,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                _ = DisplayAlert("OnCameraDetectionFinished", ex.Message, CodeLang.ButtonClose_Text);
+                _ = DisplayAlertAsync("OnCameraDetectionFinished", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -346,7 +346,7 @@ namespace BarcodeGenerator
             {
                 _ = SentrySdk.CaptureException(ex);
 
-                await DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.CameraQualityError_Text, CodeLang.ButtonClose_Text);
+                await DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.CameraQualityError_Text, CodeLang.ButtonClose_Text);
             }
 
             // Set the quality for the picker
@@ -510,7 +510,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                _ = DisplayAlert("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
+                _ = DisplayAlertAsync("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -573,7 +573,7 @@ namespace BarcodeGenerator
                     {
                         SentrySdk.CaptureException(ex);
 #if DEBUG
-                        Application.Current!.Windows[0].Page!.DisplayAlert("Draw", ex.Message, CodeLang.ButtonClose_Text);
+                        Application.Current!.Windows[0].Page!.DisplayAlertAsync("Draw", ex.Message, CodeLang.ButtonClose_Text);
 #endif
                     }               
                 }
@@ -603,7 +603,7 @@ namespace BarcodeGenerator
 
         //    sb.AppendLine($"Virtual device? {isVirtual}");
 
-        //    _ = DisplayAlert("Device info", sb.ToString(), "OK");
+        //    _ = DisplayAlertAsync("Device info", sb.ToString(), "OK");
         //}
     }
 }

@@ -1,11 +1,4 @@
-﻿//// Global usings
-global using BarcodeGenerator.Resources.Languages;
-global using System.Globalization;
-global using System.Diagnostics;
-global using Sentry;
-
-//// Local usings
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace BarcodeGenerator
 {
@@ -217,7 +210,7 @@ namespace BarcodeGenerator
                 {
                     if (match.Success)
                     {
-                        bool bAnswer = await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.OpenLinkTitle_Text, $"{match.Value}\n\n{CodeLang.OpenLinkText_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
+                        bool bAnswer = await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.OpenLinkTitle_Text, $"{match.Value}\n\n{CodeLang.OpenLinkText_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
 
                         // Open link website
                         if (bAnswer)
@@ -235,7 +228,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await Application.Current!.Windows[0].Page!.DisplayAlert("ShareBarcodeResultAsync", ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("ShareBarcodeResultAsync", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
 
@@ -273,7 +266,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await Application.Current!.Windows[0].Page!.DisplayAlert("OpenWebsiteLinkAsync", ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("OpenWebsiteLinkAsync", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -297,7 +290,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                await Application.Current!.Windows[0].Page!.DisplayAlert("ShareTextAsync", ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("ShareTextAsync", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }

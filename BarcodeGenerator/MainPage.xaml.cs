@@ -1,9 +1,9 @@
 ﻿/* Program .....: BarcodeGenerator.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
- * Copyright ...: (C) 2022-2025
+ * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.44
- * Date ........: 2025-09-18 (YYYY-MM-DD)
- * Language ....: Microsoft Visual Studio 2022: .NET 9.0 MAUI C# 13.0
+ * Date ........: 2025-10-14 (YYYY-MM-DD)
+ * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
  *                zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -12,7 +12,7 @@
  * Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.5.2 ; https://github.com/redth/ZXing.Net.Maui
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.5.2
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 2.2.1 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
- *                NuGet Package: Sentry.Maui version 5.15.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
+ *                NuGet Package: Sentry.Maui version 5.16.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
@@ -34,7 +34,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
+                DisplayAlertAsync("InitializeComponent: MainPage", ex.Message, "OK");
 #endif
                 return;
             }
@@ -719,7 +719,7 @@ namespace BarcodeGenerator
 
                 if (bResult == false)
                 {
-                    _ = DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.AllowedChar_Text}\n{cAllowedCharacters}\n\n{CodeLang.AllowedCharNot_Text} {cChar}", CodeLang.ButtonClose_Text);
+                    _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.AllowedChar_Text}\n{cAllowedCharacters}\n\n{CodeLang.AllowedCharNot_Text} {cChar}", CodeLang.ButtonClose_Text);
 
                     _ = edtTextToCode.Focus();
                     return false;
@@ -745,7 +745,7 @@ namespace BarcodeGenerator
 
                 if ((int)cChar < nMinAsciiValue || (int)cChar > nMaxAsciiValue)
                 {
-                    _ = DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.TextContainsChar_Text} {cChar}", CodeLang.ButtonClose_Text);
+                    _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.TextContainsChar_Text} {cChar}", CodeLang.ButtonClose_Text);
 
                     _ = edtTextToCode.Focus();
                     return false;
@@ -789,7 +789,7 @@ namespace BarcodeGenerator
 
                 if (cStartEndGuards.Contains(cChar) && nPos > 0 && nPos < cTextToCode.Length - 1)
                 {
-                    _ = DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.GuardInvalidStartEnd_Text} {cChar}", CodeLang.ButtonClose_Text);
+                    _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GuardInvalidStartEnd_Text} {cChar}", CodeLang.ButtonClose_Text);
 
                     _ = edtTextToCode.Focus();
                     return false;
@@ -799,14 +799,14 @@ namespace BarcodeGenerator
             // Control of missing start or end guard
             if (cStartEndGuards.Contains(cTextToCode[..1]) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
             {
-                _ = DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingEnd_Text, CodeLang.ButtonClose_Text);
+                _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingEnd_Text, CodeLang.ButtonClose_Text);
 
                 _ = edtTextToCode.Focus();
                 return false;
             }
             else if (cStartEndGuards.Contains(cTextToCode[..1]) == false && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)))
             {
-                _ = DisplayAlert(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingStart_Text, CodeLang.ButtonClose_Text);
+                _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingStart_Text, CodeLang.ButtonClose_Text);
 
                 _ = edtTextToCode.Focus();
                 return false;
@@ -888,7 +888,7 @@ namespace BarcodeGenerator
         /// <param name="cMessage"></param>
         private void DisplayErrorMessage(string cMessage)
         {
-            _ = DisplayAlert(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
+            _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
 
             _ = edtTextToCode.Focus();
         }
@@ -900,7 +900,7 @@ namespace BarcodeGenerator
         /// <param name="cMaxLength"></param>
         private void DisplayErrorMessageLength(string cMinLength, string cMaxLength)
         {
-            _ = DisplayAlert(CodeLang.ErrorTitle_Text, $"{CodeLang.CodeLengthPart1_Text} {cMinLength} {CodeLang.CodeLengthPart2_Text} {cMaxLength} {CodeLang.CodeLengthPart3_Text}", CodeLang.ButtonClose_Text);
+            _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.CodeLengthPart1_Text} {cMinLength} {CodeLang.CodeLengthPart2_Text} {cMaxLength} {CodeLang.CodeLengthPart3_Text}", CodeLang.ButtonClose_Text);
 
             _ = edtTextToCode.Focus();
         }
@@ -911,7 +911,7 @@ namespace BarcodeGenerator
         /// <param name="cErrorMessage"></param>
         private async void RestartApplication(string cErrorMessage)
         {
-            await DisplayAlert(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
+            await DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
 
             Application.Current!.Windows[0].Page = new AppShell();
         }
@@ -926,7 +926,7 @@ namespace BarcodeGenerator
             // Show license
             if (Globals.bLicense == false)
             {
-                Globals.bLicense = await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.LicenseTitle_Text, cLicense, CodeLang.Agree_Text, CodeLang.Disagree_Text);
+                Globals.bLicense = await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.LicenseTitle_Text, cLicense, CodeLang.Agree_Text, CodeLang.Disagree_Text);
 
                 if (Globals.bLicense)
                 {
@@ -941,7 +941,7 @@ namespace BarcodeGenerator
                     imgbtnSettings.IsEnabled = false;
                     btnGenerateCode.IsEnabled = false;
 
-                    await DisplayAlert(CodeLang.LicenseTitle_Text, CodeLang.CloseApplication_Text, CodeLang.ButtonClose_Text);
+                    await DisplayAlertAsync(CodeLang.LicenseTitle_Text, CodeLang.CloseApplication_Text, CodeLang.ButtonClose_Text);
 #else
                     Application.Current.Quit();
 #endif
@@ -1007,7 +1007,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                _ = DisplayAlert("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
+                _ = DisplayAlertAsync("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -1105,7 +1105,7 @@ namespace BarcodeGenerator
                 {
                     SentrySdk.CaptureException(ex);
 #if DEBUG
-                    await DisplayAlert("OnPasteFromClipboardClicked", ex.Message, CodeLang.ButtonClose_Text);
+                    await DisplayAlertAsync("OnPasteFromClipboardClicked", ex.Message, CodeLang.ButtonClose_Text);
 #endif
                 }
             }

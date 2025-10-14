@@ -16,7 +16,7 @@
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG            
-                DisplayAlert("InitializeComponent: PageSettings", ex.Message, "OK");
+                DisplayAlertAsync("InitializeComponent: PageSettings", ex.Message, "OK");
 #endif
                 return;
             }
@@ -288,7 +288,7 @@
         /// <param name="e"></param>
         private async void OnSettingsHexColorHelpClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("?", $"{CodeLang.HexColorCodes_Text}\n\n{CodeLang.AllowedChar_Text}\n{cHexCharacters}", CodeLang.ButtonClose_Text);
+            await DisplayAlertAsync("?", $"{CodeLang.HexColorCodes_Text}\n\n{CodeLang.AllowedChar_Text}\n{cHexCharacters}", CodeLang.ButtonClose_Text);
         }
 
         /// <summary>

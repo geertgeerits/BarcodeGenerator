@@ -45,7 +45,7 @@
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 Debug.WriteLine($"Error in InitializeTextToSpeechAsync: {ex.Message}");
-                await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{ex.Message}\n\n{CodeLang.TextToSpeechError_Text}", CodeLang.ButtonClose_Text);
 #endif
                 return false;
             }
@@ -146,7 +146,7 @@
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
 
@@ -221,7 +221,7 @@
                 {
                     SentrySdk.CaptureException(ex);
 #if DEBUG
-                    await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CodeLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CodeLang.ButtonClose_Text);
 #endif
                 }
 

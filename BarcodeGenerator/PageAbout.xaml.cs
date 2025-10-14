@@ -5,7 +5,7 @@ namespace BarcodeGenerator
     public sealed partial class PageAbout : ContentPage
     {
         //// TapCommand to open the crash and error report privacy information (Launcher.OpenAsync is provided by Essentials)
-        public ICommand TapCommand => new Command(async () => await DisplayAlert(CodeLang.CrashErrorReport_Text, CodeLang.CrashErrorReportSentry_Text, CodeLang.ButtonClose_Text));
+        public ICommand TapCommand => new Command(async () => await DisplayAlertAsync(CodeLang.CrashErrorReport_Text, CodeLang.CrashErrorReportSentry_Text, CodeLang.ButtonClose_Text));
 
         public PageAbout()
     	{
@@ -18,14 +18,14 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                DisplayAlert("InitializeComponent: PageAbout", ex.Message, "OK");
+                DisplayAlertAsync("InitializeComponent: PageAbout", ex.Message, "OK");
 #endif
                 return;
             }
 
             // Put text in the chosen language in the controls
             lblVersion.Text = $"{CodeLang.Version_Text} 1.0.44";
-            lblCopyright.Text = $"{CodeLang.Copyright_Text} © 2022-2025 Geert Geerits";
+            lblCopyright.Text = $"{CodeLang.Copyright_Text} © 2022-2026 Geert Geerits";
             lblPrivacyPolicy.Text = $"\n{CodeLang.PrivacyPolicyTitle_Text} {CodeLang.PrivacyPolicy_Text}";
             lblLicense.Text = $"\n{CodeLang.LicenseTitle_Text}: {CodeLang.License_Text}";
             lblExplanation.Text = $"\n{CodeLang.InfoExplanation_Text}";
@@ -107,7 +107,7 @@ namespace BarcodeGenerator
                 }
                 catch (Exception ex)
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
                 }
             }
         }
@@ -132,7 +132,7 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlert(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
             }
         }
     }
