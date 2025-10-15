@@ -95,12 +95,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.0-rc.1.25452.6" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-rc.1.25451.107" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.0-rc.2.25504.7" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-rc.2.25502.107" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.5.2" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.5.2" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="2.2.1" />
-		<PackageReference Include="Sentry.Maui" Version="5.16.0" />
+		<PackageReference Include="Sentry.Maui" Version="6.0.0-preview.1-prerelease" />
 	</ItemGroup>
 
 	<ItemGroup>
