@@ -211,7 +211,7 @@
 
                     SpeechOptions options = new()
                     {
-                        Locale = locales?.FirstOrDefault(l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
+                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
                     };
 
                     await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
