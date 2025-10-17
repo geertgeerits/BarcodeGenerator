@@ -157,7 +157,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)'=='net10.0-ios'">
-	  <ProvisioningType>automatic</ProvisioningType>
+	  <ProvisioningType>manual</ProvisioningType>
 	  <CodesignKey>Apple Development: Created via API (KL96X68Q72)</CodesignKey>
 	  <CodesignProvision>VS: com.geertgeerits.barcodegenerator Development</CodesignProvision>
 	</PropertyGroup>
@@ -191,4 +191,12 @@
 	<PropertyGroup>
 		<RuntimeIdentifiers Condition="$(TargetFramework.Contains('-android'))">android-arm;android-arm64;android-x86;android-x64</RuntimeIdentifiers>
 	</PropertyGroup>
+
+	<!--.NET 10 Android CameraX dependencies - !!!BUG!!! MSBUILD : java.exe error JAVA0000 on .NET 10 rc1-->
+	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+		<PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.4.2.3" />
+		<PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.4.2.3" />
+		<PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.4.2.3" />
+	</ItemGroup>
+
 </Project>
