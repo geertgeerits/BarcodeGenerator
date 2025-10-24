@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui/global"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:BarcodeGenerator"
              x:Class="BarcodeGenerator.PageSettings">
 
     <Shell.TitleView>
         <Label
             Style="{StaticResource labelStyleTitleView}"
-            Text="{local:Translate Settings_Text}">
+            Text="{Translate Settings_Text}">
         </Label>
     </Shell.TitleView>
 
@@ -34,7 +33,7 @@
 
                     <Label
                         Style="{StaticResource labelStyleExplanation}"
-                        Text="{local:Translate SettingsSaved_Text}">
+                        Text="{Translate SettingsSaved_Text}">
                     </Label>
                 </Border>
 
@@ -43,7 +42,7 @@
                     Grid.Row="1"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Text="{local:Translate Language_Text}">
+                    Text="{Translate Language_Text}">
                 </Label>
 
                 <Border
@@ -84,7 +83,7 @@
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Text="{local:Translate LanguageSpeech_Text}">
+                    Text="{Translate LanguageSpeech_Text}">
                 </Label>
 
                 <Border
@@ -106,7 +105,7 @@
                     Grid.Row="3"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Text="{local:Translate Theme_Text}">
+                    Text="{Translate Theme_Text}">
                 </Label>
 
                 <Border
@@ -135,7 +134,7 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Text="{local:Translate DefaultFormatGenerator_Text}">
+                    Text="{Translate DefaultFormatGenerator_Text}">
                 </Label>
 
                 <Border
@@ -163,7 +162,7 @@
                     Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Text="{local:Translate DefaultFormatScanner_Text}">
+                    Text="{Translate DefaultFormatScanner_Text}">
                 </Label>
 
                 <Border
@@ -192,7 +191,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate ForegroundOpacity_Text}">
+                    Text="{Translate ForegroundOpacity_Text}">
                 </Label>
 
                 <Border
@@ -218,7 +217,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate ForegroundColor_Text}">
+                    Text="{Translate ForegroundColor_Text}">
                 </Label>
 
                 <Slider
@@ -235,8 +234,8 @@
                     Style="{StaticResource buttonStyleHelp}"
                     Grid.Row="9"
                     Grid.Column="0"
-                    SemanticProperties.Description="{local:Translate ToolTipHelp_Text}"
-                    ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
+                    SemanticProperties.Description="{Translate ToolTipHelp_Text}"
+                    ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
                     Clicked="OnSettingsHexColorHelpClicked">
                 </Button>
 
@@ -304,7 +303,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate BackgroundOpacity_Text}">
+                    Text="{Translate BackgroundOpacity_Text}">
                 </Label>
 
                 <Border
@@ -330,7 +329,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate BackgroundColor_Text}">
+                    Text="{Translate BackgroundColor_Text}">
                 </Label>
 
                 <Slider
@@ -347,8 +346,8 @@
                     Style="{StaticResource buttonStyleHelp}"
                     Grid.Row="14"
                     Grid.Column="0"
-                    SemanticProperties.Description="{local:Translate ToolTipHelp_Text}"
-                    ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
+                    SemanticProperties.Description="{Translate ToolTipHelp_Text}"
+                    ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
                     Clicked="OnSettingsHexColorHelpClicked">
                 </Button>
 
@@ -427,9 +426,9 @@
             x:Name="btnSettingsSave"
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="2"
-            Text="{local:Translate SettingsSave_Text}"
-            SemanticProperties.Description="{local:Translate ToolTipSettingsSave_Text}"
-            ToolTipProperties.Text="{local:Translate ToolTipSettingsSave_Text}"
+            Text="{Translate SettingsSave_Text}"
+            SemanticProperties.Description="{Translate ToolTipSettingsSave_Text}"
+            ToolTipProperties.Text="{Translate ToolTipSettingsSave_Text}"
             Clicked="OnSettingsSaveClicked">
         </Button>
 
@@ -437,9 +436,9 @@
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="2"
             HorizontalOptions="End"
-            Text="{local:Translate SettingsReset_Text}"
-            SemanticProperties.Description="{local:Translate ToolTipSettingsReset_Text}"
-            ToolTipProperties.Text="{local:Translate ToolTipSettingsReset_Text}"
+            Text="{Translate SettingsReset_Text}"
+            SemanticProperties.Description="{Translate ToolTipSettingsReset_Text}"
+            ToolTipProperties.Text="{Translate ToolTipSettingsReset_Text}"
             Clicked="OnSettingsResetClicked">
         </Button>
 

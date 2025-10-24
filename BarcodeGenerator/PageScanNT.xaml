@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui/global"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:native="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
              x:Class="BarcodeGenerator.PageScanNT">
 
@@ -9,7 +8,7 @@
         <Label
             x:Name="lblTitle"
             Style="{StaticResource labelStyleTitleView}"
-            Text="{x:Static resx:CodeLang.BarcodeScanner_Text}">
+            Text="{Translate BarcodeScanner_Text}">
         </Label>
     </Shell.TitleView>
 
@@ -23,7 +22,7 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Text="{x:Static resx:CodeLang.FormatCode_Text}">
+                    Text="{Translate FormatCode_Text}">
                 </Label>
 
                 <Border
@@ -52,8 +51,8 @@
                     Value="1"
                     Minimum="0"
                     Maximum="10"
-                    SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraZoom_Text}"
-                    ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraZoom_Text}"
+                    SemanticProperties.Description="{Translate ToolTipCameraZoom_Text}"
+                    ToolTipProperties.Text="{Translate ToolTipCameraZoom_Text}"
                     ValueChanged="OnSliderCameraZoomValueChanged">
                 </Slider>
 
@@ -102,8 +101,8 @@
                                 BackgroundColor="Transparent"
                                 WidthRequest="45"
                                 HeightRequest="45"
-                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
-                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                                                
+                                SemanticProperties.Description="{Translate ToolTipCameraQuality_Text}"
+                                ToolTipProperties.Text="{Translate ToolTipCameraQuality_Text}"                                                
                                 SelectedIndexChanged="OnCameraQualityChanged">
                             </Picker>
 
@@ -113,8 +112,8 @@
                                 BackgroundColor="Transparent"
                                 WidthRequest="45"
                                 HeightRequest="45"
-                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
-                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                                                
+                                SemanticProperties.Description="{Translate ToolTipCameraQuality_Text}"
+                                ToolTipProperties.Text="{Translate ToolTipCameraQuality_Text}"                                                
                                 SelectedIndexChanged="OnCameraQualityChanged">
                             </Picker>
 
@@ -123,8 +122,8 @@
                                 Style="{StaticResource imageButtonStyleCamera}"
                                 Grid.Column="0"
                                 Source="camera_quality_128x128p.png"
-                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"
-                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraQuality_Text}"                
+                                SemanticProperties.Description="{Translate ToolTipCameraQuality_Text}"
+                                ToolTipProperties.Text="{Translate ToolTipCameraQuality_Text}"                
                                 Clicked="OnCameraQualityClicked">
                             </ImageButton>
 
@@ -133,8 +132,8 @@
                                 Style="{StaticResource imageButtonStyleCamera}"
                                 Grid.Column="1"
                                 Source="camera_facing_128x128p.png"
-                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraFacing_Text}"
-                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraFacing_Text}"
+                                SemanticProperties.Description="{Translate ToolTipCameraFacing_Text}"
+                                ToolTipProperties.Text="{Translate ToolTipCameraFacing_Text}"
                                 Clicked="OnCameraFacingClicked">
                             </ImageButton>
 
@@ -143,8 +142,8 @@
                                 Style="{StaticResource imageButtonStyleCamera}"
                                 Grid.Column="2"
                                 Source="camera_detect_off_128x128p.png"
-                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraDetecting_Text}"
-                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraDetecting_Text}"
+                                SemanticProperties.Description="{Translate ToolTipCameraDetecting_Text}"
+                                ToolTipProperties.Text="{Translate ToolTipCameraDetecting_Text}"
                                 Clicked="OnCameraDetectingClicked">
                             </ImageButton>
 
@@ -153,8 +152,8 @@
                                 Style="{StaticResource imageButtonStyleCamera}"
                                 Grid.Column="3"
                                 Source="camera_vibrate_off_128x128p.png"
-                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraVibrate_Text}"
-                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraVibrate_Text}"                                
+                                SemanticProperties.Description="{Translate ToolTipCameraVibrate_Text}"
+                                ToolTipProperties.Text="{Translate ToolTipCameraVibrate_Text}"                                
                                 Clicked="OnCameraVibrateClicked">
                             </ImageButton>
 
@@ -163,8 +162,8 @@
                                 Style="{StaticResource imageButtonStyleCamera}"
                                 Grid.Column="4"
                                 Source="camera_torch_off_64x64p.png"
-                                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
-                                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
+                                SemanticProperties.Description="{Translate ToolTipCameraTorch_Text}"
+                                ToolTipProperties.Text="{Translate ToolTipCameraTorch_Text}"
                                 Clicked="OnCameraTorchClicked">
                             </ImageButton>
                         </Grid>
@@ -184,8 +183,8 @@
                         HeightRequest="38"
                         WidthRequest="38"
                         VerticalOptions="End"
-                        SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCopy_Text}"
-                        ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCopy_Text}"
+                        SemanticProperties.Description="{Translate ToolTipCopy_Text}"
+                        ToolTipProperties.Text="{Translate ToolTipCopy_Text}"
                         IsEnabled="False"
                         Clicked="OnCopyToClipboardClicked">
                     </ImageButton>
@@ -196,8 +195,8 @@
                         VerticalOptions="End"
                         MinimumWidthRequest="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}"
                         MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
-                        Text="{x:Static resx:CodeLang.ButtonShare_Text}"
-                        ToolTipProperties.Text="{x:Static resx:CodeLang.ButtonShare_Text}"
+                        Text="{Translate ButtonShare_Text}"
+                        ToolTipProperties.Text="{Translate ButtonShare_Text}"
                         IsEnabled="False"
                         Clicked="OnShareClicked">
                     </Button>
@@ -227,8 +226,8 @@
                         WidthRequest="38"
                         IsVisible="False"
                         IsEnabled="False"
-                        SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipTextToSpeech_Text}"
-                        ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTextToSpeech_Text}"
+                        SemanticProperties.Description="{Translate ToolTipTextToSpeech_Text}"
+                        ToolTipProperties.Text="{Translate ToolTipTextToSpeech_Text}"
                         Clicked="OnTextToSpeechClicked">
                     </ImageButton>
                 </HorizontalStackLayout>

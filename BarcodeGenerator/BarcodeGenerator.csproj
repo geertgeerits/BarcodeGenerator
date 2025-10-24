@@ -97,8 +97,8 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.0-rc.2.25504.7" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-rc.2.25502.107" />
-		<PackageReference Include="ZXing.Net.Maui" Version="0.5.2" />
-		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.5.2" />
+		<PackageReference Include="ZXing.Net.Maui" Version="0.6.0" />
+		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.6.0" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="2.2.1" />
 		<PackageReference Include="Sentry.Maui" Version="6.0.0-preview.1-prerelease" />
 	</ItemGroup>
@@ -190,6 +190,12 @@
 	The package does not support the CPU architecture of this device.-->
 	<PropertyGroup>
 		<RuntimeIdentifiers Condition="$(TargetFramework.Contains('-android'))">android-arm;android-arm64;android-x86;android-x64</RuntimeIdentifiers>
+	</PropertyGroup>
+
+	<!--Enable XAML implicit xmlns declarations and preview features-->
+	<PropertyGroup>
+		<DefineConstants>$(DefineConstants);MauiAllowImplicitXmlnsDeclaration</DefineConstants>
+		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 	</PropertyGroup>
 
 	<!--.NET 10 Android CameraX dependencies - !!!BUG!!! MSBUILD : java.exe error JAVA0000 on .NET 10 rc1-->
