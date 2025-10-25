@@ -50,5 +50,8 @@
 	<string>com.geertgeerits.barcodegenerator</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+
+	<key>UIDesignRequiresCompatibility</key>
+	<true/>
 </dict>
 </plist>
