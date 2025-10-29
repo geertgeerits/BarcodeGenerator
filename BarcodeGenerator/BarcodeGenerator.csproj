@@ -198,11 +198,18 @@
 		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 	</PropertyGroup>
 
-	<!--.NET 10 Android CameraX dependencies - !!!BUG!!! MSBUILD : java.exe error JAVA0000 on .NET 10 rc1-->
+	<!--.NET 10 Android CameraX dependencies - !!!BUG!!! MSBUILD : java.exe error JAVA0000 on .NET 10 rc1
+	Do not update!!! to Camera versions 1.5.0 - No errors in versions 1.4.2.3-->
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.4.2.3" />
 		<PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.4.2.3" />
 		<PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.4.2.3" />
 	</ItemGroup>
 
+	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171
+	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171-->
+	<ItemGroup>
+		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
+	</ItemGroup>
+	
 </Project>
