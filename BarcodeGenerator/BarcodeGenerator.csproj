@@ -29,7 +29,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">12.2</SupportedOSPlatformVersion>
 		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.4</SupportedOSPlatformVersion>-->
 		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>-->
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23.0</SupportedOSPlatformVersion>
 		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>-->
@@ -95,12 +95,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.0-rc.2.25504.7" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-rc.2.25502.107" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.10" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.6.0" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.6.0" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="2.2.1" />
-		<PackageReference Include="Sentry.Maui" Version="6.0.0-preview.1-prerelease" />
+		<PackageReference Include="Sentry.Maui" Version="5.16.2" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+		<PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.5.0" />
+		<PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.5.0" />
+		<PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.5.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -198,18 +204,10 @@
 		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 	</PropertyGroup>
 
-	<!--.NET 10 Android CameraX dependencies - !!!BUG!!! MSBUILD : java.exe error JAVA0000 on .NET 10 rc1
-	Do not update!!! to Camera versions 1.5.0 - No errors in versions 1.4.2.3-->
-	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-		<PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.4.2.3" />
-		<PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.4.2.3" />
-		<PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.4.2.3" />
-	</ItemGroup>
-
 	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171
 	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171-->
-	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
-	</ItemGroup>
+	</ItemGroup>-->
 	
 </Project>
