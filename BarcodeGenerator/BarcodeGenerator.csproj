@@ -205,9 +205,9 @@
 	</PropertyGroup>
 
 	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171
-	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171-->
-	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171--> 
+	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
-	</ItemGroup>-->
+	</ItemGroup>
 	
 </Project>
