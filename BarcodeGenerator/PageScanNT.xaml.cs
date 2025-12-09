@@ -59,6 +59,10 @@ namespace BarcodeGenerator
             // Back camera quality settings
             qualities.Add(CodeLang.CameraQualityHighest_Text);
             pckCameraQualityBack.ItemsSource = qualities;
+
+            // Android camera zoom settings
+            // !!!BUG!!! Android: camera zoom does not work in release mode since .NET10
+            //sldCameraZoom.IsVisible = false;
 #endif
             // Set the quality for the camera pickers
             pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
