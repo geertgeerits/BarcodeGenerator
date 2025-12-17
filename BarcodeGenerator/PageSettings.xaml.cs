@@ -20,10 +20,7 @@
 #endif
                 return;
             }
-#if ANDROID
-            // !!!BUG!!! in Android - Return typ 'Done' is not working on Android
-            entHexColorBg.ReturnType = ReturnType.Next;
-#endif
+
             //// Put text in the chosen language in the controls and variables
             SetLanguage();
 
@@ -347,21 +344,6 @@
             {
                 _ = entHexColorBg.Focus();
             }
-            else
-            {
-                entDummy.IsEnabled = true;
-                _ = entDummy.Focus();
-            }
-        }
-
-        /// <summary>
-        /// Hide the keyboard when the dummy entry is focused
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void EntDummyFocused(object sender, FocusEventArgs e)
-        {
-            entDummy.IsEnabled = false;
         }
 
         /// <summary>

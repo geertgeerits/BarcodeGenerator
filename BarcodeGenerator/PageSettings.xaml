@@ -408,17 +408,6 @@
                     MinimumTrackColor="Blue"
                     ValueChanged="OnSliderColorBackgroundValueChanged">
                 </Slider>
-
-                <Entry
-                    x:Name="entDummy"
-                    Grid.Row="16"
-                    HeightRequest="2"
-                    WidthRequest="5"
-                    BackgroundColor="Transparent"
-                    TextColor="Transparent"
-                    Focused="EntDummyFocused">
-                </Entry>
-
             </Grid>
         </ScrollView>
 
