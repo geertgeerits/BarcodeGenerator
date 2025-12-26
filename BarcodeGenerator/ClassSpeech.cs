@@ -7,10 +7,10 @@
         private static CancellationTokenSource? cts;
 
         /// <summary>
-        /// Initialize text to speech and fill the the array with the speech languages
-        /// Android: .Language = ko - .Country = KR  .Name = Korean (South Korea)  .Id = ko-kr-x-ism-local
-        /// iOS:     .Language = ko - .Country = KR - .Name = Yuna  .Id = com.apple.voice.compact.ko-KR.Yuna
-        /// Windows: .Language = ko - .Country = KR - .Name = Microsoft David  .Id = HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM
+        /// Initialize text to speech and fill the the array with the speech languages ( : is separator before the Id)
+        /// Android: .Language = ko- .Country = KR  .Name = Korean (South Korea) : .Id = ko-kr-x-ism-local
+        /// iOS:     .Language = ko- .Country = KR- .Name = Yuna : .Id = com.apple.voice.compact.ko-KR.Yuna
+        /// Windows: .Language = ko- .Country = KR- .Name = Microsoft David : .Id = HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM
         /// </summary>
         public static async Task<bool> InitializeTextToSpeechAsync()
         {
@@ -27,25 +27,38 @@
                     return false;
                 }
 
-                // Populate and sort the locales
+                // Populate the locales
                 cLanguageLocales = new string[nTotalItems];
                 int nItem = 0;
-#if WINDOWS
+
                 foreach (var l in locales)
                 {
-                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} - {l.Id[(l.Id.LastIndexOf('\\') + 1)..]}";
+                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
                     nItem++;
-                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} - {l.Id[(l.Id.LastIndexOf('\\') + 1)..]}");
                 }
-#else
-                foreach (var l in locales)
+
+                // Remove the items in the array where the 5 first characters are duplicates of the first occurring 5 characters
+                var uniqueLocales = new List<string>();
+                var seenPrefixes = new HashSet<string>();
+
+                foreach (var item in cLanguageLocales)
                 {
-                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} - {l.Id}";
-                    nItem++;
-                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} - {l.Id}");
+                    var prefix = item[..5];
+                    if (seenPrefixes.Add(prefix))
+                    {
+                        uniqueLocales.Add(item);
+                    }
                 }
-#endif
+
+                cLanguageLocales = [.. uniqueLocales];
+
+                // Sort the locales
                 Array.Sort(cLanguageLocales);
+
+                //foreach (string item in cLanguageLocales)
+                //{
+                //    Debug.WriteLine($"Sorted locales: {item}");
+                //}
 
                 return true;
             }
@@ -73,7 +86,7 @@
                 return;
             }
 
-            // Populate the picker with sorted locales
+            // Populate the picker with the Language, Country and Name (without the Id) from the sorted locales array
             foreach (var locale in cLanguageLocales)
             {
                 picker.Items.Add(locale);
@@ -83,6 +96,24 @@
             picker.SelectedIndex = SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
 
             Debug.WriteLine("FillPickerWithSpeechLanguages - Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
+        }
+
+        /// <summary>
+        /// Picker speech language clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public static void PickerLanguageSpeechChanged(object sender, EventArgs e)
+        {
+            Picker picker = (Picker)sender;
+
+            if (picker.SelectedIndex != -1)
+            {
+                if (cLanguageLocales != null && picker.SelectedIndex < cLanguageLocales.Length)
+                {
+                    Globals.cLanguageSpeech = cLanguageLocales[picker.SelectedIndex];
+                }
+            }
         }
 
         /// <summary>
@@ -96,6 +127,7 @@
             try
             {
                 int nTotalItems = cLanguageLocales?.Length ?? 0;
+                int index;
 
                 if (cLanguageLocales is not null)
                 {
@@ -105,42 +137,48 @@
                         // Android generating old/wrong language codes - https://stackoverflow.com/questions/44245959/android-generating-wrong-language-code-for-indonesia
                         if (cCultureName.StartsWith("id") || cCultureName.StartsWith("he") || cCultureName.StartsWith("yi"))
                         {
-                            for (int nItem = 0; nItem < nTotalItems; nItem++)
+                            index = Array.FindIndex(cLanguageLocales, s => s.StartsWith(cCultureName, StringComparison.Ordinal));
+                            if (index >= 0)
                             {
-                                if (cLanguageLocales[nItem].StartsWith(cCultureName))
-                                {
-                                    Globals.cLanguageSpeech = cLanguageLocales[nItem];
-                                    return nItem;
-                                }
+                                Globals.cLanguageSpeech = cLanguageLocales[index];
+                                return index;
                             }
+                            Debug.WriteLine("SearchArrayWithSpeechLanguages - cCultureName OLD found: " + cCultureName);
 
                             // Map new language codes to old codes
                             cCultureName = GetCurrentLanguageTag(cCultureName);
                             Debug.WriteLine("SearchArrayWithSpeechLanguages - cCultureName NEW to OLD: " + cCultureName);
                         }
 
-                        // Search for the speech language as 'en-US'
-                        for (int nItem = 0; nItem < nTotalItems; nItem++)
+                        // Search for the speech language as 'en-US : Microsoft David'
+                        index = Array.BinarySearch(cLanguageLocales, cCultureName, StringComparer.Ordinal);
+                        if (index >= 0)
                         {
-                            if (cLanguageLocales[nItem].StartsWith(cCultureName))
-                            {
-                                Globals.cLanguageSpeech = cLanguageLocales[nItem];
-                                return nItem;
-                            }
+                            Globals.cLanguageSpeech = cLanguageLocales[index];
+                            return index;
                         }
+                        //Debug.WriteLine("SearchArrayWithSpeechLanguages - cCultureName 'FULL' not found: " + cCultureName);
+
+                        // Search for the speech language as 'en-US'
+                        index = Array.FindIndex(cLanguageLocales, s => s.StartsWith(cCultureName, StringComparison.Ordinal));
+                        if (index >= 0)
+                        {
+                            Globals.cLanguageSpeech = cLanguageLocales[index];
+                            return index;
+                        }
+                        //Debug.WriteLine("SearchArrayWithSpeechLanguages - cCultureName 'en-US' not found: " + cCultureName);
 
                         // Select the characters before the first hyphen if there is a hyphen in the string
                         cCultureName = cCultureName.Split('-')[0];
 
                         // Search for the speech language as 'en'
-                        for (int nItem = 0; nTotalItems > nItem; nItem++)
+                        index = Array.FindIndex(cLanguageLocales, s => s.StartsWith(cCultureName, StringComparison.Ordinal));
+                        if (index >= 0)
                         {
-                            if (cLanguageLocales[nItem].StartsWith(cCultureName))
-                            {
-                                Globals.cLanguageSpeech = cLanguageLocales[nItem];
-                                return nItem;
-                            }
+                            Globals.cLanguageSpeech = cLanguageLocales[index];
+                            return index;
                         }
+                        //Debug.WriteLine("SearchArrayWithSpeechLanguages - cCultureName 'en' found: " + cCultureName);
                     }
                 }
 
@@ -189,8 +227,8 @@
         {
             /* If you do not wait long enough to press the arrow key in the Task 'MakeExplainTurnAsync()',
                an error message will sometimes appear: 'The operation was canceled'.
-               This only occurs if the 'Explained by speech' setting is enabled.
-               The error occurs in the method 'ConvertTextToSpeechAsync()'. */
+               This only occurs if 'text to speech' is available and busy.
+               The error occurs in this method. */
 
             // Cancel the text to speech
             if (Globals.bTextToSpeechIsBusy)
@@ -217,17 +255,12 @@
                 try
                 {
                     cts = new CancellationTokenSource();
-#if WINDOWS
+
                     SpeechOptions options = new()
                     {
-                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name} - {l.Id[(l.Id.LastIndexOf('\\') + 1)..]}" == Globals.cLanguageSpeech)
+                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
                     };
-#else
-                    SpeechOptions options = new()
-                    {
-                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name} - {l.Id}" == Globals.cLanguageSpeech)
-                    };
-#endif
+
                     await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
                     Globals.bTextToSpeechIsBusy = false;
                 }
