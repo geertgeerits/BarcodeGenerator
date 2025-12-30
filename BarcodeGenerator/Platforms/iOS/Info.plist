@@ -43,11 +43,29 @@
 	<key>CFBundleDisplayName</key>
 	<string>Barcode Generator and Scanner</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.44</string>
+	<string>1.0.45</string>
 	<key>CFBundleVersion</key>
-	<string>44</string>
+	<string>45</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.geertgeerits.barcodegenerator</string>
+
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>cs</string>
+		<string>da</string>
+		<string>de</string>
+		<string>es</string>
+		<string>fi</string>
+		<string>fr</string>
+		<string>hu</string>
+		<string>it</string>
+		<string>nb</string>
+		<string>nl</string>
+		<string>pl</string>
+		<string>pt</string>
+		<string>ro</string>
+		<string>sv</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 

@@ -1,8 +1,8 @@
 ﻿/* Program .....: BarcodeGenerator.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
- * Version .....: 1.0.44
- * Date ........: 2025-12-26 (YYYY-MM-DD)
+ * Version .....: 1.0.45
+ * Date ........: 2025-12-30 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
