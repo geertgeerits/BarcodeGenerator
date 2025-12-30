@@ -209,5 +209,19 @@
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
 	</ItemGroup>
+
+	<!--Error (active)	NETSDK1152	Found multiple publish output files with the same relative path:
+	    C:\nuget\zxing.net\0.16.11\lib\net9.0\zxing.dll, C:\nuget\zxingcpp\0.4.0-alpha\runtimes\win-x64\native\ZXing.dll.
+		BarcodeGenerator (net10.0-windows10.0.19041.0)	C:\Program Files\dotnet\sdk\10.0.101\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ConflictResolution.targets 112-->
+	<!--<ItemGroup>
+	  <PackageReference Include="zxingcpp" Version="0.4.0-alpha">
+	    <ExcludeAssets>native</ExcludeAssets>
+	  </PackageReference>
+	</ItemGroup>-->
+
+	<!--<ItemGroup>
+	  --><!-- Remove the native DLL from publish if it conflicts --><!--
+	  <None Remove="$(UserProfile)\.nuget\packages\zxingcpp\0.4.0-alpha\runtimes\win-x64\native\ZXing.dll" />
+	</ItemGroup>-->
 	
 </Project>
