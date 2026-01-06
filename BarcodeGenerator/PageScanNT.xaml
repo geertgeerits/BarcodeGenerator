@@ -71,7 +71,7 @@
                             BarcodeSymbologies="All"
                             CameraFacing="Back"
                             CaptureQuality="Medium"
-                            ForceInverted="False"
+                            ForceInverted="True"
                             PauseScanning="False"
                             PoolingInterval="500"
                             TapToFocusEnabled="True"
