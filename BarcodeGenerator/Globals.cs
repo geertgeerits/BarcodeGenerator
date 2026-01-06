@@ -16,8 +16,8 @@ namespace BarcodeGenerator
         public static string cLanguageSpeech = "";
         public static bool bTextToSpeechAvailable;
         public static bool bTextToSpeechIsBusy;
-        public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
-        public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
+        public static readonly string cImageTextToSpeech = "speaker_64p_blue_green.png";
+        public static readonly string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
         public static bool bLicense;
 
         //// Global methods
@@ -233,7 +233,7 @@ namespace BarcodeGenerator
             }
 
             // Wait 700 milliseconds otherwise the ShareText() is not executed after the last opened link
-            Task.Delay(700).Wait();
+            await Task.Delay(700);
 
             // Open share interface
             await ShareTextAsync(cText);
