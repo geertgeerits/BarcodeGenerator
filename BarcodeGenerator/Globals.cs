@@ -72,10 +72,7 @@ namespace BarcodeGenerator
         /// Put the generator barcode formats in a List string
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetFormatCodeListGenerator()
-        {
-            return
-            [
+        public static List<string> GetFormatCodeListGenerator() => [
                 "Aztec",
                 "Codabar",
                 "Code 39",
@@ -92,16 +89,12 @@ namespace BarcodeGenerator
                 "UPC-A",
                 "UPC-E"
             ];
-        }
 
         ///// <summary>
         ///// Put the scanner barcode formats in a List string
         ///// </summary>
         ///// <returns></returns>
-        //public static List<string> GetFormatCodeListScanner()
-        //{
-        //    return
-        //    [
+        //public static List<string> GetFormatCodeListScanner() => [
         //        "Aztec",
         //        "Codabar",
         //        "Code 128",
@@ -125,17 +118,13 @@ namespace BarcodeGenerator
         //        "(UPC EAN Extension)",
         //        CodeLang.AllCodes_Text
         //    ];
-        //}
 
         /// <summary>
         /// Put the scanner barcode formats in a List string for the Native scanner for Android
         /// https://developers.google.com/ml-kit/vision/barcode-scanning/android
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetFormatCodeListScannerNativeAndroid()
-        {
-            return
-            [
+        public static List<string> GetFormatCodeListScannerNativeAndroid() => [
                 CodeLang.AllCodes_Text,
                 "Aztec",
                 "Codabar",
@@ -151,17 +140,13 @@ namespace BarcodeGenerator
                 "UPC-A",
                 "UPC-E"
             ];
-        }
 
         /// <summary>
         /// Put the scanner barcode formats in a List string for the Native scanner for iOS
         /// https://developer.apple.com/documentation/avfoundation/avmetadataobject/objecttype
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetFormatCodeListScannerNativeIOS()
-        {
-            return
-            [
+        public static List<string> GetFormatCodeListScannerNativeIOS() => [
                 CodeLang.AllCodes_Text,
                 "Aztec",
                 "Codabar",
@@ -180,7 +165,6 @@ namespace BarcodeGenerator
                 "UPC-A",
                 "UPC-E"
             ];
-        }
 
         /// <summary>
         /// Button share event: share the barcode result
