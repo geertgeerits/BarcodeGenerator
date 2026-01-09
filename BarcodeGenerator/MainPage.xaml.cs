@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.45
- * Date ........: 2026-01-07 (YYYY-MM-DD)
+ * Date ........: 2026-01-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -22,7 +22,7 @@ namespace BarcodeGenerator
     public sealed partial class MainPage : ContentPage
     {
         //// Local variables
-        private string cLicense = "";
+        private string cLicense = string.Empty;
 
         public MainPage()
         {

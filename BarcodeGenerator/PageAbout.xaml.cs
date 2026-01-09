@@ -90,7 +90,7 @@ namespace BarcodeGenerator
             if (Email.Default.IsComposeSupported)
             {
                 string subject = "Barcode generator and scanner";
-                string body = "";
+                string body = string.Empty;
                 string[] recipients = [url];
 
                 var message = new EmailMessage

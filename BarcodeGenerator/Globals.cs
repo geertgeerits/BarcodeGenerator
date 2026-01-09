@@ -6,14 +6,14 @@ namespace BarcodeGenerator
     internal static class Globals
     {
         //// Global variables
-        public static string cTheme = "";
+        public static string cTheme = string.Empty;
         public static int nFormatGeneratorIndex;
         public static int nFormatScannerIndex;
-        public static string cCodeColorFg = "";
-        public static string cCodeColorBg = "";
-        public static string cLanguage= "";
+        public static string cCodeColorFg = string.Empty;
+        public static string cCodeColorBg = string.Empty;
+        public static string cLanguage = string.Empty;
         public static bool bLanguageChanged;
-        public static string cLanguageSpeech = "";
+        public static string cLanguageSpeech = string.Empty;
         public static bool bTextToSpeechAvailable;
         public static bool bTextToSpeechIsBusy;
         public static readonly string cImageTextToSpeech = "speaker_64p_blue_green.png";
@@ -173,7 +173,7 @@ namespace BarcodeGenerator
         /// <returns></returns>
         public static async Task ShareBarcodeResultAsync(string cText)
         {
-            if (cText is null or "")
+            if (string.IsNullOrEmpty(cText))
             {
                 return;
             }
@@ -183,29 +183,13 @@ namespace BarcodeGenerator
             //cText = "url http://www.google.com, visit website url https://www.microsoft.com, www.yahou.com and WWW.MODEGEERITS.BE and geertgeerits@gmail.com address";
             //cText = "Share text from barcode scanner";
 
-            //string cPattern = @"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?";
-            string cPattern = @"((https?|ftp|file)\://|www.)[A-Za-z0-9\.\-]+(/[A-Za-z0-9\?\&\=;\+!'\(\)\*\-\._~%]*)*";
-
-            // Call
-            // Matches method for case-insensitive matching
             try
             {
-                foreach (Match match in Regex.Matches(cText, cPattern, RegexOptions.IgnoreCase).Cast<Match>())
+                // Extract URLs from the text and confirm/open them
+                List<string> cUrls = ParseUrlsFromText(cText);
+                if (cUrls.Count > 0)
                 {
-                    if (match.Success)
-                    {
-                        bool bAnswer = await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.OpenLinkTitle_Text, $"{match.Value}\n\n{CodeLang.OpenLinkText_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
-
-                        // Open link website
-                        if (bAnswer)
-                        {
-                            await OpenWebsiteLinkAsync(match.Value);
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    await ConfirmAndOpenLinksAsync(cUrls);
                 }
             }
             catch (Exception ex)
@@ -221,6 +205,61 @@ namespace BarcodeGenerator
 
             // Open share interface
             await ShareTextAsync(cText);
+        }
+
+        /// <summary>
+        /// Parse URLs from a block of text using the same regex as before
+        /// </summary>
+        /// <param name="cText"></param>
+        /// <returns>List of matched URL strings</returns>
+        private static List<string> ParseUrlsFromText(string cText)
+        {
+            var urls = new List<string>();
+
+            if (string.IsNullOrEmpty(cText))
+            {
+                return urls;
+            }
+
+            // Set the pattern for the URL matching
+            //string cPattern = @"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?";
+            string cPattern = @"((https?|ftp|file)\://|www.)[A-Za-z0-9\.\-]+(/[A-Za-z0-9\?\&\=;\+!'\(\)\*\-\._~%]*)*";
+
+            foreach (Match match in Regex.Matches(cText, cPattern, RegexOptions.IgnoreCase).Cast<Match>())
+            {
+                if (match.Success)
+                {
+                    urls.Add(match.Value);
+                }
+            }
+
+            return urls;
+        }
+
+        /// <summary>
+        /// Confirm each URL with the user and open it when confirmed
+        /// </summary>
+        /// <param name="cUrls"></param>
+        private static async Task ConfirmAndOpenLinksAsync(IReadOnlyList<string> cUrls)
+        {
+            if (cUrls is null || cUrls.Count == 0)
+            {
+                return;
+            }
+
+            foreach (string cUrl in cUrls)
+            {
+                bool bAnswer = await Application.Current!.Windows[0].Page!.DisplayAlertAsync(
+                    CodeLang.OpenLinkTitle_Text,
+                    $"{cUrl}\n\n{CodeLang.OpenLinkText_Text}",
+                    CodeLang.Yes_Text,
+                    CodeLang.No_Text);
+
+                if (bAnswer)
+                {
+                    await OpenWebsiteLinkAsync(cUrl);
+                }
+            }
         }
 
         /// <summary>
