@@ -2,15 +2,15 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.45
- * Date ........: 2026-01-09 (YYYY-MM-DD)
+ * Date ........: 2026-01-13 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
  *                zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
  *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
  *                Google ML Kit: https://developers.google.com/ml-kit
- * Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.7.3 ; https://github.com/redth/ZXing.Net.Maui
- *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.7.3
+ * Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.7.4 ; https://github.com/redth/ZXing.Net.Maui
+ *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.7.4
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 3.0.0-beta4 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
  *                NuGet Package: Sentry.Maui version 6.0.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
