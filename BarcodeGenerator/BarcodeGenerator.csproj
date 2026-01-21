@@ -103,11 +103,11 @@
 		<PackageReference Include="Sentry.Maui" Version="6.0.0" />
 	</ItemGroup>
 
-	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.5.2" />
 		<PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.5.2" />
 		<PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.5.2" />
-	</ItemGroup>
+	</ItemGroup>-->
 
 	<ItemGroup>
 	  <Compile Update="Resources\Languages\CodeLang.Designer.cs">
