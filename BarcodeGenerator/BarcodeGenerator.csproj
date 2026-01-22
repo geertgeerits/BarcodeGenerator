@@ -85,12 +85,6 @@
 		<PackageReference Include="Sentry.Maui" Version="6.0.0" />
 	</ItemGroup>
 
-	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-		<PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.5.2" />
-		<PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.5.2" />
-		<PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.5.2" />
-	</ItemGroup>-->
-
 	<ItemGroup>
 	  <Compile Update="Resources\Languages\CodeLang.Designer.cs">
 	    <DesignTime>True</DesignTime>
@@ -174,7 +168,7 @@
 		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 	</PropertyGroup>
 
-	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171
+	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171 - solved in version 3.0.1 of BarcodeScanning.Native.Maui
 	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171--> 
 	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />

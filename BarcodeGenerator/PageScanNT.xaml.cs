@@ -85,6 +85,9 @@ namespace BarcodeGenerator
 #elif IOS
             //// Set the barcodes in the picker for iOS
             pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeIOS();
+#elif WINDOWS
+            //// Set the barcodes in the picker for Windows
+            pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeWindows();
 #endif
             //// Default format code = All codes
             pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
@@ -152,6 +155,27 @@ namespace BarcodeGenerator
                     14 => BarcodeFormats.QRCode,
                     15 => BarcodeFormats.Upca,
                     16 => BarcodeFormats.Upce,
+                    _ => BarcodeFormats.All
+                };
+#elif WINDOWS
+                barcodeReader.BarcodeSymbologies = nSelectedIndex switch
+                {
+                    0 => BarcodeFormats.All,
+                    1 => BarcodeFormats.Aztec,
+                    2 => BarcodeFormats.CodaBar,
+                    3 => BarcodeFormats.Code39,
+                    4 => BarcodeFormats.Code93,
+                    5 => BarcodeFormats.Code128,
+                    6 => BarcodeFormats.DataMatrix,
+                    7 => BarcodeFormats.Ean8,
+                    8 => BarcodeFormats.Ean13,
+                    9 => BarcodeFormats.GS1DataBar,
+                    10 => BarcodeFormats.Itf,
+                    11 => BarcodeFormats.MicroQR,
+                    12 => BarcodeFormats.Pdf417,
+                    13 => BarcodeFormats.QRCode,
+                    14 => BarcodeFormats.Upca,
+                    15 => BarcodeFormats.Upce,
                     _ => BarcodeFormats.All
                 };
 #endif

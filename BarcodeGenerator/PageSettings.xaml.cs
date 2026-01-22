@@ -64,6 +64,8 @@
             pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
             pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeIOS();
+#elif WINDOWS
+            pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeWindows();
 #endif
             pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
@@ -155,6 +157,8 @@
             pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
             pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeIOS();
+#elif WINDOWS
+            pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeWindows();
 #endif
             pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 

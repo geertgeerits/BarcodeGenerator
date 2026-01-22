@@ -167,6 +167,30 @@ namespace BarcodeGenerator
             ];
 
         /// <summary>
+        /// Put the scanner barcode formats in a List string for the Native scanner for Windows
+        /// https://developer.apple.com/documentation/avfoundation/avmetadataobject/objecttype
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetFormatCodeListScannerNativeWindows() => [
+                CodeLang.AllCodes_Text,
+                "Aztec",
+                "Codabar",
+                "Code 39",
+                "Code 93",
+                "Code 128",
+                "Data Matrix",
+                "EAN-8",
+                "EAN-13",
+                "GS1 DataBar",
+                "ITF",
+                "Micro QR Code",
+                "PDF417",
+                "QR Code",
+                "UPC-A",
+                "UPC-E"
+            ];
+
+        /// <summary>
         /// Button share event: share the barcode result
         /// </summary>
         /// <param name="cText"></param>
