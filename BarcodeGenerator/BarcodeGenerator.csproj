@@ -1,12 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net10.0-ios;net10.0-android</TargetFrameworks>
-		<!--<TargetFrameworks>net10.0-ios;net10.0-android34.0</TargetFrameworks>-->
-		<!--<TargetFrameworks>net10.0-ios;net10.0-maccatalyst;net10.0-android</TargetFrameworks>-->
-		<!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.19041.0</TargetFrameworks>-->
+		<TargetFrameworks>net10.0-android;net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net10.0-tizen</TargetFrameworks> -->
+
+		<!-- Note for MacCatalyst:
+		The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
+		When specifying both architectures, use the plural <RuntimeIdentifiers> instead of the singular <RuntimeIdentifier>.
+		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
+		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
+		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
+
 		<OutputType>Exe</OutputType>
 		<RootNamespace>BarcodeGenerator</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -18,7 +24,6 @@
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.barcodegenerator</ApplicationId>
-		<!--<ApplicationIdGuid>e2ee1ccb-32eb-4cde-be6a-82c7026120e9</ApplicationIdGuid>-->
 		<ApplicationIdGuid>7A6A918B-29C3-433A-82AE-16D589F3D8A2</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -27,12 +32,12 @@
 		<ApplicationVersion>45</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">12.2</SupportedOSPlatformVersion>
-		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.4</SupportedOSPlatformVersion>-->
-		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>-->
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23.0</SupportedOSPlatformVersion>
-		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>-->
+		<!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>-->
+	
 		<Authors>Geert Geerits</Authors>
 		<Copyright>Geert Geerits</Copyright>
 		<Nullable>enable</Nullable>
@@ -72,34 +77,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="PageSettings-Copy.xaml.Copy" />
-	  <None Remove="Resources\Images\barcodegenerator_icon_128p.png" />
-	  <None Remove="Resources\Images\barcodegenerator_icon_324p.png" />
-	  <None Remove="Resources\Images\barcodegenerator_icon_324p2.svg" />
-	  <None Remove="Resources\Images\barcodegenerator_icon_477x324p.png" />
-	  <None Remove="Resources\Images\camera_torch_on_64x64p.png" />
-	  <None Remove="Resources\Images\cancel_close_icon_48p.png" />
-	  <None Remove="Resources\Images\cancel_close_icon_512p.png" />
-	  <None Remove="Resources\Images\circled_envelope_24p.png" />
-	  <None Remove="Resources\Images\close_icon_48p.png" />
-	  <None Remove="Resources\Images\close_icon_512p.png" />
-	  <None Remove="Resources\Images\info_32p.png" />
-	  <None Remove="Resources\Images\internet_24p.png" />
-	  <None Remove="Resources\Images\microphone_50p.png" />
-	  <None Remove="Resources\Images\microphone_cancel_50p.png" />
-	  <None Remove="Resources\Images\scan_barcode_icon_128p.png" />
-	  <None Remove="Resources\Images\scan_barcode_icon_512p.png" />
-	  <None Remove="Resources\Images\settings_32p.png" />
-	  <None Remove="Resources\Images\speaker_64p.png" />
-	  <None Remove="Resources\Images\speaker_cancel_64p.png" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.30" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.2" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.7.4" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.7.4" />
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="2.2.1" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.1" />
 		<PackageReference Include="Sentry.Maui" Version="6.0.0" />
 	</ItemGroup>
 
@@ -186,18 +168,6 @@
 	  <MtouchLink>None</MtouchLink>
 	</PropertyGroup>
 
-	<!--ADB0020: Mono.AndroidTools.IncompatibleCpuAbiException: The package does not support the CPU architecture of this device.-->
-	<!--<PropertyGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
-		<AndroidSupportedAbis>armeabi-v7a;arm64-v8a;x86;x86_64</AndroidSupportedAbis>
-	</PropertyGroup>-->
-
-	<!--From .NET 9 on the following is needed due an error in the build process:
-	Samsung Galaxy A3 (2017) SM-A320FL Android 8.0.0 -> Error ADB0020: Mono.AndroidTools.IncompatibleCpuAbiException:
-	The package does not support the CPU architecture of this device.-->
-	<!--<PropertyGroup>
-		<RuntimeIdentifiers Condition="$(TargetFramework.Contains('-android'))">android-arm;android-arm64;android-x86;android-x64</RuntimeIdentifiers>
-	</PropertyGroup>-->
-
 	<!--Enable XAML implicit xmlns declarations and preview features-->
 	<PropertyGroup>
 		<DefineConstants>$(DefineConstants);MauiAllowImplicitXmlnsDeclaration</DefineConstants>
@@ -206,22 +176,30 @@
 
 	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171
 	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171--> 
-	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
-	</ItemGroup>
-
-	<!--Error (active)	NETSDK1152	Found multiple publish output files with the same relative path:
-	    C:\nuget\zxing.net\0.16.11\lib\net9.0\zxing.dll, C:\nuget\zxingcpp\0.4.0-alpha\runtimes\win-x64\native\ZXing.dll.
-		BarcodeGenerator (net10.0-windows10.0.19041.0)	C:\Program Files\dotnet\sdk\10.0.101\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ConflictResolution.targets 112-->
-	<!--<ItemGroup>
-	  <PackageReference Include="zxingcpp" Version="0.4.0-alpha">
-	    <ExcludeAssets>native</ExcludeAssets>
-	  </PackageReference>
 	</ItemGroup>-->
 
 	<!--<ItemGroup>
 	  --><!-- Remove the native DLL from publish if it conflicts --><!--
 	  <None Remove="$(UserProfile)\.nuget\packages\zxingcpp\0.4.0-alpha\runtimes\win-x64\native\ZXing.dll" />
 	</ItemGroup>-->
+
+	<!--Error (active)	NETSDK1152	Found multiple publish output files with the same relative path:
+	    C:\nuget\zxing.net\0.16.11\lib\net9.0\zxing.dll, C:\nuget\zxingcpp\0.4.0-alpha\runtimes\win-x64\native\ZXing.dll.
+		BarcodeGenerator (net10.0-windows10.0.19041.0)	C:\Program Files\dotnet\sdk\10.0.101\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ConflictResolution.targets 112-->
+	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+  <!-- Exclude native runtime/native assets from the transitive zxingcpp package when building Windows.
+       This prevents the native ZXing.dll (runtimes\win-x64\native\ZXing.dll) from colliding with the managed
+       zxing.dll provided by zxing.net in the publish output. -->
+		
+		<PackageReference Include="zxingcpp" Version="0.4.0-alpha">
+			<ExcludeAssets>native</ExcludeAssets>
+		</PackageReference>
+		
+		<!--<PackageReference Update="zxing.net">
+			<ExcludeAssets>runtime</ExcludeAssets>
+		</PackageReference>-->
+	</ItemGroup>
 	
 </Project>
