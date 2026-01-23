@@ -168,14 +168,14 @@
 		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 	</PropertyGroup>
 
-	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171 - solved in version 3.0.1 of BarcodeScanning.Native.Maui
+	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171 - fixed in version 3.0.1 of BarcodeScanning.Native.Maui
 	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171--> 
 	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
 	</ItemGroup>-->
 
-	<!--<ItemGroup>
-	  --><!-- Remove the native DLL from publish if it conflicts --><!--
+	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+	   --><!--Remove the native DLL from publish if it conflicts--><!-- 
 	  <None Remove="$(UserProfile)\.nuget\packages\zxingcpp\0.4.0-alpha\runtimes\win-x64\native\ZXing.dll" />
 	</ItemGroup>-->
 
@@ -183,17 +183,12 @@
 	    C:\nuget\zxing.net\0.16.11\lib\net9.0\zxing.dll, C:\nuget\zxingcpp\0.4.0-alpha\runtimes\win-x64\native\ZXing.dll.
 		BarcodeGenerator (net10.0-windows10.0.19041.0)	C:\Program Files\dotnet\sdk\10.0.101\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ConflictResolution.targets 112-->
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
-  <!-- Exclude native runtime/native assets from the transitive zxingcpp package when building Windows.
+		<!-- Exclude native runtime/native assets from the transitive zxingcpp package when building Windows.
        This prevents the native ZXing.dll (runtimes\win-x64\native\ZXing.dll) from colliding with the managed
        zxing.dll provided by zxing.net in the publish output. -->
-		
 		<PackageReference Include="zxingcpp" Version="0.4.0-alpha">
 			<ExcludeAssets>native</ExcludeAssets>
 		</PackageReference>
-		
-		<!--<PackageReference Update="zxing.net">
-			<ExcludeAssets>runtime</ExcludeAssets>
-		</PackageReference>-->
 	</ItemGroup>
 	
 </Project>
