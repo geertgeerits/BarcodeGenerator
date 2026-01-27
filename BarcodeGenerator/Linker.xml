@@ -1,0 +1,18 @@
+﻿<linker>
+	<!-- Preserve core MAUI controls -->
+	<assembly fullname="Microsoft.Maui.Controls">
+		<type fullname="Microsoft.Maui.Controls.Button" preserve="all"/>
+		<type fullname="Microsoft.Maui.Controls.Entry" preserve="all"/>
+		<type fullname="Microsoft.Maui.Controls.Editor" preserve="all"/>
+		<type fullname="Microsoft.Maui.Controls.Slider" preserve="all"/>
+		<type fullname="Microsoft.Maui.Controls.Picker" preserve="all"/>
+	</assembly>
+
+	<!-- Preserve handlers to avoid trimming -->
+	<assembly fullname="Microsoft.Maui.Controls.Handlers">
+		<type fullname="Microsoft.Maui.Controls.Handlers.ButtonHandler" preserve="all"/>
+		<type fullname="Microsoft.Maui.Controls.Handlers.EntryHandler" preserve="all"/>
+		<type fullname="Microsoft.Maui.Controls.Handlers.EditorHandler" preserve="all"/>
+	</assembly>
+</linker>
+
