@@ -83,6 +83,7 @@
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.7.4" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.1" />
 		<PackageReference Include="Sentry.Maui" Version="6.0.0" />
+		<!--<PackageReference Include="ZXingCpp" Version="0.4.0-alpha" />-->
 	</ItemGroup>
 
 	<ItemGroup>
@@ -168,11 +169,11 @@
 		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 	</PropertyGroup>
 
-	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171 - fixed in version 3.0.1 of BarcodeScanning.Native.Maui
+	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171
 	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171--> 
-	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
-	</ItemGroup>-->
+	</ItemGroup>
 
 	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
 	   --><!--Remove the native DLL from publish if it conflicts--><!-- 
