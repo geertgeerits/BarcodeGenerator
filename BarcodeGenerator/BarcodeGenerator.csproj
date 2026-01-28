@@ -27,9 +27,9 @@
 		<ApplicationIdGuid>7A6A918B-29C3-433A-82AE-16D589F3D8A2</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<PackageVersion>1.0.46</PackageVersion>
-		<ApplicationDisplayVersion>1.0.46</ApplicationDisplayVersion>
-		<ApplicationVersion>46</ApplicationVersion>
+		<PackageVersion>1.0.47</PackageVersion>
+		<ApplicationDisplayVersion>1.0.47</ApplicationDisplayVersion>
+		<ApplicationVersion>47</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">12.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
@@ -134,8 +134,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.46</ApplicationDisplayVersion>
-		<ApplicationVersion>46</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.47</ApplicationDisplayVersion>
+		<ApplicationVersion>47</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
@@ -154,8 +154,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.46</ApplicationDisplayVersion>
-		<ApplicationVersion>46</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.47</ApplicationDisplayVersion>
+		<ApplicationVersion>47</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
@@ -169,15 +169,17 @@
 		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 	</PropertyGroup>
 
-	<!--Buttons do not work after linking is enabled in iOS Release builds #150-->
-	<PropertyGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
-		<MauiLinkerDescriptor>Linker.xml</MauiLinkerDescriptor>
-	</PropertyGroup>
-
-	<!--Buttons do not work after linking is enabled in iOS Release builds #150-->
+	<!--Buttons do not work after linking is enabled in iOS Release builds #150 - Does not work in xCode 26.1 -->
 	<!--<PropertyGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
-		<MtouchLink>None</MtouchLink>
+		<MauiLinkerDescriptor>Linker.xml</MauiLinkerDescriptor>
 	</PropertyGroup>-->
+
+	<!--Buttons do not work after linking is enabled in iOS Release builds #150
+	Compiling time increases significantly to 1864,5 seconds instead of 250 seconds
+	The size of the app increases significantly from 24.3 MB to 74.8 MB -->
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
+		<MtouchLink>None</MtouchLink>
+	</PropertyGroup>
 
 	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171
 	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171--> 
