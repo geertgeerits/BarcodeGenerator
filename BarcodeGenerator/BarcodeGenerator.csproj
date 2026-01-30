@@ -177,9 +177,9 @@
 	<!--Buttons do not work after linking is enabled in iOS Release builds #150
 	Compiling time increases significantly to 1864,5 seconds instead of 250 seconds
 	The size of the app increases significantly from 24.3 MB to 74.8 MB -->
-	<PropertyGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
+	<!--<PropertyGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
 		<MtouchLink>None</MtouchLink>
-	</PropertyGroup>
+	</PropertyGroup>-->
 
 	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171
 	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171--> 
