@@ -174,9 +174,13 @@
 		<MauiLinkerDescriptor>Linker.xml</MauiLinkerDescriptor>
 	</PropertyGroup>-->
 
-	<!--Buttons do not work after linking is enabled in iOS Release builds #150
-	Compiling time increases significantly to 1864,5 seconds instead of 250 seconds
-	The size of the app increases significantly from 24.3 MB to 74.8 MB -->
+	<!--Buttons do not work after linking is enabled in iOS Release builds #150.
+	Compiling time increases significantly to 1864,5 seconds instead of 250 seconds.
+	The size of the app increases significantly from 24.3 MB to 74.8 MB.
+	And there are many errors like: Missing purpose string in Info.plist.
+	Your app’s code references one or more APIs that access sensitive user data,
+	or the app has one or more entitlements that permit such access.
+	Access that I not use in the app-->
 	<!--<PropertyGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
 		<MtouchLink>None</MtouchLink>
 	</PropertyGroup>-->

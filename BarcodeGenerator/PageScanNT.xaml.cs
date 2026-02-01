@@ -396,6 +396,11 @@ namespace BarcodeGenerator
 
             // Set the title for the quality picker
             SetTitleCameraQualityPicker();
+
+            // Reset the slider camera zoom
+#if IOS
+            sldCameraZoom.Value = 1;
+#endif
         }
 
         /// <summary>
