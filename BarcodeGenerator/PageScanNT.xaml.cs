@@ -46,9 +46,6 @@ namespace BarcodeGenerator
             // iOS back camera quality settings
             qualities.Add(CodeLang.CameraQualityHigh_Text);
             pckCameraQualityBack.ItemsSource = qualities;
-
-            // iOS camera zoom settings
-            sldCameraZoom.Minimum = 1;
 #else
             // Front and back camera quality settings
             qualities.Add(CodeLang.CameraQualityLow_Text);
@@ -59,14 +56,6 @@ namespace BarcodeGenerator
             // Back camera quality settings
             qualities.Add(CodeLang.CameraQualityHighest_Text);
             pckCameraQualityBack.ItemsSource = qualities;
-
-            /* Android camera zoom settings
-               !!!BUG!!! Android: camera zoom does not work in release mode since .NET10
-               Could you please add the following to the csproj until the trimming bug is fixed?
-               <ItemGroup>
-                   <TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
-               </ItemGroup>
-               This disables trimming for Xamarin.AndroidX.Camera.Core. */
 #endif
             // Set the quality for the camera pickers
             pckCameraQualityBack.SelectedIndex = nQualityCameraBack;

@@ -49,7 +49,7 @@
                     ThumbColor="DeepSkyBlue"
                     MinimumTrackColor="DeepSkyBlue"
                     Value="1"
-                    Minimum="0"
+                    Minimum="{OnPlatform Default=0, iOS=1}"
                     Maximum="10"
                     SemanticProperties.Description="{Translate ToolTipCameraZoom_Text}"
                     ToolTipProperties.Text="{Translate ToolTipCameraZoom_Text}"

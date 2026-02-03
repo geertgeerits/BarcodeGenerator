@@ -185,7 +185,9 @@
 		<MtouchLink>None</MtouchLink>
 	</PropertyGroup>-->
 
-	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171
+	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171 since .NET10
+           Add the following to the csproj until the trimming bug is fixed.
+		   This disables trimming for Xamarin.AndroidX.Camera.Core.
 	https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171--> 
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
