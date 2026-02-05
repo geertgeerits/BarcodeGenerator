@@ -2,17 +2,17 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-03 (YYYY-MM-DD)
+ * Date ........: 2026-02-05 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
  *                zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
  *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
  *                Google ML Kit: https://developers.google.com/ml-kit
- * Dependencies : NuGet Package: ZXing.Net.Maui by Redth version 0.7.4 ; https://github.com/redth/ZXing.Net.Maui
- *                NuGet Package: ZXing.Net.Maui.Controls by Redth version 0.7.4
- *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić version 3.0.1 for Android & iOS; https://github.com/afriscic/BarcodeScanning.Native.Maui
- *                NuGet Package: Sentry.Maui version 6.0.0 ; https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
+ * Dependencies : NuGet Package: ZXing.Net.Maui by Redth - https://github.com/redth/ZXing.Net.Maui
+ *                NuGet Package: ZXing.Net.Maui.Controls by Redth
+ *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić - https://github.com/afriscic/BarcodeScanning.Native.Maui
+ *                NuGet Package: Sentry.Maui - https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
@@ -23,6 +23,9 @@ namespace BarcodeGenerator
     {
         //// Local variables
         private string cLicense = string.Empty;
+        private const string cAllowedCharactersDecimal = "0123456789";
+        private const string cAllowedCharactersHex = "0123456789ABCDEF";
+        private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
 
         public MainPage()
         {
@@ -418,7 +421,7 @@ namespace BarcodeGenerator
                         case 2:
                             cTextToCode = cTextToCode.ToUpper();
 
-                            if (TestAllowedCharacters("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*", cTextToCode) == false)
+                            if (TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
                             {
                                 return;
                             }
@@ -434,7 +437,7 @@ namespace BarcodeGenerator
                         case 3:
                             cTextToCode = cTextToCode.ToUpper();
 
-                            if (TestAllowedCharacters("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*", cTextToCode) == false)
+                            if (TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
                             {
                                 return;
                             }
@@ -472,7 +475,7 @@ namespace BarcodeGenerator
 
                         // Ean8
                         case 6:
-                            if (TestAllowedCharacters("0123456789", cTextToCode) == false)
+                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
                             }
@@ -504,7 +507,7 @@ namespace BarcodeGenerator
 
                         // Ean13
                         case 7:
-                            if (TestAllowedCharacters("0123456789", cTextToCode) == false)
+                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
                             }
@@ -536,7 +539,7 @@ namespace BarcodeGenerator
 
                         // Itf
                         case 8:
-                            if (TestAllowedCharacters("0123456789", cTextToCode) == false)
+                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
                             }
@@ -551,7 +554,7 @@ namespace BarcodeGenerator
 
                         // Msi
                         case 9:
-                            if (TestAllowedCharacters("0123456789", cTextToCode) == false)
+                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
                             }
@@ -574,7 +577,7 @@ namespace BarcodeGenerator
                         case 11:
                             cTextToCode = cTextToCode.ToUpper();
 
-                            if (TestAllowedCharacters("0123456789ABCDEF", cTextToCode) == false)
+                            if (TestAllowedCharacters(cAllowedCharactersHex, cTextToCode) == false)
                             {
                                 return;
                             }
@@ -587,7 +590,7 @@ namespace BarcodeGenerator
 
                         // UpcA
                         case 13:
-                            if (TestAllowedCharacters("0123456789", cTextToCode) == false)
+                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
                             }
@@ -619,7 +622,7 @@ namespace BarcodeGenerator
 
                         // UpcE
                         case 14:
-                            if (TestAllowedCharacters("0123456789", cTextToCode) == false)
+                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
                             }
