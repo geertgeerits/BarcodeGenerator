@@ -7,8 +7,10 @@
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
  *                zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
+ *                Apple Vision framework: https://developer.apple.com/documentation/vision
  *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
  *                Google ML Kit: https://developers.google.com/ml-kit
+ *                zxing-cpp: https://github.com/zxing-cpp/zxing-cpp
  * Dependencies : NuGet Package: ZXing.Net.Maui by Redth - https://github.com/redth/ZXing.Net.Maui
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić - https://github.com/afriscic/BarcodeScanning.Native.Maui
@@ -16,6 +18,7 @@
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
+using ZXing.Net.Maui.Controls;
 
 namespace BarcodeGenerator
 {
@@ -81,9 +84,12 @@ namespace BarcodeGenerator
             Globals.SetTheme();
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode generator
+#if WINDOWS
+            pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGeneratorWindows();
+#else
             pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
-
-            if (Globals.nFormatGeneratorIndex < 0 || Globals.nFormatGeneratorIndex > 14)
+#endif
+            if (Globals.nFormatGeneratorIndex is < 0 or > 14)
             {
                 // Default format code = QrCode
                 pckFormatCodeGenerator.SelectedIndex = 12;
@@ -380,9 +386,20 @@ namespace BarcodeGenerator
                 return;
             }
 
-            // Validate the text input and set the format
             int selectedIndex = pckFormatCodeGenerator.SelectedIndex;
 
+            // If the text from the selected format code in the picker starts with a parenthesis the barcode will not be generated
+            var itemsSource = pckFormatCodeGenerator.ItemsSource;
+            if (itemsSource is not null)
+            {
+                var item = itemsSource[selectedIndex] as string;
+                if (!string.IsNullOrEmpty(item) && item[0] == '(')
+                {
+                    return;
+                }
+            }
+
+            // Validate the text input and set the format
             if (selectedIndex != -1)
             {
                 try
@@ -398,7 +415,6 @@ namespace BarcodeGenerator
                             {
                                 return;
                             }
-
                             break;
 
                         // Codabar
@@ -414,7 +430,6 @@ namespace BarcodeGenerator
                             {
                                 return;
                             }
-
                             break;
 
                         // Code39
@@ -430,7 +445,6 @@ namespace BarcodeGenerator
                             {
                                 return;
                             }
-
                             break;
 
                         // Code93
@@ -446,7 +460,6 @@ namespace BarcodeGenerator
                             {
                                 return;
                             }
-
                             break;
 
                         // Code128
@@ -458,7 +471,6 @@ namespace BarcodeGenerator
                             {
                                 return;
                             }
-
                             break;
 
                         // DataMatrix
@@ -470,7 +482,6 @@ namespace BarcodeGenerator
                             {
                                 return;
                             }
-
                             break;
 
                         // Ean8
@@ -501,8 +512,6 @@ namespace BarcodeGenerator
                             }
 
                             edtTextToCode.Text = cTextToCode;
-                            //cTextCode = string.Concat(cTextToCode[..4], " ", cTextToCode.Substring(4, 4));
-
                             break;
 
                         // Ean13
@@ -533,8 +542,6 @@ namespace BarcodeGenerator
                             }
 
                             edtTextToCode.Text = cTextToCode;
-                            //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 6));
-
                             break;
 
                         // Itf
@@ -549,7 +556,6 @@ namespace BarcodeGenerator
                                 DisplayErrorMessage(CodeLang.LengthInputEven_Text);
                                 return;
                             }
-
                             break;
 
                         // Msi
@@ -558,7 +564,6 @@ namespace BarcodeGenerator
                             {
                                 return;
                             }
-
                             break;
 
                         // Pdf417
@@ -570,7 +575,6 @@ namespace BarcodeGenerator
                             {
                                 return;
                             }
-
                             break;
 
                         // Plessey
@@ -581,7 +585,6 @@ namespace BarcodeGenerator
                             {
                                 return;
                             }
-
                             break;
 
                         // QrCode
@@ -616,8 +619,6 @@ namespace BarcodeGenerator
                             }
 
                             edtTextToCode.Text = cTextToCode;
-                            //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 5), " ", cTextToCode.Substring(6, 5), " ", cTextToCode.Substring(11, 1));
-
                             break;
 
                         // UpcE
@@ -682,8 +683,6 @@ namespace BarcodeGenerator
                             }
 
                             edtTextToCode.Text = cTextToCode;
-                            //cTextCode = string.Concat(cTextToCode[..1], " ", cTextToCode.Substring(1, 6), " ", cTextToCode.Substring(7, 1));
-
                             break;
                     }
                 }

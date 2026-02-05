@@ -69,7 +69,7 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Put the generator barcode formats in a List string
+        /// Put the generator barcode formats in a List string for Android and iOS
         /// </summary>
         /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator() => [
@@ -87,6 +87,28 @@ namespace BarcodeGenerator
                 "Plessey",
                 "QR Code",
                 "UPC-A",
+                "UPC-E"
+            ];
+
+        /// <summary>
+        /// Put the generator barcode formats in a List string for Windows
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetFormatCodeListGeneratorWindows() => [
+                "Aztec",
+                "(Codabar)",
+                "(Code 39)",
+                "Code 93",
+                "(Code 128)",
+                "Data Matrix",
+                "(EAN-8)",
+                "(EAN-13)",
+                "(ITF (Interleaved 2 of 5))",
+                "(MSI (Modified Plessey))",
+                "PDF417",
+                "(Plessey)",
+                "QR Code",
+                "(UPC-A)",
                 "UPC-E"
             ];
 

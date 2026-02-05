@@ -56,7 +56,11 @@
             };
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode generator
+#if WINDOWS
+            pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGeneratorWindows();
+#else
             pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
+#endif
             pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode scanner
