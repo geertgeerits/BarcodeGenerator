@@ -70,13 +70,13 @@ namespace BarcodeGenerator
 
 #if ANDROID
             //// Set the barcodes in the picker for Android
-            pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeAndroid();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodeFormats.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
             //// Set the barcodes in the picker for iOS
-            pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeIOS();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodeFormats.GetFormatCodeListScannerNativeIOS();
 #elif WINDOWS
             //// Set the barcodes in the picker for Windows
-            pckFormatCodeScanner.ItemsSource = Globals.GetFormatCodeListScannerNativeWindows();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodeFormats.GetFormatCodeListScannerNativeWindows();
 #endif
             //// Default format code = All codes
             pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;

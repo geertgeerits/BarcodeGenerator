@@ -85,9 +85,9 @@ namespace BarcodeGenerator
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode generator
 #if WINDOWS
-            pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGeneratorWindows();
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodeFormats.GetFormatCodeListGeneratorWindows();
 #else
-            pckFormatCodeGenerator.ItemsSource = Globals.GetFormatCodeListGenerator();
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodeFormats.GetFormatCodeListGenerator();
 #endif
             if (Globals.nFormatGeneratorIndex is < 0 or > 14)
             {
