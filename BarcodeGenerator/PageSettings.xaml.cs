@@ -57,19 +57,19 @@
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode generator
 #if WINDOWS
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodeFormats.GetFormatCodeListGeneratorWindows();
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGeneratorWindows();
 #else
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodeFormats.GetFormatCodeListGenerator();
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator();
 #endif
             pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode scanner
 #if ANDROID
-            pckFormatCodeScanner.ItemsSource = ClassBarcodeFormats.GetFormatCodeListScannerNativeAndroid();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
-            pckFormatCodeScanner.ItemsSource = ClassBarcodeFormats.GetFormatCodeListScannerNativeIOS();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeIOS();
 #elif WINDOWS
-            pckFormatCodeScanner.ItemsSource = ClassBarcodeFormats.GetFormatCodeListScannerNativeWindows();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
 #endif
             pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
@@ -158,11 +158,11 @@
         {
             // Set the barcode list and the current default barcode format in the picker for the barcode scanner
 #if ANDROID
-            pckFormatCodeScanner.ItemsSource = ClassBarcodeFormats.GetFormatCodeListScannerNativeAndroid();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
-            pckFormatCodeScanner.ItemsSource = ClassBarcodeFormats.GetFormatCodeListScannerNativeIOS();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeIOS();
 #elif WINDOWS
-            pckFormatCodeScanner.ItemsSource = ClassBarcodeFormats.GetFormatCodeListScannerNativeWindows();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
 #endif
             pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
 
