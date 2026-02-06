@@ -85,17 +85,19 @@ namespace BarcodeGenerator
             //// Set the barcode list and the current default barcode format in the picker for the barcode generator
 #if WINDOWS
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGeneratorWindows();
+            int nMaxIndex = ClassBarcodes.GetFormatCodeListGeneratorWindows().Count - 1;
 #else
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator();
+            int nMaxIndex = ClassBarcodes.GetFormatCodeListGenerator().Count - 1;
 #endif
-            if (Globals.nFormatGeneratorIndex is < 0 or > 14)
+            if (Globals.nFormatGeneratorIndex < 0 || Globals.nFormatGeneratorIndex > nMaxIndex)
             {
-                // Default format code = QrCode
-                pckFormatCodeGenerator.SelectedIndex = 12;
+                // Default barcode format = QrCode
+                pckFormatCodeGenerator.SelectedIndex = 0;
             }
             else
             {
-                // Set the format barcode to the saved code
+                // Set the barcode format to the saved code
                 pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
             }
 
