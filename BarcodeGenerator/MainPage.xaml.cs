@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-05 (YYYY-MM-DD)
+ * Date ........: 2026-02-06 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -18,7 +18,6 @@
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
 
 using ZXing.Net.Maui;
-using ZXing.Net.Maui.Controls;
 
 namespace BarcodeGenerator
 {
@@ -213,6 +212,13 @@ namespace BarcodeGenerator
 
             if (selectedIndex != -1)
             {
+                var itemsSource = picker.ItemsSource;
+                string? item = itemsSource is not null && itemsSource.Count > selectedIndex
+                    ? itemsSource[selectedIndex] as string : null;
+
+                string selectedName = item is not null
+                    ? ClassBarcodeFormats.SetBarcodeNameToCommonName(item) : string.Empty;
+
                 bgvBarcode.Value = "";
                 bgvBarcode.HeightRequest = 160;
                 bgvBarcode.WidthRequest = -1;
@@ -221,10 +227,9 @@ namespace BarcodeGenerator
                 btnShare.Text = CodeLang.ButtonShare_Text;
                 btnShare.IsEnabled = false;
 
-                switch (selectedIndex)
+                switch (selectedName)
                 {
-                    // Aztec
-                    case 0:
+                    case "AZTEC":
                         edtTextToCode.MaxLength = 1900;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.HeightRequest = 250;
@@ -233,40 +238,35 @@ namespace BarcodeGenerator
                         bgvBarcode.Format = BarcodeFormat.Aztec;
                         break;
 
-                    // Codabar
-                    case 1:
+                    case "CODABAR":
                         edtTextToCode.MaxLength = 43;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.BarcodeMargin = 4;
                         bgvBarcode.Format = BarcodeFormat.Codabar;
                         break;
 
-                    // Code39
-                    case 2:
+                    case "CODE_39":
                         edtTextToCode.MaxLength = 48;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.BarcodeMargin = 4;
                         bgvBarcode.Format = BarcodeFormat.Code39;
                         break;
 
-                    // Code93
-                    case 3:
+                    case "CODE_93":
                         edtTextToCode.MaxLength = 48;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.BarcodeMargin = 4;
                         bgvBarcode.Format = BarcodeFormat.Code93;
                         break;
 
-                    // Code128
-                    case 4:
+                    case "CODE_128":
                         edtTextToCode.MaxLength = 48;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.BarcodeMargin = 20;
                         bgvBarcode.Format = BarcodeFormat.Code128;
                         break;
 
-                    // DataMatrix
-                    case 5:
+                    case "DATA_MATRIX":
                         edtTextToCode.MaxLength = 1500;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.HeightRequest = 250;
@@ -275,56 +275,49 @@ namespace BarcodeGenerator
                         bgvBarcode.Format = BarcodeFormat.DataMatrix;
                         break;
 
-                    // Ean8
-                    case 6:
+                    case "EAN_8":
                         edtTextToCode.MaxLength = 8;
                         edtTextToCode.Keyboard = Keyboard.Numeric;
                         bgvBarcode.BarcodeMargin = 4;
                         bgvBarcode.Format = BarcodeFormat.Ean8;
                         break;
 
-                    // Ean13
-                    case 7:
+                    case "EAN_13":
                         edtTextToCode.MaxLength = 13;
                         edtTextToCode.Keyboard = Keyboard.Numeric;
                         bgvBarcode.BarcodeMargin = 4;
                         bgvBarcode.Format = BarcodeFormat.Ean13;
                         break;
 
-                    // Itf
-                    case 8:
+                    case "ITF":
                         edtTextToCode.MaxLength = 30;
                         edtTextToCode.Keyboard = Keyboard.Numeric;
                         bgvBarcode.BarcodeMargin = 8;
                         bgvBarcode.Format = BarcodeFormat.Itf;
                         break;
 
-                    // Msi
-                    case 9:
+                    case "MSI":
                         edtTextToCode.MaxLength = 255;
                         edtTextToCode.Keyboard = Keyboard.Numeric;
                         bgvBarcode.BarcodeMargin = 10;
                         bgvBarcode.Format = BarcodeFormat.Msi;
                         break;
 
-                    // Pdf417
-                    case 10:
+                    case "PDF_417":
                         edtTextToCode.MaxLength = 1100;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.BarcodeMargin = 10;
                         bgvBarcode.Format = BarcodeFormat.Pdf417;
                         break;
 
-                    // Plessey
-                    case 11:
+                    case "PLESSEY":
                         edtTextToCode.MaxLength = 16;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.BarcodeMargin = 8;
                         bgvBarcode.Format = BarcodeFormat.Plessey;
                         break;
 
-                    // QrCode
-                    case 12:
+                    case "QR_CODE":
                         edtTextToCode.MaxLength = 1800;
                         edtTextToCode.Keyboard = Keyboard.Default;
                         bgvBarcode.HeightRequest = 250;
@@ -333,16 +326,14 @@ namespace BarcodeGenerator
                         bgvBarcode.Format = BarcodeFormat.QrCode;
                         break;
 
-                    // UpcA
-                    case 13:
+                    case "UPC_A":
                         edtTextToCode.MaxLength = 12;
                         edtTextToCode.Keyboard = Keyboard.Numeric;
                         bgvBarcode.BarcodeMargin = 0;
                         bgvBarcode.Format = BarcodeFormat.UpcA;
                         break;
 
-                    // UpcE
-                    case 14:
+                    case "UPC_E":
                         edtTextToCode.MaxLength = 8;
                         edtTextToCode.Keyboard = Keyboard.Numeric;
                         bgvBarcode.BarcodeMargin = 8;
@@ -388,26 +379,21 @@ namespace BarcodeGenerator
 
             int selectedIndex = pckFormatCodeGenerator.SelectedIndex;
 
-            // If the text from the selected format code in the picker starts with a parenthesis the barcode will not be generated
-            var itemsSource = pckFormatCodeGenerator.ItemsSource;
-            if (itemsSource is not null)
-            {
-                var item = itemsSource[selectedIndex] as string;
-                if (!string.IsNullOrEmpty(item) && item[0] == '(')
-                {
-                    return;
-                }
-            }
-
             // Validate the text input and set the format
             if (selectedIndex != -1)
             {
+                var itemsSource = pckFormatCodeGenerator.ItemsSource;
+                string? item = itemsSource is not null && itemsSource.Count > selectedIndex
+                    ? itemsSource[selectedIndex] as string : null;
+
+                string selectedName = item is not null
+                    ? ClassBarcodeFormats.SetBarcodeNameToCommonName(item) : string.Empty;
+
                 try
                 {
-                    switch (selectedIndex)
+                    switch (selectedName)
                     {
-                        // Aztec
-                        case 0:
+                        case "AZTEC":
                             cTextToCode = ReplaceCharacters(cTextToCode);
                             edtTextToCode.Text = cTextToCode;
 
@@ -417,8 +403,7 @@ namespace BarcodeGenerator
                             }
                             break;
 
-                        // Codabar
-                        case 1:
+                        case "CODABAR":
                             cTextToCode = cTextToCode.ToUpper();
 
                             if (TestAllowedCharacters("0123456789-$:/.+ABCD", cTextToCode) == false)
@@ -432,8 +417,7 @@ namespace BarcodeGenerator
                             }
                             break;
 
-                        // Code39
-                        case 2:
+                        case "CODE_39":
                             cTextToCode = cTextToCode.ToUpper();
 
                             if (TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
@@ -447,8 +431,7 @@ namespace BarcodeGenerator
                             }
                             break;
 
-                        // Code93
-                        case 3:
+                        case "CODE_93":
                             cTextToCode = cTextToCode.ToUpper();
 
                             if (TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
@@ -462,8 +445,7 @@ namespace BarcodeGenerator
                             }
                             break;
 
-                        // Code128
-                        case 4:
+                        case "CODE_128":
                             cTextToCode = ReplaceCharacters(cTextToCode);
                             edtTextToCode.Text = cTextToCode;
 
@@ -473,8 +455,7 @@ namespace BarcodeGenerator
                             }
                             break;
 
-                        // DataMatrix
-                        case 5:
+                        case "DATA_MATRIX":
                             cTextToCode = ReplaceCharacters(cTextToCode);
                             edtTextToCode.Text = cTextToCode;
 
@@ -484,8 +465,7 @@ namespace BarcodeGenerator
                             }
                             break;
 
-                        // Ean8
-                        case 6:
+                        case "EAN_8":
                             if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
@@ -514,8 +494,7 @@ namespace BarcodeGenerator
                             edtTextToCode.Text = cTextToCode;
                             break;
 
-                        // Ean13
-                        case 7:
+                        case "EAN_13":
                             if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
@@ -544,8 +523,7 @@ namespace BarcodeGenerator
                             edtTextToCode.Text = cTextToCode;
                             break;
 
-                        // Itf
-                        case 8:
+                        case "ITF":
                             if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
@@ -558,16 +536,14 @@ namespace BarcodeGenerator
                             }
                             break;
 
-                        // Msi
-                        case 9:
+                        case "MSI":
                             if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
                             }
                             break;
 
-                        // Pdf417
-                        case 10:
+                        case "PDF_417":
                             cTextToCode = ReplaceCharacters(cTextToCode);
                             edtTextToCode.Text = cTextToCode;
 
@@ -577,8 +553,7 @@ namespace BarcodeGenerator
                             }
                             break;
 
-                        // Plessey
-                        case 11:
+                        case "PLESSEY":
                             cTextToCode = cTextToCode.ToUpper();
 
                             if (TestAllowedCharacters(cAllowedCharactersHex, cTextToCode) == false)
@@ -587,12 +562,10 @@ namespace BarcodeGenerator
                             }
                             break;
 
-                        // QrCode
-                        case 12:
+                        case "QR_CODE":
                             break;
 
-                        // UpcA
-                        case 13:
+                        case "UPC_A":
                             if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
@@ -621,8 +594,7 @@ namespace BarcodeGenerator
                             edtTextToCode.Text = cTextToCode;
                             break;
 
-                        // UpcE
-                        case 14:
+                        case "UPC_E":
                             if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
                                 return;
