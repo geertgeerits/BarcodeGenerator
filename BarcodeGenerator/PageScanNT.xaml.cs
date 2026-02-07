@@ -79,7 +79,7 @@ namespace BarcodeGenerator
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
 #endif
             //// Default format code = All codes
-            pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
+            pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
 
             //// Set controls for text to speech
             if (Globals.bTextToSpeechAvailable)

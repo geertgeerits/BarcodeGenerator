@@ -57,9 +57,12 @@ namespace BarcodeGenerator
             edtTextToCode.AutoSize = EditorAutoSizeOption.Disabled;
 #endif
             //// Get the saved settings
+            ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
+            ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
+
+            ClassBarcodes.nBarcodeGeneratorIndex = Preferences.Default.Get("SettingBarcodeGeneratorIndex", -1);
+            ClassBarcodes.nBarcodeScannerIndex = Preferences.Default.Get("SettingBarcodeScannerIndex", 0);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
-            Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", -1);
-            Globals.nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 0);
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
@@ -85,22 +88,22 @@ namespace BarcodeGenerator
             //// Set the barcode list and the current default barcode format in the picker for the barcode generator
 #if WINDOWS
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGeneratorWindows();
-            int nMaxIndex = ClassBarcodes.GetFormatCodeListGeneratorWindows().Count - 1;
+            int nListCount = ClassBarcodes.GetFormatCodeListGeneratorWindows().Count;
 #else
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator();
-            int nMaxIndex = ClassBarcodes.GetFormatCodeListGenerator().Count - 1;
+            int nListCount = ClassBarcodes.GetFormatCodeListGenerator().Count;
 #endif
-            if (Globals.nFormatGeneratorIndex < 0 || Globals.nFormatGeneratorIndex > nMaxIndex)
+            if (ClassBarcodes.nBarcodeGeneratorIndex < 0 || ClassBarcodes.nBarcodeGeneratorIndex > nListCount - 1)
             {
-                // Default barcode format = QrCode
-                Globals.nFormatGeneratorIndex = ClassBarcodes.SearchIndexInPickerList(pckFormatCodeGenerator, "QR Code");
-                pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
-                Preferences.Default.Set("SettingFormatGeneratorIndex", Globals.nFormatGeneratorIndex);
+                // Set default barcode format
+                ClassBarcodes.nBarcodeGeneratorIndex = ClassBarcodes.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorDefault);
+                pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
+                Preferences.Default.Set("SettingBarcodeGeneratorIndex", ClassBarcodes.nBarcodeGeneratorIndex);
             }
             else
             {
                 // Set the barcode format to the saved code
-                pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
+                pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
             }
 
             //// Get and set the user interface language after a first start or reset of the application
@@ -951,7 +954,7 @@ namespace BarcodeGenerator
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
             // Set the generator format in the picker
-            pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
+            pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
         }
 
         /// <summary>

@@ -7,8 +7,6 @@ namespace BarcodeGenerator
     {
         //// Global variables
         public static string cTheme = string.Empty;
-        public static int nFormatGeneratorIndex;
-        public static int nFormatScannerIndex;
         public static string cCodeColorFg = string.Empty;
         public static string cCodeColorBg = string.Empty;
         public static string cLanguage = string.Empty;

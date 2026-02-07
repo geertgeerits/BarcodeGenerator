@@ -61,7 +61,7 @@
 #else
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator();
 #endif
-            pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
+            pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode scanner
 #if ANDROID
@@ -71,7 +71,7 @@
 #elif WINDOWS
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
 #endif
-            pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
+            pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
 
             //// Set the current color in the entry and on the sliders
             int nOpacity = 0;
@@ -164,7 +164,7 @@
 #elif WINDOWS
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
 #endif
-            pckFormatCodeScanner.SelectedIndex = Globals.nFormatScannerIndex;
+            pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
 
             // Set the current theme in the picker
             List<string> ThemeList =
@@ -229,7 +229,7 @@
 
             if (selectedIndex != -1)
             {
-                Globals.nFormatGeneratorIndex = selectedIndex;
+                ClassBarcodes.nBarcodeGeneratorIndex = selectedIndex;
             }
         }
 
@@ -245,7 +245,7 @@
 
             if (selectedIndex != -1)
             {
-                Globals.nFormatScannerIndex = selectedIndex;
+                ClassBarcodes.nBarcodeScannerIndex = selectedIndex;
             }
         }
 
@@ -478,9 +478,11 @@
         /// <param name="e"></param>
         private static void OnSettingsSaveClicked(object sender, EventArgs e)
         {
+            Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
+            Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
+            Preferences.Default.Set("SettingBarcodeGeneratorIndex", ClassBarcodes.nBarcodeGeneratorIndex);
+            Preferences.Default.Set("SettingBarcodeScannerIndex", ClassBarcodes.nBarcodeScannerIndex);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
-            Preferences.Default.Set("SettingFormatGeneratorIndex", Globals.nFormatGeneratorIndex);
-            Preferences.Default.Set("SettingFormatScannerIndex", Globals.nFormatScannerIndex);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", Globals.cCodeColorBg);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
@@ -511,9 +513,11 @@
             else
             {
                 // Reset some settings
+                Preferences.Default.Remove("SettingBarcodeGeneratorName");
+                Preferences.Default.Remove("SettingBarcodeScannerName");
+                Preferences.Default.Remove("SettingBarcodeGeneratorIndex");
+                Preferences.Default.Remove("SettingBarcodeScannerIndex");
                 Preferences.Default.Remove("SettingTheme");
-                Preferences.Default.Remove("SettingFormatGeneratorIndex");
-                Preferences.Default.Remove("SettingFormatScannerIndex");
                 Preferences.Default.Remove("SettingCodeColorFg");
                 Preferences.Default.Remove("SettingCodeColorBg");
                 Preferences.Default.Remove("SettingLanguage");
