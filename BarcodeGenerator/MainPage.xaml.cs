@@ -59,8 +59,6 @@ namespace BarcodeGenerator
             //// Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
-
-            ClassBarcodes.nBarcodeGeneratorIndex = Preferences.Default.Get("SettingBarcodeGeneratorIndex", -1);
             ClassBarcodes.nBarcodeScannerIndex = Preferences.Default.Get("SettingBarcodeScannerIndex", 0);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
@@ -93,18 +91,23 @@ namespace BarcodeGenerator
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator();
             int nListCount = ClassBarcodes.GetFormatCodeListGenerator().Count;
 #endif
+            // Search for the name of the saved barcode in the list
+            ClassBarcodes.nBarcodeGeneratorIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeGeneratorName)
+                ? ClassBarcodes.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorName)
+                : -1;
+
+            // Search for the index of the saved barcode in the list
             if (ClassBarcodes.nBarcodeGeneratorIndex < 0 || ClassBarcodes.nBarcodeGeneratorIndex > nListCount - 1)
             {
                 // Set default barcode format
                 ClassBarcodes.nBarcodeGeneratorIndex = ClassBarcodes.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorDefault);
-                pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
-                Preferences.Default.Set("SettingBarcodeGeneratorIndex", ClassBarcodes.nBarcodeGeneratorIndex);
+                ClassBarcodes.cBarcodeGeneratorName = pckFormatCodeGenerator.Items[ClassBarcodes.nBarcodeGeneratorIndex];
+
+                Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             }
-            else
-            {
-                // Set the barcode format to the saved code
-                pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
-            }
+
+            // Set the barcode format to the saved code
+            pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
 
             //// Get and set the user interface language after a first start or reset of the application
             try
@@ -221,10 +224,12 @@ namespace BarcodeGenerator
             {
                 var itemsSource = picker.ItemsSource;
                 string? item = itemsSource is not null && itemsSource.Count > selectedIndex
-                    ? itemsSource[selectedIndex] as string : null;
+                    ? itemsSource[selectedIndex] as string
+                    : null;
 
                 string selectedName = item is not null
-                    ? ClassBarcodes.SetBarcodeNameToCommonName(item) : string.Empty;
+                    ? ClassBarcodes.SetBarcodeNameToCommonName(item)
+                    : string.Empty;
 
                 bgvBarcode.Value = "";
                 bgvBarcode.HeightRequest = 160;
@@ -391,10 +396,12 @@ namespace BarcodeGenerator
             {
                 var itemsSource = pckFormatCodeGenerator.ItemsSource;
                 string? item = itemsSource is not null && itemsSource.Count > selectedIndex
-                    ? itemsSource[selectedIndex] as string : null;
+                    ? itemsSource[selectedIndex] as string
+                    : null;
 
                 string selectedName = item is not null
-                    ? ClassBarcodes.SetBarcodeNameToCommonName(item) : string.Empty;
+                    ? ClassBarcodes.SetBarcodeNameToCommonName(item)
+                    : string.Empty;
 
                 try
                 {

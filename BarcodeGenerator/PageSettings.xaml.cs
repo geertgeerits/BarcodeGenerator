@@ -230,6 +230,7 @@
             if (selectedIndex != -1)
             {
                 ClassBarcodes.nBarcodeGeneratorIndex = selectedIndex;
+                ClassBarcodes.cBarcodeGeneratorName = pckFormatCodeGenerator.Items[ClassBarcodes.nBarcodeGeneratorIndex];
             }
         }
 
@@ -480,7 +481,6 @@
         {
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
-            Preferences.Default.Set("SettingBarcodeGeneratorIndex", ClassBarcodes.nBarcodeGeneratorIndex);
             Preferences.Default.Set("SettingBarcodeScannerIndex", ClassBarcodes.nBarcodeScannerIndex);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
@@ -515,7 +515,6 @@
                 // Reset some settings
                 Preferences.Default.Remove("SettingBarcodeGeneratorName");
                 Preferences.Default.Remove("SettingBarcodeScannerName");
-                Preferences.Default.Remove("SettingBarcodeGeneratorIndex");
                 Preferences.Default.Remove("SettingBarcodeScannerIndex");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
