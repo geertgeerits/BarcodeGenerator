@@ -106,7 +106,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             }
 
-            // Set the barcode format to the saved code
+            // Select the barcode format in the picker
             pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
 
             //// Get and set the user interface language after a first start or reset of the application
