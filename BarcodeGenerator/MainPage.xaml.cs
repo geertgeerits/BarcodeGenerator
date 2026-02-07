@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-06 (YYYY-MM-DD)
+ * Date ........: 2026-02-07 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -58,7 +58,7 @@ namespace BarcodeGenerator
 #endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
-            Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", 0);
+            Globals.nFormatGeneratorIndex = Preferences.Default.Get("SettingFormatGeneratorIndex", -1);
             Globals.nFormatScannerIndex = Preferences.Default.Get("SettingFormatScannerIndex", 0);
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
@@ -93,7 +93,9 @@ namespace BarcodeGenerator
             if (Globals.nFormatGeneratorIndex < 0 || Globals.nFormatGeneratorIndex > nMaxIndex)
             {
                 // Default barcode format = QrCode
-                pckFormatCodeGenerator.SelectedIndex = 0;
+                Globals.nFormatGeneratorIndex = ClassBarcodes.SearchIndexInPickerList(pckFormatCodeGenerator, "QR Code");
+                pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
+                Preferences.Default.Set("SettingFormatGeneratorIndex", Globals.nFormatGeneratorIndex);
             }
             else
             {

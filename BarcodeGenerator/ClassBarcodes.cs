@@ -64,7 +64,7 @@
             ];
 
         ///// <summary>
-        ///// Put the scanner barcode formats in a List string for ZXing
+        ///// Put the scanner barcode formats in a List string using ZXing for all platforms
         ///// </summary>
         ///// <returns></returns>
         //public static List<string> GetFormatCodeListScanner() => [
@@ -141,7 +141,6 @@
 
         /// <summary>
         /// Put the scanner barcode formats in a List string for the Native scanner for Windows
-        /// https://developer.apple.com/documentation/avfoundation/avmetadataobject/objecttype
         /// </summary>
         /// <returns></returns>
         public static List<string> GetFormatCodeListScannerNativeWindows() => [
@@ -198,6 +197,21 @@
                 "UPC EAN Extension" => cBarcode_UPC_EAN_EXTENSION,
                 _ => CodeLang.AllCodes_Text,
             };
+        }
+
+        /// <summary>
+        /// Search the index of the barcode format in the Picker list (and set the selected index to it)
+        /// </summary>
+        /// <param name="picker"></param>
+        /// <param name="cBarcode"></param>
+        /// <returns></returns>
+        public static int SearchIndexInPickerList(Picker picker, string cBarcode)
+        {
+            return picker.Items.IndexOf(cBarcode);
+
+            //int index = picker.Items.IndexOf(cBarcode);
+            //picker.SelectedIndex = index;
+            //return index;
         }
     }
 }
