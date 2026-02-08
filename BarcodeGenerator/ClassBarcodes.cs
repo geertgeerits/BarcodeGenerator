@@ -69,11 +69,11 @@
         /// <returns></returns>
         public static List<string> GetFormatCodeListGeneratorWindows() => [
                 "Aztec",
-                "Code 93",
+                //"Code 93",
                 "Data Matrix",
                 "PDF417",
-                "QR Code",
-                "UPC-E"
+                "QR Code"
+                //"UPC-E"
             ];
 
         ///// <summary>
@@ -180,9 +180,9 @@
         /// </summary>
         /// <param name="format"></param>
         /// <returns></returns>
-        public static string SetBarcodeNameToCommonName(string format)
+        public static string SetBarcodeNameToCommonName(string cBarcode)
         {
-            return format switch
+            return cBarcode switch
             {
                 "Aztec" => cBarcode_AZTEC,
                 "Codabar" => cBarcode_CODABAR,
@@ -199,7 +199,7 @@
                 "IMb" or "IMB" or "IMb (Intelligent Mail)" => cBarcode_IMB,
                 "ITF" or "ITF (Interleaved 2 of 5)" => cBarcode_ITF,
                 "ITF 14" => cBarcode_ITF_14,
-                "MaxiCode" => cBarcode_MAXICODE,
+                "MaxiCode" or "Maxi Code" => cBarcode_MAXICODE,
                 "Micro PDF417" or "Micro PDF-417" => cBarcode_MICRO_PDF_417,
                 "Micro QR Code" => cBarcode_MICRO_QR_CODE,
                 "MSI" or "MSI (Modified Plessey)" => cBarcode_MSI,
@@ -214,31 +214,6 @@
                 "UPC EAN Extension" => cBarcode_UPC_EAN_EXTENSION,
                 _ => CodeLang.AllCodes_Text,
             };
-        }
-
-        /// <summary>
-        /// Search the index of the barcode format in the Picker list (and set the selected index to it)
-        /// </summary>
-        /// <param name="picker"></param>
-        /// <param name="cBarcode"></param>
-        /// <returns></returns>
-        public static int SearchIndexInPickerList(Picker picker, string cBarcode)
-        {
-            return !string.IsNullOrEmpty(cBarcode) ? picker.Items.IndexOf(cBarcode) : -1;
-        }
-
-        /// <summary>
-        /// Retrieves the item name at the specified index from the picker list.
-        /// </summary>
-        /// <remarks>If the specified index is out of range, the method returns null rather than throwing
-        /// an exception.</remarks>
-        /// <param name="picker">The picker instance containing the list of items to search.</param>
-        /// <param name="nIndex">The zero-based index of the item to retrieve from the picker list. Must be greater than or equal to 0 and
-        /// less than the number of items in the picker.</param>
-        /// <returns>The name of the item at the specified index if it exists; otherwise, null.</returns>
-        public static string? SearchNameInPickerList(Picker picker, int nIndex)
-        {
-            return nIndex < 0 || nIndex >= picker.Items.Count ? null : picker.Items.ElementAtOrDefault(nIndex);
         }
     }
 }

@@ -68,17 +68,32 @@ namespace BarcodeGenerator
                 lblTitle.VerticalTextAlignment = TextAlignment.Start;
             }
 
+            //// Initialize the barcode pickers
 #if ANDROID
-            //// Set the barcodes in the picker for Android
+            // Set the barcodes in the picker for Android
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
-            //// Set the barcodes in the picker for iOS
+            // Set the barcodes in the picker for iOS
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeIOS();
 #elif WINDOWS
-            //// Set the barcodes in the picker for Windows
+            // Set the barcodes in the picker for Windows
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
 #endif
-            //// Default format code = All codes
+            // Search for the name of the saved barcode in the picker list
+            ClassBarcodes.nBarcodeScannerIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeScannerName)
+                ? Globals.SearchIndexInPickerList(pckFormatCodeScanner, ClassBarcodes.cBarcodeScannerName)
+                : -1;
+
+            // If the saved barcode name was not found in the list then set the default index to 0 (All codes)
+            if (ClassBarcodes.nBarcodeScannerIndex == -1)
+            {
+                ClassBarcodes.nBarcodeScannerIndex = 0;
+                ClassBarcodes.cBarcodeScannerName = pckFormatCodeScanner.Items[ClassBarcodes.nBarcodeScannerIndex];
+                
+                Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
+            }
+
+            // Select the barcode format in the picker
             pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
 
             //// Set controls for text to speech

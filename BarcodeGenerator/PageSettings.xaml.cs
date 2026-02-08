@@ -61,7 +61,7 @@
 #else
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator();
 #endif
-            pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
+            pckFormatCodeGenerator.SelectedIndex = Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorName);
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode scanner
 #if ANDROID
@@ -71,7 +71,7 @@
 #elif WINDOWS
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
 #endif
-            pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
+            pckFormatCodeScanner.SelectedIndex = Globals.SearchIndexInPickerList(pckFormatCodeScanner, ClassBarcodes.cBarcodeScannerName);
 
             //// Set the current color in the entry and on the sliders
             int nOpacity = 0;
@@ -247,6 +247,7 @@
             if (selectedIndex != -1)
             {
                 ClassBarcodes.nBarcodeScannerIndex = selectedIndex;
+                ClassBarcodes.cBarcodeScannerName = pckFormatCodeScanner.Items[ClassBarcodes.nBarcodeScannerIndex];
             }
         }
 
@@ -481,7 +482,6 @@
         {
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
-            Preferences.Default.Set("SettingBarcodeScannerIndex", ClassBarcodes.nBarcodeScannerIndex);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", Globals.cCodeColorBg);
@@ -515,7 +515,6 @@
                 // Reset some settings
                 Preferences.Default.Remove("SettingBarcodeGeneratorName");
                 Preferences.Default.Remove("SettingBarcodeScannerName");
-                Preferences.Default.Remove("SettingBarcodeScannerIndex");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
                 Preferences.Default.Remove("SettingCodeColorBg");

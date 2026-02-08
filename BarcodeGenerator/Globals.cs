@@ -217,5 +217,30 @@ namespace BarcodeGenerator
 #endif
             }
         }
+
+        /// <summary>
+        /// Retrieves the index of the specified item name from the picker list
+        /// </summary>
+        /// <param name="picker"></param>
+        /// <param name="cItemName"></param>
+        /// <returns></returns>
+        public static int SearchIndexInPickerList(Picker picker, string cItemName)
+        {
+            return !string.IsNullOrEmpty(cItemName) ? picker.Items.IndexOf(cItemName) : -1;
+        }
+
+        /// <summary>
+        /// Retrieves the item name at the specified index from the picker list
+        /// </summary>
+        /// <remarks>If the specified index is out of range, the method returns null rather than throwing
+        /// an exception.</remarks>
+        /// <param name="picker">The picker instance containing the list of items to search.</param>
+        /// <param name="nIndex">The zero-based index of the item to retrieve from the picker list.
+        /// Must be greater than or equal to 0 and less than the number of items in the picker.</param>
+        /// <returns>The name of the item at the specified index if it exists; otherwise, null.</returns>
+        public static string? SearchNameInPickerList(Picker picker, int nIndex)
+        {
+            return nIndex < 0 || nIndex >= picker.Items.Count ? null : picker.Items.ElementAtOrDefault(nIndex);
+        }
     }
 }

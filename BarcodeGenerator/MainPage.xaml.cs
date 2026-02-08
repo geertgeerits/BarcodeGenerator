@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-07 (YYYY-MM-DD)
+ * Date ........: 2026-02-08 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -59,7 +59,6 @@ namespace BarcodeGenerator
             //// Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
-            ClassBarcodes.nBarcodeScannerIndex = Preferences.Default.Get("SettingBarcodeScannerIndex", 0);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
@@ -91,16 +90,15 @@ namespace BarcodeGenerator
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator();
             int nListCount = ClassBarcodes.GetFormatCodeListGenerator().Count;
 #endif
-            // Search for the name of the saved barcode in the list
+            // Search for the name of the saved barcode in the picker list
             ClassBarcodes.nBarcodeGeneratorIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeGeneratorName)
-                ? ClassBarcodes.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorName)
+                ? Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorName)
                 : -1;
 
-            // Search for the index of the saved barcode in the list
+            // If the saved barcode name was not found in the list then set it to the default barcode name
             if (ClassBarcodes.nBarcodeGeneratorIndex < 0 || ClassBarcodes.nBarcodeGeneratorIndex > nListCount - 1)
             {
-                // Set default barcode format
-                ClassBarcodes.nBarcodeGeneratorIndex = ClassBarcodes.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorDefault);
+                ClassBarcodes.nBarcodeGeneratorIndex = Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorDefault);
                 ClassBarcodes.cBarcodeGeneratorName = pckFormatCodeGenerator.Items[ClassBarcodes.nBarcodeGeneratorIndex];
 
                 Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
@@ -1141,26 +1139,30 @@ namespace BarcodeGenerator
 
    Aztec              1900     3832        3067            1914
    Codabar              43       43          43
-   Code39               48       48          48
-   Code93               48       48          48
-   Code128              48       48          48
-   DataMatrix         1500     3116        2335            1555                     
-   Ean8                  8        8
-   Ean13                13       13
-   GS1 DataBar
+   Code 39              48       48          48
+   Code 39 Mod 43
+   Code 93              48       48          48
+   Code 128             48       48          48
+   Data Matrix        1500     3116        2335            1555                     
+   Ean 8                 8        8
+   Ean 13               13       13
+   GS1 DataBar          
+   GS1 DataBar Expanded 
+   GS1 DataBar Limited  
    Imb                  31       31
    Itf                  30       30
+   Itf 14               
    MaxiCode             93       93
-   MicroPDF417                  366         250             150
-   MicroQR                       35          21              15
+   Micro PDF 417                366         250             150
+   Micro QR                      35          21              15
    Msi                  255     255
-   Pdf417              1100    2710        1850            1108
-   PharmaCode             6       6
+   Pdf 417             1100    2710        1850            1108
+   Pharmacode             6       6
    Plessey               16      16          16
-   QrCode              1800    7089        4296            2953            1817
-   Rss14                 14      14
-   RssExpanded           74      74
-   UpcA                  12      12
-   UpcE                   8       8
-   UpcEanExtension        2       2
+   QR Code             1800    7089        4296            2953            1817
+   Rss 14                14      14
+   Rss Expanded          74      74
+   Upc A                 12      12
+   Upc E                  8       8
+   Upc Ean Extension      2       2
    _____________________________________________________________________________________________ */
