@@ -116,73 +116,40 @@ namespace BarcodeGenerator
         private void OnPickerFormatCodeChanged(object sender, EventArgs e)
         {
             var picker = (Picker)sender;
-            int nSelectedIndex = picker.SelectedIndex;
+            int selectedIndex = picker.SelectedIndex;
 
-            if (nSelectedIndex != -1)
+            if (selectedIndex != -1)
             {
-#if ANDROID
-                barcodeReader.BarcodeSymbologies = nSelectedIndex switch
+                var itemsSource = picker.ItemsSource;
+                string? item = itemsSource is not null && itemsSource.Count > selectedIndex
+                    ? itemsSource[selectedIndex] as string
+                    : null;
+
+                string? selectedName = item is not null
+                    ? picker.ItemsSource[selectedIndex] as string : string.Empty;
+
+                barcodeReader.BarcodeSymbologies = selectedName switch
                 {
-                    0 => BarcodeFormats.All,
-                    1 => BarcodeFormats.Aztec,
-                    2 => BarcodeFormats.CodaBar,
-                    3 => BarcodeFormats.Code39,
-                    4 => BarcodeFormats.Code93,
-                    5 => BarcodeFormats.Code128,
-                    6 => BarcodeFormats.DataMatrix,
-                    7 => BarcodeFormats.Ean8,
-                    8 => BarcodeFormats.Ean13,
-                    9 => BarcodeFormats.Itf,
-                    10 => BarcodeFormats.Pdf417,
-                    11 => BarcodeFormats.QRCode,
-                    12 => BarcodeFormats.Upca,
-                    13 => BarcodeFormats.Upce,
-                    _ => BarcodeFormats.All
+                    ClassBarcodes.cBarcode_AZTEC => BarcodeFormats.Aztec,
+                    ClassBarcodes.cBarcode_CODABAR => BarcodeFormats.CodaBar,
+                    ClassBarcodes.cBarcode_CODE_128 => BarcodeFormats.Code128,
+                    ClassBarcodes.cBarcode_CODE_39 => BarcodeFormats.Code39,
+                    ClassBarcodes.cBarcode_CODE_93 => BarcodeFormats.Code93,
+                    ClassBarcodes.cBarcode_DATA_MATRIX => BarcodeFormats.DataMatrix,
+                    ClassBarcodes.cBarcode_DX_FILM_EDGE => BarcodeFormats.DXFilmEdge,
+                    ClassBarcodes.cBarcode_EAN_13 => BarcodeFormats.Ean13,
+                    ClassBarcodes.cBarcode_EAN_8 => BarcodeFormats.Ean8,
+                    ClassBarcodes.cBarcode_GS1_DATABAR => BarcodeFormats.GS1DataBar,
+                    ClassBarcodes.cBarcode_ITF => BarcodeFormats.Itf,
+                    ClassBarcodes.cBarcode_MAXICODE => BarcodeFormats.MaxiCode,
+                    ClassBarcodes.cBarcode_MICRO_PDF_417 => BarcodeFormats.MicroPdf417,
+                    ClassBarcodes.cBarcode_MICRO_QR_CODE => BarcodeFormats.MicroQR,
+                    ClassBarcodes.cBarcode_PDF_417 => BarcodeFormats.Pdf417,
+                    ClassBarcodes.cBarcode_QR_CODE => BarcodeFormats.QRCode,
+                    ClassBarcodes.cBarcode_UPC_A => BarcodeFormats.Upca,
+                    ClassBarcodes.cBarcode_UPC_E => BarcodeFormats.Upce,
+                    _ => BarcodeFormats.All,
                 };
-#elif IOS
-                barcodeReader.BarcodeSymbologies = nSelectedIndex switch
-                {
-                    0 => BarcodeFormats.All,
-                    1 => BarcodeFormats.Aztec,
-                    2 => BarcodeFormats.CodaBar,
-                    3 => BarcodeFormats.Code39,
-                    4 => BarcodeFormats.Code93,
-                    5 => BarcodeFormats.Code128,
-                    6 => BarcodeFormats.DataMatrix,
-                    7 => BarcodeFormats.Ean8,
-                    8 => BarcodeFormats.Ean13,
-                    9 => BarcodeFormats.GS1DataBar,
-                    10 => BarcodeFormats.Itf,
-                    11 => BarcodeFormats.MicroPdf417,
-                    12 => BarcodeFormats.MicroQR,
-                    13 => BarcodeFormats.Pdf417,
-                    14 => BarcodeFormats.QRCode,
-                    15 => BarcodeFormats.Upca,
-                    16 => BarcodeFormats.Upce,
-                    _ => BarcodeFormats.All
-                };
-#elif WINDOWS
-                barcodeReader.BarcodeSymbologies = nSelectedIndex switch
-                {
-                    0 => BarcodeFormats.All,
-                    1 => BarcodeFormats.Aztec,
-                    2 => BarcodeFormats.CodaBar,
-                    3 => BarcodeFormats.Code39,
-                    4 => BarcodeFormats.Code93,
-                    5 => BarcodeFormats.Code128,
-                    6 => BarcodeFormats.DataMatrix,
-                    7 => BarcodeFormats.Ean8,
-                    8 => BarcodeFormats.Ean13,
-                    9 => BarcodeFormats.GS1DataBar,
-                    10 => BarcodeFormats.Itf,
-                    11 => BarcodeFormats.MicroQR,
-                    12 => BarcodeFormats.Pdf417,
-                    13 => BarcodeFormats.QRCode,
-                    14 => BarcodeFormats.Upca,
-                    15 => BarcodeFormats.Upce,
-                    _ => BarcodeFormats.All
-                };
-#endif
             }
         }
 

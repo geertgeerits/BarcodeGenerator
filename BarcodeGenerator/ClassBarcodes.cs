@@ -10,6 +10,7 @@
         public const string cBarcode_CODE_39_MOD_43 = "Code 39 Mod 43";
         public const string cBarcode_CODE_93 = "Code 93";
         public const string cBarcode_DATA_MATRIX = "Data Matrix";
+        public const string cBarcode_DX_FILM_EDGE = "DX Film Edge";
         public const string cBarcode_EAN_13 = "EAN-13";
         public const string cBarcode_EAN_8 = "EAN-8";
         public const string cBarcode_GS1_DATABAR = "GS1 Databar";
