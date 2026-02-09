@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
-using ZXing.Net.Maui.Controls;
+﻿using BarcodeScanning;
+using Microsoft.Extensions.Logging;
 using Microsoft.Maui.LifecycleEvents;
-using BarcodeScanning;
+using ZXing.Net.Maui.Controls;
 
 namespace BarcodeGenerator
 {

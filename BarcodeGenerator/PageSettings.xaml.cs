@@ -41,7 +41,7 @@
                 "ro" => 12,     // Română - Romanian
                 "fi" => 13,     // Suomi - Finnish
                 "sv" => 14,     // Svenska - Swedish
-                _ => 3,         // English
+                _ => 3          // English
             };
 
             //// Fill the picker with the speech languages and select the saved language in the picker
@@ -52,7 +52,7 @@
             {
                 "Light" => 1,   // Light
                 "Dark" => 2,    // Dark
-                _ => 0,         // System
+                _ => 0          // System
             };
 
             //// Set the barcode list and the current default barcode format in the picker for the barcode generator
@@ -131,7 +131,7 @@
                     12 => "ro",     // Română - Romanian
                     13 => "fi",     // Suomi - Finnish
                     14 => "sv",     // Svenska - Swedish
-                    _ => "en",      // English
+                    _ => "en"       // English
                 };
             }
 
@@ -177,7 +177,7 @@
             {
                 "Light" => 1,   // Light
                 "Dark" => 2,    // Dark
-                _ => 0,         // System
+                _ => 0          // System
             };
         }
 
@@ -207,7 +207,7 @@
                 {
                     1 => "Light",   // Light
                     2 => "Dark",    // Dark
-                    _ => "System",  // System
+                    _ => "System"   // System
                 };
 
                 // Set the theme

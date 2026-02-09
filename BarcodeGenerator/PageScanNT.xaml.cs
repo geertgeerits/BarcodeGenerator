@@ -122,8 +122,7 @@ namespace BarcodeGenerator
             {
                 var itemsSource = picker.ItemsSource;
                 string? item = itemsSource is not null && itemsSource.Count > selectedIndex
-                    ? itemsSource[selectedIndex] as string
-                    : null;
+                    ? itemsSource[selectedIndex] as string : null;
 
                 string? selectedName = item is not null
                     ? picker.ItemsSource[selectedIndex] as string : string.Empty;
@@ -148,7 +147,7 @@ namespace BarcodeGenerator
                     ClassBarcodes.cBarcode_QR_CODE => BarcodeFormats.QRCode,
                     ClassBarcodes.cBarcode_UPC_A => BarcodeFormats.Upca,
                     ClassBarcodes.cBarcode_UPC_E => BarcodeFormats.Upce,
-                    _ => BarcodeFormats.All,
+                    _ => BarcodeFormats.All
                 };
             }
         }
