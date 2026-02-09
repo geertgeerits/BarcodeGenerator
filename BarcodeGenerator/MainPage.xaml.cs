@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-08 (YYYY-MM-DD)
+ * Date ........: 2026-02-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -225,9 +225,8 @@ namespace BarcodeGenerator
                     ? itemsSource[selectedIndex] as string
                     : null;
 
-                string selectedName = item is not null
-                    ? ClassBarcodes.SetBarcodeNameToCommonName(item)
-                    : string.Empty;
+                string? selectedName = item is not null
+                    ? picker.ItemsSource[selectedIndex] as string : string.Empty;
 
                 bgvBarcode.Value = "";
                 bgvBarcode.HeightRequest = 160;
@@ -397,9 +396,8 @@ namespace BarcodeGenerator
                     ? itemsSource[selectedIndex] as string
                     : null;
 
-                string selectedName = item is not null
-                    ? ClassBarcodes.SetBarcodeNameToCommonName(item)
-                    : string.Empty;
+                string? selectedName = item is not null
+                    ? pckFormatCodeGenerator.ItemsSource[selectedIndex] as string : string.Empty;
 
                 try
                 {

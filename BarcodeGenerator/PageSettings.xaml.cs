@@ -164,8 +164,6 @@
 #elif WINDOWS
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
 #endif
-            pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
-
             // Set the current theme in the picker
             List<string> ThemeList =
             [

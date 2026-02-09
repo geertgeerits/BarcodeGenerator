@@ -140,7 +140,7 @@ namespace BarcodeGenerator
         /// Confirm each URL with the user and open it when confirmed
         /// </summary>
         /// <param name="cUrls"></param>
-        private static async Task ConfirmAndOpenLinksAsync(IReadOnlyList<string> cUrls)
+        private static async Task ConfirmAndOpenLinksAsync(List<string> cUrls)
         {
             if (cUrls is null || cUrls.Count == 0)
             {
