@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui/global"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="BarcodeGenerator.PageScanZX"
              Appearing="OnPageAppearing"
@@ -52,7 +51,7 @@
                 Grid.ColumnSpan="2">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="{x:Static resx:CodeLang.BarcodeScanner_Text}" />
+                        <Span Text="{Translate BarcodeScanner_Text}" />
                         <Span Text=" (ZXing Zebra Crossing)" FontSize="14" />
                     </FormattedString>
                 </Label.FormattedText>
@@ -67,8 +66,8 @@
                 VerticalOptions="Center"
                 HeightRequest="36"
                 WidthRequest="36"
-                SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
-                ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCameraTorch_Text}"
+                SemanticProperties.Description="{Translate ToolTipCameraTorch_Text}"
+                ToolTipProperties.Text="{Translate ToolTipCameraTorch_Text}"
                 Clicked="OnTorchClicked">
             </ImageButton>
         </Grid>
@@ -84,7 +83,7 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Text="{x:Static resx:CodeLang.FormatCode_Text}">
+                    Text="{Translate FormatCode_Text}">
                 </Label>
                 
                 <Border
@@ -139,8 +138,8 @@
                         HeightRequest="38"
                         WidthRequest="38"
                         VerticalOptions="End"
-                        SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipCopy_Text}"
-                        ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipCopy_Text}"
+                        SemanticProperties.Description="{Translate ToolTipCopy_Text}"
+                        ToolTipProperties.Text="{Translate ToolTipCopy_Text}"
                         IsEnabled="False"
                         Clicked="OnCopyToClipboardClicked">
                     </ImageButton>
@@ -151,8 +150,8 @@
                         VerticalOptions="End"
                         MinimumWidthRequest="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}"
                         MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=250, Desktop=250}"
-                        Text="{x:Static resx:CodeLang.ButtonShare_Text}"
-                        ToolTipProperties.Text="{x:Static resx:CodeLang.ButtonShare_Text}"
+                        Text="{Translate ButtonShare_Text}"
+                        ToolTipProperties.Text="{Translate ButtonShare_Text}"
                         IsEnabled="False"
                         Clicked="OnShareClicked">
                     </Button>
@@ -181,8 +180,8 @@
                         HeightRequest="38"
                         WidthRequest="38"
                         IsVisible="False"
-                        SemanticProperties.Description="{x:Static resx:CodeLang.ToolTipTextToSpeech_Text}"
-                        ToolTipProperties.Text="{x:Static resx:CodeLang.ToolTipTextToSpeech_Text}"                        
+                        SemanticProperties.Description="{Translate ToolTipTextToSpeech_Text}"
+                        ToolTipProperties.Text="{Translate ToolTipTextToSpeech_Text}"                        
                         Clicked="OnTextToSpeechClicked">
                     </ImageButton>
                 </HorizontalStackLayout>

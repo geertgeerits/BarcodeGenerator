@@ -97,154 +97,154 @@ namespace BarcodeGenerator
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Aztec,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_CODABAR => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Codabar,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_CODE_128 => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Code128,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_CODE_39 => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Code39,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_CODE_93 => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Code93,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_DATA_MATRIX => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.DataMatrix,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_EAN_13 => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Ean13,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_EAN_8 => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Ean8,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_IMB => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Imb,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_ITF => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Itf,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_MAXICODE => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.MaxiCode,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_MSI => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Msi,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_PDF_417 => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Pdf417,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_PHARMACODE => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.PharmaCode,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_PLESSEY => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Plessey,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_QR_CODE => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.QrCode,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_RSS_14 => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Rss14,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_RSS_EXPANDED => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.RssExpanded,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_UPC_A => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.UpcA,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_UPC_E => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.UpcE,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     ClassBarcodes.cBarcode_UPC_EAN_EXTENSION => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.UpcEanExtension,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                     _ => new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormats.All,
-                        Multiple = false,
+                        Multiple = true,
                         TryHarder = true
                     },
                 };
@@ -252,95 +252,51 @@ namespace BarcodeGenerator
         }
 
         // Barcode detected event
-        private async void OnBarcodesDetected(object sender, BarcodeDetectionEventArgs e)
+        private async void OnBarcodesDetected(object? sender, BarcodeDetectionEventArgs e)
         {
-            try
-            {
-                Dispatcher.Dispatch(() =>
-                {
-                    btnShare.Text = $"{CodeLang.ButtonShare_Text} {e.Results[0].Format}";
-                    lblBarcodeResult.Text = e.Results[0].Value;
+            if (e.Results == null || e.Results.Length == 0) return;
 
-                    imgbtnCopyToClipboard.IsEnabled = true;
-                    btnShare.IsEnabled = true;
-                    imgbtnTextToSpeech.IsEnabled = true;
-                });
-            }
-            catch (Exception ex)
+            // Build the display list on the background thread
+            var list = new List<string>();
+            foreach (var barcode in e.Results)
             {
-                SentrySdk.CaptureException(ex);
-#if DEBUG
-                _ = DisplayAlertAsync("OnCameraDetectionFinished", ex.Message, CodeLang.ButtonClose_Text);
-#endif
-            }
-        }
-
-        private async void OnBarcodesDetectedZ(object sender, BarcodeDetectionEventArgs e)
-        {
-            if (e.Results.Length == 0)
-            {
-                return;
+                var fmt = barcode.Format.ToString();
+                var val = barcode.Value;
+                if (!string.IsNullOrEmpty(fmt) && !string.IsNullOrEmpty(val))
+                    list.Add($"{fmt}:\n{val}");
             }
 
-            imgbtnCopyToClipboard.IsEnabled = false;
-            btnShare.IsEnabled = false;
-            imgbtnTextToSpeech.IsEnabled = false;
+            // Remove duplicates and sort the list
+            list = [.. list.Distinct().OrderBy(x => x)];
 
-            lblBarcodeResult.Text = "";
-            string cBarcodeFormat = "";
-            string cDisplayValue = "";
-            List<string> listBarcodes = [];
-
-            try
+            // Marshal UI updates to the main thread
+            Dispatcher.Dispatch(() =>
             {
-                foreach (var barcode in e.Results)
-                {
-                    cBarcodeFormat = barcode.Format.ToString();
-                    cDisplayValue = barcode.Value;
+                imgbtnCopyToClipboard.IsEnabled = false;
+                btnShare.IsEnabled = false;
+                imgbtnTextToSpeech.IsEnabled = false;
 
-                    // Add the barcode format and display value to the list 'listBarcodes'
-                    listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
-
-                    //Debug.WriteLine($"Barcodes: {barcode.Format} -> {barcode.Value}");
-                    Debug.WriteLine($"Barcodes: {cBarcodeFormat} -> {cDisplayValue}");
-                }
-
-                // Remove duplicates
-                listBarcodes = [.. listBarcodes.Distinct()];
-
-                // Sort the list
-                listBarcodes.Sort();
+                lblBarcodeResult.Text = "";
 
                 // Set the barcode results in the label 'lblBarcodeResult.Text'
-                //if (listBarcodes.Count == 1)
-                //{
-                //    btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
-                //    lblBarcodeResult.Text = cDisplayValue;
-                //}
-                //else if (listBarcodes.Count > 1)
-                //{
-                //    btnShare.Text = CodeLang.ButtonShare_Text;
-                //    foreach (string barcode in listBarcodes)
-                //    {
-                //        lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode}\n\n";
-                //    }
-                //}
-                //else
-                //{
-                //    return;
-                //}
+                if (list.Count == 1)
+                {
+                    var parts = list[0].Split(new[] { ":\n" }, StringSplitOptions.None);
+                    btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
+                    lblBarcodeResult.Text = parts.Length > 1 ? parts[1] : "";
+                }
+                else if (list.Count > 1)
+                {
+                    btnShare.Text = CodeLang.ButtonShare_Text;
+                    var sb = new System.Text.StringBuilder();
+                    foreach (var item in list) sb.AppendLine(item).AppendLine();
+                    lblBarcodeResult.Text = sb.ToString();
+                }
 
                 imgbtnCopyToClipboard.IsEnabled = true;
                 btnShare.IsEnabled = true;
                 imgbtnTextToSpeech.IsEnabled = true;
-            }
-            catch (Exception ex)
-            {
-                //SentrySdk.CaptureException(ex);
-#if DEBUG
-                _ = DisplayAlertAsync("OnCameraDetectionFinished", ex.Message, CodeLang.ButtonClose_Text);
-#endif
-            }
+            });
         }
 
         // Button share event.
@@ -372,6 +328,9 @@ namespace BarcodeGenerator
                 barcodeReader.IsTorchOn = false;
                 Task.Delay(300).Wait();
             }
+
+            // Unsubscribe the barcode event
+            barcodeReader.BarcodesDetected -= OnBarcodesDetected;
         }
 
         // Button text to speech event - Convert text to speech.
