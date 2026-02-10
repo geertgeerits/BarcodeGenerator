@@ -76,34 +76,34 @@
                 //cBarcode_UPC_E
             ];
 
-        ///// <summary>
-        ///// Put the scanner barcode formats in a List string using ZXing for all platforms
-        ///// </summary>
-        ///// <returns></returns>
-        //public static List<string> GetFormatCodeListScanner() => [
-        //        cBarcode_AZTEC,
-        //        cBarcode_CODABAR,
-        //        cBarcode_CODE_128,
-        //        cBarcode_CODE_39,
-        //        cBarcode_CODE_93,
-        //        cBarcode_DATA_MATRIX,
-        //        cBarcode_EAN_13,
-        //        cBarcode_EAN_8,
-        //        cBarcode_IMB,
-        //        cBarcode_ITF,
-        //        cBarcode_MAXICODE,
-        //        cBarcode_MSI,
-        //        cBarcode_PDF_417,
-        //        cBarcode_PHARMACODE,
-        //        cBarcode_PLESSEY,
-        //        cBarcode_QR_CODE,
-        //        cBarcode_RSS_14,
-        //        cBarcode_RSS_EXPANDED,
-        //        cBarcode_UPC_A,
-        //        cBarcode_UPC_E,
-        //        cBarcode_UPC_EAN_EXTENSION,
-        //        CodeLang.AllCodes_Text
-        //    ];
+        /// <summary>
+        /// Put the scanner barcode formats in a List string using ZXing for all platforms
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetFormatCodeListScanner() => [
+                cBarcode_AZTEC,
+                cBarcode_CODABAR,
+                cBarcode_CODE_128,
+                cBarcode_CODE_39,
+                cBarcode_CODE_93,
+                cBarcode_DATA_MATRIX,
+                cBarcode_EAN_13,
+                cBarcode_EAN_8,
+                cBarcode_IMB,
+                cBarcode_ITF,
+                cBarcode_MAXICODE,
+                cBarcode_MSI,
+                cBarcode_PDF_417,
+                cBarcode_PHARMACODE,
+                cBarcode_PLESSEY,
+                cBarcode_QR_CODE,
+                cBarcode_RSS_14,
+                cBarcode_RSS_EXPANDED,
+                cBarcode_UPC_A,
+                cBarcode_UPC_E,
+                cBarcode_UPC_EAN_EXTENSION,
+                CodeLang.AllCodes_Text
+            ];
 
         /// <summary>
         /// Put the scanner barcode formats in a List string for the Native scanner for Android

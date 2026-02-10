@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui/global"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resx="clr-namespace:BarcodeGenerator.Resources.Languages"
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
@@ -106,15 +106,14 @@
                     </Picker>
                 </Border>
 
-                <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320.-->
-                <Frame
+                <Border
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
                     BackgroundColor="Transparent"
-                    BorderColor="Transparent">
+                    Stroke="Transparent">
 
                     <zxing:CameraBarcodeReaderView
                         x:Name="barcodeReader"
@@ -125,7 +124,7 @@
                         IsTorchOn="False"
                         BarcodesDetected="OnBarcodesDetected">
                     </zxing:CameraBarcodeReaderView>
-                </Frame>
+                </Border>
             
                 <HorizontalStackLayout
                     Grid.Row="4"
@@ -193,8 +192,8 @@
                     Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
                     BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
 
                     <Label

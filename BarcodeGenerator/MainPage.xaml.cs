@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-09 (YYYY-MM-DD)
+ * Date ........: 2026-02-10 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -46,7 +46,6 @@ namespace BarcodeGenerator
 
             //// Disable Sentry for testing - https://github.com/getsentry/sentry-dotnet/discussions/3325
             //SentrySdk.Close();
-
 #if WINDOWS
             //// Disable the scan button for Windows because the BarcodeScanner.Native.Maui package does not support Windows
             //imgbtnScanNT.IsEnabled = false;
@@ -199,7 +198,11 @@ namespace BarcodeGenerator
         private async void OnPageScanClickedNT(object sender, EventArgs e)
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
+#if WINDOWS
+            await Navigation.PushAsync(new PageScanZX());
+#else
             await Navigation.PushAsync(new PageScanNT());
+#endif
         }
 
         private async void OnPageSettingsClicked(object sender, EventArgs e)
