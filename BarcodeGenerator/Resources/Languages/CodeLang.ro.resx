@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Vorbi</value>
   </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Nu a fost găsită nicio cameră.</value>
+  </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
     <value>Dacă nu a fost acordată permisiunea de a utiliza camera, camera poate fi activată în setările dispozitivului, selectați aplicația și activați camera.
 O altă opțiune este să dezinstalați și să reinstalați aplicația.</value>
@@ -420,6 +423,12 @@ Nepermis:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Temă:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Trimiteți un e-mail autorului acestei aplicații</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Deschideți site-ul web al acestei aplicații</value>
+  </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
@@ -443,6 +452,9 @@ Nepermis:</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Copiați textul în clipboard</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Raport de eroare</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Întoarce-te</value>

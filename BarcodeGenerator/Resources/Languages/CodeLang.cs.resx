@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Mluvit</value>
   </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Nenalezena žádná kamera.</value>
+  </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
     <value>Pokud nebylo uděleno povolení k použití kamery, lze kameru povolit v nastavení zařízení, vybrat aplikaci a povolit kameru.
 Další možností je odinstalovat a znovu nainstalovat aplikaci.</value>

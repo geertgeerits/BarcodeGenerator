@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Sprechen</value>
   </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Keine Kamera gefunden.</value>
+  </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
     <value>Wenn keine Erlaubnis zur Nutzung der Kamera erteilt wurde, kann die Kamera in den Geräteeinstellungen aktiviert werden, die Anwendung auswählen und die Kamera aktivieren.
 Eine andere Möglichkeit besteht darin, die Anwendung zu deinstallieren und erneut zu installieren.</value>
@@ -420,6 +423,12 @@ Nicht erlaubt:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Thema:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>E-Mail an den Entwickler dieser Anwendung senden</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Website dieser Anwendung öffnen</value>
+  </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
@@ -443,6 +452,9 @@ Nicht erlaubt:</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Text in die Zwischenablage kopieren</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Fehlerbericht</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Geh zurück</value>

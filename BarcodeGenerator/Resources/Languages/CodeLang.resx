@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Speak</value>
   </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>No camera found.</value>
+  </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
     <value>If permission to use the camera has not been given, the camera can be enabled in the device settings, select the application and enable the camera.
 Another option is to uninstall and reinstall the application.</value>

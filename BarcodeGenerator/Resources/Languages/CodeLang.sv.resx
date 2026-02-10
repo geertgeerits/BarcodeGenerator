@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Tala</value>
   </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Ingen kamera hittades.</value>
+  </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
     <value>Om tillstånd att använda kameran inte har getts kan kameran aktiveras i enhetsinställningarna, välj applikationen och aktivera kameran.
 Ett annat alternativ är att avinstallera och installera om programmet.</value>
@@ -420,6 +423,12 @@ Inte tillåtet:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Tema:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Skicka ett e-postmeddelande till skaparen av den här applikationen</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Öppna webbplatsen för den här applikationen</value>
+  </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
@@ -443,6 +452,9 @@ Inte tillåtet:</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopiera text till urklipp</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Kraschfelrapport</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Gå tillbaka</value>

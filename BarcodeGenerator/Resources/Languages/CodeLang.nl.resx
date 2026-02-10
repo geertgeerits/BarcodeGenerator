@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Spreek</value>
   </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Geen camera gevonden.</value>
+  </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
     <value>Wanneer er geen toelating gegeven werd voor het gebruik van de camera, dan kan de camera aangezet worden in de instellingen van het toestel, selecteer de toepassing en schakel de camera in.
 Een andere mogelijkheid is de toepassing te verwijderen en opnieuw te installeren.</value>
@@ -420,6 +423,12 @@ Niet toegestaan:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Thema:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Stuur een e-mail naar de auteur van deze applicatie</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Open de website van deze applicatie</value>
+  </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
@@ -443,6 +452,9 @@ Niet toegestaan:</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Kopieer tekst naar het klembord</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Rapport over een crash</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Ga terug</value>

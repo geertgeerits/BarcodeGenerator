@@ -22,14 +22,14 @@ namespace BarcodeGenerator
             // Check if the device supports barcode scanning with ZXing.Net.Maui
             if (!ZXing.Net.Maui.BarcodeScanning.IsSupported)
             {
-                _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, "CodeLang.NoCamera_Text", CodeLang.ButtonClose_Text);
+                _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.CameraNotFound_Text, CodeLang.ButtonClose_Text);
                 return;
             }
 #if IOS
             // Check and request camera permission for iOS.
-            Task<PermissionStatus> task = CheckAndRequestCameraPermissionAsync();
+            Task<PermissionStatus> task = PageScanZX.CheckAndRequestCameraPermissionAsync();
 #endif
-            // The height of the title bar is lower when an iPhone is in horizontal position.
+            // The height of the title bar is lower when an iPhone is in horizontal position
             if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
                 lblTitle.VerticalOptions = LayoutOptions.Start;
@@ -64,12 +64,12 @@ namespace BarcodeGenerator
                 imgbtnTextToSpeech.IsVisible = true;
             }
 
-            // For testing crashes - DivideByZeroException.
+            // For testing crashes - DivideByZeroException
             //int divByZero = 51 / int.Parse("0");
         }
 
-        // Set the scanner properties for the selected format code.
-        // ZXing CameraBarcodeReaderView options.
+        // Set the scanner properties for the selected format code
+        // ZXing CameraBarcodeReaderView options
         private void OnPickerFormatCodeChanged(object sender, EventArgs e)
         {
             var picker = (Picker)sender;
@@ -281,7 +281,7 @@ namespace BarcodeGenerator
                 // Set the barcode results in the label 'lblBarcodeResult.Text'
                 if (list.Count == 1)
                 {
-                    var parts = list[0].Split(new[] { ":\n" }, StringSplitOptions.None);
+                    var parts = list[0].Split([":\n"], StringSplitOptions.None);
                     btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
                     lblBarcodeResult.Text = parts.Length > 1 ? parts[1] : "";
                 }
@@ -299,13 +299,13 @@ namespace BarcodeGenerator
             });
         }
 
-        // Button share event.
+        // Button share event
         private void OnShareClicked(object sender, EventArgs e)
         {
             _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
         }
 
-        // Set language text to speech using the Appearing event of the PageScanZX.xaml.
+        // Set language text to speech using the Appearing event of the PageScanZX.xaml
         private void OnPageAppearing(object sender, EventArgs e)
         {
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
@@ -317,7 +317,7 @@ namespace BarcodeGenerator
             barcodeReader.IsTorchOn = !barcodeReader.IsTorchOn;
         }
 
-        // Cancel the text to speech and turn off the torch if on, when going back to the mainpage.
+        // Cancel the text to speech and turn off the torch if on, when going back to the mainpage
         // Called by the Disappearing event from the PageScanZX.xaml.
         private void OnPageDisappearing(object sender, EventArgs e)
         {
@@ -333,7 +333,7 @@ namespace BarcodeGenerator
             barcodeReader.BarcodesDetected -= OnBarcodesDetected;
         }
 
-        // Button text to speech event - Convert text to speech.
+        // Button text to speech event - Convert text to speech
         private void OnTextToSpeechClicked(object sender, EventArgs e)
         {
             // Cancel the text to speech.
@@ -357,7 +357,7 @@ namespace BarcodeGenerator
         }
 
         // Check and request camera permission for iOS.
-        public async Task<PermissionStatus> CheckAndRequestCameraPermissionAsync()
+        public static async Task<PermissionStatus> CheckAndRequestCameraPermissionAsync()
         {
             PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Camera>();
 
@@ -368,8 +368,8 @@ namespace BarcodeGenerator
         
             if (status == PermissionStatus.Unknown && DeviceInfo.Platform == DevicePlatform.iOS)
             {
-                // Prompt the user to turn on in settings.
-                // On iOS once a permission has been denied it may not be requested again from the application.
+                // Prompt the user to turn on in settings
+                // On iOS once a permission has been denied it may not be requested again from the application
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.CameraPermissionIOS_Text, CodeLang.ButtonClose_Text);
                 return status;
             }

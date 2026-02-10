@@ -156,6 +156,9 @@
   <data name="ButtonSpeak_Text" xml:space="preserve">
     <value>Beszél</value>
   </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Nem található kamera.</value>
+  </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
     <value>Ha nem kapott engedélyt a kamera használatára, akkor a készülék beállításainál engedélyezheti a kamerát, válassza ki az alkalmazást és engedélyezze a kamerát.
 Egy másik lehetőség az alkalmazás eltávolítása és újratelepítése.</value>
@@ -420,6 +423,12 @@ Nem megengedett:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Téma:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Küldjön e-mailt az alkalmazás szerzőjének.</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Nyissa meg az alkalmazás weboldalát.</value>
+  </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
   </data>
@@ -443,6 +452,9 @@ Nem megengedett:</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
     <value>Szöveg másolása a vágólapra</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Hibajelentés a hibáról.</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Menjen vissza</value>
