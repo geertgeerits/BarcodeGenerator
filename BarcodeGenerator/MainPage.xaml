@@ -29,6 +29,7 @@
             <Label
                 x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
+                Margin="{OnPlatform Default='4', WinUI='0,10,0,0'}"
                 Grid.Column="1"
                 Text="{Translate BarcodeGenerator_Text}">
             </Label>
@@ -114,6 +115,7 @@
                     <Label
                         Style="{StaticResource labelStyleDefault}"
                         MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=400, Desktop=400}"
+                        Margin="{OnPlatform Default='0', WinUI='14,8,0,0'}"
                         Text="{Translate TextToEncode_Text}">
                     </Label>
                 </HorizontalStackLayout>
@@ -131,6 +133,7 @@
                         HorizontalOptions="End"
                         VerticalOptions="Center"
                         HorizontalTextAlignment="End"
+                        Margin="{OnPlatform Default='0', WinUI='0,15,0,0'}"
                         IsVisible="False"
                         Text="en-US">
                     </Label>

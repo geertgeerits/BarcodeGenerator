@@ -42,7 +42,7 @@
         public static string cBarcodeScannerDefault = CodeLang.AllCodes_Text;
 
         /// <summary>
-        /// Put the generator barcode formats in a List string for Android and iOS
+        /// Put the generator barcode formats in a List string using the Native generator for Android and iOS
         /// </summary>
         /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator() => [
@@ -64,7 +64,7 @@
             ];
 
         /// <summary>
-        /// Put the generator barcode formats in a List string for Windows
+        /// Put the generator barcode formats in a List string using the ZXing generator for Windows
         /// </summary>
         /// <returns></returns>
         public static List<string> GetFormatCodeListGeneratorWindows() => [
@@ -77,10 +77,11 @@
             ];
 
         /// <summary>
-        /// Put the scanner barcode formats in a List string using ZXing for all platforms
+        /// Put the scanner barcode formats in a List string using the ZXing scanner for all platforms
         /// </summary>
         /// <returns></returns>
         public static List<string> GetFormatCodeListScanner() => [
+                CodeLang.AllCodes_Text,
                 cBarcode_AZTEC,
                 cBarcode_CODABAR,
                 cBarcode_CODE_128,
@@ -101,12 +102,11 @@
                 cBarcode_RSS_EXPANDED,
                 cBarcode_UPC_A,
                 cBarcode_UPC_E,
-                cBarcode_UPC_EAN_EXTENSION,
-                CodeLang.AllCodes_Text
+                cBarcode_UPC_EAN_EXTENSION
             ];
 
         /// <summary>
-        /// Put the scanner barcode formats in a List string for the Native scanner for Android
+        /// Put the scanner barcode formats in a List string using the Native scanner for Android
         /// https://developers.google.com/ml-kit/vision/barcode-scanning/android
         /// </summary>
         /// <returns></returns>
@@ -128,7 +128,7 @@
             ];
 
         /// <summary>
-        /// Put the scanner barcode formats in a List string for the Native scanner for iOS
+        /// Put the scanner barcode formats in a List string using the Native scanner for iOS
         /// https://developer.apple.com/documentation/avfoundation/avmetadataobject/objecttype
         /// </summary>
         /// <returns></returns>
@@ -153,7 +153,7 @@
             ];
 
         /// <summary>
-        /// Put the scanner barcode formats in a List string for the native scanner for Windows
+        /// Put the scanner barcode formats in a List string using the native scanner for Windows
         /// </summary>
         /// <returns></returns>
         public static List<string> GetFormatCodeListScannerNativeWindows() => [

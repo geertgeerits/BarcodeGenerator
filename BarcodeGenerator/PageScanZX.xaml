@@ -37,7 +37,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <NavigationPage.TitleView>
+    <Shell.TitleView>
         <Grid
             RowDefinitions="Auto"
             ColumnDefinitions="200*, 60, 60"
@@ -71,7 +71,7 @@
                 Clicked="OnTorchClicked">
             </ImageButton>
         </Grid>
-    </NavigationPage.TitleView>
+    </Shell.TitleView>
 
     <ScrollView>
         <StackLayout>
@@ -169,6 +169,7 @@
                         Style="{StaticResource labelStyleDefault}"
                         HorizontalOptions="End"
                         HorizontalTextAlignment="End"
+                        Margin="{OnPlatform Default='0', WinUI='0,15,0,0'}"
                         IsVisible="False"
                         Text="en-US">
                     </Label>

@@ -46,11 +46,6 @@ namespace BarcodeGenerator
 
             //// Disable Sentry for testing - https://github.com/getsentry/sentry-dotnet/discussions/3325
             //SentrySdk.Close();
-#if WINDOWS
-            //// Disable the scan button for Windows because the BarcodeScanner.Native.Maui package does not support Windows
-            //imgbtnScanNT.IsEnabled = false;
-#endif
-
 #if IOS
             //// AutoSize has to be disabled for iOS
             edtTextToCode.AutoSize = EditorAutoSizeOption.Disabled;

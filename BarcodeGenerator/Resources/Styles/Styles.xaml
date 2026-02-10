@@ -132,7 +132,7 @@
         <Setter Property="VerticalOptions" Value="Center"/>
         <Setter Property="HorizontalOptions"  Value="Fill"/>
         <Setter Property="MinimumHeightRequest" Value="40"/>
-        <Setter Property="Margin" Value="{OnPlatform 0, Android=0, iOS=0, WinUI='9,0,0,0'}" />
+        <Setter Property="Margin" Value="{OnPlatform Default='0', Android='0', iOS='0', WinUI='9,0,0,0'}" />
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
@@ -336,13 +336,13 @@
     </Style>
 
     <Style x:Key="labelStyleDefault" TargetType="Label">
-        <Setter Property="Margin" Value="0" />
+        <Setter Property="Margin" Value="{OnPlatform Default='0', WinUI='0,8,0,0'}" />
         <Setter Property="HorizontalOptions" Value="Start" />
         <Setter Property="VerticalOptions" Value="Center" />
     </Style>
 
     <Style x:Key="labelStyleTitleView" TargetType="Label">
-        <Setter Property="Margin" Value="4" />
+        <Setter Property="Margin" Value="{OnPlatform Default='4', WinUI='40,10,0,0'}" />
         <Setter Property="HorizontalOptions" Value="Start" />
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="HorizontalTextAlignment" Value="Start" />
@@ -455,7 +455,7 @@
 
     <Style x:Key="sliderStyleColor" TargetType="Slider">
         <Setter Property="VerticalOptions" Value="Center" />
-        <Setter Property="Margin" Value="{OnPlatform 0, iOS='4,0,4,0', Android=0, WinUI=0}" />
+        <Setter Property="Margin" Value="{OnPlatform Default='0', iOS='4,0,4,0', Android='0', WinUI='8,0,8,0'}" />
         <Setter Property="Minimum" Value="0" />
         <Setter Property="Maximum" Value="255" />
     </Style>
