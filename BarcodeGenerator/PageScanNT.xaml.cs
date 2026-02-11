@@ -4,7 +4,7 @@ namespace BarcodeGenerator
 {
     public sealed partial class PageScanNT : ContentPage
     {
-        //// Local variables
+        // Local variables
         private readonly BarcodeDrawable _drawable = new();
         private readonly List<string> qualities = [];
         private int nQualityCameraBack;
@@ -25,15 +25,15 @@ namespace BarcodeGenerator
                 return;
             }
 
-            //// Get the saved quality settings
+            // Get the saved quality settings
             nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 2);
             nQualityCameraFront = Preferences.Default.Get("SettingQualityCameraFront", 1);
 
 #if DEBUG
-            //// Read the device information
+            // Read the device information
             //ReadDeviceInfo();
 #endif
-            //// Settings for iOS and Android
+            // Settings for iOS and Android
             // Set the quality for the camera pickers
             // No support for the highest quality: iPad 8, iOS version 17.1.1 (back and front camera)
             // No support for the high and the highest quality: iPhone 7, iOS version 15.8 (front camera)
@@ -61,14 +61,14 @@ namespace BarcodeGenerator
             pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
             pckCameraQualityFront.SelectedIndex = nQualityCameraFront;
 
-            //// The height of the title bar is lower when an iPhone is in horizontal position
+            // The height of the title bar is lower when an iPhone is in horizontal position
             if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
                 lblTitle.VerticalOptions = LayoutOptions.Start;
                 lblTitle.VerticalTextAlignment = TextAlignment.Start;
             }
 
-            //// Initialize the barcode pickers
+            // Initialize the barcode pickers
 #if ANDROID
             // Set the barcodes in the picker for Android
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeAndroid();
@@ -96,14 +96,14 @@ namespace BarcodeGenerator
             // Select the barcode format in the picker
             pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
 
-            //// Set controls for text to speech
+            // Set controls for text to speech
             if (Globals.bTextToSpeechAvailable)
             {
                 lblTextToSpeech.IsVisible = true;
                 imgbtnTextToSpeech.IsVisible = true;
             }
 
-            //// For testing crashes - DivideByZeroException
+            // For testing crashes - DivideByZeroException
             //int divByZero = 51 / int.Parse("0");
         }
 

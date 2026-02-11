@@ -23,7 +23,7 @@ namespace BarcodeGenerator
 {
     public sealed partial class MainPage : ContentPage
     {
-        //// Local variables
+        // Local variables
         private string cLicense = string.Empty;
         private const string cAllowedCharactersDecimal = "0123456789";
         private const string cAllowedCharactersHex = "0123456789ABCDEF";
@@ -44,13 +44,13 @@ namespace BarcodeGenerator
                 return;
             }
 
-            //// Disable Sentry for testing - https://github.com/getsentry/sentry-dotnet/discussions/3325
+            // Disable Sentry for testing - https://github.com/getsentry/sentry-dotnet/discussions/3325
             //SentrySdk.Close();
 #if IOS
-            //// AutoSize has to be disabled for iOS
+            // AutoSize has to be disabled for iOS
             edtTextToCode.AutoSize = EditorAutoSizeOption.Disabled;
 #endif
-            //// Get the saved settings
+            // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
@@ -60,7 +60,7 @@ namespace BarcodeGenerator
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
-            //// The height of the title bar is lower when an iPhone is in horizontal position
+            // The height of the title bar is lower when an iPhone is in horizontal position
             if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
                 imgbtnAbout.VerticalOptions = LayoutOptions.Start;
@@ -70,13 +70,13 @@ namespace BarcodeGenerator
                 imgbtnSettings.VerticalOptions = LayoutOptions.Start;
             }
 
-            //// Set the tooltips for the scanner buttons
+            // Set the tooltips for the scanner buttons
             ToolTipProperties.SetText(imgbtnScanNT, CodeLang.ToolTipBarcodeScanner_Text + " (Native)");
 
-            //// Set the theme
+            // Set the theme
             Globals.SetTheme();
 
-            //// Set the barcode list and the current default barcode format in the picker for the barcode generator
+            // Set the barcode list and the current default barcode format in the picker for the barcode generator
 #if WINDOWS
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGeneratorWindows();
             int nListCount = ClassBarcodes.GetFormatCodeListGeneratorWindows().Count;
@@ -101,7 +101,7 @@ namespace BarcodeGenerator
             // Select the barcode format in the picker
             pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
 
-            //// Get and set the user interface language after a first start or reset of the application
+            // Get and set the user interface language after a first start or reset of the application
             try
             {
                 if (string.IsNullOrEmpty(Globals.cLanguage))
@@ -126,19 +126,19 @@ namespace BarcodeGenerator
                 Debug.WriteLine("MainPage - Globals.cLanguage: " + Globals.cLanguage);
             }
 
-            //// Set the text language
+            // Set the text language
             SetTextLanguage();
 
-            //// Initialize text to speech and get and set the speech language
+            // Initialize text to speech and get and set the speech language
             InitializeTextToSpeechAsync();
 
-            //// Clear the clipboard
+            // Clear the clipboard
             //Clipboard.Default.SetTextAsync(null);  // For testing
 
-            //// Set focus to the editor
+            // Set focus to the editor
             edtTextToCode.Focus();
 
-            //// Test for crashes Sentry
+            // Test for crashes Sentry
             //SentrySdk.CaptureMessage("Hello Sentry");
             //throw new Exception("This is a test exception");
         }
@@ -183,7 +183,7 @@ namespace BarcodeGenerator
             Debug.WriteLine("MainPage - Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
         }
 
-        //// TitleView buttons clicked events
+        // TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();

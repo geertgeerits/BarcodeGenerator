@@ -2,10 +2,10 @@
 
 namespace BarcodeGenerator
 {
-    //// Global variables and methods
+    // Global variables and methods
     internal static class Globals
     {
-        //// Global variables
+        // Global variables
         public static string cTheme = string.Empty;
         public static string cCodeColorFg = string.Empty;
         public static string cCodeColorBg = string.Empty;
@@ -18,7 +18,7 @@ namespace BarcodeGenerator
         public static readonly string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
         public static bool bLicense;
 
-        //// Global methods
+        // Global methods
 
         /// <summary>
         /// Set the theme

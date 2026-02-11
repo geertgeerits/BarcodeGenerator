@@ -2,7 +2,7 @@
 {
     public sealed partial class PageSettings : ContentPage
     {
-        //// Local variables
+        // Local variables
         private const string cHexCharacters = "0123456789ABCDEFabcdef";
         private readonly Stopwatch stopWatch = new();
 
@@ -21,10 +21,10 @@
                 return;
             }
 
-            //// Put text in the chosen language in the controls and variables
+            // Put text in the chosen language in the controls and variables
             SetLanguage();
 
-            //// Set the current language in the picker
+            // Set the current language in the picker
             pckLanguage.SelectedIndex = Globals.cLanguage switch
             {
                 "cs" => 0,      // Čeština - Czech
@@ -44,10 +44,10 @@
                 _ => 3          // English
             };
 
-            //// Fill the picker with the speech languages and select the saved language in the picker
+            // Fill the picker with the speech languages and select the saved language in the picker
             ClassSpeech.FillPickerWithSpeechLanguages(pckLanguageSpeech);
 
-            //// Set the current theme in the picker
+            // Set the current theme in the picker
             pckTheme.SelectedIndex = Globals.cTheme switch
             {
                 "Light" => 1,   // Light
@@ -55,7 +55,7 @@
                 _ => 0          // System
             };
 
-            //// Set the barcode list and the current default barcode format in the picker for the barcode generator
+            // Set the barcode list and the current default barcode format in the picker for the barcode generator
 #if WINDOWS
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGeneratorWindows();
 #else
@@ -63,17 +63,11 @@
 #endif
             pckFormatCodeGenerator.SelectedIndex = Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorName);
 
-            //// Set the barcode list and the current default barcode format in the picker for the barcode scanner
-#if ANDROID
-            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeAndroid();
-#elif IOS
-            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeIOS();
-#elif WINDOWS
-            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
-#endif
+            // Set the barcode list and the current default barcode format in the picker for the barcode scanner
+            // The picker list has been set in the SetLanguage() method because of the different barcode format names in different languages, so we need to set it after setting the language
             pckFormatCodeScanner.SelectedIndex = Globals.SearchIndexInPickerList(pckFormatCodeScanner, ClassBarcodes.cBarcodeScannerName);
 
-            //// Set the current color in the entry and on the sliders
+            // Set the current color in the entry and on the sliders
             int nOpacity = 0;
             int nRed = 0;
             int nGreen = 0;
@@ -97,7 +91,7 @@
             sldColorBgGreen.Value = nGreen;
             sldColorBgBlue.Value = nBlue;
 
-            //// Start the stopWatch for resetting all the settings
+            // Start the stopWatch for resetting all the settings
             stopWatch.Start();
         }
 

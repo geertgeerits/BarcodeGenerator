@@ -4,7 +4,7 @@ namespace BarcodeGenerator
 {
     public sealed partial class PageAbout : ContentPage
     {
-        //// TapCommand to open the crash and error report privacy information (Launcher.OpenAsync is provided by Essentials)
+        // TapCommand to open the crash and error report privacy information (Launcher.OpenAsync is provided by Essentials)
         public ICommand TapCommand => new Command(async () => await DisplayAlertAsync(CodeLang.CrashErrorReport_Text, CodeLang.CrashErrorReportSentry_Text, CodeLang.ButtonClose_Text));
 
         public PageAbout()
