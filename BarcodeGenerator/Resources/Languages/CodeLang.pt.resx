@@ -454,7 +454,7 @@ Não permitido:</value>
     <value>Copie o texto para a área de transferência</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Relatório de erro de falha</value>
+    <value>Relatórios de falhas e erros</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Volte</value>

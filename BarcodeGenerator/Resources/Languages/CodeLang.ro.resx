@@ -454,7 +454,7 @@ Nepermis:</value>
     <value>Copiați textul în clipboard</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Raport de eroare</value>
+    <value>Rapoarte de blocare și erori</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Întoarce-te</value>

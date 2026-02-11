@@ -454,7 +454,7 @@ Ei sallittu:</value>
     <value>Kopioi teksti leikepöydälle</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Virheraportti kaatumisesta</value>
+    <value>Kaatumis- ja virheraportit</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Mene takaisin</value>

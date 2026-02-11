@@ -454,7 +454,7 @@ Non autorizzato:</value>
     <value>Copia il testo negli appunti</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Segnalazione di errore di crash</value>
+    <value>Segnalazioni di crash ed errori</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Torna indietro</value>

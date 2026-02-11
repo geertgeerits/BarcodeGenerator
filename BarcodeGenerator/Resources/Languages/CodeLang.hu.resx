@@ -454,7 +454,7 @@ Nem megengedett:</value>
     <value>Szöveg másolása a vágólapra</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Hibajelentés a hibáról.</value>
+    <value>Összeomlási és hibajelentések</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Menjen vissza</value>

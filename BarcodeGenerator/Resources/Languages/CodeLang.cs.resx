@@ -454,7 +454,7 @@ Nepovoleno:</value>
     <value>Zkopírujte text do schránky</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Zpráva o chybě při pádu</value>
+    <value>Zprávy o selhání a chybách</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Vraťte se</value>

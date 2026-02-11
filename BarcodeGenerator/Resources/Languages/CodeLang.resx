@@ -454,7 +454,7 @@ Not allowed:</value>
     <value>Copy text to the clipboard</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Crash error report</value>
+    <value>Crash and error reports</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Go back</value>

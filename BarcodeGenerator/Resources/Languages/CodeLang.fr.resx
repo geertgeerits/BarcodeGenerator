@@ -454,7 +454,7 @@ Interdit:</value>
     <value>Copiez le texte dans le presse-papiers</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Rapport d'erreur</value>
+    <value>Rapports de plantage et d'erreur</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Retourner</value>

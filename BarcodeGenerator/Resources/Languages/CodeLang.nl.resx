@@ -454,7 +454,7 @@ Niet toegestaan:</value>
     <value>Kopieer tekst naar het klembord</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Rapport over een crash</value>
+    <value>Storings- en foutrapporten</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Ga terug</value>

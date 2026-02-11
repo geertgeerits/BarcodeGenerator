@@ -454,7 +454,7 @@ Niedozwolony:</value>
     <value>Skopiuj tekst do schowka</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Raport o błędzie awarii</value>
+    <value>Storings- en foutrapporten</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Wróć</value>

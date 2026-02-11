@@ -454,7 +454,7 @@ Ikke tilladt:</value>
     <value>Kopier tekst til udklipsholderen</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Fejlrapport om nedbrud</value>
+    <value>Nedbruds- og fejlrapporter</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Gå tilbage</value>

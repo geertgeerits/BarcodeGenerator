@@ -454,7 +454,7 @@ No permitido:</value>
     <value>Copie el texto en el portapapeles</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Informe de error de bloqueo.</value>
+    <value>Informes de fallos y errores</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Regresa</value>
