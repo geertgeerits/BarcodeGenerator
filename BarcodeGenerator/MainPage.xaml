@@ -84,12 +84,6 @@
                         x:Name="pckFormatCodeGenerator"
                         MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}"
                         SelectedIndexChanged="OnPickerFormatCodeChanged">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Barcode 1</x:String>
-                                <x:String>Barcode 2</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
                     </Picker>
                 </Border>
 

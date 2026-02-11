@@ -14,7 +14,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                DisplayAlertAsync("InitializeComponent: PageScanNT", ex.Message, "OK");
+                DisplayAlertAsync("InitializeComponent: PageScanZX", ex.Message, "OK");
 #endif
                 return;
             }
@@ -57,7 +57,7 @@ namespace BarcodeGenerator
             // Select the barcode format in the picker
             pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
 
-            //// Set controls for text to speech
+            // Set controls for text to speech
             if (Globals.bTextToSpeechAvailable)
             {
                 lblTextToSpeech.IsVisible = true;
@@ -68,8 +68,12 @@ namespace BarcodeGenerator
             //int divByZero = 51 / int.Parse("0");
         }
 
-        // Set the scanner properties for the selected format code
-        // ZXing CameraBarcodeReaderView options
+        /// <summary>
+        /// Set the scanner properties for the selected format code
+        /// ZXing CameraBarcodeReaderView options
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerFormatCodeChanged(object sender, EventArgs e)
         {
             var picker = (Picker)sender;
@@ -251,7 +255,11 @@ namespace BarcodeGenerator
             }
         }
 
-        // Barcode detected event
+        /// <summary>
+        /// Barcode detected event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnBarcodesDetected(object? sender, BarcodeDetectionEventArgs e)
         {
             if (e.Results == null || e.Results.Length == 0) return;
@@ -299,26 +307,42 @@ namespace BarcodeGenerator
             });
         }
 
-        // Button share event
+        /// <summary>
+        /// Button share event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnShareClicked(object sender, EventArgs e)
         {
             _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
         }
 
-        // Set language text to speech using the Appearing event of the PageScanZX.xaml
+        /// <summary>
+        /// Set language text to speech using the Appearing event of the PageScanZX.xaml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPageAppearing(object sender, EventArgs e)
         {
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
         }
 
-        // ImageButton torch clicked event.
+        /// <summary>
+        /// ImageButton torch clicked event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTorchClicked(object sender, EventArgs e)
         {
             barcodeReader.IsTorchOn = !barcodeReader.IsTorchOn;
         }
 
-        // Cancel the text to speech and turn off the torch if on, when going back to the mainpage
-        // Called by the Disappearing event from the PageScanZX.xaml.
+        /// <summary>
+        /// Cancel the text to speech and turn off the torch if on, when going back to the mainpage
+        /// Called by the Disappearing event from the PageScanZX.xaml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPageDisappearing(object sender, EventArgs e)
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
@@ -333,7 +357,11 @@ namespace BarcodeGenerator
             barcodeReader.BarcodesDetected -= OnBarcodesDetected;
         }
 
-        // Button text to speech event - Convert text to speech
+        /// <summary>
+        /// Button text to speech event - Convert text to speech
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTextToSpeechClicked(object sender, EventArgs e)
         {
             // Cancel the text to speech.
@@ -347,7 +375,11 @@ namespace BarcodeGenerator
             _ = ClassSpeech.ConvertTextToSpeechAsync(imgbtnTextToSpeech, lblBarcodeResult.Text);
         }
 
-        // Copy text to the clipboard clicked event.
+        /// <summary>
+        /// Copy text to the clipboard clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnCopyToClipboardClicked(object sender, EventArgs e)
         {
             if (lblBarcodeResult.Text.Length > 0)
@@ -356,7 +388,10 @@ namespace BarcodeGenerator
             }
         }
 
-        // Check and request camera permission for iOS.
+        /// <summary>
+        /// Check and request camera permission for iOS
+        /// </summary>
+        /// <returns></returns>
         public static async Task<PermissionStatus> CheckAndRequestCameraPermissionAsync()
         {
             PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Camera>();
