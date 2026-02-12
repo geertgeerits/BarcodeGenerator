@@ -24,7 +24,7 @@
             // Put text in the chosen language in the controls and variables
             SetLanguage();
 
-            // Set the current language in the picker
+            // Select the current language in the picker
             pckLanguage.SelectedIndex = Globals.cLanguage switch
             {
                 "cs" => 0,      // Čeština - Czech
@@ -44,10 +44,10 @@
                 _ => 3          // English
             };
 
-            // Fill the picker with the speech languages and select the saved language in the picker
+            // Fill the picker with the speech languages and select the current language in the picker
             ClassSpeech.FillPickerWithSpeechLanguages(pckLanguageSpeech);
 
-            // Set the current theme in the picker
+            // Select the current theme in the picker
             pckTheme.SelectedIndex = Globals.cTheme switch
             {
                 "Light" => 1,   // Light
@@ -55,17 +55,14 @@
                 _ => 0          // System
             };
 
-            // Set the barcode list and the current default barcode format in the picker for the barcode generator
+            // Set the generator barcode formats in the picker
 #if WINDOWS
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGeneratorWindows();
 #else
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator();
 #endif
+            // Select the current barcode format in the picker for the barcode generator
             pckFormatCodeGenerator.SelectedIndex = Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorName);
-
-            // Set the barcode list and the current default barcode format in the picker for the barcode scanner
-            // The picker list has been set in the SetLanguage() method because of the different barcode format names in different languages, so we need to set it after setting the language
-            pckFormatCodeScanner.SelectedIndex = Globals.SearchIndexInPickerList(pckFormatCodeScanner, ClassBarcodes.cBarcodeScannerName);
 
             // Set the current color in the entry and on the sliders
             int nOpacity = 0;
@@ -147,10 +144,12 @@
 
         /// <summary>
         /// Put text in the chosen language in the controls and variables
+        /// The pickers 'pckTheme' and 'pckFormatCodeScanner' are set in this method because some values
+        /// in the pickers are different depending on the language
         /// </summary>
         private void SetLanguage()
         {
-            // Set the barcode list and the current default barcode format in the picker for the barcode scanner
+            // Set the scanner barcode formats in the picker
 #if ANDROID
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeAndroid();
 #elif IOS
@@ -158,7 +157,21 @@
 #elif WINDOWS
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
 #endif
-            // Set the current theme in the picker
+            // Search for the name of the saved barcode in the picker list
+            ClassBarcodes.nBarcodeScannerIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeScannerName)
+                ? Globals.SearchIndexInPickerList(pckFormatCodeScanner, ClassBarcodes.cBarcodeScannerName) : -1;
+
+            // If the saved barcode name was not found in the list then set the default index to 0 (All codes)
+            if (ClassBarcodes.nBarcodeScannerIndex == -1)
+            {
+                ClassBarcodes.nBarcodeScannerIndex = 0;
+                ClassBarcodes.cBarcodeScannerName = pckFormatCodeScanner.Items[ClassBarcodes.nBarcodeScannerIndex];
+            }
+
+            // Select the current barcode format in the picker for the barcode scanner
+            pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
+
+            // Set the theme in the picker
             List<string> ThemeList =
             [
                 CodeLang.ThemeSystem_Text,
@@ -166,13 +179,6 @@
                 CodeLang.ThemeDark_Text
             ];
             pckTheme.ItemsSource = ThemeList;
-
-            pckTheme.SelectedIndex = Globals.cTheme switch
-            {
-                "Light" => 1,   // Light
-                "Dark" => 2,    // Dark
-                _ => 0          // System
-            };
         }
 
         /// <summary>

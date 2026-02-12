@@ -42,8 +42,7 @@ namespace BarcodeGenerator
 
             // Search for the name of the saved barcode in the picker list
             ClassBarcodes.nBarcodeScannerIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeScannerName)
-                ? Globals.SearchIndexInPickerList(pckFormatCodeScanner, ClassBarcodes.cBarcodeScannerName)
-                : -1;
+                ? Globals.SearchIndexInPickerList(pckFormatCodeScanner, ClassBarcodes.cBarcodeScannerName) : -1;
 
             // If the saved barcode name was not found in the list then set the default index to 0 (All codes)
             if (ClassBarcodes.nBarcodeScannerIndex == -1)
