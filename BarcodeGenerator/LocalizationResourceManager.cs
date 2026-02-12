@@ -2,7 +2,7 @@
 
 namespace BarcodeGenerator
 {
-    public sealed class LocalizationResourceManager : INotifyPropertyChanged
+    public sealed partial class LocalizationResourceManager : INotifyPropertyChanged
     {
         private LocalizationResourceManager() {
             CodeLang.Culture = CultureInfo.CurrentUICulture;

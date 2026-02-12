@@ -15,12 +15,10 @@
 
             <ImageButton
                 x:Name="imgbtnAbout"
+                Style="{StaticResource imageButtonStyleIcons}"
                 Grid.Column="0"
                 Source="info_32p.png"
                 HorizontalOptions="Start"
-                VerticalOptions="Center"
-                HeightRequest="32"
-                WidthRequest="32"
                 SemanticProperties.Description="{Translate Info_Text}"
                 ToolTipProperties.Text="{Translate Info_Text}"
                 Clicked="OnPageAboutClicked">
@@ -36,23 +34,20 @@
 
             <ImageButton
                 x:Name="imgbtnScanNT"
+                Style="{StaticResource imageButtonStyleIcons}"
                 Grid.Column="2"
                 Source="scan_barcode_icon_128p.png"
                 HorizontalOptions="End"
-                VerticalOptions="Center"
-                HeightRequest="36"
-                WidthRequest="36"
+                HeightRequest="{OnPlatform Default='36', WinUI='26'}"
+                WidthRequest="{OnPlatform Default='36', WinUI='26'}"
                 Clicked="OnPageScanClickedNT">
             </ImageButton>
 
             <ImageButton
                 x:Name="imgbtnSettings"
+                Style="{StaticResource imageButtonStyleIcons}"
                 Grid.Column="3"
                 Source="settings_32p.png"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="32"
-                WidthRequest="32"
                 SemanticProperties.Description="{Translate Settings_Text}"
                 ToolTipProperties.Text="{Translate Settings_Text}"
                 Clicked="OnPageSettingsClicked">
