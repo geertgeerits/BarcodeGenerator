@@ -57,9 +57,9 @@
 
             // Set the generator barcode formats in the picker
 #if WINDOWS
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGeneratorWindows();
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
 #else
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator();
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_NT();
 #endif
             // Select the current barcode format in the picker for the barcode generator
             pckFormatCodeGenerator.SelectedIndex = Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorName);
@@ -151,11 +151,11 @@
         {
             // Set the scanner barcode formats in the picker
 #if ANDROID
-            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeAndroid();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Android();
 #elif IOS
-            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeIOS();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_IOS();
 #elif WINDOWS
-            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScannerNativeWindows();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Windows();
 #endif
             // Search for the name of the saved barcode in the picker list
             ClassBarcodes.nBarcodeScannerIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeScannerName)

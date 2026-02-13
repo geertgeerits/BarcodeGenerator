@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-12 (YYYY-MM-DD)
+ * Date ........: 2026-02-13 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -78,11 +78,11 @@ namespace BarcodeGenerator
 
             // Set the barcode list and the current default barcode format in the picker for the barcode generator
 #if WINDOWS
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGeneratorWindows();
-            int nListCount = ClassBarcodes.GetFormatCodeListGeneratorWindows().Count;
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
+            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows().Count;
 #else
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator();
-            int nListCount = ClassBarcodes.GetFormatCodeListGenerator().Count;
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_NT();
+            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_NT().Count;
 #endif
             // Search for the name of the saved barcode in the picker list
             ClassBarcodes.nBarcodeGeneratorIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeGeneratorName)
@@ -194,6 +194,7 @@ namespace BarcodeGenerator
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
 #if WINDOWS
             await Navigation.PushAsync(new PageScanZX());
+            //await Navigation.PushAsync(new PageScanNT());  // !!!BUG!!! Error in NuGet package when using the native Windows scanner ???
 #else
             await Navigation.PushAsync(new PageScanNT());
 #endif

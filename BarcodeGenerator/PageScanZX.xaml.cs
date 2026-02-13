@@ -38,7 +38,7 @@ namespace BarcodeGenerator
             }
 
             // Initialize the barcode pickers
-            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner();
+            pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_ZX();
 
             // Search for the name of the saved barcode in the picker list
             ClassBarcodes.nBarcodeScannerIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeScannerName)

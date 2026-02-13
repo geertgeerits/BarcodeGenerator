@@ -210,7 +210,7 @@
 		<!-- Exclude native runtime/native assets from the transitive zxingcpp package when building Windows.
        This prevents the native ZXing.dll (runtimes\win-x64\native\ZXing.dll) from colliding with the managed
        zxing.dll provided by zxing.net in the publish output. -->
-		<PackageReference Include="zxingcpp" Version="0.4.0-alpha">
+		<PackageReference Include="zxingcpp" Version="0.5.0">
 			<ExcludeAssets>native</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>
