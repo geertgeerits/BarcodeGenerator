@@ -79,7 +79,7 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.3" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.7.4" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.7.4" />
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.2" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.3" />
 		<PackageReference Include="Sentry.Maui" Version="6.1.0" />
 		<!--<PackageReference Include="ZXingCpp" Version="0.4.0-alpha" />-->
 	</ItemGroup>
