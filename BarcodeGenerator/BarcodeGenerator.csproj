@@ -172,6 +172,16 @@
 
 	<PropertyGroup>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<GenerateAppInstallerFile>True</GenerateAppInstallerFile>
+		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+		<AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+		<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+		<GenerateTestArtifacts>True</GenerateTestArtifacts>
+		<AppInstallerUri>C:\Sources\MAUI\BarcodeGenerator\BarcodeGenerator\bin\Release</AppInstallerUri>
+		<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+		<DefaultLanguage>en-US</DefaultLanguage>
+		<PackageCertificateKeyFile>BarcodeGenerator_TemporaryKey.pfx</PackageCertificateKeyFile>
 	</PropertyGroup>
 	
 	<!--Buttons do not work after linking is enabled in iOS Release builds #150 - Does not work in xCode 26.1 -->

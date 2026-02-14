@@ -193,8 +193,8 @@ namespace BarcodeGenerator
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
 #if WINDOWS
-            await Navigation.PushAsync(new PageScanZX());
             //await Navigation.PushAsync(new PageScanNT());  // !!!BUG!!! Error in NuGet package when using the native Windows scanner ???
+            await Navigation.PushAsync(new PageScanZX());
 #else
             await Navigation.PushAsync(new PageScanNT());
 #endif
