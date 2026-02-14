@@ -83,10 +83,10 @@
         public static string cBarcodeScannerDefault = CodeLang.AllCodes_Text;
 
         /// <summary>
-        /// Put the generator barcode formats in a List string using the Native library for all platforms
+        /// Put the generator barcode formats in a List string using the ZXing library for all platforms
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetFormatCodeListGenerator_NT() => [
+        public static List<string> GetFormatCodeListGenerator_ZX() => [
                 cBarcode_AZTEC,
                 cBarcode_CODABAR,
                 cBarcode_CODE_39,

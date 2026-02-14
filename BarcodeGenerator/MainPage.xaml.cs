@@ -81,8 +81,8 @@ namespace BarcodeGenerator
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
             int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows().Count;
 #else
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_NT();
-            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_NT().Count;
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
+            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX().Count;
 #endif
             // Search for the name of the saved barcode in the picker list
             ClassBarcodes.nBarcodeGeneratorIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeGeneratorName)
