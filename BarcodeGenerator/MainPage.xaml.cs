@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-14 (YYYY-MM-DD)
+ * Date ........: 2026-02-15 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -1125,38 +1125,4 @@ namespace BarcodeGenerator
    UPC-E: 01810905 -> UPC-A: 018000001095
 
    Source: https://bytescout.com/blog/2013/10/upc-and-upc-e-purpose-advantages.html
-   _____________________________________________________________________________________________ */
-
-/* Barcode formats and maximum length of the text to encode.
-   edtTextToCode.MaxLength     Numeric     AlphaNumeric    Binary 8-bits   Kanji/Kana JIS X 0208
-   -----------------------     -------     ------------    -------------   ---------------------
-
-   Aztec              1900     3832        3067            1914
-   Codabar              43       43          43
-   Code 39              48       48          48
-   Code 39 Mod 43
-   Code 93              48       48          48
-   Code 128             48       48          48
-   Data Matrix        1500     3116        2335            1555                     
-   Ean 8                 8        8
-   Ean 13               13       13
-   GS1 DataBar          
-   GS1 DataBar Expanded 
-   GS1 DataBar Limited  
-   Imb                  31       31
-   Itf                  30       30
-   Itf 14               
-   MaxiCode             93       93
-   Micro PDF 417                366         250             150
-   Micro QR                      35          21              15
-   Msi                  255     255
-   Pdf 417             1100    2710        1850            1108
-   Pharmacode             6       6
-   Plessey               16      16          16
-   QR Code             1800    7089        4296            2953            1817
-   Rss 14                14      14
-   Rss Expanded          74      74
-   Upc A                 12      12
-   Upc E                  8       8
-   Upc Ean Extension      2       2
    _____________________________________________________________________________________________ */
