@@ -71,6 +71,7 @@
         public const string cBarcode_QR_CODE = "QR Code";                           // Quick Response Code
         public const string cBarcode_QR_CODE_MODEL_1 = "QR Code Model 1";
         public const string cBarcode_QR_CODE_MODEL_2 = "QR Code Model 2";
+        public const string cBarcode_FRAME_QR_CODE = "Frame QR Code";
         public const string cBarcode_MICRO_QR_CODE = "Micro QR Code";
         public const string cBarcode_RMQR = "rMQR Rectangular Micro QR Code";
 
@@ -317,7 +318,8 @@
    QR Code                     1800       7089       4296       2953          1817
    QR Code Model 1
    QR Code Model 2
+   Frame QR
    Micro QR                      35         21         15
-   rMQR
+   rMQR Rectangular Micro QR
    _____________________________________________________________________________________________ */
 
