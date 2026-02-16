@@ -193,6 +193,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
+                    x:Name="brdBarcode"
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -205,6 +206,25 @@
                         HeightRequest="250"
                         MaximumWidthRequest="{OnIdiom 340, Phone=340, Tablet=680, Desktop=680}">
                     </zxing:BarcodeGeneratorView>
+                </Border>
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    x:Name="brdQrCodeImage"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    MaximumWidthRequest="{OnIdiom 340, Phone=340, Tablet=680, Desktop=680}"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                    IsVisible="False">
+
+                    <Image
+                        x:Name="imgQrCodeImage"
+                        WidthRequest="300"
+                        HeightRequest="300"
+                        IsVisible="False">
+                    </Image>
                 </Border>
 
                 <Button

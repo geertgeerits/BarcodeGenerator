@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-15 (YYYY-MM-DD)
+ * Date ........: 2026-02-16 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -13,6 +13,8 @@
  *                zxing-cpp: https://github.com/zxing-cpp/zxing-cpp
  * Dependencies : NuGet Package: ZXing.Net.Maui by Redth - https://github.com/redth/ZXing.Net.Maui
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth
+ *                NuGet Package: QRCoder by Raffael Herrmann, Shane Krueger
+ *                NuGet Package: SkiaSharp by Microsoft - https://github.com/mono/SkiaSharp
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić - https://github.com/afriscic/BarcodeScanning.Native.Maui
  *                NuGet Package: Sentry.Maui - https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun */
@@ -28,6 +30,17 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersDecimal = "0123456789";
         private const string cAllowedCharactersHex = "0123456789ABCDEF";
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
+        private static bool bIsBarcodeWithImage;
+
+        //private static readonly FilePickerFileType customFileType = new(
+        //new Dictionary<DevicePlatform, IEnumerable<string>>
+        //{
+        //    //{ DevicePlatform.iOS, new[] { "UTType.Image" } },
+        //    { DevicePlatform.Android, new[] { "image/*" } },
+        //    { DevicePlatform.WinUI, new[] { ".png", ".jpg" } },
+        //    { DevicePlatform.Tizen, new[] { "*/*" } },
+        //    { DevicePlatform.macOS, new[] { "png", "jpg" } },
+        //});
 
         public MainPage()
         {
@@ -225,6 +238,12 @@ namespace BarcodeGenerator
                 string? selectedName = item is not null
                     ? picker.ItemsSource[selectedIndex] as string : string.Empty;
 
+                brdQrCodeImage.IsVisible = false;
+                imgQrCodeImage.IsVisible = false;
+                brdBarcode.IsVisible = true;
+                bgvBarcode.IsVisible = true;
+                bIsBarcodeWithImage = false;
+
                 bgvBarcode.Value = "";
                 bgvBarcode.HeightRequest = 160;
                 bgvBarcode.WidthRequest = -1;
@@ -332,6 +351,18 @@ namespace BarcodeGenerator
                         bgvBarcode.Format = BarcodeFormat.QrCode;
                         break;
 
+                    case ClassBarcodes.cBarcode_QR_CODE_IMAGE:
+                        edtTextToCode.MaxLength = 1800;
+                        edtTextToCode.Keyboard = Keyboard.Default;
+                        imgQrCodeImage.HeightRequest = 250;
+                        imgQrCodeImage.WidthRequest = 250;
+                        brdBarcode.IsVisible = false;
+                        bgvBarcode.IsVisible = false;
+                        brdQrCodeImage.IsVisible = true;
+                        imgQrCodeImage.IsVisible = true;
+                        bIsBarcodeWithImage = true;
+                        break;
+
                     case ClassBarcodes.cBarcode_UPC_A:
                         edtTextToCode.MaxLength = 12;
                         edtTextToCode.Keyboard = Keyboard.Numeric;
@@ -354,7 +385,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnGenerateCodeClicked(object sender, EventArgs e)
+        private async void OnGenerateCodeClicked(object sender, EventArgs e)
         {
             // Hide the keyboard
             edtTextToCode.IsEnabled = false;
@@ -385,16 +416,16 @@ namespace BarcodeGenerator
 
             int selectedIndex = pckFormatCodeGenerator.SelectedIndex;
 
+            var itemsSource = pckFormatCodeGenerator.ItemsSource;
+            string? item = itemsSource is not null && itemsSource.Count > selectedIndex
+                ? itemsSource[selectedIndex] as string : null;
+
+            string? selectedName = item is not null
+                ? pckFormatCodeGenerator.ItemsSource[selectedIndex] as string : string.Empty;
+
             // Validate the text input and set the format
             if (selectedIndex != -1)
             {
-                var itemsSource = pckFormatCodeGenerator.ItemsSource;
-                string? item = itemsSource is not null && itemsSource.Count > selectedIndex
-                    ? itemsSource[selectedIndex] as string : null;
-
-                string? selectedName = item is not null
-                    ? pckFormatCodeGenerator.ItemsSource[selectedIndex] as string : string.Empty;
-
                 try
                 {
                     switch (selectedName)
@@ -571,6 +602,9 @@ namespace BarcodeGenerator
                         case ClassBarcodes.cBarcode_QR_CODE:
                             break;
 
+                        case ClassBarcodes.cBarcode_QR_CODE_IMAGE:
+                            break;
+
                         case ClassBarcodes.cBarcode_UPC_A:
                             if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
@@ -676,8 +710,35 @@ namespace BarcodeGenerator
                 // For testing crashes - DivideByZeroException
                 //int divByZero = 51 / int.Parse("0");
 
-                bgvBarcode.Value = cTextToCode;
-            
+                // Generate the QR code with an image
+                if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+                {
+                    // Open the file picker to select an image file
+                    PickOptions options = new()
+                    {
+                        PickerTitle = "Please select a square image file",
+                        //FileTypes = customFileType,
+                        FileTypes = FilePickerFileType.Images
+                    };
+
+                    FileResult? cFile = await PickAndShow(options);
+
+                    if (cFile == null)
+                        return;
+
+                    // Read the selected file as a stream
+                    var logoStream = await cFile.OpenReadAsync();
+
+                    // Generate the QR code with the logo using SkiaSharp
+                    var qrImage = QrCodeHelper.GenerateQrWithLogo_Skia(cTextToCode, logoStream);
+                    imgQrCodeImage.Source = qrImage;
+                }
+                // Generate the barcode
+                else
+                {
+                    bgvBarcode.Value = cTextToCode;
+                }
+
                 btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[selectedIndex]}";
                 btnShare.IsEnabled = true;
             }
@@ -862,6 +923,7 @@ namespace BarcodeGenerator
         {
             edtTextToCode.Text = "";
             bgvBarcode.Value = "";
+            imgQrCodeImage.Source = null;
             btnShare.Text = CodeLang.ButtonShare_Text;
             btnShare.IsEnabled = false;
 
@@ -983,10 +1045,18 @@ namespace BarcodeGenerator
             {
                 if (Screenshot.Default.IsCaptureSupported)
                 {
-                    IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
-                    Stream stream = await screen!.OpenReadAsync();
-
-                    SaveStreamAsFile(stream);
+                    if (bIsBarcodeWithImage)
+                    {
+                        IScreenshotResult? screen = await imgQrCodeImage.CaptureAsync();
+                        Stream stream = await screen!.OpenReadAsync();
+                        SaveStreamAsFile(stream);
+                    }
+                    else
+                    {
+                        IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
+                        Stream stream = await screen!.OpenReadAsync();
+                        SaveStreamAsFile(stream);
+                    }
                 }
             }
             catch (Exception ex)
@@ -1095,6 +1165,37 @@ namespace BarcodeGenerator
 #endif
                 }
             }
+        }
+
+        /// <summary>
+        /// Opens a file picker dialog and returns the selected file.
+        /// </summary>
+        /// <param name="options">The options for the file picker.</param>
+        /// <returns>The selected file result, or null if no file was selected.</returns>
+        public static async Task<FileResult?> PickAndShow(PickOptions options)
+        {
+            try
+            {
+                var result = await FilePicker.Default.PickAsync(options);
+                if (result != null)
+                {
+                    if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
+                        result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
+                    {
+                        using var stream = await result.OpenReadAsync();
+                        var image = ImageSource.FromStream(() => stream);
+                    }
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // The user canceled or something went wrong
+                Debug.WriteLine($"File picking error: {ex.Message}");
+            }
+
+            return null;
         }
     }
 }
