@@ -58,8 +58,8 @@ namespace BarcodeGenerator
                     float top = (size - iconSize) / 2f;
                     var dest = new SKRect(left, top, left + iconSize, top + iconSize);
 
-                    // Optional: draw a white border around the icon
-                    var borderPaint = new SKPaint { Style = SKPaintStyle.Fill, Color = SKColors.White };
+                    // Optional: draw a border around the icon
+                    var borderPaint = new SKPaint { Style = SKPaintStyle.Fill, Color = SKColor.Parse(Globals.cCodeColorBg) };
                     float borderPadding = 6;
                     var borderRect = new SKRect(dest.Left - borderPadding, dest.Top - borderPadding,
                                                  dest.Right + borderPadding, dest.Bottom + borderPadding);
