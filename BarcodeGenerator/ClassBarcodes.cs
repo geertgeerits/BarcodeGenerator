@@ -74,7 +74,7 @@
         public const string cBarcode_FRAME_QR_CODE = "Frame QR Code";
         public const string cBarcode_MICRO_QR_CODE = "Micro QR Code";
         public const string cBarcode_RMQR = "rMQR Rectangular Micro QR Code";
-        public const string cBarcode_QR_CODE_IMAGE = "QR Code with Image";
+        public const string cBarcode_QR_CODE_IMAGE = "QR Code + Image";
 
         // Global constants and variables
         public static int nBarcodeGeneratorIndex;
@@ -102,6 +102,7 @@
                 cBarcode_PDF_417,
                 cBarcode_PLESSEY,
                 cBarcode_QR_CODE,
+                cBarcode_QR_CODE_IMAGE,
                 cBarcode_UPC_A,
                 cBarcode_UPC_E
             ];
