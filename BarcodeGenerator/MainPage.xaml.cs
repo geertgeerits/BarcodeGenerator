@@ -713,7 +713,7 @@ namespace BarcodeGenerator
                 // Generate the QR code with an image
                 if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
-                    // Open the file picker to select an image file
+                    // Set the options for the file picker
                     PickOptions options = new()
                     {
                         PickerTitle = "Please select a square image file",
@@ -721,10 +721,13 @@ namespace BarcodeGenerator
                         FileTypes = FilePickerFileType.Images
                     };
 
-                    FileResult? cFile = await PickAndShow(options);
+                    // Open the file picker to select an image file
+                    FileResult? cFile = await QrCodeHelper.PickImage(options);
 
                     if (cFile == null)
+                    {
                         return;
+                    }
 
                     // Read the selected file as a stream
                     var logoStream = await cFile.OpenReadAsync();
@@ -1165,37 +1168,6 @@ namespace BarcodeGenerator
 #endif
                 }
             }
-        }
-
-        /// <summary>
-        /// Opens a file picker dialog and returns the selected file.
-        /// </summary>
-        /// <param name="options">The options for the file picker.</param>
-        /// <returns>The selected file result, or null if no file was selected.</returns>
-        public static async Task<FileResult?> PickAndShow(PickOptions options)
-        {
-            try
-            {
-                var result = await FilePicker.Default.PickAsync(options);
-                if (result != null)
-                {
-                    if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
-                        result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
-                    {
-                        using var stream = await result.OpenReadAsync();
-                        var image = ImageSource.FromStream(() => stream);
-                    }
-                }
-
-                return result;
-            }
-            catch (Exception ex)
-            {
-                // The user canceled or something went wrong
-                Debug.WriteLine($"File picking error: {ex.Message}");
-            }
-
-            return null;
         }
     }
 }

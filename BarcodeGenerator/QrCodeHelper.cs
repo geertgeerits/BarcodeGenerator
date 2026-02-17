@@ -31,6 +31,7 @@ namespace BarcodeGenerator
 
             var paint = new SKPaint { Style = SKPaintStyle.Fill, Color = SKColor.Parse(Globals.cCodeColorFg), IsAntialias = false };
 
+            // Draw QR code modules
             for (int y = 0; y < moduleCount; y++)
             {
                 for (int x = 0; x < moduleCount; x++)
@@ -51,6 +52,7 @@ namespace BarcodeGenerator
             {
                 logoStream.Position = 0;
                 using var logoBitmap = SKBitmap.Decode(logoStream);
+                
                 if (logoBitmap != null)
                 {
                     float iconSize = size * 0.18f;                  // Scale logo to 18% of QR code size
@@ -71,12 +73,46 @@ namespace BarcodeGenerator
 
             canvas.Flush();
 
+            // Convert SKBitmap to ImageSource
             using var image = SKImage.FromBitmap(bitmap);
             using var encoded = image.Encode(SKEncodedImageFormat.Png, 100);
             var ms = new MemoryStream();
             encoded.SaveTo(ms);
             ms.Position = 0;
+            
             return ImageSource.FromStream(() => ms);
+        }
+
+        /// <summary>
+        /// Opens a file picker dialog and returns the selected file.
+        /// </summary>
+        /// <param name="options">The options for the file picker.</param>
+        /// <returns>The selected file result, or null if no file was selected.</returns>
+        public static async Task<FileResult?> PickImage(PickOptions options)
+        {
+            try
+            {
+                var result = await FilePicker.Default.PickAsync(options);
+                
+                if (result != null)
+                {
+                    if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
+                        result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
+                    {
+                        using var stream = await result.OpenReadAsync();
+                        var image = ImageSource.FromStream(() => stream);
+                    }
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // The user canceled or something went wrong
+                Debug.WriteLine($"File picking error: {ex.Message}");
+            }
+
+            return null;
         }
     }
 }
