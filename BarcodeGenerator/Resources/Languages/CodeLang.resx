@@ -317,6 +317,9 @@ The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, Ge
 
 You can always contact me for any corrections.</value>
   </data>
+  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+    <value>The QR code with image is generated at a fixed pixel size. The inserted image is centered and scaled to 20% of the QR code’s width, with a border added for improved visibility. For best results, use a square image between 48×48 and 96×96 pixels. Preferred file formats are PNG (with a transparent background) or JPEG. We recommend testing your QR code to ensure it scans correctly.</value>
+  </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
   </data>

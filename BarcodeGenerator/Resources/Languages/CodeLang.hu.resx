@@ -317,6 +317,9 @@ A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar
 
 Bármilyen javításért bármikor fordulhat hozzám.</value>
   </data>
+  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+    <value>A képet tartalmazó QR-kód fix pixelméretű. A beillesztett kép középre igazított és a QR-kód szélességének 20%-ára méreteződik, a jobb láthatóság érdekében szegéllyel. A legjobb eredmény elérése érdekében használjon 48×48 és 96×96 pixel közötti méretű négyzet alakú képet. Az előnyben részesített fájlformátumok a PNG (átlátszó háttérrel) vagy a JPEG. Javasoljuk, hogy tesztelje a QR-kódot, hogy biztosan megfelelően olvassa be.</value>
+  </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Információ</value>
   </data>

@@ -19,6 +19,12 @@
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 
+		<!--XAML Source Generation - stored in Dependencies-net10.0xxx-Analyzers-Microsoft.Maui.Controls.SourceGen-->
+		<MauiXamlInflator>SourceGen</MauiXamlInflator>
+		<!--Optional (for Visual Studio Code)-->
+		<!--<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>C:\x</CompilerGeneratedFilesOutputPath>-->
+
 		<!-- Display name -->
 		<ApplicationTitle>Barcode Generator and Scanner</ApplicationTitle>
 

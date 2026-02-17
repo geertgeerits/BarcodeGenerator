@@ -576,6 +576,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The QR code with image is generated at a fixed pixel size. The inserted image is centered and scaled to 20% of the QR code’s width, with a border added for improved visibility. For best results, use a square image between 48×48 and 96×96 pixels. Preferred file formats are PNG (with a transparent background) or JPEG. We recommend testing your QR code to ensure it scans correctly..
+        /// </summary>
+        internal static string InfoQRCodeImage_Text {
+            get {
+                return ResourceManager.GetString("InfoQRCodeImage_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language:.
         /// </summary>
         internal static string Language_Text {

@@ -317,6 +317,9 @@ Le lingue di supporto sono: ceco, danese, olandese, inglese, finlandese, frances
 
 Potete sempre contattarmi per eventuali correzioni.</value>
   </data>
+  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+    <value>Il codice QR con immagine viene generato con una dimensione fissa in pixel. L'immagine inserita viene centrata e ridimensionata al 20% della larghezza del codice QR, con l'aggiunta di un bordo per una migliore visibilità. Per risultati ottimali, utilizzare un'immagine quadrata con dimensioni comprese tra 48×48 e 96×96 pixel. I formati di file preferiti sono PNG (con sfondo trasparente) o JPEG. Si consiglia di testare il codice QR per assicurarsi che venga scansionato correttamente.</value>
+  </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informazione</value>
   </data>

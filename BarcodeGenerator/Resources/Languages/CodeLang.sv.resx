@@ -317,6 +317,9 @@ Stödspråken är: tjeckiska, danska, holländska, engelska, finska, franska, ty
 
 Du kan alltid kontakta mig för eventuella korrigeringar.</value>
   </data>
+  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+    <value>QR-koden med bilden genereras med en fast pixelstorlek. Den infogade bilden centreras och skalas till 20 % av QR-kodens bredd, med en kantlinje för förbättrad synlighet. För bästa resultat, använd en fyrkantig bild mellan 48×48 och 96×96 pixlar. Föredragna filformat är PNG (med transparent bakgrund) eller JPEG. Vi rekommenderar att du testar din QR-kod för att säkerställa att den skannar korrekt.</value>
+  </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
   </data>

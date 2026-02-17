@@ -9,13 +9,13 @@ namespace BarcodeGenerator
         /// Generates a QR code image from the specified text, optionally overlaying a centered logo image.
         /// </summary>
         /// <remarks>The QR code is generated with a fixed pixel size per module. If a logo is provided,
-        /// it is scaled to 20% of the QR code's size and centered, with a white border for improved visibility. The
+        /// it is scaled to 20% of the QR code's size and centered, with a border for improved visibility. The
         /// returned ImageSource is suitable for use in UI frameworks that support image sources.</remarks>
         /// <param name="text">The text to encode within the generated QR code.</param>
         /// <param name="logoStream">A stream containing the logo image to overlay at the center of the QR code, or null to generate a QR code
         /// without a logo. The stream must be positioned at the beginning.</param>
         /// <returns>An ImageSource representing the generated QR code image, including the logo overlay if provided.</returns>
-        public static ImageSource GenerateQrWithLogo_Skia(string text, Stream? logoStream)
+        public static ImageSource GenerateQrWithLogo(string text, Stream? logoStream)
         {
             var generator = new QRCodeGenerator();
             var qrData = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
@@ -53,7 +53,7 @@ namespace BarcodeGenerator
                 using var logoBitmap = SKBitmap.Decode(logoStream);
                 if (logoBitmap != null)
                 {
-                    float iconSize = size * 0.20f;
+                    float iconSize = size * 0.18f;                  // Scale logo to 18% of QR code size
                     float left = (size - iconSize) / 2f;
                     float top = (size - iconSize) / 2f;
                     var dest = new SKRect(left, top, left + iconSize, top + iconSize);
