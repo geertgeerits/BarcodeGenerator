@@ -318,7 +318,7 @@ Obsługiwane języki to: czeski, duński, holenderski, angielski, fiński, franc
 Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>Kod QR z obrazkiem jest generowany z ustalonym rozmiarem pikseli. Wstawiony obraz jest wyśrodkowany i skalowany do 20% szerokości kodu QR, z dodaną ramką dla lepszej widoczności. Aby uzyskać najlepsze rezultaty, użyj kwadratowego obrazu o wymiarach od 48×48 do 96×96 pikseli. Preferowane formaty plików to PNG (z przezroczystym tłem) lub JPEG. Zalecamy przetestowanie kodu QR, aby upewnić się, że skanuje się poprawnie.</value>
+    <value>Kod QR z osadzonym obrazem jest generowany z ustalonym rozmiarem pikseli. Wstawiony obraz jest wyśrodkowany i skalowany do {0}% szerokości kodu QR, z dodaną ramką dla lepszej widoczności. Aby uzyskać najlepsze rezultaty, użyj obrazu o rozmiarze około {1} pikseli. Preferowane formaty plików to PNG (opcjonalnie z przezroczystym tłem) lub JPEG. Zalecamy przetestowanie kodu QR, aby upewnić się, że skanuje się poprawnie.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informacje</value>

@@ -318,7 +318,7 @@ Støttespråkene er: tsjekkisk, dansk, nederlandsk, engelsk, finsk, fransk, tysk
 Du kan alltid kontakte meg for eventuelle rettelser.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>QR-koden med bildet genereres med en fast pikselstørrelse. Det innsatte bildet sentreres og skaleres til 20 % av QR-kodens bredde, med en kantlinje lagt til for bedre synlighet. For best resultat, bruk et firkantet bilde mellom 48×48 og 96×96 piksler. Foretrukne filformater er PNG (med gjennomsiktig bakgrunn) eller JPEG. Vi anbefaler at du tester QR-koden din for å sikre at den skanner riktig.</value>
+    <value>QR-koden med et innebygd bilde genereres med en fast pikselstørrelse. Bildet som settes inn sentreres og skaleres til {0} % av QR-kodens bredde, med en kantlinje lagt til for bedre synlighet. For best resultat, bruk et bilde på omtrent {1} piksler. Foretrukne filformater er PNG (valgfritt med gjennomsiktig bakgrunn) eller JPEG. Vi anbefaler at du tester QR-koden din for å sikre at den skanner riktig.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informasjon</value>

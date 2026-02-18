@@ -286,7 +286,7 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Opens a file picker dialog and returns the selected file.
+        /// Opens a file picker dialog and return the selected file.
         /// </summary>
         /// <param name="options">The options for the file picker.</param>
         /// <returns>The selected file result, or null if no file was selected.</returns>

@@ -318,7 +318,7 @@ De ondersteunende talen zijn: Tsjechisch, Deens, Nederlands, Engels, Fins, Frans
 Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>De QR-code met afbeelding wordt gegenereerd met een vaste pixelgrootte. De ingevoegde afbeelding wordt gecentreerd en geschaald tot 20% van de breedte van de QR-code, met een rand voor betere zichtbaarheid. Voor het beste resultaat kunt u het best een vierkante afbeelding gebruiken tussen 48x48 en 96x96 pixels. De voorkeur gaat uit naar PNG (met een transparante achtergrond) of JPEG als bestandsindeling. We raden aan uw QR-code te testen om er zeker van te zijn dat deze correct scant.</value>
+    <value>De QR-code met ingesloten afbeelding wordt gegenereerd met een vaste pixelgrootte. De ingevoegde afbeelding wordt gecentreerd en geschaald tot {0}% van de breedte van de QR-code, met een rand voor betere zichtbaarheid. Voor het beste resultaat kunt u een afbeelding van ongeveer {1} pixels gebruiken. De voorkeur gaat uit naar PNG (eventueel met een transparante achtergrond) of JPEG. We raden aan uw QR-code te testen om er zeker van te zijn dat deze correct scant.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informatie</value>

@@ -318,7 +318,7 @@ Tukikielet ovat: tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, unka
 Voit aina ottaa minuun yhteyttä korjauksista.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>QR-koodi kuvan kanssa luodaan kiinteällä pikselikoolla. Lisätty kuva keskitetään ja skaalataan 20 prosenttiin QR-koodin leveydestä, ja siihen lisätään reunus näkyvyyden parantamiseksi. Parhaan tuloksen saavuttamiseksi käytä neliönmuotoista kuvaa, jonka koko on 48 × 48–96 × 96 pikseliä. Suositellut tiedostomuodot ovat PNG (läpinäkyvällä taustalla) tai JPEG. Suosittelemme testaamaan QR-koodiasi varmistaaksesi, että se skannataan oikein.</value>
+    <value>QR-koodi, johon on upotettu kuva, luodaan kiinteällä pikselikoolla. Lisätty kuva keskitetään ja skaalataan {0} prosenttiin QR-koodin leveydestä, ja siihen lisätään reunus näkyvyyden parantamiseksi. Parhaan tuloksen saavuttamiseksi käytä noin {1} pikselin kokoista kuvaa. Suositellut tiedostomuodot ovat PNG (valinnainen läpinäkyvällä taustalla) tai JPEG. Suosittelemme, että testaat QR-koodiasi varmistaaksesi, että se skannataan oikein.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Tiedot</value>

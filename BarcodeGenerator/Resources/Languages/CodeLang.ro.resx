@@ -318,7 +318,7 @@ Limbile suportate sunt: cehă, daneză, olandeză, engleză, finlandeză, france
 Mă puteți contacta oricând pentru orice corecturi.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>Codul QR cu imagine este generat la o dimensiune fixă ​​în pixeli. Imaginea inserată este centrată și scalată la 20% din lățimea codului QR, cu o bordură adăugată pentru o vizibilitate îmbunătățită. Pentru cele mai bune rezultate, utilizați o imagine pătrată între 48×48 și 96×96 pixeli. Formatele de fișier preferate sunt PNG (cu fundal transparent) sau JPEG. Vă recomandăm să testați codul QR pentru a vă asigura că se scanează corect.</value>
+    <value>Codul QR cu o imagine încorporată este generat la o dimensiune fixă ​​în pixeli. Imaginea inserată este centrată și scalată la {0}% din lățimea codului QR, cu o bordură adăugată pentru o vizibilitate îmbunătățită. Pentru cele mai bune rezultate, utilizați o imagine de aproximativ {1} pixeli. Formatele de fișier preferate sunt PNG (opțional cu fundal transparent) sau JPEG. Vă recomandăm să testați codul QR pentru a vă asigura că se scanează corect.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informație</value>
