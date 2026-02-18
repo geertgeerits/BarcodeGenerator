@@ -388,6 +388,9 @@ Thank you in advance.</value>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>No personal and other data is stored or passed on to myself and others.</value>
   </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>QR Code image size: {0}% - {1} pixels</value>
+  </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>The application will be restarted.</value>
   </data>

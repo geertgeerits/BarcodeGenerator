@@ -172,6 +172,11 @@
             // Select the current barcode format in the picker for the barcode scanner
             pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
 
+            // Set the QR code image size percent in the label
+            QrCodeHelper.nQRCodeImageSizePixels = QrCodeHelper.nQRCodeImageSizeMaximumPixels * (QrCodeHelper.nQRCodeImageSizePercent / 100);
+            lblQRCodeImageSize.Text = $"{CodeLang.QRCodeImageSize_Text} {QrCodeHelper.nQRCodeImageSizePercent:F0} - {QrCodeHelper.nQRCodeImageSizePixels:F0}";
+            sldQRCodeImageSize.Value = QrCodeHelper.nQRCodeImageSizePercent;
+
             // Set the theme in the picker
             List<string> ThemeList =
             [
@@ -481,6 +486,7 @@
         {
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
+            Preferences.Default.Set("SettingQRCodeImageSizePercent", QrCodeHelper.nQRCodeImageSizePercent);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", Globals.cCodeColorBg);
@@ -514,6 +520,7 @@
                 // Reset some settings
                 Preferences.Default.Remove("SettingBarcodeGeneratorName");
                 Preferences.Default.Remove("SettingBarcodeScannerName");
+                Preferences.Default.Remove("SettingQRCodeImageSizePercent");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
                 Preferences.Default.Remove("SettingCodeColorBg");
@@ -528,6 +535,14 @@
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
+        }
+
+        private void OnSliderQRCodeImageSizeValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            QrCodeHelper.nQRCodeImageSizePercent = (float)e.NewValue;
+            QrCodeHelper.nQRCodeImageSizePixels = QrCodeHelper.nQRCodeImageSizeMaximumPixels * (QrCodeHelper.nQRCodeImageSizePercent / 100);
+
+            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, QrCodeHelper.nQRCodeImageSizePercent, (int)QrCodeHelper.nQRCodeImageSizePixels)}";
         }
     }
 }

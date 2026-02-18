@@ -389,6 +389,35 @@
                     MinimumTrackColor="Blue"
                     ValueChanged="OnSliderColorBackgroundValueChanged">
                 </Slider>
+
+                <Label
+                    x:Name="lblQRCodeImageSize"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="17"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    VerticalTextAlignment="Start"
+                    Text="{Translate QRCodeImageSize_Text}">
+                </Label>
+
+                <Border
+                    Style="{StaticResource borderStyleGroup}"
+                    Grid.Row="17"
+                    Grid.Column="2"
+                    Grid.RowSpan="1">
+                </Border>
+                
+                <Slider
+                    x:Name="sldQRCodeImageSize"
+                    Style="{StaticResource sliderStyleColor}"
+                    Grid.Row="17"
+                    Grid.Column="2"
+                    ThumbColor="Orange"
+                    MinimumTrackColor="Orange"
+                    Minimum="10"
+                    Maximum="30"
+                    ValueChanged="OnSliderQRCodeImageSizeValueChanged">
+                </Slider>
             </Grid>
         </ScrollView>
 

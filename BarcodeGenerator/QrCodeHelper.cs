@@ -5,6 +5,11 @@ namespace BarcodeGenerator
 {
     public static class QrCodeHelper
     {
+        // Global variables to control the maximum size of the logo as a percentage of the QR code size.
+        public static float nQRCodeImageSizePercent = 20.0f;
+        public static float nQRCodeImageSizeMaximumPixels = 580;
+        public static float nQRCodeImageSizePixels = nQRCodeImageSizeMaximumPixels * (nQRCodeImageSizePercent / 100);
+
         /// <summary>
         /// Generates a QR code image from the specified text, optionally overlaying a centered logo image.
         /// </summary>
@@ -113,7 +118,8 @@ namespace BarcodeGenerator
                 if (logoBitmap != null && logoBitmap.Width > 0 && logoBitmap.Height > 0)
                 {
                     // Maximum box for the logo (as a fraction of the QR size)
-                    float iconMaxSize = size * 0.20f;
+                    float iconMaxSize = size * nQRCodeImageSizePercent / 100f;
+                    Debug.WriteLine($"Original logo size: {logoBitmap.Width}x{logoBitmap.Height}, QR code size: {size}x{size}, icon max size: {iconMaxSize}x{iconMaxSize}");
 
                     // Compute scale to fit the logo inside a square of iconMaxSize while preserving aspect ratio.
                     float scale = Math.Min(iconMaxSize / logoBitmap.Width, iconMaxSize / logoBitmap.Height);
