@@ -318,7 +318,7 @@ Os idiomas de suporte são: tcheco, dinamarquês, holandês, inglês, finlandês
 Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>O código QR com imagem incorporada é gerado com um tamanho de pixel fixo. A imagem inserida é centralizada e redimensionada para {0}% da largura do código QR, com uma borda adicionada para melhor visibilidade. Para melhores resultados, use uma imagem de aproximadamente {1} pixels. Os formatos de arquivo preferenciais são PNG (opcionalmente com fundo transparente) ou JPEG. Recomendamos testar seu código QR para garantir que ele seja lido corretamente.</value>
+    <value>O código QR com imagem incorporada é gerado com um tamanho fixo em pixels. A imagem inserida é centralizada e redimensionada para {0}% da largura ou altura do código QR, com uma borda adicionada para melhor visibilidade. Você pode ajustar a escala da imagem nas configurações. Para melhores resultados, use uma imagem de aproximadamente {1} pixels. Os formatos de arquivo preferenciais são PNG (opcionalmente com fundo transparente) ou JPEG. Recomendamos testar seu código QR para garantir que ele seja lido corretamente.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informação</value>
@@ -387,6 +387,9 @@ Agradeço antecipadamente.</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>Nenhum dado pessoal e outros são armazenados ou transmitidos para mim e para outros.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>Tamanho da imagem do código QR: {0}% - {1} pixels</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>O aplicativo será reiniciado.</value>

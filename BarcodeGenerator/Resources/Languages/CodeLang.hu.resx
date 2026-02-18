@@ -318,7 +318,7 @@ A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar
 Bármilyen javításért bármikor fordulhat hozzám.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>A beágyazott képet tartalmazó QR-kód fix pixelméretű. A beillesztett kép középre igazított és a QR-kód szélességének {0}%-ára méretezett, a jobb láthatóság érdekében szegéllyel. A legjobb eredmény érdekében körülbelül {1} ​​pixeles képet használjon. Az előnyben részesített fájlformátumok a PNG (opcionálisan átlátszó háttérrel) vagy a JPEG. Javasoljuk, hogy tesztelje a QR-kódot, hogy biztosan megfelelően beolvassa.</value>
+    <value>A beágyazott képet tartalmazó QR-kód fix pixelméretű. A beillesztett kép középre igazított és a QR-kód szélességének vagy magasságának {0}%-ára méreteződik, a jobb láthatóság érdekében szegéllyel. A kép mérete a beállításokban módosítható. A legjobb eredmény elérése érdekében körülbelül {1} pixeles képet használjon. Az előnyben részesített fájlformátumok a PNG (opcionálisan átlátszó háttérrel) vagy a JPEG. Javasoljuk, hogy tesztelje a QR-kódot, hogy biztosan megfelelően olvassa be.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Információ</value>
@@ -387,6 +387,9 @@ Előre is köszönöm.</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>Személyes és egyéb adatokat nem tárolunk, illetve nem adunk át magamnak és másoknak.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>QR-kód képmérete: {0}% - {1} pixel</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Az alkalmazás újraindul.</value>

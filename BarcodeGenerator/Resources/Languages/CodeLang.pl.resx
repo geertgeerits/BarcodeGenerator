@@ -318,7 +318,7 @@ Obsługiwane języki to: czeski, duński, holenderski, angielski, fiński, franc
 Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>Kod QR z osadzonym obrazem jest generowany z ustalonym rozmiarem pikseli. Wstawiony obraz jest wyśrodkowany i skalowany do {0}% szerokości kodu QR, z dodaną ramką dla lepszej widoczności. Aby uzyskać najlepsze rezultaty, użyj obrazu o rozmiarze około {1} pikseli. Preferowane formaty plików to PNG (opcjonalnie z przezroczystym tłem) lub JPEG. Zalecamy przetestowanie kodu QR, aby upewnić się, że skanuje się poprawnie.</value>
+    <value>Kod QR z osadzonym obrazem jest generowany z ustalonym rozmiarem pikseli. Wstawiony obraz jest wyśrodkowany i skalowany do {0}% szerokości lub wysokości kodu QR, z dodaną ramką dla lepszej widoczności. Skalę obrazu można dostosować w ustawieniach. Aby uzyskać najlepsze rezultaty, użyj obrazu o rozmiarze około {1} pikseli. Preferowane formaty plików to PNG (opcjonalnie z przezroczystym tłem) lub JPEG. Zalecamy przetestowanie kodu QR, aby upewnić się, że skanuje się poprawnie.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informacje</value>
@@ -387,6 +387,9 @@ Z góry dziękuję.</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>Żadne dane osobowe i inne nie są przechowywane ani przekazywane mnie i innym osobom.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>Rozmiar obrazu kodu QR: {0}% - {1} pikseli</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplikacja zostanie ponownie uruchomiona.</value>

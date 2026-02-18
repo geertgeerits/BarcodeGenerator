@@ -318,7 +318,7 @@ Podporované jazyky jsou: čeština, dánština, holandština, angličtina, fin�
 Pro případné opravy mě můžete vždy kontaktovat.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>QR kód s vloženým obrázkem je generován s pevnou velikostí v pixelech. Vložený obrázek je vycentrován a zmenšen na {0} % šířky QR kódu s přidaným okrajem pro lepší viditelnost. Nejlepších výsledků dosáhnete, když použijete obrázek o velikosti přibližně {1} pixelů. Preferované formáty souborů jsou PNG (volitelně s průhledným pozadím) nebo JPEG. Doporučujeme otestovat QR kód, abyste se ujistili, že se správně naskenuje.</value>
+    <value>QR kód s vloženým obrázkem je generován s pevnou velikostí v pixelech. Vložený obrázek je vycentrován a zmenšen na {0} % šířky nebo výšky QR kódu s přidaným okrajem pro lepší viditelnost. Měřítko obrázku můžete upravit v nastavení. Nejlepších výsledků dosáhnete, když použijete obrázek o velikosti přibližně {1} pixelů. Preferované formáty souborů jsou PNG (volitelně s průhledným pozadím) nebo JPEG. Doporučujeme QR kód otestovat, abyste se ujistili, že se správně skenuje.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informace</value>
@@ -387,6 +387,9 @@ Děkuji předem.</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>Žádné osobní a jiné údaje nejsou ukládány ani předávány mně a ostatním.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>Velikost obrázku QR kódu: {0} % - {1} pixelů</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplikace bude restartována.</value>

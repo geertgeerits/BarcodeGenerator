@@ -318,7 +318,7 @@ De ondersteunende talen zijn: Tsjechisch, Deens, Nederlands, Engels, Fins, Frans
 Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>De QR-code met ingesloten afbeelding wordt gegenereerd met een vaste pixelgrootte. De ingevoegde afbeelding wordt gecentreerd en geschaald tot {0}% van de breedte van de QR-code, met een rand voor betere zichtbaarheid. Voor het beste resultaat kunt u een afbeelding van ongeveer {1} pixels gebruiken. De voorkeur gaat uit naar PNG (eventueel met een transparante achtergrond) of JPEG. We raden aan uw QR-code te testen om er zeker van te zijn dat deze correct scant.</value>
+    <value>De QR-code met ingesloten afbeelding wordt gegenereerd met een vaste pixelgrootte. De ingevoegde afbeelding wordt gecentreerd en geschaald tot {0}% van de breedte of hoogte van de QR-code, met een rand voor betere zichtbaarheid. U kunt de schaal van de afbeelding aanpassen in de instellingen. Voor het beste resultaat kunt u een afbeelding van ongeveer {1} pixels gebruiken. Aanbevolen bestandsformaten zijn PNG (eventueel met een transparante achtergrond) of JPEG. We raden aan uw QR-code te testen om er zeker van te zijn dat deze correct scant.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informatie</value>
@@ -387,6 +387,9 @@ Alvast bedankt.</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>Er worden geen persoonlijke en andere gegevens opgeslagen of doorgegeven aan mezelf en anderen.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>Afbeeldingsgrootte QR-code: {0}% - {1} pixels</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>De toepassing wordt opnieuw gestart.</value>

@@ -318,7 +318,7 @@ Stödspråken är: tjeckiska, danska, holländska, engelska, finska, franska, ty
 Du kan alltid kontakta mig för eventuella korrigeringar.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>QR-koden med en inbäddad bild genereras med en fast pixelstorlek. Den infogade bilden centreras och skalas till {0} % av QR-kodens bredd, med en kantlinje för förbättrad synlighet. För bästa resultat, använd en bild på cirka {1} pixlar. Föredragna filformat är PNG (valfritt med transparent bakgrund) eller JPEG. Vi rekommenderar att du testar din QR-kod för att säkerställa att den skannar korrekt.</value>
+    <value>QR-koden med en inbäddad bild genereras med en fast pixelstorlek. Den infogade bilden centreras och skalas till {0} % av QR-kodens bredd eller höjd, med en kantlinje för förbättrad synlighet. Du kan justera bildens skala i inställningarna. För bästa resultat, använd en bild på cirka {1} pixlar. Föredragna filformat är PNG (valfritt med transparent bakgrund) eller JPEG. Vi rekommenderar att du testar din QR-kod för att säkerställa att den skannar korrekt.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
@@ -387,6 +387,9 @@ Tack på förhand.</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>Inga personliga och andra uppgifter lagras eller vidarebefordras till mig själv och andra.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>QR-kodens bildstorlek: {0} % - {1} pixlar</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Applikationen kommer att startas om.</value>
