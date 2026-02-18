@@ -5,10 +5,10 @@ namespace BarcodeGenerator
 {
     public static class QrCodeHelper
     {
-        // Global variables to control the maximum size of the logo as a percentage of the QR code size.
-        public static float nQRCodeImageSizePercent = 20.0f;
+        // Global variables to control the maximum size of the image as a percentage of the QR code size.
+        public static float nQRCodeImageSizePercent;
         public static float nQRCodeImageSizeMaximumPixels = 580;
-        public static float nQRCodeImageSizePixels = nQRCodeImageSizeMaximumPixels * (nQRCodeImageSizePercent / 100);
+        public static float nQRCodeImageSizePixels;
 
         /// <summary>
         /// Generates a QR code image from the specified text, optionally overlaying a centered logo image.

@@ -174,7 +174,7 @@
 
             // Set the QR code image size percent in the label
             QrCodeHelper.nQRCodeImageSizePixels = QrCodeHelper.nQRCodeImageSizeMaximumPixels * (QrCodeHelper.nQRCodeImageSizePercent / 100);
-            lblQRCodeImageSize.Text = $"{CodeLang.QRCodeImageSize_Text} {QrCodeHelper.nQRCodeImageSizePercent:F0} - {QrCodeHelper.nQRCodeImageSizePixels:F0}";
+            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, QrCodeHelper.nQRCodeImageSizePercent, (int)QrCodeHelper.nQRCodeImageSizePixels)}";
             sldQRCodeImageSize.Value = QrCodeHelper.nQRCodeImageSizePercent;
 
             // Set the theme in the picker
@@ -478,6 +478,24 @@
         }
 
         /// <summary>
+        /// Handles the ValueChanged event for the QR code image size slider, updating the QR code image size percentage
+        /// and pixel dimensions based on the new slider value.
+        /// </summary>
+        /// <remarks>This method recalculates the QR code image size in pixels and updates the associated
+        /// label to reflect the current size selection. It should be connected to the slider's ValueChanged event to
+        /// ensure the UI remains in sync with user input.</remarks>
+        /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
+        /// <param name="e">An object that contains the event data, including the new value of the slider representing the desired QR
+        /// code image size percentage.</param>
+        private void OnSliderQRCodeImageSizeValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            QrCodeHelper.nQRCodeImageSizePercent = (float)e.NewValue;
+            QrCodeHelper.nQRCodeImageSizePixels = QrCodeHelper.nQRCodeImageSizeMaximumPixels * (QrCodeHelper.nQRCodeImageSizePercent / 100);
+
+            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, QrCodeHelper.nQRCodeImageSizePercent, (int)QrCodeHelper.nQRCodeImageSizePixels)}";
+        }
+
+        /// <summary>
         /// Button save settings clicked event
         /// </summary>
         /// <param name="sender"></param>
@@ -535,14 +553,6 @@
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
-        }
-
-        private void OnSliderQRCodeImageSizeValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            QrCodeHelper.nQRCodeImageSizePercent = (float)e.NewValue;
-            QrCodeHelper.nQRCodeImageSizePixels = QrCodeHelper.nQRCodeImageSizeMaximumPixels * (QrCodeHelper.nQRCodeImageSizePercent / 100);
-
-            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, QrCodeHelper.nQRCodeImageSizePercent, (int)QrCodeHelper.nQRCodeImageSizePixels)}";
         }
     }
 }
