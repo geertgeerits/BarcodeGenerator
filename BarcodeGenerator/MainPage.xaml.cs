@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-18 (YYYY-MM-DD)
+ * Date ........: 2026-02-19 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -66,7 +66,7 @@ namespace BarcodeGenerator
             // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
-            QrCodeHelper.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 20.0f);
+            ClassQRCodeImage.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 20.0f);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
@@ -717,13 +717,13 @@ namespace BarcodeGenerator
                     // Set the options for the file picker
                     PickOptions options = new()
                     {
-                        PickerTitle = "Please select a square image file",
+                        PickerTitle = "",
                         //FileTypes = customFileType,
                         FileTypes = FilePickerFileType.Images
                     };
 
                     // Open the file picker to select an image file
-                    FileResult? cFile = await QrCodeHelper.PickImage(options);
+                    FileResult? cFile = await ClassQRCodeImage.PickImage(options);
 
                     if (cFile == null)
                     {
@@ -734,9 +734,36 @@ namespace BarcodeGenerator
                     var logoStream = await cFile.OpenReadAsync();
 
                     // Generate the QR code with the logo using QRCoder and SkiaSharp
-                    var qrImage = QrCodeHelper.GenerateQrWithLogo(cTextToCode, logoStream);
+                    var qrImage = ClassQRCodeImage.GenerateQrWithLogo(cTextToCode, logoStream);
                     imgQrCodeImage.Source = qrImage;
+
+//                    // Save and share the generated QR code with logo as an image file:
+//                    // Wait briefly to ensure the image is rendered in the view, then capture the Image view and save/share.
+//                    try
+//                    {
+//                        if (Screenshot.Default.IsCaptureSupported)
+//                        {
+//                            // give the UI a little time to render the new image
+//                            await Task.Delay(200);
+
+//                            IScreenshotResult? screen = await imgQrCodeImage.CaptureAsync();
+//                            if (screen is not null)
+//                            {
+//                                Stream stream = await screen.OpenReadAsync();
+//                                // Reuse existing helper to write file and open share UI
+//                                SaveStreamAsFile(stream);
+//                            }
+//                        }
+//                    }
+//                    catch (Exception ex)
+//                    {
+//                        SentrySdk.CaptureException(ex);
+//#if DEBUG
+//                        _ = DisplayAlertAsync("Save QR Image", ex.Message, CodeLang.ButtonClose_Text);
+//#endif
+//                    }
                 }
+
                 // Generate the barcode
                 else
                 {

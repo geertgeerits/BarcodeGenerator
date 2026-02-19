@@ -24,14 +24,14 @@ namespace BarcodeGenerator
             }
 
             // Calculate the QR code image size in pixels based on the percentage and maximum size
-            QrCodeHelper.nQRCodeImageSizePixels = QrCodeHelper.nQRCodeImageSizeMaximumPixels * (QrCodeHelper.nQRCodeImageSizePercent / 100);
+            ClassQRCodeImage.nQRCodeImageSizePixels = ClassQRCodeImage.nQRCodeImageSizeMaximumPixels * (ClassQRCodeImage.nQRCodeImageSizePercent / 100);
 
             // Put text in the chosen language in the controls
             lblVersion.Text = $"{CodeLang.Version_Text} 1.0.47";
             lblCopyright.Text = $"{CodeLang.Copyright_Text} © 2022-2026 Geert Geerits";
             lblPrivacyPolicy.Text = $"\n{CodeLang.PrivacyPolicyTitle_Text} {CodeLang.PrivacyPolicy_Text}";
             lblLicense.Text = $"\n{CodeLang.LicenseTitle_Text}: {CodeLang.License_Text}";
-            lblQRCodeImage.Text = $"\n{string.Format(CodeLang.InfoQRCodeImage_Text, (int)QrCodeHelper.nQRCodeImageSizePercent, (int)QrCodeHelper.nQRCodeImageSizePixels)}";
+            lblQRCodeImage.Text = $"\n{string.Format(CodeLang.InfoQRCodeImage_Text, (int)ClassQRCodeImage.nQRCodeImageSizePercent, (int)ClassQRCodeImage.nQRCodeImageSizePixels)}";
             lblExplanation.Text = $"\n{CodeLang.InfoExplanation_Text}";
             lblLicenseMit.Text = $"\n{CodeLang.Copyright_Text} © {CodeLang.LicenseMit_Text}\n\n{CodeLang.LicenseMit2_Text}";
             lblTrademarks.Text = $"\n{CodeLang.Trademarks_Text}";

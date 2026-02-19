@@ -3,7 +3,7 @@ using SkiaSharp;
 
 namespace BarcodeGenerator
 {
-    public static class QrCodeHelper
+    public static class ClassQRCodeImage
     {
         // Global variables to control the maximum size of the image as a percentage of the QR code size.
         public static float nQRCodeImageSizePercent;
@@ -59,31 +59,6 @@ namespace BarcodeGenerator
                     }
                 }
             }
-
-            //// Draw a square logo if provided
-            //if (logoStream != null)
-            //{
-            //    logoStream.Position = 0;
-            //    using var logoBitmap = SKBitmap.Decode(logoStream);
-
-            //    if (logoBitmap != null)
-            //    {
-            //        float iconSize = size * 0.18f;                  // Scale logo to 18% of QR code size
-            //        float left = (size - iconSize) / 2f;
-            //        float top = (size - iconSize) / 2f;
-            //        var dest = new SKRect(left: left, top: top, right: left + iconSize, bottom: top + iconSize);
-
-            //        // Optional: draw a border around the icon
-            //        var borderPaint = new SKPaint { Style = SKPaintStyle.Fill, Color = SKColor.Parse(Globals.cCodeColorBg) };
-            //        float borderPadding = 4;
-            //        var borderRect = new SKRect(dest.Left - borderPadding, dest.Top - borderPadding,
-            //                                     dest.Right + borderPadding, dest.Bottom + borderPadding);
-            //        canvas.DrawRoundRect(rect: borderRect, rx: 4, ry: 4, paint: borderPaint);
-
-            //        // Draw the image centered on the QR code
-            //        canvas.DrawBitmap(logoBitmap, dest);
-            //    }
-            //}
 
             // Draw logo if provided
             if (logoStream != null)

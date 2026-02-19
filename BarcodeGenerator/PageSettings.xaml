@@ -415,7 +415,7 @@
                     ThumbColor="Orange"
                     MinimumTrackColor="Orange"
                     Minimum="10"
-                    Maximum="30"
+                    Maximum="35"
                     ValueChanged="OnSliderQRCodeImageSizeValueChanged">
                 </Slider>
             </Grid>
