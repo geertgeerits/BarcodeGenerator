@@ -318,7 +318,7 @@ A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar
 Bármilyen javításért bármikor fordulhat hozzám.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>A beágyazott képet tartalmazó QR-kód fix pixelméretű. A beillesztett kép középre igazított és a QR-kód szélességének vagy magasságának {0}%-ára méreteződik, a jobb láthatóság érdekében szegéllyel. A kép mérete a beállításokban módosítható. A legjobb eredmény elérése érdekében körülbelül {1} pixeles képet használjon. Az előnyben részesített fájlformátumok a PNG (opcionálisan átlátszó háttérrel) vagy a JPEG. Javasoljuk, hogy tesztelje a QR-kódot, hogy biztosan megfelelően olvassa be.</value>
+    <value>A beágyazott képet tartalmazó QR-kód változó pixelmérettel generálódik, a benne lévő karakterek számától függően. A beillesztett kép középre van igazítva, és a QR-kód szélességének vagy magasságának {0}%-ára méreteződik, a jobb láthatóság érdekében szegéllyel. A kép mérete a beállításokban módosítható. A legjobb eredmény elérése érdekében kísérletezzen a képmérettel, hogy ne kelljen túlzottan átméretezni. Az előnyben részesített fájlformátumok a PNG (opcionálisan átlátszó háttérrel) vagy a JPEG. Javasoljuk, hogy tesztelje a QR-kódot, hogy biztosan megfelelően beolvassa.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Információ</value>

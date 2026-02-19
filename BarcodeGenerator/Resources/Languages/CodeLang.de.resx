@@ -318,7 +318,7 @@ Die unterstützten Sprachen sind: Tschechisch, Dänisch, Niederländisch, Englis
 Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>Der QR-Code mit eingebettetem Bild wird in einer festen Pixelgröße generiert. Das eingefügte Bild wird zentriert und auf {0}% der Breite oder Höhe des QR-Codes skaliert. Zur besseren Lesbarkeit wird ein Rahmen hinzugefügt. Sie können die Bildskalierung in den Einstellungen anpassen. Für optimale Ergebnisse verwenden Sie ein Bild mit einer Größe von ca. {1} Pixeln. Bevorzugte Dateiformate sind PNG (optional mit transparentem Hintergrund) oder JPEG. Wir empfehlen, Ihren QR-Code zu testen, um sicherzustellen, dass er korrekt gescannt wird.</value>
+    <value>Der QR-Code mit eingebettetem Bild wird in variabler Pixelgröße generiert, abhängig von der Anzahl der enthaltenen Zeichen. Das eingefügte Bild wird zentriert und auf {0} % der Breite oder Höhe des QR-Codes skaliert. Ein Rahmen verbessert die Lesbarkeit. Die Bildskalierung lässt sich in den Einstellungen anpassen. Experimentieren Sie mit der Bildgröße, um optimale Ergebnisse zu erzielen und unnötige Skalierungen zu vermeiden. Bevorzugte Dateiformate sind PNG (optional mit transparentem Hintergrund) oder JPEG. Wir empfehlen, Ihren QR-Code zu testen, um sicherzustellen, dass er korrekt gescannt wird.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>

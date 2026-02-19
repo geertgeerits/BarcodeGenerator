@@ -318,7 +318,7 @@ Les langues de support sont les suivantes : tchèque, danois, néerlandais, ang
 Vous pouvez toujours me contacter pour toute correction.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>Le code QR contenant une image intégrée est généré à une taille fixe en pixels. L'image insérée est centrée et redimensionnée à {0}% de la largeur ou de la hauteur du code QR, avec une bordure ajoutée pour une meilleure visibilité. Vous pouvez ajuster l'échelle de l'image dans les paramètres. Pour un résultat optimal, utilisez une image d'environ {1} pixels. Les formats de fichier recommandés sont PNG (avec éventuellement un fond transparent) ou JPEG. Nous vous recommandons de tester votre code QR pour vous assurer qu'il fonctionne correctement.</value>
+    <value>Le code QR contenant une image est généré avec une taille de pixels variable selon le nombre de caractères. L'image insérée est centrée et redimensionnée à {0} % de la largeur ou de la hauteur du code QR, avec une bordure pour une meilleure visibilité. Vous pouvez ajuster la taille de l'image dans les paramètres. Pour un résultat optimal, testez différentes tailles d'image afin d'éviter un redimensionnement excessif. Les formats de fichier recommandés sont PNG (avec éventuellement un fond transparent) ou JPEG. Nous vous conseillons de tester votre code QR pour vérifier qu'il fonctionne correctement.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>

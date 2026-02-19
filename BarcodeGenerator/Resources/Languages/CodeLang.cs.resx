@@ -318,7 +318,7 @@ Podporované jazyky jsou: čeština, dánština, holandština, angličtina, fin�
 Pro případné opravy mě můžete vždy kontaktovat.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>QR kód s vloženým obrázkem je generován s pevnou velikostí v pixelech. Vložený obrázek je vycentrován a zmenšen na {0} % šířky nebo výšky QR kódu s přidaným okrajem pro lepší viditelnost. Měřítko obrázku můžete upravit v nastavení. Nejlepších výsledků dosáhnete, když použijete obrázek o velikosti přibližně {1} pixelů. Preferované formáty souborů jsou PNG (volitelně s průhledným pozadím) nebo JPEG. Doporučujeme QR kód otestovat, abyste se ujistili, že se správně skenuje.</value>
+    <value>QR kód s vloženým obrázkem se generuje s proměnnou velikostí v pixelech v závislosti na počtu znaků, které obsahuje. Vložený obrázek je vycentrován a zmenšen na {0} % šířky nebo výšky QR kódu s přidaným okrajem pro lepší viditelnost. Měřítko obrázku můžete upravit v nastavení. Nejlepších výsledků dosáhnete experimentováním s velikostí obrázku, aby nebylo nutné jej nadměrně zvětšovat. Preferované formáty souborů jsou PNG (volitelně s průhledným pozadím) nebo JPEG. Doporučujeme QR kód otestovat, abyste se ujistili, že se správně naskenuje.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informace</value>

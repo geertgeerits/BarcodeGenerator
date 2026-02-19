@@ -318,7 +318,7 @@ Los idiomas de soporte son: checo, danés, holandés, inglés, finlandés, franc
 Siempre puedes contactarme para cualquier corrección.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>El código QR con imagen incrustada se genera con un tamaño de píxel fijo. La imagen insertada se centra y se escala al {0}% del ancho o alto del código QR, con un borde para mejorar la visibilidad. Puede ajustar la escala de la imagen en la configuración. Para obtener mejores resultados, utilice una imagen de aproximadamente {1} píxeles. Los formatos de archivo preferidos son PNG (opcionalmente con fondo transparente) o JPEG. Recomendamos probar el código QR para asegurarse de que se escanee correctamente.</value>
+    <value>El código QR con imagen incrustada se genera con un tamaño de píxel variable según el número de caracteres. La imagen insertada se centra y se escala al {0} % del ancho o alto del código QR, con un borde para mejorar la visibilidad. Puede ajustar la escala de la imagen en la configuración. Para obtener mejores resultados, experimente con el tamaño de la imagen para no tener que ajustarla demasiado. Los formatos de archivo preferidos son PNG (opcionalmente con fondo transparente) o JPEG. Recomendamos probar el código QR para asegurarse de que se lea correctamente.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Información</value>
