@@ -736,32 +736,6 @@ namespace BarcodeGenerator
                     // Generate the QR code with the logo using QRCoder and SkiaSharp
                     var qrImage = ClassQRCodeImage.GenerateQrWithLogo(cTextToCode, logoStream);
                     imgQrCodeImage.Source = qrImage;
-
-//                    // Save and share the generated QR code with logo as an image file:
-//                    // Wait briefly to ensure the image is rendered in the view, then capture the Image view and save/share.
-//                    try
-//                    {
-//                        if (Screenshot.Default.IsCaptureSupported)
-//                        {
-//                            // give the UI a little time to render the new image
-//                            await Task.Delay(200);
-
-//                            IScreenshotResult? screen = await imgQrCodeImage.CaptureAsync();
-//                            if (screen is not null)
-//                            {
-//                                Stream stream = await screen.OpenReadAsync();
-//                                // Reuse existing helper to write file and open share UI
-//                                SaveStreamAsFile(stream);
-//                            }
-//                        }
-//                    }
-//                    catch (Exception ex)
-//                    {
-//                        SentrySdk.CaptureException(ex);
-//#if DEBUG
-//                        _ = DisplayAlertAsync("Save QR Image", ex.Message, CodeLang.ButtonClose_Text);
-//#endif
-//                    }
                 }
 
                 // Generate the barcode
@@ -1078,9 +1052,12 @@ namespace BarcodeGenerator
                 {
                     if (bIsBarcodeWithImage)
                     {
-                        IScreenshotResult? screen = await imgQrCodeImage.CaptureAsync();
-                        Stream stream = await screen!.OpenReadAsync();
-                        SaveStreamAsFile(stream);
+                        string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, "qr_code_image.png");
+                        await Share.Default.RequestAsync(new ShareFileRequest
+                        {
+                            Title = "Barcode Generator",
+                            File = new ShareFile(cFileName)
+                        });
                     }
                     else
                     {
