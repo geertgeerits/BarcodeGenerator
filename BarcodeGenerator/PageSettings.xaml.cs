@@ -174,7 +174,7 @@
 
             // Set the QR code image size percent in the label
             ClassQRCodeImage.nQRCodeImageSizePixels = ClassQRCodeImage.nQRCodeImageSizeMaximumPixels * (ClassQRCodeImage.nQRCodeImageSizePercent / 100);
-            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent, (int)ClassQRCodeImage.nQRCodeImageSizePixels)}";
+            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";
             sldQRCodeImageSize.Value = ClassQRCodeImage.nQRCodeImageSizePercent;
 
             // Set the theme in the picker
@@ -492,7 +492,7 @@
             ClassQRCodeImage.nQRCodeImageSizePercent = MathF.Round((float)e.NewValue, 2);
             ClassQRCodeImage.nQRCodeImageSizePixels = ClassQRCodeImage.nQRCodeImageSizeMaximumPixels * (ClassQRCodeImage.nQRCodeImageSizePercent / 100);
 
-            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent, (int)ClassQRCodeImage.nQRCodeImageSizePixels)}";
+            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";
         }
 
         /// <summary>

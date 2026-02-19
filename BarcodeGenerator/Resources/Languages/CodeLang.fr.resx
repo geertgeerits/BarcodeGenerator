@@ -389,7 +389,7 @@ Merci d'avance.</value>
     <value>Aucune donnée personnelle ou autre n'est stockée ou transmise à moi-même et à d'autres.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Taille de l'image du code QR : {0}% - {1} pixels</value>
+    <value>Taille de l'image du code QR : {0}%</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>L'application sera redémarrée.</value>

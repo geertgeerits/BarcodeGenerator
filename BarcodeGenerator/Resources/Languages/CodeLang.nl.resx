@@ -389,7 +389,7 @@ Alvast bedankt.</value>
     <value>Er worden geen persoonlijke en andere gegevens opgeslagen of doorgegeven aan mezelf en anderen.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Afbeeldingsgrootte QR-code: {0}% - {1} pixels</value>
+    <value>Afbeeldingsgrootte QR-code: {0}%</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>De toepassing wordt opnieuw gestart.</value>

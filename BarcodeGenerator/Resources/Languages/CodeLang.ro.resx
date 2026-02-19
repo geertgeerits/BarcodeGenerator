@@ -389,7 +389,7 @@ Vă mulțumesc anticipat.</value>
     <value>Nicio dată cu caracter personal sau de altă natură nu este stocată sau transmisă mie și altora.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Dimensiunea imaginii codului QR: {0}% - {1} pixeli</value>
+    <value>Dimensiunea imaginii codului QR: {0}%</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplicația va fi repornită.</value>

@@ -764,7 +764,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code image size: {0}% - {1} pixels.
+        ///   Looks up a localized string similar to QR Code image size: {0}%.
         /// </summary>
         internal static string QRCodeImageSize_Text {
             get {

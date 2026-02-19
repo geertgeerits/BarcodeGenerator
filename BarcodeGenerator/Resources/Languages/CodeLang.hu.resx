@@ -389,7 +389,7 @@ Előre is köszönöm.</value>
     <value>Személyes és egyéb adatokat nem tárolunk, illetve nem adunk át magamnak és másoknak.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>QR-kód képmérete: {0}% - {1} pixel</value>
+    <value>QR-kód képmérete: {0}%</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Az alkalmazás újraindul.</value>

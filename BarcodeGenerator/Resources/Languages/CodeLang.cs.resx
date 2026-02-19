@@ -389,7 +389,7 @@ Děkuji předem.</value>
     <value>Žádné osobní a jiné údaje nejsou ukládány ani předávány mně a ostatním.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Velikost obrázku QR kódu: {0} % - {1} pixelů</value>
+    <value>Velikost obrázku QR kódu: {0} %</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplikace bude restartována.</value>

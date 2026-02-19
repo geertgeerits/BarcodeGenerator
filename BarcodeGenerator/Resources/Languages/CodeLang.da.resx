@@ -389,7 +389,7 @@ Tak på forhånd.</value>
     <value>Ingen personlige og andre data gemmes eller videregives til mig selv og andre.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>QR-kode billedstørrelse: {0}% - {1} pixels</value>
+    <value>QR-kode billedstørrelse: {0}%</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Applikationen vil blive genstartet.</value>

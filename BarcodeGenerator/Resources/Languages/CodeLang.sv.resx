@@ -389,7 +389,7 @@ Tack på förhand.</value>
     <value>Inga personliga och andra uppgifter lagras eller vidarebefordras till mig själv och andra.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>QR-kodens bildstorlek: {0} % - {1} pixlar</value>
+    <value>QR-kodens bildstorlek: {0} %</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Applikationen kommer att startas om.</value>

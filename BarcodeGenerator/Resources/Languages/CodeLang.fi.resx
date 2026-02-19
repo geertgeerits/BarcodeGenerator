@@ -389,7 +389,7 @@ Kiitos jo etukäteen.</value>
     <value>Mitään henkilö- tai muita tietoja ei tallenneta tai luovuteta minulle tai muille.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>QR-koodin kuvan koko: {0} % - {1} pikseliä</value>
+    <value>QR-koodin kuvan koko: {0} %</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Sovellus käynnistetään uudelleen.</value>
