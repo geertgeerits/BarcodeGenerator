@@ -32,16 +32,6 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
         private static bool bIsBarcodeWithImage;
 
-        //private static readonly FilePickerFileType customFileType = new(
-        //new Dictionary<DevicePlatform, IEnumerable<string>>
-        //{
-        //    //{ DevicePlatform.iOS, new[] { "UTType.Image" } },
-        //    { DevicePlatform.Android, new[] { "image/*" } },
-        //    { DevicePlatform.WinUI, new[] { ".png", ".jpg" } },
-        //    { DevicePlatform.Tizen, new[] { "*/*" } },
-        //    { DevicePlatform.macOS, new[] { "png", "jpg" } },
-        //});
-
         public MainPage()
         {
             try
@@ -714,31 +704,11 @@ namespace BarcodeGenerator
                 // Generate the QR code with an image
                 if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
-                    // Set the options for the file picker
-                    PickOptions options = new()
-                    {
-                        PickerTitle = "",
-                        //FileTypes = customFileType,
-                        FileTypes = FilePickerFileType.Images
-                    };
-
-                    // Open the file picker to select an image file
-                    FileResult? cFile = await ClassQRCodeImage.PickImage(options);
-
-                    if (cFile == null)
-                    {
-                        return;
-                    }
-
-                    // Read the selected file as a stream
-                    var logoStream = await cFile.OpenReadAsync();
-
                     // Generate the QR code with the logo using QRCoder and SkiaSharp
-                    var qrImage = ClassQRCodeImage.GenerateQrWithLogo(cTextToCode, logoStream);
+                    var qrImage = await ClassQRCodeImage.GenerateQrWithLogo(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
-
-                // Generate the barcode
+                // Generate the barcode without an image
                 else
                 {
                     bgvBarcode.Value = cTextToCode;
@@ -1173,6 +1143,18 @@ namespace BarcodeGenerator
 #endif
                 }
             }
+        }
+
+        /// <summary>
+        /// Show the recommended logo size based on the QR code size and the configured percentage
+        /// </summary>
+        /// <param name="nPixels"></param>
+        public async Task ShowImagePixels(int nPixels)
+        {
+            //await DisplayAlertAsync("Recommended Logo Size", $"Pixels: {nPixels}", CodeLang.ButtonClose_Text);
+            btnGenerateCode.Text = $"Pixels: {nPixels}";
+            await Task.Delay(3000);
+            btnGenerateCode.Text = CodeLang.GenerateCode_Text;
         }
     }
 }

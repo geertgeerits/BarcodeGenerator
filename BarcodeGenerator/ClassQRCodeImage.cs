@@ -24,10 +24,9 @@ namespace BarcodeGenerator
         /// The higher the ECC level, the more data can be recovered, but it also increases the size of the QR code.
         /// </remarks>
         /// <param name="text">The text to encode within the generated QR code.</param>
-        /// <param name="logoStream">A stream containing the logo image to overlay at the center of the QR code, or null to generate a QR code
         /// without a logo. The stream must be positioned at the beginning.</param>
         /// <returns>An ImageSource representing the generated QR code image, including the logo overlay if provided.</returns>
-        public static ImageSource GenerateQrWithLogo(string text, Stream? logoStream)
+        public static async Task<ImageSource> GenerateQrWithLogo(string text)
         {
             // Generate QR code data with high error correction level to allow for logo overlay
             var generator = new QRCodeGenerator();
@@ -37,7 +36,34 @@ namespace BarcodeGenerator
             int moduleCount = modules.Count;
             int pixelsPerModule = 20;
             int size = moduleCount * pixelsPerModule;
+            Debug.WriteLine($"QR code generated with module count: {moduleCount}, size: {size}x{size}, pixels per module: {pixelsPerModule}");
 
+            // Calculate the recommended image size based on the QR code size and the configured percentage
+            float ImageRecommendedSize = size * nQRCodeImageSizePercent / 100f;
+            await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Recommended image size", $"Pixels: {ImageRecommendedSize}", CodeLang.ButtonClose_Text);
+
+            //MainPage mainPage = new MainPage();
+            //await mainPage.ShowImagePixels((int)ImageRecommendedSize);
+            //await Task.Delay(3000);
+
+            // Set the options for the file picker
+            PickOptions options = new()
+            {
+                PickerTitle = "",
+                FileTypes = FilePickerFileType.Images
+            };
+
+            // Open the file picker to select an image file
+            FileResult? cFile = await PickImage(options);
+
+            // Read the selected file as a stream
+            Stream? logoStream = null;
+            if (cFile != null)
+            {
+                logoStream = await cFile.OpenReadAsync();
+            }
+
+            // Calculate the maximum image size in pixels based on the QR code size and the configured percentage
             using var bitmap = new SKBitmap(width: size, height: size);
             using var canvas = new SKCanvas(bitmap);
             canvas.Clear(SKColor.Parse(Globals.cCodeColorBg));
