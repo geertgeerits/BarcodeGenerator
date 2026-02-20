@@ -59,7 +59,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleGenerator}"
-                RowDefinitions="Auto, Auto, 180, Auto, Auto, Auto"
+                RowDefinitions="Auto, Auto, 180, Auto, 300, Auto"
                 HorizontalOptions="Center">
 
                 <Label
