@@ -382,6 +382,9 @@ Vielen Dank im Voraus.</value>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>Website-Link</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>Pixeln</value>
+  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Datenschutz-Bestimmungen:</value>
   </data>
@@ -390,6 +393,9 @@ Vielen Dank im Voraus.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>QR-Code-Bildgröße: {0}%</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Empfohlene Bildgröße</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Die Anwendung wird neu gestartet.</value>

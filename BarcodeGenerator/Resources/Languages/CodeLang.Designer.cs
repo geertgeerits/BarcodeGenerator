@@ -746,6 +746,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to pixels.
+        /// </summary>
+        internal static string Pixels_Text {
+            get {
+                return ResourceManager.GetString("Pixels_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No personal and other data is stored or passed on to myself and others..
         /// </summary>
         internal static string PrivacyPolicy_Text {
@@ -769,6 +778,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string QRCodeImageSize_Text {
             get {
                 return ResourceManager.GetString("QRCodeImageSize_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recommended image size.
+        /// </summary>
+        internal static string QRCodeRecommendedImageSize_Text {
+            get {
+                return ResourceManager.GetString("QRCodeRecommendedImageSize_Text", resourceCulture);
             }
         }
         

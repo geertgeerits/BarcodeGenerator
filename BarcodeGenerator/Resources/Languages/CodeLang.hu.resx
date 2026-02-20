@@ -382,6 +382,9 @@ Előre is köszönöm.</value>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>Weboldal link</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>pixel</value>
+  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Adatvédelmi irányelvek:</value>
   </data>
@@ -390,6 +393,9 @@ Előre is köszönöm.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>QR-kód képmérete: {0}%</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Ajánlott képméret</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Az alkalmazás újraindul.</value>

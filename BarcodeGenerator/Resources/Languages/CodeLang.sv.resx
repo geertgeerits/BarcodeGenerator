@@ -382,6 +382,9 @@ Tack på förhand.</value>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>Webbplatslänk</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>pixlar</value>
+  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Integritetspolicy:</value>
   </data>
@@ -390,6 +393,9 @@ Tack på förhand.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>QR-kodens bildstorlek: {0} %</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Rekommenderad bildstorlek</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Applikationen kommer att startas om.</value>

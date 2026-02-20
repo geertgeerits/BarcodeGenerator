@@ -173,7 +173,6 @@
             pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
 
             // Set the QR code image size percent in the label
-            ClassQRCodeImage.nQRCodeImageSizePixels = ClassQRCodeImage.nQRCodeImageSizeMaximumPixels * (ClassQRCodeImage.nQRCodeImageSizePercent / 100);
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";
             sldQRCodeImageSize.Value = ClassQRCodeImage.nQRCodeImageSizePercent;
 
@@ -490,8 +489,6 @@
         private void OnSliderQRCodeImageSizeValueChanged(object sender, ValueChangedEventArgs e)
         {
             ClassQRCodeImage.nQRCodeImageSizePercent = MathF.Round((float)e.NewValue, 2);
-            ClassQRCodeImage.nQRCodeImageSizePixels = ClassQRCodeImage.nQRCodeImageSizeMaximumPixels * (ClassQRCodeImage.nQRCodeImageSizePercent / 100);
-
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";
         }
 

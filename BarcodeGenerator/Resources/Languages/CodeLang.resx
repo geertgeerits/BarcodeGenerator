@@ -382,6 +382,9 @@ Thank you in advance.</value>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>Website link</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>pixels</value>
+  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Privacy Policy:</value>
   </data>
@@ -390,6 +393,9 @@ Thank you in advance.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>QR Code image size: {0}%</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Recommended image size</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>The application will be restarted.</value>

@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-19 (YYYY-MM-DD)
+ * Date ........: 2026-02-20 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -56,7 +56,7 @@ namespace BarcodeGenerator
             // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
-            ClassQRCodeImage.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 20.0f);
+            ClassQRCodeImage.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
@@ -1147,14 +1147,21 @@ namespace BarcodeGenerator
 
         /// <summary>
         /// Show the recommended logo size based on the QR code size and the configured percentage
+        /// // !!! Does not work !!!
         /// </summary>
         /// <param name="nPixels"></param>
         public async Task ShowImagePixels(int nPixels)
         {
-            //await DisplayAlertAsync("Recommended Logo Size", $"Pixels: {nPixels}", CodeLang.ButtonClose_Text);
-            btnGenerateCode.Text = $"Pixels: {nPixels}";
-            await Task.Delay(3000);
-            btnGenerateCode.Text = CodeLang.GenerateCode_Text;
+            //Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(async () =>
+            //await DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nPixels} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
+
+            //Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(() =>
+            //    btnGenerateCode.Text = $"Pixels: {nPixels}");
+
+            //await Task.Delay(2000);
+
+            //Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(() =>
+            //    btnGenerateCode.Text = CodeLang.GenerateCode_Text);
         }
     }
 }

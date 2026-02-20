@@ -5,10 +5,8 @@ namespace BarcodeGenerator
 {
     public static class ClassQRCodeImage
     {
-        // Global variables to control the maximum size of the image as a percentage of the QR code size.
+        // Global variable to control the size of the image as a percentage of the QR code size.
         public static float nQRCodeImageSizePercent;
-        public static float nQRCodeImageSizeMaximumPixels = 580;
-        public static float nQRCodeImageSizePixels;
 
         /// <summary>
         /// Generates a QR code image from the specified text, optionally overlaying a centered logo image.
@@ -39,12 +37,11 @@ namespace BarcodeGenerator
             Debug.WriteLine($"QR code generated with module count: {moduleCount}, size: {size}x{size}, pixels per module: {pixelsPerModule}");
 
             // Calculate the recommended image size based on the QR code size and the configured percentage
-            float ImageRecommendedSize = size * nQRCodeImageSizePercent / 100f;
-            await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Recommended image size", $"Pixels: {ImageRecommendedSize}", CodeLang.ButtonClose_Text);
+            int nImageRecommendedSize = (int)(size * nQRCodeImageSizePercent / 100f);
+            await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nImageRecommendedSize} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
 
             //MainPage mainPage = new MainPage();
-            //await mainPage.ShowImagePixels((int)ImageRecommendedSize);
-            //await Task.Delay(3000);
+            //await mainPage.ShowImagePixels(nImageRecommendedSize);     // !!! Does not work !!!
 
             // Set the options for the file picker
             PickOptions options = new()

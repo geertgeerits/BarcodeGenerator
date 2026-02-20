@@ -382,6 +382,9 @@ Děkuji předem.</value>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>Odkaz na webovou stránku</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>pixely</value>
+  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Zásady ochrany osobních údajů:</value>
   </data>
@@ -390,6 +393,9 @@ Děkuji předem.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>Velikost obrázku QR kódu: {0} %</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Doporučená velikost obrázku</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplikace bude restartována.</value>

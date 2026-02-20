@@ -382,6 +382,9 @@ Takk på forhånd.</value>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>Link til nettstedet</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>piksler</value>
+  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Personvernregler:</value>
   </data>
@@ -390,6 +393,9 @@ Takk på forhånd.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>Bildestørrelse for QR-kode: {0} %</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Anbefalt bildestørrelse</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Applikasjonen vil bli startet på nytt.</value>

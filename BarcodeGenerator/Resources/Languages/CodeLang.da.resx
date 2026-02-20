@@ -382,6 +382,9 @@ Tak på forhånd.</value>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>Website link</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>pixels</value>
+  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Fortrolighedspolitik:</value>
   </data>
@@ -390,6 +393,9 @@ Tak på forhånd.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>QR-kode billedstørrelse: {0}%</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Anbefalet billedstørrelse</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Applikationen vil blive genstartet.</value>
