@@ -5,8 +5,7 @@
  * Date ........: 2026-02-20 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
- * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
- *                zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
+ * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
  *                Apple Vision framework: https://developer.apple.com/documentation/vision
  *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
  *                Google ML Kit: https://developers.google.com/ml-kit
@@ -217,6 +216,10 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnPickerFormatCodeChanged(object sender, EventArgs e)
         {
+            const int nHeightBarcode1D = 160;
+            const int nHeightBarcode2D = 300;
+            const int nWidthBarcode2D = 300;
+
             var picker = (Picker)sender;
             int selectedIndex = picker.SelectedIndex;
 
@@ -236,8 +239,10 @@ namespace BarcodeGenerator
                 bIsBarcodeWithImage = false;
 
                 bgvBarcode.Value = "";
-                bgvBarcode.HeightRequest = 160;
+                bgvBarcode.HeightRequest = nHeightBarcode1D;
                 bgvBarcode.WidthRequest = -1;
+                bgvBarcode.MaximumHeightRequest = 300;
+                bgvBarcode.MaximumWidthRequest = 600;
                 bgvBarcode.HorizontalOptions = LayoutOptions.Fill;
 
                 btnShare.Text = CodeLang.ButtonShare_Text;
@@ -248,8 +253,8 @@ namespace BarcodeGenerator
                     case ClassBarcodes.cBarcode_AZTEC:
                         edtTextToCode.MaxLength = 1900;
                         edtTextToCode.Keyboard = Keyboard.Default;
-                        bgvBarcode.HeightRequest = 250;
-                        bgvBarcode.WidthRequest = 250;
+                        bgvBarcode.HeightRequest = nHeightBarcode2D;
+                        bgvBarcode.WidthRequest = nWidthBarcode2D;
                         bgvBarcode.BarcodeMargin = 2;
                         bgvBarcode.Format = BarcodeFormat.Aztec;
                         break;
@@ -285,8 +290,8 @@ namespace BarcodeGenerator
                     case ClassBarcodes.cBarcode_DATA_MATRIX:
                         edtTextToCode.MaxLength = 1500;
                         edtTextToCode.Keyboard = Keyboard.Default;
-                        bgvBarcode.HeightRequest = 250;
-                        bgvBarcode.WidthRequest = 250;
+                        bgvBarcode.HeightRequest = nHeightBarcode2D;
+                        bgvBarcode.WidthRequest = nWidthBarcode2D;
                         bgvBarcode.BarcodeMargin = 2;
                         bgvBarcode.Format = BarcodeFormat.DataMatrix;
                         break;
@@ -322,6 +327,7 @@ namespace BarcodeGenerator
                     case ClassBarcodes.cBarcode_PDF_417:
                         edtTextToCode.MaxLength = 1100;
                         edtTextToCode.Keyboard = Keyboard.Default;
+                        bgvBarcode.HeightRequest = nHeightBarcode2D;
                         bgvBarcode.BarcodeMargin = 10;
                         bgvBarcode.Format = BarcodeFormat.Pdf417;
                         break;
@@ -336,8 +342,8 @@ namespace BarcodeGenerator
                     case ClassBarcodes.cBarcode_QR_CODE:
                         edtTextToCode.MaxLength = 1800;
                         edtTextToCode.Keyboard = Keyboard.Default;
-                        bgvBarcode.HeightRequest = 250;
-                        bgvBarcode.WidthRequest = 250;
+                        bgvBarcode.HeightRequest = nHeightBarcode2D;
+                        bgvBarcode.WidthRequest = nWidthBarcode2D;
                         bgvBarcode.BarcodeMargin = 1;
                         bgvBarcode.Format = BarcodeFormat.QrCode;
                         break;
@@ -345,8 +351,8 @@ namespace BarcodeGenerator
                     case ClassBarcodes.cBarcode_QR_CODE_IMAGE:
                         edtTextToCode.MaxLength = 1800;
                         edtTextToCode.Keyboard = Keyboard.Default;
-                        imgQrCodeImage.HeightRequest = 250;
-                        imgQrCodeImage.WidthRequest = 250;
+                        imgQrCodeImage.HeightRequest = nHeightBarcode2D;
+                        imgQrCodeImage.WidthRequest = nWidthBarcode2D;
                         brdBarcode.IsVisible = false;
                         bgvBarcode.IsVisible = false;
                         brdQrCodeImage.IsVisible = true;
@@ -1145,24 +1151,24 @@ namespace BarcodeGenerator
             }
         }
 
-        /// <summary>
-        /// Show the recommended logo size based on the QR code size and the configured percentage
-        /// // !!! Does not work !!!
-        /// </summary>
-        /// <param name="nPixels"></param>
-        public async Task ShowImagePixels(int nPixels)
-        {
-            //Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(async () =>
-            //await DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nPixels} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
+        ///// <summary>
+        ///// Show the recommended logo size based on the QR code size and the configured percentage
+        ///// // !!! Does not work !!!
+        ///// </summary>
+        ///// <param name="nPixels"></param>
+        //public async Task ShowImagePixels(int nPixels)
+        //{
+        //    Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(async () =>
+        //    await DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nPixels} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
 
-            //Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(() =>
-            //    btnGenerateCode.Text = $"Pixels: {nPixels}");
+        //    Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(() =>
+        //        btnGenerateCode.Text = $"Pixels: {nPixels}");
 
-            //await Task.Delay(2000);
+        //    await Task.Delay(2000);
 
-            //Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(() =>
-            //    btnGenerateCode.Text = CodeLang.GenerateCode_Text);
-        }
+        //    Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(() =>
+        //        btnGenerateCode.Text = CodeLang.GenerateCode_Text);
+        //}
     }
 }
 

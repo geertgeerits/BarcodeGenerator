@@ -59,7 +59,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleGenerator}"
-                RowDefinitions="Auto, Auto, 180, Auto, 250, Auto"
+                RowDefinitions="Auto, Auto, 180, Auto, Auto, Auto"
                 HorizontalOptions="Center">
 
                 <Label
@@ -77,7 +77,7 @@
 
                     <Picker
                         x:Name="pckFormatCodeGenerator"
-                        MinimumWidthRequest="{OnIdiom 200, Phone=200, Tablet=300, Desktop=300}"
+                        MinimumWidthRequest="{OnIdiom Default=200, Phone=200, Tablet=300, Desktop=300}"
                         SelectedIndexChanged="OnPickerFormatCodeChanged">
                     </Picker>
                 </Border>
@@ -103,7 +103,7 @@
 
                     <Label
                         Style="{StaticResource labelStyleDefault}"
-                        MaximumWidthRequest="{OnIdiom 200, Phone=200, Tablet=400, Desktop=400}"
+                        MaximumWidthRequest="{OnIdiom Default=200, Phone=200, Tablet=400, Desktop=400}"
                         Margin="{OnPlatform Default='0', WinUI='14,8,0,0'}"
                         Text="{Translate TextToEncode_Text}">
                     </Label>
@@ -139,7 +139,6 @@
                     </ImageButton>
                 </HorizontalStackLayout>
 
-                <!--// https://stackoverflow.com/questions/72839872/expandable-editor-in-scrollview-cutting-text-in-maui-->
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="2"
@@ -147,7 +146,7 @@
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Fill"
                     VerticalOptions="Fill"
-                    Margin="{OnIdiom 5, Phone='5,0,5,0', Tablet=0, Desktop=0}">
+                    Margin="{OnIdiom Default=5, Phone='5,0,5,0', Tablet=0, Desktop=0}">
                 
                     <Grid
                         RowDefinitions="*"
@@ -191,38 +190,37 @@
                     Clicked="OnClearCodeClicked">
                 </Button>
 
+                <!--ZXing barcode generator view and image control are placed in the same grid cell. Only one of them is visible at a time-->
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     x:Name="brdBarcode"
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    MaximumWidthRequest="{OnIdiom 340, Phone=340, Tablet=680, Desktop=680}"
                     HorizontalOptions="Fill"
                     BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
 
                     <zxing:BarcodeGeneratorView
                         x:Name="bgvBarcode"
-                        HeightRequest="250"
-                        MaximumWidthRequest="{OnIdiom 340, Phone=340, Tablet=680, Desktop=680}">
+                        HeightRequest="300">
                     </zxing:BarcodeGeneratorView>
                 </Border>
 
+                <!-- QRCoder is generated as an image, so a border with an image control is used to display it -->
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     x:Name="brdQrCodeImage"
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    MaximumWidthRequest="{OnIdiom 340, Phone=340, Tablet=680, Desktop=680}"
                     HorizontalOptions="Fill"
                     BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
                     IsVisible="False">
 
                     <Image
                         x:Name="imgQrCodeImage"
-                        WidthRequest="300"
                         HeightRequest="300"
+                        WidthRequest="300"
                         IsVisible="False">
                     </Image>
                 </Border>
@@ -234,7 +232,7 @@
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Center"
                     VerticalOptions="Start"
-                    MinimumWidthRequest="{OnIdiom 160, Phone=160, Tablet=210, Desktop=210}"
+                    MinimumWidthRequest="{OnIdiom Default=160, Phone=160, Tablet=210, Desktop=210}"
                     Text="{Translate ButtonShare_Text}"
                     ToolTipProperties.Text="{Translate ButtonShare_Text}"
                     IsEnabled="False"
