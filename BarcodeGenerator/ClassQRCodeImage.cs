@@ -43,15 +43,8 @@ namespace BarcodeGenerator
             //MainPage mainPage = new MainPage();
             //await mainPage.ShowImagePixels(nImageRecommendedSize);     // !!! Does not work !!!
 
-            // Set the options for the file picker
-            PickOptions options = new()
-            {
-                PickerTitle = "",
-                FileTypes = FilePickerFileType.Images
-            };
-
             // Open the file picker to select an image file
-            FileResult? cFile = await PickImage(options);
+            FileResult? cFile = await PickImage();
 
             // Read the selected file as a stream
             Stream? logoStream = null;
@@ -298,10 +291,15 @@ namespace BarcodeGenerator
         /// <summary>
         /// Opens a file picker dialog and return the selected file.
         /// </summary>
-        /// <param name="options">The options for the file picker.</param>
         /// <returns>The selected file result, or null if no file was selected.</returns>
-        public static async Task<FileResult?> PickImage(PickOptions options)
+        public static async Task<FileResult?> PickImage()
         {
+            // Set the options for the file picker
+            PickOptions options = new()
+            {
+                FileTypes = FilePickerFileType.Images
+            };
+
             try
             {
                 var result = await FilePicker.Default.PickAsync(options);
