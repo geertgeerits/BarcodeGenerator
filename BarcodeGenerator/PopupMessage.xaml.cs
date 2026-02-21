@@ -4,19 +4,27 @@ namespace BarcodeGenerator;
 
 public partial class PopupMessage : Popup
 {
-    public PopupMessage(int seconds = 3, string cMessage = "")
+    public PopupMessage(int nSeconds = 3, string cMessage = "")
     {
         InitializeComponent();
 
-        // Set the message text with the recommended image size
+        // Set the message text
         lblPopupMessage.Text = cMessage;
 
-        CloseAfter(seconds);
+        CloseAfter(nSeconds);
     }
 
-    private async void CloseAfter(int seconds)
+    private async void CloseAfter(int nSeconds)
     {
-        await Task.Delay(seconds * 1000);
-        await CloseAsync();
+        await Task.Delay(nSeconds * 1000);
+        
+        try
+        {
+            await CloseAsync();
+        }
+        catch
+        {
+            Debug.WriteLine("Error closing popup.");
+        }
     }
 }

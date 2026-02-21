@@ -22,7 +22,7 @@ namespace BarcodeGenerator
         /// Level H: Corrects up to 30% of data damage.
         /// The higher the ECC level, the more data can be recovered, but it also increases the size of the QR code.
         /// </remarks>
-        /// <param name="text">The text to encode within the generated QR code.</param>
+        /// <param name="text">The text to encode within the generated QR code.
         /// without a logo. The stream must be positioned at the beginning.</param>
         /// <returns>An ImageSource representing the generated QR code image, including the logo overlay if provided.</returns>
         public static async Task<ImageSource> GenerateQrWithLogo(string text)
