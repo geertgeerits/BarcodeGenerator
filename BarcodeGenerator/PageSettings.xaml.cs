@@ -488,7 +488,8 @@
         /// code image size percentage.</param>
         private void OnSliderQRCodeImageSizeValueChanged(object sender, ValueChangedEventArgs e)
         {
-            ClassQRCodeImage.nQRCodeImageSizePercent = MathF.Round((float)e.NewValue, 2);
+            ClassQRCodeImage.nQRCodeImageSizePercent = MathF.Round((float)e.NewValue, 1);
+            sldQRCodeImageSize.Value = ClassQRCodeImage.nQRCodeImageSizePercent;
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";
         }
 
