@@ -30,6 +30,7 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersHex = "0123456789ABCDEF";
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
         private static bool bIsBarcodeWithImage;
+        public static bool bIsAfterPopupMessage;
 
         public MainPage()
         {
@@ -190,7 +191,7 @@ namespace BarcodeGenerator
 
 
         /// <summary>
-        /// Set the barcode list and the current default barcode format in the picker for the barcode generator
+        /// Set the barcode list and the current or default barcode format in the picker for the barcode generator
         /// </summary>
         private void SetBarcodeGeneratorInPicker()
         {
@@ -1005,6 +1006,11 @@ namespace BarcodeGenerator
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
             // Set the generator format in the picker
+            //if (!bIsAfterPopupMessage)
+            //{
+            //    pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
+            //}
+            //bIsAfterPopupMessage = false;
             pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
         }
 
