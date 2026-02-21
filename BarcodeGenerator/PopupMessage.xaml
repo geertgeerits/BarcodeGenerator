@@ -1,0 +1,20 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BarcodeGenerator.PopupMessage"
+             BackgroundColor="#80000000">
+
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+        Padding="20"
+        WidthRequest="250">
+
+        <Label
+            x:Name="lblPopupMessage"
+            HorizontalOptions="Center"
+            BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
+        </Label>
+    </VerticalStackLayout>
+</ContentPage>

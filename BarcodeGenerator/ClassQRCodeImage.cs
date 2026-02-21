@@ -38,10 +38,24 @@ namespace BarcodeGenerator
 
             // Calculate the recommended image size based on the QR code size and the configured percentage
             int nImageRecommendedSize = (int)(size * nQRCodeImageSizePercent / 100f);
-            await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nImageRecommendedSize} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
 
-            //MainPage mainPage = new MainPage();
-            //await mainPage.ShowImagePixels(nImageRecommendedSize);     // !!! Does not work !!!
+            // Show a modal popup to inform the user about the recommended image size before opening the file picker
+            //await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nImageRecommendedSize} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
+            var currentPage = Application.Current?.Windows[0].Page;
+            if (currentPage != null)
+            {
+                var popup = new PopupMessage(2, nImageRecommendedSize);
+                await currentPage.Navigation.PushModalAsync(popup);     // Show the modal
+
+                await Task.Delay(TimeSpan.FromSeconds(2));              // Wait while the popup is visible
+
+                // Pop the modal only if it's still at the top of the modal stack
+                var modalStack = currentPage.Navigation.ModalStack;
+                if (modalStack.Count > 0 && modalStack[modalStack.Count - 1] == popup)
+                {
+                    await currentPage.Navigation.PopModalAsync();
+                }
+            }
 
             // Open the file picker to select an image file
             FileResult? cFile = await PickImage();
