@@ -30,7 +30,9 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersHex = "0123456789ABCDEF";
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
         private static bool bIsBarcodeWithImage;
-        public static bool bIsAfterPopupMessage;
+
+        // Public variables
+        public static bool bIsPopupMessage;
 
         public MainPage()
         {
@@ -248,6 +250,7 @@ namespace BarcodeGenerator
                 bgvBarcode.IsVisible = true;
                 bIsBarcodeWithImage = false;
 
+                imgQrCodeImage.Source = null;
                 bgvBarcode.Value = "";
                 bgvBarcode.HeightRequest = nHeightBarcode1D;
                 bgvBarcode.WidthRequest = -1;
@@ -1006,12 +1009,10 @@ namespace BarcodeGenerator
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
             // Set the generator format in the picker
-            //if (!bIsAfterPopupMessage)
-            //{
-            //    pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
-            //}
-            //bIsAfterPopupMessage = false;
-            pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
+            if (!bIsPopupMessage)
+            {
+                pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
+            }
         }
 
         /// <summary>

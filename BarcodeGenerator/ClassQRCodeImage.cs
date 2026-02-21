@@ -44,16 +44,17 @@ namespace BarcodeGenerator
             //await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nImageRecommendedSize} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
 
             // Show a modal popup to inform the user about the recommended image size before opening the file picker
-            var currentPage = Application.Current?.Windows.FirstOrDefault()?.Page;
+            var currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
             {
-                await currentPage.ShowPopupAsync(new PopupMessage(2, nImageRecommendedSize));
-                //MainPage.bIsAfterPopupMessage = true;
+                MainPage.bIsPopupMessage = true;
+                _ = await currentPage.ShowPopupAsync(new PopupMessage(2, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize} {CodeLang.Pixels_Text}"));
             }
 
             // Open the file picker to select an image file
             FileResult? cFile = await PickImage();
-
+            MainPage.bIsPopupMessage = false;
+            
             // Read the selected file as a stream
             Stream? logoStream = null;
             if (cFile != null)
