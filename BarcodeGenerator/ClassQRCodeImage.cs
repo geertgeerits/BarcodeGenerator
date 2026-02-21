@@ -42,6 +42,7 @@ namespace BarcodeGenerator
             // Show a modal popup to inform the user about the recommended image size before opening the file picker
             //await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nImageRecommendedSize} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
             var currentPage = Application.Current?.Windows[0].Page;
+
             if (currentPage != null)
             {
                 var popup = new PopupMessage(2, nImageRecommendedSize);

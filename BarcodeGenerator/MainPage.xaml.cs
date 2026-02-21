@@ -80,28 +80,7 @@ namespace BarcodeGenerator
             Globals.SetTheme();
 
             // Set the barcode list and the current default barcode format in the picker for the barcode generator
-#if WINDOWS
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
-            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows().Count;
-#else
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
-            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX().Count;
-#endif
-            // Search for the name of the saved barcode in the picker list
-            ClassBarcodes.nBarcodeGeneratorIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeGeneratorName)
-                ? Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorName) : -1;
-
-            // If the saved barcode name was not found in the list then set it to the default barcode name
-            if (ClassBarcodes.nBarcodeGeneratorIndex < 0 || ClassBarcodes.nBarcodeGeneratorIndex > nListCount - 1)
-            {
-                ClassBarcodes.nBarcodeGeneratorIndex = Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorDefault);
-                ClassBarcodes.cBarcodeGeneratorName = pckFormatCodeGenerator.Items[ClassBarcodes.nBarcodeGeneratorIndex];
-
-                Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
-            }
-
-            // Select the barcode format in the picker
-            pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
+            SetBarcodeGeneratorInPicker();
 
             // Get and set the user interface language after a first start or reset of the application
             try
@@ -207,6 +186,36 @@ namespace BarcodeGenerator
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
             await Navigation.PushAsync(new PageSettings());
+        }
+
+
+        /// <summary>
+        /// Set the barcode list and the current default barcode format in the picker for the barcode generator
+        /// </summary>
+        private void SetBarcodeGeneratorInPicker()
+        {
+#if WINDOWS
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
+            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows().Count;
+#else
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
+            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX().Count;
+#endif
+            // Search for the name of the saved barcode in the picker list
+            ClassBarcodes.nBarcodeGeneratorIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeGeneratorName)
+                ? Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorName) : -1;
+
+            // If the saved barcode name was not found in the list then set it to the default barcode name
+            if (ClassBarcodes.nBarcodeGeneratorIndex < 0 || ClassBarcodes.nBarcodeGeneratorIndex > nListCount - 1)
+            {
+                ClassBarcodes.nBarcodeGeneratorIndex = Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorDefault);
+                ClassBarcodes.cBarcodeGeneratorName = pckFormatCodeGenerator.Items[ClassBarcodes.nBarcodeGeneratorIndex];
+
+                Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
+            }
+
+            // Select the barcode format in the picker
+            pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
         }
 
         /// <summary>
@@ -1150,25 +1159,6 @@ namespace BarcodeGenerator
                 }
             }
         }
-
-        ///// <summary>
-        ///// Show the recommended logo size based on the QR code size and the configured percentage
-        ///// // !!! Does not work !!!
-        ///// </summary>
-        ///// <param name="nPixels"></param>
-        //public async Task ShowImagePixels(int nPixels)
-        //{
-        //    Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(async () =>
-        //    await DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nPixels} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
-
-        //    Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(() =>
-        //        btnGenerateCode.Text = $"Pixels: {nPixels}");
-
-        //    await Task.Delay(2000);
-
-        //    Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(() =>
-        //        btnGenerateCode.Text = CodeLang.GenerateCode_Text);
-        //}
     }
 }
 
