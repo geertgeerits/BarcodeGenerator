@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-21 (YYYY-MM-DD)
+ * Date ........: 2026-02-22 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -998,6 +998,12 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnPageAppearing(object sender, EventArgs e)
         {
+            // If the page is appearing after a popup message, then do nothing
+            if (bIsPopupMessage)
+            {
+                return;
+            }
+
             // Set the text language
             if (Globals.bLanguageChanged)
             {
@@ -1009,10 +1015,7 @@ namespace BarcodeGenerator
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
             // Set the generator format in the picker
-            if (!bIsPopupMessage)
-            {
-                pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
-            }
+            pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
         }
 
         /// <summary>
