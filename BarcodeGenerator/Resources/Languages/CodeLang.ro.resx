@@ -147,6 +147,9 @@
   <data name="ButtonListen_Text" xml:space="preserve">
     <value>Asculta</value>
   </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>Următorul</value>
+  </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
     <value>Distribuie text</value>
   </data>

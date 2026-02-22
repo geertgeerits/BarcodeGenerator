@@ -27,7 +27,7 @@
             VerticalOptions="End"
             BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
             TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
-            Text="{Translate ButtonClose_Text}"
+            Text="{Translate ButtonNext_Text}"
             Clicked="OnButtonClose_Clicked">
         </Button>
     </VerticalStackLayout>

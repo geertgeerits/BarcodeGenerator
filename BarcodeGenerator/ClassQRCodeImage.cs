@@ -48,7 +48,7 @@ namespace BarcodeGenerator
             if (currentPage != null)
             {
                 MainPage.bIsPopupMessage = true;
-                _ = await currentPage.ShowPopupAsync(new PopupMessage(2, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize} {CodeLang.Pixels_Text}"));
+                _ = await currentPage.ShowPopupAsync(new PopupMessage(3, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize} {CodeLang.Pixels_Text}"));
             }
 
             // Open the file picker to select an image file
