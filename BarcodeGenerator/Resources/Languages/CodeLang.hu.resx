@@ -397,6 +397,9 @@ Előre is köszönöm.</value>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>QR-kód képmérete: {0}%</value>
   </data>
+  <data name="QRCodeImageTypeError_Text" xml:space="preserve">
+    <value>Érvénytelen fájltípust választott. Kérjük, válasszon JPG vagy PNG képet.</value>
+  </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
     <value>Ajánlott képméret</value>
   </data>

@@ -397,6 +397,9 @@ Vă mulțumesc anticipat.</value>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>Dimensiunea imaginii codului QR: {0}%</value>
   </data>
+  <data name="QRCodeImageTypeError_Text" xml:space="preserve">
+    <value>Tip de fișier selectat nevalid. Selectați o imagine JPG sau PNG.</value>
+  </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
     <value>Dimensiune recomandată a imaginii</value>
   </data>

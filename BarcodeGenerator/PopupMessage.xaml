@@ -12,7 +12,7 @@
         HorizontalOptions="Center"
         BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
         Padding="20"
-        WidthRequest="250">
+        WidthRequest="300">
         
         <Label
             x:Name="lblPopupMessage"

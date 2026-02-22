@@ -10,7 +10,8 @@
  *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
  *                Google ML Kit: https://developers.google.com/ml-kit
  *                zxing-cpp: https://github.com/zxing-cpp/zxing-cpp
- * Dependencies : NuGet Package: ZXing.Net.Maui by Redth - https://github.com/redth/ZXing.Net.Maui
+ * Dependencies : NuGet Package: CommunityToolkit.Maui
+ *                NuGet Package: ZXing.Net.Maui by Redth - https://github.com/redth/ZXing.Net.Maui
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth
  *                NuGet Package: QRCoder by Raffael Herrmann, Shane Krueger
  *                NuGet Package: SkiaSharp by Microsoft - https://github.com/mono/SkiaSharp

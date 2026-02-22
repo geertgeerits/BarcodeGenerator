@@ -298,40 +298,46 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Opens a file picker dialog and return the selected file.
+        /// Opens a media picker dialog and return the selected file.
         /// </summary>
         /// <returns>The selected file result, or null if no file was selected.</returns>
         public static async Task<FileResult?> PickImage()
         {
-            // Set the options for the file picker
-            PickOptions options = new()
-            {
-                FileTypes = FilePickerFileType.Images
-            };
-
             try
             {
-                var result = await FilePicker.Default.PickAsync(options);
-                
-                if (result != null)
+                // Let user pick photos (multiple possible). We take the first one
+                var photos = await MediaPicker.Default.PickPhotosAsync();
+                var selected = photos?.FirstOrDefault();
+
+                // Get the file name with extension
+                // FileResult.FileName provides the name including the extension
+                string? fileNameWithExt = selected?.FileName;
+
+                Debug.WriteLine($"PickImage: selected file name: {fileNameWithExt ?? "<none>"}");
+
+                // Validate the selected file
+                if (!string.IsNullOrEmpty(fileNameWithExt))
                 {
-                    if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
-                        result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
+                    if (fileNameWithExt.EndsWith("png", StringComparison.OrdinalIgnoreCase) ||
+                        fileNameWithExt.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
+                        fileNameWithExt.EndsWith("jpeg", StringComparison.OrdinalIgnoreCase))
                     {
-                        using var stream = await result.OpenReadAsync();
-                        var image = ImageSource.FromStream(() => stream);
+                        return selected;
+                    }
+                    else
+                    {
+                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.QRCodeImageTypeError_Text}", CodeLang.ButtonClose_Text);
+                        return null;
                     }
                 }
 
-                return result;
+                return selected;
             }
             catch (Exception ex)
             {
-                // The user canceled or something went wrong
                 Debug.WriteLine($"PickImage: File picking error: {ex.Message}");
+                return null;
             }
-
-            return null;
         }
 
         /// <summary>

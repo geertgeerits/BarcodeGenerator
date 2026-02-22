@@ -397,6 +397,9 @@ Agradeço antecipadamente.</value>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>Tamanho da imagem do código QR: {0}%</value>
   </data>
+  <data name="QRCodeImageTypeError_Text" xml:space="preserve">
+    <value>Tipo de arquivo inválido selecionado. Selecione uma imagem JPG ou PNG.</value>
+  </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
     <value>Tamanho de imagem recomendado</value>
   </data>

@@ -397,6 +397,9 @@ Alvast bedankt.</value>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>Afbeeldingsgrootte QR-code: {0}%</value>
   </data>
+  <data name="QRCodeImageTypeError_Text" xml:space="preserve">
+    <value>Ongeldig bestandstype geselecteerd. Selecteer een JPG- of PNG-afbeelding.</value>
+  </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
     <value>Aanbevolen afbeeldingsgrootte</value>
   </data>

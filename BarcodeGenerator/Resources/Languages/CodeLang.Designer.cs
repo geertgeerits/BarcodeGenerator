@@ -791,6 +791,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid file type selected. Please select a JPG or PNG image..
+        /// </summary>
+        internal static string QRCodeImageTypeError_Text {
+            get {
+                return ResourceManager.GetString("QRCodeImageTypeError_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recommended image size.
         /// </summary>
         internal static string QRCodeRecommendedImageSize_Text {
