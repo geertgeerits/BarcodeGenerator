@@ -52,9 +52,9 @@ namespace BarcodeGenerator
             }
 
             // Open the file picker to select an image file
-            FileResult? cFile = await PickImage();
+            FileResult? cFile = await ClassFileOperations.PickImage();
             MainPage.bIsPopupMessage = false;
-            
+
             // Read the selected file as a stream
             Stream? logoStream = null;
             if (cFile != null)
@@ -167,7 +167,7 @@ namespace BarcodeGenerator
             // Save the generated PNG to disk with the original pixel size for sharing or other purposes
             using MemoryStream memoryStream = new(ms.ToArray());
             string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, "qr_code_image.png");
-            _ = SavePngFromStreamAsync(memoryStream, cFileName);
+            _ = ClassFileOperations.SavePngFromStreamAsync(memoryStream, cFileName);
 
             // Return the ImageSource for use in the UI
             return ImageSource.FromStream(() => ms);
@@ -295,98 +295,6 @@ namespace BarcodeGenerator
                 canvas.Flush();
             }
             return dest;
-        }
-
-        /// <summary>
-        /// Opens a media picker dialog and return the selected file.
-        /// </summary>
-        /// <returns>The selected file result, or null if no file was selected.</returns>
-        public static async Task<FileResult?> PickImage()
-        {
-            try
-            {
-                // Let user pick photos (multiple possible). We take the first one
-                var photos = await MediaPicker.Default.PickPhotosAsync();
-                var selected = photos?.FirstOrDefault();
-
-                // Get the file name with extension
-                // FileResult.FileName provides the name including the extension
-                string? fileNameWithExt = selected?.FileName;
-
-                Debug.WriteLine($"PickImage: selected file name: {fileNameWithExt ?? "<none>"}");
-
-                // Validate the selected file
-                if (!string.IsNullOrEmpty(fileNameWithExt))
-                {
-                    if (fileNameWithExt.EndsWith("png", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith("jpeg", StringComparison.OrdinalIgnoreCase))
-                    {
-                        return selected;
-                    }
-                    else
-                    {
-                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.QRCodeImageTypeError_Text}", CodeLang.ButtonClose_Text);
-                        return null;
-                    }
-                }
-
-                return selected;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"PickImage: File picking error: {ex.Message}");
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Asynchronously saves a PNG image from the specified memory stream to the given file path.
-        /// </summary>
-        /// <remarks>The method sets the stream position to the beginning before saving and creates the
-        /// target directory if it does not exist.</remarks>
-        /// <param name="pngStream">The memory stream containing the PNG image data to save. Must not be null or empty.</param>
-        /// <param name="filePath">The full file path where the PNG image will be saved. Must be a valid, non-empty path.</param>
-        /// <returns>A task that represents the asynchronous save operation.</returns>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="pngStream"/> is null or empty, or if <paramref name="filePath"/> is null, empty,
-        /// or consists only of white-space characters.</exception>
-        /// <exception cref="IOException">Thrown if an I/O error occurs while saving the PNG file, such as issues with file access or directory
-        /// creation.</exception>
-        public static async Task SavePngFromStreamAsync(MemoryStream pngStream, string filePath)
-        {
-            if (pngStream == null || pngStream.Length == 0)
-            {
-                Debug.WriteLine("SavePngFromStreamAsync: PNG stream is null or empty.", nameof(pngStream));
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(filePath))
-            {
-                Debug.WriteLine("Invalid file path.", nameof(filePath));
-                return;
-            }
-
-            try
-            {
-                // Ensure the stream is at the beginning
-                pngStream.Position = 0;
-
-                // Create directory if it doesn't exist
-                string? directory = Path.GetDirectoryName(filePath);
-                if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
-                {
-                    Directory.CreateDirectory(directory);
-                }
-
-                // Save the file asynchronously
-                using FileStream fileStream = new(filePath, FileMode.Create, FileAccess.Write);
-                await pngStream.CopyToAsync(fileStream);
-            }
-            catch (Exception ex)
-            {
-                // Log or handle the error as needed
-                Debug.WriteLine($"SavePngFromStreamAsync: Failed to save PNG file: {ex.Message}", ex);
-            }
         }
     }
 }

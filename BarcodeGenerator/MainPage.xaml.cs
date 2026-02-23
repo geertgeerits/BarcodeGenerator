@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.47
- * Date ........: 2026-02-22 (YYYY-MM-DD)
+ * Date ........: 2026-02-23 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -192,7 +192,6 @@ namespace BarcodeGenerator
             await Navigation.PushAsync(new PageSettings());
         }
 
-
         /// <summary>
         /// Set the barcode list and the current or default barcode format in the picker for the barcode generator
         /// </summary>
@@ -230,8 +229,8 @@ namespace BarcodeGenerator
         private void OnPickerFormatCodeChanged(object sender, EventArgs e)
         {
             const int nHeightBarcode1D = 160;
-            const int nHeightBarcode2D = 300;
-            const int nWidthBarcode2D = 300;
+            const int nHeightBarcode2D = 280;
+            const int nWidthBarcode2D = 280;
 
             var picker = (Picker)sender;
             int selectedIndex = picker.SelectedIndex;
@@ -255,7 +254,7 @@ namespace BarcodeGenerator
                 bgvBarcode.Value = "";
                 bgvBarcode.HeightRequest = nHeightBarcode1D;
                 bgvBarcode.WidthRequest = -1;
-                bgvBarcode.MaximumHeightRequest = 300;
+                bgvBarcode.MaximumHeightRequest = nHeightBarcode2D;
                 bgvBarcode.MaximumWidthRequest = 600;
                 bgvBarcode.HorizontalOptions = LayoutOptions.Fill;
 
@@ -434,6 +433,9 @@ namespace BarcodeGenerator
             string? selectedName = item is not null
                 ? pckFormatCodeGenerator.ItemsSource[selectedIndex] as string : string.Empty;
 
+            // Create an instance of ClassValidateBarcodes for instance method calls
+            var barcodeValidator = new ClassValidateBarcodes();
+
             // Validate the text input and set the format
             if (selectedIndex != -1)
             {
@@ -442,11 +444,12 @@ namespace BarcodeGenerator
                     switch (selectedName)
                     {
                         case ClassBarcodes.cBarcode_AZTEC:
-                            cTextToCode = ReplaceCharacters(cTextToCode);
+                            cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
                             edtTextToCode.Text = cTextToCode;
 
-                            if (TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
                             break;
@@ -454,13 +457,15 @@ namespace BarcodeGenerator
                         case ClassBarcodes.cBarcode_CODABAR:
                             cTextToCode = cTextToCode.ToUpper();
 
-                            if (TestAllowedCharacters("0123456789-$:/.+ABCD", cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedCharacters("0123456789-$:/.+ABCD", cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
 
-                            if (TestStartEndGuards("ABCD", cTextToCode) == false)
+                            if (await ClassValidateBarcodes.TestStartEndGuards("ABCD", cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
                             break;
@@ -468,13 +473,15 @@ namespace BarcodeGenerator
                         case ClassBarcodes.cBarcode_CODE_39:
                             cTextToCode = cTextToCode.ToUpper();
 
-                            if (TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
 
-                            if (TestStartEndGuards("*", cTextToCode) == false)
+                            if (await ClassValidateBarcodes.TestStartEndGuards("*", cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
                             break;
@@ -482,40 +489,45 @@ namespace BarcodeGenerator
                         case ClassBarcodes.cBarcode_CODE_93:
                             cTextToCode = cTextToCode.ToUpper();
 
-                            if (TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
 
-                            if (TestStartEndGuards("*", cTextToCode) == false)
+                            if (await ClassValidateBarcodes.TestStartEndGuards("*", cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
                             break;
 
                         case ClassBarcodes.cBarcode_CODE_128:
-                            cTextToCode = ReplaceCharacters(cTextToCode);
+                            cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
                             edtTextToCode.Text = cTextToCode;
 
-                            if (TestAllowedAsciiValues(1, 127, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedAsciiValues(1, 127, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
                             break;
 
                         case ClassBarcodes.cBarcode_DATA_MATRIX:
-                            cTextToCode = ReplaceCharacters(cTextToCode);
+                            cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
                             edtTextToCode.Text = cTextToCode;
 
-                            if (TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
                             break;
 
                         case ClassBarcodes.cBarcode_EAN_8:
-                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
 
@@ -532,7 +544,7 @@ namespace BarcodeGenerator
                             }
 
                             cTextToCode = cTextToCode[..7];
-                            cTextToCode += CalculateChecksumEanUpcA(ReverseString(cTextToCode));
+                            cTextToCode += ClassValidateBarcodes.CalculateChecksumEanUpcA(ClassValidateBarcodes.ReverseString(cTextToCode));
 
                             if (nLenTextToCode == 8 && cChecksum != cTextToCode.Substring(7, 1))
                             {
@@ -543,8 +555,9 @@ namespace BarcodeGenerator
                             break;
 
                         case ClassBarcodes.cBarcode_EAN_13:
-                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
 
@@ -561,7 +574,7 @@ namespace BarcodeGenerator
                             }
 
                             cTextToCode = cTextToCode[..12];
-                            cTextToCode += CalculateChecksumEanUpcA(ReverseString(cTextToCode));
+                            cTextToCode += ClassValidateBarcodes.CalculateChecksumEanUpcA(ClassValidateBarcodes.ReverseString(cTextToCode));
 
                             if (nLenTextToCode == 13 && cChecksum != cTextToCode.Substring(12, 1))
                             {
@@ -572,8 +585,9 @@ namespace BarcodeGenerator
                             break;
 
                         case ClassBarcodes.cBarcode_ITF:
-                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
 
@@ -585,18 +599,20 @@ namespace BarcodeGenerator
                             break;
 
                         case ClassBarcodes.cBarcode_MSI:
-                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
                             break;
 
                         case ClassBarcodes.cBarcode_PDF_417:
-                            cTextToCode = ReplaceCharacters(cTextToCode);
+                            cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
                             edtTextToCode.Text = cTextToCode;
 
-                            if (TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
                             break;
@@ -604,8 +620,9 @@ namespace BarcodeGenerator
                         case ClassBarcodes.cBarcode_PLESSEY:
                             cTextToCode = cTextToCode.ToUpper();
 
-                            if (TestAllowedCharacters(cAllowedCharactersHex, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersHex, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
                             break;
@@ -617,8 +634,9 @@ namespace BarcodeGenerator
                             break;
 
                         case ClassBarcodes.cBarcode_UPC_A:
-                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
 
@@ -635,7 +653,7 @@ namespace BarcodeGenerator
                             }
 
                             cTextToCode = cTextToCode[..11];
-                            cTextToCode += CalculateChecksumEanUpcA(cTextToCode);
+                            cTextToCode += ClassValidateBarcodes.CalculateChecksumEanUpcA(cTextToCode);
 
                             if (nLenTextToCode == 12 && cChecksum != cTextToCode.Substring(11, 1))
                             {
@@ -646,8 +664,9 @@ namespace BarcodeGenerator
                             break;
 
                         case ClassBarcodes.cBarcode_UPC_E:
-                            if (TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                            if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                             {
+                                _ = edtTextToCode.Focus();
                                 return;
                             }
 
@@ -695,7 +714,7 @@ namespace BarcodeGenerator
                             cUpcA = $"0{cUpcA}";
 
                             // Calculate and add the checksum of the UPC-A code
-                            cUpcA += CalculateChecksumEanUpcA(cUpcA);
+                            cUpcA += ClassValidateBarcodes.CalculateChecksumEanUpcA(cUpcA);
 
                             // Add the checksum from the UPC-A code to the UPC-E code
                             cTextToCode = string.Concat(cTextToCode.AsSpan(0, 7), cUpcA.AsSpan(11, 1));
@@ -745,168 +764,6 @@ namespace BarcodeGenerator
 
                 RestartApplication(ex.Message);
             }
-        }
-
-        /// <summary>
-        /// Test for allowed characters
-        /// </summary>
-        /// <param name="cAllowedCharacters"></param>
-        /// <param name="cTextToCode"></param>
-        /// <returns></returns>
-        private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
-        {
-            foreach (char cChar in cTextToCode)
-            {
-                bool bResult = cAllowedCharacters.Contains(cChar);
-
-                if (bResult == false)
-                {
-                    _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.AllowedChar_Text}\n{cAllowedCharacters}\n\n{CodeLang.AllowedCharNot_Text} {cChar}", CodeLang.ButtonClose_Text);
-
-                    _ = edtTextToCode.Focus();
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Test for allowed minimum and maximum ASCII values
-        /// </summary>
-        /// <param name="nMinAsciiValue"></param>
-        /// <param name="nMaxAsciiValue"></param>
-        /// <param name="cTextToCode"></param>
-        /// <returns></returns>
-        private bool TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
-        {
-            // Test for allowed minimum and maximum ASCII values
-            foreach (char cChar in cTextToCode)
-            {
-                //Console.WriteLine($"{"ASCII value: "} {(int)cChar}");  // For testing
-
-                if ((int)cChar < nMinAsciiValue || (int)cChar > nMaxAsciiValue)
-                {
-                    _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.TextContainsChar_Text} {cChar}", CodeLang.ButtonClose_Text);
-
-                    _ = edtTextToCode.Focus();
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Replace special characters in strings for ASCII output (iOS keyboard marks are curved instead of straight)
-        /// </summary>
-        /// <param name="cText"></param>
-        /// <returns></returns>
-        private static string ReplaceCharacters(string cText)
-        {
-            // Convert characters from UTF-8 or ASCII extended to characters that are supported in ASCII
-            cText = cText.Replace('‘', '\'');       // Left single quotation mark replaced with apostrophe
-            cText = cText.Replace('’', '\'');       // Right single quotation mark replaced with apostrophe
-            cText = cText.Replace('“', '"');        // Left double quotation mark replaced with quotation mark
-            cText = cText.Replace('”', '"');        // Right double quotation mark replaced with quotation mark
-
-            return cText;
-        }
-
-        /// <summary>
-        /// Test start and end guards
-        /// </summary>
-        /// <param name="cStartEndGuards"></param>
-        /// <param name="cTextToCode"></param>
-        /// <returns></returns>
-        private bool TestStartEndGuards(string cStartEndGuards, string cTextToCode)
-        {
-            int nPos;
-            char cChar;
-
-            // Control of start and end guards in the wrong place
-            for (nPos = 0; nPos < cTextToCode.Length; nPos++)
-            {
-                cChar = cTextToCode[nPos];
-
-                if (cStartEndGuards.Contains(cChar) && nPos > 0 && nPos < cTextToCode.Length - 1)
-                {
-                    _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GuardInvalidStartEnd_Text} {cChar}", CodeLang.ButtonClose_Text);
-
-                    _ = edtTextToCode.Focus();
-                    return false;
-                }
-            }
-
-            // Control of missing start or end guard
-            if (cStartEndGuards.Contains(cTextToCode[..1]) && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)) == false)
-            {
-                _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingEnd_Text, CodeLang.ButtonClose_Text);
-
-                _ = edtTextToCode.Focus();
-                return false;
-            }
-            else if (cStartEndGuards.Contains(cTextToCode[..1]) == false && cStartEndGuards.Contains(cTextToCode.Substring(cTextToCode.Length - 1, 1)))
-            {
-                _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.GuardMissingStart_Text, CodeLang.ButtonClose_Text);
-
-                _ = edtTextToCode.Focus();
-                return false;
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Reverse the characters in a string
-        /// </summary>
-        /// <param name="cText"></param>
-        /// <returns></returns>
-        private static string ReverseString(string cText)
-        {
-            char[] charArray = cText.ToCharArray();
-            Array.Reverse(charArray);
-
-            return string.Concat(charArray);
-        }
-
-        /// <summary>
-        /// Calculate the checksum of an EAN-13, EAN-8 and UPC-A code
-        /// </summary>
-        /// <param name="cTextToCode"></param>
-        /// <returns></returns>
-        private static string CalculateChecksumEanUpcA(string cTextToCode)
-        {
-            int nPos;
-            int nPartialSum;
-            int nChecksum = 0;
-            int nCheckDigit = 0;
-
-            // Loop over string
-            for (nPos = 0; nPos < cTextToCode.Length; nPos++)
-            {
-                if ((nPos + 1) % 2 == 0)
-                {
-                    nPartialSum = (int)char.GetNumericValue(cTextToCode[nPos]);
-                }
-                else
-                {
-                    nPartialSum = (int)char.GetNumericValue(cTextToCode[nPos]) * 3;
-                }
-                Debug.WriteLine($"{"nPartialSum: "} {nPartialSum}");  // For testing
-
-                nChecksum += nPartialSum;
-            }
-            Debug.WriteLine($"{"nChecksum: "} {nChecksum}");  // For testing
-
-            int nRemainder = nChecksum % 10;
-            if (nRemainder != 0)
-            {
-                nCheckDigit = 10 - nRemainder;
-            }
-            Debug.WriteLine($"{"nCheckDigit: "} {nCheckDigit}");  // For testing
-
-            return Convert.ToString(nCheckDigit);
         }
 
         /// <summary>
@@ -1059,7 +916,7 @@ namespace BarcodeGenerator
                     {
                         IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
                         Stream stream = await screen!.OpenReadAsync();
-                        SaveStreamAsFile(stream);
+                        ClassFileOperations.SaveStreamAsFile(stream);
                     }
                 }
             }
@@ -1070,40 +927,6 @@ namespace BarcodeGenerator
                 _ = DisplayAlertAsync("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
-        }
-
-        /// <summary>
-        /// Save the barcode as an image file
-        /// </summary>
-        /// <param name="inputStream"></param>
-        private static async void SaveStreamAsFile(Stream inputStream)
-        {
-            // Save the image file
-            string cFileName = Path.Combine(FileSystem.CacheDirectory, "BarcodeGenerator.png");
-
-            using (FileStream outputFileStream = new(cFileName, FileMode.Create))
-            {
-                inputStream.CopyTo(outputFileStream);
-            }
-
-            inputStream.Dispose();
-
-            // Open the share interface to share the file
-            await OpenShareInterfaceAsync(cFileName);
-        }
-
-        /// <summary>
-        /// Open the share interface
-        /// </summary>
-        /// <param name="cFile"></param>
-        /// <returns></returns>
-        private static async Task OpenShareInterfaceAsync(string cFile)
-        {
-            await Share.Default.RequestAsync(new ShareFileRequest
-            {
-                Title = "Barcode Generator",
-                File = new ShareFile(cFile)
-            });
         }
 
         /// <summary>
@@ -1172,31 +995,3 @@ namespace BarcodeGenerator
         }
     }
 }
-
-/* How to convert a UPC-E code back to UPC-A ?
-   A 6-digit UPC-E code is derived from a UPC-A 12-digit code.
-   You can convert a UPC-E code back to its UPC-A format using the following scenarios.
-
-   If the UPC-E code ends in 0, 1, or 2:
-   Convert the UPC-E back to UPC-A code by picking the first two digits in the UPC-E code.
-   Add the last digit (still of using the UPC-E code) and then four zeros(0).
-   Complete the conversion by adding characters 3 -5 of your UPC-E code.
-
-   If the UPC-E code ends in 3:
-   Determine what the UPC-A code is by picking the first three digits used in your UPC-E code.
-   Add five zeros (0), and then characters 4 and 5 of the UPC-E.
-
-   Where the UPC-E code ends in 4:
-   Determine the UPC-A code in this way: take the UPC-E code and write out the first four digits.
-   Add five zeros (0), then the fifth character of the UPC-E code.
-
-   If the UPC-E code ends in any of 5, 6, 7, 8, or 9:
-   Convert the UPC-E code to UPC-A by first picking the leading five digits in the UPC-E code.
-   Add four 0 digits and the last character of the UPC-E code.
-
-   Samples:
-   UPC-E: 01326901 -> UPC-A: 013000002691
-   UPC-E: 01810905 -> UPC-A: 018000001095
-
-   Source: https://bytescout.com/blog/2013/10/upc-and-upc-e-purpose-advantages.html
-   _____________________________________________________________________________________________ */

@@ -59,8 +59,9 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleGenerator}"
-                RowDefinitions="Auto, Auto, 180, Auto, 300, Auto"
-                HorizontalOptions="Center">
+                RowDefinitions="Auto, Auto, 180, Auto, 280, Auto"
+                HorizontalOptions="Center"
+                RowSpacing="5">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -202,7 +203,7 @@
 
                     <zxing:BarcodeGeneratorView
                         x:Name="bgvBarcode"
-                        HeightRequest="300">
+                        HeightRequest="280">
                     </zxing:BarcodeGeneratorView>
                 </Border>
 
@@ -219,8 +220,8 @@
 
                     <Image
                         x:Name="imgQrCodeImage"
-                        HeightRequest="300"
-                        WidthRequest="300"
+                        HeightRequest="280"
+                        WidthRequest="280"
                         IsVisible="False">
                     </Image>
                 </Border>
