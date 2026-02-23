@@ -1,63 +1,12 @@
-﻿using CommunityToolkit.Maui.Alerts;
-using CommunityToolkit.Maui.Storage;
-using System.Runtime.Versioning;
-using System.Text;
+﻿//using CommunityToolkit.Maui.Alerts;
+//using CommunityToolkit.Maui.Storage;
+//using System.Runtime.Versioning;
+//using System.Text;
 
 namespace BarcodeGenerator
 {
     internal class ClassFileOperations
     {
-        ///<summary>
-        /// Requests storage permissions and saves a file if permissions are granted.
-        /// </summary>
-        /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>        
-        [SupportedOSPlatform("android")]
-        [SupportedOSPlatform("ios14.0")]
-        [SupportedOSPlatform("maccatalyst14.0")]
-        //[SupportedOSPlatform("tizen")]
-        [SupportedOSPlatform("windows")]
-        public static async Task RequestStoragePermissionsAndSaveFile(CancellationToken cancellationToken)
-        {
-            var readPermissionStatus = await Permissions.RequestAsync<Permissions.StorageRead>();
-            var writePermissionStatus = await Permissions.RequestAsync<Permissions.StorageWrite>();
-
-            if (readPermissionStatus != PermissionStatus.Granted ||
-                writePermissionStatus != PermissionStatus.Granted)
-            {
-                await Toast
-                    .Make("Storage permissions are required to save files.")
-                    .Show(cancellationToken);
-
-                return;
-            }
-
-            await SaveFile(cancellationToken);
-        }
-        
-        /// <summary>
-        /// Saves a file asynchronously.
-        /// </summary>
-        /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-        /// <returns>A task representing the asynchronous operation.</returns>
-        [SupportedOSPlatform("android")]
-        [SupportedOSPlatform("ios14.0")]
-        [SupportedOSPlatform("maccatalyst14.0")]
-        //[SupportedOSPlatform("tizen")]
-        [SupportedOSPlatform("windows")]
-        public static async Task SaveFile(CancellationToken cancellationToken)
-        {
-            using var stream = new MemoryStream(Encoding.Default.GetBytes("Hello from the Community Toolkit!"));
-            var fileSaverResult = await FileSaver.Default.SaveAsync("test.txt", stream, cancellationToken);
-            if (fileSaverResult.IsSuccessful)
-            {
-                await Toast.Make($"The file was saved successfully to location: {fileSaverResult.FilePath}").Show(cancellationToken);
-            }
-            else
-            {
-                await Toast.Make($"The file was not saved successfully with error: {fileSaverResult.Exception.Message}").Show(cancellationToken);
-            }
-        }
-
         /// <summary>
         /// Opens a media picker dialog and return the selected file.
         /// </summary>
@@ -183,5 +132,56 @@ namespace BarcodeGenerator
                 Debug.WriteLine($"SavePngFromStreamAsync: Failed to save PNG file: {ex.Message}", ex);
             }
         }
+
+        /////<summary>
+        ///// Requests storage permissions and saves a file if permissions are granted.
+        ///// </summary>
+        ///// <param name="cancellationToken">A cancellation token to cancel the operation.</param>        
+        //[SupportedOSPlatform("android")]
+        //[SupportedOSPlatform("ios14.0")]
+        //[SupportedOSPlatform("maccatalyst14.0")]
+        ////[SupportedOSPlatform("tizen")]
+        //[SupportedOSPlatform("windows")]
+        //public static async Task RequestStoragePermissionsAndSaveFile(CancellationToken cancellationToken)
+        //{
+        //    var readPermissionStatus = await Permissions.RequestAsync<Permissions.StorageRead>();
+        //    var writePermissionStatus = await Permissions.RequestAsync<Permissions.StorageWrite>();
+
+        //    if (readPermissionStatus != PermissionStatus.Granted ||
+        //        writePermissionStatus != PermissionStatus.Granted)
+        //    {
+        //        await Toast
+        //            .Make("Storage permissions are required to save files.")
+        //            .Show(cancellationToken);
+
+        //        return;
+        //    }
+
+        //    await SaveFile(cancellationToken);
+        //}
+
+        ///// <summary>
+        ///// Saves a file asynchronously.
+        ///// </summary>
+        ///// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+        ///// <returns>A task representing the asynchronous operation.</returns>
+        //[SupportedOSPlatform("android")]
+        //[SupportedOSPlatform("ios14.0")]
+        //[SupportedOSPlatform("maccatalyst14.0")]
+        ////[SupportedOSPlatform("tizen")]
+        //[SupportedOSPlatform("windows")]
+        //public static async Task SaveFile(CancellationToken cancellationToken)
+        //{
+        //    using var stream = new MemoryStream(Encoding.Default.GetBytes("Hello from the Community Toolkit!"));
+        //    var fileSaverResult = await FileSaver.Default.SaveAsync("test.txt", stream, cancellationToken);
+        //    if (fileSaverResult.IsSuccessful)
+        //    {
+        //        await Toast.Make($"The file was saved successfully to location: {fileSaverResult.FilePath}").Show(cancellationToken);
+        //    }
+        //    else
+        //    {
+        //        await Toast.Make($"The file was not saved successfully with error: {fileSaverResult.Exception.Message}").Show(cancellationToken);
+        //    }
+        //}
     }
 }
