@@ -82,7 +82,7 @@
         public static string cBarcodeGeneratorName = string.Empty;
         public static string cBarcodeScannerName = string.Empty;
         public const string cBarcodeGeneratorDefault = cBarcode_QR_CODE;
-        public static string cBarcodeScannerDefault = CodeLang.AllCodes_Text;
+        public static readonly string cBarcodeScannerDefault = CodeLang.AllCodes_Text;
 
         /// <summary>
         /// Put the generator barcode formats in a List string using the ZXing library for all platforms
@@ -107,6 +107,28 @@
                 cBarcode_UPC_E
             ];
 
+        //public static List<string> GetFormatCodeListGenerator_ZX() =>
+        //    [.. new List<string>
+        //    {
+        //        cBarcode_AZTEC,
+        //        cBarcode_CODABAR,
+        //        cBarcode_CODE_39,
+        //        cBarcode_CODE_93,
+        //        cBarcode_CODE_128,
+        //        cBarcode_DATA_MATRIX,
+        //        cBarcode_EAN_8,
+        //        cBarcode_EAN_13,
+        //        cBarcode_ITF,
+        //        cBarcode_MSI,
+        //        cBarcode_PDF_417,
+        //        cBarcode_PLESSEY,
+        //        cBarcode_QR_CODE,
+        //        cBarcode_QR_CODE_IMAGE,
+        //        cBarcode_UPC_A,
+        //        cBarcode_UPC_E
+        //    }
+        //    .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
+
         /// <summary>
         /// Put the generator barcode formats in a List string using the ZXing library for Windows
         /// </summary>
@@ -120,6 +142,19 @@
                 cBarcode_QR_CODE_IMAGE
                 //cBarcode_UPC_E
             ];
+
+        //public static List<string> GetFormatCodeListGenerator_ZX_Windows() =>
+        //    [.. new List<string>
+        //    {
+        //        cBarcode_AZTEC,
+        //        //cBarcode_CODE_93,
+        //        cBarcode_DATA_MATRIX,
+        //        cBarcode_PDF_417,
+        //        cBarcode_QR_CODE,
+        //        cBarcode_QR_CODE_IMAGE
+        //        //cBarcode_UPC_E
+        //    }
+        //    .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
         /// <summary>
         /// Put the scanner barcode formats in a List string using the ZXing library for all platforms
