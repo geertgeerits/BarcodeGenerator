@@ -70,15 +70,6 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All codes.
-        /// </summary>
-        internal static string AllCodes_Text {
-            get {
-                return ResourceManager.GetString("AllCodes_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Allowed characters:.
         /// </summary>
         internal static string AllowedChar_Text {
@@ -111,6 +102,474 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string BackgroundOpacity_Text {
             get {
                 return ResourceManager.GetString("BackgroundOpacity_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All codes.
+        /// </summary>
+        internal static string Barcode_AllCodes_Text {
+            get {
+                return ResourceManager.GetString("Barcode_AllCodes_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aztec Code.
+        /// </summary>
+        internal static string Barcode_AZTEC_CODE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_AZTEC_CODE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aztec Rune.
+        /// </summary>
+        internal static string Barcode_AZTEC_RUNE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_AZTEC_RUNE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aztec.
+        /// </summary>
+        internal static string Barcode_AZTEC_Text {
+            get {
+                return ResourceManager.GetString("Barcode_AZTEC_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Codabar.
+        /// </summary>
+        internal static string Barcode_CODABAR_Text {
+            get {
+                return ResourceManager.GetString("Barcode_CODABAR_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code 128.
+        /// </summary>
+        internal static string Barcode_CODE_128_Text {
+            get {
+                return ResourceManager.GetString("Barcode_CODE_128_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code 39 checksum mod 10.
+        /// </summary>
+        internal static string Barcode_CODE_39_CHECKSUM_MOD_10_Text {
+            get {
+                return ResourceManager.GetString("Barcode_CODE_39_CHECKSUM_MOD_10_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code 39 checksum mod 43.
+        /// </summary>
+        internal static string Barcode_CODE_39_CHECKSUM_MOD_43_Text {
+            get {
+                return ResourceManager.GetString("Barcode_CODE_39_CHECKSUM_MOD_43_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code 39 full ASCII checksum.
+        /// </summary>
+        internal static string Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text {
+            get {
+                return ResourceManager.GetString("Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code 39 full ASCII.
+        /// </summary>
+        internal static string Barcode_CODE_39_FULL_ASCII_Text {
+            get {
+                return ResourceManager.GetString("Barcode_CODE_39_FULL_ASCII_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code 39.
+        /// </summary>
+        internal static string Barcode_CODE_39_Text {
+            get {
+                return ResourceManager.GetString("Barcode_CODE_39_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code 93i.
+        /// </summary>
+        internal static string Barcode_CODE_93_I_Text {
+            get {
+                return ResourceManager.GetString("Barcode_CODE_93_I_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code 93.
+        /// </summary>
+        internal static string Barcode_CODE_93_Text {
+            get {
+                return ResourceManager.GetString("Barcode_CODE_93_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compact PDF417.
+        /// </summary>
+        internal static string Barcode_COMPACT_PDF_417_Text {
+            get {
+                return ResourceManager.GetString("Barcode_COMPACT_PDF_417_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Matrix.
+        /// </summary>
+        internal static string Barcode_DATA_MATRIX_Text {
+            get {
+                return ResourceManager.GetString("Barcode_DATA_MATRIX_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DX Film Edge.
+        /// </summary>
+        internal static string Barcode_DX_FILM_EDGE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_DX_FILM_EDGE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EAN-13.
+        /// </summary>
+        internal static string Barcode_EAN_13_Text {
+            get {
+                return ResourceManager.GetString("Barcode_EAN_13_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EAN-2.
+        /// </summary>
+        internal static string Barcode_EAN_2_Text {
+            get {
+                return ResourceManager.GetString("Barcode_EAN_2_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EAN-5.
+        /// </summary>
+        internal static string Barcode_EAN_5_Text {
+            get {
+                return ResourceManager.GetString("Barcode_EAN_5_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EAN-8.
+        /// </summary>
+        internal static string Barcode_EAN_8_Text {
+            get {
+                return ResourceManager.GetString("Barcode_EAN_8_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EAN/UPC.
+        /// </summary>
+        internal static string Barcode_EAN_UPC_Text {
+            get {
+                return ResourceManager.GetString("Barcode_EAN_UPC_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frame QR Code.
+        /// </summary>
+        internal static string Barcode_FRAME_QR_CODE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_FRAME_QR_CODE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 Databar expanded stacked.
+        /// </summary>
+        internal static string Barcode_GS1_DATABAR_EXPANDED_STACKED_Text {
+            get {
+                return ResourceManager.GetString("Barcode_GS1_DATABAR_EXPANDED_STACKED_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 Databar expanded.
+        /// </summary>
+        internal static string Barcode_GS1_DATABAR_EXPANDED_Text {
+            get {
+                return ResourceManager.GetString("Barcode_GS1_DATABAR_EXPANDED_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 Databar limited.
+        /// </summary>
+        internal static string Barcode_GS1_DATABAR_LIMITED_Text {
+            get {
+                return ResourceManager.GetString("Barcode_GS1_DATABAR_LIMITED_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 Databar omnidirectional.
+        /// </summary>
+        internal static string Barcode_GS1_DATABAR_OMNI_Text {
+            get {
+                return ResourceManager.GetString("Barcode_GS1_DATABAR_OMNI_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 Databar stacked omnidirectional.
+        /// </summary>
+        internal static string Barcode_GS1_DATABAR_STACKED_OMNI_Text {
+            get {
+                return ResourceManager.GetString("Barcode_GS1_DATABAR_STACKED_OMNI_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 Databar stacked.
+        /// </summary>
+        internal static string Barcode_GS1_DATABAR_STACKED_Text {
+            get {
+                return ResourceManager.GetString("Barcode_GS1_DATABAR_STACKED_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 Databar.
+        /// </summary>
+        internal static string Barcode_GS1_DATABAR_Text {
+            get {
+                return ResourceManager.GetString("Barcode_GS1_DATABAR_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IMb Intelligent Mail.
+        /// </summary>
+        internal static string Barcode_IMB_Text {
+            get {
+                return ResourceManager.GetString("Barcode_IMB_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ISBN Int. Standard Book Number.
+        /// </summary>
+        internal static string Barcode_ISBN_Text {
+            get {
+                return ResourceManager.GetString("Barcode_ISBN_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ITF Interleaved 2 of 5 14.
+        /// </summary>
+        internal static string Barcode_ITF_14_Text {
+            get {
+                return ResourceManager.GetString("Barcode_ITF_14_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ITF Interleaved 2 of 5 checksum.
+        /// </summary>
+        internal static string Barcode_ITF_CHECKSUM_Text {
+            get {
+                return ResourceManager.GetString("Barcode_ITF_CHECKSUM_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ITF Interleaved 2 of 5.
+        /// </summary>
+        internal static string Barcode_ITF_Text {
+            get {
+                return ResourceManager.GetString("Barcode_ITF_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MaxiCode.
+        /// </summary>
+        internal static string Barcode_MAXICODE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_MAXICODE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Micro PDF417.
+        /// </summary>
+        internal static string Barcode_MICRO_PDF_417_Text {
+            get {
+                return ResourceManager.GetString("Barcode_MICRO_PDF_417_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Micro QR Code.
+        /// </summary>
+        internal static string Barcode_MICRO_QR_CODE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_MICRO_QR_CODE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MSI Modified Plessey.
+        /// </summary>
+        internal static string Barcode_MSI_Text {
+            get {
+                return ResourceManager.GetString("Barcode_MSI_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PDF417.
+        /// </summary>
+        internal static string Barcode_PDF_417_Text {
+            get {
+                return ResourceManager.GetString("Barcode_PDF_417_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pharmacode.
+        /// </summary>
+        internal static string Barcode_PHARMACODE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_PHARMACODE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plessey.
+        /// </summary>
+        internal static string Barcode_PLESSEY_Text {
+            get {
+                return ResourceManager.GetString("Barcode_PLESSEY_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PZN Pharma Central Number.
+        /// </summary>
+        internal static string Barcode_PZN_Text {
+            get {
+                return ResourceManager.GetString("Barcode_PZN_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QR Code with image.
+        /// </summary>
+        internal static string Barcode_QR_CODE_IMAGE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_QR_CODE_IMAGE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QR Code model 1.
+        /// </summary>
+        internal static string Barcode_QR_CODE_MODEL_1_Text {
+            get {
+                return ResourceManager.GetString("Barcode_QR_CODE_MODEL_1_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QR Code model 2.
+        /// </summary>
+        internal static string Barcode_QR_CODE_MODEL_2_Text {
+            get {
+                return ResourceManager.GetString("Barcode_QR_CODE_MODEL_2_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QR Code.
+        /// </summary>
+        internal static string Barcode_QR_CODE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_QR_CODE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RMQR Rectangular Micro QR Code.
+        /// </summary>
+        internal static string Barcode_RMQR_Text {
+            get {
+                return ResourceManager.GetString("Barcode_RMQR_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RSS 14.
+        /// </summary>
+        internal static string Barcode_RSS_14_Text {
+            get {
+                return ResourceManager.GetString("Barcode_RSS_14_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RSS Expanded.
+        /// </summary>
+        internal static string Barcode_RSS_EXPANDED_Text {
+            get {
+                return ResourceManager.GetString("Barcode_RSS_EXPANDED_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UPC-A.
+        /// </summary>
+        internal static string Barcode_UPC_A_Text {
+            get {
+                return ResourceManager.GetString("Barcode_UPC_A_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UPC-E.
+        /// </summary>
+        internal static string Barcode_UPC_E_Text {
+            get {
+                return ResourceManager.GetString("Barcode_UPC_E_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UPC-EAN Extension.
+        /// </summary>
+        internal static string Barcode_UPC_EAN_EXTENSION_Text {
+            get {
+                return ResourceManager.GetString("Barcode_UPC_EAN_EXTENSION_Text", resourceCulture);
             }
         }
         

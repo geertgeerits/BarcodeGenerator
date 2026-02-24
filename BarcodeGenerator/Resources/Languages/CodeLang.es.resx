@@ -120,7 +120,7 @@
   <data name="Agree_Text" xml:space="preserve">
     <value>De acuerdo</value>
   </data>
-  <data name="AllCodes_Text" xml:space="preserve">
+  <data name="Barcode_AllCodes_Text" xml:space="preserve">
     <value>Todos los códigos</value>
   </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
@@ -140,6 +140,10 @@
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
     <value>Escáner</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Barcode_QR_CODE_IMAGE_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Cerrar</value>

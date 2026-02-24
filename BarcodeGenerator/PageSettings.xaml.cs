@@ -62,7 +62,7 @@
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
 #endif
             // Select the current barcode format in the picker for the barcode generator
-            pckFormatCodeGenerator.SelectedIndex = Globals.SearchIndexInPickerList(pckFormatCodeGenerator, ClassBarcodes.cBarcodeGeneratorName);
+            ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
 
             // Set the current color in the entry and on the sliders
             int nOpacity = 0;
@@ -149,6 +149,17 @@
         /// </summary>
         private void SetLanguage()
         {
+            // Set the generator barcode formats in the picker
+#if WINDOWS
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
+            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows().Count;
+#else
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
+            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX().Count;
+#endif
+            // Search for the name of the saved barcode in the picker list
+            ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
+
             // Set the scanner barcode formats in the picker
 #if ANDROID
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Android();
@@ -159,18 +170,7 @@
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_ZX();
 #endif
             // Search for the name of the saved barcode in the picker list
-            ClassBarcodes.nBarcodeScannerIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeScannerName)
-                ? Globals.SearchIndexInPickerList(pckFormatCodeScanner, ClassBarcodes.cBarcodeScannerName) : -1;
-
-            // If the saved barcode name was not found in the list then set the default index to 0 (All codes)
-            if (ClassBarcodes.nBarcodeScannerIndex == -1)
-            {
-                ClassBarcodes.nBarcodeScannerIndex = 0;
-                ClassBarcodes.cBarcodeScannerName = pckFormatCodeScanner.Items[ClassBarcodes.nBarcodeScannerIndex];
-            }
-
-            // Select the current barcode format in the picker for the barcode scanner
-            pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
+            ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
 
             // Set the QR code image size percent in the label
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";

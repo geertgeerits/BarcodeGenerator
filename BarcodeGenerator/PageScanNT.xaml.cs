@@ -79,21 +79,11 @@ namespace BarcodeGenerator
             // Set the barcodes in the picker for Windows
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Windows();
 #endif
-            // Search for the name of the saved barcode in the picker list
-            ClassBarcodes.nBarcodeScannerIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeScannerName)
-                ? Globals.SearchIndexInPickerList(pckFormatCodeScanner, ClassBarcodes.cBarcodeScannerName) : -1;
+            // Set the barcode list and the select the saved or default barcode format for the barcode scanner
+            ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
 
-            // If the saved barcode name was not found in the list then set the default index to 0 (All codes)
-            if (ClassBarcodes.nBarcodeScannerIndex == -1)
-            {
-                ClassBarcodes.nBarcodeScannerIndex = 0;
-                ClassBarcodes.cBarcodeScannerName = pckFormatCodeScanner.Items[ClassBarcodes.nBarcodeScannerIndex];
-                
-                Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
-            }
-
-            // Select the barcode format in the picker
-            pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
+            //// Select the barcode format in the picker
+            //pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
 
             // Set controls for text to speech
             if (Globals.bTextToSpeechAvailable)
@@ -114,6 +104,14 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnPickerFormatCodeChanged(object sender, EventArgs e)
         {
+            // Pseudocode / Plan:
+            // 1. Get the Picker and its SelectedIndex.
+            // 2. If an item is selected, obtain the selectedName (string).
+            // 3. Use a switch expression that uses "when" guards (non-constant patterns)
+            //    to compare the selectedName to ClassBarcodes.* string values.
+            //    This avoids CS9135 which requires compile-time constant patterns.
+            // 4. Map each known barcode name to the corresponding BarcodeFormats value.
+            // 5. Fallback to BarcodeFormats.All for unknown or null values.
             var picker = (Picker)sender;
             int selectedIndex = picker.SelectedIndex;
 
@@ -128,24 +126,25 @@ namespace BarcodeGenerator
 
                 barcodeReader.BarcodeSymbologies = selectedName switch
                 {
-                    ClassBarcodes.cBarcode_AZTEC => BarcodeFormats.Aztec,
-                    ClassBarcodes.cBarcode_CODABAR => BarcodeFormats.CodaBar,
-                    ClassBarcodes.cBarcode_CODE_128 => BarcodeFormats.Code128,
-                    ClassBarcodes.cBarcode_CODE_39 => BarcodeFormats.Code39,
-                    ClassBarcodes.cBarcode_CODE_93 => BarcodeFormats.Code93,
-                    ClassBarcodes.cBarcode_DATA_MATRIX => BarcodeFormats.DataMatrix,
-                    ClassBarcodes.cBarcode_DX_FILM_EDGE => BarcodeFormats.DXFilmEdge,
-                    ClassBarcodes.cBarcode_EAN_13 => BarcodeFormats.Ean13,
-                    ClassBarcodes.cBarcode_EAN_8 => BarcodeFormats.Ean8,
-                    ClassBarcodes.cBarcode_GS1_DATABAR => BarcodeFormats.GS1DataBar,
-                    ClassBarcodes.cBarcode_ITF => BarcodeFormats.Itf,
-                    ClassBarcodes.cBarcode_MAXICODE => BarcodeFormats.MaxiCode,
-                    ClassBarcodes.cBarcode_MICRO_PDF_417 => BarcodeFormats.MicroPdf417,
-                    ClassBarcodes.cBarcode_MICRO_QR_CODE => BarcodeFormats.MicroQR,
-                    ClassBarcodes.cBarcode_PDF_417 => BarcodeFormats.Pdf417,
-                    ClassBarcodes.cBarcode_QR_CODE => BarcodeFormats.QRCode,
-                    ClassBarcodes.cBarcode_UPC_A => BarcodeFormats.Upca,
-                    ClassBarcodes.cBarcode_UPC_E => BarcodeFormats.Upce,
+                    // Use "var s when s == ..." so patterns do not need to be compile-time constants.
+                    var s when s == ClassBarcodes.cBarcode_AZTEC => BarcodeFormats.Aztec,
+                    var s when s == ClassBarcodes.cBarcode_CODABAR => BarcodeFormats.CodaBar,
+                    var s when s == ClassBarcodes.cBarcode_CODE_128 => BarcodeFormats.Code128,
+                    var s when s == ClassBarcodes.cBarcode_CODE_39 => BarcodeFormats.Code39,
+                    var s when s == ClassBarcodes.cBarcode_CODE_93 => BarcodeFormats.Code93,
+                    var s when s == ClassBarcodes.cBarcode_DATA_MATRIX => BarcodeFormats.DataMatrix,
+                    var s when s == ClassBarcodes.cBarcode_DX_FILM_EDGE => BarcodeFormats.DXFilmEdge,
+                    var s when s == ClassBarcodes.cBarcode_EAN_13 => BarcodeFormats.Ean13,
+                    var s when s == ClassBarcodes.cBarcode_EAN_8 => BarcodeFormats.Ean8,
+                    var s when s == ClassBarcodes.cBarcode_GS1_DATABAR => BarcodeFormats.GS1DataBar,
+                    var s when s == ClassBarcodes.cBarcode_ITF => BarcodeFormats.Itf,
+                    var s when s == ClassBarcodes.cBarcode_MAXICODE => BarcodeFormats.MaxiCode,
+                    var s when s == ClassBarcodes.cBarcode_MICRO_PDF_417 => BarcodeFormats.MicroPdf417,
+                    var s when s == ClassBarcodes.cBarcode_MICRO_QR_CODE => BarcodeFormats.MicroQR,
+                    var s when s == ClassBarcodes.cBarcode_PDF_417 => BarcodeFormats.Pdf417,
+                    var s when s == ClassBarcodes.cBarcode_QR_CODE => BarcodeFormats.QRCode,
+                    var s when s == ClassBarcodes.cBarcode_UPC_A => BarcodeFormats.Upca,
+                    var s when s == ClassBarcodes.cBarcode_UPC_E => BarcodeFormats.Upce,
                     _ => BarcodeFormats.All
                 };
             }
@@ -241,7 +240,7 @@ namespace BarcodeGenerator
                     listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
                 }
 
-                // Remove duplicates
+                // Remove duplicates and convert back to List
                 listBarcodes = [.. listBarcodes.Distinct()];
 
                 // Sort the list

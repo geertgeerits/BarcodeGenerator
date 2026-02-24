@@ -2,279 +2,389 @@
 {
     internal class ClassBarcodes
     {
-        // Global constants for 1D barcode formats
-        public const string cBarcode_CODABAR = "Codabar";
-        
-        public const string cBarcode_CODE_39 = "Code 39";
-        public const string cBarcode_CODE_39_CHECKSUM_MOD_10 = "Code 39 Checksum Mod 10";
-        public const string cBarcode_CODE_39_CHECKSUM_MOD_43 = "Code 39 Checksum Mod 43";
-        public const string cBarcode_CODE_39_FULL_ASCII = "Code 39 Full ASCII";
-        public const string cBarcode_CODE_39_FULL_ASCII_CHECKSUM = "Code 39 Full ASCII Checksum";
-        
-        public const string cBarcode_CODE_93 = "Code 93";
-        public const string cBarcode_CODE_93_I = "Code 93i";
+        // Global readonly variables for 1D barcode formats
+        public static string cBarcode_CODABAR = CodeLang.Barcode_CODABAR_Text;
 
-        public const string cBarcode_CODE_128 = "Code 128";
+        public static string cBarcode_CODE_39 = CodeLang.Barcode_CODE_39_Text;
+        public static string cBarcode_CODE_39_CHECKSUM_MOD_10 = CodeLang.Barcode_CODE_39_CHECKSUM_MOD_10_Text;
+        public static string cBarcode_CODE_39_CHECKSUM_MOD_43 = CodeLang.Barcode_CODE_39_CHECKSUM_MOD_43_Text;
+        public static string cBarcode_CODE_39_FULL_ASCII = CodeLang.Barcode_CODE_39_FULL_ASCII_Text;
+        public static string cBarcode_CODE_39_FULL_ASCII_CHECKSUM = CodeLang.Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text;
 
-        public const string cBarcode_DX_FILM_EDGE = "DX Film Edge";                 // DX Film Edge
+        public static string cBarcode_CODE_93 = CodeLang.Barcode_CODE_93_Text;
+        public static string cBarcode_CODE_93_I = CodeLang.Barcode_CODE_93_I_Text;
 
-        public const string cBarcode_EAN_2 = "EAN-2";                               // European Article Number
-        public const string cBarcode_EAN_5 = "EAN-5";
-        public const string cBarcode_EAN_8 = "EAN-8";
-        public const string cBarcode_EAN_13 = "EAN-13";
-        public const string cBarcode_EAN_UPC = "EAN/UPC";
+        public static string cBarcode_CODE_128 = CodeLang.Barcode_CODE_128_Text;
 
-        public const string cBarcode_GS1_DATABAR = "GS1 Databar";                   // General Specifications 1
-        public const string cBarcode_GS1_DATABAR_EXPANDED = "GS1 Databar Expanded";
-        public const string cBarcode_GS1_DATABAR_EXPANDED_STACKED = "GS1 Databar Expanded Stacked";
-        public const string cBarcode_GS1_DATABAR_LIMITED = "GS1 Databar Limited";
-        public const string cBarcode_GS1_DATABAR_OMNI = "GS1 Databar Omni";
-        public const string cBarcode_GS1_DATABAR_STACKED = "GS1 Databar Stacked";
-        public const string cBarcode_GS1_DATABAR_STACKED_OMNI = "GS1 Databar Stacked Omni";
+        public static string cBarcode_DX_FILM_EDGE = CodeLang.Barcode_DX_FILM_EDGE_Text;    // DX Film Edge
 
-        public const string cBarcode_IMB = "IMb Intelligent Mail";                  // Intelligent Mail Barcode
+        public static string cBarcode_EAN_2 = CodeLang.Barcode_EAN_2_Text;              // European Article Number
+        public static string cBarcode_EAN_5 = CodeLang.Barcode_EAN_5_Text;
+        public static string cBarcode_EAN_8 = CodeLang.Barcode_EAN_8_Text;
+        public static string cBarcode_EAN_13 = CodeLang.Barcode_EAN_13_Text;
+        public static string cBarcode_EAN_UPC = CodeLang.Barcode_EAN_UPC_Text;
 
-        public const string cBarcode_ISBN = "ISBN Int. Standard Book Number";       // International Standard Book Number
+        public static string cBarcode_GS1_DATABAR = CodeLang.Barcode_GS1_DATABAR_Text;  // General Specifications 1
+        public static string cBarcode_GS1_DATABAR_EXPANDED = CodeLang.Barcode_GS1_DATABAR_EXPANDED_Text;
+        public static string cBarcode_GS1_DATABAR_EXPANDED_STACKED = CodeLang.Barcode_GS1_DATABAR_EXPANDED_STACKED_Text;
+        public static string cBarcode_GS1_DATABAR_LIMITED = CodeLang.Barcode_GS1_DATABAR_LIMITED_Text;
+        public static string cBarcode_GS1_DATABAR_OMNI = CodeLang.Barcode_GS1_DATABAR_OMNI_Text;
+        public static string cBarcode_GS1_DATABAR_STACKED = CodeLang.Barcode_GS1_DATABAR_STACKED_Text;
+        public static string cBarcode_GS1_DATABAR_STACKED_OMNI = CodeLang.Barcode_GS1_DATABAR_STACKED_OMNI_Text;
 
-        public const string cBarcode_ITF = "ITF Interleaved 2 of 5";                // Interleaved Two of Five
-        public const string cBarcode_ITF_14 = "ITF Interleaved 2 of 5 14";
-        public const string cBarcode_ITF_CHECKSUM = "ITF Interleaved 2 of 5 Checksum";
-        
-        public const string cBarcode_MSI = "MSI Modified Plessey";                  // Modified Plessey
+        public static string cBarcode_IMB = CodeLang.Barcode_IMB_Text;                  // Intelligent Mail Barcode
 
-        public const string cBarcode_PHARMACODE = "Pharmacode";
-        
-        public const string cBarcode_PLESSEY = "Plessey";
-        
-        public const string cBarcode_PZN = "PZN Pharma Central Number";             // Pharma Central Number
+        public static string cBarcode_ISBN = CodeLang.Barcode_ISBN_Text;                // International Standard Book Number
 
-        public const string cBarcode_RSS_14 = "RSS 14";                             // Reduce Space Symbology
-        public const string cBarcode_RSS_EXPANDED = "RSS Expanded";
-        
-        public const string cBarcode_UPC_A = "UPC-A";                               // Universal Product Code
-        public const string cBarcode_UPC_E = "UPC-E";
-        public const string cBarcode_UPC_EAN_EXTENSION = "UPC-EAN Extension";
+        public static string cBarcode_ITF = CodeLang.Barcode_ITF_Text;                  // Interleaved Two of Five
+        public static string cBarcode_ITF_14 = CodeLang.Barcode_ITF_14_Text;
+        public static string cBarcode_ITF_CHECKSUM = CodeLang.Barcode_ITF_CHECKSUM_Text;
 
-        // Global constants for 2D barcode formats
-        public const string cBarcode_AZTEC = "Aztec";
-        public const string cBarcode_AZTEC_CODE = "Aztec Code";
-        public const string cBarcode_AZTEC_RUNE = "Aztec Rune";
+        public static string cBarcode_MSI = CodeLang.Barcode_MSI_Text;                  // Modified Plessey
 
-        public const string cBarcode_DATA_MATRIX = "Data Matrix";
+        public static string cBarcode_PHARMACODE = CodeLang.Barcode_PHARMACODE_Text;
 
-        public const string cBarcode_MAXICODE = "MaxiCode";
+        public static string cBarcode_PLESSEY = CodeLang.Barcode_PLESSEY_Text;
 
-        public const string cBarcode_PDF_417 = "PDF417";                            // Portable Data File 417
-        public const string cBarcode_COMPACT_PDF_417 = "Compact PDF417";
-        public const string cBarcode_MICRO_PDF_417 = "Micro PDF417";
+        public static string cBarcode_PZN = CodeLang.Barcode_PZN_Text;                  // Pharma Central Number
 
-        public const string cBarcode_QR_CODE = "QR Code";                           // Quick Response Code
-        public const string cBarcode_QR_CODE_MODEL_1 = "QR Code Model 1";
-        public const string cBarcode_QR_CODE_MODEL_2 = "QR Code Model 2";
-        public const string cBarcode_FRAME_QR_CODE = "Frame QR Code";
-        public const string cBarcode_MICRO_QR_CODE = "Micro QR Code";
-        public const string cBarcode_RMQR = "rMQR Rectangular Micro QR Code";
-        public const string cBarcode_QR_CODE_IMAGE = "QR Code + Image";
+        public static string cBarcode_RSS_14 = CodeLang.Barcode_RSS_14_Text;            // Reduce Space Symbology
+        public static string cBarcode_RSS_EXPANDED = CodeLang.Barcode_RSS_EXPANDED_Text;
 
-        // Global constants and variables
+        public static string cBarcode_UPC_A = CodeLang.Barcode_UPC_A_Text;              // Universal Product Code
+        public static string cBarcode_UPC_E = CodeLang.Barcode_UPC_E_Text;
+        public static string cBarcode_UPC_EAN_EXTENSION = CodeLang.Barcode_UPC_EAN_EXTENSION_Text;
+
+        // Global readonly variables for 2D barcode formats
+        public static string cBarcode_AZTEC = CodeLang.Barcode_AZTEC_Text;
+        public static string cBarcode_AZTEC_CODE = CodeLang.Barcode_AZTEC_CODE_Text;
+        public static string cBarcode_AZTEC_RUNE = CodeLang.Barcode_AZTEC_RUNE_Text;
+
+        public static string cBarcode_DATA_MATRIX = CodeLang.Barcode_DATA_MATRIX_Text;
+
+        public static string cBarcode_MAXICODE = CodeLang.Barcode_MAXICODE_Text;
+
+        public static string cBarcode_PDF_417 = CodeLang.Barcode_PDF_417_Text;          // Portable Data File 417
+        public static string cBarcode_COMPACT_PDF_417 = CodeLang.Barcode_COMPACT_PDF_417_Text;  
+        public static string cBarcode_MICRO_PDF_417 = CodeLang.Barcode_MICRO_PDF_417_Text;
+
+        public static string cBarcode_QR_CODE = CodeLang.Barcode_QR_CODE_Text;          // Quick Response Code
+        public static string cBarcode_QR_CODE_MODEL_1 = CodeLang.Barcode_QR_CODE_MODEL_1_Text;
+        public static string cBarcode_QR_CODE_MODEL_2 = CodeLang.Barcode_QR_CODE_MODEL_2_Text;
+        public static string cBarcode_FRAME_QR_CODE = CodeLang.Barcode_FRAME_QR_CODE_Text;
+        public static string cBarcode_MICRO_QR_CODE = CodeLang.Barcode_MICRO_QR_CODE_Text;
+        public static string cBarcode_RMQR = CodeLang.Barcode_RMQR_Text;
+        public static string cBarcode_QR_CODE_IMAGE = CodeLang.Barcode_QR_CODE_IMAGE_Text;
+
+        // Global variables
         public static int nBarcodeGeneratorIndex;
         public static int nBarcodeScannerIndex;
         public static string cBarcodeGeneratorName = string.Empty;
         public static string cBarcodeScannerName = string.Empty;
-        public const string cBarcodeGeneratorDefault = cBarcode_QR_CODE;
-        public static readonly string cBarcodeScannerDefault = CodeLang.AllCodes_Text;
+        public static string cBarcodeGeneratorDefault = cBarcode_QR_CODE;
+        public static string cBarcodeScannerDefault = CodeLang.Barcode_AllCodes_Text;
+
+        /// <summary>
+        /// Initialize the barcode formats by assigning the values from the resource file to the global readonly variables
+        /// This method can be called in the constructor of the main page or in the startup class of the application
+        /// </summary>
+        public static void InitializeBarcodeFormats()
+        {
+            // Global readonly variables for 1D barcode formats
+            cBarcode_CODABAR = CodeLang.Barcode_CODABAR_Text;
+
+            cBarcode_CODE_39 = CodeLang.Barcode_CODE_39_Text;
+            cBarcode_CODE_39_CHECKSUM_MOD_10 = CodeLang.Barcode_CODE_39_CHECKSUM_MOD_10_Text;
+            cBarcode_CODE_39_CHECKSUM_MOD_43 = CodeLang.Barcode_CODE_39_CHECKSUM_MOD_43_Text;
+            cBarcode_CODE_39_FULL_ASCII = CodeLang.Barcode_CODE_39_FULL_ASCII_Text;
+            cBarcode_CODE_39_FULL_ASCII_CHECKSUM = CodeLang.Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text;
+
+            cBarcode_CODE_93 = CodeLang.Barcode_CODE_93_Text;
+            cBarcode_CODE_93_I = CodeLang.Barcode_CODE_93_I_Text;
+
+            cBarcode_CODE_128 = CodeLang.Barcode_CODE_128_Text;
+
+            cBarcode_DX_FILM_EDGE = CodeLang.Barcode_DX_FILM_EDGE_Text;                             // DX Film Edge
+            cBarcode_EAN_2 = CodeLang.Barcode_EAN_2_Text;                                           // European Article Number
+            cBarcode_EAN_5 = CodeLang.Barcode_EAN_5_Text;
+            cBarcode_EAN_8 = CodeLang.Barcode_EAN_8_Text;
+            cBarcode_EAN_13 = CodeLang.Barcode_EAN_13_Text;
+            cBarcode_EAN_UPC = CodeLang.Barcode_EAN_UPC_Text;
+
+            cBarcode_GS1_DATABAR = CodeLang.Barcode_GS1_DATABAR_Text;                               // General Specifications 1
+            cBarcode_GS1_DATABAR_EXPANDED = CodeLang.Barcode_GS1_DATABAR_EXPANDED_Text;
+            cBarcode_GS1_DATABAR_EXPANDED_STACKED = CodeLang.Barcode_GS1_DATABAR_EXPANDED_STACKED_Text;
+            cBarcode_GS1_DATABAR_LIMITED = CodeLang.Barcode_GS1_DATABAR_LIMITED_Text;
+            cBarcode_GS1_DATABAR_OMNI = CodeLang.Barcode_GS1_DATABAR_OMNI_Text;
+            cBarcode_GS1_DATABAR_STACKED = CodeLang.Barcode_GS1_DATABAR_STACKED_Text;
+            cBarcode_GS1_DATABAR_STACKED_OMNI = CodeLang.Barcode_GS1_DATABAR_STACKED_OMNI_Text;
+
+            cBarcode_IMB = CodeLang.Barcode_IMB_Text;                       // Intelligent Mail Barcode
+
+            cBarcode_ISBN = CodeLang.Barcode_ISBN_Text;                     // International Standard Book Number
+            cBarcode_ITF = CodeLang.Barcode_ITF_Text;                       // Interleaved Two of Five
+            cBarcode_ITF_14 = CodeLang.Barcode_ITF_14_Text;
+            cBarcode_ITF_CHECKSUM = CodeLang.Barcode_ITF_CHECKSUM_Text;
+
+            cBarcode_MSI = CodeLang.Barcode_MSI_Text;                       // Modified Plessey
+
+            cBarcode_PHARMACODE = CodeLang.Barcode_PHARMACODE_Text;
+            cBarcode_PLESSEY = CodeLang.Barcode_PLESSEY_Text;
+
+            cBarcode_PZN = CodeLang.Barcode_PZN_Text;                       // Pharma Central Number
+
+            cBarcode_RSS_14 = CodeLang.Barcode_RSS_14_Text;                 // Reduce Space Symbology
+            cBarcode_RSS_EXPANDED = CodeLang.Barcode_RSS_EXPANDED_Text;
+            cBarcode_UPC_A = CodeLang.Barcode_UPC_A_Text;                   // Universal Product Code
+            cBarcode_UPC_E = CodeLang.Barcode_UPC_E_Text;
+            cBarcode_UPC_EAN_EXTENSION = CodeLang.Barcode_UPC_EAN_EXTENSION_Text;
+
+            // Global readonly variables for 2D barcode formats
+            cBarcode_AZTEC = CodeLang.Barcode_AZTEC_Text;
+            cBarcode_AZTEC_CODE = CodeLang.Barcode_AZTEC_CODE_Text;
+            cBarcode_AZTEC_RUNE = CodeLang.Barcode_AZTEC_RUNE_Text;
+
+            cBarcode_DATA_MATRIX = CodeLang.Barcode_DATA_MATRIX_Text;
+
+            cBarcode_MAXICODE = CodeLang.Barcode_MAXICODE_Text;
+
+            cBarcode_PDF_417 = CodeLang.Barcode_PDF_417_Text;               // Portable Data File 417
+            cBarcode_COMPACT_PDF_417 = CodeLang.Barcode_COMPACT_PDF_417_Text;
+            cBarcode_MICRO_PDF_417 = CodeLang.Barcode_MICRO_PDF_417_Text;
+
+            cBarcode_QR_CODE = CodeLang.Barcode_QR_CODE_Text;               // Quick Response Code
+            cBarcode_QR_CODE_MODEL_1 = CodeLang.Barcode_QR_CODE_MODEL_1_Text;
+            cBarcode_QR_CODE_MODEL_2 = CodeLang.Barcode_QR_CODE_MODEL_2_Text;
+            cBarcode_FRAME_QR_CODE = CodeLang.Barcode_FRAME_QR_CODE_Text;
+            cBarcode_MICRO_QR_CODE = CodeLang.Barcode_MICRO_QR_CODE_Text;
+            cBarcode_RMQR = CodeLang.Barcode_RMQR_Text;
+            cBarcode_QR_CODE_IMAGE = CodeLang.Barcode_QR_CODE_IMAGE_Text;
+
+            // Default values for the barcode generator and scanner
+            cBarcodeGeneratorDefault = cBarcode_QR_CODE;
+            cBarcodeScannerDefault = CodeLang.Barcode_AllCodes_Text;
+        }
 
         /// <summary>
         /// Put the generator barcode formats in a List string using the ZXing library for all platforms
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetFormatCodeListGenerator_ZX() => [
-                cBarcode_AZTEC,
-                cBarcode_CODABAR,
-                cBarcode_CODE_39,
-                cBarcode_CODE_93,
-                cBarcode_CODE_128,
-                cBarcode_DATA_MATRIX,
-                cBarcode_EAN_8,
-                cBarcode_EAN_13,
-                cBarcode_ITF,
-                cBarcode_MSI,
-                cBarcode_PDF_417,
-                cBarcode_PLESSEY,
-                cBarcode_QR_CODE,
-                cBarcode_QR_CODE_IMAGE,
-                cBarcode_UPC_A,
-                cBarcode_UPC_E
-            ];
-
-        //public static List<string> GetFormatCodeListGenerator_ZX() =>
-        //    [.. new List<string>
-        //    {
-        //        cBarcode_AZTEC,
-        //        cBarcode_CODABAR,
-        //        cBarcode_CODE_39,
-        //        cBarcode_CODE_93,
-        //        cBarcode_CODE_128,
-        //        cBarcode_DATA_MATRIX,
-        //        cBarcode_EAN_8,
-        //        cBarcode_EAN_13,
-        //        cBarcode_ITF,
-        //        cBarcode_MSI,
-        //        cBarcode_PDF_417,
-        //        cBarcode_PLESSEY,
-        //        cBarcode_QR_CODE,
-        //        cBarcode_QR_CODE_IMAGE,
-        //        cBarcode_UPC_A,
-        //        cBarcode_UPC_E
-        //    }
-        //    .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
+        public static List<string> GetFormatCodeListGenerator_ZX() => [.. new List<string>
+            {
+                CodeLang.Barcode_AZTEC_Text,
+                CodeLang.Barcode_CODABAR_Text,
+                CodeLang.Barcode_CODE_39_Text,
+                CodeLang.Barcode_CODE_93_Text,
+                CodeLang.Barcode_CODE_128_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_EAN_8_Text,
+                CodeLang.Barcode_EAN_13_Text,
+                CodeLang.Barcode_ITF_Text,
+                CodeLang.Barcode_MSI_Text,
+                CodeLang.Barcode_PDF_417_Text,
+                CodeLang.Barcode_PLESSEY_Text,
+                CodeLang.Barcode_QR_CODE_Text,
+                CodeLang.Barcode_QR_CODE_IMAGE_Text,
+                CodeLang.Barcode_UPC_A_Text,
+                CodeLang.Barcode_UPC_E_Text
+            }
+            .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
         /// <summary>
         /// Put the generator barcode formats in a List string using the ZXing library for Windows
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetFormatCodeListGenerator_ZX_Windows() => [
-                cBarcode_AZTEC,
-                //cBarcode_CODE_93,
-                cBarcode_DATA_MATRIX,
-                cBarcode_PDF_417,
-                cBarcode_QR_CODE,
-                cBarcode_QR_CODE_IMAGE
-                //cBarcode_UPC_E
-            ];
-
-        //public static List<string> GetFormatCodeListGenerator_ZX_Windows() =>
-        //    [.. new List<string>
-        //    {
-        //        cBarcode_AZTEC,
-        //        //cBarcode_CODE_93,
-        //        cBarcode_DATA_MATRIX,
-        //        cBarcode_PDF_417,
-        //        cBarcode_QR_CODE,
-        //        cBarcode_QR_CODE_IMAGE
-        //        //cBarcode_UPC_E
-        //    }
-        //    .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
+        public static List<string> GetFormatCodeListGenerator_ZX_Windows() => [.. new List<string>
+            {
+                CodeLang.Barcode_AZTEC_Text,
+                //CodeLang.Barcode_CODE_93_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_PDF_417_Text,
+                CodeLang.Barcode_QR_CODE_Text,
+                CodeLang.Barcode_QR_CODE_IMAGE_Text
+                //CodeLang.Barcode_UPC_E_Text
+            }
+            .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
         /// <summary>
         /// Put the scanner barcode formats in a List string using the ZXing library for all platforms
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetFormatCodeListScanner_ZX() => [
-                CodeLang.AllCodes_Text,
-                cBarcode_AZTEC,
-                cBarcode_CODABAR,
-                cBarcode_CODE_39,
-                cBarcode_CODE_93,
-                cBarcode_CODE_128,
-                cBarcode_DATA_MATRIX,
-                cBarcode_EAN_8,
-                cBarcode_EAN_13,
-                cBarcode_IMB,
-                cBarcode_ITF,
-                cBarcode_MAXICODE,
-                cBarcode_MSI,
-                cBarcode_PDF_417,
-                cBarcode_PHARMACODE,
-                cBarcode_PLESSEY,
-                cBarcode_QR_CODE,
-                cBarcode_RSS_14,
-                cBarcode_RSS_EXPANDED,
-                cBarcode_UPC_A,
-                cBarcode_UPC_E,
-                cBarcode_UPC_EAN_EXTENSION
-            ];
+        public static List<string> GetFormatCodeListScanner_ZX() => [.. new List<string>
+            {
+                CodeLang.Barcode_AllCodes_Text,
+                CodeLang.Barcode_AZTEC_Text,
+                CodeLang.Barcode_CODABAR_Text,
+                CodeLang.Barcode_CODE_39_Text,
+                CodeLang.Barcode_CODE_93_Text,
+                CodeLang.Barcode_CODE_128_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_EAN_8_Text,
+                CodeLang.Barcode_EAN_13_Text,
+                CodeLang.Barcode_IMB_Text,
+                CodeLang.Barcode_ITF_Text,
+                CodeLang.Barcode_MAXICODE_Text,
+                CodeLang.Barcode_MSI_Text,
+                CodeLang.Barcode_PDF_417_Text,
+                CodeLang.Barcode_PHARMACODE_Text,
+                CodeLang.Barcode_PLESSEY_Text,
+                CodeLang.Barcode_QR_CODE_Text,
+                CodeLang.Barcode_RSS_14_Text,
+                CodeLang.Barcode_RSS_EXPANDED_Text,
+                CodeLang.Barcode_UPC_A_Text,
+                CodeLang.Barcode_UPC_E_Text,
+                CodeLang.Barcode_UPC_EAN_EXTENSION_Text
+            }
+            .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
         /// <summary>
         /// Put the scanner barcode formats in a List string using the native library for Android
         /// https://developers.google.com/ml-kit/vision/barcode-scanning/android
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetFormatCodeListScanner_NT_Android() => [
-                CodeLang.AllCodes_Text,
-                cBarcode_AZTEC,
-                cBarcode_CODABAR,
-                cBarcode_CODE_39,
-                cBarcode_CODE_93,
-                cBarcode_CODE_128,
-                cBarcode_DATA_MATRIX,
-                cBarcode_EAN_8,
-                cBarcode_EAN_13,
-                cBarcode_ITF,
-                cBarcode_PDF_417,
-                cBarcode_QR_CODE,
-                cBarcode_UPC_A,
-                cBarcode_UPC_E
-            ];
+        public static List<string> GetFormatCodeListScanner_NT_Android() => [.. new List<string>
+            {
+                CodeLang.Barcode_AllCodes_Text,
+                CodeLang.Barcode_AZTEC_Text,
+                CodeLang.Barcode_CODABAR_Text,
+                CodeLang.Barcode_CODE_39_Text,
+                CodeLang.Barcode_CODE_93_Text,
+                CodeLang.Barcode_CODE_128_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_EAN_8_Text,
+                CodeLang.Barcode_EAN_13_Text,
+                CodeLang.Barcode_ITF_Text,
+                CodeLang.Barcode_PDF_417_Text,
+                CodeLang.Barcode_QR_CODE_Text,
+                CodeLang.Barcode_UPC_A_Text,
+                CodeLang.Barcode_UPC_E_Text
+            }
+            .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
         /// <summary>
         /// Put the scanner barcode formats in a List string using the native library for iOS
         /// https://developer.apple.com/documentation/avfoundation/avmetadataobject/objecttype
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetFormatCodeListScanner_NT_IOS() => [
-                CodeLang.AllCodes_Text,
-                cBarcode_AZTEC,
-                cBarcode_CODABAR,
-                cBarcode_CODE_39,
-                cBarcode_CODE_93,
-                cBarcode_CODE_128,
-                cBarcode_DATA_MATRIX,
-                cBarcode_EAN_8,
-                cBarcode_EAN_13,
-                cBarcode_GS1_DATABAR,
-                cBarcode_ITF,
-                cBarcode_MICRO_PDF_417,
-                cBarcode_MICRO_QR_CODE,
-                cBarcode_PDF_417,
-                cBarcode_QR_CODE,
-                cBarcode_UPC_A,
-                cBarcode_UPC_E
-            ];
+        public static List<string> GetFormatCodeListScanner_NT_IOS() => [.. new List<string>
+            {
+                CodeLang.Barcode_AllCodes_Text,
+                CodeLang.Barcode_AZTEC_Text,
+                CodeLang.Barcode_CODABAR_Text,
+                CodeLang.Barcode_CODE_39_Text,
+                CodeLang.Barcode_CODE_93_Text,
+                CodeLang.Barcode_CODE_128_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_EAN_8_Text,
+                CodeLang.Barcode_EAN_13_Text,
+                CodeLang.Barcode_GS1_DATABAR_Text,
+                CodeLang.Barcode_ITF_Text,
+                CodeLang.Barcode_MICRO_PDF_417_Text,
+                CodeLang.Barcode_MICRO_QR_CODE_Text,
+                CodeLang.Barcode_PDF_417_Text,
+                CodeLang.Barcode_QR_CODE_Text,
+                CodeLang.Barcode_UPC_A_Text,
+                CodeLang.Barcode_UPC_E_Text
+            }
+            .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
         /// <summary>
         /// Put the scanner barcode formats in a List string using the native library for Windows
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetFormatCodeListScanner_NT_Windows() => [
-                CodeLang.AllCodes_Text,
-                cBarcode_AZTEC,
-                cBarcode_AZTEC_CODE,
-                cBarcode_AZTEC_RUNE,
-                cBarcode_CODABAR,
-                cBarcode_CODE_39,
-                cBarcode_CODE_93,
-                cBarcode_CODE_128,
-                cBarcode_COMPACT_PDF_417,
-                cBarcode_DATA_MATRIX,
-                cBarcode_DX_FILM_EDGE,
-                cBarcode_EAN_2,
-                cBarcode_EAN_5,
-                cBarcode_EAN_8,
-                cBarcode_EAN_13,
-                cBarcode_EAN_UPC,
-                cBarcode_GS1_DATABAR,
-                cBarcode_GS1_DATABAR_EXPANDED,
-                cBarcode_GS1_DATABAR_EXPANDED_STACKED,
-                cBarcode_GS1_DATABAR_LIMITED,
-                cBarcode_GS1_DATABAR_OMNI,
-                cBarcode_GS1_DATABAR_STACKED,
-                cBarcode_GS1_DATABAR_STACKED_OMNI,
-                cBarcode_ISBN,
-                cBarcode_ITF,
-                cBarcode_ITF_14,
-                cBarcode_MAXICODE,
-                cBarcode_MICRO_PDF_417,
-                cBarcode_MICRO_QR_CODE,
-                cBarcode_PDF_417,
-                cBarcode_PZN,
-                cBarcode_QR_CODE,
-                cBarcode_QR_CODE_MODEL_1,
-                cBarcode_QR_CODE_MODEL_2,
-                cBarcode_RMQR,
-                cBarcode_UPC_A,
-                cBarcode_UPC_E
-            ];
+        public static List<string> GetFormatCodeListScanner_NT_Windows() => [.. new List<string>
+            {
+                CodeLang.Barcode_AllCodes_Text,
+                CodeLang.Barcode_AZTEC_Text,
+                CodeLang.Barcode_AZTEC_CODE_Text,
+                CodeLang.Barcode_AZTEC_RUNE_Text,
+                CodeLang.Barcode_CODABAR_Text,
+                CodeLang.Barcode_CODE_39_Text,
+                CodeLang.Barcode_CODE_93_Text,
+                CodeLang.Barcode_CODE_128_Text,
+                CodeLang.Barcode_COMPACT_PDF_417_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_DX_FILM_EDGE_Text,
+                CodeLang.Barcode_EAN_2_Text,
+                CodeLang.Barcode_EAN_5_Text,
+                CodeLang.Barcode_EAN_8_Text,
+                CodeLang.Barcode_EAN_13_Text,
+                CodeLang.Barcode_EAN_UPC_Text,
+                CodeLang.Barcode_GS1_DATABAR_Text,
+                CodeLang.Barcode_GS1_DATABAR_EXPANDED_Text,
+                CodeLang.Barcode_GS1_DATABAR_EXPANDED_STACKED_Text,
+                CodeLang.Barcode_GS1_DATABAR_LIMITED_Text,
+                CodeLang.Barcode_GS1_DATABAR_OMNI_Text,
+                CodeLang.Barcode_GS1_DATABAR_STACKED_Text,
+                CodeLang.Barcode_GS1_DATABAR_STACKED_OMNI_Text,
+                CodeLang.Barcode_ISBN_Text,
+                CodeLang.Barcode_ITF_Text,
+                CodeLang.Barcode_ITF_14_Text,
+                CodeLang.Barcode_MAXICODE_Text,
+                CodeLang.Barcode_MICRO_PDF_417_Text,
+                CodeLang.Barcode_MICRO_QR_CODE_Text,
+                CodeLang.Barcode_PDF_417_Text,
+                CodeLang.Barcode_PZN_Text,
+                CodeLang.Barcode_QR_CODE_Text,
+                CodeLang.Barcode_QR_CODE_MODEL_1_Text,
+                CodeLang.Barcode_QR_CODE_MODEL_2_Text,
+                CodeLang.Barcode_RMQR_Text,
+                CodeLang.Barcode_UPC_A_Text,
+                CodeLang.Barcode_UPC_E_Text
+            }
+            .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
+
+        /// <summary>
+        /// Select the name and index in the generator barcode list
+        /// </summary>
+        /// <param name="picker"></param>
+        public static void SelectBarcodeGeneratorNameIndex(Picker picker)
+        {
+            // If there is no saved barcode generator name then set it to the default barcode generator name
+            if (string.IsNullOrEmpty(cBarcodeGeneratorName))
+            {
+                cBarcodeGeneratorName = cBarcodeGeneratorDefault;
+            }
+
+            // Search for the name of the barcode in the picker list
+            nBarcodeGeneratorIndex = picker.Items.IndexOf(cBarcodeGeneratorName);
+
+            // If the saved barcode name was not found in the list then set it to the first barcode name
+            if (nBarcodeGeneratorIndex < 0)
+            {
+                nBarcodeGeneratorIndex = 0;
+                cBarcodeGeneratorName = picker.Items[nBarcodeGeneratorIndex];
+            }
+
+            // Select the barcode format in the picker
+            picker.SelectedIndex = nBarcodeGeneratorIndex;
+        }
+
+        /// <summary>
+        /// Select the name and index in the scanner barcode list
+        /// </summary>
+        /// <param name="picker"></param>
+        public static void SelectBarcodeScannerNameIndex(Picker picker)
+        {
+            // If there is no saved barcode scanner name then set it to the default barcode scanner name
+            if (string.IsNullOrEmpty(cBarcodeScannerName))
+            {
+                cBarcodeScannerName = cBarcodeScannerDefault;
+            }
+
+            // Search for the name of the barcode in the picker list
+            nBarcodeScannerIndex = picker.Items.IndexOf(cBarcodeScannerName);
+            
+            // If the saved barcode name was not found in the list then set it to the first barcode name
+            if (nBarcodeScannerIndex < 0)
+            {
+                nBarcodeScannerIndex = 0;
+                cBarcodeScannerName = picker.Items[nBarcodeScannerIndex];
+            }
+
+            // Select the barcode format in the picker
+            picker.SelectedIndex = nBarcodeScannerIndex;
+        }
     }
 }
 

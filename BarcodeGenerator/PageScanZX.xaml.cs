@@ -40,21 +40,12 @@ namespace BarcodeGenerator
             // Initialize the barcode pickers
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_ZX();
 
-            // Search for the name of the saved barcode in the picker list
-            ClassBarcodes.nBarcodeScannerIndex = !string.IsNullOrEmpty(ClassBarcodes.cBarcodeScannerName)
-                ? Globals.SearchIndexInPickerList(pckFormatCodeScanner, ClassBarcodes.cBarcodeScannerName) : -1;
+            // Set the barcode list and the select the saved or default barcode format for the barcode scanner
+            ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
+            Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
 
-            // If the saved barcode name was not found in the list then set the default index to 0 (All codes)
-            if (ClassBarcodes.nBarcodeScannerIndex == -1)
-            {
-                ClassBarcodes.nBarcodeScannerIndex = 0;
-                ClassBarcodes.cBarcodeScannerName = pckFormatCodeScanner.Items[ClassBarcodes.nBarcodeScannerIndex];
-
-                Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
-            }
-
-            // Select the barcode format in the picker
-            pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
+            //// Select the barcode format in the picker
+            //pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
 
             // Set controls for text to speech
             if (Globals.bTextToSpeechAvailable)
@@ -82,175 +73,237 @@ namespace BarcodeGenerator
             {
                 lblBarcodeResult.Text = "";
                 btnShare.Text = CodeLang.ButtonShare_Text;
-            
+
                 imgbtnCopyToClipboard.IsEnabled = false;
                 btnShare.IsEnabled = false;
                 imgbtnTextToSpeech.IsEnabled = false;
 
                 var itemsSource = picker.ItemsSource;
-                string? item = itemsSource is not null && itemsSource.Count > selectedIndex
-                    ? itemsSource[selectedIndex] as string : null;
+                string? selectedName = itemsSource is not null && itemsSource.Count > selectedIndex
+                    ? itemsSource[selectedIndex] as string
+                    : string.Empty;
 
-                string? selectedName = item is not null
-                    ? picker.ItemsSource[selectedIndex] as string : string.Empty;
-
-                barcodeReader.Options = selectedName switch
+                // Use equality comparisons instead of a switch expression because ClassBarcodes members are not compile-time constants.
+                if (selectedName == ClassBarcodes.cBarcode_AZTEC)
                 {
-                    ClassBarcodes.cBarcode_AZTEC => new BarcodeReaderOptions
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Aztec,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_CODABAR => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_CODABAR)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Codabar,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_CODE_128 => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_CODE_128)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Code128,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_CODE_39 => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Code39,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_CODE_93 => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_CODE_93)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Code93,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_DATA_MATRIX => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.DataMatrix,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_EAN_13 => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Ean13,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_EAN_8 => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Ean8,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_IMB => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_IMB)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Imb,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_ITF => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_ITF)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Itf,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_MAXICODE => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_MAXICODE)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.MaxiCode,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_MSI => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_MSI)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Msi,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_PDF_417 => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Pdf417,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_PHARMACODE => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_PHARMACODE)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.PharmaCode,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_PLESSEY => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Plessey,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_QR_CODE => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.QrCode,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_RSS_14 => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_RSS_14)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.Rss14,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_RSS_EXPANDED => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_RSS_EXPANDED)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.RssExpanded,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_UPC_A => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.UpcA,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_UPC_E => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.UpcE,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    ClassBarcodes.cBarcode_UPC_EAN_EXTENSION => new BarcodeReaderOptions
+                    };
+                }
+                else if (selectedName == ClassBarcodes.cBarcode_UPC_EAN_EXTENSION)
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormat.UpcEanExtension,
                         Multiple = true,
                         TryHarder = true
-                    },
-                    _ => new BarcodeReaderOptions
+                    };
+                }
+                else
+                {
+                    barcodeReader.Options = new BarcodeReaderOptions
                     {
                         AutoRotate = true,
                         Formats = BarcodeFormats.All,
                         Multiple = true,
                         TryHarder = true
-                    },
-                };
+                    };
+                }
             }
         }
 
@@ -399,7 +452,7 @@ namespace BarcodeGenerator
             {
                 return status;
             }
-        
+
             if (status == PermissionStatus.Unknown && DeviceInfo.Platform == DevicePlatform.iOS)
             {
                 // Prompt the user to turn on in settings

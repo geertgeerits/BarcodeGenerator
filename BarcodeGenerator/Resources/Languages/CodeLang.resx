@@ -120,7 +120,7 @@
   <data name="Agree_Text" xml:space="preserve">
     <value>Agree</value>
   </data>
-  <data name="AllCodes_Text" xml:space="preserve">
+  <data name="Barcode_AllCodes_Text" xml:space="preserve">
     <value>All codes</value>
   </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
@@ -140,6 +140,102 @@
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
     <value>Scanner</value>
+  </data>
+  <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
+    <value>Aztec Code</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
+    <value>Code 39 checksum mod 10</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
+    <value>Code 39 checksum mod 43</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
+    <value>Code 39 full ASCII checksum</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
+    <value>Code 39 full ASCII</value>
+  </data>
+  <data name="Barcode_CODE_39_Text" xml:space="preserve">
+    <value>Code 39</value>
+  </data>
+  <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
+    <value>Code 93i</value>
+  </data>
+  <data name="Barcode_CODE_93_Text" xml:space="preserve">
+    <value>Code 93</value>
+  </data>
+  <data name="Barcode_CODE_128_Text" xml:space="preserve">
+    <value>Code 128</value>
+  </data>
+  <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
+    <value>Compact PDF417</value>
+  </data>
+  <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
+    <value>Frame QR Code</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar expanded stacked</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>GS1 Databar expanded</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 Databar limited</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar omnidirectional</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar stacked omnidirectional</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar stacked</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>IMb Intelligent Mail</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>ISBN Int. Standard Book Number</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF Interleaved 2 of 5 14</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>ITF Interleaved 2 of 5 checksum</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF Interleaved 2 of 5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Micro QR Code</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI Modified Plessey</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN Pharma Central Number</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>QR Code with image</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>QR Code model 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>QR Code model 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>QR Code</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>RMQR Rectangular Micro QR Code</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>RSS Expanded</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>UPC-EAN Extension</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Close</value>
@@ -508,5 +604,62 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Micro PDF417</value>
+  </data>
+  <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
+    <value>DX Film Edge</value>
+  </data>
+  <data name="Barcode_EAN_2_Text" xml:space="preserve">
+    <value>EAN-2</value>
+  </data>
+  <data name="Barcode_EAN_5_Text" xml:space="preserve">
+    <value>EAN-5</value>
+  </data>
+  <data name="Barcode_EAN_8_Text" xml:space="preserve">
+    <value>EAN-8</value>
+  </data>
+  <data name="Barcode_EAN_13_Text" xml:space="preserve">
+    <value>EAN-13</value>
+  </data>
+  <data name="Barcode_EAN_UPC_Text" xml:space="preserve">
+    <value>EAN/UPC</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
+    <value>GS1 Databar</value>
+  </data>
+  <data name="Barcode_CODABAR_Text" xml:space="preserve">
+    <value>Codabar</value>
+  </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>Pharmacode</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>Plessey</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>RSS 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
+  <data name="Barcode_AZTEC_Text" xml:space="preserve">
+    <value>Aztec</value>
+  </data>
+  <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
+    <value>Aztec Rune</value>
+  </data>
+  <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
+    <value>Data Matrix</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>MaxiCode</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
   </data>
 </root>
