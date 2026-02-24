@@ -55,15 +55,6 @@
                 _ => 0          // System
             };
 
-            // Set the generator barcode formats in the picker
-#if WINDOWS
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
-#else
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
-#endif
-            // Select the current barcode format in the picker for the barcode generator
-            ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
-
             // Set the current color in the entry and on the sliders
             int nOpacity = 0;
             int nRed = 0;
@@ -144,22 +135,23 @@
 
         /// <summary>
         /// Put text in the chosen language in the controls and variables
-        /// The pickers 'pckTheme' and 'pckFormatCodeScanner' are set in this method because some values
-        /// in the pickers are different depending on the language
+        /// The pickers 'pckTheme', 'pckFormatCodeGenerator' and 'pckFormatCodeScanner' are set in this method
+        /// because some values in the pickers are different depending on the language
         /// </summary>
         private void SetLanguage()
         {
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
-            ClassBarcodes.InitializeBarcodeFormats();
+            //ClassBarcodes.InitializeBarcodeFormats();
 
             // Set the generator barcode formats in the picker
 #if WINDOWS
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
-            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows().Count;
 #else
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
-            int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX().Count;
 #endif
+            // Select the current barcode format in the picker for the barcode generator
+            ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
+            
             // Set the scanner barcode formats in the picker
 #if ANDROID
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Android();
@@ -169,7 +161,7 @@
             //pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Windows();
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_ZX();
 #endif
-            // Search for the name of the saved barcode in the picker list
+            // Select the current barcode format in the picker for the barcode scanner
             ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
 
             // Set the QR code image size percent in the label

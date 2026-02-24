@@ -112,7 +112,6 @@ namespace BarcodeGenerator
             SetTextLanguage();
 
             // Select the name and index in the barcode list and save the name
-            //ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
 
             // Initialize text to speech and get and set the speech language
@@ -927,9 +926,6 @@ namespace BarcodeGenerator
             {
                 btnShare.Text = CodeLang.ButtonShare_Text;
             }
-
-            // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
-            //ClassBarcodes.InitializeBarcodeFormats();
         }
 
         /// <summary>
