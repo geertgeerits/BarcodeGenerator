@@ -3,78 +3,78 @@
     internal class ClassBarcodes
     {
         // Global readonly variables for 1D barcode formats
-        public static string cBarcode_CODABAR = CodeLang.Barcode_CODABAR_Text;
+        public static string cBarcode_CODABAR = string.Empty;
 
-        public static string cBarcode_CODE_39 = CodeLang.Barcode_CODE_39_Text;
-        public static string cBarcode_CODE_39_CHECKSUM_MOD_10 = CodeLang.Barcode_CODE_39_CHECKSUM_MOD_10_Text;
-        public static string cBarcode_CODE_39_CHECKSUM_MOD_43 = CodeLang.Barcode_CODE_39_CHECKSUM_MOD_43_Text;
-        public static string cBarcode_CODE_39_FULL_ASCII = CodeLang.Barcode_CODE_39_FULL_ASCII_Text;
-        public static string cBarcode_CODE_39_FULL_ASCII_CHECKSUM = CodeLang.Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text;
+        public static string cBarcode_CODE_39 = string.Empty;
+        public static string cBarcode_CODE_39_CHECKSUM_MOD_10 = string.Empty;
+        public static string cBarcode_CODE_39_CHECKSUM_MOD_43 = string.Empty;
+        public static string cBarcode_CODE_39_FULL_ASCII = string.Empty;
+        public static string cBarcode_CODE_39_FULL_ASCII_CHECKSUM = string.Empty;
 
-        public static string cBarcode_CODE_93 = CodeLang.Barcode_CODE_93_Text;
-        public static string cBarcode_CODE_93_I = CodeLang.Barcode_CODE_93_I_Text;
+        public static string cBarcode_CODE_93 = string.Empty;
+        public static string cBarcode_CODE_93_I = string.Empty;
+        
+        public static string cBarcode_CODE_128 = string.Empty;
 
-        public static string cBarcode_CODE_128 = CodeLang.Barcode_CODE_128_Text;
+        public static string cBarcode_DX_FILM_EDGE = string.Empty;              // DX Film Edge
 
-        public static string cBarcode_DX_FILM_EDGE = CodeLang.Barcode_DX_FILM_EDGE_Text;    // DX Film Edge
+        public static string cBarcode_EAN_2 = string.Empty;                     // European Article Number
+        public static string cBarcode_EAN_5 = string.Empty;
+        public static string cBarcode_EAN_8 = string.Empty;
+        public static string cBarcode_EAN_13 = string.Empty;
+        public static string cBarcode_EAN_UPC = string.Empty;
 
-        public static string cBarcode_EAN_2 = CodeLang.Barcode_EAN_2_Text;              // European Article Number
-        public static string cBarcode_EAN_5 = CodeLang.Barcode_EAN_5_Text;
-        public static string cBarcode_EAN_8 = CodeLang.Barcode_EAN_8_Text;
-        public static string cBarcode_EAN_13 = CodeLang.Barcode_EAN_13_Text;
-        public static string cBarcode_EAN_UPC = CodeLang.Barcode_EAN_UPC_Text;
+        public static string cBarcode_GS1_DATABAR = string.Empty;               // General Specifications 1
+        public static string cBarcode_GS1_DATABAR_EXPANDED = string.Empty;
+        public static string cBarcode_GS1_DATABAR_EXPANDED_STACKED = string.Empty;
+        public static string cBarcode_GS1_DATABAR_LIMITED = string.Empty;
+        public static string cBarcode_GS1_DATABAR_OMNI = string.Empty;
+        public static string cBarcode_GS1_DATABAR_STACKED = string.Empty;
+        public static string cBarcode_GS1_DATABAR_STACKED_OMNI = string.Empty;
+        
+        public static string cBarcode_IMB = string.Empty;                       // Intelligent Mail Barcode
 
-        public static string cBarcode_GS1_DATABAR = CodeLang.Barcode_GS1_DATABAR_Text;  // General Specifications 1
-        public static string cBarcode_GS1_DATABAR_EXPANDED = CodeLang.Barcode_GS1_DATABAR_EXPANDED_Text;
-        public static string cBarcode_GS1_DATABAR_EXPANDED_STACKED = CodeLang.Barcode_GS1_DATABAR_EXPANDED_STACKED_Text;
-        public static string cBarcode_GS1_DATABAR_LIMITED = CodeLang.Barcode_GS1_DATABAR_LIMITED_Text;
-        public static string cBarcode_GS1_DATABAR_OMNI = CodeLang.Barcode_GS1_DATABAR_OMNI_Text;
-        public static string cBarcode_GS1_DATABAR_STACKED = CodeLang.Barcode_GS1_DATABAR_STACKED_Text;
-        public static string cBarcode_GS1_DATABAR_STACKED_OMNI = CodeLang.Barcode_GS1_DATABAR_STACKED_OMNI_Text;
+        public static string cBarcode_ISBN = string.Empty;                      // International Standard Book Number
 
-        public static string cBarcode_IMB = CodeLang.Barcode_IMB_Text;                  // Intelligent Mail Barcode
+        public static string cBarcode_ITF = string.Empty;                       // Interleaved Two of Five
+        public static string cBarcode_ITF_14 = string.Empty;
+        public static string cBarcode_ITF_CHECKSUM = string.Empty;
 
-        public static string cBarcode_ISBN = CodeLang.Barcode_ISBN_Text;                // International Standard Book Number
+        public static string cBarcode_MSI = string.Empty;                       // Modified Plessey
 
-        public static string cBarcode_ITF = CodeLang.Barcode_ITF_Text;                  // Interleaved Two of Five
-        public static string cBarcode_ITF_14 = CodeLang.Barcode_ITF_14_Text;
-        public static string cBarcode_ITF_CHECKSUM = CodeLang.Barcode_ITF_CHECKSUM_Text;
+        public static string cBarcode_PHARMACODE = string.Empty;
 
-        public static string cBarcode_MSI = CodeLang.Barcode_MSI_Text;                  // Modified Plessey
+        public static string cBarcode_PLESSEY = string.Empty;
 
-        public static string cBarcode_PHARMACODE = CodeLang.Barcode_PHARMACODE_Text;
+        public static string cBarcode_PZN = string.Empty;                       // Pharma Central Number
 
-        public static string cBarcode_PLESSEY = CodeLang.Barcode_PLESSEY_Text;
+        public static string cBarcode_RSS_14 = string.Empty;                    // Reduce Space Symbology
+        public static string cBarcode_RSS_EXPANDED = string.Empty;
 
-        public static string cBarcode_PZN = CodeLang.Barcode_PZN_Text;                  // Pharma Central Number
-
-        public static string cBarcode_RSS_14 = CodeLang.Barcode_RSS_14_Text;            // Reduce Space Symbology
-        public static string cBarcode_RSS_EXPANDED = CodeLang.Barcode_RSS_EXPANDED_Text;
-
-        public static string cBarcode_UPC_A = CodeLang.Barcode_UPC_A_Text;              // Universal Product Code
-        public static string cBarcode_UPC_E = CodeLang.Barcode_UPC_E_Text;
-        public static string cBarcode_UPC_EAN_EXTENSION = CodeLang.Barcode_UPC_EAN_EXTENSION_Text;
+        public static string cBarcode_UPC_A = string.Empty;                     // Universal Product Code
+        public static string cBarcode_UPC_E = string.Empty;
+        public static string cBarcode_UPC_EAN_EXTENSION = string.Empty;
 
         // Global readonly variables for 2D barcode formats
-        public static string cBarcode_AZTEC = CodeLang.Barcode_AZTEC_Text;
-        public static string cBarcode_AZTEC_CODE = CodeLang.Barcode_AZTEC_CODE_Text;
-        public static string cBarcode_AZTEC_RUNE = CodeLang.Barcode_AZTEC_RUNE_Text;
+        public static string cBarcode_AZTEC = string.Empty;
+        public static string cBarcode_AZTEC_CODE = string.Empty;
+        public static string cBarcode_AZTEC_RUNE = string.Empty;
 
-        public static string cBarcode_DATA_MATRIX = CodeLang.Barcode_DATA_MATRIX_Text;
+        public static string cBarcode_DATA_MATRIX = string.Empty;
 
-        public static string cBarcode_MAXICODE = CodeLang.Barcode_MAXICODE_Text;
+        public static string cBarcode_MAXICODE = string.Empty;
 
-        public static string cBarcode_PDF_417 = CodeLang.Barcode_PDF_417_Text;          // Portable Data File 417
-        public static string cBarcode_COMPACT_PDF_417 = CodeLang.Barcode_COMPACT_PDF_417_Text;  
-        public static string cBarcode_MICRO_PDF_417 = CodeLang.Barcode_MICRO_PDF_417_Text;
+        public static string cBarcode_PDF_417 = string.Empty;                   // Portable Data File 417
+        public static string cBarcode_COMPACT_PDF_417 = string.Empty;  
+        public static string cBarcode_MICRO_PDF_417 = string.Empty;
 
-        public static string cBarcode_QR_CODE = CodeLang.Barcode_QR_CODE_Text;          // Quick Response Code
-        public static string cBarcode_QR_CODE_MODEL_1 = CodeLang.Barcode_QR_CODE_MODEL_1_Text;
-        public static string cBarcode_QR_CODE_MODEL_2 = CodeLang.Barcode_QR_CODE_MODEL_2_Text;
-        public static string cBarcode_FRAME_QR_CODE = CodeLang.Barcode_FRAME_QR_CODE_Text;
-        public static string cBarcode_MICRO_QR_CODE = CodeLang.Barcode_MICRO_QR_CODE_Text;
-        public static string cBarcode_RMQR = CodeLang.Barcode_RMQR_Text;
-        public static string cBarcode_QR_CODE_IMAGE = CodeLang.Barcode_QR_CODE_IMAGE_Text;
+        public static string cBarcode_QR_CODE = string.Empty;                   // Quick Response Code
+        public static string cBarcode_QR_CODE_MODEL_1 = string.Empty;
+        public static string cBarcode_QR_CODE_MODEL_2 = string.Empty;
+        public static string cBarcode_FRAME_QR_CODE = string.Empty;
+        public static string cBarcode_MICRO_QR_CODE = string.Empty;
+        public static string cBarcode_RMQR = string.Empty;
+        public static string cBarcode_QR_CODE_IMAGE = string.Empty;             // CodeLang.Barcode_QR_CODE_IMAGE_Text;
 
         // Global variables
         public static int nBarcodeGeneratorIndex;
@@ -82,7 +82,7 @@
         public static string cBarcodeGeneratorName = string.Empty;
         public static string cBarcodeScannerName = string.Empty;
         public static string cBarcodeGeneratorDefault = cBarcode_QR_CODE;
-        public static string cBarcodeScannerDefault = CodeLang.Barcode_AllCodes_Text;
+        public static string cBarcodeScannerDefault = string.Empty;
 
         /// <summary>
         /// Initialize the barcode formats by assigning the values from the resource file to the global readonly variables
@@ -104,14 +104,14 @@
 
             cBarcode_CODE_128 = CodeLang.Barcode_CODE_128_Text;
 
-            cBarcode_DX_FILM_EDGE = CodeLang.Barcode_DX_FILM_EDGE_Text;                             // DX Film Edge
-            cBarcode_EAN_2 = CodeLang.Barcode_EAN_2_Text;                                           // European Article Number
+            cBarcode_DX_FILM_EDGE = CodeLang.Barcode_DX_FILM_EDGE_Text;     // DX Film Edge
+            cBarcode_EAN_2 = CodeLang.Barcode_EAN_2_Text;                   // European Article Number
             cBarcode_EAN_5 = CodeLang.Barcode_EAN_5_Text;
             cBarcode_EAN_8 = CodeLang.Barcode_EAN_8_Text;
             cBarcode_EAN_13 = CodeLang.Barcode_EAN_13_Text;
             cBarcode_EAN_UPC = CodeLang.Barcode_EAN_UPC_Text;
 
-            cBarcode_GS1_DATABAR = CodeLang.Barcode_GS1_DATABAR_Text;                               // General Specifications 1
+            cBarcode_GS1_DATABAR = CodeLang.Barcode_GS1_DATABAR_Text;       // General Specifications 1
             cBarcode_GS1_DATABAR_EXPANDED = CodeLang.Barcode_GS1_DATABAR_EXPANDED_Text;
             cBarcode_GS1_DATABAR_EXPANDED_STACKED = CodeLang.Barcode_GS1_DATABAR_EXPANDED_STACKED_Text;
             cBarcode_GS1_DATABAR_LIMITED = CodeLang.Barcode_GS1_DATABAR_LIMITED_Text;

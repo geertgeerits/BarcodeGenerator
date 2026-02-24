@@ -149,6 +149,9 @@
         /// </summary>
         private void SetLanguage()
         {
+            // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
+            ClassBarcodes.InitializeBarcodeFormats();
+
             // Set the generator barcode formats in the picker
 #if WINDOWS
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
@@ -157,9 +160,6 @@
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
             int nListCount = ClassBarcodes.GetFormatCodeListGenerator_ZX().Count;
 #endif
-            // Search for the name of the saved barcode in the picker list
-            ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
-
             // Set the scanner barcode formats in the picker
 #if ANDROID
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Android();

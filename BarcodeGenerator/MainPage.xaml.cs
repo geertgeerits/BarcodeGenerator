@@ -111,14 +111,8 @@ namespace BarcodeGenerator
             // Set the text language
             SetTextLanguage();
 
-            // Set the barcode list and the select the saved or default barcode format for the barcode generator
-#if WINDOWS
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
-#else
-            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
-#endif
             // Select the name and index in the barcode list and save the name
-            ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
+            //ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
 
             // Initialize text to speech and get and set the speech language
@@ -913,6 +907,16 @@ namespace BarcodeGenerator
             // Set the current UI culture of the selected language
             Globals.SetCultureSelectedLanguage(Globals.cLanguage);
 
+            // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
+            ClassBarcodes.InitializeBarcodeFormats();
+#if WINDOWS
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
+#else
+            pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
+#endif
+            // Select the name and index in the barcode list and save the name
+            ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
+
             cLicense = $"{CodeLang.License_Text}\n\n{CodeLang.LicenseMit2_Text}";
             
             if (pckFormatCodeGenerator.SelectedIndex >= 0)
@@ -925,7 +929,7 @@ namespace BarcodeGenerator
             }
 
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
-            ClassBarcodes.InitializeBarcodeFormats();
+            //ClassBarcodes.InitializeBarcodeFormats();
         }
 
         /// <summary>
