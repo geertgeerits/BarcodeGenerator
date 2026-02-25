@@ -199,7 +199,7 @@
     <value>ISBN Int. Standard Book Number</value>
   </data>
   <data name="Barcode_ITF_14_Text" xml:space="preserve">
-    <value>ITF Interleaved 2 of 5 14</value>
+    <value>ITF-14 Interleaved 2 of 5</value>
   </data>
   <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
     <value>ITF Interleaved 2 of 5 checksum</value>

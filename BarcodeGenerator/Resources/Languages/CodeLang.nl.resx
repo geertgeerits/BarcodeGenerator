@@ -145,10 +145,10 @@
     <value>Aztec code</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
-    <value>Code 39 checksum mod 10</value>
+    <value>Code 39 checksum modulo 10</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
-    <value>Code 39 checksum mod 43</value>
+    <value>Code 39 checksum modulo 43</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
     <value>Code 39 volledige ASCII checksum</value>
@@ -229,7 +229,7 @@
     <value>QR-code</value>
   </data>
   <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR Rectangular Micro QR-code</value>
+    <value>RMQR Rechthoekige micro-QR-code</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS-uitbreiding</value>

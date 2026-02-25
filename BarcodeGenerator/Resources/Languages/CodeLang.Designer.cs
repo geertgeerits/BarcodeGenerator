@@ -385,7 +385,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ITF Interleaved 2 of 5 14.
+        ///   Looks up a localized string similar to ITF-14 Interleaved 2 of 5.
         /// </summary>
         internal static string Barcode_ITF_14_Text {
             get {
