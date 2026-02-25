@@ -349,13 +349,22 @@
             // Search for the name of the barcode in the picker list
             nBarcodeGeneratorIndex = picker.Items.IndexOf(cBarcodeGeneratorName);
 
-            // If the saved barcode name was not found in the list then set it to the first barcode name
+            // If the barcode name was not found in the list then set it to the default name
+            if (nBarcodeGeneratorIndex < 0)
+            {
+                cBarcodeGeneratorName = cBarcodeGeneratorDefault;
+                
+                // Search for the name of the barcode in the picker list
+                nBarcodeGeneratorIndex = picker.Items.IndexOf(cBarcodeGeneratorName);
+            }
+
+            // If the barcode name was not found in the list then set it to the first barcode name
             if (nBarcodeGeneratorIndex < 0)
             {
                 nBarcodeGeneratorIndex = 0;
                 cBarcodeGeneratorName = picker.Items[nBarcodeGeneratorIndex];
             }
-
+            
             // Select the barcode format in the picker
             picker.SelectedIndex = nBarcodeGeneratorIndex;
         }
@@ -374,8 +383,17 @@
 
             // Search for the name of the barcode in the picker list
             nBarcodeScannerIndex = picker.Items.IndexOf(cBarcodeScannerName);
-            
-            // If the saved barcode name was not found in the list then set it to the first barcode name
+
+            // If the barcode name was not found in the list then set it to the default name
+            if (nBarcodeScannerIndex < 0)
+            {
+                cBarcodeScannerName = cBarcodeScannerDefault;
+
+                // Search for the name of the barcode in the picker list
+                nBarcodeScannerIndex = picker.Items.IndexOf(cBarcodeScannerName);
+            }
+
+            // If the barcode name was not found in the list then set it to the first barcode name
             if (nBarcodeScannerIndex < 0)
             {
                 nBarcodeScannerIndex = 0;

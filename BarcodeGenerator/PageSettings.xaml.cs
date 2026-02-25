@@ -141,7 +141,7 @@
         private void SetLanguage()
         {
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
-            //ClassBarcodes.InitializeBarcodeFormats();
+            ClassBarcodes.InitializeBarcodeFormats();
 
             // Set the generator barcode formats in the picker
 #if WINDOWS
