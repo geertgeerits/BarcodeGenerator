@@ -145,10 +145,10 @@
     <value>Aztec Code</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
-    <value>Code 39 checksum mod 10</value>
+    <value>Code 39 checksum modulus 10</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
-    <value>Code 39 checksum mod 43</value>
+    <value>Code 39 checksum modulus 43</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
     <value>Code 39 full ASCII checksum</value>

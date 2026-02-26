@@ -81,7 +81,7 @@
         public static int nBarcodeScannerIndex;
         public static string cBarcodeGeneratorName = string.Empty;
         public static string cBarcodeScannerName = string.Empty;
-        public static string cBarcodeGeneratorDefault = cBarcode_QR_CODE;
+        public static string cBarcodeGeneratorDefault = string.Empty;
         public static string cBarcodeScannerDefault = string.Empty;
 
         /// <summary>

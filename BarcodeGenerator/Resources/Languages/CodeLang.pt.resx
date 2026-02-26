@@ -145,10 +145,10 @@
     <value>Código Aztec</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
-    <value>Soma de verificação do Código 39 módulo 10</value>
+    <value>Código 39 soma de verificação módulo 10</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
-    <value>Soma de verificação do Código 39 módulo 43</value>
+    <value>Código 39 soma de verificação módulo 43</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
     <value>código 39 Soma de verificação ASCII completa</value>
@@ -223,7 +223,7 @@
     <value>Código QR modelo 2</value>
   </data>
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
-    <value>QR Code</value>
+    <value>Código QR</value>
   </data>
   <data name="Barcode_RMQR_Text" xml:space="preserve">
     <value>RMQR Micro QR code retangular</value>
@@ -660,6 +660,6 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
     <value>PDF417</value>
   </data>
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
-    <value>QR Code com imagem</value>
+    <value>Código QR com imagem</value>
   </data>
 </root>

@@ -145,13 +145,13 @@
     <value>Aztec kód</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
-    <value>Kontrolní součet kódu 39 modulo 10</value>
+    <value>Kód 39 kontrolní součet modul 10</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
-    <value>Kontrolní součet kódu 39 modulo 43</value>
+    <value>Kód 39 kontrolní součet modul 43</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
-    <value>Kontrolní součet kódu 39 v plném ASCII</value>
+    <value>Kód 39, plný kontrolní součet ASCII</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
     <value>Kód 39 plný ASCII</value>
@@ -221,7 +221,7 @@
   </data>
   <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
     <value>QR kód model 2</value>
-  </data>	
+  </data>
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QR kód</value>
   </data>

@@ -160,7 +160,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code 39 checksum mod 10.
+        ///   Looks up a localized string similar to Code 39 checksum modulus 10.
         /// </summary>
         internal static string Barcode_CODE_39_CHECKSUM_MOD_10_Text {
             get {
@@ -169,7 +169,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code 39 checksum mod 43.
+        ///   Looks up a localized string similar to Code 39 checksum modulus 43.
         /// </summary>
         internal static string Barcode_CODE_39_CHECKSUM_MOD_43_Text {
             get {
