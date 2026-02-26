@@ -84,6 +84,9 @@
         public static string cBarcodeGeneratorDefault = string.Empty;
         public static string cBarcodeScannerDefault = string.Empty;
 
+        // Creating a public dictionary
+        public static Dictionary<string, string> barcodeSearch = new();
+
         /// <summary>
         /// Initialize the barcode formats by assigning the values from the resource file to the global readonly variables
         /// This method can be called in the constructor of the main page or in the startup class of the application
@@ -165,71 +168,71 @@
             cBarcodeScannerDefault = CodeLang.Barcode_AllCodes_Text;
         }
 
-        /// <summary>
-        /// Initialize the barcode search formats by putting the name of the barcode format in a dictionary
-        /// with the key as the name of the barcode format and the value as the name of the barcode format in the resource file
-        /// </summary>
-        public static Dictionary<string, string> barcodeSearch = new()
+        // Initialize the barcode search formats by putting the name of the barcode format in a dictionary
+        public static void InitializeBarcodeSearchFormats()
         {
+            // Clear the dictionary before adding new elements
+            barcodeSearch.Clear();
+
             // Add elements to the dictionary
             // All codes
-            {"ALL_CODES", CodeLang.Barcode_AllCodes_Text},
+            barcodeSearch.Add("ALL_CODES", CodeLang.Barcode_AllCodes_Text);
 
             // 1D barcode formats
-            {"CODABAR", cBarcode_CODABAR},
-            {"CODE_39", cBarcode_CODE_39},
-            {"CODE_39_CHECKSUM_MOD_10", cBarcode_CODE_39_CHECKSUM_MOD_10},
-            {"CODE_39_CHECKSUM_MOD_43", cBarcode_CODE_39_CHECKSUM_MOD_43},
-            {"CODE_39_FULL_ASCII", cBarcode_CODE_39_FULL_ASCII},
-            {"CODE_39_FULL_ASCII_CHECKSUM", cBarcode_CODE_39_FULL_ASCII_CHECKSUM},
-            {"CODE_93", cBarcode_CODE_93},
-            {"CODE_93I", cBarcode_CODE_93_I},
-            {"CODE_128", cBarcode_CODE_128},
-            {"DX_FILM_EDGE", cBarcode_DX_FILM_EDGE},
-            {"EAN_2", cBarcode_EAN_2},
-            {"EAN_5", cBarcode_EAN_5},
-            {"EAN_8", cBarcode_EAN_8},
-            {"EAN_13", cBarcode_EAN_13},
-            {"EAN_UPC", cBarcode_EAN_UPC},
-            {"GS1_DATABAR", cBarcode_GS1_DATABAR},
-            {"GS1_DATABAR_EXPANDED", cBarcode_GS1_DATABAR_EXPANDED},
-            {"GS1_DATABAR_EXPANDED_STACKED", cBarcode_GS1_DATABAR_EXPANDED_STACKED},
-            {"GS1_DATABAR_LIMITED", cBarcode_GS1_DATABAR_LIMITED},
-            {"GS1_DATABAR_OMNI", cBarcode_GS1_DATABAR_OMNI},
-            {"GS1_DATABAR_STACKED", cBarcode_GS1_DATABAR_STACKED},
-            {"GS1_DATABAR_STACKED_OMNI", cBarcode_GS1_DATABAR_STACKED_OMNI},
-            {"IMB", cBarcode_IMB},
-            {"ISBN", cBarcode_ISBN},
-            {"ITF", cBarcode_ITF},
-            {"ITF_14", cBarcode_ITF_14},
-            {"ITF_CHECKSUM", cBarcode_ITF_CHECKSUM},
-            {"MSI", cBarcode_MSI},
-            {"PHARMACODE", cBarcode_PHARMACODE},
-            {"PLESSEY", cBarcode_PLESSEY},
-            {"PZN", cBarcode_PZN},
-            {"RSS_14", cBarcode_RSS_14},
-            {"RSS_EXPANDED", cBarcode_RSS_EXPANDED},
-            {"UPC_A", cBarcode_UPC_A},
-            {"UPC_E", cBarcode_UPC_E},
-            {"UPC_EAN_EXTENSION", cBarcode_UPC_EAN_EXTENSION},
+            barcodeSearch.Add("CODABAR", CodeLang.Barcode_CODABAR_Text);
+            barcodeSearch.Add("CODE_39", CodeLang.Barcode_CODE_39_Text);
+            barcodeSearch.Add("CODE_39_CHECKSUM_MOD_10", CodeLang.Barcode_CODE_39_CHECKSUM_MOD_10_Text);
+            barcodeSearch.Add("CODE_39_CHECKSUM_MOD_43", CodeLang.Barcode_CODE_39_CHECKSUM_MOD_43_Text);
+            barcodeSearch.Add("CODE_39_FULL_ASCII", CodeLang.Barcode_CODE_39_FULL_ASCII_Text);
+            barcodeSearch.Add("CODE_39_FULL_ASCII_CHECKSUM", CodeLang.Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text);
+            barcodeSearch.Add("CODE_93", CodeLang.Barcode_CODE_93_Text);
+            barcodeSearch.Add("CODE_93I", CodeLang.Barcode_CODE_93_I_Text);
+            barcodeSearch.Add("CODE_128", CodeLang.Barcode_CODE_128_Text);
+            barcodeSearch.Add("DX_FILM_EDGE", CodeLang.Barcode_DX_FILM_EDGE_Text);
+            barcodeSearch.Add("EAN_2", CodeLang.Barcode_EAN_2_Text);
+            barcodeSearch.Add("EAN_5", CodeLang.Barcode_EAN_5_Text);
+            barcodeSearch.Add("EAN_8", CodeLang.Barcode_EAN_8_Text);
+            barcodeSearch.Add("EAN_13", CodeLang.Barcode_EAN_13_Text);
+            barcodeSearch.Add("EAN_UPC", CodeLang.Barcode_EAN_UPC_Text);
+            barcodeSearch.Add("GS1_DATABAR", CodeLang.Barcode_GS1_DATABAR_Text);
+            barcodeSearch.Add("GS1_DATABAR_EXPANDED", CodeLang.Barcode_GS1_DATABAR_EXPANDED_Text);
+            barcodeSearch.Add("GS1_DATABAR_EXPANDED_STACKED", CodeLang.Barcode_GS1_DATABAR_EXPANDED_STACKED_Text);
+            barcodeSearch.Add("GS1_DATABAR_LIMITED", CodeLang.Barcode_GS1_DATABAR_LIMITED_Text);
+            barcodeSearch.Add("GS1_DATABAR_OMNI", CodeLang.Barcode_GS1_DATABAR_OMNI_Text);
+            barcodeSearch.Add("GS1_DATABAR_STACKED", CodeLang.Barcode_GS1_DATABAR_STACKED_Text);
+            barcodeSearch.Add("GS1_DATABAR_STACKED_OMNI", CodeLang.Barcode_GS1_DATABAR_STACKED_OMNI_Text);
+            barcodeSearch.Add("IMB", CodeLang.Barcode_IMB_Text);
+            barcodeSearch.Add("ISBN", CodeLang.Barcode_ISBN_Text);
+            barcodeSearch.Add("ITF", CodeLang.Barcode_ITF_Text);
+            barcodeSearch.Add("ITF_14", CodeLang.Barcode_ITF_14_Text);
+            barcodeSearch.Add("ITF_CHECKSUM", CodeLang.Barcode_ITF_CHECKSUM_Text);
+            barcodeSearch.Add("MSI", CodeLang.Barcode_MSI_Text);
+            barcodeSearch.Add("PHARMACODE", CodeLang.Barcode_PHARMACODE_Text);
+            barcodeSearch.Add("PLESSEY", CodeLang.Barcode_PLESSEY_Text);
+            barcodeSearch.Add("PZN", CodeLang.Barcode_PZN_Text);
+            barcodeSearch.Add("RSS_14", CodeLang.Barcode_RSS_14_Text);
+            barcodeSearch.Add("RSS_EXPANDED", CodeLang.Barcode_RSS_EXPANDED_Text);
+            barcodeSearch.Add("UPC_A", CodeLang.Barcode_UPC_A_Text);
+            barcodeSearch.Add("UPC_E", CodeLang.Barcode_UPC_E_Text);
+            barcodeSearch.Add("UPC_EAN_EXTENSION", CodeLang.Barcode_UPC_EAN_EXTENSION_Text);
             
             // 2D barcode formats
-            {"AZTEC", cBarcode_AZTEC},
-            {"AZTEC_CODE", cBarcode_AZTEC_CODE},
-            {"AZTEC_RUNE", cBarcode_AZTEC_RUNE},
-            {"DATA_MATRIX", cBarcode_DATA_MATRIX},
-            {"MAXICODE", cBarcode_MAXICODE},
-            {"PDF_417", cBarcode_PDF_417},
-            {"COMPACT_PDF_417", cBarcode_COMPACT_PDF_417},
-            {"MICRO_PDF_417", cBarcode_MICRO_PDF_417},
-            {"QR_CODE", cBarcode_QR_CODE},
-            {"QR_CODE_MODEL_1", cBarcode_QR_CODE_MODEL_1},
-            {"QR_CODE_MODEL_2", cBarcode_QR_CODE_MODEL_2},
-            {"FRAME_QR_CODE", cBarcode_FRAME_QR_CODE},
-            {"MICRO_QR_CODE", cBarcode_MICRO_QR_CODE},
-            {"RMQR", cBarcode_RMQR},
-            {"QR_CODE_IMAGE", cBarcode_QR_CODE_IMAGE}
-        };
+            barcodeSearch.Add("AZTEC", CodeLang.Barcode_AZTEC_Text);
+            barcodeSearch.Add("AZTEC_CODE", CodeLang.Barcode_AZTEC_CODE_Text);
+            barcodeSearch.Add("AZTEC_RUNE", CodeLang.Barcode_AZTEC_RUNE_Text);
+            barcodeSearch.Add("DATA_MATRIX", CodeLang.Barcode_DATA_MATRIX_Text);
+            barcodeSearch.Add("MAXICODE", CodeLang.Barcode_MAXICODE_Text);
+            barcodeSearch.Add("PDF_417", CodeLang.Barcode_PDF_417_Text);
+            barcodeSearch.Add("COMPACT_PDF_417", CodeLang.Barcode_COMPACT_PDF_417_Text);
+            barcodeSearch.Add("MICRO_PDF_417", CodeLang.Barcode_MICRO_PDF_417_Text);
+            barcodeSearch.Add("QR_CODE", CodeLang.Barcode_QR_CODE_Text);
+            barcodeSearch.Add("QR_CODE_MODEL_1", CodeLang.Barcode_QR_CODE_MODEL_1_Text);
+            barcodeSearch.Add("QR_CODE_MODEL_2", CodeLang.Barcode_QR_CODE_MODEL_2_Text);
+            barcodeSearch.Add("FRAME_QR_CODE", CodeLang.Barcode_FRAME_QR_CODE_Text);
+            barcodeSearch.Add("MICRO_QR_CODE", CodeLang.Barcode_MICRO_QR_CODE_Text);
+            barcodeSearch.Add("RMQR", CodeLang.Barcode_RMQR_Text);
+            barcodeSearch.Add("QR_CODE_IMAGE", CodeLang.Barcode_QR_CODE_IMAGE_Text);
+        }
 
         /// <summary>
         /// Put the generator barcode formats in a List string using the ZXing library for all platforms
@@ -401,6 +404,53 @@
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
         /// <summary>
+        /// Searches for the specified key in the barcode dictionary and returns the associated value, if found.    
+        /// </summary>
+        /// <remarks>If the key is found, the method writes the key and its value to the console. If the
+        /// key is not found, a message indicating the missing key is written to the console.</remarks>
+        /// <param name="searchKey">The key to locate in the barcode dictionary. This value cannot be null.</param>
+        /// <returns>The value associated with the specified key if the key exists in the dictionary; otherwise, null.</returns>
+        public static string? SearchKeyInDictionary(string searchKey)
+        {
+            if (searchKey is null)
+            {
+                //throw new ArgumentNullException(nameof(searchKey));
+            }
+
+            if (barcodeSearch.TryGetValue(searchKey, out var value))
+            {
+                return value;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Searches for the specified value in the barcode dictionary and returns the corresponding key if found.
+        /// </summary>
+        /// <remarks>This method writes a message to the console indicating whether the value was found
+        /// and, if so, the associated key. The search is case-sensitive.</remarks>
+        /// <param name="searchValue">The value to locate within the barcode dictionary. This parameter must not be null.</param>
+        /// <returns>The key associated with the specified value if it exists in the dictionary; otherwise, an empty string.</returns>
+        public static string? SearchValueInDictionary(string searchValue)
+        {
+            if (searchValue is null)
+            {
+                //throw new ArgumentNullException(nameof(searchValue));
+            }
+
+            // reverse lookup: return the first key that matches the provided value
+            foreach (var kvp in barcodeSearch)
+            {
+                if (string.Equals(kvp.Value, searchValue, StringComparison.Ordinal))
+                {
+                    return kvp.Key;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
         /// Select the name and index in the generator barcode list
         /// </summary>
         /// <param name="picker"></param>
@@ -468,53 +518,6 @@
 
             // Select the barcode format in the picker
             picker.SelectedIndex = nBarcodeScannerIndex;
-        }
-
-        /// <summary>
-        /// Searches for the specified key in the barcode dictionary and returns the associated value, if found.    
-        /// </summary>
-        /// <remarks>If the key is found, the method writes the key and its value to the console. If the
-        /// key is not found, a message indicating the missing key is written to the console.</remarks>
-        /// <param name="searchKey">The key to locate in the barcode dictionary. This value cannot be null.</param>
-        /// <returns>The value associated with the specified key if the key exists in the dictionary; otherwise, null.</returns>
-        public static string? SearchKeyInDictionary(string searchKey)
-        {
-            if (barcodeSearch.TryGetValue(searchKey, out string? value))
-            {
-                // Key found, value is stored in the 'value' variable
-                Console.WriteLine($"Key: {searchKey}, Value: {value}");
-                return value;
-            }
-            else
-            {
-                // Key not found in the dictionary
-                Console.WriteLine($"Key '{searchKey}' not found in the dictionary.");
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Searches for the specified value in the barcode dictionary and returns the corresponding key if found.
-        /// </summary>
-        /// <remarks>This method writes a message to the console indicating whether the value was found
-        /// and, if so, the associated key. The search is case-sensitive.</remarks>
-        /// <param name="searchValue">The value to locate within the barcode dictionary. This parameter must not be null.</param>
-        /// <returns>The key associated with the specified value if it exists in the dictionary; otherwise, an empty string.</returns>
-        public static string SearchValueInDictionary(string searchValue)
-        {
-            if (barcodeSearch.ContainsValue(searchValue))
-            {
-                // Value found in the dictionary
-                string key = barcodeSearch.FirstOrDefault(x => x.Value == searchValue).Key;
-                Console.WriteLine($"Value '{searchValue}, Key: {key}' found in the dictionary.");
-                return key;
-            }
-            else
-            {
-                // Value not found in the dictionary
-                Console.WriteLine($"Value '{searchValue}' not found in the dictionary.");
-                return string.Empty;
-            }
         }
     }
 }

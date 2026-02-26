@@ -124,8 +124,14 @@
                 // Set the current UI culture of the selected language
                 Globals.SetCultureSelectedLanguage(Globals.cLanguage);
 
+
+                //ClassBarcodes.InitializeBarcodeSearchFormats();
+
+
                 // Put text in the chosen language in the controls and variables
                 SetLanguage();
+
+
 
                 // Search the selected language in the cLanguageLocales array and select the new speech language
                 pckLanguageSpeech.SelectedIndex = ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguage);
@@ -138,10 +144,17 @@
         /// The pickers 'pckTheme', 'pckFormatCodeGenerator' and 'pckFormatCodeScanner' are set in this method
         /// because some values in the pickers are different depending on the language
         /// </summary>
-        private void SetLanguage()
+        private async Task SetLanguage()
         {
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
             ClassBarcodes.InitializeBarcodeFormats();
+            
+
+            //ClassBarcodes.InitializeBarcodeSearchFormats();
+            //string searchKey = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeGeneratorName);
+
+            //Globals.SetCultureSelectedLanguage(Globals.cLanguage);
+
 
             // Set the generator barcode formats in the picker
 #if WINDOWS
@@ -149,9 +162,16 @@
 #else
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
 #endif
+            
+            //await Task.Delay(500); // Wait for 500 milliseconds to ensure the pickers are updated before selecting the index
+            //ClassBarcodes.InitializeBarcodeSearchFormats();
+            //ClassBarcodes.cBarcodeGeneratorName = ClassBarcodes.SearchKeyInDictionary(searchKey);
+
             // Select the current barcode format in the picker for the barcode generator
             ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
-            
+
+
+
             // Set the scanner barcode formats in the picker
 #if ANDROID
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Android();
