@@ -154,7 +154,7 @@
     <value>Código 39 suma de comprobación ASCII completa</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
-    <value>Código 39 ASCII completa</value>
+    <value>Código 39 ASCII completo</value>
   </data>
   <data name="Barcode_CODE_39_Text" xml:space="preserve">
     <value>Código 39</value>
@@ -174,9 +174,65 @@
   <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
     <value>Código QR con marco</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Barcode_QR_CODE_IMAGE_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar expandido apilado</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>GS1 Databar expandido</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 Databar limitado</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar omnidireccional</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar apilado omnidireccional</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar apilado</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>IMb Correo inteligente</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>ISBN Número internacional de libro normalizado</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF-14 Intercalado 2 de 5</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>ITF Intercalado 2 de 5 suma de comprobación</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF Intercalado 2 de 5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Código QR micro</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI Plessey modificado</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN Número de central farmacéutica</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>Código QR modelo 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>Código QR modelo 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>Código QR</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>RMQR Microcódigo QR rectangular</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>RSS ampliado</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>UPC-EAN Extensión</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Cerrar</value>
@@ -546,6 +602,9 @@ Microsoft, Microsoft Store, el logotipo de Microsoft Store y Windows son marcas 
   <data name="Yes_Text" xml:space="preserve">
     <value>Sí</value>
   </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Micro PDF417</value>
+  </data>
   <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
     <value>DX Film Edge</value>
   </data>
@@ -599,5 +658,8 @@ Microsoft, Microsoft Store, el logotipo de Microsoft Store y Windows son marcas 
   </data>
   <data name="Barcode_PDF_417_Text" xml:space="preserve">
     <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>Código QR con imagen</value>
   </data>
 </root>

@@ -154,7 +154,7 @@
     <value>Kontrolní součet kódu 39 v plném ASCII</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
-    <value>Kód 39 v plném ASCII</value>
+    <value>Kód 39 plný ASCII</value>
   </data>
   <data name="Barcode_CODE_39_Text" xml:space="preserve">
     <value>Kód 39</value>
@@ -174,9 +174,65 @@
   <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
     <value>QR kód rámce</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Barcode_QR_CODE_IMAGE_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar rozšířený, vrstvený</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>GS1 Databar rozšířený</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 Databar omezený</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar všesměrový</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar vrstvený, všesměrový</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar vrstvený</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>IMb Inteligentní pošta</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>ISBN Mezinárodní standardní číslo knihy</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF-14 Prokládané 2 z 5</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>ITF Prokládané 2 z 5 kontrolní součet</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF Prokládané 2 z 5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Mikro QR kód</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI Modifikovaný Plessey</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN Centrální číslo Pharma</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>QR kód model 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>QR kód model 2</value>
+  </data>	
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>QR kód</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>RMQR Obdélníkový mikro QR kód</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>RSS rozšířený</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>UPC-EAN rozšíření</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Zavřít</value>
@@ -546,6 +602,9 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="Yes_Text" xml:space="preserve">
     <value>Ano</value>
   </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Mikro PDF417</value>
+  </data>
   <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
     <value>DX Film Edge</value>
   </data>
@@ -599,5 +658,8 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   </data>
   <data name="Barcode_PDF_417_Text" xml:space="preserve">
     <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>QR kód s obrázkem</value>
   </data>
 </root>

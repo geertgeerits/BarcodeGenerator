@@ -174,9 +174,65 @@
   <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
     <value>Ram QR-kod</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Barcode_QR_CODE_IMAGE_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar expanderad staplad</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>GS1 Databar expanderad</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 Databar begränsad</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar rundstrålande</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar staplad rundstrålande</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar staplad</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>IMb Intelligent e-post</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>ISBN Internationellt standardboknummer</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF-14 Interleaved 2 av 5</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>ITF Interleaved 2 av 5 kontrollsumma</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF Interleaved 2 av 5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Mikro QR-kod</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI Modifierad Plessey</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN Pharma centralnummer</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>QR-kod modell 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>QR-kod modell 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>QR-kod</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>RMQR Rektangulär mikro QR-kod</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>RSS Expanderad</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>UPC-EAN-tillägg</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Stänga</value>
@@ -546,6 +602,9 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   <data name="Yes_Text" xml:space="preserve">
     <value>Ja</value>
   </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Mikro PDF417</value>
+  </data>
   <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
     <value>DX Film Edge</value>
   </data>
@@ -599,5 +658,8 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   </data>
   <data name="Barcode_PDF_417_Text" xml:space="preserve">
     <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>QR-kod med bild</value>
   </data>
 </root>

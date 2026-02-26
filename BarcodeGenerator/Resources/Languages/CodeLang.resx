@@ -216,9 +216,6 @@
   <data name="Barcode_PZN_Text" xml:space="preserve">
     <value>PZN Pharma Central Number</value>
   </data>
-  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
-    <value>QR Code with image</value>
-  </data>
   <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
     <value>QR Code model 1</value>
   </data>
@@ -661,5 +658,8 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
   </data>
   <data name="Barcode_PDF_417_Text" xml:space="preserve">
     <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>QR Code with image</value>
   </data>
 </root>
