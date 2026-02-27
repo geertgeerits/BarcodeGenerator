@@ -89,6 +89,35 @@
         }
 
         /// <summary>
+        /// Go to the next field when the next/done key have been pressed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void GoToNextField(object sender, EventArgs e)
+        {
+            // Go to the next field when the next/done key have been pressed
+            if (sender == entHexColorFg)
+            {
+                _ = entHexColorBg.Focus();
+            }
+            else if (sender == entHexColorBg)
+            {
+                _ = entHexColorFg.Focus();
+            }
+
+            // Hide the soft input keyboard
+            if (entHexColorFg.IsSoftInputShowing())
+            {
+                await entHexColorFg.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            }
+
+            if (entHexColorBg.IsSoftInputShowing())
+            {
+                await entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            }
+        }
+
+        /// <summary>
         /// Picker language clicked event
         /// </summary>
         /// <param name="sender"></param>
@@ -147,7 +176,7 @@
         /// The pickers 'pckTheme', 'pckFormatCodeGenerator' and 'pckFormatCodeScanner' are set in this method
         /// because some values in the pickers are different depending on the language
         /// </summary>
-        private async void SetLanguage()
+        private void SetLanguage()
         {
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
             ClassBarcodes.InitializeBarcodeFormats();
@@ -276,6 +305,14 @@
             {
                 ((Entry)sender).Text = e.OldTextValue;
             }
+
+            // !!!BUG!!! iOS 26.1 - The MaxLength is 8 characters but the user can still enter more than 8 characters in iOS but
+            // they are not really there because the MaxLength is set to 8 characters and when the entry lose focus the text is cut to 8 characters
+            // If the text is longer than 8 characters, remove the last characters
+            //if (((Entry)sender).Text.Length > 8)
+            //{
+            //    ((Entry)sender).Text = ((Entry)sender).Text.Substring(0, 8);
+            //}
         }
 
         /// <summary>
@@ -355,12 +392,6 @@
                 sldColorBgRed.Value = nRed;
                 sldColorBgGreen.Value = nGreen;
                 sldColorBgBlue.Value = nBlue;
-            }
-
-            // Set focus to the next button
-            if (sender.Equals(entHexColorFg))
-            {
-                _ = entHexColorBg.Focus();
             }
         }
 
@@ -481,10 +512,10 @@
                 cHexColor = cHexColor[1..];
             }
 
-            nOpacity = int.Parse(cHexColor[..2], NumberStyles.AllowHexSpecifier);
-            nRed = int.Parse(cHexColor.Substring(2, 2), NumberStyles.AllowHexSpecifier);
-            nGreen = int.Parse(cHexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
-            nBlue = int.Parse(cHexColor.Substring(6, 2), NumberStyles.AllowHexSpecifier);
+            nOpacity = int.Parse(cHexColor.AsSpan(0, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+            nRed = int.Parse(cHexColor.AsSpan(2, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+            nGreen = int.Parse(cHexColor.AsSpan(4, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+            nBlue = int.Parse(cHexColor.AsSpan(6, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
         }
 
         /// <summary>
