@@ -85,7 +85,7 @@
         public static string cBarcodeScannerDefault = string.Empty;
 
         // Creating a public dictionary
-        public static Dictionary<string, string> barcodeSearch = new();
+        public static Dictionary<string, string> barcodeSearch = [];
 
         /// <summary>
         /// Initialize the barcode formats by assigning the values from the resource file to the global readonly variables
@@ -409,20 +409,18 @@
         /// <remarks>If the key is found, the method writes the key and its value to the console. If the
         /// key is not found, a message indicating the missing key is written to the console.</remarks>
         /// <param name="searchKey">The key to locate in the barcode dictionary. This value cannot be null.</param>
-        /// <returns>The value associated with the specified key if the key exists in the dictionary; otherwise, null.</returns>
-        public static string? SearchKeyInDictionary(string searchKey)
+        /// <returns>The value associated with the specified key if the key exists in the dictionary; otherwise, an empty string.</returns>
+        public static string SearchKeyInDictionary(string searchKey)
         {
-            if (searchKey is null)
+            if (!string.IsNullOrEmpty(searchKey))
             {
-                //throw new ArgumentNullException(nameof(searchKey));
+                if (barcodeSearch.TryGetValue(searchKey, out var value))
+                {
+                    return value;
+                }
             }
 
-            if (barcodeSearch.TryGetValue(searchKey, out var value))
-            {
-                return value;
-            }
-
-            return null;
+            return string.Empty;
         }
 
         /// <summary>
@@ -432,22 +430,20 @@
         /// and, if so, the associated key. The search is case-sensitive.</remarks>
         /// <param name="searchValue">The value to locate within the barcode dictionary. This parameter must not be null.</param>
         /// <returns>The key associated with the specified value if it exists in the dictionary; otherwise, an empty string.</returns>
-        public static string? SearchValueInDictionary(string searchValue)
+        public static string SearchValueInDictionary(string searchValue)
         {
-            if (searchValue is null)
+            if (!string.IsNullOrEmpty(searchValue))
             {
-                //throw new ArgumentNullException(nameof(searchValue));
-            }
-
-            // reverse lookup: return the first key that matches the provided value
-            foreach (var kvp in barcodeSearch)
-            {
-                if (string.Equals(kvp.Value, searchValue, StringComparison.Ordinal))
+                // More efficient reverse lookup using LINQ
+                string foundKey = barcodeSearch.FirstOrDefault(x => x.Value == searchValue).Key;
+                
+                if (!string.IsNullOrEmpty(foundKey))
                 {
-                    return kvp.Key;
+                    return foundKey;
                 }
             }
-            return null;
+
+            return string.Empty;
         }
 
         /// <summary>

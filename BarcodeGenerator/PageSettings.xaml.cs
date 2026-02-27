@@ -5,6 +5,8 @@
         // Local variables
         private const string cHexCharacters = "0123456789ABCDEFabcdef";
         private readonly Stopwatch stopWatch = new();
+        private string searchKeyGenerator = string.Empty;
+        private string searchKeyScanner = string.Empty;
 
         public PageSettings()
         {
@@ -43,6 +45,9 @@
                 "sv" => 14,     // Svenska - Swedish
                 _ => 3          // English
             };
+
+            // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
+            ClassBarcodes.InitializeBarcodeSearchFormats();
 
             // Fill the picker with the speech languages and select the current language in the picker
             ClassSpeech.FillPickerWithSpeechLanguages(pckLanguageSpeech);
@@ -121,17 +126,15 @@
             {
                 Globals.bLanguageChanged = true;
 
+                // Search the barcode generator and scanner name with the search key to get the new name in the selected language
+                searchKeyGenerator = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeGeneratorName);
+                searchKeyScanner = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeScannerName);
+
                 // Set the current UI culture of the selected language
                 Globals.SetCultureSelectedLanguage(Globals.cLanguage);
 
-
-                //ClassBarcodes.InitializeBarcodeSearchFormats();
-
-
                 // Put text in the chosen language in the controls and variables
                 SetLanguage();
-
-
 
                 // Search the selected language in the cLanguageLocales array and select the new speech language
                 pckLanguageSpeech.SelectedIndex = ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguage);
@@ -144,18 +147,11 @@
         /// The pickers 'pckTheme', 'pckFormatCodeGenerator' and 'pckFormatCodeScanner' are set in this method
         /// because some values in the pickers are different depending on the language
         /// </summary>
-        private async Task SetLanguage()
+        private async void SetLanguage()
         {
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
             ClassBarcodes.InitializeBarcodeFormats();
             
-
-            //ClassBarcodes.InitializeBarcodeSearchFormats();
-            //string searchKey = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeGeneratorName);
-
-            //Globals.SetCultureSelectedLanguage(Globals.cLanguage);
-
-
             // Set the generator barcode formats in the picker
 #if WINDOWS
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
@@ -163,15 +159,6 @@
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
 #endif
             
-            //await Task.Delay(500); // Wait for 500 milliseconds to ensure the pickers are updated before selecting the index
-            //ClassBarcodes.InitializeBarcodeSearchFormats();
-            //ClassBarcodes.cBarcodeGeneratorName = ClassBarcodes.SearchKeyInDictionary(searchKey);
-
-            // Select the current barcode format in the picker for the barcode generator
-            ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
-
-
-
             // Set the scanner barcode formats in the picker
 #if ANDROID
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Android();
@@ -181,7 +168,19 @@
             //pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Windows();
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_ZX();
 #endif
-            // Select the current barcode format in the picker for the barcode scanner
+
+            // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language and get the new barcode generator name with the search key
+            ClassBarcodes.InitializeBarcodeSearchFormats();
+
+            // Search the barcode generator and scanner name with the search key to get the new name in the selected language
+            if (Globals.bLanguageChanged)
+            {
+                ClassBarcodes.cBarcodeGeneratorName = ClassBarcodes.SearchKeyInDictionary(searchKeyGenerator);
+                ClassBarcodes.cBarcodeScannerName = ClassBarcodes.SearchKeyInDictionary(searchKeyScanner);
+            }
+
+            // Select the current barcode format in the picker for the barcode generator and scanner
+            ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
             ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
 
             // Set the QR code image size percent in the label
