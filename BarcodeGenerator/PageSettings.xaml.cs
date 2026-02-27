@@ -305,14 +305,6 @@
             {
                 ((Entry)sender).Text = e.OldTextValue;
             }
-
-            // !!!BUG!!! iOS 26.1 - The MaxLength is 8 characters but the user can still enter more than 8 characters in iOS but
-            // they are not really there because the MaxLength is set to 8 characters and when the entry lose focus the text is cut to 8 characters
-            // If the text is longer than 8 characters, remove the last characters
-            //if (((Entry)sender).Text.Length > 8)
-            //{
-            //    ((Entry)sender).Text = ((Entry)sender).Text.Substring(0, 8);
-            //}
         }
 
         /// <summary>
