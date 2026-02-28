@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui/global"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BarcodeGenerator.PageSettings">
+             x:Class="BarcodeGenerator.PageSettings"
+             SafeAreaEdges="All">
 
     <Shell.TitleView>
         <Label
@@ -19,7 +20,7 @@
             Grid.Row="1"
             Grid.Column="0"
             Orientation="Vertical">
-            
+
             <Grid
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
@@ -424,7 +425,6 @@
         </ScrollView>
 
         <Button
-            x:Name="btnSettingsSave"
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="2"
             Text="{Translate SettingsSave_Text}"

@@ -22,7 +22,11 @@
 #endif
                 return;
             }
-
+#if ANDROID
+            // Android !!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
+            entHexColorFg.IsEnabled = false;
+            entHexColorBg.IsEnabled = false;
+#endif
             // Put text in the chosen language in the controls and variables
             SetLanguage();
 
@@ -96,25 +100,30 @@
         private async void GoToNextField(object sender, EventArgs e)
         {
             // Go to the next field when the next/done key have been pressed
-            if (sender == entHexColorFg)
-            {
-                _ = entHexColorBg.Focus();
-            }
-            else if (sender == entHexColorBg)
-            {
-                _ = entHexColorFg.Focus();
-            }
+            //if (sender == entHexColorFg)
+            //{
+            //    _ = entHexColorBg.Focus();
+            //}
+            //else if (sender == entHexColorBg)
+            //{
+            //    //_ = entHexColorFg.Focus();
+
+            //    //if (entHexColorBg.IsSoftInputShowing())
+            //    //{
+            //    //    await entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            //    //}
+            //}
 
             // Hide the soft input keyboard
-            if (entHexColorFg.IsSoftInputShowing())
-            {
-                await entHexColorFg.HideSoftInputAsync(System.Threading.CancellationToken.None);
-            }
+            //if (entHexColorFg.IsSoftInputShowing())
+            //{
+            //    await entHexColorFg.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            //}
 
-            if (entHexColorBg.IsSoftInputShowing())
-            {
-                await entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
-            }
+            //if (entHexColorBg.IsSoftInputShowing())
+            //{
+            //    await entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            //}
         }
 
         /// <summary>
@@ -343,6 +352,29 @@
         private void EntryHexColorUnfocused(object sender, EventArgs e)
         {
             Entry entry = (Entry)sender;
+#if IOS      
+            // https://github.com/dotnet/maui/issues/33316 and https://github.com/dotnet/maui/issues/32016
+            // Workaround for iOS !!!BUG!!! The MaxLength property of an Entry control is not respected on iOS,
+            // so we have to set the text again to get the correct length of the text (Microsoft.Maui.Controls Version 10.0.41)
+            string cTemp = entry.Text;
+            entry.Text = "";
+            entry.Text = cTemp;
+#endif
+            // Hide the soft input keyboard
+            //if (entHexColorFg.IsSoftInputShowing())
+            //{
+            //    entHexColorFg.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            //}
+
+            //if (entHexColorBg.IsSoftInputShowing())
+            //{
+            //    entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            //}
+
+            entHexColorFg.IsEnabled = false;
+            entHexColorFg.IsEnabled = true;
+            entHexColorBg.IsEnabled = false;
+            entHexColorBg.IsEnabled = true;
 
             // Add the opacity if length = 6 characters
             if (entry.Text.Length == 6)
