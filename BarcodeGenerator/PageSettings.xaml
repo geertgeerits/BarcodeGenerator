@@ -11,8 +11,10 @@
         </Label>
     </Shell.TitleView>
 
+    <!--Android !!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
+    A fourth row with a height of 50 is added to the grid to workaround this issue and push the content above the navigation bar on Android.-->
     <Grid
-        RowDefinitions="Auto, *, Auto"
+        RowDefinitions="Auto, *, Auto, 50"
         HorizontalOptions="Center"
         Margin="5">
 

@@ -22,11 +22,7 @@
 #endif
                 return;
             }
-#if ANDROID
-            // Android !!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
-            entHexColorFg.IsEnabled = false;
-            entHexColorBg.IsEnabled = false;
-#endif
+
             // Put text in the chosen language in the controls and variables
             SetLanguage();
 
