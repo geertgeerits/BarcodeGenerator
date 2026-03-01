@@ -7,6 +7,7 @@
         private readonly Stopwatch stopWatch = new();
         private string searchKeyGenerator = string.Empty;
         private string searchKeyScanner = string.Empty;
+        private bool hasWorkaroundRow;
 
         public PageSettings()
         {
@@ -86,40 +87,6 @@
 
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
-        }
-
-        /// <summary>
-        /// Go to the next field when the next/done key have been pressed 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void GoToNextField(object sender, EventArgs e)
-        {
-            // Go to the next field when the next/done key have been pressed
-            //if (sender == entHexColorFg)
-            //{
-            //    _ = entHexColorBg.Focus();
-            //}
-            //else if (sender == entHexColorBg)
-            //{
-            //    //_ = entHexColorFg.Focus();
-
-            //    //if (entHexColorBg.IsSoftInputShowing())
-            //    //{
-            //    //    await entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
-            //    //}
-            //}
-
-            // Hide the soft input keyboard
-            //if (entHexColorFg.IsSoftInputShowing())
-            //{
-            //    await entHexColorFg.HideSoftInputAsync(System.Threading.CancellationToken.None);
-            //}
-
-            //if (entHexColorBg.IsSoftInputShowing())
-            //{
-            //    await entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
-            //}
         }
 
         /// <summary>
@@ -341,6 +308,35 @@
         }
 
         /// <summary>
+        /// Go to the next field when the next/done key have been pressed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void GoToNextField(object sender, EventArgs e)
+        {
+            // Go to the next field when the next/done key have been pressed
+            if (sender == entHexColorFg)
+            {
+                _ = entHexColorBg.Focus();
+            }
+            else if (sender == entHexColorBg)
+            {
+                _ = entHexColorFg.Focus();
+            }
+
+            // Hide the soft input keyboard
+            //if (entHexColorFg.IsSoftInputShowing())
+            //{
+            //    await entHexColorFg.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            //}
+
+            //if (entHexColorBg.IsSoftInputShowing())
+            //{
+            //    await entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            //}
+        }
+
+        /// <summary>
         /// Entry HexColor Unfocused event
         /// </summary>
         /// <param name="sender"></param>
@@ -348,44 +344,48 @@
         private void EntryHexColorUnfocused(object sender, EventArgs e)
         {
             Entry entry = (Entry)sender;
-#if IOS      
+
+#if ANDROID
+            // Android!!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
+            // A fourth row with a height of 50 is added to the grid to workaround this issue and push the content above the navigation bar
+            // on Android when the entry is unfocused and the soft input keyboard is hidden,
+            // but only if it hasn't been added yet to prevent adding multiple rows
+            if (!hasWorkaroundRow)
+            {
+                grdMainFixed.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
+                hasWorkaroundRow = true;
+            }
+#endif
+
+#if IOS
             // https://github.com/dotnet/maui/issues/33316 and https://github.com/dotnet/maui/issues/32016
             // Workaround for iOS !!!BUG!!! The MaxLength property of an Entry control is not respected on iOS,
             // so we have to set the text again to get the correct length of the text (Microsoft.Maui.Controls Version 10.0.41)
+            // Re-assign text to enforce MaxLength on iOS
             string cTemp = entry.Text;
             entry.Text = "";
             entry.Text = cTemp;
 #endif
-            // Hide the soft input keyboard
-            //if (entHexColorFg.IsSoftInputShowing())
-            //{
-            //    entHexColorFg.HideSoftInputAsync(System.Threading.CancellationToken.None);
-            //}
-
-            //if (entHexColorBg.IsSoftInputShowing())
-            //{
-            //    entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
-            //}
-
+            // Force a UI refresh of the Entry controls
             entHexColorFg.IsEnabled = false;
             entHexColorFg.IsEnabled = true;
             entHexColorBg.IsEnabled = false;
             entHexColorBg.IsEnabled = true;
 
             // Add the opacity if length = 6 characters
-            if (entry.Text.Length == 6)
+            if (entry.Text?.Length == 6)
             {
                 entry.Text = $"FF{entry.Text}";
             }
 
             // Length must be 8 characters
-            if (entry.Text.Length != 8)
+            if (entry.Text == null || entry.Text.Length != 8)
             {
                 _ = entry.Focus();
                 return;
             }
 
-            // Set the sliders position
+            // Set the sliders position based on the entry content
             int nOpacity = 0;
             int nRed = 0;
             int nGreen = 0;
