@@ -662,4 +662,7 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR-koodi kuvalla</value>
   </data>
+  <data name="QRCodeImageTitle_Text" xml:space="preserve">
+    <value>Valitse kuva</value>
+  </data>
 </root>

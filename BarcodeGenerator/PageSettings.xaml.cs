@@ -312,6 +312,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
         private async void GoToNextField(object sender, EventArgs e)
         {
             // Go to the next field when the next/done key have been pressed
@@ -319,32 +320,36 @@
             {
                 _ = entHexColorBg.Focus();
             }
-            else if (sender == entHexColorBg)
+            //else if (sender == entHexColorBg)
+            //{
+            //    _ = entHexColorFg.Focus();
+            //}
+#if IOS
+            // Hide the soft input keyboard
+            if (entHexColorFg.IsSoftInputShowing())
             {
-                _ = entHexColorFg.Focus();
+                await entHexColorFg.HideSoftInputAsync(System.Threading.CancellationToken.None);
             }
 
-            // Hide the soft input keyboard
-            //if (entHexColorFg.IsSoftInputShowing())
-            //{
-            //    await entHexColorFg.HideSoftInputAsync(System.Threading.CancellationToken.None);
-            //}
-
-            //if (entHexColorBg.IsSoftInputShowing())
-            //{
-            //    await entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
-            //}
+            if (entHexColorBg.IsSoftInputShowing())
+            {
+                await entHexColorBg.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            }
+#endif
         }
 
         /// <summary>
-        /// Entry HexColor Unfocused event
+        /// Handles the focus event for the hex color entry field, applying platform-specific layout adjustments when
+        /// necessary.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void EntryHexColorUnfocused(object sender, EventArgs e)
+        /// <remarks>On Android devices, this method applies a workaround for a known issue where the
+        /// layout may not adjust correctly when the soft input keyboard is hidden. It adds an extra row to the grid to
+        /// ensure proper content positioning above the navigation bar. This workaround is only applied once per
+        /// instance.</remarks>
+        /// <param name="sender">The source of the event, typically the entry control that received or lost focus.</param>
+        /// <param name="e">A <see cref="FocusEventArgs"/> object that contains the event data, including the focus state.</param>
+        private void EntryHexColorFocused(object sender, FocusEventArgs e)
         {
-            Entry entry = (Entry)sender;
-
 #if ANDROID
             // Android!!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
             // A fourth row with a height of 50 is added to the grid to workaround this issue and push the content above the navigation bar
@@ -356,7 +361,16 @@
                 hasWorkaroundRow = true;
             }
 #endif
+        }
 
+        /// <summary>
+        /// Entry HexColor Unfocused event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EntryHexColorUnfocused(object sender, EventArgs e)
+        {
+            Entry entry = (Entry)sender;
 #if IOS
             // https://github.com/dotnet/maui/issues/33316 and https://github.com/dotnet/maui/issues/32016
             // Workaround for iOS !!!BUG!!! The MaxLength property of an Entry control is not respected on iOS,
@@ -366,12 +380,6 @@
             entry.Text = "";
             entry.Text = cTemp;
 #endif
-            // Force a UI refresh of the Entry controls
-            entHexColorFg.IsEnabled = false;
-            entHexColorFg.IsEnabled = true;
-            entHexColorBg.IsEnabled = false;
-            entHexColorBg.IsEnabled = true;
-
             // Add the opacity if length = 6 characters
             if (entry.Text?.Length == 6)
             {

@@ -662,4 +662,7 @@ Microsoft, Microsoft Store, le logo Microsoft Store et Windows sont des marques 
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>Code QR avec image</value>
   </data>
+  <data name="QRCodeImageTitle_Text" xml:space="preserve">
+    <value>Choisissez une image</value>
+  </data>
 </root>

@@ -1250,6 +1250,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose an image.
+        /// </summary>
+        internal static string QRCodeImageTitle_Text {
+            get {
+                return ResourceManager.GetString("QRCodeImageTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid file type selected. Please select a JPG or PNG image..
         /// </summary>
         internal static string QRCodeImageTypeError_Text {

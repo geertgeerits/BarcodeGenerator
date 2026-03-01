@@ -8,7 +8,7 @@
     Loaded="Popup_Loaded">
     
     <Grid
-        RowDefinitions="Auto, Auto"
+        RowDefinitions="Auto, Auto, Auto"
         ColumnDefinitions="Auto, Auto"
         RowSpacing="5"
         HorizontalOptions="Center"
@@ -23,9 +23,9 @@
             VerticalOptions="Fill"
             CornerRadius="10">
         </BoxView>
-            
+
         <Label
-            x:Name="lblPopupMessage"
+            x:Name="lblPopupTitle"
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2"
@@ -33,19 +33,35 @@
             VerticalOptions="Fill"
             WidthRequest="280"
             BackgroundColor="Transparent"
-            Margin="10"
+            Margin="10,5,10,5"
+            Padding="5"
+            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+            HorizontalTextAlignment="Center"
+            Text="{Translate QRCodeImageTitle_Text}">
+        </Label>
+
+        <Label
+            x:Name="lblPopupMessage"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            WidthRequest="280"
+            BackgroundColor="Transparent"
+            Margin="10,5,10,5"
             Padding="5"
             TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
         </Label>
 
         <Button
             x:Name="btnButtonClose"
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="1"
             HorizontalOptions="End"
             VerticalOptions="End"
             BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
-            Margin="10"
+            Margin="5,5,5,0"
             Padding="15,5,15,5"
             TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
             Text="{Translate ButtonNext_Text}"

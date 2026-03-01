@@ -662,4 +662,7 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR kód s obrázkem</value>
   </data>
+  <data name="QRCodeImageTitle_Text" xml:space="preserve">
+    <value>Vyberte obrázek</value>
+  </data>
 </root>

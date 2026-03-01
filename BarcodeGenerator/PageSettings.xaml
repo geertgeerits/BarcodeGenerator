@@ -237,6 +237,7 @@
                         MaxLength="8"
                         TextTransform="Uppercase"
                         TextChanged="EntryHexColorTextChanged"
+                        Focused="EntryHexColorFocused"
                         Unfocused="EntryHexColorUnfocused"
                         Completed="GoToNextField">
                     </Entry>
@@ -350,6 +351,7 @@
                         MaxLength="8"
                         TextTransform="Uppercase"
                         TextChanged="EntryHexColorTextChanged"
+                        Focused="EntryHexColorFocused" 
                         Unfocused="EntryHexColorUnfocused"
                         Completed="GoToNextField">
                     </Entry>

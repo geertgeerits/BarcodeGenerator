@@ -662,4 +662,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR-kode med bilde</value>
   </data>
+  <data name="QRCodeImageTitle_Text" xml:space="preserve">
+    <value>Velg et bilde</value>
+  </data>
 </root>

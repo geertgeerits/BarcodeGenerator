@@ -239,7 +239,7 @@
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
     <value>Ascolta</value>
-  </data>	
+  </data>
   <data name="ButtonNext_Text" xml:space="preserve">
     <value>Prossima</value>
   </data>
@@ -661,5 +661,8 @@ Microsoft, Microsoft Store, il logo di Microsoft Store e Windows sono marchi di 
   </data>
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR code con immagine</value>
+  </data>
+  <data name="QRCodeImageTitle_Text" xml:space="preserve">
+    <value>Scegli un'immagine</value>
   </data>
 </root>

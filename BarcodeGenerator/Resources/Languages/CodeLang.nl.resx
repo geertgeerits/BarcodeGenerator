@@ -662,4 +662,7 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR-code met afbeelding</value>
   </data>
+  <data name="QRCodeImageTitle_Text" xml:space="preserve">
+    <value>Kies een afbeelding</value>
+  </data>
 </root>
