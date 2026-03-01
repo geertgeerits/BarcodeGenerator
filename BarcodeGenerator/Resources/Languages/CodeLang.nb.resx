@@ -665,4 +665,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
   <data name="QRCodeImageTitle_Text" xml:space="preserve">
     <value>Velg et bilde</value>
   </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Kansellere</value>
+  </data>
 </root>

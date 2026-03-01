@@ -6,11 +6,14 @@ namespace BarcodeGenerator
 {
     public static class ClassQRCodeImage
     {
-        // Global variable to control the size of the image as a percentage of the QR code size.
+        // Global variable to control the size of the image as a percentage of the QR code size
         public static float nQRCodeImageSizePercent;
 
+        // Global variable to track if the popup message was canceled by the user
+        public static bool bPopupCanceled = false;
+
         /// <summary>
-        /// Generates a QR code image from the specified text, optionally overlaying a centered logo image.
+        /// Generates a QR code image from the specified text, optionally overlaying a centered logo image
         /// </summary>
         /// <remarks>The QR code is generated with a fixed pixel size per module. If a logo is provided,
         /// it is scaled to 20% of the QR code's size and centered, with a border for improved visibility. The
@@ -25,7 +28,7 @@ namespace BarcodeGenerator
         /// <param name="text">The text to encode within the generated QR code.
         /// without a logo. The stream must be positioned at the beginning.</param>
         /// <returns>An ImageSource representing the generated QR code image, including the logo overlay if provided.</returns>
-        public static async Task<ImageSource> GenerateQrWithLogo(string text)
+        public static async Task<ImageSource?> GenerateQrWithLogo(string text)
         {
             // Generate QR code data with high error correction level to allow for logo overlay
             var generator = new QRCodeGenerator();
@@ -48,7 +51,14 @@ namespace BarcodeGenerator
             if (currentPage != null)
             {
                 MainPage.bIsPopupMessage = true;
-                _ = await currentPage.ShowPopupAsync(new PopupMessage(4, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize} {CodeLang.Pixels_Text}"));
+                await currentPage.ShowPopupAsync(new PopupMessage(5, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize} {CodeLang.Pixels_Text}"));
+
+                // Check if the popup was canceled by the user before proceeding to open the file picker
+                if (bPopupCanceled)
+                {
+                    bPopupCanceled = false;
+                    return null;
+                }
             }
 
             // Open the file picker to select an image file

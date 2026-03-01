@@ -109,4 +109,25 @@ public partial class PopupMessage : Popup
             Debug.WriteLine($"OnButtonCloseClicked: Error closing popup - {ex.Message}");
         }
     }
+
+    private async void OnButtonCancel_Clicked(object sender, EventArgs e)
+    {
+        // Cancel the pending auto-close and attempt a single close
+        try
+        {
+            _closeCts.Cancel();
+        }
+        catch { }
+
+        try
+        {
+            await TryCloseAsync();
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"OnButtonCloseClicked: Error closing popup - {ex.Message}");
+        }
+
+        ClassQRCodeImage.bPopupCanceled = true;
+    }
 }

@@ -665,4 +665,7 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
   <data name="QRCodeImageTitle_Text" xml:space="preserve">
     <value>Choose an image</value>
   </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
 </root>

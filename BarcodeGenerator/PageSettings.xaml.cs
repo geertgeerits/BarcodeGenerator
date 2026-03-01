@@ -320,10 +320,10 @@
             {
                 _ = entHexColorBg.Focus();
             }
-            //else if (sender == entHexColorBg)
-            //{
-            //    _ = entHexColorFg.Focus();
-            //}
+            else if (sender == entHexColorBg)
+            {
+                _ = entHexColorFg.Focus();
+            }
 #if IOS
             // Hide the soft input keyboard
             if (entHexColorFg.IsSoftInputShowing())

@@ -665,4 +665,7 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="QRCodeImageTitle_Text" xml:space="preserve">
     <value>Válasszon egy képet</value>
   </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Mégsem</value>
+  </data>
 </root>

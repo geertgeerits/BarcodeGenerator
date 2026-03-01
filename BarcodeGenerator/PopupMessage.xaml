@@ -50,9 +50,24 @@
             WidthRequest="280"
             BackgroundColor="Transparent"
             Margin="10,5,10,5"
-            Padding="5"
+            Padding="5,5,5,10"
             TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
         </Label>
+
+        <Button
+            x:Name="btnButtonCancel"
+            Grid.Row="2"
+            Grid.Column="0"
+            HorizontalOptions="Start"
+            VerticalOptions="End"
+            WidthRequest="130"
+            BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
+            Margin="0,5,0,0"
+            Padding="5"
+            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
+            Text="{Translate ButtonCancel_Text}"
+            Clicked="OnButtonCancel_Clicked">
+        </Button>
 
         <Button
             x:Name="btnButtonClose"
@@ -60,9 +75,10 @@
             Grid.Column="1"
             HorizontalOptions="End"
             VerticalOptions="End"
+            WidthRequest="130"
             BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
-            Margin="5,5,5,0"
-            Padding="15,5,15,5"
+            Margin="0,5,0,0"
+            Padding="5"
             TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
             Text="{Translate ButtonNext_Text}"
             Clicked="OnButtonClose_Clicked">

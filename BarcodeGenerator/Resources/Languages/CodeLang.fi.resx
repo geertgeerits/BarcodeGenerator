@@ -665,4 +665,7 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="QRCodeImageTitle_Text" xml:space="preserve">
     <value>Valitse kuva</value>
   </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Peruuttaa</value>
+  </data>
 </root>

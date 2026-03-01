@@ -665,4 +665,7 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="QRCodeImageTitle_Text" xml:space="preserve">
     <value>Kies een afbeelding</value>
   </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
 </root>

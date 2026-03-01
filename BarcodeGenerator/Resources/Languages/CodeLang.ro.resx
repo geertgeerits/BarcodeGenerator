@@ -665,4 +665,7 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="QRCodeImageTitle_Text" xml:space="preserve">
     <value>Alege o imagine</value>
   </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Anula</value>
+  </data>
 </root>

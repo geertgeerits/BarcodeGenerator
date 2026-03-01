@@ -665,4 +665,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   <data name="QRCodeImageTitle_Text" xml:space="preserve">
     <value>Vælg et billede</value>
   </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Ophæve</value>
+  </data>
 </root>
