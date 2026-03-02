@@ -121,13 +121,13 @@ public partial class PopupMessage : Popup
 
         try
         {
+            ClassQRCodeImage.bPopupCanceled = true;
+
             await TryCloseAsync();
         }
         catch (Exception ex)
         {
             Debug.WriteLine($"OnButtonCloseClicked: Error closing popup - {ex.Message}");
         }
-
-        ClassQRCodeImage.bPopupCanceled = true;
     }
 }

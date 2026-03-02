@@ -315,7 +315,7 @@
         /// 
         private async void GoToNextField(object sender, EventArgs e)
         {
-            // Go to the next field when the next/done key have been pressed
+            // Go to the next field when the next/done key have been pressed on the soft input keyboard
             if (sender == entHexColorFg)
             {
                 _ = entHexColorBg.Focus();

@@ -51,6 +51,7 @@
             BackgroundColor="Transparent"
             Margin="10,5,10,5"
             Padding="5,5,5,10"
+            HorizontalTextAlignment="Center"
             TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
         </Label>
 
