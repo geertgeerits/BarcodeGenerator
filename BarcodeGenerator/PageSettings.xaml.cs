@@ -355,7 +355,7 @@
         //            // A fourth row with a height of 50 is added to the grid to workaround this issue and push the content above the navigation bar
         //            // on Android when the entry is unfocused and the soft input keyboard is hidden,
         //            // but only if it hasn't been added yet to prevent adding multiple rows
-        //            // Happens only with the Microsoft SwiftKey keyboard, the Samsung and Google keyboards don't have this issue
+        //            // Happens most with the Microsoft SwiftKey keyboard, the Samsung and Google keyboards have it less or not at all.
         //            if (!hasWorkaroundRow)
         //            {
         //                grdMainFixed.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
