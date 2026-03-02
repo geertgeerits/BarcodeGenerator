@@ -7,7 +7,7 @@
         private readonly Stopwatch stopWatch = new();
         private string searchKeyGenerator = string.Empty;
         private string searchKeyScanner = string.Empty;
-        private bool hasWorkaroundRow;
+        //private bool hasWorkaroundRow;
 
         public PageSettings()
         {
@@ -338,30 +338,31 @@
 #endif
         }
 
-        /// <summary>
-        /// Handles the focus event for the hex color entry field, applying platform-specific layout adjustments when
-        /// necessary.
-        /// </summary>
-        /// <remarks>On Android devices, this method applies a workaround for a known issue where the
-        /// layout may not adjust correctly when the soft input keyboard is hidden. It adds an extra row to the grid to
-        /// ensure proper content positioning above the navigation bar. This workaround is only applied once per
-        /// instance.</remarks>
-        /// <param name="sender">The source of the event, typically the entry control that received or lost focus.</param>
-        /// <param name="e">A <see cref="FocusEventArgs"/> object that contains the event data, including the focus state.</param>
-        private void EntryHexColorFocused(object sender, FocusEventArgs e)
-        {
-#if ANDROID
-            // Android!!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
-            // A fourth row with a height of 50 is added to the grid to workaround this issue and push the content above the navigation bar
-            // on Android when the entry is unfocused and the soft input keyboard is hidden,
-            // but only if it hasn't been added yet to prevent adding multiple rows
-            if (!hasWorkaroundRow)
-            {
-                grdMainFixed.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
-                hasWorkaroundRow = true;
-            }
-#endif
-        }
+//        /// <summary>
+//        /// Handles the focus event for the hex color entry field, applying platform-specific layout adjustments when
+//        /// necessary.
+//        /// </summary>
+//        /// <remarks>On Android devices, this method applies a workaround for a known issue where the
+//        /// layout may not adjust correctly when the soft input keyboard is hidden. It adds an extra row to the grid to
+//        /// ensure proper content positioning above the navigation bar. This workaround is only applied once per
+//        /// instance.</remarks>
+//        /// <param name="sender">The source of the event, typically the entry control that received or lost focus.</param>
+//        /// <param name="e">A <see cref="FocusEventArgs"/> object that contains the event data, including the focus state.</param>
+//        private void EntryHexColorFocused(object sender, FocusEventArgs e)
+//        {
+//#if ANDROID
+//            // Android!!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
+//            // A fourth row with a height of 50 is added to the grid to workaround this issue and push the content above the navigation bar
+//            // on Android when the entry is unfocused and the soft input keyboard is hidden,
+//            // but only if it hasn't been added yet to prevent adding multiple rows
+//            // Happens only with the keyboard Microsoft SwiftKey Keyboard, the Samsung and Google Keyboard doesn't have this issue
+//            if (!hasWorkaroundRow)
+//            {
+//                grdMainFixed.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
+//                hasWorkaroundRow = true;
+//            }
+//#endif
+//        }
 
         /// <summary>
         /// Entry HexColor Unfocused event
