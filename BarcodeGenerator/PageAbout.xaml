@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:link="clr-namespace:BarcodeGenerator"
              x:Class="BarcodeGenerator.PageAbout"
-             x:DataType="link:PageAbout">
+             x:DataType="link:PageAbout"
+             SafeAreaEdges="All">
 
     <Shell.TitleView>
         <Label
