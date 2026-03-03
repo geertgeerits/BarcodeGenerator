@@ -668,4 +668,7 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC Código QR Seguro</value>
+  </data>
 </root>

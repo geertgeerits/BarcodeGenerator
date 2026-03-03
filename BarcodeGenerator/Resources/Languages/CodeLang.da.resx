@@ -668,4 +668,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Ophæve</value>
   </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC sikker QR-kode</value>
+  </data>
 </root>

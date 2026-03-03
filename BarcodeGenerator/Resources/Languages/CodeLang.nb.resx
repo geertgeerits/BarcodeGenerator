@@ -668,4 +668,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Kansellere</value>
   </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC sikker QR-kode</value>
+  </data>
 </root>

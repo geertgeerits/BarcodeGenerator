@@ -668,4 +668,7 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Anula</value>
   </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC Cod QR securizat</value>
+  </data>
 </root>

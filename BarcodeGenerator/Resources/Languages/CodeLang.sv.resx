@@ -668,4 +668,7 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Avboka</value>
   </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC säker QR-kod</value>
+  </data>
 </root>

@@ -547,6 +547,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SQRC Secure QR Code.
+        /// </summary>
+        internal static string Barcode_SQRC_Text {
+            get {
+                return ResourceManager.GetString("Barcode_SQRC_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UPC-A.
         /// </summary>
         internal static string Barcode_UPC_A_Text {

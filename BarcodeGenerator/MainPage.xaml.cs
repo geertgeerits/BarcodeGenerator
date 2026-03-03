@@ -332,7 +332,7 @@ namespace BarcodeGenerator
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
-                    edtTextToCode.MaxLength = 1700;
+                    edtTextToCode.MaxLength = 1250;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;

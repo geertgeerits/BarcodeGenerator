@@ -73,8 +73,9 @@
         public static string cBarcode_QR_CODE_MODEL_2 = string.Empty;
         public static string cBarcode_FRAME_QR_CODE = string.Empty;
         public static string cBarcode_MICRO_QR_CODE = string.Empty;
-        public static string cBarcode_RMQR = string.Empty;
-        public static string cBarcode_QR_CODE_IMAGE = string.Empty;             // CodeLang.Barcode_QR_CODE_IMAGE_Text;
+        public static string cBarcode_RMQR = string.Empty;                      // Rectangular Micro QR Code
+        public static string cBarcode_SQRC = string.Empty;                      // Secure Quick Response Code
+        public static string cBarcode_QR_CODE_IMAGE = string.Empty;             // QR Code with image in the center
 
         // Global variables
         public static int nBarcodeGeneratorIndex;
@@ -160,8 +161,9 @@
             cBarcode_QR_CODE_MODEL_2 = CodeLang.Barcode_QR_CODE_MODEL_2_Text;
             cBarcode_FRAME_QR_CODE = CodeLang.Barcode_FRAME_QR_CODE_Text;
             cBarcode_MICRO_QR_CODE = CodeLang.Barcode_MICRO_QR_CODE_Text;
-            cBarcode_RMQR = CodeLang.Barcode_RMQR_Text;
-            cBarcode_QR_CODE_IMAGE = CodeLang.Barcode_QR_CODE_IMAGE_Text;
+            cBarcode_RMQR = CodeLang.Barcode_RMQR_Text;                     // Rectangular Micro QR Code
+            cBarcode_SQRC = CodeLang.Barcode_SQRC_Text;                     // Secure Quick Response Code
+            cBarcode_QR_CODE_IMAGE = CodeLang.Barcode_QR_CODE_IMAGE_Text;   // QR Code with image in the center
 
             // Default values for the barcode generator and scanner
             cBarcodeGeneratorDefault = cBarcode_QR_CODE;
@@ -231,6 +233,7 @@
             barcodeSearch.Add("FRAME_QR_CODE", CodeLang.Barcode_FRAME_QR_CODE_Text);
             barcodeSearch.Add("MICRO_QR_CODE", CodeLang.Barcode_MICRO_QR_CODE_Text);
             barcodeSearch.Add("RMQR", CodeLang.Barcode_RMQR_Text);
+            barcodeSearch.Add("SQRC", CodeLang.Barcode_SQRC_Text);
             barcodeSearch.Add("QR_CODE_IMAGE", CodeLang.Barcode_QR_CODE_IMAGE_Text);
         }
 
@@ -578,9 +581,9 @@
 
    2D barcode formats and maximum length of the text to encode.
 
-                      edtTextToCode    Numeric      Alpha    Binary     Kanji/Kana
-                          MaxLength               Numeric    8-bits     JIS X 0208
-                      -------------    -------    -------    -------    ----------
+                      edtTextToCode    Numeric      Alpha    Binary     Kanji/Kana    Version    Correction
+                          MaxLength               Numeric    8-bits     JIS X 0208                    level
+                      -------------    -------    -------    -------    ----------    -------    ----------
    Aztec                       1900       3832       3067       1914
    Aztec Code
    Aztec Rune
@@ -593,12 +596,13 @@
    Compact PDF417
    Micro PDF 417                366        250        150
 
-   QR Code                     1800       7089       4296       2953          1817
+   QR Code                     1800       7089       4296       2953          1817         40       L (low)
    QR Code Model 1
    QR Code Model 2
    Frame QR
    Micro QR                      35         21         15
    rMQR Rectangular Micro QR
-   QR Code + Image             1700       7089       4296       1273          1817
-   _____________________________________________________________________________________________ */
+   SQRC Secure QR Code
+   QR Code with Image          1250                             1273                               H (high)
+   ________________________________________________________________________________________________________ */
 

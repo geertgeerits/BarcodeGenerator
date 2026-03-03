@@ -668,4 +668,7 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Mégsem</value>
   </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC biztonságos QR-kód</value>
+  </data>
 </root>
