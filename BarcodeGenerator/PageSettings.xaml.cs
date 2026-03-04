@@ -7,7 +7,7 @@
         private readonly Stopwatch stopWatch = new();
         private string searchKeyGenerator = string.Empty;
         private string searchKeyScanner = string.Empty;
-        private bool hasWorkaroundRow;
+        //private bool hasWorkaroundRow;
 
         public PageSettings()
         {
@@ -23,6 +23,16 @@
 #endif
                 return;
             }
+
+#if ANDROID
+            // Android !!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
+            // A padding with a height of 50 at the bottom is added to the grid to workaround this issue and push the content
+            // above the navigation bar on Android when the entry is unfocused and the soft input keyboard is hidden.
+            // Happens when the 'Entry ReturnType' is set to 'Done' and the soft keyboard is hiding after pressing 'Done'.
+            // Workaround: use always 'Next' and handle the focus in the GoToNextField method to go to the next field or unfocus the last field.
+            // Happens most with the Microsoft SwiftKey keyboard, the Samsung and Google keyboards have it less or not at all.
+            entHexColorBg.ReturnType = ReturnType.Next;
+#endif
 
             // Put text in the chosen language in the controls and variables
             SetLanguage();
@@ -338,13 +348,15 @@
 #if ANDROID
             // Android !!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
             // A padding with a height of 50 at the bottom is added to the grid to workaround this issue and push the content
-            // above the navigation bar on Android when the entry is unfocused and the soft input keyboard is hidden
+            // above the navigation bar on Android when the entry is unfocused and the soft input keyboard is hidden.
+            // Happens when the 'Entry ReturnType' is set to 'Done' and the soft keyboard is hiding after pressing 'Done'.
+            // Workaround: use always 'Next' and handle the focus in the GoToNextField method to go to the next field or unfocus the last field.
             // Happens most with the Microsoft SwiftKey keyboard, the Samsung and Google keyboards have it less or not at all.
-            if (!hasWorkaroundRow)
-            {
-                grdMainFixed.Padding = new Thickness(0, 0, 0, 50);
-                hasWorkaroundRow = true;
-            }
+            //if (!hasWorkaroundRow)
+            //{
+            //    grdMainFixed.Padding = new Thickness(0, 0, 0, 50);
+            //    hasWorkaroundRow = true;
+            //}
 #endif
 
 #if IOS
