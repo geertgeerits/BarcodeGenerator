@@ -98,7 +98,7 @@
 
             // Set the QR code image size to update the switch and entry
             swtQRCodeImageSizeVariable.IsToggled = ClassQRCodeImage.bQRCodeImageSizeVariable;
-            entQRCodeImageSizePixels.IsEnabled = ClassQRCodeImage.bQRCodeImageSizeVariable;
+            entQRCodeImageSizePixels.IsEnabled = !ClassQRCodeImage.bQRCodeImageSizeVariable;
             entQRCodeImageSizePixels.Text = ClassQRCodeImage.nQRCodeImageSizePixels.ToString();
 
             // Start the stopWatch for resetting all the settings
@@ -541,6 +541,78 @@
         }
 
         /// <summary>
+        /// Switch QR code image size variable toggled event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SwtQRCodeImageSizeVariable_Toggled(object sender, ToggledEventArgs e)
+        {
+            ClassQRCodeImage.bQRCodeImageSizeVariable = e.Value;
+            entQRCodeImageSizePixels.IsEnabled = !e.Value;
+        }
+
+        /// <summary>
+        /// Handles the TextChanged event for the QR code image size entry, ensuring that only valid decimal values are
+        /// accepted.
+        /// </summary>
+        /// <remarks>If the new text value is not a valid decimal, the text is reverted to the previous
+        /// value to prevent invalid input.</remarks>
+        /// <param name="sender">The source of the event, typically the Entry control that triggered the TextChanged event.</param>
+        /// <param name="e">The event data containing information about the text change, including the new and old text values.</param>
+        private void EntQRCodeImageSizePixels_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!IsDecimal(e.NewTextValue))
+            {
+                ((Entry)sender).Text = e.OldTextValue;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether the specified string consists exclusively of valid decimal characters.
+        /// </summary>
+        /// <remarks>This method checks each character in the input string against a predefined set of
+        /// valid decimal characters. It is case-sensitive and returns false if any character is not recognized as a
+        /// valid decimal character.</remarks>
+        /// <param name="cText">The string to evaluate for valid decimal characters. This parameter cannot be null or empty.</param>
+        /// <returns>true if all characters in the string are valid decimal characters; otherwise, false.</returns>
+        private static bool IsDecimal(string cText)
+        {
+            foreach (char c in cText)
+            {
+                if (!cDecimalCharacters.Contains(c))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EntQRCodeImageSizePixels_Unfocused(object sender, FocusEventArgs e)
+        {
+            string cText = ((Entry)sender).Text;
+
+            if (!int.TryParse(cText, out int nValue))
+            {
+                entQRCodeImageSizePixels.Focus();
+                return;
+            }
+
+            if (nValue < 500 || nValue > 10000)
+            {
+                entQRCodeImageSizePixels.Focus();
+                return;
+            }
+
+            ClassQRCodeImage.nQRCodeImageSizePixels = nValue;
+        }
+        
+        /// <summary>
         /// Handles the ValueChanged event for the QR code image size slider, updating the QR code image size percentage
         /// and pixel dimensions based on the new slider value.
         /// </summary>
@@ -619,52 +691,6 @@
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
-        }
-
-        private void SwtQRCodeImageSizeVariable_Toggled(object sender, ToggledEventArgs e)
-        {
-            entQRCodeImageSizePixels.IsEnabled = e.Value;
-            ClassQRCodeImage.bQRCodeImageSizeVariable = e.Value;
-        }
-
-        private void EntQRCodeImageSizePixels_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (!IsDecimal(e.NewTextValue))
-            {
-                ((Entry)sender).Text = e.OldTextValue;
-            }
-        }
-
-        private static bool IsDecimal(string cText)
-        {
-            foreach (char c in cText)
-            {
-                if (!cDecimalCharacters.Contains(c))
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        private void EntQRCodeImageSizePixels_Unfocused(object sender, FocusEventArgs e)
-        {
-            string cText = ((Entry)sender).Text;
-
-            if (!int.TryParse(cText, out int nValue))
-            {
-                entQRCodeImageSizePixels.Focus();
-                return;
-            }
-
-            if (nValue < 500 || nValue > 10000)
-            {
-                entQRCodeImageSizePixels.Focus();
-                return;
-            }
-
-            ClassQRCodeImage.nQRCodeImageSizePixels = nValue;
         }
     }
 }
