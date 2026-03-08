@@ -7,8 +7,8 @@ namespace BarcodeGenerator
     public static class ClassQRCodeImage
     {
         // Global variables to control the size of the QR code and image
-        public static bool bQRCodeImageSizeVariable;
-        public static int nQRCodeImageSizePixels;
+        public static bool bQRCodeSizeVariable;
+        public static int nQRCodeSizePixels;
         public static float nQRCodeImageSizePercent;
 
         // Global variable to track if the popup message was canceled by the user
@@ -47,9 +47,9 @@ namespace BarcodeGenerator
             int pixelsPerModule = 20;
 
             // Compute the pixelsPerModule from a desired output size to avoid extreme bitmap dimensions
-            if (!bQRCodeImageSizeVariable)
+            if (!bQRCodeSizeVariable)
             {
-                int desiredOutputPx = nQRCodeImageSizePixels;                           // e.g. target image width
+                int desiredOutputPx = nQRCodeSizePixels;                           // e.g. target image width
                 pixelsPerModule = Math.Clamp(desiredOutputPx / moduleCount, 4, 40);     // Keep between 4 and 40
             }
 

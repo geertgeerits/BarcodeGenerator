@@ -401,15 +401,15 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
-                    Text="Fixed/Variable image size">
+                    Text="{Translate QRCodeSizeVariable_Text}">
                 </Label>
 
                 <Switch
-                    x:Name="swtQRCodeImageSizeVariable"
+                    x:Name="swtQRCodeSizeVariable"
                     Grid.Row="17"
                     Grid.Column="2"
                     HorizontalOptions="Start"
-                    Toggled="SwtQRCodeImageSizeVariable_Toggled"  >
+                    Toggled="SwtQRCodeSizeVariable_Toggled"  >
                 </Switch>
 
                 <Label
@@ -418,7 +418,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
-                    Text="QR code size in pixels">
+                    Text="{Translate QRCodeSizePixels_Text}">
                 </Label>
 
                 <Border
@@ -427,7 +427,7 @@
                     Grid.Column="2">
 
                     <Entry
-                        x:Name="entQRCodeImageSizePixels"
+                        x:Name="entQRCodeSizePixels"
                         Grid.Row="18"
                         Grid.Column="2"
                         ClearButtonVisibility="WhileEditing"
@@ -436,8 +436,8 @@
                         Keyboard="Numeric"
                         ReturnType="Next"
                         IsEnabled="False"
-                        TextChanged="EntQRCodeImageSizePixels_TextChanged"
-                        Unfocused="EntQRCodeImageSizePixels_Unfocused" >
+                        TextChanged="EntQRCodeSizePixels_TextChanged"
+                        Unfocused="EntQRCodeSizePixels_Unfocused" >
                     </Entry>
                 </Border>
 

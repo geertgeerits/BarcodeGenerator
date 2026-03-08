@@ -1295,6 +1295,24 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to QR Code size in pixels:.
+        /// </summary>
+        internal static string QRCodeSizePixels_Text {
+            get {
+                return ResourceManager.GetString("QRCodeSizePixels_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fixed/Variable QR Code size:.
+        /// </summary>
+        internal static string QRCodeSizeVariable_Text {
+            get {
+                return ResourceManager.GetString("QRCodeSizeVariable_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The application will be restarted..
         /// </summary>
         internal static string RestartApp_Text {

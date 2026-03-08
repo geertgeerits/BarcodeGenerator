@@ -59,8 +59,8 @@ namespace BarcodeGenerator
             // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
-            ClassQRCodeImage.bQRCodeImageSizeVariable = Preferences.Default.Get("SettingQRCodeImageSizeVariable", true);
-            ClassQRCodeImage.nQRCodeImageSizePixels = Preferences.Default.Get("SettingQRCodeImageSizePixels", 800);
+            ClassQRCodeImage.bQRCodeSizeVariable = Preferences.Default.Get("SettingQRCodeSizeVariable", true);
+            ClassQRCodeImage.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
             ClassQRCodeImage.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");

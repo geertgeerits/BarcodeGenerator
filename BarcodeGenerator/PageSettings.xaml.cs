@@ -97,9 +97,9 @@
             sldColorBgBlue.Value = nBlue;
 
             // Set the QR code image size to update the switch and entry
-            swtQRCodeImageSizeVariable.IsToggled = ClassQRCodeImage.bQRCodeImageSizeVariable;
-            entQRCodeImageSizePixels.IsEnabled = !ClassQRCodeImage.bQRCodeImageSizeVariable;
-            entQRCodeImageSizePixels.Text = ClassQRCodeImage.nQRCodeImageSizePixels.ToString();
+            swtQRCodeSizeVariable.IsToggled = ClassQRCodeImage.bQRCodeSizeVariable;
+            entQRCodeSizePixels.IsEnabled = !ClassQRCodeImage.bQRCodeSizeVariable;
+            entQRCodeSizePixels.Text = ClassQRCodeImage.nQRCodeSizePixels.ToString();
 
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
@@ -545,10 +545,10 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SwtQRCodeImageSizeVariable_Toggled(object sender, ToggledEventArgs e)
+        private void SwtQRCodeSizeVariable_Toggled(object sender, ToggledEventArgs e)
         {
-            ClassQRCodeImage.bQRCodeImageSizeVariable = e.Value;
-            entQRCodeImageSizePixels.IsEnabled = !e.Value;
+            ClassQRCodeImage.bQRCodeSizeVariable = e.Value;
+            entQRCodeSizePixels.IsEnabled = !e.Value;
         }
 
         /// <summary>
@@ -559,7 +559,7 @@
         /// value to prevent invalid input.</remarks>
         /// <param name="sender">The source of the event, typically the Entry control that triggered the TextChanged event.</param>
         /// <param name="e">The event data containing information about the text change, including the new and old text values.</param>
-        private void EntQRCodeImageSizePixels_TextChanged(object sender, TextChangedEventArgs e)
+        private void EntQRCodeSizePixels_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (!IsDecimal(e.NewTextValue))
             {
@@ -593,23 +593,23 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void EntQRCodeImageSizePixels_Unfocused(object sender, FocusEventArgs e)
+        private void EntQRCodeSizePixels_Unfocused(object sender, FocusEventArgs e)
         {
             string cText = ((Entry)sender).Text;
 
             if (!int.TryParse(cText, out int nValue))
             {
-                entQRCodeImageSizePixels.Focus();
+                entQRCodeSizePixels.Focus();
                 return;
             }
 
             if (nValue < 500 || nValue > 10000)
             {
-                entQRCodeImageSizePixels.Focus();
+                entQRCodeSizePixels.Focus();
                 return;
             }
 
-            ClassQRCodeImage.nQRCodeImageSizePixels = nValue;
+            ClassQRCodeImage.nQRCodeSizePixels = nValue;
         }
         
         /// <summary>
@@ -638,8 +638,8 @@
         {
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
-            Preferences.Default.Set("SettingQRCodeImageSizeVariable", ClassQRCodeImage.bQRCodeImageSizeVariable);
-            Preferences.Default.Set("SettingQRCodeImageSizePixels", ClassQRCodeImage.nQRCodeImageSizePixels);
+            Preferences.Default.Set("SettingQRCodeSizeVariable", ClassQRCodeImage.bQRCodeSizeVariable);
+            Preferences.Default.Set("SettingQRCodeSizePixels", ClassQRCodeImage.nQRCodeSizePixels);
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassQRCodeImage.nQRCodeImageSizePercent);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
@@ -674,8 +674,8 @@
                 // Reset some settings
                 Preferences.Default.Remove("SettingBarcodeGeneratorName");
                 Preferences.Default.Remove("SettingBarcodeScannerName");
-                Preferences.Default.Remove("SettingQRCodeImageSizeVariable");
-                Preferences.Default.Remove("SettingQRCodeImageSizePixels");
+                Preferences.Default.Remove("SettingQRCodeSizeVariable");
+                Preferences.Default.Remove("SettingQRCodeSizePixels");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
