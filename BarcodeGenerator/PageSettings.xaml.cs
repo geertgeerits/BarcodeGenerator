@@ -4,6 +4,7 @@
     {
         // Local variables
         private const string cHexCharacters = "0123456789ABCDEFabcdef";
+        private const string cDecimalCharacters = "0123456789";
         private readonly Stopwatch stopWatch = new();
         private string searchKeyGenerator = string.Empty;
         private string searchKeyScanner = string.Empty;
@@ -94,6 +95,11 @@
             sldColorBgRed.Value = nRed;
             sldColorBgGreen.Value = nGreen;
             sldColorBgBlue.Value = nBlue;
+
+            // Set the QR code image size to update the switch and entry
+            swtQRCodeImageSizeVariable.IsToggled = ClassQRCodeImage.bQRCodeImageSizeVariable;
+            entQRCodeImageSizePixels.IsEnabled = ClassQRCodeImage.bQRCodeImageSizeVariable;
+            entQRCodeImageSizePixels.Text = ClassQRCodeImage.nQRCodeImageSizePixels.ToString();
 
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
@@ -560,6 +566,8 @@
         {
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
+            Preferences.Default.Set("SettingQRCodeImageSizeVariable", ClassQRCodeImage.bQRCodeImageSizeVariable);
+            Preferences.Default.Set("SettingQRCodeImageSizePixels", ClassQRCodeImage.nQRCodeImageSizePixels);
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassQRCodeImage.nQRCodeImageSizePercent);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
@@ -594,6 +602,8 @@
                 // Reset some settings
                 Preferences.Default.Remove("SettingBarcodeGeneratorName");
                 Preferences.Default.Remove("SettingBarcodeScannerName");
+                Preferences.Default.Remove("SettingQRCodeImageSizeVariable");
+                Preferences.Default.Remove("SettingQRCodeImageSizePixels");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
@@ -609,6 +619,52 @@
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
+        }
+
+        private void SwtQRCodeImageSizeVariable_Toggled(object sender, ToggledEventArgs e)
+        {
+            entQRCodeImageSizePixels.IsEnabled = e.Value;
+            ClassQRCodeImage.bQRCodeImageSizeVariable = e.Value;
+        }
+
+        private void EntQRCodeImageSizePixels_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!IsDecimal(e.NewTextValue))
+            {
+                ((Entry)sender).Text = e.OldTextValue;
+            }
+        }
+
+        private static bool IsDecimal(string cText)
+        {
+            foreach (char c in cText)
+            {
+                if (!cDecimalCharacters.Contains(c))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void EntQRCodeImageSizePixels_Unfocused(object sender, FocusEventArgs e)
+        {
+            string cText = ((Entry)sender).Text;
+
+            if (!int.TryParse(cText, out int nValue))
+            {
+                entQRCodeImageSizePixels.Focus();
+                return;
+            }
+
+            if (nValue < 500 || nValue > 10000)
+            {
+                entQRCodeImageSizePixels.Focus();
+                return;
+            }
+
+            ClassQRCodeImage.nQRCodeImageSizePixels = nValue;
         }
     }
 }

@@ -6,7 +6,9 @@ namespace BarcodeGenerator
 {
     public static class ClassQRCodeImage
     {
-        // Global variable to control the size of the image as a percentage of the QR code size
+        // Global variables to control the size of the QR code and image
+        public static bool bQRCodeImageSizeVariable;
+        public static int nQRCodeImageSizePixels;
         public static float nQRCodeImageSizePercent;
 
         // Global variable to track if the popup message was canceled by the user
@@ -15,9 +17,13 @@ namespace BarcodeGenerator
         /// <summary>
         /// Generates a QR code image from the specified text, optionally overlaying a centered logo image
         /// </summary>
-        /// <remarks>The QR code is generated with a fixed pixel size per module. If a logo is provided,
-        /// it is scaled to 20% of the QR code's size and centered, with a border for improved visibility. The
-        /// returned ImageSource is suitable for use in UI frameworks that support image sources.
+        /// <remarks>The QR code is generated with a fixed pixel size per module.
+        /// The fixed pixel size defines how many pixels in the generated SKBitmap correspond to one QR 'module'
+        /// (one dark/light square in the QR matrix).
+        /// Together with moduleCount it determines the output bitmap size: size = moduleCount * pixelsPerModule.
+        /// If an image is provided, it is scaled from 10% to 35% (value set in the settings of the app)
+        /// of the QR code's size and centered, with a border for improved visibility.
+        /// The returned ImageSource is suitable for use in UI frameworks that support image sources.
         /// The ECC (Error Correction Code) levels for QR codes are as follows:
         /// Level L (Low): Corrects up to 7% of data damage.
         /// Level M (Medium): Corrects up to 15% of data damage.
@@ -28,7 +34,7 @@ namespace BarcodeGenerator
         /// <param name="text">The text to encode within the generated QR code.
         /// without a logo. The stream must be positioned at the beginning.</param>
         /// <returns>An ImageSource representing the generated QR code image, including the logo overlay if provided.</returns>
-        public static async Task<ImageSource?> GenerateQrWithLogo(string text)
+        public static async Task<ImageSource?> GenerateQrCodeWithImage(string text)
         {
             // Generate QR code data with high error correction level to allow for logo overlay
             var generator = new QRCodeGenerator();
@@ -36,7 +42,17 @@ namespace BarcodeGenerator
 
             var modules = qrData.ModuleMatrix;
             int moduleCount = modules.Count;
+
+            // For simplicity, you can also use a fixed value like 20, but be aware that very large module counts can lead to very large bitmaps
             int pixelsPerModule = 20;
+
+            // Compute the pixelsPerModule from a desired output size to avoid extreme bitmap dimensions
+            if (!bQRCodeImageSizeVariable)
+            {
+                int desiredOutputPx = nQRCodeImageSizePixels;                           // e.g. target image width
+                pixelsPerModule = Math.Clamp(desiredOutputPx / moduleCount, 4, 40);     // Keep between 4 and 40
+            }
+
             int size = moduleCount * pixelsPerModule;
             Debug.WriteLine($"QR code generated with module count: {moduleCount}, size: {size}x{size}, pixels per module: {pixelsPerModule}");
 
