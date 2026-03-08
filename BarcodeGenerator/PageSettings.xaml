@@ -401,13 +401,14 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
-                    Text="{Translate QRCodeImageSize_Text}">
+                    Text="Fixed/Variable image size">
                 </Label>
 
                 <Switch
                     x:Name="swtQRCodeImageSizeVariable"
                     Grid.Row="17"
                     Grid.Column="2"
+                    HorizontalOptions="Start"
                     Toggled="SwtQRCodeImageSizeVariable_Toggled"  >
                 </Switch>
 
@@ -417,7 +418,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
-                    Text="{Translate QRCodeImageSize_Text}">
+                    Text="QR code size in pixels">
                 </Label>
 
                 <Border
