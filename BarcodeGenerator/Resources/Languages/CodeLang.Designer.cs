@@ -1304,7 +1304,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fixed/Variable QR Code size:.
+        ///   Looks up a localized string similar to Fixed/Variable size QR Code:.
         /// </summary>
         internal static string QRCodeSizeVariable_Text {
             get {

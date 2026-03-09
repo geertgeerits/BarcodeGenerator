@@ -10,6 +10,7 @@ namespace BarcodeGenerator
         public static bool bQRCodeSizeVariable;
         public static int nQRCodeSizePixels;
         public static float nQRCodeImageSizePercent;
+        public static string cQRCodeType = string.Empty;
 
         // Global variable to track if the popup message was canceled by the user
         public static bool bPopupCanceled = false;
@@ -49,7 +50,7 @@ namespace BarcodeGenerator
             // Compute the pixelsPerModule from a desired output size to avoid extreme bitmap dimensions
             if (!bQRCodeSizeVariable)
             {
-                int desiredOutputPx = nQRCodeSizePixels;                           // e.g. target image width
+                int desiredOutputPx = nQRCodeSizePixels;                                // e.g. target image width
                 pixelsPerModule = Math.Clamp(desiredOutputPx / moduleCount, 4, 40);     // Keep between 4 and 40
             }
 
@@ -59,33 +60,37 @@ namespace BarcodeGenerator
             // Calculate the recommended image size based on the QR code size and the configured percentage
             int nImageRecommendedSize = (int)(size * nQRCodeImageSizePercent / 100f);
 
-            // Show a DisplayAlertAsync to inform the user about the recommended image size before opening the file picker
-            //await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nImageRecommendedSize} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
-
-            // Show a modal popup to inform the user about the recommended image size before opening the file picker
-            var currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
-            if (currentPage != null)
-            {
-                MainPage.bIsPopupMessage = true;
-                await currentPage.ShowPopupAsync(new PopupMessage(5, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize} {CodeLang.Pixels_Text}"));
-
-                // Check if the popup was canceled by the user before proceeding to open the file picker
-                if (bPopupCanceled)
-                {
-                    bPopupCanceled = false;
-                    return null;
-                }
-            }
-
-            // Open the file picker to select an image file
-            FileResult? cFile = await ClassFileOperations.PickImage();
-            MainPage.bIsPopupMessage = false;
-
-            // Read the selected file as a stream
             Stream? logoStream = null;
-            if (cFile != null)
+
+            if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
             {
-                logoStream = await cFile.OpenReadAsync();
+                // Show a DisplayAlertAsync to inform the user about the recommended image size before opening the file picker
+                //await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nImageRecommendedSize} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
+
+                // Show a modal popup to inform the user about the recommended image size before opening the file picker
+                var currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+                if (currentPage != null)
+                {
+                    MainPage.bIsPopupMessage = true;
+                    await currentPage.ShowPopupAsync(new PopupMessage(5, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize} {CodeLang.Pixels_Text}"));
+
+                    // Check if the popup was canceled by the user before proceeding to open the file picker
+                    if (bPopupCanceled)
+                    {
+                        bPopupCanceled = false;
+                        return null;
+                    }
+                }
+
+                // Open the file picker to select an image file
+                FileResult? cFile = await ClassFileOperations.PickImage();
+                MainPage.bIsPopupMessage = false;
+
+                // Read the selected file as a stream
+                if (cFile != null)
+                {
+                    logoStream = await cFile.OpenReadAsync();
+                }
             }
 
             // Calculate the maximum image size in pixels based on the QR code size and the configured percentage
@@ -192,7 +197,7 @@ namespace BarcodeGenerator
 
             // Save the generated PNG to disk with the original pixel size for sharing or other purposes
             using MemoryStream memoryStream = new(ms.ToArray());
-            string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, "qr_code_image.png");
+            string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, "qr_code.png");
             _ = ClassFileOperations.SavePngFromStreamAsync(memoryStream, cFileName);
 
             // Return the ImageSource for use in the UI

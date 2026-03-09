@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.48
- * Date ........: 2026-03-08 (YYYY-MM-DD)
+ * Date ........: 2026-03-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -30,7 +30,6 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersDecimal = "0123456789";
         private const string cAllowedCharactersHex = "0123456789ABCDEF";
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
-        private static bool bIsBarcodeWithImage;
 
         // Public variables
         public static bool bIsPopupMessage;
@@ -221,7 +220,6 @@ namespace BarcodeGenerator
                 imgQrCodeImage.IsVisible = false;
                 brdBarcode.IsVisible = true;
                 bgvBarcode.IsVisible = true;
-                bIsBarcodeWithImage = false;
 
                 imgQrCodeImage.Source = null;
                 bgvBarcode.Value = "";
@@ -325,12 +323,14 @@ namespace BarcodeGenerator
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)
                 {
-                    edtTextToCode.MaxLength = 1800;
+                    edtTextToCode.MaxLength = 1250;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.HeightRequest = nHeightBarcode2D;
-                    bgvBarcode.WidthRequest = nWidthBarcode2D;
-                    bgvBarcode.BarcodeMargin = 1;
-                    bgvBarcode.Format = BarcodeFormat.QrCode;
+                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
+                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
+                    brdBarcode.IsVisible = false;
+                    bgvBarcode.IsVisible = false;
+                    brdQrCodeImage.IsVisible = true;
+                    imgQrCodeImage.IsVisible = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
@@ -342,7 +342,6 @@ namespace BarcodeGenerator
                     bgvBarcode.IsVisible = false;
                     brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
-                    bIsBarcodeWithImage = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
                 {
@@ -711,10 +710,12 @@ namespace BarcodeGenerator
                 // For testing crashes - DivideByZeroException
                 //int divByZero = 51 / int.Parse("0");
 
-                // Generate the QR code with an image
-                if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+                // Generate the QR code with or without an image
+                ClassQRCodeImage.cQRCodeType = selectedName!;
+
+                if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
-                    // Generate the QR code with the logo using QRCoder and SkiaSharp
+                    // Generate the QR code (with the image using) QRCoder and SkiaSharp
                     var qrImage = await ClassQRCodeImage.GenerateQrCodeWithImage(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
@@ -872,10 +873,10 @@ namespace BarcodeGenerator
             // System.InvalidCastException: Unable to cast object of type 'Foundation.NSString' to type 'Foundation.NSExtensionItem'.
             try
             {
-                // Share the QR code with the logo as an image file using the Share API
-                if (bIsBarcodeWithImage)
+                // Share the QR code (with the image) as an image file using the Share API
+                if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
-                    string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, "qr_code_image.png");
+                    string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, "qr_code.png");
                     await Share.Default.RequestAsync(new ShareFileRequest
                     {
                         Title = "Barcode Generator",

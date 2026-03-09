@@ -57,7 +57,7 @@ namespace BarcodeGenerator
         public static async void SaveStreamAsFile(Stream inputStream)
         {
             // Save the image file
-            string cFileName = Path.Combine(FileSystem.CacheDirectory, "BarcodeGenerator.png");
+            string cFileName = Path.Combine(FileSystem.CacheDirectory, "Barcode_Generator.png");
 
             using (FileStream outputFileStream = new(cFileName, FileMode.Create))
             {

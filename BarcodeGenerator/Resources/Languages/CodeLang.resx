@@ -672,7 +672,7 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>SQRC Secure QR Code</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Fixed/Variable QR Code size:</value>
+    <value>Fixed/Variable size QR Code:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>QR Code size in pixels:</value>
