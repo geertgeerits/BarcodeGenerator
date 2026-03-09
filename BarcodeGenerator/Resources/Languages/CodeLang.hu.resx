@@ -414,7 +414,7 @@ A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar
 Bármilyen javításért bármikor fordulhat hozzám.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>A beágyazott képet tartalmazó QR-kód változó pixelmérettel generálódik, a benne lévő karakterek számától függően. A beillesztett kép középre van igazítva, és a QR-kód szélességének vagy magasságának {0}%-ára méreteződik, a jobb láthatóság érdekében szegéllyel. A kép mérete a beállításokban módosítható. A legjobb eredmény elérése érdekében kísérletezzen a képmérettel, hogy ne kelljen túlzottan átméretezni. Az előnyben részesített fájlformátumok a PNG (opcionálisan átlátszó háttérrel) vagy a JPEG. Javasoljuk, hogy tesztelje a QR-kódot, hogy biztosan megfelelően beolvassa.</value>
+    <value>A QR-kód (beleértve a beágyazott képet is) fix vagy változó pixelmérettel generálódik, a benne lévő karakterek számától és a beállításokban meghatározott maximális pixelmérettől függően. A beillesztett kép középre van igazítva, és a QR-kód szélességének vagy magasságának 10% és 35%-a közötti méretűre van méretezve, a jobb láthatóság érdekében egy szegéllyel. A kép mérete a beállításokban módosítható. A legjobb eredmény elérése érdekében kísérletezzen a képmérettel, hogy ne igényeljen túlzott átméretezést. Az előnyben részesített fájlformátumok a PNG (opcionálisan átlátszó háttérrel) vagy a JPEG. Javasoljuk, hogy tesztelje a QR-kódot, hogy biztosan megfelelően beolvassa.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Információ</value>
@@ -670,5 +670,11 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>SQRC biztonságos QR-kód</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>Fix/Változó méretű QR-kód:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>QR-kód mérete pixelben:</value>
   </data>
 </root>

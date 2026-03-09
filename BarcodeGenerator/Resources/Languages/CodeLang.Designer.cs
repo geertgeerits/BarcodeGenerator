@@ -1062,7 +1062,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The QR code with an embedded image is generated at a variable pixel size depending on the number of characters it contains. The inserted image is centered and scaled to {0}% of the QR code’s width or height, with a border added for improved visibility. You can adjust the image scale in the settings. For best results, experiment with the image size so that it does not need to be resized excessively. Preferred file formats are PNG (optionally with a transparent background) or JPEG. We recommend testing your Q [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to The QR code (including the embedded image) is generated at either a fixed or variable pixel size, depending on the number of characters it contains and the maximum pixel size defined in the settings. The inserted image is centered and scaled to between 10% and 35% of the QR code’s width or height, with a border added to improve visibility. You can adjust the image scale in the settings. For best results, experiment with the image size so that it does not require excessive resizing. Preferred file formats ar [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InfoQRCodeImage_Text {
             get {
@@ -1304,7 +1304,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fixed/Variable size QR Code:.
+        ///   Looks up a localized string similar to Fixed/Variable QR Code size:.
         /// </summary>
         internal static string QRCodeSizeVariable_Text {
             get {

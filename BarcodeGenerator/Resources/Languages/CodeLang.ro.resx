@@ -414,7 +414,7 @@ Limbile suportate sunt: cehă, daneză, olandeză, engleză, finlandeză, france
 Mă puteți contacta oricând pentru orice corecturi.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>Codul QR cu o imagine încorporată este generat la o dimensiune variabilă a pixelilor, în funcție de numărul de caractere pe care le conține. Imaginea inserată este centrată și scalată la {0}% din lățimea sau înălțimea codului QR, cu o bordură adăugată pentru o vizibilitate îmbunătățită. Puteți ajusta scara imaginii în setări. Pentru cele mai bune rezultate, experimentați cu dimensiunea imaginii, astfel încât să nu fie nevoie să fie redimensionată excesiv. Formatele de fișier preferate sunt PNG (opțional cu fundal transparent) sau JPEG. Vă recomandăm să testați codul QR pentru a vă asigura că se scanează corect.</value>
+    <value>Codul QR (inclusiv imaginea încorporată) este generat la o dimensiune fixă ​​sau variabilă a pixelilor, în funcție de numărul de caractere pe care îl conține și de dimensiunea maximă a pixelilor definită în setări. Imaginea inserată este centrată și scalată între 10% și 35% din lățimea sau înălțimea codului QR, cu o bordură adăugată pentru a îmbunătăți vizibilitatea. Puteți ajusta scara imaginii în setări. Pentru cele mai bune rezultate, experimentați cu dimensiunea imaginii, astfel încât să nu necesite redimensionare excesivă. Formatele de fișier preferate sunt PNG (opțional cu fundal transparent) sau JPEG. Vă recomandăm să testați codul QR pentru a vă asigura că se scanează corect.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informație</value>
@@ -670,5 +670,11 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>SQRC Cod QR securizat</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>Cod QR cu dimensiune fixă/variabilă:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>Dimensiunea codului QR în pixeli:</value>
   </data>
 </root>

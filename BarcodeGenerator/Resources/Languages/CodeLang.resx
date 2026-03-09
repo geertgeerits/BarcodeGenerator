@@ -414,7 +414,7 @@ The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, Ge
 You can always contact me for any corrections.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>The QR code with an embedded image is generated at a variable pixel size depending on the number of characters it contains. The inserted image is centered and scaled to {0}% of the QR code’s width or height, with a border added for improved visibility. You can adjust the image scale in the settings. For best results, experiment with the image size so that it does not need to be resized excessively. Preferred file formats are PNG (optionally with a transparent background) or JPEG. We recommend testing your QR code to ensure it scans correctly.</value>
+    <value>The QR code (including the embedded image) is generated at either a fixed or variable pixel size, depending on the number of characters it contains and the maximum pixel size defined in the settings. The inserted image is centered and scaled to between 10% and 35% of the QR code’s width or height, with a border added to improve visibility. You can adjust the image scale in the settings. For best results, experiment with the image size so that it does not require excessive resizing. Preferred file formats are PNG (optionally with a transparent background) or JPEG. We recommend testing your QR code to ensure it scans correctly.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
@@ -672,7 +672,7 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>SQRC Secure QR Code</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Fixed/Variable size QR Code:</value>
+    <value>Fixed/Variable QR Code size:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>QR Code size in pixels:</value>

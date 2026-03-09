@@ -414,7 +414,7 @@ Understøttende sprog er: tjekkisk, dansk, hollandsk, engelsk, finsk, fransk, ty
 Du kan altid kontakte mig for eventuelle rettelser.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>QR-koden med et integreret billede genereres med en variabel pixelstørrelse afhængigt af antallet af tegn, den indeholder. Det indsatte billede centreres og skaleres til {0} % af QR-kodens bredde eller højde med en kant tilføjet for forbedret synlighed. Du kan justere billedskalaen i indstillingerne. For at opnå de bedste resultater skal du eksperimentere med billedstørrelsen, så det ikke behøver at blive for stort ændret i størrelse. Foretrukne filformater er PNG (valgfrit med en gennemsigtig baggrund) eller JPEG. Vi anbefaler at teste din QR-kode for at sikre, at den scanner korrekt.</value>
+    <value>QR-koden (inklusive det integrerede billede) genereres enten med en fast eller variabel pixelstørrelse, afhængigt af antallet af tegn, den indeholder, og den maksimale pixelstørrelse, der er defineret i indstillingerne. Det indsatte billede centreres og skaleres til mellem 10 % og 35 % af QR-kodens bredde eller højde, med en kant tilføjet for at forbedre synligheden. Du kan justere billedskalaen i indstillingerne. For at opnå de bedste resultater skal du eksperimentere med billedstørrelsen, så den ikke kræver overdreven ændring af størrelsen. Foretrukne filformater er PNG (valgfrit med en gennemsigtig baggrund) eller JPEG. Vi anbefaler at teste din QR-kode for at sikre, at den scanner korrekt.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
@@ -670,5 +670,11 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>SQRC sikker QR-kode</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>QR-kode med fast/variabel størrelse:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>QR-kodestørrelse i pixels:</value>
   </data>
 </root>
