@@ -8,7 +8,7 @@
         /// <param name="cAllowedCharacters"></param>
         /// <param name="cTextToCode"></param>
         /// <returns></returns>
-        public async Task<bool> TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
+        public static async Task<bool> TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
         {
             foreach (char cChar in cTextToCode)
             {
@@ -31,7 +31,7 @@
         /// <param name="nMaxAsciiValue"></param>
         /// <param name="cTextToCode"></param>
         /// <returns></returns>
-        public async Task<bool> TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
+        public static async Task<bool> TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
         {
             // Test for allowed minimum and maximum ASCII values
             foreach (char cChar in cTextToCode)

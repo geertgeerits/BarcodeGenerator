@@ -414,7 +414,7 @@ Støttespråkene er: tsjekkisk, dansk, nederlandsk, engelsk, finsk, fransk, tysk
 Du kan alltid kontakte meg for eventuelle rettelser.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>QR-koden (inkludert det innebygde bildet) genereres med enten en fast eller variabel pikselstørrelse, avhengig av antall tegn den inneholder og den maksimale pikselstørrelsen som er definert i innstillingene. Det innsatte bildet sentreres og skaleres til mellom 10 % og 35 % av QR-kodens bredde eller høyde, med en kant lagt til for å forbedre synligheten. Du kan justere bildeskalaen i innstillingene. For best resultat, eksperimenter med bildestørrelsen slik at den ikke krever overdreven endring av størrelse. Foretrukne filformater er PNG (valgfritt med gjennomsiktig bakgrunn) eller JPEG. Vi anbefaler at du tester QR-koden din for å sikre at den skanner riktig.</value>
+    <value>QR-koden (inkludert det innebygde bildet) genereres med enten en fast eller variabel pikselstørrelse, avhengig av antall tegn den inneholder og den maksimale pikselstørrelsen som er angitt i innstillingene. Det innebygde bildet er sentrert og skalert mellom 10 % og 35 % av QR-kodens bredde eller høyde. Dette kan justeres i innstillingene. En kantlinje legges til for å forbedre synligheten. For best resultat, eksperimenter med bildestørrelsen for å unngå overdreven endring av størrelse. Foretrukne filformater er PNG (valgfritt med gjennomsiktig bakgrunn) eller JPEG. Vi anbefaler å teste QR-koden for å sikre at den skanner riktig.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informasjon</value>
@@ -672,7 +672,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
     <value>SQRC sikker QR-kode</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>QR-kode med fast/variabel størrelse:</value>
+    <value>QR-kode med variabel størrelse:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>QR-kodestørrelse i piksler:</value>

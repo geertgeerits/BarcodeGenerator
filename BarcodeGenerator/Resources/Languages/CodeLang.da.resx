@@ -414,7 +414,7 @@ Understøttende sprog er: tjekkisk, dansk, hollandsk, engelsk, finsk, fransk, ty
 Du kan altid kontakte mig for eventuelle rettelser.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>QR-koden (inklusive det integrerede billede) genereres enten med en fast eller variabel pixelstørrelse, afhængigt af antallet af tegn, den indeholder, og den maksimale pixelstørrelse, der er defineret i indstillingerne. Det indsatte billede centreres og skaleres til mellem 10 % og 35 % af QR-kodens bredde eller højde, med en kant tilføjet for at forbedre synligheden. Du kan justere billedskalaen i indstillingerne. For at opnå de bedste resultater skal du eksperimentere med billedstørrelsen, så den ikke kræver overdreven ændring af størrelsen. Foretrukne filformater er PNG (valgfrit med en gennemsigtig baggrund) eller JPEG. Vi anbefaler at teste din QR-kode for at sikre, at den scanner korrekt.</value>
+    <value>QR-koden (inklusive det integrerede billede) genereres enten med en fast eller variabel pixelstørrelse, afhængigt af antallet af tegn, den indeholder, og den maksimale pixelstørrelse, der er angivet i indstillingerne. Det integrerede billede centreres og skaleres mellem 10 % og 35 % af QR-kodens bredde eller højde. Dette kan justeres i indstillingerne. Der tilføjes en kant for at forbedre synligheden. For at opnå de bedste resultater bør du eksperimentere med billedstørrelsen for at undgå overdreven ændring af størrelsen. Foretrukne filformater er PNG (valgfrit med en gennemsigtig baggrund) eller JPEG. Vi anbefaler at teste QR-koden for at sikre, at den scanner korrekt.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
@@ -672,7 +672,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
     <value>SQRC sikker QR-kode</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>QR-kode med fast/variabel størrelse:</value>
+    <value>QR-kode i variabel størrelse:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>QR-kodestørrelse i pixels:</value>

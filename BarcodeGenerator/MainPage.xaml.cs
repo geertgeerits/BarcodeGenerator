@@ -25,14 +25,14 @@ namespace BarcodeGenerator
 {
     public sealed partial class MainPage : ContentPage
     {
+        // Public variables
+        public static bool bIsPopupMessage;
+
         // Local variables
         private string cLicense = string.Empty;
         private const string cAllowedCharactersDecimal = "0123456789";
         private const string cAllowedCharactersHex = "0123456789ABCDEF";
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
-
-        // Public variables
-        public static bool bIsPopupMessage;
 
         public MainPage()
         {
@@ -403,9 +403,6 @@ namespace BarcodeGenerator
             string? selectedName = item is not null
                 ? pckFormatCodeGenerator.ItemsSource[selectedIndex] as string : string.Empty;
 
-            // Create an instance of ClassValidateBarcodes for instance method calls
-            var barcodeValidator = new ClassValidateBarcodes();
-
             // Validate the text input and set the format
             if (selectedIndex != -1)
             {
@@ -416,7 +413,7 @@ namespace BarcodeGenerator
                         cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
                         edtTextToCode.Text = cTextToCode;
 
-                        if (await barcodeValidator.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -426,7 +423,7 @@ namespace BarcodeGenerator
                     {
                         cTextToCode = cTextToCode.ToUpper();
 
-                        if (await barcodeValidator.TestAllowedCharacters("0123456789-$:/.+ABCD", cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedCharacters("0123456789-$:/.+ABCD", cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -442,7 +439,7 @@ namespace BarcodeGenerator
                     {
                         cTextToCode = cTextToCode.ToUpper();
 
-                        if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -458,7 +455,7 @@ namespace BarcodeGenerator
                     {
                         cTextToCode = cTextToCode.ToUpper();
 
-                        if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -475,7 +472,7 @@ namespace BarcodeGenerator
                         cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
                         edtTextToCode.Text = cTextToCode;
 
-                        if (await barcodeValidator.TestAllowedAsciiValues(1, 127, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedAsciiValues(1, 127, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -486,7 +483,7 @@ namespace BarcodeGenerator
                         cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
                         edtTextToCode.Text = cTextToCode;
 
-                        if (await barcodeValidator.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -494,7 +491,7 @@ namespace BarcodeGenerator
                     }
                     else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
                     {
-                        if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -524,7 +521,7 @@ namespace BarcodeGenerator
                     }
                     else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
                     {
-                        if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -554,7 +551,7 @@ namespace BarcodeGenerator
                     }
                     else if (selectedName == ClassBarcodes.cBarcode_ITF)
                     {
-                        if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -568,7 +565,7 @@ namespace BarcodeGenerator
                     }
                     else if (selectedName == ClassBarcodes.cBarcode_MSI)
                     {
-                        if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -579,7 +576,7 @@ namespace BarcodeGenerator
                         cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
                         edtTextToCode.Text = cTextToCode;
 
-                        if (await barcodeValidator.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -589,7 +586,7 @@ namespace BarcodeGenerator
                     {
                         cTextToCode = cTextToCode.ToUpper();
 
-                        if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersHex, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersHex, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -605,7 +602,7 @@ namespace BarcodeGenerator
                     }
                     else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
                     {
-                        if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;
@@ -635,7 +632,7 @@ namespace BarcodeGenerator
                     }
                     else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
                     {
-                        if (await barcodeValidator.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
+                        if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
                         {
                             _ = edtTextToCode.Focus();
                             return;

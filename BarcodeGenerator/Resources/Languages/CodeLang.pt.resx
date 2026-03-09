@@ -414,7 +414,7 @@ Os idiomas de suporte são: tcheco, dinamarquês, holandês, inglês, finlandês
 Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>O código QR (incluindo a imagem incorporada) é gerado com um tamanho de pixel fixo ou variável, dependendo do número de caracteres que contém e do tamanho máximo de pixel definido nas configurações. A imagem inserida é centralizada e redimensionada para ocupar entre 10% e 35% da largura ou altura do código QR, com uma borda adicionada para melhorar a visibilidade. Você pode ajustar a escala da imagem nas configurações. Para obter melhores resultados, experimente com o tamanho da imagem para que não seja necessário redimensioná-la excessivamente. Os formatos de arquivo preferenciais são PNG (opcionalmente com fundo transparente) ou JPEG. Recomendamos testar seu código QR para garantir que ele seja lido corretamente.</value>
+    <value>O código QR (incluindo a imagem incorporada) é gerado com um tamanho de pixel fixo ou variável, dependendo do número de caracteres que contém e do tamanho máximo de pixel especificado nas configurações. A imagem incorporada é centralizada e dimensionada entre 10% e 35% da largura ou altura do código QR, podendo esse valor ser ajustado nas configurações. Uma borda é adicionada para melhorar a visibilidade. Para obter melhores resultados, experimente diferentes tamanhos de imagem para evitar redimensionamentos excessivos. Os formatos de arquivo preferenciais são PNG (opcionalmente com fundo transparente) ou JPEG. Recomendamos testar o código QR para garantir que ele seja lido corretamente.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informação</value>
@@ -672,7 +672,7 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
     <value>SQRC Código QR Seguro</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Código QR de tamanho fixo/variável:</value>
+    <value>Código QR de tamanho variável:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>Tamanho do código QR em pixels:</value>

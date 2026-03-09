@@ -414,7 +414,7 @@ Obsługiwane języki to: czeski, duński, holenderski, angielski, fiński, franc
 Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>Kod QR (wraz z osadzonym obrazem) jest generowany ze stałym lub zmiennym rozmiarem pikseli, w zależności od liczby znaków i maksymalnego rozmiaru pikseli zdefiniowanego w ustawieniach. Wstawiony obraz jest wyśrodkowany i skalowany do 10–35% szerokości lub wysokości kodu QR, z dodaną ramką w celu poprawy widoczności. Skalę obrazu można dostosować w ustawieniach. Aby uzyskać najlepsze rezultaty, należy poeksperymentować z rozmiarem obrazu, aby nie wymagał on nadmiernej zmiany rozmiaru. Preferowane formaty plików to PNG (opcjonalnie z przezroczystym tłem) lub JPEG. Zalecamy przetestowanie kodu QR, aby upewnić się, że skanuje się poprawnie.</value>
+    <value>Kod QR (wraz z osadzonym obrazem) jest generowany ze stałym lub zmiennym rozmiarem pikseli, w zależności od liczby znaków i maksymalnego rozmiaru piksela określonego w ustawieniach. Osadzony obraz jest wyśrodkowany i skalowany w zakresie od 10% do 35% szerokości lub wysokości kodu QR. Można to dostosować w ustawieniach. Dodano obramowanie w celu poprawy widoczności. Aby uzyskać najlepsze rezultaty, należy eksperymentować z rozmiarem obrazu, aby uniknąć nadmiernej zmiany rozmiaru. Preferowane formaty plików to PNG (opcjonalnie z przezroczystym tłem) lub JPEG. Zalecamy przetestowanie kodu QR, aby upewnić się, że skanuje się poprawnie.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informacje</value>
@@ -672,7 +672,7 @@ Microsoft, Microsoft Store, logo Microsoft Store i Windows są znakami towarowym
     <value>SQRC bezpieczny kod QR</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Stały/zmienny rozmiar kodu QR:</value>
+    <value>Kod QR o zmiennej wielkości:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>Rozmiar kodu QR w pikselach:</value>

@@ -414,7 +414,7 @@ Los idiomas de soporte son: checo, danés, holandés, inglés, finlandés, franc
 Siempre puedes contactarme para cualquier corrección.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>El código QR (incluida la imagen incrustada) se genera con un tamaño de píxel fijo o variable, según la cantidad de caracteres que contenga y el tamaño máximo de píxel definido en la configuración. La imagen insertada se centra y se escala entre el 10 % y el 35 % del ancho o alto del código QR, con un borde para mejorar la visibilidad. Puede ajustar la escala de la imagen en la configuración. Para obtener mejores resultados, experimente con el tamaño de la imagen para que no requiera un ajuste excesivo. Los formatos de archivo preferidos son PNG (opcionalmente con fondo transparente) o JPEG. Recomendamos probar el código QR para asegurarse de que se lea correctamente.</value>
+    <value>El código QR (incluida la imagen incrustada) se genera con un tamaño de píxel fijo o variable, según la cantidad de caracteres que contenga y el tamaño máximo de píxel especificado en la configuración. La imagen incrustada se centra y se escala entre el 10 % y el 35 % del ancho o alto del código QR; esto se puede ajustar en la configuración. Se añade un borde para mejorar la visibilidad. Para obtener mejores resultados, experimente con el tamaño de la imagen para evitar cambios excesivos. Los formatos de archivo preferidos son PNG (opcionalmente con fondo transparente) o JPEG. Recomendamos probar el código QR para asegurarse de que se lea correctamente.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Información</value>
@@ -672,7 +672,7 @@ Microsoft, Microsoft Store, el logotipo de Microsoft Store y Windows son marcas 
     <value>SQRC Código QR seguro</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Código QR de tamaño fijo/variable:</value>
+    <value>Código QR de tamaño variable:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>Tamaño del código QR en píxeles:</value>

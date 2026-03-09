@@ -1,9 +1,4 @@
-﻿//using CommunityToolkit.Maui.Alerts;
-//using CommunityToolkit.Maui.Storage;
-//using System.Runtime.Versioning;
-//using System.Text;
-
-namespace BarcodeGenerator
+﻿namespace BarcodeGenerator
 {
     internal class ClassFileOperations
     {

@@ -4,7 +4,7 @@ using SkiaSharp;
 
 namespace BarcodeGenerator
 {
-    public static class ClassQRCodeImage
+    internal class ClassQRCodeImage
     {
         // Global variables to control the size of the QR code and image
         public static bool bQRCodeSizeVariable;

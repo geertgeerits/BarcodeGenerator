@@ -2,7 +2,7 @@ using ZXing.Net.Maui;
 
 namespace BarcodeGenerator
 {
-    public partial class PageScanZX : ContentPage
+    public sealed partial class PageScanZX : ContentPage
     {
         public PageScanZX()
         {
