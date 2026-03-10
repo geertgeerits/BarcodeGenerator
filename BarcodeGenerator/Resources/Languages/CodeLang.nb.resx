@@ -677,4 +677,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>QR-kodestørrelse i piksler:</value>
   </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Strekkode med tekst:</value>
+  </data>
 </root>

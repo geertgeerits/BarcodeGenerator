@@ -677,4 +677,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>QR-kodestørrelse i pixels:</value>
   </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Stregkode med billedtekst:</value>
+  </data>
 </root>

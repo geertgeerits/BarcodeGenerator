@@ -677,4 +677,7 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>Dimensiunea codului QR în pixeli:</value>
   </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Cod de bare cu legendă:</value>
+  </data>
 </root>

@@ -677,4 +677,7 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>QR-koodin koko pikseleinä:</value>
   </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Viivakoodi kuvatekstillä:</value>
+  </data>
 </root>

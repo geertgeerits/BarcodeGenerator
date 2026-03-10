@@ -677,4 +677,7 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>QR-kód mérete pixelben:</value>
   </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Vonalkód felirattal:</value>
+  </data>
 </root>

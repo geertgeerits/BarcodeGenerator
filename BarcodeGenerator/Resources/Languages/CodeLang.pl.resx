@@ -677,4 +677,7 @@ Microsoft, Microsoft Store, logo Microsoft Store i Windows są znakami towarowym
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>Rozmiar kodu QR w pikselach:</value>
   </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Kod kreskowy z podpisem:</value>
+  </data>
 </root>

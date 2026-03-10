@@ -677,4 +677,7 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>QR-kodens storlek i pixlar:</value>
   </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Streckkod med bildtext:</value>
+  </data>
 </root>

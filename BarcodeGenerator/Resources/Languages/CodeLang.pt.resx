@@ -677,4 +677,7 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>Tamanho do código QR em pixels:</value>
   </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Código de barras com legenda:</value>
+  </data>
 </root>
