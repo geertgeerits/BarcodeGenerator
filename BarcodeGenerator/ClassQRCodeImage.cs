@@ -195,8 +195,7 @@ namespace BarcodeGenerator
 
             // Save the generated PNG to disk with the original pixel size for sharing or other purposes
             using MemoryStream memoryStream = new(ms.ToArray());
-            string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, "qr_code.png");
-            _ = ClassFileOperations.SavePngFromStreamAsync(memoryStream, cFileName);
+            _ = ClassFileOperations.SavePngFromStreamAsync(memoryStream, Globals.cFileBarcode);
 
             // Return the ImageSource for use in the UI
             return ImageSource.FromStream(() => ms);

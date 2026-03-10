@@ -101,6 +101,11 @@
             entQRCodeSizePixels.IsEnabled = !ClassQRCodeImage.bQRCodeSizeVariable;
             entQRCodeSizePixels.Text = ClassQRCodeImage.nQRCodeSizePixels.ToString();
 
+            // Set the barcode with caption variable to update the switch
+            swtBarcodeWithCaption.IsToggled = ClassBarcodeCaption.bBarcodeWithCaption;
+
+
+
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
         }
@@ -550,6 +555,16 @@
             ClassQRCodeImage.bQRCodeSizeVariable = e.Value;
             entQRCodeSizePixels.IsEnabled = !e.Value;
         }
+        
+        /// <summary>
+        /// Switch barcode with caption toggled event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SwtBarcodeWithCaption_Toggled(object sender, ToggledEventArgs e)
+        {
+            ClassBarcodeCaption.bBarcodeWithCaption = e.Value;
+        }
 
         /// <summary>
         /// Handles the TextChanged event for the QR code image size entry, ensuring that only valid decimal values are
@@ -638,6 +653,7 @@
         {
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
+            Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodeCaption.bBarcodeWithCaption);
             Preferences.Default.Set("SettingQRCodeSizeVariable", ClassQRCodeImage.bQRCodeSizeVariable);
             Preferences.Default.Set("SettingQRCodeSizePixels", ClassQRCodeImage.nQRCodeSizePixels);
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassQRCodeImage.nQRCodeImageSizePercent);
@@ -674,6 +690,7 @@
                 // Reset some settings
                 Preferences.Default.Remove("SettingBarcodeGeneratorName");
                 Preferences.Default.Remove("SettingBarcodeScannerName");
+                Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingQRCodeSizeVariable");
                 Preferences.Default.Remove("SettingQRCodeSizePixels");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");

@@ -601,6 +601,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Barcode with caption:.
+        /// </summary>
+        internal static string BarcodeWithCaption_Text {
+            get {
+                return ResourceManager.GetString("BarcodeWithCaption_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string ButtonCancel_Text {

@@ -26,7 +26,7 @@
             <Grid
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -469,6 +469,23 @@
                         ValueChanged="OnSliderQRCodeImageSizeValueChanged">
                     </Slider>
                 </Border>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="20"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    VerticalTextAlignment="Start"
+                    Text="{Translate BarcodeWithCaption_Text}">
+                </Label>
+
+                <Switch
+                    x:Name="swtBarcodeWithCaption"
+                    Grid.Row="20"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                    Toggled="SwtBarcodeWithCaption_Toggled">
+                </Switch>
 
             </Grid>
         </ScrollView>

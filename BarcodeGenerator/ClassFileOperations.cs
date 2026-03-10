@@ -52,9 +52,7 @@
         public static async void SaveStreamAsFile(Stream inputStream)
         {
             // Save the image file
-            string cFileName = Path.Combine(FileSystem.CacheDirectory, "barcode_generator.png");
-
-            using (FileStream outputFileStream = new(cFileName, FileMode.Create))
+            using (FileStream outputFileStream = new(Globals.cFileBarcode, FileMode.Create))
             {
                 inputStream.CopyTo(outputFileStream);
             }
@@ -62,7 +60,7 @@
             inputStream.Dispose();
 
             // Open the share interface to share the file
-            await OpenShareInterfaceAsync(cFileName);
+            await OpenShareInterfaceAsync(Globals.cFileBarcode);
         }
 
         /// <summary>
@@ -70,7 +68,7 @@
         /// </summary>
         /// <param name="cFile"></param>
         /// <returns></returns>
-        private static async Task OpenShareInterfaceAsync(string cFile)
+        public static async Task OpenShareInterfaceAsync(string cFile)
         {
             await Share.Default.RequestAsync(new ShareFileRequest
             {
@@ -125,6 +123,26 @@
             {
                 // Log or handle the error as needed
                 Debug.WriteLine($"SavePngFromStreamAsync: Failed to save PNG file: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Deletes the specified file if it exists
+        /// </summary>
+        /// <param name="filePath">The path of the file to delete.</param>
+        public static void DeleteFileIfExists(string filePath)
+        {
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                    Debug.WriteLine($"Deleted existing file at: {filePath}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"DeleteFileIfExists: Failed to delete file at {filePath}: {ex.Message}", ex);
             }
         }
 

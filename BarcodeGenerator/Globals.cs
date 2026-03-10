@@ -19,6 +19,7 @@ namespace BarcodeGenerator
         public static bool bIsPopupMessage;                                 // Popup message has been displayed
         public static bool bPopupCanceled;                                  // Popup message was canceled by the user
         public static bool bLicense;                                        // Flag to indicate if the user has accepted the license agreement
+        public static string cFileBarcode = string.Empty;                   // Path and file name of the saved barcode image
 
         // Global methods
 

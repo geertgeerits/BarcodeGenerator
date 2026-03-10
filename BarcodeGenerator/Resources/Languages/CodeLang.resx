@@ -677,4 +677,7 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
     <value>QR Code size in pixels:</value>
   </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Barcode with caption:</value>
+  </data>
 </root>

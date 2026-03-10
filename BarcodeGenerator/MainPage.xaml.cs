@@ -30,6 +30,7 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersDecimal = "0123456789";
         private const string cAllowedCharactersHex = "0123456789ABCDEF";
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
+        private static bool bBarcodeWithCaptionAccepted;
 
         public MainPage()
         {
@@ -55,6 +56,7 @@ namespace BarcodeGenerator
             // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
+            ClassBarcodeCaption.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", false);
             ClassQRCodeImage.bQRCodeSizeVariable = Preferences.Default.Get("SettingQRCodeSizeVariable", true);
             ClassQRCodeImage.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
             ClassQRCodeImage.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
@@ -114,6 +116,9 @@ namespace BarcodeGenerator
 
             // Initialize text to speech and get and set the speech language
             InitializeTextToSpeechAsync();
+            
+            // Path and file name of the saved barcode image
+            Globals.cFileBarcode = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.png");
 
             // Clear the clipboard
             //Clipboard.Default.SetTextAsync(null);  // For testing
@@ -233,6 +238,8 @@ namespace BarcodeGenerator
                 string? selectedName = item is not null
                     ? picker.ItemsSource[selectedIndex] as string : string.Empty;
 
+                bBarcodeWithCaptionAccepted = false;
+
                 brdQrCodeImage.IsVisible = false;
                 imgQrCodeImage.IsVisible = false;
                 brdBarcode.IsVisible = true;
@@ -264,6 +271,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Codabar;
+                    bBarcodeWithCaptionAccepted = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
                 {
@@ -271,6 +279,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Code39;
+                    bBarcodeWithCaptionAccepted = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_93)
                 {
@@ -278,6 +287,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Code93;
+                    bBarcodeWithCaptionAccepted = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_128)
                 {
@@ -285,6 +295,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 20;
                     bgvBarcode.Format = BarcodeFormat.Code128;
+                    bBarcodeWithCaptionAccepted = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
                 {
@@ -301,6 +312,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Ean8;
+                    bBarcodeWithCaptionAccepted = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
                 {
@@ -308,6 +320,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Ean13;
+                    bBarcodeWithCaptionAccepted = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_ITF)
                 {
@@ -315,6 +328,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 8;
                     bgvBarcode.Format = BarcodeFormat.Itf;
+                    bBarcodeWithCaptionAccepted = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_MSI)
                 {
@@ -322,6 +336,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 10;
                     bgvBarcode.Format = BarcodeFormat.Msi;
+                    bBarcodeWithCaptionAccepted = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
                 {
@@ -337,6 +352,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 8;
                     bgvBarcode.Format = BarcodeFormat.Plessey;
+                    bBarcodeWithCaptionAccepted = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)
                 {
@@ -366,6 +382,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 0;
                     bgvBarcode.Format = BarcodeFormat.UpcA;
+                    bBarcodeWithCaptionAccepted = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
                 {
@@ -373,6 +390,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 8;
                     bgvBarcode.Format = BarcodeFormat.UpcE;
+                    bBarcodeWithCaptionAccepted = true;
                 }
             }
         }
@@ -384,6 +402,10 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnGenerateCodeClicked(object sender, EventArgs e)
         {
+            // Delete the previously saved barcode image file if it exists
+            //ClassFileOperations.DeleteFileIfExists(Globals.cFileBarcode);
+            //Task.Delay(100).Wait();  // Wait for the file to be deleted before generating a new one
+
             // Hide the keyboard
             edtTextToCode.IsEnabled = false;
             edtTextToCode.IsEnabled = true;
@@ -887,19 +909,34 @@ namespace BarcodeGenerator
                 // Share the QR code (with the image) as an image file using the Share API
                 if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
-                    string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, "qr_code.png");
                     await Share.Default.RequestAsync(new ShareFileRequest
                     {
                         Title = "Barcode Generator",
-                        File = new ShareFile(cFileName)
+                        File = new ShareFile(Globals.cFileBarcode)
                     });
                 }
-                // Share the barcode without an image by capturing the barcode view and saving it as a file using the Share API
+                // Share the barcode (without an image) by capturing the barcode view and saving it as a file using the Share API
                 else if (Screenshot.Default.IsCaptureSupported)
                 {
+                    // Capture the barcode view as a screenshot
                     IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
-                    Stream stream = await screen!.OpenReadAsync();
-                    ClassFileOperations.SaveStreamAsFile(stream);
+
+                    // Barcode with caption
+                    if (ClassBarcodeCaption.bBarcodeWithCaption && bBarcodeWithCaptionAccepted)
+                    {
+                        await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, edtTextToCode.Text.Trim());
+                        
+                        // Open the share interface to share the file
+                        await ClassFileOperations.OpenShareInterfaceAsync(Globals.cFileBarcode);
+                    }
+                    // Barcode without caption
+                    else
+                    {
+                        Stream stream = await screen!.OpenReadAsync();
+
+                        // Save the barcode as a file and open the share interface
+                        ClassFileOperations.SaveStreamAsFile(stream);
+                    }
                 }
             }
             catch (Exception ex)
