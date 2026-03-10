@@ -13,7 +13,7 @@ namespace BarcodeGenerator
         public static string cQRCodeType = string.Empty;
 
         /// <summary>
-        /// Generates a QR code image from the specified text, optionally overlaying a centered logo image
+        /// Generates a QR code image from the specified text, optionally overlaying a centered image
         /// </summary>
         /// <remarks>The QR code is generated with a fixed pixel size per module.
         /// The fixed pixel size defines how many pixels in the generated SKBitmap correspond to one QR 'module'

@@ -52,7 +52,7 @@
         public static async void SaveStreamAsFile(Stream inputStream)
         {
             // Save the image file
-            string cFileName = Path.Combine(FileSystem.CacheDirectory, "Barcode_Generator.png");
+            string cFileName = Path.Combine(FileSystem.CacheDirectory, "barcode_generator.png");
 
             using (FileStream outputFileStream = new(cFileName, FileMode.Create))
             {

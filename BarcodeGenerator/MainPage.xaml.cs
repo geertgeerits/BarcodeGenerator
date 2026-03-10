@@ -882,8 +882,6 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnShareClicked(object sender, EventArgs e)
         {
-            // Sometimes an InvalidCastException when running on a MacBook Air M1:
-            // System.InvalidCastException: Unable to cast object of type 'Foundation.NSString' to type 'Foundation.NSExtensionItem'.
             try
             {
                 // Share the QR code (with the image) as an image file using the Share API
@@ -906,6 +904,8 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
+                // Sometimes an InvalidCastException when running on a MacBook Air M1:
+                // System.InvalidCastException: Unable to cast object of type 'Foundation.NSString' to type 'Foundation.NSExtensionItem'.
                 SentrySdk.CaptureException(ex);
 #if DEBUG
                 _ = DisplayAlertAsync("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
