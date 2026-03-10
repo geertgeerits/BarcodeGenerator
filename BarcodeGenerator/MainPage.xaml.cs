@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.48
- * Date ........: 2026-03-09 (YYYY-MM-DD)
+ * Date ........: 2026-03-10 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -13,7 +13,7 @@
  * Dependencies : NuGet Package: CommunityToolkit.Maui
  *                NuGet Package: ZXing.Net.Maui by Redth - https://github.com/redth/ZXing.Net.Maui
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth
- *                NuGet Package: QRCoder by Raffael Herrmann, Shane Krueger
+ *                NuGet Package: QRCoder by Raffael Herrmann, Shane Krueger - https://github.com/Shane32/QRCoder - https://github.com/Shane32/QRCoder/wiki
  *                NuGet Package: SkiaSharp by Microsoft - https://github.com/mono/SkiaSharp
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić - https://github.com/afriscic/BarcodeScanning.Native.Maui
  *                NuGet Package: Sentry.Maui - https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
@@ -25,9 +25,6 @@ namespace BarcodeGenerator
 {
     public sealed partial class MainPage : ContentPage
     {
-        // Public variables
-        public static bool bIsPopupMessage;
-
         // Local variables
         private string cLicense = string.Empty;
         private const string cAllowedCharactersDecimal = "0123456789";
@@ -169,13 +166,28 @@ namespace BarcodeGenerator
             Debug.WriteLine("MainPage - Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
         }
 
-        // TitleView buttons clicked events
+        /// <summary>
+        /// Handles the click event for the About page navigation button by canceling any ongoing text-to-speech
+        /// operation and navigating asynchronously to the About page.
+        /// </summary>
+        /// <remarks>This method ensures that any active text-to-speech process is stopped before
+        /// navigating to the About page. It performs navigation asynchronously to maintain UI responsiveness.</remarks>
+        /// <param name="sender">The source of the event, typically the button that was clicked.</param>
+        /// <param name="e">The event data associated with the click event.</param>
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
             await Navigation.PushAsync(new PageAbout());
         }
 
+        /// <summary>
+        /// Handles the click event for the page scan button and navigates to the appropriate scanning page based on the
+        /// platform.
+        /// </summary>
+        /// <remarks>Cancels any ongoing text-to-speech operation before navigating. On Windows platforms,
+        /// navigates to a ZX scanning page due to a known issue with the native scanner.</remarks>
+        /// <param name="sender">The source of the event, typically the button that was clicked.</param>
+        /// <param name="e">An object that contains the event data.</param>
         private async void OnPageScanClickedNT(object sender, EventArgs e)
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
@@ -187,6 +199,11 @@ namespace BarcodeGenerator
 #endif
         }
 
+        /// <summary>
+        /// On page settings clicked event - navigate to the settings page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnPageSettingsClicked(object sender, EventArgs e)
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
@@ -707,16 +724,15 @@ namespace BarcodeGenerator
                 // For testing crashes - DivideByZeroException
                 //int divByZero = 51 / int.Parse("0");
 
-                // Generate the QR code with or without an image
-                ClassQRCodeImage.cQRCodeType = selectedName!;
-
+                // Generate the QR code with or without an image using QRCoder and SkiaSharp
                 if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
-                    // Generate the QR code (with the image using) QRCoder and SkiaSharp
-                    var qrImage = await ClassQRCodeImage.GenerateQrCodeWithImage(cTextToCode);
+                    ClassQRCodeImage.cQRCodeType = selectedName;
+
+                    var qrImage = await ClassQRCodeImage.GenerateQrCode(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
-                // Generate the barcode without an image
+                // Generate the other barcodes using the BarcodeView control from the ZXing.Net.MAUI library
                 else
                 {
                     bgvBarcode.Value = cTextToCode;
@@ -826,7 +842,7 @@ namespace BarcodeGenerator
         private void OnPageAppearing(object sender, EventArgs e)
         {
             // If the page is appearing after a popup message, then do nothing
-            if (bIsPopupMessage)
+            if (Globals.bIsPopupMessage)
             {
                 return;
             }

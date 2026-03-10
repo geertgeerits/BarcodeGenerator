@@ -12,9 +12,6 @@ namespace BarcodeGenerator
         public static float nQRCodeImageSizePercent;
         public static string cQRCodeType = string.Empty;
 
-        // Global variable to track if the popup message was canceled by the user
-        public static bool bPopupCanceled = false;
-
         /// <summary>
         /// Generates a QR code image from the specified text, optionally overlaying a centered logo image
         /// </summary>
@@ -35,7 +32,7 @@ namespace BarcodeGenerator
         /// <param name="text">The text to encode within the generated QR code.
         /// without a logo. The stream must be positioned at the beginning.</param>
         /// <returns>An ImageSource representing the generated QR code image, including the logo overlay if provided.</returns>
-        public static async Task<ImageSource?> GenerateQrCodeWithImage(string text)
+        public static async Task<ImageSource?> GenerateQrCode(string text)
         {
             // Generate QR code data with high error correction level to allow for logo overlay
             var generator = new QRCodeGenerator();
@@ -62,6 +59,7 @@ namespace BarcodeGenerator
 
             Stream? logoStream = null;
 
+            // If the QR Code with image has been selected, show a message about the recommended image size and open the file picker
             if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
             {
                 // Show a DisplayAlertAsync to inform the user about the recommended image size before opening the file picker
@@ -71,20 +69,20 @@ namespace BarcodeGenerator
                 var currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
                 if (currentPage != null)
                 {
-                    MainPage.bIsPopupMessage = true;
+                    Globals.bIsPopupMessage = true;
                     await currentPage.ShowPopupAsync(new PopupMessage(5, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize} {CodeLang.Pixels_Text}"));
 
                     // Check if the popup was canceled by the user before proceeding to open the file picker
-                    if (bPopupCanceled)
+                    if (Globals.bPopupCanceled)
                     {
-                        bPopupCanceled = false;
+                        Globals.bPopupCanceled = false;
                         return null;
                     }
                 }
 
                 // Open the file picker to select an image file
                 FileResult? cFile = await ClassFileOperations.PickImage();
-                MainPage.bIsPopupMessage = false;
+                Globals.bIsPopupMessage = false;
 
                 // Read the selected file as a stream
                 if (cFile != null)

@@ -6,17 +6,19 @@ namespace BarcodeGenerator
     internal static class Globals
     {
         // Global variables
-        public static string cTheme = string.Empty;
-        public static string cCodeColorFg = string.Empty;
-        public static string cCodeColorBg = string.Empty;
-        public static string cLanguage = string.Empty;
-        public static bool bLanguageChanged;
-        public static string cLanguageSpeech = string.Empty;
-        public static bool bTextToSpeechAvailable;
-        public static bool bTextToSpeechIsBusy;
-        public static readonly string cImageTextToSpeech = "speaker_64p_blue_green.png";
-        public static readonly string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
-        public static bool bLicense;
+        public static string cTheme = string.Empty;                         // Theme: Light, Dark or System
+        public static string cCodeColorFg = string.Empty;                   // Foreground color of the barcode (text and bars)
+        public static string cCodeColorBg = string.Empty;                   // Background color of the barcode
+        public static string cLanguage = string.Empty;                      // Language for the UI (culture name, e.g. "en-US")
+        public static bool bLanguageChanged;                                // Flag to indicate if the language has been changed
+        public static string cLanguageSpeech = string.Empty;                // Language for text-to-speech
+        public static bool bTextToSpeechAvailable;                          // Flag to indicate if text-to-speech is available
+        public static bool bTextToSpeechIsBusy;                             // Flag to indicate if text-to-speech is currently busy
+        public static readonly string cImageTextToSpeech = "speaker_64p_blue_green.png";  // Image for text-to-speech button
+        public static readonly string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";  // Image for text-to-speech cancel button
+        public static bool bIsPopupMessage;                                 // Popup message has been displayed
+        public static bool bPopupCanceled;                                  // Popup message was canceled by the user
+        public static bool bLicense;                                        // Flag to indicate if the user has accepted the license agreement
 
         // Global methods
 

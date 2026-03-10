@@ -121,7 +121,7 @@ public partial class PopupMessage : Popup
 
         try
         {
-            ClassQRCodeImage.bPopupCanceled = true;
+            Globals.bPopupCanceled = true;
 
             await TryCloseAsync();
         }
