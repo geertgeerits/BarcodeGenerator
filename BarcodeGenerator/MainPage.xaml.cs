@@ -239,6 +239,7 @@ namespace BarcodeGenerator
                     ? picker.ItemsSource[selectedIndex] as string : string.Empty;
 
                 bBarcodeWithCaptionAccepted = false;
+                ClassQRCodeImage.cQRCodeType = string.Empty;
 
                 brdQrCodeImage.IsVisible = false;
                 imgQrCodeImage.IsVisible = false;
@@ -402,10 +403,6 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnGenerateCodeClicked(object sender, EventArgs e)
         {
-            // Delete the previously saved barcode image file if it exists
-            //ClassFileOperations.DeleteFileIfExists(Globals.cFileBarcode);
-            //Task.Delay(100).Wait();  // Wait for the file to be deleted before generating a new one
-
             // Hide the keyboard
             edtTextToCode.IsEnabled = false;
             edtTextToCode.IsEnabled = true;
@@ -934,8 +931,11 @@ namespace BarcodeGenerator
                     {
                         Stream stream = await screen!.OpenReadAsync();
 
-                        // Save the barcode as a file and open the share interface
+                        // Save the barcode as a file
                         ClassFileOperations.SaveStreamAsFile(stream);
+
+                        // Open the share interface to share the file
+                        await ClassFileOperations.OpenShareInterfaceAsync(Globals.cFileBarcode);
                     }
                 }
             }

@@ -58,9 +58,6 @@
             }
 
             inputStream.Dispose();
-
-            // Open the share interface to share the file
-            await OpenShareInterfaceAsync(Globals.cFileBarcode);
         }
 
         /// <summary>
