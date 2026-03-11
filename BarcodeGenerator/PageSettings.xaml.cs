@@ -102,7 +102,7 @@
             entQRCodeSizePixels.Text = ClassQRCodeImage.nQRCodeSizePixels.ToString();
 
             // Set the barcode with caption variable to update the switch
-            swtBarcodeWithCaption.IsToggled = ClassBarcodeCaption.bBarcodeWithCaption;
+            swtBarcodeWithCaption.IsToggled = Globals.bBarcodeWithCaption;
 
 
 
@@ -563,7 +563,7 @@
         /// <param name="e"></param>
         private void SwtBarcodeWithCaption_Toggled(object sender, ToggledEventArgs e)
         {
-            ClassBarcodeCaption.bBarcodeWithCaption = e.Value;
+            Globals.bBarcodeWithCaption = e.Value;
         }
 
         /// <summary>
@@ -653,10 +653,10 @@
         {
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
-            Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodeCaption.bBarcodeWithCaption);
             Preferences.Default.Set("SettingQRCodeSizeVariable", ClassQRCodeImage.bQRCodeSizeVariable);
             Preferences.Default.Set("SettingQRCodeSizePixels", ClassQRCodeImage.nQRCodeSizePixels);
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassQRCodeImage.nQRCodeImageSizePercent);
+            Preferences.Default.Set("SettingBarcodeWithCaption", Globals.bBarcodeWithCaption);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", Globals.cCodeColorBg);
@@ -690,10 +690,10 @@
                 // Reset some settings
                 Preferences.Default.Remove("SettingBarcodeGeneratorName");
                 Preferences.Default.Remove("SettingBarcodeScannerName");
-                Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingQRCodeSizeVariable");
                 Preferences.Default.Remove("SettingQRCodeSizePixels");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
+                Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
                 Preferences.Default.Remove("SettingCodeColorBg");

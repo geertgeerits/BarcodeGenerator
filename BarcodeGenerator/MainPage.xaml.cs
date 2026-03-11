@@ -56,10 +56,10 @@ namespace BarcodeGenerator
             // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
-            ClassBarcodeCaption.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             ClassQRCodeImage.bQRCodeSizeVariable = Preferences.Default.Get("SettingQRCodeSizeVariable", true);
             ClassQRCodeImage.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
             ClassQRCodeImage.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
+            Globals.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
@@ -950,7 +950,7 @@ namespace BarcodeGenerator
                     IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
 
                     // Barcode with caption
-                    if (ClassBarcodeCaption.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
+                    if (Globals.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                     {
                         await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption);
                         

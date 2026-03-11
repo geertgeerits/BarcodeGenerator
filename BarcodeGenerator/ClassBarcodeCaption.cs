@@ -14,21 +14,12 @@
 // 10. Make methods asynchronous and perform CPU-heavy work on a background thread using Task.Run.
 // 11. Handle nulls and throw meaningful exceptions; ensure stream is seeked before decode.
 
-using System;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.Maui.Storage;
 using SkiaSharp;
-using System.Diagnostics;
-using Microsoft.Maui; // for DeviceDisplay if needed
 
 namespace BarcodeGenerator
 {
     public static class ClassBarcodeCaption
     {
-        // Global variable to control whether the barcode image should include a caption
-        public static bool bBarcodeWithCaption;
-
         /// <summary>
         /// Create an image that contains the barcode image with the caption (number) placed under it,
         /// save the resulting PNG to the cache directory and return the full file path.
@@ -40,8 +31,13 @@ namespace BarcodeGenerator
         /// <returns>Full path to the saved PNG file</returns>
         public static async Task<string> SaveBarcodeWithCaptionAsync(Stream barcodeStream, string caption, string fileName = "barcode_generator.png", int padding = 12)
         {
-            if (barcodeStream is null) throw new ArgumentNullException(nameof(barcodeStream));
-            if (caption is null) caption = string.Empty;
+            if (barcodeStream is null)
+            {
+                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionAsync: barcodeStream is null.");
+                return string.Empty;    // Return empty string on failure instead of throwing, to avoid crashing the app
+            }
+
+            caption ??= string.Empty;
             fileName = string.IsNullOrWhiteSpace(fileName) ? "barcode_generator.png" : fileName;
 
             // Do the CPU-bound image work on a background thread
@@ -55,7 +51,11 @@ namespace BarcodeGenerator
                     // Decode input image to SKBitmap
                     using var codecStream = barcodeStream.CanSeek ? barcodeStream : CopyToMemoryStream(barcodeStream);
                     using var skBitmap = SKBitmap.Decode(codecStream);
-                    if (skBitmap is null) throw new InvalidOperationException("Unable to decode barcode image stream.");
+                    if (skBitmap is null)
+                    {
+                        Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionAsync: Failed to decode barcode image stream.");
+                        return string.Empty;    // Return empty string on failure instead of throwing, to avoid crashing the app
+                    }
 
                     int srcWidth = skBitmap.Width;
                     int srcHeight = skBitmap.Height;
@@ -82,7 +82,7 @@ namespace BarcodeGenerator
                     float maxTextWidth = srcWidth - padding * 2;
                     const float minFontSize = 10f;
                     int attempts = 0;
-                    SKRect textBounds = new SKRect();
+                    SKRect textBounds = new();
                     float measuredWidth = font.MeasureText(caption, out textBounds);
                     while (measuredWidth > maxTextWidth && font.Size > minFontSize && attempts++ < 20)
                     {
@@ -141,7 +141,7 @@ namespace BarcodeGenerator
                 catch (Exception ex)
                 {
                     Debug.WriteLine($"ClassBarcodeImageHelper.SaveBarcodeWithCaptionAsync error: {ex}");
-                    throw;
+                    return string.Empty;    // Return empty string on failure instead of throwing, to avoid crashing the app
                 }
             });
         }
@@ -151,7 +151,12 @@ namespace BarcodeGenerator
         /// </summary>
         public static async Task<string> SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = "barcode_generator.png", int padding = 12)
         {
-            if (screen is null) throw new ArgumentNullException(nameof(screen));
+            if (screen is null)
+            {
+                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync: screen is null.");
+                return string.Empty;    // Return empty string on failure instead of throwing, to avoid crashing the app
+            }
+
             await using var stream = await screen.OpenReadAsync();
             return await SaveBarcodeWithCaptionAsync(stream, caption, fileName, padding);
         }
@@ -171,10 +176,16 @@ namespace BarcodeGenerator
             try
             {
                 if (string.IsNullOrWhiteSpace(colorString))
+                {
                     return defaultColor;
+                }
 
                 string s = colorString.Trim();
-                if (!s.StartsWith("#")) s = "#" + s;
+                if (!s.StartsWith('#'))
+                {
+                    s = "#" + s;
+                }
+
                 return SKColor.Parse(s);
             }
             catch
