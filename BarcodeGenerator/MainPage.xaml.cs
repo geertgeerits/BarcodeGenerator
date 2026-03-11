@@ -952,7 +952,7 @@ namespace BarcodeGenerator
                     // Barcode with caption
                     if (Globals.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                     {
-                        await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption);
+                        await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, Globals.cFileBarcode);
                         
                         // Open the share interface to share the file
                         await ClassFileOperations.OpenShareInterfaceAsync(Globals.cFileBarcode);
