@@ -56,7 +56,7 @@ namespace BarcodeGenerator
             // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
-            ClassBarcodeCaption.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", false);
+            ClassBarcodeCaption.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             ClassQRCodeImage.bQRCodeSizeVariable = Preferences.Default.Get("SettingQRCodeSizeVariable", true);
             ClassQRCodeImage.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
             ClassQRCodeImage.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
@@ -342,7 +342,6 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 16;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.HeightRequest = 170;
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Plessey;
                 }

@@ -67,27 +67,32 @@ namespace BarcodeGenerator
                     // Determine font size relative to image width if not provided
                     float fontSize = Math.Max(14f, srcWidth / 16f);
 
-                    // Prepare paint for text measuring
+                    // Prepare paint for text drawing (color, antialias)
                     using var textPaint = new SKPaint
                     {
                         IsAntialias = true,
                         Color = fgColor,
-                        Typeface = SKTypeface.Default,
-                        TextSize = fontSize,
-                        TextAlign = SKTextAlign.Center,
+                        Style = SKPaintStyle.Fill
                     };
+
+                    // Create SKFont for measuring and drawing text
+                    using var font = new SKFont(SKTypeface.Default, fontSize);
 
                     // Ensure caption fits horizontally; reduce font size if necessary
                     float maxTextWidth = srcWidth - padding * 2;
                     const float minFontSize = 10f;
                     int attempts = 0;
-                    while (textPaint.MeasureText(caption) > maxTextWidth && textPaint.TextSize > minFontSize && attempts++ < 10)
+                    SKRect textBounds = new SKRect();
+                    float measuredWidth = font.MeasureText(caption, out textBounds);
+                    while (measuredWidth > maxTextWidth && font.Size > minFontSize && attempts++ < 20)
                     {
-                        textPaint.TextSize -= 1.5f;
+                        font.Size -= 1.5f;
+                        measuredWidth = font.MeasureText(caption, out textBounds);
                     }
 
-                    // Compute caption height (approximate line height)
-                    float textHeight = textPaint.FontMetrics.Descent - textPaint.FontMetrics.Ascent;
+                    // Compute caption height (approximate line height) from font metrics
+                    var metrics = font.Metrics;
+                    float textHeight = metrics.Descent - metrics.Ascent;
                     int captionHeight = (int)Math.Ceiling(textHeight) + padding * 2;
 
                     // Create new bitmap with extra space for caption
@@ -109,15 +114,15 @@ namespace BarcodeGenerator
                     destRect.Left = (outWidth - destRect.Width) / 2f;
                     destRect.Top = 0;
 
-                    using var paintImage = new SKPaint { FilterQuality = SKFilterQuality.High, IsAntialias = true };
-                    using var srcBmpImage = SKBitmapToPixmap(skBitmap); // use original bitmap
+                    // Use an SKPaint when calling DrawBitmap overload that accepts SKRect; avoid obsolete FilterQuality
+                    using var paintImage = new SKPaint { IsAntialias = true };
                     canvas.DrawBitmap(skBitmap, destRect, paintImage);
 
                     // Draw caption centered horizontally below the image
                     float textX = outWidth / 2f;
-                    // baseline Y: top of caption area + padding + text ascent absolute
-                    float textY = srcHeight + padding - textPaint.FontMetrics.Ascent; // ascent is negative
-                    canvas.DrawText(caption, textX, textY, textPaint);
+                    // baseline Y: top of caption area + padding + absolute ascent
+                    float textY = srcHeight + padding - metrics.Ascent; // ascent is negative
+                    canvas.DrawText(caption, textX, textY, SKTextAlign.Center, font, textPaint);
 
                     // Encode to PNG
                     using var image = SKImage.FromBitmap(outBitmap);
