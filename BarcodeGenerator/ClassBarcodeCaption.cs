@@ -46,11 +46,15 @@ namespace BarcodeGenerator
                 try
                 {
                     // Ensure stream is readable from beginning
-                    if (barcodeStream.CanSeek) barcodeStream.Seek(0, SeekOrigin.Begin);
+                    if (barcodeStream.CanSeek)
+                    {
+                        barcodeStream.Seek(0, SeekOrigin.Begin);
+                    }
 
                     // Decode input image to SKBitmap
                     using var codecStream = barcodeStream.CanSeek ? barcodeStream : CopyToMemoryStream(barcodeStream);
                     using var skBitmap = SKBitmap.Decode(codecStream);
+                    
                     if (skBitmap is null)
                     {
                         Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionAsync: Failed to decode barcode image stream.");
@@ -84,6 +88,7 @@ namespace BarcodeGenerator
                     int attempts = 0;
                     SKRect textBounds = new();
                     float measuredWidth = font.MeasureText(caption, out textBounds);
+                    
                     while (measuredWidth > maxTextWidth && font.Size > minFontSize && attempts++ < 20)
                     {
                         font.Size -= 1.5f;
@@ -110,7 +115,8 @@ namespace BarcodeGenerator
                     float scaleX = (float)outWidth / srcWidth;
                     float scaleY = scaleX; // keep aspect ratio
                     var destRect = SKRect.Create(0, 0, srcWidth * scaleX, srcHeight * scaleY);
-                    // center horizontally if destRect.Width < outWidth due to rounding
+                    
+                    // Center horizontally if destRect.Width < outWidth due to rounding
                     destRect.Left = (outWidth - destRect.Width) / 2f;
                     destRect.Top = 0;
 
@@ -120,6 +126,7 @@ namespace BarcodeGenerator
 
                     // Draw caption centered horizontally below the image
                     float textX = outWidth / 2f;
+                    
                     // baseline Y: top of caption area + padding + absolute ascent
                     float textY = srcHeight + padding - metrics.Ascent; // ascent is negative
                     canvas.DrawText(caption, textX, textY, SKTextAlign.Center, font, textPaint);
@@ -140,7 +147,7 @@ namespace BarcodeGenerator
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine($"ClassBarcodeImageHelper.SaveBarcodeWithCaptionAsync error: {ex}");
+                    Debug.WriteLine($"ClassBarcodeCaption.SaveBarcodeWithCaptionAsync error: {ex}");
                     return string.Empty;    // Return empty string on failure instead of throwing, to avoid crashing the app
                 }
             });

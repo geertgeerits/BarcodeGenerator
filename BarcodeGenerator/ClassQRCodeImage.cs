@@ -62,9 +62,6 @@ namespace BarcodeGenerator
             // If the QR Code with image has been selected, show a message about the recommended image size and open the file picker
             if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
             {
-                // Show a DisplayAlertAsync to inform the user about the recommended image size before opening the file picker
-                //await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.QRCodeRecommendedImageSize_Text, $"{nImageRecommendedSize} {CodeLang.Pixels_Text}", CodeLang.ButtonClose_Text);
-
                 // Show a modal popup to inform the user about the recommended image size before opening the file picker
                 var currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
                 if (currentPage != null)
