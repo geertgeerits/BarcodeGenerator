@@ -84,7 +84,7 @@ namespace BarcodeGenerator
 
                     // Ensure caption fits horizontally; reduce font size if necessary
                     float maxTextWidth = srcWidth - padding * 2;
-                    const float minFontSize = 10f;
+                    const float minFontSize = 6f;
                     int attempts = 0;
                     SKRect textBounds = new();
                     float measuredWidth = font.MeasureText(caption, out textBounds);
