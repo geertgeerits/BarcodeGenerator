@@ -26,7 +26,7 @@
             <Grid
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, 4, Auto">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -472,7 +472,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="20"
+                    Grid.Row="21"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
@@ -481,7 +481,7 @@
 
                 <Switch
                     x:Name="swtBarcodeWithCaption"
-                    Grid.Row="20"
+                    Grid.Row="21"
                     Grid.Column="2"
                     HorizontalOptions="Start"
                     Toggled="SwtBarcodeWithCaption_Toggled">
