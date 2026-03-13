@@ -1,7 +1,7 @@
 ﻿/* Program .....: BarcodeGenerator.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
- * Version .....: 1.0.48
+ * Version .....: 1.0.49
  * Date ........: 2026-03-13 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
