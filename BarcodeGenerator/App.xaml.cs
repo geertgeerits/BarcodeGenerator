@@ -19,11 +19,11 @@
             {
                 X = 200,
                 Y = 50,
-                Height = 1000,
+                Height = 1100,
                 Width = 900,
                 MinimumHeight = 800,
                 MinimumWidth = 900,
-                MaximumHeight = 1200,
+                MaximumHeight = 1300,
                 MaximumWidth = 900
             };
         }
