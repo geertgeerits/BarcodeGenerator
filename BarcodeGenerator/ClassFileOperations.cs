@@ -67,11 +67,14 @@
         /// <returns></returns>
         public static async Task OpenShareInterfaceAsync(string cFile)
         {
-            await Share.Default.RequestAsync(new ShareFileRequest
+            if (!string.IsNullOrEmpty(cFile))
             {
-                Title = "Barcode Generator",
-                File = new ShareFile(cFile)
-            });
+                await Share.Default.RequestAsync(new ShareFileRequest
+                {
+                    Title = "Barcode Generator",
+                    File = new ShareFile(cFile)
+                });
+            }
         }
 
         /// <summary>

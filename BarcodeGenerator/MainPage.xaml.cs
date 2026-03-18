@@ -1,8 +1,8 @@
 ﻿/* Program .....: BarcodeGenerator.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
- * Version .....: 1.0.49
- * Date ........: 2026-03-13 (YYYY-MM-DD)
+ * Version .....: 1.0.50
+ * Date ........: 2026-03-18 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -956,10 +956,10 @@ namespace BarcodeGenerator
                     // Barcode with caption
                     if (Globals.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                     {
-                        await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, Globals.cFileBarcode);
-                        
+                        string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, Globals.cFileBarcode);
+
                         // Open the share interface to share the file
-                        await ClassFileOperations.OpenShareInterfaceAsync(Globals.cFileBarcode);
+                        await ClassFileOperations.OpenShareInterfaceAsync(cFile);
                     }
                     // Barcode without caption
                     else

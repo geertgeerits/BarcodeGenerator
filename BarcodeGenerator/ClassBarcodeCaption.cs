@@ -26,7 +26,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="barcodeStream">Stream containing the barcode image (PNG/JPEG/etc)</param>
         /// <param name="caption">Text to draw under the barcode (usually the numeric string)</param>
-        /// <param name="fileName">Optional output file name. Defaults to "barcode_with_caption.png"</param>
+        /// <param name="fileName">Optional output file name. Defaults to "barcode_generator.png"</param>
         /// <param name="padding">Padding in pixels between barcode and caption and edges</param>
         /// <returns>Full path to the saved PNG file</returns>
         public static async Task<string> SaveBarcodeWithCaptionAsync(Stream barcodeStream, string caption, string fileName = "barcode_generator.png", int padding = 12)
@@ -135,15 +135,13 @@ namespace BarcodeGenerator
                     using var image = SKImage.FromBitmap(outBitmap);
                     using var data = image.Encode(SKEncodedImageFormat.Png, 100);
 
-                    string outPath = Globals.cFileBarcode;
-
                     // Write to file
-                    using (var file = File.Open(outPath, FileMode.Create, FileAccess.Write))
+                    using (var file = File.Open(fileName, FileMode.Create, FileAccess.Write))
                     {
                         data.SaveTo(file);
                     }
 
-                    return outPath;
+                    return fileName;
                 }
                 catch (Exception ex)
                 {
