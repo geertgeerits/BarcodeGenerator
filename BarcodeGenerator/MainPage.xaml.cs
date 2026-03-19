@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-03-18 (YYYY-MM-DD)
+ * Date ........: 2026-03-19 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -787,6 +787,8 @@ namespace BarcodeGenerator
 
         /// <summary>
         /// Inserts a specified character or string into the caption at the given position.
+        /// Start with the last position to insert to avoid affecting the positions of the remaining characters to insert.
+        /// This method is used to insert spaces in the caption of EAN and UPC barcodes for better readability.
         /// </summary>
         /// <param name="cCaption">The original caption string in which to insert the character or string. If null, the method returns the
         /// original value.</param>

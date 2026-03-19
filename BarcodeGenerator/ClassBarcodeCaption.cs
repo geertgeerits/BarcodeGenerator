@@ -21,6 +21,21 @@ namespace BarcodeGenerator
     public static class ClassBarcodeCaption
     {
         /// <summary>
+        /// Convenience helper to get a screenshot's stream and call SaveBarcodeWithCaptionAsync
+        /// </summary>
+        public static async Task<string> SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = "barcode_generator.png", int padding = 12)
+        {
+            if (screen is null)
+            {
+                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync: screen is null.");
+                return string.Empty;    // Return empty string on failure instead of throwing, to avoid crashing the app
+            }
+
+            await using Stream stream = await screen.OpenReadAsync();
+            return await SaveBarcodeWithCaptionAsync(stream, caption, fileName, padding);
+        }
+
+        /// <summary>
         /// Create an image that contains the barcode image with the caption (number) placed under it,
         /// save the resulting PNG to the cache directory and return the full file path.
         /// </summary>
@@ -52,8 +67,8 @@ namespace BarcodeGenerator
                     }
 
                     // Decode input image to SKBitmap
-                    using var codecStream = barcodeStream.CanSeek ? barcodeStream : CopyToMemoryStream(barcodeStream);
-                    using var skBitmap = SKBitmap.Decode(codecStream);
+                    using Stream codecStream = barcodeStream.CanSeek ? barcodeStream : CopyToMemoryStream(barcodeStream);
+                    using SKBitmap? skBitmap = SKBitmap.Decode(codecStream);
                     
                     if (skBitmap is null)
                     {
@@ -72,7 +87,7 @@ namespace BarcodeGenerator
                     float fontSize = Math.Max(14f, srcWidth / 16f);
 
                     // Prepare paint for text drawing (color, antialias)
-                    using var textPaint = new SKPaint
+                    using SKPaint textPaint = new()
                     {
                         IsAntialias = true,
                         Color = fgColor,
@@ -80,7 +95,7 @@ namespace BarcodeGenerator
                     };
 
                     // Create SKFont for measuring and drawing text
-                    using var font = new SKFont(SKTypeface.Default, fontSize);
+                    using SKFont font = new(SKTypeface.Default, fontSize);
 
                     // Ensure caption fits horizontally; reduce font size if necessary
                     float maxTextWidth = srcWidth - padding * 2;
@@ -96,7 +111,7 @@ namespace BarcodeGenerator
                     }
 
                     // Compute caption height (approximate line height) from font metrics
-                    var metrics = font.Metrics;
+                    SKFontMetrics metrics = font.Metrics;
                     float textHeight = metrics.Descent - metrics.Ascent;
                     int captionHeight = (int)Math.Ceiling(textHeight) + padding * 2;
 
@@ -104,8 +119,8 @@ namespace BarcodeGenerator
                     int outWidth = srcWidth;
                     int outHeight = srcHeight + captionHeight;
 
-                    using var outBitmap = new SKBitmap(outWidth, outHeight, SKColorType.Bgra8888, SKAlphaType.Premul);
-                    using var canvas = new SKCanvas(outBitmap);
+                    using SKBitmap outBitmap = new(outWidth, outHeight, SKColorType.Bgra8888, SKAlphaType.Premul);
+                    using SKCanvas canvas = new(outBitmap);
 
                     // Draw background
                     canvas.Clear(bgColor);
@@ -114,14 +129,14 @@ namespace BarcodeGenerator
                     // If source width differs from outWidth, scale proportionally to outWidth
                     float scaleX = (float)outWidth / srcWidth;
                     float scaleY = scaleX; // keep aspect ratio
-                    var destRect = SKRect.Create(0, 0, srcWidth * scaleX, srcHeight * scaleY);
+                    SKRect destRect = SKRect.Create(0, 0, srcWidth * scaleX, srcHeight * scaleY);
                     
                     // Center horizontally if destRect.Width < outWidth due to rounding
                     destRect.Left = (outWidth - destRect.Width) / 2f;
                     destRect.Top = 0;
 
                     // Use an SKPaint when calling DrawBitmap overload that accepts SKRect; avoid obsolete FilterQuality
-                    using var paintImage = new SKPaint { IsAntialias = true };
+                    using SKPaint paintImage = new() { IsAntialias = true };
                     canvas.DrawBitmap(skBitmap, destRect, paintImage);
 
                     // Draw caption centered horizontally below the image
@@ -132,11 +147,11 @@ namespace BarcodeGenerator
                     canvas.DrawText(caption, textX, textY, SKTextAlign.Center, font, textPaint);
 
                     // Encode to PNG
-                    using var image = SKImage.FromBitmap(outBitmap);
-                    using var data = image.Encode(SKEncodedImageFormat.Png, 100);
+                    using SKImage image = SKImage.FromBitmap(outBitmap);
+                    using SKData data = image.Encode(SKEncodedImageFormat.Png, 100);
 
                     // Write to file
-                    using (var file = File.Open(fileName, FileMode.Create, FileAccess.Write))
+                    using (FileStream file = File.Open(fileName, FileMode.Create, FileAccess.Write))
                     {
                         data.SaveTo(file);
                     }
@@ -151,25 +166,10 @@ namespace BarcodeGenerator
             });
         }
 
-        /// <summary>
-        /// Convenience helper to get a screenshot's stream and call SaveBarcodeWithCaptionAsync.
-        /// </summary>
-        public static async Task<string> SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = "barcode_generator.png", int padding = 12)
-        {
-            if (screen is null)
-            {
-                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync: screen is null.");
-                return string.Empty;    // Return empty string on failure instead of throwing, to avoid crashing the app
-            }
-
-            await using var stream = await screen.OpenReadAsync();
-            return await SaveBarcodeWithCaptionAsync(stream, caption, fileName, padding);
-        }
-
         // Helper: copy to MemoryStream when original stream is not seekable
         private static MemoryStream CopyToMemoryStream(Stream src)
         {
-            var ms = new MemoryStream();
+            MemoryStream ms = new();
             src.CopyTo(ms);
             ms.Seek(0, SeekOrigin.Begin);
             return ms;

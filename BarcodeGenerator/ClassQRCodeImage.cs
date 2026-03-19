@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui.Extensions;
 using QRCoder;
 using SkiaSharp;
+using System.Collections;
 
 namespace BarcodeGenerator
 {
@@ -34,11 +35,22 @@ namespace BarcodeGenerator
         /// <returns>An ImageSource representing the generated QR code image, including the logo overlay if provided.</returns>
         public static async Task<ImageSource?> GenerateQrCode(string text)
         {
-            // Generate QR code data with high error correction level to allow for logo overlay
-            var generator = new QRCodeGenerator();
-            var qrData = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
+            // Generate QR code data using QRCoder with the appropriate error correction level based on whether an image will be included
+            using QRCodeGenerator generator = new();
+            QRCodeData qrData;
 
-            var modules = qrData.ModuleMatrix;
+            // QR codes with images require a higher error correction level to ensure the code remains scannable even if part of it is obscured by the image
+            if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+            {
+                qrData = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
+            }
+            // For standard QR codes without an image, a lower error correction level can be used to reduce the overall size of the QR code
+            else
+            {
+                qrData = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+            }
+
+            List<BitArray> modules = qrData.ModuleMatrix;
             int moduleCount = modules.Count;
 
             // For simplicity, you can also use a fixed value like 20, but be aware that very large module counts can lead to very large bitmaps
@@ -63,7 +75,7 @@ namespace BarcodeGenerator
             if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
             {
                 // Show a modal popup to inform the user about the recommended image size before opening the file picker
-                var currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+                Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
                 if (currentPage != null)
                 {
                     Globals.bIsPopupMessage = true;
@@ -89,11 +101,11 @@ namespace BarcodeGenerator
             }
 
             // Calculate the maximum image size in pixels based on the QR code size and the configured percentage
-            using var bitmap = new SKBitmap(width: size, height: size);
-            using var canvas = new SKCanvas(bitmap);
+            using SKBitmap bitmap = new SKBitmap(width: size, height: size);
+            using SKCanvas canvas = new SKCanvas(bitmap);
             canvas.Clear(SKColor.Parse(Globals.cCodeColorBg));
 
-            var paint = new SKPaint { Style = SKPaintStyle.Fill, Color = SKColor.Parse(Globals.cCodeColorFg), IsAntialias = false };
+            SKPaint paint = new() { Style = SKPaintStyle.Fill, Color = SKColor.Parse(Globals.cCodeColorFg), IsAntialias = false };
 
             // Draw QR code modules
             for (int y = 0; y < moduleCount; y++)
@@ -104,7 +116,7 @@ namespace BarcodeGenerator
 
                     if (moduleOn)
                     {
-                        var rect = new SKRect(x * pixelsPerModule, y * pixelsPerModule,
+                        SKRect rect = new(x * pixelsPerModule, y * pixelsPerModule,
                                               (x + 1) * pixelsPerModule, (y + 1) * pixelsPerModule);
                         canvas.DrawRect(rect, paint);
                     }
@@ -117,17 +129,17 @@ namespace BarcodeGenerator
                 logoStream.Position = 0;
 
                 // Use SKCodec to read encoded origin (EXIF orientation) so we can correct rotation
-                using var codec = SKCodec.Create(logoStream);
+                using SKCodec codec = SKCodec.Create(logoStream);
 
                 SKBitmap? logoBitmap = null;
                 if (codec != null)
                 {
-                    var info = codec.Info;
+                    SKImageInfo info = codec.Info;
                     logoBitmap = new SKBitmap(info.Width, info.Height, info.ColorType, info.AlphaType);
                     codec.GetPixels(logoBitmap.Info, logoBitmap.GetPixels());
 
                     // Fix orientation according to EXIF
-                    var oriented = FixOrientation(logoBitmap, codec.EncodedOrigin);
+                    SKBitmap oriented = FixOrientation(logoBitmap, codec.EncodedOrigin);
                     if (!ReferenceEquals(oriented, logoBitmap))
                     {
                         logoBitmap.Dispose();
@@ -159,10 +171,10 @@ namespace BarcodeGenerator
 
                     float left = (size - destWidth) / 2f;
                     float top = (size - destHeight) / 2f;
-                    var dest = new SKRect(left, top, left + destWidth, top + destHeight);
+                    SKRect dest = new(left, top, left + destWidth, top + destHeight);
 
                     // Draw a background/border behind the logo for contrast
-                    var borderPaint = new SKPaint
+                    SKPaint borderPaint = new()
                     {
                         Style = SKPaintStyle.Fill,
                         Color = SKColor.Parse(Globals.cCodeColorBg),
@@ -170,7 +182,7 @@ namespace BarcodeGenerator
                     };
 
                     float borderPadding = Math.Max(4f, iconMaxSize * 0.06f);
-                    var borderRect = new SKRect(dest.Left - borderPadding, dest.Top - borderPadding,
+                    SKRect borderRect = new(dest.Left - borderPadding, dest.Top - borderPadding,
                                                  dest.Right + borderPadding, dest.Bottom + borderPadding);
                     canvas.DrawRoundRect(borderRect, 6f, 6f, borderPaint);
 
@@ -184,9 +196,9 @@ namespace BarcodeGenerator
             canvas.Flush();
 
             // Convert SKBitmap to ImageSource
-            using var image = SKImage.FromBitmap(bitmap);
-            using var encoded = image.Encode(SKEncodedImageFormat.Png, 100);
-            var ms = new MemoryStream();
+            using SKImage image = SKImage.FromBitmap(bitmap);
+            using SKData encoded = image.Encode(SKEncodedImageFormat.Png, 100);
+            MemoryStream ms = new();
             encoded.SaveTo(ms);
             ms.Position = 0;
 
@@ -220,18 +232,16 @@ namespace BarcodeGenerator
                     return FlipBitmap(src, horizontal: false);
                 case SKEncodedOrigin.LeftTop: // transpose (rotate 90 and flip horizontal)
                     {
-                        var r = RotateBitmap(src, 90);
-                        var f = FlipBitmap(r, horizontal: true);
-                        r.Dispose();
+                        using SKBitmap r = RotateBitmap(src, 90);
+                        using SKBitmap f = FlipBitmap(r, horizontal: true);
                         return f;
                     }
                 case SKEncodedOrigin.RightTop: // rotate 90
                     return RotateBitmap(src, 90);
                 case SKEncodedOrigin.RightBottom: // transverse (rotate 270 and flip horizontal)
                     {
-                        var r = RotateBitmap(src, 270);
-                        var f = FlipBitmap(r, horizontal: true);
-                        r.Dispose();
+                        using SKBitmap r = RotateBitmap(src, 270);
+                        using SKBitmap f = FlipBitmap(r, horizontal: true);
                         return f;
                     }
                 case SKEncodedOrigin.LeftBottom: // rotate 270
@@ -257,8 +267,8 @@ namespace BarcodeGenerator
             {
                 int w = src.Width;
                 int h = src.Height;
-                var dest = new SKBitmap(new SKImageInfo(w, h, src.ColorType, src.AlphaType));
-                using (var canvas = new SKCanvas(dest))
+                SKBitmap dest = new(new SKImageInfo(w, h, src.ColorType, src.AlphaType));
+                using SKCanvas canvas = new(dest);
                 {
                     canvas.Clear(SKColors.Transparent);
                     canvas.Translate(w / 2f, h / 2f);
@@ -274,8 +284,8 @@ namespace BarcodeGenerator
                 // swap width/height for 90/270
                 int w = src.Height;
                 int h = src.Width;
-                var dest = new SKBitmap(new SKImageInfo(w, h, src.ColorType, src.AlphaType));
-                using (var canvas = new SKCanvas(dest))
+                SKBitmap dest = new(new SKImageInfo(w, h, src.ColorType, src.AlphaType));
+                using (SKCanvas canvas = new(dest))
                 {
                     canvas.Clear(SKColors.Transparent);
                     canvas.Translate(w / 2f, h / 2f);
@@ -301,8 +311,8 @@ namespace BarcodeGenerator
         /// <returns>A new <see cref="SKBitmap"/> instance containing the flipped image. The original bitmap is not modified.</returns>
         private static SKBitmap FlipBitmap(SKBitmap src, bool horizontal)
         {
-            var dest = new SKBitmap(new SKImageInfo(src.Width, src.Height, src.ColorType, src.AlphaType));
-            using (var canvas = new SKCanvas(dest))
+            SKBitmap dest = new(new SKImageInfo(src.Width, src.Height, src.ColorType, src.AlphaType));
+            using (SKCanvas canvas = new(dest))
             {
                 canvas.Clear(SKColors.Transparent);
                 if (horizontal)
