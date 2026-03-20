@@ -53,6 +53,8 @@ namespace BarcodeGenerator
             }
 
             caption ??= string.Empty;
+            //caption = "AB123W5M5IJ";  // For testing only
+
             fileName = string.IsNullOrWhiteSpace(fileName) ? "barcode_generator.png" : fileName;
 
             // Do the CPU-bound image work on a background thread
@@ -86,6 +88,12 @@ namespace BarcodeGenerator
                     // Determine font size relative to image width if not provided
                     float fontSize = Math.Max(14f, srcWidth / 16f);
 
+                    // Select a font Typeface (default system font)
+                    using SKTypeface typeface = SKTypeface.FromFamilyName("CourierNew", SKFontStyle.Normal)
+                                     ?? SKTypeface.FromFamilyName("monospace")
+                                     ?? SKTypeface.Default;
+                    using SKFont font = new(typeface, fontSize);
+
                     // Prepare paint for text drawing (color, antialias)
                     using SKPaint textPaint = new()
                     {
@@ -93,9 +101,6 @@ namespace BarcodeGenerator
                         Color = fgColor,
                         Style = SKPaintStyle.Fill
                     };
-
-                    // Create SKFont for measuring and drawing text
-                    using SKFont font = new(SKTypeface.Default, fontSize);
 
                     // Ensure caption fits horizontally; reduce font size if necessary
                     float maxTextWidth = srcWidth - padding * 2;
