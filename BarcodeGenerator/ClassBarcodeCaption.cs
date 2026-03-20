@@ -88,9 +88,9 @@ namespace BarcodeGenerator
                     // Determine font size relative to image width if not provided
                     float fontSize = Math.Max(14f, srcWidth / 16f);
 
-                    // Select a font Typeface (default system font)
-                    using SKTypeface typeface = SKTypeface.FromFamilyName("CourierNew", SKFontStyle.Normal)
-                                     ?? SKTypeface.FromFamilyName("monospace")
+                    // Select a font Typeface - Try a common Windows name, a generic monospace, then default
+                    using SKTypeface typeface = SKTypeface.FromFamilyName("Courier New", SKFontStyle.Normal)
+                                     ?? SKTypeface.FromFamilyName("monospace", SKFontStyle.Normal)
                                      ?? SKTypeface.Default;
                     using SKFont font = new(typeface, fontSize);
 
