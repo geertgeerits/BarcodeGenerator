@@ -104,16 +104,21 @@ namespace BarcodeGenerator
 
                     // Ensure caption fits horizontally; reduce font size if necessary
                     float maxTextWidth = srcWidth - padding * 2;
-                    const float minFontSize = 6f;
+                    const float minFontSize = 10f;
                     int attempts = 0;
                     SKRect textBounds = new();
                     float measuredWidth = font.MeasureText(caption, out textBounds);
                     
-                    while (measuredWidth > maxTextWidth && font.Size > minFontSize && attempts++ < 20)
+                    while (measuredWidth > maxTextWidth && font.Size > minFontSize && attempts++ < 50)
                     {
                         font.Size -= 1.5f;
                         measuredWidth = font.MeasureText(caption, out textBounds);
                     }
+
+                    // Reduce font size slightly more to ensure it fits well within the width
+                    font.Size -= 1.0f;
+                    
+                    Debug.WriteLine($"ClassBarcodeCaption.SaveBarcodeWithCaptionAsync: Final font size for caption '{caption}' is {font.Size} after {attempts} attempts to fit within {maxTextWidth}px width.");
 
                     // Compute caption height (approximate line height) from font metrics
                     SKFontMetrics metrics = font.Metrics;
