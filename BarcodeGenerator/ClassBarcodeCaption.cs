@@ -44,7 +44,7 @@ namespace BarcodeGenerator
         /// <param name="fileName">Optional output file name. Defaults to "barcode_generator.png"</param>
         /// <param name="padding">Padding in pixels between barcode and caption and edges</param>
         /// <returns>Full path to the saved PNG file</returns>
-        public static async Task<string> SaveBarcodeWithCaptionAsync(Stream barcodeStream, string caption, string fileName = "barcode_generator.png", int padding = 12)
+        private static async Task<string> SaveBarcodeWithCaptionAsync(Stream barcodeStream, string caption, string fileName = "barcode_generator.png", int padding = 12)
         {
             if (barcodeStream is null)
             {
