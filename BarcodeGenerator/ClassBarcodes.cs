@@ -252,6 +252,7 @@
                 CodeLang.Barcode_EAN_8_Text,
                 CodeLang.Barcode_EAN_13_Text,
                 CodeLang.Barcode_ITF_Text,
+                CodeLang.Barcode_MICRO_QR_CODE_Text,
                 CodeLang.Barcode_MSI_Text,
                 CodeLang.Barcode_PDF_417_Text,
                 CodeLang.Barcode_PLESSEY_Text,
@@ -271,6 +272,7 @@
                 CodeLang.Barcode_AZTEC_Text,
                 //CodeLang.Barcode_CODE_93_Text,
                 CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_MICRO_QR_CODE_Text,
                 CodeLang.Barcode_PDF_417_Text,
                 CodeLang.Barcode_QR_CODE_Text,
                 CodeLang.Barcode_QR_CODE_IMAGE_Text

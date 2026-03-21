@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-03-20 (YYYY-MM-DD)
+ * Date ........: 2026-03-21 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -371,6 +371,17 @@ namespace BarcodeGenerator
                     brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
                 }
+                else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
+                {
+                    edtTextToCode.MaxLength = 9;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
+                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
+                    brdBarcode.IsVisible = false;
+                    bgvBarcode.IsVisible = false;
+                    brdQrCodeImage.IsVisible = true;
+                    imgQrCodeImage.IsVisible = true;
+                }
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
                 {
                     edtTextToCode.MaxLength = 12;
@@ -463,7 +474,7 @@ namespace BarcodeGenerator
                             _ = edtTextToCode.Focus();
                             return;
                         }
-                        
+
                         cBarcodeCaption = cTextToCode;
                     }
                     else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
@@ -646,6 +657,10 @@ namespace BarcodeGenerator
                     {
                         // no validation here
                     }
+                    else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
+                    {
+                        // no validation here
+                    }
                     else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
                     {
                         if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
@@ -763,7 +778,15 @@ namespace BarcodeGenerator
                 {
                     ClassQRCodeImage.cQRCodeType = selectedName;
 
-                    var qrImage = await ClassQRCodeImage.GenerateQrCode(cTextToCode);
+                    ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCode(cTextToCode);
+                    imgQrCodeImage.Source = qrImage;
+                }
+                // Generate the Micro QR code using QRCoder
+                else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
+                {
+                    ClassQRCodeImage.cQRCodeType = selectedName;
+
+                    ImageSource? qrImage = await ClassMicroQRCode.GenerateMicroQrCode(cTextToCode, -4);
                     imgQrCodeImage.Source = qrImage;
                 }
                 // Generate the other barcodes using the BarcodeView control from the ZXing.Net.MAUI library
@@ -941,7 +964,7 @@ namespace BarcodeGenerator
             try
             {
                 // Share the QR code (with the image) as an image file using the Share API
-                if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+                if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     await Share.Default.RequestAsync(new ShareFileRequest
                     {
