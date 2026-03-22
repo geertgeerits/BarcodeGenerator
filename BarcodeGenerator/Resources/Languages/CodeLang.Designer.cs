@@ -1205,6 +1205,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maximum Characters: Numeric: {0}, Alphanumeric: {1}, Binary: {2}, Kanji/Kana: {3}..
+        /// </summary>
+        internal static string MaximumCharactersNABK_Text {
+            get {
+                return ResourceManager.GetString("MaximumCharactersNABK_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Barcode Generator and Scanner.
         /// </summary>
         internal static string NameProgram_Text {

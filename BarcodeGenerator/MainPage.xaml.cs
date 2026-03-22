@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-03-21 (YYYY-MM-DD)
+ * Date ........: 2026-03-22 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -351,7 +351,7 @@ namespace BarcodeGenerator
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)
                 {
-                    edtTextToCode.MaxLength = 1250;
+                    edtTextToCode.MaxLength = 1250;                     // Binary
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;
@@ -362,7 +362,7 @@ namespace BarcodeGenerator
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
-                    edtTextToCode.MaxLength = 1250;
+                    edtTextToCode.MaxLength = 1250;                     // Binary
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;
@@ -373,7 +373,8 @@ namespace BarcodeGenerator
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
-                    edtTextToCode.MaxLength = 9;
+                    edtTextToCode.Placeholder = $"{string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
+                    edtTextToCode.MaxLength = 35;  // Version M4 - ECC Low: Numeric 35, Alphanumeric 21, Binary 15, Kanji/Kana 9
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;

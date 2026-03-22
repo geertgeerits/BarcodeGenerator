@@ -6,11 +6,12 @@ Micro QR codes have limitations on data capacity and error correction levels.
 They support versions M1 through M4 (specified as -1 to -4), and not all ECC levels are available for all versions.
 M1 only supports detection (no ECC), M2 and M3 support L and M levels, and M4 supports L, M, and Q levels.
 For detailed capacity tables, see the Micro QR Code specification.
+https://www.nuget.org/packages/QRCoder/1.7.0#show-readme-container
 https://www.qrcode.com/en/codes/microqr.html  
-*/  
+*/
 
 using QRCoder;
-using System.Runtime.Versioning;
+//using System.Runtime.Versioning;
 
 namespace BarcodeGenerator
 {
@@ -23,11 +24,12 @@ namespace BarcodeGenerator
         /// returned ImageSource can be used directly in UI elements that support image sources. The generated PNG image
         /// is also saved to disk for sharing or further processing.</remarks>
         /// <param name="text">The text to encode in the Micro QR code. Cannot be null or empty.</param>
+        /// <param name="nVersion">The requested Micro QR code version (-1 to -4). Default is -4 (M4), which supports the largest data capacity. If the specified version cannot accommodate the text, a smaller version may be generated if possible.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains an ImageSource representing the
         /// generated Micro QR code, or null if the code could not be generated.</returns>
-        [SupportedOSPlatform("ios13.0")]
-        [SupportedOSPlatform("maccatalyst13.0")]
-        [SupportedOSPlatform("windows10.0.17763.0")]
+        //[SupportedOSPlatform("ios13.0")]
+        //[SupportedOSPlatform("maccatalyst13.0")]
+        //[SupportedOSPlatform("windows10.0.17763.0")]
         public static async Task<ImageSource?> GenerateMicroQrCode(string text, int nVersion = -4)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -35,16 +37,26 @@ namespace BarcodeGenerator
                 return null;
             }
 
-            using QRCodeGenerator generator = new();
-            using QRCodeData qrCodeData = QRCodeGenerator.GenerateMicroQrCode(text, QRCodeGenerator.ECCLevel.L, requestedVersion: nVersion);
-            using PngByteQRCode qrCode = new(qrCodeData);
-            byte[] qrCodeImage = qrCode.GetGraphic(20);
+            try
+            {
+                // Generate the Micro QR code with the specified version and error correction level
+                using QRCodeGenerator generator = new();
+                using QRCodeData qrCodeData = QRCodeGenerator.GenerateMicroQrCode(text, QRCodeGenerator.ECCLevel.L, requestedVersion: nVersion);
+                using PngByteQRCode qrCode = new(qrCodeData);
+                byte[] qrCodeImage = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
 
-            // Save a copy to disk (await the async save)
-            await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(qrCodeImage), Globals.cFileBarcode);
+                // Save a copy to disk (await the async save)
+                await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(qrCodeImage), Globals.cFileBarcode);
 
-            // Return an ImageSource that opens a fresh stream when needed
-            return ImageSource.FromStream(() => new MemoryStream(qrCodeImage));
+                // Return an ImageSource that opens a fresh stream when needed
+                return ImageSource.FromStream(() => new MemoryStream(qrCodeImage));
+
+            }
+            catch (Exception ex)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.Barcode_MICRO_QR_CODE_Text, ex.Message, CodeLang.ButtonClose_Text);
+                return null;
+            }
         }
     }
 }

@@ -69,10 +69,10 @@
         public static string cBarcode_MICRO_PDF_417 = string.Empty;
 
         public static string cBarcode_QR_CODE = string.Empty;                   // Quick Response Code
-        public static string cBarcode_QR_CODE_MODEL_1 = string.Empty;
-        public static string cBarcode_QR_CODE_MODEL_2 = string.Empty;
-        public static string cBarcode_FRAME_QR_CODE = string.Empty;
-        public static string cBarcode_MICRO_QR_CODE = string.Empty;
+        public static string cBarcode_QR_CODE_MODEL_1 = string.Empty;           // QR Code Model 1
+        public static string cBarcode_QR_CODE_MODEL_2 = string.Empty;           // QR Code Model 2
+        public static string cBarcode_FRAME_QR_CODE = string.Empty;             // Frame QR Code
+        public static string cBarcode_MICRO_QR_CODE = string.Empty;             // Micro QR Code symbol version -4 (M4) with error correction level L, M, or Q
         public static string cBarcode_RMQR = string.Empty;                      // Rectangular Micro QR Code
         public static string cBarcode_SQRC = string.Empty;                      // Secure Quick Response Code
         public static string cBarcode_QR_CODE_IMAGE = string.Empty;             // QR Code with image in the center
@@ -157,10 +157,10 @@
             cBarcode_MICRO_PDF_417 = CodeLang.Barcode_MICRO_PDF_417_Text;
 
             cBarcode_QR_CODE = CodeLang.Barcode_QR_CODE_Text;               // Quick Response Code
-            cBarcode_QR_CODE_MODEL_1 = CodeLang.Barcode_QR_CODE_MODEL_1_Text;
-            cBarcode_QR_CODE_MODEL_2 = CodeLang.Barcode_QR_CODE_MODEL_2_Text;
-            cBarcode_FRAME_QR_CODE = CodeLang.Barcode_FRAME_QR_CODE_Text;
-            cBarcode_MICRO_QR_CODE = CodeLang.Barcode_MICRO_QR_CODE_Text;
+            cBarcode_QR_CODE_MODEL_1 = CodeLang.Barcode_QR_CODE_MODEL_1_Text;  // QR Code Model 1
+            cBarcode_QR_CODE_MODEL_2 = CodeLang.Barcode_QR_CODE_MODEL_2_Text;  // QR Code Model 2
+            cBarcode_FRAME_QR_CODE = CodeLang.Barcode_FRAME_QR_CODE_Text;   // Frame QR Code
+            cBarcode_MICRO_QR_CODE = CodeLang.Barcode_MICRO_QR_CODE_Text;   // Micro QR Code symbol version -4 (M4) with error correction level L, M, or Q
             cBarcode_RMQR = CodeLang.Barcode_RMQR_Text;                     // Rectangular Micro QR Code
             cBarcode_SQRC = CodeLang.Barcode_SQRC_Text;                     // Secure Quick Response Code
             cBarcode_QR_CODE_IMAGE = CodeLang.Barcode_QR_CODE_IMAGE_Text;   // QR Code with image in the center
@@ -598,11 +598,13 @@
    Compact PDF417
    Micro PDF 417                366        250        150
 
-   QR Code                     1800       7089       4296       2953          1817         40       L (low)
+   QR Code                     1250       7089       4296       2953          1817         40       L (low)
    QR Code Model 1
    QR Code Model 2
    Frame QR
-   Micro QR                      35         21         15
+   Micro QR                      35         35         21         15             9         M4       L (low)
+   Micro QR                      30         30         18         13             8         M4       M (medium)
+   Micro QR                      21         21         13          9             5         M4       Q (quartile)
    rMQR Rectangular Micro QR
    SQRC Secure QR Code
    QR Code with Image          1250                             1273                               H (high)

@@ -208,7 +208,7 @@
     <value>ITF Interleaved 2 of 5</value>
   </data>
   <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
-    <value>icro QR code</value>
+    <value>Micro codice QR</value>
   </data>
   <data name="Barcode_MSI_Text" xml:space="preserve">
     <value>MSI Plessey modificato</value>
@@ -217,13 +217,13 @@
     <value>PZN Pharma numero centrale</value>
   </data>
   <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
-    <value>QR code modello 1</value>
+    <value>Codice QR modello 1</value>
   </data>
   <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
-    <value>QR code modello 2</value>
+    <value>Codice QR modello 2</value>
   </data>
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
-    <value>QR code</value>
+    <value>Codice QR</value>
   </data>
   <data name="Barcode_RMQR_Text" xml:space="preserve">
     <value>RMQR micro QR code rettangolare</value>
@@ -660,7 +660,7 @@ Microsoft, Microsoft Store, il logo di Microsoft Store e Windows sono marchi di 
     <value>PDF417</value>
   </data>
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
-    <value>QR code con immagine</value>
+    <value>Codice QR con immagine</value>
   </data>
   <data name="QRCodeImageTitle_Text" xml:space="preserve">
     <value>Scegli un'immagine</value>
