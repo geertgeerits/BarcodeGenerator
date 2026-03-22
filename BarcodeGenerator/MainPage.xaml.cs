@@ -407,6 +407,8 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 8;
                     bgvBarcode.Format = BarcodeFormat.UpcE;
                 }
+
+                edtTextToCode.Focus();
             }
         }
 
@@ -779,6 +781,19 @@ namespace BarcodeGenerator
                 }
             }
 
+            // Generate the barcode
+            _ = GenerateBarcode(selectedIndex, selectedName!, cTextToCode);
+        }
+
+        /// <summary>
+        /// Generate the barcode based on the selected format and the input text
+        /// </summary>
+        /// <param name="selectedIndex">The index of the selected barcode format.</param>
+        /// <param name="selectedName">The name of the selected barcode format.</param>
+        /// <param name="cTextToCode">The text to encode into the barcode.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
+        private async Task GenerateBarcode(int selectedIndex, string selectedName, string cTextToCode)
+        {
             try
             {
                 // For testing crashes - DivideByZeroException

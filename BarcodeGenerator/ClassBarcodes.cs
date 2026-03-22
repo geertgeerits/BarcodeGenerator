@@ -68,7 +68,7 @@
         public static string cBarcode_COMPACT_PDF_417 = string.Empty;
         public static string cBarcode_MICRO_PDF_417 = string.Empty;
 
-        public static string cBarcode_QR_CODE = string.Empty;                   // Quick Response Code
+        public static string cBarcode_QR_CODE = string.Empty;                   // Quick Response Code Model 2
         public static string cBarcode_QR_CODE_MODEL_1 = string.Empty;           // QR Code Model 1
         public static string cBarcode_QR_CODE_MODEL_2 = string.Empty;           // QR Code Model 2
         public static string cBarcode_FRAME_QR_CODE = string.Empty;             // Frame QR Code
@@ -156,7 +156,7 @@
             cBarcode_COMPACT_PDF_417 = CodeLang.Barcode_COMPACT_PDF_417_Text;
             cBarcode_MICRO_PDF_417 = CodeLang.Barcode_MICRO_PDF_417_Text;
 
-            cBarcode_QR_CODE = CodeLang.Barcode_QR_CODE_Text;               // Quick Response Code
+            cBarcode_QR_CODE = CodeLang.Barcode_QR_CODE_Text;               // Quick Response Code Model 2
             cBarcode_QR_CODE_MODEL_1 = CodeLang.Barcode_QR_CODE_MODEL_1_Text;  // QR Code Model 1
             cBarcode_QR_CODE_MODEL_2 = CodeLang.Barcode_QR_CODE_MODEL_2_Text;  // QR Code Model 2
             cBarcode_FRAME_QR_CODE = CodeLang.Barcode_FRAME_QR_CODE_Text;   // Frame QR Code
@@ -598,16 +598,25 @@
    Compact PDF417
    Micro PDF 417                366        250        150
 
-   QR Code                                7089       4296       2953          1817         40       L (low)
-   QR Code                     1600       3993       1663                                  40       Q (quartile)
-   QR Code Model 1
-   QR Code Model 2
+   QR Code Model 1                        1101        667        458       282             14       L (low)
+   
+   QR Code Model 2                        7089       4296       2953      1817             40       L (low)
+   QR Code Model 2                        5596       3391       2331      1435             40       M (medium)
+   QR Code Model 2             1600       3993       2420       1663      1024             40       Q (quartile)
+   QR Code Model 2                        3057       1852       1273       784             40       H (high)
+   
+   QR Code with Image          1200       3057       1852       1273       784             40       H (high)
+   
    Frame QR
-   Micro QR                      35         35         21         15             9         M4       L (low)
-   Micro QR                      30         30         18         13             8         M4       M (medium)
-   Micro QR                      21         21         13          9             5         M4       Q (quartile)
+   
+   Micro QR                      35         35         21         15         9             M4       L (low)
+   Micro QR                      30         30         18         13         8             M4       M (medium)
+   Micro QR                      21         21         13          9         5             M4       Q (quartile)
+   
    rMQR Rectangular Micro QR
+   
    SQRC Secure QR Code
-   QR Code with Image          1200       3057       1273                                           H (high)
+
+   https://www.qrcode.com/en/about/version.html
    _____________________________________________________________________________________________________________ */
 
