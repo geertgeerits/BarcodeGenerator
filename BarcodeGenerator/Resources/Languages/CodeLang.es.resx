@@ -680,4 +680,7 @@ Microsoft, Microsoft Store, el logotipo de Microsoft Store y Windows son marcas 
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Código de barras con título:</value>
   </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>Máximo de caracteres: Numéricos: {0}, Alfanuméricos: {1}, Binarios: {2}, Kanji/Kana: {3}.</value>
+  </data>
 </root>

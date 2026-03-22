@@ -38,16 +38,27 @@ namespace BarcodeGenerator
             // Generate QR code data using QRCoder with the appropriate error correction level based on whether an image will be included
             using QRCodeGenerator generator = new();
             QRCodeData qrData;
+            string cErrorTitle = string.Empty;
 
             // QR codes with images require a higher error correction level to ensure the code remains scannable even if part of it is obscured by the image
-            if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+            try
             {
-                qrData = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
+                if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+                {
+                    cErrorTitle = CodeLang.Barcode_QR_CODE_IMAGE_Text;
+                    qrData = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
+                }
+                // For standard QR codes without an image, a lower error correction level can be used to reduce the overall size of the QR code
+                else
+                {
+                    cErrorTitle = CodeLang.Barcode_QR_CODE_Text;
+                    qrData = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+                }
             }
-            // For standard QR codes without an image, a lower error correction level can be used to reduce the overall size of the QR code
-            else
+            catch (Exception ex)
             {
-                qrData = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(cErrorTitle, ex.Message, CodeLang.ButtonClose_Text);
+                return null;
             }
 
             List<BitArray> modules = qrData.ModuleMatrix;

@@ -598,7 +598,8 @@
    Compact PDF417
    Micro PDF 417                366        250        150
 
-   QR Code                     1250       7089       4296       2953          1817         40       L (low)
+   QR Code                                7089       4296       2953          1817         40       L (low)
+   QR Code                     1600       3993       1663                                  40       Q (quartile)
    QR Code Model 1
    QR Code Model 2
    Frame QR
@@ -607,6 +608,6 @@
    Micro QR                      21         21         13          9             5         M4       Q (quartile)
    rMQR Rectangular Micro QR
    SQRC Secure QR Code
-   QR Code with Image          1250                             1273                               H (high)
-   ________________________________________________________________________________________________________ */
+   QR Code with Image          1200       3057       1273                                           H (high)
+   _____________________________________________________________________________________________________________ */
 

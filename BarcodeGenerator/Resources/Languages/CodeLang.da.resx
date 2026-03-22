@@ -680,4 +680,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Stregkode med billedtekst:</value>
   </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>Maksimalt antal tegn: Numerisk: {0}, Alfanumerisk: {1}, Binær: {2}, Kanji/Kana: {3}.</value>
+  </data>
 </root>

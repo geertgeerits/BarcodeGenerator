@@ -680,4 +680,7 @@ Microsoft, Microsoft Store, logo Microsoft Store i Windows są znakami towarowym
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Kod kreskowy z podpisem:</value>
   </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>Maksymalna liczba znaków: Cyfry: {0}, Alfanumeryczne: {1}, Binarne: {2}, Kanji/Kana: {3}.</value>
+  </data>
 </root>
