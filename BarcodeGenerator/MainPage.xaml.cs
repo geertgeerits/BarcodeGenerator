@@ -382,7 +382,7 @@ namespace BarcodeGenerator
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     edtTextToCode.Placeholder = $"{string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
-                    edtTextToCode.MaxLength = 36;  // Version M4 - ECC Low: Numeric 35, Alphanumeric 21, Binary 15, Kanji/Kana 9
+                    edtTextToCode.MaxLength = 35;  // Version M4 - ECC Low: Numeric 35, Alphanumeric 21, Binary 15, Kanji/Kana 9
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;
