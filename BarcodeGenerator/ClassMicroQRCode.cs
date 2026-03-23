@@ -46,7 +46,7 @@ namespace BarcodeGenerator
                 byte[] qrCodeImage = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
 
                 // Save a copy to disk (await the async save)
-                await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(qrCodeImage), Globals.cFileBarcode);
+                await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(qrCodeImage), Globals.cFileBarcodePng);
 
                 // Return an ImageSource that opens a fresh stream when needed
                 return ImageSource.FromStream(() => new MemoryStream(qrCodeImage));
@@ -71,17 +71,17 @@ namespace BarcodeGenerator
             {
                 // Generate the Micro QR code with the specified version and error correction level
                 using QRCodeGenerator qrGenerator = new();
-                using QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.L); //, requestedVersion: nVersion);
+                using QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.L);
                 using SvgQRCode qrCode = new(qrCodeData);
                 string qrCodeAsSvg = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
 
                 // Save a copy to disk (await the async save)
-                string cFileBarcodesvg = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.svg");
-                //await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(qrCodeAsSvg)), cFileBarcodesvg);
+                //await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(qrCodeAsSvg), Globals.cFileBarcodeSvg);
+
                 // Return an ImageSource that opens a fresh stream when needed
                 //return ImageSource.FromStream(() => new MemoryStream(System.Text.Encoding.UTF8.GetBytes(qrCodeAsSvg)));
 
-                using FileStream outputStream = File.OpenWrite(cFileBarcodesvg);
+                using FileStream outputStream = File.OpenWrite(Globals.cFileBarcodeSvg);
                 using StreamWriter writer = new StreamWriter(outputStream);
                 await writer.WriteAsync(qrCodeAsSvg);
                 

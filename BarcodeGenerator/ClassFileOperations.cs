@@ -52,7 +52,7 @@
         public static async void SaveStreamAsFile(Stream inputStream)
         {
             // Save the image file
-            using (FileStream outputFileStream = new(Globals.cFileBarcode, FileMode.Create))
+            using (FileStream outputFileStream = new(Globals.cFileBarcodePng, FileMode.Create))
             {
                 inputStream.CopyTo(outputFileStream);
             }

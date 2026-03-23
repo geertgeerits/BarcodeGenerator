@@ -215,7 +215,7 @@ namespace BarcodeGenerator
 
             // Save the generated PNG to disk with the original pixel size for sharing or other purposes
             using MemoryStream memoryStream = new(ms.ToArray());
-            _ = ClassFileOperations.SavePngFromStreamAsync(memoryStream, Globals.cFileBarcode);
+            _ = ClassFileOperations.SavePngFromStreamAsync(memoryStream, Globals.cFileBarcodePng);
 
             // Return the ImageSource for use in the UI
             return ImageSource.FromStream(() => ms);

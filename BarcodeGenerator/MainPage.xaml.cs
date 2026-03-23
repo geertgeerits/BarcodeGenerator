@@ -118,7 +118,8 @@ namespace BarcodeGenerator
             InitializeTextToSpeechAsync();
             
             // Path and file name of the saved barcode image
-            Globals.cFileBarcode = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.png");
+            Globals.cFileBarcodePng = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.png");
+            Globals.cFileBarcodeSvg = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.svg");
 
             // Clear the clipboard
             //Clipboard.Default.SetTextAsync(null);  // For testing
@@ -1004,7 +1005,7 @@ namespace BarcodeGenerator
                     await Share.Default.RequestAsync(new ShareFileRequest
                     {
                         Title = "Barcode Generator",
-                        File = new ShareFile(Globals.cFileBarcode)
+                        File = new ShareFile(Globals.cFileBarcodePng)
                     });
                 }
                 // Share the barcode (without an image) by capturing the barcode view and saving it as a file using the Share API
@@ -1016,7 +1017,7 @@ namespace BarcodeGenerator
                     // Barcode with caption
                     if (Globals.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                     {
-                        string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, Globals.cFileBarcode);
+                        string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, Globals.cFileBarcodePng);
 
                         // Open the share interface to share the file
                         await ClassFileOperations.OpenShareInterfaceAsync(cFile);
@@ -1030,7 +1031,7 @@ namespace BarcodeGenerator
                         ClassFileOperations.SaveStreamAsFile(stream);
 
                         // Open the share interface to share the file
-                        await ClassFileOperations.OpenShareInterfaceAsync(Globals.cFileBarcode);
+                        await ClassFileOperations.OpenShareInterfaceAsync(Globals.cFileBarcodePng);
                     }
                 }
             }
