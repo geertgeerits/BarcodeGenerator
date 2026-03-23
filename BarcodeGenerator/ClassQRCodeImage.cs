@@ -36,23 +36,34 @@ namespace BarcodeGenerator
         public static async Task<ImageSource?> GenerateQrCode(string text)
         {
             // Generate QR code data using QRCoder with the appropriate error correction level based on whether an image will be included
-            using QRCodeGenerator generator = new();
+            using QRCodeGenerator qrGenerator = new();
             QRCodeData qrData;
+            QRCodeData qrDataSvg;
             string cErrorTitle = string.Empty;
 
             // QR codes with images require a higher error correction level to ensure the code remains scannable even if part of it is obscured by the image
             try
             {
+                // QR code with image, use ECC Level H (30% error correction) to allow for the central image overlay without compromising scannability
                 if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     cErrorTitle = CodeLang.Barcode_QR_CODE_IMAGE_Text;
-                    qrData = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
+                    qrData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
                 }
-                // For standard QR codes without an image, a lower error correction level can be used to reduce the overall size of the QR code
+                // QR codes without image, a lower error correction level can be used to reduce the overall size of the QR code
                 else
                 {
                     cErrorTitle = CodeLang.Barcode_QR_CODE_Text;
-                    qrData = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+                    qrData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+
+                    // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
+                    qrDataSvg = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+                    using SvgQRCode qrCode = new(qrDataSvg);
+                    string qrCodeAsSvg = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
+
+                    using FileStream outputStream = File.OpenWrite(Globals.cFileBarcodeSvg);
+                    using StreamWriter writer = new(outputStream);
+                    await writer.WriteAsync(qrCodeAsSvg);
                 }
             }
             catch (Exception ex)

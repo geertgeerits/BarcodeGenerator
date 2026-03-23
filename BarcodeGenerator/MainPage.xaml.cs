@@ -432,6 +432,10 @@ namespace BarcodeGenerator
             edtTextToCode.IsEnabled = false;
             edtTextToCode.IsEnabled = true;
 
+            // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
+            ClassFileOperations.DeleteFileIfExists(Globals.cFileBarcodePng);
+            ClassFileOperations.DeleteFileIfExists(Globals.cFileBarcodeSvg);
+
             // Set the barcode colors
             bgvBarcode.ForegroundColor = Color.FromArgb(Globals.cCodeColorFg);
             bgvBarcode.BackgroundColor = Color.FromArgb(Globals.cCodeColorBg);
@@ -823,7 +827,6 @@ namespace BarcodeGenerator
 
                     ImageSource? qrImage = await ClassMicroQRCode.GenerateMicroQrCode(cTextToCode, -4);
                     imgQrCodeImage.Source = qrImage;
-                    //await ClassMicroQRCode.GenerateMicroQrCodeSvg(cTextToCode, -4);
                 }
                 // Generate the other barcodes using the BarcodeView control from the ZXing.Net.MAUI library
                 else
@@ -999,8 +1002,13 @@ namespace BarcodeGenerator
         {
             try
             {
-                // Share the QR code (with the image) as an image file using the Share API
-                if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
+                // Share the QR code as an image file using the Share API
+                if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE)
+                {
+                    await ClassFileOperations.ShareMultipleFilesAsync();
+                }
+                // Share the QR code with the image or the Micro QR code as an image file using the Share API
+                else if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     await Share.Default.RequestAsync(new ShareFileRequest
                     {

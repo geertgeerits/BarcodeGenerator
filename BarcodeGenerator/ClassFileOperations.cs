@@ -127,6 +127,26 @@
         }
 
         /// <summary>
+        /// Shares multiple files using the platform's share interface
+        /// This method checks for the existence of the specified files before attempting to share them
+        /// </summary>
+        /// <returns></returns>
+        public static async Task ShareMultipleFilesAsync()
+        {
+            if (!File.Exists(Globals.cFileBarcodePng) || !File.Exists(Globals.cFileBarcodeSvg))
+            {
+                Debug.WriteLine("ClassFileOperations.ShareMultipleFilesAsync: One or more files to share do not exist.");
+                return;
+            }
+
+            await Share.Default.RequestAsync(new ShareMultipleFilesRequest
+            {
+                Title = "Barcode Generator",
+                Files = [new(Globals.cFileBarcodePng), new ShareFile(Globals.cFileBarcodeSvg)]
+            });
+        }
+
+        /// <summary>
         /// Deletes the specified file if it exists
         /// </summary>
         /// <param name="filePath">The path of the file to delete.</param>
