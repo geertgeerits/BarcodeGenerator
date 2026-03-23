@@ -822,6 +822,7 @@ namespace BarcodeGenerator
 
                     ImageSource? qrImage = await ClassMicroQRCode.GenerateMicroQrCode(cTextToCode, -4);
                     imgQrCodeImage.Source = qrImage;
+                    //await ClassMicroQRCode.GenerateMicroQrCodeSvg(cTextToCode, -4);
                 }
                 // Generate the other barcodes using the BarcodeView control from the ZXing.Net.MAUI library
                 else

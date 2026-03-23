@@ -15,5 +15,7 @@
     <Color x:Key="DarkGray">#505050</Color>
     <Color x:Key="LightEntryBG">#fdfdfd</Color>
     <Color x:Key="DarkEntryBG">#646464</Color>
+    <Color x:Key="LightPlaceholder">#c8c8c8</Color>
+    <Color x:Key="DarkPlaceholder">#969696</Color>
 
 </ResourceDictionary>

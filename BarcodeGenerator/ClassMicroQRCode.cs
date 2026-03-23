@@ -58,5 +58,40 @@ namespace BarcodeGenerator
                 return null;
             }
         }
+
+
+        public static async Task<ImageSource?> GenerateMicroQrCodeSvg(string text, int nVersion = -4)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return null;
+            }
+
+            try
+            {
+                // Generate the Micro QR code with the specified version and error correction level
+                using QRCodeGenerator qrGenerator = new();
+                using QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.L); //, requestedVersion: nVersion);
+                using SvgQRCode qrCode = new(qrCodeData);
+                string qrCodeAsSvg = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
+
+                // Save a copy to disk (await the async save)
+                string cFileBarcodesvg = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.svg");
+                //await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(qrCodeAsSvg)), cFileBarcodesvg);
+                // Return an ImageSource that opens a fresh stream when needed
+                //return ImageSource.FromStream(() => new MemoryStream(System.Text.Encoding.UTF8.GetBytes(qrCodeAsSvg)));
+
+                using FileStream outputStream = File.OpenWrite(cFileBarcodesvg);
+                using StreamWriter writer = new StreamWriter(outputStream);
+                await writer.WriteAsync(qrCodeAsSvg);
+                
+                return null;
+            }
+            catch (Exception ex)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.Barcode_MICRO_QR_CODE_Text, ex.Message, CodeLang.ButtonClose_Text);
+                return null;
+            }
+        }
     }
 }

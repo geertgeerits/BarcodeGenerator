@@ -57,7 +57,7 @@
     <Style TargetType="Editor">
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}" />
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource Light}}" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource DarkPlaceholder}, Dark={StaticResource LightPlaceholder}}" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontAttributes" Value="Bold"/>
@@ -68,7 +68,7 @@
         <Setter Property="VerticalTextAlignment" Value="Center" />
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}" />
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource Light}}" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource DarkPlaceholder}, Dark={StaticResource LightPlaceholder}}" />
         <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="16"/>
