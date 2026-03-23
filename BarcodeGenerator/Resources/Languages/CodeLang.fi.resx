@@ -681,6 +681,9 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
     <value>Viivakoodi kuvatekstillä:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Merkkien enimmäismäärä: Numeerinen: {0}, Alfanumeerinen: {1}, Binääri: {2}, Kanji/Kana: {3}.</value>
+    <value>Numeerinen: {0}, Alfanumeerinen: {1}, Binääri: {2}, Kanji/Kana: {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Merkkien enimmäismäärä:</value>
   </data>
 </root>

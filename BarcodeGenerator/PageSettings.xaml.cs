@@ -376,7 +376,7 @@
             // so we have to set the text again to get the correct length of the text (Microsoft.Maui.Controls Version 10.0.41)
             // Re-assign text to enforce MaxLength on iOS
             string cTemp = entry.Text;
-            entry.Text = "";
+            entry.Text = string.Empty;
             entry.Text = cTemp;
 #endif
             // Add the opacity if length = 6 characters

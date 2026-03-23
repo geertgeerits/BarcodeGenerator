@@ -681,6 +681,9 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
     <value>Strekkode med tekst:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Maksimalt antall tegn: Numerisk: {0}, Alfanumerisk: {1}, Binær: {2}, Kanji/Kana: {3}.</value>
+    <value>Numerisk: {0}, Alfanumerisk: {1}, Binær: {2}, Kanji/Kana: {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Maksimalt antall tegn:</value>
   </data>
 </root>

@@ -681,6 +681,9 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
     <value>Streckkod med bildtext:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Max antal tecken: Numeriskt: {0}, Alfanumeriskt: {1}, Binärt: {2}, Kanji/Kana: {3}.</value>
+    <value>Numeriskt: {0}, Alfanumeriskt: {1}, Binärt: {2}, Kanji/Kana: {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Max antal tecken:</value>
   </data>
 </root>

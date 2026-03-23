@@ -221,9 +221,9 @@ namespace BarcodeGenerator
             btnShare.IsEnabled = false;
             imgbtnTextToSpeech.IsEnabled = false;
 
-            lblBarcodeResult.Text = "";
-            string cBarcodeFormat = "";
-            string cDisplayValue = "";
+            lblBarcodeResult.Text = string.Empty;
+            string cBarcodeFormat = string.Empty;
+            string cDisplayValue = string.Empty;
             List<string> listBarcodes = [];
 
             try

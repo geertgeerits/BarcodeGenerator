@@ -681,6 +681,9 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
     <value>Čárový kód s popiskem:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Maximální počet znaků: Číselné: {0}, Alfanumerické: {1}, Binární: {2}, Kanji/Kana: {3}.</value>
+    <value>Číselné: {0}, Alfanumerické: {1}, Binární: {2}, Kanji/Kana: {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Maximální počet znaků:</value>
   </data>
 </root>

@@ -602,10 +602,10 @@
    
    QR Code Model 2                        7089       4296       2953      1817             40       L (low)
    QR Code Model 2                        5596       3391       2331      1435             40       M (medium)
-   QR Code Model 2             1600       3993       2420       1663      1024             40       Q (quartile)
+   QR Code Model 2             3993       3993       2420       1663      1024             40       Q (quartile)
    QR Code Model 2                        3057       1852       1273       784             40       H (high)
    
-   QR Code with Image          1200       3057       1852       1273       784             40       H (high)
+   QR Code with Image          3057       3057       1852       1273       784             40       H (high)
    
    Frame QR
    

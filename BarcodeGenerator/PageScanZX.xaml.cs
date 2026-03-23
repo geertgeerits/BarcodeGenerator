@@ -68,7 +68,7 @@ namespace BarcodeGenerator
 
             if (selectedIndex != -1)
             {
-                lblBarcodeResult.Text = "";
+                lblBarcodeResult.Text = string.Empty;
                 btnShare.Text = CodeLang.ButtonShare_Text;
 
                 imgbtnCopyToClipboard.IsEnabled = false;
@@ -333,7 +333,7 @@ namespace BarcodeGenerator
                 btnShare.IsEnabled = false;
                 imgbtnTextToSpeech.IsEnabled = false;
 
-                lblBarcodeResult.Text = "";
+                lblBarcodeResult.Text = string.Empty;
 
                 // Set the barcode results in the label 'lblBarcodeResult.Text'
                 if (list.Count == 1)
