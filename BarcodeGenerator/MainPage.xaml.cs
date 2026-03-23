@@ -311,7 +311,7 @@ namespace BarcodeGenerator
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
                 {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 8\n{CodeLang.AllowedChar_Text} {cAllowedCharactersDecimal}";
+                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8\n{CodeLang.AllowedChar_Text} {cAllowedCharactersDecimal}";
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 4;
@@ -319,7 +319,7 @@ namespace BarcodeGenerator
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
                 {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 13\n{CodeLang.AllowedChar_Text} {cAllowedCharactersDecimal}";
+                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 13\n{CodeLang.AllowedChar_Text} {cAllowedCharactersDecimal}";
                     edtTextToCode.MaxLength = 13;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 4;
@@ -400,7 +400,7 @@ namespace BarcodeGenerator
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
                 {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 12\n{CodeLang.AllowedChar_Text} {cAllowedCharactersDecimal}";
+                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 12\n{CodeLang.AllowedChar_Text} {cAllowedCharactersDecimal}";
                     edtTextToCode.MaxLength = 12;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 0;
@@ -408,7 +408,7 @@ namespace BarcodeGenerator
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
                 {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 8\n{CodeLang.AllowedChar_Text} {cAllowedCharactersDecimal}";
+                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8\n{CodeLang.AllowedChar_Text} {cAllowedCharactersDecimal}";
                     edtTextToCode.MaxLength = 8;
                     edtTextToCode.Keyboard = Keyboard.Numeric;
                     bgvBarcode.BarcodeMargin = 8;

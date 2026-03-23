@@ -686,4 +686,7 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Maximum aantal karakters:</value>
   </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Aantal cijfers:</value>
+  </data>
 </root>

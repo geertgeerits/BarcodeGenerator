@@ -686,4 +686,7 @@ Microsoft, Microsoft Store, il logo di Microsoft Store e Windows sono marchi di 
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Numero massimo di caratteri:</value>
   </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Numero di cifre:</value>
+  </data>
 </root>

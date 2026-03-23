@@ -686,4 +686,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Maksimalt antal tegn:</value>
   </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Antal cifre:</value>
+  </data>
 </root>

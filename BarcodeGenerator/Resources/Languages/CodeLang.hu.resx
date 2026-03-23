@@ -686,4 +686,7 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Maximális karakterszám:</value>
   </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Számjegyek száma:</value>
+  </data>
 </root>

@@ -1241,6 +1241,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of digits:.
+        /// </summary>
+        internal static string NumberOfDigits_Text {
+            get {
+                return ResourceManager.GetString("NumberOfDigits_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open this link?.
         /// </summary>
         internal static string OpenLinkText_Text {

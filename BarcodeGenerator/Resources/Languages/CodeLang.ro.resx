@@ -686,4 +686,7 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Număr maxim de caractere:</value>
   </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Număr de cifre:</value>
+  </data>
 </root>

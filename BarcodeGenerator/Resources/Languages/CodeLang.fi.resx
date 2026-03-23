@@ -686,4 +686,7 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Merkkien enimmäismäärä:</value>
   </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Numeroiden lukumäärä:</value>
+  </data>
 </root>
