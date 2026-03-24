@@ -153,6 +153,39 @@
 
             return Convert.ToString(nCheckDigit);
         }
+
+        /// <summary>
+        /// Convert a UPC-E code back to its UPC-A format
+        /// </summary>
+        /// <param name="cUpcE"></param>
+        /// <param name="nLenTextToCode"></param>
+        /// <returns></returns>
+        public static string ConvertUpcEToUpcA(string cUpcE, int nLenTextToCode)
+        {
+            cUpcE = cUpcE.Substring(1, 6);
+            string cLastDigit = cUpcE.Substring(cUpcE.Length - 1, 1);
+            int nLastDigit = Convert.ToInt32(cLastDigit);
+            string cUpcA = string.Empty;
+
+            if (nLastDigit < 3)
+            {
+                cUpcA = string.Concat(cUpcE.AsSpan(0, 2), cLastDigit, "0000", cUpcE.AsSpan(2, 3));
+            }
+            else if (nLastDigit == 3)
+            {
+                cUpcA = string.Concat(cUpcE.AsSpan(0, 3), "00000", cUpcE.AsSpan(3, 2));
+            }
+            else if (nLastDigit == 4)
+            {
+                cUpcA = string.Concat(cUpcE.AsSpan(0, 4), "00000", cUpcE.AsSpan(4, 1));
+            }
+            else
+            {
+                cUpcA = string.Concat(cUpcE.AsSpan(0, 5), "0000", cLastDigit);
+            }
+
+            return cUpcA = $"0{cUpcA}";
+        }
     }
 }
 

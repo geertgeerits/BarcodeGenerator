@@ -756,36 +756,14 @@ namespace BarcodeGenerator
                             return;
                         }
 
-                        // Convert UPC-E to UPC-A code
+                        // Store the checksum character if it exists to compare it later with the calculated checksum character from the UPC-A code, because the checksum character of the UPC-E code is the same as the checksum character of the corresponding UPC-A code
                         if (nLenTextToCode == 8)
                         {
                             cChecksum = cTextToCode.Substring(7, 1);
                         }
-
-                        string cUpcE = cTextToCode.Substring(1, 6);
-                        string cLastDigit = cUpcE.Substring(cUpcE.Length - 1, 1);
-                        int nLastDigit = Convert.ToInt32(cLastDigit);
-
-                        string cUpcA;
-
-                        if (nLastDigit < 3)
-                        {
-                            cUpcA = string.Concat(cUpcE.AsSpan(0, 2), cLastDigit, "0000", cUpcE.AsSpan(2, 3));
-                        }
-                        else if (nLastDigit == 3)
-                        {
-                            cUpcA = string.Concat(cUpcE.AsSpan(0, 3), "00000", cUpcE.AsSpan(3, 2));
-                        }
-                        else if (nLastDigit == 4)
-                        {
-                            cUpcA = string.Concat(cUpcE.AsSpan(0, 4), "00000", cUpcE.AsSpan(4, 1));
-                        }
-                        else
-                        {
-                            cUpcA = string.Concat(cUpcE.AsSpan(0, 5), "0000", cLastDigit);
-                        }
-
-                        cUpcA = $"0{cUpcA}";
+                        
+                        // Convert UPC-E to UPC-A code
+                        string cUpcA = ClassValidateBarcodes.ConvertUpcEToUpcA(cTextToCode, nLenTextToCode);
 
                         // Calculate and add the checksum of the UPC-A code
                         cUpcA += ClassValidateBarcodes.CalculateChecksumEanUpcA(cUpcA);
@@ -828,7 +806,7 @@ namespace BarcodeGenerator
                 // For testing crashes - DivideByZeroException
                 //int divByZero = 51 / int.Parse("0");
 
-                if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
+                if (OperatingSystem.IsWindows() && selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {
                     ClassQRCodeImage.cQRCodeType = selectedName;
 

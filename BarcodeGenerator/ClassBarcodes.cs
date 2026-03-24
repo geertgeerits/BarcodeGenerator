@@ -246,7 +246,6 @@
         /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator_ZX() => [.. new List<string>
             {
-                CodeLang.Barcode_ART_QR_CODE_Text,
                 CodeLang.Barcode_AZTEC_Text,
                 CodeLang.Barcode_CODABAR_Text,
                 CodeLang.Barcode_CODE_39_Text,

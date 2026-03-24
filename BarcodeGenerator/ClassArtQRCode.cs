@@ -1,13 +1,21 @@
-﻿// https://github.com/Shane32/QRCoder/wiki/Advanced-usage---QR-Code-renderers#211-artqrcode-renderer-in-detail
+﻿/*
+https://github.com/Shane32/QRCoder/wiki/Advanced-usage---QR-Code-renderers#211-artqrcode-renderer-in-detail
+Only supported in .NET 6.0+ due to System.Drawing.Common dependency, which is not supported in .NET 5.0
+and earlier on non-Windows platforms.
+.NET 6.0+ supports System.Drawing.Common on all platforms, but it is still recommended to use it only on Windows
+for production applications due to potential performance and reliability issues on other platforms.
+*/
 
 using QRCoder;
 using System.Drawing;
+using System.Runtime.Versioning;
 using static QRCoder.ArtQRCode;
 
 namespace BarcodeGenerator
 {
     internal class ClassArtQRCode
     {
+        [SupportedOSPlatform("windows")]
         public static async Task<ImageSource?> GenerateArtQrCodeAsync(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -24,7 +32,7 @@ namespace BarcodeGenerator
                 Bitmap? bgBitmap = null;
                 if (cFile != null)
                 {
-                    using var s = await cFile.OpenReadAsync();
+                    using Stream s = await cFile.OpenReadAsync();
                     bgBitmap = new Bitmap(s);
                 }
 
@@ -33,14 +41,14 @@ namespace BarcodeGenerator
                 using QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
                 using ArtQRCode qrCode = new(qrCodeData);
 
-                Bitmap qrCodeImage = qrCode.GetGraphic(10,
-                                        darkColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorFg)),
-                                        lightColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorBg)),
-                                        backgroundColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorBg)),
-                                        backgroundImage: bgBitmap,
-                                        backgroundImageStyle: BackgroundImageStyle.DataAreaOnly);
+                using Bitmap qrCodeImage = qrCode.GetGraphic(10,
+                                            darkColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorFg)),
+                                            lightColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorBg)),
+                                            backgroundColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorBg)),
+                                            backgroundImage: bgBitmap,
+                                            backgroundImageStyle: BackgroundImageStyle.DataAreaOnly);
 
-                // dispose bgBitmap when no longer needed
+                // Dispose bgBitmap when no longer needed
                 bgBitmap?.Dispose();
 
                 // Convert bitmap to byte array
