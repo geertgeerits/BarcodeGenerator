@@ -689,4 +689,7 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="NumberOfDigits_Text" xml:space="preserve">
     <value>Počet číslic:</value>
   </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Umělecký QR kód</value>
+  </data>
 </root>

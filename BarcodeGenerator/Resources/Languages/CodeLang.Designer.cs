@@ -115,6 +115,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Artistic QR Code.
+        /// </summary>
+        internal static string Barcode_ART_QR_CODE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_ART_QR_CODE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aztec Code.
         /// </summary>
         internal static string Barcode_AZTEC_CODE_Text {

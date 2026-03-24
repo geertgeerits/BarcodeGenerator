@@ -689,4 +689,7 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="NumberOfDigits_Text" xml:space="preserve">
     <value>Számjegyek száma:</value>
   </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Művészi QR-kód</value>
+  </data>
 </root>

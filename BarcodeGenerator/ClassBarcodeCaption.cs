@@ -109,7 +109,7 @@ namespace BarcodeGenerator
                     SKRect textBounds = new();
                     float measuredWidth = font.MeasureText(caption, out textBounds);
                     
-                    while (measuredWidth > maxTextWidth && font.Size > minFontSize && attempts++ < 50)
+                    while (measuredWidth > maxTextWidth && font.Size > minFontSize && attempts++ < 60)
                     {
                         font.Size -= 1.5f;
                         measuredWidth = font.MeasureText(caption, out textBounds);

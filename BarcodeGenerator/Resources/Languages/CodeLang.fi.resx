@@ -689,4 +689,7 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="NumberOfDigits_Text" xml:space="preserve">
     <value>Numeroiden lukumäärä:</value>
   </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Taiteellinen QR-koodi</value>
+  </data>
 </root>

@@ -33,8 +33,13 @@ namespace BarcodeGenerator
         /// <param name="text">The text to encode within the generated QR code.
         /// without a logo. The stream must be positioned at the beginning.</param>
         /// <returns>An ImageSource representing the generated QR code image, including the logo overlay if provided.</returns>
-        public static async Task<ImageSource?> GenerateQrCode(string text)
+        public static async Task<ImageSource?> GenerateQrCodeAsync(string text)
         {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return null;
+            }
+
             // Generate QR code data using QRCoder with the appropriate error correction level based on whether an image will be included
             using QRCodeGenerator qrGenerator = new();
             QRCodeData qrData;
@@ -61,7 +66,7 @@ namespace BarcodeGenerator
                     using SvgQRCode qrCode = new(qrDataSvg);
                     string qrCodeAsSvg = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
 
-                    ClassFileOperations.SaveStringAsFileSvg(qrCodeAsSvg);
+                    ClassFileOperations.SaveStringAsFileSvg(qrCodeAsSvg, Globals.cFileBarcodeSvg);
                 }
             }
             catch (Exception ex)
@@ -121,8 +126,8 @@ namespace BarcodeGenerator
             }
 
             // Calculate the maximum image size in pixels based on the QR code size and the configured percentage
-            using SKBitmap bitmap = new SKBitmap(width: size, height: size);
-            using SKCanvas canvas = new SKCanvas(bitmap);
+            using SKBitmap bitmap = new(width: size, height: size);
+            using SKCanvas canvas = new(bitmap);
             canvas.Clear(SKColor.Parse(Globals.cCodeColorBg));
 
             SKPaint paint = new() { Style = SKPaintStyle.Fill, Color = SKColor.Parse(Globals.cCodeColorFg), IsAntialias = false };

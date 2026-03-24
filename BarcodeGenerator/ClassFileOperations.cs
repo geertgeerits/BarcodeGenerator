@@ -18,7 +18,7 @@
                 // FileResult.FileName provides the name including the extension
                 string? fileNameWithExt = selected?.FileName;
 
-                Debug.WriteLine($"PickImage: selected file name: {fileNameWithExt ?? "<none>"}");
+                Debug.WriteLine($"ClassFileOperations.PickImage: selected file name: {fileNameWithExt ?? "<none>"}");
 
                 // Validate the selected file
                 if (!string.IsNullOrEmpty(fileNameWithExt))
@@ -40,8 +40,57 @@
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"PickImage: File picking error: {ex.Message}");
+                Debug.WriteLine($"ClassFileOperations.PickImage: File picking error: {ex.Message}");
                 return null;
+            }
+        }
+
+        /// <summary>
+        /// Asynchronously saves a PNG image from the specified memory stream to the given file path.
+        /// </summary>
+        /// <remarks>The method sets the stream position to the beginning before saving and creates the
+        /// target directory if it does not exist.</remarks>
+        /// <param name="stream">The memory stream containing the PNG image data to save. Must not be null or empty.</param>
+        /// <param name="filePath">The full file path where the PNG image will be saved. Must be a valid, non-empty path.</param>
+        /// <returns>A task that represents the asynchronous save operation.</returns>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="stream"/> is null or empty, or if <paramref name="filePath"/> is null, empty,
+        /// or consists only of white-space characters.</exception>
+        /// <exception cref="IOException">Thrown if an I/O error occurs while saving the PNG file, such as issues with file access or directory
+        /// creation.</exception>
+        public static async Task SavePngFromStreamAsync(MemoryStream stream, string filePath)
+        {
+            if (stream == null || stream.Length == 0)
+            {
+                Debug.WriteLine("ClassFileOperations.SavePngFromStreamAsync: PNG stream is null or empty.", nameof(stream));
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(filePath))
+            {
+                Debug.WriteLine("ClassFileOperations.SavePngFromStreamAsync: Invalid file path.", nameof(filePath));
+                return;
+            }
+
+            try
+            {
+                // Ensure the stream is at the beginning
+                stream.Position = 0;
+
+                // Create directory if it doesn't exist
+                string? directory = Path.GetDirectoryName(filePath);
+                if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+
+                // Save the file asynchronously
+                using FileStream fileStream = new(filePath, FileMode.Create, FileAccess.Write);
+                await stream.CopyToAsync(fileStream);
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the error as needed
+                Debug.WriteLine($"ClassFileOperations.SavePngFromStreamAsync: Failed to save PNG file: {ex.Message}", ex);
             }
         }
 
@@ -49,7 +98,8 @@
         /// Save the barcode as an image file
         /// </summary>
         /// <param name="inputStream"></param>
-        public static void SaveStreamAsFilePng(Stream inputStream)
+        /// <param name="filePath"></param>
+        public static void SaveStreamAsFilePng(Stream inputStream, string filePath)
         {
             if (inputStream == null || inputStream.Length == 0)
             {
@@ -59,12 +109,12 @@
             // Save the image file
             try
             {
-                using FileStream outputFileStream = new(Globals.cFileBarcodePng, FileMode.Create);
+                using FileStream outputFileStream = new(filePath, FileMode.Create);
                 inputStream.CopyTo(outputFileStream);
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"SaveStreamAsFile: Failed to save image file: {ex.Message}", ex);
+                Debug.WriteLine($"ClassFileOperations.SaveStreamAsFilePng: Failed to save image file: {ex.Message}", ex);
             }
 
             inputStream.Dispose();
@@ -74,7 +124,8 @@
         /// Save the barcode as an SVG file
         /// </summary>
         /// <param name="svgContent"></param>
-        public static void SaveStringAsFileSvg(string svgContent)
+        /// <param name="filePath"></param>
+        public static void SaveStringAsFileSvg(string svgContent, string filePath)
         {
             if (string.IsNullOrWhiteSpace(svgContent))
             {
@@ -84,14 +135,15 @@
             // Save the image file
             try
             {
-                using FileStream outputFileStream = new(Globals.cFileBarcodeSvg, FileMode.Create);
+                using FileStream outputFileStream = new(filePath, FileMode.Create);
                 byte[] svgBytes = System.Text.Encoding.UTF8.GetBytes(svgContent);
                 using MemoryStream inputStream = new(svgBytes);
                 inputStream.CopyTo(outputFileStream);
+                inputStream.Dispose();
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"SaveStringAsFileSvg: Failed to save SVG file: {ex.Message}", ex);
+                Debug.WriteLine($"ClassFileOperations.SaveStringAsFileSvg: Failed to save SVG file: {ex.Message}", ex);
             }
         }
 
@@ -109,55 +161,6 @@
                     Title = "Barcode Generator",
                     File = new ShareFile(cFile)
                 });
-            }
-        }
-
-        /// <summary>
-        /// Asynchronously saves a PNG image from the specified memory stream to the given file path.
-        /// </summary>
-        /// <remarks>The method sets the stream position to the beginning before saving and creates the
-        /// target directory if it does not exist.</remarks>
-        /// <param name="pngStream">The memory stream containing the PNG image data to save. Must not be null or empty.</param>
-        /// <param name="filePath">The full file path where the PNG image will be saved. Must be a valid, non-empty path.</param>
-        /// <returns>A task that represents the asynchronous save operation.</returns>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="pngStream"/> is null or empty, or if <paramref name="filePath"/> is null, empty,
-        /// or consists only of white-space characters.</exception>
-        /// <exception cref="IOException">Thrown if an I/O error occurs while saving the PNG file, such as issues with file access or directory
-        /// creation.</exception>
-        public static async Task SavePngFromStreamAsync(MemoryStream pngStream, string filePath)
-        {
-            if (pngStream == null || pngStream.Length == 0)
-            {
-                Debug.WriteLine("SavePngFromStreamAsync: PNG stream is null or empty.", nameof(pngStream));
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(filePath))
-            {
-                Debug.WriteLine("Invalid file path.", nameof(filePath));
-                return;
-            }
-
-            try
-            {
-                // Ensure the stream is at the beginning
-                pngStream.Position = 0;
-
-                // Create directory if it doesn't exist
-                string? directory = Path.GetDirectoryName(filePath);
-                if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
-                {
-                    Directory.CreateDirectory(directory);
-                }
-
-                // Save the file asynchronously
-                using FileStream fileStream = new(filePath, FileMode.Create, FileAccess.Write);
-                await pngStream.CopyToAsync(fileStream);
-            }
-            catch (Exception ex)
-            {
-                // Log or handle the error as needed
-                Debug.WriteLine($"SavePngFromStreamAsync: Failed to save PNG file: {ex.Message}", ex);
             }
         }
 
@@ -194,12 +197,12 @@
                 if (File.Exists(filePath))
                 {
                     File.Delete(filePath);
-                    Debug.WriteLine($"Deleted existing file at: {filePath}");
+                    Debug.WriteLine($"ClassFileOperations.DeleteFileIfExists: Deleted existing file at: {filePath}");
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"DeleteFileIfExists: Failed to delete file at {filePath}: {ex.Message}", ex);
+                Debug.WriteLine($"ClassFileOperations.DeleteFileIfExists: Failed to delete file at {filePath}: {ex.Message}", ex);
             }
         }
 

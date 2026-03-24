@@ -71,6 +71,7 @@
         public static string cBarcode_QR_CODE = string.Empty;                   // Quick Response Code Model 2
         public static string cBarcode_QR_CODE_MODEL_1 = string.Empty;           // QR Code Model 1
         public static string cBarcode_QR_CODE_MODEL_2 = string.Empty;           // QR Code Model 2
+        public static string cBarcode_ART_QR_CODE = string.Empty;               // Artistic QR Code
         public static string cBarcode_FRAME_QR_CODE = string.Empty;             // Frame QR Code
         public static string cBarcode_MICRO_QR_CODE = string.Empty;             // Micro QR Code symbol version -4 (M4) with error correction level L, M, or Q
         public static string cBarcode_RMQR = string.Empty;                      // Rectangular Micro QR Code
@@ -159,6 +160,7 @@
             cBarcode_QR_CODE = CodeLang.Barcode_QR_CODE_Text;               // Quick Response Code Model 2
             cBarcode_QR_CODE_MODEL_1 = CodeLang.Barcode_QR_CODE_MODEL_1_Text;  // QR Code Model 1
             cBarcode_QR_CODE_MODEL_2 = CodeLang.Barcode_QR_CODE_MODEL_2_Text;  // QR Code Model 2
+            cBarcode_ART_QR_CODE = CodeLang.Barcode_ART_QR_CODE_Text;       // Artistic QR Code
             cBarcode_FRAME_QR_CODE = CodeLang.Barcode_FRAME_QR_CODE_Text;   // Frame QR Code
             cBarcode_MICRO_QR_CODE = CodeLang.Barcode_MICRO_QR_CODE_Text;   // Micro QR Code symbol version -4 (M4) with error correction level L, M, or Q
             cBarcode_RMQR = CodeLang.Barcode_RMQR_Text;                     // Rectangular Micro QR Code
@@ -230,6 +232,7 @@
             barcodeSearch.Add("QR_CODE", CodeLang.Barcode_QR_CODE_Text);
             barcodeSearch.Add("QR_CODE_MODEL_1", CodeLang.Barcode_QR_CODE_MODEL_1_Text);
             barcodeSearch.Add("QR_CODE_MODEL_2", CodeLang.Barcode_QR_CODE_MODEL_2_Text);
+            barcodeSearch.Add("ART_QR_CODE", CodeLang.Barcode_ART_QR_CODE_Text);
             barcodeSearch.Add("FRAME_QR_CODE", CodeLang.Barcode_FRAME_QR_CODE_Text);
             barcodeSearch.Add("MICRO_QR_CODE", CodeLang.Barcode_MICRO_QR_CODE_Text);
             barcodeSearch.Add("RMQR", CodeLang.Barcode_RMQR_Text);
@@ -243,6 +246,7 @@
         /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator_ZX() => [.. new List<string>
             {
+                CodeLang.Barcode_ART_QR_CODE_Text,
                 CodeLang.Barcode_AZTEC_Text,
                 CodeLang.Barcode_CODABAR_Text,
                 CodeLang.Barcode_CODE_39_Text,
@@ -269,6 +273,7 @@
         /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator_ZX_Windows() => [.. new List<string>
             {
+                CodeLang.Barcode_ART_QR_CODE_Text,
                 CodeLang.Barcode_AZTEC_Text,
                 //CodeLang.Barcode_CODE_93_Text,
                 CodeLang.Barcode_DATA_MATRIX_Text,

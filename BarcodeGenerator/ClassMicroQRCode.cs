@@ -26,7 +26,7 @@ namespace BarcodeGenerator
         /// <param name="nVersion">The requested Micro QR code version (-1 to -4). Default is -4 (M4), which supports the largest data capacity. If the specified version cannot accommodate the text, a smaller version may be generated if possible.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains an ImageSource representing the
         /// generated Micro QR code, or null if the code could not be generated.</returns>
-        public static async Task<ImageSource?> GenerateMicroQrCode(string text, int nVersion = -4)
+        public static async Task<ImageSource?> GenerateMicroQrCodeAsync(string text, int nVersion = -4)
         {
             if (string.IsNullOrWhiteSpace(text))
             {
@@ -39,16 +39,16 @@ namespace BarcodeGenerator
                 using QRCodeData qrDataSvg = QRCodeGenerator.GenerateMicroQrCode(text, QRCodeGenerator.ECCLevel.L, requestedVersion: nVersion);
                 using SvgQRCode qrCodeSvg = new(qrDataSvg);
                 string qrCodeAsSvg = qrCodeSvg.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
-                
-                // Save a copy to disk
-                ClassFileOperations.SaveStringAsFileSvg(qrCodeAsSvg);
+
+                // Save the string 'qrCodeAsSvg' as a SVG file
+                ClassFileOperations.SaveStringAsFileSvg(qrCodeAsSvg, Globals.cFileBarcodeSvg);
 
                 // Generate the Micro QR code as PNG file with the specified version and error correction level
                 using QRCodeData qrDataPng = QRCodeGenerator.GenerateMicroQrCode(text, QRCodeGenerator.ECCLevel.L, requestedVersion: nVersion);
                 using PngByteQRCode qrCodePng = new(qrDataPng);
                 byte[] qrCodeImage = qrCodePng.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
 
-                // Save a copy to disk
+                // Save the byte array 'qrCodeImage' as a PNG file
                 await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(qrCodeImage), Globals.cFileBarcodePng);
 
                 // Return an ImageSource that opens a fresh stream when needed

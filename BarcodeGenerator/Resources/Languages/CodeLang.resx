@@ -689,4 +689,7 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
   <data name="NumberOfDigits_Text" xml:space="preserve">
     <value>Number of digits:</value>
   </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Artistic QR Code</value>
+  </data>
 </root>

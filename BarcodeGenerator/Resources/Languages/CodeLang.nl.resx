@@ -689,4 +689,7 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="NumberOfDigits_Text" xml:space="preserve">
     <value>Aantal cijfers:</value>
   </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Artistieke QR-code</value>
+  </data>
 </root>

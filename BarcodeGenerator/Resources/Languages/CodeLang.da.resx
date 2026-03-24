@@ -689,4 +689,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   <data name="NumberOfDigits_Text" xml:space="preserve">
     <value>Antal cifre:</value>
   </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Kunstnerisk QR-kode</value>
+  </data>
 </root>

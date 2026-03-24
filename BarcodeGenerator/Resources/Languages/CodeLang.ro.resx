@@ -689,4 +689,7 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="NumberOfDigits_Text" xml:space="preserve">
     <value>Număr de cifre:</value>
   </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Cod QR artistic</value>
+  </data>
 </root>
