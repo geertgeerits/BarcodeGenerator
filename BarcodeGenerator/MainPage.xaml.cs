@@ -1002,13 +1002,20 @@ namespace BarcodeGenerator
         {
             try
             {
-                // Share the QR code as an image file using the Share API
-                if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE)
+                // Share the QR code or the Micro QR code as an image file using the Share API
+                if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
-                    await ClassFileOperations.ShareMultipleFilesAsync();
+                    if (!await ClassFileOperations.ShareMultipleFilesAsync())
+                    {
+                        await Share.Default.RequestAsync(new ShareFileRequest
+                        {
+                            Title = "Barcode Generator",
+                            File = new ShareFile(Globals.cFileBarcodePng)
+                        });
+                    }
                 }
-                // Share the QR code with the image or the Micro QR code as an image file using the Share API
-                else if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
+                // Share the QR code with the image as an image file using the Share API
+                else if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     await Share.Default.RequestAsync(new ShareFileRequest
                     {
@@ -1016,7 +1023,7 @@ namespace BarcodeGenerator
                         File = new ShareFile(Globals.cFileBarcodePng)
                     });
                 }
-                // Share the barcode (without an image) by capturing the barcode view and saving it as a file using the Share API
+                // Share the barcode by capturing the barcode view and saving it as a file using the Share API
                 else if (Screenshot.Default.IsCaptureSupported)
                 {
                     // Capture the barcode view as a screenshot
@@ -1036,7 +1043,7 @@ namespace BarcodeGenerator
                         Stream stream = await screen!.OpenReadAsync();
 
                         // Save the barcode as a file
-                        ClassFileOperations.SaveStreamAsFile(stream);
+                        ClassFileOperations.SaveStreamAsFilePng(stream);
 
                         // Open the share interface to share the file
                         await ClassFileOperations.OpenShareInterfaceAsync(Globals.cFileBarcodePng);

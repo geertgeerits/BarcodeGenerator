@@ -49,15 +49,50 @@
         /// Save the barcode as an image file
         /// </summary>
         /// <param name="inputStream"></param>
-        public static async void SaveStreamAsFile(Stream inputStream)
+        public static void SaveStreamAsFilePng(Stream inputStream)
         {
-            // Save the image file
-            using (FileStream outputFileStream = new(Globals.cFileBarcodePng, FileMode.Create))
+            if (inputStream == null || inputStream.Length == 0)
             {
+                return;
+            }
+            
+            // Save the image file
+            try
+            {
+                using FileStream outputFileStream = new(Globals.cFileBarcodePng, FileMode.Create);
                 inputStream.CopyTo(outputFileStream);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"SaveStreamAsFile: Failed to save image file: {ex.Message}", ex);
             }
 
             inputStream.Dispose();
+        }
+
+        /// <summary>
+        /// Save the barcode as an SVG file
+        /// </summary>
+        /// <param name="svgContent"></param>
+        public static void SaveStringAsFileSvg(string svgContent)
+        {
+            if (string.IsNullOrWhiteSpace(svgContent))
+            {
+                return;
+            }
+
+            // Save the image file
+            try
+            {
+                using FileStream outputFileStream = new(Globals.cFileBarcodeSvg, FileMode.Create);
+                byte[] svgBytes = System.Text.Encoding.UTF8.GetBytes(svgContent);
+                using MemoryStream inputStream = new(svgBytes);
+                inputStream.CopyTo(outputFileStream);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"SaveStringAsFileSvg: Failed to save SVG file: {ex.Message}", ex);
+            }
         }
 
         /// <summary>
@@ -131,12 +166,12 @@
         /// This method checks for the existence of the specified files before attempting to share them
         /// </summary>
         /// <returns></returns>
-        public static async Task ShareMultipleFilesAsync()
+        public static async Task<bool> ShareMultipleFilesAsync()
         {
             if (!File.Exists(Globals.cFileBarcodePng) || !File.Exists(Globals.cFileBarcodeSvg))
             {
                 Debug.WriteLine("ClassFileOperations.ShareMultipleFilesAsync: One or more files to share do not exist.");
-                return;
+                return false;
             }
 
             await Share.Default.RequestAsync(new ShareMultipleFilesRequest
@@ -144,6 +179,8 @@
                 Title = "Barcode Generator",
                 Files = [new(Globals.cFileBarcodePng), new ShareFile(Globals.cFileBarcodeSvg)]
             });
+            
+            return true;
         }
 
         /// <summary>

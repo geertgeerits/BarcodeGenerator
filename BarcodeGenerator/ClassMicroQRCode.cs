@@ -11,7 +11,6 @@ https://www.qrcode.com/en/codes/microqr.html
 */
 
 using QRCoder;
-//using System.Runtime.Versioning;
 
 namespace BarcodeGenerator
 {
@@ -21,15 +20,12 @@ namespace BarcodeGenerator
         /// Generates a Micro QR code image from the specified text asynchronously.
         /// </summary>
         /// <remarks>The generated Micro QR code uses a fixed error correction level and version. The
-        /// returned ImageSource can be used directly in UI elements that support image sources. The generated PNG image
+        /// returned ImageSource can be used directly in UI elements that support image sources. The generated PNG and SVG image
         /// is also saved to disk for sharing or further processing.</remarks>
         /// <param name="text">The text to encode in the Micro QR code. Cannot be null or empty.</param>
         /// <param name="nVersion">The requested Micro QR code version (-1 to -4). Default is -4 (M4), which supports the largest data capacity. If the specified version cannot accommodate the text, a smaller version may be generated if possible.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains an ImageSource representing the
         /// generated Micro QR code, or null if the code could not be generated.</returns>
-        //[SupportedOSPlatform("ios13.0")]
-        //[SupportedOSPlatform("maccatalyst13.0")]
-        //[SupportedOSPlatform("windows10.0.17763.0")]
         public static async Task<ImageSource?> GenerateMicroQrCode(string text, int nVersion = -4)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -39,53 +35,24 @@ namespace BarcodeGenerator
 
             try
             {
-                // Generate the Micro QR code with the specified version and error correction level
-                using QRCodeGenerator generator = new();
-                using QRCodeData qrCodeData = QRCodeGenerator.GenerateMicroQrCode(text, QRCodeGenerator.ECCLevel.L, requestedVersion: nVersion);
-                using PngByteQRCode qrCode = new(qrCodeData);
-                byte[] qrCodeImage = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
+                // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
+                using QRCodeData qrDataSvg = QRCodeGenerator.GenerateMicroQrCode(text, QRCodeGenerator.ECCLevel.L, requestedVersion: nVersion);
+                using SvgQRCode qrCodeSvg = new(qrDataSvg);
+                string qrCodeAsSvg = qrCodeSvg.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
+                
+                // Save a copy to disk
+                ClassFileOperations.SaveStringAsFileSvg(qrCodeAsSvg);
 
-                // Save a copy to disk (await the async save)
+                // Generate the Micro QR code as PNG file with the specified version and error correction level
+                using QRCodeData qrDataPng = QRCodeGenerator.GenerateMicroQrCode(text, QRCodeGenerator.ECCLevel.L, requestedVersion: nVersion);
+                using PngByteQRCode qrCodePng = new(qrDataPng);
+                byte[] qrCodeImage = qrCodePng.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
+
+                // Save a copy to disk
                 await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(qrCodeImage), Globals.cFileBarcodePng);
 
                 // Return an ImageSource that opens a fresh stream when needed
                 return ImageSource.FromStream(() => new MemoryStream(qrCodeImage));
-
-            }
-            catch (Exception ex)
-            {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.Barcode_MICRO_QR_CODE_Text, ex.Message, CodeLang.ButtonClose_Text);
-                return null;
-            }
-        }
-
-
-        public static async Task<ImageSource?> GenerateMicroQrCodeSvg(string text, int nVersion = -4)
-        {
-            if (string.IsNullOrWhiteSpace(text))
-            {
-                return null;
-            }
-
-            try
-            {
-                // Generate the Micro QR code with the specified version and error correction level
-                using QRCodeGenerator qrGenerator = new();
-                using QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.L);
-                using SvgQRCode qrCode = new(qrCodeData);
-                string qrCodeAsSvg = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
-
-                // Save a copy to disk (await the async save)
-                //await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(qrCodeAsSvg), Globals.cFileBarcodeSvg);
-
-                // Return an ImageSource that opens a fresh stream when needed
-                //return ImageSource.FromStream(() => new MemoryStream(System.Text.Encoding.UTF8.GetBytes(qrCodeAsSvg)));
-
-                using FileStream outputStream = File.OpenWrite(Globals.cFileBarcodeSvg);
-                using StreamWriter writer = new StreamWriter(outputStream);
-                await writer.WriteAsync(qrCodeAsSvg);
-                
-                return null;
             }
             catch (Exception ex)
             {

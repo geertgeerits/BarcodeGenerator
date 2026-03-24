@@ -61,9 +61,7 @@ namespace BarcodeGenerator
                     using SvgQRCode qrCode = new(qrDataSvg);
                     string qrCodeAsSvg = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
 
-                    using FileStream outputStream = File.OpenWrite(Globals.cFileBarcodeSvg);
-                    using StreamWriter writer = new(outputStream);
-                    await writer.WriteAsync(qrCodeAsSvg);
+                    ClassFileOperations.SaveStringAsFileSvg(qrCodeAsSvg);
                 }
             }
             catch (Exception ex)
