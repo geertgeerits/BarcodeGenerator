@@ -532,9 +532,9 @@
                       edtTextToCode    Numeric      Alpha    Binary     Kanji/Kana
                           MaxLength               Numeric    8-bits     JIS X 0208
                       -------------    -------    -------    -------    ----------
-   Codabar                       43         43         43
+   Codabar                       20         20         20
 
-   Code 39                       48         48         48
+   Code 39                       43         43         43
    Code 39 Mod 10
    Code 39 Mod 43
    Code 39 Full ASCII
@@ -565,7 +565,7 @@
 
    ISBN
    
-   ITF                           30          30
+   ITF                           14          14
    ITF 14               
    ITF Checksum
 
@@ -609,6 +609,7 @@
    QR Code Model 2             3993       3993       2420       1663      1024             40       Q (quartile)
    QR Code Model 2                        3057       1852       1273       784             40       H (high)
    
+   Art QR Code                 3993       3993       2420       1663      1024             40       Q (quartile)   
    QR Code with Image          3057       3057       1852       1273       784             40       H (high)
    
    Frame QR
