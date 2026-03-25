@@ -209,10 +209,10 @@ namespace BarcodeGenerator
             }
         }
 
-        // Minor helper to obtain SKPixmap from SKBitmap (unused but kept for future adjustments)
-        private static SKPixmap SKBitmapToPixmap(SKBitmap bmp)
-        {
-            return new SKPixmap(new SKImageInfo(bmp.Width, bmp.Height, bmp.ColorType, bmp.AlphaType), bmp.GetPixels());
-        }
+        //// Minor helper to obtain SKPixmap from SKBitmap (unused but kept for future adjustments)
+        //private static SKPixmap SKBitmapToPixmap(SKBitmap bmp)
+        //{
+        //    return new SKPixmap(new SKImageInfo(bmp.Width, bmp.Height, bmp.ColorType, bmp.AlphaType), bmp.GetPixels());
+        //}
     }
 }

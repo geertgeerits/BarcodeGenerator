@@ -4,6 +4,11 @@ Only supported in .NET 6.0+ due to System.Drawing.Common dependency, which is no
 and earlier on non-Windows platforms.
 .NET 6.0+ supports System.Drawing.Common on all platforms, but it is still recommended to use it only on Windows
 for production applications due to potential performance and reliability issues on other platforms.
+The QRCode and ArtQRCode renderers depend on System.Drawing.Common, which Microsoft has removed cross-platform support
+for in .NET 6+. You may encounter one of the following build or runtime errors:
+- CA1416: This call site is reachable on all platforms. 'QRCode.QRCode(QRCodeData)' is only supported on: 'windows'
+- System.TypeInitializationException: The type initializer for 'Gdip' threw an exception.
+- System.PlatformNotSupportedException: System.Drawing.Common is not supported on this platform.
 */
 
 using QRCoder;

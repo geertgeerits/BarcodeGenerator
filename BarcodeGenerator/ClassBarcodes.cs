@@ -622,5 +622,7 @@
    SQRC Secure QR Code
 
    https://www.qrcode.com/en/about/version.html
+   https://camcode.com/blog/guide-to-barcode-types-standards/
+   https://www.bartendersoftware.com/
    _____________________________________________________________________________________________________________ */
 
