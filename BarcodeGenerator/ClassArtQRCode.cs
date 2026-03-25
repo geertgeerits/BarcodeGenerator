@@ -11,6 +11,7 @@ for in .NET 6+. You may encounter one of the following build or runtime errors:
 - System.PlatformNotSupportedException: System.Drawing.Common is not supported on this platform.
 */
 
+using CommunityToolkit.Maui.Extensions;
 using QRCoder;
 using System.Drawing;
 using System.Runtime.Versioning;
@@ -30,6 +31,22 @@ namespace BarcodeGenerator
 
             try
             {
+                // Show a modal popup to inform the user about the recommended image size before opening the file picker
+                Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+                if (currentPage != null)
+                {
+                    Globals.bIsPopupMessage = true;
+                    //await currentPage.ShowPopupAsync(new PopupMessage(5, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize} {CodeLang.Pixels_Text}"));
+                    await currentPage.ShowPopupAsync(new PopupMessage(5, $""));
+
+                    // Check if the popup was canceled by the user before proceeding to open the file picker
+                    if (Globals.bPopupCanceled)
+                    {
+                        Globals.bPopupCanceled = false;
+                        return null;
+                    }
+                }
+
                 // Open the file picker to select an image file for the background of the Art QR code
                 FileResult? cFile = await ClassFileOperations.PickImage();
 
