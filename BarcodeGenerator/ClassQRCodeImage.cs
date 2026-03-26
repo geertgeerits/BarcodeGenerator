@@ -42,7 +42,7 @@ namespace BarcodeGenerator
 
             // Generate QR code data using QRCoder with the appropriate error correction level based on whether an image will be included
             using QRCodeGenerator qrGenerator = new();
-            QRCodeData qrData;
+            QRCodeData qrDataPng;
             QRCodeData qrDataSvg;
             string cErrorTitle = string.Empty;
 
@@ -53,13 +53,13 @@ namespace BarcodeGenerator
                 if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     cErrorTitle = CodeLang.Barcode_QR_CODE_IMAGE_Text;
-                    qrData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
+                    qrDataPng = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
                 }
                 // QR codes without image, a lower error correction level can be used to reduce the overall size of the QR code
                 else
                 {
                     cErrorTitle = CodeLang.Barcode_QR_CODE_Text;
-                    qrData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+                    qrDataPng = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
 
                     // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
                     qrDataSvg = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
@@ -75,7 +75,7 @@ namespace BarcodeGenerator
                 return null;
             }
 
-            List<BitArray> modules = qrData.ModuleMatrix;
+            List<BitArray> modules = qrDataPng.ModuleMatrix;
             int moduleCount = modules.Count;
 
             // For simplicity, you can also use a fixed value like 20, but be aware that very large module counts can lead to very large bitmaps
