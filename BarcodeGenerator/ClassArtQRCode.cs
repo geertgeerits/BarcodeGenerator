@@ -38,10 +38,10 @@ namespace BarcodeGenerator
                 using ArtQRCode qrCode = new(qrCodeData);
 
                 using Bitmap qrCodeImageTemp = qrCode.GetGraphic(pixelsPerModule:10,
-                                               darkColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorFg)),
-                                               lightColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorBg)),
-                                               backgroundColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorBg)),
-                                               drawQuietZones: false);
+                                                   darkColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorFg)),
+                                                   lightColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorBg)),
+                                                   backgroundColor: System.Drawing.Color.FromArgb(ParseHexColor(Globals.cCodeColorBg)),
+                                                   drawQuietZones: false);
 
                 // Retrieve the width and height of the generated Art QR code
                 int qrCodeWidth = qrCodeImageTemp.Width;
