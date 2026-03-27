@@ -19,6 +19,7 @@
  *                NuGet Package: Sentry.Maui - https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun, Raffael Herrmann, Shane Krueger, Copilot */
 
+using System.Globalization;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator
@@ -380,7 +381,7 @@ namespace BarcodeGenerator
                 // Properties 2D barcodes
                 else if (selectedName == ClassBarcodes.cBarcode_AZTEC)
                 {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 1900";
+                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1900.ToString("N0", CultureInfo.CurrentCulture)}";
                     edtTextToCode.MaxLength = 1900;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = nHeightBarcode2D;
@@ -391,7 +392,7 @@ namespace BarcodeGenerator
                 
                 else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
                 {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 1500";
+                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1500.ToString("N0", CultureInfo.CurrentCulture)}";
                     edtTextToCode.MaxLength = 1500;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = nHeightBarcode2D;
@@ -402,7 +403,7 @@ namespace BarcodeGenerator
                 
                 else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
                 {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 1100";
+                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1100.ToString("N0", CultureInfo.CurrentCulture)}";
                     edtTextToCode.MaxLength = 1100;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.HeightRequest = nHeightBarcode2D;
@@ -416,7 +417,9 @@ namespace BarcodeGenerator
                 
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)        // Model 2 - ECCLevel.Quartile
                 {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 3993, 2420, 1663, 1024)}";
+                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
+                        3993.ToString("N0", CultureInfo.CurrentCulture), 2420.ToString("N0", CultureInfo.CurrentCulture),
+                        1663.ToString("N0", CultureInfo.CurrentCulture), 1024.ToString("N0", CultureInfo.CurrentCulture))}";
                     edtTextToCode.MaxLength = 3993;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
@@ -429,7 +432,9 @@ namespace BarcodeGenerator
                 
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)  // Model 2 - ECCLevel.High
                 {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 3057, 1852, 1273, 784)}";
+                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
+                        3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
+                        1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
                     edtTextToCode.MaxLength = 3057;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
@@ -442,7 +447,9 @@ namespace BarcodeGenerator
                 
                 else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)  // Model 2 - ECCLevel.High
                 {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 3057, 1852, 1273, 784)}";
+                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
+                        3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
+                        1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
                     edtTextToCode.MaxLength = 3057;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
