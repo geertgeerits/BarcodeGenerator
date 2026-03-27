@@ -33,6 +33,7 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
         private const string cAllowedCharactersCodabar = "0123456789-$:/.+ABCD";
         private static string cBarcodeCaption = string.Empty;
+        private static string cBarcodeSelectedName = string.Empty;
         //private bool _suppressTextChanged;
 
         public MainPage()
@@ -112,6 +113,7 @@ namespace BarcodeGenerator
             }
 
             // Set the text language
+            //cBarcodeSelectedName = ClassBarcodes.cBarcodeGeneratorName;
             SetTextLanguage();
 
             // Select the name and index in the barcode list and save the name
@@ -241,6 +243,12 @@ namespace BarcodeGenerator
 
                 string? selectedName = item is not null
                     ? picker.ItemsSource[selectedIndex] as string : string.Empty;
+
+                if (selectedName is not null)
+                {
+                    cBarcodeSelectedName = selectedName;
+                    //SetBarcodePlaceholderText();
+                }
 
                 ClassQRCodeImage.cQRCodeType = string.Empty;
 
@@ -473,6 +481,98 @@ namespace BarcodeGenerator
                 }
 
                 edtTextToCode.Focus();
+            }
+        }
+
+        /// <summary>
+        /// Set the placeholder text for the editor based on the selected format code
+        /// </summary>
+        /// <param name="selectedName"></param>
+        private void SetBarcodePlaceholderText()
+        {
+            // Placeholder text for 1D barcodes
+            if (cBarcodeSelectedName == ClassBarcodes.cBarcode_CODABAR)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 20\n{CodeLang.AllowedChar_Text} {cAllowedCharactersCodabar}";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_CODE_39)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 43\n{CodeLang.AllowedChar_Text} {cAllowedCharactersCode39_93}";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_CODE_93)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 48\n{CodeLang.AllowedChar_Text} {cAllowedCharactersCode39_93}";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_CODE_128)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 48";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_EAN_8)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_EAN_13)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 13";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_ITF)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 2-14";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_MSI)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 1-255";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_PLESSEY)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 16\n{CodeLang.AllowedChar_Text} {cAllowedCharactersHex}";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_UPC_A)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 12";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_UPC_E)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
+            }
+            // Placeholder text for 2D barcodes
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_AZTEC)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1900.ToString("N0", CultureInfo.CurrentCulture)}";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1500.ToString("N0", CultureInfo.CurrentCulture)}";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_PDF_417)
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1100.ToString("N0", CultureInfo.CurrentCulture)}";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_QR_CODE)        // Model 2 - ECCLevel.Quartile
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
+                    3993.ToString("N0", CultureInfo.CurrentCulture), 2420.ToString("N0", CultureInfo.CurrentCulture),
+                    1663.ToString("N0", CultureInfo.CurrentCulture), 1024.ToString("N0", CultureInfo.CurrentCulture))}";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)  // Model 2 - ECCLevel.High
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
+                    3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
+                    1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_ART_QR_CODE)  // Model 2 - ECCLevel.High
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
+                    3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
+                    1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
+            }
+            else if (cBarcodeSelectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
+            }
+            else
+            {
+                edtTextToCode.Placeholder = string.Empty;
             }
         }
 
@@ -1116,6 +1216,9 @@ namespace BarcodeGenerator
             {
                 btnShare.Text = CodeLang.ButtonShare_Text;
             }
+
+            // Set the placeholder text for the editor based on the selected barcode format
+            //SetBarcodePlaceholderText();
         }
 
         /// <summary>

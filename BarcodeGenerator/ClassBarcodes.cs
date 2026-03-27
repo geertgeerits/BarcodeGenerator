@@ -2,7 +2,7 @@
 {
     internal class ClassBarcodes
     {
-        // Global readonly variables for 1D barcode formats
+        // Global variables for 1D barcode formats
         public static string cBarcode_CODABAR = string.Empty;
 
         public static string cBarcode_CODE_39 = string.Empty;
@@ -55,7 +55,7 @@
         public static string cBarcode_UPC_E = string.Empty;
         public static string cBarcode_UPC_EAN_EXTENSION = string.Empty;
 
-        // Global readonly variables for 2D barcode formats
+        // Global variables for 2D barcode formats
         public static string cBarcode_AZTEC = string.Empty;
         public static string cBarcode_AZTEC_CODE = string.Empty;
         public static string cBarcode_AZTEC_RUNE = string.Empty;
@@ -246,23 +246,26 @@
         /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator_ZX() => [.. new List<string>
             {
-                CodeLang.Barcode_AZTEC_Text,
+                // https://github.com/redth/ZXing.Net.Maui
+                // 1D barcode formats    
                 CodeLang.Barcode_CODABAR_Text,
                 CodeLang.Barcode_CODE_39_Text,
                 CodeLang.Barcode_CODE_93_Text,
                 CodeLang.Barcode_CODE_128_Text,
-                CodeLang.Barcode_DATA_MATRIX_Text,
                 CodeLang.Barcode_EAN_8_Text,
                 CodeLang.Barcode_EAN_13_Text,
                 CodeLang.Barcode_ITF_Text,
-                CodeLang.Barcode_MICRO_QR_CODE_Text,
                 CodeLang.Barcode_MSI_Text,
-                CodeLang.Barcode_PDF_417_Text,
                 CodeLang.Barcode_PLESSEY_Text,
+                CodeLang.Barcode_UPC_A_Text,
+                CodeLang.Barcode_UPC_E_Text,
+                // 2D barcode formats
+                CodeLang.Barcode_AZTEC_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_PDF_417_Text,
                 CodeLang.Barcode_QR_CODE_Text,
                 CodeLang.Barcode_QR_CODE_IMAGE_Text,
-                CodeLang.Barcode_UPC_A_Text,
-                CodeLang.Barcode_UPC_E_Text
+                CodeLang.Barcode_MICRO_QR_CODE_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
@@ -272,15 +275,18 @@
         /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator_ZX_Windows() => [.. new List<string>
             {
-                CodeLang.Barcode_ART_QR_CODE_Text,
-                CodeLang.Barcode_AZTEC_Text,
+                // https://github.com/redth/ZXing.Net.Maui    
+                // 1D barcode formats
                 //CodeLang.Barcode_CODE_93_Text,
+                //CodeLang.Barcode_UPC_E_Text,
+                // 2D barcode formats
+                CodeLang.Barcode_AZTEC_Text,
                 CodeLang.Barcode_DATA_MATRIX_Text,
-                CodeLang.Barcode_MICRO_QR_CODE_Text,
                 CodeLang.Barcode_PDF_417_Text,
                 CodeLang.Barcode_QR_CODE_Text,
-                CodeLang.Barcode_QR_CODE_IMAGE_Text
-                //CodeLang.Barcode_UPC_E_Text
+                CodeLang.Barcode_QR_CODE_IMAGE_Text,
+                CodeLang.Barcode_ART_QR_CODE_Text,
+                CodeLang.Barcode_MICRO_QR_CODE_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
@@ -290,28 +296,31 @@
         /// <returns></returns>
         public static List<string> GetFormatCodeListScanner_ZX() => [.. new List<string>
             {
+                // https://github.com/redth/ZXing.Net.Maui
                 CodeLang.Barcode_AllCodes_Text,
-                CodeLang.Barcode_AZTEC_Text,
+                // 1D barcode formats
                 CodeLang.Barcode_CODABAR_Text,
                 CodeLang.Barcode_CODE_39_Text,
                 CodeLang.Barcode_CODE_93_Text,
                 CodeLang.Barcode_CODE_128_Text,
-                CodeLang.Barcode_DATA_MATRIX_Text,
                 CodeLang.Barcode_EAN_8_Text,
                 CodeLang.Barcode_EAN_13_Text,
                 CodeLang.Barcode_IMB_Text,
                 CodeLang.Barcode_ITF_Text,
-                CodeLang.Barcode_MAXICODE_Text,
                 CodeLang.Barcode_MSI_Text,
-                CodeLang.Barcode_PDF_417_Text,
                 CodeLang.Barcode_PHARMACODE_Text,
                 CodeLang.Barcode_PLESSEY_Text,
-                CodeLang.Barcode_QR_CODE_Text,
                 CodeLang.Barcode_RSS_14_Text,
                 CodeLang.Barcode_RSS_EXPANDED_Text,
                 CodeLang.Barcode_UPC_A_Text,
                 CodeLang.Barcode_UPC_E_Text,
-                CodeLang.Barcode_UPC_EAN_EXTENSION_Text
+                CodeLang.Barcode_UPC_EAN_EXTENSION_Text,
+                // 2D barcode formats
+                CodeLang.Barcode_AZTEC_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_MAXICODE_Text,
+                CodeLang.Barcode_PDF_417_Text,
+                CodeLang.Barcode_QR_CODE_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
@@ -322,20 +331,23 @@
         /// <returns></returns>
         public static List<string> GetFormatCodeListScanner_NT_Android() => [.. new List<string>
             {
+                // https://github.com/afriscic/BarcodeScanning.Native.Maui
                 CodeLang.Barcode_AllCodes_Text,
-                CodeLang.Barcode_AZTEC_Text,
+                // 1D barcode formats                
                 CodeLang.Barcode_CODABAR_Text,
                 CodeLang.Barcode_CODE_39_Text,
                 CodeLang.Barcode_CODE_93_Text,
                 CodeLang.Barcode_CODE_128_Text,
-                CodeLang.Barcode_DATA_MATRIX_Text,
                 CodeLang.Barcode_EAN_8_Text,
                 CodeLang.Barcode_EAN_13_Text,
                 CodeLang.Barcode_ITF_Text,
-                CodeLang.Barcode_PDF_417_Text,
-                CodeLang.Barcode_QR_CODE_Text,
                 CodeLang.Barcode_UPC_A_Text,
-                CodeLang.Barcode_UPC_E_Text
+                CodeLang.Barcode_UPC_E_Text,
+                // 2D barcode formats
+                CodeLang.Barcode_AZTEC_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_PDF_417_Text,
+                CodeLang.Barcode_QR_CODE_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
@@ -346,23 +358,26 @@
         /// <returns></returns>
         public static List<string> GetFormatCodeListScanner_NT_IOS() => [.. new List<string>
             {
+                // https://github.com/afriscic/BarcodeScanning.Native.Maui    
                 CodeLang.Barcode_AllCodes_Text,
-                CodeLang.Barcode_AZTEC_Text,
+                // 1D barcode formats
                 CodeLang.Barcode_CODABAR_Text,
                 CodeLang.Barcode_CODE_39_Text,
                 CodeLang.Barcode_CODE_93_Text,
                 CodeLang.Barcode_CODE_128_Text,
-                CodeLang.Barcode_DATA_MATRIX_Text,
                 CodeLang.Barcode_EAN_8_Text,
                 CodeLang.Barcode_EAN_13_Text,
                 CodeLang.Barcode_GS1_DATABAR_Text,
                 CodeLang.Barcode_ITF_Text,
-                CodeLang.Barcode_MICRO_PDF_417_Text,
-                CodeLang.Barcode_MICRO_QR_CODE_Text,
-                CodeLang.Barcode_PDF_417_Text,
-                CodeLang.Barcode_QR_CODE_Text,
                 CodeLang.Barcode_UPC_A_Text,
-                CodeLang.Barcode_UPC_E_Text
+                CodeLang.Barcode_UPC_E_Text,
+                // 2D barcode formats
+                CodeLang.Barcode_AZTEC_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_PDF_417_Text,
+                CodeLang.Barcode_MICRO_PDF_417_Text,
+                CodeLang.Barcode_QR_CODE_Text,
+                CodeLang.Barcode_MICRO_QR_CODE_Text,
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
@@ -372,16 +387,13 @@
         /// <returns></returns>
         public static List<string> GetFormatCodeListScanner_NT_Windows() => [.. new List<string>
             {
+                // https://github.com/afriscic/BarcodeScanning.Native.Maui    
                 CodeLang.Barcode_AllCodes_Text,
-                CodeLang.Barcode_AZTEC_Text,
-                CodeLang.Barcode_AZTEC_CODE_Text,
-                CodeLang.Barcode_AZTEC_RUNE_Text,
+                // 1D barcode formats
                 CodeLang.Barcode_CODABAR_Text,
                 CodeLang.Barcode_CODE_39_Text,
                 CodeLang.Barcode_CODE_93_Text,
                 CodeLang.Barcode_CODE_128_Text,
-                CodeLang.Barcode_COMPACT_PDF_417_Text,
-                CodeLang.Barcode_DATA_MATRIX_Text,
                 CodeLang.Barcode_DX_FILM_EDGE_Text,
                 CodeLang.Barcode_EAN_2_Text,
                 CodeLang.Barcode_EAN_5_Text,
@@ -398,17 +410,23 @@
                 CodeLang.Barcode_ISBN_Text,
                 CodeLang.Barcode_ITF_Text,
                 CodeLang.Barcode_ITF_14_Text,
-                CodeLang.Barcode_MAXICODE_Text,
-                CodeLang.Barcode_MICRO_PDF_417_Text,
-                CodeLang.Barcode_MICRO_QR_CODE_Text,
-                CodeLang.Barcode_PDF_417_Text,
                 CodeLang.Barcode_PZN_Text,
+                CodeLang.Barcode_UPC_A_Text,
+                CodeLang.Barcode_UPC_E_Text,
+                // 2D barcode formats
+                CodeLang.Barcode_AZTEC_Text,
+                CodeLang.Barcode_AZTEC_CODE_Text,
+                CodeLang.Barcode_AZTEC_RUNE_Text,
+                CodeLang.Barcode_DATA_MATRIX_Text,
+                CodeLang.Barcode_MAXICODE_Text,
+                CodeLang.Barcode_PDF_417_Text,
+                CodeLang.Barcode_COMPACT_PDF_417_Text,
+                CodeLang.Barcode_MICRO_PDF_417_Text,
                 CodeLang.Barcode_QR_CODE_Text,
                 CodeLang.Barcode_QR_CODE_MODEL_1_Text,
                 CodeLang.Barcode_QR_CODE_MODEL_2_Text,
-                CodeLang.Barcode_RMQR_Text,
-                CodeLang.Barcode_UPC_A_Text,
-                CodeLang.Barcode_UPC_E_Text
+                CodeLang.Barcode_MICRO_QR_CODE_Text,
+                CodeLang.Barcode_RMQR_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
@@ -626,4 +644,3 @@
    https://camcode.com/blog/guide-to-barcode-types-standards/
    https://www.bartendersoftware.com/
    _____________________________________________________________________________________________________________ */
-
