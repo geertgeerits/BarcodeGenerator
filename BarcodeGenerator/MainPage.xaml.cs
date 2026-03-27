@@ -19,7 +19,6 @@
  *                NuGet Package: Sentry.Maui - https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun, Raffael Herrmann, Shane Krueger, Copilot */
 
-using System.Globalization;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator
