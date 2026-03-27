@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-03-26 (YYYY-MM-DD)
+ * Date ........: 2026-03-27 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -263,17 +263,8 @@ namespace BarcodeGenerator
                 btnShare.Text = CodeLang.ButtonShare_Text;
                 btnShare.IsEnabled = false;
 
-                if (selectedName == ClassBarcodes.cBarcode_AZTEC)
-                {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 1900";
-                    edtTextToCode.MaxLength = 1900;
-                    edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.HeightRequest = nHeightBarcode2D;
-                    bgvBarcode.WidthRequest = nWidthBarcode2D;
-                    bgvBarcode.BarcodeMargin = 2;
-                    bgvBarcode.Format = BarcodeFormat.Aztec;
-                }
-                else if (selectedName == ClassBarcodes.cBarcode_CODABAR)
+                // Properties 1D barcodes
+                if (selectedName == ClassBarcodes.cBarcode_CODABAR)
                 {
                     //cAllowedCharacters = cAllowedCharactersCodabar;
                     edtTextToCode.TextTransform = TextTransform.Uppercase;
@@ -283,6 +274,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Codabar;
                 }
+                
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
                 {
                     //cAllowedCharacters = cAllowedCharactersCode39_93;
@@ -293,6 +285,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Code39;
                 }
+                
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_93)
                 {
                     //cAllowedCharacters = cAllowedCharactersCode39_93;
@@ -303,6 +296,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Code93;
                 }
+                
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_128)
                 {
                     edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 48";
@@ -311,6 +305,90 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 20;
                     bgvBarcode.Format = BarcodeFormat.Code128;
                 }
+                
+                else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
+                {
+                    //cAllowedCharacters = cAllowedCharactersDecimal;
+                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
+                    edtTextToCode.MaxLength = 8;
+                    edtTextToCode.Keyboard = Keyboard.Numeric;
+                    bgvBarcode.BarcodeMargin = 4;
+                    bgvBarcode.Format = BarcodeFormat.Ean8;
+                }
+                
+                else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
+                {
+                    //cAllowedCharacters = cAllowedCharactersDecimal;
+                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 13";
+                    edtTextToCode.MaxLength = 13;
+                    edtTextToCode.Keyboard = Keyboard.Numeric;
+                    bgvBarcode.BarcodeMargin = 4;
+                    bgvBarcode.Format = BarcodeFormat.Ean13;
+                }
+                
+                else if (selectedName == ClassBarcodes.cBarcode_ITF)
+                {
+                    //cAllowedCharacters = cAllowedCharactersDecimal;
+                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 2-14";
+                    edtTextToCode.MaxLength = 14;
+                    edtTextToCode.Keyboard = Keyboard.Numeric;
+                    bgvBarcode.BarcodeMargin = 8;
+                    bgvBarcode.Format = BarcodeFormat.Itf;
+                }
+                
+                else if (selectedName == ClassBarcodes.cBarcode_MSI)
+                {
+                    //cAllowedCharacters = cAllowedCharactersDecimal;
+                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 1-255";
+                    edtTextToCode.MaxLength = 255;
+                    edtTextToCode.Keyboard = Keyboard.Numeric;
+                    bgvBarcode.BarcodeMargin = 10;
+                    bgvBarcode.Format = BarcodeFormat.Msi;
+                }
+                
+                else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
+                {
+                    //cAllowedCharacters = cAllowedCharactersHex;
+                    edtTextToCode.TextTransform = TextTransform.Uppercase;
+                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 16\n{CodeLang.AllowedChar_Text} {cAllowedCharactersHex}";
+                    edtTextToCode.MaxLength = 16;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    bgvBarcode.BarcodeMargin = 4;
+                    bgvBarcode.Format = BarcodeFormat.Plessey;
+                }
+                
+                else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
+                {
+                    //cAllowedCharacters = cAllowedCharactersDecimal;
+                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 12";
+                    edtTextToCode.MaxLength = 12;
+                    edtTextToCode.Keyboard = Keyboard.Numeric;
+                    bgvBarcode.BarcodeMargin = 0;
+                    bgvBarcode.Format = BarcodeFormat.UpcA;
+                }
+                
+                else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
+                {
+                    //cAllowedCharacters = cAllowedCharactersDecimal;
+                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
+                    edtTextToCode.MaxLength = 8;
+                    edtTextToCode.Keyboard = Keyboard.Numeric;
+                    bgvBarcode.BarcodeMargin = 8;
+                    bgvBarcode.Format = BarcodeFormat.UpcE;
+                }
+
+                // Properties 2D barcodes
+                else if (selectedName == ClassBarcodes.cBarcode_AZTEC)
+                {
+                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 1900";
+                    edtTextToCode.MaxLength = 1900;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    bgvBarcode.HeightRequest = nHeightBarcode2D;
+                    bgvBarcode.WidthRequest = nWidthBarcode2D;
+                    bgvBarcode.BarcodeMargin = 2;
+                    bgvBarcode.Format = BarcodeFormat.Aztec;
+                }
+                
                 else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
                 {
                     edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 1500";
@@ -321,42 +399,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 2;
                     bgvBarcode.Format = BarcodeFormat.DataMatrix;
                 }
-                else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
-                {
-                    //cAllowedCharacters = cAllowedCharactersDecimal;
-                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
-                    edtTextToCode.MaxLength = 8;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 4;
-                    bgvBarcode.Format = BarcodeFormat.Ean8;
-                }
-                else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
-                {
-                    //cAllowedCharacters = cAllowedCharactersDecimal;
-                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 13";
-                    edtTextToCode.MaxLength = 13;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 4;
-                    bgvBarcode.Format = BarcodeFormat.Ean13;
-                }
-                else if (selectedName == ClassBarcodes.cBarcode_ITF)
-                {
-                    //cAllowedCharacters = cAllowedCharactersDecimal;
-                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 2-14";
-                    edtTextToCode.MaxLength = 14;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 8;
-                    bgvBarcode.Format = BarcodeFormat.Itf;
-                }
-                else if (selectedName == ClassBarcodes.cBarcode_MSI)
-                {
-                    //cAllowedCharacters = cAllowedCharactersDecimal;
-                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 1-255";
-                    edtTextToCode.MaxLength = 255;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 10;
-                    bgvBarcode.Format = BarcodeFormat.Msi;
-                }
+                
                 else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
                 {
                     edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 1100";
@@ -370,16 +413,7 @@ namespace BarcodeGenerator
 #endif              
                     bgvBarcode.Format = BarcodeFormat.Pdf417;
                 }
-                else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
-                {
-                    //cAllowedCharacters = cAllowedCharactersHex;
-                    edtTextToCode.TextTransform = TextTransform.Uppercase;
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 16\n{CodeLang.AllowedChar_Text} {cAllowedCharactersHex}";
-                    edtTextToCode.MaxLength = 16;
-                    edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.BarcodeMargin = 4;
-                    bgvBarcode.Format = BarcodeFormat.Plessey;
-                }
+                
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)        // Model 2 - ECCLevel.Quartile
                 {
                     edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 3993, 2420, 1663, 1024)}";
@@ -392,18 +426,7 @@ namespace BarcodeGenerator
                     brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
                 }
-                else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)  // Model 2 - ECCLevel.Quartile
-                {
-                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 3993, 2420, 1663, 1024)}";
-                    edtTextToCode.MaxLength = 3993;
-                    edtTextToCode.Keyboard = Keyboard.Default;
-                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
-                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
-                    brdBarcode.IsVisible = false;
-                    bgvBarcode.IsVisible = false;
-                    brdQrCodeImage.IsVisible = true;
-                    imgQrCodeImage.IsVisible = true;
-                }
+                
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)  // Model 2 - ECCLevel.High
                 {
                     edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 3057, 1852, 1273, 784)}";
@@ -416,6 +439,20 @@ namespace BarcodeGenerator
                     brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
                 }
+                
+                else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)  // Model 2 - ECCLevel.High
+                {
+                    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 3057, 1852, 1273, 784)}";
+                    edtTextToCode.MaxLength = 3057;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
+                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
+                    brdBarcode.IsVisible = false;
+                    bgvBarcode.IsVisible = false;
+                    brdQrCodeImage.IsVisible = true;
+                    imgQrCodeImage.IsVisible = true;
+                }
+                
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
                 {
                     edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
@@ -427,24 +464,6 @@ namespace BarcodeGenerator
                     bgvBarcode.IsVisible = false;
                     brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
-                }
-                else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
-                {
-                    //cAllowedCharacters = cAllowedCharactersDecimal;
-                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 12";
-                    edtTextToCode.MaxLength = 12;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 0;
-                    bgvBarcode.Format = BarcodeFormat.UpcA;
-                }
-                else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
-                {
-                    //cAllowedCharacters = cAllowedCharactersDecimal;
-                    edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
-                    edtTextToCode.MaxLength = 8;
-                    edtTextToCode.Keyboard = Keyboard.Numeric;
-                    bgvBarcode.BarcodeMargin = 8;
-                    bgvBarcode.Format = BarcodeFormat.UpcE;
                 }
 
                 edtTextToCode.Focus();
@@ -507,18 +526,8 @@ namespace BarcodeGenerator
             {
                 try
                 {
-                    if (selectedName == ClassBarcodes.cBarcode_AZTEC)
-                    {
-                        cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
-                        edtTextToCode.Text = cTextToCode;
-
-                        if (await ClassValidateBarcodes.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
-                        {
-                            _ = edtTextToCode.Focus();
-                            return;
-                        }
-                    }
-                    else if (selectedName == ClassBarcodes.cBarcode_CODABAR)
+                    // Validate 1D barcodes
+                    if (selectedName == ClassBarcodes.cBarcode_CODABAR)
                     {
                         cTextToCode = cTextToCode.ToUpper();
 
@@ -536,6 +545,7 @@ namespace BarcodeGenerator
 
                         cBarcodeCaption = cTextToCode;
                     }
+                    
                     else if (selectedName == ClassBarcodes.cBarcode_CODE_39 || selectedName == ClassBarcodes.cBarcode_CODE_93)
                     {
                         cTextToCode = cTextToCode.ToUpper();
@@ -554,6 +564,7 @@ namespace BarcodeGenerator
 
                         cBarcodeCaption = cTextToCode;
                     }
+                    
                     else if (selectedName == ClassBarcodes.cBarcode_CODE_128)
                     {
                         cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
@@ -567,17 +578,7 @@ namespace BarcodeGenerator
 
                         cBarcodeCaption = cTextToCode;
                     }
-                    else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
-                    {
-                        cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
-                        edtTextToCode.Text = cTextToCode;
-
-                        if (await ClassValidateBarcodes.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
-                        {
-                            _ = edtTextToCode.Focus();
-                            return;
-                        }
-                    }
+                    
                     else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
                     {
                         if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
@@ -609,6 +610,7 @@ namespace BarcodeGenerator
                         edtTextToCode.Text = cTextToCode;
                         cBarcodeCaption = InsertCharacterInCaption(cTextToCode, 4);
                     }
+                    
                     else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
                     {
                         if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
@@ -641,6 +643,7 @@ namespace BarcodeGenerator
                         cBarcodeCaption = InsertCharacterInCaption(cTextToCode, 7);
                         cBarcodeCaption = InsertCharacterInCaption(cBarcodeCaption, 1);
                     }
+                    
                     else if (selectedName == ClassBarcodes.cBarcode_ITF)
                     {
                         if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
@@ -657,6 +660,7 @@ namespace BarcodeGenerator
 
                         cBarcodeCaption = cTextToCode;
                     }
+                    
                     else if (selectedName == ClassBarcodes.cBarcode_MSI)
                     {
                         if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
@@ -667,17 +671,7 @@ namespace BarcodeGenerator
 
                         cBarcodeCaption = cTextToCode;
                     }
-                    else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
-                    {
-                        cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
-                        edtTextToCode.Text = cTextToCode;
-
-                        if (await ClassValidateBarcodes.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
-                        {
-                            _ = edtTextToCode.Focus();
-                            return;
-                        }
-                    }
+                    
                     else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
                     {
                         cTextToCode = cTextToCode.ToUpper();
@@ -690,6 +684,7 @@ namespace BarcodeGenerator
 
                         cBarcodeCaption = cTextToCode;
                     }
+                    
                     else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
                     {
                         if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
@@ -723,6 +718,7 @@ namespace BarcodeGenerator
                         cBarcodeCaption = InsertCharacterInCaption(cBarcodeCaption, 6);
                         cBarcodeCaption = InsertCharacterInCaption(cBarcodeCaption, 1);
                     }
+                    
                     else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
                     {
                         if (await ClassValidateBarcodes.TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode) == false)
@@ -766,6 +762,43 @@ namespace BarcodeGenerator
                         edtTextToCode.Text = cTextToCode;
                         cBarcodeCaption = InsertCharacterInCaption(cTextToCode, 7);
                         cBarcodeCaption = InsertCharacterInCaption(cBarcodeCaption, 1);
+                    }
+                    
+                    // Validate 2D barcodes
+                    else if (selectedName == ClassBarcodes.cBarcode_AZTEC)
+                    {
+                        cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
+                        edtTextToCode.Text = cTextToCode;
+
+                        if (await ClassValidateBarcodes.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                        {
+                            _ = edtTextToCode.Focus();
+                            return;
+                        }
+                    }
+                    
+                    else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
+                    {
+                        cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
+                        edtTextToCode.Text = cTextToCode;
+
+                        if (await ClassValidateBarcodes.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                        {
+                            _ = edtTextToCode.Focus();
+                            return;
+                        }
+                    }
+                    
+                    else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
+                    {
+                        cTextToCode = ClassValidateBarcodes.ReplaceCharacters(cTextToCode);
+                        edtTextToCode.Text = cTextToCode;
+
+                        if (await ClassValidateBarcodes.TestAllowedAsciiValues(1, 255, cTextToCode) == false)
+                        {
+                            _ = edtTextToCode.Focus();
+                            return;
+                        }
                     }
                 }
                 catch (Exception)

@@ -1214,7 +1214,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maximum Characters:.
+        ///   Looks up a localized string similar to Maximum characters:.
         /// </summary>
         internal static string MaximumCharacters_Text {
             get {

@@ -34,7 +34,7 @@ namespace BarcodeGenerator
                 // Calculate the recommended image size based on the Art QR code size
                 // Generate the Art QR code data with the appropriate error correction level without border and quiet zones to get the actual size of the Art QR code without any padding
                 QRCodeGenerator qrGenerator = new();
-                using QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+                using QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
                 using ArtQRCode qrCode = new(qrCodeData);
 
                 using Bitmap qrCodeImageTemp = qrCode.GetGraphic(pixelsPerModule:10,
