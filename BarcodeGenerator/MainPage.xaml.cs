@@ -247,7 +247,7 @@ namespace BarcodeGenerator
                 if (selectedName is not null)
                 {
                     cBarcodeSelectedName = selectedName;
-                    //SetBarcodePlaceholderText();
+                    //SetBarcodePlaceholderText(cBarcodeSelectedName);
                 }
 
                 ClassQRCodeImage.cQRCodeType = string.Empty;
@@ -488,7 +488,7 @@ namespace BarcodeGenerator
         /// Set the placeholder text for the editor based on the selected format code
         /// </summary>
         /// <param name="selectedName"></param>
-        private void SetBarcodePlaceholderText()
+        private void SetBarcodePlaceholderText(string cBarcodeSelectedName)
         {
             // Placeholder text for 1D barcodes
             if (cBarcodeSelectedName == ClassBarcodes.cBarcode_CODABAR)
@@ -570,10 +570,10 @@ namespace BarcodeGenerator
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
             }
-            else
-            {
-                edtTextToCode.Placeholder = string.Empty;
-            }
+            //else
+            //{
+            //    edtTextToCode.Placeholder = string.Empty;
+            //}
         }
 
         /// <summary>
@@ -1218,7 +1218,11 @@ namespace BarcodeGenerator
             }
 
             // Set the placeholder text for the editor based on the selected barcode format
-            //SetBarcodePlaceholderText();
+            //if (Globals.bLanguageChanged)
+            //{
+            //    SetBarcodePlaceholderText(cBarcodeSelectedName);
+            //}
+            //SetBarcodePlaceholderText(cBarcodeSelectedName);
         }
 
         /// <summary>
