@@ -241,7 +241,7 @@
         }
 
         /// <summary>
-        /// Put the generator barcode formats in a List string using the ZXing library for all platforms
+        /// Put the generator barcode formats in a List string using the ZXing, QRCoder and SkiaSharp.QrCode library for all platforms
         /// </summary>
         /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator_ZX() => [.. new List<string>
@@ -265,12 +265,13 @@
                 CodeLang.Barcode_PDF_417_Text,
                 CodeLang.Barcode_QR_CODE_Text,
                 CodeLang.Barcode_QR_CODE_IMAGE_Text,
+                CodeLang.Barcode_ART_QR_CODE_Text,
                 CodeLang.Barcode_MICRO_QR_CODE_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
         /// <summary>
-        /// Put the generator barcode formats in a List string using the ZXing library for Windows
+        /// Put the generator barcode formats in a List string using the ZXing and QRCoder library for Windows
         /// </summary>
         /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator_ZX_Windows() => [.. new List<string>

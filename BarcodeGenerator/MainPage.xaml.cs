@@ -15,9 +15,10 @@
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth
  *                NuGet Package: QRCoder by Raffael Herrmann, Shane Krueger - https://github.com/Shane32/QRCoder - https://github.com/Shane32/QRCoder/wiki
  *                NuGet Package: SkiaSharp by Microsoft - https://github.com/mono/SkiaSharp
+ *                NuGet Package: SkiaSharp.QrCode by Ikiru Yoshizaki - https://github.com/guitarrapc/SkiaSharp.QrCode
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić - https://github.com/afriscic/BarcodeScanning.Native.Maui
  *                NuGet Package: Sentry.Maui - https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
- * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun, Raffael Herrmann, Shane Krueger, Copilot */
+ * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun, Raffael Herrmann, Shane Krueger, Ikiru Yoshizaki, Copilot */
 
 using System.Collections;
 using ZXing.Net.Maui;
@@ -505,6 +506,7 @@ namespace BarcodeGenerator
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
             }
+            
             // Placeholder text for 2D barcodes
             else if (selectedName == ClassBarcodes.cBarcode_AZTEC)
             {
@@ -906,13 +908,12 @@ namespace BarcodeGenerator
                 {
                     ClassQRCodeImage.cQRCodeType = selectedName;
 #if WINDOWS
-                    //ImageSource? qrImage = await ClassArtQRCodeWin.GenerateArtQrCodeAsync(cTextToCode);
-                    ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
-                    imgQrCodeImage.Source = qrImage;
+                    ImageSource? qrImage = await ClassArtQRCodeWin.GenerateArtQrCodeAsync(cTextToCode);
+                    //ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);  // For testing on Windows with the SkiaSharp library, because it can cause out of memory exceptions, especially with larger QR codes
 #else
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
-                    imgQrCodeImage.Source = qrImage;
 #endif
+                    imgQrCodeImage.Source = qrImage;
                 }
                 // Generate the QR code with or without an image using QRCoder (and SkiaSharp)
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
