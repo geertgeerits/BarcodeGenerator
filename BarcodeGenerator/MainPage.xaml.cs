@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-03-28 (YYYY-MM-DD)
+ * Date ........: 2026-03-29 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -902,12 +902,17 @@ namespace BarcodeGenerator
                 // For testing crashes - DivideByZeroException
                 //int divByZero = 51 / int.Parse("0");
 
-                if (OperatingSystem.IsWindows() && selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
+                if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {
                     ClassQRCodeImage.cQRCodeType = selectedName;
-
+#if WINDOWS
+                    //ImageSource? qrImage = await ClassArtQRCodeWin.GenerateArtQrCodeAsync(cTextToCode);
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+#else
+                    ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
+                    imgQrCodeImage.Source = qrImage;
+#endif
                 }
                 // Generate the QR code with or without an image using QRCoder (and SkiaSharp)
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
