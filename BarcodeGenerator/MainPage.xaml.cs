@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-03-29 (YYYY-MM-DD)
+ * Date ........: 2026-03-30 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -908,8 +908,8 @@ namespace BarcodeGenerator
                 {
                     ClassQRCodeImage.cQRCodeType = selectedName;
 #if WINDOWS
-                    ImageSource? qrImage = await ClassArtQRCodeWin.GenerateArtQrCodeAsync(cTextToCode);
-                    //ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);  // For testing on Windows with the SkiaSharp library, because it can cause out of memory exceptions, especially with larger QR codes
+                            //ImageSource? qrImage = await ClassArtQRCodeWin.GenerateArtQrCodeAsync(cTextToCode);
+                            ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);  // For testing on Windows with the SkiaSharp library, because it can cause out of memory exceptions, especially with larger QR codes
 #else
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
 #endif
@@ -949,6 +949,86 @@ namespace BarcodeGenerator
                 RestartApplication(ex.Message);
             }
         }
+
+        //private async Task GenerateBarcode(int selectedIndex, string selectedName, string cTextToCode)
+        //{
+        //    try
+        //    {
+        //        // show activity indicator (add an ActivityIndicator named actIndicator in XAML)
+        //        //actIndicator.IsVisible = true;
+        //        //actIndicator.IsRunning = true;
+        //        btnGenerateCode.IsEnabled = false;
+
+        //        ImageSource? qrImage = null;
+
+        //        if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
+        //        {
+        //            ClassQRCodeImage.cQRCodeType = selectedName;
+
+        //            // Offload heavy Art QR generation to a background thread
+        //            qrImage = await Task.Run(async () =>
+        //            {
+        //                // If GenerateArtQrCodeAsync is already async but does heavy synchronous work internally,
+        //                // running it inside Task.Run shields the UI thread.
+        //                return await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode).ConfigureAwait(false);
+        //            }).Unwrap();
+
+        //            // apply result back on UI thread
+        //            MainThread.BeginInvokeOnMainThread(() => imgQrCodeImage.Source = qrImage);
+        //        }
+        //        else if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+        //        {
+        //            ClassQRCodeImage.cQRCodeType = selectedName;
+
+        //            // Offload QR generation (QRCoder + Skia) to background
+        //            qrImage = await Task.Run(async () =>
+        //            {
+        //                return await ClassQRCodeImage.GenerateQrCodeAsync(cTextToCode).ConfigureAwait(false);
+        //            }).Unwrap();
+
+        //            MainThread.BeginInvokeOnMainThread(() => imgQrCodeImage.Source = qrImage);
+        //        }
+        //        else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
+        //        {
+        //            ClassQRCodeImage.cQRCodeType = selectedName;
+
+        //            qrImage = await Task.Run(async () =>
+        //            {
+        //                return await ClassMicroQRCode.GenerateMicroQrCodeAsync(cTextToCode, -4).ConfigureAwait(false);
+        //            }).Unwrap();
+
+        //            MainThread.BeginInvokeOnMainThread(() => imgQrCodeImage.Source = qrImage);
+        //        }
+        //        else
+        //        {
+        //            // barcode view is simple assignment — keep on UI thread
+        //            MainThread.BeginInvokeOnMainThread(() => bgvBarcode.Value = cTextToCode);
+        //        }
+
+        //        MainThread.BeginInvokeOnMainThread(() =>
+        //        {
+        //            btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[selectedIndex]}";
+        //            btnShare.IsEnabled = true;
+        //        });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _ = SentrySdk.CaptureException(ex);
+
+        //        MainThread.BeginInvokeOnMainThread(() => bgvBarcode.Value = string.Empty);
+
+        //        RestartApplication(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        MainThread.BeginInvokeOnMainThread(() =>
+        //        {
+        //            //actIndicator.IsRunning = false;
+        //            //actIndicator.IsVisible = false;
+        //            btnGenerateCode.IsEnabled = true;
+        //        });
+        //    }
+        //}
 
         /// <summary>
         /// Inserts a specified character or string into the caption at the given position.
