@@ -2,6 +2,7 @@
 using SkiaSharp;
 using SkiaSharp.QrCode;
 using SkiaSharp.QrCode.Image;
+using System.IO;
 
 namespace BarcodeGenerator
 {
@@ -172,7 +173,45 @@ namespace BarcodeGenerator
 
             // Return ImageSource for the generated PNG file
             return ImageSource.FromFile(Globals.cFileBarcodePng);
+
+
+            //CombineBitmaps(cFile, "overlay.png", Globals.cFileBarcodePng);
+            
+            //return ImageSource.FromFile(Globals.cFileBarcodePng);
+
         }
+
+        public static void CombineBitmaps(string basePath, string overlayPath, string outputPath)
+        {
+            // Load the base image
+            using SKBitmap baseBitmap = SKBitmap.Decode(basePath);
+
+            // Load the overlay image (with transparency)
+            using SKBitmap overlayBitmap = SKBitmap.Decode(overlayPath);
+
+            // Create a surface to draw on
+            using SKSurface surface = SKSurface.Create(new SKImageInfo(baseBitmap.Width, baseBitmap.Height));
+            SKCanvas canvas = surface.Canvas;
+
+            // Clear canvas (optional)
+            canvas.Clear(SKColors.Transparent);
+
+            // Draw the base image
+            canvas.DrawBitmap(baseBitmap, 0, 0);
+
+            // Draw the overlay image on top
+            // You can change the position (x, y)
+            canvas.DrawBitmap(overlayBitmap, new SKPoint(0, 0));
+
+            // Save the result
+            using var image = surface.Snapshot();
+            using var data = image.Encode(SKEncodedImageFormat.Png, 100);
+
+            using var stream = File.OpenWrite(outputPath);
+            data.SaveTo(stream);
+        }
+
+
     }
 }
 
