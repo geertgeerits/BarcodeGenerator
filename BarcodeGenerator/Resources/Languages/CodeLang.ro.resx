@@ -697,6 +697,6 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
     <value>Cod QR artistic</value>
   </data>
   <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Opacitatea fundalului Cod QR artistic:</value>
+    <value>Opacitatea fundalului, cod QR artistic:</value>
   </data>
 </root>

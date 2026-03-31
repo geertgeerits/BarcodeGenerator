@@ -98,7 +98,6 @@
 
             // Set the QR code image size to update the switch and entry
             swtQRCodeSizeVariable.IsToggled = ClassQRCodeImage.bQRCodeSizeVariable;
-            entQRCodeSizePixels.IsEnabled = !ClassQRCodeImage.bQRCodeSizeVariable;
             entQRCodeSizePixels.Text = ClassQRCodeImage.nQRCodeSizePixels.ToString();
 
             // Set the barcode with caption variable to update the switch
@@ -555,7 +554,6 @@
         private void SwtQRCodeSizeVariable_Toggled(object sender, ToggledEventArgs e)
         {
             ClassQRCodeImage.bQRCodeSizeVariable = e.Value;
-            entQRCodeSizePixels.IsEnabled = !e.Value;
         }
         
         /// <summary>

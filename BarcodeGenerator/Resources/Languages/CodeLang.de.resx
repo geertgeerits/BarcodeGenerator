@@ -697,6 +697,6 @@ Microsoft, Microsoft Store, das Microsoft Store-Logo und Windows sind Marken der
     <value>Künstlerischer QR-Code</value>
   </data>
   <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Hintergrundtransparenz Künstlerischer QR-Code:</value>
+    <value>Künstlerischer QR-Code mit Hintergrundtransparenz:</value>
   </data>
 </root>

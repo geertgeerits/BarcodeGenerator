@@ -55,6 +55,7 @@ namespace BarcodeGenerator
 #if IOS
             // AutoSize has to be disabled for iOS
             edtTextToCode.AutoSize = EditorAutoSizeOption.Disabled;
+            activityIndicator.Scale = 2;
 #endif
             // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
@@ -900,20 +901,20 @@ namespace BarcodeGenerator
         /// <returns>A task representing the asynchronous operation.</returns>
         private async Task GenerateBarcode(int selectedIndex, string selectedName, string cTextToCode)
         {
+            // Start the activity indicator
+            activityIndicator.IsRunning = true;
+            await Task.Delay(200);
+
             try
             {
                 // For testing crashes - DivideByZeroException
                 //int divByZero = 51 / int.Parse("0");
 
+                // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
                 if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {
                     ClassQRCodeImage.cQRCodeType = selectedName;
-#if WINDOWS
-                            ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);  // All platforms
-                            //ImageSource? qrImage = await ClassArtQRCodeWin.GenerateArtQrCodeAsync(cTextToCode);  // Windows only
-#else
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
-#endif
                     imgQrCodeImage.Source = qrImage;
                 }
                 // Generate the QR code with or without an image using QRCoder (and SkiaSharp)
@@ -949,6 +950,9 @@ namespace BarcodeGenerator
 
                 RestartApplication(ex.Message);
             }
+
+            // Stop the activity indicator
+            activityIndicator.IsRunning = false;
         }
 
         /// <summary>

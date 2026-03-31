@@ -106,7 +106,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Background opacity Artistic QR Code:.
+        ///   Looks up a localized string similar to Background opacity artistic QR code:.
         /// </summary>
         internal static string BackgroundOpacityArt_Text {
             get {

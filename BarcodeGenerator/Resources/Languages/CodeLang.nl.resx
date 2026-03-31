@@ -416,7 +416,7 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
     <value>De QR-code wordt gegenereerd met een vaste of variabele pixelgrootte, afhankelijk van het aantal tekens en de maximale pixelgrootte die in de instellingen is gedefinieerd.
 Wanneer een afbeelding bovenop de QR-code wordt geplaatst, wordt deze gecentreerd en geschaald naar 10% tot 35% van de breedte of hoogte van de QR-code. Dit bereik kan worden aangepast in de instellingen. Er wordt een rand toegevoegd om de zichtbaarheid te verbeteren.
-De artistieke QR-code kan ook een achtergrondafbeelding bevatten. In dat geval moet de transparantie van de achtergrond worden ingesteld tussen 0% en minder dan 100% (zie Instellingen).
+De artistieke QR-code kan ook een achtergrondafbeelding bevatten. In dat geval moet de dekking of transparantie van de achtergrond worden ingesteld tussen 0% en minder dan 100% (zie Instellingen).
 Voor het beste resultaat kunt u experimenteren met de afbeeldingsgrootte om overmatige schaling te voorkomen. De voorkeur gaat uit naar PNG (eventueel met een transparante achtergrond) of JPEG.
 We raden aan de gegenereerde QR-codes en andere barcodes te testen om er zeker van te zijn dat ze correct scannen.</value>
   </data>
@@ -697,6 +697,6 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
     <value>Artistieke QR-code</value>
   </data>
   <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Achtergronddoorzichtigheid Artistieke QR-code:</value>
+    <value>Achtergronddekking artistieke QR-code:</value>
   </data>
 </root>

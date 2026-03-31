@@ -33,6 +33,18 @@
                 Text="{Translate BarcodeGenerator_Text}">
             </Label>
 
+            <ActivityIndicator
+                x:Name="activityIndicator"
+                Grid.Column="1"
+                HeightRequest="46"
+                WidthRequest="46"
+                Margin="2"
+                VerticalOptions="Center"
+                HorizontalOptions="End"
+                Color="Gold"
+                IsRunning="False">
+            </ActivityIndicator>
+
             <ImageButton
                 x:Name="imgbtnScanNT"
                 Style="{StaticResource imageButtonStyleIcons}"

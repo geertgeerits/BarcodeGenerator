@@ -72,6 +72,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="ClassArtQRCodeWin.cs" />
 	  <Compile Remove="PageScanGV.xaml.cs" />
 	  <Compile Remove="PageWebsite.xaml.cs" />
 	</ItemGroup>

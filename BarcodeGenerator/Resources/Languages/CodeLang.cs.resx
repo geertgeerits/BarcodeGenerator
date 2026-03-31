@@ -697,6 +697,6 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
     <value>Umělecký QR kód</value>
   </data>
   <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Neprůhlednost pozadí Umělecký QR kód:</value>
+    <value>Umělecký QR kód pro neprůhlednost pozadí:</value>
   </data>
 </root>

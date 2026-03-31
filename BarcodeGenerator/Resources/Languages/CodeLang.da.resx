@@ -697,6 +697,6 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
     <value>Kunstnerisk QR-kode</value>
   </data>
   <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Baggrundsopacitet Kunstnerisk QR-kode:</value>
+    <value>Kunstnerisk baggrundsopacitet QR-kode:</value>
   </data>
 </root>

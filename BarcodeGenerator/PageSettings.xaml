@@ -435,7 +435,6 @@
                         Placeholder="500 - 10000"
                         Keyboard="Numeric"
                         ReturnType="Next"
-                        IsEnabled="False"
                         TextChanged="EntQRCodeSizePixels_TextChanged"
                         Unfocused="EntQRCodeSizePixels_Unfocused" >
                     </Entry>
