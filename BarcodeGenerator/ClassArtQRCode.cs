@@ -2,7 +2,6 @@
 using SkiaSharp;
 using SkiaSharp.QrCode;
 using SkiaSharp.QrCode.Image;
-using System.IO;
 
 namespace BarcodeGenerator
 {
@@ -40,13 +39,16 @@ namespace BarcodeGenerator
             // Open the file picker to select an image file for the background of the Art QR code
             FileResult? cFile = await ClassFileOperations.PickImage();
 
+            // The 2 characters of cArtCodeOpacityBg and the last 6 characters of cCodeColorBg to create a valid hex color string for SkiaSharp
+            string cBackgroundColor = string.Concat(Globals.cArtCodeOpacityBg, Globals.cCodeColorBg.AsSpan(2, 6));
+
             // Create QR code with custom styling
             QRCodeImageBuilder qrData = new QRCodeImageBuilder(text)
                 .WithSize(ClassQRCodeImage.nQRCodeSizePixels, ClassQRCodeImage.nQRCodeSizePixels)
-                .WithModuleShape(CircleModuleShape.Default, sizePercent: 0.95f)
+                .WithModuleShape(CircleModuleShape.Default)
                 .WithErrorCorrection(ECCLevel.H)
                 .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
-                            backgroundColor: SKColor.Parse(Globals.cCodeColorBg),
+                            backgroundColor: SKColor.Parse(cBackgroundColor),
                             clearColor: SKColors.Transparent);
 
             // Generate PNG bytes off the UI thread (QRCode creation can be heavy)
@@ -75,7 +77,7 @@ namespace BarcodeGenerator
                     byte[] bgBytes;
                     await using (Stream bgStream = await cFile.OpenReadAsync())
                     {
-                        using var ms = new MemoryStream();
+                        using MemoryStream ms = new MemoryStream();
                         await bgStream.CopyToAsync(ms);
                         bgBytes = ms.ToArray();
                     }
@@ -98,7 +100,7 @@ namespace BarcodeGenerator
                             int targetHeight = qrBitmap.Height;
 
                             // Create a scaled background with the same size as the QR code
-                            var info = new SKImageInfo(targetWidth, targetHeight, bgBitmap.ColorType, bgBitmap.AlphaType);
+                            SKImageInfo info = new SKImageInfo(targetWidth, targetHeight, bgBitmap.ColorType, bgBitmap.AlphaType);
                             using SKBitmap scaledBg = new SKBitmap(info);
                             using (SKCanvas bgCanvas = new SKCanvas(scaledBg))
                             {
@@ -106,21 +108,21 @@ namespace BarcodeGenerator
 
                                 // Draw bgBitmap stretched to the target size (preserves no aspect ratio).
                                 using SKPaint paint = new() { IsAntialias = true, FilterQuality = SKFilterQuality.High };
-                                var srcRect = new SKRect(0, 0, bgBitmap.Width, bgBitmap.Height);
-                                var dstRect = new SKRect(0, 0, targetWidth, targetHeight);
+                                SKRect srcRect = new SKRect(0, 0, bgBitmap.Width, bgBitmap.Height);
+                                SKRect dstRect = new SKRect(0, 0, targetWidth, targetHeight);
                                 bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, paint);
                             }
 
                             // Compose scaled background and QR onto an SKSurface (CPU-backed)
-                            var infoSurface = new SKImageInfo(targetWidth, targetHeight, SKColorType.Rgba8888, SKAlphaType.Premul);
-                            using var surface = SKSurface.Create(infoSurface);
+                            SKImageInfo infoSurface = new SKImageInfo(targetWidth, targetHeight, SKColorType.Rgba8888, SKAlphaType.Premul);
+                            using SKSurface surface = SKSurface.Create(infoSurface);
                             if (surface == null)
                             {
                                 Debug.WriteLine("SKSurface.Create returned null.");
                                 return pngBytes;
                             }
 
-                            var canvas = surface.Canvas;
+                            SKCanvas canvas = surface.Canvas;
                             canvas.Clear(SKColors.Transparent);
 
                             // Draw scaled background then QR
@@ -129,8 +131,8 @@ namespace BarcodeGenerator
 
                             // Snapshot and encode to PNG
                             canvas.Flush();
-                            using var image = surface.Snapshot();
-                            using var pngData = image.Encode(SKEncodedImageFormat.Png, 100);
+                            using SKImage image = surface.Snapshot();
+                            using SKData pngData = image.Encode(SKEncodedImageFormat.Png, 100);
 
                             if (pngData != null)
                             {
@@ -172,46 +174,8 @@ namespace BarcodeGenerator
             }
 
             // Return ImageSource for the generated PNG file
-            return ImageSource.FromFile(Globals.cFileBarcodePng);
-
-
-            //CombineBitmaps(cFile, "overlay.png", Globals.cFileBarcodePng);
-            
-            //return ImageSource.FromFile(Globals.cFileBarcodePng);
-
+            return ImageSource.FromStream(() => new MemoryStream(pngBytes, writable: false));
         }
-
-        public static void CombineBitmaps(string basePath, string overlayPath, string outputPath)
-        {
-            // Load the base image
-            using SKBitmap baseBitmap = SKBitmap.Decode(basePath);
-
-            // Load the overlay image (with transparency)
-            using SKBitmap overlayBitmap = SKBitmap.Decode(overlayPath);
-
-            // Create a surface to draw on
-            using SKSurface surface = SKSurface.Create(new SKImageInfo(baseBitmap.Width, baseBitmap.Height));
-            SKCanvas canvas = surface.Canvas;
-
-            // Clear canvas (optional)
-            canvas.Clear(SKColors.Transparent);
-
-            // Draw the base image
-            canvas.DrawBitmap(baseBitmap, 0, 0);
-
-            // Draw the overlay image on top
-            // You can change the position (x, y)
-            canvas.DrawBitmap(overlayBitmap, new SKPoint(0, 0));
-
-            // Save the result
-            using var image = surface.Snapshot();
-            using var data = image.Encode(SKEncodedImageFormat.Png, 100);
-
-            using var stream = File.OpenWrite(outputPath);
-            data.SaveTo(stream);
-        }
-
-
     }
 }
 

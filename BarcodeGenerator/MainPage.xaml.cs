@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-03-30 (YYYY-MM-DD)
+ * Date ........: 2026-03-31 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -66,6 +66,7 @@ namespace BarcodeGenerator
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
+            Globals.cArtCodeOpacityBg = Preferences.Default.Get("SettingArtCodeOpacityBg", "00");
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
@@ -908,8 +909,8 @@ namespace BarcodeGenerator
                 {
                     ClassQRCodeImage.cQRCodeType = selectedName;
 #if WINDOWS
-                            //ImageSource? qrImage = await ClassArtQRCodeWin.GenerateArtQrCodeAsync(cTextToCode);
-                            ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);  // For testing on Windows with the SkiaSharp library, because it can cause out of memory exceptions, especially with larger QR codes
+                            ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);  // All platforms
+                            //ImageSource? qrImage = await ClassArtQRCodeWin.GenerateArtQrCodeAsync(cTextToCode);  // Windows only
 #else
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
 #endif

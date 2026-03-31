@@ -96,6 +96,8 @@
             sldColorBgGreen.Value = nGreen;
             sldColorBgBlue.Value = nBlue;
 
+            sldArtQRCodeOpacityBg.Value = int.Parse(Globals.cArtCodeOpacityBg.AsSpan(0, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+
             // Set the QR code image size to update the switch and entry
             swtQRCodeSizeVariable.IsToggled = ClassQRCodeImage.bQRCodeSizeVariable;
             entQRCodeSizePixels.IsEnabled = !ClassQRCodeImage.bQRCodeSizeVariable;
@@ -103,8 +105,6 @@
 
             // Set the barcode with caption variable to update the switch
             swtBarcodeWithCaption.IsToggled = Globals.bBarcodeWithCaption;
-
-
 
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
@@ -645,6 +645,20 @@
         }
 
         /// <summary>
+        /// Handles the ValueChanged event for the QR code background opacity slider, updating the background color's opacity
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
+        /// <param name="e">An object that contains the event data, including the new value of the slider representing the desired QR
+        /// code background opacity.</param>
+        private void SldArtQRCodeOpacityBg_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            int nAmountOpacity = (int)e.NewValue;
+            Globals.cArtCodeOpacityBg = $"{nAmountOpacity:X2}";
+
+            //lblArtQRCodeOpacityBg.Text = Globals.cArtCodeOpacityBg;  // For testing the opacity value in hex
+        }
+
+        /// <summary>
         /// Button save settings clicked event
         /// </summary>
         /// <param name="sender"></param>
@@ -660,6 +674,7 @@
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", Globals.cCodeColorBg);
+            Preferences.Default.Set("SettingArtCodeOpacityBg", Globals.cArtCodeOpacityBg);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
             Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
 
@@ -697,6 +712,7 @@
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
                 Preferences.Default.Remove("SettingCodeColorBg");
+                Preferences.Default.Remove("SettingArtCodeOpacityBg");
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");
                 Preferences.Default.Remove("SettingQualityCameraBack");

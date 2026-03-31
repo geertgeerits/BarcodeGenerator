@@ -414,7 +414,11 @@ Le lingue di supporto sono: ceco, danese, olandese, inglese, finlandese, frances
 Potete sempre contattarmi per eventuali correzioni.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>Il codice QR (inclusa l'immagine incorporata) viene generato con una dimensione in pixel fissa o variabile, a seconda del numero di caratteri che contiene e della dimensione massima in pixel specificata nelle impostazioni. L'immagine incorporata viene centrata e ridimensionata tra il 10% e il 35% della larghezza o dell'altezza del codice QR; questa impostazione può essere modificata nelle impostazioni. Viene aggiunto un bordo per migliorarne la visibilità. Per risultati ottimali, si consiglia di sperimentare con le dimensioni dell'immagine per evitare ridimensionamenti eccessivi. I formati di file preferiti sono PNG (facoltativamente con sfondo trasparente) o JPEG. Si consiglia di testare il codice QR per assicurarsi che venga scansionato correttamente.</value>
+    <value>Il codice QR viene generato con una dimensione in pixel fissa o variabile, a seconda del numero di caratteri che contiene e della dimensione massima in pixel definita nelle impostazioni.
+Quando un'immagine viene posizionata sopra il codice QR, viene centrata e ridimensionata a una dimensione compresa tra il 10% e il 35% della larghezza o dell'altezza del codice QR. Questo intervallo può essere regolato nelle impostazioni. Viene aggiunto un bordo per migliorare la visibilità.
+Il codice QR può anche includere un'immagine di sfondo. In questo caso, l'opacità dello sfondo deve essere impostata tra lo 0% e meno del 100% (vedere Impostazioni).
+Per ottenere risultati ottimali, si consiglia di sperimentare con le dimensioni dell'immagine per evitare ridimensionamenti eccessivi. I formati di file preferiti sono PNG (eventualmente con sfondo trasparente) o JPEG.
+Si consiglia di testare i codici QR e altri codici a barre generati per assicurarsi che vengano scansionati correttamente.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informazione</value>
@@ -691,5 +695,8 @@ Microsoft, Microsoft Store, il logo di Microsoft Store e Windows sono marchi di 
   </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Codice QR artistico</value>
+  </data>
+  <data name="BackgroundOpacityArt_Text" xml:space="preserve">
+    <value>Opacità dello sfondo Codice QR artistico:</value>
   </data>
 </root>

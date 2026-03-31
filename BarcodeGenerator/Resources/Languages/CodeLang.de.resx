@@ -414,7 +414,11 @@ Die unterstützten Sprachen sind: Tschechisch, Dänisch, Niederländisch, Englis
 Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>Der QR-Code (inklusive eingebettetem Bild) wird je nach Zeichenanzahl und der in den Einstellungen festgelegten maximalen Pixelgröße entweder mit fester oder variabler Pixelgröße generiert. Das eingebettete Bild wird zentriert und auf 10 % bis 35 % der Breite oder Höhe des QR-Codes skaliert. Diese Skalierung kann in den Einstellungen angepasst werden. Ein Rahmen verbessert die Lesbarkeit. Um optimale Ergebnisse zu erzielen, experimentieren Sie mit der Bildgröße, um übermäßiges Skalieren zu vermeiden. Bevorzugte Dateiformate sind PNG (optional mit transparentem Hintergrund) oder JPEG. Wir empfehlen, den QR-Code zu testen, um sicherzustellen, dass er korrekt gescannt wird.</value>
+    <value>Der QR-Code wird je nach Zeichenanzahl und der in den Einstellungen festgelegten maximalen Pixelgröße entweder mit fester oder variabler Pixelgröße generiert.
+Wenn ein Bild über den QR-Code gelegt wird, wird es zentriert und auf 10 % bis 35 % der Breite oder Höhe des QR-Codes skaliert. Dieser Bereich kann in den Einstellungen angepasst werden. Ein Rahmen verbessert die Lesbarkeit.
+Der künstlerische QR-Code kann auch ein Hintergrundbild enthalten. In diesem Fall muss die Hintergrundtransparenz zwischen 0 % und unter 100 % liegen (siehe Einstellungen).
+Für optimale Ergebnisse experimentieren Sie mit der Bildgröße, um übermäßiges Skalieren zu vermeiden. Bevorzugte Dateiformate sind PNG (optional mit transparentem Hintergrund) oder JPEG.
+Wir empfehlen, die generierten QR-Codes und andere Barcodes zu testen, um sicherzustellen, dass sie korrekt gescannt werden können.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
@@ -691,5 +695,8 @@ Microsoft, Microsoft Store, das Microsoft Store-Logo und Windows sind Marken der
   </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Künstlerischer QR-Code</value>
+  </data>
+  <data name="BackgroundOpacityArt_Text" xml:space="preserve">
+    <value>Hintergrundtransparenz Künstlerischer QR-Code:</value>
   </data>
 </root>

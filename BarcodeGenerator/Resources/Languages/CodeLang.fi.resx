@@ -414,7 +414,11 @@ Tukikielet ovat: tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, unka
 Voit aina ottaa minuun yhteyttä korjauksista.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>QR-koodi (mukaan lukien upotettu kuva) luodaan joko kiinteällä tai muuttuvalla pikselikoolla riippuen sen sisältämien merkkien määrästä ja asetuksissa määritetystä enimmäispikselikoosta. Upotettu kuva keskitetään ja skaalataan 10–35 %:iin QR-koodin leveydestä tai korkeudesta. Tätä voi säätää asetuksissa. Näkyvyyden parantamiseksi lisätään reunus. Parhaan tuloksen saavuttamiseksi kokeile kuvan kokoa välttääksesi liiallista koon muuttamista. Suositellut tiedostomuodot ovat PNG (valinnainen läpinäkyvällä taustalla) tai JPEG. Suosittelemme QR-koodin testaamista sen varmistamiseksi, että se skannataan oikein.</value>
+    <value>QR-koodi luodaan joko kiinteällä tai muuttuvalla pikselikoolla riippuen sen sisältämien merkkien määrästä ja asetuksissa määritetystä enimmäispikselikoosta.
+Kun kuva sijoitetaan QR-koodin päälle, se keskitetään ja skaalataan 10–35 %:iin QR-koodin leveydestä tai korkeudesta. Tätä aluetta voidaan säätää asetuksissa. Näkyvyyden parantamiseksi lisätään reunus.
+Taiteellinen QR-koodi voi sisältää myös taustakuvan. Tässä tapauksessa taustan läpinäkyvyyden on oltava 0 % ja alle 100 % (katso Asetukset).
+Parhaan tuloksen saavuttamiseksi kokeile kuvan kokoa välttääksesi liiallista koon muuttamista. Suositeltuja tiedostomuotoja ovat PNG (valinnainen läpinäkyvällä taustalla) tai JPEG.
+Suosittelemme testaamaan luotuja QR-koodeja ja muita viivakoodeja varmistaaksesi, että ne skannataan oikein.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Tiedot</value>
@@ -691,5 +695,8 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Taiteellinen QR-koodi</value>
+  </data>
+  <data name="BackgroundOpacityArt_Text" xml:space="preserve">
+    <value>Taustan läpinäkyvyys Taiteellinen QR-koodi:</value>
   </data>
 </root>

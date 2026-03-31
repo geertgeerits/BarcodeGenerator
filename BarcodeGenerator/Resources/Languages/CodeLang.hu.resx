@@ -414,7 +414,11 @@ A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar
 Bármilyen javításért bármikor fordulhat hozzám.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>A QR-kód (beleértve a beágyazott képet is) fix vagy változó pixelmérettel generálódik, a benne lévő karakterek számától és a beállításokban megadott maximális pixelmérettől függően. A beágyazott kép középre van igazítva, és a QR-kód szélességének vagy magasságának 10% és 35%-a között méreteződik, ez a beállításokban módosítható. A jobb láthatóság érdekében egy szegély kerül hozzáadásra. A legjobb eredmény elérése érdekében kísérletezzen a képmérettel, hogy elkerülje a túlzott átméretezést. Az előnyben részesített fájlformátumok a PNG (opcionálisan átlátszó háttérrel) vagy a JPEG. Javasoljuk, hogy tesztelje a QR-kódot, hogy biztosan megfelelően beolvassa-e.</value>
+    <value>A QR-kód fix vagy változó pixelmérettel generálódik, a benne lévő karakterek számától és a beállításokban meghatározott maximális pixelmérettől függően.
+Amikor egy képet helyezünk a QR-kódra, az középre igazodik, és a QR-kód szélességének vagy magasságának 10% és 35%-a közötti méretarányra méreteződik. Ez a tartomány a beállításokban módosítható. A jobb láthatóság érdekében egy szegély kerül hozzáadásra.
+A művészi QR-kód háttérképet is tartalmazhat. Ebben az esetben a háttér átlátszóságát 0% és 100% alatti értékre kell állítani (lásd a Beállításokat).
+A legjobb eredmény elérése érdekében kísérletezzen a képmérettel, hogy elkerülje a túlzott átméretezést. Az előnyben részesített fájlformátumok a PNG (opcionálisan átlátszó háttérrel) vagy a JPEG.
+Javasoljuk, hogy tesztelje a generált QR-kódokat és más vonalkódokat, hogy biztosan megfelelően olvassanak be.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Információ</value>
@@ -691,5 +695,8 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Művészi QR-kód</value>
+  </data>
+  <data name="BackgroundOpacityArt_Text" xml:space="preserve">
+    <value>Háttér átlátszósága Művészi QR-kód:</value>
   </data>
 </root>

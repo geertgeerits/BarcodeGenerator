@@ -9,6 +9,7 @@ namespace BarcodeGenerator
         public static string cTheme = string.Empty;                         // Theme: Light, Dark or System
         public static string cCodeColorFg = string.Empty;                   // Foreground color of the barcode (text and bars)
         public static string cCodeColorBg = string.Empty;                   // Background color of the barcode
+        public static string cArtCodeOpacityBg = string.Empty;              // Opacity of the background art image (0-255)
         public static string cLanguage = string.Empty;                      // Language for the UI (culture name, e.g. "en-US")
         public static bool bLanguageChanged;                                // Flag to indicate if the language has been changed
         public static string cLanguageSpeech = string.Empty;                // Language for text-to-speech
