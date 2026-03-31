@@ -96,8 +96,6 @@
             sldColorBgGreen.Value = nGreen;
             sldColorBgBlue.Value = nBlue;
 
-            sldArtQRCodeOpacityBg.Value = int.Parse(Globals.cArtCodeOpacityBg.AsSpan(0, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
-
             // Set the QR code image size to update the switch and entry
             swtQRCodeSizeVariable.IsToggled = ClassQRCodeImage.bQRCodeSizeVariable;
             entQRCodeSizePixels.IsEnabled = !ClassQRCodeImage.bQRCodeSizeVariable;
@@ -208,6 +206,10 @@
             // Set the QR code image size percent in the label
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";
             sldQRCodeImageSize.Value = ClassQRCodeImage.nQRCodeImageSizePercent;
+
+            // Set the Art QR code background opacity value on the slider and label
+            sldArtQRCodeOpacityBg.Value = int.Parse(Globals.cArtCodeOpacityBg.AsSpan(0, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+            lblArtQRCodeOpacityBg.Text = $"{CodeLang.BackgroundOpacityArt_Text} {Globals.cArtCodeOpacityBg}";
 
             // Set the theme in the picker
             List<string> ThemeList =
@@ -655,7 +657,7 @@
             int nAmountOpacity = (int)e.NewValue;
             Globals.cArtCodeOpacityBg = $"{nAmountOpacity:X2}";
 
-            //lblArtQRCodeOpacityBg.Text = Globals.cArtCodeOpacityBg;  // For testing the opacity value in hex
+            lblArtQRCodeOpacityBg.Text = $"{CodeLang.BackgroundOpacityArt_Text} {Globals.cArtCodeOpacityBg}";
         }
 
         /// <summary>
