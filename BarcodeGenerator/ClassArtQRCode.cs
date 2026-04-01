@@ -28,7 +28,7 @@ namespace BarcodeGenerator
             if (currentPage != null)
             {
                 Globals.bIsPopupMessage = true;
-                await currentPage.ShowPopupAsync(new PopupMessage(5, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{ClassQRCodeImage.nQRCodeSizePixels} x {ClassQRCodeImage.nQRCodeSizePixels} {CodeLang.Pixels_Text}"));
+                _ = await currentPage.ShowPopupAsync(new PopupMessage(5, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{ClassQRCodeImage.nQRCodeSizePixels:N0} x {ClassQRCodeImage.nQRCodeSizePixels:N0} {CodeLang.Pixels_Text}"));
 
                 // Check if the popup was canceled by the user before proceeding to open the file picker
                 if (Globals.bPopupCanceled)
@@ -45,6 +45,7 @@ namespace BarcodeGenerator
             string cBackgroundColor = string.Concat(Globals.cArtCodeOpacityBg, Globals.cCodeColorBg.AsSpan(2, 6));
 
             // Create QR code with custom styling
+            // If no size is given then the default size = 512 x 512 pixels
             QRCodeImageBuilder qrData = new QRCodeImageBuilder(text)
                 .WithSize(ClassQRCodeImage.nQRCodeSizePixels, ClassQRCodeImage.nQRCodeSizePixels)
                 .WithModuleShape(CircleModuleShape.Default)
