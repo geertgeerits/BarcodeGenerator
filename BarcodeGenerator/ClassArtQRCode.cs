@@ -7,6 +7,8 @@ namespace BarcodeGenerator
 {
     internal class ClassArtQRCode
     {
+        private static bool bImageStretched = false;  // Whether to stretch the background image to fill the QR code dimensions (true) or fit within while preserving aspect ratio (false)
+
         /// <summary>
         /// Generates an artistic QR code image from the provided text and saves it as a PNG file.
         /// The QR code is styled with custom colors, circular modules, and high error correction level to ensure it remains
@@ -87,7 +89,7 @@ namespace BarcodeGenerator
                     {
                         try
                         {
-                            using SKBitmap? bgBitmap = SKBitmap.Decode(bgBytes);
+                            using SKBitmap? bgBitmap = DecodeAndOrientBitmap(bgBytes);
                             using SKBitmap? qrBitmap = SKBitmap.Decode(pngBytes);
 
                             if (bgBitmap == null || qrBitmap == null)
@@ -100,17 +102,33 @@ namespace BarcodeGenerator
                             int targetHeight = qrBitmap.Height;
 
                             // Create a scaled background with the same size as the QR code
-                            SKImageInfo info = new SKImageInfo(targetWidth, targetHeight, bgBitmap.ColorType, bgBitmap.AlphaType);
-                            using SKBitmap scaledBg = new SKBitmap(info);
-                            using (SKCanvas bgCanvas = new SKCanvas(scaledBg))
+                            SKImageInfo info = new(targetWidth, targetHeight, bgBitmap.ColorType, bgBitmap.AlphaType);
+                            using SKBitmap scaledBg = new(info);
+                            using (SKCanvas bgCanvas = new(scaledBg))
                             {
                                 bgCanvas.Clear(SKColors.Transparent);
 
-                                // Draw bgBitmap stretched to the target size (preserves no aspect ratio).
-                                using SKPaint paint = new() { IsAntialias = true, FilterQuality = SKFilterQuality.High };
-                                SKRect srcRect = new SKRect(0, 0, bgBitmap.Width, bgBitmap.Height);
-                                SKRect dstRect = new SKRect(0, 0, targetWidth, targetHeight);
-                                bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, paint);
+                                if (bImageStretched)
+                                {
+                                    // Draw bgBitmap stretched to the target size (preserves no aspect ratio)
+                                    using SKPaint paint = new() { IsAntialias = true, FilterQuality = SKFilterQuality.High };
+                                    SKRect srcRect = new SKRect(0, 0, bgBitmap.Width, bgBitmap.Height);
+                                    SKRect dstRect = new SKRect(0, 0, targetWidth, targetHeight);
+                                    bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, paint);
+                                }
+                                else
+                                {
+                                    // Draw bgBitmap scaled to fit within the target size while preserving aspect ratio, centered on the canvas
+                                    float scale = Math.Min((float)targetWidth / bgBitmap.Width, (float)targetHeight / bgBitmap.Height);
+                                    float scaledWidth = bgBitmap.Width * scale;
+                                    float scaledHeight = bgBitmap.Height * scale;
+                                    float left = (targetWidth - scaledWidth) / 2;
+                                    float top = (targetHeight - scaledHeight) / 2;
+                                    using SKPaint paint = new() { IsAntialias = true, FilterQuality = SKFilterQuality.High };
+                                    SKRect srcRect = new SKRect(0, 0, bgBitmap.Width, bgBitmap.Height);
+                                    SKRect dstRect = new SKRect(left, top, left + scaledWidth, top + scaledHeight);
+                                    bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, paint);
+                                }
                             }
 
                             // Compose scaled background and QR onto an SKSurface (CPU-backed)
@@ -175,6 +193,119 @@ namespace BarcodeGenerator
 
             // Return ImageSource for the generated PNG file
             return ImageSource.FromStream(() => new MemoryStream(pngBytes, writable: false));
+        }
+
+        /// <summary>
+        /// Decode image bytes and apply EXIF orientation (if any) so the returned bitmap is oriented "top-left"
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
+        private static SKBitmap? DecodeAndOrientBitmap(byte[] bytes)
+        {
+            if (bytes == null || bytes.Length == 0)
+                return null;
+
+            SKEncodedOrigin origin = SKEncodedOrigin.TopLeft;
+            try
+            {
+                using SKMemoryStream codecStream = new(bytes);
+                using SKCodec codec = SKCodec.Create(codecStream);
+                if (codec != null)
+                {
+                    origin = codec.EncodedOrigin;
+                }
+            }
+            catch
+            {
+                origin = SKEncodedOrigin.TopLeft;
+            }
+
+            // Decode original bitmap
+            SKBitmap? srcBitmap = SKBitmap.Decode(bytes);
+            if (srcBitmap == null)
+                return null;
+
+            // If already top-left, return as-is
+            if (origin == SKEncodedOrigin.TopLeft)
+                return srcBitmap;
+
+            int w = srcBitmap.Width;
+            int h = srcBitmap.Height;
+
+            // Determine result size for rotations that swap dims
+            int resultW = (origin == SKEncodedOrigin.RightTop || origin == SKEncodedOrigin.RightBottom || origin == SKEncodedOrigin.LeftTop || origin == SKEncodedOrigin.LeftBottom) ? h : w;
+            int resultH = (origin == SKEncodedOrigin.RightTop || origin == SKEncodedOrigin.RightBottom || origin == SKEncodedOrigin.LeftTop || origin == SKEncodedOrigin.LeftBottom) ? w : h;
+
+            SKImageInfo info = new(resultW, resultH, srcBitmap.ColorType, srcBitmap.AlphaType);
+            SKBitmap result = new(info);
+
+            using (SKCanvas canvas = new(result))
+            {
+                canvas.Clear(SKColors.Transparent);
+
+                switch (origin)
+                {
+                    case SKEncodedOrigin.TopRight:
+                        // Flip horizontal
+                        canvas.Scale(-1, 1);
+                        canvas.Translate(-w, 0);
+                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        break;
+
+                    case SKEncodedOrigin.BottomRight:
+                        // Rotate 180
+                        canvas.RotateDegrees(180);
+                        canvas.Translate(-w, -h);
+                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        break;
+
+                    case SKEncodedOrigin.BottomLeft:
+                        // Flip vertical
+                        canvas.Scale(1, -1);
+                        canvas.Translate(0, -h);
+                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        break;
+
+                    case SKEncodedOrigin.RightTop:
+                        // Rotate 90 CW
+                        canvas.Translate(resultW, 0);
+                        canvas.RotateDegrees(90);
+                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        break;
+
+                    case SKEncodedOrigin.LeftBottom:
+                        // Rotate 270 CW (or 90 CCW)
+                        canvas.Translate(0, resultH);
+                        canvas.RotateDegrees(270);
+                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        break;
+
+                    case SKEncodedOrigin.LeftTop:
+                        // Transpose (mirror across top-left to bottom-right axis)
+                        // Implement as rotate 90 CW then flip horizontal
+                        canvas.Translate(resultW, 0);
+                        canvas.RotateDegrees(90);
+                        canvas.Scale(-1, 1);
+                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        break;
+
+                    case SKEncodedOrigin.RightBottom:
+                        // Transverse (mirror across top-right to bottom-left axis)
+                        // Implement as rotate 270 CW then flip horizontal
+                        canvas.Translate(0, resultH);
+                        canvas.RotateDegrees(270);
+                        canvas.Scale(-1, 1);
+                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        break;
+
+                    default:
+                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        break;
+                }
+            }
+
+            srcBitmap.Dispose();
+            return result;
         }
     }
 }
