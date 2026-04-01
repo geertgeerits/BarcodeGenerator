@@ -128,6 +128,9 @@
 	  <MauiXaml Update="PageSettings.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="PopupColorPicker.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="PopupMessage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

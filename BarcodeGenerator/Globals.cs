@@ -7,6 +7,7 @@ namespace BarcodeGenerator
     {
         // Global variables
         public static string cTheme = string.Empty;                         // Theme: Light, Dark or System
+        public static string cCodeColor = string.Empty;                     // Color of the barcode (text and bars) for the popup color picker
         public static string cCodeColorFg = string.Empty;                   // Foreground color of the barcode (text and bars)
         public static string cCodeColorBg = string.Empty;                   // Background color of the barcode
         public static string cArtCodeOpacityBg = string.Empty;              // Opacity of the background art image (0-255)

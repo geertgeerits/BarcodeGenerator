@@ -1,4 +1,6 @@
-﻿namespace BarcodeGenerator
+﻿using CommunityToolkit.Maui.Extensions;
+
+namespace BarcodeGenerator
 {
     public sealed partial class PageSettings : ContentPage
     {
@@ -170,14 +172,14 @@
         {
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
             ClassBarcodes.InitializeBarcodeFormats();
-            
+
             // Set the generator barcode formats in the picker
 #if WINDOWS
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
 #else
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
 #endif
-            
+
             // Set the scanner barcode formats in the picker
 #if ANDROID
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Android();
@@ -555,7 +557,7 @@
         {
             ClassQRCodeImage.bQRCodeSizeVariable = e.Value;
         }
-        
+
         /// <summary>
         /// Switch barcode with caption toggled event
         /// </summary>
@@ -626,7 +628,7 @@
 
             ClassQRCodeImage.nQRCodeSizePixels = nValue;
         }
-        
+
         /// <summary>
         /// Handles the ValueChanged event for the QR code image size slider, updating the QR code image size percentage
         /// and pixel dimensions based on the new slider value.
@@ -724,6 +726,34 @@
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
+        }
+
+        private async void OnButtonColorForgroundClicked(object sender, EventArgs e)
+        {
+            Globals.cCodeColor = Globals.cCodeColorFg;
+            await OpenPopupColorPickerAsync();
+            Globals.cCodeColorFg = Globals.cCodeColor;
+            entHexColorFg.Text = Globals.cCodeColorFg;
+            bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
+        }
+
+        /// <summary>
+        /// Show a modal popup to inform the user about the recommended image size before opening the file picker
+        /// </summary>
+        private async Task OpenPopupColorPickerAsync()
+        {
+            Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+            if (currentPage != null)
+            {
+                Globals.bIsPopupMessage = true;
+                _ = await currentPage.ShowPopupAsync(new PopupColorPicker(60, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{ClassQRCodeImage.nQRCodeSizePixels:N0} x {ClassQRCodeImage.nQRCodeSizePixels:N0} {CodeLang.Pixels_Text}"));
+
+                // Check if the popup was canceled by the user before proceeding to open the file picker
+                if (Globals.bPopupCanceled)
+                {
+                    Globals.bPopupCanceled = false;
+                }
+            }
         }
     }
 }

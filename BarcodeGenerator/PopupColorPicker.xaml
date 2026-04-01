@@ -1,0 +1,173 @@
+<toolkit:Popup
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="BarcodeGenerator.PopupColorPicker"
+    BackgroundColor="DeepSkyBlue"
+    CanBeDismissedByTappingOutsideOfPopup="False"
+    Loaded="Popup_Loaded">
+
+    <Grid
+        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+        ColumnDefinitions="60, 100, 100*"
+        RowSpacing="5"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="300"
+        Padding="10">
+
+        <BoxView
+            Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+            Grid.RowSpan="8"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            CornerRadius="10">
+        </BoxView>
+
+        <Label
+            x:Name="lblPopupTitle"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            WidthRequest="280"
+            BackgroundColor="Transparent"
+            Margin="10,5,10,5"
+            Padding="5"
+            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+            HorizontalTextAlignment="Center"
+            Text="{Translate QRCodeImageTitle_Text}">
+        </Label>
+
+        <Border
+            Style="{StaticResource borderStyleGroup}"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.RowSpan="4"
+            Grid.ColumnSpan="3">
+        </Border>
+
+        <Slider
+            x:Name="sldOpacity"
+            Style="{StaticResource sliderStyleColor}"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            ThumbColor="Grey"
+            MinimumTrackColor="Black"
+            ValueChanged="OnSliderColorValueChanged">
+        </Slider>
+
+        <Slider
+            x:Name="sldColorRed"
+            Style="{StaticResource sliderStyleColor}"
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            ThumbColor="Red"
+            MinimumTrackColor="Red"
+            ValueChanged="OnSliderColorValueChanged">
+        </Slider>
+
+        <Slider
+            x:Name="sldColorGreen"
+            Style="{StaticResource sliderStyleColor}"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            ThumbColor="Green"
+            MinimumTrackColor="Green"
+            ValueChanged="OnSliderColorValueChanged">
+        </Slider>
+
+        <Slider
+            x:Name="sldColorBlue"
+            Style="{StaticResource sliderStyleColor}"
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            ThumbColor="Blue"
+            MinimumTrackColor="Blue"
+            ValueChanged="OnSliderColorValueChanged">
+        </Slider>
+
+        <Button
+            Style="{StaticResource buttonStyleHelp}"
+            Grid.Row="5"
+            Grid.Column="0"
+            HorizontalOptions="Start"
+            SemanticProperties.Description="{Translate ToolTipHelp_Text}"
+            ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
+            Clicked="OnSettingsHexColorHelpClicked">
+        </Button>
+
+        <Border
+            Style="{StaticResource borderStyleDefault}"
+            Grid.Row="5"
+            Grid.Column="1">
+
+            <Entry
+                x:Name="entHexColor"
+                Grid.Row="5"
+                Grid.Column="1"
+                ClearButtonVisibility="WhileEditing"
+                Keyboard="Text"
+                ReturnType="Next"
+                MaxLength="8"
+                TextTransform="Uppercase"
+                TextChanged="EntryHexColorTextChanged"
+                Unfocused="EntryHexColorUnfocused">
+            </Entry>
+        </Border>
+
+        <Border
+            Grid.Row="5"
+            Grid.Column="2"
+            HeightRequest="40"
+            BackgroundColor="Transparent"
+            Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+            StrokeThickness="1"
+            StrokeShape="RoundRectangle 5,5,5,5">
+
+            <BoxView
+                x:Name="bxvColor"
+                Grid.Row="5"
+                Grid.Column="2"
+                Color="Black">
+            </BoxView>
+        </Border>
+
+        <Button
+            x:Name="btnButtonCancel"
+            Grid.Row="6"
+            Grid.Column="0"
+            HorizontalOptions="Start"
+            VerticalOptions="End"
+            WidthRequest="130"
+            BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
+            Margin="0,5,0,0"
+            Padding="5"
+            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
+            Text="{Translate ButtonCancel_Text}"
+            Clicked="OnButtonCancel_Clicked">
+        </Button>
+
+        <Button
+            x:Name="btnButtonClose"
+            Grid.Row="6"
+            Grid.Column="2"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            WidthRequest="130"
+            BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
+            Margin="0,5,0,0"
+            Padding="5"
+            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
+            Text="{Translate ButtonNext_Text}"
+            Clicked="OnButtonClose_Clicked">
+        </Button>
+
+    </Grid>
+</toolkit:Popup>
