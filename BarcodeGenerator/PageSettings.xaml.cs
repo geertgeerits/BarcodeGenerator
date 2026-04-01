@@ -488,18 +488,26 @@ namespace BarcodeGenerator
         {
             Globals.cCodeColor = Globals.cCodeColorFg;
             await OpenPopupColorPickerAsync();
-            Globals.cCodeColorFg = Globals.cCodeColor;
-            lblHexColorFg.Text = $"{CodeLang.ForegroundColor_Text} {Globals.cCodeColorFg}";
-            bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
+
+            if (!Globals.bPopupCanceled)
+            {
+                Globals.cCodeColorFg = Globals.cCodeColor;
+                lblHexColorFg.Text = $"{CodeLang.ForegroundColor_Text} {Globals.cCodeColorFg}";
+                bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
+            }
         }
 
         private async void OnButtonColorBackgroundClicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = Globals.cCodeColorBg;
             await OpenPopupColorPickerAsync();
-            Globals.cCodeColorBg = Globals.cCodeColor;
-            lblHexColorBg.Text = $"{CodeLang.BackgroundColor_Text} {Globals.cCodeColorBg}";
-            bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
+
+            if (!Globals.bPopupCanceled)
+            {
+                Globals.cCodeColorBg = Globals.cCodeColor;
+                lblHexColorBg.Text = $"{CodeLang.BackgroundColor_Text} {Globals.cCodeColorBg}";
+                bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
+            }
         }
 
         /// <summary>
@@ -512,12 +520,6 @@ namespace BarcodeGenerator
             {
                 Globals.bIsPopupMessage = true;
                 _ = await currentPage.ShowPopupAsync(new PopupColorPicker(60, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{ClassQRCodeImage.nQRCodeSizePixels:N0} x {ClassQRCodeImage.nQRCodeSizePixels:N0} {CodeLang.Pixels_Text}"));
-
-                // Check if the popup was canceled by the user before proceeding to open the file picker
-                if (Globals.bPopupCanceled)
-                {
-                    Globals.bPopupCanceled = false;
-                }
             }
         }
     }

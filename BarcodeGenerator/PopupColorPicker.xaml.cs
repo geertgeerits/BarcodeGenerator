@@ -15,6 +15,8 @@ public partial class PopupColorPicker : Popup
 
         // Set the message text
         //lblPopupMessage.Text = cMessage;
+        
+        Globals.bPopupCanceled = false;
 
         // Start the asynchronous process to close the popup after the specified number of seconds
         _ = CloseAfterSecondsAsync(nSeconds, _closeCts.Token);
@@ -25,9 +27,9 @@ public partial class PopupColorPicker : Popup
         int nGreen = 0;
         int nBlue = 0;
 
-        entHexColor.Text = Globals.cCodeColorFg;
+        entHexColor.Text = Globals.cCodeColor;
 
-        HexToRgbColor(Globals.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+        HexToRgbColor(Globals.cCodeColor, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
         sldOpacity.Value = nOpacity;
         sldColorRed.Value = nRed;
@@ -153,11 +155,11 @@ public partial class PopupColorPicker : Popup
         }
 
         // The X2 format specifier formats the number as a hexadecimal value with a minimum width of 2 digits
-        string cColorFgHex = $"{nAmountOpacity:X2}{nColorRed:X2}{nColorGreen:X2}{nColorBlue:X2}";
-        entHexColor.Text = cColorFgHex;
-        bxvColor.Color = Color.FromArgb(cColorFgHex);
+        string cColorHex = $"{nAmountOpacity:X2}{nColorRed:X2}{nColorGreen:X2}{nColorBlue:X2}";
+        entHexColor.Text = cColorHex;
+        bxvColor.Color = Color.FromArgb(cColorHex);
 
-        Globals.cCodeColor = cColorFgHex;
+        Globals.cCodeColor = cColorHex;
     }
 
     /// <summary>
@@ -261,7 +263,9 @@ public partial class PopupColorPicker : Popup
     {
         // Ensure only one caller proceeds to call CloseAsync
         if (Interlocked.CompareExchange(ref _closing, 1, 0) != 0)
+        {
             return;
+        }
 
         try
         {
@@ -313,6 +317,8 @@ public partial class PopupColorPicker : Popup
     /// <param name="e"></param>
     private async void OnButtonCancel_Clicked(object sender, EventArgs e)
     {
+        Globals.bPopupCanceled = true;
+
         // Cancel the pending auto-close and attempt a single close
         try
         {
@@ -322,8 +328,6 @@ public partial class PopupColorPicker : Popup
 
         try
         {
-            Globals.bPopupCanceled = true;
-
             await TryCloseAsync();
         }
         catch (Exception ex)
