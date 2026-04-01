@@ -48,14 +48,6 @@
                     Text="{Translate Language_Text}">
                 </Label>
 
-                <Button
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    HorizontalOptions="Center"
-                    Text="Popup"
-                    Clicked="OnButtonColorForgroundClicked">
-                </Button>
-                
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="1"
@@ -178,91 +170,17 @@
                 </Border>
 
                 <Label
+                    x:Name="lblHexColorFg"
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="7"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Start"
-                    Text="{Translate ForegroundOpacity_Text}">
-                </Label>
-
-                <Border
-                    Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="7"
-                    Grid.Column="2"
-                    Grid.RowSpan="4">
-                </Border>
-                
-                <Slider
-                    x:Name="sldOpacityFg"
-                    Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="7"
-                    Grid.Column="2"
-                    ThumbColor="Grey"
-                    MinimumTrackColor="Black"
-                    ValueChanged="OnSliderColorForegroundValueChanged">
-                </Slider>
-
-                <Label
-                    Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="8"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
                     Text="{Translate ForegroundColor_Text}">
                 </Label>
 
-                <Slider
-                    x:Name="sldColorFgRed"
-                    Style="{StaticResource sliderStyleColor}"
+                <Border
                     Grid.Row="8"
-                    Grid.Column="2"
-                    ThumbColor="Red"
-                    MinimumTrackColor="Red"
-                    ValueChanged="OnSliderColorForegroundValueChanged">
-                </Slider>
-
-                <Button
-                    Style="{StaticResource buttonStyleHelp}"
-                    Grid.Row="9"
-                    Grid.Column="0"
-                    SemanticProperties.Description="{Translate ToolTipHelp_Text}"
-                    ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
-                    Clicked="OnSettingsHexColorHelpClicked">
-                </Button>
-
-                <Border
-                    Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="9"
-                    Grid.Column="1">
-
-                    <Entry
-                        x:Name="entHexColorFg"
-                        Grid.Row="9"
-                        Grid.Column="1"
-                        ClearButtonVisibility="WhileEditing"
-                        Keyboard="Text"
-                        ReturnType="Next"
-                        MaxLength="8"
-                        TextTransform="Uppercase"
-                        TextChanged="EntryHexColorTextChanged"
-                        Unfocused="EntryHexColorUnfocused"
-                        Completed="GoToNextField">
-                    </Entry>
-                </Border>
-
-                <Slider
-                    x:Name="sldColorFgGreen"
-                    Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="9"
-                    Grid.Column="2"
-                    ThumbColor="Green"
-                    MinimumTrackColor="Green"
-                    ValueChanged="OnSliderColorForegroundValueChanged">
-                </Slider>
-
-                <Border
-                    Grid.Row="10"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HeightRequest="40"
@@ -273,50 +191,23 @@
 
                     <BoxView
                         x:Name="bxvColorFg"
-                        Grid.Row="10"
+                        Grid.Row="8"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         Color="Black">
                     </BoxView>
                 </Border>
 
-                <Slider
-                    x:Name="sldColorFgBlue"
-                    Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="10"
+                <Button
+                    Style="{StaticResource buttonStyleDefault}"
+                    Grid.Row="8"
                     Grid.Column="2"
-                    ThumbColor="Blue"
-                    MinimumTrackColor="Blue"
-                    ValueChanged="OnSliderColorForegroundValueChanged">
-                </Slider>
+                    Text="Color picker foreground"
+                    Clicked="OnButtonColorForgroundClicked">
+                </Button>
 
                 <Label
-                    Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="12"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Start"
-                    Text="{Translate BackgroundOpacity_Text}">
-                </Label>
-
-                <Border
-                    Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="12"
-                    Grid.Column="2"
-                    Grid.RowSpan="4">
-                </Border>
-                
-                <Slider
-                    x:Name="sldOpacityBg"
-                    Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="12"
-                    Grid.Column="2"
-                    ThumbColor="Grey"
-                    MinimumTrackColor="Black"
-                    ValueChanged="OnSliderColorBackgroundValueChanged">
-                </Slider>
-
-                <Label
+                    x:Name="lblHexColorBg"
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="13"
                     Grid.Column="0"
@@ -324,55 +215,6 @@
                     VerticalTextAlignment="Start"
                     Text="{Translate BackgroundColor_Text}">
                 </Label>
-
-                <Slider
-                    x:Name="sldColorBgRed"
-                    Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="13"
-                    Grid.Column="2"
-                    ThumbColor="Red"
-                    MinimumTrackColor="Red"
-                    ValueChanged="OnSliderColorBackgroundValueChanged">
-                </Slider>
-
-                <Button
-                    Style="{StaticResource buttonStyleHelp}"
-                    Grid.Row="14"
-                    Grid.Column="0"
-                    SemanticProperties.Description="{Translate ToolTipHelp_Text}"
-                    ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
-                    Clicked="OnSettingsHexColorHelpClicked">
-                </Button>
-
-                <Border
-                    Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="14"
-                    Grid.Column="1">
-
-                    <Entry
-                        x:Name="entHexColorBg"
-                        Grid.Row="14"
-                        Grid.Column="1"
-                        ClearButtonVisibility="WhileEditing"
-                        Keyboard="Text"
-                        ReturnType="Done"
-                        MaxLength="8"
-                        TextTransform="Uppercase"
-                        TextChanged="EntryHexColorTextChanged"
-                        Unfocused="EntryHexColorUnfocused"
-                        Completed="GoToNextField">
-                    </Entry>
-                </Border>
-
-                <Slider
-                    x:Name="sldColorBgGreen"
-                    Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="14"
-                    Grid.Column="2"
-                    ThumbColor="Green"
-                    MinimumTrackColor="Green"
-                    ValueChanged="OnSliderColorBackgroundValueChanged">
-                </Slider>
 
                 <Border
                     Grid.Row="15"
@@ -392,16 +234,14 @@
                         Color="White">
                     </BoxView>
                 </Border>
-            
-                <Slider
-                    x:Name="sldColorBgBlue"
-                    Style="{StaticResource sliderStyleColor}"
+
+                <Button
+                    Style="{StaticResource buttonStyleDefault}"
                     Grid.Row="15"
                     Grid.Column="2"
-                    ThumbColor="Blue"
-                    MinimumTrackColor="Blue"
-                    ValueChanged="OnSliderColorBackgroundValueChanged">
-                </Slider>
+                    Text="Color picker background"
+                    Clicked="OnButtonColorBackgroundClicked">
+                </Button>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"

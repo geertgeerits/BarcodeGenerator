@@ -34,7 +34,7 @@ namespace BarcodeGenerator
             // Happens when the 'Entry ReturnType' is set to 'Done' and the soft keyboard is hiding after pressing 'Done'.
             // Workaround: use always 'Next' and handle the focus in the GoToNextField method to go to the next field or unfocus the last field.
             // Happens most with the Microsoft SwiftKey keyboard, the Samsung and Google keyboards have it less or not at all.
-            entHexColorBg.ReturnType = ReturnType.Next;
+            //entHexColorBg.ReturnType = ReturnType.Next;
 #endif
 
             // Put text in the chosen language in the controls and variables
@@ -73,30 +73,6 @@ namespace BarcodeGenerator
                 "Dark" => 2,    // Dark
                 _ => 0          // System
             };
-
-            // Set the current color in the entry and on the sliders
-            int nOpacity = 0;
-            int nRed = 0;
-            int nGreen = 0;
-            int nBlue = 0;
-
-            entHexColorFg.Text = Globals.cCodeColorFg;
-
-            HexToRgbColor(Globals.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
-
-            sldOpacityFg.Value = nOpacity;
-            sldColorFgRed.Value = nRed;
-            sldColorFgGreen.Value = nGreen;
-            sldColorFgBlue.Value = nBlue;
-
-            entHexColorBg.Text = Globals.cCodeColorBg;
-
-            HexToRgbColor(Globals.cCodeColorBg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
-
-            sldOpacityBg.Value = nOpacity;
-            sldColorBgRed.Value = nRed;
-            sldColorBgGreen.Value = nGreen;
-            sldColorBgBlue.Value = nBlue;
 
             // Set the QR code image size to update the switch and entry
             swtQRCodeSizeVariable.IsToggled = ClassQRCodeImage.bQRCodeSizeVariable;
@@ -207,6 +183,13 @@ namespace BarcodeGenerator
             // Set the QR code image size percent in the label
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";
             sldQRCodeImageSize.Value = ClassQRCodeImage.nQRCodeImageSizePercent;
+
+            // Set the current color in the label and the box view
+            lblHexColorFg.Text = $"{CodeLang.ForegroundColor_Text} {Globals.cCodeColorFg}";
+            bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
+
+            lblHexColorBg.Text = $"{CodeLang.BackgroundColor_Text} {Globals.cCodeColorBg}";
+            bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
 
             // Set the Art QR code background opacity value on the slider and label
             sldArtQRCodeOpacityBg.Value = int.Parse(Globals.cArtCodeOpacityBg.AsSpan(0, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
@@ -319,233 +302,6 @@ namespace BarcodeGenerator
             }
 
             return true;
-        }
-
-        /// <summary>
-        /// Display help for Hex color
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnSettingsHexColorHelpClicked(object sender, EventArgs e)
-        {
-            await DisplayAlertAsync("?", $"{CodeLang.HexColorCodes_Text}\n\n{CodeLang.AllowedChar_Text}\n{cHexCharacters}", CodeLang.ButtonClose_Text);
-        }
-
-        /// <summary>
-        /// Go to the next field when the next/done key have been pressed 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// 
-        private async void GoToNextField(object sender, EventArgs e)
-        {
-            // Go to the next field when the next/done key have been pressed on the soft input keyboard
-            if (sender == entHexColorFg)
-            {
-                _ = entHexColorBg.Focus();
-            }
-            else if (sender == entHexColorBg)
-            {
-                entHexColorBg.Unfocus();
-            }
-        }
-
-        /// <summary>
-        /// Entry HexColor Unfocused event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void EntryHexColorUnfocused(object sender, EventArgs e)
-        {
-            Entry entry = (Entry)sender;
-
-#if ANDROID
-            // Android !!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
-            // A padding with a height of 50 at the bottom is added to the grid to workaround this issue and push the content
-            // above the navigation bar on Android when the entry is unfocused and the soft input keyboard is hidden.
-            // Happens when the 'Entry ReturnType' is set to 'Done' and the soft keyboard is hiding after pressing 'Done'.
-            // Workaround: use always 'Next' and handle the focus in the GoToNextField method to go to the next field or unfocus the last field.
-            // Happens most with the Microsoft SwiftKey keyboard, the Samsung and Google keyboards have it less or not at all.
-            //if (!hasWorkaroundRow)
-            //{
-            //    grdMainFixed.Padding = new Thickness(0, 0, 0, 50);
-            //    hasWorkaroundRow = true;
-            //}
-#endif
-
-#if IOS
-            // https://github.com/dotnet/maui/issues/33316 and https://github.com/dotnet/maui/issues/32016
-            // Workaround for iOS !!!BUG!!! The MaxLength property of an Entry control is not respected on iOS,
-            // so we have to set the text again to get the correct length of the text (Microsoft.Maui.Controls Version 10.0.41)
-            // Re-assign text to enforce MaxLength on iOS
-            string cTemp = entry.Text;
-            entry.Text = string.Empty;
-            entry.Text = cTemp;
-#endif
-            // Add the opacity if length = 6 characters
-            if (entry.Text?.Length == 6)
-            {
-                entry.Text = $"FF{entry.Text}";
-            }
-
-            // Length must be 8 characters
-            if (entry.Text == null || entry.Text.Length != 8)
-            {
-                _ = entry.Focus();
-                return;
-            }
-
-            // Set the sliders position based on the entry content
-            int nOpacity = 0;
-            int nRed = 0;
-            int nGreen = 0;
-            int nBlue = 0;
-
-            if (entry == entHexColorFg)
-            {
-                Globals.cCodeColorFg = entHexColorFg.Text;
-
-                HexToRgbColor(Globals.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
-
-                sldOpacityFg.Value = nOpacity;
-                sldColorFgRed.Value = nRed;
-                sldColorFgGreen.Value = nGreen;
-                sldColorFgBlue.Value = nBlue;
-            }
-            else
-            {
-                Globals.cCodeColorBg = entHexColorBg.Text;
-
-                HexToRgbColor(Globals.cCodeColorBg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
-
-                sldOpacityBg.Value = nOpacity;
-                sldColorBgRed.Value = nRed;
-                sldColorBgGreen.Value = nGreen;
-                sldColorBgBlue.Value = nBlue;
-            }
-        }
-
-        /// <summary>
-        /// Slider color barcode Foreground value change
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        private void OnSliderColorForegroundValueChanged(object sender, ValueChangedEventArgs args)
-        {
-            int nAmountOpacity = 0;
-            int nColorRed = 0;
-            int nColorGreen = 0;
-            int nColorBlue = 0;
-
-            Slider slider = (Slider)sender;
-
-            if (slider == sldOpacityFg)
-            {
-                nAmountOpacity = (int)args.NewValue;
-                nColorRed = (int)sldColorFgRed.Value;
-                nColorGreen = (int)sldColorFgGreen.Value;
-                nColorBlue = (int)sldColorFgBlue.Value;
-            }
-            else if (slider == sldColorFgRed)
-            {
-                nAmountOpacity = (int)sldOpacityFg.Value;
-                nColorRed = (int)args.NewValue;
-                nColorGreen = (int)sldColorFgGreen.Value;
-                nColorBlue = (int)sldColorFgBlue.Value;
-            }
-            else if (slider == sldColorFgGreen)
-            {
-                nAmountOpacity = (int)sldOpacityFg.Value;
-                nColorRed = (int)sldColorFgRed.Value;
-                nColorGreen = (int)args.NewValue;
-                nColorBlue = (int)sldColorFgBlue.Value;
-            }
-            else if (slider == sldColorFgBlue)
-            {
-                nAmountOpacity = (int)sldOpacityFg.Value;
-                nColorRed = (int)sldColorFgRed.Value;
-                nColorGreen = (int)sldColorFgGreen.Value;
-                nColorBlue = (int)args.NewValue;
-            }
-
-            // The X2 format specifier formats the number as a hexadecimal value with a minimum width of 2 digits
-            string cColorFgHex = $"{nAmountOpacity:X2}{nColorRed:X2}{nColorGreen:X2}{nColorBlue:X2}";
-            entHexColorFg.Text = cColorFgHex;
-            bxvColorFg.Color = Color.FromArgb(cColorFgHex);
-
-            Globals.cCodeColorFg = cColorFgHex;
-        }
-
-        /// <summary>
-        /// Slider color barcode background value change
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        private void OnSliderColorBackgroundValueChanged(object sender, ValueChangedEventArgs args)
-        {
-            int nAmountOpacity = 0;
-            int nColorRed = 0;
-            int nColorGreen = 0;
-            int nColorBlue = 0;
-
-            Slider slider = (Slider)sender;
-
-            if (slider == sldOpacityBg)
-            {
-                nAmountOpacity = (int)args.NewValue;
-                nColorRed = (int)sldColorBgRed.Value;
-                nColorGreen = (int)sldColorBgGreen.Value;
-                nColorBlue = (int)sldColorBgBlue.Value;
-            }
-            else if (slider == sldColorBgRed)
-            {
-                nAmountOpacity = (int)sldOpacityBg.Value;
-                nColorRed = (int)args.NewValue;
-                nColorGreen = (int)sldColorBgGreen.Value;
-                nColorBlue = (int)sldColorBgBlue.Value;
-            }
-            else if (slider == sldColorBgGreen)
-            {
-                nAmountOpacity = (int)sldOpacityBg.Value;
-                nColorRed = (int)sldColorBgRed.Value;
-                nColorGreen = (int)args.NewValue;
-                nColorBlue = (int)sldColorBgBlue.Value;
-            }
-            else if (slider == sldColorBgBlue)
-            {
-                nAmountOpacity = (int)sldOpacityBg.Value;
-                nColorRed = (int)sldColorBgRed.Value;
-                nColorGreen = (int)sldColorBgGreen.Value;
-                nColorBlue = (int)args.NewValue;
-            }
-
-            string cColorBgHex = $"{nAmountOpacity:X2}{nColorRed:X2}{nColorGreen:X2}{nColorBlue:X2}";
-            entHexColorBg.Text = cColorBgHex;
-            bxvColorBg.Color = Color.FromArgb(cColorBgHex);
-
-            Globals.cCodeColorBg = cColorBgHex;
-        }
-
-        /// <summary>
-        /// Convert OORRGGBB Hex color to RGB color
-        /// </summary>
-        /// <param name="cHexColor"></param>
-        /// <param name="nOpacity"></param>
-        /// <param name="nRed"></param>
-        /// <param name="nGreen"></param>
-        /// <param name="nBlue"></param>
-        private static void HexToRgbColor(string cHexColor, ref int nOpacity, ref int nRed, ref int nGreen, ref int nBlue)
-        {
-            // Remove leading # if present
-            if (cHexColor[..1] == "#")
-            {
-                cHexColor = cHexColor[1..];
-            }
-
-            nOpacity = int.Parse(cHexColor.AsSpan(0, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
-            nRed = int.Parse(cHexColor.AsSpan(2, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
-            nGreen = int.Parse(cHexColor.AsSpan(4, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
-            nBlue = int.Parse(cHexColor.AsSpan(6, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
         }
 
         /// <summary>
@@ -733,8 +489,17 @@ namespace BarcodeGenerator
             Globals.cCodeColor = Globals.cCodeColorFg;
             await OpenPopupColorPickerAsync();
             Globals.cCodeColorFg = Globals.cCodeColor;
-            entHexColorFg.Text = Globals.cCodeColorFg;
+            lblHexColorFg.Text = $"{CodeLang.ForegroundColor_Text} {Globals.cCodeColorFg}";
             bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
+        }
+
+        private async void OnButtonColorBackgroundClicked(object sender, EventArgs e)
+        {
+            Globals.cCodeColor = Globals.cCodeColorBg;
+            await OpenPopupColorPickerAsync();
+            Globals.cCodeColorBg = Globals.cCodeColor;
+            lblHexColorBg.Text = $"{CodeLang.BackgroundColor_Text} {Globals.cCodeColorBg}";
+            bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
         }
 
         /// <summary>

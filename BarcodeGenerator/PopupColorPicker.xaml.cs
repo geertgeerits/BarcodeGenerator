@@ -98,20 +98,9 @@ public partial class PopupColorPicker : Popup
 
         if (entry == entHexColor)
         {
-            Globals.cCodeColorFg = entHexColor.Text;
+            Globals.cCodeColor = entHexColor.Text;
 
-            HexToRgbColor(Globals.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
-
-            sldOpacity.Value = nOpacity;
-            sldColorRed.Value = nRed;
-            sldColorGreen.Value = nGreen;
-            sldColorBlue.Value = nBlue;
-        }
-        else
-        {
-            Globals.cCodeColorBg = entHexColor.Text;
-
-            HexToRgbColor(Globals.cCodeColorBg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+            HexToRgbColor(Globals.cCodeColor, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
             sldOpacity.Value = nOpacity;
             sldColorRed.Value = nRed;
@@ -168,7 +157,7 @@ public partial class PopupColorPicker : Popup
         entHexColor.Text = cColorFgHex;
         bxvColor.Color = Color.FromArgb(cColorFgHex);
 
-        Globals.cCodeColorFg = cColorFgHex;
+        Globals.cCodeColor = cColorFgHex;
     }
 
     /// <summary>
