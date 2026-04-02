@@ -33,7 +33,7 @@
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3">
+                    Grid.ColumnSpan="2">
 
                     <Label
                         Style="{StaticResource labelStyleExplanation}"
@@ -45,7 +45,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="1"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     Text="{Translate Language_Text}">
                 </Label>
 
@@ -84,7 +83,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="2"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     Text="{Translate LanguageSpeech_Text}">
                 </Label>
 
@@ -104,7 +102,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="3"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     Text="{Translate Theme_Text}">
                 </Label>
 
@@ -124,7 +121,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="4"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     Text="{Translate DefaultFormatGenerator_Text}">
                 </Label>
 
@@ -144,7 +140,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="5"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     Text="{Translate DefaultFormatScanner_Text}">
                 </Label>
 
@@ -165,7 +160,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="6"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
                     Text="{Translate ForegroundColor_Text}">
                 </Label>
 
@@ -204,7 +198,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="7"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
                     Text="{Translate BackgroundColor_Text}">
                 </Label>
 
@@ -242,7 +235,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="8"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
                     Text="{Translate BackgroundColorArtQRCode_Text}">
                 </Label>
 
@@ -279,7 +271,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="9"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
                     Text="{Translate QRCodeSizeVariable_Text}">
                 </Label>
@@ -296,7 +287,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="10"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
                     Text="{Translate QRCodeSizePixels_Text}">
                 </Label>
@@ -323,7 +313,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="11"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
                     Text="{Translate QRCodeImageSize_Text}">
                 </Label>
@@ -349,7 +338,6 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="12"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
                     Text="{Translate BarcodeWithCaption_Text}">
                 </Label>

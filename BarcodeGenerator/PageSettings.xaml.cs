@@ -5,7 +5,6 @@ namespace BarcodeGenerator
     public sealed partial class PageSettings : ContentPage
     {
         // Local variables
-        private const string cHexCharacters = "0123456789ABCDEFabcdef";
         private const string cDecimalCharacters = "0123456789";
         private readonly Stopwatch stopWatch = new();
         private string searchKeyGenerator = string.Empty;
@@ -183,14 +182,9 @@ namespace BarcodeGenerator
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";
             sldQRCodeImageSize.Value = ClassQRCodeImage.nQRCodeImageSizePercent;
 
-            // Set the current color in the label and the box view
-            lblHexColorFg.Text = $"{CodeLang.ForegroundColor_Text} {Globals.cCodeColorFg}";
+            // Set the current color in the box view
             bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
-
-            lblHexColorBg.Text = $"{CodeLang.BackgroundColor_Text} {Globals.cCodeColorBg}";
             bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
-
-            lblHexColorBgArtQRCode.Text = $"{CodeLang.BackgroundColorArtQRCode_Text} {Globals.cCodeColorBgArtQRCode}";
             bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
 
             // Set the theme in the picker
@@ -450,7 +444,6 @@ namespace BarcodeGenerator
             if (!Globals.bPopupCanceled)
             {
                 Globals.cCodeColorFg = Globals.cCodeColor;
-                lblHexColorFg.Text = $"{CodeLang.ForegroundColor_Text} {Globals.cCodeColorFg}";
                 bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
             }
         }
@@ -468,7 +461,6 @@ namespace BarcodeGenerator
             if (!Globals.bPopupCanceled)
             {
                 Globals.cCodeColorBg = Globals.cCodeColor;
-                lblHexColorBg.Text = $"{CodeLang.BackgroundColor_Text} {Globals.cCodeColorBg}";
                 bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
             }
         }
@@ -486,7 +478,6 @@ namespace BarcodeGenerator
             if (!Globals.bPopupCanceled)
             {
                 Globals.cCodeColorBgArtQRCode = Globals.cCodeColor;
-                lblHexColorBgArtQRCode.Text = $"{CodeLang.BackgroundColor_Text} {Globals.cCodeColorBgArtQRCode}";
                 bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
             }
         }

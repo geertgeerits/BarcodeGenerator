@@ -314,8 +314,7 @@
                             <Setter Property="ColumnDefinitions">
                                 <Setter.Value>
                                     <ColumnDefinitionCollection>
-                                        <ColumnDefinition Width="{OnIdiom 40, Phone=40, Tablet=40, Desktop=40}" />
-                                        <ColumnDefinition Width="{OnIdiom 110, Phone=110, Tablet=250, Desktop=250}" />
+                                        <ColumnDefinition Width="{OnIdiom 150, Phone=150, Tablet=290, Desktop=290}" />
                                         <ColumnDefinition Width="{OnIdiom 190, Phone=190, Tablet=330, Desktop=330}" />
                                     </ColumnDefinitionCollection>
                                 </Setter.Value>
@@ -330,8 +329,7 @@
                             <Setter Property="ColumnDefinitions">
                                 <Setter.Value>
                                     <ColumnDefinitionCollection>
-                                        <ColumnDefinition Width="{OnIdiom 40, Phone=40, Tablet=40, Desktop=40}" />
-                                        <ColumnDefinition Width="{OnIdiom 210, Phone=210, Tablet=350, Desktop=350}" />
+                                        <ColumnDefinition Width="{OnIdiom 250, Phone=250, Tablet=390, Desktop=390}" />
                                         <ColumnDefinition Width="{OnIdiom 290, Phone=290, Tablet=430, Desktop=430}" />
                                     </ColumnDefinitionCollection>
                                 </Setter.Value>
