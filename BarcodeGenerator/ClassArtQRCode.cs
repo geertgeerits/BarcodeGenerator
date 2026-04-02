@@ -2,6 +2,7 @@
 using SkiaSharp;
 using SkiaSharp.QrCode;
 using SkiaSharp.QrCode.Image;
+using System.IO.Compression;
 
 namespace BarcodeGenerator
 {
@@ -19,6 +20,13 @@ namespace BarcodeGenerator
         public static async Task<ImageSource?> GenerateArtQrCodeAsync(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
+            {
+                return null;
+            }
+
+            // Check input text length against QR code limits based on detected mode and error correction level (H),
+            // and show an alert if it exceeds the limits            
+            if (!await QrModeDetector.CheckInputTextAsync(text))
             {
                 return null;
             }
@@ -41,7 +49,11 @@ namespace BarcodeGenerator
             // Open the file picker to select an image file for the background of the Art QR code
             FileResult? cFile = await ClassFileOperations.PickImage();
 
-            // Create QR code with custom styling
+            // Compress then encode (gzip->base64) to reduce bytes and allow encoding larger text content than the QR code
+            // would normally allow, at the cost of requiring a custom decoder on the scanning side
+            //text = CompressToBase64(text);
+
+            // Create QR code with custom styling and non-compressed text
             // If no size is given then the default size = 512 x 512 pixels
             QRCodeImageBuilder qrData = new QRCodeImageBuilder(text)
                 .WithSize(ClassQRCodeImage.nQRCodeSizePixels, ClassQRCodeImage.nQRCodeSizePixels)
@@ -304,6 +316,27 @@ namespace BarcodeGenerator
 
             srcBitmap.Dispose();
             return result;
+        }
+
+        /// <summary>
+        /// Compresses the specified string using GZip compression and encodes the result as a Base64 string.
+        /// </summary>
+        /// <remarks>The input string is first encoded as UTF-8 before compression. The returned Base64
+        /// string can be decoded and decompressed to retrieve the original input.</remarks>
+        /// <param name="s">The string to compress. Cannot be null.</param>
+        /// <returns>A Base64-encoded string representing the compressed input.</returns>
+        static string CompressToBase64(string s)
+        {
+            byte[] input = System.Text.Encoding.UTF8.GetBytes(s);
+            using MemoryStream ms = new();
+            using (GZipStream gz = new(ms, System.IO.Compression.CompressionLevel.Optimal, leaveOpen: true))
+            {
+                gz.Write(input, 0, input.Length);
+            }
+
+            ms.Position = 0;
+            
+            return Convert.ToBase64String(ms.ToArray());
         }
     }
 }

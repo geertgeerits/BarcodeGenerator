@@ -57,6 +57,12 @@ namespace BarcodeGenerator
             edtTextToCode.AutoSize = EditorAutoSizeOption.Disabled;
             activityIndicator.Scale = 2;
 #endif
+
+#if ANDROID || IOS
+            // Register code pages for QR code encoding - required for Shift_JIS encoding used in Kanji mode            
+            QrModeDetector.RegisterCodePages();
+#endif
+
             // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
@@ -387,7 +393,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 25;
 #else
                     bgvBarcode.BarcodeMargin = 10;
-#endif              
+#endif
                     bgvBarcode.Format = BarcodeFormat.Pdf417;
                 }
                 

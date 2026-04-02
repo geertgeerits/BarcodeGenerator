@@ -9,12 +9,12 @@
 
     <Grid
         RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-        ColumnDefinitions="100, 100*, 100"
+        ColumnDefinitions="130, 70*, 130"
         RowSpacing="5"
         HorizontalOptions="Center"
         VerticalOptions="Center"
-        WidthRequest="300"
-        Padding="10">
+        WidthRequest="340"
+        Padding="0">
 
         <BoxView
             Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
@@ -22,7 +22,8 @@
             Grid.ColumnSpan="3"
             HorizontalOptions="Fill"
             VerticalOptions="Fill"
-            CornerRadius="10">
+            CornerRadius="10"
+            Margin="0">
         </BoxView>
 
         <Label
@@ -46,7 +47,8 @@
             Grid.Row="1"
             Grid.Column="0"
             Grid.RowSpan="4"
-            Grid.ColumnSpan="3">
+            Grid.ColumnSpan="3"
+            Margin="4">
         </Border>
 
         <Slider
@@ -55,6 +57,7 @@
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="3"
+            Margin="10,5,10,0"
             ThumbColor="Grey"
             MinimumTrackColor="Black"
             ValueChanged="OnSliderColorValueChanged">
@@ -66,6 +69,7 @@
             Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="3"
+            Margin="10,0,10,0"
             ThumbColor="Red"
             MinimumTrackColor="Red"
             ValueChanged="OnSliderColorValueChanged">
@@ -77,6 +81,7 @@
             Grid.Row="3"
             Grid.Column="0"
             Grid.ColumnSpan="3"
+            Margin="10,0,10,0"
             ThumbColor="Green"
             MinimumTrackColor="Green"
             ValueChanged="OnSliderColorValueChanged">
@@ -88,6 +93,7 @@
             Grid.Row="4"
             Grid.Column="0"
             Grid.ColumnSpan="3"
+            Margin="10,0,10,0"
             ThumbColor="Blue"
             MinimumTrackColor="Blue"
             ValueChanged="OnSliderColorValueChanged">
@@ -96,7 +102,10 @@
         <Border
             Style="{StaticResource borderStyleDefault}"
             Grid.Row="5"
-            Grid.Column="0">
+            Grid.Column="0"
+            WidthRequest="120"
+            HorizontalOptions="Start"
+            Margin="4,0,0,0">
 
             <Entry
                 x:Name="entHexColor"
@@ -114,6 +123,9 @@
             Grid.Row="5"
             Grid.Column="2"
             HeightRequest="40"
+            WidthRequest="120"
+            HorizontalOptions="End"
+            Margin="0,0,4,0"
             BackgroundColor="Transparent"
             Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
             StrokeThickness="1"
@@ -132,8 +144,8 @@
             Grid.Column="0"
             HorizontalOptions="Start"
             VerticalOptions="End"
-            WidthRequest="100"
-            Margin="0,5,0,0"
+            WidthRequest="120"
+            Margin="4,5,0,0"
             Padding="5"
             ToolTipProperties.Text="{Translate ButtonCancel_Text}"
             Source="ic_action_cancel.png"
@@ -160,8 +172,8 @@
             Grid.Column="2"
             HorizontalOptions="End"
             VerticalOptions="End"
-            WidthRequest="100"
-            Margin="0,5,0,0"
+            WidthRequest="120"
+            Margin="0,5,4,0"
             Padding="5"
             ToolTipProperties.Text="{Translate ButtonNext_Text}"
             Source="ic_action_tick.png"

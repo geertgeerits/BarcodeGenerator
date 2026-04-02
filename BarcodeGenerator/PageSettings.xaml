@@ -15,8 +15,8 @@
         x:Name="grdMainFixed"
         RowDefinitions="Auto, *, Auto"
         HorizontalOptions="Center"
-        ColumnSpacing="5"
-        Margin="5"
+        RowSpacing="1"
+        Margin="4"
         SafeAreaEdges="Container,SoftInput">
 
         <ScrollView
@@ -27,6 +27,7 @@
             <Grid
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
+                RowSpacing="4"
                 RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
                 <Border
@@ -326,6 +327,7 @@
                     <Slider
                         x:Name="sldQRCodeImageSize"
                         Style="{StaticResource sliderStyleColor}"
+                        Margin="10,7,10,0"
                         ThumbColor="Orange"
                         MinimumTrackColor="Orange"
                         Minimum="10"
