@@ -186,6 +186,52 @@
 
             return cUpcA = $"0{cUpcA}";
         }
+
+        // QR code can encode any text, but some characters may not be supported in certain modes
+        // This method can be used to validate input before encoding
+
+
+        /// <summary>
+        /// Asynchronously validates the input text against QR code character count limits for each encoding mode.
+        /// </summary>
+        /// <remarks>If the input text exceeds the character limit for its detected QR code mode, an alert
+        /// dialog is displayed to the user and the method returns <see langword="false"/>. This method is intended to
+        /// be used before encoding text into a QR code to ensure compatibility with the specified mode
+        /// limits.</remarks>
+        /// <param name="cText">The text to be validated for QR code encoding. The detected mode of this text determines which character
+        /// limit applies.</param>
+        /// <param name="nNumeric">The maximum allowed number of characters for the Numeric mode</param>
+        /// <param name="nAlphanumeric">The maximum allowed number of characters for the Alphanumeric mode</param>
+        /// <param name="nByte">The maximum allowed number of characters for the Byte mode</param>
+        /// <param name="nKanji">The maximum allowed number of characters for the Kanji mode</param>
+        /// <returns>A task that represents the asynchronous operation. The task result is <see langword="true"/> if the input
+        /// text does not exceed the character limit for its detected mode; otherwise, <see langword="false"/>.</returns>
+        public static async Task<bool> CheckInputTextAsync(string cText, int nNumeric, int nAlphanumeric, int nByte, int nKanji)
+        {
+            // Check input text length against QR code limits based on detected mode and error correction level (H),
+            // and show an alert if it exceeds the limits            
+            if (QrModeDetector.Detect(cText) == QrModeDetector.Mode.Numeric && cText.Length > nNumeric)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Numeric characters detected", $"The length of the text is limited to {nNumeric} characters", "OK");
+                return false;
+            }
+            else if (QrModeDetector.Detect(cText) == QrModeDetector.Mode.Alphanumeric && cText.Length > nAlphanumeric)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Alphanumeric characters detected", $"The length of the text is limited to {nAlphanumeric} characters", "OK");
+                return false;
+            }
+            else if (QrModeDetector.Detect(cText) == QrModeDetector.Mode.Byte && cText.Length > nByte)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Binary characters detected", $"The length of the text is limited to {nByte} characters", "OK");
+                return false;
+            }
+            else if (QrModeDetector.Detect(cText) == QrModeDetector.Mode.Kanji && cText.Length > nKanji)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Kanji characters detected", $"The length of the text is limited to {nKanji} characters", "OK");
+                return false;
+            }
+            return true;
+        }
     }
 }
 
