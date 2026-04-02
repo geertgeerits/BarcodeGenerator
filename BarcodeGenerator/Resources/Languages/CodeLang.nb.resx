@@ -696,7 +696,10 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Kunstnerisk QR-kode</value>
   </data>
-  <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Bakgrunnens opasitet kunstnerisk QR-kode:</value>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Bakgrunnsfarge kunstnerisk QR-kode:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Fargevelger</value>
   </data>
 </root>

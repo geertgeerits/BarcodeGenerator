@@ -696,7 +696,10 @@ Microsoft, Microsoft Store, le logo Microsoft Store et Windows sont des marques 
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Code QR artistique</value>
   </data>
-  <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Code QR artistique d'opacité de fond:</value>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Code QR artistique couleur de fond:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Sélecteur de couleurs</value>
   </data>
 </root>

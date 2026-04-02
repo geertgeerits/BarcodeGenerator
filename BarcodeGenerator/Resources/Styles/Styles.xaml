@@ -479,6 +479,16 @@
         <Setter Property="Aspect" Value="AspectFit" />
     </Style>
 
+    <Style x:Key="imageButtonStyleColorPicker" TargetType="ImageButton">
+        <Setter Property="HeightRequest" Value="39" />
+        <Setter Property="WidthRequest" Value="39" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Aspect" Value="AspectFit" />
+    </Style>
+
     <Style x:Key="pickerStyleSettings" TargetType="Picker">
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="VerticalTextAlignment" Value="Center" />

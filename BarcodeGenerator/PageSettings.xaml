@@ -15,6 +15,7 @@
         x:Name="grdMainFixed"
         RowDefinitions="Auto, *, Auto"
         HorizontalOptions="Center"
+        ColumnSpacing="5"
         Margin="5"
         SafeAreaEdges="Container,SoftInput">
 
@@ -26,7 +27,7 @@
             <Grid
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto, Auto, Auto, Auto, 4, Auto">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -56,8 +57,6 @@
                     <Picker
                         x:Name="pckLanguage"
                         Style="{StaticResource pickerStyleSettings}"
-                        Grid.Row="1"
-                        Grid.Column="2"
                         SelectedIndexChanged="OnPickerLanguageChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -97,8 +96,6 @@
                     <Picker
                         x:Name="pckLanguageSpeech"
                         Style="{StaticResource pickerStyleSettings}"
-                        Grid.Row="2"
-                        Grid.Column="2"
                         SelectedIndexChanged="OnPickerLanguageSpeechChanged">
                     </Picker>
                 </Border>
@@ -119,8 +116,6 @@
                     <Picker
                         x:Name="pckTheme"
                         Style="{StaticResource pickerStyleSettings}"
-                        Grid.Row="3"
-                        Grid.Column="2"
                         SelectedIndexChanged="OnPickerThemeChanged">
                     </Picker>
                 </Border>
@@ -141,8 +136,6 @@
                     <Picker
                         x:Name="pckFormatCodeGenerator"
                         Style="{StaticResource pickerStyleSettings}"
-                        Grid.Row="4"
-                        Grid.Column="2"
                         SelectedIndexChanged="OnPickerFormatCodeGeneratorChanged">
                     </Picker>
                 </Border>
@@ -163,8 +156,6 @@
                     <Picker
                         x:Name="pckFormatCodeScanner"
                         Style="{StaticResource pickerStyleSettings}"
-                        Grid.Row="5"
-                        Grid.Column="2"
                         SelectedIndexChanged="OnPickerFormatCodeScannerChanged">
                     </Picker>
                 </Border>
@@ -172,80 +163,121 @@
                 <Label
                     x:Name="lblHexColorFg"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="7"
+                    Grid.Row="6"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Start"
+                    Grid.ColumnSpan="3"
                     Text="{Translate ForegroundColor_Text}">
                 </Label>
 
-                <Border
-                    Grid.Row="8"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    HeightRequest="40"
-                    BackgroundColor="Transparent"
-                    Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
-                    StrokeThickness="1"
-                    StrokeShape="RoundRectangle 5,5,5,5">
-
-                    <BoxView
-                        x:Name="bxvColorFg"
-                        Grid.Row="8"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        Color="Black">
-                    </BoxView>
-                </Border>
-
-                <Button
-                    Style="{StaticResource buttonStyleDefault}"
-                    Grid.Row="8"
+                <Grid
+                    Grid.Row="6"
                     Grid.Column="2"
-                    Text="Color picker foreground"
-                    Clicked="OnButtonColorForgroundClicked">
-                </Button>
+                    ColumnDefinitions="48, 100*">
+
+                    <ImageButton
+                        Style="{StaticResource imageButtonStyleColorPicker}"
+                        Grid.Column="0"
+                        Source="ic_action_settings.png"
+                        SemanticProperties.Description="{Translate ColorPicker_Text}"
+                        ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                        Clicked="OnButtonColorForgroundClicked">
+                    </ImageButton>
+
+                    <Border
+                        Grid.Column="1"
+                        HeightRequest="40"
+                        BackgroundColor="Transparent"
+                        Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5">
+
+                        <BoxView
+                            x:Name="bxvColorFg"
+                            Grid.Column="1"
+                            Color="Black">
+                        </BoxView>
+                    </Border>
+                </Grid>
 
                 <Label
                     x:Name="lblHexColorBg"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="13"
+                    Grid.Row="7"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Start"
+                    Grid.ColumnSpan="3"
                     Text="{Translate BackgroundColor_Text}">
                 </Label>
 
-                <Border
-                    Grid.Row="15"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    HeightRequest="40"
-                    BackgroundColor="Transparent"
-                    Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
-                    StrokeThickness="1"
-                    StrokeShape="RoundRectangle 5,5,5,5">
-                    
-                    <BoxView
-                        x:Name="bxvColorBg"
-                        Grid.Row="15"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        Color="White">
-                    </BoxView>
-                </Border>
-
-                <Button
-                    Style="{StaticResource buttonStyleDefault}"
-                    Grid.Row="15"
+                <Grid
+                    Grid.Row="7"
                     Grid.Column="2"
-                    Text="Color picker background"
-                    Clicked="OnButtonColorBackgroundClicked">
-                </Button>
+                    ColumnDefinitions="48, 100*">
+
+                    <ImageButton
+                        Style="{StaticResource imageButtonStyleColorPicker}"
+                        Grid.Column="0"
+                        Source="ic_action_settings.png"
+                        SemanticProperties.Description="{Translate ColorPicker_Text}"
+                        ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                        Clicked="OnButtonColorBackgroundClicked">
+                    </ImageButton>
+
+                    <Border
+                        Grid.Column="1"
+                        HeightRequest="40"
+                        BackgroundColor="Transparent"
+                        Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5">
+
+                        <BoxView
+                            x:Name="bxvColorBg"
+                            Color="White">
+                        </BoxView>
+                    </Border>
+                </Grid>
+
+                <Label
+                    x:Name="lblHexColorBgArtQRCode"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="8"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Text="{Translate BackgroundColorArtQRCode_Text}">
+                </Label>
+
+                <Grid
+                    Grid.Row="8"
+                    Grid.Column="2"
+                    ColumnDefinitions="48, 100*">
+
+                    <ImageButton
+                        Style="{StaticResource imageButtonStyleColorPicker}"
+                        Grid.Column="0"
+                        Source="ic_action_settings.png"
+                        SemanticProperties.Description="{Translate ColorPicker_Text}"
+                        ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                        Clicked="OnButtonColorBackgroundArtQRCodeClicked">
+                    </ImageButton>
+
+                    <Border
+                        Grid.Column="1"
+                        HeightRequest="40"
+                        BackgroundColor="Transparent"
+                        Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5,5,5,5">
+
+                        <BoxView
+                            x:Name="bxvColorBgArtQRCode"
+                            Color="White">
+                        </BoxView>
+                    </Border>
+                </Grid>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="17"
+                    Grid.Row="9"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
@@ -254,7 +286,7 @@
 
                 <Switch
                     x:Name="swtQRCodeSizeVariable"
-                    Grid.Row="17"
+                    Grid.Row="9"
                     Grid.Column="2"
                     HorizontalOptions="Start"
                     Toggled="SwtQRCodeSizeVariable_Toggled"  >
@@ -262,7 +294,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="18"
+                    Grid.Row="10"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
@@ -271,13 +303,11 @@
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="18"
+                    Grid.Row="10"
                     Grid.Column="2">
 
                     <Entry
                         x:Name="entQRCodeSizePixels"
-                        Grid.Row="18"
-                        Grid.Column="2"
                         ClearButtonVisibility="WhileEditing"
                         MaxLength="5"
                         Placeholder="500 - 10000"
@@ -291,7 +321,7 @@
                 <Label
                     x:Name="lblQRCodeImageSize"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="19"
+                    Grid.Row="11"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
@@ -300,15 +330,13 @@
                 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="19"
+                    Grid.Row="11"
                     Grid.Column="2"
                     Grid.RowSpan="1">
                 
                     <Slider
                         x:Name="sldQRCodeImageSize"
                         Style="{StaticResource sliderStyleColor}"
-                        Grid.Row="19"
-                        Grid.Column="2"
                         ThumbColor="Orange"
                         MinimumTrackColor="Orange"
                         Minimum="10"
@@ -318,35 +346,8 @@
                 </Border>
 
                 <Label
-                    x:Name="lblArtQRCodeOpacityBg"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="20"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Start"
-                    Text="{Translate BackgroundOpacityArt_Text}">
-                </Label>
-
-                <Border
-                    Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="20"
-                    Grid.Column="2"
-                    Grid.RowSpan="1">
-
-                    <Slider
-                        x:Name="sldArtQRCodeOpacityBg"
-                        Style="{StaticResource sliderStyleColor}"
-                        Grid.Row="20"
-                        Grid.Column="2"
-                        ThumbColor="Violet"
-                        MinimumTrackColor="Violet"
-                        ValueChanged="SldArtQRCodeOpacityBg_ValueChanged">
-                    </Slider>
-                </Border>
-
-                <Label
-                    Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="22"
+                    Grid.Row="12"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Start"
@@ -355,7 +356,7 @@
 
                 <Switch
                     x:Name="swtBarcodeWithCaption"
-                    Grid.Row="22"
+                    Grid.Row="12"
                     Grid.Column="2"
                     HorizontalOptions="Start"
                     Toggled="SwtBarcodeWithCaption_Toggled">

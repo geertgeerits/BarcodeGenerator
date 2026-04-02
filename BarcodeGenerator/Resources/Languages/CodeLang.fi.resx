@@ -696,7 +696,10 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Taiteellinen QR-koodi</value>
   </data>
-  <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Taustan läpinäkyvyyden taiteellinen QR-koodi:</value>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Taustavärin taiteellinen QR-koodi:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Värivalitsin</value>
   </data>
 </root>

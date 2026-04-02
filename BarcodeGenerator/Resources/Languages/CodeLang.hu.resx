@@ -696,7 +696,10 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Művészi QR-kód</value>
   </data>
-  <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Háttér átlátszóságának művészi QR-kódja:</value>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Háttérszín művészi QR-kód:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Színválasztó</value>
   </data>
 </root>

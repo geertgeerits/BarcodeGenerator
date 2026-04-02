@@ -9,7 +9,7 @@
 
     <Grid
         RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-        ColumnDefinitions="60, 100, 100*"
+        ColumnDefinitions="100, 100*, 100"
         RowSpacing="5"
         HorizontalOptions="Center"
         VerticalOptions="Center"
@@ -38,7 +38,7 @@
             Padding="5"
             TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
             HorizontalTextAlignment="Center"
-            Text="{Translate QRCodeImageTitle_Text}">
+            Text="{Translate ColorPicker_Text}">
         </Label>
 
         <Border
@@ -93,25 +93,13 @@
             ValueChanged="OnSliderColorValueChanged">
         </Slider>
 
-        <Button
-            Style="{StaticResource buttonStyleHelp}"
-            Grid.Row="5"
-            Grid.Column="0"
-            HorizontalOptions="Start"
-            SemanticProperties.Description="{Translate ToolTipHelp_Text}"
-            ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
-            Clicked="OnSettingsHexColorHelpClicked">
-        </Button>
-
         <Border
             Style="{StaticResource borderStyleDefault}"
             Grid.Row="5"
-            Grid.Column="1">
+            Grid.Column="0">
 
             <Entry
                 x:Name="entHexColor"
-                Grid.Row="5"
-                Grid.Column="1"
                 ClearButtonVisibility="WhileEditing"
                 Keyboard="Text"
                 ReturnType="Next"
@@ -133,41 +121,52 @@
 
             <BoxView
                 x:Name="bxvColor"
-                Grid.Row="5"
-                Grid.Column="2"
                 Color="Black">
             </BoxView>
         </Border>
 
-        <Button
+        <ImageButton
             x:Name="btnButtonCancel"
+            Style="{StaticResource imageButtonStyleColorPicker}"
             Grid.Row="6"
             Grid.Column="0"
             HorizontalOptions="Start"
             VerticalOptions="End"
-            WidthRequest="130"
-            BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
+            WidthRequest="100"
             Margin="0,5,0,0"
             Padding="5"
-            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
-            Text="{Translate ButtonCancel_Text}"
+            ToolTipProperties.Text="{Translate ButtonCancel_Text}"
+            Source="ic_action_cancel.png"
             Clicked="OnButtonCancel_Clicked">
-        </Button>
+        </ImageButton>
 
         <Button
+            Style="{StaticResource buttonStyleHelp}"
+            Grid.Row="6"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            HeightRequest="39"
+            WidthRequest="39"
+            SemanticProperties.Description="{Translate ToolTipHelp_Text}"
+            ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
+            Clicked="OnSettingsHexColorHelpClicked">
+        </Button>
+
+        <ImageButton
             x:Name="btnButtonClose"
+            Style="{StaticResource imageButtonStyleColorPicker}"
             Grid.Row="6"
             Grid.Column="2"
             HorizontalOptions="End"
             VerticalOptions="End"
-            WidthRequest="130"
-            BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
+            WidthRequest="100"
             Margin="0,5,0,0"
             Padding="5"
-            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
-            Text="{Translate ButtonNext_Text}"
+            ToolTipProperties.Text="{Translate ButtonNext_Text}"
+            Source="ic_action_tick.png"
             Clicked="OnButtonClose_Clicked">
-        </Button>
+        </ImageButton>
 
     </Grid>
 </toolkit:Popup>

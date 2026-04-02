@@ -97,20 +97,20 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Background color artistic QR code:.
+        /// </summary>
+        internal static string BackgroundColorArtQRCode_Text {
+            get {
+                return ResourceManager.GetString("BackgroundColorArtQRCode_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Background opacity:.
         /// </summary>
         internal static string BackgroundOpacity_Text {
             get {
                 return ResourceManager.GetString("BackgroundOpacity_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Background opacity artistic QR code:.
-        /// </summary>
-        internal static string BackgroundOpacityArt_Text {
-            get {
-                return ResourceManager.GetString("BackgroundOpacityArt_Text", resourceCulture);
             }
         }
         
@@ -833,6 +833,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string CodeLengthPart3_Text {
             get {
                 return ResourceManager.GetString("CodeLengthPart3_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color picker.
+        /// </summary>
+        internal static string ColorPicker_Text {
+            get {
+                return ResourceManager.GetString("ColorPicker_Text", resourceCulture);
             }
         }
         

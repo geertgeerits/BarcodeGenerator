@@ -696,7 +696,10 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Artistieke QR-code</value>
   </data>
-  <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Dekking achtergrond artistieke QR-code:</value>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Kleur achtergrond artistieke QR-code:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Kleurenkiezer</value>
   </data>
 </root>

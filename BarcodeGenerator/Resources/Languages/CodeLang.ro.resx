@@ -696,7 +696,10 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Cod QR artistic</value>
   </data>
-  <data name="BackgroundOpacityArt_Text" xml:space="preserve">
-    <value>Opacitatea fundalului, cod QR artistic:</value>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Culoare de fundal artistică cod QR:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Selector de culori</value>
   </data>
 </root>

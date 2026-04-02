@@ -10,7 +10,6 @@ namespace BarcodeGenerator
         private readonly Stopwatch stopWatch = new();
         private string searchKeyGenerator = string.Empty;
         private string searchKeyScanner = string.Empty;
-        //private bool hasWorkaroundRow;
 
         public PageSettings()
         {
@@ -191,9 +190,8 @@ namespace BarcodeGenerator
             lblHexColorBg.Text = $"{CodeLang.BackgroundColor_Text} {Globals.cCodeColorBg}";
             bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
 
-            // Set the Art QR code background opacity value on the slider and label
-            sldArtQRCodeOpacityBg.Value = int.Parse(Globals.cArtCodeOpacityBg.AsSpan(0, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
-            lblArtQRCodeOpacityBg.Text = $"{CodeLang.BackgroundOpacityArt_Text} {Globals.cArtCodeOpacityBg}";
+            lblHexColorBgArtQRCode.Text = $"{CodeLang.BackgroundColorArtQRCode_Text} {Globals.cCodeColorBgArtQRCode}";
+            bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
 
             // Set the theme in the picker
             List<string> ThemeList =
@@ -274,37 +272,6 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// On entry HexColor text changed event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (!IsHex(e.NewTextValue))
-            {
-                ((Entry)sender).Text = e.OldTextValue;
-            }
-        }
-
-        /// <summary>
-        /// Test if the text is a hex value
-        /// </summary>
-        /// <param name="cText"></param>
-        /// <returns></returns>
-        private static bool IsHex(string cText)
-        {
-            foreach (char c in cText)
-            {
-                if (!cHexCharacters.Contains(c))
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        /// <summary>
         /// Switch QR code image size variable toggled event
         /// </summary>
         /// <param name="sender"></param>
@@ -362,10 +329,10 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// 
+        /// Handles the Unfocused event for the QR code image size entry, ensuring that the entered value is within the valid range.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The source of the event, typically the Entry control that triggered the Unfocused event.</param>
+        /// <param name="e">The event data containing information about the focus change.</param>
         private void EntQRCodeSizePixels_Unfocused(object sender, FocusEventArgs e)
         {
             string cText = ((Entry)sender).Text;
@@ -403,20 +370,6 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Handles the ValueChanged event for the QR code background opacity slider, updating the background color's opacity
-        /// </summary>
-        /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
-        /// <param name="e">An object that contains the event data, including the new value of the slider representing the desired QR
-        /// code background opacity.</param>
-        private void SldArtQRCodeOpacityBg_ValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            int nAmountOpacity = (int)e.NewValue;
-            Globals.cArtCodeOpacityBg = $"{nAmountOpacity:X2}";
-
-            lblArtQRCodeOpacityBg.Text = $"{CodeLang.BackgroundOpacityArt_Text} {Globals.cArtCodeOpacityBg}";
-        }
-
-        /// <summary>
         /// Button save settings clicked event
         /// </summary>
         /// <param name="sender"></param>
@@ -432,7 +385,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", Globals.cCodeColorBg);
-            Preferences.Default.Set("SettingArtCodeOpacityBg", Globals.cArtCodeOpacityBg);
+            Preferences.Default.Set("SettingCodeColorBgArtQRCode", Globals.cCodeColorBgArtQRCode);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
             Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
 
@@ -470,7 +423,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
                 Preferences.Default.Remove("SettingCodeColorBg");
-                Preferences.Default.Remove("SettingArtCodeOpacityBg");
+                Preferences.Default.Remove("SettingCodeColorBgArtQRCode");
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");
                 Preferences.Default.Remove("SettingQualityCameraBack");
@@ -484,6 +437,11 @@ namespace BarcodeGenerator
             Application.Current!.Windows[0].Page = new AppShell();
         }
 
+        /// <summary>
+        /// On button color forground clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnButtonColorForgroundClicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = Globals.cCodeColorFg;
@@ -497,6 +455,11 @@ namespace BarcodeGenerator
             }
         }
 
+        /// <summary>
+        /// On button color background clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnButtonColorBackgroundClicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = Globals.cCodeColorBg;
@@ -507,6 +470,24 @@ namespace BarcodeGenerator
                 Globals.cCodeColorBg = Globals.cCodeColor;
                 lblHexColorBg.Text = $"{CodeLang.BackgroundColor_Text} {Globals.cCodeColorBg}";
                 bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
+            }
+        }
+
+        /// <summary>
+        /// On button color background Art QR code clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonColorBackgroundArtQRCodeClicked(object sender, EventArgs e)
+        {
+            Globals.cCodeColor = Globals.cCodeColorBgArtQRCode;
+            await OpenPopupColorPickerAsync();
+
+            if (!Globals.bPopupCanceled)
+            {
+                Globals.cCodeColorBgArtQRCode = Globals.cCodeColor;
+                lblHexColorBgArtQRCode.Text = $"{CodeLang.BackgroundColor_Text} {Globals.cCodeColorBgArtQRCode}";
+                bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
             }
         }
 

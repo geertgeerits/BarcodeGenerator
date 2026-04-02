@@ -41,9 +41,6 @@ namespace BarcodeGenerator
             // Open the file picker to select an image file for the background of the Art QR code
             FileResult? cFile = await ClassFileOperations.PickImage();
 
-            // The 2 characters of cArtCodeOpacityBg and the last 6 characters of cCodeColorBg to create a valid hex color string for SkiaSharp
-            string cBackgroundColor = string.Concat(Globals.cArtCodeOpacityBg, Globals.cCodeColorBg.AsSpan(2, 6));
-
             // Create QR code with custom styling
             // If no size is given then the default size = 512 x 512 pixels
             QRCodeImageBuilder qrData = new QRCodeImageBuilder(text)
@@ -51,7 +48,7 @@ namespace BarcodeGenerator
                 .WithModuleShape(CircleModuleShape.Default)
                 .WithErrorCorrection(ECCLevel.H)
                 .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
-                            backgroundColor: SKColor.Parse(cBackgroundColor),
+                            backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
                             clearColor: SKColors.Transparent);
 
             // Generate PNG bytes off the UI thread (QRCode creation can be heavy)

@@ -98,17 +98,14 @@ public partial class PopupColorPicker : Popup
         int nGreen = 0;
         int nBlue = 0;
 
-        if (entry == entHexColor)
-        {
-            Globals.cCodeColor = entHexColor.Text;
+        Globals.cCodeColor = entHexColor.Text;
 
-            HexToRgbColor(Globals.cCodeColor, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+        HexToRgbColor(Globals.cCodeColor, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
-            sldOpacity.Value = nOpacity;
-            sldColorRed.Value = nRed;
-            sldColorGreen.Value = nGreen;
-            sldColorBlue.Value = nBlue;
-        }
+        sldOpacity.Value = nOpacity;
+        sldColorRed.Value = nRed;
+        sldColorGreen.Value = nGreen;
+        sldColorBlue.Value = nBlue;
     }
 
     /// <summary>
@@ -125,41 +122,48 @@ public partial class PopupColorPicker : Popup
 
         Slider slider = (Slider)sender;
 
-        if (slider == sldOpacity)
+        try
         {
-            nAmountOpacity = (int)args.NewValue;
-            nColorRed = (int)sldColorRed.Value;
-            nColorGreen = (int)sldColorGreen.Value;
-            nColorBlue = (int)sldColorBlue.Value;
-        }
-        else if (slider == sldColorRed)
-        {
-            nAmountOpacity = (int)sldOpacity.Value;
-            nColorRed = (int)args.NewValue;
-            nColorGreen = (int)sldColorGreen.Value;
-            nColorBlue = (int)sldColorBlue.Value;
-        }
-        else if (slider == sldColorGreen)
-        {
-            nAmountOpacity = (int)sldOpacity.Value;
-            nColorRed = (int)sldColorRed.Value;
-            nColorGreen = (int)args.NewValue;
-            nColorBlue = (int)sldColorBlue.Value;
-        }
-        else if (slider == sldColorBlue)
-        {
-            nAmountOpacity = (int)sldOpacity.Value;
-            nColorRed = (int)sldColorRed.Value;
-            nColorGreen = (int)sldColorGreen.Value;
-            nColorBlue = (int)args.NewValue;
-        }
+            if (slider == sldOpacity)
+            {
+                nAmountOpacity = (int)args.NewValue;
+                nColorRed = (int)sldColorRed.Value;
+                nColorGreen = (int)sldColorGreen.Value;
+                nColorBlue = (int)sldColorBlue.Value;
+            }
+            else if (slider == sldColorRed)
+            {
+                nAmountOpacity = (int)sldOpacity.Value;
+                nColorRed = (int)args.NewValue;
+                nColorGreen = (int)sldColorGreen.Value;
+                nColorBlue = (int)sldColorBlue.Value;
+            }
+            else if (slider == sldColorGreen)
+            {
+                nAmountOpacity = (int)sldOpacity.Value;
+                nColorRed = (int)sldColorRed.Value;
+                nColorGreen = (int)args.NewValue;
+                nColorBlue = (int)sldColorBlue.Value;
+            }
+            else if (slider == sldColorBlue)
+            {
+                nAmountOpacity = (int)sldOpacity.Value;
+                nColorRed = (int)sldColorRed.Value;
+                nColorGreen = (int)sldColorGreen.Value;
+                nColorBlue = (int)args.NewValue;
+            }
 
-        // The X2 format specifier formats the number as a hexadecimal value with a minimum width of 2 digits
-        string cColorHex = $"{nAmountOpacity:X2}{nColorRed:X2}{nColorGreen:X2}{nColorBlue:X2}";
-        entHexColor.Text = cColorHex;
-        bxvColor.Color = Color.FromArgb(cColorHex);
+            // The X2 format specifier formats the number as a hexadecimal value with a minimum width of 2 digits
+            string cColorHex = $"{nAmountOpacity:X2}{nColorRed:X2}{nColorGreen:X2}{nColorBlue:X2}";
+            entHexColor.Text = cColorHex;
+            bxvColor.Color = Color.FromArgb(cColorHex);
 
-        Globals.cCodeColor = cColorHex;
+            Globals.cCodeColor = cColorHex;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"PopupColorPicker.OnSliderColorValueChanged: Error converting slider value to hex - {ex.Message}");
+        }
     }
 
     /// <summary>
@@ -172,16 +176,24 @@ public partial class PopupColorPicker : Popup
     /// <param name="nBlue"></param>
     private static void HexToRgbColor(string cHexColor, ref int nOpacity, ref int nRed, ref int nGreen, ref int nBlue)
     {
-        // Remove leading # if present
-        if (cHexColor[..1] == "#")
+        try
         {
-            cHexColor = cHexColor[1..];
-        }
+            // Remove leading # if present
+            if (cHexColor[..1] == "#")
+            {
+                cHexColor = cHexColor[1..];
+            }
 
-        nOpacity = int.Parse(cHexColor.AsSpan(0, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
-        nRed = int.Parse(cHexColor.AsSpan(2, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
-        nGreen = int.Parse(cHexColor.AsSpan(4, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
-        nBlue = int.Parse(cHexColor.AsSpan(6, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+            nOpacity = int.Parse(cHexColor.AsSpan(0, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+            nRed = int.Parse(cHexColor.AsSpan(2, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+            nGreen = int.Parse(cHexColor.AsSpan(4, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+            nBlue = int.Parse(cHexColor.AsSpan(6, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"PopupColorPicker.HexToRgbColor: Error converting hex to RGB - {ex.Message}");
+        }
     }
 
     /// <summary>
