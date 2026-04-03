@@ -607,7 +607,6 @@ namespace BarcodeGenerator
                 ? pckFormatCodeGenerator.ItemsSource[selectedIndex] as string : string.Empty;
 
             // Validate the text input and set the format
-            // No validation for QR codes, because the library can encode all characters and it is not possible to calculate
             // the maximum number of characters due to the different encoding modes and error correction levels
             if (selectedIndex != -1)
             {

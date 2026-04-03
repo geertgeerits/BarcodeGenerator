@@ -17,7 +17,7 @@ namespace BarcodeGenerator
 
         public async Task<ClassBarcodeValidationResult> ValidateAsync(string selectedName, string cTextToCode, int nLenTextToCode)
         {
-            var result = new ClassBarcodeValidationResult
+            ClassBarcodeValidationResult result = new()
             {
                 Success = false,
                 Text = cTextToCode,
@@ -471,34 +471,29 @@ namespace BarcodeGenerator
         {
             // Check input text length against code limits based on detected mode and error correction level,
             // and show an alert if it exceeds the limits            
-            if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Numeric && cText.Length > nNumeric)
+
+            string cMessage;
+
+            switch (ClassQrModeDetector.Detect(cText))
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
-                    $"{CodeLang.CharacterNumericDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedCharacter_Text,
-                    nNumeric.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
-                return false;
+                case ClassQrModeDetector.Mode.Numeric when cText.Length > nNumeric:
+                    cMessage = $"{CodeLang.CharacterNumericDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedCharacter_Text, nNumeric.ToString("N0", CultureInfo.CurrentCulture))}";
+                    await DisplayErrorMessage(cMessage);
+                    return false;
+                case ClassQrModeDetector.Mode.Alphanumeric when cText.Length > nAlphanumeric:
+                    cMessage = $"{CodeLang.CharacterAlphanumericDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedCharacter_Text, nAlphanumeric.ToString("N0", CultureInfo.CurrentCulture))}";
+                    await DisplayErrorMessage(cMessage);
+                    return false;
+                case ClassQrModeDetector.Mode.Byte when cText.Length > nByte:
+                    cMessage = $"{CodeLang.CharacterBinaryByteDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedByte_Text, nByte.ToString("N0", CultureInfo.CurrentCulture))}";
+                    await DisplayErrorMessage(cMessage);
+                    return false;
+                case ClassQrModeDetector.Mode.Kanji when cText.Length > nKanji:
+                    cMessage = $"{CodeLang.CharacterKanjiKanaDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedCharacter_Text, nKanji.ToString("N0", CultureInfo.CurrentCulture))}";
+                    await DisplayErrorMessage(cMessage);
+                    return false;
             }
-            else if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Alphanumeric && cText.Length > nAlphanumeric)
-            {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
-                    $"{CodeLang.CharacterAlphanumericDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedCharacter_Text,
-                    nAlphanumeric.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
-                return false;
-            }
-            else if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Byte && cText.Length > nByte)
-            {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
-                    $"{CodeLang.CharacterBinaryByteDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedByte_Text,
-                    nByte.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
-                return false;
-            }
-            else if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Kanji && cText.Length > nKanji)
-            {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
-                    $"{CodeLang.CharacterKanjiKanaDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedCharacter_Text,
-                    nKanji.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
-                return false;
-            }
+
             return true;
         }
 
@@ -512,9 +507,20 @@ namespace BarcodeGenerator
         public static string InsertCharacterInCaption(string cCaption, int nPosition, string cCharacter = " ")
         {
             if (cCaption == null || nPosition < 0 || nPosition > cCaption.Length)
+            {
                 return cCaption ?? string.Empty;
+            }
 
             return cCaption.Insert(nPosition, cCharacter);
+        }
+
+        /// <summary>
+        /// Display an error message
+        /// </summary>
+        /// <param name="cMessage"></param>
+        private static async Task DisplayErrorMessage(string cMessage)
+        {
+            await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
         }
     }
 }

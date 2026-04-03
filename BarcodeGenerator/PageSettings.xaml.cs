@@ -491,7 +491,7 @@ namespace BarcodeGenerator
             if (currentPage != null)
             {
                 Globals.bIsPopupMessage = true;
-                _ = await currentPage.ShowPopupAsync(new PopupColorPicker(60, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{ClassQRCodeImage.nQRCodeSizePixels:N0} x {ClassQRCodeImage.nQRCodeSizePixels:N0} {CodeLang.Pixels_Text}"));
+                _ = await currentPage.ShowPopupAsync(new PopupColorPicker(120));
             }
         }
     }
