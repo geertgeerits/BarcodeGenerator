@@ -274,7 +274,7 @@ namespace BarcodeGenerator
         /// <param name="cAllowedCharacters"></param>
         /// <param name="cTextToCode"></param>
         /// <returns></returns>
-        public static async Task<bool> TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
+        private static async Task<bool> TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
         {
             foreach (char cChar in cTextToCode)
             {
@@ -297,7 +297,7 @@ namespace BarcodeGenerator
         /// <param name="nMaxAsciiValue"></param>
         /// <param name="cTextToCode"></param>
         /// <returns></returns>
-        public static async Task<bool> TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
+        private static async Task<bool> TestAllowedAsciiValues(int nMinAsciiValue, int nMaxAsciiValue, string cTextToCode)
         {
             // Test for allowed minimum and maximum ASCII values
             foreach (char cChar in cTextToCode)
@@ -319,7 +319,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="cText"></param>
         /// <returns></returns>
-        public static string ReplaceCharacters(string cText)
+        private static string ReplaceCharacters(string cText)
         {
             // Convert characters from UTF-8 or ASCII extended to characters that are supported in ASCII
             cText = cText.Replace('‘', '\'');       // Left single quotation mark replaced with apostrophe
@@ -336,7 +336,7 @@ namespace BarcodeGenerator
         /// <param name="cStartEndGuards"></param>
         /// <param name="cTextToCode"></param>
         /// <returns></returns>
-        public static async Task<bool> TestStartEndGuards(string cStartEndGuards, string cTextToCode)
+        private static async Task<bool> TestStartEndGuards(string cStartEndGuards, string cTextToCode)
         {
             int nPos;
             char cChar;
@@ -373,7 +373,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="cText"></param>
         /// <returns></returns>
-        public static string ReverseString(string cText)
+        private static string ReverseString(string cText)
         {
             char[] charArray = cText.ToCharArray();
             Array.Reverse(charArray);
@@ -386,7 +386,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="cTextToCode"></param>
         /// <returns></returns>
-        public static string CalculateChecksumEanUpcA(string cTextToCode)
+        private static string CalculateChecksumEanUpcA(string cTextToCode)
         {
             int nPos;
             int nPartialSum;
@@ -425,7 +425,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="cUpcE"></param>
         /// <returns></returns>
-        public static string ConvertUpcEToUpcA(string cUpcE)
+        private static string ConvertUpcEToUpcA(string cUpcE)
         {
             cUpcE = cUpcE.Substring(1, 6);
             string cLastDigit = cUpcE.Substring(cUpcE.Length - 1, 1);
@@ -467,7 +467,7 @@ namespace BarcodeGenerator
         /// <param name="nKanji">The maximum allowed number of characters for the Kanji mode</param>
         /// <returns>A task that represents the asynchronous operation. The task result is <see langword="true"/> if the input
         /// text does not exceed the character limit for its detected mode; otherwise, <see langword="false"/>.</returns>
-        public static async Task<bool> CheckValidateTextAsync(string cText, int nNumeric, int nAlphanumeric, int nByte, int nKanji)
+        private static async Task<bool> CheckValidateTextAsync(string cText, int nNumeric, int nAlphanumeric, int nByte, int nKanji)
         {
             // Check input text length against code limits based on detected mode and error correction level,
             // and show an alert if it exceeds the limits            
@@ -504,7 +504,7 @@ namespace BarcodeGenerator
         /// <param name="nPosition"></param>
         /// <param name="cCharacter"></param>
         /// <returns></returns>
-        public static string InsertCharacterInCaption(string cCaption, int nPosition, string cCharacter = " ")
+        private static string InsertCharacterInCaption(string cCaption, int nPosition, string cCharacter = " ")
         {
             if (cCaption == null || nPosition < 0 || nPosition > cCaption.Length)
             {
