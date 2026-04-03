@@ -577,6 +577,7 @@ namespace BarcodeGenerator
             bgvBarcode.BackgroundColor = Color.FromArgb(Globals.cCodeColorBg);
 
             // Miscellaneous
+            btnShare.IsEnabled = false;
             bgvBarcode.Value = string.Empty;
             cBarcodeCaption = string.Empty;
             string cChecksum = string.Empty;

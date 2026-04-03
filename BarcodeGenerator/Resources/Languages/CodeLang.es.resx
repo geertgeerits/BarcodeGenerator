@@ -714,7 +714,10 @@ Microsoft, Microsoft Store, el logotipo de Microsoft Store y Windows son marcas 
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Se detectó un carácter kanji/kana.</value>
   </data>
-  <data name="TextLengthLimited_Text" xml:space="preserve">
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
     <value>La longitud del texto está limitada a {0} caracteres.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>La longitud del texto está limitada a {0} bytes.</value>
   </data>
 </root>

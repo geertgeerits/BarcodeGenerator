@@ -208,28 +208,28 @@
             if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Numeric && cText.Length > nNumeric)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
-                    $"{CodeLang.CharacterNumericDetected_Text}\n{string.Format(CodeLang.TextLengthLimited_Text,
+                    $"{CodeLang.CharacterNumericDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedCharacter_Text,
                     nNumeric.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
                 return false;
             }
             else if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Alphanumeric && cText.Length > nAlphanumeric)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
-                    $"{CodeLang.CharacterAlphanumericDetected_Text}\n{string.Format(CodeLang.TextLengthLimited_Text,
+                    $"{CodeLang.CharacterAlphanumericDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedCharacter_Text,
                     nAlphanumeric.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
                 return false;
             }
             else if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Byte && cText.Length > nByte)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
-                    $"{CodeLang.CharacterBinaryByteDetected_Text}\n{string.Format(CodeLang.TextLengthLimited_Text,
+                    $"{CodeLang.CharacterBinaryByteDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedByte_Text,
                     nByte.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
                 return false;
             }
             else if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Kanji && cText.Length > nKanji)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
-                    $"{CodeLang.CharacterKanjiKanaDetected_Text}\n{string.Format(CodeLang.TextLengthLimited_Text,
+                    $"{CodeLang.CharacterKanjiKanaDetected_Text}\n{string.Format(CodeLang.TextLengthLimitedCharacter_Text,
                     nKanji.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
                 return false;
             }

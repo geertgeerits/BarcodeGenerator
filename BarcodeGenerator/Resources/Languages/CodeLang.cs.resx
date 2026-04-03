@@ -714,7 +714,10 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Detekován znak kanji/kana.</value>
   </data>
-  <data name="TextLengthLimited_Text" xml:space="preserve">
-    <value>The text length is limited to {0} characters.</value>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>Délka textu je omezena na {0} znaků.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>Délka textu je omezena na {0} bajtů.</value>
   </data>
 </root>

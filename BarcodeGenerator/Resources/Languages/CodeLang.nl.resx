@@ -714,7 +714,10 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Kana-teken gedetecteerd.</value>
   </data>
-  <data name="TextLengthLimited_Text" xml:space="preserve">
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
     <value>De tekstlengte is beperkt tot {0} tekens.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>De tekstlengte is beperkt tot {0} bytes.</value>
   </data>
 </root>

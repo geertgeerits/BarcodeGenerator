@@ -714,7 +714,10 @@ Microsoft, Microsoft Store, logo Microsoft Store i Windows są znakami towarowym
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Wykryto znak kanji/kana.</value>
   </data>
-  <data name="TextLengthLimited_Text" xml:space="preserve">
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
     <value>Długość tekstu jest ograniczona do {0} znaków.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>Długość tekstu jest ograniczona do {0} bajtów.</value>
   </data>
 </root>

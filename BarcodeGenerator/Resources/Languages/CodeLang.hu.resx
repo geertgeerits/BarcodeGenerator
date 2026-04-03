@@ -714,7 +714,10 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Kanji/Kana karakter észlelve.</value>
   </data>
-  <data name="TextLengthLimited_Text" xml:space="preserve">
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
     <value>A szöveg hossza {0} karakterre korlátozódik.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>A szöveg hossza {0} bájtra korlátozódik.</value>
   </data>
 </root>

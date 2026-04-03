@@ -714,7 +714,10 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Kanji/Kana-merkki havaittu.</value>
   </data>
-  <data name="TextLengthLimited_Text" xml:space="preserve">
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
     <value>Tekstin pituus on rajoitettu {0} merkkiin.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>Tekstin pituus on rajoitettu {0} tavuun.</value>
   </data>
 </root>

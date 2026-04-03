@@ -1470,11 +1470,20 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The text length is limited to {0} bytes..
+        /// </summary>
+        internal static string TextLengthLimitedByte_Text {
+            get {
+                return ResourceManager.GetString("TextLengthLimitedByte_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The text length is limited to {0} characters..
         /// </summary>
-        internal static string TextLengthLimited_Text {
+        internal static string TextLengthLimitedCharacter_Text {
             get {
-                return ResourceManager.GetString("TextLengthLimited_Text", resourceCulture);
+                return ResourceManager.GetString("TextLengthLimitedCharacter_Text", resourceCulture);
             }
         }
         

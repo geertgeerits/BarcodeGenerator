@@ -714,7 +714,10 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Kanji/Kana-tecken upptäckt.</value>
   </data>
-  <data name="TextLengthLimited_Text" xml:space="preserve">
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
     <value>Textlängden är begränsad till {0} tecken.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>Textlängden är begränsad till {0} byte.</value>
   </data>
 </root>
