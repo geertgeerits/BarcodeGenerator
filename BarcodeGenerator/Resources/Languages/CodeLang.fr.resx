@@ -284,8 +284,7 @@ Une autre option consiste à désinstaller et réinstaller l'application.</value
     <value>Annuler</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Le code est faux.
-Le chiffre de contrôle a été corrigé.</value>
+    <value>Le code est faux.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Effacer</value>

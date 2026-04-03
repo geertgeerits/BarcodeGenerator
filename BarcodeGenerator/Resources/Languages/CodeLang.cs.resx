@@ -284,8 +284,7 @@ Další možností je odinstalovat a znovu nainstalovat aplikaci.</value>
     <value>Zrušení</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Kód je špatný.
-Kontrolní číslice byla opravena.</value>
+    <value>Kód je špatný.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Vymazat</value>

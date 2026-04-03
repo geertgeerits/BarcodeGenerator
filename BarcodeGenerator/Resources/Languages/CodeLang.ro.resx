@@ -284,8 +284,7 @@ O altă opțiune este să dezinstalați și să reinstalați aplicația.</value>
     <value>Anulare</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Codul este greșit.
-Cifra de verificare a fost corectată.</value>
+    <value>Codul este greșit.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Elimina</value>

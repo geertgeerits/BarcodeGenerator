@@ -284,8 +284,7 @@ Egy másik lehetőség az alkalmazás eltávolítása és újratelepítése.</va
     <value>Megszünteti</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Hibás a kód.
-Az ellenőrző számjegy javítva.</value>
+    <value>Hibás a kód.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Töröl</value>

@@ -284,8 +284,7 @@ En anden mulighed er at afinstallere og geninstallere programmet.</value>
     <value>Afbestille</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Koden er forkert.
-Kontrolcifferet er blevet rettet.</value>
+    <value>Koden er forkert.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Ryd</value>

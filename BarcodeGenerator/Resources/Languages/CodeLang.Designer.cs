@@ -818,8 +818,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The code is wrong.
-        ///The check digit has been corrected..
+        ///   Looks up a localized string similar to The code is wrong..
         /// </summary>
         internal static string CheckDigitError_Text {
             get {

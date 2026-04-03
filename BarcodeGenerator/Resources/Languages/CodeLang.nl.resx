@@ -284,8 +284,7 @@ Een andere mogelijkheid is de toepassing te verwijderen en opnieuw te installere
     <value>Annuleren</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>De code is fout.
-Het controlecijfer is gecorrigeerd.</value>
+    <value>De code is fout.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Wissen</value>

@@ -284,8 +284,7 @@ Ett annat alternativ är att avinstallera och installera om programmet.</value>
     <value>Annullera</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Koden är fel.
-Kontrollsiffran har korrigerats.</value>
+    <value>Koden är fel.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Klar</value>

@@ -284,8 +284,7 @@ Un'altra opzione è disinstallare e reinstallare l'applicazione.</value>
     <value>Annulla</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Il codice è sbagliato.
-La cifra di controllo è stata corretta.</value>
+    <value>Il codice è sbagliato.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Rimuovi</value>

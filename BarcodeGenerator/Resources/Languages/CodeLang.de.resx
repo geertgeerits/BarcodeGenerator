@@ -284,8 +284,7 @@ Eine andere Möglichkeit besteht darin, die Anwendung zu deinstallieren und erne
     <value>Stornieren</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>Der Code ist falsch.
-Die Prüfziffer wurde korrigiert.</value>
+    <value>Der Code ist falsch.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
     <value>Löschen</value>
