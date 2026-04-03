@@ -702,4 +702,19 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="ColorPicker_Text" xml:space="preserve">
     <value>Värivalitsin</value>
   </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Numeerinen merkki havaittu.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Aakkosnumeerinen merkki havaittu.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Tavumerkki havaittu.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Kanji/Kana-merkki havaittu.</value>
+  </data>
+  <data name="TextLengthLimited_Text" xml:space="preserve">
+    <value>Tekstin pituus on rajoitettu {0} merkkiin.</value>
+  </data>
 </root>

@@ -702,4 +702,19 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   <data name="ColorPicker_Text" xml:space="preserve">
     <value>Farvevælger</value>
   </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Numerisk tegn registreret.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Alfanumerisk tegn registreret.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Bytetegn registreret.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Kanji/Kana-tegn registreret.</value>
+  </data>
+  <data name="TextLengthLimited_Text" xml:space="preserve">
+    <value>Tekstlængden er begrænset til {0} tegn.</value>
+  </data>
 </root>

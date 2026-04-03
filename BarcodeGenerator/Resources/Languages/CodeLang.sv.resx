@@ -702,4 +702,19 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   <data name="ColorPicker_Text" xml:space="preserve">
     <value>Färgväljare</value>
   </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Numeriskt tecken upptäckt.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Alfanumeriskt tecken upptäckt.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Bytecken upptäckt.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Kanji/Kana-tecken upptäckt.</value>
+  </data>
+  <data name="TextLengthLimited_Text" xml:space="preserve">
+    <value>Textlängden är begränsad till {0} tecken.</value>
+  </data>
 </root>

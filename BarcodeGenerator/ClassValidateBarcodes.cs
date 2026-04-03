@@ -158,14 +158,13 @@
         /// Convert a UPC-E code back to its UPC-A format
         /// </summary>
         /// <param name="cUpcE"></param>
-        /// <param name="nLenTextToCode"></param>
         /// <returns></returns>
-        public static string ConvertUpcEToUpcA(string cUpcE, int nLenTextToCode)
+        public static string ConvertUpcEToUpcA(string cUpcE)
         {
             cUpcE = cUpcE.Substring(1, 6);
             string cLastDigit = cUpcE.Substring(cUpcE.Length - 1, 1);
             int nLastDigit = Convert.ToInt32(cLastDigit);
-            string cUpcA = string.Empty;
+            string cUpcA;
 
             if (nLastDigit < 3)
             {
@@ -184,21 +183,17 @@
                 cUpcA = string.Concat(cUpcE.AsSpan(0, 5), "0000", cLastDigit);
             }
 
-            return cUpcA = $"0{cUpcA}";
+            return $"0{cUpcA}";
         }
 
-        // QR code can encode any text, but some characters may not be supported in certain modes
-        // This method can be used to validate input before encoding
-
-
         /// <summary>
-        /// Asynchronously validates the input text against QR code character count limits for each encoding mode.
+        /// Asynchronously validates the input text against code character count limits for each encoding mode.
         /// </summary>
-        /// <remarks>If the input text exceeds the character limit for its detected QR code mode, an alert
+        /// <remarks>If the input text exceeds the character limit for its detected code mode, an alert
         /// dialog is displayed to the user and the method returns <see langword="false"/>. This method is intended to
-        /// be used before encoding text into a QR code to ensure compatibility with the specified mode
+        /// be used before encoding text into a code to ensure compatibility with the specified mode
         /// limits.</remarks>
-        /// <param name="cText">The text to be validated for QR code encoding. The detected mode of this text determines which character
+        /// <param name="cText">The text to be validated for code encoding. The detected mode of this text determines which character
         /// limit applies.</param>
         /// <param name="nNumeric">The maximum allowed number of characters for the Numeric mode</param>
         /// <param name="nAlphanumeric">The maximum allowed number of characters for the Alphanumeric mode</param>
@@ -206,28 +201,36 @@
         /// <param name="nKanji">The maximum allowed number of characters for the Kanji mode</param>
         /// <returns>A task that represents the asynchronous operation. The task result is <see langword="true"/> if the input
         /// text does not exceed the character limit for its detected mode; otherwise, <see langword="false"/>.</returns>
-        public static async Task<bool> CheckInputTextAsync(string cText, int nNumeric, int nAlphanumeric, int nByte, int nKanji)
+        public static async Task<bool> CheckValidateTextAsync(string cText, int nNumeric, int nAlphanumeric, int nByte, int nKanji)
         {
-            // Check input text length against QR code limits based on detected mode and error correction level (H),
+            // Check input text length against code limits based on detected mode and error correction level,
             // and show an alert if it exceeds the limits            
-            if (QrModeDetector.Detect(cText) == QrModeDetector.Mode.Numeric && cText.Length > nNumeric)
+            if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Numeric && cText.Length > nNumeric)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Numeric characters detected", $"The length of the text is limited to {nNumeric} characters", "OK");
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
+                    $"{CodeLang.CharacterNumericDetected_Text}\n{string.Format(CodeLang.TextLengthLimited_Text,
+                    nNumeric.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
                 return false;
             }
-            else if (QrModeDetector.Detect(cText) == QrModeDetector.Mode.Alphanumeric && cText.Length > nAlphanumeric)
+            else if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Alphanumeric && cText.Length > nAlphanumeric)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Alphanumeric characters detected", $"The length of the text is limited to {nAlphanumeric} characters", "OK");
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
+                    $"{CodeLang.CharacterAlphanumericDetected_Text}\n{string.Format(CodeLang.TextLengthLimited_Text,
+                    nAlphanumeric.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
                 return false;
             }
-            else if (QrModeDetector.Detect(cText) == QrModeDetector.Mode.Byte && cText.Length > nByte)
+            else if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Byte && cText.Length > nByte)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Binary characters detected", $"The length of the text is limited to {nByte} characters", "OK");
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
+                    $"{CodeLang.CharacterBinaryByteDetected_Text}\n{string.Format(CodeLang.TextLengthLimited_Text,
+                    nByte.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
                 return false;
             }
-            else if (QrModeDetector.Detect(cText) == QrModeDetector.Mode.Kanji && cText.Length > nKanji)
+            else if (ClassQrModeDetector.Detect(cText) == ClassQrModeDetector.Mode.Kanji && cText.Length > nKanji)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Kanji characters detected", $"The length of the text is limited to {nKanji} characters", "OK");
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text,
+                    $"{CodeLang.CharacterKanjiKanaDetected_Text}\n{string.Format(CodeLang.TextLengthLimited_Text,
+                    nKanji.ToString("N0", CultureInfo.CurrentCulture))}", CodeLang.ButtonClose_Text);
                 return false;
             }
             return true;

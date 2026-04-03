@@ -782,6 +782,42 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alphanumeric character detected..
+        /// </summary>
+        internal static string CharacterAlphanumericDetected_Text {
+            get {
+                return ResourceManager.GetString("CharacterAlphanumericDetected_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Byte character detected..
+        /// </summary>
+        internal static string CharacterBinaryByteDetected_Text {
+            get {
+                return ResourceManager.GetString("CharacterBinaryByteDetected_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kanji/Kana character detected..
+        /// </summary>
+        internal static string CharacterKanjiKanaDetected_Text {
+            get {
+                return ResourceManager.GetString("CharacterKanjiKanaDetected_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Numeric character detected..
+        /// </summary>
+        internal static string CharacterNumericDetected_Text {
+            get {
+                return ResourceManager.GetString("CharacterNumericDetected_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The code is wrong.
         ///The check digit has been corrected..
         /// </summary>
@@ -1430,6 +1466,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string TextContainsChar_Text {
             get {
                 return ResourceManager.GetString("TextContainsChar_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text length is limited to {0} characters..
+        /// </summary>
+        internal static string TextLengthLimited_Text {
+            get {
+                return ResourceManager.GetString("TextLengthLimited_Text", resourceCulture);
             }
         }
         

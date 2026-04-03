@@ -702,4 +702,19 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
   <data name="ColorPicker_Text" xml:space="preserve">
     <value>Seletor de cores</value>
   </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Caractere numérico detectado.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Caractere alfanumérico detectado.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Caractere de byte detectado.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Caractere kanji/kana detectado.</value>
+  </data>
+  <data name="TextLengthLimited_Text" xml:space="preserve">
+    <value>O texto está limitado a {0} caracteres.</value>
+  </data>
 </root>

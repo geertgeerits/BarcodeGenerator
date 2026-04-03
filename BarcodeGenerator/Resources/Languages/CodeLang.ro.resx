@@ -702,4 +702,19 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="ColorPicker_Text" xml:space="preserve">
     <value>Selector de culori</value>
   </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Caracter numeric detectat.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Caracter alfanumeric detectat.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Caracter byte detectat.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Caracter Kanji/Kana detectat.</value>
+  </data>
+  <data name="TextLengthLimited_Text" xml:space="preserve">
+    <value>Lungimea textului este limitată la {0} caractere.</value>
+  </data>
 </root>

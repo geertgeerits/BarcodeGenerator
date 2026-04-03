@@ -702,4 +702,19 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="ColorPicker_Text" xml:space="preserve">
     <value>Výběr barev</value>
   </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Detekován číselný znak.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Detekován alfanumerický znak.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Detekován bajtový znak.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Detekován znak kanji/kana.</value>
+  </data>
+  <data name="TextLengthLimited_Text" xml:space="preserve">
+    <value>The text length is limited to {0} characters.</value>
+  </data>
 </root>

@@ -702,4 +702,19 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
   <data name="ColorPicker_Text" xml:space="preserve">
     <value>Fargevelger</value>
   </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Numerisk tegn oppdaget.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Alfanumerisk tegn oppdaget.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Bytetegn oppdaget.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Kanji/Kana-tegn oppdaget.</value>
+  </data>
+  <data name="TextLengthLimited_Text" xml:space="preserve">
+    <value>Tekstlengden er begrenset til {0} tegn.</value>
+  </data>
 </root>

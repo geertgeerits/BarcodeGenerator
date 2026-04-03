@@ -702,4 +702,19 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="ColorPicker_Text" xml:space="preserve">
     <value>Színválasztó</value>
   </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Numerikus karakter észlelve.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Alfanumerikus karakter észlelve.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Bájt karakter észlelve.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Kanji/Kana karakter észlelve.</value>
+  </data>
+  <data name="TextLengthLimited_Text" xml:space="preserve">
+    <value>A szöveg hossza {0} karakterre korlátozódik.</value>
+  </data>
 </root>

@@ -702,4 +702,19 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="ColorPicker_Text" xml:space="preserve">
     <value>Kleurenkiezer</value>
   </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Numeriek teken gedetecteerd.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Alfanumeriek teken gedetecteerd.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Byte-teken gedetecteerd.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Kana-teken gedetecteerd.</value>
+  </data>
+  <data name="TextLengthLimited_Text" xml:space="preserve">
+    <value>De tekstlengte is beperkt tot {0} tekens.</value>
+  </data>
 </root>

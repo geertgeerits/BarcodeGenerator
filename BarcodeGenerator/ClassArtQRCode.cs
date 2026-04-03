@@ -24,13 +24,6 @@ namespace BarcodeGenerator
                 return null;
             }
 
-            // Check input text length against QR code limits based on detected mode and error correction level (H),
-            // and show an alert if it exceeds the limits            
-            if (!await QrModeDetector.CheckInputTextAsync(text))
-            {
-                return null;
-            }
-
             // Show a modal popup to inform the user about the recommended image size before opening the file picker
             Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
