@@ -719,4 +719,16 @@ Microsoft, Microsoft Store, das Microsoft Store-Logo und Windows sind Marken der
   <data name="TextLengthLimitedByte_Text" xml:space="preserve">
     <value>Die Textlänge ist auf {0} Bytes begrenzt.</value>
   </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>QR-Code-Modulform:</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>QR-Code-Form: Quadrat</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>QR-Code-Form: Kreis</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>QR-Code-Form: abgerundet</value>
+  </data>
 </root>

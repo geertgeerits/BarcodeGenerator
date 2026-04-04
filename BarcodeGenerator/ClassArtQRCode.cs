@@ -48,13 +48,44 @@ namespace BarcodeGenerator
 
             // Create QR code with custom styling and non-compressed text
             // If no size is given then the default size = 512 x 512 pixels
-            QRCodeImageBuilder qrData = new QRCodeImageBuilder(text)
-                .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
-                .WithModuleShape(CircleModuleShape.Default)
-                .WithErrorCorrection(ECCLevel.H)
-                .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
-                            backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
-                            clearColor: SKColors.Transparent);
+            QRCodeImageBuilder? qrData = null;
+
+            if (ClassBarcodes.cQRCodeModuleShape == "Square")
+            {
+                qrData = new QRCodeImageBuilder(text)
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
+                    .WithErrorCorrection(ECCLevel.H)
+                    .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
+                                backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
+                                clearColor: SKColors.Transparent);
+            }
+            else if (ClassBarcodes.cQRCodeModuleShape == "Rounded")
+            {
+                qrData = new QRCodeImageBuilder(text)
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
+                    .WithModuleShape(RoundedRectangleModuleShape.Default)
+                    .WithErrorCorrection(ECCLevel.H)
+                    .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
+                                backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
+                                clearColor: SKColors.Transparent);
+            }
+            else if (ClassBarcodes.cQRCodeModuleShape == "Circle")
+            {
+                qrData = new QRCodeImageBuilder(text)
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
+                    .WithModuleShape(CircleModuleShape.Default)
+                    .WithErrorCorrection(ECCLevel.H)
+                    .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
+                                backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
+                                clearColor: SKColors.Transparent);
+            }
+
+            // Add a null check before using qrData
+            if (qrData == null)
+            {
+                Debug.WriteLine("Invalid QR code module shape");
+                return null;
+            }
 
             // Generate PNG bytes off the UI thread (QRCode creation can be heavy)
             byte[]? pngBytes = null;

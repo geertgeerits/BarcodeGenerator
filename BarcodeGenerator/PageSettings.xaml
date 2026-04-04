@@ -188,7 +188,6 @@
 
                         <BoxView
                             x:Name="bxvColorFg"
-                            Grid.Column="1"
                             Color="Black">
                         </BoxView>
                     </Border>
@@ -275,49 +274,77 @@
                     Text="{Translate QRCodeModuleShape_Text}">
                 </Label>
 
-                <!--<Border
-                    Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="9"
-                    Grid.Column="2">
-
-                    <Picker
-                        x:Name="pckQRCodeModuleShape"
-                        Style="{StaticResource pickerStyleSettings}"
-                        SelectedIndexChanged="OnPickerQRCodeModuleShapeChanged">
-                    </Picker>
-                </Border>-->
-
                 <Grid
                     Grid.Row="9"
                     Grid.Column="2"
-                    ColumnDefinitions="*,*,*" >
+                    RowDefinitions="Auto, Auto"
+                    ColumnDefinitions="10, *,*,*" >
                     
                     <RadioButton
-                        Grid.Column="0"
-                        CornerRadius="0">
-                        <RadioButton.Content>
-                            <Image Source="ic_action_cancel.png"
-                            SemanticProperties.Description="Cat" />
-                        </RadioButton.Content>
+                        x:Name="rbtQRCodeModuleShapeSquare"
+                        GroupName="ModuleShape"
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        ToolTipProperties.Text="{Translate QRCodeModuleShapeSquare_Text}"
+                        SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}"
+                        CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
                     </RadioButton>
                     
                     <RadioButton
-                        Grid.Column="1"
-                        CornerRadius="0">
-                        <RadioButton.Content>
-                            <Image Source="ic_action_settings.png"
-                            SemanticProperties.Description="Dog" />
-                        </RadioButton.Content>
+                        x:Name="rbtQRCodeModuleShapeRounded"
+                        GroupName="ModuleShape"
+                        Grid.Column="2"
+                        HorizontalOptions="Start"
+                        ToolTipProperties.Text="{Translate QRCodeModuleShapeRounded_Text}"
+                        SemanticProperties.Description="{Translate QRCodeModuleShapeRounded_Text}"
+                        CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
                     </RadioButton>
 
                     <RadioButton
-                        Grid.Column="2"
-                        CornerRadius="0">
-                        <RadioButton.Content>
-                            <Image Source="ic_action_tick.png"
-                            SemanticProperties.Description="Elephant" />
-                        </RadioButton.Content>
+                        x:Name="rbtQRCodeModuleShapeCircle"
+                        GroupName="ModuleShape"
+                        Grid.Column="3"
+                        HorizontalOptions="Start"
+                        ToolTipProperties.Text="{Translate QRCodeModuleShapeCircle_Text}"
+                        SemanticProperties.Description="{Translate QRCodeModuleShapeCircle_Text}"
+                        CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
                     </RadioButton>
+
+                    <BoxView
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HeightRequest="38"
+                        WidthRequest="38"
+                        CornerRadius="0"
+                        HorizontalOptions="Start"
+                        Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                        ToolTipProperties.Text="{Translate QRCodeModuleShapeSquare_Text}"
+                        SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}">
+                    </BoxView>
+
+                    <BoxView
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HeightRequest="40"
+                        WidthRequest="40"
+                        CornerRadius="10"
+                        HorizontalOptions="Start"
+                        Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                        ToolTipProperties.Text="{Translate QRCodeModuleShapeRounded_Text}"
+                        SemanticProperties.Description="{Translate QRCodeModuleShapeRounded_Text}">
+                    </BoxView>
+
+                    <BoxView
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        HeightRequest="42"
+                        WidthRequest="42"
+                        CornerRadius="25"
+                        HorizontalOptions="Start"
+                        Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                        ToolTipProperties.Text="{Translate QRCodeModuleShapeCircle_Text}"
+                        SemanticProperties.Description="{Translate QRCodeModuleShapeCircle_Text}">
+                    </BoxView>
                 </Grid>
 
                 <Label

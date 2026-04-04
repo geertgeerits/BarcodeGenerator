@@ -723,12 +723,12 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>QR Code module shape:</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
-    <value>Square</value>
+    <value>QR Code shape: Square</value>
   </data>
   <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
-    <value>Circle</value>
+    <value>QR Code shape: circle</value>
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
-    <value>Rounded</value>
+    <value>QR Code shape: rounded</value>
   </data>
 </root>

@@ -72,13 +72,10 @@ namespace BarcodeGenerator
                 _ => 0          // System
             };
 
-            // Select the current QR Code module shape in the picker
-            //pckQRCodeModuleShape.SelectedIndex = ClassBarcodes.cQRCodeModuleShape switch
-            //{
-            //    "Circle" => 0,   // Circle
-            //    "Rounded" => 1,  // Rounded
-            //    _ => 2           // Square
-            //};
+            // Select the current QR Code module shape in the radio buttons
+            rbtQRCodeModuleShapeCircle.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Circle";
+            rbtQRCodeModuleShapeRounded.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Rounded";
+            rbtQRCodeModuleShapeSquare.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Square";
 
             // Set the QR code image size to update the switch and entry
             swtQRCodeSizeVariable.IsToggled = ClassBarcodes.bQRCodeSizeVariable;
@@ -502,6 +499,27 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Radio button QR code module shape checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RbtQRCodeModuleShape_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (rbtQRCodeModuleShapeSquare.IsChecked)
+            {
+                ClassBarcodes.cQRCodeModuleShape = "Square";
+            }
+            else if (rbtQRCodeModuleShapeRounded.IsChecked)
+            {
+                ClassBarcodes.cQRCodeModuleShape = "Rounded";
+            }
+            else if (rbtQRCodeModuleShapeCircle.IsChecked)
+            {
+                ClassBarcodes.cQRCodeModuleShape = "Circle";
+            }
+        }
+
+        /// <summary>
         /// Show a modal popup to inform the user about the recommended image size before opening the file picker
         /// </summary>
         private async Task OpenPopupColorPickerAsync(string cMessage)
@@ -518,11 +536,6 @@ namespace BarcodeGenerator
                 Globals.bIsPopupMessage = true;
                 _ = await currentPage.ShowPopupAsync(new PopupColorPicker(120, cMessage));
             }
-        }
-
-        private void OnPickerQRCodeModuleShapeChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

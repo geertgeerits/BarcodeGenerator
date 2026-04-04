@@ -719,4 +719,16 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="TextLengthLimitedByte_Text" xml:space="preserve">
     <value>Lungimea textului este limitată la {0} octeți.</value>
   </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>Forma modulului codului QR:</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>Forma codului QR: pătrată</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>Forma codului QR: cerc</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>Forma codului QR: rotunjită</value>
+  </data>
 </root>
