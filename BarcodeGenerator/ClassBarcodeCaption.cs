@@ -103,7 +103,7 @@ namespace BarcodeGenerator
                     };
 
                     // Ensure caption fits horizontally; reduce font size if necessary
-                    float maxTextWidth = srcWidth - (padding * 8);
+                    float maxTextWidth = srcWidth - (padding * 4);
                     const float minFontSize = 9f;
                     int attempts = 0;
                     SKRect textBounds = new();

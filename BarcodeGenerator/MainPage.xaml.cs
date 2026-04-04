@@ -29,7 +29,6 @@ namespace BarcodeGenerator
     {
         // Local variables
         private string cLicense = string.Empty;
-        private const string cAllowedCharactersDecimal = "0123456789";
         private const string cAllowedCharactersHex = "0123456789ABCDEF";
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
         private const string cAllowedCharactersCodabar = "0123456789-$:/.+ABCD";
@@ -62,7 +61,6 @@ namespace BarcodeGenerator
             // Register code pages for QR code encoding - required for Shift_JIS encoding used in Kanji mode            
             ClassQrModeDetector.RegisterCodePages();
 #endif
-
             // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
@@ -238,12 +236,12 @@ namespace BarcodeGenerator
             const int nHeightBarcode2D = 280;
             const int nWidthBarcode2D = 280;
 
-            var picker = (Picker)sender;
+            Picker picker = (Picker)sender;
             int selectedIndex = picker.SelectedIndex;
 
             if (selectedIndex != -1)
             {
-                var itemsSource = picker.ItemsSource;
+                IList? itemsSource = picker.ItemsSource;
                 string? item = itemsSource is not null && itemsSource.Count > selectedIndex
                     ? itemsSource[selectedIndex] as string : null;
 
@@ -580,7 +578,6 @@ namespace BarcodeGenerator
             btnShare.IsEnabled = false;
             bgvBarcode.Value = string.Empty;
             cBarcodeCaption = string.Empty;
-            string cChecksum = string.Empty;
 
             // Validate the input
             if (string.IsNullOrEmpty(edtTextToCode.Text))
@@ -599,7 +596,7 @@ namespace BarcodeGenerator
 
             int selectedIndex = pckFormatCodeGenerator.SelectedIndex;
 
-            var itemsSource = pckFormatCodeGenerator.ItemsSource;
+            IList? itemsSource = pckFormatCodeGenerator.ItemsSource;
             string? item = itemsSource is not null && itemsSource.Count > selectedIndex
                 ? itemsSource[selectedIndex] as string : null;
 
@@ -608,32 +605,29 @@ namespace BarcodeGenerator
 
             // Validate the text input and set the format
             // the maximum number of characters due to the different encoding modes and error correction levels
+            // Validate the text input and set the format
             if (selectedIndex != -1)
             {
-                // Validate the text input and set the format
-                if (selectedIndex != -1)
+                BarcodeValidationService validator = new();
+                ClassBarcodeValidationResult validation = await BarcodeValidationService.ValidateAsync(selectedName!, cTextToCode, nLenTextToCode);
+
+                if (!validation.Success)
                 {
-                    var validator = new BarcodeValidationService();
-                    ClassBarcodeValidationResult validation = await validator.ValidateAsync(selectedName, cTextToCode, nLenTextToCode);
-
-                    if (!validation.Success)
+                    // If there is a specific formatted error message, show it
+                    if (!string.IsNullOrEmpty(validation.ErrorMessage))
                     {
-                        // If there is a specific formatted error message, show it
-                        if (!string.IsNullOrEmpty(validation.ErrorMessage))
-                        {
-                            DisplayErrorMessage(validation.ErrorMessage);
-                        }
-
-                        _ = edtTextToCode.Focus();
-                        bgvBarcode.Value = string.Empty;
-                        return;
+                        DisplayErrorMessage(validation.ErrorMessage);
                     }
 
-                    // Use validated/possibly modified text and caption
-                    cTextToCode = validation.Text;
-                    edtTextToCode.Text = cTextToCode;
-                    cBarcodeCaption = validation.Caption;
+                    _ = edtTextToCode.Focus();
+                    bgvBarcode.Value = string.Empty;
+                    return;
                 }
+
+                // Use validated/possibly modified text and caption
+                cTextToCode = validation.Text;
+                edtTextToCode.Text = cTextToCode;
+                cBarcodeCaption = validation.Caption;
             }
 
             // Generate the barcode

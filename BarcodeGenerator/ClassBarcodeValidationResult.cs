@@ -15,7 +15,7 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
         private const string cAllowedCharactersCodabar = "0123456789-$:/.+ABCD";
 
-        public async Task<ClassBarcodeValidationResult> ValidateAsync(string selectedName, string cTextToCode, int nLenTextToCode)
+        public static async Task<ClassBarcodeValidationResult> ValidateAsync(string selectedName, string cTextToCode, int nLenTextToCode)
         {
             ClassBarcodeValidationResult result = new()
             {
@@ -132,11 +132,7 @@ namespace BarcodeGenerator
                         return result;
 
                     result.Text = cTextToCode;
-
-                    if (cTextToCode.Length < 49)
-                    {
-                        result.Caption = cTextToCode;
-                    }
+                    result.Caption = cTextToCode;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
                 {
