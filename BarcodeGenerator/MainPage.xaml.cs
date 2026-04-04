@@ -64,9 +64,10 @@ namespace BarcodeGenerator
             // Get the saved settings
             ClassBarcodes.cBarcodeGeneratorName = Preferences.Default.Get("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorDefault);
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
-            ClassQRCodeImage.bQRCodeSizeVariable = Preferences.Default.Get("SettingQRCodeSizeVariable", true);
-            ClassQRCodeImage.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
-            ClassQRCodeImage.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
+            ClassBarcodes.bQRCodeSizeVariable = Preferences.Default.Get("SettingQRCodeSizeVariable", true);
+            ClassBarcodes.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
+            ClassBarcodes.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
+            ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Circle");  // Square, Circle, Rounded
             Globals.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
@@ -248,7 +249,7 @@ namespace BarcodeGenerator
                 string? selectedName = item is not null
                     ? picker.ItemsSource[selectedIndex] as string : string.Empty;
 
-                ClassQRCodeImage.cQRCodeType = string.Empty;
+                ClassBarcodes.cQRCodeType = string.Empty;
 
                 brdQrCodeImage.IsVisible = false;
                 imgQrCodeImage.IsVisible = false;
@@ -655,14 +656,14 @@ namespace BarcodeGenerator
                 // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
                 if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {
-                    ClassQRCodeImage.cQRCodeType = selectedName;
+                    ClassBarcodes.cQRCodeType = selectedName;
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
                 // Generate the QR code with or without an image using QRCoder (and SkiaSharp)
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
-                    ClassQRCodeImage.cQRCodeType = selectedName;
+                    ClassBarcodes.cQRCodeType = selectedName;
 
                     ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
@@ -670,7 +671,7 @@ namespace BarcodeGenerator
                 // Generate the Micro QR code using QRCoder
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
-                    ClassQRCodeImage.cQRCodeType = selectedName;
+                    ClassBarcodes.cQRCodeType = selectedName;
 
                     ImageSource? qrImage = await ClassMicroQRCode.GenerateMicroQrCodeAsync(cTextToCode, -4);
                     imgQrCodeImage.Source = qrImage;
@@ -819,7 +820,7 @@ namespace BarcodeGenerator
             try
             {
                 // Share the QR code or the Micro QR code as an image file using the Share API
-                if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
+                if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     if (!await ClassFileOperations.ShareMultipleFilesAsync())
                     {
@@ -831,7 +832,7 @@ namespace BarcodeGenerator
                     }
                 }
                 // Share the QR code with the image as an image file using the Share API
-                else if (ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_ART_QR_CODE || ClassQRCodeImage.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+                else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     await Share.Default.RequestAsync(new ShareFileRequest
                     {

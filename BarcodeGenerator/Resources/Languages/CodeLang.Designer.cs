@@ -1386,6 +1386,42 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to QR Code module shape:.
+        /// </summary>
+        internal static string QRCodeModuleShape_Text {
+            get {
+                return ResourceManager.GetString("QRCodeModuleShape_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Circle.
+        /// </summary>
+        internal static string QRCodeModuleShapeCircle_Text {
+            get {
+                return ResourceManager.GetString("QRCodeModuleShapeCircle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rounded.
+        /// </summary>
+        internal static string QRCodeModuleShapeRounded_Text {
+            get {
+                return ResourceManager.GetString("QRCodeModuleShapeRounded_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Square.
+        /// </summary>
+        internal static string QRCodeModuleShapeSquare_Text {
+            get {
+                return ResourceManager.GetString("QRCodeModuleShapeSquare_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recommended image size.
         /// </summary>
         internal static string QRCodeRecommendedImageSize_Text {

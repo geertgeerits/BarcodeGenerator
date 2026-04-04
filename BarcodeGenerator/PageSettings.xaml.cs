@@ -72,9 +72,17 @@ namespace BarcodeGenerator
                 _ => 0          // System
             };
 
+            // Select the current QR Code module shape in the picker
+            //pckQRCodeModuleShape.SelectedIndex = ClassBarcodes.cQRCodeModuleShape switch
+            //{
+            //    "Circle" => 0,   // Circle
+            //    "Rounded" => 1,  // Rounded
+            //    _ => 2           // Square
+            //};
+
             // Set the QR code image size to update the switch and entry
-            swtQRCodeSizeVariable.IsToggled = ClassQRCodeImage.bQRCodeSizeVariable;
-            entQRCodeSizePixels.Text = ClassQRCodeImage.nQRCodeSizePixels.ToString();
+            swtQRCodeSizeVariable.IsToggled = ClassBarcodes.bQRCodeSizeVariable;
+            entQRCodeSizePixels.Text = ClassBarcodes.nQRCodeSizePixels.ToString();
 
             // Set the barcode with caption variable to update the switch
             swtBarcodeWithCaption.IsToggled = Globals.bBarcodeWithCaption;
@@ -179,8 +187,8 @@ namespace BarcodeGenerator
             ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
 
             // Set the QR code image size percent in the label
-            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";
-            sldQRCodeImageSize.Value = ClassQRCodeImage.nQRCodeImageSizePercent;
+            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
+            sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
 
             // Set the current color in the box view
             bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
@@ -195,6 +203,15 @@ namespace BarcodeGenerator
                 CodeLang.ThemeDark_Text
             ];
             pckTheme.ItemsSource = ThemeList;
+
+            // Set the QR code module shapes in the picker
+            List<string> QRCodeModuleShape =
+            [
+                CodeLang.QRCodeModuleShapeCircle_Text,
+                CodeLang.QRCodeModuleShapeRounded_Text,
+                CodeLang.QRCodeModuleShapeSquare_Text
+            ];
+            //pckQRCodeModuleShape.ItemsSource = QRCodeModuleShape;
         }
 
         /// <summary>
@@ -272,7 +289,7 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void SwtQRCodeSizeVariable_Toggled(object sender, ToggledEventArgs e)
         {
-            ClassQRCodeImage.bQRCodeSizeVariable = e.Value;
+            ClassBarcodes.bQRCodeSizeVariable = e.Value;
         }
 
         /// <summary>
@@ -343,7 +360,7 @@ namespace BarcodeGenerator
                 return;
             }
 
-            ClassQRCodeImage.nQRCodeSizePixels = nValue;
+            ClassBarcodes.nQRCodeSizePixels = nValue;
         }
 
         /// <summary>
@@ -358,9 +375,9 @@ namespace BarcodeGenerator
         /// code image size percentage.</param>
         private void OnSliderQRCodeImageSizeValueChanged(object sender, ValueChangedEventArgs e)
         {
-            ClassQRCodeImage.nQRCodeImageSizePercent = MathF.Round((float)e.NewValue, 1);
-            sldQRCodeImageSize.Value = ClassQRCodeImage.nQRCodeImageSizePercent;
-            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassQRCodeImage.nQRCodeImageSizePercent)}";
+            ClassBarcodes.nQRCodeImageSizePercent = MathF.Round((float)e.NewValue, 1);
+            sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
+            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
         }
 
         /// <summary>
@@ -372,9 +389,10 @@ namespace BarcodeGenerator
         {
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
-            Preferences.Default.Set("SettingQRCodeSizeVariable", ClassQRCodeImage.bQRCodeSizeVariable);
-            Preferences.Default.Set("SettingQRCodeSizePixels", ClassQRCodeImage.nQRCodeSizePixels);
-            Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassQRCodeImage.nQRCodeImageSizePercent);
+            Preferences.Default.Set("SettingQRCodeSizeVariable", ClassBarcodes.bQRCodeSizeVariable);
+            Preferences.Default.Set("SettingQRCodeSizePixels", ClassBarcodes.nQRCodeSizePixels);
+            Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassBarcodes.nQRCodeImageSizePercent);
+            Preferences.Default.Set("SettingQRCodeModuleShape", ClassBarcodes.cQRCodeModuleShape);
             Preferences.Default.Set("SettingBarcodeWithCaption", Globals.bBarcodeWithCaption);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
@@ -413,6 +431,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeSizeVariable");
                 Preferences.Default.Remove("SettingQRCodeSizePixels");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
+                Preferences.Default.Remove("SettingQRCodeModuleShape");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
@@ -439,7 +458,7 @@ namespace BarcodeGenerator
         private async void OnButtonColorForgroundClicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = Globals.cCodeColorFg;
-            await OpenPopupColorPickerAsync();
+            await OpenPopupColorPickerAsync(CodeLang.ForegroundColor_Text);
 
             if (!Globals.bPopupCanceled)
             {
@@ -456,7 +475,7 @@ namespace BarcodeGenerator
         private async void OnButtonColorBackgroundClicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = Globals.cCodeColorBg;
-            await OpenPopupColorPickerAsync();
+            await OpenPopupColorPickerAsync(CodeLang.BackgroundColor_Text);
 
             if (!Globals.bPopupCanceled)
             {
@@ -473,7 +492,7 @@ namespace BarcodeGenerator
         private async void OnButtonColorBackgroundArtQRCodeClicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = Globals.cCodeColorBgArtQRCode;
-            await OpenPopupColorPickerAsync();
+            await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
 
             if (!Globals.bPopupCanceled)
             {
@@ -485,14 +504,25 @@ namespace BarcodeGenerator
         /// <summary>
         /// Show a modal popup to inform the user about the recommended image size before opening the file picker
         /// </summary>
-        private async Task OpenPopupColorPickerAsync()
+        private async Task OpenPopupColorPickerAsync(string cMessage)
         {
+            // If the last character of the message is a : then remove it
+            if (cMessage.EndsWith(':'))
+            {
+                cMessage = cMessage[..^1];
+            }
+
             Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
             {
                 Globals.bIsPopupMessage = true;
-                _ = await currentPage.ShowPopupAsync(new PopupColorPicker(120));
+                _ = await currentPage.ShowPopupAsync(new PopupColorPicker(120, cMessage));
             }
+        }
+
+        private void OnPickerQRCodeModuleShapeChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -719,4 +719,16 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
   <data name="TextLengthLimitedByte_Text" xml:space="preserve">
     <value>The text length is limited to {0} bytes.</value>
   </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>QR Code module shape:</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>Square</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>Circle</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>Rounded</value>
+  </data>
 </root>

@@ -33,18 +33,31 @@
             Grid.ColumnSpan="3"
             HorizontalOptions="Fill"
             VerticalOptions="Fill"
-            WidthRequest="280"
             BackgroundColor="Transparent"
-            Margin="10,5,10,5"
-            Padding="5"
+            Margin="10,5,10,1"
+            Padding="0"
             TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
             HorizontalTextAlignment="Center"
             Text="{Translate ColorPicker_Text}">
         </Label>
 
+        <Label
+            x:Name="lblPopupMessage"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            BackgroundColor="Transparent"
+            Margin="10,1,10,1"
+            Padding="0"
+            HorizontalTextAlignment="Center"
+            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
+        </Label>
+        
         <Border
             Style="{StaticResource borderStyleGroup}"
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="0"
             Grid.RowSpan="4"
             Grid.ColumnSpan="3"
@@ -54,7 +67,7 @@
         <Slider
             x:Name="sldOpacity"
             Style="{StaticResource sliderStyleColor}"
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="3"
             Margin="10,5,10,0"
@@ -66,7 +79,7 @@
         <Slider
             x:Name="sldColorRed"
             Style="{StaticResource sliderStyleColor}"
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.Column="0"
             Grid.ColumnSpan="3"
             Margin="10,0,10,0"
@@ -78,7 +91,7 @@
         <Slider
             x:Name="sldColorGreen"
             Style="{StaticResource sliderStyleColor}"
-            Grid.Row="3"
+            Grid.Row="4"
             Grid.Column="0"
             Grid.ColumnSpan="3"
             Margin="10,0,10,0"
@@ -90,7 +103,7 @@
         <Slider
             x:Name="sldColorBlue"
             Style="{StaticResource sliderStyleColor}"
-            Grid.Row="4"
+            Grid.Row="5"
             Grid.Column="0"
             Grid.ColumnSpan="3"
             Margin="10,0,10,0"
@@ -101,7 +114,7 @@
 
         <Border
             Style="{StaticResource borderStyleDefault}"
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="0"
             WidthRequest="120"
             HorizontalOptions="Start"
@@ -120,7 +133,7 @@
         </Border>
 
         <Border
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="2"
             HeightRequest="40"
             WidthRequest="120"
@@ -140,13 +153,12 @@
         <ImageButton
             x:Name="btnButtonCancel"
             Style="{StaticResource imageButtonStyleColorPicker}"
-            Grid.Row="6"
+            Grid.Row="7"
             Grid.Column="0"
             HorizontalOptions="Start"
             VerticalOptions="End"
             WidthRequest="120"
-            Margin="4,5,0,0"
-            Padding="5"
+            Margin="4,5,0,5"
             ToolTipProperties.Text="{Translate ButtonCancel_Text}"
             Source="ic_action_cancel.png"
             Clicked="OnButtonCancel_Clicked">
@@ -154,12 +166,13 @@
 
         <Button
             Style="{StaticResource buttonStyleHelp}"
-            Grid.Row="6"
+            Grid.Row="7"
             Grid.Column="1"
             HorizontalOptions="Center"
             VerticalOptions="End"
             HeightRequest="39"
             WidthRequest="39"
+            Margin="0,0,0,5"
             SemanticProperties.Description="{Translate ToolTipHelp_Text}"
             ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
             Clicked="OnSettingsHexColorHelpClicked">
@@ -168,13 +181,12 @@
         <ImageButton
             x:Name="btnButtonClose"
             Style="{StaticResource imageButtonStyleColorPicker}"
-            Grid.Row="6"
+            Grid.Row="7"
             Grid.Column="2"
             HorizontalOptions="End"
             VerticalOptions="End"
             WidthRequest="120"
-            Margin="0,5,4,0"
-            Padding="5"
+            Margin="0,5,4,5"
             ToolTipProperties.Text="{Translate ButtonNext_Text}"
             Source="ic_action_tick.png"
             Clicked="OnButtonClose_Clicked">

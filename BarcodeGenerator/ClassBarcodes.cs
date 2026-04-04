@@ -86,6 +86,15 @@
         public static string cBarcodeGeneratorDefault = string.Empty;
         public static string cBarcodeScannerDefault = string.Empty;
 
+        // Global variables to control the QR code and image
+        public static string cQRCodeType = string.Empty;
+        public static bool bQRCodeSizeVariable;
+        public static int nQRCodeSizePixels;
+        public static float nQRCodeImageSizePercent;
+        public static string cQRCodeModuleShape;
+
+
+
         // Creating a public dictionary
         public static Dictionary<string, string> barcodeSearch = [];
 

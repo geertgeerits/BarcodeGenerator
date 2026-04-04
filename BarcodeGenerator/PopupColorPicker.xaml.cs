@@ -14,7 +14,7 @@ public partial class PopupColorPicker : Popup
         InitializeComponent();
 
         // Set the message text
-        //lblPopupMessage.Text = cMessage;
+        lblPopupMessage.Text = cMessage;
         
         Globals.bPopupCanceled = false;
 

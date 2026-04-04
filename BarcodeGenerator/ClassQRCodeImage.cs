@@ -7,12 +7,6 @@ namespace BarcodeGenerator
 {
     internal class ClassQRCodeImage
     {
-        // Global variables to control the size of the QR code and image
-        public static bool bQRCodeSizeVariable;
-        public static int nQRCodeSizePixels;
-        public static float nQRCodeImageSizePercent;
-        public static string cQRCodeType = string.Empty;
-
         /// <summary>
         /// Generates a QR code image from the specified text, optionally overlaying a centered image
         /// </summary>
@@ -50,7 +44,7 @@ namespace BarcodeGenerator
             try
             {
                 // QR code with image, use ECC Level H (30% error correction) to allow for the central image overlay without compromising scannability
-                if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+                if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     cErrorTitle = CodeLang.Barcode_QR_CODE_IMAGE_Text;
                     qrDataPng = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
@@ -82,9 +76,9 @@ namespace BarcodeGenerator
             int pixelsPerModule = 20;
 
             // Compute the pixelsPerModule from a desired output size to avoid extreme bitmap dimensions
-            if (!bQRCodeSizeVariable)
+            if (!ClassBarcodes.bQRCodeSizeVariable)
             {
-                int desiredOutputPx = nQRCodeSizePixels;                                // e.g. target image width
+                int desiredOutputPx = ClassBarcodes.nQRCodeSizePixels;                                // e.g. target image width
                 pixelsPerModule = Math.Clamp(desiredOutputPx / moduleCount, 4, 40);     // Keep between 4 and 40
             }
 
@@ -92,12 +86,12 @@ namespace BarcodeGenerator
             Debug.WriteLine($"QR code generated with module count: {moduleCount}, size: {size}x{size}, pixels per module: {pixelsPerModule}");
 
             // Calculate the recommended image size based on the QR code size and the configured percentage
-            int nImageRecommendedSize = (int)(size * nQRCodeImageSizePercent / 100f);
+            int nImageRecommendedSize = (int)(size * ClassBarcodes.nQRCodeImageSizePercent / 100f);
 
             Stream? logoStream = null;
 
             // If the QR Code with image has been selected, show a message about the recommended image size and open the file picker
-            if (cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+            if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
             {
                 // Show a modal popup to inform the user about the recommended image size before opening the file picker
                 Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
@@ -181,7 +175,7 @@ namespace BarcodeGenerator
                 if (logoBitmap != null && logoBitmap.Width > 0 && logoBitmap.Height > 0)
                 {
                     // Maximum box for the logo (as a fraction of the QR size)
-                    float iconMaxSize = size * nQRCodeImageSizePercent / 100f;
+                    float iconMaxSize = size * ClassBarcodes.nQRCodeImageSizePercent / 100f;
                     Debug.WriteLine($"Original logo size: {logoBitmap.Width}x{logoBitmap.Height}, QR code size: {size}x{size}, icon max size: {iconMaxSize}x{iconMaxSize}");
 
                     // Compute scale to fit the logo inside a square of iconMaxSize while preserving aspect ratio.
