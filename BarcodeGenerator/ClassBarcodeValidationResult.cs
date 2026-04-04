@@ -132,7 +132,11 @@ namespace BarcodeGenerator
                         return result;
 
                     result.Text = cTextToCode;
-                    result.Caption = cTextToCode;
+
+                    if (cTextToCode.Length < 49)
+                    {
+                        result.Caption = cTextToCode;
+                    }
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
                 {
