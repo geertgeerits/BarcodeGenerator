@@ -103,8 +103,8 @@ namespace BarcodeGenerator
                     };
 
                     // Ensure caption fits horizontally; reduce font size if necessary
-                    float maxTextWidth = srcWidth - padding * 2;
-                    const float minFontSize = 10f;
+                    float maxTextWidth = srcWidth - (padding * 8);
+                    const float minFontSize = 9f;
                     int attempts = 0;
                     SKRect textBounds = new();
                     float measuredWidth = font.MeasureText(caption, out textBounds);
