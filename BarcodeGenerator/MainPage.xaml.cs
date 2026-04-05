@@ -609,7 +609,7 @@ namespace BarcodeGenerator
             // Validate the text input and set the format
             if (selectedIndex != -1)
             {
-                BarcodeValidationService validator = new();
+                //BarcodeValidationService validator = new();
                 ClassBarcodeValidationResult validation = await BarcodeValidationService.ValidateAsync(selectedName!, cTextToCode, nLenTextToCode);
 
                 if (!validation.Success)

@@ -8,7 +8,7 @@ namespace BarcodeGenerator
 {
     internal class ClassArtQRCode
     {
-        private static bool bImageStretched = false;  // Whether to stretch the background image to fill the QR code dimensions (true) or fit within while preserving aspect ratio (false)
+        private static readonly bool bImageStretched = false;  // Whether to stretch the background image to fill the QR code dimensions (true) or fit within while preserving aspect ratio (false)
 
         /// <summary>
         /// Generates an artistic QR code image from the provided text and saves it as a PNG file.
@@ -87,13 +87,25 @@ namespace BarcodeGenerator
             {
                 if (cFileForeground != null)
                 {
-                    logo = SKBitmap.Decode(File.ReadAllBytes(cFileForeground.FullPath));
-                    icon = IconData.FromImage(logo, iconSizePercent: (int)ClassBarcodes.nQRCodeImageSizePercent);
+                    // Read foreground image bytes (async) and apply EXIF orientation
+                    byte[] fgBytes;
+                    await using (Stream fgStream = await cFileForeground.OpenReadAsync())
+                    {
+                        using MemoryStream ms = new();
+                        await fgStream.CopyToAsync(ms);
+                        fgBytes = ms.ToArray();
+                    }
+
+                    logo = DecodeAndOrientBitmap(fgBytes);
+                    if (logo != null)
+                    {
+                        icon = IconData.FromImage(logo, iconSizePercent: (int)ClassBarcodes.nQRCodeImageSizePercent, iconBorderWidth: 10);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"ClassArtQRCode.GenerateArtQrCodeAsync: {ex.Message}");
+                Debug.WriteLine($"ClassArtQRCode.GenerateArtQrCodeAsync (foreground): {ex.Message}");
             }
 
             // Create QR code with custom styling and non-compressed text
@@ -170,7 +182,7 @@ namespace BarcodeGenerator
                     byte[] bgBytes;
                     await using (Stream bgStream = await cFileBackground.OpenReadAsync())
                     {
-                        using MemoryStream ms = new MemoryStream();
+                        using MemoryStream ms = new();
                         await bgStream.CopyToAsync(ms);
                         bgBytes = ms.ToArray();
                     }
@@ -203,8 +215,8 @@ namespace BarcodeGenerator
                                 {
                                     // Draw bgBitmap stretched to the target size (preserves no aspect ratio)
                                     using SKPaint paint = new() { IsAntialias = true, FilterQuality = SKFilterQuality.High };
-                                    SKRect srcRect = new SKRect(0, 0, bgBitmap.Width, bgBitmap.Height);
-                                    SKRect dstRect = new SKRect(0, 0, targetWidth, targetHeight);
+                                    SKRect srcRect = new(0, 0, bgBitmap.Width, bgBitmap.Height);
+                                    SKRect dstRect = new(0, 0, targetWidth, targetHeight);
                                     bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, paint);
                                 }
                                 else
@@ -216,14 +228,14 @@ namespace BarcodeGenerator
                                     float left = (targetWidth - scaledWidth) / 2;
                                     float top = (targetHeight - scaledHeight) / 2;
                                     using SKPaint paint = new() { IsAntialias = true, FilterQuality = SKFilterQuality.High };
-                                    SKRect srcRect = new SKRect(0, 0, bgBitmap.Width, bgBitmap.Height);
-                                    SKRect dstRect = new SKRect(left, top, left + scaledWidth, top + scaledHeight);
+                                    SKRect srcRect = new(0, 0, bgBitmap.Width, bgBitmap.Height);
+                                    SKRect dstRect = new(left, top, left + scaledWidth, top + scaledHeight);
                                     bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, paint);
                                 }
                             }
 
                             // Compose scaled background and QR onto an SKSurface (CPU-backed)
-                            SKImageInfo infoSurface = new SKImageInfo(targetWidth, targetHeight, SKColorType.Rgba8888, SKAlphaType.Premul);
+                            SKImageInfo infoSurface = new(targetWidth, targetHeight, SKColorType.Rgba8888, SKAlphaType.Premul);
                             using SKSurface surface = SKSurface.Create(infoSurface);
                             if (surface == null)
                             {
