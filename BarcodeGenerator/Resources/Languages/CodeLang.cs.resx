@@ -720,7 +720,7 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
     <value>Délka textu je omezena na {0} bajtů.</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
-    <value>Tvar modulu QR kódu:</value>
+    <value>Tvar uměleckého modulu QR kódu:</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>Tvar QR kódu: čtverec</value>

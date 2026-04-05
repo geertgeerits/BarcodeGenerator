@@ -720,7 +720,7 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
     <value>A szöveg hossza {0} bájtra korlátozódik.</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
-    <value>QR-kód modul alakja:</value>
+    <value>Művészi QR-kód modul alakja:</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>QR-kód alakja: négyzet</value>

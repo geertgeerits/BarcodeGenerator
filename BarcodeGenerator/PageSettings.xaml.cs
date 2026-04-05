@@ -534,7 +534,7 @@ namespace BarcodeGenerator
             if (currentPage != null)
             {
                 Globals.bIsPopupMessage = true;
-                _ = await currentPage.ShowPopupAsync(new PopupColorPicker(120, cMessage));
+                _ = await currentPage.ShowPopupAsync(new PopupColorPicker(cMessage));
             }
         }
     }

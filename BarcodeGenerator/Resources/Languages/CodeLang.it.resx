@@ -720,7 +720,7 @@ Microsoft, Microsoft Store, il logo di Microsoft Store e Windows sono marchi di 
     <value>La lunghezza del testo è limitata a {0} byte.</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
-    <value>Forma del modulo del codice QR:</value>
+    <value>Forma artistica del modulo del codice QR:</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>Forma del codice QR: quadrata</value>

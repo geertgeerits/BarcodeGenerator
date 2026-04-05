@@ -1386,7 +1386,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code module shape:.
+        ///   Looks up a localized string similar to Artistic QR Code module shape:.
         /// </summary>
         internal static string QRCodeModuleShape_Text {
             get {

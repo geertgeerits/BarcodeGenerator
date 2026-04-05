@@ -285,6 +285,7 @@
                         GroupName="ModuleShape"
                         Grid.Column="1"
                         HorizontalOptions="Start"
+                        Margin="{OnPlatform Default='3,0,0,0', WinUI='10,0,0,0'}"
                         ToolTipProperties.Text="{Translate QRCodeModuleShapeSquare_Text}"
                         SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}"
                         CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
@@ -295,6 +296,7 @@
                         GroupName="ModuleShape"
                         Grid.Column="2"
                         HorizontalOptions="Start"
+                        Margin="{OnPlatform Default='3,0,0,0', WinUI='10,0,0,0'}"
                         ToolTipProperties.Text="{Translate QRCodeModuleShapeRounded_Text}"
                         SemanticProperties.Description="{Translate QRCodeModuleShapeRounded_Text}"
                         CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
@@ -305,6 +307,7 @@
                         GroupName="ModuleShape"
                         Grid.Column="3"
                         HorizontalOptions="Start"
+                        Margin="{OnPlatform Default='3,0,0,0', WinUI='10,0,0,0'}"
                         ToolTipProperties.Text="{Translate QRCodeModuleShapeCircle_Text}"
                         SemanticProperties.Description="{Translate QRCodeModuleShapeCircle_Text}"
                         CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
@@ -352,6 +355,7 @@
                     Grid.Row="10"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Text="{Translate QRCodeSizeVariable_Text}">
                 </Label>
 
@@ -360,6 +364,7 @@
                     Grid.Row="10"
                     Grid.Column="2"
                     HorizontalOptions="Start"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Toggled="SwtQRCodeSizeVariable_Toggled"  >
                 </Switch>
 
@@ -420,6 +425,7 @@
                     Grid.Row="13"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Text="{Translate BarcodeWithCaption_Text}">
                 </Label>
 
@@ -428,6 +434,7 @@
                     Grid.Row="13"
                     Grid.Column="2"
                     HorizontalOptions="Start"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Toggled="SwtBarcodeWithCaption_Toggled">
                 </Switch>
 

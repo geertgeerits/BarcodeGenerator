@@ -720,7 +720,7 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
     <value>De tekstlengte is beperkt tot {0} bytes.</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
-    <value>Vorm van de QR-codemodule:</value>
+    <value>Vorm van de artistieke QR-codemodule:</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>Vorm van de QR-code: vierkant</value>

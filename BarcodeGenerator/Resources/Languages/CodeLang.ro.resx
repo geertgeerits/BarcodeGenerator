@@ -720,7 +720,7 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
     <value>Lungimea textului este limitată la {0} octeți.</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
-    <value>Forma modulului codului QR:</value>
+    <value>Formă artistică a modulului QR Code:</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>Forma codului QR: pătrată</value>
