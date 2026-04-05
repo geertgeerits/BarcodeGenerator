@@ -24,6 +24,9 @@ namespace BarcodeGenerator
                 return null;
             }
 
+            FileResult? cFileBackground = null;
+            FileResult? cFileForeground = null;
+
             // Show a modal popup to inform the user about the recommended background image size before opening the file picker
             Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
@@ -35,16 +38,63 @@ namespace BarcodeGenerator
                 if (Globals.bPopupCanceled)
                 {
                     Globals.bPopupCanceled = false;
-                    return null;
+                }
+                else
+                {
+                    // Open the file picker to select an image file for the background of the Art QR code
+                    cFileBackground = await ClassFileOperations.PickImage();
                 }
             }
 
-            // Open the file picker to select an image file for the background of the Art QR code
-            FileResult? cFileBackground = await ClassFileOperations.PickImage();
+            // Calculate the recommended foreground image size based on the QR code size and a percentage defined in ClassBarcodes
+            int nRecommendedImageSize = (int)(ClassBarcodes.nQRCodeSizePixels * ClassBarcodes.nQRCodeImageSizePercent / 100f);
+
+            // Show a modal popup to inform the user about the recommended foreground image size before opening the file picker
+            currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+            if (currentPage != null)
+            {
+                Globals.bIsPopupMessage = true;
+                _ = await currentPage.ShowPopupAsync(new PopupMessage(10, CodeLang.QRCodeImageForegroundTitle_Text, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nRecommendedImageSize:N0} x {nRecommendedImageSize:N0} {CodeLang.Pixels_Text}"));
+
+                // Check if the popup was canceled by the user before proceeding to open the file picker
+                if (Globals.bPopupCanceled)
+                {
+                    Globals.bPopupCanceled = false;
+                }
+                else
+                {
+                    // Open the file picker to select an image file for the foreground of the Art QR code
+                    cFileForeground = await ClassFileOperations.PickImage();
+                }
+            }
+
+            if (cFileBackground == null && cFileForeground == null)
+            {
+                return null;
+            }
 
             // Compress then encode (gzip->base64) to reduce bytes and allow encoding larger text content than the QR code
             // would normally allow, at the cost of requiring a custom decoder on the scanning side
             //text = CompressToBase64(text);
+
+            // Load the foreground image (if any) into an SKBitmap and create an IconData for the QR code builder.
+            // The IconData will be embedded in the center of the QR code and should be sized appropriately (e.g. 20-30% of the QR code size)
+            // to ensure the QR code remains scannable.
+            SKBitmap? logo = null;
+            IconData? icon = null;
+
+            try
+            {
+                if (cFileForeground != null)
+                {
+                    logo = SKBitmap.Decode(File.ReadAllBytes(cFileForeground.FullPath));
+                    icon = IconData.FromImage(logo, iconSizePercent: (int)ClassBarcodes.nQRCodeImageSizePercent);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"ClassArtQRCode.GenerateArtQrCodeAsync: {ex.Message}");
+            }
 
             // Create QR code with custom styling and non-compressed text
             // If no size is given then the default size = 512 x 512 pixels
@@ -52,12 +102,14 @@ namespace BarcodeGenerator
 
             if (ClassBarcodes.cQRCodeModuleShape == "Square")
             {
+
                 qrData = new QRCodeImageBuilder(text)
                     .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(ECCLevel.H)
                     .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
                                 backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
-                                clearColor: SKColors.Transparent);
+                                clearColor: SKColors.Transparent)
+                    .WithIcon(icon);
             }
             else if (ClassBarcodes.cQRCodeModuleShape == "Rounded")
             {
@@ -67,7 +119,8 @@ namespace BarcodeGenerator
                     .WithErrorCorrection(ECCLevel.H)
                     .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
                                 backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
-                                clearColor: SKColors.Transparent);
+                                clearColor: SKColors.Transparent)
+                    .WithIcon(icon);
             }
             else if (ClassBarcodes.cQRCodeModuleShape == "Circle")
             {
@@ -77,7 +130,8 @@ namespace BarcodeGenerator
                     .WithErrorCorrection(ECCLevel.H)
                     .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
                                 backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
-                                clearColor: SKColors.Transparent);
+                                clearColor: SKColors.Transparent)
+                    .WithIcon(icon);
             }
 
             // Add a null check before using qrData
@@ -92,6 +146,9 @@ namespace BarcodeGenerator
             try
             {
                 pngBytes = await Task.Run(() => qrData.ToByteArray());
+                
+                logo?.Dispose();
+                if (icon is IDisposable d) d.Dispose();
             }
             catch (Exception ex)
             {
