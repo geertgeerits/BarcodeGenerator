@@ -665,8 +665,8 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR-kode med billede</value>
   </data>
-  <data name="QRCodeImageTitle_Text" xml:space="preserve">
-    <value>Vælg et billede</value>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Vælg et forgrundsbillede</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Ophæve</value>
@@ -730,5 +730,8 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
     <value>QR-kodeform: afrundet</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Vælg et baggrundsbillede</value>
   </data>
 </root>

@@ -665,8 +665,8 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR-kod med bild</value>
   </data>
-  <data name="QRCodeImageTitle_Text" xml:space="preserve">
-    <value>Välj en bild</value>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Välj en förgrundsbild</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Avboka</value>
@@ -730,5 +730,8 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
     <value>QR-kodens form: rundad</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Välj en bakgrundsbild</value>
   </data>
 </root>

@@ -35,9 +35,8 @@
             BackgroundColor="Transparent"
             Margin="10,5,10,5"
             Padding="5"
-            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
             HorizontalTextAlignment="Center"
-            Text="{Translate QRCodeImageTitle_Text}">
+            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
         </Label>
 
         <Label

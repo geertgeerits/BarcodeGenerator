@@ -665,8 +665,8 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR kód s obrázkem</value>
   </data>
-  <data name="QRCodeImageTitle_Text" xml:space="preserve">
-    <value>Vyberte obrázek</value>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Vyberte obrázek popředí</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Zrušit</value>
@@ -730,5 +730,8 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
     <value>Tvar QR kódu: zaoblený</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Vyberte obrázek pozadí</value>
   </data>
 </root>

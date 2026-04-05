@@ -665,8 +665,8 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR-code met afbeelding</value>
   </data>
-  <data name="QRCodeImageTitle_Text" xml:space="preserve">
-    <value>Kies een afbeelding</value>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Kies een voorgrondafbeelding</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Annuleren</value>
@@ -730,5 +730,8 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
     <value>Vorm van de QR-code: afgerond</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Kies een achtergrondafbeelding</value>
   </data>
 </root>

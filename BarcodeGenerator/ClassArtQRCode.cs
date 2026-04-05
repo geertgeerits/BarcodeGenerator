@@ -24,12 +24,12 @@ namespace BarcodeGenerator
                 return null;
             }
 
-            // Show a modal popup to inform the user about the recommended image size before opening the file picker
+            // Show a modal popup to inform the user about the recommended background image size before opening the file picker
             Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
             {
                 Globals.bIsPopupMessage = true;
-                _ = await currentPage.ShowPopupAsync(new PopupMessage(5, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{ClassBarcodes.nQRCodeSizePixels:N0} x {ClassBarcodes.nQRCodeSizePixels:N0} {CodeLang.Pixels_Text}"));
+                _ = await currentPage.ShowPopupAsync(new PopupMessage(10, CodeLang.QRCodeImageBackgroundTitle_Text, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{ClassBarcodes.nQRCodeSizePixels:N0} x {ClassBarcodes.nQRCodeSizePixels:N0} {CodeLang.Pixels_Text}"));
 
                 // Check if the popup was canceled by the user before proceeding to open the file picker
                 if (Globals.bPopupCanceled)
@@ -40,7 +40,7 @@ namespace BarcodeGenerator
             }
 
             // Open the file picker to select an image file for the background of the Art QR code
-            FileResult? cFile = await ClassFileOperations.PickImage();
+            FileResult? cFileBackground = await ClassFileOperations.PickImage();
 
             // Compress then encode (gzip->base64) to reduce bytes and allow encoding larger text content than the QR code
             // would normally allow, at the cost of requiring a custom decoder on the scanning side
@@ -105,13 +105,13 @@ namespace BarcodeGenerator
             }
 
             // If a background image was selected, composite the QR code on top of the background on a background thread
-            if (cFile != null)
+            if (cFileBackground != null)
             {
                 try
                 {
                     // Read background image into memory first (safe to pass bytes into Task.Run)
                     byte[] bgBytes;
-                    await using (Stream bgStream = await cFile.OpenReadAsync())
+                    await using (Stream bgStream = await cFileBackground.OpenReadAsync())
                     {
                         using MemoryStream ms = new MemoryStream();
                         await bgStream.CopyToAsync(ms);

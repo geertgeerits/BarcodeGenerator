@@ -665,8 +665,8 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>Código QR com imagem</value>
   </data>
-  <data name="QRCodeImageTitle_Text" xml:space="preserve">
-    <value>Escolha uma imagem</value>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Escolha uma imagem de primeiro plano</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Cancelar</value>
@@ -730,5 +730,8 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
     <value>Formato do código QR: arredondado</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Escolha uma imagem de fundo</value>
   </data>
 </root>

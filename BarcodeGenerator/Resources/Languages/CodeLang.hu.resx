@@ -665,8 +665,8 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR-kód képpel</value>
   </data>
-  <data name="QRCodeImageTitle_Text" xml:space="preserve">
-    <value>Válasszon egy képet</value>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Válasszon előtérképet</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Mégsem</value>
@@ -730,5 +730,8 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
     <value>QR-kód alakja: lekerekített</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Válasszon háttérképet</value>
   </data>
 </root>

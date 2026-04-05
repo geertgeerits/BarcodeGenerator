@@ -7,11 +7,12 @@ public partial class PopupMessage : Popup
     private CancellationTokenSource _closeCts = new();
     private int _closing;                                // 0 == not closing, 1 == closing
 
-    public PopupMessage(int nSeconds = 3, string cMessage = "")
+    public PopupMessage(int nSeconds = 3, string cTitle = "", string cMessage = "")
     {
         InitializeComponent();
 
-        // Set the message text
+        // Set the title and message text
+        lblPopupTitle.Text = cTitle;
         lblPopupMessage.Text = cMessage;
 
         // Start the asynchronous process to close the popup after the specified number of seconds
