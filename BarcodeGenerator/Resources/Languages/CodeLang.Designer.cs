@@ -1359,6 +1359,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Artistic QR Code with gradient colors:.
+        /// </summary>
+        internal static string QRCodeGradient_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradient_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose a background image.
         /// </summary>
         internal static string QRCodeImageBackgroundTitle_Text {

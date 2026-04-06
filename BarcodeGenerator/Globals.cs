@@ -22,7 +22,6 @@ namespace BarcodeGenerator
         public static bool bPopupCanceled;                                  // Popup message was canceled by the user
         public static string cFileBarcodePng = string.Empty;                // Path and file name of the saved barcode image
         public static string cFileBarcodeSvg = string.Empty;                // Path and file name of the saved barcode image
-        public static bool bBarcodeWithCaption;                             // Control whether the barcode image should include a caption
         public static bool bLicense;                                        // Flag to indicate if the user has accepted the license agreement
 
         // Global methods

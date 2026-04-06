@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-04-05 (YYYY-MM-DD)
+ * Date ........: 2026-04-06 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -67,8 +67,9 @@ namespace BarcodeGenerator
             ClassBarcodes.bQRCodeSizeVariable = Preferences.Default.Get("SettingQRCodeSizeVariable", true);
             ClassBarcodes.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
             ClassBarcodes.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
-            ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Circle");  // Square, Circle, Rounded
-            Globals.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
+            ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Rounded");  // Square, Rounded, Circle
+            ClassBarcodes.bQRCodeGradient = Preferences.Default.Get("SettingQRCodeGradient", true);
+            ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
@@ -847,7 +848,7 @@ namespace BarcodeGenerator
                     IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
 
                     // Barcode with caption
-                    if (Globals.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
+                    if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                     {
                         string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, Globals.cFileBarcodePng);
 

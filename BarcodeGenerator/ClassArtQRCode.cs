@@ -24,10 +24,18 @@ namespace BarcodeGenerator
                 return null;
             }
 
-            FileResult? cFileBackground = null;
-            FileResult? cFileForeground = null;
+            // Create a gradient for the QR code if enabled in settings
+            GradientOptions? gradient = null;
+
+            if (ClassBarcodes.bQRCodeGradient)
+            {
+                gradient = new([SKColors.Blue, SKColors.Purple, SKColors.Pink],
+                    GradientDirection.TopLeftToBottomRight,
+                    [0f, 0.5f, 1f]);
+            }
 
             // Show a modal popup to inform the user about the recommended background image size before opening the file picker
+            FileResult? cFileBackground = null;
             Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
             {
@@ -50,6 +58,7 @@ namespace BarcodeGenerator
             int nRecommendedImageSize = (int)(ClassBarcodes.nQRCodeSizePixels * ClassBarcodes.nQRCodeImageSizePercent / 100f);
 
             // Show a modal popup to inform the user about the recommended foreground image size before opening the file picker
+            FileResult? cFileForeground = null;
             currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
             {
@@ -66,11 +75,6 @@ namespace BarcodeGenerator
                     // Open the file picker to select an image file for the foreground of the Art QR code
                     cFileForeground = await ClassFileOperations.PickImage();
                 }
-            }
-
-            if (cFileBackground == null && cFileForeground == null)
-            {
-                return null;
             }
 
             // Compress then encode (gzip->base64) to reduce bytes and allow encoding larger text content than the QR code
@@ -121,6 +125,7 @@ namespace BarcodeGenerator
                     .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
                                 backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
+                    .WithGradient(gradient)
                     .WithIcon(icon);
             }
             else if (ClassBarcodes.cQRCodeModuleShape == "Rounded")
@@ -132,6 +137,8 @@ namespace BarcodeGenerator
                     .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
                                 backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
+                    .WithFinderPatternShape(RoundedRectangleFinderPatternShape.Default)
+                    .WithGradient(gradient)
                     .WithIcon(icon);
             }
             else if (ClassBarcodes.cQRCodeModuleShape == "Circle")
@@ -143,6 +150,8 @@ namespace BarcodeGenerator
                     .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
                                 backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
+                    .WithFinderPatternShape(CircleFinderPatternShape.Default)
+                    .WithGradient(gradient)
                     .WithIcon(icon);
             }
 

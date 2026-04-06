@@ -81,8 +81,11 @@ namespace BarcodeGenerator
             swtQRCodeSizeVariable.IsToggled = ClassBarcodes.bQRCodeSizeVariable;
             entQRCodeSizePixels.Text = ClassBarcodes.nQRCodeSizePixels.ToString();
 
+            // Set the QR code gradient variable to update the switch
+            swtQRCodeGradient.IsToggled = ClassBarcodes.bQRCodeGradient;
+
             // Set the barcode with caption variable to update the switch
-            swtBarcodeWithCaption.IsToggled = Globals.bBarcodeWithCaption;
+            swtBarcodeWithCaption.IsToggled = ClassBarcodes.bBarcodeWithCaption;
 
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
@@ -290,13 +293,23 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Switch QR code gradient toggled event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SwtQRCodeGradient_Toggled(object sender, ToggledEventArgs e)
+        {
+            ClassBarcodes.bQRCodeGradient = e.Value;
+        }
+
+        /// <summary>
         /// Switch barcode with caption toggled event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void SwtBarcodeWithCaption_Toggled(object sender, ToggledEventArgs e)
         {
-            Globals.bBarcodeWithCaption = e.Value;
+            ClassBarcodes.bBarcodeWithCaption = e.Value;
         }
 
         /// <summary>
@@ -390,7 +403,8 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeSizePixels", ClassBarcodes.nQRCodeSizePixels);
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassBarcodes.nQRCodeImageSizePercent);
             Preferences.Default.Set("SettingQRCodeModuleShape", ClassBarcodes.cQRCodeModuleShape);
-            Preferences.Default.Set("SettingBarcodeWithCaption", Globals.bBarcodeWithCaption);
+            Preferences.Default.Set("SettingQRCodeGradient", ClassBarcodes.bQRCodeGradient);
+            Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", Globals.cCodeColorBg);
@@ -429,6 +443,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeSizePixels");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
                 Preferences.Default.Remove("SettingQRCodeModuleShape");
+                Preferences.Default.Remove("SettingQRCodeGradient");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");

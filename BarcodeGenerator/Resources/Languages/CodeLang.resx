@@ -734,4 +734,7 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
   <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
     <value>Choose a background image</value>
   </data>
+  <data name="QRCodeGradient_Text" xml:space="preserve">
+    <value>Artistic QR Code with gradient colors:</value>
+  </data>
 </root>

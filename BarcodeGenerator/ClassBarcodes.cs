@@ -87,12 +87,13 @@
         public static string cBarcodeScannerDefault = string.Empty;
 
         // Global variables to control the QR code and image
-        public static string cQRCodeType = string.Empty;
-        public static bool bQRCodeSizeVariable;
-        public static int nQRCodeSizePixels;
-        public static float nQRCodeImageSizePercent;
-        public static string cQRCodeModuleShape;
-
+        public static string cQRCodeType = string.Empty;            // QR code type: QR Code Model 1, QR Code Model 2, Frame QR Code, Micro QR Code, RMQR, SQRC, QR Code with image in the center or Artistic QR Code
+        public static bool bQRCodeSizeVariable;                     // Control whether the size of the QR code is variable or fixed
+        public static int nQRCodeSizePixels;                        // Size of the QR code in pixels (if the size is fixed)
+        public static float nQRCodeImageSizePercent;                // Size of the QR code image as a percentage
+        public static string cQRCodeModuleShape = string.Empty;     // Shape of the QR code modules
+        public static bool bQRCodeGradient;                         // Flag to indicate if the QR code has a gradient
+        public static bool bBarcodeWithCaption;                     // Control whether the barcode image should include a caption
 
 
         // Creating a public dictionary
