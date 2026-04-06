@@ -1,5 +1,4 @@
-﻿using BarcodeGenerator;
-using CommunityToolkit.Maui.Extensions;
+﻿using CommunityToolkit.Maui.Extensions;
 
 namespace BarcodeGenerator
 {
@@ -10,7 +9,7 @@ namespace BarcodeGenerator
         private readonly Stopwatch stopWatch = new();
         private string searchKeyGenerator = string.Empty;
         private string searchKeyScanner = string.Empty;
-        private string cGradientDirectionBackgroundColor = "000000";
+        private readonly string cGradientDirectionBackgroundColor = "000099";  // navy blue
 
         public PageSettings()
         {
@@ -97,9 +96,6 @@ namespace BarcodeGenerator
             // Set the QR code gradient direction to update the button background color
             switch (ClassBarcodes.cQRCodeGradientDirection)
             {
-                case "None":
-                    btnQRCodeGradientDirection0.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
-                    break;
                 case "BottomToTop":
                     btnQRCodeGradientDirection1.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
                     break;
@@ -616,7 +612,6 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnButtonQRCodeGradientDirectionClicked(object sender, EventArgs e)
         {
-            btnQRCodeGradientDirection0.BackgroundColor = Colors.Transparent;
             btnQRCodeGradientDirection1.BackgroundColor = Colors.Transparent;
             btnQRCodeGradientDirection2.BackgroundColor = Colors.Transparent;
             btnQRCodeGradientDirection3.BackgroundColor = Colors.Transparent;
@@ -626,12 +621,7 @@ namespace BarcodeGenerator
             btnQRCodeGradientDirection7.BackgroundColor = Colors.Transparent;
             btnQRCodeGradientDirection8.BackgroundColor = Colors.Transparent;
 
-            if (sender == btnQRCodeGradientDirection0)
-            {
-                ClassBarcodes.cQRCodeGradientDirection = "None";
-                btnQRCodeGradientDirection0.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
-            }
-            else if (sender == btnQRCodeGradientDirection1)
+            if (sender == btnQRCodeGradientDirection1)
             {
                 ClassBarcodes.cQRCodeGradientDirection = "BottomToTop";
                 btnQRCodeGradientDirection1.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);

@@ -377,7 +377,7 @@
                     Grid.Column="2"
                     RowDefinitions="Auto"
                     ColumnDefinitions="Auto, Auto, Auto"
-                    ColumnSpacing="6">
+                    ColumnSpacing="12">
 
                     <Border
                         Grid.Column="0"
@@ -390,7 +390,6 @@
                             HeightRequest="50"
                             WidthRequest="50"
                             HorizontalOptions="Start"
-                            Color="Yellow"
                             ToolTipProperties.Text="{Translate QRCodeModuleShapeSquare_Text}"
                             SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}">
                         </BoxView>
@@ -419,7 +418,6 @@
                             HeightRequest="50"
                             WidthRequest="50"
                             HorizontalOptions="Start"
-                            Color="Yellow"
                             ToolTipProperties.Text="{Translate QRCodeModuleShapeSquare_Text}"
                             SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}">
                         </BoxView>
@@ -448,7 +446,6 @@
                             HeightRequest="50"
                             WidthRequest="50"
                             HorizontalOptions="Start"
-                            Color="Yellow"
                             ToolTipProperties.Text="{Translate QRCodeModuleShapeSquare_Text}"
                             SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}">
                         </BoxView>
@@ -479,25 +476,15 @@
                     Grid.Row="12"
                     Grid.Column="2"
                     RowDefinitions="Auto, Auto"
-                    ColumnDefinitions="Auto, Auto, Auto, Auto, Auto"
+                    ColumnDefinitions="Auto, Auto, Auto, Auto"
                     RowSpacing="8"
                     ColumnSpacing="8"
-                    Padding="5">
-
-                    <ImageButton
-                        x:Name="btnQRCodeGradientDirection0"
-                        Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
-                        Grid.Column="0"
-                        Source="ic_action_cancel.png"
-                        SemanticProperties.Description="{Translate ColorPicker_Text}"
-                        ToolTipProperties.Text="{Translate ColorPicker_Text}"
-                        Clicked="OnButtonQRCodeGradientDirectionClicked">
-                    </ImageButton>
+                    Padding="0,4,0,0">
 
                     <ImageButton
                         x:Name="btnQRCodeGradientDirection1"
                         Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
-                        Grid.Column="1"
+                        Grid.Column="0"
                         Source="ic_action_arrow_top.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
@@ -507,7 +494,7 @@
                     <ImageButton
                         x:Name="btnQRCodeGradientDirection2"
                         Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
-                        Grid.Column="2"
+                        Grid.Column="1"
                         Source="ic_action_arrow_right_top.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
@@ -517,7 +504,7 @@
                     <ImageButton
                         x:Name="btnQRCodeGradientDirection3"
                         Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
-                        Grid.Column="3"
+                        Grid.Column="2"
                         Source="ic_action_arrow_right.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
@@ -527,7 +514,7 @@
                     <ImageButton
                         x:Name="btnQRCodeGradientDirection4"
                         Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
-                        Grid.Column="4"
+                        Grid.Column="3"
                         Source="ic_action_arrow_right_bottom.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
@@ -538,7 +525,7 @@
                         x:Name="btnQRCodeGradientDirection5"
                         Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
                         Grid.Row="1"
-                        Grid.Column="1"
+                        Grid.Column="0"
                         Source="ic_action_arrow_bottom.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
@@ -549,7 +536,7 @@
                         x:Name="btnQRCodeGradientDirection6"
                         Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
                         Grid.Row="1"
-                        Grid.Column="2"
+                        Grid.Column="1"
                         Source="ic_action_arrow_left_bottom.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
@@ -560,7 +547,7 @@
                         x:Name="btnQRCodeGradientDirection7"
                         Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
                         Grid.Row="1"
-                        Grid.Column="3"
+                        Grid.Column="2"
                         Source="ic_action_arrow_left.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
@@ -571,7 +558,7 @@
                         x:Name="btnQRCodeGradientDirection8"
                         Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
                         Grid.Row="1"
-                        Grid.Column="4"
+                        Grid.Column="3"
                         Source="ic_action_arrow_left_top.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
