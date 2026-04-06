@@ -27,9 +27,9 @@ namespace BarcodeGenerator
             // Create a gradient for the QR code if enabled in settings
             GradientOptions? gradient = null;
 
-            if (ClassBarcodes.bQRCodeGradient)
+            if (ClassBarcodes.bQRCodeGradientColor)
             {
-                gradient = new([SKColors.Blue, SKColors.Purple, SKColors.Pink],
+                gradient = new([SKColor.Parse(ClassBarcodes.cQRCodeGradientColor1), SKColor.Parse(ClassBarcodes.cQRCodeGradientColor2), SKColor.Parse(ClassBarcodes.cQRCodeGradientColor3)],
                     GradientDirection.TopLeftToBottomRight,
                     [0f, 0.5f, 1f]);
             }

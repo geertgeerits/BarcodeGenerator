@@ -68,7 +68,10 @@ namespace BarcodeGenerator
             ClassBarcodes.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
             ClassBarcodes.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
             ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Rounded");  // Square, Rounded, Circle
-            ClassBarcodes.bQRCodeGradient = Preferences.Default.Get("SettingQRCodeGradient", true);
+            ClassBarcodes.bQRCodeGradientColor = Preferences.Default.Get("SettingQRCodeGradientColor", true);
+            ClassBarcodes.cQRCodeGradientColor1 = Preferences.Default.Get("SettingQRCodeGradientColor1", "FFFF0000");
+            ClassBarcodes.cQRCodeGradientColor2 = Preferences.Default.Get("SettingQRCodeGradientColor2", "FF00FF00");
+            ClassBarcodes.cQRCodeGradientColor3 = Preferences.Default.Get("SettingQRCodeGradientColor3", "FF0000FF");
             ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");

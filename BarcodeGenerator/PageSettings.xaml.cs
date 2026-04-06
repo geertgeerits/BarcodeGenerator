@@ -73,16 +73,24 @@ namespace BarcodeGenerator
             };
 
             // Select the current QR Code module shape in the radio buttons
-            rbtQRCodeModuleShapeCircle.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Circle";
-            rbtQRCodeModuleShapeRounded.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Rounded";
             rbtQRCodeModuleShapeSquare.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Square";
+            rbtQRCodeModuleShapeRounded.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Rounded";
+            rbtQRCodeModuleShapeCircle.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Circle";
 
             // Set the QR code image size to update the switch and entry
             swtQRCodeSizeVariable.IsToggled = ClassBarcodes.bQRCodeSizeVariable;
             entQRCodeSizePixels.Text = ClassBarcodes.nQRCodeSizePixels.ToString();
 
             // Set the QR code gradient variable to update the switch
-            swtQRCodeGradient.IsToggled = ClassBarcodes.bQRCodeGradient;
+            swtQRCodeGradient.IsToggled = ClassBarcodes.bQRCodeGradientColor;
+
+            // Set the current color in the box view
+            bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
+            bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
+            bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
+            bxvColorGradient1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
+            bxvColorGradient2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
+            bxvColorGradient3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
 
             // Set the barcode with caption variable to update the switch
             swtBarcodeWithCaption.IsToggled = ClassBarcodes.bBarcodeWithCaption;
@@ -190,11 +198,6 @@ namespace BarcodeGenerator
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
             sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
 
-            // Set the current color in the box view
-            bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
-            bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
-            bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
-
             // Set the theme in the picker
             List<string> ThemeList =
             [
@@ -299,7 +302,7 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void SwtQRCodeGradient_Toggled(object sender, ToggledEventArgs e)
         {
-            ClassBarcodes.bQRCodeGradient = e.Value;
+            ClassBarcodes.bQRCodeGradientColor = e.Value;
         }
 
         /// <summary>
@@ -403,7 +406,10 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeSizePixels", ClassBarcodes.nQRCodeSizePixels);
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassBarcodes.nQRCodeImageSizePercent);
             Preferences.Default.Set("SettingQRCodeModuleShape", ClassBarcodes.cQRCodeModuleShape);
-            Preferences.Default.Set("SettingQRCodeGradient", ClassBarcodes.bQRCodeGradient);
+            Preferences.Default.Set("SettingQRCodeGradientColor", ClassBarcodes.bQRCodeGradientColor);
+            Preferences.Default.Set("SettingQRCodeGradientColor1", ClassBarcodes.cQRCodeGradientColor1);
+            Preferences.Default.Set("SettingQRCodeGradientColor2", ClassBarcodes.cQRCodeGradientColor2);
+            Preferences.Default.Set("SettingQRCodeGradientColor3", ClassBarcodes.cQRCodeGradientColor3);
             Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
@@ -443,7 +449,10 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeSizePixels");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
                 Preferences.Default.Remove("SettingQRCodeModuleShape");
-                Preferences.Default.Remove("SettingQRCodeGradient");
+                Preferences.Default.Remove("SettingQRCodeGradientColor");
+                Preferences.Default.Remove("SettingQRCodeGradientColor1");
+                Preferences.Default.Remove("SettingQRCodeGradientColor2");
+                Preferences.Default.Remove("SettingQRCodeGradientColor3");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
@@ -510,6 +519,57 @@ namespace BarcodeGenerator
             {
                 Globals.cCodeColorBgArtQRCode = Globals.cCodeColor;
                 bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
+            }
+        }
+
+        /// <summary>
+        ///  On button color gradient 1 clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonColorGradient1Clicked(object sender, EventArgs e)
+        {
+            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor1;
+            await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
+    
+            if (!Globals.bPopupCanceled)
+            {
+                ClassBarcodes.cQRCodeGradientColor1 = Globals.cCodeColor;
+                bxvColorGradient1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
+            }
+        }
+
+        /// <summary>
+        /// On button color gradient 2 clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonColorGradient2Clicked(object sender, EventArgs e)
+        {
+            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor2;
+            await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                ClassBarcodes.cQRCodeGradientColor2 = Globals.cCodeColor;
+                bxvColorGradient2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
+            }
+        }
+
+        /// <summary>
+        /// On button color gradient 3 clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonColorGradient3Clicked(object sender, EventArgs e)
+        {
+            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor3;
+            await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                ClassBarcodes.cQRCodeGradientColor3 = Globals.cCodeColor;
+                bxvColorGradient3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
             }
         }
 

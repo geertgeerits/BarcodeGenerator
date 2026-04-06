@@ -386,6 +386,7 @@
                         StrokeShape="RoundRectangle 5,5,5,5">
 
                         <BoxView
+                            x:Name="bxvColorGradient1"
                             HeightRequest="50"
                             WidthRequest="50"
                             HorizontalOptions="Start"
@@ -400,11 +401,11 @@
                         Grid.Column="0"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        BackgroundColor ="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                        BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
                         Source="ic_action_settings.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
-                        Clicked="OnButtonColorBackgroundArtQRCodeClicked">
+                        Clicked="OnButtonColorGradient1Clicked">
                     </ImageButton>
 
                     <Border
@@ -414,6 +415,7 @@
                         StrokeShape="RoundRectangle 5,5,5,5">
 
                         <BoxView
+                            x:Name="bxvColorGradient2"
                             HeightRequest="50"
                             WidthRequest="50"
                             HorizontalOptions="Start"
@@ -428,11 +430,11 @@
                         Grid.Column="1"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        BackgroundColor ="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                        BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
                         Source="ic_action_settings.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
-                        Clicked="OnButtonColorBackgroundArtQRCodeClicked">
+                        Clicked="OnButtonColorGradient2Clicked">
                     </ImageButton>
 
                     <Border
@@ -442,6 +444,7 @@
                         StrokeShape="RoundRectangle 5,5,5,5">
 
                         <BoxView
+                            x:Name="bxvColorGradient3"
                             HeightRequest="50"
                             WidthRequest="50"
                             HorizontalOptions="Start"
@@ -456,11 +459,11 @@
                         Grid.Column="2"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        BackgroundColor ="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                        BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
                         Source="ic_action_settings.png"
                         SemanticProperties.Description="{Translate ColorPicker_Text}"
                         ToolTipProperties.Text="{Translate ColorPicker_Text}"
-                        Clicked="OnButtonColorBackgroundArtQRCodeClicked">
+                        Clicked="OnButtonColorGradient3Clicked">
                     </ImageButton>                
                 </Grid>
 
