@@ -69,9 +69,10 @@ namespace BarcodeGenerator
             ClassBarcodes.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
             ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Rounded");  // Square, Rounded, Circle
             ClassBarcodes.bQRCodeGradientColor = Preferences.Default.Get("SettingQRCodeGradientColor", true);
-            ClassBarcodes.cQRCodeGradientColor1 = Preferences.Default.Get("SettingQRCodeGradientColor1", "FFFF0000");
-            ClassBarcodes.cQRCodeGradientColor2 = Preferences.Default.Get("SettingQRCodeGradientColor2", "FF00FF00");
-            ClassBarcodes.cQRCodeGradientColor3 = Preferences.Default.Get("SettingQRCodeGradientColor3", "FF0000FF");
+            ClassBarcodes.cQRCodeGradientColor1 = Preferences.Default.Get("SettingQRCodeGradientColor1", "FFFF0000");  // FFFF0000 Red - FF00FFFF Cyan
+            ClassBarcodes.cQRCodeGradientColor2 = Preferences.Default.Get("SettingQRCodeGradientColor2", "FF00FF00");  // FF00FF00 Green - FFFF00FF Magenta
+            ClassBarcodes.cQRCodeGradientColor3 = Preferences.Default.Get("SettingQRCodeGradientColor3", "FF0000FF");  // FF0000FF Blue - FFFFFF00 Yellow
+            ClassBarcodes.cQRCodeGradientDirection = Preferences.Default.Get("SettingQRCodeGradientDirection", "BottomLeftToTopRight");  // None, BottomToTop, BottomLeftToTopRight, LeftToRight, TopLeftToBottomRight, TopToBottom, TopRightToBottomLeft, RightToLeft, BottomRightToTopLeft
             ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");

@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Maui.Extensions;
+﻿using BarcodeGenerator;
+using CommunityToolkit.Maui.Extensions;
 
 namespace BarcodeGenerator
 {
@@ -9,6 +10,7 @@ namespace BarcodeGenerator
         private readonly Stopwatch stopWatch = new();
         private string searchKeyGenerator = string.Empty;
         private string searchKeyScanner = string.Empty;
+        private string cGradientDirectionBackgroundColor = "000000";
 
         public PageSettings()
         {
@@ -88,9 +90,41 @@ namespace BarcodeGenerator
             bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
             bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
             bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
-            bxvColorGradient1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
-            bxvColorGradient2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
-            bxvColorGradient3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
+            bxvGradientColor1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
+            bxvGradientColor2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
+            bxvGradientColor3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
+
+            // Set the QR code gradient direction to update the button background color
+            switch (ClassBarcodes.cQRCodeGradientDirection)
+            {
+                case "None":
+                    btnQRCodeGradientDirection0.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "BottomToTop":
+                    btnQRCodeGradientDirection1.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "BottomLeftToTopRight":
+                    btnQRCodeGradientDirection2.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "LeftToRight":
+                    btnQRCodeGradientDirection3.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "TopLeftToBottomRight":
+                    btnQRCodeGradientDirection4.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "TopToBottom":
+                    btnQRCodeGradientDirection5.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "TopRightToBottomLeft":
+                    btnQRCodeGradientDirection6.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "RightToLeft":
+                    btnQRCodeGradientDirection7.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "BottomRightToTopLeft":
+                    btnQRCodeGradientDirection8.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+            }
 
             // Set the barcode with caption variable to update the switch
             swtBarcodeWithCaption.IsToggled = ClassBarcodes.bBarcodeWithCaption;
@@ -410,6 +444,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeGradientColor1", ClassBarcodes.cQRCodeGradientColor1);
             Preferences.Default.Set("SettingQRCodeGradientColor2", ClassBarcodes.cQRCodeGradientColor2);
             Preferences.Default.Set("SettingQRCodeGradientColor3", ClassBarcodes.cQRCodeGradientColor3);
+            Preferences.Default.Set("SettingQRCodeGradientDirection", ClassBarcodes.cQRCodeGradientDirection);
             Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
@@ -453,6 +488,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeGradientColor1");
                 Preferences.Default.Remove("SettingQRCodeGradientColor2");
                 Preferences.Default.Remove("SettingQRCodeGradientColor3");
+                Preferences.Default.Remove("SettingQRCodeGradientDirection");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
@@ -527,7 +563,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnButtonColorGradient1Clicked(object sender, EventArgs e)
+        private async void OnButtonGradientColor1Clicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor1;
             await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
@@ -535,7 +571,7 @@ namespace BarcodeGenerator
             if (!Globals.bPopupCanceled)
             {
                 ClassBarcodes.cQRCodeGradientColor1 = Globals.cCodeColor;
-                bxvColorGradient1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
+                bxvGradientColor1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
             }
         }
 
@@ -544,7 +580,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnButtonColorGradient2Clicked(object sender, EventArgs e)
+        private async void OnButtonGradientColor2Clicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor2;
             await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
@@ -552,7 +588,7 @@ namespace BarcodeGenerator
             if (!Globals.bPopupCanceled)
             {
                 ClassBarcodes.cQRCodeGradientColor2 = Globals.cCodeColor;
-                bxvColorGradient2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
+                bxvGradientColor2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
             }
         }
 
@@ -561,7 +597,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnButtonColorGradient3Clicked(object sender, EventArgs e)
+        private async void OnButtonGradientColor3Clicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor3;
             await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
@@ -569,7 +605,71 @@ namespace BarcodeGenerator
             if (!Globals.bPopupCanceled)
             {
                 ClassBarcodes.cQRCodeGradientColor3 = Globals.cCodeColor;
-                bxvColorGradient3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
+                bxvGradientColor3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
+            }
+        }
+
+        /// <summary>
+        /// On button QR code gradient direction clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnButtonQRCodeGradientDirectionClicked(object sender, EventArgs e)
+        {
+            btnQRCodeGradientDirection0.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection1.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection2.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection3.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection4.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection5.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection6.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection7.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection8.BackgroundColor = Colors.Transparent;
+
+            if (sender == btnQRCodeGradientDirection0)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "None";
+                btnQRCodeGradientDirection0.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection1)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "BottomToTop";
+                btnQRCodeGradientDirection1.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection2)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "BottomLeftToTopRight";
+                btnQRCodeGradientDirection2.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection3)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "LeftToRight";
+                btnQRCodeGradientDirection3.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection4)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "TopLeftToBottomRight";
+                btnQRCodeGradientDirection4.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection5)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "TopToBottom";
+                btnQRCodeGradientDirection5.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection6)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "TopRightToBottomLeft";
+                btnQRCodeGradientDirection6.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection7)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "RightToLeft";
+                btnQRCodeGradientDirection7.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection8)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "BottomRightToTopLeft";
+                btnQRCodeGradientDirection8.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
             }
         }
 

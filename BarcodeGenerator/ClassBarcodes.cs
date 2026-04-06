@@ -87,16 +87,17 @@
         public static string cBarcodeScannerDefault = string.Empty;
 
         // Global variables to control the QR code and image
-        public static string cQRCodeType = string.Empty;            // QR code type: QR Code Model 1, QR Code Model 2, Frame QR Code, Micro QR Code, RMQR, SQRC, QR Code with image in the center or Artistic QR Code
-        public static bool bQRCodeSizeVariable;                     // Control whether the size of the QR code is variable or fixed
-        public static int nQRCodeSizePixels;                        // Size of the QR code in pixels (if the size is fixed)
-        public static float nQRCodeImageSizePercent;                // Size of the QR code image as a percentage
-        public static string cQRCodeModuleShape = string.Empty;     // Shape of the QR code modules
-        public static bool bQRCodeGradientColor;                    // Flag to indicate if the QR code has a gradient
-        public static string cQRCodeGradientColor1 = string.Empty;  // First color of the QR code gradient
-        public static string cQRCodeGradientColor2 = string.Empty;  // Second color of the QR code gradient
-        public static string cQRCodeGradientColor3 = string.Empty;  // Third color of the QR code gradient
-        public static bool bBarcodeWithCaption;                     // Control whether the barcode image should include a caption
+        public static string cQRCodeType = string.Empty;                // QR code type: QR Code Model 1, QR Code Model 2, Frame QR Code, Micro QR Code, RMQR, SQRC, QR Code with image in the center or Artistic QR Code
+        public static bool bQRCodeSizeVariable;                         // Control whether the size of the QR code is variable or fixed
+        public static int nQRCodeSizePixels;                            // Size of the QR code in pixels (if the size is fixed)
+        public static float nQRCodeImageSizePercent;                    // Size of the QR code image as a percentage
+        public static string cQRCodeModuleShape = string.Empty;         // Shape of the QR code modules
+        public static bool bQRCodeGradientColor;                        // Flag to indicate if the QR code has a gradient
+        public static string cQRCodeGradientColor1 = string.Empty;      // First color of the QR code gradient
+        public static string cQRCodeGradientColor2 = string.Empty;      // Second color of the QR code gradient
+        public static string cQRCodeGradientColor3 = string.Empty;      // Third color of the QR code gradient
+        public static string cQRCodeGradientDirection = string.Empty;   // Direction of the QR code gradient 
+        public static bool bBarcodeWithCaption;                         // Control whether the barcode image should include a caption
 
 
         // Creating a public dictionary
@@ -181,7 +182,7 @@
             cBarcode_ART_QR_CODE = CodeLang.Barcode_ART_QR_CODE_Text;       // Artistic QR Code
 
             // Default values for the barcode generator and scanner
-            cBarcodeGeneratorDefault = cBarcode_QR_CODE;
+            cBarcodeGeneratorDefault = cBarcode_ART_QR_CODE;
             cBarcodeScannerDefault = CodeLang.Barcode_AllCodes_Text;
         }
 

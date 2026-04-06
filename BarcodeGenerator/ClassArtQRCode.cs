@@ -30,7 +30,7 @@ namespace BarcodeGenerator
             if (ClassBarcodes.bQRCodeGradientColor)
             {
                 gradient = new([SKColor.Parse(ClassBarcodes.cQRCodeGradientColor1), SKColor.Parse(ClassBarcodes.cQRCodeGradientColor2), SKColor.Parse(ClassBarcodes.cQRCodeGradientColor3)],
-                    GradientDirection.TopLeftToBottomRight,
+                    Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
                     [0f, 0.5f, 1f]);
             }
 

@@ -172,7 +172,7 @@
             WidthRequest="120"
             Margin="4,5,0,5"
             ToolTipProperties.Text="{Translate ButtonCancel_Text}"
-            Source="ic_action_cancel.png"
+            Source="ic_action_cancel_red.png"
             Clicked="OnButtonCancel_Clicked">
         </ImageButton>
 
@@ -200,7 +200,7 @@
             WidthRequest="120"
             Margin="0,5,4,5"
             ToolTipProperties.Text="{Translate ButtonNext_Text}"
-            Source="ic_action_tick.png"
+            Source="ic_action_tick_green.png"
             Clicked="OnButtonClose_Clicked">
         </ImageButton>
 
