@@ -734,8 +734,35 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
     <value>Utilizați culori gradient:</value>
   </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Direcția gradientului:</value>
+  </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
     <value>Culori gradient:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>De jos în sus</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>De jos în stânga spre sus în dreapta</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>De la stânga spre dreapta</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>De sus în stânga spre jos în dreapta</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>De sus în jos</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>De sus, de la dreapta la stânga jos</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>De la dreapta la stânga</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>De jos, de la dreapta la stânga sus</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
     <value>Culoare gradient 1</value>

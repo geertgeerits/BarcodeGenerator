@@ -734,8 +734,35 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
     <value>Bruk gradientfarger:</value>
   </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Gradientretning:</value>
+  </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
     <value>Gradientfarger:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Nederst til topp</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Nederst til venstre til øverst til høyre</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Venstre til høyre</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Øverst til venstre til nederst til høyre</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Topp til bunn</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Øverst til høyre til bunn til venstre</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Høyre til venstre</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Nederst til høyre til øverst til venstre</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
     <value>Gradientfarge 1</value>

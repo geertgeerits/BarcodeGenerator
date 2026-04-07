@@ -734,8 +734,35 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
     <value>Gebruik gradiëntkleuren:</value>
   </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Richting van de gradiënt:</value>
+  </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
     <value>Gradiëntkleuren:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Van onder naar boven</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Van links onder naar rechts boven</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Van links naar rechts</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Van links boven naar rechts onder</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Van boven naar beneden</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Van rechtsboven naar linksonder</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Van rechts naar links</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Van rechtsonder naar linksboven</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
     <value>Gradiëntkleur 1</value>

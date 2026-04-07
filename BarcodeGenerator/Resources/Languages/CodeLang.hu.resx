@@ -734,8 +734,35 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
     <value>Színátmenetes színek használata:</value>
   </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Színátmenet iránya:</value>
+  </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
     <value>Színátmenetes színek:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Lentről felfelé</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Balról lentről jobbra fentre</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Balról jobbra</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Balról fentről jobbra lentre</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Fentről lefelé</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Jobb felső sarokból bal alsó sarokba</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Jobbról balra</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Jobb alsó sarokból bal felső sarokba</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
     <value>Színátmenet színe 1</value>

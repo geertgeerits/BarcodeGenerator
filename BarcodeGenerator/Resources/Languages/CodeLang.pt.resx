@@ -734,8 +734,35 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
     <value>Usar cores gradientes:</value>
   </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Direção do gradiente:</value>
+  </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
     <value>Cores gradientes:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>De baixo para cima</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>De baixo à esquerda para cima à direita</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Da esquerda para a direita</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>De cima à esquerda para baixo à direita</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>De cima para baixo</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>De cima à direita para baixo à esquerda</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Da direita para a esquerda</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>De baixo à direita para cima à esquerda</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
     <value>Cor gradiente 1</value>

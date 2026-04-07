@@ -734,8 +734,35 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
     <value>Použití barev přechodu:</value>
   </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Směr přechodu:</value>
+  </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
     <value>Barvy přechodu:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Zdola nahoru</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Zleva dole doprava</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Zleva doprava</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Zleva nahoře doprava</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Shora dolů</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Zprava nahoře doleva doleva</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Zprava doleva</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Zprava doleva doleva</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
     <value>Barva přechodu 1</value>

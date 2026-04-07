@@ -734,8 +734,35 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
     <value>Käytä liukuvärejä:</value>
   </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Liukuvärjäyksen suunta:</value>
+  </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
     <value>Liukuvärit:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Alhaalta ylös</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Alhaalta vasemmalta yläoikealle</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Vasemmalta oikealle</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Ylhäältä vasemmalta alaoikealle</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Ylhäältä alas</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Ylhäältä oikealta alas vasemmalle</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Oikealta vasemmalle</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Alhaalta oikealta ylös vasemmalle</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
     <value>Liukuväri 1</value>

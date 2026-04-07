@@ -734,8 +734,35 @@ Microsoft, Microsoft Store, logo Microsoft Store i Windows są znakami towarowym
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
     <value>Użyj kolorów gradientowych:</value>
   </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Kierunek gradientu:</value>
+  </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
     <value>Kolory gradientowe:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Od dołu do góry</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Od dołu po lewej do góry po prawej</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Od lewej do prawej</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Od góry po lewej do dołu po prawej</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Od góry do dołu</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Od góry po prawej do dołu po lewej</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Od prawej do lewej</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Od dołu po prawej do góry po lewej</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
     <value>Kolor gradientowy 1</value>

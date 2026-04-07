@@ -734,8 +734,35 @@ Microsoft, Microsoft Store, il logo di Microsoft Store e Windows sono marchi di 
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
     <value>Usa colori sfumati:</value>
   </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Direzione del gradiente:</value>
+  </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
     <value>Colori sfumati:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Dal basso verso l'alto</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Dal basso a sinistra all'alto a destra</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Da sinistra a destra</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Dall'alto a sinistra al basso a destra</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Dall'alto verso il basso</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Dall'alto a destra in basso a sinistra</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Da destra a sinistra</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Dal basso a destra in alto a sinistra</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
     <value>Sfumatura di colore 1</value>
