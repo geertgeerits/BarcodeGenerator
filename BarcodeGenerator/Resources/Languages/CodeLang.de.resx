@@ -414,10 +414,11 @@ Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
     <value>Der QR-Code wird je nach Zeichenanzahl und der in den Einstellungen festgelegten maximalen Pixelgröße entweder mit fester oder variabler Pixelgröße generiert.
-Wenn ein Bild über den QR-Code gelegt wird, wird es zentriert und auf 10 % bis 35 % der Breite oder Höhe des QR-Codes skaliert. Dieser Bereich kann in den Einstellungen angepasst werden. Ein Rahmen verbessert die Lesbarkeit.
-Der künstlerische QR-Code kann auch ein Hintergrundbild enthalten. In diesem Fall muss die Hintergrundtransparenz zwischen 0 % und unter 100 % liegen (siehe Einstellungen).
-Für optimale Ergebnisse experimentieren Sie mit der Bildgröße, um übermäßiges Skalieren zu vermeiden. Bevorzugte Dateiformate sind PNG (optional mit transparentem Hintergrund) oder JPEG.
-Wir empfehlen, die generierten QR-Codes und andere Barcodes zu testen, um sicherzustellen, dass sie korrekt gescannt werden können.</value>
+Wird ein Bild (Logo) über den QR-Code gelegt, wird es zentriert und auf 10 % bis 35 % der QR-Code-Größe skaliert. Dieser Bereich lässt sich in den Einstellungen anpassen. Ein Rahmen verbessert die Lesbarkeit.
+Der grafische QR-Code ist hochgradig anpassbar und bietet Optionen wie Farbverläufe, benutzerdefinierte Formen, Farben, ein Vordergrundbild (Logo) und ein Hintergrundbild. In diesem Fall muss die Hintergrunddeckkraft zwischen 0 % und unter 100 % liegen (siehe Einstellungen).
+Für optimale Ergebnisse verwenden Sie quadratische Bilder und experimentieren Sie mit der Bildgröße, um übermäßiges Skalieren zu vermeiden. Bevorzugte Dateiformate sind PNG (optional mit transparentem Hintergrund) oder JPEG.
+
+Es wird empfohlen, die generierten QR-Codes und andere Barcodes zu testen, um sicherzustellen, dass sie korrekt gescannt werden können.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>

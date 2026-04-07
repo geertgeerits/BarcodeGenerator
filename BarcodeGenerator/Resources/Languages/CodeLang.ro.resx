@@ -414,10 +414,11 @@ Mă puteți contacta oricând pentru orice corecturi.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
     <value>Codul QR este generat la o dimensiune fixă ​​sau variabilă a pixelilor, în funcție de numărul de caractere pe care îl conține și de dimensiunea maximă a pixelilor definită în setări.
-Când o imagine este plasată deasupra codului QR, aceasta este centrată și scalată la o valoare cuprinsă între 10% și 35% din lățimea sau înălțimea codului QR. Acest interval poate fi ajustat în setări. Se adaugă o bordură pentru a îmbunătăți vizibilitatea.
-Codul QR artistic poate include și o imagine de fundal. În acest caz, opacitatea fundalului trebuie setată între 0% și mai puțin de 100% (consultați Setări).
-Pentru cele mai bune rezultate, experimentați cu dimensiunea imaginii pentru a evita redimensionarea excesivă. Formatele de fișier preferate sunt PNG (opțional cu fundal transparent) sau JPEG.
-Vă recomandăm să testați codurile QR generate și alte coduri de bare pentru a vă asigura că se scanează corect.</value>
+Când o imagine (logo) este plasată deasupra codului QR, aceasta este centrată și scalată la o valoare între 10% și 35% din dimensiunea codului QR. Acest interval poate fi ajustat în setări. Se adaugă o bordură pentru a îmbunătăți vizibilitatea.
+Codul QR artistic este extrem de personalizabil, cu opțiuni precum gradienți, forme personalizate, culori, o imagine în prim-plan (logo) și o imagine de fundal. În acest caz, opacitatea fundalului trebuie setată între 0% și mai puțin de 100% (consultați setările).
+Pentru cele mai bune rezultate, utilizați imagini pătrate și experimentați cu dimensiunea imaginii pentru a evita redimensionarea excesivă. Formatele de fișier preferate sunt PNG (opțional cu fundal transparent) sau JPEG.
+
+Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a vă asigura că se scanează corect.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informație</value>

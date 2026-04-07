@@ -414,9 +414,10 @@ Potete sempre contattarmi per eventuali correzioni.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
     <value>Il codice QR viene generato con una dimensione in pixel fissa o variabile, a seconda del numero di caratteri che contiene e della dimensione massima in pixel definita nelle impostazioni.
-Quando un'immagine viene posizionata sopra il codice QR, viene centrata e ridimensionata a una dimensione compresa tra il 10% e il 35% della larghezza o dell'altezza del codice QR. Questo intervallo può essere regolato nelle impostazioni. Viene aggiunto un bordo per migliorare la visibilità.
-Il codice QR può anche includere un'immagine di sfondo. In questo caso, l'opacità dello sfondo deve essere impostata tra lo 0% e meno del 100% (vedere Impostazioni).
-Per ottenere risultati ottimali, si consiglia di sperimentare con le dimensioni dell'immagine per evitare ridimensionamenti eccessivi. I formati di file preferiti sono PNG (eventualmente con sfondo trasparente) o JPEG.
+Quando un'immagine (logo) viene posizionata sopra il codice QR, viene centrata e ridimensionata a una dimensione compresa tra il 10% e il 35% della dimensione del codice QR. Questo intervallo può essere regolato nelle impostazioni. Viene aggiunto un bordo per migliorare la visibilità.
+Il codice QR artistico è altamente personalizzabile, con opzioni come sfumature, forme personalizzate, colori, un'immagine in primo piano (logo) e un'immagine di sfondo. In questo caso, l'opacità dello sfondo deve essere impostata tra lo 0% e meno del 100% (vedere le impostazioni).
+Per ottenere risultati ottimali, utilizzare immagini quadrate e sperimentare con le dimensioni dell'immagine per evitare ridimensionamenti eccessivi. I formati di file preferiti sono PNG (eventualmente con sfondo trasparente) o JPEG.
+
 Si consiglia di testare i codici QR e altri codici a barre generati per assicurarsi che vengano scansionati correttamente.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">

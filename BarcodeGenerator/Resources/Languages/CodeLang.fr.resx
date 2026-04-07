@@ -414,10 +414,11 @@ Vous pouvez toujours me contacter pour toute correction.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
     <value>Le code QR est généré avec une taille de pixels fixe ou variable, selon le nombre de caractères qu'il contient et la taille maximale définie dans les paramètres.
-Lorsqu'une image est superposée au code QR, elle est centrée et redimensionnée entre 10 % et 35 % de la largeur ou de la hauteur du code QR. Cette plage est ajustable dans les paramètres. Une bordure est ajoutée pour une meilleure visibilité.
-Le code QR artistique peut également inclure une image de fond. Dans ce cas, l'opacité du fond doit être comprise entre 0 % et moins de 100 % (voir Paramètres).
-Pour un résultat optimal, testez différentes tailles d'image afin d'éviter un redimensionnement excessif. Les formats de fichier recommandés sont PNG (avec éventuellement un fond transparent) ou JPEG.
-Nous vous recommandons de tester les codes QR générés et les autres codes-barres pour vous assurer de leur bonne lecture.</value>
+Lorsqu'une image (logo) est superposée au code QR, elle est centrée et redimensionnée entre 10 % et 35 % de la taille du code QR. Cette plage est ajustable dans les paramètres. Une bordure est ajoutée pour une meilleure visibilité.
+Le code QR artistique est hautement personnalisable : dégradés, formes personnalisées, couleurs, image de premier plan (logo) et image d'arrière-plan. Dans ce cas, l'opacité de l'arrière-plan doit être comprise entre 0 % et moins de 100 % (voir les paramètres).
+Pour un résultat optimal, utilisez des images carrées et testez différentes tailles d'image afin d'éviter un redimensionnement excessif. Les formats de fichiers recommandés sont PNG (avec éventuellement un fond transparent) ou JPEG.
+
+Il est conseillé de tester les codes QR générés et les autres codes-barres pour vérifier leur bon fonctionnement.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>

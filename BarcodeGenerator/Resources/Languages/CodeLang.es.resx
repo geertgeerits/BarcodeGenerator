@@ -414,10 +414,11 @@ Siempre puedes contactarme para cualquier corrección.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
     <value>El código QR se genera con un tamaño de píxel fijo o variable, según la cantidad de caracteres que contenga y el tamaño máximo de píxel definido en la configuración.
-Cuando se coloca una imagen sobre el código QR, esta se centra y se escala a un tamaño entre el 10 % y el 35 % del ancho o alto del código QR. Este rango se puede ajustar en la configuración. Se añade un borde para mejorar la visibilidad.
-El código QR artístico también puede incluir una imagen de fondo. En este caso, la opacidad del fondo debe configurarse entre el 0 % y menos del 100 % (consulte la sección de Configuración).
-Para obtener mejores resultados, experimente con el tamaño de la imagen para evitar redimensionamientos excesivos. Los formatos de archivo preferidos son PNG (opcionalmente con fondo transparente) o JPEG.
-Recomendamos probar los códigos QR generados y otros códigos de barras para asegurar que se escaneen correctamente.</value>
+Cuando se coloca una imagen (logotipo) sobre el código QR, esta se centra y se escala a un tamaño entre el 10 % y el 35 % del tamaño del código QR. Este rango se puede ajustar en la configuración. Se añade un borde para mejorar la visibilidad.
+El código QR artístico es altamente personalizable, con opciones como degradados, formas personalizadas, colores, una imagen de primer plano (logotipo) y una imagen de fondo. En este caso, la opacidad del fondo debe configurarse entre el 0 % y menos del 100 % (consulte la configuración).
+Para obtener mejores resultados, utilice imágenes cuadradas y experimente con el tamaño de la imagen para evitar redimensionamientos excesivos. Los formatos de archivo preferidos son PNG (opcionalmente con fondo transparente) o JPEG.
+
+Se recomienda probar los códigos QR generados y otros códigos de barras para asegurar que se escaneen correctamente.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Información</value>

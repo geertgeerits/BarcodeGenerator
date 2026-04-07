@@ -68,7 +68,7 @@ namespace BarcodeGenerator
 
             foreach (char c in s)
             {
-                byte[] bs = sjis.GetBytes(new[] { c });
+                byte[] bs = sjis.GetBytes([c]);
                 if (bs.Length != 2)
                 {
                     return false;

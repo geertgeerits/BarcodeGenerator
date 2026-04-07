@@ -414,10 +414,11 @@ Du kan alltid kontakte meg for eventuelle rettelser.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
     <value>QR-koden genereres med enten en fast eller variabel pikselstørrelse, avhengig av antall tegn den inneholder og den maksimale pikselstørrelsen som er definert i innstillingene.
-Når et bilde plasseres oppå QR-koden, sentreres og skaleres det til mellom 10 % og 35 % av QR-kodens bredde eller høyde. Dette området kan justeres i innstillingene. En kant legges til for å forbedre synligheten.
-Den kunstneriske QR-koden kan også inkludere et bakgrunnsbilde. I dette tilfellet må bakgrunnens opasitet settes til mellom 0 % og mindre enn 100 % (se Innstillinger).
-For best resultat, eksperimenter med bildestørrelsen for å unngå overdreven endring av størrelse. Foretrukne filformater er PNG (valgfritt med gjennomsiktig bakgrunn) eller JPEG.
-Vi anbefaler å teste de genererte QR-kodene og andre strekkodene for å sikre at de skannes riktig.</value>
+Når et bilde (logo) plasseres oppå QR-koden, sentreres og skaleres det til mellom 10 % og 35 % av QR-kodens størrelse. Dette området kan justeres i innstillingene. En kant legges til for å forbedre synligheten.
+Den kunstneriske QR-koden er svært tilpassbar, med alternativer som gradienter, tilpassede former, farger, et forgrunnsbilde (logo) og et bakgrunnsbilde. I dette tilfellet må bakgrunnsopasiteten settes mellom 0 % og mindre enn 100 % (se innstillinger).
+For best resultat, bruk firkantede bilder og eksperimenter med bildestørrelse for å unngå overdreven endring av størrelse. Foretrukne filformater er PNG (valgfritt med gjennomsiktig bakgrunn) eller JPEG.
+
+Det anbefales å teste de genererte QR-kodene og andre strekkodene for å sikre at de skanner riktig.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informasjon</value>

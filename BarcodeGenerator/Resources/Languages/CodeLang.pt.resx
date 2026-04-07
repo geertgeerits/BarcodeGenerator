@@ -414,10 +414,11 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
     <value>O código QR é gerado com um tamanho de pixel fixo ou variável, dependendo do número de caracteres que contém e do tamanho máximo de pixel definido nas configurações.
-Quando uma imagem é colocada sobre o código QR, ela é centralizada e dimensionada para ocupar entre 10% e 35% da largura ou altura do código QR. Esse intervalo pode ser ajustado nas configurações. Uma borda é adicionada para melhorar a visibilidade.
-O código QR artístico também pode incluir uma imagem de fundo. Nesse caso, a opacidade do fundo deve ser definida entre 0% e menos de 100% (consulte Configurações).
-Para obter melhores resultados, experimente com o tamanho da imagem para evitar redimensionamentos excessivos. Os formatos de arquivo preferenciais são PNG (opcionalmente com fundo transparente) ou JPEG.
-Recomendamos testar os códigos QR gerados e outros códigos de barras para garantir que sejam lidos corretamente.</value>
+Quando uma imagem (logotipo) é colocada sobre o código QR, ela é centralizada e dimensionada para ocupar entre 10% e 35% do tamanho do código QR. Esse intervalo pode ser ajustado nas configurações. Uma borda é adicionada para melhorar a visibilidade.
+O código QR artístico é altamente personalizável, com opções como gradientes, formas personalizadas, cores, uma imagem de primeiro plano (logotipo) e uma imagem de fundo. Nesse caso, a opacidade do fundo deve ser definida entre 0% e menos de 100% (consulte as configurações).
+Para obter melhores resultados, use imagens quadradas e experimente com o tamanho da imagem para evitar redimensionamento excessivo. Os formatos de arquivo preferenciais são PNG (opcionalmente com fundo transparente) ou JPEG.
+
+Recomenda-se testar os códigos QR gerados e outros códigos de barras para garantir que sejam lidos corretamente.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informação</value>

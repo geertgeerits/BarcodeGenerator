@@ -413,11 +413,12 @@ Obsługiwane języki to: czeski, duński, holenderski, angielski, fiński, franc
 Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
-    <value>Kod QR jest generowany ze stałym lub zmiennym rozmiarem pikseli, w zależności od liczby znaków i maksymalnego rozmiaru pikseli zdefiniowanego w ustawieniach.
-Po umieszczeniu obrazu na kodzie QR, jest on wyśrodkowany i skalowany do rozmiaru od 10% do 35% szerokości lub wysokości kodu QR. Zakres ten można dostosować w ustawieniach. Dodana jest ramka w celu poprawy widoczności.
-Artystyczny kod QR może również zawierać obraz tła. W takim przypadku krycie tła musi być ustawione w zakresie od 0% do mniej niż 100% (patrz Ustawienia).
-Aby uzyskać najlepsze rezultaty, eksperymentuj z rozmiarem obrazu, aby uniknąć nadmiernej zmiany rozmiaru. Preferowane formaty plików to PNG (opcjonalnie z przezroczystym tłem) lub JPEG.
-Zalecamy przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, aby upewnić się, że skanują się prawidłowo.</value>
+    <value>Kod QR jest generowany ze stałym lub zmiennym rozmiarem pikseli, w zależności od liczby znaków i maksymalnego rozmiaru piksela zdefiniowanego w ustawieniach.
+Po umieszczeniu obrazu (logo) na kodzie QR, jest on wyśrodkowany i skalowany do rozmiaru od 10% do 35% rozmiaru kodu QR. Zakres ten można dostosować w ustawieniach. Dodana jest ramka w celu poprawy widoczności.
+Artystyczny kod QR jest w dużym stopniu konfigurowalny, z opcjami takimi jak gradienty, niestandardowe kształty, kolory, obraz na pierwszym planie (logo) i obraz tła. W takim przypadku krycie tła musi być ustawione w zakresie od 0% do mniej niż 100% (patrz ustawienia).
+Aby uzyskać najlepsze rezultaty, używaj kwadratowych obrazów i eksperymentuj z rozmiarem obrazu, aby uniknąć nadmiernej zmiany rozmiaru. Preferowane formaty plików to PNG (opcjonalnie z przezroczystym tłem) lub JPEG.
+
+Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, aby upewnić się, że skanują się prawidłowo.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informacje</value>

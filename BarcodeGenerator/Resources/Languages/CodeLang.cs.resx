@@ -414,10 +414,11 @@ Pro případné opravy mě můžete vždy kontaktovat.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
     <value>QR kód se generuje s pevnou nebo proměnnou velikostí v pixelech v závislosti na počtu znaků, které obsahuje, a maximální velikosti v pixelech definované v nastavení.
-Když je obrázek umístěn na QR kód, je vycentrován a zmenšen na 10 % až 35 % šířky nebo výšky QR kódu. Tento rozsah lze upravit v nastavení. Pro zlepšení viditelnosti je přidán okraj.
-Umělecký QR kód může také obsahovat obrázek na pozadí. V tomto případě musí být neprůhlednost pozadí nastavena na hodnotu mezi 0 % a méně než 100 % (viz Nastavení).
-Pro dosažení nejlepších výsledků experimentujte s velikostí obrázku, abyste se vyhnuli nadměrnému zvětšování. Preferované formáty souborů jsou PNG (volitelně s průhledným pozadím) nebo JPEG.
-Doporučujeme otestovat vygenerované QR kódy a další čárové kódy, abyste se ujistili, že se správně skenují.</value>
+Když je obrázek (logo) umístěn na QR kód, je vycentrován a zmenšen na 10 % až 35 % velikosti QR kódu. Tento rozsah lze upravit v nastavení. Pro zlepšení viditelnosti je přidán okraj.
+Umělecký QR kód je vysoce přizpůsobitelný a nabízí možnosti, jako jsou přechody, vlastní tvary, barvy, obrázek v popředí (logo) a obrázek na pozadí. V tomto případě musí být neprůhlednost pozadí nastavena mezi 0 % a méně než 100 % (viz nastavení).
+Pro dosažení nejlepších výsledků používejte čtvercové obrázky a experimentujte s jejich velikostí, abyste se vyhnuli nadměrnému zvětšování. Preferované formáty souborů jsou PNG (volitelně s průhledným pozadím) nebo JPEG.
+
+Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyste se ujistili, že se správně skenují.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informace</value>

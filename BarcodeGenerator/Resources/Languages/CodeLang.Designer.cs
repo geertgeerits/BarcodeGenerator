@@ -1134,8 +1134,8 @@ namespace BarcodeGenerator.Resources.Languages {
         
         /// <summary>
         ///   Looks up a localized string similar to The QR code is generated at either a fixed or variable pixel size, depending on the number of characters it contains and the maximum pixel size defined in the settings.
-        ///When an image is placed on top of the QR code, it is centered and scaled to between 10% and 35% of the QR code’s width or height. This range can be adjusted in the settings. A border is added to improve visibility.
-        ///The artistic QR code can also include a background image. In this case, the background opacity must be set between 0% and less [rest of string was truncated]&quot;;.
+        ///When an image (logo) is placed on top of the QR code, it is centered and scaled to between 10% and 35% of the QR code’s size. This range can be adjusted in the settings. A border is added to improve visibility.
+        ///The artistic QR code is highly customizable, with options such as gradients, custom shapes, colors, a foreground image (logo), and [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InfoQRCodeImage_Text {
             get {

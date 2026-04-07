@@ -414,10 +414,11 @@ You can always contact me for any corrections.</value>
   </data>
   <data name="InfoQRCodeImage_Text" xml:space="preserve">
     <value>The QR code is generated at either a fixed or variable pixel size, depending on the number of characters it contains and the maximum pixel size defined in the settings.
-When an image is placed on top of the QR code, it is centered and scaled to between 10% and 35% of the QR code’s width or height. This range can be adjusted in the settings. A border is added to improve visibility.
-The artistic QR code can also include a background image. In this case, the background opacity must be set between 0% and less than 100% (see Settings).
-For best results, experiment with the image size to avoid excessive resizing. Preferred file formats are PNG (optionally with a transparent background) or JPEG.
-We recommend testing the generated QR codes and other barcodes to ensure they scan correctly.</value>
+When an image (logo) is placed on top of the QR code, it is centered and scaled to between 10% and 35% of the QR code’s size. This range can be adjusted in the settings. A border is added to improve visibility.
+The artistic QR code is highly customizable, with options such as gradients, custom shapes, colors, a foreground image (logo), and a background image. In this case, the background opacity must be set between 0% and less than 100% (see settings).
+For best results, use square images and experiment with image size to avoid excessive resizing. Preferred file formats are PNG (optionally with a transparent background) or JPEG.
+
+It is recommended to test the generated QR codes and other barcodes to ensure they scan correctly.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
