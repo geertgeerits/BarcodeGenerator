@@ -719,10 +719,6 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="TextLengthLimitedByte_Text" xml:space="preserve">
     <value>De tekstlengte is beperkt tot {0} bytes.</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="QRCodeModuleShape_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>Vorm van de QR-code: vierkant</value>
   </data>
@@ -734,5 +730,23 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   </data>
   <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
     <value>Kies een achtergrondafbeelding</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>Gebruik gradiëntkleuren:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>Gradiëntkleuren:</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>Gradiëntkleur 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>Gradiëntkleur 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>Gradiëntkleur 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>Modulevorm:</value>
   </data>
 </root>

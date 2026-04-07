@@ -719,10 +719,6 @@ Microsoft, Microsoft Store, das Microsoft Store-Logo und Windows sind Marken der
   <data name="TextLengthLimitedByte_Text" xml:space="preserve">
     <value>Die Textlänge ist auf {0} Bytes begrenzt.</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="QRCodeModuleShape_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>QR-Code-Form: Quadrat</value>
   </data>
@@ -734,5 +730,23 @@ Microsoft, Microsoft Store, das Microsoft Store-Logo und Windows sind Marken der
   </data>
   <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
     <value>Wähle ein Hintergrundbild</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>Farbverläufe verwenden:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>Farbverläufe:</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>Farbverlauf 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>Farbverlauf 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>Farbverlauf 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>Modulform:</value>
   </data>
 </root>
