@@ -624,6 +624,18 @@
                     Text="{Translate QRCodeSizePixels_Text}">
                 </Label>
 
+                <!-- Dummy entry to set focus to when using the 'Next' key on the keyboard when the previous entry 'entQRCodeSizePixels' had focus.
+                     This is necessary to trigger the Unfocused event of 'entQRCodeSizePixels' to validate the size value and update the sliders and preview accordingly.
+                     This dummy entry is placed behind the other entry and is not visible and not interactive. -->
+                <Entry
+                    x:Name="entDummy"
+                    Grid.Row="16"
+                    Grid.Column="1"
+                    HeightRequest="20"
+                    WidthRequest="50"
+                    Margin="10,0,0,0">
+                </Entry>
+
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="16"
