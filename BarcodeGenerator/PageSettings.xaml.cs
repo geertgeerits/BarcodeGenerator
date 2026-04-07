@@ -59,9 +59,6 @@ namespace BarcodeGenerator
                 _ => 3          // English
             };
 
-            // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
-            ClassBarcodes.InitializeBarcodeSearchFormats();
-
             // Fill the picker with the speech languages and select the current language in the picker
             ClassSpeech.FillPickerWithSpeechLanguages(pckLanguageSpeech);
 
@@ -73,14 +70,13 @@ namespace BarcodeGenerator
                 _ => 0          // System
             };
 
+            // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
+            ClassBarcodes.InitializeBarcodeSearchFormats();
+
             // Select the current QR Code module shape in the radio buttons
             rbtQRCodeModuleShapeSquare.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Square";
             rbtQRCodeModuleShapeRounded.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Rounded";
             rbtQRCodeModuleShapeCircle.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Circle";
-
-            // Set the QR code image size to update the switch and entry
-            swtQRCodeSizeVariable.IsToggled = ClassBarcodes.bQRCodeSizeVariable;
-            entQRCodeSizePixels.Text = ClassBarcodes.nQRCodeSizePixels.ToString();
 
             // Set the QR code gradient variable to update the switch
             swtQRCodeGradient.IsToggled = ClassBarcodes.bQRCodeGradientColor;
@@ -121,6 +117,10 @@ namespace BarcodeGenerator
                     btnQRCodeGradientDirection8.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
                     break;
             }
+
+            // Set the QR code image size to update the switch and entry
+            swtQRCodeSizeVariable.IsToggled = ClassBarcodes.bQRCodeSizeVariable;
+            entQRCodeSizePixels.Text = ClassBarcodes.nQRCodeSizePixels.ToString();
 
             // Set the barcode with caption variable to update the switch
             swtBarcodeWithCaption.IsToggled = ClassBarcodes.bBarcodeWithCaption;
@@ -190,6 +190,15 @@ namespace BarcodeGenerator
         /// </summary>
         private void SetLanguage()
         {
+            // Set the theme in the picker
+            List<string> ThemeList =
+            [
+                CodeLang.ThemeSystem_Text,
+                CodeLang.ThemeLight_Text,
+                CodeLang.ThemeDark_Text
+            ];
+            pckTheme.ItemsSource = ThemeList;
+
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
             ClassBarcodes.InitializeBarcodeFormats();
 
@@ -224,19 +233,6 @@ namespace BarcodeGenerator
             ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
             ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
 
-            // Set the QR code image size percent in the label
-            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
-            sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
-
-            // Set the theme in the picker
-            List<string> ThemeList =
-            [
-                CodeLang.ThemeSystem_Text,
-                CodeLang.ThemeLight_Text,
-                CodeLang.ThemeDark_Text
-            ];
-            pckTheme.ItemsSource = ThemeList;
-
             // Set the QR code module shapes in the picker
             List<string> QRCodeModuleShape =
             [
@@ -244,7 +240,10 @@ namespace BarcodeGenerator
                 CodeLang.QRCodeModuleShapeRounded_Text,
                 CodeLang.QRCodeModuleShapeSquare_Text
             ];
-            //pckQRCodeModuleShape.ItemsSource = QRCodeModuleShape;
+
+            // Set the QR code image size percent in the label
+            lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
+            sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
         }
 
         /// <summary>
@@ -316,13 +315,75 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Switch QR code image size variable toggled event
+        /// On button color forground clicked event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SwtQRCodeSizeVariable_Toggled(object sender, ToggledEventArgs e)
+        private async void OnButtonColorForgroundClicked(object sender, EventArgs e)
         {
-            ClassBarcodes.bQRCodeSizeVariable = e.Value;
+            Globals.cCodeColor = Globals.cCodeColorFg;
+            await PageSettings.OpenPopupColorPickerAsync(CodeLang.ForegroundColor_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                Globals.cCodeColorFg = Globals.cCodeColor;
+                bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
+            }
+        }
+
+        /// <summary>
+        /// On button color background clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonColorBackgroundClicked(object sender, EventArgs e)
+        {
+            Globals.cCodeColor = Globals.cCodeColorBg;
+            await PageSettings.OpenPopupColorPickerAsync(CodeLang.BackgroundColor_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                Globals.cCodeColorBg = Globals.cCodeColor;
+                bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
+            }
+        }
+
+        /// <summary>
+        /// On button color background Art QR code clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonColorBackgroundArtQRCodeClicked(object sender, EventArgs e)
+        {
+            Globals.cCodeColor = Globals.cCodeColorBgArtQRCode;
+            await PageSettings.OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                Globals.cCodeColorBgArtQRCode = Globals.cCodeColor;
+                bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
+            }
+        }
+
+        /// <summary>
+        /// Radio button QR code module shape checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RbtQRCodeModuleShape_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (rbtQRCodeModuleShapeSquare.IsChecked)
+            {
+                ClassBarcodes.cQRCodeModuleShape = "Square";
+            }
+            else if (rbtQRCodeModuleShapeRounded.IsChecked)
+            {
+                ClassBarcodes.cQRCodeModuleShape = "Rounded";
+            }
+            else if (rbtQRCodeModuleShapeCircle.IsChecked)
+            {
+                ClassBarcodes.cQRCodeModuleShape = "Circle";
+            }
         }
 
         /// <summary>
@@ -336,13 +397,146 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Switch barcode with caption toggled event
+        ///  On button color gradient 1 clicked event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SwtBarcodeWithCaption_Toggled(object sender, ToggledEventArgs e)
+        private async void OnButtonGradientColor1Clicked(object sender, EventArgs e)
         {
-            ClassBarcodes.bBarcodeWithCaption = e.Value;
+            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor1;
+            await PageSettings.OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor1_Text);
+    
+            if (!Globals.bPopupCanceled)
+            {
+                ClassBarcodes.cQRCodeGradientColor1 = Globals.cCodeColor;
+                bxvGradientColor1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
+            }
+        }
+
+        /// <summary>
+        /// On button color gradient 2 clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonGradientColor2Clicked(object sender, EventArgs e)
+        {
+            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor2;
+            await PageSettings.OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor2_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                ClassBarcodes.cQRCodeGradientColor2 = Globals.cCodeColor;
+                bxvGradientColor2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
+            }
+        }
+
+        /// <summary>
+        /// On button color gradient 3 clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonGradientColor3Clicked(object sender, EventArgs e)
+        {
+            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor3;
+            await PageSettings.OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor3_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                ClassBarcodes.cQRCodeGradientColor3 = Globals.cCodeColor;
+                bxvGradientColor3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
+            }
+        }
+
+        /// <summary>
+        /// On button QR code gradient direction clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnButtonQRCodeGradientDirectionClicked(object sender, EventArgs e)
+        {
+            btnQRCodeGradientDirection1.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection2.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection3.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection4.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection5.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection6.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection7.BackgroundColor = Colors.Transparent;
+            btnQRCodeGradientDirection8.BackgroundColor = Colors.Transparent;
+
+            if (sender == btnQRCodeGradientDirection1)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "BottomToTop";
+                btnQRCodeGradientDirection1.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection2)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "BottomLeftToTopRight";
+                btnQRCodeGradientDirection2.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection3)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "LeftToRight";
+                btnQRCodeGradientDirection3.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection4)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "TopLeftToBottomRight";
+                btnQRCodeGradientDirection4.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection5)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "TopToBottom";
+                btnQRCodeGradientDirection5.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection6)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "TopRightToBottomLeft";
+                btnQRCodeGradientDirection6.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection7)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "RightToLeft";
+                btnQRCodeGradientDirection7.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeGradientDirection8)
+            {
+                ClassBarcodes.cQRCodeGradientDirection = "BottomRightToTopLeft";
+                btnQRCodeGradientDirection8.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+        }
+
+        /// <summary>
+        /// Switch QR code image size variable toggled event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SwtQRCodeSizeVariable_Toggled(object sender, ToggledEventArgs e)
+        {
+            ClassBarcodes.bQRCodeSizeVariable = e.Value;
+        }
+
+        /// <summary>
+        /// Handles the Unfocused event for the QR code image size entry, ensuring that the entered value is within the valid range.
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the Entry control that triggered the Unfocused event.</param>
+        /// <param name="e">The event data containing information about the focus change.</param>
+        private void EntQRCodeSizePixels_Unfocused(object sender, FocusEventArgs e)
+        {
+            string cText = ((Entry)sender).Text;
+
+            if (!int.TryParse(cText, out int nValue))
+            {
+                entQRCodeSizePixels.Focus();
+                return;
+            }
+
+            if (nValue < 500 || nValue > 10000)
+            {
+                entQRCodeSizePixels.Focus();
+                return;
+            }
+
+            ClassBarcodes.nQRCodeSizePixels = nValue;
         }
 
         /// <summary>
@@ -383,30 +577,6 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Handles the Unfocused event for the QR code image size entry, ensuring that the entered value is within the valid range.
-        /// </summary>
-        /// <param name="sender">The source of the event, typically the Entry control that triggered the Unfocused event.</param>
-        /// <param name="e">The event data containing information about the focus change.</param>
-        private void EntQRCodeSizePixels_Unfocused(object sender, FocusEventArgs e)
-        {
-            string cText = ((Entry)sender).Text;
-
-            if (!int.TryParse(cText, out int nValue))
-            {
-                entQRCodeSizePixels.Focus();
-                return;
-            }
-
-            if (nValue < 500 || nValue > 10000)
-            {
-                entQRCodeSizePixels.Focus();
-                return;
-            }
-
-            ClassBarcodes.nQRCodeSizePixels = nValue;
-        }
-
-        /// <summary>
         /// Handles the ValueChanged event for the QR code image size slider, updating the QR code image size percentage
         /// and pixel dimensions based on the new slider value.
         /// </summary>
@@ -421,6 +591,37 @@ namespace BarcodeGenerator
             ClassBarcodes.nQRCodeImageSizePercent = MathF.Round((float)e.NewValue, 1);
             sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
+        }
+
+        /// <summary>
+        /// Switch barcode with caption toggled event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SwtBarcodeWithCaption_Toggled(object sender, ToggledEventArgs e)
+        {
+            ClassBarcodes.bBarcodeWithCaption = e.Value;
+        }
+
+        /// <summary>
+        /// Show a modal popup to inform the user about the recommended image size before opening the file picker
+        /// </summary>
+        /// <param name="cMessage"></param>
+        /// <returns></returns>
+        private static async Task OpenPopupColorPickerAsync(string cMessage)
+        {
+            // If the last character of the message is a : then remove it
+            if (cMessage.EndsWith(':'))
+            {
+                cMessage = cMessage[..^1];
+            }
+
+            Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+            if (currentPage != null)
+            {
+                Globals.bIsPopupMessage = true;
+                _ = await currentPage.ShowPopupAsync(new PopupColorPicker(cMessage));
+            }
         }
 
         /// <summary>
@@ -501,206 +702,6 @@ namespace BarcodeGenerator
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
-        }
-
-        /// <summary>
-        /// On button color forground clicked event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnButtonColorForgroundClicked(object sender, EventArgs e)
-        {
-            Globals.cCodeColor = Globals.cCodeColorFg;
-            await OpenPopupColorPickerAsync(CodeLang.ForegroundColor_Text);
-
-            if (!Globals.bPopupCanceled)
-            {
-                Globals.cCodeColorFg = Globals.cCodeColor;
-                bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
-            }
-        }
-
-        /// <summary>
-        /// On button color background clicked event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnButtonColorBackgroundClicked(object sender, EventArgs e)
-        {
-            Globals.cCodeColor = Globals.cCodeColorBg;
-            await OpenPopupColorPickerAsync(CodeLang.BackgroundColor_Text);
-
-            if (!Globals.bPopupCanceled)
-            {
-                Globals.cCodeColorBg = Globals.cCodeColor;
-                bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
-            }
-        }
-
-        /// <summary>
-        /// On button color background Art QR code clicked event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnButtonColorBackgroundArtQRCodeClicked(object sender, EventArgs e)
-        {
-            Globals.cCodeColor = Globals.cCodeColorBgArtQRCode;
-            await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
-
-            if (!Globals.bPopupCanceled)
-            {
-                Globals.cCodeColorBgArtQRCode = Globals.cCodeColor;
-                bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
-            }
-        }
-
-        /// <summary>
-        ///  On button color gradient 1 clicked event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnButtonGradientColor1Clicked(object sender, EventArgs e)
-        {
-            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor1;
-            await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor1_Text);
-    
-            if (!Globals.bPopupCanceled)
-            {
-                ClassBarcodes.cQRCodeGradientColor1 = Globals.cCodeColor;
-                bxvGradientColor1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
-            }
-        }
-
-        /// <summary>
-        /// On button color gradient 2 clicked event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnButtonGradientColor2Clicked(object sender, EventArgs e)
-        {
-            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor2;
-            await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor2_Text);
-
-            if (!Globals.bPopupCanceled)
-            {
-                ClassBarcodes.cQRCodeGradientColor2 = Globals.cCodeColor;
-                bxvGradientColor2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
-            }
-        }
-
-        /// <summary>
-        /// On button color gradient 3 clicked event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnButtonGradientColor3Clicked(object sender, EventArgs e)
-        {
-            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor3;
-            await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor3_Text);
-
-            if (!Globals.bPopupCanceled)
-            {
-                ClassBarcodes.cQRCodeGradientColor3 = Globals.cCodeColor;
-                bxvGradientColor3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
-            }
-        }
-
-        /// <summary>
-        /// On button QR code gradient direction clicked event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnButtonQRCodeGradientDirectionClicked(object sender, EventArgs e)
-        {
-            btnQRCodeGradientDirection1.BackgroundColor = Colors.Transparent;
-            btnQRCodeGradientDirection2.BackgroundColor = Colors.Transparent;
-            btnQRCodeGradientDirection3.BackgroundColor = Colors.Transparent;
-            btnQRCodeGradientDirection4.BackgroundColor = Colors.Transparent;
-            btnQRCodeGradientDirection5.BackgroundColor = Colors.Transparent;
-            btnQRCodeGradientDirection6.BackgroundColor = Colors.Transparent;
-            btnQRCodeGradientDirection7.BackgroundColor = Colors.Transparent;
-            btnQRCodeGradientDirection8.BackgroundColor = Colors.Transparent;
-
-            if (sender == btnQRCodeGradientDirection1)
-            {
-                ClassBarcodes.cQRCodeGradientDirection = "BottomToTop";
-                btnQRCodeGradientDirection1.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
-            }
-            else if (sender == btnQRCodeGradientDirection2)
-            {
-                ClassBarcodes.cQRCodeGradientDirection = "BottomLeftToTopRight";
-                btnQRCodeGradientDirection2.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
-            }
-            else if (sender == btnQRCodeGradientDirection3)
-            {
-                ClassBarcodes.cQRCodeGradientDirection = "LeftToRight";
-                btnQRCodeGradientDirection3.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
-            }
-            else if (sender == btnQRCodeGradientDirection4)
-            {
-                ClassBarcodes.cQRCodeGradientDirection = "TopLeftToBottomRight";
-                btnQRCodeGradientDirection4.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
-            }
-            else if (sender == btnQRCodeGradientDirection5)
-            {
-                ClassBarcodes.cQRCodeGradientDirection = "TopToBottom";
-                btnQRCodeGradientDirection5.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
-            }
-            else if (sender == btnQRCodeGradientDirection6)
-            {
-                ClassBarcodes.cQRCodeGradientDirection = "TopRightToBottomLeft";
-                btnQRCodeGradientDirection6.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
-            }
-            else if (sender == btnQRCodeGradientDirection7)
-            {
-                ClassBarcodes.cQRCodeGradientDirection = "RightToLeft";
-                btnQRCodeGradientDirection7.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
-            }
-            else if (sender == btnQRCodeGradientDirection8)
-            {
-                ClassBarcodes.cQRCodeGradientDirection = "BottomRightToTopLeft";
-                btnQRCodeGradientDirection8.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
-            }
-        }
-
-        /// <summary>
-        /// Radio button QR code module shape checked changed event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RbtQRCodeModuleShape_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            if (rbtQRCodeModuleShapeSquare.IsChecked)
-            {
-                ClassBarcodes.cQRCodeModuleShape = "Square";
-            }
-            else if (rbtQRCodeModuleShapeRounded.IsChecked)
-            {
-                ClassBarcodes.cQRCodeModuleShape = "Rounded";
-            }
-            else if (rbtQRCodeModuleShapeCircle.IsChecked)
-            {
-                ClassBarcodes.cQRCodeModuleShape = "Circle";
-            }
-        }
-
-        /// <summary>
-        /// Show a modal popup to inform the user about the recommended image size before opening the file picker
-        /// </summary>
-        private async Task OpenPopupColorPickerAsync(string cMessage)
-        {
-            // If the last character of the message is a : then remove it
-            if (cMessage.EndsWith(':'))
-            {
-                cMessage = cMessage[..^1];
-            }
-
-            Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
-            if (currentPage != null)
-            {
-                Globals.bIsPopupMessage = true;
-                _ = await currentPage.ShowPopupAsync(new PopupColorPicker(cMessage));
-            }
         }
     }
 }
