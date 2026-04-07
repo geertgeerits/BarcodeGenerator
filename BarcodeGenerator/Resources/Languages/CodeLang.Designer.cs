@@ -1359,11 +1359,128 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Artistic QR Code with gradient colors:.
+        ///   Looks up a localized string similar to Gradient color 1.
         /// </summary>
-        internal static string QRCodeGradient_Text {
+        internal static string QRCodeGradientColor1_Text {
             get {
-                return ResourceManager.GetString("QRCodeGradient_Text", resourceCulture);
+                return ResourceManager.GetString("QRCodeGradientColor1_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gradient color 2.
+        /// </summary>
+        internal static string QRCodeGradientColor2_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientColor2_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gradient color 3.
+        /// </summary>
+        internal static string QRCodeGradientColor3_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientColor3_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gradient colors:.
+        /// </summary>
+        internal static string QRCodeGradientColors_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientColors_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gradient direction:.
+        /// </summary>
+        internal static string QRCodeGradientDirection_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientDirection_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom to top.
+        /// </summary>
+        internal static string QRCodeGradientDirection1_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientDirection1_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom left to top right.
+        /// </summary>
+        internal static string QRCodeGradientDirection2_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientDirection2_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left to right.
+        /// </summary>
+        internal static string QRCodeGradientDirection3_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientDirection3_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top left to bottom right.
+        /// </summary>
+        internal static string QRCodeGradientDirection4_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientDirection4_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top to bottom.
+        /// </summary>
+        internal static string QRCodeGradientDirection5_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientDirection5_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top right to bottom left.
+        /// </summary>
+        internal static string QRCodeGradientDirection6_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientDirection6_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right to left.
+        /// </summary>
+        internal static string QRCodeGradientDirection7_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientDirection7_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom right to top left.
+        /// </summary>
+        internal static string QRCodeGradientDirection8_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientDirection8_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use gradient colors:.
+        /// </summary>
+        internal static string QRCodeGradientUse_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientUse_Text", resourceCulture);
             }
         }
         
@@ -1404,7 +1521,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Artistic QR Code module shape:.
+        ///   Looks up a localized string similar to Module shape:.
         /// </summary>
         internal static string QRCodeModuleShape_Text {
             get {
@@ -1431,7 +1548,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code shape: Square.
+        ///   Looks up a localized string similar to QR Code shape: square.
         /// </summary>
         internal static string QRCodeModuleShapeSquare_Text {
             get {

@@ -719,8 +719,9 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
   <data name="TextLengthLimitedByte_Text" xml:space="preserve">
     <value>O texto está limitado a {0} bytes.</value>
   </data>
-  <data name="QRCodeModuleShape_Text" xml:space="preserve">
-    <value>Formato artístico do módulo de código QR:</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="QRCodeModuleShape_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>Formato do código QR: quadrado</value>

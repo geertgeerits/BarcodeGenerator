@@ -719,8 +719,9 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="TextLengthLimitedByte_Text" xml:space="preserve">
     <value>A szöveg hossza {0} bájtra korlátozódik.</value>
   </data>
-  <data name="QRCodeModuleShape_Text" xml:space="preserve">
-    <value>Művészi QR-kód modul alakja:</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="QRCodeModuleShape_Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>QR-kód alakja: négyzet</value>

@@ -562,7 +562,7 @@ namespace BarcodeGenerator
         private async void OnButtonGradientColor1Clicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor1;
-            await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
+            await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor1_Text);
     
             if (!Globals.bPopupCanceled)
             {
@@ -579,7 +579,7 @@ namespace BarcodeGenerator
         private async void OnButtonGradientColor2Clicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor2;
-            await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
+            await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor2_Text);
 
             if (!Globals.bPopupCanceled)
             {
@@ -596,7 +596,7 @@ namespace BarcodeGenerator
         private async void OnButtonGradientColor3Clicked(object sender, EventArgs e)
         {
             Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor3;
-            await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
+            await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor3_Text);
 
             if (!Globals.bPopupCanceled)
             {
