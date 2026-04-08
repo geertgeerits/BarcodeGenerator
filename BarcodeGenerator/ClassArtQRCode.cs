@@ -24,6 +24,22 @@ namespace BarcodeGenerator
                 return null;
             }
 
+            // Show a modal popup with information about the Art QR code features before opening the file pickers
+            Globals.bIsPopupMessage = true;
+            
+            Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+            if (currentPage != null)
+            {
+                Globals.bIsPopupMessage = true;
+                _ = await currentPage.ShowPopupAsync(new PopupSettingsArtQRCode(CodeLang.Settings_Text));
+
+                // Check if the popup was canceled by the user before proceeding to open the file picker
+                if (Globals.bPopupCanceled)
+                {
+                    return null;
+                }
+            }
+
             // Create a gradient for the QR code if enabled in settings
             GradientOptions? gradient = null;
 
@@ -34,46 +50,54 @@ namespace BarcodeGenerator
                     [0f, 0.5f, 1f]);
             }
 
-            // Show a modal popup to inform the user about the recommended background image size before opening the file picker
-            FileResult? cFileBackground = null;
-            Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
-            if (currentPage != null)
-            {
-                Globals.bIsPopupMessage = true;
-                _ = await currentPage.ShowPopupAsync(new PopupMessage(20, CodeLang.QRCodeImageBackgroundTitle_Text, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{ClassBarcodes.nQRCodeSizePixels:N0} x {ClassBarcodes.nQRCodeSizePixels:N0} {CodeLang.Pixels_Text}"));
+            // Show a modal popup to inform the user about the recommended foreground image size before opening the file picker
+            FileResult? cFileForeground = null;
 
-                // Check if the popup was canceled by the user before proceeding to open the file picker
-                if (Globals.bPopupCanceled)
+            if (ClassBarcodes.bQRCodeForegroundImage)
+            {
+                // Calculate the recommended foreground image size based on the QR code size and a percentage defined in ClassBarcodes
+                int nRecommendedImageSize = (int)(ClassBarcodes.nQRCodeSizePixels * ClassBarcodes.nQRCodeImageSizePercent / 100f);
+
+                currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+                if (currentPage != null)
                 {
-                    Globals.bPopupCanceled = false;
-                }
-                else
-                {
-                    // Open the file picker to select an image file for the background of the Art QR code
-                    cFileBackground = await ClassFileOperations.PickImage();
+                    Globals.bIsPopupMessage = true;
+                    _ = await currentPage.ShowPopupAsync(new PopupMessage(20, CodeLang.QRCodeImageForegroundTitle_Text, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nRecommendedImageSize:N0} x {nRecommendedImageSize:N0} {CodeLang.Pixels_Text}"));
+
+                    // Check if the popup was canceled by the user before proceeding to open the file picker
+                    if (Globals.bPopupCanceled)
+                    {
+                        Globals.bPopupCanceled = false;
+                    }
+                    else
+                    {
+                        // Open the file picker to select an image file for the foreground of the Art QR code
+                        cFileForeground = await ClassFileOperations.PickImage();
+                    }
                 }
             }
 
-            // Calculate the recommended foreground image size based on the QR code size and a percentage defined in ClassBarcodes
-            int nRecommendedImageSize = (int)(ClassBarcodes.nQRCodeSizePixels * ClassBarcodes.nQRCodeImageSizePercent / 100f);
+            // Show a modal popup to inform the user about the recommended background image size before opening the file picker
+            FileResult? cFileBackground = null;
 
-            // Show a modal popup to inform the user about the recommended foreground image size before opening the file picker
-            FileResult? cFileForeground = null;
-            currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
-            if (currentPage != null)
+            if (ClassBarcodes.bQRCodeBackgroundImage)
             {
-                Globals.bIsPopupMessage = true;
-                _ = await currentPage.ShowPopupAsync(new PopupMessage(20, CodeLang.QRCodeImageForegroundTitle_Text, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nRecommendedImageSize:N0} x {nRecommendedImageSize:N0} {CodeLang.Pixels_Text}"));
+                currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+                if (currentPage != null)
+                {
+                    Globals.bIsPopupMessage = true;
+                    _ = await currentPage.ShowPopupAsync(new PopupMessage(20, CodeLang.QRCodeImageBackgroundTitle_Text, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{ClassBarcodes.nQRCodeSizePixels:N0} x {ClassBarcodes.nQRCodeSizePixels:N0} {CodeLang.Pixels_Text}"));
 
-                // Check if the popup was canceled by the user before proceeding to open the file picker
-                if (Globals.bPopupCanceled)
-                {
-                    Globals.bPopupCanceled = false;
-                }
-                else
-                {
-                    // Open the file picker to select an image file for the foreground of the Art QR code
-                    cFileForeground = await ClassFileOperations.PickImage();
+                    // Check if the popup was canceled by the user before proceeding to open the file picker
+                    if (Globals.bPopupCanceled)
+                    {
+                        Globals.bPopupCanceled = false;
+                    }
+                    else
+                    {
+                        // Open the file picker to select an image file for the background of the Art QR code
+                        cFileBackground = await ClassFileOperations.PickImage();
+                    }
                 }
             }
 

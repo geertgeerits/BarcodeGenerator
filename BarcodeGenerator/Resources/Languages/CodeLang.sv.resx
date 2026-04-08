@@ -777,4 +777,10 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>Modulform:</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Förgrundsbild:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Bakgrundsbild:</value>
+  </data>
 </root>

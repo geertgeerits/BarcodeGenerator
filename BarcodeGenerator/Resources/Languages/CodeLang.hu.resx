@@ -777,4 +777,10 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>Modul alakja:</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Előtérkép:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Háttérkép:</value>
+  </data>
 </root>

@@ -1,0 +1,142 @@
+<toolkit:Popup
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="BarcodeGenerator.PopupSettingsArtQRCode"
+    BackgroundColor="DeepSkyBlue"
+    CanBeDismissedByTappingOutsideOfPopup="False"
+    Loaded="Popup_Loaded">
+
+    <Grid
+        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+        ColumnDefinitions="240, 60*"
+        RowSpacing="5"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="340"
+        Padding="0">
+
+        <BoxView
+            Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+            Grid.RowSpan="8"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            CornerRadius="10"
+            Margin="0">
+        </BoxView>
+
+        <Label
+            x:Name="lblPopupTitle"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            BackgroundColor="Transparent"
+            Margin="10,5,10,1"
+            Padding="0"
+            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+            HorizontalTextAlignment="Center"
+            Text="{Translate ColorPicker_Text}">
+        </Label>
+
+        <Border
+            Style="{StaticResource borderStyleGroup}"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.RowSpan="4"
+            Grid.ColumnSpan="2"
+            Margin="4">
+        </Border>
+
+        <Label
+            Style="{StaticResource labelStyleDefault}"
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="10,1,10,1"
+            Padding="0"
+            HorizontalTextAlignment="Start"
+            Text="{Translate QRCodeGradientColors_Text}">
+        </Label>
+
+        <Switch
+            x:Name="swtGradientColors"
+            Style="{StaticResource switchStyleColor}"
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="10,5,10,0"
+            ThumbColor="Grey"
+            Toggled="SwtGradientColors_Toggled">
+        </Switch>
+
+        <Label
+            Style="{StaticResource labelStyleDefault}"
+            Grid.Row="3"
+            Grid.Column="0"
+            Margin="10,1,10,1"
+            Padding="0"
+            HorizontalTextAlignment="Start"
+            Text="{Translate ImageForeground_Text}">
+        </Label>
+
+        <Switch
+            x:Name="swtForegroundImage"
+            Style="{StaticResource switchStyleColor}"
+            Grid.Row="3"
+            Grid.Column="1"
+            Margin="10,5,10,0"
+            ThumbColor="Grey"
+            Toggled="SwtForegroundImage_Toggled">
+        </Switch>
+
+        <Label
+            Style="{StaticResource labelStyleDefault}"
+            Grid.Row="4"
+            Grid.Column="0"
+            Margin="10,1,10,1"
+            Padding="0"
+            HorizontalTextAlignment="Start"
+            Text="{Translate ImageBackground_Text}">
+        </Label>
+
+        <Switch
+            x:Name="swtBackgroundImage"
+            Style="{StaticResource switchStyleColor}"
+            Grid.Row="4"
+            Grid.Column="1"
+            Margin="10,5,10,0"
+            ThumbColor="Grey"
+            Toggled="SwtBackgroundImage_Toggled">
+        </Switch>
+
+        <ImageButton
+            x:Name="btnButtonCancel"
+            Style="{StaticResource imageButtonStyleColorPicker}"
+            Grid.Row="7"
+            Grid.Column="0"
+            HorizontalOptions="Start"
+            VerticalOptions="End"
+            WidthRequest="120"
+            Margin="4,5,0,5"
+            ToolTipProperties.Text="{Translate ButtonCancel_Text}"
+            Source="ic_action_cancel_red.png"
+            Clicked="OnButtonCancel_Clicked">
+        </ImageButton>
+
+        <ImageButton
+            x:Name="btnButtonClose"
+            Style="{StaticResource imageButtonStyleColorPicker}"
+            Grid.Row="7"
+            Grid.Column="2"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            WidthRequest="120"
+            Margin="0,5,4,5"
+            ToolTipProperties.Text="{Translate ButtonNext_Text}"
+            Source="ic_action_tick_green.png"
+            Clicked="OnButtonClose_Clicked">
+        </ImageButton>
+
+    </Grid>
+</toolkit:Popup>

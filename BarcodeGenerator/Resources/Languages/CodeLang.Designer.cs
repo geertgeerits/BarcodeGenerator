@@ -1111,6 +1111,24 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Background image:.
+        /// </summary>
+        internal static string ImageBackground_Text {
+            get {
+                return ResourceManager.GetString("ImageBackground_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foreground image:.
+        /// </summary>
+        internal static string ImageForeground_Text {
+            get {
+                return ResourceManager.GetString("ImageForeground_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Information.
         /// </summary>
         internal static string Info_Text {

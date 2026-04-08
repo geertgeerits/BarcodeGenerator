@@ -777,4 +777,10 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>Modulevorm:</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Voorgrondafbeelding:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Achtergrondafbeelding:</value>
+  </data>
 </root>

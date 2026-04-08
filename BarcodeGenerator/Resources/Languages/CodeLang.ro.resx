@@ -777,4 +777,10 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>Forma modulului:</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Imagine de prim-plan:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Imagine de fundal:</value>
+  </data>
 </root>

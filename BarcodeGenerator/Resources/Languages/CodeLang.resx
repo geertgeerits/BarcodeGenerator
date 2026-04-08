@@ -777,4 +777,10 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>Module shape:</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Foreground image:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Background image:</value>
+  </data>
 </root>

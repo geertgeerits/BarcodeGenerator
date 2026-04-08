@@ -777,4 +777,10 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>Moduulin muoto:</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Etualan kuva:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Taustakuva:</value>
+  </data>
 </root>

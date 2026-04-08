@@ -777,4 +777,10 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>Tvar modulu:</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Obrázek v popředí:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Obrázek na pozadí:</value>
+  </data>
 </root>

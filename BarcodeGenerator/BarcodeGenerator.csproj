@@ -97,7 +97,7 @@
 		<PackageReference Include="ZXing.Net.Maui" Version="0.7.4" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.7.4" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.3" />
-		<PackageReference Include="Sentry.Maui" Version="6.3.0" />
+		<PackageReference Include="Sentry.Maui" Version="6.3.1" />
 		<!--<PackageReference Include="ZXingCpp" Version="0.4.0-alpha" />-->
 	</ItemGroup>
 
@@ -133,6 +133,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PopupMessage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PopupSettingsArtQRCode.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

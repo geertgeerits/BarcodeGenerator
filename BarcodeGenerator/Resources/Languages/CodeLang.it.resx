@@ -777,4 +777,10 @@ Microsoft, Microsoft Store, il logo di Microsoft Store e Windows sono marchi di 
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>Forma del modulo:</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Immagine in primo piano:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Immagine di sfondo:</value>
+  </data>
 </root>

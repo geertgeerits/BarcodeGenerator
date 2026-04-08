@@ -97,8 +97,9 @@
         public static string cQRCodeGradientColor2 = string.Empty;      // Second color of the QR code gradient
         public static string cQRCodeGradientColor3 = string.Empty;      // Third color of the QR code gradient
         public static string cQRCodeGradientDirection = string.Empty;   // Direction of the QR code gradient 
+        public static bool bQRCodeBackgroundImage;                      // Flag to indicate if the QR code has a background image
+        public static bool bQRCodeForegroundImage;                      // Flag to indicate if the QR code has a foreground image
         public static bool bBarcodeWithCaption;                         // Control whether the barcode image should include a caption
-
 
         // Creating a public dictionary
         public static Dictionary<string, string> barcodeSearch = [];
