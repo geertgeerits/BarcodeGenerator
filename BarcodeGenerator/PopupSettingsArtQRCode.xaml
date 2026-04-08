@@ -13,7 +13,7 @@
         RowSpacing="5"
         HorizontalOptions="Center"
         VerticalOptions="Center"
-        WidthRequest="300"
+        WidthRequest="320"
         Padding="0">
 
         <BoxView
@@ -55,7 +55,7 @@
             Grid.Row="2"
             Grid.Column="0"
             HorizontalTextAlignment="Start"
-            Margin="10,10,0,0"
+            Margin="{OnPlatform Default='10,10,0,0', iOS='10,0,0,0', WinUI='10,10,0,0'}"
             Padding="0"
             Text="{Translate QRCodeGradientColors_Text}">
         </Label>
@@ -65,7 +65,7 @@
             Grid.Row="2"
             Grid.Column="1"
             HorizontalOptions="End"
-            Margin="10,10,0,0"
+            Margin="{OnPlatform Default='10,10,10,0', WinUI='10,10,0,0'}"
             Toggled="SwtGradientColors_Toggled">
         </Switch>
 
@@ -84,7 +84,7 @@
             Grid.Row="3"
             Grid.Column="1"
             HorizontalOptions="End"
-            Margin="10,0,0,0"
+            Margin="{OnPlatform Default='10,10,10,0', WinUI='10,0,0,0'}"
             Toggled="SwtForegroundImage_Toggled">
         </Switch>
 
@@ -103,7 +103,7 @@
             Grid.Row="4"
             Grid.Column="1"
             HorizontalOptions="End"
-            Margin="10,0,0,10"
+            Margin="{OnPlatform Default='10,10,10,10', WinUI='10,0,0,10'}"
             Toggled="SwtBackgroundImage_Toggled">
         </Switch>
 
