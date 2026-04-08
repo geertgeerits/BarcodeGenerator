@@ -97,7 +97,6 @@ namespace BarcodeGenerator
                 Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
                 if (currentPage != null)
                 {
-                    Globals.bIsPopupMessage = true;
                     await currentPage.ShowPopupAsync(new PopupMessage(20, CodeLang.QRCodeImageForegroundTitle_Text, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize:N0} x {nImageRecommendedSize:N0} {CodeLang.Pixels_Text}"));
 
                     // Check if the popup was canceled by the user before proceeding to open the file picker
@@ -110,7 +109,6 @@ namespace BarcodeGenerator
 
                 // Open the file picker to select an image file
                 FileResult? cFileForeground = await ClassFileOperations.PickImage();
-                Globals.bIsPopupMessage = false;
 
                 // Read the selected file as a stream
                 if (cFileForeground != null)

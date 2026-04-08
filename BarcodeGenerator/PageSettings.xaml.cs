@@ -78,8 +78,10 @@ namespace BarcodeGenerator
             rbtQRCodeModuleShapeRounded.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Rounded";
             rbtQRCodeModuleShapeCircle.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Circle";
 
-            // Set the QR code gradient variable to update the switch
+            // Set the initial states of the switches
             swtQRCodeGradient.IsToggled = ClassBarcodes.bQRCodeGradientColor;
+            swtForegroundImage.IsToggled = ClassBarcodes.bQRCodeForegroundImage;
+            swtBackgroundImage.IsToggled = ClassBarcodes.bQRCodeBackgroundImage;
 
             // Set the current color in the box view
             bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
@@ -506,6 +508,26 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Switch QR code foreground image toggled event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SwtForegroundImage_Toggled(object sender, ToggledEventArgs e)
+        {
+            ClassBarcodes.bQRCodeForegroundImage = e.Value;
+        }
+
+        /// <summary>
+        /// Switch QR code background image toggled event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SwtBackgroundImage_Toggled(object sender, ToggledEventArgs e)
+        {
+            ClassBarcodes.bQRCodeBackgroundImage = e.Value;
+        }
+
+        /// <summary>
         /// Switch QR code image size variable toggled event
         /// </summary>
         /// <param name="sender"></param>
@@ -619,7 +641,6 @@ namespace BarcodeGenerator
             Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
             {
-                Globals.bIsPopupMessage = true;
                 _ = await currentPage.ShowPopupAsync(new PopupColorPicker(cMessage));
             }
         }
@@ -642,6 +663,8 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeGradientColor2", ClassBarcodes.cQRCodeGradientColor2);
             Preferences.Default.Set("SettingQRCodeGradientColor3", ClassBarcodes.cQRCodeGradientColor3);
             Preferences.Default.Set("SettingQRCodeGradientDirection", ClassBarcodes.cQRCodeGradientDirection);
+            Preferences.Default.Set("SettingQRCodeForegroundImage", ClassBarcodes.bQRCodeForegroundImage);
+            Preferences.Default.Set("SettingQRCodeBackgroundImage", ClassBarcodes.bQRCodeBackgroundImage);
             Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
@@ -686,6 +709,8 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeGradientColor2");
                 Preferences.Default.Remove("SettingQRCodeGradientColor3");
                 Preferences.Default.Remove("SettingQRCodeGradientDirection");
+                Preferences.Default.Remove("SettingQRCodeForegroundImage");
+                Preferences.Default.Remove("SettingQRCodeBackgroundImage");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");

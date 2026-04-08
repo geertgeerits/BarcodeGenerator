@@ -73,6 +73,8 @@ namespace BarcodeGenerator
             ClassBarcodes.cQRCodeGradientColor2 = Preferences.Default.Get("SettingQRCodeGradientColor2", "FF00FF00");  // FF00FF00 Green - FFFF00FF Magenta
             ClassBarcodes.cQRCodeGradientColor3 = Preferences.Default.Get("SettingQRCodeGradientColor3", "FF0000FF");  // FF0000FF Blue - FFFFFF00 Yellow
             ClassBarcodes.cQRCodeGradientDirection = Preferences.Default.Get("SettingQRCodeGradientDirection", "BottomLeftToTopRight");  // None, BottomToTop, BottomLeftToTopRight, LeftToRight, TopLeftToBottomRight, TopToBottom, TopRightToBottomLeft, RightToLeft, BottomRightToTopLeft
+            ClassBarcodes.bQRCodeForegroundImage = Preferences.Default.Get("SettingQRCodeForegroundImage", false);
+            ClassBarcodes.bQRCodeBackgroundImage = Preferences.Default.Get("SettingQRCodeBackgroundImage", false);
             ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
@@ -781,12 +783,6 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnPageAppearing(object sender, EventArgs e)
         {
-            // If the page is appearing after a popup message, then do nothing
-            if (Globals.bIsPopupMessage)
-            {
-                return;
-            }
-
             // Set the text language
             if (Globals.bLanguageChanged)
             {
@@ -797,7 +793,7 @@ namespace BarcodeGenerator
             // Set the speech language
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
-            // Set the generator format in the picker
+            // Set the selected generator format in the picker
             pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
         }
 

@@ -9,11 +9,11 @@
 
     <Grid
         RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-        ColumnDefinitions="240, 60*"
+        ColumnDefinitions="200*, 70"
         RowSpacing="5"
         HorizontalOptions="Center"
         VerticalOptions="Center"
-        WidthRequest="340"
+        WidthRequest="300"
         Padding="0">
 
         <BoxView
@@ -54,19 +54,18 @@
             Style="{StaticResource labelStyleDefault}"
             Grid.Row="2"
             Grid.Column="0"
-            Margin="10,1,10,1"
-            Padding="0"
             HorizontalTextAlignment="Start"
+            Margin="10,10,0,0"
+            Padding="0"
             Text="{Translate QRCodeGradientColors_Text}">
         </Label>
 
         <Switch
             x:Name="swtGradientColors"
-            Style="{StaticResource switchStyleColor}"
             Grid.Row="2"
             Grid.Column="1"
-            Margin="10,5,10,0"
-            ThumbColor="Grey"
+            HorizontalOptions="End"
+            Margin="10,10,0,0"
             Toggled="SwtGradientColors_Toggled">
         </Switch>
 
@@ -74,19 +73,18 @@
             Style="{StaticResource labelStyleDefault}"
             Grid.Row="3"
             Grid.Column="0"
-            Margin="10,1,10,1"
-            Padding="0"
             HorizontalTextAlignment="Start"
+            Margin="10,0,0,0"
+            Padding="0"
             Text="{Translate ImageForeground_Text}">
         </Label>
 
         <Switch
             x:Name="swtForegroundImage"
-            Style="{StaticResource switchStyleColor}"
             Grid.Row="3"
             Grid.Column="1"
-            Margin="10,5,10,0"
-            ThumbColor="Grey"
+            HorizontalOptions="End"
+            Margin="10,0,0,0"
             Toggled="SwtForegroundImage_Toggled">
         </Switch>
 
@@ -94,19 +92,18 @@
             Style="{StaticResource labelStyleDefault}"
             Grid.Row="4"
             Grid.Column="0"
-            Margin="10,1,10,1"
-            Padding="0"
             HorizontalTextAlignment="Start"
+            Margin="10,0,0,10"
+            Padding="0"
             Text="{Translate ImageBackground_Text}">
         </Label>
 
         <Switch
             x:Name="swtBackgroundImage"
-            Style="{StaticResource switchStyleColor}"
             Grid.Row="4"
             Grid.Column="1"
-            Margin="10,5,10,0"
-            ThumbColor="Grey"
+            HorizontalOptions="End"
+            Margin="10,0,0,10"
             Toggled="SwtBackgroundImage_Toggled">
         </Switch>
 

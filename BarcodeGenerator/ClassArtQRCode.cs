@@ -25,12 +25,9 @@ namespace BarcodeGenerator
             }
 
             // Show a modal popup with information about the Art QR code features before opening the file pickers
-            Globals.bIsPopupMessage = true;
-            
             Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
             {
-                Globals.bIsPopupMessage = true;
                 _ = await currentPage.ShowPopupAsync(new PopupSettingsArtQRCode(CodeLang.Settings_Text));
 
                 // Check if the popup was canceled by the user before proceeding to open the file picker
@@ -61,7 +58,6 @@ namespace BarcodeGenerator
                 currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
                 if (currentPage != null)
                 {
-                    Globals.bIsPopupMessage = true;
                     _ = await currentPage.ShowPopupAsync(new PopupMessage(20, CodeLang.QRCodeImageForegroundTitle_Text, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nRecommendedImageSize:N0} x {nRecommendedImageSize:N0} {CodeLang.Pixels_Text}"));
 
                     // Check if the popup was canceled by the user before proceeding to open the file picker
@@ -85,7 +81,6 @@ namespace BarcodeGenerator
                 currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
                 if (currentPage != null)
                 {
-                    Globals.bIsPopupMessage = true;
                     _ = await currentPage.ShowPopupAsync(new PopupMessage(20, CodeLang.QRCodeImageBackgroundTitle_Text, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{ClassBarcodes.nQRCodeSizePixels:N0} x {ClassBarcodes.nQRCodeSizePixels:N0} {CodeLang.Pixels_Text}"));
 
                     // Check if the popup was canceled by the user before proceeding to open the file picker

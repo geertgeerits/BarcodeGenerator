@@ -156,8 +156,8 @@
     </Style>
 
     <Style TargetType="Switch">
-        <Setter Property="OffColor" Value="DarkRed"/>
-        <Setter Property="OnColor" Value="Green"/>
+        <Setter Property="OffColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
+        <Setter Property="OnColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">

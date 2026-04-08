@@ -18,7 +18,6 @@ namespace BarcodeGenerator
         public static bool bTextToSpeechIsBusy;                             // Flag to indicate if text-to-speech is currently busy
         public static readonly string cImageTextToSpeech = "speaker_64p_blue_green.png";  // Image for text-to-speech button
         public static readonly string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";  // Image for text-to-speech cancel button
-        public static bool bIsPopupMessage;                                 // Popup message has been displayed
         public static bool bPopupCanceled;                                  // Popup message was canceled by the user
         public static string cFileBarcodePng = string.Empty;                // Path and file name of the saved barcode image
         public static string cFileBarcodeSvg = string.Empty;                // Path and file name of the saved barcode image

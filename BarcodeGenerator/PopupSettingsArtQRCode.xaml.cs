@@ -11,9 +11,10 @@ namespace BarcodeGenerator
             // Set the message text
             lblPopupTitle.Text = cMessage;
 
+            // Set the initial states of the switches
             swtGradientColors.IsToggled = ClassBarcodes.bQRCodeGradientColor;
-            swtBackgroundImage.IsToggled = ClassBarcodes.bQRCodeBackgroundImage;
             swtForegroundImage.IsToggled = ClassBarcodes.bQRCodeForegroundImage;
+            swtBackgroundImage.IsToggled = ClassBarcodes.bQRCodeBackgroundImage;
 
             Globals.bPopupCanceled = false;
         }
