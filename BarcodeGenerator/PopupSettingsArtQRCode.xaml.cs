@@ -12,7 +12,7 @@ namespace BarcodeGenerator
 
             // Set the message text
             lblPopupTitle.Text = cMessage;
-
+        }
 
         /// <summary>
         /// Set focus to the close button when the popup is loaded, so that pressing Enter will close it immediately.
