@@ -3,137 +3,508 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Class="BarcodeGenerator.PopupSettingsArtQRCode"
-    BackgroundColor="DeepSkyBlue"
+    BackgroundColor="DimGray"
     CanBeDismissedByTappingOutsideOfPopup="False"
     Loaded="Popup_Loaded">
+    
+    <ScrollView
+        MaximumHeightRequest="700"
+        WidthRequest="340"
+        Orientation="Vertical">
+        
+        <Grid
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+            ColumnDefinitions="145, 100*"
+            RowSpacing="5"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="340"
+            Padding="0">
 
-    <Grid
-        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-        ColumnDefinitions="200*, 70"
-        RowSpacing="5"
-        HorizontalOptions="Center"
-        VerticalOptions="Center"
-        WidthRequest="320"
-        Padding="0">
+            <BoxView
+                Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                Grid.RowSpan="12"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                CornerRadius="10"
+                Margin="0">
+            </BoxView>
 
-        <BoxView
-            Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
-            Grid.RowSpan="8"
-            Grid.ColumnSpan="3"
-            HorizontalOptions="Fill"
-            VerticalOptions="Fill"
-            CornerRadius="10"
-            Margin="0">
-        </BoxView>
+            <Label
+                x:Name="lblPopupTitle"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                BackgroundColor="Transparent"
+                Margin="10,5,10,0"
+                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                HorizontalTextAlignment="Center"
+                Text="{Translate ColorPicker_Text}">
+            </Label>
 
-        <Label
-            x:Name="lblPopupTitle"
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            HorizontalOptions="Fill"
-            VerticalOptions="Fill"
-            BackgroundColor="Transparent"
-            Margin="10,5,10,1"
-            Padding="0"
-            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
-            HorizontalTextAlignment="Center"
-            Text="{Translate ColorPicker_Text}">
-        </Label>
+            <Border
+                Style="{StaticResource borderStyleGroup}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.RowSpan="9"
+                Grid.ColumnSpan="2"
+                Margin="4">
+            </Border>
 
-        <Border
-            Style="{StaticResource borderStyleGroup}"
-            Grid.Row="1"
-            Grid.Column="0"
-            Grid.RowSpan="4"
-            Grid.ColumnSpan="2"
-            Margin="4">
-        </Border>
+            <Label
+                x:Name="lblHexColorFg"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0,6,0,0"
+                Padding="8,0,0,0"
+                Text="{Translate ForegroundColor_Text}">
+            </Label>
 
-        <Label
-            Style="{StaticResource labelStyleDefault}"
-            Grid.Row="2"
-            Grid.Column="0"
-            HorizontalTextAlignment="Start"
-            Margin="{OnPlatform Default='10,10,0,0', iOS='10,0,0,0', WinUI='10,10,0,0'}"
-            Padding="0"
-            Text="{Translate QRCodeGradientColors_Text}">
-        </Label>
+            <Grid
+                Grid.Row="1"
+                Grid.Column="2"
+                ColumnDefinitions="48, 100*">
 
-        <Switch
-            x:Name="swtGradientColors"
-            Grid.Row="2"
-            Grid.Column="1"
-            HorizontalOptions="End"
-            Margin="{OnPlatform Default='10,10,10,0', WinUI='10,10,0,0'}"
-            Toggled="SwtGradientColors_Toggled">
-        </Switch>
+                <ImageButton
+                    Style="{StaticResource imageButtonStyleColorPicker}"
+                    Grid.Column="0"
+                    Margin="0,6,0,0"
+                    Source="ic_action_settings.png"
+                    SemanticProperties.Description="{Translate ColorPicker_Text}"
+                    ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                    Clicked="OnButtonColorForgroundClicked">
+                </ImageButton>
 
-        <Label
-            Style="{StaticResource labelStyleDefault}"
-            Grid.Row="3"
-            Grid.Column="0"
-            HorizontalTextAlignment="Start"
-            Margin="10,0,0,0"
-            Padding="0"
-            Text="{Translate ImageForeground_Text}">
-        </Label>
+                <Border
+                    Grid.Column="1"
+                    HeightRequest="40"
+                    Margin="0,6,8,0"
+                    BackgroundColor="Transparent"
+                    Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5">
 
-        <Switch
-            x:Name="swtForegroundImage"
-            Grid.Row="3"
-            Grid.Column="1"
-            HorizontalOptions="End"
-            Margin="{OnPlatform Default='10,10,10,0', WinUI='10,0,0,0'}"
-            Toggled="SwtForegroundImage_Toggled">
-        </Switch>
+                    <BoxView
+                        x:Name="bxvColorFg">
+                    </BoxView>
+                </Border>
+            </Grid>
+        
+            <Label
+                x:Name="lblHexColorBgArtQRCode"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="2"
+                Grid.Column="0"
+                Padding="8,0,0,0"
+                Text="{Translate BackgroundColor_Text}">
+            </Label>
 
-        <Label
-            Style="{StaticResource labelStyleDefault}"
-            Grid.Row="4"
-            Grid.Column="0"
-            HorizontalTextAlignment="Start"
-            Margin="10,0,0,10"
-            Padding="0"
-            Text="{Translate ImageBackground_Text}">
-        </Label>
+            <Grid
+                Grid.Row="2"
+                Grid.Column="2"
+                ColumnDefinitions="48, 100*">
 
-        <Switch
-            x:Name="swtBackgroundImage"
-            Grid.Row="4"
-            Grid.Column="1"
-            HorizontalOptions="End"
-            Margin="{OnPlatform Default='10,10,10,10', WinUI='10,0,0,10'}"
-            Toggled="SwtBackgroundImage_Toggled">
-        </Switch>
+                <ImageButton
+                    Style="{StaticResource imageButtonStyleColorPicker}"
+                    Grid.Column="0"
+                    Source="ic_action_settings.png"
+                    SemanticProperties.Description="{Translate ColorPicker_Text}"
+                    ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                    Clicked="OnButtonColorBackgroundArtQRCodeClicked">
+                </ImageButton>
 
-        <ImageButton
-            x:Name="btnButtonCancel"
-            Style="{StaticResource imageButtonStyleColorPicker}"
-            Grid.Row="7"
-            Grid.Column="0"
-            HorizontalOptions="Start"
-            VerticalOptions="End"
-            WidthRequest="120"
-            Margin="4,5,0,5"
-            ToolTipProperties.Text="{Translate ButtonCancel_Text}"
-            Source="ic_action_cancel_red.png"
-            Clicked="OnButtonCancel_Clicked">
-        </ImageButton>
+                <Border
+                    Grid.Column="1"
+                    HeightRequest="40"
+                    Margin="0,0,8,0"
+                    BackgroundColor="Transparent"
+                    Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5">
 
-        <ImageButton
-            x:Name="btnButtonClose"
-            Style="{StaticResource imageButtonStyleColorPicker}"
-            Grid.Row="7"
-            Grid.Column="2"
-            HorizontalOptions="End"
-            VerticalOptions="End"
-            WidthRequest="120"
-            Margin="0,5,4,5"
-            ToolTipProperties.Text="{Translate ButtonNext_Text}"
-            Source="ic_action_tick_green.png"
-            Clicked="OnButtonClose_Clicked">
-        </ImageButton>
+                    <BoxView
+                        x:Name="bxvColorBgArtQRCode">
+                    </BoxView>
+                </Border>
+            </Grid>
 
-    </Grid>
+            <Label
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="3"
+                Grid.Column="0"
+                Padding="8,0,0,0"
+                Text="{Translate QRCodeModuleShape_Text}">
+            </Label>
+
+            <Grid
+                Grid.Row="3"
+                Grid.Column="2"
+                RowDefinitions="Auto"
+                ColumnDefinitions="30, 32, 30, 32, 30, 30" >
+
+                <RadioButton
+                    x:Name="rbtQRCodeModuleShapeSquare"
+                    GroupName="ModuleShape"
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
+                    ToolTipProperties.Text="{Translate QRCodeModuleShapeSquare_Text}"
+                    SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}"
+                    CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
+                </RadioButton>
+
+                <BoxView
+                    Grid.Column="1"
+                    HeightRequest="27"
+                    WidthRequest="27"
+                    CornerRadius="0"
+                    HorizontalOptions="Start"
+                    Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                    ToolTipProperties.Text="{Translate QRCodeModuleShapeSquare_Text}"
+                    SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}">
+                </BoxView>
+
+                <RadioButton
+                    x:Name="rbtQRCodeModuleShapeRounded"
+                    GroupName="ModuleShape"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                    Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
+                    ToolTipProperties.Text="{Translate QRCodeModuleShapeRounded_Text}"
+                    SemanticProperties.Description="{Translate QRCodeModuleShapeRounded_Text}"
+                    CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
+                </RadioButton>
+
+                <BoxView
+                    Grid.Column="3"
+                    HeightRequest="28"
+                    WidthRequest="28"
+                    CornerRadius="10"
+                    HorizontalOptions="Start"
+                    Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                    ToolTipProperties.Text="{Translate QRCodeModuleShapeRounded_Text}"
+                    SemanticProperties.Description="{Translate QRCodeModuleShapeRounded_Text}">
+                </BoxView>
+
+                <RadioButton
+                    x:Name="rbtQRCodeModuleShapeCircle"
+                    GroupName="ModuleShape"
+                    Grid.Column="4"
+                    HorizontalOptions="Start"
+                    Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
+                    ToolTipProperties.Text="{Translate QRCodeModuleShapeCircle_Text}"
+                    SemanticProperties.Description="{Translate QRCodeModuleShapeCircle_Text}"
+                    CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
+                </RadioButton>
+
+                <BoxView
+                    Grid.Column="5"
+                    HeightRequest="29"
+                    WidthRequest="29"
+                    CornerRadius="25"
+                    HorizontalOptions="Start"
+                    Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                    ToolTipProperties.Text="{Translate QRCodeModuleShapeCircle_Text}"
+                    SemanticProperties.Description="{Translate QRCodeModuleShapeCircle_Text}">
+                </BoxView>
+            </Grid>
+
+            <Label
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="5"
+                Grid.Column="0"
+                Padding="8,0,0,0"
+                VerticalTextAlignment="Start"
+                Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
+                Text="{Translate QRCodeGradientUse_Text}">
+            </Label>
+
+            <Switch
+                x:Name="swtQRCodeGradient"
+                Grid.Row="5"
+                Grid.Column="2"
+                HorizontalOptions="Start"
+                Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
+                Toggled="SwtQRCodeGradient_Toggled">
+            </Switch>
+
+            <Label
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="6"
+                Grid.Column="0"
+                Padding="8,0,0,0"
+                Text="{Translate QRCodeGradientColors_Text}">
+            </Label>
+
+            <Grid
+                Grid.Row="6"
+                Grid.Column="2"
+                RowDefinitions="Auto"
+                ColumnDefinitions="Auto, Auto, Auto"
+                ColumnSpacing="12">
+
+                <Border
+                    Grid.Column="0"
+                    Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5">
+
+                    <BoxView
+                        x:Name="bxvGradientColor1"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        HorizontalOptions="Start"
+                        SemanticProperties.Description="{Translate QRCodeGradientColor1_Text}"
+                        ToolTipProperties.Text="{Translate QRCodeGradientColor1_Text}">
+                    </BoxView>
+                </Border>
+
+                <ImageButton
+                    Style="{StaticResource imageButtonStyleColorPicker}"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                    Source="ic_action_settings.png"
+                    SemanticProperties.Description="{Translate ColorPicker_Text}"
+                    ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                    Clicked="OnButtonGradientColor1Clicked">
+                </ImageButton>
+
+                <Border
+                    Grid.Column="1"
+                    Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5">
+
+                    <BoxView
+                        x:Name="bxvGradientColor2"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        HorizontalOptions="Start"
+                        SemanticProperties.Description="{Translate QRCodeGradientColor2_Text}"
+                        ToolTipProperties.Text="{Translate QRCodeGradientColor2_Text}">
+                    </BoxView>
+                </Border>
+
+                <ImageButton
+                    Style="{StaticResource imageButtonStyleColorPicker}"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                    Source="ic_action_settings.png"
+                    SemanticProperties.Description="{Translate ColorPicker_Text}"
+                    ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                    Clicked="OnButtonGradientColor2Clicked">
+                </ImageButton>
+
+                <Border
+                    Grid.Column="2"
+                    Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 5,5,5,5">
+
+                    <BoxView
+                        x:Name="bxvGradientColor3"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        HorizontalOptions="Start"
+                        SemanticProperties.Description="{Translate QRCodeGradientColor3_Text}"
+                        ToolTipProperties.Text="{Translate QRCodeGradientColor3_Text}">
+                    </BoxView>
+                </Border>
+
+                <ImageButton
+                    Style="{StaticResource imageButtonStyleColorPicker}"
+                    Grid.Column="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                    Source="ic_action_settings.png"
+                    SemanticProperties.Description="{Translate ColorPicker_Text}"
+                    ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                    Clicked="OnButtonGradientColor3Clicked">
+                </ImageButton>
+            </Grid>
+
+            <Label
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="7"
+                Grid.Column="0"
+                Padding="8,0,0,0"
+                VerticalOptions="Start"
+                Text="{Translate QRCodeGradientDirection_Text}">
+            </Label>
+
+            <Grid
+                Grid.Row="7"
+                Grid.Column="2"
+                RowDefinitions="Auto, Auto"
+                ColumnDefinitions="Auto, Auto, Auto, Auto"
+                RowSpacing="8"
+                ColumnSpacing="8"
+                Padding="0,4,0,0">
+
+                <ImageButton
+                    x:Name="btnQRCodeGradientDirection1"
+                    Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                    Grid.Column="0"
+                    Source="ic_action_arrow_top.png"
+                    SemanticProperties.Description="{Translate QRCodeGradientDirection1_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientDirection1_Text}"
+                    Clicked="OnButtonQRCodeGradientDirectionClicked">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="btnQRCodeGradientDirection2"
+                    Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                    Grid.Column="1"
+                    Source="ic_action_arrow_right_top.png"
+                    SemanticProperties.Description="{Translate QRCodeGradientDirection2_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientDirection2_Text}"
+                    Clicked="OnButtonQRCodeGradientDirectionClicked">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="btnQRCodeGradientDirection3"
+                    Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                    Grid.Column="2"
+                    Source="ic_action_arrow_right.png"
+                    SemanticProperties.Description="{Translate QRCodeGradientDirection3_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientDirection3_Text}"
+                    Clicked="OnButtonQRCodeGradientDirectionClicked">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="btnQRCodeGradientDirection4"
+                    Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                    Grid.Column="3"
+                    Source="ic_action_arrow_right_bottom.png"
+                    SemanticProperties.Description="{Translate QRCodeGradientDirection4_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientDirection4_Text}"
+                    Clicked="OnButtonQRCodeGradientDirectionClicked">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="btnQRCodeGradientDirection5"
+                    Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="0,0,0,8"
+                    Source="ic_action_arrow_bottom.png"
+                    SemanticProperties.Description="{Translate QRCodeGradientDirection5_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientDirection5_Text}"
+                    Clicked="OnButtonQRCodeGradientDirectionClicked">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="btnQRCodeGradientDirection6"
+                    Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="0,0,0,8"
+                    Source="ic_action_arrow_left_bottom.png"
+                    SemanticProperties.Description="{Translate QRCodeGradientDirection6_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientDirection6_Text}"
+                    Clicked="OnButtonQRCodeGradientDirectionClicked">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="btnQRCodeGradientDirection7"
+                    Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="0,0,0,8"
+                    Source="ic_action_arrow_left.png"
+                    SemanticProperties.Description="{Translate QRCodeGradientDirection7_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientDirection7_Text}"
+                    Clicked="OnButtonQRCodeGradientDirectionClicked">
+                </ImageButton>
+
+                <ImageButton
+                    x:Name="btnQRCodeGradientDirection8"
+                    Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    Margin="0,0,0,8"
+                    Source="ic_action_arrow_left_top.png"
+                    SemanticProperties.Description="{Translate QRCodeGradientDirection8_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientDirection8_Text}"
+                    Clicked="OnButtonQRCodeGradientDirectionClicked">
+                </ImageButton>
+            </Grid>
+
+            <Label
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="8"
+                Grid.Column="0"
+                Padding="8,0,0,0"
+                VerticalTextAlignment="Start"
+                Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
+                Text="{Translate ImageForeground_Text}">
+            </Label>
+
+            <Switch
+                x:Name="swtForegroundImage"
+                Grid.Row="8"
+                Grid.Column="2"
+                HorizontalOptions="Start"
+                Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
+                Toggled="SwtForegroundImage_Toggled">
+            </Switch>
+
+            <Label
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="9"
+                Grid.Column="0"
+                Padding="8,0,0,8"
+                VerticalTextAlignment="Start"
+                Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
+                Text="{Translate ImageBackground_Text}">
+            </Label>
+
+            <Switch
+                x:Name="swtBackgroundImage"
+                Grid.Row="9"
+                Grid.Column="2"
+                HorizontalOptions="Start"
+                Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
+                Toggled="SwtBackgroundImage_Toggled">
+            </Switch>
+
+            <ImageButton
+                x:Name="btnButtonCancel"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="11"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                WidthRequest="120"
+                Margin="4,5,0,5"
+                ToolTipProperties.Text="{Translate ButtonCancel_Text}"
+                Source="ic_action_cancel_red.png"
+                Clicked="OnButtonCancel_Clicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="btnButtonClose"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="11"
+                Grid.Column="2"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                WidthRequest="120"
+                Margin="0,5,4,5"
+                ToolTipProperties.Text="{Translate ButtonNext_Text}"
+                Source="ic_action_tick_green.png"
+                Clicked="OnButtonClose_Clicked">
+            </ImageButton>
+
+        </Grid>
+    </ScrollView>
 </toolkit:Popup>

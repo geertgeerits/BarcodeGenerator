@@ -3,206 +3,212 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Class="BarcodeGenerator.PopupColorPicker"
-    BackgroundColor="DeepSkyBlue"
+    BackgroundColor="DimGray"
     CanBeDismissedByTappingOutsideOfPopup="False"
     Loaded="Popup_Loaded">
 
-    <Grid
-        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-        ColumnDefinitions="130, 70*, 130"
-        RowSpacing="5"
-        HorizontalOptions="Center"
-        VerticalOptions="Center"
+    <ScrollView
+        MaximumHeightRequest="380"
         WidthRequest="340"
-        Padding="0">
+        Orientation="Vertical">
 
-        <BoxView
-            Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
-            Grid.RowSpan="8"
-            Grid.ColumnSpan="3"
-            HorizontalOptions="Fill"
-            VerticalOptions="Fill"
-            CornerRadius="10"
-            Margin="0">
-        </BoxView>
+        <Grid
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+            ColumnDefinitions="130, 70*, 130"
+            RowSpacing="5"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="340"
+            Padding="0">
 
-        <Label
-            x:Name="lblPopupTitle"
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            HorizontalOptions="Fill"
-            VerticalOptions="Fill"
-            BackgroundColor="Transparent"
-            Margin="10,5,10,1"
-            Padding="0"
-            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
-            HorizontalTextAlignment="Center"
-            Text="{Translate ColorPicker_Text}">
-        </Label>
-
-        <Label
-            x:Name="lblPopupMessage"
-            Grid.Row="1"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            HorizontalOptions="Fill"
-            VerticalOptions="Fill"
-            BackgroundColor="Transparent"
-            Margin="10,1,10,1"
-            Padding="0"
-            HorizontalTextAlignment="Center"
-            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
-        </Label>
-        
-        <Border
-            Style="{StaticResource borderStyleGroup}"
-            Grid.Row="2"
-            Grid.Column="0"
-            Grid.RowSpan="4"
-            Grid.ColumnSpan="3"
-            Margin="4">
-        </Border>
-
-        <Slider
-            x:Name="sldOpacity"
-            Style="{StaticResource sliderStyleColor}"
-            Grid.Row="2"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            Margin="10,5,10,0"
-            ThumbColor="Grey"
-            MinimumTrackColor="Black"
-            ValueChanged="OnSliderColorValueChanged">
-        </Slider>
-
-        <Slider
-            x:Name="sldColorRed"
-            Style="{StaticResource sliderStyleColor}"
-            Grid.Row="3"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            Margin="10,0,10,0"
-            ThumbColor="Red"
-            MinimumTrackColor="Red"
-            ValueChanged="OnSliderColorValueChanged">
-        </Slider>
-
-        <Slider
-            x:Name="sldColorGreen"
-            Style="{StaticResource sliderStyleColor}"
-            Grid.Row="4"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            Margin="10,0,10,0"
-            ThumbColor="Green"
-            MinimumTrackColor="Green"
-            ValueChanged="OnSliderColorValueChanged">
-        </Slider>
-
-        <Slider
-            x:Name="sldColorBlue"
-            Style="{StaticResource sliderStyleColor}"
-            Grid.Row="5"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            Margin="10,0,10,0"
-            ThumbColor="Blue"
-            MinimumTrackColor="Blue"
-            ValueChanged="OnSliderColorValueChanged">
-        </Slider>
-
-        <!-- Dummy entry to set focus to when using the 'Next' key on the keyboard when the previous entry 'entHexColor' had focus.
-             This is necessary to trigger the Unfocused event of 'entHexColor' to validate the hex color value and update the sliders and color preview accordingly.
-             This dummy entry is placed behind the other entry and is not visible and not interactive. -->
-        <Entry
-            x:Name="entDummy"
-            Grid.Row="6"
-            Grid.Column="0"
-            HeightRequest="20"
-            WidthRequest="50"
-            Margin="10,0,0,0">
-        </Entry>
-
-        <Border
-            Style="{StaticResource borderStyleDefault}"
-            Grid.Row="6"
-            Grid.Column="0"
-            WidthRequest="120"
-            HorizontalOptions="Start"
-            Margin="4,0,0,0">
-
-            <Entry
-                x:Name="entHexColor"
-                ClearButtonVisibility="WhileEditing"
-                Keyboard="Text"
-                ReturnType="Next"
-                MaxLength="8"
-                TextTransform="Uppercase"
-                TextChanged="EntryHexColorTextChanged"
-                Unfocused="EntryHexColorUnfocused">
-            </Entry>
-        </Border>
-
-        <Border
-            Grid.Row="6"
-            Grid.Column="2"
-            HeightRequest="40"
-            WidthRequest="120"
-            HorizontalOptions="End"
-            Margin="0,0,4,0"
-            BackgroundColor="Transparent"
-            Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
-            StrokeThickness="1"
-            StrokeShape="RoundRectangle 5,5,5,5">
 
             <BoxView
-                x:Name="bxvColor"
-                Color="Black">
+                Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                Grid.RowSpan="8"
+                Grid.ColumnSpan="3"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                CornerRadius="10"
+                Margin="0">
             </BoxView>
-        </Border>
 
-        <ImageButton
-            x:Name="btnButtonCancel"
-            Style="{StaticResource imageButtonStyleColorPicker}"
-            Grid.Row="7"
-            Grid.Column="0"
-            HorizontalOptions="Start"
-            VerticalOptions="End"
-            WidthRequest="120"
-            Margin="4,5,0,5"
-            ToolTipProperties.Text="{Translate ButtonCancel_Text}"
-            Source="ic_action_cancel_red.png"
-            Clicked="OnButtonCancel_Clicked">
-        </ImageButton>
+            <Label
+                x:Name="lblPopupTitle"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                BackgroundColor="Transparent"
+                Margin="10,5,10,1"
+                Padding="0"
+                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                HorizontalTextAlignment="Center"
+                Text="{Translate ColorPicker_Text}">
+            </Label>
 
-        <Button
-            Style="{StaticResource buttonStyleHelp}"
-            Grid.Row="7"
-            Grid.Column="1"
-            HorizontalOptions="Center"
-            VerticalOptions="End"
-            HeightRequest="39"
-            WidthRequest="39"
-            Margin="0,0,0,5"
-            SemanticProperties.Description="{Translate ToolTipHelp_Text}"
-            ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
-            Clicked="OnSettingsHexColorHelpClicked">
-        </Button>
+            <Label
+                x:Name="lblPopupMessage"
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                BackgroundColor="Transparent"
+                Margin="10,1,10,1"
+                Padding="0"
+                HorizontalTextAlignment="Center"
+                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
+            </Label>
+        
+            <Border
+                Style="{StaticResource borderStyleGroup}"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.RowSpan="4"
+                Grid.ColumnSpan="3"
+                Margin="4">
+            </Border>
 
-        <ImageButton
-            x:Name="btnButtonClose"
-            Style="{StaticResource imageButtonStyleColorPicker}"
-            Grid.Row="7"
-            Grid.Column="2"
-            HorizontalOptions="End"
-            VerticalOptions="End"
-            WidthRequest="120"
-            Margin="0,5,4,5"
-            ToolTipProperties.Text="{Translate ButtonNext_Text}"
-            Source="ic_action_tick_green.png"
-            Clicked="OnButtonClose_Clicked">
-        </ImageButton>
+            <Slider
+                x:Name="sldOpacity"
+                Style="{StaticResource sliderStyleColor}"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="10,5,10,0"
+                ThumbColor="Grey"
+                MinimumTrackColor="Black"
+                ValueChanged="OnSliderColorValueChanged">
+            </Slider>
 
-    </Grid>
+            <Slider
+                x:Name="sldColorRed"
+                Style="{StaticResource sliderStyleColor}"
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="10,0,10,0"
+                ThumbColor="Red"
+                MinimumTrackColor="Red"
+                ValueChanged="OnSliderColorValueChanged">
+            </Slider>
+
+            <Slider
+                x:Name="sldColorGreen"
+                Style="{StaticResource sliderStyleColor}"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="10,0,10,0"
+                ThumbColor="Green"
+                MinimumTrackColor="Green"
+                ValueChanged="OnSliderColorValueChanged">
+            </Slider>
+
+            <Slider
+                x:Name="sldColorBlue"
+                Style="{StaticResource sliderStyleColor}"
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="10,0,10,0"
+                ThumbColor="Blue"
+                MinimumTrackColor="Blue"
+                ValueChanged="OnSliderColorValueChanged">
+            </Slider>
+
+            <!-- Dummy entry to set focus to when using the 'Next' key on the keyboard when the previous entry 'entHexColor' had focus.
+                 This is necessary to trigger the Unfocused event of 'entHexColor' to validate the hex color value and update the sliders and color preview accordingly.
+                 This dummy entry is placed behind the other entry and is not visible and not interactive. -->
+            <Entry
+                x:Name="entDummy"
+                Grid.Row="6"
+                Grid.Column="0"
+                HeightRequest="20"
+                WidthRequest="50"
+                Margin="10,0,0,0">
+            </Entry>
+
+            <Border
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="6"
+                Grid.Column="0"
+                WidthRequest="120"
+                HorizontalOptions="Start"
+                Margin="4,0,0,0">
+
+                <Entry
+                    x:Name="entHexColor"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    ReturnType="Next"
+                    MaxLength="8"
+                    TextTransform="Uppercase"
+                    TextChanged="EntryHexColorTextChanged"
+                    Unfocused="EntryHexColorUnfocused">
+                </Entry>
+            </Border>
+
+            <Border
+                Grid.Row="6"
+                Grid.Column="2"
+                HeightRequest="40"
+                WidthRequest="120"
+                HorizontalOptions="End"
+                Margin="0,0,4,0"
+                BackgroundColor="Transparent"
+                Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 5,5,5,5">
+
+                <BoxView
+                    x:Name="bxvColor">
+                </BoxView>
+            </Border>
+
+            <ImageButton
+                x:Name="btnButtonCancel"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="7"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                WidthRequest="120"
+                Margin="4,5,0,5"
+                ToolTipProperties.Text="{Translate ButtonCancel_Text}"
+                Source="ic_action_cancel_red.png"
+                Clicked="OnButtonCancel_Clicked">
+            </ImageButton>
+
+            <Button
+                Style="{StaticResource buttonStyleHelp}"
+                Grid.Row="7"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                HeightRequest="39"
+                WidthRequest="39"
+                Margin="0,0,0,5"
+                SemanticProperties.Description="{Translate ToolTipHelp_Text}"
+                ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
+                Clicked="OnSettingsHexColorHelpClicked">
+            </Button>
+
+            <ImageButton
+                x:Name="btnButtonClose"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="7"
+                Grid.Column="2"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                WidthRequest="120"
+                Margin="0,5,4,5"
+                ToolTipProperties.Text="{Translate ButtonNext_Text}"
+                Source="ic_action_tick_green.png"
+                Clicked="OnButtonClose_Clicked">
+            </ImageButton>
+
+        </Grid>
+    </ScrollView>
 </toolkit:Popup>
