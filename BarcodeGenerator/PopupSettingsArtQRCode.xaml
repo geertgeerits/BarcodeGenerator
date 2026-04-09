@@ -9,20 +9,21 @@
     Loaded="Popup_Loaded">
     
     <ScrollView
-        WidthRequest="{OnIdiom 340, Phone=340, Tablet=560, Desktop=560}"
+        HorizontalOptions="Center"
+        WidthRequest="340"
         Orientation="Vertical">
 
         <Grid
             RowDefinitions="Auto, Auto, Auto"
             ColumnDefinitions="120, 120*"
-            VerticalOptions="Start">
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            WidthRequest="340">
 
             <BoxView
                 Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
                 Grid.RowSpan="4"
                 Grid.ColumnSpan="2"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill"
                 CornerRadius="10"
                 Margin="0">
             </BoxView>
@@ -45,7 +46,8 @@
                 Grid.Row="1"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                HeightRequest="560"
+                MinimumHeightRequest="600"
+                Margin="0,-50,0,0"
                 VerticalOptions="Start">
             </local:ClassArtQRCodeSettings>
 
@@ -55,9 +57,9 @@
                 Grid.Row="2"
                 Grid.Column="0"
                 HorizontalOptions="Start"
-                VerticalOptions="End"
+                VerticalOptions="Start"
                 WidthRequest="120"
-                Margin="4,5,0,5"
+                Margin="4,-40,0,15"
                 ToolTipProperties.Text="{Translate ButtonCancel_Text}"
                 Source="ic_action_cancel_red.png"
                 Clicked="OnButtonCancel_Clicked">
@@ -69,9 +71,9 @@
                 Grid.Row="2"
                 Grid.Column="1"
                 HorizontalOptions="End"
-                VerticalOptions="End"
+                VerticalOptions="Start"
                 WidthRequest="120"
-                Margin="0,5,4,5"
+                Margin="0,-40,4,15"
                 ToolTipProperties.Text="{Translate ButtonNext_Text}"
                 Source="ic_action_tick_green.png"
                 Clicked="OnButtonClose_Clicked">
