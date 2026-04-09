@@ -25,8 +25,8 @@ namespace BarcodeGenerator
             swtBackgroundImage.IsToggled = ClassBarcodes.bQRCodeBackgroundImage;
 
             // Set the current color in the box view
-            bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
-            bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
+            bxvColorFgArtQRCode.Color = Color.FromArgb(ClassBarcodes.cCodeColorFgArtQRCode);
+            bxvColorBgArtQRCode.Color = Color.FromArgb(ClassBarcodes.cCodeColorBgArtQRCode);
             bxvGradientColor1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
             bxvGradientColor2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
             bxvGradientColor3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
@@ -80,13 +80,13 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonColorForgroundClicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = Globals.cCodeColorFg;
-            await OpenPopupColorPickerAsync(CodeLang.ForegroundColor_Text);
+            Globals.cCodeColor = ClassBarcodes.cCodeColorFgArtQRCode;
+            await OpenPopupColorPickerAsync(CodeLang.ForegroundColorArtQRCode_Text);
 
             if (!Globals.bPopupCanceled)
             {
-                Globals.cCodeColorFg = Globals.cCodeColor;
-                bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
+                ClassBarcodes.cCodeColorFgArtQRCode = Globals.cCodeColor;
+                bxvColorFgArtQRCode.Color = Color.FromArgb(ClassBarcodes.cCodeColorFgArtQRCode);
             }
         }
 
@@ -97,13 +97,13 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonColorBackgroundArtQRCodeClicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = Globals.cCodeColorBgArtQRCode;
+            Globals.cCodeColor = ClassBarcodes.cCodeColorBgArtQRCode;
             await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
 
             if (!Globals.bPopupCanceled)
             {
-                Globals.cCodeColorBgArtQRCode = Globals.cCodeColor;
-                bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
+                ClassBarcodes.cCodeColorBgArtQRCode = Globals.cCodeColor;
+                bxvColorBgArtQRCode.Color = Color.FromArgb(ClassBarcodes.cCodeColorBgArtQRCode);
             }
         }
 

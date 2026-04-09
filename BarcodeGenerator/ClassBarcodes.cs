@@ -92,6 +92,8 @@
         public static int nQRCodeSizePixels;                            // Size of the QR code in pixels (if the size is fixed)
         public static float nQRCodeImageSizePercent;                    // Size of the QR code image as a percentage
         public static string cQRCodeModuleShape = string.Empty;         // Shape of the QR code modules
+        public static string cCodeColorFgArtQRCode = string.Empty;      // Foreground color of the art image
+        public static string cCodeColorBgArtQRCode = string.Empty;      // Background color of the art image
         public static bool bQRCodeGradientColor;                        // Flag to indicate if the QR code has a gradient
         public static string cQRCodeGradientColor1 = string.Empty;      // First color of the QR code gradient
         public static string cQRCodeGradientColor2 = string.Empty;      // Second color of the QR code gradient

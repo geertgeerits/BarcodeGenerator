@@ -86,7 +86,7 @@ namespace BarcodeGenerator
             // Set the current color in the box view
             bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
             bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
-            bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
+            bxvColorBgArtQRCode.Color = Color.FromArgb(ClassBarcodes.cCodeColorBgArtQRCode);
             bxvGradientColor1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
             bxvGradientColor2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
             bxvGradientColor3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
@@ -357,13 +357,13 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonColorBackgroundArtQRCodeClicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = Globals.cCodeColorBgArtQRCode;
+            Globals.cCodeColor = ClassBarcodes.cCodeColorBgArtQRCode;
             await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
 
             if (!Globals.bPopupCanceled)
             {
-                Globals.cCodeColorBgArtQRCode = Globals.cCodeColor;
-                bxvColorBgArtQRCode.Color = Color.FromArgb(Globals.cCodeColorBgArtQRCode);
+                ClassBarcodes.cCodeColorBgArtQRCode = Globals.cCodeColor;
+                bxvColorBgArtQRCode.Color = Color.FromArgb(ClassBarcodes.cCodeColorBgArtQRCode);
             }
         }
 
@@ -669,7 +669,8 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", Globals.cCodeColorBg);
-            Preferences.Default.Set("SettingCodeColorBgArtQRCode", Globals.cCodeColorBgArtQRCode);
+            Preferences.Default.Set("SettingCodeColorFgArtQRCode", ClassBarcodes.cCodeColorFgArtQRCode);
+            Preferences.Default.Set("SettingCodeColorBgArtQRCode", ClassBarcodes.cCodeColorBgArtQRCode);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
             Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
 
@@ -715,6 +716,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingCodeColorFg");
                 Preferences.Default.Remove("SettingCodeColorBg");
+                Preferences.Default.Remove("SettingCodeColorFgArtQRCode");
                 Preferences.Default.Remove("SettingCodeColorBgArtQRCode");
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");

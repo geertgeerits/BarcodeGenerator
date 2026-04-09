@@ -1016,6 +1016,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Foreground color artistic QR code:.
+        /// </summary>
+        internal static string ForegroundColorArtQRCode_Text {
+            get {
+                return ResourceManager.GetString("ForegroundColorArtQRCode_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Foreground opacity:.
         /// </summary>
         internal static string ForegroundOpacity_Text {

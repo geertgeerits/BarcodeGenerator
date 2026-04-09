@@ -68,6 +68,8 @@ namespace BarcodeGenerator
             ClassBarcodes.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
             ClassBarcodes.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
             ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Rounded");  // Square, Rounded, Circle
+            ClassBarcodes.cCodeColorFgArtQRCode = Preferences.Default.Get("SettingCodeColorFgArtQRCode", "FF000000");
+            ClassBarcodes.cCodeColorBgArtQRCode = Preferences.Default.Get("SettingCodeColorBgArtQRCode", "00FFFFFF");
             ClassBarcodes.bQRCodeGradientColor = Preferences.Default.Get("SettingQRCodeGradientColor", true);
             ClassBarcodes.cQRCodeGradientColor1 = Preferences.Default.Get("SettingQRCodeGradientColor1", "FFFF0000");  // FFFF0000 Red - FF00FFFF Cyan
             ClassBarcodes.cQRCodeGradientColor2 = Preferences.Default.Get("SettingQRCodeGradientColor2", "FF00FF00");  // FF00FF00 Green - FFFF00FF Magenta
@@ -79,7 +81,6 @@ namespace BarcodeGenerator
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
-            Globals.cCodeColorBgArtQRCode = Preferences.Default.Get("SettingCodeColorBgArtQRCode", "00FFFFFF");
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);

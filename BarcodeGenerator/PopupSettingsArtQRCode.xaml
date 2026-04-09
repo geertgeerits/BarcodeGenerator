@@ -89,7 +89,7 @@
                     StrokeShape="RoundRectangle 5,5,5,5">
 
                     <BoxView
-                        x:Name="bxvColorFg">
+                        x:Name="bxvColorFgArtQRCode">
                     </BoxView>
                 </Border>
             </Grid>

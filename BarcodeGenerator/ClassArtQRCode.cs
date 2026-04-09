@@ -141,8 +141,8 @@ namespace BarcodeGenerator
                 qrData = new QRCodeImageBuilder(text)
                     .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(ECCLevel.H)
-                    .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
-                                backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
+                    .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
+                                backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
                     .WithGradient(gradient)
                     .WithIcon(icon);
@@ -153,8 +153,8 @@ namespace BarcodeGenerator
                     .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithModuleShape(RoundedRectangleModuleShape.Default)
                     .WithErrorCorrection(ECCLevel.H)
-                    .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
-                                backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
+                    .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
+                                backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
                     .WithFinderPatternShape(RoundedRectangleFinderPatternShape.Default)
                     .WithGradient(gradient)
@@ -166,8 +166,8 @@ namespace BarcodeGenerator
                     .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithModuleShape(CircleModuleShape.Default)
                     .WithErrorCorrection(ECCLevel.H)
-                    .WithColors(codeColor: SKColor.Parse(Globals.cCodeColorFg),
-                                backgroundColor: SKColor.Parse(Globals.cCodeColorBgArtQRCode),
+                    .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
+                                backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
                     .WithFinderPatternShape(CircleFinderPatternShape.Default)
                     .WithGradient(gradient)
