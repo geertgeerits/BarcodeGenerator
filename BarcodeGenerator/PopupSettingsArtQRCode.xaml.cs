@@ -8,13 +8,13 @@ namespace BarcodeGenerator
 
         public PopupSettingsArtQRCode(string cMessage = "")
         {
+            // Name of the current page
+            Globals.cCurrentPage = "PopupSettingsArtQRCode";
+
             InitializeComponent();
 
             // Set the message text
             lblPopupTitle.Text = cMessage;
-
-            // Name of the current page
-            Globals.cCurrentPage = "PopupSettingsArtQRCode";
         }
 
         /// <summary>

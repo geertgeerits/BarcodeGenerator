@@ -13,6 +13,9 @@ namespace BarcodeGenerator
 
         public PageSettings()
         {
+            // Name of the current page
+            Globals.cCurrentPage = "PageSettings";
+
             try
             {
                 InitializeComponent();
@@ -35,8 +38,6 @@ namespace BarcodeGenerator
             // Happens most with the Microsoft SwiftKey keyboard, the Samsung and Google keyboards have it less or not at all.
             //entHexColorBg.ReturnType = ReturnType.Next;
 #endif
-            // Name of the current page
-            Globals.cCurrentPage = "PageSettings";
 
             // Put text in the chosen language in the controls and variables
             SetLanguage();
