@@ -21,6 +21,7 @@ namespace BarcodeGenerator
         public static string cFileBarcodePng = string.Empty;                // Path and file name of the saved barcode image
         public static string cFileBarcodeSvg = string.Empty;                // Path and file name of the saved barcode image
         public static bool bLicense;                                        // Flag to indicate if the user has accepted the license agreement
+        public static string cCurrentPage = string.Empty;                   // Name of the current page
 
         // Global methods
 

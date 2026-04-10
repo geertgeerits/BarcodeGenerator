@@ -12,6 +12,9 @@ namespace BarcodeGenerator
 
             // Set the message text
             lblPopupTitle.Text = cMessage;
+
+            // Name of the current page
+            Globals.cCurrentPage = "PopupSettingsArtQRCode";
         }
 
         /// <summary>

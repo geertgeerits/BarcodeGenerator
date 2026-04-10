@@ -5,7 +5,7 @@
     x:Class="BarcodeGenerator.ClassArtQRCodeSettings">
 
     <Grid
-        Style="{StaticResource gridStyleSettingsArtQRCode}"
+        x:Name="grdSettingsArtQRCode"
         RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
         RowSpacing="5"
         HorizontalOptions="Center"

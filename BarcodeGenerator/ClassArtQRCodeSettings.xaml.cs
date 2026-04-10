@@ -10,15 +10,21 @@ namespace BarcodeGenerator
     	{
     		InitializeComponent();
 
-            // Select the current QR Code module shape in the radio buttons
+            // Get the current display information
+            DisplayInfo displayInfo = DeviceDisplay.MainDisplayInfo;
+
+            // Adjust the column widths based on the current orientation
+            UpdateGridColumns(displayInfo.Orientation);
+
+            // Set the initial states of the radio buttons based on the current QR Code module shape
             rbtQRCodeModuleShapeSquare.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Square";
             rbtQRCodeModuleShapeRounded.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Rounded";
             rbtQRCodeModuleShapeCircle.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Circle";
 
-            // Set the initial states of the switches
-            swtQRCodeGradient.IsToggled = ClassBarcodes.bQRCodeGradientColor;
+            // Set the initial states of the switches based on the current settings
             swtForegroundImage.IsToggled = ClassBarcodes.bQRCodeForegroundImage;
             swtBackgroundImage.IsToggled = ClassBarcodes.bQRCodeBackgroundImage;
+            swtQRCodeGradient.IsToggled = ClassBarcodes.bQRCodeGradientColor;
 
             // Set the current color in the box view
             bxvColorFgArtQRCode.Color = Color.FromArgb(ClassBarcodes.cCodeColorFgArtQRCode);
@@ -57,6 +63,53 @@ namespace BarcodeGenerator
             }
 
             Globals.bPopupCanceled = false;
+
+            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
+            this.Unloaded += OnUnloaded;
+        }
+
+        /// <summary>
+        /// Handles the event that occurs when the main display's information changes, such as orientation updates.
+        /// </summary>
+        /// <remarks>This method ensures that updates to the grid columns in response to display changes
+        /// are performed on the main UI thread.</remarks>
+        /// <param name="sender">The source of the event. This is typically the display information provider.</param>
+        /// <param name="e">An object that contains the event data, including the updated display information.</param>
+        private void OnMainDisplayInfoChanged(object? sender, DisplayInfoChangedEventArgs e)
+        {
+            MainThread.BeginInvokeOnMainThread(() => UpdateGridColumns(e.DisplayInfo.Orientation));
+        }
+
+        private void UpdateGridColumns(DisplayOrientation orientation)
+        {
+            grdSettingsArtQRCode.ColumnDefinitions.Clear();
+
+            if (Globals.cCurrentPage == "PageSettings")
+            {
+                if (orientation == DisplayOrientation.Portrait)
+                {
+                    grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                    grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                }
+                else // Landscape
+                {
+                    grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                    grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                }
+            }
+            else
+            {
+                if (orientation == DisplayOrientation.Portrait)
+                {
+                    grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                    grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                }
+                else // Landscape
+                {
+                    grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                    grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                }
+            }
         }
 
         /// <summary>
@@ -281,6 +334,17 @@ namespace BarcodeGenerator
             {
                 _ = await currentPage.ShowPopupAsync(new PopupColorPicker(cMessage));
             }
+        }
+
+        /// <summary>
+        /// Unsubscribe from events when the popup is unloaded to prevent memory leaks and unintended behavior when the popup is closed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnUnloaded(object? sender, EventArgs e)
+        {
+            DeviceDisplay.MainDisplayInfoChanged -= OnMainDisplayInfoChanged;
+            this.Unloaded -= OnUnloaded;
         }
     }
 }
