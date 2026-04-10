@@ -783,4 +783,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
   <data name="ImageBackground_Text" xml:space="preserve">
     <value>Bakgrunnsbilde:</value>
   </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Kunstnerisk QR-kode for forgrunnsfarge:</value>
+  </data>
 </root>

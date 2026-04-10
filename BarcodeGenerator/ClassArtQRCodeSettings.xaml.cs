@@ -83,6 +83,15 @@ namespace BarcodeGenerator
             MainThread.BeginInvokeOnMainThread(() => UpdateGridColumns(e.DisplayInfo.Orientation));
         }
 
+        /// <summary>
+        /// Updates the column definitions of the settings grid based on the specified display orientation and current
+        /// device type.
+        /// </summary>
+        /// <remarks>This method adjusts the layout of the settings grid to provide an optimal user
+        /// experience for different device types (phone, tablet, desktop) and display orientations (portrait or
+        /// landscape). The changes are applied only to the relevant settings page or popup, depending on the current
+        /// context.</remarks>
+        /// <param name="orientation">The orientation of the display, which determines how the grid columns are configured.</param>
         private void UpdateGridColumns(DisplayOrientation orientation)
         {
             grdSettingsArtQRCode.ColumnDefinitions.Clear();
@@ -107,8 +116,8 @@ namespace BarcodeGenerator
                 {
                     if (orientation == DisplayOrientation.Portrait)
                     {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
                     }
                     else // Landscape
                     {
@@ -120,8 +129,8 @@ namespace BarcodeGenerator
                 {
                     if (orientation == DisplayOrientation.Portrait)
                     {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
                     }
                     else // Landscape
                     {
@@ -173,16 +182,6 @@ namespace BarcodeGenerator
                     }
                 }
             }
-        }
-
-        /// <summary>
-        /// Set focus to the close button when the popup is loaded, so that pressing Enter will close it immediately.
-        /// </summary>
-        /// <param name="sender">The source of the event, typically the popup that was loaded.</param>
-        /// <param name="e">An EventArgs object that contains the event data.</param>
-        private void Popup_Loaded(object sender, EventArgs e)
-        {
-            //btnButtonClose.Focus();
         }
 
         /// <summary>

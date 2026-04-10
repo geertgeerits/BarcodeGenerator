@@ -783,4 +783,7 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="ImageBackground_Text" xml:space="preserve">
     <value>Háttérkép:</value>
   </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Előtérszín művészi QR-kód:</value>
+  </data>
 </root>

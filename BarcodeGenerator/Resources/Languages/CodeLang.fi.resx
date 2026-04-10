@@ -783,4 +783,7 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="ImageBackground_Text" xml:space="preserve">
     <value>Taustakuva:</value>
   </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Etualan väri taiteellinen QR-koodi:</value>
+  </data>
 </root>

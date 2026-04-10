@@ -783,4 +783,7 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="ImageBackground_Text" xml:space="preserve">
     <value>Imagine de fundal:</value>
   </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Cod QR artistic în culoarea prim-planului:</value>
+  </data>
 </root>

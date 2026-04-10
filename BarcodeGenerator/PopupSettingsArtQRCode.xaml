@@ -4,7 +4,7 @@
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:BarcodeGenerator"
     x:Class="BarcodeGenerator.PopupSettingsArtQRCode"
-    BackgroundColor="DimGray"
+    BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
     CanBeDismissedByTappingOutsideOfPopup="False"
     Loaded="Popup_Loaded">
     
@@ -17,17 +17,8 @@
             RowDefinitions="Auto, Auto, Auto"
             ColumnDefinitions="120, 120*"
             HorizontalOptions="Center"
-            VerticalOptions="Start"
-            WidthRequest="340">
+            VerticalOptions="Start">
 
-            <BoxView
-                Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
-                Grid.RowSpan="4"
-                Grid.ColumnSpan="2"
-                CornerRadius="10"
-                Margin="0">
-            </BoxView>
-            
             <Label
                 x:Name="lblPopupTitle"
                 Grid.Row="0"

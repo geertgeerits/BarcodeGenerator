@@ -783,4 +783,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   <data name="ImageBackground_Text" xml:space="preserve">
     <value>Baggrundsbillede:</value>
   </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Kunstnerisk QR-kode for forgrundsfarve:</value>
+  </data>
 </root>

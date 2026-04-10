@@ -783,4 +783,7 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="ImageBackground_Text" xml:space="preserve">
     <value>Obrázek na pozadí:</value>
   </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Umělecký QR kód pro barvu popředí:</value>
+  </data>
 </root>

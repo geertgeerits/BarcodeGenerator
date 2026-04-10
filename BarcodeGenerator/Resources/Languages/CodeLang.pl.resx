@@ -783,4 +783,7 @@ Microsoft, Microsoft Store, logo Microsoft Store i Windows są znakami towarowym
   <data name="ImageBackground_Text" xml:space="preserve">
     <value>Obraz w tle:</value>
   </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Artystyczny kod QR w kolorze pierwszego planu:</value>
+  </data>
 </root>
