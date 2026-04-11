@@ -241,7 +241,8 @@
                     Grid.Row="8"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Padding="{OnPlatform Default='10,10,0,0', WinUI='16,10,0,0'}"
+                    HorizontalOptions="Center"
+                    Padding="0,10,0,0"
                     TextDecorations="Underline"
                     Text="{Translate Barcode_ART_QR_CODE_Text}">
                 </Label>
