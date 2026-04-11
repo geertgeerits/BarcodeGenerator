@@ -94,93 +94,101 @@ namespace BarcodeGenerator
         /// <param name="orientation">The orientation of the display, which determines how the grid columns are configured.</param>
         private void UpdateGridColumns(DisplayOrientation orientation)
         {
+            // Clear existing column definitions to avoid conflicts and ensure the new layout is applied correctly.
             grdSettingsArtQRCode.ColumnDefinitions.Clear();
 
             // cCurrentPage = PageSettings
-            if (Globals.cCurrentPage == "PageSettings")
+            switch (Globals.cCurrentPage)
             {
-                if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-                {
-                    if (orientation == DisplayOrientation.Portrait)
+                case "PageSettings":
+                    if (DeviceInfo.Idiom == DeviceIdiom.Phone)
                     {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                break;
+                            default:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                break;
+                        }
                     }
-                    else // Landscape
+                    else if (DeviceInfo.Idiom == DeviceIdiom.Tablet)  // For tablets
                     {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
+                                break;
+                            default:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(390) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(430) });
+                                break;
+                        }
                     }
-                }
-                else if (DeviceInfo.Idiom == DeviceIdiom.Tablet)  // For tablets
-                {
-                    if (orientation == DisplayOrientation.Portrait)
+                    else  // Desktop
                     {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
+                                break;
+                            default:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(390) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(430) });
+                                break;
+                        }
                     }
-                    else // Landscape
+                    break;
+                // cCurrentPage = PopupSettingsArtQRCode
+                default:
+                    if (DeviceInfo.Idiom == DeviceIdiom.Phone)
                     {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(390) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(430) });
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                break;
+                            default:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                break;
+                        }
                     }
-                }
-                else  // Desktop
-                {
-                    if (orientation == DisplayOrientation.Portrait)
+                    else if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
                     {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                break;
+                            default:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                break;
+                        }
                     }
-                    else // Landscape
+                    else  // Desktop
                     {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(390) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(430) });
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                break;
+                            default:
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                break;
+                        }
                     }
-                }
-            }
-            // cCurrentPage = PopupSettingsArtQRCode
-            else
-            {
-                if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-                {
-                    if (orientation == DisplayOrientation.Portrait)
-                    {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
-                    }
-                    else // Landscape
-                    {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
-                    }
-                }
-                else if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
-                {
-                    if (orientation == DisplayOrientation.Portrait)
-                    {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
-                    }
-                    else // Landscape
-                    {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
-                    }
-                }
-                else  // Desktop
-                {
-                    if (orientation == DisplayOrientation.Portrait)
-                    {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
-                    }
-                    else // Landscape
-                    {
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                        grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
-                    }
-                }
+                    break;
             }
         }
 

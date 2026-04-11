@@ -492,13 +492,13 @@ Alvast bedankt.</value>
     <value>Er worden geen persoonlijke en andere gegevens opgeslagen of doorgegeven aan mezelf en anderen.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Afbeeldingsgrootte QR-code: {0}%</value>
+    <value>Formaat afbeelding QR-code: {0}%</value>
   </data>
   <data name="QRCodeImageTypeError_Text" xml:space="preserve">
     <value>Ongeldig bestandstype geselecteerd. Selecteer een JPG- of PNG-afbeelding.</value>
   </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
-    <value>Aanbevolen afbeeldingsgrootte</value>
+    <value>Aanbevolen formaat afbeelding</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>De toepassing wordt opnieuw gestart.</value>
@@ -778,10 +778,10 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
     <value>Modulevorm:</value>
   </data>
   <data name="ImageForeground_Text" xml:space="preserve">
-    <value>Voorgrondafbeelding:</value>
+    <value>Afbeelding voorgrond:</value>
   </data>
   <data name="ImageBackground_Text" xml:space="preserve">
-    <value>Achtergrondafbeelding:</value>
+    <value>Afbeelding achtergrond:</value>
   </data>
   <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
     <value>Kleur voorgrond artistieke QR-code:</value>
