@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:BarcodeGenerator"
+    x:DataType="local:LocalizationResourceManager"
     x:Class="BarcodeGenerator.PopupSettingsArtQRCode"
     BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
     CanBeDismissedByTappingOutsideOfPopup="False"
@@ -37,8 +38,6 @@
                 Grid.Row="1"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                MinimumHeightRequest="600"
-                Margin="0,-50,0,0"
                 VerticalOptions="Start">
             </local:ClassArtQRCodeSettings>
 
@@ -50,7 +49,7 @@
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
                 WidthRequest="120"
-                Margin="4,-40,0,15"
+                Margin="0,10,0,10"
                 ToolTipProperties.Text="{Translate ButtonCancel_Text}"
                 Source="ic_action_cancel_red.png"
                 Clicked="OnButtonCancel_Clicked">
@@ -64,7 +63,7 @@
                 HorizontalOptions="End"
                 VerticalOptions="Start"
                 WidthRequest="120"
-                Margin="0,-40,4,15"
+                Margin="0,10,0,0"
                 ToolTipProperties.Text="{Translate ButtonNext_Text}"
                 Source="ic_action_tick_green.png"
                 Clicked="OnButtonClose_Clicked">

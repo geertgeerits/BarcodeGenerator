@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:BarcodeGenerator"
+    x:DataType="local:LocalizationResourceManager"
     x:Class="BarcodeGenerator.PageSettings"
     SafeAreaEdges="All">
 
@@ -19,7 +20,7 @@
         RowDefinitions="Auto, *, Auto"
         HorizontalOptions="Center"
         RowSpacing="1"
-        Margin="4"
+        Margin="0,4,0,0"
         SafeAreaEdges="Container,SoftInput">
 
         <ScrollView
@@ -240,7 +241,7 @@
                     Grid.Row="8"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Padding="0,15,0,0"
+                    Padding="15,10,0,0"
                     TextDecorations="Underline"
                     Text="{Translate Barcode_ART_QR_CODE_Text}">
                 </Label>
@@ -249,8 +250,6 @@
                     Grid.Row="9"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    MinimumHeightRequest="600"
-                    Margin="0,-50,0,0"
                     VerticalOptions="Start">
                 </local:ClassArtQRCodeSettings>
 
@@ -263,7 +262,7 @@
                     Grid.Row="10"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
-                    Margin="{OnPlatform Default='0,-40,0,0', iOS='0,-34,0,0'}"
+                    Margin="{OnPlatform Default='0,5,0,0', iOS='0,5,0,0'}"
                     Text="{Translate QRCodeSizeVariable_Text}">
                 </Label>
 
@@ -272,7 +271,7 @@
                     Grid.Row="10"
                     Grid.Column="2"
                     HorizontalOptions="Start"
-                    Margin="{OnPlatform Default='0,-40,0,0', iOS='0,-34,0,0'}"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Toggled="SwtQRCodeSizeVariable_Toggled"  >
                 </Switch>
 
