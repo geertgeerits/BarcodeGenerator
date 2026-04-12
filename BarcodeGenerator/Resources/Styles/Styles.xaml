@@ -344,6 +344,76 @@
         <Setter Property="RowSpacing" Value="2" />
     </Style>
 
+    <Style x:Key="gridStylePopup" TargetType="Grid">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="{OnIdiom 120, Phone=80, Tablet=120, Desktop=120}" />
+                                        <ColumnDefinition Width="{OnIdiom 120*, Phone=80, Tablet=120*, Desktop=120*}" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="WidthRequest" Value="340" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="{OnIdiom 220, Phone=250, Tablet=220, Desktop=220}" />
+                                        <ColumnDefinition Width="{OnIdiom 220*, Phone=280*, Tablet=220*, Desktop=220*}" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="WidthRequest" Value="520" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="ColumnSpacing" Value="0" />
+        <Setter Property="RowSpacing" Value="0" />
+    </Style>
+
+    <Style x:Key="scrollviewStylePopup" TargetType="ScrollView">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="WidthRequest" Value="340" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="WidthRequest" Value="520" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
+
     <Style x:Key="borderStyleDefault" TargetType="Border">
         <Setter Property="HorizontalOptions" Value="Fill" />
         <Setter Property="VerticalOptions" Value="Center" />

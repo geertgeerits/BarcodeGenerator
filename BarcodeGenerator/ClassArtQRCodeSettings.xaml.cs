@@ -155,8 +155,8 @@ namespace BarcodeGenerator
                                 grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
                                 break;
                             default:
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
                                 break;
                         }
                     }
@@ -183,8 +183,8 @@ namespace BarcodeGenerator
                                 grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
                                 break;
                             default:
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(220) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(220) });
                                 break;
                         }
                     }

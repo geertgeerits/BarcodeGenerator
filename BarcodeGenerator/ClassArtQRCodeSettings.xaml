@@ -4,8 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:barcodegenerator="clr-namespace:BarcodeGenerator"
     x:DataType="barcodegenerator:HyperlinkSpan"
-    x:Class="BarcodeGenerator.ClassArtQRCodeSettings"
-    >
+    x:Class="BarcodeGenerator.ClassArtQRCodeSettings">
 
     <Grid
         x:Name="grdSettingsArtQRCode"
