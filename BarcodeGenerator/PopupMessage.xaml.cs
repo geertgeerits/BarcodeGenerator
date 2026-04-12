@@ -11,6 +11,9 @@ namespace BarcodeGenerator
         {
             InitializeComponent();
 
+            // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
+            Globals.bPopupOpened = true;
+
             // Set the title and message text
             lblPopupTitle.Text = cTitle;
             lblPopupMessage.Text = cMessage;

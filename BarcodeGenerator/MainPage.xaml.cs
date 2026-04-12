@@ -795,7 +795,11 @@ namespace BarcodeGenerator
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
             // Set the selected generator format in the picker
-            pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
+            if (!Globals.bPopupOpened)
+            {
+                pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
+                Globals.bPopupOpened = false;
+            }
         }
 
         /// <summary>

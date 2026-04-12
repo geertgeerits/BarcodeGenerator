@@ -6,17 +6,18 @@ namespace BarcodeGenerator
     internal static class Globals
     {
         // Global variables
-        public static string cTheme = string.Empty;                         // Theme: Light, Dark or System
-        public static string cLanguage = string.Empty;                      // Language for the UI (culture name, e.g. "en-US")
-        public static bool bLanguageChanged;                                // Flag to indicate if the language has been changed
-        public static string cLanguageSpeech = string.Empty;                // Language for text-to-speech
-        public static bool bTextToSpeechAvailable;                          // Flag to indicate if text-to-speech is available
-        public static bool bTextToSpeechIsBusy;                             // Flag to indicate if text-to-speech is currently busy
+        public static string cTheme = string.Empty;                 // Theme: Light, Dark or System
+        public static string cLanguage = string.Empty;              // Language for the UI (culture name, e.g. "en-US")
+        public static bool bLanguageChanged;                        // Flag to indicate if the language has been changed
+        public static string cLanguageSpeech = string.Empty;        // Language for text-to-speech
+        public static bool bTextToSpeechAvailable;                  // Flag to indicate if text-to-speech is available
+        public static bool bTextToSpeechIsBusy;                     // Flag to indicate if text-to-speech is currently busy
         public static readonly string cImageTextToSpeech = "speaker_64p_blue_green.png";  // Image for text-to-speech button
         public static readonly string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";  // Image for text-to-speech cancel button
-        public static bool bPopupCanceled;                                  // Popup message was canceled by the user
-        public static bool bLicense;                                        // Flag to indicate if the user has accepted the license agreement
-        public static string cCurrentPage = string.Empty;                   // Name of the current page
+        public static bool bPopupOpened;                            // Popup has been opened, used to prevent the OnAppearing event to change the pckFormatCodeGenerator index on the MainPage
+        public static bool bPopupCanceled;                          // Popup was canceled by the user
+        public static bool bLicense;                                // Flag to indicate if the user has accepted the license agreement
+        public static string cCurrentPage = string.Empty;           // Name of the current page
 
         // Global methods
 
