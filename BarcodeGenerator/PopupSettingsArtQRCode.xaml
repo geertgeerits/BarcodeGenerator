@@ -10,9 +10,7 @@
     Loaded="Popup_Loaded">
     
     <ScrollView
-        Style="{StaticResource scrollviewStylePopup}"
-        HorizontalOptions="Center"
-        Orientation="Vertical">
+        Style="{StaticResource scrollviewStylePopup}">
 
         <Grid
             RowDefinitions="Auto, Auto, Auto"

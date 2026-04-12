@@ -97,9 +97,10 @@ namespace BarcodeGenerator
             // Clear existing column definitions to avoid conflicts and ensure the new layout is applied correctly.
             grdSettingsArtQRCode.ColumnDefinitions.Clear();
 
-            // cCurrentPage = PageSettings
+            // Set column widths based on the current page, device type, and orientation to optimize the layout for user interaction
             switch (Globals.cCurrentPage)
             {
+                // cCurrentPage = PageSettings
                 case "PageSettings":
                     if (DeviceInfo.Idiom == DeviceIdiom.Phone)
                     {
@@ -145,6 +146,7 @@ namespace BarcodeGenerator
                     }
                     break;
                 // cCurrentPage = PopupSettingsArtQRCode
+                // The Style 'scrollviewStylePopup' is applied to the scroll view in the popup, so these column widths will be used when the popup is open
                 default:
                     if (DeviceInfo.Idiom == DeviceIdiom.Phone)
                     {
@@ -156,7 +158,7 @@ namespace BarcodeGenerator
                                 break;
                             default:
                                 grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
                                 break;
                         }
                     }
@@ -165,12 +167,12 @@ namespace BarcodeGenerator
                         switch (orientation)
                         {
                             case DisplayOrientation.Portrait:
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
                                 break;
                             default:
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
                                 break;
                         }
                     }
@@ -179,12 +181,12 @@ namespace BarcodeGenerator
                         switch (orientation)
                         {
                             case DisplayOrientation.Portrait:
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
                                 break;
                             default:
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(220) });
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(220) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
                                 break;
                         }
                     }
