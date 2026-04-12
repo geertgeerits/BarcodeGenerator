@@ -314,7 +314,7 @@ namespace BarcodeGenerator
             // Save PNG to file
             try
             {
-                await File.WriteAllBytesAsync(Globals.cFileBarcodePng, pngBytes);
+                await File.WriteAllBytesAsync(ClassBarcodes.cFileBarcodePng, pngBytes);
             }
             catch (Exception ex)
             {

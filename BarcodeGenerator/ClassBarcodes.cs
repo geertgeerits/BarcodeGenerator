@@ -92,6 +92,9 @@
         public static int nQRCodeSizePixels;                            // Size of the QR code in pixels (if the size is fixed)
         public static float nQRCodeImageSizePercent;                    // Size of the QR code image as a percentage
         public static string cQRCodeModuleShape = string.Empty;         // Shape of the QR code modules
+        public static string cCodeColor = string.Empty;                 // Color of the barcode (text and bars) for the popup color picker
+        public static string cCodeColorFg = string.Empty;               // Foreground color of the barcode (text and bars)
+        public static string cCodeColorBg = string.Empty;               // Background color of the barcode
         public static string cCodeColorFgArtQRCode = string.Empty;      // Foreground color of the art image
         public static string cCodeColorBgArtQRCode = string.Empty;      // Background color of the art image
         public static bool bQRCodeGradientColor;                        // Flag to indicate if the QR code has a gradient
@@ -102,6 +105,8 @@
         public static bool bQRCodeBackgroundImage;                      // Flag to indicate if the QR code has a background image
         public static bool bQRCodeForegroundImage;                      // Flag to indicate if the QR code has a foreground image
         public static bool bBarcodeWithCaption;                         // Control whether the barcode image should include a caption
+        public static string cFileBarcodePng = string.Empty;            // Path and file name of the saved barcode image
+        public static string cFileBarcodeSvg = string.Empty;            // Path and file name of the saved barcode image
 
         // Creating a public dictionary
         public static Dictionary<string, string> barcodeSearch = [];

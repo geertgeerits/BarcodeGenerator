@@ -77,8 +77,8 @@ namespace BarcodeGenerator
             ClassBarcodes.InitializeBarcodeSearchFormats();
 
             // Set the current color in the box view
-            bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
-            bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
+            bxvColorFg.Color = Color.FromArgb(ClassBarcodes.cCodeColorFg);
+            bxvColorBg.Color = Color.FromArgb(ClassBarcodes.cCodeColorBg);
 
             // Set the QR code image size to update the switch and entry
             swtQRCodeSizeVariable.IsToggled = ClassBarcodes.bQRCodeSizeVariable;
@@ -283,13 +283,13 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonColorForgroundClicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = Globals.cCodeColorFg;
+            ClassBarcodes.cCodeColor = ClassBarcodes.cCodeColorFg;
             await OpenPopupColorPickerAsync(CodeLang.ForegroundColor_Text);
 
             if (!Globals.bPopupCanceled)
             {
-                Globals.cCodeColorFg = Globals.cCodeColor;
-                bxvColorFg.Color = Color.FromArgb(Globals.cCodeColorFg);
+                ClassBarcodes.cCodeColorFg = ClassBarcodes.cCodeColor;
+                bxvColorFg.Color = Color.FromArgb(ClassBarcodes.cCodeColorFg);
             }
         }
 
@@ -300,13 +300,13 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonColorBackgroundClicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = Globals.cCodeColorBg;
+            ClassBarcodes.cCodeColor = ClassBarcodes.cCodeColorBg;
             await OpenPopupColorPickerAsync(CodeLang.BackgroundColor_Text);
 
             if (!Globals.bPopupCanceled)
             {
-                Globals.cCodeColorBg = Globals.cCodeColor;
-                bxvColorBg.Color = Color.FromArgb(Globals.cCodeColorBg);
+                ClassBarcodes.cCodeColorBg = ClassBarcodes.cCodeColor;
+                bxvColorBg.Color = Color.FromArgb(ClassBarcodes.cCodeColorBg);
             }
         }
 
@@ -461,6 +461,10 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeSizePixels", ClassBarcodes.nQRCodeSizePixels);
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassBarcodes.nQRCodeImageSizePercent);
             Preferences.Default.Set("SettingQRCodeModuleShape", ClassBarcodes.cQRCodeModuleShape);
+            Preferences.Default.Set("SettingCodeColorFg", ClassBarcodes.cCodeColorFg);
+            Preferences.Default.Set("SettingCodeColorBg", ClassBarcodes.cCodeColorBg);
+            Preferences.Default.Set("SettingCodeColorFgArtQRCode", ClassBarcodes.cCodeColorFgArtQRCode);
+            Preferences.Default.Set("SettingCodeColorBgArtQRCode", ClassBarcodes.cCodeColorBgArtQRCode);
             Preferences.Default.Set("SettingQRCodeGradientColor", ClassBarcodes.bQRCodeGradientColor);
             Preferences.Default.Set("SettingQRCodeGradientColor1", ClassBarcodes.cQRCodeGradientColor1);
             Preferences.Default.Set("SettingQRCodeGradientColor2", ClassBarcodes.cQRCodeGradientColor2);
@@ -469,13 +473,9 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeForegroundImage", ClassBarcodes.bQRCodeForegroundImage);
             Preferences.Default.Set("SettingQRCodeBackgroundImage", ClassBarcodes.bQRCodeBackgroundImage);
             Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
-            Preferences.Default.Set("SettingTheme", Globals.cTheme);
-            Preferences.Default.Set("SettingCodeColorFg", Globals.cCodeColorFg);
-            Preferences.Default.Set("SettingCodeColorBg", Globals.cCodeColorBg);
-            Preferences.Default.Set("SettingCodeColorFgArtQRCode", ClassBarcodes.cCodeColorFgArtQRCode);
-            Preferences.Default.Set("SettingCodeColorBgArtQRCode", ClassBarcodes.cCodeColorBgArtQRCode);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
             Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
+            Preferences.Default.Set("SettingTheme", Globals.cTheme);
 
             // Give it some time to save the settings
             Task.Delay(400).Wait();
@@ -508,6 +508,10 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeSizePixels");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
                 Preferences.Default.Remove("SettingQRCodeModuleShape");
+                Preferences.Default.Remove("SettingCodeColorFg");
+                Preferences.Default.Remove("SettingCodeColorBg");
+                Preferences.Default.Remove("SettingCodeColorFgArtQRCode");
+                Preferences.Default.Remove("SettingCodeColorBgArtQRCode");
                 Preferences.Default.Remove("SettingQRCodeGradientColor");
                 Preferences.Default.Remove("SettingQRCodeGradientColor1");
                 Preferences.Default.Remove("SettingQRCodeGradientColor2");
@@ -516,13 +520,9 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeForegroundImage");
                 Preferences.Default.Remove("SettingQRCodeBackgroundImage");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
-                Preferences.Default.Remove("SettingTheme");
-                Preferences.Default.Remove("SettingCodeColorFg");
-                Preferences.Default.Remove("SettingCodeColorBg");
-                Preferences.Default.Remove("SettingCodeColorFgArtQRCode");
-                Preferences.Default.Remove("SettingCodeColorBgArtQRCode");
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");
+                Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingQualityCameraBack");
                 Preferences.Default.Remove("SettingQualityCameraFront");
             }

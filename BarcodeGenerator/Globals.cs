@@ -7,9 +7,6 @@ namespace BarcodeGenerator
     {
         // Global variables
         public static string cTheme = string.Empty;                         // Theme: Light, Dark or System
-        public static string cCodeColor = string.Empty;                     // Color of the barcode (text and bars) for the popup color picker
-        public static string cCodeColorFg = string.Empty;                   // Foreground color of the barcode (text and bars)
-        public static string cCodeColorBg = string.Empty;                   // Background color of the barcode
         public static string cLanguage = string.Empty;                      // Language for the UI (culture name, e.g. "en-US")
         public static bool bLanguageChanged;                                // Flag to indicate if the language has been changed
         public static string cLanguageSpeech = string.Empty;                // Language for text-to-speech
@@ -18,8 +15,6 @@ namespace BarcodeGenerator
         public static readonly string cImageTextToSpeech = "speaker_64p_blue_green.png";  // Image for text-to-speech button
         public static readonly string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";  // Image for text-to-speech cancel button
         public static bool bPopupCanceled;                                  // Popup message was canceled by the user
-        public static string cFileBarcodePng = string.Empty;                // Path and file name of the saved barcode image
-        public static string cFileBarcodeSvg = string.Empty;                // Path and file name of the saved barcode image
         public static bool bLicense;                                        // Flag to indicate if the user has accepted the license agreement
         public static string cCurrentPage = string.Empty;                   // Name of the current page
 

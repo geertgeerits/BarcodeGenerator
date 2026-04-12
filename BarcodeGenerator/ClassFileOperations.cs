@@ -171,7 +171,7 @@
         /// <returns></returns>
         public static async Task<bool> ShareMultipleFilesAsync()
         {
-            if (!File.Exists(Globals.cFileBarcodePng) || !File.Exists(Globals.cFileBarcodeSvg))
+            if (!File.Exists(ClassBarcodes.cFileBarcodePng) || !File.Exists(ClassBarcodes.cFileBarcodeSvg))
             {
                 Debug.WriteLine("ClassFileOperations.ShareMultipleFilesAsync: One or more files to share do not exist.");
                 return false;
@@ -180,7 +180,7 @@
             await Share.Default.RequestAsync(new ShareMultipleFilesRequest
             {
                 Title = "Barcode Generator",
-                Files = [new(Globals.cFileBarcodePng), new ShareFile(Globals.cFileBarcodeSvg)]
+                Files = [new(ClassBarcodes.cFileBarcodePng), new ShareFile(ClassBarcodes.cFileBarcodeSvg)]
             });
             
             return true;

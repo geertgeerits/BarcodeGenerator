@@ -22,9 +22,9 @@ namespace BarcodeGenerator
             int nGreen = 0;
             int nBlue = 0;
 
-            entHexColor.Text = Globals.cCodeColor;
+            entHexColor.Text = ClassBarcodes.cCodeColor;
 
-            HexToRgbColor(Globals.cCodeColor, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+            HexToRgbColor(ClassBarcodes.cCodeColor, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
             sldOpacity.Value = nOpacity;
             sldColorRed.Value = nRed;
@@ -79,9 +79,9 @@ namespace BarcodeGenerator
             int nGreen = 0;
             int nBlue = 0;
 
-            Globals.cCodeColor = entHexColor.Text;
+            ClassBarcodes.cCodeColor = entHexColor.Text;
 
-            HexToRgbColor(Globals.cCodeColor, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+            HexToRgbColor(ClassBarcodes.cCodeColor, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
 
             sldOpacity.Value = nOpacity;
             sldColorRed.Value = nRed;
@@ -139,7 +139,7 @@ namespace BarcodeGenerator
                 entHexColor.Text = cColorHex;
                 bxvColor.Color = Color.FromArgb(cColorHex);
 
-                Globals.cCodeColor = cColorHex;
+                ClassBarcodes.cCodeColor = cColorHex;
             }
             catch (Exception ex)
             {
@@ -236,7 +236,7 @@ namespace BarcodeGenerator
         /// <param name="e">The event data associated with the button click.</param>
         private async void OnButtonClose_Clicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = entHexColor.Text;
+            ClassBarcodes.cCodeColor = entHexColor.Text;
             await CloseAsync();
         }
     }

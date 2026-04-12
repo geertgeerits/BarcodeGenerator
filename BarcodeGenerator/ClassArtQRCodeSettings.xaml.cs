@@ -201,12 +201,12 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonColorForgroundClicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = ClassBarcodes.cCodeColorFgArtQRCode;
+            ClassBarcodes.cCodeColor = ClassBarcodes.cCodeColorFgArtQRCode;
             await OpenPopupColorPickerAsync(CodeLang.ForegroundColorArtQRCode_Text);
 
             if (!Globals.bPopupCanceled)
             {
-                ClassBarcodes.cCodeColorFgArtQRCode = Globals.cCodeColor;
+                ClassBarcodes.cCodeColorFgArtQRCode = ClassBarcodes.cCodeColor;
                 bxvColorFgArtQRCode.Color = Color.FromArgb(ClassBarcodes.cCodeColorFgArtQRCode);
             }
         }
@@ -218,12 +218,12 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonColorBackgroundArtQRCodeClicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = ClassBarcodes.cCodeColorBgArtQRCode;
+            ClassBarcodes.cCodeColor = ClassBarcodes.cCodeColorBgArtQRCode;
             await OpenPopupColorPickerAsync(CodeLang.BackgroundColorArtQRCode_Text);
 
             if (!Globals.bPopupCanceled)
             {
-                ClassBarcodes.cCodeColorBgArtQRCode = Globals.cCodeColor;
+                ClassBarcodes.cCodeColorBgArtQRCode = ClassBarcodes.cCodeColor;
                 bxvColorBgArtQRCode.Color = Color.FromArgb(ClassBarcodes.cCodeColorBgArtQRCode);
             }
         }
@@ -266,12 +266,12 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonGradientColor1Clicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor1;
+            ClassBarcodes.cCodeColor = ClassBarcodes.cQRCodeGradientColor1;
             await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor1_Text);
 
             if (!Globals.bPopupCanceled)
             {
-                ClassBarcodes.cQRCodeGradientColor1 = Globals.cCodeColor;
+                ClassBarcodes.cQRCodeGradientColor1 = ClassBarcodes.cCodeColor;
                 bxvGradientColor1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
             }
         }
@@ -283,12 +283,12 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonGradientColor2Clicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor2;
+            ClassBarcodes.cCodeColor = ClassBarcodes.cQRCodeGradientColor2;
             await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor2_Text);
 
             if (!Globals.bPopupCanceled)
             {
-                ClassBarcodes.cQRCodeGradientColor2 = Globals.cCodeColor;
+                ClassBarcodes.cQRCodeGradientColor2 = ClassBarcodes.cCodeColor;
                 bxvGradientColor2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
             }
         }
@@ -300,12 +300,12 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonGradientColor3Clicked(object sender, EventArgs e)
         {
-            Globals.cCodeColor = ClassBarcodes.cQRCodeGradientColor3;
+            ClassBarcodes.cCodeColor = ClassBarcodes.cQRCodeGradientColor3;
             await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor3_Text);
 
             if (!Globals.bPopupCanceled)
             {
-                ClassBarcodes.cQRCodeGradientColor3 = Globals.cCodeColor;
+                ClassBarcodes.cQRCodeGradientColor3 = ClassBarcodes.cCodeColor;
                 bxvGradientColor3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
             }
         }

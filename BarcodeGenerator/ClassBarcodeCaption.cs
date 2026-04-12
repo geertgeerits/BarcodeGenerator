@@ -4,9 +4,9 @@
 // 3. Measure the caption with an SKPaint to compute required caption height. If the caption is wider than the image,
 //    reduce the font size iteratively until it fits (with a reasonable minimum).
 // 4. Create a new SKBitmap whose height is original image height + captionHeight + padding.
-// 5. Draw background color (from Globals.cCodeColorBg) onto the canvas.
+// 5. Draw background color (from ClassBarcodes.cCodeColorBg) onto the canvas.
 // 6. Draw the barcode bitmap on top area (keeping its width; scale if needed to fit width).
-// 7. Draw the caption centered horizontally below the barcode with foreground color (Globals.cCodeColorFg).
+// 7. Draw the caption centered horizontally below the barcode with foreground color (ClassBarcodes.cCodeColorFg).
 // 8. Encode the composed image as PNG and save to FileSystem.Current.CacheDirectory (or return a stream/path).
 // 9. Provide two public helpers:
 //    - `SaveBarcodeWithCaptionAsync(Stream barcodeStream, string caption, string fileName = ...)`
@@ -82,8 +82,8 @@ namespace BarcodeGenerator
                     int srcHeight = skBitmap.Height;
 
                     // Determine colors (Globals stores as "AARRGGBB" without '#')
-                    SKColor fgColor = TryParseSkColor(Globals.cCodeColorFg, SKColors.Black);
-                    SKColor bgColor = TryParseSkColor(Globals.cCodeColorBg, SKColors.White);
+                    SKColor fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
+                    SKColor bgColor = TryParseSkColor(ClassBarcodes.cCodeColorBg, SKColors.White);
 
                     // Determine font size relative to image width if not provided
                     float fontSize = Math.Max(14f, srcWidth / 16f);

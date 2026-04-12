@@ -58,9 +58,9 @@ namespace BarcodeGenerator
                     // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
                     qrDataSvg = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
                     using SvgQRCode qrCode = new(qrDataSvg);
-                    string qrCodeAsSvg = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(Globals.cCodeColorBg, 16)));
+                    string qrCodeAsSvg = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
 
-                    ClassFileOperations.SaveStringAsFileSvg(qrCodeAsSvg, Globals.cFileBarcodeSvg);
+                    ClassFileOperations.SaveStringAsFileSvg(qrCodeAsSvg, ClassBarcodes.cFileBarcodeSvg);
                 }
             }
             catch (Exception ex)
@@ -120,9 +120,9 @@ namespace BarcodeGenerator
             // Calculate the maximum image size in pixels based on the QR code size and the configured percentage
             using SKBitmap bitmap = new(width: size, height: size);
             using SKCanvas canvas = new(bitmap);
-            canvas.Clear(SKColor.Parse(Globals.cCodeColorBg));
+            canvas.Clear(SKColor.Parse(ClassBarcodes.cCodeColorBg));
 
-            SKPaint paint = new() { Style = SKPaintStyle.Fill, Color = SKColor.Parse(Globals.cCodeColorFg), IsAntialias = false };
+            SKPaint paint = new() { Style = SKPaintStyle.Fill, Color = SKColor.Parse(ClassBarcodes.cCodeColorFg), IsAntialias = false };
 
             // Draw QR code modules
             for (int y = 0; y < moduleCount; y++)
@@ -194,7 +194,7 @@ namespace BarcodeGenerator
                     SKPaint borderPaint = new()
                     {
                         Style = SKPaintStyle.Fill,
-                        Color = SKColor.Parse(Globals.cCodeColorBg),
+                        Color = SKColor.Parse(ClassBarcodes.cCodeColorBg),
                         IsAntialias = true
                     };
 
@@ -221,7 +221,7 @@ namespace BarcodeGenerator
 
             // Save the generated PNG to disk with the original pixel size for sharing or other purposes
             using MemoryStream memoryStream = new(ms.ToArray());
-            _ = ClassFileOperations.SavePngFromStreamAsync(memoryStream, Globals.cFileBarcodePng);
+            _ = ClassFileOperations.SavePngFromStreamAsync(memoryStream, ClassBarcodes.cFileBarcodePng);
 
             // Return the ImageSource for use in the UI
             return ImageSource.FromStream(() => ms);

@@ -68,8 +68,10 @@ namespace BarcodeGenerator
             ClassBarcodes.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
             ClassBarcodes.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
             ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Rounded");  // Square, Rounded, Circle
+            ClassBarcodes.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
+            ClassBarcodes.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
             ClassBarcodes.cCodeColorFgArtQRCode = Preferences.Default.Get("SettingCodeColorFgArtQRCode", "FF000000");
-            ClassBarcodes.cCodeColorBgArtQRCode = Preferences.Default.Get("SettingCodeColorBgArtQRCode", "00FFFFFF");
+            ClassBarcodes.cCodeColorBgArtQRCode = Preferences.Default.Get("SettingCodeColorBgArtQRCode", "FFFFFFFF");
             ClassBarcodes.bQRCodeGradientColor = Preferences.Default.Get("SettingQRCodeGradientColor", true);
             ClassBarcodes.cQRCodeGradientColor1 = Preferences.Default.Get("SettingQRCodeGradientColor1", "FFFF0000");  // FFFF0000 Red - FF00FFFF Cyan
             ClassBarcodes.cQRCodeGradientColor2 = Preferences.Default.Get("SettingQRCodeGradientColor2", "FF00FF00");  // FF00FF00 Green - FFFF00FF Magenta
@@ -78,11 +80,9 @@ namespace BarcodeGenerator
             ClassBarcodes.bQRCodeForegroundImage = Preferences.Default.Get("SettingQRCodeForegroundImage", false);
             ClassBarcodes.bQRCodeBackgroundImage = Preferences.Default.Get("SettingQRCodeBackgroundImage", false);
             ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
-            Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
-            Globals.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
-            Globals.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
+            Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
             // The height of the title bar is lower when an iPhone is in horizontal position
@@ -136,8 +136,8 @@ namespace BarcodeGenerator
             InitializeTextToSpeechAsync();
             
             // Path and file name of the saved barcode image
-            Globals.cFileBarcodePng = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.png");
-            Globals.cFileBarcodeSvg = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.svg");
+            ClassBarcodes.cFileBarcodePng = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.png");
+            ClassBarcodes.cFileBarcodeSvg = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.svg");
 
             // Clear the clipboard
             //Clipboard.Default.SetTextAsync(null);  // For testing
@@ -576,12 +576,12 @@ namespace BarcodeGenerator
             edtTextToCode.IsEnabled = true;
 
             // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
-            ClassFileOperations.DeleteFileIfExists(Globals.cFileBarcodePng);
-            ClassFileOperations.DeleteFileIfExists(Globals.cFileBarcodeSvg);
+            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
+            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
 
             // Set the barcode colors
-            bgvBarcode.ForegroundColor = Color.FromArgb(Globals.cCodeColorFg);
-            bgvBarcode.BackgroundColor = Color.FromArgb(Globals.cCodeColorBg);
+            bgvBarcode.ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg);
+            bgvBarcode.BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg);
 
             // Miscellaneous
             btnShare.IsEnabled = false;
@@ -829,7 +829,7 @@ namespace BarcodeGenerator
                         await Share.Default.RequestAsync(new ShareFileRequest
                         {
                             Title = "Barcode Generator",
-                            File = new ShareFile(Globals.cFileBarcodePng)
+                            File = new ShareFile(ClassBarcodes.cFileBarcodePng)
                         });
                     }
                 }
@@ -839,7 +839,7 @@ namespace BarcodeGenerator
                     await Share.Default.RequestAsync(new ShareFileRequest
                     {
                         Title = "Barcode Generator",
-                        File = new ShareFile(Globals.cFileBarcodePng)
+                        File = new ShareFile(ClassBarcodes.cFileBarcodePng)
                     });
                 }
                 // Share the barcode by capturing the barcode view and saving it as a file using the Share API
@@ -851,7 +851,7 @@ namespace BarcodeGenerator
                     // Barcode with caption
                     if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                     {
-                        string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, Globals.cFileBarcodePng);
+                        string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
 
                         // Open the share interface to share the file
                         await ClassFileOperations.OpenShareInterfaceAsync(cFile);
@@ -862,10 +862,10 @@ namespace BarcodeGenerator
                         Stream stream = await screen!.OpenReadAsync();
 
                         // Save the barcode as a file
-                        ClassFileOperations.SaveStreamAsFilePng(stream, Globals.cFileBarcodePng);
+                        ClassFileOperations.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
 
                         // Open the share interface to share the file
-                        await ClassFileOperations.OpenShareInterfaceAsync(Globals.cFileBarcodePng);
+                        await ClassFileOperations.OpenShareInterfaceAsync(ClassBarcodes.cFileBarcodePng);
                     }
                 }
             }
