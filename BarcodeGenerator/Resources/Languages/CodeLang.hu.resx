@@ -685,7 +685,7 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
     <value>Vonalkód felirattal:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Numerikus: {0}, Alfanumerikus: {1}, Bináris: {2}, Kanji/Kana: {3}</value>
+    <value>numerikus {0}, alfanumerikus {1}, bájtok {2}, kandzsi/kana {3}</value>
   </data>
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Maximális karakterszám:</value>

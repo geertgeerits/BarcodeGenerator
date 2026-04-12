@@ -685,7 +685,7 @@ Microsoft, Microsoft Store, il logo di Microsoft Store e Windows sono marchi di 
     <value>Codice a barre con didascalia:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Numerici: {0}, Alfanumerici: {1}, Binari: {2}, Kanji/Kana: {3}</value>
+    <value>numerici {0}, alfanumerici {1}, binari {2}, kanji/kana {3}</value>
   </data>
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Numero massimo di caratteri:</value>

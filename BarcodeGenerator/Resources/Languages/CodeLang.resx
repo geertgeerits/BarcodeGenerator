@@ -685,7 +685,7 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>Barcode with caption:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Numeric: {0}, Alphanumeric: {1}, Binary: {2}, Kanji/Kana: {3}</value>
+    <value>numeric {0}, alphanumeric {1}, bytes {2}, kanji/kana {3}</value>
   </data>
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Maximum characters:</value>

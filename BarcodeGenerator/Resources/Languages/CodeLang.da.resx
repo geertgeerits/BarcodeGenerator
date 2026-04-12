@@ -685,7 +685,7 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
     <value>Stregkode med billedtekst:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Numerisk: {0}, Alfanumerisk: {1}, Binær: {2}, Kanji/Kana: {3}</value>
+    <value>numerisk {0}, alfanumerisk {1}, bytes {2}, kanji/kana {3}</value>
   </data>
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Maksimalt antal tegn:</value>

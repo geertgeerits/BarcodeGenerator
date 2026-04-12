@@ -685,7 +685,7 @@ Microsoft, Microsoft Store, le logo Microsoft Store et Windows sont des marques 
     <value>Code-barres avec légende:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Numériques: {0}, Alphanumériques: {1}, Binaires: {2}, Kanji/Kana: {3}</value>
+    <value>numériques {0}, alphanumériques {1}, octets {2}, kanji/kana {3}</value>
   </data>
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Nombre maximal de caractères:</value>

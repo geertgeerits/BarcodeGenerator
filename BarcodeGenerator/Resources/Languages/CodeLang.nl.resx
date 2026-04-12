@@ -685,7 +685,7 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
     <value>Barcode met onderschrift:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Numeriek: {0}, Alfanumeriek: {1}, Binair: {2}, Kanji/Kana: {3}</value>
+    <value>numeriek {0}, alfanumeriek {1}, bytes {2}, kanji/kana {3}</value>
   </data>
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Maximum aantal karakters:</value>

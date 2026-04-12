@@ -685,7 +685,7 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
     <value>Cod de bare cu legendă:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>Numerice: {0}, Alfanumerice: {1}, Binare: {2}, Kanji/Kana: {3}</value>
+    <value>numeric {0}, alfanumeric {1}, octeți {2}, kanji/kana {3}</value>
   </data>
   <data name="MaximumCharacters_Text" xml:space="preserve">
     <value>Număr maxim de caractere:</value>
