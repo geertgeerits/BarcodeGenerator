@@ -786,4 +786,10 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
     <value>Etualan väri taiteellinen QR-koodi:</value>
   </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Pakkaus käytössä:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>Viivakoodin tekstiä voidaan pakata (katso aktivointi asetukset). Jotta teksti olisi taas luettavissa, se on purettava skannerilla, joka tukee GZip-pakkausta, kuten tässä sovelluksessa olevalla skannerilla.</value>
+  </data>
 </root>

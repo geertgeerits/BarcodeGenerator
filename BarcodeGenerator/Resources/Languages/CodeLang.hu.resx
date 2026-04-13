@@ -786,4 +786,10 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
     <value>Előtérszín művészi QR-kód:</value>
   </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Tömörítés engedélyezve:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>A vonalkód szövege tömöríthető (az aktiváláshoz lásd a beállításokat). Ahhoz, hogy a szöveg ismét olvasható legyen, ki kell tömöríteni egy GZip tömörítést támogató szkennerrel, például az alkalmazásban található szkennerrel.</value>
+  </data>
 </root>

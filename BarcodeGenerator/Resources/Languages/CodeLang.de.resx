@@ -786,4 +786,10 @@ Microsoft, Microsoft Store, das Microsoft Store-Logo und Windows sind Marken der
   <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
     <value>Künstlerischer QR-Code mit Vordergrundfarbe:</value>
   </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Komprimierung aktiviert:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>Der Text eines Barcodes kann komprimiert werden (siehe Einstellungen zum Aktivieren). Um den Text wieder lesbar zu machen, muss er mit einem Scanner dekomprimiert werden, der GZip-Komprimierung unterstützt, z. B. mit dem Scanner dieser App.</value>
+  </data>
 </root>

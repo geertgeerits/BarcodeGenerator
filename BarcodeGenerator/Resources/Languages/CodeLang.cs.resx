@@ -786,4 +786,10 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
     <value>Umělecký QR kód pro barvu popředí:</value>
   </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Komprese povolena:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>Text čárového kódu lze komprimovat (aktivaci naleznete v nastavení). Aby byl text opět čitelný, musí být dekomprimován skenerem, který podporuje kompresi GZip, jako je skener v této aplikaci.</value>
+  </data>
 </root>

@@ -786,4 +786,10 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
   <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
     <value>Kunstnerisk QR-kode for forgrundsfarve:</value>
   </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Komprimering aktiveret:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>Teksten i en stregkode kan komprimeres (se indstillinger for aktivering). For at gøre teksten læsbar igen, skal den dekomprimeres af en scanner, der understøtter GZip-komprimering, f.eks. scanneren i denne app.</value>
+  </data>
 </root>
