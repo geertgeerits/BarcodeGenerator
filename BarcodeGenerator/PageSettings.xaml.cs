@@ -87,6 +87,9 @@ namespace BarcodeGenerator
             // Set the barcode with caption variable to update the switch
             swtBarcodeWithCaption.IsToggled = ClassBarcodes.bBarcodeWithCaption;
 
+            // Set the text compression variable to update the switch
+            swtCompressionEnabled.IsToggled = ClassBarcodes.bCompressionEnabled;
+
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
         }
@@ -429,6 +432,16 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Switch text compression toggled event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SwtCompressionEnabled_Toggled(object sender, ToggledEventArgs e)
+        {
+            ClassBarcodes.bCompressionEnabled = e.Value;
+        }
+
+        /// <summary>
         /// Show a modal popup to inform the user about the recommended image size before opening the file picker
         /// </summary>
         /// <param name="cMessage"></param>
@@ -473,6 +486,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeForegroundImage", ClassBarcodes.bQRCodeForegroundImage);
             Preferences.Default.Set("SettingQRCodeBackgroundImage", ClassBarcodes.bQRCodeBackgroundImage);
             Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
+            Preferences.Default.Set("SettingCompressionEnabled", ClassBarcodes.bCompressionEnabled);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
             Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
@@ -520,6 +534,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeForegroundImage");
                 Preferences.Default.Remove("SettingQRCodeBackgroundImage");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
+                Preferences.Default.Remove("SettingCompressionEnabled");
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");
                 Preferences.Default.Remove("SettingTheme");

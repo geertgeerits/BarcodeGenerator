@@ -15,6 +15,13 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
         private const string cAllowedCharactersCodabar = "0123456789-$:/.+ABCD";
 
+        /// <summary>
+        /// Validate the input text for the selected barcode type, and calculate checksums and captions if applicable. Returns a result object containing success status, possibly modified text and caption, and any error message if validation fails
+        /// </summary>
+        /// <param name="selectedName"></param>
+        /// <param name="cTextToCode"></param>
+        /// <param name="nLenTextToCode"></param>
+        /// <returns></returns>
         public static async Task<ClassBarcodeValidationResult> ValidateAsync(string selectedName, string cTextToCode, int nLenTextToCode)
         {
             ClassBarcodeValidationResult result = new()
@@ -498,12 +505,15 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Insert a character in a caption at a specified position. If the position is out of bounds, the original caption is returned.
+        /// Insert a character in a caption at a specified position. If the position is out of bounds, the original caption is returned
+        /// It is recommended to start with the last position and move backwards when inserting multiple characters,
+        /// to avoid affecting the positions of subsequent insertions.
+        /// For example, when inserting at positions 1 and 7, first insert at position 7, then at position 1
         /// </summary>
-        /// <param name="cCaption"></param>
-        /// <param name="nPosition"></param>
-        /// <param name="cCharacter"></param>
-        /// <returns></returns>
+        /// <param name="cCaption">The caption in which to insert the character</param>
+        /// <param name="nPosition">The position at which to insert the character</param>
+        /// <param name="cCharacter">The character to insert</param>
+        /// <returns>The modified caption with the character inserted, or the original caption if the position is out of bounds</returns>
         private static string InsertCharacterInCaption(string cCaption, int nPosition, string cCharacter = " ")
         {
             if (cCaption == null || nPosition < 0 || nPosition > cCaption.Length)

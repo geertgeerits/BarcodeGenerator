@@ -786,4 +786,10 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
   <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
     <value>Foreground color artistic QR code:</value>
   </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Compression enabled:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>The text of a barcode can be compressed (see settings to activate). To make the text readable again, it must be decompressed by a scanner that supports GZip compression, such as the scanner in this app.</value>
+  </data>
 </root>

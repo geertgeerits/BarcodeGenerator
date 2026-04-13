@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui/global"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:link="clr-namespace:BarcodeGenerator"
+             x:DataType="link:HyperlinkSpan"
              x:Class="BarcodeGenerator.PageAbout"
-             x:DataType="link:PageAbout"
              SafeAreaEdges="All">
 
     <Shell.TitleView>
@@ -102,6 +102,11 @@
 
                     <Label
                         x:Name="lblQRCodeImage"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
+
+                    <Label
+                        x:Name="lblCompression"
                         Style="{StaticResource labelStyleInfo}">
                     </Label>
 

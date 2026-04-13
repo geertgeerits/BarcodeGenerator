@@ -98,7 +98,10 @@ namespace BarcodeGenerator
 
             // Compress then encode (gzip->base64) to reduce bytes and allow encoding larger text content than the QR code
             // would normally allow, at the cost of requiring a custom decoder on the scanning side
-            //text = CompressToBase64(text);
+            if (ClassBarcodes.bCompressionEnabled)
+            {
+                text = ClassCompression.CompressToBase64(text);
+            }
 
             // Load the foreground image (if any) into an SKBitmap and create an IconData for the QR code builder.
             // The IconData will be embedded in the center of the QR code and should be sized appropriately (e.g. 20-30% of the QR code size)
@@ -437,27 +440,6 @@ namespace BarcodeGenerator
 
             srcBitmap.Dispose();
             return result;
-        }
-
-        /// <summary>
-        /// Compresses the specified string using GZip compression and encodes the result as a Base64 string.
-        /// </summary>
-        /// <remarks>The input string is first encoded as UTF-8 before compression. The returned Base64
-        /// string can be decoded and decompressed to retrieve the original input.</remarks>
-        /// <param name="s">The string to compress. Cannot be null.</param>
-        /// <returns>A Base64-encoded string representing the compressed input.</returns>
-        static string CompressToBase64(string s)
-        {
-            byte[] input = System.Text.Encoding.UTF8.GetBytes(s);
-            using MemoryStream ms = new();
-            using (GZipStream gz = new(ms, System.IO.Compression.CompressionLevel.Optimal, leaveOpen: true))
-            {
-                gz.Write(input, 0, input.Length);
-            }
-
-            ms.Position = 0;
-            
-            return Convert.ToBase64String(ms.ToArray());
         }
     }
 }

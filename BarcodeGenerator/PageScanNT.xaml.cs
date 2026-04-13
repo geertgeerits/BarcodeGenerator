@@ -236,6 +236,12 @@ namespace BarcodeGenerator
                     cBarcodeFormat = barcode.BarcodeFormat.ToString();
                     cDisplayValue = barcode.DisplayValue;
 
+                    // Decompress the barcode result if compression is enabled
+                    if (ClassBarcodes.bCompressionEnabled)
+                    {
+                        cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
+                    }
+
                     // Add the barcode format and display value to the list 'listBarcodes'
                     listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
                 }

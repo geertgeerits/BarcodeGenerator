@@ -350,6 +350,12 @@ namespace BarcodeGenerator
                     lblBarcodeResult.Text = sb.ToString();
                 }
 
+                // Decompress the barcode result if compression is enabled
+                if (ClassBarcodes.bCompressionEnabled)
+                {
+                    lblBarcodeResult.Text = ClassCompression.DecompressFromBase64(lblBarcodeResult.Text);
+                }
+
                 imgbtnCopyToClipboard.IsEnabled = true;
                 btnShare.IsEnabled = true;
                 imgbtnTextToSpeech.IsEnabled = true;

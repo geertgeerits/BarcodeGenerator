@@ -32,7 +32,7 @@
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
                 RowSpacing="4"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -359,6 +359,22 @@
                     HorizontalOptions="Start"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Toggled="SwtBarcodeWithCaption_Toggled">
+                </Switch>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="14"
+                    Grid.Column="0"
+                    Margin="0"
+                    Text="{Translate CompressionEnabled_Text}">
+                </Label>
+
+                <Switch
+                    x:Name="swtCompressionEnabled"
+                    Grid.Row="14"
+                    Grid.Column="2"
+                    Margin="0"
+                    Toggled="SwtCompressionEnabled_Toggled">
                 </Switch>
 
             </Grid>

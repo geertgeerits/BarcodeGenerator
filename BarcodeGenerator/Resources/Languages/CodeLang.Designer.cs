@@ -881,6 +881,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compression enabled:.
+        /// </summary>
+        internal static string CompressionEnabled_Text {
+            get {
+                return ResourceManager.GetString("CompressionEnabled_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact:.
         /// </summary>
         internal static string Contact_Text {
@@ -1143,6 +1152,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string Info_Text {
             get {
                 return ResourceManager.GetString("Info_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text of a barcode can be compressed (see settings to activate). To make the text readable again, it must be decompressed by a scanner that supports GZip compression, such as the scanner in this app..
+        /// </summary>
+        internal static string InfoCompression_Text {
+            get {
+                return ResourceManager.GetString("InfoCompression_Text", resourceCulture);
             }
         }
         

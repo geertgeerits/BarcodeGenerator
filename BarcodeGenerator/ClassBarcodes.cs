@@ -105,6 +105,7 @@
         public static bool bQRCodeBackgroundImage;                      // Flag to indicate if the QR code has a background image
         public static bool bQRCodeForegroundImage;                      // Flag to indicate if the QR code has a foreground image
         public static bool bBarcodeWithCaption;                         // Control whether the barcode image should include a caption
+        public static bool bCompressionEnabled;                         // Control whether the barcode text should be compressed before encoding it in the barcode and decompressed after decoding it from the barcode
         public static string cFileBarcodePng = string.Empty;            // Path and file name of the saved barcode image
         public static string cFileBarcodeSvg = string.Empty;            // Path and file name of the saved barcode image
 
