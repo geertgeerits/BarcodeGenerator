@@ -787,9 +787,9 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>Foreground color artistic QR code:</value>
   </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
-    <value>Compression enabled:</value>
+    <value>Compression QR Code:</value>
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
-    <value>The text of a barcode can be compressed (see settings to activate). To make the text readable again, it must be decompressed by a scanner that supports GZip compression, such as the scanner in this app.</value>
+    <value>The text in the QR code can be compressed (see the settings to enable this). To make the text readable again, it must be decompressed by a scanner that supports GZip compression, such as the scanner in this app. You also have to set the scanner’s format to QR Code.</value>
   </data>
 </root>

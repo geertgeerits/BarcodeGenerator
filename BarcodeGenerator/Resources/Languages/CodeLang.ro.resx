@@ -787,9 +787,9 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
     <value>Cod QR artistic în culoarea prim-planului:</value>
   </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
-    <value>Compresie activată:</value>
+    <value>Compresie cod QR:</value>
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
-    <value>Textul unui cod de bare poate fi comprimat (consultați setările pentru activare). Pentru ca textul să fie din nou lizibil, acesta trebuie decomprimat cu un scaner care acceptă compresia GZip, cum ar fi scanerul din această aplicație.</value>
+    <value>Textul din codul QR poate fi comprimat (consultați setările pentru a activa această opțiune). Pentru ca textul să fie din nou lizibil, acesta trebuie decomprimat cu un scaner care acceptă compresia GZip, cum ar fi scanerul din această aplicație. De asemenea, trebuie să setați formatul scanerului la Cod QR.</value>
   </data>
 </root>

@@ -881,7 +881,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Compression enabled:.
+        ///   Looks up a localized string similar to Compression QR Code:.
         /// </summary>
         internal static string CompressionEnabled_Text {
             get {
@@ -1156,7 +1156,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The text of a barcode can be compressed (see settings to activate). To make the text readable again, it must be decompressed by a scanner that supports GZip compression, such as the scanner in this app..
+        ///   Looks up a localized string similar to The text in the QR code can be compressed (see the settings to enable this). To make the text readable again, it must be decompressed by a scanner that supports GZip compression, such as the scanner in this app. You also have to set the scanner’s format to QR Code..
         /// </summary>
         internal static string InfoCompression_Text {
             get {

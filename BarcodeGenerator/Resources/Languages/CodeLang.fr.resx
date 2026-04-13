@@ -787,9 +787,9 @@ Microsoft, Microsoft Store, le logo Microsoft Store et Windows sont des marques 
     <value>Code QR artistique de couleur de premier plan:</value>
   </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
-    <value>Compression activée :</value>
+    <value>Code QR compressé:</value>
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
-    <value>Le texte d’un code-barres peut être compressé (voir les paramètres pour activer la compression). Pour le rendre à nouveau lisible, il doit être décompressé par un lecteur compatible avec la compression GZip, comme celui intégré à cette application.</value>
+    <value>Le texte du code QR peut être compressé (voir les paramètres pour activer cette option). Pour le rendre à nouveau lisible, il doit être décompressé à l’aide d’un scanner compatible avec la compression GZip, comme celui intégré à cette application. Vous devez également sélectionner le format « Code QR » dans les paramètres du scanner.</value>
   </data>
 </root>

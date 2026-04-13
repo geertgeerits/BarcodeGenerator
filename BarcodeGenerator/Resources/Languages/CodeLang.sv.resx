@@ -787,9 +787,9 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
     <value>Konstnärlig QR-kod för förgrundsfärg:</value>
   </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
-    <value>Komprimering aktiverad:</value>
+    <value>Komprimering av QR-kod:</value>
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
-    <value>Texten i en streckkod kan komprimeras (se inställningar för att aktivera). För att göra texten läsbar igen måste den dekomprimeras med en skanner som stöder GZip-komprimering, till exempel skannern i den här appen.</value>
+    <value>Texten i QR-koden kan komprimeras (se inställningarna för att aktivera detta). För att göra texten läsbar igen måste den dekomprimeras av en skanner som stöder GZip-komprimering, till exempel skannern i den här appen. Du måste också ställa in skannerns format till QR-kod.</value>
   </data>
 </root>
