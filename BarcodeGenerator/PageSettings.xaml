@@ -365,6 +365,7 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="14"
                     Grid.Column="0"
+                    VerticalTextAlignment="Start"
                     Margin="0"
                     Text="{Translate CompressionEnabled_Text}">
                 </Label>
@@ -373,6 +374,7 @@
                     x:Name="swtCompressionEnabled"
                     Grid.Row="14"
                     Grid.Column="2"
+                    HorizontalOptions="Start"
                     Margin="0"
                     Toggled="SwtCompressionEnabled_Toggled">
                 </Switch>

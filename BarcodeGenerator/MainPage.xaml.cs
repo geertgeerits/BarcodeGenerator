@@ -657,6 +657,8 @@ namespace BarcodeGenerator
             activityIndicator.IsRunning = true;
             await Task.Delay(200);
 
+            ClassBarcodes.bIsQRCode = false;
+            
             try
             {
                 // For testing crashes - DivideByZeroException
@@ -666,14 +668,18 @@ namespace BarcodeGenerator
                 if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
+                    ClassBarcodes.bIsQRCode = true;
+                    
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+                    
                 }
                 // Generate the QR code with or without an image using QRCoder (and SkiaSharp)
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
-
+                    ClassBarcodes.bIsQRCode = true;
+                    
                     ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
