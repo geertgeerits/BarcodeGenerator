@@ -34,7 +34,7 @@ namespace BarcodeGenerator
         /// <exception cref="ArgumentNullException"></exception>
         public static string DecompressFromBase64(string base64)
         {
-            if (base64 is null || !IsGzipBase64(base64))
+            if (string.IsNullOrEmpty(base64) || !IsGzipBase64(base64))
             {
                 return base64 ?? string.Empty;
             }
