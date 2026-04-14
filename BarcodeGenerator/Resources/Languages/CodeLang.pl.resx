@@ -790,6 +790,6 @@ Microsoft, Microsoft Store, logo Microsoft Store i Windows są znakami towarowym
     <value>Kompresja kodu QR:</value>
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
-    <value>Tekst w kodzie QR można skompresować (sprawdź ustawienia, aby włączyć tę opcję). Aby tekst był ponownie czytelny, należy go zdekompresować za pomocą skanera obsługującego kompresję GZip, takiego jak skaner w tej aplikacji. Należy również ustawić format skanera na kod QR.</value>
+    <value>Tekst w kodzie QR można skompresować (sprawdź ustawienia, aby włączyć tę opcję). Aby tekst był ponownie czytelny, należy go zdekompresować za pomocą skanera obsługującego kompresję GZip, takiego jak skaner w tej aplikacji.</value>
   </data>
 </root>

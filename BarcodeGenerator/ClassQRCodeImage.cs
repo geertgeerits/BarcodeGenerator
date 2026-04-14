@@ -34,13 +34,6 @@ namespace BarcodeGenerator
                 return null;
             }
 
-            // Compress then encode (gzip->base64) to reduce bytes and allow encoding larger text content than the QR code
-            // would normally allow, at the cost of requiring a custom decoder on the scanning side
-            if (ClassBarcodes.bCompressionEnabled)
-            {
-                text = ClassCompression.CompressToBase64(text);
-            }
-
             // Generate QR code data using QRCoder with the appropriate error correction level based on whether an image will be included
             using QRCodeGenerator qrGenerator = new();
             QRCodeData qrDataPng;

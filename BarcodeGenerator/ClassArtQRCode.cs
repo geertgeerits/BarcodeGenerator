@@ -2,7 +2,6 @@
 using SkiaSharp;
 using SkiaSharp.QrCode;
 using SkiaSharp.QrCode.Image;
-using System.IO.Compression;
 
 namespace BarcodeGenerator
 {
@@ -94,13 +93,6 @@ namespace BarcodeGenerator
                         cFileBackground = await ClassFileOperations.PickImage();
                     }
                 }
-            }
-
-            // Compress then encode (gzip->base64) to reduce bytes and allow encoding larger text content than the QR code
-            // would normally allow, at the cost of requiring a custom decoder on the scanning side
-            if (ClassBarcodes.bCompressionEnabled)
-            {
-                text = ClassCompression.CompressToBase64(text);
             }
 
             // Load the foreground image (if any) into an SKBitmap and create an IconData for the QR code builder.

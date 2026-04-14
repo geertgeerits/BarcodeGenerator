@@ -147,12 +147,6 @@ namespace BarcodeGenerator
                     var s when s == ClassBarcodes.cBarcode_UPC_E => BarcodeFormats.Upce,
                     _ => BarcodeFormats.All
                 };
-
-                ClassBarcodes.bIsQRCode = false;
-                if (selectedName == ClassBarcodes.cBarcode_QR_CODE)
-                {
-                    ClassBarcodes.bIsQRCode = true;
-                }
             }
         }
 
@@ -242,11 +236,8 @@ namespace BarcodeGenerator
                     cBarcodeFormat = barcode.BarcodeFormat.ToString();
                     cDisplayValue = barcode.DisplayValue;
 
-                    // Decompress the barcode result if compression is enabled and is a QR code
-                    if (ClassBarcodes.bCompressionEnabled && ClassBarcodes.bIsQRCode)
-                    {
-                        cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
-                    }
+                    // Decompress the QR code result if compressed
+                    cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
 
                     // Add the barcode format and display value to the list 'listBarcodes'
                     listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");

@@ -65,7 +65,6 @@ namespace BarcodeGenerator
         {
             var picker = (Picker)sender;
             int selectedIndex = picker.SelectedIndex;
-            ClassBarcodes.bIsQRCode = false;
 
             if (selectedIndex != -1)
             {
@@ -241,8 +240,6 @@ namespace BarcodeGenerator
                         Multiple = true,
                         TryHarder = true
                     };
-                    
-                    ClassBarcodes.bIsQRCode = true;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_RSS_14)
                 {
@@ -353,11 +350,8 @@ namespace BarcodeGenerator
                     lblBarcodeResult.Text = sb.ToString();
                 }
 
-                // Decompress the barcode result if compression is enabled and is a QR code
-                if (ClassBarcodes.bCompressionEnabled && ClassBarcodes.bIsQRCode)
-                {
-                    lblBarcodeResult.Text = ClassCompression.DecompressFromBase64(lblBarcodeResult.Text);
-                }
+                // Decompress the QR code result if compressed
+                lblBarcodeResult.Text = ClassCompression.DecompressFromBase64(lblBarcodeResult.Text);
 
                 imgbtnCopyToClipboard.IsEnabled = true;
                 btnShare.IsEnabled = true;

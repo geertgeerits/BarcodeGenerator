@@ -790,6 +790,6 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
     <value>QR-kód tömörítése:</value>
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
-    <value>A QR-kódban található szöveg tömöríthető (ennek engedélyezéséhez lásd a beállításokat). Ahhoz, hogy a szöveg ismét olvasható legyen, ki kell tömöríteni egy GZip tömörítést támogató szkennerrel, például az alkalmazásban található szkennerrel. A szkenner formátumát QR-kódra kell állítani.</value>
+    <value>A QR-kódban található szöveg tömöríthető (ennek engedélyezéséhez lásd a beállításokat). Ahhoz, hogy a szöveg ismét olvasható legyen, ki kell tömöríteni egy GZip tömörítést támogató szkennerrel, például az alkalmazásban található szkennerrel.</value>
   </data>
 </root>

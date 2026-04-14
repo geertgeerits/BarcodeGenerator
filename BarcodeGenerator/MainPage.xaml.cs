@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-04-13 (YYYY-MM-DD)
+ * Date ........: 2026-04-14 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -32,7 +32,9 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersHex = "0123456789ABCDEF";
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
         private const string cAllowedCharactersCodabar = "0123456789-$:/.+ABCD";
-        private static string cBarcodeCaption = string.Empty;
+        private static string cBarcodeCaption = string.Empty;   // Caption text for the barcode - used for sharing the barcode with the caption in the text and for the option to include the caption in the generated barcode image
+        private static bool bCompressionAllowed;                // Flag to indicate if compression is allowed for the input text based on the selected barcode format
+
 
         public MainPage()
         {
@@ -278,6 +280,8 @@ namespace BarcodeGenerator
                 btnShare.Text = CodeLang.ButtonShare_Text;
                 btnShare.IsEnabled = false;
 
+                bCompressionAllowed = false;
+
                 // Properties 1D barcodes
                 if (selectedName == ClassBarcodes.cBarcode_CODABAR)
                 {
@@ -415,6 +419,7 @@ namespace BarcodeGenerator
                     bgvBarcode.IsVisible = false;
                     brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
+                    bCompressionAllowed = true;
                 }
                 
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)  // Model 2 - ECCLevel.High
@@ -427,6 +432,7 @@ namespace BarcodeGenerator
                     bgvBarcode.IsVisible = false;
                     brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
+                    bCompressionAllowed = true;
                 }
                 
                 else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)  // Model 2 - ECCLevel.High
@@ -439,6 +445,7 @@ namespace BarcodeGenerator
                     bgvBarcode.IsVisible = false;
                     brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
+                    bCompressionAllowed = true;
                 }
                 
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
@@ -657,8 +664,13 @@ namespace BarcodeGenerator
             activityIndicator.IsRunning = true;
             await Task.Delay(200);
 
-            ClassBarcodes.bIsQRCode = false;
-            
+            // Compress then encode (gzip->base64) to reduce bytes and allow encoding larger text content than the QR code
+            // would normally allow, at the cost of requiring a custom decoder on the scanning side
+            if (ClassBarcodes.bCompressionEnabled && bCompressionAllowed)
+            {
+                cTextToCode = ClassCompression.CompressToBase64(cTextToCode);
+            }
+
             try
             {
                 // For testing crashes - DivideByZeroException
@@ -668,7 +680,6 @@ namespace BarcodeGenerator
                 if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
-                    ClassBarcodes.bIsQRCode = true;
                     
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
@@ -678,7 +689,6 @@ namespace BarcodeGenerator
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
-                    ClassBarcodes.bIsQRCode = true;
                     
                     ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
