@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-04-14 (YYYY-MM-DD)
+ * Date ........: 2026-04-15 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -69,7 +69,7 @@ namespace BarcodeGenerator
             ClassBarcodes.bQRCodeSizeVariable = Preferences.Default.Get("SettingQRCodeSizeVariable", true);
             ClassBarcodes.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
             ClassBarcodes.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25.0f);
-            ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Rounded");  // Square, Rounded, Circle
+            ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Square");  // Square, Rounded, Circle
             ClassBarcodes.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             ClassBarcodes.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
             ClassBarcodes.cCodeColorFgArtQRCode = Preferences.Default.Get("SettingCodeColorFgArtQRCode", "FF000000");
@@ -625,7 +625,6 @@ namespace BarcodeGenerator
             // Validate the text input and set the format
             if (selectedIndex != -1)
             {
-                //BarcodeValidationService validator = new();
                 ClassBarcodeValidationResult validation = await BarcodeValidationService.ValidateAsync(selectedName!, cTextToCode, nLenTextToCode);
 
                 if (!validation.Success)
