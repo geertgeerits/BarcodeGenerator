@@ -74,7 +74,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleGenerator}"
-                RowDefinitions="Auto, Auto, 180, Auto, 280, Auto"
+                RowDefinitions="Auto, Auto, 180, Auto, 290, Auto"
                 HorizontalOptions="Center"
                 RowSpacing="5">
 
@@ -206,40 +206,37 @@
                     Clicked="OnClearCodeClicked">
                 </Button>
 
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">                    
+                </Border>
+
                 <!--ZXing barcode generator view and image control are placed in the same grid cell. Only one of them is visible at a time-->
-                <Border
-                    Style="{StaticResource borderStyleDefault}"
-                    x:Name="brdBarcode"
+                <zxing:BarcodeGeneratorView
+                    x:Name="bgvBarcode"
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Fill"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">
+                    HeightRequest="280"
+                    Margin="5">
+                </zxing:BarcodeGeneratorView>
 
-                    <zxing:BarcodeGeneratorView
-                        x:Name="bgvBarcode"
-                        HeightRequest="280">
-                    </zxing:BarcodeGeneratorView>
-                </Border>
-
-                <!-- QRCoder is generated as an image, so a border with an image control is used to display it -->
-                <Border
-                    Style="{StaticResource borderStyleDefault}"
-                    x:Name="brdQrCodeImage"
+                <!-- QRCoder is generated as an image, so an image control is used to display it -->
+                <Image
+                    x:Name="imgQrCodeImage"
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Fill"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                    HeightRequest="280"
+                    WidthRequest="280"
+                    Margin="5"
                     IsVisible="False">
-
-                    <Image
-                        x:Name="imgQrCodeImage"
-                        HeightRequest="280"
-                        WidthRequest="280"
-                        IsVisible="False">
-                    </Image>
-                </Border>
+                </Image>
 
                 <Button
                     x:Name="btnShare"

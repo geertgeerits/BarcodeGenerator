@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.50
- * Date ........: 2026-04-15 (YYYY-MM-DD)
+ * Date ........: 2026-04-16 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -262,9 +262,7 @@ namespace BarcodeGenerator
 
                 ClassBarcodes.cQRCodeType = string.Empty;
 
-                brdQrCodeImage.IsVisible = false;
                 imgQrCodeImage.IsVisible = false;
-                brdBarcode.IsVisible = true;
                 bgvBarcode.IsVisible = true;
 
                 imgQrCodeImage.Source = null;
@@ -415,9 +413,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;
-                    brdBarcode.IsVisible = false;
                     bgvBarcode.IsVisible = false;
-                    brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
                 }
@@ -428,9 +424,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;
-                    brdBarcode.IsVisible = false;
                     bgvBarcode.IsVisible = false;
-                    brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
                 }
@@ -441,9 +435,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;
-                    brdBarcode.IsVisible = false;
                     bgvBarcode.IsVisible = false;
-                    brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
                 }
@@ -454,9 +446,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;
-                    brdBarcode.IsVisible = false;
                     bgvBarcode.IsVisible = false;
-                    brdQrCodeImage.IsVisible = true;
                     imgQrCodeImage.IsVisible = true;
                 }
 
