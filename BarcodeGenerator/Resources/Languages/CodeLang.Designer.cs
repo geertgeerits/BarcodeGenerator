@@ -1611,7 +1611,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code shape: circle.
+        ///   Looks up a localized string similar to QR Code module shape: circle.
         /// </summary>
         internal static string QRCodeModuleShapeCircle_Text {
             get {
@@ -1620,7 +1620,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code shape: rounded.
+        ///   Looks up a localized string similar to QR Code module shape: rounded.
         /// </summary>
         internal static string QRCodeModuleShapeRounded_Text {
             get {

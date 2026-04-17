@@ -721,13 +721,13 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
     <value>Tekstlængden er begrænset til {0} bytes.</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
-    <value>QR-kodeform: firkantet</value>
+    <value>QR-kodemodulets form: firkantet</value>
   </data>
   <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
-    <value>QR-kodeform: cirkel</value>
+    <value>QR-kodemodulets form: cirkel</value>
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
-    <value>QR-kodeform: afrundet</value>
+    <value>QR-kodemodulets form: afrundet</value>
   </data>
   <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
     <value>Vælg et baggrundsbillede</value>

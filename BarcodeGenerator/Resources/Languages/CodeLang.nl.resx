@@ -721,13 +721,13 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
     <value>De tekstlengte is beperkt tot {0} bytes.</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
-    <value>Vorm van de QR-code: vierkant</value>
+    <value>Vorm QR-codemodule: vierkant</value>
   </data>
   <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
-    <value>Vorm van de QR-code: cirkel</value>
+    <value>Vorm QR-codemodule: cirkel</value>
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
-    <value>Vorm van de QR-code: afgerond</value>
+    <value>Vorm QR-codemodule: afgerond</value>
   </data>
   <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
     <value>Kies een achtergrondafbeelding</value>
@@ -775,7 +775,7 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
     <value>Gradiëntkleur 3</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
-    <value>Modulevorm:</value>
+    <value>Vorm module:</value>
   </data>
   <data name="ImageForeground_Text" xml:space="preserve">
     <value>Afbeelding voorgrond:</value>
@@ -793,15 +793,15 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
     <value>De tekst in de QR-code kan worden gecomprimeerd (zie de instellingen om dit in te schakelen). Om de tekst weer leesbaar te maken, moet deze worden gedecomprimeerd met een scanner die GZip-compressie ondersteunt, zoals de scanner in deze app.</value>
   </data>
   <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
-    <value>Vorm van het zoekpatroon:</value>
+    <value>Vorm zoekpatroon:</value>
   </data>
   <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
-    <value>Vorm van het QR-code zoekpatroon: cirkel</value>
+    <value>Vorm QR-code zoekpatroon: cirkel</value>
   </data>
   <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
-    <value>Vorm van het QR-code zoekpatroon: afgerond</value>
+    <value>Vorm QR-code zoekpatroon: afgerond</value>
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
-    <value>Vorm van het QR-code zoekpatroon: vierkant</value>
+    <value>Vorm QR-code zoekpatroon: vierkant</value>
   </data>
 </root>

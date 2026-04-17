@@ -721,13 +721,13 @@ Microsoft, Microsoft Store, el logotipo de Microsoft Store y Windows son marcas 
     <value>La longitud del texto está limitada a {0} bytes.</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
-    <value>Forma del código QR: cuadrado</value>
+    <value>Forma del módulo de código QR: cuadrada</value>
   </data>
   <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
-    <value>Forma del código QR: círculo</value>
+    <value>Forma del módulo de código QR: circular</value>
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
-    <value>Forma del código QR: redondeada</value>
+    <value>Forma del módulo de código QR: redondeada</value>
   </data>
   <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
     <value>Elige una imagen de fondo</value>

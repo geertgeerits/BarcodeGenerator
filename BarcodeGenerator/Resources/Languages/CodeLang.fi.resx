@@ -721,13 +721,13 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
     <value>Tekstin pituus on rajoitettu {0} tavuun.</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
-    <value>QR-koodin muoto: neliö</value>
+    <value>QR-koodimoduulin muoto: neliö</value>
   </data>
   <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
-    <value>QR-koodin muoto: ympyrä</value>
+    <value>QR-koodimoduulin muoto: ympyrä</value>
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
-    <value>QR-koodin muoto: pyöristetty</value>
+    <value>QR-koodimoduulin muoto: pyöristetty</value>
   </data>
   <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
     <value>Valitse taustakuva</value>

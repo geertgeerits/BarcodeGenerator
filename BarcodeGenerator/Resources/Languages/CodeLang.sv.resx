@@ -721,13 +721,13 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
     <value>Textlängden är begränsad till {0} byte.</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
-    <value>QR-kodens form: fyrkantig</value>
+    <value>QR-kodmodulens form: fyrkantig</value>
   </data>
   <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
-    <value>QR-kodens form: cirkel</value>
+    <value>QR-kodmodulens form: cirkel</value>
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
-    <value>QR-kodens form: rundad</value>
+    <value>QR-kodmodulens form: rundad</value>
   </data>
   <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
     <value>Välj en bakgrundsbild</value>
