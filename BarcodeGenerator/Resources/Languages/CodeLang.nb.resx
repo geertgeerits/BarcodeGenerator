@@ -792,4 +792,16 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>Teksten i QR-koden kan komprimeres (se innstillingene for å aktivere dette). For å gjøre teksten lesbar igjen, må den dekomprimeres av en skanner som støtter GZip-komprimering, for eksempel skanneren i denne appen.</value>
   </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Mønsterform for søker:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>Mønsterform for QR-kodesøker: sirkel</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>Mønsterform for QR-kodesøker: avrundet</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>Mønsterform for QR-kodesøker: firkantet</value>
+  </data>
 </root>

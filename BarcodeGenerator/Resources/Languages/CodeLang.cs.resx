@@ -792,4 +792,16 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>Text v QR kódu lze komprimovat (viz nastavení, jak tuto funkci povolit). Aby byl text opět čitelný, musí být dekomprimován skenerem, který podporuje kompresi GZip, jako je skener v této aplikaci.</value>
   </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Tvar vzoru pro vyhledávač:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>Tvar vzoru pro vyhledávač QR kódů: kruh</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>Tvar vzoru pro vyhledávač QR kódů: zaoblený</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>Tvar vzoru pro vyhledávač QR kódů: čtverec</value>
+  </data>
 </root>

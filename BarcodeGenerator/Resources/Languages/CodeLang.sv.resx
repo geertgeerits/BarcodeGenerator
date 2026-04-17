@@ -792,4 +792,16 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>Texten i QR-koden kan komprimeras (se inställningarna för att aktivera detta). För att göra texten läsbar igen måste den dekomprimeras av en skanner som stöder GZip-komprimering, till exempel skannern i den här appen.</value>
   </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Sökarens mönsterform:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>QR-kodsökarens mönsterform: cirkel</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>QR-kodsökarens mönsterform: rundad</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>QR-kodsökarens mönsterform: fyrkantig</value>
+  </data>
 </root>

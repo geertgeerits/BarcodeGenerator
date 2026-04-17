@@ -792,4 +792,16 @@ Microsoft, Microsoft Store, el logotipo de Microsoft Store y Windows son marcas 
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>El texto del código QR se puede comprimir (consulta la configuración para activar esta opción). Para que el texto vuelva a ser legible, debe descomprimirse con un escáner compatible con la compresión GZip, como el escáner de esta aplicación.</value>
   </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Forma del patrón del buscador:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>Forma del patrón del buscador de códigos QR: círculo</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>Forma del patrón del buscador de códigos QR: redondeado</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>Forma del patrón del buscador de códigos QR: cuadrado</value>
+  </data>
 </root>

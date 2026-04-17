@@ -792,4 +792,16 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>Textul din codul QR poate fi comprimat (consultați setările pentru a activa această opțiune). Pentru ca textul să fie din nou lizibil, acesta trebuie decomprimat cu un scaner care acceptă compresia GZip, cum ar fi scanerul din această aplicație.</value>
   </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Forma modelului căutător:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>Forma modelului căutător de coduri QR: cerc</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>Forma modelului căutător de coduri QR: rotunjită</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>Forma modelului căutător de coduri QR: pătrată</value>
+  </data>
 </root>

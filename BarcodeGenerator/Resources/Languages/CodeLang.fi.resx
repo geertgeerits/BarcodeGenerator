@@ -792,4 +792,16 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>QR-koodin tekstiä voidaan pakata (katso asetukset tämän käyttöönottamiseksi). Jotta teksti olisi taas luettavissa, se on purettava skannerilla, joka tukee GZip-pakkausta, kuten tässä sovelluksessa olevalla skannerilla.</value>
   </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Etsinnän kuvion muoto:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>QR-koodin etsijän kuvion muoto: ympyrä</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>QR-koodin etsijän kuvion muoto: pyöristetty</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>QR-koodin etsijän kuvion muoto: neliö</value>
+  </data>
 </root>

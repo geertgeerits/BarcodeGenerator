@@ -792,4 +792,16 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>A QR-kódban található szöveg tömöríthető (ennek engedélyezéséhez lásd a beállításokat). Ahhoz, hogy a szöveg ismét olvasható legyen, ki kell tömöríteni egy GZip tömörítést támogató szkennerrel, például az alkalmazásban található szkennerrel.</value>
   </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Kereső minta alakja:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>QR-kód kereső minta alakja: kör</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>QR-kód kereső minta alakja: lekerekített</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>QR-kód kereső minta alakja: négyzet</value>
+  </data>
 </root>
