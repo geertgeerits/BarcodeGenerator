@@ -35,7 +35,6 @@ namespace BarcodeGenerator
         private static string cBarcodeCaption = string.Empty;   // Caption text for the barcode - used for sharing the barcode with the caption in the text and for the option to include the caption in the generated barcode image
         private static bool bCompressionAllowed;                // Flag to indicate if compression is allowed for the input text based on the selected barcode format
 
-
         public MainPage()
         {
             try

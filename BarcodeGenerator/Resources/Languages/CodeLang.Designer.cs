@@ -1629,7 +1629,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code shape: square.
+        ///   Looks up a localized string similar to QR Code module shape: square.
         /// </summary>
         internal static string QRCodeModuleShapeSquare_Text {
             get {
