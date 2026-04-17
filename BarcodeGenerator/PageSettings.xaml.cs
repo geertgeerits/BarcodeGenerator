@@ -9,7 +9,6 @@ namespace BarcodeGenerator
         private readonly Stopwatch stopWatch = new();
         private string searchKeyGenerator = string.Empty;
         private string searchKeyScanner = string.Empty;
-        private readonly string cGradientDirectionBackgroundColor = "000099";  // navy blue
 
         public PageSettings()
         {
