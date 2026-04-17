@@ -213,10 +213,11 @@
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Fill"
                     VerticalOptions="Fill"
+                    Margin="{OnPlatform Default=0, Android='5,0,5,0'}"
                     BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}">                    
                 </Border>
 
-                <!--ZXing barcode generator view and image control are placed in the same grid cell. Only one of them is visible at a time-->
+                <!--ZXing barcode generator view and QRCoder image control are placed in the same grid cell. Only one of them is visible at a time-->
                 <zxing:BarcodeGeneratorView
                     x:Name="bgvBarcode"
                     Grid.Row="4"

@@ -130,43 +130,38 @@ namespace BarcodeGenerator
             // If no size is given then the default size = 512 x 512 pixels
             QRCodeImageBuilder? qrData = null;
 
-            if (ClassBarcodes.cQRCodeModuleShape == "Square")
-            {
+            // Build base QRCodeImageBuilder with common settings
+            qrData = new QRCodeImageBuilder(text)
+                .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
+                .WithErrorCorrection(ECCLevel.H)
+                .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
+                            backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
+                            clearColor: SKColors.Transparent)
+                .WithGradient(gradient)
+                .WithIcon(icon);
 
-                qrData = new QRCodeImageBuilder(text)
-                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
-                    .WithErrorCorrection(ECCLevel.H)
-                    .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
-                                backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
-                                clearColor: SKColors.Transparent)
-                    .WithGradient(gradient)
-                    .WithIcon(icon);
-            }
-            else if (ClassBarcodes.cQRCodeModuleShape == "Rounded")
+            // Apply module shape if a non-default shape is selected
+            switch (ClassBarcodes.cQRCodeModuleShape)
             {
-                qrData = new QRCodeImageBuilder(text)
-                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
-                    .WithModuleShape(RoundedRectangleModuleShape.Default)
-                    .WithErrorCorrection(ECCLevel.H)
-                    .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
-                                backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
-                                clearColor: SKColors.Transparent)
-                    .WithFinderPatternShape(RoundedRectangleFinderPatternShape.Default)
-                    .WithGradient(gradient)
-                    .WithIcon(icon);
+                case "Rounded":
+                    qrData = qrData.WithModuleShape(RoundedRectangleModuleShape.Default);
+                    break;
+                case "Circle":
+                    qrData = qrData.WithModuleShape(CircleModuleShape.Default);
+                    break;
+                // "Square" or unknown: leave default module shape
             }
-            else if (ClassBarcodes.cQRCodeModuleShape == "Circle")
+
+            // Apply finder pattern shape independently from module shape
+            switch (ClassBarcodes.cQRCodeFinderPatternShape)
             {
-                qrData = new QRCodeImageBuilder(text)
-                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
-                    .WithModuleShape(CircleModuleShape.Default)
-                    .WithErrorCorrection(ECCLevel.H)
-                    .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
-                                backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
-                                clearColor: SKColors.Transparent)
-                    .WithFinderPatternShape(CircleFinderPatternShape.Default)
-                    .WithGradient(gradient)
-                    .WithIcon(icon);
+                case "Rounded":
+                    qrData = qrData.WithFinderPatternShape(RoundedRectangleFinderPatternShape.Default);
+                    break;
+                case "Circle":
+                    qrData = qrData.WithFinderPatternShape(CircleFinderPatternShape.Default);
+                    break;
+                // "Square" or unknown: leave default finder pattern shape
             }
 
             // Add a null check before using qrData

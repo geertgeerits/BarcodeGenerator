@@ -19,6 +19,11 @@ namespace BarcodeGenerator
             DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
             this.Unloaded += OnUnloaded;
 
+            // Set the initial states of the radio buttons based on the current QR Code finder pattern shape
+            rbtQRCodeFinderPatternShapeSquare.IsChecked = ClassBarcodes.cQRCodeFinderPatternShape == "Square";
+            rbtQRCodeFinderPatternShapeRounded.IsChecked = ClassBarcodes.cQRCodeFinderPatternShape == "Rounded";
+            rbtQRCodeFinderPatternShapeCircle.IsChecked = ClassBarcodes.cQRCodeFinderPatternShape == "Circle";
+
             // Set the initial states of the radio buttons based on the current QR Code module shape
             rbtQRCodeModuleShapeSquare.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Square";
             rbtQRCodeModuleShapeRounded.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Rounded";
@@ -225,6 +230,27 @@ namespace BarcodeGenerator
             {
                 ClassBarcodes.cCodeColorBgArtQRCode = ClassBarcodes.cCodeColor;
                 bxvColorBgArtQRCode.Color = Color.FromArgb(ClassBarcodes.cCodeColorBgArtQRCode);
+            }
+        }
+
+        /// <summary>
+        /// Radio button QR code FinderPattern shape checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RbtQRCodeFinderPatternShape_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (rbtQRCodeFinderPatternShapeSquare.IsChecked)
+            {
+                ClassBarcodes.cQRCodeFinderPatternShape = "Square";
+            }
+            else if (rbtQRCodeFinderPatternShapeRounded.IsChecked)
+            {
+                ClassBarcodes.cQRCodeFinderPatternShape = "Rounded";
+            }
+            else if (rbtQRCodeFinderPatternShapeCircle.IsChecked)
+            {
+                ClassBarcodes.cQRCodeFinderPatternShape = "Circle";
             }
         }
 

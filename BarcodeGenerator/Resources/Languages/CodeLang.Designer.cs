@@ -1404,6 +1404,42 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finder pattern shape:.
+        /// </summary>
+        internal static string QRCodeFinderPatternShape_Text {
+            get {
+                return ResourceManager.GetString("QRCodeFinderPatternShape_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QR Code finder pattern shape: circle.
+        /// </summary>
+        internal static string QRCodeFinderPatternShapeCircle_Text {
+            get {
+                return ResourceManager.GetString("QRCodeFinderPatternShapeCircle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QR Code finder pattern shape: rounded.
+        /// </summary>
+        internal static string QRCodeFinderPatternShapeRounded_Text {
+            get {
+                return ResourceManager.GetString("QRCodeFinderPatternShapeRounded_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QR Code finder pattern shape: square.
+        /// </summary>
+        internal static string QRCodeFinderPatternShapeSquare_Text {
+            get {
+                return ResourceManager.GetString("QRCodeFinderPatternShapeSquare_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gradient color 1.
         /// </summary>
         internal static string QRCodeGradientColor1_Text {

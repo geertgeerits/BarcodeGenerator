@@ -104,11 +104,92 @@
             Grid.Row="3"
             Grid.Column="0"
             Padding="8,0,0,0"
-            Text="{Translate QRCodeModuleShape_Text}">
+            Text="{Translate QRCodeFinderPatternShape_Text}">
         </Label>
 
         <Grid
             Grid.Row="3"
+            Grid.Column="2"
+            RowDefinitions="Auto"
+            ColumnDefinitions="30, 32, 30, 32, 30, 30" >
+
+            <RadioButton
+                x:Name="rbtQRCodeFinderPatternShapeSquare"
+                GroupName="FinderPatternShape"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
+                ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeSquare_Text}"
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}"
+                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
+            </RadioButton>
+
+            <BoxView
+                Grid.Column="1"
+                HeightRequest="27"
+                WidthRequest="27"
+                CornerRadius="0"
+                HorizontalOptions="Start"
+                Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeSquare_Text}"
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}">
+            </BoxView>
+
+            <RadioButton
+                x:Name="rbtQRCodeFinderPatternShapeRounded"
+                GroupName="FinderPatternShape"
+                Grid.Column="2"
+                HorizontalOptions="Start"
+                Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
+                ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeRounded_Text}"
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRounded_Text}"
+                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
+            </RadioButton>
+
+            <BoxView
+                Grid.Column="3"
+                HeightRequest="28"
+                WidthRequest="28"
+                CornerRadius="10"
+                HorizontalOptions="Start"
+                Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeRounded_Text}"
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRounded_Text}">
+            </BoxView>
+
+            <RadioButton
+                x:Name="rbtQRCodeFinderPatternShapeCircle"
+                GroupName="FinderPatternShape"
+                Grid.Column="4"
+                HorizontalOptions="Start"
+                Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
+                ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeCircle_Text}"
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeCircle_Text}"
+                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
+            </RadioButton>
+
+            <BoxView
+                Grid.Column="5"
+                HeightRequest="29"
+                WidthRequest="29"
+                CornerRadius="25"
+                HorizontalOptions="Start"
+                Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeCircle_Text}"
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeCircle_Text}">
+            </BoxView>
+        </Grid>
+
+        <Label
+            Style="{StaticResource labelStyleDefault}"
+            Grid.Row="4"
+            Grid.Column="0"
+            Padding="8,0,0,0"
+            Text="{Translate QRCodeModuleShape_Text}">
+        </Label>
+
+        <Grid
+            Grid.Row="4"
             Grid.Column="2"
             RowDefinitions="Auto"
             ColumnDefinitions="30, 32, 30, 32, 30, 30" >

@@ -198,14 +198,6 @@ namespace BarcodeGenerator
             ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
             ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
 
-            // Set the QR code module shapes in the picker
-            List<string> QRCodeModuleShape =
-            [
-                CodeLang.QRCodeModuleShapeCircle_Text,
-                CodeLang.QRCodeModuleShapeRounded_Text,
-                CodeLang.QRCodeModuleShapeSquare_Text
-            ];
-
             // Set the QR code image size percent in the label
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
             sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
@@ -473,6 +465,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeSizeVariable", ClassBarcodes.bQRCodeSizeVariable);
             Preferences.Default.Set("SettingQRCodeSizePixels", ClassBarcodes.nQRCodeSizePixels);
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassBarcodes.nQRCodeImageSizePercent);
+            Preferences.Default.Set("SettingQRCodeFinderPatternShape", ClassBarcodes.cQRCodeFinderPatternShape);
             Preferences.Default.Set("SettingQRCodeModuleShape", ClassBarcodes.cQRCodeModuleShape);
             Preferences.Default.Set("SettingCodeColorFg", ClassBarcodes.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", ClassBarcodes.cCodeColorBg);
@@ -521,6 +514,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeSizeVariable");
                 Preferences.Default.Remove("SettingQRCodeSizePixels");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
+                Preferences.Default.Remove("SettingQRCodeFinderPatternShape");
                 Preferences.Default.Remove("SettingQRCodeModuleShape");
                 Preferences.Default.Remove("SettingCodeColorFg");
                 Preferences.Default.Remove("SettingCodeColorBg");

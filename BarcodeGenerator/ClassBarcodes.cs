@@ -91,6 +91,7 @@
         public static bool bQRCodeSizeVariable;                         // Control whether the size of the QR code is variable or fixed
         public static int nQRCodeSizePixels;                            // Size of the QR code in pixels (if the size is fixed)
         public static float nQRCodeImageSizePercent;                    // Size of the QR code image as a percentage
+        public static string cQRCodeFinderPatternShape = string.Empty;  // Shape of the QR code finder pattern shapes
         public static string cQRCodeModuleShape = string.Empty;         // Shape of the QR code modules
         public static string cCodeColor = string.Empty;                 // Color of the barcode (text and bars) for the popup color picker
         public static string cCodeColorFg = string.Empty;               // Foreground color of the barcode (text and bars)
