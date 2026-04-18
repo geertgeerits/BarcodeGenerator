@@ -101,7 +101,12 @@
                     </Label>
 
                     <Label
-                        x:Name="lblQRCodeImage"
+                        x:Name="lblQRCodeArt"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
+
+                    <Label
+                        x:Name="lblQRCodeSettings"
                         Style="{StaticResource labelStyleInfo}">
                     </Label>
 

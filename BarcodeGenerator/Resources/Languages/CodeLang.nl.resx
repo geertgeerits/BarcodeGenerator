@@ -412,13 +412,11 @@ De ondersteunende talen zijn: Tsjechisch, Deens, Nederlands, Engels, Fins, Frans
 
 Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   </data>
-  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>De QR-code wordt gegenereerd met een vaste of variabele pixelgrootte, afhankelijk van het aantal tekens en de maximale pixelgrootte die in de instellingen is gedefinieerd.
 Wanneer een afbeelding (logo) bovenop de QR-code wordt geplaatst, wordt deze gecentreerd en geschaald naar 10% tot 35% van de grootte van de QR-code. Dit bereik kan worden aangepast in de instellingen. Er wordt een rand toegevoegd om de zichtbaarheid te verbeteren.
 De artistieke QR-code is zeer aanpasbaar, met opties zoals verlopen, aangepaste vormen, kleuren, een voorgrondafbeelding (logo) en een achtergrondafbeelding. In dit geval moet de achtergronddoorzichtigheid worden ingesteld tussen 0% en minder dan 100% (zie instellingen).
-Gebruik voor het beste resultaat vierkante afbeeldingen en experimenteer met de afbeeldingsgrootte om overmatig schalen te voorkomen. De voorkeursbestandsindelingen zijn PNG (eventueel met een transparante achtergrond) of JPEG.
-
-Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er zeker van te zijn dat ze correct scannen.</value>
+Gebruik voor het beste resultaat vierkante afbeeldingen en experimenteer met de afbeeldingsgrootte om overmatig schalen te voorkomen. De voorkeursbestandsindelingen zijn PNG (eventueel met een transparante achtergrond) of JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informatie</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>Vorm QR-code zoekpatroon: vierkant</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Voor optimale scanbetrouwbaarheid raden we het volgende aan voor QR-codes:
+Zorg voor een hoog contrast tussen de voorgrond- en achtergrondkleuren.
+Gebruik vierkante modules (standaard): vierkante modules leveren over het algemeen het laagste foutpercentage op bij het scannen van QR-codes.
+Vermijd openingen tussen modules: kleinere modules of vormen zoals cirkels of afgeronde modules kunnen openingen creëren, wat het aantal scanfouten kan verhogen.
+Foutcorrectie is standaard ingesteld op hoog (30% herstel): een hoog foutcorrectieniveau compenseert voor verminderde leesbaarheid.
+
+Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er zeker van te zijn dat ze correct scannen.</value>
   </data>
 </root>

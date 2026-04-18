@@ -412,13 +412,11 @@ Stödspråken är: tjeckiska, danska, holländska, engelska, finska, franska, ty
 
 Du kan alltid kontakta mig för eventuella korrigeringar.</value>
   </data>
-  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>QR-koden genereras med antingen en fast eller variabel pixelstorlek, beroende på antalet tecken den innehåller och den maximala pixelstorleken som definierats i inställningarna.
 När en bild (logotyp) placeras ovanpå QR-koden centreras och skalas den till mellan 10 % och 35 % av QR-kodens storlek. Detta intervall kan justeras i inställningarna. En ram läggs till för att förbättra synligheten.
 Den konstnärliga QR-koden är mycket anpassningsbar, med alternativ som gradienter, anpassade former, färger, en förgrundsbild (logotyp) och en bakgrundsbild. I det här fallet måste bakgrundsopaciteten ställas in mellan 0 % och mindre än 100 % (se inställningar).
-För bästa resultat, använd fyrkantiga bilder och experimentera med bildstorleken för att undvika överdriven storleksändring. Föredragna filformat är PNG (valfritt med en transparent bakgrund) eller JPEG.
-
-Det rekommenderas att testa de genererade QR-koderna och andra streckkoder för att säkerställa att de läses korrekt.</value>
+För bästa resultat, använd fyrkantiga bilder och experimentera med bildstorleken för att undvika överdriven storleksändring. Föredragna filformat är PNG (valfritt med en transparent bakgrund) eller JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärke
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>QR-kodsökarens mönsterform: fyrkantig</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>För optimal skanningstillförlitlighet rekommenderar vi följande för QR-koder:
+Håll hög kontrast mellan förgrunds- och bakgrundsfärgerna.
+Använd fyrkantiga moduler (standard): fyrkantiga moduler ger generellt sett den lägsta felfrekvensen vid skanning av QR-koder.
+Undvik mellanrum mellan moduler: mindre moduler eller former som cirklar eller rundade moduler kan skapa mellanrum, vilket kan öka skanningsfelen.
+Felkorrigering är som standard inställd på hög (30 % återställning): en hög felkorrigeringsnivå hjälper till att kompensera för minskad läsbarhet.
+
+Det rekommenderas att testa de genererade QR-koderna och andra streckkoder för att säkerställa att de skannar korrekt.</value>
   </data>
 </root>

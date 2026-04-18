@@ -412,13 +412,11 @@ Die unterstützten Sprachen sind: Tschechisch, Dänisch, Niederländisch, Englis
 
 Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   </data>
-  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>Der QR-Code wird je nach Zeichenanzahl und der in den Einstellungen festgelegten maximalen Pixelgröße entweder mit fester oder variabler Pixelgröße generiert.
 Wird ein Bild (Logo) über den QR-Code gelegt, wird es zentriert und auf 10 % bis 35 % der QR-Code-Größe skaliert. Dieser Bereich lässt sich in den Einstellungen anpassen. Ein Rahmen verbessert die Lesbarkeit.
 Der grafische QR-Code ist hochgradig anpassbar und bietet Optionen wie Farbverläufe, benutzerdefinierte Formen, Farben, ein Vordergrundbild (Logo) und ein Hintergrundbild. In diesem Fall muss die Hintergrunddeckkraft zwischen 0 % und unter 100 % liegen (siehe Einstellungen).
-Für optimale Ergebnisse verwenden Sie quadratische Bilder und experimentieren Sie mit der Bildgröße, um übermäßiges Skalieren zu vermeiden. Bevorzugte Dateiformate sind PNG (optional mit transparentem Hintergrund) oder JPEG.
-
-Es wird empfohlen, die generierten QR-Codes und andere Barcodes zu testen, um sicherzustellen, dass sie korrekt gescannt werden können.</value>
+Für optimale Ergebnisse verwenden Sie quadratische Bilder und experimentieren Sie mit der Bildgröße, um übermäßiges Skalieren zu vermeiden. Bevorzugte Dateiformate sind PNG (optional mit transparentem Hintergrund) oder JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, das Microsoft Store-Logo und Windows sind Marken der
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>QR-Code-Suchmuster: Quadrat</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Für optimale Scan-Zuverlässigkeit empfehlen wir für QR-Codes Folgendes:
+Achten Sie auf einen hohen Kontrast zwischen Vorder- und Hintergrundfarbe.
+Verwenden Sie quadratische Module (Standard): Quadratische Module führen in der Regel zu der geringsten Fehlerrate beim Scannen von QR-Codes.
+Vermeiden Sie Lücken zwischen den Modulen: Kleinere Module oder Formen wie Kreise oder abgerundete Module können Lücken erzeugen, die zu mehr Scanfehlern führen können.
+Die Fehlerkorrektur ist standardmäßig auf „Hoch“ (30 % Wiederherstellung) eingestellt: Ein hoher Wert hilft, eine geringere Lesbarkeit auszugleichen.
+
+Es wird empfohlen, die generierten QR-Codes und andere Barcodes zu testen, um sicherzustellen, dass sie korrekt gescannt werden können.</value>
   </data>
 </root>

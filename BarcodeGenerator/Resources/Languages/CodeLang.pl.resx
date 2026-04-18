@@ -412,13 +412,11 @@ Obsługiwane języki to: czeski, duński, holenderski, angielski, fiński, franc
 
 Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</value>
   </data>
-  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>Kod QR jest generowany ze stałym lub zmiennym rozmiarem pikseli, w zależności od liczby znaków i maksymalnego rozmiaru piksela zdefiniowanego w ustawieniach.
 Po umieszczeniu obrazu (logo) na kodzie QR, jest on wyśrodkowany i skalowany do rozmiaru od 10% do 35% rozmiaru kodu QR. Zakres ten można dostosować w ustawieniach. Dodana jest ramka w celu poprawy widoczności.
 Artystyczny kod QR jest w dużym stopniu konfigurowalny, z opcjami takimi jak gradienty, niestandardowe kształty, kolory, obraz na pierwszym planie (logo) i obraz tła. W takim przypadku krycie tła musi być ustawione w zakresie od 0% do mniej niż 100% (patrz ustawienia).
-Aby uzyskać najlepsze rezultaty, używaj kwadratowych obrazów i eksperymentuj z rozmiarem obrazu, aby uniknąć nadmiernej zmiany rozmiaru. Preferowane formaty plików to PNG (opcjonalnie z przezroczystym tłem) lub JPEG.
-
-Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, aby upewnić się, że skanują się prawidłowo.</value>
+Aby uzyskać najlepsze rezultaty, używaj kwadratowych obrazów i eksperymentuj z rozmiarem obrazu, aby uniknąć nadmiernej zmiany rozmiaru. Preferowane formaty plików to PNG (opcjonalnie z przezroczystym tłem) lub JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informacje</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, logo Microsoft Store i Windows są znakami towarowym
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>Kształt wzoru wyszukiwarki kodów QR: kwadrat</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Aby zapewnić optymalną niezawodność skanowania kodów QR, zalecamy następujące działania:
+Utrzymuj wysoki kontrast między kolorami pierwszego planu a tła.
+Używaj modułów kwadratowych (domyślnie): moduły kwadratowe zazwyczaj generują najniższy współczynnik błędów podczas skanowania kodów QR.
+Unikaj przerw między modułami: mniejsze moduły lub kształty, takie jak koła lub moduły zaokrąglone, mogą tworzyć przerwy, co może zwiększyć liczbę błędów skanowania.
+Domyślnie korekcja błędów jest ustawiona na wysoki poziom (30% odzysku): wysoki poziom korekcji błędów pomaga zrekompensować zmniejszoną czytelność.
+
+Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, aby upewnić się, że skanują się prawidłowo.</value>
   </data>
 </root>

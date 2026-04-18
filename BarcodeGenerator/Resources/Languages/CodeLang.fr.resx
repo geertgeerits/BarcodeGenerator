@@ -412,13 +412,11 @@ Les langues de support sont les suivantes : tchèque, danois, néerlandais, ang
 
 Vous pouvez toujours me contacter pour toute correction.</value>
   </data>
-  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>Le code QR est généré avec une taille de pixels fixe ou variable, selon le nombre de caractères qu'il contient et la taille maximale définie dans les paramètres.
 Lorsqu'une image (logo) est superposée au code QR, elle est centrée et redimensionnée entre 10 % et 35 % de la taille du code QR. Cette plage est ajustable dans les paramètres. Une bordure est ajoutée pour une meilleure visibilité.
 Le code QR artistique est hautement personnalisable : dégradés, formes personnalisées, couleurs, image de premier plan (logo) et image d'arrière-plan. Dans ce cas, l'opacité de l'arrière-plan doit être comprise entre 0 % et moins de 100 % (voir les paramètres).
-Pour un résultat optimal, utilisez des images carrées et testez différentes tailles d'image afin d'éviter un redimensionnement excessif. Les formats de fichiers recommandés sont PNG (avec éventuellement un fond transparent) ou JPEG.
-
-Il est conseillé de tester les codes QR générés et les autres codes-barres pour vérifier leur bon fonctionnement.</value>
+Pour un résultat optimal, utilisez des images carrées et testez différentes tailles d'image afin d'éviter un redimensionnement excessif. Les formats de fichiers recommandés sont PNG (avec éventuellement un fond transparent) ou JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, le logo Microsoft Store et Windows sont des marques 
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>Forme du motif de recherche de code QR: carré</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Pour une fiabilité de lecture optimale, nous recommandons les points suivants pour les codes QR:
+Conservez un contraste élevé entre les couleurs de premier plan et d’arrière-plan.
+Utilisez des modules carrés (par défaut): les modules carrés présentent généralement le taux d’erreur le plus faible lors de la lecture des codes QR.
+Évitez les espaces entre les modules: les modules plus petits ou les formes telles que les cercles ou les modules arrondis peuvent créer des espaces, ce qui peut augmenter les erreurs de lecture.
+La correction d’erreur est réglée sur un niveau élevé (30 % de récupération) par défaut: un niveau de correction d’erreur élevé permet de compenser une lisibilité réduite.
+
+Il est recommandé de tester les codes QR générés et les autres codes-barres afin de s’assurer de leur bonne lecture.</value>
   </data>
 </root>

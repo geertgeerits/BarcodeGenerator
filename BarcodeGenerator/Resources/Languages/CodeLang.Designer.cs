@@ -1182,22 +1182,22 @@ namespace BarcodeGenerator.Resources.Languages {
         ///When an image (logo) is placed on top of the QR code, it is centered and scaled to between 10% and 35% of the QR code’s size. This range can be adjusted in the settings. A border is added to improve visibility.
         ///The artistic QR code is highly customizable, with options such as gradients, custom shapes, colors, a foreground image (logo), and [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string InfoQRCodeImage_Text {
+        internal static string InfoQRCodeArt_Text {
             get {
-                return ResourceManager.GetString("InfoQRCodeImage_Text", resourceCulture);
+                return ResourceManager.GetString("InfoQRCodeArt_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to For optimal scan reliability, we recommend the following for QR codes:
         ///Keep high contrast between the foreground and background colors.
-        ///Use rectangular modules (default): rectangular modules generally produce the lowest error rate when scanning QR codes.
+        ///Use square modules (default): square modules generally produce the lowest error rate when scanning QR codes.
         ///Avoid gaps between modules: smaller modules or shapes such as circles or rounded modules can create gaps, which may increase scan errors.
-        ///Error correction is set to high (30% recovery) by default: a higher error-correction level helps compensate for red [rest of string was truncated]&quot;;.
+        ///Error correction is set to high (30% recovery) by default: a high error-correction level helps compensate for reduced readabi [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string InfoQRCodeTest_Text {
+        internal static string InfoQRCodeSettings_Text {
             get {
-                return ResourceManager.GetString("InfoQRCodeTest_Text", resourceCulture);
+                return ResourceManager.GetString("InfoQRCodeSettings_Text", resourceCulture);
             }
         }
         

@@ -412,13 +412,11 @@ Tukikielet ovat: tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, unka
 
 Voit aina ottaa minuun yhteyttä korjauksista.</value>
   </data>
-  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>QR-koodi luodaan joko kiinteällä tai muuttuvalla pikselikoolla riippuen sen sisältämien merkkien määrästä ja asetuksissa määritetystä enimmäispikselikoosta.
 Kun kuva (logo) sijoitetaan QR-koodin päälle, se keskitetään ja skaalataan 10–35 %:iin QR-koodin koosta. Tätä aluetta voidaan säätää asetuksissa. Näkyvyyden parantamiseksi lisätään reunus.
 Taiteellinen QR-koodi on erittäin muokattavissa, ja siinä on vaihtoehtoja, kuten liukuvärit, mukautetut muodot, värit, etualan kuva (logo) ja taustakuva. Tässä tapauksessa taustan läpinäkyvyyden on oltava 0 % ja alle 100 % (katso asetukset).
-Parhaan tuloksen saavuttamiseksi käytä neliönmuotoisia kuvia ja kokeile eri kuvakokoja välttääksesi liiallista koon muuttamista. Suositeltuja tiedostomuotoja ovat PNG (valinnainen läpinäkyvällä taustalla) tai JPEG.
-
-On suositeltavaa testata luodut QR-koodit ja muut viivakoodit varmistaaksesi, että ne skannataan oikein.</value>
+Parhaan tuloksen saavuttamiseksi käytä neliönmuotoisia kuvia ja kokeile eri kuvakokoja välttääksesi liiallista koon muuttamista. Suositeltuja tiedostomuotoja ovat PNG (valinnainen läpinäkyvällä taustalla) tai JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Tiedot</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>QR-koodin etsijän kuvion muoto: neliö</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Optimaalisen skannausluotettavuuden takaamiseksi suosittelemme seuraavaa QR-koodien skannauksessa:
+Pidä etualan ja taustan värien välinen kontrasti korkeana.
+Käytä neliömoduuleja (oletus): neliömoduulit tuottavat yleensä pienimmän virheprosentin QR-koodeja skannattaessa.
+Vältä aukkoja moduulien välillä: pienemmät moduulit tai muodot, kuten ympyrät tai pyöreät moduulit, voivat luoda aukkoja, mikä voi lisätä skannausvirheitä.
+Virheenkorjaus on oletusarvoisesti asetettu korkeaksi (30 %:n palautus): korkea virheenkorjaustaso auttaa kompensoimaan heikentynyttä luettavuutta.
+
+On suositeltavaa testata luodut QR-koodit ja muut viivakoodit varmistaaksesi, että ne skannataan oikein.</value>
   </data>
 </root>

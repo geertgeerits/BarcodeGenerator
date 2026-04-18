@@ -412,13 +412,11 @@ Os idiomas de suporte são: tcheco, dinamarquês, holandês, inglês, finlandês
 
 Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   </data>
-  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>O código QR é gerado com um tamanho de pixel fixo ou variável, dependendo do número de caracteres que contém e do tamanho máximo de pixel definido nas configurações.
 Quando uma imagem (logotipo) é colocada sobre o código QR, ela é centralizada e dimensionada para ocupar entre 10% e 35% do tamanho do código QR. Esse intervalo pode ser ajustado nas configurações. Uma borda é adicionada para melhorar a visibilidade.
 O código QR artístico é altamente personalizável, com opções como gradientes, formas personalizadas, cores, uma imagem de primeiro plano (logotipo) e uma imagem de fundo. Nesse caso, a opacidade do fundo deve ser definida entre 0% e menos de 100% (consulte as configurações).
-Para obter melhores resultados, use imagens quadradas e experimente com o tamanho da imagem para evitar redimensionamento excessivo. Os formatos de arquivo preferenciais são PNG (opcionalmente com fundo transparente) ou JPEG.
-
-Recomenda-se testar os códigos QR gerados e outros códigos de barras para garantir que sejam lidos corretamente.</value>
+Para obter melhores resultados, use imagens quadradas e experimente com o tamanho da imagem para evitar redimensionamento excessivo. Os formatos de arquivo preferenciais são PNG (opcionalmente com fundo transparente) ou JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informação</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>Formato do padrão de localização do código QR: quadrado</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Para otimizar a confiabilidade da leitura de códigos QR, recomendamos o seguinte:
+Mantenha um alto contraste entre as cores de primeiro plano e de fundo.
+Use módulos quadrados (padrão): módulos quadrados geralmente produzem a menor taxa de erros na leitura de códigos QR.
+Evite espaços entre os módulos: módulos menores ou formatos como círculos ou módulos arredondados podem criar espaços, o que pode aumentar os erros de leitura.
+A correção de erros está definida como alta (30% de recuperação) por padrão: um alto nível de correção de erros ajuda a compensar a legibilidade reduzida.
+
+Recomenda-se testar os códigos QR gerados e outros códigos de barras para garantir que sejam lidos corretamente.</value>
   </data>
 </root>

@@ -412,13 +412,11 @@ Støttespråkene er: tsjekkisk, dansk, nederlandsk, engelsk, finsk, fransk, tysk
 
 Du kan alltid kontakte meg for eventuelle rettelser.</value>
   </data>
-  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>QR-koden genereres med enten en fast eller variabel pikselstørrelse, avhengig av antall tegn den inneholder og den maksimale pikselstørrelsen som er definert i innstillingene.
 Når et bilde (logo) plasseres oppå QR-koden, sentreres og skaleres det til mellom 10 % og 35 % av QR-kodens størrelse. Dette området kan justeres i innstillingene. En kant legges til for å forbedre synligheten.
 Den kunstneriske QR-koden er svært tilpassbar, med alternativer som gradienter, tilpassede former, farger, et forgrunnsbilde (logo) og et bakgrunnsbilde. I dette tilfellet må bakgrunnsopasiteten settes mellom 0 % og mindre enn 100 % (se innstillinger).
-For best resultat, bruk firkantede bilder og eksperimenter med bildestørrelse for å unngå overdreven endring av størrelse. Foretrukne filformater er PNG (valgfritt med gjennomsiktig bakgrunn) eller JPEG.
-
-Det anbefales å teste de genererte QR-kodene og andre strekkodene for å sikre at de skanner riktig.</value>
+For best resultat, bruk firkantede bilder og eksperimenter med bildestørrelse for å unngå overdreven endring av størrelse. Foretrukne filformater er PNG (valgfritt med gjennomsiktig bakgrunn) eller JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informasjon</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for 
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>Mønsterform for QR-kodesøker: firkantet</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>For optimal skanningspålitelighet anbefaler vi følgende for QR-koder:
+Oppretthold høy kontrast mellom forgrunns- og bakgrunnsfargene.
+Bruk firkantede moduler (standard): firkantede moduler gir vanligvis den laveste feilraten når du skanner QR-koder.
+Unngå mellomrom mellom moduler: mindre moduler eller former som sirkler eller avrundede moduler kan lage mellomrom, noe som kan øke skannefeil.
+Feilkorreksjon er satt til høy (30 % gjenoppretting) som standard: et høyt feilkorreksjonsnivå bidrar til å kompensere for redusert lesbarhet.
+
+Det anbefales å teste de genererte QR-kodene og andre strekkoder for å sikre at de skanner riktig.</value>
   </data>
 </root>

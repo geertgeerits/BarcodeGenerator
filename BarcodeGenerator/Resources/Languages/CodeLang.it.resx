@@ -412,13 +412,11 @@ Le lingue di supporto sono: ceco, danese, olandese, inglese, finlandese, frances
 
 Potete sempre contattarmi per eventuali correzioni.</value>
   </data>
-  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>Il codice QR viene generato con una dimensione in pixel fissa o variabile, a seconda del numero di caratteri che contiene e della dimensione massima in pixel definita nelle impostazioni.
 Quando un'immagine (logo) viene posizionata sopra il codice QR, viene centrata e ridimensionata a una dimensione compresa tra il 10% e il 35% della dimensione del codice QR. Questo intervallo può essere regolato nelle impostazioni. Viene aggiunto un bordo per migliorare la visibilità.
 Il codice QR artistico è altamente personalizzabile, con opzioni come sfumature, forme personalizzate, colori, un'immagine in primo piano (logo) e un'immagine di sfondo. In questo caso, l'opacità dello sfondo deve essere impostata tra lo 0% e meno del 100% (vedere le impostazioni).
-Per ottenere risultati ottimali, utilizzare immagini quadrate e sperimentare con le dimensioni dell'immagine per evitare ridimensionamenti eccessivi. I formati di file preferiti sono PNG (eventualmente con sfondo trasparente) o JPEG.
-
-Si consiglia di testare i codici QR e altri codici a barre generati per assicurarsi che vengano scansionati correttamente.</value>
+Per ottenere risultati ottimali, utilizzare immagini quadrate e sperimentare con le dimensioni dell'immagine per evitare ridimensionamenti eccessivi. I formati di file preferiti sono PNG (eventualmente con sfondo trasparente) o JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informazione</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, il logo di Microsoft Store e Windows sono marchi di 
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>Forma del pattern di ricerca del codice QR: quadrato</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Per una scansione affidabile e ottimale dei codici QR, consigliamo quanto segue:
+Mantenere un contrasto elevato tra i colori di primo piano e di sfondo.
+Utilizzare moduli quadrati (impostazione predefinita): i moduli quadrati generalmente producono il tasso di errore più basso durante la scansione dei codici QR.
+Evitare spazi tra i moduli: moduli più piccoli o forme come cerchi o moduli arrotondati possono creare spazi vuoti, che potrebbero aumentare gli errori di scansione.
+La correzione degli errori è impostata su un livello elevato (recupero del 30%) per impostazione predefinita: un livello elevato di correzione degli errori aiuta a compensare la ridotta leggibilità.
+
+Si consiglia di testare i codici QR e altri codici a barre generati per assicurarsi che vengano scansionati correttamente.</value>
   </data>
 </root>

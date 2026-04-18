@@ -412,13 +412,11 @@ Limbile suportate sunt: cehă, daneză, olandeză, engleză, finlandeză, france
 
 Mă puteți contacta oricând pentru orice corecturi.</value>
   </data>
-  <data name="InfoQRCodeImage_Text" xml:space="preserve">
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>Codul QR este generat la o dimensiune fixă ​​sau variabilă a pixelilor, în funcție de numărul de caractere pe care îl conține și de dimensiunea maximă a pixelilor definită în setări.
 Când o imagine (logo) este plasată deasupra codului QR, aceasta este centrată și scalată la o valoare între 10% și 35% din dimensiunea codului QR. Acest interval poate fi ajustat în setări. Se adaugă o bordură pentru a îmbunătăți vizibilitatea.
 Codul QR artistic este extrem de personalizabil, cu opțiuni precum gradienți, forme personalizate, culori, o imagine în prim-plan (logo) și o imagine de fundal. În acest caz, opacitatea fundalului trebuie setată între 0% și mai puțin de 100% (consultați setările).
-Pentru cele mai bune rezultate, utilizați imagini pătrate și experimentați cu dimensiunea imaginii pentru a evita redimensionarea excesivă. Formatele de fișier preferate sunt PNG (opțional cu fundal transparent) sau JPEG.
-
-Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a vă asigura că se scanează corect.</value>
+Pentru cele mai bune rezultate, utilizați imagini pătrate și experimentați cu dimensiunea imaginii pentru a evita redimensionarea excesivă. Formatele de fișier preferate sunt PNG (opțional cu fundal transparent) sau JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Informație</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>Forma modelului căutător de coduri QR: pătrată</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Pentru o fiabilitate optimă a scanării, recomandăm următoarele pentru codurile QR:
+Mențineți un contrast ridicat între culorile prim-planului și cele de fundal.
+Utilizați module pătrate (implicit): modulele pătrate produc, în general, cea mai mică rată de eroare la scanarea codurilor QR.
+Evitați spațiile dintre module: modulele sau formele mai mici, cum ar fi cercurile sau modulele rotunjite, pot crea spații, ceea ce poate crește erorile de scanare.
+Corectarea erorilor este setată implicit la nivel ridicat (recuperare 30%): un nivel ridicat de corecție a erorilor ajută la compensarea lizibilității reduse.
+
+Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a vă asigura că se scanează corect.</value>
   </data>
 </root>

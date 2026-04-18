@@ -28,7 +28,8 @@ namespace BarcodeGenerator
             lblCopyright.Text = $"{CodeLang.Copyright_Text} © 2022-2026 Geert Geerits";
             lblPrivacyPolicy.Text = $"\n{CodeLang.PrivacyPolicyTitle_Text} {CodeLang.PrivacyPolicy_Text}";
             lblLicense.Text = $"\n{CodeLang.LicenseTitle_Text}: {CodeLang.License_Text}";
-            lblQRCodeImage.Text = $"\n{CodeLang.InfoQRCodeImage_Text}\n\n{CodeLang.InfoQRCodeTest_Text}";
+            lblQRCodeArt.Text = $"\n{CodeLang.InfoQRCodeArt_Text}";
+            lblQRCodeSettings.Text = $"\n{CodeLang.InfoQRCodeSettings_Text}";
             lblCompression.Text = $"\n{CodeLang.InfoCompression_Text}";
             lblExplanation.Text = $"\n{CodeLang.InfoExplanation_Text}";
             lblLicenseMit.Text = $"\n{CodeLang.Copyright_Text} © {CodeLang.LicenseMit_Text}\n\n{CodeLang.LicenseMit2_Text}";
