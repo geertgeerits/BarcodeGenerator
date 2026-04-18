@@ -416,9 +416,7 @@ You can always contact me for any corrections.</value>
     <value>The QR code is generated at either a fixed or variable pixel size, depending on the number of characters it contains and the maximum pixel size defined in the settings.
 When an image (logo) is placed on top of the QR code, it is centered and scaled to between 10% and 35% of the QR code’s size. This range can be adjusted in the settings. A border is added to improve visibility.
 The artistic QR code is highly customizable, with options such as gradients, custom shapes, colors, a foreground image (logo), and a background image. In this case, the background opacity must be set between 0% and less than 100% (see settings).
-For best results, use square images and experiment with image size to avoid excessive resizing. Preferred file formats are PNG (optionally with a transparent background) or JPEG.
-
-It is recommended to test the generated QR codes and other barcodes to ensure they scan correctly.</value>
+For best results, use square images and experiment with image size to avoid excessive resizing. Preferred file formats are PNG (optionally with a transparent background) or JPEG.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
@@ -803,5 +801,14 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
     <value>QR Code finder pattern shape: square</value>
+  </data>
+  <data name="InfoQRCodeTest_Text" xml:space="preserve">
+    <value>For optimal scan reliability, we recommend the following for QR codes:
+Keep high contrast between the foreground and background colors.
+Use rectangular modules (default): rectangular modules generally produce the lowest error rate when scanning QR codes.
+Avoid gaps between modules: smaller modules or shapes such as circles or rounded modules can create gaps, which may increase scan errors.
+Error correction is set to high (30% recovery) by default: a higher error-correction level helps compensate for reduced readability.
+
+It is recommended to test the generated QR codes and other barcodes to ensure they scan correctly.</value>
   </data>
 </root>

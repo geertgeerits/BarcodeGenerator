@@ -1189,6 +1189,19 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For optimal scan reliability, we recommend the following for QR codes:
+        ///Keep high contrast between the foreground and background colors.
+        ///Use rectangular modules (default): rectangular modules generally produce the lowest error rate when scanning QR codes.
+        ///Avoid gaps between modules: smaller modules or shapes such as circles or rounded modules can create gaps, which may increase scan errors.
+        ///Error correction is set to high (30% recovery) by default: a higher error-correction level helps compensate for red [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string InfoQRCodeTest_Text {
+            get {
+                return ResourceManager.GetString("InfoQRCodeTest_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language:.
         /// </summary>
         internal static string Language_Text {
