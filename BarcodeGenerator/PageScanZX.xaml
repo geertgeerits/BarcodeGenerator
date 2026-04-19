@@ -51,13 +51,8 @@
                 Style="{StaticResource labelStyleTitleView}"
                 Grid.Row="0"
                 Grid.Column="0"
-                Grid.ColumnSpan="2">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="{Translate BarcodeScanner_Text}" />
-                        <Span Text=" (ZXing Zebra Crossing)" FontSize="14" />
-                    </FormattedString>
-                </Label.FormattedText>
+                Grid.ColumnSpan="2"
+                Text="{Translate BarcodeScanner_Text}">
             </Label>
 
             <ImageButton
