@@ -6,12 +6,12 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity Name="maui-package-name-placeholder" Publisher="CN=geer" Version="1.0.50.0" />
+  <Identity Name="GeertGeerits.BarcodeGeneratorgg" Publisher="CN=75951DE0-B465-4089-8AA1-8E9DD2C3CB22" Version="1.0.50.0" />
 
   <mp:PhoneIdentity PhoneProductId="55684D77-1AF4-4193-B6B7-2D4D757FCD4E" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>$placeholder$</DisplayName>
+    <DisplayName>Barcode Generator gg</DisplayName>
     <PublisherDisplayName>Geert Geerits</PublisherDisplayName>
     <Logo>$placeholder$.png</Logo>
   </Properties>
@@ -46,8 +46,8 @@
 	<Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="Barcode Generator"
-        Description="Barcode Generator and Scanner"
+        DisplayName="$placeholder$"
+        Description="$placeholder$"
         Square150x150Logo="$placeholder$.png"
         Square44x44Logo="$placeholder$.png"
         BackgroundColor="transparent">

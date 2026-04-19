@@ -201,7 +201,7 @@
 
 	<PropertyGroup>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<GenerateAppInstallerFile>True</GenerateAppInstallerFile>
+		<GenerateAppInstallerFile>False</GenerateAppInstallerFile>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
 		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
 		<AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
@@ -211,6 +211,7 @@
 		<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
 		<DefaultLanguage>en-US</DefaultLanguage>
 		<PackageCertificateKeyFile>BarcodeGenerator_TemporaryKey.pfx</PackageCertificateKeyFile>
+		<GenerateTemporaryStoreCertificate>false</GenerateTemporaryStoreCertificate>
 	</PropertyGroup>
 	
 	<!--Buttons do not work after linking is enabled in iOS Release builds #150 - Does not work in xCode 26.1 -->
