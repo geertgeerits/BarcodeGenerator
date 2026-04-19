@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /myapp.keystore
 /Miscellaneous
+/msix_extracted
