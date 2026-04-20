@@ -17,5 +17,9 @@
     <Color x:Key="DarkEntryBG">#646464</Color>
     <Color x:Key="LightPlaceholder">#c8c8c8</Color>
     <Color x:Key="DarkPlaceholder">#969696</Color>
+    <Color x:Key="LightSwitchOffColor">Red</Color>
+    <Color x:Key="DarkSwitchOffColor">Red</Color>
+    <Color x:Key="LightSwitchOnColor">Green</Color>
+    <Color x:Key="DarkSwitchOnColor">MediumSpringGreen</Color>
 
 </ResourceDictionary>

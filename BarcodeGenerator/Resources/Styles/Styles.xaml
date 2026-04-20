@@ -155,26 +155,13 @@
         <Setter Property="MaximumTrackColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
     </Style>
 
+    <!--!!!BUG!!! Different platforms render the Switch control differently, and some properties (like OnColor and OffColor) are ignored on certain platforms.
+    To ensure a consistent appearance across all platforms, we set the colors directly in the style, even though they may not be applied on all platforms.-->
     <Style TargetType="Switch">
-        <Setter Property="OffColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
-        <Setter Property="OnColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Off">
-                        <VisualState.Setters>
-                            <Setter Property="ThumbColor" Value="Red" />
-                        </VisualState.Setters>
-                    </VisualState>
-                    <VisualState x:Name="On">
-                        <VisualState.Setters>
-                            <Setter Property="ThumbColor" Value="MediumSpringGreen" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
-    </Style>
+        <Setter Property="OffColor" Value="Red" />
+        <Setter Property="OnColor" Value="SpringGreen" />
+        <Setter Property="ThumbColor" Value="LightGray" />
+    </Style>    
 
     <Style x:Key="gridStyleInfo" TargetType="Grid">
         <Setter Property="VisualStateManager.VisualStateGroups">

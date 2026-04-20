@@ -273,7 +273,7 @@
                     Grid.Column="2"
                     HorizontalOptions="Start"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
-                    Toggled="SwtQRCodeSizeVariable_Toggled"  >
+                    Toggled="SwtQRCodeSizeVariable_Toggled">
                 </Switch>
 
                 <Label
