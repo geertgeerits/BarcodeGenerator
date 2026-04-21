@@ -33,9 +33,9 @@
 		<ApplicationIdGuid>7A6A918B-29C3-433A-82AE-16D589F3D8A2</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<PackageVersion>1.0.50</PackageVersion>
-		<ApplicationDisplayVersion>1.0.50</ApplicationDisplayVersion>
-		<ApplicationVersion>50</ApplicationVersion>
+		<PackageVersion>1.0.51</PackageVersion>
+		<ApplicationDisplayVersion>1.0.51</ApplicationDisplayVersion>
+		<ApplicationVersion>51</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
@@ -97,7 +97,7 @@
 		<PackageReference Include="ZXing.Net.Maui" Version="0.7.4" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.7.4" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.3" />
-		<PackageReference Include="Sentry.Maui" Version="6.4.0" />
+		<PackageReference Include="Sentry.Maui" Version="6.4.1" />
 		<!--<PackageReference Include="ZXingCpp" Version="0.4.0-alpha" />-->
 	</ItemGroup>
 
@@ -164,8 +164,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.50</ApplicationDisplayVersion>
-		<ApplicationVersion>50</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.51</ApplicationDisplayVersion>
+		<ApplicationVersion>51</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
@@ -184,8 +184,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.50</ApplicationDisplayVersion>
-		<ApplicationVersion>50</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.51</ApplicationDisplayVersion>
+		<ApplicationVersion>51</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
