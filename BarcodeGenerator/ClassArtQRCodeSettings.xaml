@@ -275,7 +275,6 @@
             x:Name="swtQRCodeGradient"
             Grid.Row="5"
             Grid.Column="2"
-            HorizontalOptions="Start"
             Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
             Toggled="SwtQRCodeGradient_Toggled">
         </Switch>
@@ -501,7 +500,6 @@
             x:Name="swtForegroundImage"
             Grid.Row="8"
             Grid.Column="2"
-            HorizontalOptions="Start"
             Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
             Toggled="SwtForegroundImage_Toggled">
         </Switch>

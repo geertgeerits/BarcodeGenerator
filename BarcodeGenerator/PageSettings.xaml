@@ -271,7 +271,6 @@
                     x:Name="swtQRCodeSizeVariable"
                     Grid.Row="10"
                     Grid.Column="2"
-                    HorizontalOptions="Start"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Toggled="SwtQRCodeSizeVariable_Toggled">
                 </Switch>
@@ -356,7 +355,6 @@
                     x:Name="swtBarcodeWithCaption"
                     Grid.Row="13"
                     Grid.Column="2"
-                    HorizontalOptions="Start"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Toggled="SwtBarcodeWithCaption_Toggled">
                 </Switch>
@@ -374,7 +372,6 @@
                     x:Name="swtCompressionEnabled"
                     Grid.Row="14"
                     Grid.Column="2"
-                    HorizontalOptions="Start"
                     Margin="0"
                     Toggled="SwtCompressionEnabled_Toggled">
                 </Switch>

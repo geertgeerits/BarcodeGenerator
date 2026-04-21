@@ -158,6 +158,7 @@
     <!--!!!BUG!!! Different platforms render the Switch control differently, and some properties (like OnColor and OffColor) are ignored on certain platforms.
     To ensure a consistent appearance across all platforms, we set the colors directly in the style, even though they may not be applied on all platforms.-->
     <Style TargetType="Switch">
+        <Setter Property="HorizontalOptions" Value="Start"/>
         <Setter Property="OffColor" Value="Red" />
         <Setter Property="OnColor" Value="SpringGreen" />
         <Setter Property="ThumbColor" Value="LightGray" />
