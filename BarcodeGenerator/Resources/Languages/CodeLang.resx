@@ -847,4 +847,7 @@ It is recommended to test the generated QR codes and other barcodes to ensure th
   <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
     <value>Calendar event</value>
   </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>Payload type:</value>
+  </data>
 </root>

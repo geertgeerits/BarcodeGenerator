@@ -1462,6 +1462,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Payload type:.
+        /// </summary>
+        internal static string PayloadType_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Text.
         /// </summary>
         internal static string PayloadType_TEXT_Text {

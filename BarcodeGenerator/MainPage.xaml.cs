@@ -83,7 +83,7 @@ namespace BarcodeGenerator
             ClassBarcodes.bQRCodeBackgroundImage = Preferences.Default.Get("SettingQRCodeBackgroundImage", false);
             ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             ClassBarcodes.bCompressionEnabled = Preferences.Default.Get("SettingCompressionEnabled", false);
-            ClassBarcodes.cPayloadType = Preferences.Default.Get("SettingPayloadType", "Text");
+            ClassBarcodes.cPayloadType = Preferences.Default.Get("SettingPayloadType", ClassBarcodes.cPayloadTypeDefault);
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");

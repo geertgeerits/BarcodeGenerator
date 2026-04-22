@@ -32,7 +32,7 @@
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
                 RowSpacing="4"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -375,6 +375,25 @@
                     Margin="0"
                     Toggled="SwtCompressionEnabled_Toggled">
                 </Switch>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="15"
+                    Grid.Column="0"
+                    Text="{Translate PayloadType_Text}">
+                </Label>
+                
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="15"
+                    Grid.Column="1">
+
+                    <Picker
+                        x:Name="pckPayloadType"
+                        Style="{StaticResource pickerStyleSettings}"
+                        SelectedIndexChanged="OnPickerPayloadTypeChanged">
+                    </Picker>
+                </Border>
 
             </Grid>
         </ScrollView>

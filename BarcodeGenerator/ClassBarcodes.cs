@@ -95,11 +95,13 @@
         // Global variables
         public static int nBarcodeGeneratorIndex;
         public static int nBarcodeScannerIndex;
+        public static int nPayloadTypeIndex;
         public static string cBarcodeGeneratorName = string.Empty;
         public static string cBarcodeScannerName = string.Empty;
         public static string cBarcodeGeneratorDefault = string.Empty;
         public static string cBarcodeScannerDefault = string.Empty;
-        public static string cPayloadType = string.Empty;               // Payload type for the QR code generator and scanner    
+        public static string cPayloadType = string.Empty;               // Payload type for the QR code generator and scanner
+        public static string cPayloadTypeDefault = string.Empty;
 
         // Global variables to control the QR code and image
         public static string cQRCodeType = string.Empty;                // QR code type: QR Code Model 1, QR Code Model 2, Frame QR Code, Micro QR Code, RMQR, SQRC, QR Code with image in the center or Artistic QR Code
@@ -207,9 +209,10 @@
             cBarcode_QR_CODE_IMAGE = CodeLang.Barcode_QR_CODE_IMAGE_Text;   // QR Code with image in the center
             cBarcode_ART_QR_CODE = CodeLang.Barcode_ART_QR_CODE_Text;       // Artistic QR Code
 
-            // Default values for the barcode generator and scanner
+            // Default values for the barcode generator, scanner and payload type
             cBarcodeGeneratorDefault = cBarcode_ART_QR_CODE;
             cBarcodeScannerDefault = CodeLang.Barcode_AllCodes_Text;
+            cPayloadTypeDefault = CodeLang.PayloadType_TEXT_Text;
         }
 
         /// <summary>
@@ -479,7 +482,7 @@
         /// <remarks>Call this method before accessing any payload type fields to ensure they are properly
         /// initialized. This method is typically used during application startup or prior to using features that depend
         /// on payload type values.</remarks>
-        public static void InitializePayloadType()
+        public static void InitializePayloadTypes()
         {
             cPayloadType_TEXT = CodeLang.PayloadType_TEXT_Text;
             cPayloadType_WIFI = CodeLang.PayloadType_WIFI_Text;
@@ -660,6 +663,41 @@
 
             // Select the barcode format in the picker
             picker.SelectedIndex = nBarcodeScannerIndex;
+        }
+
+        /// <summary>
+        /// Select the name and index in the payload type list
+        /// </summary>
+        /// <param name="picker"></param>
+        public static void SelectPayloadTypeIndex(Picker picker)
+        {
+            // If there is no saved payload type name then set it to the default payload type name
+            if (string.IsNullOrEmpty(cPayloadType))
+            {
+                cPayloadType = cPayloadTypeDefault;
+            }
+
+            // Search for the name of the payload type in the picker list
+            nPayloadTypeIndex = picker.Items.IndexOf(cPayloadType);
+            
+            // If the payload type name was not found in the list then set it to the default name
+            if (nPayloadTypeIndex < 0)
+            {
+                cPayloadType = cPayloadTypeDefault;
+
+                // Search for the name of the payload type in the picker list
+                nPayloadTypeIndex = picker.Items.IndexOf(cPayloadType);
+            }
+
+            // If the payload type name was not found in the list then set it to the first payload type name
+            if (nPayloadTypeIndex < 0)
+            {
+                nPayloadTypeIndex = 0;
+                cPayloadType = picker.Items[nPayloadTypeIndex];
+            }
+
+            // Select the payload type in the picker
+            picker.SelectedIndex = nPayloadTypeIndex;
         }
     }
 }

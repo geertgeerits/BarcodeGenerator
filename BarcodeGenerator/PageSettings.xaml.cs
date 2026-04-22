@@ -163,8 +163,9 @@ namespace BarcodeGenerator
             ];
             pckTheme.ItemsSource = ThemeList;
 
-            // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
+            // Initialize the barcode formats and payload types in the ClassBarcodes class to update the names in the selected language
             ClassBarcodes.InitializeBarcodeFormats();
+            ClassBarcodes.InitializePayloadTypes();
 
             // Set the generator barcode formats in the picker
 #if WINDOWS
@@ -182,9 +183,12 @@ namespace BarcodeGenerator
             //pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_NT_Windows();
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_ZX();
 #endif
+            // Set the payload types in the picker
+            pckPayloadType.ItemsSource = ClassBarcodes.GetQRCodePayloadTypes();
 
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language and get the new barcode generator name with the search key
             ClassBarcodes.InitializeBarcodeSearchFormats();
+            ClassBarcodes.InitializePayloadSearchTypes();
 
             // Search the barcode generator and scanner name with the search key to get the new name in the selected language
             if (Globals.bLanguageChanged)
@@ -196,6 +200,7 @@ namespace BarcodeGenerator
             // Select the current barcode format in the picker for the barcode generator and scanner
             ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
             ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
+            ClassBarcodes.SelectPayloadTypeIndex(pckPayloadType);
 
             // Set the QR code image size percent in the label
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
@@ -267,6 +272,23 @@ namespace BarcodeGenerator
             {
                 ClassBarcodes.nBarcodeScannerIndex = selectedIndex;
                 ClassBarcodes.cBarcodeScannerName = pckFormatCodeScanner.Items[ClassBarcodes.nBarcodeScannerIndex];
+            }
+        }
+
+        /// <summary>
+        /// Picker payload type clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnPickerPayloadTypeChanged(object sender, EventArgs e)
+        {
+            Picker picker = (Picker)sender;
+            int selectedIndex = picker.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                ClassBarcodes.nPayloadTypeIndex = selectedIndex;
+                ClassBarcodes.cPayloadType = pckPayloadType.Items[ClassBarcodes.nPayloadTypeIndex];
             }
         }
 
