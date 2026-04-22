@@ -1390,6 +1390,114 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bookmark.
+        /// </summary>
+        internal static string PayloadType_BOOKMARK_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_BOOKMARK_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calendar event.
+        /// </summary>
+        internal static string PayloadType_CALENDAREVENT_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_CALENDAREVENT_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact data.
+        /// </summary>
+        internal static string PayloadType_CONTACTDATA_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_CONTACTDATA_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geolocation.
+        /// </summary>
+        internal static string PayloadType_GEOLOCATION_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_GEOLOCATION_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mail.
+        /// </summary>
+        internal static string PayloadType_MAIL_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_MAIL_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MMS.
+        /// </summary>
+        internal static string PayloadType_MMS_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_MMS_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number.
+        /// </summary>
+        internal static string PayloadType_PHONENUMBER_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_PHONENUMBER_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SMS.
+        /// </summary>
+        internal static string PayloadType_SMS_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_SMS_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text.
+        /// </summary>
+        internal static string PayloadType_TEXT_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_TEXT_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL.
+        /// </summary>
+        internal static string PayloadType_URL_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_URL_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WhatsApp message.
+        /// </summary>
+        internal static string PayloadType_WHATSAPPMESSAGE_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_WHATSAPPMESSAGE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WiFi.
+        /// </summary>
+        internal static string PayloadType_WIFI_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_WIFI_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to pixels.
         /// </summary>
         internal static string Pixels_Text {

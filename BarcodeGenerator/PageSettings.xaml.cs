@@ -479,6 +479,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeBackgroundImage", ClassBarcodes.bQRCodeBackgroundImage);
             Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
             Preferences.Default.Set("SettingCompressionEnabled", ClassBarcodes.bCompressionEnabled);
+            Preferences.Default.Set("SettingPayloadType", ClassBarcodes.cPayloadType);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
             Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
@@ -528,6 +529,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeBackgroundImage");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingCompressionEnabled");
+                Preferences.Default.Remove("SettingPayloadType");
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");
                 Preferences.Default.Remove("SettingTheme");

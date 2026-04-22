@@ -811,4 +811,40 @@ Error correction is set to high (30% recovery) by default: a high error-correcti
 
 It is recommended to test the generated QR codes and other barcodes to ensure they scan correctly.</value>
   </data>
+  <data name="PayloadType_TEXT_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>WiFi</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>Bookmark</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>Geolocation</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>WhatsApp message</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>Contact data</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>Calendar event</value>
+  </data>
 </root>
