@@ -811,4 +811,43 @@ Foutcorrectie is standaard ingesteld op hoog (30% herstel): een hoog foutcorrect
 
 Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er zeker van te zijn dat ze correct scannen.</value>
   </data>
+  <data name="PayloadType_TEXT_Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>WiFi</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>Bladwijzer</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>Geolocatie</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>Telefoonnummer</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>WhatsApp-bericht</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>Contactgegevens</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>Agenda-evenement</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>Payloadtype:</value>
+  </data>
 </root>

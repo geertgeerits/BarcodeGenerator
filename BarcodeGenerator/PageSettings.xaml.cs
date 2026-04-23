@@ -9,6 +9,7 @@ namespace BarcodeGenerator
         private readonly Stopwatch stopWatch = new();
         private string searchKeyGenerator = string.Empty;
         private string searchKeyScanner = string.Empty;
+        private string searchKeyPayloadType = string.Empty;
 
         public PageSettings()
         {
@@ -132,8 +133,9 @@ namespace BarcodeGenerator
                 Globals.bLanguageChanged = true;
 
                 // Search the barcode generator and scanner name with the search key to get the new name in the selected language
-                searchKeyGenerator = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeGeneratorName);
-                searchKeyScanner = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeScannerName);
+                searchKeyGenerator = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeGeneratorName, ClassBarcodes.barcodeSearch);
+                searchKeyScanner = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeScannerName, ClassBarcodes.barcodeSearch);
+                searchKeyPayloadType = ClassBarcodes.SearchValueInDictionary(ClassPayloadTypes.cPayloadType, ClassPayloadTypes.payloadSearch);
 
                 // Set the current UI culture of the selected language
                 Globals.SetCultureSelectedLanguage(Globals.cLanguage);
@@ -165,7 +167,7 @@ namespace BarcodeGenerator
 
             // Initialize the barcode formats and payload types in the ClassBarcodes class to update the names in the selected language
             ClassBarcodes.InitializeBarcodeFormats();
-            ClassBarcodes.InitializePayloadTypes();
+            ClassPayloadTypes.InitializePayloadTypes();
 
             // Set the generator barcode formats in the picker
 #if WINDOWS
@@ -184,23 +186,24 @@ namespace BarcodeGenerator
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_ZX();
 #endif
             // Set the payload types in the picker
-            pckPayloadType.ItemsSource = ClassBarcodes.GetQRCodePayloadTypes();
+            pckPayloadType.ItemsSource = ClassPayloadTypes.GetQRCodePayloadTypes();
 
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language and get the new barcode generator name with the search key
             ClassBarcodes.InitializeBarcodeSearchFormats();
-            ClassBarcodes.InitializePayloadSearchTypes();
+            ClassPayloadTypes.InitializePayloadSearchTypes();
 
-            // Search the barcode generator and scanner name with the search key to get the new name in the selected language
+            // Search the barcode generator, scanner and payload type name with the search key to get the new name in the selected language
             if (Globals.bLanguageChanged)
             {
-                ClassBarcodes.cBarcodeGeneratorName = ClassBarcodes.SearchKeyInDictionary(searchKeyGenerator);
-                ClassBarcodes.cBarcodeScannerName = ClassBarcodes.SearchKeyInDictionary(searchKeyScanner);
+                ClassBarcodes.cBarcodeGeneratorName = ClassBarcodes.SearchKeyInDictionary(searchKeyGenerator, ClassBarcodes.barcodeSearch);
+                ClassBarcodes.cBarcodeScannerName = ClassBarcodes.SearchKeyInDictionary(searchKeyScanner, ClassBarcodes.barcodeSearch);
+                ClassPayloadTypes.cPayloadType = ClassBarcodes.SearchKeyInDictionary(searchKeyPayloadType, ClassPayloadTypes.payloadSearch);
             }
 
             // Select the current barcode format in the picker for the barcode generator and scanner
             ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
             ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
-            ClassBarcodes.SelectPayloadTypeIndex(pckPayloadType);
+            ClassPayloadTypes.SelectPayloadTypeIndex(pckPayloadType);
 
             // Set the QR code image size percent in the label
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
@@ -287,8 +290,8 @@ namespace BarcodeGenerator
 
             if (selectedIndex != -1)
             {
-                ClassBarcodes.nPayloadTypeIndex = selectedIndex;
-                ClassBarcodes.cPayloadType = pckPayloadType.Items[ClassBarcodes.nPayloadTypeIndex];
+                ClassPayloadTypes.nPayloadTypeIndex = selectedIndex;
+                ClassPayloadTypes.cPayloadType = pckPayloadType.Items[ClassPayloadTypes.nPayloadTypeIndex];
             }
         }
 
@@ -501,7 +504,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeBackgroundImage", ClassBarcodes.bQRCodeBackgroundImage);
             Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
             Preferences.Default.Set("SettingCompressionEnabled", ClassBarcodes.bCompressionEnabled);
-            Preferences.Default.Set("SettingPayloadType", ClassBarcodes.cPayloadType);
+            Preferences.Default.Set("SettingPayloadType", ClassPayloadTypes.cPayloadType);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
             Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);

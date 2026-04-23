@@ -78,30 +78,13 @@
         public static string cBarcode_QR_CODE_IMAGE = string.Empty;             // QR Code with image in the center
         public static string cBarcode_ART_QR_CODE = string.Empty;               // Artistic QR Code
 
-        // Global variables for Payload Types
-        public static string cPayloadType_TEXT = string.Empty;
-        public static string cPayloadType_WIFI = string.Empty;
-        public static string cPayloadType_URL = string.Empty;
-        public static string cPayloadType_BOOKMARK = string.Empty;
-        public static string cPayloadType_MAIL = string.Empty;
-        public static string cPayloadType_SMS = string.Empty;
-        public static string cPayloadType_MMS = string.Empty;
-        public static string cPayloadType_GEOLOCATION = string.Empty;
-        public static string cPayloadType_PHONENUMBER = string.Empty;
-        public static string cPayloadType_WHATSAPPMESSAGE = string.Empty;
-        public static string cPayloadType_CONTACTDATA = string.Empty;
-        public static string cPayloadType_CALENDAREVENT = string.Empty;
-
         // Global variables
         public static int nBarcodeGeneratorIndex;
         public static int nBarcodeScannerIndex;
-        public static int nPayloadTypeIndex;
         public static string cBarcodeGeneratorName = string.Empty;
         public static string cBarcodeScannerName = string.Empty;
         public static string cBarcodeGeneratorDefault = string.Empty;
         public static string cBarcodeScannerDefault = string.Empty;
-        public static string cPayloadType = string.Empty;               // Payload type for the QR code generator and scanner
-        public static string cPayloadTypeDefault = string.Empty;
 
         // Global variables to control the QR code and image
         public static string cQRCodeType = string.Empty;                // QR code type: QR Code Model 1, QR Code Model 2, Frame QR Code, Micro QR Code, RMQR, SQRC, QR Code with image in the center or Artistic QR Code
@@ -127,9 +110,8 @@
         public static string cFileBarcodePng = string.Empty;            // Path and file name of the saved barcode image
         public static string cFileBarcodeSvg = string.Empty;            // Path and file name of the saved barcode image
 
-        // Creating a public dictionaries to store the barcode formats and payload types for search operations
+        // Creating a public dictionaries to store the barcode formats for search operations
         public static Dictionary<string, string> barcodeSearch = [];
-        public static Dictionary<string, string> payloadSearch = [];
 
         /// <summary>
         /// Initialize the barcode formats by assigning the values from the resource file to the global readonly variables
@@ -209,10 +191,9 @@
             cBarcode_QR_CODE_IMAGE = CodeLang.Barcode_QR_CODE_IMAGE_Text;   // QR Code with image in the center
             cBarcode_ART_QR_CODE = CodeLang.Barcode_ART_QR_CODE_Text;       // Artistic QR Code
 
-            // Default values for the barcode generator, scanner and payload type
+            // Default values for the barcode generator and scanner
             cBarcodeGeneratorDefault = cBarcode_ART_QR_CODE;
             cBarcodeScannerDefault = CodeLang.Barcode_AllCodes_Text;
-            cPayloadTypeDefault = CodeLang.PayloadType_TEXT_Text;
         }
 
         /// <summary>
@@ -477,93 +458,18 @@
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
         /// <summary>
-        /// Initializes static payload type fields with their corresponding values.
-        /// </summary>
-        /// <remarks>Call this method before accessing any payload type fields to ensure they are properly
-        /// initialized. This method is typically used during application startup or prior to using features that depend
-        /// on payload type values.</remarks>
-        public static void InitializePayloadTypes()
-        {
-            cPayloadType_TEXT = CodeLang.PayloadType_TEXT_Text;
-            cPayloadType_WIFI = CodeLang.PayloadType_WIFI_Text;
-            cPayloadType_URL = CodeLang.PayloadType_URL_Text;
-            cPayloadType_BOOKMARK = CodeLang.PayloadType_BOOKMARK_Text;
-            cPayloadType_MAIL = CodeLang.PayloadType_MAIL_Text;
-            cPayloadType_SMS = CodeLang.PayloadType_SMS_Text;
-            cPayloadType_MMS = CodeLang.PayloadType_MMS_Text;
-            cPayloadType_GEOLOCATION = CodeLang.PayloadType_GEOLOCATION_Text;
-            cPayloadType_PHONENUMBER = CodeLang.PayloadType_PHONENUMBER_Text;
-            cPayloadType_WHATSAPPMESSAGE = CodeLang.PayloadType_WHATSAPPMESSAGE_Text;
-            cPayloadType_CONTACTDATA = CodeLang.PayloadType_CONTACTDATA_Text;
-            cPayloadType_CALENDAREVENT = CodeLang.PayloadType_CALENDAREVENT_Text;
-        }
-
-        /// <summary>
-        /// Initializes the set of supported payload types for lookup operations.
-        /// </summary>
-        /// <remarks>This method clears any existing payload type mappings and repopulates the internal
-        /// dictionary with the standard set of payload types. Call this method before performing payload type
-        /// lookups to ensure the dictionary is correctly initialized.</remarks>
-        public static void InitializePayloadSearchTypes()
-        {
-            // Clear the dictionary before adding new elements
-            payloadSearch.Clear();
-
-            // Add elements to the dictionary
-            payloadSearch.Add("TEXT", CodeLang.PayloadType_TEXT_Text);
-            payloadSearch.Add("WIFI", CodeLang.PayloadType_WIFI_Text);
-            payloadSearch.Add("URL", CodeLang.PayloadType_URL_Text);
-            payloadSearch.Add("BOOKMARK", CodeLang.PayloadType_BOOKMARK_Text);
-            payloadSearch.Add("MAIL", CodeLang.PayloadType_MAIL_Text);
-            payloadSearch.Add("SMS", CodeLang.PayloadType_SMS_Text);
-            payloadSearch.Add("MMS", CodeLang.PayloadType_MMS_Text);
-            payloadSearch.Add("GEOLOCATION", CodeLang.PayloadType_GEOLOCATION_Text);
-            payloadSearch.Add("PHONENUMBER", CodeLang.PayloadType_PHONENUMBER_Text);
-            payloadSearch.Add("WHATSAPPMESSAGE", CodeLang.PayloadType_WHATSAPPMESSAGE_Text);
-            payloadSearch.Add("CONTACTDATA", CodeLang.PayloadType_CONTACTDATA_Text);
-            payloadSearch.Add("CALENDAREVENT", CodeLang.PayloadType_CALENDAREVENT_Text);
-        }
-
-        /// <summary>
-        /// Retrieves a list of supported QR code payload types as display names, ordered alphabetically in a
-        /// case-insensitive manner.
-        /// </summary>
-        /// <remarks>The returned payload types include common QR code formats such as Wi-Fi, URL,
-        /// bookmark, email, SMS, MMS, geolocation, plain text, phone number, WhatsApp message, contact data, and
-        /// calendar event. This method can be used to populate UI elements or validate supported QR code
-        /// formats.</remarks>
-        /// <returns>A list of strings representing the supported QR code payload types. The list is sorted alphabetically
-        /// without regard to case.</returns>
-        public static List<string> GetQRCodePayloadTypes() => [.. new List<string>
-            {
-                // https://github.com/Shane32/QRCoder    
-                CodeLang.PayloadType_TEXT_Text,
-                CodeLang.PayloadType_WIFI_Text,
-                CodeLang.PayloadType_URL_Text,
-                CodeLang.PayloadType_BOOKMARK_Text,
-                CodeLang.PayloadType_MAIL_Text,
-                CodeLang.PayloadType_SMS_Text,
-                CodeLang.PayloadType_MMS_Text,
-                CodeLang.PayloadType_GEOLOCATION_Text,
-                CodeLang.PayloadType_PHONENUMBER_Text,
-                CodeLang.PayloadType_WHATSAPPMESSAGE_Text,
-                CodeLang.PayloadType_CONTACTDATA_Text,
-                CodeLang.PayloadType_CALENDAREVENT_Text,
-            }
-            .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
-
-        /// <summary>
-        /// Searches for the specified key in the barcode dictionary and returns the associated value, if found.    
+        /// Searches for the specified key in the dictionary and returns the associated value, if found.    
         /// </summary>
         /// <remarks>If the key is found, the method writes the key and its value to the console. If the
         /// key is not found, a message indicating the missing key is written to the console.</remarks>
-        /// <param name="searchKey">The key to locate in the barcode dictionary. This value cannot be null.</param>
+        /// <param name="searchKey">The key to locate in the dictionary. This value cannot be null.</param>
+        /// <param name="dic">The dictionary to search within. This parameter must not be null.</param>
         /// <returns>The value associated with the specified key if the key exists in the dictionary; otherwise, an empty string.</returns>
-        public static string SearchKeyInDictionary(string searchKey)
+        public static string SearchKeyInDictionary(string searchKey, Dictionary<string, string> dic)
         {
             if (!string.IsNullOrEmpty(searchKey))
             {
-                if (barcodeSearch.TryGetValue(searchKey, out var value))
+                if (dic.TryGetValue(searchKey, out var value))
                 {
                     return value;
                 }
@@ -573,18 +479,19 @@
         }
 
         /// <summary>
-        /// Searches for the specified value in the barcode dictionary and returns the corresponding key if found.
+        /// Searches for the specified value in the dictionary and returns the corresponding key if found.
         /// </summary>
         /// <remarks>This method writes a message to the console indicating whether the value was found
         /// and, if so, the associated key. The search is case-sensitive.</remarks>
-        /// <param name="searchValue">The value to locate within the barcode dictionary. This parameter must not be null.</param>
+        /// <param name="searchValue">The value to locate within the dictionary. This parameter must not be null.</param>
+        /// <param name="dic">The dictionary to search within. This parameter must not be null.</param>
         /// <returns>The key associated with the specified value if it exists in the dictionary; otherwise, an empty string.</returns>
-        public static string SearchValueInDictionary(string searchValue)
+        public static string SearchValueInDictionary(string searchValue, Dictionary<string, string> dic)
         {
             if (!string.IsNullOrEmpty(searchValue))
             {
                 // More efficient reverse lookup using LINQ
-                string foundKey = barcodeSearch.FirstOrDefault(x => x.Value == searchValue).Key;
+                string foundKey = dic.FirstOrDefault(x => x.Value == searchValue).Key;
                 
                 if (!string.IsNullOrEmpty(foundKey))
                 {
@@ -663,41 +570,6 @@
 
             // Select the barcode format in the picker
             picker.SelectedIndex = nBarcodeScannerIndex;
-        }
-
-        /// <summary>
-        /// Select the name and index in the payload type list
-        /// </summary>
-        /// <param name="picker"></param>
-        public static void SelectPayloadTypeIndex(Picker picker)
-        {
-            // If there is no saved payload type name then set it to the default payload type name
-            if (string.IsNullOrEmpty(cPayloadType))
-            {
-                cPayloadType = cPayloadTypeDefault;
-            }
-
-            // Search for the name of the payload type in the picker list
-            nPayloadTypeIndex = picker.Items.IndexOf(cPayloadType);
-            
-            // If the payload type name was not found in the list then set it to the default name
-            if (nPayloadTypeIndex < 0)
-            {
-                cPayloadType = cPayloadTypeDefault;
-
-                // Search for the name of the payload type in the picker list
-                nPayloadTypeIndex = picker.Items.IndexOf(cPayloadType);
-            }
-
-            // If the payload type name was not found in the list then set it to the first payload type name
-            if (nPayloadTypeIndex < 0)
-            {
-                nPayloadTypeIndex = 0;
-                cPayloadType = picker.Items[nPayloadTypeIndex];
-            }
-
-            // Select the payload type in the picker
-            picker.SelectedIndex = nPayloadTypeIndex;
         }
     }
 }

@@ -811,4 +811,43 @@ Domyślnie korekcja błędów jest ustawiona na wysoki poziom (30% odzysku): wys
 
 Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, aby upewnić się, że skanują się prawidłowo.</value>
   </data>
+  <data name="PayloadType_TEXT_Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>Wi-Fi</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>Zakładka</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>Geolokalizacja</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>Numer telefonu</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>Wiadomość WhatsApp</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>Dane kontaktowe</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>Wydarzenie w kalendarzu</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>Typ treści:</value>
+  </data>
 </root>

@@ -1426,7 +1426,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mail.
+        ///   Looks up a localized string similar to E-mail.
         /// </summary>
         internal static string PayloadType_MAIL_Text {
             get {

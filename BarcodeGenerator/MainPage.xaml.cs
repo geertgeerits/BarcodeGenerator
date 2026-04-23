@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.51
- * Date ........: 2026-04-22 (YYYY-MM-DD)
+ * Date ........: 2026-04-23 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -83,7 +83,7 @@ namespace BarcodeGenerator
             ClassBarcodes.bQRCodeBackgroundImage = Preferences.Default.Get("SettingQRCodeBackgroundImage", false);
             ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             ClassBarcodes.bCompressionEnabled = Preferences.Default.Get("SettingCompressionEnabled", false);
-            ClassBarcodes.cPayloadType = Preferences.Default.Get("SettingPayloadType", ClassBarcodes.cPayloadTypeDefault);
+            ClassPayloadTypes.cPayloadType = Preferences.Default.Get("SettingPayloadType", ClassPayloadTypes.cPayloadTypeDefault);
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
@@ -573,6 +573,13 @@ namespace BarcodeGenerator
             // Hide the keyboard
             edtTextToCode.IsEnabled = false;
             edtTextToCode.IsEnabled = true;
+
+            // If a specific payload type is selected, build the payload and set it in the editor
+            if (ClassPayloadTypes.cPayloadType != ClassPayloadTypes.cPayloadTypeDefault)
+            {
+                edtTextToCode.Text = ClassPayloadTypes.BuildPayload(ClassPayloadTypes.cPayloadType);
+            }
+
 
             // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
             ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);

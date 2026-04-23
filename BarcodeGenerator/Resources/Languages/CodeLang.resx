@@ -824,7 +824,7 @@ It is recommended to test the generated QR codes and other barcodes to ensure th
     <value>Bookmark</value>
   </data>
   <data name="PayloadType_MAIL_Text" xml:space="preserve">
-    <value>Mail</value>
+    <value>E-mail</value>
   </data>
   <data name="PayloadType_SMS_Text" xml:space="preserve">
     <value>SMS</value>
