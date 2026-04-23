@@ -850,4 +850,7 @@ Det anbefales å teste de genererte QR-kodene og andre strekkoder for å sikre a
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Nyttelasttype:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

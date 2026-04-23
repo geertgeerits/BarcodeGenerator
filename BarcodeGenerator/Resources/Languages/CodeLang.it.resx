@@ -850,4 +850,7 @@ Si consiglia di testare i codici QR e altri codici a barre generati per assicura
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Tipo di payload:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

@@ -138,6 +138,9 @@
 	  <MauiXaml Update="PopupMessage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="PopupPayloadTypes.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="PopupSettingsArtQRCode.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

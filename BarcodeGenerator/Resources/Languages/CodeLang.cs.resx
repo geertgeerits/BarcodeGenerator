@@ -850,4 +850,7 @@ Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyst
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Typ obsahu:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

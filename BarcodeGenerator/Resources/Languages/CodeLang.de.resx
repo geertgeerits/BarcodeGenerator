@@ -850,4 +850,7 @@ Es wird empfohlen, die generierten QR-Codes und andere Barcodes zu testen, um si
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Nutzdatentyp:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

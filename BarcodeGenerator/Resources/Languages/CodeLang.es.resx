@@ -850,4 +850,7 @@ Se recomienda probar los códigos QR generados y otros códigos de barras para a
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Tipo de carga útil:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

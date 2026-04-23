@@ -850,4 +850,7 @@ Ajánlott a generált QR-kódok és más vonalkódok tesztelése a helyes beolva
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Adat típusa:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

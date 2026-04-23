@@ -850,4 +850,7 @@ Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Tip de mesaj:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

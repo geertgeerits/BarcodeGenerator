@@ -1507,6 +1507,159 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description:.
+        /// </summary>
+        internal static string PayloadTypeDescription_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeDescription_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End:.
+        /// </summary>
+        internal static string PayloadTypeEnd_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeEnd_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Firstname:.
+        /// </summary>
+        internal static string PayloadTypeFirstname_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeFirstname_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lastname:.
+        /// </summary>
+        internal static string PayloadTypeLastname_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeLastname_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latitude:.
+        /// </summary>
+        internal static string PayloadTypeLatitude_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeLatitude_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location:.
+        /// </summary>
+        internal static string PayloadTypeLocation_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeLocation_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Longitude:.
+        /// </summary>
+        internal static string PayloadTypeLongitude_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeLongitude_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-Mail:.
+        /// </summary>
+        internal static string PayloadTypeMail_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeMail_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message:.
+        /// </summary>
+        internal static string PayloadTypeMessage_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeMessage_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number:.
+        /// </summary>
+        internal static string PayloadTypeNumber_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeNumber_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        internal static string PayloadTypePassword_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypePassword_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receiver:.
+        /// </summary>
+        internal static string PayloadTypeReceiver_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeReceiver_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name network:.
+        /// </summary>
+        internal static string PayloadTypeSSID_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeSSID_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start:.
+        /// </summary>
+        internal static string PayloadTypeStart_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeStart_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subject:.
+        /// </summary>
+        internal static string PayloadTypeSubject_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeSubject_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title:.
+        /// </summary>
+        internal static string PayloadTypeTitle_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL:.
+        /// </summary>
+        internal static string PayloadTypeURL_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeURL_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to pixels.
         /// </summary>
         internal static string Pixels_Text {

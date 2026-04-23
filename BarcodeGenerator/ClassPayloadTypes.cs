@@ -1,7 +1,4 @@
-﻿using static QRCoder.PayloadGenerator;
-using Geolocation = QRCoder.PayloadGenerator.Geolocation;
-
-namespace BarcodeGenerator
+﻿namespace BarcodeGenerator
 {
     internal class ClassPayloadTypes
     {
@@ -23,6 +20,7 @@ namespace BarcodeGenerator
         public static int nPayloadTypeIndex;
         public static string cPayloadType = string.Empty;
         public static string cPayloadTypeDefault = string.Empty;
+        public static string cPayloadResult = string.Empty;
 
         // Creating a public dictionaries to store the payload types for search operations
         public static Dictionary<string, string> payloadSearch = [];
@@ -139,80 +137,6 @@ namespace BarcodeGenerator
 
             // Select the payload type in the picker
             picker.SelectedIndex = nPayloadTypeIndex;
-        }
-
-        /// <summary>
-        /// Builds a QR code payload string based on the selected payload type name. The method generates the appropriate
-        /// payload string for the QR code based on the selected payload type.
-        /// </summary>
-        /// <param name="selectedName">The name of the selected payload type.</param>
-        /// <returns>The generated payload string for the QR code.</returns>
-        /// <remarks>https://github.com/Shane32/QRCoder</remarks>
-        public static string BuildPayload(string selectedName)
-        {
-            string payload;
-
-            if (selectedName == cPayloadType_WIFI)
-            {
-                WiFi generator = new("My-WiFis-Name", "s3cr3t-p4ssw0rd", WiFi.Authentication.WPA);
-                payload = generator.ToString();
-            }
-            else if (selectedName == cPayloadType_URL)
-            {
-                Url generator = new("https://github.com/codebude/QRCoder/");
-                payload = generator.ToString();
-            }
-            else if (selectedName == cPayloadType_BOOKMARK)
-            {
-                Bookmark generator = new("http://code-bude.net", "Blog of QRCoder's father");
-                payload = generator.ToString();
-            }
-            else if (selectedName == cPayloadType_MAIL)
-            {
-                Mail generator = new("john@doe.com", "Look at this!", "Hi John, have a look at this QRCoder library!");
-                payload = generator.ToString();
-            }
-            else if (selectedName == cPayloadType_SMS)
-            {
-                SMS generator = new("+491701234567", "Hi John, do you remember SMS?");
-                payload = generator.ToString();
-            }
-            else if (selectedName == cPayloadType_MMS)
-            {
-                MMS generator = new("+491701234567", "Hi John, have a look at this QRCoder library!");
-                payload = generator.ToString();
-            }
-            else if (selectedName == cPayloadType_GEOLOCATION)
-            {
-                Geolocation generator = new("51.26118", "6.6717");
-                payload = generator.ToString();
-            }
-            else if (selectedName == cPayloadType_PHONENUMBER)
-            {
-                PhoneNumber generator = new("+491701234567");
-                payload = generator.ToString();
-            }
-            else if (selectedName == cPayloadType_WHATSAPPMESSAGE)
-            {
-                WhatsAppMessage generator = new("Hi John, what do you think about QR codes?");
-                payload = generator.ToString();
-            }
-            else if (selectedName == cPayloadType_CONTACTDATA)
-            {
-                ContactData generator = new(ContactData.ContactOutputType.VCard3, "John", "Doe");
-                payload = generator.ToString();
-            }
-            else if (selectedName == cPayloadType_CALENDAREVENT)
-            {
-                CalendarEvent generator = new("Birthday party", "Join QRCoder's fourth birthday!", "51.26118,6.6717", new DateTime(2017, 10, 13), new DateTime(2017, 10, 13), true);
-                payload = generator.ToString();
-            }
-            else
-            {
-                payload = string.Empty;
-            }
-
-            return payload;
         }
     }
 }

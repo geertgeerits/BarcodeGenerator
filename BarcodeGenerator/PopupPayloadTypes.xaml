@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:local="clr-namespace:BarcodeGenerator"
+    x:DataType="local:LocalizationResourceManager"
+    x:Class="BarcodeGenerator.PopupPayloadTypes"
+    BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+    CanBeDismissedByTappingOutsideOfPopup="False">
+
+    <ScrollView
+        Style="{StaticResource scrollviewStylePopup}">
+
+        <Grid
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+            ColumnDefinitions="120, 120*"
+            HorizontalOptions="Center"
+            VerticalOptions="Start">
+
+            <Label
+                x:Name="lblPopupTitle"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                BackgroundColor="Transparent"
+                Margin="10,5,10,0"
+                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                HorizontalTextAlignment="Center"
+                Text="{Translate ColorPicker_Text}">
+            </Label>
+
+            <Label
+                x:Name="lblPayloadTypeSSID"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="1"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeSSID_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeSSID"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="1"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeSSID"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypePassword"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="2"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypePassword_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypePassword"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="2"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypePassword"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Password"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeURL"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="3"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeURL_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeURL"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="3"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeURL"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Url"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeTitle"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="4"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeTitle_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeTitle"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="4"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeTitle"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeReceiver"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="5"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeReceiver_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeReceiver"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="5"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeReceiver"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeSubject"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="6"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeSubject_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeSubject"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="6"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeSubject"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeMessage"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="7"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeMessage_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeMessage"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="7"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeMessage"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeLatitude"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="8"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeLatitude_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeLatitude"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="8"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeLatitude"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Numeric"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeLongitude"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="9"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeLongitude_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeLongitude"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="9"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeLongitude"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Numeric"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeFirstname"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="10"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeFirstname_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeFirstname"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="10"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeFirstname"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeLastname"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="11"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeLastname_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeLastname"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="11"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeLastname"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeNumber"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="12"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeNumber_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeNumber"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="12"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeNumber"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Telephone"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeMail"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="13"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeMail_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeMail"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="13"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeMail"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Email"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeDescription"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="14"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeDescription_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeDescription"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="14"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeDescription"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeLocation"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="15"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeLocation_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeLocation"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="15"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <Entry
+                    x:Name="entPayloadTypeLocation"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeStart"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="16"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeStart_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeStart"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="16"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <DatePicker
+                    x:Name="dtpPayloadTypeStart">
+                </DatePicker>
+            </Border>
+
+            <Label
+                x:Name="lblPayloadTypeEnd"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="17"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeEnd_Text}"
+                IsVisible="False">
+            </Label>
+
+            <Border
+                x:Name="brdPayloadTypeEnd"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="17"
+                Grid.Column="1"
+                IsVisible="False">
+
+                <DatePicker
+                    x:Name="dtpPayloadTypeEnd">
+                </DatePicker>
+            </Border>
+
+
+            <ImageButton
+                x:Name="btnButtonCancel"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="18"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="120"
+                Margin="0,10,0,10"
+                ToolTipProperties.Text="{Translate ButtonCancel_Text}"
+                Source="ic_action_cancel_red.png"
+                Clicked="OnButtonCancel_Clicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="btnButtonClose"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="18"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                WidthRequest="120"
+                Margin="0,10,0,0"
+                ToolTipProperties.Text="{Translate ButtonNext_Text}"
+                Source="ic_action_tick_green.png"
+                Clicked="OnButtonClose_Clicked">
+            </ImageButton>
+
+        </Grid>
+    </ScrollView>
+</toolkit:Popup>

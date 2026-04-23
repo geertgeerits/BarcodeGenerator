@@ -850,4 +850,7 @@ Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er 
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Payloadtype:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

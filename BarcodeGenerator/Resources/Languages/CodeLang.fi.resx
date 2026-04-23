@@ -850,4 +850,7 @@ On suositeltavaa testata luodut QR-koodit ja muut viivakoodit varmistaaksesi, et
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Tietotyyppi:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

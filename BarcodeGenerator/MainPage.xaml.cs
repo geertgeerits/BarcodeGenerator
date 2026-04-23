@@ -20,6 +20,7 @@
  *                NuGet Package: Sentry.Maui - https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun, Raffael Herrmann, Shane Krueger, Ikiru Yoshizaki, Copilot */
 
+using CommunityToolkit.Maui.Extensions;
 using System.Collections;
 using ZXing.Net.Maui;
 
@@ -577,9 +578,21 @@ namespace BarcodeGenerator
             // If a specific payload type is selected, build the payload and set it in the editor
             if (ClassPayloadTypes.cPayloadType != ClassPayloadTypes.cPayloadTypeDefault)
             {
-                edtTextToCode.Text = ClassPayloadTypes.BuildPayload(ClassPayloadTypes.cPayloadType);
-            }
+                // Show a modal popup to fill in the details for the selected payload type before generating the payload and setting it in the editor
+                Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+                if (currentPage != null)
+                {
+                    _ = await currentPage.ShowPopupAsync(new PopupPayloadTypes(CodeLang.PayloadType_Text));
 
+                    // Check if the popup was canceled by the user
+                    if (Globals.bPopupCanceled)
+                    {
+                        return;
+                    }
+                }
+                
+                edtTextToCode.Text = ClassPayloadTypes.cPayloadResult;
+            }
 
             // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
             ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);

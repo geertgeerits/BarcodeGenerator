@@ -850,4 +850,7 @@ Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, 
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Typ treści:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

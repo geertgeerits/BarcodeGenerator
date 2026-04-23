@@ -850,4 +850,7 @@ Recomenda-se testar os códigos QR gerados e outros códigos de barras para gara
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Tipo de conteúdo:</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>
