@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.51
- * Date ........: 2026-04-23 (YYYY-MM-DD)
+ * Date ........: 2026-04-24 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -35,6 +35,7 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersCodabar = "0123456789-$:/.+ABCD";
         private static string cBarcodeCaption = string.Empty;   // Caption text for the barcode - used for sharing the barcode with the caption in the text and for the option to include the caption in the generated barcode image
         private static bool bCompressionAllowed;                // Flag to indicate if compression is allowed for the input text based on the selected barcode format
+        private static bool bPayloadTypeAllowed;                // Flag to indicate if a specific payload type is allowed for the selected barcode format
 
         public MainPage()
         {
@@ -281,6 +282,7 @@ namespace BarcodeGenerator
                 btnShare.IsEnabled = false;
 
                 bCompressionAllowed = false;
+                bPayloadTypeAllowed = false;
 
                 // Properties 1D barcodes
                 if (selectedName == ClassBarcodes.cBarcode_CODABAR)
@@ -394,6 +396,7 @@ namespace BarcodeGenerator
                     bgvBarcode.WidthRequest = nWidthBarcode2D;
                     bgvBarcode.BarcodeMargin = 2;
                     bgvBarcode.Format = BarcodeFormat.DataMatrix;
+                    bPayloadTypeAllowed = true;
                 }
                 
                 else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
@@ -418,6 +421,7 @@ namespace BarcodeGenerator
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
+                    bPayloadTypeAllowed = true;
                 }
                 
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)  // Model 2 - ECCLevel.High
@@ -429,6 +433,7 @@ namespace BarcodeGenerator
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
+                    bPayloadTypeAllowed = true;
                 }
                 
                 else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)  // Model 2 - ECCLevel.High
@@ -440,6 +445,7 @@ namespace BarcodeGenerator
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
+                    bPayloadTypeAllowed = true;
                 }
                 
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
@@ -575,8 +581,8 @@ namespace BarcodeGenerator
             edtTextToCode.IsEnabled = false;
             edtTextToCode.IsEnabled = true;
 
-            // If a specific payload type is selected, build the payload and set it in the editor
-            if (ClassPayloadTypes.cPayloadType != ClassPayloadTypes.cPayloadTypeDefault)
+            // If a payload type is allowed and a specific payload type is selected, build the payload and set it in the editor
+            if (bPayloadTypeAllowed && ClassPayloadTypes.cPayloadType != ClassPayloadTypes.cPayloadTypeDefault)
             {
                 // Show a modal popup to fill in the details for the selected payload type before generating the payload and setting it in the editor
                 Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
@@ -590,7 +596,7 @@ namespace BarcodeGenerator
                         return;
                     }
                 }
-                
+
                 edtTextToCode.Text = ClassPayloadTypes.cPayloadResult;
             }
 
@@ -919,13 +925,15 @@ namespace BarcodeGenerator
             // Set the current UI culture of the selected language
             Globals.SetCultureSelectedLanguage(Globals.cLanguage);
 
-            // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
+            // Initialize the barcode formats and payload types to update the names in the selected language
             ClassBarcodes.InitializeBarcodeFormats();
 #if WINDOWS
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX_Windows();
 #else
             pckFormatCodeGenerator.ItemsSource = ClassBarcodes.GetFormatCodeListGenerator_ZX();
 #endif
+            ClassPayloadTypes.InitializePayloadTypes();
+
             // Select the name and index in the barcode list and save the name
             ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
 
@@ -997,19 +1005,5 @@ namespace BarcodeGenerator
                 }
             }
         }
-
-        ///// <summary>
-        ///// Editor text changed event: Validate the input text based on the allowed characters for the selected barcode format and remove any invalid characters
-        ///// </summary>
-        ///// <remarks>Hangs when there is already text in the editor and you select another format with a different set
-        ///// of allowed characters, because the code tries to remove the invalid characters one by one and triggers
-        ///// the TextChanged event again for each character removed, which can lead to an infinite loop if there are
-        ///// many invalid characters. To prevent this, we can use a flag to suppress the TextChanged event while we are
-        ///// modifying the text programmatically.</remarks>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void EdtTextToCode_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //}
     }
 }

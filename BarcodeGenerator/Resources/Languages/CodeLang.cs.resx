@@ -850,7 +850,55 @@ Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyst
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Typ obsahu:</value>
   </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>Název sítě:</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>Heslo:</value>
+  </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
     <value>URL:</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>Titulek:</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>Příjemce:</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>Předmět:</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>Zpráva:</value>
+  </data>
+  <data name="PayloadTypeNumber_Text" xml:space="preserve">
+    <value>Číslo:</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>Zeměpisná šířka:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>Délka:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>Jméno:</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>Příjmení:</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>Popis:</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>Poloha:</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>Začátek:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>Konec:</value>
   </data>
 </root>

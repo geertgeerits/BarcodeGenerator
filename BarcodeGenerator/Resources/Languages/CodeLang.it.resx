@@ -850,7 +850,55 @@ Si consiglia di testare i codici QR e altri codici a barre generati per assicura
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Tipo di payload:</value>
   </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>Nome rete:</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
     <value>URL:</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>Titolo:</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>Destinatario:</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>Oggetto:</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>Messaggio:</value>
+  </data>
+  <data name="PayloadTypeNumber_Text" xml:space="preserve">
+    <value>Numero:</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>Latitudine:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>Longitudine:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>Cognome:</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>Descrizione:</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>Posizione:</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>Inizio:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>Fine:</value>
   </data>
 </root>

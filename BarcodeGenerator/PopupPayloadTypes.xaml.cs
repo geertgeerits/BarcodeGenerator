@@ -19,21 +19,18 @@ namespace BarcodeGenerator
             // Set the message text
             lblPopupTitle.Text = $"{cMessage} {ClassPayloadTypes.cPayloadType}";
 
-            // Set default dates for calendar event payload type to the current date and time if they are not already set
-            dtpPayloadTypeStart.Date ??= DateTime.Now;
-            dtpPayloadTypeEnd.Date ??= DateTime.Now;
+            // Set default date and time for calendar event payload type to the current date and time
+            dtpPayloadTypeStartDate.Date = DateTime.Now.Date;
+            dtpPayloadTypeEndDate.Date = DateTime.Now.Date;
+            tmpPayloadTypeStartTime.Time = DateTime.Now.TimeOfDay;
+            tmpPayloadTypeEndTime.Time = DateTime.Now.TimeOfDay;
+            dtpPayloadTypeStartDate.Format = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
+            dtpPayloadTypeEndDate.Format = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
+            tmpPayloadTypeStartTime.Format = CultureInfo.CurrentCulture.DateTimeFormat.ShortTimePattern;
+            tmpPayloadTypeEndTime.Format = CultureInfo.CurrentCulture.DateTimeFormat.ShortTimePattern;
 
+            // Set the visibility of controls based on the selected payload type
             SetControls(ClassPayloadTypes.cPayloadType);
-        }
-
-        /// <summary>
-        /// Set focus to the close button when the popup is loaded, so that pressing Enter will close it immediately.
-        /// </summary>
-        /// <param name="sender">The source of the event, typically the popup that was loaded.</param>
-        /// <param name="e">An EventArgs object that contains the event data.</param>
-        private void Popup_Loaded(object sender, EventArgs e)
-        {
-            btnButtonClose.Focus();
         }
 
         /// <summary>
@@ -118,9 +115,11 @@ namespace BarcodeGenerator
                 lblPayloadTypeLocation.IsVisible = true;
                 brdPayloadTypeLocation.IsVisible = true;
                 lblPayloadTypeStart.IsVisible = true;
-                brdPayloadTypeStart.IsVisible = true;
+                brdPayloadTypeStartDate.IsVisible = true;
+                brdPayloadTypeStartTime.IsVisible = true;
                 lblPayloadTypeEnd.IsVisible = true;
-                brdPayloadTypeEnd.IsVisible = true;
+                brdPayloadTypeEndDate.IsVisible = true;
+                brdPayloadTypeEndTime.IsVisible = true;
             }
         }
 
@@ -211,8 +210,8 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)
             {
-                DateTime startDate = dtpPayloadTypeStart.Date ?? DateTime.Now;
-                DateTime endDate = dtpPayloadTypeEnd.Date ?? DateTime.Now;
+                DateTime startDate = dtpPayloadTypeStartDate.Date!.Value + tmpPayloadTypeStartTime.Time!.Value;
+                DateTime endDate = dtpPayloadTypeEndDate.Date!.Value + tmpPayloadTypeEndTime.Time!.Value;
                 CalendarEvent generator = new(subject: entPayloadTypeSubject.Text, description: entPayloadTypeDescription.Text, location: entPayloadTypeLocation.Text, start: new DateTimeOffset(startDate), end: new DateTimeOffset(endDate), allDayEvent: false);
                 payload = generator.ToString();
             }

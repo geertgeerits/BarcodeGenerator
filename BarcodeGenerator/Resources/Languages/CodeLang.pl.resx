@@ -850,7 +850,55 @@ Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, 
   <data name="PayloadType_Text" xml:space="preserve">
     <value>Typ treści:</value>
   </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>Nazwa sieci:</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>Hasło:</value>
+  </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
     <value>URL:</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>Tytuł:</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>Odbiorca:</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>Temat:</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>Wiadomość:</value>
+  </data>
+  <data name="PayloadTypeNumber_Text" xml:space="preserve">
+    <value>Numer:</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>Szerokość geograficzna:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>Długość geograficzna:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>Imię:</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>Nazwisko:</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>Lokalizacja:</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>Początek:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>Koniec:</value>
   </data>
 </root>

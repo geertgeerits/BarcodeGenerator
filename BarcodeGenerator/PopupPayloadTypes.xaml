@@ -9,6 +9,9 @@
     BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
     CanBeDismissedByTappingOutsideOfPopup="False">
 
+    <!--Set the Text property of the Entry controls to "" to eliminate null values if nothing has been entered.
+    This is necessary to prevent null reference exceptions when the Text properties are accessed in the code-behind-->
+
     <ScrollView
         Style="{StaticResource scrollviewStylePopup}">
 
@@ -53,6 +56,7 @@
                     x:Name="entPayloadTypeSSID"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -77,7 +81,8 @@
                 <Entry
                     x:Name="entPayloadTypePassword"
                     ClearButtonVisibility="WhileEditing"
-                    Keyboard="Password"
+                    Keyboard="Text"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -103,6 +108,7 @@
                     x:Name="entPayloadTypeURL"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Url"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -128,6 +134,7 @@
                     x:Name="entPayloadTypeTitle"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -153,6 +160,7 @@
                     x:Name="entPayloadTypeReceiver"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -178,6 +186,7 @@
                     x:Name="entPayloadTypeSubject"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -203,6 +212,7 @@
                     x:Name="entPayloadTypeMessage"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -228,6 +238,7 @@
                     x:Name="entPayloadTypeLatitude"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -253,6 +264,7 @@
                     x:Name="entPayloadTypeLongitude"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -278,6 +290,7 @@
                     x:Name="entPayloadTypeFirstname"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -303,6 +316,7 @@
                     x:Name="entPayloadTypeLastname"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -328,6 +342,7 @@
                     x:Name="entPayloadTypeNumber"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Telephone"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -353,6 +368,7 @@
                     x:Name="entPayloadTypeMail"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Email"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -378,6 +394,7 @@
                     x:Name="entPayloadTypeDescription"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -403,6 +420,7 @@
                     x:Name="entPayloadTypeLocation"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -417,17 +435,30 @@
                 IsVisible="False">
             </Label>
 
-            <Border
-                x:Name="brdPayloadTypeStart"
-                Style="{StaticResource borderStyleDefault}"
+            <HorizontalStackLayout
                 Grid.Row="16"
-                Grid.Column="1"
-                IsVisible="False">
+                Grid.Column="1">
 
-                <DatePicker
-                    x:Name="dtpPayloadTypeStart">
-                </DatePicker>
-            </Border>
+                <Border
+                    x:Name="brdPayloadTypeStartDate"
+                    Style="{StaticResource borderStyleDefault}"
+                    IsVisible="False">
+
+                    <DatePicker
+                        x:Name="dtpPayloadTypeStartDate">
+                    </DatePicker>
+                </Border>
+
+                <Border
+                    x:Name="brdPayloadTypeStartTime"
+                    Style="{StaticResource borderStyleDefault}"
+                    IsVisible="False">
+
+                    <TimePicker
+                        x:Name="tmpPayloadTypeStartTime">
+                    </TimePicker>
+                </Border>
+            </HorizontalStackLayout>
 
             <Label
                 x:Name="lblPayloadTypeEnd"
@@ -439,18 +470,32 @@
                 IsVisible="False">
             </Label>
 
-            <Border
-                x:Name="brdPayloadTypeEnd"
-                Style="{StaticResource borderStyleDefault}"
+            <HorizontalStackLayout
                 Grid.Row="17"
-                Grid.Column="1"
-                IsVisible="False">
+                Grid.Column="1">
 
-                <DatePicker
-                    x:Name="dtpPayloadTypeEnd">
-                </DatePicker>
-            </Border>
+                <Border
+                    x:Name="brdPayloadTypeEndDate"
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="17"
+                    Grid.Column="1"
+                    IsVisible="False">
 
+                    <DatePicker
+                        x:Name="dtpPayloadTypeEndDate">
+                    </DatePicker>
+                </Border>
+
+                <Border
+                    x:Name="brdPayloadTypeEndTime"
+                    Style="{StaticResource borderStyleDefault}"
+                    IsVisible="False">
+
+                    <TimePicker
+                        x:Name="tmpPayloadTypeEndTime">
+                    </TimePicker>
+                </Border>
+            </HorizontalStackLayout>
 
             <ImageButton
                 x:Name="btnButtonCancel"
