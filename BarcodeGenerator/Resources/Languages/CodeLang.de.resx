@@ -811,9 +811,6 @@ Die Fehlerkorrektur ist standardmäßig auf „Hoch“ (30 % Wiederherstellung) 
 
 Es wird empfohlen, die generierten QR-Codes und andere Barcodes zu testen, um sicherzustellen, dass sie korrekt gescannt werden können.</value>
   </data>
-  <data name="PayloadType_TEXT_Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
     <value>WLAN</value>
   </data>
@@ -900,5 +897,8 @@ Es wird empfohlen, die generierten QR-Codes und andere Barcodes zu testen, um si
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
     <value>Ende:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Nutzlasten:</value>
   </data>
 </root>

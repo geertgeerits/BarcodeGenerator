@@ -811,9 +811,6 @@ Corectarea erorilor este setată implicit la nivel ridicat (recuperare 30%): un 
 
 Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a vă asigura că se scanează corect.</value>
   </data>
-  <data name="PayloadType_TEXT_Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
     <value>WiFi</value>
   </data>
@@ -900,5 +897,8 @@ Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
     <value>Sfârșit:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Sarcini utile:</value>
   </data>
 </root>

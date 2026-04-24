@@ -1390,6 +1390,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Payloads:.
+        /// </summary>
+        internal static string PayloadEnabled_Text {
+            get {
+                return ResourceManager.GetString("PayloadEnabled_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bookmark.
         /// </summary>
         internal static string PayloadType_BOOKMARK_Text {
@@ -1467,15 +1476,6 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string PayloadType_Text {
             get {
                 return ResourceManager.GetString("PayloadType_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Text.
-        /// </summary>
-        internal static string PayloadType_TEXT_Text {
-            get {
-                return ResourceManager.GetString("PayloadType_TEXT_Text", resourceCulture);
             }
         }
         

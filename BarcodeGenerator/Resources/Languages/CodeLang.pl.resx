@@ -811,9 +811,6 @@ Domyślnie korekcja błędów jest ustawiona na wysoki poziom (30% odzysku): wys
 
 Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, aby upewnić się, że skanują się prawidłowo.</value>
   </data>
-  <data name="PayloadType_TEXT_Text" xml:space="preserve">
-    <value>Tekst</value>
-  </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
     <value>Wi-Fi</value>
   </data>
@@ -900,5 +897,8 @@ Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, 
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
     <value>Koniec:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Ładunki:</value>
   </data>
 </root>

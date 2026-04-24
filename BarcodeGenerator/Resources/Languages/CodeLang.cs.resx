@@ -811,9 +811,6 @@ Korekce chyb je ve výchozím nastavení nastavena na vysokou hodnotu (30% zotav
 
 Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyste se ujistili, že se skenují správně.</value>
   </data>
-  <data name="PayloadType_TEXT_Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
     <value>Wi-Fi</value>
   </data>
@@ -900,5 +897,8 @@ Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyst
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
     <value>Konec:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Užitečné zatížení:</value>
   </data>
 </root>

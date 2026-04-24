@@ -811,9 +811,6 @@ Error correction is set to high (30% recovery) by default: a high error-correcti
 
 It is recommended to test the generated QR codes and other barcodes to ensure they scan correctly.</value>
   </data>
-  <data name="PayloadType_TEXT_Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
     <value>WiFi</value>
   </data>
@@ -900,5 +897,8 @@ It is recommended to test the generated QR codes and other barcodes to ensure th
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
     <value>End:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Payloads:</value>
   </data>
 </root>

@@ -811,9 +811,6 @@ Fejlkorrektion er som standard indstillet til høj (30 % gendannelse): et højt 
 
 Det anbefales at teste de genererede QR-koder og andre stregkoder for at sikre, at de scannes korrekt.</value>
   </data>
-  <data name="PayloadType_TEXT_Text" xml:space="preserve">
-    <value>Tekst</value>
-  </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
     <value>WiFi</value>
   </data>
@@ -900,5 +897,8 @@ Det anbefales at teste de genererede QR-koder og andre stregkoder for at sikre, 
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
     <value>Slut:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Nyttelast:</value>
   </data>
 </root>

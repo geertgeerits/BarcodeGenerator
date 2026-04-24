@@ -811,9 +811,6 @@ La correction d’erreur est réglée sur un niveau élevé (30 % de récupéra
 
 Il est recommandé de tester les codes QR générés et les autres codes-barres afin de s’assurer de leur bonne lecture.</value>
   </data>
-  <data name="PayloadType_TEXT_Text" xml:space="preserve">
-    <value>Texte</value>
-  </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
     <value>Wi-Fi</value>
   </data>
@@ -900,5 +897,8 @@ Il est recommandé de tester les codes QR générés et les autres codes-barres 
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
     <value>Fin:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Charges utiles:</value>
   </data>
 </root>

@@ -6,18 +6,30 @@ namespace BarcodeGenerator
 {
     public partial class PopupPayloadTypes : Popup
     {
-    	public PopupPayloadTypes(string cMessage = "")
+    	public PopupPayloadTypes()
     	{
             // Name of the current page
             Globals.cCurrentPage = "PopupPayloadTypes";
 
             InitializeComponent();
 
+            // Get the current display information
+            DisplayInfo displayInfo = DeviceDisplay.MainDisplayInfo;
+
+            // Adjust the column widths based on the current orientation
+            UpdateGridColumns(displayInfo.Orientation);
+
+            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
+            this.Unloaded += OnUnloaded;
+
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
             Globals.bPopupOpened = true;
 
-            // Set the message text
-            lblPopupTitle.Text = $"{cMessage} {ClassPayloadTypes.cPayloadType}";
+            // Set the payload types in the picker
+            pckPayloadType.ItemsSource = ClassPayloadTypes.GetQRCodePayloadTypes();
+
+            // Select the current barcode format in the picker for the barcode generator and scanner
+            ClassPayloadTypes.SelectPayloadTypeIndex(pckPayloadType);
 
             // Set default date and time for calendar event payload type to the current date and time
             dtpPayloadTypeStartDate.Date = DateTime.Now.Date;
@@ -29,8 +41,23 @@ namespace BarcodeGenerator
             tmpPayloadTypeStartTime.Format = CultureInfo.CurrentCulture.DateTimeFormat.ShortTimePattern;
             tmpPayloadTypeEndTime.Format = CultureInfo.CurrentCulture.DateTimeFormat.ShortTimePattern;
 
+            // Initially set the visibility of all controls to false
+            SetControlsVisibilityFalse();
+            
             // Set the visibility of controls based on the selected payload type
-            SetControls(ClassPayloadTypes.cPayloadType);
+            SetControlsVisibilityTrue(ClassPayloadTypes.cPayloadType);
+        }
+
+        /// <summary>
+        /// Handles the event that occurs when the main display's information changes, such as orientation updates.
+        /// </summary>
+        /// <remarks>This method ensures that updates to the grid columns in response to display changes
+        /// are performed on the main UI thread.</remarks>
+        /// <param name="sender">The source of the event. This is typically the display information provider.</param>
+        /// <param name="e">An object that contains the event data, including the updated display information.</param>
+        private void OnMainDisplayInfoChanged(object? sender, DisplayInfoChangedEventArgs e)
+        {
+            MainThread.BeginInvokeOnMainThread(() => UpdateGridColumns(e.DisplayInfo.Orientation));
         }
 
         /// <summary>
@@ -38,7 +65,7 @@ namespace BarcodeGenerator
         /// The method checks the selected payload type
         /// </summary>
         /// <param name="selectedName"></param>
-        public void SetControls(string selectedName)
+        private void SetControlsVisibilityTrue(string selectedName)
         {
             if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)
             {
@@ -121,6 +148,71 @@ namespace BarcodeGenerator
                 brdPayloadTypeEndDate.IsVisible = true;
                 brdPayloadTypeEndTime.IsVisible = true;
             }
+        }
+
+        /// <summary>
+        /// Picker payload type clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnPickerPayloadTypeChanged(object sender, EventArgs e)
+        {
+            Picker picker = (Picker)sender;
+            int selectedIndex = picker.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                ClassPayloadTypes.nPayloadTypeIndex = selectedIndex;
+                ClassPayloadTypes.cPayloadType = pckPayloadType.Items[ClassPayloadTypes.nPayloadTypeIndex];
+
+                SetControlsVisibilityFalse();
+                SetControlsVisibilityTrue(ClassPayloadTypes.cPayloadType);
+            }
+        }
+
+        /// <summary>
+        /// Sets the visibility of all relevant controls to false, effectively hiding them from the user interface.
+        /// </summary>
+        /// <remarks>Call this method to ensure that none of the associated controls are visible. This can
+        /// be useful when resetting the UI or preparing it for a different state.</remarks>
+        private void SetControlsVisibilityFalse()
+        {
+            lblPayloadTypeSSID.IsVisible = false;
+            brdPayloadTypeSSID.IsVisible = false;
+            lblPayloadTypePassword.IsVisible = false;
+            brdPayloadTypePassword.IsVisible = false;
+            lblPayloadTypeURL.IsVisible = false;
+            brdPayloadTypeURL.IsVisible = false;
+            lblPayloadTypeTitle.IsVisible = false;
+            brdPayloadTypeTitle.IsVisible = false;
+            lblPayloadTypeReceiver.IsVisible = false;
+            brdPayloadTypeReceiver.IsVisible = false;
+            lblPayloadTypeSubject.IsVisible = false;
+            brdPayloadTypeSubject.IsVisible = false;
+            lblPayloadTypeMessage.IsVisible = false;
+            brdPayloadTypeMessage.IsVisible = false;
+            lblPayloadTypeLatitude.IsVisible = false;
+            brdPayloadTypeLatitude.IsVisible = false;
+            lblPayloadTypeLongitude.IsVisible = false;
+            brdPayloadTypeLongitude.IsVisible = false;
+            lblPayloadTypeFirstname.IsVisible = false;
+            brdPayloadTypeFirstname.IsVisible = false;
+            lblPayloadTypeLastname.IsVisible = false;
+            brdPayloadTypeLastname.IsVisible = false;
+            lblPayloadTypeNumber.IsVisible = false;
+            brdPayloadTypeNumber.IsVisible = false;
+            lblPayloadTypeMail.IsVisible = false;
+            brdPayloadTypeMail.IsVisible = false;
+            lblPayloadTypeDescription.IsVisible = false;
+            brdPayloadTypeDescription.IsVisible = false;
+            brdPayloadTypeLocation.IsVisible = false;
+            lblPayloadTypeLocation.IsVisible = false;
+            lblPayloadTypeStart.IsVisible = false;
+            brdPayloadTypeStartDate.IsVisible = false;
+            brdPayloadTypeStartTime.IsVisible = false;
+            lblPayloadTypeEnd.IsVisible = false;
+            brdPayloadTypeEndDate.IsVisible = false;
+            brdPayloadTypeEndTime.IsVisible = false;
         }
 
         /// <summary>
@@ -221,6 +313,128 @@ namespace BarcodeGenerator
             }
 
             return payload;
+        }
+
+        /// <summary>
+        /// Updates the column definitions of the settings grid based on the specified display orientation and current
+        /// device type.
+        /// </summary>
+        /// <remarks>This method adjusts the layout of the settings grid to provide an optimal user
+        /// experience for different device types (phone, tablet, desktop) and display orientations (portrait or
+        /// landscape). The changes are applied only to the relevant settings page or popup, depending on the current
+        /// context.</remarks>
+        /// <param name="orientation">The orientation of the display, which determines how the grid columns are configured.</param>
+        private void UpdateGridColumns(DisplayOrientation orientation)
+        {
+            // Clear existing column definitions to avoid conflicts and ensure the new layout is applied correctly.
+            grdSettingsPayloadTypes.ColumnDefinitions.Clear();
+
+            // Set column widths based on the current page, device type, and orientation to optimize the layout for user interaction
+            switch (Globals.cCurrentPage)
+            {
+                // cCurrentPage = PageSettings
+                case "PageSettings":
+                    if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+                    {
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                break;
+                            default:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                break;
+                        }
+                    }
+                    else if (DeviceInfo.Idiom == DeviceIdiom.Tablet)  // For tablets
+                    {
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
+                                break;
+                            default:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(390) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(430) });
+                                break;
+                        }
+                    }
+                    else  // Desktop
+                    {
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
+                                break;
+                            default:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(390) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(430) });
+                                break;
+                        }
+                    }
+                    break;
+                // cCurrentPage = PopupSettingsArtQRCode
+                // The Style 'scrollviewStylePopup' is applied to the scroll view in the popup, so these column widths will be used when the popup is open
+                default:
+                    if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+                    {
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                                break;
+                            default:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                break;
+                        }
+                    }
+                    else if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
+                    {
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                break;
+                            default:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                break;
+                        }
+                    }
+                    else  // Desktop
+                    {
+                        switch (orientation)
+                        {
+                            case DisplayOrientation.Portrait:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                break;
+                            default:
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                break;
+                        }
+                    }
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Unsubscribe from events when the popup is unloaded to prevent memory leaks and unintended behavior when the popup is closed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnUnloaded(object? sender, EventArgs e)
+        {
+            DeviceDisplay.MainDisplayInfoChanged -= OnMainDisplayInfoChanged;
+            this.Unloaded -= OnUnloaded;
         }
     }
 }

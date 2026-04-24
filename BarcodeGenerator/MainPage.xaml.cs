@@ -85,6 +85,7 @@ namespace BarcodeGenerator
             ClassBarcodes.bQRCodeBackgroundImage = Preferences.Default.Get("SettingQRCodeBackgroundImage", false);
             ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             ClassBarcodes.bCompressionEnabled = Preferences.Default.Get("SettingCompressionEnabled", false);
+            ClassPayloadTypes.bPayloadEnabled = Preferences.Default.Get("SettingPayloadEnabled", false);
             ClassPayloadTypes.cPayloadType = Preferences.Default.Get("SettingPayloadType", ClassPayloadTypes.cPayloadTypeDefault);
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
@@ -582,13 +583,13 @@ namespace BarcodeGenerator
             edtTextToCode.IsEnabled = true;
 
             // If a payload type is allowed and a specific payload type is selected, build the payload and set it in the editor
-            if (bPayloadTypeAllowed && ClassPayloadTypes.cPayloadType != ClassPayloadTypes.cPayloadTypeDefault)
+            if (ClassPayloadTypes.bPayloadEnabled && bPayloadTypeAllowed)
             {
                 // Show a modal popup to fill in the details for the selected payload type before generating the payload and setting it in the editor
                 Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
                 if (currentPage != null)
                 {
-                    _ = await currentPage.ShowPopupAsync(new PopupPayloadTypes(CodeLang.PayloadType_Text));
+                    _ = await currentPage.ShowPopupAsync(new PopupPayloadTypes());
 
                     // Check if the popup was canceled by the user
                     if (Globals.bPopupCanceled)

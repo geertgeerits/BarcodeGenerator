@@ -32,7 +32,7 @@
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
                 RowSpacing="4"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -339,29 +339,9 @@
                     </Slider>
                 </Border>
 
-                <!--For 1D barcodes, there is an option to show or hide the caption (the text representation of the
-                data encoded in the barcode) under the barcode.
-                This option is not available for 2D barcodes because they do not have a caption.-->
                 <Label
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="13"
-                    Grid.Column="0"
-                    VerticalTextAlignment="Start"
-                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
-                    Text="{Translate BarcodeWithCaption_Text}">
-                </Label>
-
-                <Switch
-                    x:Name="swtBarcodeWithCaption"
-                    Grid.Row="13"
-                    Grid.Column="2"
-                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
-                    Toggled="SwtBarcodeWithCaption_Toggled">
-                </Switch>
-
-                <Label
-                    Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="14"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="0"
@@ -370,10 +350,25 @@
 
                 <Switch
                     x:Name="swtCompressionEnabled"
-                    Grid.Row="14"
+                    Grid.Row="13"
                     Grid.Column="2"
                     Margin="0"
                     Toggled="SwtCompressionEnabled_Toggled">
+                </Switch>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="14"
+                    Grid.Column="0"
+                    Text="{Translate PayloadEnabled_Text}">
+                </Label>
+
+                <Switch
+                    x:Name="swtPayloadEnabled"
+                    Grid.Row="14"
+                    Grid.Column="2"
+                    Margin="0"
+                    Toggled="SwtPayloadEnabled_Toggled">
                 </Switch>
 
                 <Label
@@ -394,6 +389,26 @@
                         SelectedIndexChanged="OnPickerPayloadTypeChanged">
                     </Picker>
                 </Border>
+
+                <!--For 1D barcodes, there is an option to show or hide the caption (the text representation of the
+                data encoded in the barcode) under the barcode.
+                This option is not available for 2D barcodes because they do not have a caption.-->
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="16"
+                    Grid.Column="0"
+                    VerticalTextAlignment="Start"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
+                    Text="{Translate BarcodeWithCaption_Text}">
+                </Label>
+
+                <Switch
+                    x:Name="swtBarcodeWithCaption"
+                    Grid.Row="16"
+                    Grid.Column="2"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
+                    Toggled="SwtBarcodeWithCaption_Toggled">
+                </Switch>
 
             </Grid>
         </ScrollView>

@@ -811,9 +811,6 @@ Foutcorrectie is standaard ingesteld op hoog (30% herstel): een hoog foutcorrect
 
 Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er zeker van te zijn dat ze correct scannen.</value>
   </data>
-  <data name="PayloadType_TEXT_Text" xml:space="preserve">
-    <value>Tekst</value>
-  </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
     <value>WiFi</value>
   </data>
@@ -900,5 +897,8 @@ Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er 
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
     <value>Einde:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Payloads:</value>
   </data>
 </root>

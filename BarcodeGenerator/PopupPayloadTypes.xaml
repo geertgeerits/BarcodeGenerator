@@ -16,24 +16,33 @@
         Style="{StaticResource scrollviewStylePopup}">
 
         <Grid
+            x:Name="grdSettingsPayloadTypes"
             RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-            ColumnDefinitions="120, 120*"
+            ColumnDefinitions="140, 120*"
             HorizontalOptions="Center"
-            VerticalOptions="Start">
+            VerticalOptions="Start"
+            RowSpacing="0"
+            ColumnSpacing="0">
 
             <Label
-                x:Name="lblPopupTitle"
+                Style="{StaticResource labelStyleDefault}"
                 Grid.Row="0"
                 Grid.Column="0"
-                Grid.ColumnSpan="2"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill"
-                BackgroundColor="Transparent"
-                Margin="10,5,10,0"
-                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
-                HorizontalTextAlignment="Center"
-                Text="{Translate ColorPicker_Text}">
+                Text="{Translate PayloadType_Text}">
             </Label>
+
+            <Border
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="0,6,6,0">
+
+                <Picker
+                    x:Name="pckPayloadType"
+                    Style="{StaticResource pickerStyleSettings}"
+                    SelectedIndexChanged="OnPickerPayloadTypeChanged">
+                </Picker>
+            </Border>
 
             <Label
                 x:Name="lblPayloadTypeSSID"
@@ -41,8 +50,7 @@
                 Grid.Row="1"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeSSID_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeSSID_Text}">
             </Label>
 
             <Border
@@ -50,7 +58,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="1"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeSSID"
@@ -67,8 +75,7 @@
                 Grid.Row="2"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypePassword_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypePassword_Text}">
             </Label>
 
             <Border
@@ -76,7 +83,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="2"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypePassword"
@@ -93,8 +100,7 @@
                 Grid.Row="3"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeURL_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeURL_Text}">
             </Label>
 
             <Border
@@ -102,7 +108,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="3"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeURL"
@@ -119,8 +125,7 @@
                 Grid.Row="4"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeTitle_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeTitle_Text}">
             </Label>
 
             <Border
@@ -128,7 +133,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="4"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeTitle"
@@ -145,8 +150,7 @@
                 Grid.Row="5"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeReceiver_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeReceiver_Text}">
             </Label>
 
             <Border
@@ -154,7 +158,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="5"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeReceiver"
@@ -171,8 +175,7 @@
                 Grid.Row="6"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeSubject_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeSubject_Text}">
             </Label>
 
             <Border
@@ -180,7 +183,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="6"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeSubject"
@@ -197,8 +200,7 @@
                 Grid.Row="7"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeMessage_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeMessage_Text}">
             </Label>
 
             <Border
@@ -206,7 +208,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="7"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeMessage"
@@ -223,8 +225,7 @@
                 Grid.Row="8"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeLatitude_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeLatitude_Text}">
             </Label>
 
             <Border
@@ -232,10 +233,11 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="8"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeLatitude"
+                    Placeholder="0.000000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
                     Text=""
@@ -249,8 +251,7 @@
                 Grid.Row="9"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeLongitude_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeLongitude_Text}">
             </Label>
 
             <Border
@@ -258,10 +259,11 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="9"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeLongitude"
+                    Placeholder="0.000000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
                     Text=""
@@ -275,8 +277,7 @@
                 Grid.Row="10"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeFirstname_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeFirstname_Text}">
             </Label>
 
             <Border
@@ -284,7 +285,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="10"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeFirstname"
@@ -301,8 +302,7 @@
                 Grid.Row="11"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeLastname_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeLastname_Text}">
             </Label>
 
             <Border
@@ -310,7 +310,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="11"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeLastname"
@@ -327,8 +327,7 @@
                 Grid.Row="12"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeNumber_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeNumber_Text}">
             </Label>
 
             <Border
@@ -336,7 +335,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="12"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeNumber"
@@ -353,8 +352,7 @@
                 Grid.Row="13"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeMail_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeMail_Text}">
             </Label>
 
             <Border
@@ -362,7 +360,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="13"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeMail"
@@ -379,8 +377,7 @@
                 Grid.Row="14"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeDescription_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeDescription_Text}">
             </Label>
 
             <Border
@@ -388,7 +385,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="14"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeDescription"
@@ -405,8 +402,7 @@
                 Grid.Row="15"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeLocation_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeLocation_Text}">
             </Label>
 
             <Border
@@ -414,7 +410,7 @@
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="15"
                 Grid.Column="1"
-                IsVisible="False">
+                Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeLocation"
@@ -431,8 +427,7 @@
                 Grid.Row="16"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeStart_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeStart_Text}">
             </Label>
 
             <HorizontalStackLayout
@@ -442,7 +437,7 @@
                 <Border
                     x:Name="brdPayloadTypeStartDate"
                     Style="{StaticResource borderStyleDefault}"
-                    IsVisible="False">
+                    Margin="0,6,6,0">
 
                     <DatePicker
                         x:Name="dtpPayloadTypeStartDate">
@@ -452,10 +447,11 @@
                 <Border
                     x:Name="brdPayloadTypeStartTime"
                     Style="{StaticResource borderStyleDefault}"
-                    IsVisible="False">
+                    Margin="0,6,6,0">
 
                     <TimePicker
-                        x:Name="tmpPayloadTypeStartTime">
+                        x:Name="tmpPayloadTypeStartTime"
+                        MaximumWidthRequest="{OnPlatform WinUI=156}">
                     </TimePicker>
                 </Border>
             </HorizontalStackLayout>
@@ -466,8 +462,7 @@
                 Grid.Row="17"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeEnd_Text}"
-                IsVisible="False">
+                Text="{Translate PayloadTypeEnd_Text}">
             </Label>
 
             <HorizontalStackLayout
@@ -477,9 +472,7 @@
                 <Border
                     x:Name="brdPayloadTypeEndDate"
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="17"
-                    Grid.Column="1"
-                    IsVisible="False">
+                    Margin="0,6,6,0">
 
                     <DatePicker
                         x:Name="dtpPayloadTypeEndDate">
@@ -489,10 +482,11 @@
                 <Border
                     x:Name="brdPayloadTypeEndTime"
                     Style="{StaticResource borderStyleDefault}"
-                    IsVisible="False">
+                    Margin="0,6,6,0">
 
                     <TimePicker
-                        x:Name="tmpPayloadTypeEndTime">
+                        x:Name="tmpPayloadTypeEndTime"
+                        MaximumWidthRequest="{OnPlatform WinUI=156}">
                     </TimePicker>
                 </Border>
             </HorizontalStackLayout>
@@ -505,7 +499,7 @@
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
                 WidthRequest="120"
-                Margin="0,10,0,10"
+                Margin="0,15,0,10"
                 ToolTipProperties.Text="{Translate ButtonCancel_Text}"
                 Source="ic_action_cancel_red.png"
                 Clicked="OnButtonCancel_Clicked">
@@ -519,7 +513,7 @@
                 HorizontalOptions="End"
                 VerticalOptions="Start"
                 WidthRequest="120"
-                Margin="0,10,0,0"
+                Margin="0,15,6,0"
                 ToolTipProperties.Text="{Translate ButtonNext_Text}"
                 Source="ic_action_tick_green.png"
                 Clicked="OnButtonClose_Clicked">

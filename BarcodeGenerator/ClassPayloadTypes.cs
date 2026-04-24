@@ -2,8 +2,7 @@
 {
     internal class ClassPayloadTypes
     {
-        // Global variables for Payload Types
-        public static string cPayloadType_TEXT = string.Empty;
+        // Global variables for Payload Types - https://github.com/Shane32/QRCoder    
         public static string cPayloadType_WIFI = string.Empty;
         public static string cPayloadType_URL = string.Empty;
         public static string cPayloadType_BOOKMARK = string.Empty;
@@ -18,6 +17,7 @@
 
         // Global variables
         public static int nPayloadTypeIndex;
+        public static bool bPayloadEnabled;
         public static string cPayloadType = string.Empty;
         public static string cPayloadTypeDefault = string.Empty;
         public static string cPayloadResult = string.Empty;
@@ -33,7 +33,6 @@
         /// on payload type values.</remarks>
         public static void InitializePayloadTypes()
         {
-            cPayloadType_TEXT = CodeLang.PayloadType_TEXT_Text;
             cPayloadType_WIFI = CodeLang.PayloadType_WIFI_Text;
             cPayloadType_URL = CodeLang.PayloadType_URL_Text;
             cPayloadType_BOOKMARK = CodeLang.PayloadType_BOOKMARK_Text;
@@ -47,7 +46,7 @@
             cPayloadType_CALENDAREVENT = CodeLang.PayloadType_CALENDAREVENT_Text;
 
             // Default values for the payload type
-            cPayloadTypeDefault = CodeLang.PayloadType_TEXT_Text;
+            cPayloadTypeDefault = CodeLang.PayloadType_URL_Text;
         }
 
         /// <summary>
@@ -62,7 +61,6 @@
             payloadSearch.Clear();
 
             // Add elements to the dictionary
-            payloadSearch.Add("TEXT", CodeLang.PayloadType_TEXT_Text);
             payloadSearch.Add("WIFI", CodeLang.PayloadType_WIFI_Text);
             payloadSearch.Add("URL", CodeLang.PayloadType_URL_Text);
             payloadSearch.Add("BOOKMARK", CodeLang.PayloadType_BOOKMARK_Text);
@@ -88,8 +86,6 @@
         /// without regard to case.</returns>
         public static List<string> GetQRCodePayloadTypes() => [.. new List<string>
             {
-                // https://github.com/Shane32/QRCoder    
-                CodeLang.PayloadType_TEXT_Text,
                 CodeLang.PayloadType_WIFI_Text,
                 CodeLang.PayloadType_URL_Text,
                 CodeLang.PayloadType_BOOKMARK_Text,

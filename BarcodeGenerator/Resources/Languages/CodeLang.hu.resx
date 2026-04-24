@@ -811,9 +811,6 @@ A hibajavítás alapértelmezés szerint magasra van állítva (30%-os helyreál
 
 Ajánlott a generált QR-kódok és más vonalkódok tesztelése a helyes beolvasás érdekében.</value>
   </data>
-  <data name="PayloadType_TEXT_Text" xml:space="preserve">
-    <value>Szöveg</value>
-  </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
     <value>WiFi</value>
   </data>
@@ -900,5 +897,8 @@ Ajánlott a generált QR-kódok és más vonalkódok tesztelése a helyes beolva
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
     <value>Vége:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Hasznos terhelés:</value>
   </data>
 </root>
