@@ -8,9 +8,6 @@ namespace BarcodeGenerator
     {
     	public PopupPayloadTypes()
     	{
-            // Name of the current page
-            Globals.cCurrentPage = "PopupPayloadTypes";
-
             InitializeComponent();
 
             // Get the current display information
@@ -330,99 +327,48 @@ namespace BarcodeGenerator
             grdSettingsPayloadTypes.ColumnDefinitions.Clear();
 
             // Set column widths based on the current page, device type, and orientation to optimize the layout for user interaction
-            switch (Globals.cCurrentPage)
+            // The Style 'scrollviewStylePopup' is applied to the scroll view in the popup, so these column widths will be used when the popup is open
+            if (DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
-                // cCurrentPage = PageSettings
-                case "PageSettings":
-                    if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-                    {
-                        switch (orientation)
-                        {
-                            case DisplayOrientation.Portrait:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
-                                break;
-                            default:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                                break;
-                        }
-                    }
-                    else if (DeviceInfo.Idiom == DeviceIdiom.Tablet)  // For tablets
-                    {
-                        switch (orientation)
-                        {
-                            case DisplayOrientation.Portrait:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
-                                break;
-                            default:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(390) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(430) });
-                                break;
-                        }
-                    }
-                    else  // Desktop
-                    {
-                        switch (orientation)
-                        {
-                            case DisplayOrientation.Portrait:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
-                                break;
-                            default:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(390) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(430) });
-                                break;
-                        }
-                    }
-                    break;
-                // cCurrentPage = PopupSettingsArtQRCode
-                // The Style 'scrollviewStylePopup' is applied to the scroll view in the popup, so these column widths will be used when the popup is open
-                default:
-                    if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-                    {
-                        switch (orientation)
-                        {
-                            case DisplayOrientation.Portrait:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
-                                break;
-                            default:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                                break;
-                        }
-                    }
-                    else if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
-                    {
-                        switch (orientation)
-                        {
-                            case DisplayOrientation.Portrait:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                                break;
-                            default:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                                break;
-                        }
-                    }
-                    else  // Desktop
-                    {
-                        switch (orientation)
-                        {
-                            case DisplayOrientation.Portrait:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                                break;
-                            default:
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                                grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                                break;
-                        }
-                    }
-                    break;
+                switch (orientation)
+                {
+                    case DisplayOrientation.Portrait:
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
+                        break;
+                    default:
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                        break;
+                }
+            }
+            else if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
+            {
+                switch (orientation)
+                {
+                    case DisplayOrientation.Portrait:
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                        break;
+                    default:
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                        break;
+                }
+            }
+            else  // Desktop
+            {
+                switch (orientation)
+                {
+                    case DisplayOrientation.Portrait:
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                        break;
+                    default:
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                        break;
+                }
             }
         }
 

@@ -506,21 +506,10 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnShareClicked(object sender, EventArgs e)
+        private async void OnShareClicked(object sender, EventArgs e)
         {
-            // Sometimes InvalidCastException when running on a MacBook Air M1:
-            // System.InvalidCastException: Unable to cast object of type 'Foundation.NSString' to type 'Foundation.NSExtensionItem'.
-            try
-            {
-                _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureException(ex);
-#if DEBUG
-                _ = DisplayAlertAsync("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
-#endif
-            }
+            // Share the payload types - this will parse the text and offer relevant share/open options for recognized payload types like URLs, Wi‑Fi config, contact (vCard), calendar event (iCal), etc.
+            await Globals.SharePayloadTypes(lblBarcodeResult.Text);            
         }
 
         /// <summary>

@@ -1,3 +1,4 @@
+using System.Collections;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator
@@ -63,7 +64,7 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnPickerFormatCodeChanged(object sender, EventArgs e)
         {
-            var picker = (Picker)sender;
+            Picker picker = (Picker)sender;
             int selectedIndex = picker.SelectedIndex;
 
             if (selectedIndex != -1)
@@ -75,7 +76,7 @@ namespace BarcodeGenerator
                 btnShare.IsEnabled = false;
                 imgbtnTextToSpeech.IsEnabled = false;
 
-                var itemsSource = picker.ItemsSource;
+                IList? itemsSource = picker.ItemsSource;
                 string? selectedName = itemsSource is not null && itemsSource.Count > selectedIndex
                     ? itemsSource[selectedIndex] as string
                     : string.Empty;
@@ -311,16 +312,21 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnBarcodesDetected(object? sender, BarcodeDetectionEventArgs e)
         {
-            if (e.Results == null || e.Results.Length == 0) return;
+            if (e.Results == null || e.Results.Length == 0)
+            {
+                return;
+            }
 
             // Build the display list on the background thread
-            var list = new List<string>();
-            foreach (var barcode in e.Results)
+            List<string> list = [];
+            foreach (BarcodeResult? barcode in e.Results)
             {
-                var fmt = barcode.Format.ToString();
-                var val = barcode.Value;
+                string fmt = barcode.Format.ToString();
+                string val = barcode.Value;
                 if (!string.IsNullOrEmpty(fmt) && !string.IsNullOrEmpty(val))
+                {
                     list.Add($"{fmt}:\n{val}");
+                }
             }
 
             // Remove duplicates and sort the list
@@ -338,15 +344,15 @@ namespace BarcodeGenerator
                 // Set the barcode results in the label 'lblBarcodeResult.Text'
                 if (list.Count == 1)
                 {
-                    var parts = list[0].Split([":\n"], StringSplitOptions.None);
+                    string[] parts = list[0].Split([":\n"], StringSplitOptions.None);
                     btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
                     lblBarcodeResult.Text = parts.Length > 1 ? parts[1] : "";
                 }
                 else if (list.Count > 1)
                 {
                     btnShare.Text = CodeLang.ButtonShare_Text;
-                    var sb = new System.Text.StringBuilder();
-                    foreach (var item in list) sb.AppendLine(item).AppendLine();
+                    System.Text.StringBuilder sb = new();
+                    foreach (string item in list) sb.AppendLine(item).AppendLine();
                     lblBarcodeResult.Text = sb.ToString();
                 }
 
@@ -364,9 +370,10 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnShareClicked(object sender, EventArgs e)
+        private async void OnShareClicked(object sender, EventArgs e)
         {
-            _ = Globals.ShareBarcodeResultAsync(lblBarcodeResult.Text);
+            // Share the payload types - this will parse the text and offer relevant share/open options for recognized payload types like URLs, Wi‑Fi config, contact (vCard), calendar event (iCal), etc.
+            await Globals.SharePayloadTypes(lblBarcodeResult.Text);
         }
 
         /// <summary>
