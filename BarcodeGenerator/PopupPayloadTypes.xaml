@@ -115,7 +115,7 @@
                     x:Name="entPayloadTypeURL"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Url"
-                    Text=""
+                    Text="http://"
                     ReturnType="Next">
                 </Entry>
             </Border>
@@ -342,7 +342,7 @@
                     x:Name="entPayloadTypeNumber"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Telephone"
-                    Text=""
+                    Text="+"
                     ReturnType="Next">
                 </Entry>
             </Border>

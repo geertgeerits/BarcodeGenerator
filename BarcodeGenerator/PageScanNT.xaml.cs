@@ -234,7 +234,11 @@ namespace BarcodeGenerator
                 foreach (var barcode in e.BarcodeResults)
                 {
                     cBarcodeFormat = barcode.BarcodeFormat.ToString();
-                    cDisplayValue = barcode.DisplayValue;
+                    // Use RawValue for consistent raw data across platforms
+                    // The DisplayValue property may be parsed differently by the underlying platform barcode APIs:
+                    // - Android(Google ML Kit): Automatically parses Wi - Fi QR codes and returns formatted text
+                    // - iOS(Apple Vision / AVFoundation): Returns the raw QR code string
+                    cDisplayValue = barcode.RawValue ?? barcode.DisplayValue;
 
                     // Decompress the QR code result if compressed
                     cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
