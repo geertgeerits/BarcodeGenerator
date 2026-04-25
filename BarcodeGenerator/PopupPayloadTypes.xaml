@@ -7,6 +7,7 @@
     x:DataType="local:LocalizationResourceManager"
     x:Class="BarcodeGenerator.PopupPayloadTypes"
     BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+    MaximumHeightRequest="600"
     CanBeDismissedByTappingOutsideOfPopup="False">
 
     <!--Set the Text property of the Entry controls to "" to eliminate null values if nothing has been entered.
@@ -17,7 +18,7 @@
 
         <Grid
             x:Name="grdSettingsPayloadTypes"
-            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
             ColumnDefinitions="140, 120*"
             HorizontalOptions="Center"
             VerticalOptions="Start"
@@ -430,71 +431,75 @@
                 Text="{Translate PayloadTypeStart_Text}">
             </Label>
 
-            <HorizontalStackLayout
+            <Border
+                x:Name="brdPayloadTypeStartDate"
+                Style="{StaticResource borderStyleDefault}"
                 Grid.Row="16"
-                Grid.Column="1">
+                Grid.Column="1"
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                Margin="0,6,6,0">
 
-                <Border
-                    x:Name="brdPayloadTypeStartDate"
-                    Style="{StaticResource borderStyleDefault}"
-                    Margin="0,6,6,0">
+                <DatePicker
+                    x:Name="dtpPayloadTypeStartDate"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}">
+                </DatePicker>
+            </Border>
 
-                    <DatePicker
-                        x:Name="dtpPayloadTypeStartDate">
-                    </DatePicker>
-                </Border>
+            <Border
+                x:Name="brdPayloadTypeStartTime"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="17"
+                Grid.Column="1"
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                Margin="0,6,6,0">
 
-                <Border
-                    x:Name="brdPayloadTypeStartTime"
-                    Style="{StaticResource borderStyleDefault}"
-                    Margin="0,6,6,0">
-
-                    <TimePicker
-                        x:Name="tmpPayloadTypeStartTime"
-                        MaximumWidthRequest="{OnPlatform WinUI=156}">
-                    </TimePicker>
-                </Border>
-            </HorizontalStackLayout>
+                <TimePicker
+                    x:Name="tmpPayloadTypeStartTime"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}">
+                </TimePicker>
+            </Border>
 
             <Label
                 x:Name="lblPayloadTypeEnd"
                 Style="{StaticResource labelStyleDefault}"
-                Grid.Row="17"
+                Grid.Row="18"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
                 Text="{Translate PayloadTypeEnd_Text}">
             </Label>
 
-            <HorizontalStackLayout
-                Grid.Row="17"
-                Grid.Column="1">
+            <Border
+                x:Name="brdPayloadTypeEndDate"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="18"
+                Grid.Column="1"
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                Margin="0,6,6,0">
 
-                <Border
-                    x:Name="brdPayloadTypeEndDate"
-                    Style="{StaticResource borderStyleDefault}"
-                    Margin="0,6,6,0">
+                <DatePicker
+                    x:Name="dtpPayloadTypeEndDate"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}">
+                </DatePicker>
+            </Border>
 
-                    <DatePicker
-                        x:Name="dtpPayloadTypeEndDate">
-                    </DatePicker>
-                </Border>
+            <Border
+                x:Name="brdPayloadTypeEndTime"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="19"
+                Grid.Column="1"
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                Margin="0,6,6,0">
 
-                <Border
-                    x:Name="brdPayloadTypeEndTime"
-                    Style="{StaticResource borderStyleDefault}"
-                    Margin="0,6,6,0">
-
-                    <TimePicker
-                        x:Name="tmpPayloadTypeEndTime"
-                        MaximumWidthRequest="{OnPlatform WinUI=156}">
-                    </TimePicker>
-                </Border>
-            </HorizontalStackLayout>
+                <TimePicker
+                    x:Name="tmpPayloadTypeEndTime"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}">
+                </TimePicker>
+            </Border>
 
             <ImageButton
                 x:Name="btnButtonCancel"
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Row="18"
+                Grid.Row="20"
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
@@ -508,7 +513,7 @@
             <ImageButton
                 x:Name="btnButtonClose"
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Row="18"
+                Grid.Row="20"
                 Grid.Column="1"
                 HorizontalOptions="End"
                 VerticalOptions="Start"
