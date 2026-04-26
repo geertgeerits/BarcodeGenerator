@@ -901,4 +901,7 @@ Det rekommenderas att testa de genererade QR-koderna och andra streckkoder för 
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Nyttolaster:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Nyttolaster</value>
+  </data>
 </root>

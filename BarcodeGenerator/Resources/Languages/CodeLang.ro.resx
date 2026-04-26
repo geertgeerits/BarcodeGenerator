@@ -901,4 +901,7 @@ Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Sarcini utile:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Sarcini utile</value>
+  </data>
 </root>

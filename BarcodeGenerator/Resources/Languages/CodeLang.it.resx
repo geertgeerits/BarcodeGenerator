@@ -901,4 +901,7 @@ Si consiglia di testare i codici QR e altri codici a barre generati per assicura
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Carichi utili:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Carichi utili</value>
+  </data>
 </root>

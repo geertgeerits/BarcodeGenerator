@@ -901,4 +901,7 @@ Es wird empfohlen, die generierten QR-Codes und andere Barcodes zu testen, um si
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Nutzlasten:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Nutzlasten</value>
+  </data>
 </root>

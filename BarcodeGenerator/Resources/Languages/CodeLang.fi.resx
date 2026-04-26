@@ -901,4 +901,7 @@ On suositeltavaa testata luodut QR-koodit ja muut viivakoodit varmistaaksesi, et
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Hyötykuormat:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Hyötykuormat</value>
+  </data>
 </root>

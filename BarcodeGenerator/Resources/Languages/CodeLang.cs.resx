@@ -901,4 +901,7 @@ Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyst
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Užitečné zatížení:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Užitečné zatížení</value>
+  </data>
 </root>

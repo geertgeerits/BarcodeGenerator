@@ -134,5 +134,141 @@
             // Select the payload type in the picker
             picker.SelectedIndex = nPayloadTypeIndex;
         }
+
+        /// <summary>
+        /// Attempts to handle and share the specified payload text using the most appropriate mechanism based on its
+        /// content, such as opening links, sharing contacts, or displaying Wi‑Fi details.
+        /// </summary>
+        /// <remarks>The method detects the type of the payload by inspecting its prefix and performs an
+        /// action suitable for that type, such as launching a browser, opening Wi‑Fi settings, or sharing files. If the
+        /// payload type is not recognized, a generic share operation is used. The method is asynchronous and returns
+        /// immediately; callers should not rely on its completion for further logic.</remarks>
+        /// <param name="text">The payload text to process and share. This can be a URL, Wi‑Fi QR payload, telephone number, vCard,
+        /// calendar event, or other supported format. Cannot be null or whitespace.</param>
+        public static async Task SharePayloadTypes(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return;
+            }
+
+            // WhatsApp short link
+            if (text.StartsWith("https://wa.me/", StringComparison.OrdinalIgnoreCase))
+            {
+                await Launcher.Default.OpenAsync(new Uri(text));
+                return;
+            }
+
+            // Wi‑Fi QR payload: show details and offer to copy or open Wi‑Fi settings
+            if (text.StartsWith("WIFI:", StringComparison.OrdinalIgnoreCase))
+            {
+                string ssid = string.Empty, pass = string.Empty, auth = string.Empty;
+                string payload = text[5..];
+                foreach (string part in payload.Split(';', StringSplitOptions.RemoveEmptyEntries))
+                {
+                    if (part.StartsWith("S:"))
+                    {
+                        ssid = Uri.UnescapeDataString(part.AsSpan(2));
+                    }
+                    else if (part.StartsWith("P:"))
+                    {
+                        pass = Uri.UnescapeDataString(part.AsSpan(2));
+                    }
+                    else if (part.StartsWith("T:"))
+                    {
+                        auth = part[2..];
+                    }
+                }
+
+                string message = $"SSID: {ssid}\nPassword: {pass}\nEncryption: {auth}";
+                string action = await Application.Current!.Windows[0].Page!.DisplayActionSheetAsync("Wi‑Fi network detected", CodeLang.ButtonClose_Text, null, "Copy", "Open Wi‑Fi Settings");
+
+                if (action == "Copy")
+                {
+                    await Clipboard.Default.SetTextAsync($"SSID:{ssid};P:{pass};");
+                }
+                else if (action == "Open Wi‑Fi Settings")
+                {
+#if ANDROID
+                    try
+                    {
+                        var intent = new Android.Content.Intent(Android.Provider.Settings.ActionWifiSettings);
+                        intent.SetFlags(Android.Content.ActivityFlags.NewTask);
+                        Android.App.Application.Context.StartActivity(intent);
+                    }
+                    catch
+                    {
+                        // fallback to launcher
+                        await Launcher.Default.OpenAsync(new Uri("ms-settings:network-wifi"));
+                    }
+#elif WINDOWS
+                    await Launcher.Default.OpenAsync(new Uri("ms-settings:network-wifi"));
+#elif IOS
+                    // iOS doesn't reliably allow opening Wi‑Fi settings from apps on all iOS versions.
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("", "Please open Settings → Wi‑Fi to join the network.", CodeLang.ButtonClose_Text);
+#else
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("", "Open Wi‑Fi settings is not supported on this platform.", CodeLang.ButtonClose_Text);
+#endif
+                }
+
+                return;
+            }
+
+            // Generic URI handlers (URL, geo, mailto, sms, mms, etc.)
+            if (text.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ||
+                text.StartsWith("https://", StringComparison.OrdinalIgnoreCase) ||
+                text.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase) ||
+                text.StartsWith("sms:", StringComparison.OrdinalIgnoreCase) ||
+                text.StartsWith("mms:", StringComparison.OrdinalIgnoreCase) ||
+                text.StartsWith("geo:", StringComparison.OrdinalIgnoreCase))
+            {
+                await Launcher.Default.OpenAsync(new Uri(text));
+                return;
+            }
+
+            // Telephone numbers - prefer PhoneDialer where available
+            if (text.StartsWith("tel:", StringComparison.OrdinalIgnoreCase))
+            {
+                string number = text[4..];
+                try
+                {
+                    PhoneDialer.Default.Open(number);
+                }
+                catch
+                {
+                    await Launcher.Default.OpenAsync(new Uri(text));
+                }
+                return;
+            }
+
+            // Contact (vCard) - write to a temp .vcf and let the system open/share it
+            if (text.StartsWith("BEGIN:VCARD", StringComparison.OrdinalIgnoreCase))
+            {
+                string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"contact_{DateTime.Now:yyyyMMddHHmmss}.vcf");
+                System.IO.File.WriteAllText(file, text);
+                await Share.Default.RequestAsync(new ShareFileRequest
+                {
+                    Title = "Import Contact",
+                    File = new ShareFile(file)
+                });
+                return;
+            }
+
+            // Calendar event (iCal) - write to a temp .ics and let the system open/share it
+            if (text.StartsWith("BEGIN:VEVENT", StringComparison.OrdinalIgnoreCase) || text.Contains("BEGIN:VEVENT"))
+            {
+                string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"event_{DateTime.Now:yyyyMMddHHmmss}.ics");
+                System.IO.File.WriteAllText(file, text);
+                await Share.Default.RequestAsync(new ShareFileRequest
+                {
+                    Title = "Add to Calendar",
+                    File = new ShareFile(file)
+                });
+                return;
+            }
+
+            // Fallback: use existing generic share method
+            _ = Globals.ShareBarcodeResultAsync(text);
+        }
     }
 }

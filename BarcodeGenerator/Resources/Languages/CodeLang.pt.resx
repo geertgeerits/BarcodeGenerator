@@ -901,4 +901,7 @@ Recomenda-se testar os códigos QR gerados e outros códigos de barras para gara
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Cargas úteis:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Cargas úteis</value>
+  </data>
 </root>

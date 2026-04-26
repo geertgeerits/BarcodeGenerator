@@ -901,4 +901,7 @@ Il est recommandé de tester les codes QR générés et les autres codes-barres 
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Charges utiles:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Charges utiles</value>
+  </data>
 </root>

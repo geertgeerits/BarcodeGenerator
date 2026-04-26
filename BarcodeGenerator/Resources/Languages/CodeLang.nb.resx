@@ -901,4 +901,7 @@ Det anbefales å teste de genererte QR-kodene og andre strekkoder for å sikre a
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Nyttelaster:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Nyttelaster</value>
+  </data>
 </root>

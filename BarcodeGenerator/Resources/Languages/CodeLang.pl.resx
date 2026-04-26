@@ -901,4 +901,7 @@ Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, 
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Ładunki:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Ładunki</value>
+  </data>
 </root>

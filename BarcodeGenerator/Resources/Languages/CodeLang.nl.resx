@@ -901,4 +901,7 @@ Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er 
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Payloads:</value>
   </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Payloads</value>
+  </data>
 </root>

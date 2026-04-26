@@ -513,7 +513,7 @@ namespace BarcodeGenerator
         private async void OnShareClicked(object sender, EventArgs e)
         {
             // Share the payload types - this will parse the text and offer relevant share/open options for recognized payload types like URLs, Wi‑Fi config, contact (vCard), calendar event (iCal), etc.
-            await Globals.SharePayloadTypes(lblBarcodeResult.Text);            
+            await ClassPayloadTypes.SharePayloadTypes(lblBarcodeResult.Text);            
         }
 
         /// <summary>

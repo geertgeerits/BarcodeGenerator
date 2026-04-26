@@ -22,6 +22,9 @@ namespace BarcodeGenerator
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
             Globals.bPopupOpened = true;
 
+            // Reset the popup canceled flag to false when the popup is opened
+            Globals.bPopupCanceled = false;
+
             // Set the payload types in the picker
             pckPayloadType.ItemsSource = ClassPayloadTypes.GetQRCodePayloadTypes();
 
