@@ -302,10 +302,18 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)
             {
+                // https://icalendar.dev/blog/what-is-icalendar/
                 DateTime startDate = dtpPayloadTypeStartDate.Date!.Value + tmpPayloadTypeStartTime.Time!.Value;
                 DateTime endDate = dtpPayloadTypeEndDate.Date!.Value + tmpPayloadTypeEndTime.Time!.Value;
-                CalendarEvent generator = new(subject: entPayloadTypeSubject.Text, description: entPayloadTypeDescription.Text, location: entPayloadTypeLocation.Text, start: new DateTimeOffset(startDate), end: new DateTimeOffset(endDate), allDayEvent: false);
-                payload = generator.ToString();
+                //CalendarEvent generator = new(subject: entPayloadTypeSubject.Text, description: entPayloadTypeDescription.Text, location: entPayloadTypeLocation.Text, start: new DateTimeOffset(startDate), end: new DateTimeOffset(endDate), allDayEvent: false);
+                //payload = generator.ToString();
+
+                // Format as YYYYMMDDThhmmZ (UTC, no seconds)
+                string startUtc = startDate.ToUniversalTime().ToString("yyyyMMdd'T'HHmm'00Z'");
+                string endUtc = endDate.ToUniversalTime().ToString("yyyyMMdd'T'HHmm'00Z'");
+                
+                Random random = new();
+                payload = $"BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nSUMMARY:{entPayloadTypeSubject.Text}\r\nDESCRIPTION:{entPayloadTypeDescription.Text}\r\nLOCATION:{entPayloadTypeLocation.Text}\r\nDTSTART:{startUtc}\r\nDTEND:{endUtc}\r\nUID:{DateTime.UtcNow.Ticks + random.Next(1000, 9999)}\r\nDTSTAMP:{DateTime.UtcNow:yyyyMMddTHHmmssZ}\r\nEND:VEVENT\r\nEND:VCALENDAR";
             }
             else
             {
