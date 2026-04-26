@@ -238,7 +238,7 @@
 
                 <Entry
                     x:Name="entPayloadTypeLatitude"
-                    Placeholder="-90.000000 - 90.000000"
+                    Placeholder="-90.00000 - 90.00000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
                     Text=""
@@ -264,7 +264,7 @@
 
                 <Entry
                     x:Name="entPayloadTypeLongitude"
-                    Placeholder="-180.000000 - 180.000000"
+                    Placeholder="-180.00000 - 180.00000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
                     Text=""
