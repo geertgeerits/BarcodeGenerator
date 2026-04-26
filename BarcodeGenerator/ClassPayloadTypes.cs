@@ -255,7 +255,7 @@
             }
 
             // Calendar event (iCal) - write to a temp .ics and let the system open/share it
-            if (text.StartsWith("BEGIN:VEVENT", StringComparison.OrdinalIgnoreCase) || text.Contains("BEGIN:VEVENT"))
+            if (text.StartsWith("BEGIN:VCALENDAR", StringComparison.OrdinalIgnoreCase) || text.Contains("BEGIN:VEVENT"))
             {
                 string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"event_{DateTime.Now:yyyyMMddHHmmss}.ics");
                 System.IO.File.WriteAllText(file, text);

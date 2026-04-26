@@ -164,7 +164,7 @@
                 <Entry
                     x:Name="entPayloadTypeReceiver"
                     ClearButtonVisibility="WhileEditing"
-                    Keyboard="Text"
+                    Keyboard="Email"
                     Text=""
                     ReturnType="Next">
                 </Entry>
@@ -238,7 +238,7 @@
 
                 <Entry
                     x:Name="entPayloadTypeLatitude"
-                    Placeholder="0.000000"
+                    Placeholder="-90.000000 - 90.000000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
                     Text=""
@@ -264,7 +264,7 @@
 
                 <Entry
                     x:Name="entPayloadTypeLongitude"
-                    Placeholder="0.000000"
+                    Placeholder="-180.000000 - 180.000000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
                     Text=""

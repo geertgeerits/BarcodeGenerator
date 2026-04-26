@@ -1,5 +1,6 @@
 using CommunityToolkit.Maui.Views;
 using static QRCoder.PayloadGenerator;
+using static QRCoder.PayloadGenerator.Geolocation;
 using Geolocation = QRCoder.PayloadGenerator.Geolocation;
 
 namespace BarcodeGenerator
@@ -234,7 +235,7 @@ namespace BarcodeGenerator
         private async void OnButtonClose_Clicked(object sender, EventArgs e)
         {
             // Generate the payload result based on the selected payload type and user input, and then close the popup
-            ClassPayloadTypes.cPayloadResult = BuildPayload(ClassPayloadTypes.cPayloadType);
+            ClassPayloadTypes.cPayloadResult = await BuildPayload(ClassPayloadTypes.cPayloadType);
 
             await CloseAsync();
         }
@@ -246,7 +247,7 @@ namespace BarcodeGenerator
         /// <param name="selectedName">The name of the selected payload type.</param>
         /// <returns>The generated payload string for the QR code.</returns>
         /// <remarks>https://github.com/Shane32/QRCoder</remarks>
-        public string BuildPayload(string selectedName)
+        public async Task<string> BuildPayload(string selectedName)
         {
             string payload;
 
@@ -282,7 +283,38 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
-                Geolocation generator = new(latitude: entPayloadTypeLatitude.Text, longitude: entPayloadTypeLongitude.Text);
+                // Replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
+                string latText = (entPayloadTypeLatitude.Text ?? string.Empty).Trim().Replace(',', '.');
+                string lonText = (entPayloadTypeLongitude.Text ?? string.Empty).Trim().Replace(',', '.');
+
+                // Latitude ranges from -90° to +90° and longitude ranges from -180° to +180°
+                if (!double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
+                {
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Error", "Invalid latitude value. Please enter a valid number.", "OK");
+                    return string.Empty;
+                }
+
+                if (!double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
+                {
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Error", "Invalid longitude value. Please enter a valid number.", "OK");
+                    return string.Empty;
+                }
+
+                // Validate inclusive min/max bounds
+                if (latitude < -90.0 || latitude > 90.0)
+                {
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Error", "Latitude out of range. Value must be between -90 and 90 (inclusive).", "OK");
+                    return string.Empty;
+                }
+
+                if (longitude < -180.0 || longitude > 180.0)
+                {
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Error", "Longitude out of range. Value must be between -180 and 180 (inclusive).", "OK");
+                    return string.Empty;
+                }
+
+                // Use invariant string formatting to ensure consistent decimal separator expected by payload generator
+                Geolocation generator = new(latitude: latitude.ToString(CultureInfo.InvariantCulture), longitude: longitude.ToString(CultureInfo.InvariantCulture), GeolocationEncoding.GoogleMaps);
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
@@ -302,18 +334,33 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)
             {
-                // https://icalendar.dev/blog/what-is-icalendar/
+                // https://github.com/Shane32/QRCoder
                 DateTime startDate = dtpPayloadTypeStartDate.Date!.Value + tmpPayloadTypeStartTime.Time!.Value;
                 DateTime endDate = dtpPayloadTypeEndDate.Date!.Value + tmpPayloadTypeEndTime.Time!.Value;
-                //CalendarEvent generator = new(subject: entPayloadTypeSubject.Text, description: entPayloadTypeDescription.Text, location: entPayloadTypeLocation.Text, start: new DateTimeOffset(startDate), end: new DateTimeOffset(endDate), allDayEvent: false);
-                //payload = generator.ToString();
 
-                // Format as YYYYMMDDThhmmZ (UTC, no seconds)
+                if (startDate > endDate)
+                {
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Error", "Start date cannot be later than end date.", "OK");
+                    return string.Empty;
+                }
+
+                // Format as YYYYMMDDThhmm00Z (UTC, no seconds = 00)
                 string startUtc = startDate.ToUniversalTime().ToString("yyyyMMdd'T'HHmm'00Z'");
                 string endUtc = endDate.ToUniversalTime().ToString("yyyyMMdd'T'HHmm'00Z'");
-                
+
                 Random random = new();
-                payload = $"BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nSUMMARY:{entPayloadTypeSubject.Text}\r\nDESCRIPTION:{entPayloadTypeDescription.Text}\r\nLOCATION:{entPayloadTypeLocation.Text}\r\nDTSTART:{startUtc}\r\nDTEND:{endUtc}\r\nUID:{DateTime.UtcNow.Ticks + random.Next(1000, 9999)}\r\nDTSTAMP:{DateTime.UtcNow:yyyyMMddTHHmmssZ}\r\nEND:VEVENT\r\nEND:VCALENDAR";
+                payload = $@"BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:{entPayloadTypeSubject.Text}
+DESCRIPTION:{entPayloadTypeDescription.Text}
+LOCATION:{entPayloadTypeLocation.Text}
+DTSTART:{startUtc}
+DTEND:{endUtc}
+UID:{DateTime.UtcNow.Ticks + random.Next(1000, 9999)}
+DTSTAMP:{DateTime.UtcNow:yyyyMMddTHHmmssZ}
+END:VEVENT
+END:VCALENDAR";
             }
             else
             {
