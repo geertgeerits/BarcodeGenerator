@@ -76,6 +76,8 @@
 	  <Compile Remove="ClassValidateBarcodesOLD.cs" />
 	  <Compile Remove="PageScanGV.xaml.cs" />
 	  <Compile Remove="PageWebsite.xaml.cs" />
+	  <Compile Remove="Platforms\Android\ShareFileHandler.cs" />
+	  <Compile Remove="Platforms\iOS\ShareFileHandler.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -85,6 +87,11 @@
 
 	<ItemGroup>
 	  <None Remove="Linker.xml" />
+	  <None Remove="Platforms\Android\AndroidManifest.xml.tmp" />
+	  <None Remove="Platforms\Android\Resources\xml\file_paths.xml.tmp" />
+	  <None Remove="Platforms\Android\ShareFileHandler.cs.tmp" />
+	  <None Remove="Platforms\iOS\Info.plist.tmp" />
+	  <None Remove="Platforms\iOS\ShareFileHandler.cs.tmp" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -256,6 +263,9 @@
 		<PackageReference Include="zxingcpp" Version="0.5.1">
 			<ExcludeAssets>native</ExcludeAssets>
 		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Platforms\Android\Resources\xml\" />
 	</ItemGroup>
 	
 </Project>

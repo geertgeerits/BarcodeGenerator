@@ -1,4 +1,6 @@
-﻿namespace BarcodeGenerator
+﻿using Microsoft.Maui.Controls.PlatformConfiguration;
+
+namespace BarcodeGenerator
 {
     internal class ClassPayloadTypes
     {
@@ -160,7 +162,7 @@
             }
 
             // Wi‑Fi QR payload: show details and offer to copy or open Wi‑Fi settings
-            if (text.StartsWith("WIFI:", StringComparison.OrdinalIgnoreCase))
+            else if (text.StartsWith("WIFI:", StringComparison.OrdinalIgnoreCase))
             {
                 string ssid = string.Empty, pass = string.Empty, auth = string.Empty;
                 string payload = text[5..];
@@ -215,7 +217,7 @@
             }
 
             // Generic URI handlers (URL, geo, mailto, sms, mms, etc.)
-            if (text.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ||
+            else if (text.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ||
                 text.StartsWith("https://", StringComparison.OrdinalIgnoreCase) ||
                 text.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase) ||
                 text.StartsWith("sms:", StringComparison.OrdinalIgnoreCase) ||
@@ -227,7 +229,7 @@
             }
 
             // Telephone numbers - prefer PhoneDialer where available
-            if (text.StartsWith("tel:", StringComparison.OrdinalIgnoreCase))
+            else if (text.StartsWith("tel:", StringComparison.OrdinalIgnoreCase))
             {
                 string number = text[4..];
                 try
@@ -242,55 +244,32 @@
             }
 
             // Contact (vCard) - write to a temp .vcf and let the system open/share it
-            if (text.StartsWith("BEGIN:VCARD", StringComparison.OrdinalIgnoreCase))
+            else if (text.StartsWith("BEGIN:VCARD", StringComparison.OrdinalIgnoreCase))
             {
-                //string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"contact_{DateTime.Now:yyyyMMddHHmmss}.vcf");
-                //System.IO.File.WriteAllText(file, text);
-                //await Share.Default.RequestAsync(new ShareFileRequest
-                //{
-                //    Title = "Import Contact",
-                //    File = new ShareFile(file, "text/vcard")
-                //});
-                
-                string file = Path.Combine(FileSystem.Current.CacheDirectory, $"contact_{DateTime.Now:yyyyMMddHHmmss}.vcf");
-                //File.WriteAllText(file, text, System.Text.Encoding.UTF8);  // Unable to read vCard data
-                File.WriteAllText(file, text);
-#if ANDROID
-                BarcodeGenerator.Platforms.Android.ShareFileHandler.ShareFile(file, "text/x-vcard", "Import Contact");
-#elif IOS
-                BarcodeGenerator.Platforms.iOS.ShareFileHandler.ShareFile(file, "text/x-vcard", "Import Contact");
-#else
-                await Share.Default.RequestAsync(new ShareFileRequest { Title = "Import Contact", File = new ShareFile(file, "text/x-vcard") });
-#endif
-                return;
+                string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"contact_{DateTime.Now:yyyyMMddHHmmss}.vcf");
+                System.IO.File.WriteAllText(file, text);
+                await Launcher.Default.OpenAsync(new OpenFileRequest
+                {
+                    File = new ReadOnlyFile(file)
+                });
             }
 
             // Calendar event (iCal) - write to a temp .ics and let the system open/share it
-            if (text.StartsWith("BEGIN:VCALENDAR", StringComparison.OrdinalIgnoreCase) || text.Contains("BEGIN:VEVENT"))
+            else if (text.StartsWith("BEGIN:VCALENDAR", StringComparison.OrdinalIgnoreCase) || text.Contains("BEGIN:VEVENT"))
             {
-                //string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"event_{DateTime.Now:yyyyMMddHHmmss}.ics");
-                //System.IO.File.WriteAllText(file, text);
-                //await Share.Default.RequestAsync(new ShareFileRequest
-                //{
-                //    Title = "Add to Calendar",
-                //    File = new ShareFile(file, "text/calendar")
-                //});
-                
-                string file = Path.Combine(FileSystem.Current.CacheDirectory, $"event_{DateTime.Now:yyyyMMddHHmmss}.ics");
-                //File.WriteAllText(file, text, System.Text.Encoding.UTF8);    // Unable to read data
-                File.WriteAllText(file, text);
-#if ANDROID
-                BarcodeGenerator.Platforms.Android.ShareFileHandler.ShareFile(file, "text/calendar", "Add to Calendar");
-#elif IOS
-                BarcodeGenerator.Platforms.iOS.ShareFileHandler.ShareFile(file, "text/calendar", "Add to Calendar");
-#else
-                await Share.Default.RequestAsync(new ShareFileRequest { Title = "Add to Calendar", File = new ShareFile(file, "text/calendar") });
-#endif
-                return;
+                string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"event_{DateTime.Now:yyyyMMddHHmmss}.ics");
+                System.IO.File.WriteAllText(file, text);
+                await Launcher.Default.OpenAsync(new OpenFileRequest
+                {
+                    File = new ReadOnlyFile(file)
+                });
             }
 
             // Fallback: use existing generic share method
-            _ = Globals.ShareBarcodeResultAsync(text);
+            else
+            {
+                _ = Globals.ShareBarcodeResultAsync(text);
+            }
         }
     }
 }
