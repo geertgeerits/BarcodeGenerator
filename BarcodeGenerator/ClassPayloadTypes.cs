@@ -244,26 +244,48 @@
             // Contact (vCard) - write to a temp .vcf and let the system open/share it
             if (text.StartsWith("BEGIN:VCARD", StringComparison.OrdinalIgnoreCase))
             {
-                string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"contact_{DateTime.Now:yyyyMMddHHmmss}.vcf");
-                System.IO.File.WriteAllText(file, text);
-                await Share.Default.RequestAsync(new ShareFileRequest
-                {
-                    Title = "Import Contact",
-                    File = new ShareFile(file, "text/vcard")
-                });
+                //string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"contact_{DateTime.Now:yyyyMMddHHmmss}.vcf");
+                //System.IO.File.WriteAllText(file, text);
+                //await Share.Default.RequestAsync(new ShareFileRequest
+                //{
+                //    Title = "Import Contact",
+                //    File = new ShareFile(file, "text/vcard")
+                //});
+                
+                string file = Path.Combine(FileSystem.Current.CacheDirectory, $"contact_{DateTime.Now:yyyyMMddHHmmss}.vcf");
+                //File.WriteAllText(file, text, System.Text.Encoding.UTF8);  // Unable to read vCard data
+                File.WriteAllText(file, text);
+#if ANDROID
+                BarcodeGenerator.Platforms.Android.ShareFileHandler.ShareFile(file, "text/x-vcard", "Import Contact");
+#elif IOS
+                BarcodeGenerator.Platforms.iOS.ShareFileHandler.ShareFile(file, "text/x-vcard", "Import Contact");
+#else
+                await Share.Default.RequestAsync(new ShareFileRequest { Title = "Import Contact", File = new ShareFile(file, "text/x-vcard") });
+#endif
                 return;
             }
 
             // Calendar event (iCal) - write to a temp .ics and let the system open/share it
             if (text.StartsWith("BEGIN:VCALENDAR", StringComparison.OrdinalIgnoreCase) || text.Contains("BEGIN:VEVENT"))
             {
-                string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"event_{DateTime.Now:yyyyMMddHHmmss}.ics");
-                System.IO.File.WriteAllText(file, text);
-                await Share.Default.RequestAsync(new ShareFileRequest
-                {
-                    Title = "Add to Calendar",
-                    File = new ShareFile(file, "text/calendar")
-                });
+                //string file = System.IO.Path.Combine(FileSystem.Current.CacheDirectory, $"event_{DateTime.Now:yyyyMMddHHmmss}.ics");
+                //System.IO.File.WriteAllText(file, text);
+                //await Share.Default.RequestAsync(new ShareFileRequest
+                //{
+                //    Title = "Add to Calendar",
+                //    File = new ShareFile(file, "text/calendar")
+                //});
+                
+                string file = Path.Combine(FileSystem.Current.CacheDirectory, $"event_{DateTime.Now:yyyyMMddHHmmss}.ics");
+                //File.WriteAllText(file, text, System.Text.Encoding.UTF8);    // Unable to read data
+                File.WriteAllText(file, text);
+#if ANDROID
+                BarcodeGenerator.Platforms.Android.ShareFileHandler.ShareFile(file, "text/calendar", "Add to Calendar");
+#elif IOS
+                BarcodeGenerator.Platforms.iOS.ShareFileHandler.ShareFile(file, "text/calendar", "Add to Calendar");
+#else
+                await Share.Default.RequestAsync(new ShareFileRequest { Title = "Add to Calendar", File = new ShareFile(file, "text/calendar") });
+#endif
                 return;
             }
 
