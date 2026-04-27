@@ -18,12 +18,9 @@
 
         <Grid
             x:Name="grdSettingsPayloadTypes"
+            Style="{StaticResource gridStylePopup}"
             RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-            ColumnDefinitions="140, 120*"
-            HorizontalOptions="Center"
-            VerticalOptions="Start"
-            RowSpacing="0"
-            ColumnSpacing="0">
+            VerticalOptions="Start">
 
             <Label
                 Style="{StaticResource labelStyleDefault}"

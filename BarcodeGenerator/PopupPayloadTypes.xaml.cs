@@ -11,15 +11,6 @@ namespace BarcodeGenerator
     	{
             InitializeComponent();
 
-            // Get the current display information
-            DisplayInfo displayInfo = DeviceDisplay.MainDisplayInfo;
-
-            // Adjust the column widths based on the current orientation
-            UpdateGridColumns(displayInfo.Orientation);
-
-            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
-            this.Unloaded += OnUnloaded;
-
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
             Globals.bPopupOpened = true;
 
@@ -47,18 +38,6 @@ namespace BarcodeGenerator
             
             // Set the visibility of controls based on the selected payload type
             SetControlsVisibilityTrue(ClassPayloadTypes.cPayloadType);
-        }
-
-        /// <summary>
-        /// Handles the event that occurs when the main display's information changes, such as orientation updates.
-        /// </summary>
-        /// <remarks>This method ensures that updates to the grid columns in response to display changes
-        /// are performed on the main UI thread.</remarks>
-        /// <param name="sender">The source of the event. This is typically the display information provider.</param>
-        /// <param name="e">An object that contains the event data, including the updated display information.</param>
-        private void OnMainDisplayInfoChanged(object? sender, DisplayInfoChangedEventArgs e)
-        {
-            MainThread.BeginInvokeOnMainThread(() => UpdateGridColumns(e.DisplayInfo.Orientation));
         }
 
         /// <summary>
@@ -241,8 +220,8 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Builds a QR code payload string based on the selected payload type name. The method generates the appropriate
-        /// payload string for the QR code based on the selected payload type.
+        /// Builds a QR code payload string based on the selected payload type name.
+        /// The method generates the appropriate payload string for the QR code based on the selected payload type.
         /// </summary>
         /// <param name="selectedName">The name of the selected payload type.</param>
         /// <returns>The generated payload string for the QR code.</returns>
@@ -368,77 +347,6 @@ END:VCALENDAR";
             }
 
             return payload;
-        }
-
-        /// <summary>
-        /// Updates the column definitions of the settings grid based on the specified display orientation and current
-        /// device type.
-        /// </summary>
-        /// <remarks>This method adjusts the layout of the settings grid to provide an optimal user
-        /// experience for different device types (phone, tablet, desktop) and display orientations (portrait or
-        /// landscape). The changes are applied only to the relevant settings page or popup, depending on the current
-        /// context.</remarks>
-        /// <param name="orientation">The orientation of the display, which determines how the grid columns are configured.</param>
-        private void UpdateGridColumns(DisplayOrientation orientation)
-        {
-            // Clear existing column definitions to avoid conflicts and ensure the new layout is applied correctly.
-            grdSettingsPayloadTypes.ColumnDefinitions.Clear();
-
-            // Set column widths based on the current page, device type, and orientation to optimize the layout for user interaction
-            // The Style 'scrollviewStylePopup' is applied to the scroll view in the popup, so these column widths will be used when the popup is open
-            if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-            {
-                switch (orientation)
-                {
-                    case DisplayOrientation.Portrait:
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
-                        break;
-                    default:
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                        break;
-                }
-            }
-            else if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
-            {
-                switch (orientation)
-                {
-                    case DisplayOrientation.Portrait:
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                        break;
-                    default:
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                        break;
-                }
-            }
-            else  // Desktop
-            {
-                switch (orientation)
-                {
-                    case DisplayOrientation.Portrait:
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                        break;
-                    default:
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                        grdSettingsPayloadTypes.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
-                        break;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Unsubscribe from events when the popup is unloaded to prevent memory leaks and unintended behavior when the popup is closed.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnUnloaded(object? sender, EventArgs e)
-        {
-            DeviceDisplay.MainDisplayInfoChanged -= OnMainDisplayInfoChanged;
-            this.Unloaded -= OnUnloaded;
         }
     }
 }

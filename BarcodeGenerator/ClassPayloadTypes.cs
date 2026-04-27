@@ -249,7 +249,7 @@
                 await Share.Default.RequestAsync(new ShareFileRequest
                 {
                     Title = "Import Contact",
-                    File = new ShareFile(file)
+                    File = new ShareFile(file, "text/vcard")
                 });
                 return;
             }
@@ -262,7 +262,7 @@
                 await Share.Default.RequestAsync(new ShareFileRequest
                 {
                     Title = "Add to Calendar",
-                    File = new ShareFile(file)
+                    File = new ShareFile(file, "text/calendar")
                 });
                 return;
             }

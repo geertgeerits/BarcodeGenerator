@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.51
- * Date ........: 2026-04-26 (YYYY-MM-DD)
+ * Date ........: 2026-04-27 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -278,6 +278,7 @@ namespace BarcodeGenerator
                 bgvBarcode.HorizontalOptions = LayoutOptions.Fill;
                 edtTextToCode.Placeholder = string.Empty;
                 edtTextToCode.TextTransform = TextTransform.None;
+                edtTextToCode.IsEnabled = true;
 
                 btnShare.Text = CodeLang.ButtonShare_Text;
                 btnShare.IsEnabled = false;
@@ -595,7 +596,8 @@ namespace BarcodeGenerator
             // If a payload type is allowed and a specific barcode is selected, build the payload and set it in the editor
             if (ClassPayloadTypes.bPayloadEnabled && bPayloadTypeAllowed)
             {
-                edtTextToCode.Text = string.Empty;
+                OnClearCodeClicked(sender, e);
+                edtTextToCode.IsEnabled = false;
 
                 // Show a modal popup to fill in the details for the selected payload type before generating the payload and setting it in the editor
                 Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
