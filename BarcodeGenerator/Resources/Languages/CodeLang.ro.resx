@@ -935,4 +935,7 @@ Alegeți o opțiune.</value>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
     <value>Deschiderea setărilor Wi-Fi nu este acceptată pe această platformă.</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Creați coduri QR inteligente cu tipuri de date utile precum Wi-Fi, contacte și multe altele. Alegeți doar un tip, introduceți detaliile și ați terminat (activați această opțiune în setări).</value>
+  </data>
 </root>

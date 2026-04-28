@@ -29,6 +29,7 @@ namespace BarcodeGenerator
             lblPrivacyPolicy.Text = $"\n{CodeLang.PrivacyPolicyTitle_Text} {CodeLang.PrivacyPolicy_Text}";
             lblLicense.Text = $"\n{CodeLang.LicenseTitle_Text}: {CodeLang.License_Text}";
             lblQRCodeArt.Text = $"\n{CodeLang.InfoQRCodeArt_Text}";
+            lblPayloadTypes.Text = $"\n{CodeLang.InfoPayloadTypes_Text}";
             lblQRCodeSettings.Text = $"\n{CodeLang.InfoQRCodeSettings_Text}";
             lblCompression.Text = $"\n{CodeLang.InfoCompression_Text}";
             lblExplanation.Text = $"\n{CodeLang.InfoExplanation_Text}";

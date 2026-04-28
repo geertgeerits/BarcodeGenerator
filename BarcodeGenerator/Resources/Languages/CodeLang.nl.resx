@@ -935,4 +935,7 @@ Kies een optie.</value>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
     <value>Het openen van Wi-Fi-instellingen wordt niet ondersteund op dit platform.</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Maak slimme QR-codes met verschillende soorten gegevens, zoals wifi, contacten en meer. Kies een type, voer je gegevens in en klaar (schakel dit in de instellingen in).</value>
+  </data>
 </root>

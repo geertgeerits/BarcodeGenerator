@@ -935,4 +935,7 @@ Válasszon egy lehetőséget.</value>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
     <value>A Wi-Fi beállítások megnyitása nem támogatott ezen a platformon.</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Hozz létre intelligens QR-kódokat olyan adattípusokkal, mint a Wi-Fi, névjegyek és egyebek. Csak válassz egy típust, add meg az adataidat, és kész is vagy (ezt engedélyezd a beállításokban).</value>
+  </data>
 </root>

@@ -935,4 +935,7 @@ Vyberte možnost.</value>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
     <value>Nastavení Wi-Fi není na této platformě podporováno.</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Vytvářejte chytré QR kódy s různými typy dat, jako je Wi-Fi, kontakty a další. Stačí vybrat typ, zadat své údaje a je to (povolte tuto funkci v nastavení).</value>
+  </data>
 </root>

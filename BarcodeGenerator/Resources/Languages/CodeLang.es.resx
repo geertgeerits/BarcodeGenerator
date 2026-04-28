@@ -935,4 +935,7 @@ Seleccione una opción.</value>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
     <value>Abrir ajustes de Wi-Fi no está disponible en esta plataforma.</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Crea códigos QR inteligentes con tipos de datos como Wi-Fi, contactos y más. Solo tienes que elegir un tipo, introducir tus datos y listo (activa esta opción en los ajustes).</value>
+  </data>
 </root>

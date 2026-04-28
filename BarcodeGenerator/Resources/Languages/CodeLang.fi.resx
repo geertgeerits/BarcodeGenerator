@@ -935,4 +935,7 @@ Valitse vaihtoehto.</value>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
     <value>Avaa Wi-Fi-asetukset -toimintoa ei tueta tällä alustalla.</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Luo älykkäitä QR-koodeja, joissa on esimerkiksi Wi-Fi- ja yhteystietotyyppejä. Valitse vain tyyppi, anna tietosi ja olet valmis (ota tämä käyttöön asetuksista).</value>
+  </data>
 </root>

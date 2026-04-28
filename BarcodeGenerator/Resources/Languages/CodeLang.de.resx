@@ -935,4 +935,7 @@ Wählen Sie eine Option.</value>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
     <value>Das Öffnen der WLAN-Einstellungen wird auf dieser Plattform nicht unterstützt.</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Erstellen Sie intelligente QR-Codes mit verschiedenen Nutzdaten wie WLAN, Kontakten und mehr. Wählen Sie einfach einen Typ aus, geben Sie Ihre Daten ein, und fertig (diese Funktion kann in den Einstellungen aktiviert werden).</value>
+  </data>
 </root>

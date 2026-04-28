@@ -106,6 +106,11 @@
                     </Label>
 
                     <Label
+                        x:Name="lblPayloadTypes"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
+
+                    <Label
                         x:Name="lblQRCodeSettings"
                         Style="{StaticResource labelStyleInfo}">
                     </Label>

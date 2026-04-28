@@ -935,4 +935,7 @@ Välj ett alternativ.</value>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
     <value>Öppna Wi-Fi-inställningar stöds inte på den här plattformen.</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Skapa smarta QR-koder med nyttolasttyper som Wi-Fi, kontakter och mer. Välj bara en typ, ange dina uppgifter och du är klar (aktivera detta i inställningarna).</value>
+  </data>
 </root>

@@ -935,4 +935,7 @@ Choose an option.</value>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
     <value>Open Wi‑Fi settings is not supported on this platform.</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Create smart QR codes with payload types like Wi‑Fi, contacts, and more. Just choose a type, enter your details, and you’re done (enable this in the settings).</value>
+  </data>
 </root>
