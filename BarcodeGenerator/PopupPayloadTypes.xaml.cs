@@ -1,13 +1,13 @@
 using CommunityToolkit.Maui.Views;
 using static QRCoder.PayloadGenerator;
 using static QRCoder.PayloadGenerator.Geolocation;
-using Geolocation = QRCoder.PayloadGenerator.Geolocation;
+using QRGeolocation = QRCoder.PayloadGenerator.Geolocation;
 
 namespace BarcodeGenerator
 {
     public partial class PopupPayloadTypes : Popup
     {
-    	public PopupPayloadTypes()
+        public PopupPayloadTypes()
     	{
             InitializeComponent();
 
@@ -38,6 +38,9 @@ namespace BarcodeGenerator
             
             // Set the visibility of controls based on the selected payload type
             SetControlsVisibilityTrue(ClassPayloadTypes.cPayloadType);
+
+            // Get the device's cached and current geographic location
+            GetLocation();
         }
 
         /// <summary>
@@ -293,7 +296,7 @@ namespace BarcodeGenerator
                 }
 
                 // Use invariant string formatting to ensure consistent decimal separator expected by payload generator
-                Geolocation generator = new(latitude: latitude.ToString(CultureInfo.InvariantCulture), longitude: longitude.ToString(CultureInfo.InvariantCulture), GeolocationEncoding.GoogleMaps);
+                QRGeolocation generator = new(latitude: latitude.ToString(CultureInfo.InvariantCulture), longitude: longitude.ToString(CultureInfo.InvariantCulture), GeolocationEncoding.GoogleMaps);
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
@@ -347,6 +350,43 @@ END:VCALENDAR";
             }
 
             return payload;
+        }
+
+        /// <summary>
+        /// Displays the device's cached and current geographic location to the user in alert dialogs.
+        /// </summary>
+        /// <remarks>This method first attempts to retrieve a cached location and displays it if
+        /// available. It then attempts to obtain the current location and displays the result. If either location is
+        /// unavailable, an appropriate message is shown. This method is asynchronous and returns immediately; any
+        /// exceptions thrown during location retrieval or display may not be observed by the caller.</remarks>
+        public async void GetLocation()
+        {
+            Location? location;
+
+            location = await ClassGeolocation.GetCachedLocation();
+            if (location != null)
+            {
+                //await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Cached Location", $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}", "OK");
+                //entPayloadTypeLatitude.Text = location.Latitude.ToString();
+                //entPayloadTypeLongitude.Text = location.Longitude.ToString();
+            }
+            else
+            {
+                //await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Cached Location", "No cached location available", "OK");
+            }
+
+            location = await new ClassGeolocation().GetCurrentLocation();
+
+            if (location != null)
+            {
+                //await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Current Location", $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}", "OK");
+                entPayloadTypeLatitude.Text = location.Latitude.ToString();
+                entPayloadTypeLongitude.Text = location.Longitude.ToString();
+            }
+            else
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Current Location", "No current location available", "OK");
+            }
         }
     }
 }
