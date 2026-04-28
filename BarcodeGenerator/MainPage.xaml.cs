@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.51
- * Date ........: 2026-04-27 (YYYY-MM-DD)
+ * Date ........: 2026-04-28 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -466,13 +466,16 @@ namespace BarcodeGenerator
                 // Set focus to the editor
                 edtTextToCode.Focus();
 
-                // If a payload type is allowed and a specific barcode is selected set the button text to "Payloads"
+                // If a payload type is allowed and a specific barcode is selected set the button text to payloads and disable the text input
                 if (ClassPayloadTypes.bPayloadEnabled && bPayloadTypeAllowed)
                 {
+                    OnClearCodeClicked(sender, e);
+                    edtTextToCode.IsEnabled = false;
                     btnGenerateCode.Text = CodeLang.Payloads_Text;
                 }
                 else
                 {
+                    edtTextToCode.IsEnabled = true;
                     btnGenerateCode.Text = CodeLang.GenerateCode_Text;
                 }
             }
@@ -849,13 +852,17 @@ namespace BarcodeGenerator
                 Globals.bPopupOpened = false;
             }
 
-            // If a payload type is allowed and a specific barcode is selected set the button text to "Payloads"
+            // If a payload type is allowed and a specific barcode is selected set the button text to payloads and disable the text input
+            // This needs to be done here in the Appearing event when coming back from the Settings or PopupPayloadTypes page when the user has
+            // enabled or disabled the payload types or has selected a payload type
             if (ClassPayloadTypes.bPayloadEnabled && bPayloadTypeAllowed)
             {
+                edtTextToCode.IsEnabled = false;
                 btnGenerateCode.Text = CodeLang.Payloads_Text;
             }
             else
             {
+                edtTextToCode.IsEnabled = true;
                 btnGenerateCode.Text = CodeLang.GenerateCode_Text;
             }
         }

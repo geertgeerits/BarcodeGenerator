@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Controls.PlatformConfiguration;
-
-namespace BarcodeGenerator
+﻿namespace BarcodeGenerator
 {
     internal class ClassPayloadTypes
     {
@@ -182,14 +180,14 @@ namespace BarcodeGenerator
                     }
                 }
 
-                string message = $"SSID: {ssid}\nPassword: {pass}\nEncryption: {auth}";
-                string action = await Application.Current!.Windows[0].Page!.DisplayActionSheetAsync("Wi‑Fi network detected", CodeLang.ButtonClose_Text, null, "Copy", "Open Wi‑Fi Settings");
+                //string message = $"SSID: {ssid}\nPassword: {pass}\nEncryption: {auth}";
+                string action = await Application.Current!.Windows[0].Page!.DisplayActionSheetAsync(CodeLang.WiFiNetworkDetected_Text, CodeLang.ButtonClose_Text, null, CodeLang.ButtonCopy_Text, CodeLang.WiFiOpenSettings_Text);
 
-                if (action == "Copy")
+                if (action == CodeLang.ButtonCopy_Text)
                 {
                     await Clipboard.Default.SetTextAsync($"SSID:{ssid};P:{pass};");
                 }
-                else if (action == "Open Wi‑Fi Settings")
+                else if (action == CodeLang.WiFiOpenSettings_Text)
                 {
 #if ANDROID
                     try
@@ -207,9 +205,9 @@ namespace BarcodeGenerator
                     await Launcher.Default.OpenAsync(new Uri("ms-settings:network-wifi"));
 #elif IOS
                     // iOS doesn't reliably allow opening Wi‑Fi settings from apps on all iOS versions.
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("", "Please open Settings → Wi‑Fi to join the network.", CodeLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.WiFiJoinNetwork_Text, CodeLang.ButtonClose_Text);
 #else
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("", "Open Wi‑Fi settings is not supported on this platform.", CodeLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.WiFiOpenSettingsNotSupported_Text, CodeLang.ButtonClose_Text);
 #endif
                 }
 

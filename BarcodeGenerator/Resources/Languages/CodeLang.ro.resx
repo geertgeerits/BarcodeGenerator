@@ -904,4 +904,35 @@ Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a
   <data name="Payloads_Text" xml:space="preserve">
     <value>Sarcini utile</value>
   </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Valoare latitudine nevalidă.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Valoare longitudine nevalidă.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Latitudine în afara intervalului. Valoarea trebuie să fie între -90 și 90 (inclusiv).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Longitudine în afara intervalului. Valoarea trebuie să fie între -180 și 180 (inclusiv).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Data de început nu poate fi ulterioară datei de sfârșit.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Rețea Wi-Fi detectată.
+Alegeți o opțiune.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Copie</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Deschideți setările Wi-Fi</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Deschideți Setări - Wi-Fi pentru a vă conecta la rețea.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Deschiderea setărilor Wi-Fi nu este acceptată pe această platformă.</value>
+  </data>
 </root>

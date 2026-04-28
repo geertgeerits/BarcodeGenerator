@@ -904,4 +904,35 @@ Det rekommenderas att testa de genererade QR-koderna och andra streckkoder för 
   <data name="Payloads_Text" xml:space="preserve">
     <value>Nyttolaster</value>
   </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Ogiltigt latitudvärde.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Ogiltigt longitudvärde.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Latitud utanför intervallet. Värdet måste vara mellan -90 och 90 (inklusive).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Longitud utanför intervallet. Värdet måste vara mellan -180 och 180 (inklusive).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Startdatum får inte vara senare än slutdatum.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Wi-Fi-nätverk upptäckt.
+Välj ett alternativ.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopiera</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Öppna Wi-Fi-inställningar</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Öppna Inställningar - Wi-Fi för att ansluta till nätverket.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Öppna Wi-Fi-inställningar stöds inte på den här plattformen.</value>
+  </data>
 </root>

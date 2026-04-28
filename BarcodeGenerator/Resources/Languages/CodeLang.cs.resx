@@ -904,4 +904,35 @@ Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyst
   <data name="Payloads_Text" xml:space="preserve">
     <value>Užitečné zatížení</value>
   </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Neplatná hodnota zeměpisné šířky.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Neplatná hodnota zeměpisné délky.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Zeměpisná šířka mimo rozsah. Hodnota musí být mezi -90 a 90 (včetně).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Zeměpisná délka mimo rozsah. Hodnota musí být mezi -180 a 180 (včetně).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Datum zahájení nemůže být pozdější než datum ukončení.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Detekována síť Wi-Fi.
+Vyberte možnost.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopie</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Otevřít nastavení Wi-Fi</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Pro připojení k síti otevřete Nastavení – Wi-Fi.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Nastavení Wi-Fi není na této platformě podporováno.</value>
+  </data>
 </root>

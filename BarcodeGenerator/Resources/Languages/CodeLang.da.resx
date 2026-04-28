@@ -904,4 +904,35 @@ Det anbefales at teste de genererede QR-koder og andre stregkoder for at sikre, 
   <data name="Payloads_Text" xml:space="preserve">
     <value>Nyttelast</value>
   </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Ugyldig breddegradsværdi.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Ugyldig længdegradsværdi.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Breddegrad uden for intervallet. Værdien skal være mellem -90 og 90 (inklusive).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Længdegrad uden for intervallet. Værdien skal være mellem -180 og 180 (inklusive).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Startdatoen må ikke være senere end slutdatoen.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Wi-Fi-netværk registreret.
+Vælg en mulighed.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopi</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Åbning af Wi-Fi-indstillinger</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Åbn Indstillinger - Wi-Fi for at oprette forbindelse til netværket.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Åbning af Wi-Fi-indstillinger understøttes ikke på denne platform.</value>
+  </data>
 </root>

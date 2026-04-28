@@ -904,4 +904,35 @@ Es wird empfohlen, die generierten QR-Codes und andere Barcodes zu testen, um si
   <data name="Payloads_Text" xml:space="preserve">
     <value>Nutzlasten</value>
   </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Ungültiger Breitengrad.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Ungültiger Längengrad.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Breitengrad außerhalb des zulässigen Bereichs. Der Wert muss zwischen -90 und 90 (einschließlich) liegen.</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Längengrad außerhalb des zulässigen Bereichs. Der Wert muss zwischen -180 und 180 (einschließlich) liegen.</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Das Startdatum darf nicht nach dem Enddatum liegen.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>WLAN-Netzwerk erkannt.
+Wählen Sie eine Option.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopie</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>WLAN-Einstellungen öffnen</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Bitte öffnen Sie die Einstellungen und wählen Sie 'WLAN', um sich mit dem Netzwerk zu verbinden.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Das Öffnen der WLAN-Einstellungen wird auf dieser Plattform nicht unterstützt.</value>
+  </data>
 </root>

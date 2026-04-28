@@ -904,4 +904,35 @@ On suositeltavaa testata luodut QR-koodit ja muut viivakoodit varmistaaksesi, et
   <data name="Payloads_Text" xml:space="preserve">
     <value>Hyötykuormat</value>
   </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Virheellinen leveysasteen arvo.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Virheellinen pituusaste.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Leveysaste on alueen ulkopuolella. Arvon on oltava välillä -90 ja 90 (mukaan lukien).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Pituusaste on alueen ulkopuolella. Arvon on oltava välillä -180 ja 180 (mukaan lukien).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Aloituspäivämäärä ei voi olla myöhäisempi kuin päättymispäivämäärä.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Wi-Fi-verkko havaittu.
+Valitse vaihtoehto.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopioida</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Avaa Wi-Fi-asetukset</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Avaa Asetukset - Wi-Fi liittyäksesi verkkoon.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Avaa Wi-Fi-asetukset -toimintoa ei tueta tällä alustalla.</value>
+  </data>
 </root>

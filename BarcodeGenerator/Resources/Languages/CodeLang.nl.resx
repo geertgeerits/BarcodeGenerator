@@ -904,4 +904,35 @@ Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er 
   <data name="Payloads_Text" xml:space="preserve">
     <value>Payloads</value>
   </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Ongeldige breedtegraadwaarde.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Ongeldige lengtegraadwaarde.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Breedtegraad buiten bereik. De waarde moet tussen -90 en 90 liggen (inclusief).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Lengtegraad buiten bereik. De waarde moet tussen -180 en 180 liggen (inclusief).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>De startdatum mag niet later zijn dan de einddatum.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Wi-Fi-netwerk gedetecteerd.
+Kies een optie.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopiëren</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Wi-Fi-instellingen openen</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Open Instellingen - Wi-Fi om verbinding te maken met het netwerk.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Het openen van Wi-Fi-instellingen wordt niet ondersteund op dit platform.</value>
+  </data>
 </root>

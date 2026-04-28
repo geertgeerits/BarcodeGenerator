@@ -904,4 +904,35 @@ It is recommended to test the generated QR codes and other barcodes to ensure th
   <data name="Payloads_Text" xml:space="preserve">
     <value>Payloads</value>
   </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Invalid latitude value.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Invalid longitude value.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Latitude out of range. Value must be between -90 and 90 (inclusive).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Longitude out of range. Value must be between -180 and 180 (inclusive).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Start date cannot be later than end date.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Wi‑Fi network detected.
+Choose an option.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Open Wi‑Fi Settings</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Please open Settings - Wi‑Fi to join the network.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Open Wi‑Fi settings is not supported on this platform.</value>
+  </data>
 </root>

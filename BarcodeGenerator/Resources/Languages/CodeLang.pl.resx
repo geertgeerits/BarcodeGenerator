@@ -904,4 +904,35 @@ Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, 
   <data name="Payloads_Text" xml:space="preserve">
     <value>Ładunki</value>
   </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Nieprawidłowa wartość szerokości geograficznej.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Nieprawidłowa wartość długości geograficznej.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Szerokość geograficzna poza zakresem. Wartość musi mieścić się w przedziale od -90 do 90 (włącznie).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Długość geograficzna poza zakresem. Wartość musi mieścić się w przedziale od -180 do 180 (włącznie).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Data rozpoczęcia nie może być późniejsza niż data zakończenia.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Wykryto sieć Wi-Fi.
+Wybierz opcję.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopia</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Otwórz ustawienia Wi-Fi</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Otwórz Ustawienia – Wi-Fi, aby dołączyć do sieci.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Opcja Otwórz ustawienia Wi-Fi nie jest obsługiwana na tej platformie.</value>
+  </data>
 </root>

@@ -904,4 +904,35 @@ Recomenda-se testar os códigos QR gerados e outros códigos de barras para gara
   <data name="Payloads_Text" xml:space="preserve">
     <value>Cargas úteis</value>
   </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Valor de latitude inválido.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Valor de longitude inválido.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Latitude fora do intervalo. O valor deve estar entre -90 e 90 (inclusive).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Longitude fora do intervalo. O valor deve estar entre -180 e 180 (inclusive).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>A data de início não pode ser posterior à data de término.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Rede Wi-Fi detectada.
+Escolha uma opção.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Cópia</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Abrir as configurações de Wi-Fi</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Por favor, abra Configurações &gt; Wi-Fi para conectar-se à rede.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Abrir as configurações de Wi-Fi não é compatível com esta plataforma.</value>
+  </data>
 </root>

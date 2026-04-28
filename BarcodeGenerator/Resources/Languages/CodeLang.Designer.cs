@@ -646,6 +646,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy.
+        /// </summary>
+        internal static string ButtonCopy_Text {
+            get {
+                return ResourceManager.GetString("ButtonCopy_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Listen.
         /// </summary>
         internal static string ButtonListen_Text {
@@ -994,6 +1003,51 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string Email_Text {
             get {
                 return ResourceManager.GetString("Email_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid latitude value..
+        /// </summary>
+        internal static string ErrorLatitudeInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorLatitudeInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latitude out of range. Value must be between -90 and 90 (inclusive)..
+        /// </summary>
+        internal static string ErrorLatitudeRange_Text {
+            get {
+                return ResourceManager.GetString("ErrorLatitudeRange_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid longitude value..
+        /// </summary>
+        internal static string ErrorLongitudeInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorLongitudeInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Longitude out of range. Value must be between -180 and 180 (inclusive)..
+        /// </summary>
+        internal static string ErrorLongitudeRange_Text {
+            get {
+                return ResourceManager.GetString("ErrorLongitudeRange_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start date cannot be later than end date..
+        /// </summary>
+        internal static string ErrorStartdateLaterEnddate_Text {
+            get {
+                return ResourceManager.GetString("ErrorStartdateLaterEnddate_Text", resourceCulture);
             }
         }
         
@@ -2272,6 +2326,43 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string Website_Text {
             get {
                 return ResourceManager.GetString("Website_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please open Settings - Wi‑Fi to join the network..
+        /// </summary>
+        internal static string WiFiJoinNetwork_Text {
+            get {
+                return ResourceManager.GetString("WiFiJoinNetwork_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wi‑Fi network detected.
+        ///Choose an option..
+        /// </summary>
+        internal static string WiFiNetworkDetected_Text {
+            get {
+                return ResourceManager.GetString("WiFiNetworkDetected_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open Wi‑Fi Settings.
+        /// </summary>
+        internal static string WiFiOpenSettings_Text {
+            get {
+                return ResourceManager.GetString("WiFiOpenSettings_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open Wi‑Fi settings is not supported on this platform..
+        /// </summary>
+        internal static string WiFiOpenSettingsNotSupported_Text {
+            get {
+                return ResourceManager.GetString("WiFiOpenSettingsNotSupported_Text", resourceCulture);
             }
         }
         

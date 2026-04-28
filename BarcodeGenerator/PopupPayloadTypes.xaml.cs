@@ -269,26 +269,26 @@ namespace BarcodeGenerator
                 // Latitude ranges from -90° to +90° and longitude ranges from -180° to +180°
                 if (!double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Error", "Invalid latitude value. Please enter a valid number.", "OK");
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeInvalid_Text, CodeLang.ButtonClose_Text);
                     return string.Empty;
                 }
 
                 if (!double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Error", "Invalid longitude value. Please enter a valid number.", "OK");
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeInvalid_Text, CodeLang.ButtonClose_Text);
                     return string.Empty;
                 }
 
                 // Validate inclusive min/max bounds
                 if (latitude < -90.0 || latitude > 90.0)
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Error", "Latitude out of range. Value must be between -90 and 90 (inclusive).", "OK");
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeRange_Text, CodeLang.ButtonClose_Text);
                     return string.Empty;
                 }
 
                 if (longitude < -180.0 || longitude > 180.0)
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Error", "Longitude out of range. Value must be between -180 and 180 (inclusive).", "OK");
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeRange_Text, CodeLang.ButtonClose_Text);
                     return string.Empty;
                 }
 
@@ -319,7 +319,7 @@ namespace BarcodeGenerator
 
                 if (startDate > endDate)
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Error", "Start date cannot be later than end date.", "OK");
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorStartdateLaterEnddate_Text, CodeLang.ButtonClose_Text);
                     return string.Empty;
                 }
 
