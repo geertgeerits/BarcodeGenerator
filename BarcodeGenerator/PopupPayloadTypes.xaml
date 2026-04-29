@@ -19,7 +19,7 @@
         <Grid
             x:Name="grdSettingsPayloadTypes"
             Style="{StaticResource gridStylePopup}"
-            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
             VerticalOptions="Start">
 
             <Label
@@ -273,20 +273,6 @@
                 </Entry>
             </Border>
 
-            <ImageButton
-                x:Name="btnButtonGeoLocation"
-                Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Row="10"
-                Grid.Column="0"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                WidthRequest="120"
-                Margin="0,15,0,10"
-                ToolTipProperties.Text="{Translate GeoLocationButton_Text}"
-                Source="ic_action_location.png"
-                Clicked="OnButtonGeoLocation_Clicked">
-            </ImageButton>
-
             <Border
                 x:Name="brdPayloadTypeLatitudeDMS"
                 Style="{StaticResource borderStyleDefault}"
@@ -318,10 +304,38 @@
                 </Label>
             </Border>
 
+            <ImageButton
+                x:Name="btnButtonGeoLocation"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="12"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="120"
+                Margin="0,15,0,10"
+                ToolTipProperties.Text="{Translate GeoLocationButton_Text}"
+                Source="ic_action_location.png"
+                Clicked="OnButtonGeoLocation_Clicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="btnButtonGeoMap"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="12"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                WidthRequest="120"
+                Margin="0,15,6,10"
+                ToolTipProperties.Text="{Translate GeoLocationButton_Text}"
+                Source="ic_action_map.png"
+                Clicked="OnButtonGeoMap_Clicked">
+            </ImageButton>
+
             <Label
                 x:Name="lblPayloadTypeFirstname"
                 Style="{StaticResource labelStyleDefault}"
-                Grid.Row="12"
+                Grid.Row="13"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
                 Text="{Translate PayloadTypeFirstname_Text}">
@@ -330,7 +344,7 @@
             <Border
                 x:Name="brdPayloadTypeFirstname"
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="12"
+                Grid.Row="13"
                 Grid.Column="1"
                 Margin="0,6,6,0">
 
@@ -346,7 +360,7 @@
             <Label
                 x:Name="lblPayloadTypeLastname"
                 Style="{StaticResource labelStyleDefault}"
-                Grid.Row="13"
+                Grid.Row="14"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
                 Text="{Translate PayloadTypeLastname_Text}">
@@ -355,7 +369,7 @@
             <Border
                 x:Name="brdPayloadTypeLastname"
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="13"
+                Grid.Row="14"
                 Grid.Column="1"
                 Margin="0,6,6,0">
 
@@ -371,7 +385,7 @@
             <Label
                 x:Name="lblPayloadTypeNumber"
                 Style="{StaticResource labelStyleDefault}"
-                Grid.Row="14"
+                Grid.Row="15"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
                 Text="{Translate PayloadTypeNumber_Text}">
@@ -380,7 +394,7 @@
             <Border
                 x:Name="brdPayloadTypeNumber"
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="14"
+                Grid.Row="15"
                 Grid.Column="1"
                 Margin="0,6,6,0">
 
@@ -396,7 +410,7 @@
             <Label
                 x:Name="lblPayloadTypeMail"
                 Style="{StaticResource labelStyleDefault}"
-                Grid.Row="15"
+                Grid.Row="16"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
                 Text="{Translate PayloadTypeMail_Text}">
@@ -405,7 +419,7 @@
             <Border
                 x:Name="brdPayloadTypeMail"
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="15"
+                Grid.Row="16"
                 Grid.Column="1"
                 Margin="0,6,6,0">
 
@@ -421,7 +435,7 @@
             <Label
                 x:Name="lblPayloadTypeDescription"
                 Style="{StaticResource labelStyleDefault}"
-                Grid.Row="16"
+                Grid.Row="17"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
                 Text="{Translate PayloadTypeDescription_Text}">
@@ -430,7 +444,7 @@
             <Border
                 x:Name="brdPayloadTypeDescription"
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="16"
+                Grid.Row="17"
                 Grid.Column="1"
                 Margin="0,6,6,0">
 
@@ -446,7 +460,7 @@
             <Label
                 x:Name="lblPayloadTypeLocation"
                 Style="{StaticResource labelStyleDefault}"
-                Grid.Row="17"
+                Grid.Row="18"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
                 Text="{Translate PayloadTypeLocation_Text}">
@@ -455,7 +469,7 @@
             <Border
                 x:Name="brdPayloadTypeLocation"
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="17"
+                Grid.Row="18"
                 Grid.Column="1"
                 Margin="0,6,6,0">
 
@@ -471,7 +485,7 @@
             <Label
                 x:Name="lblPayloadTypeStart"
                 Style="{StaticResource labelStyleDefault}"
-                Grid.Row="18"
+                Grid.Row="19"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
                 Text="{Translate PayloadTypeStart_Text}">
@@ -480,7 +494,7 @@
             <Border
                 x:Name="brdPayloadTypeStartDate"
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="18"
+                Grid.Row="19"
                 Grid.Column="1"
                 BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
                 Margin="0,6,6,0">
@@ -494,7 +508,7 @@
             <Border
                 x:Name="brdPayloadTypeStartTime"
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="19"
+                Grid.Row="20"
                 Grid.Column="1"
                 BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
                 Margin="0,6,6,0">
@@ -508,7 +522,7 @@
             <Label
                 x:Name="lblPayloadTypeEnd"
                 Style="{StaticResource labelStyleDefault}"
-                Grid.Row="20"
+                Grid.Row="21"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
                 Text="{Translate PayloadTypeEnd_Text}">
@@ -517,7 +531,7 @@
             <Border
                 x:Name="brdPayloadTypeEndDate"
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="20"
+                Grid.Row="21"
                 Grid.Column="1"
                 BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
                 Margin="0,6,6,0">
@@ -531,7 +545,7 @@
             <Border
                 x:Name="brdPayloadTypeEndTime"
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="21"
+                Grid.Row="22"
                 Grid.Column="1"
                 BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
                 Margin="0,6,6,0">
@@ -545,7 +559,7 @@
             <ImageButton
                 x:Name="btnButtonCancel"
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Row="22"
+                Grid.Row="23"
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
@@ -559,7 +573,7 @@
             <ImageButton
                 x:Name="btnButtonClose"
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Row="22"
+                Grid.Row="23"
                 Grid.Column="1"
                 HorizontalOptions="End"
                 VerticalOptions="Start"

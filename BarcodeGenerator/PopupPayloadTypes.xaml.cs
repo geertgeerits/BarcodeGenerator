@@ -101,9 +101,11 @@ namespace BarcodeGenerator
                 brdPayloadTypeLatitude.IsVisible = true;
                 lblPayloadTypeLongitude.IsVisible = true;
                 brdPayloadTypeLongitude.IsVisible = true;
-                btnButtonGeoLocation.IsVisible = true;
                 brdPayloadTypeLatitudeDMS.IsVisible = true;
                 brdPayloadTypeLongitudeDMS.IsVisible = true;
+                btnButtonGeoLocation.IsVisible = true;
+                btnButtonGeoMap.IsVisible = true;
+
                 _ = entPayloadTypeLatitude.Focus();
                 entPayloadTypeLatitude.CursorPosition = entPayloadTypeLatitude.Text?.Length ?? 0;
             }
@@ -195,9 +197,10 @@ namespace BarcodeGenerator
             brdPayloadTypeLatitude.IsVisible = false;
             lblPayloadTypeLongitude.IsVisible = false;
             brdPayloadTypeLongitude.IsVisible = false;
-            btnButtonGeoLocation.IsVisible = false;
             brdPayloadTypeLatitudeDMS.IsVisible = false;
             brdPayloadTypeLongitudeDMS.IsVisible = false;
+            btnButtonGeoLocation.IsVisible = false;
+            btnButtonGeoMap.IsVisible = false;
             lblPayloadTypeFirstname.IsVisible = false;
             brdPayloadTypeFirstname.IsVisible = false;
             lblPayloadTypeLastname.IsVisible = false;
@@ -298,6 +301,18 @@ namespace BarcodeGenerator
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.GeolocationTitle_Text, CodeLang.GeolocationMessage_Text, CodeLang.ButtonClose_Text);
             }
+        }
+
+        /// <summary>
+        /// On click event for the geolocation map button, which opens the device's default web browser to display
+        /// the specified latitude and longitude on Google Maps
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonGeoMap_Clicked(object sender, EventArgs e)
+        {
+            string url = $"http://maps.google.com/maps?q={entPayloadTypeLatitude.Text},{entPayloadTypeLongitude.Text}";
+            await Launcher.Default.OpenAsync(new Uri(url));
         }
 
         /// <summary>
