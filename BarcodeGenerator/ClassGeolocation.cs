@@ -1,4 +1,7 @@
-﻿namespace BarcodeGenerator
+﻿using System;
+using System.Globalization;
+
+namespace BarcodeGenerator
 {
     internal class ClassGeolocation
     {
@@ -129,5 +132,43 @@
         //        // Unable to stop listening for location changes
         //    }
         //}
+
+        /// <summary>
+        /// Converts a decimal degree value to a DMS string
+        /// </summary>
+        /// <param name="decimalDegree"></param>
+        /// <param name="isLatitude"></param>
+        /// <returns></returns>
+        public static string DecimalToDMS(double decimalDegree, bool isLatitude)
+        {
+            // Determine hemisphere
+            string hemisphere;
+            if (isLatitude)
+            {
+                hemisphere = decimalDegree >= 0 ? "N" : "S";
+            }
+            else
+            {
+                hemisphere = decimalDegree >= 0 ? "E" : "W";
+            }
+
+            // Work with absolute value for calculation
+            double absValue = Math.Abs(decimalDegree);
+
+            // Extract degrees
+            int degrees = (int)Math.Floor(absValue);
+
+            // Extract minutes
+            double minutesFull = (absValue - degrees) * 60;
+            int minutes = (int)Math.Floor(minutesFull);
+
+            // Extract seconds
+            double seconds = (minutesFull - minutes) * 60;
+
+            // Format with 2 decimal places for seconds
+            return string.Format(CultureInfo.InvariantCulture,
+                "{0}° {1}' {2:0.##}\" {3}",
+                degrees, minutes, seconds, hemisphere);
+        }
     }
 }

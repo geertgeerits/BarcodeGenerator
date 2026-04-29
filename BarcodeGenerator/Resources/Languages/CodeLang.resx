@@ -938,4 +938,13 @@ Choose an option.</value>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Create smart QR codes with payload types like Wi‑Fi, contacts, and more. Just choose a type, enter your details, and you’re done (enable this in the settings).</value>
   </data>
+  <data name="ButtonGeoLocation_Text" xml:space="preserve">
+    <value>Request geolocation</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Geolocation</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>No location available on this device.</value>
+  </data>
 </root>

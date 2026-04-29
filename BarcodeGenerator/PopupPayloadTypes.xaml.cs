@@ -38,9 +38,6 @@ namespace BarcodeGenerator
             
             // Set the visibility of controls based on the selected payload type
             SetControlsVisibilityTrue(ClassPayloadTypes.cPayloadType);
-
-            // Get the device's cached and current geographic location
-            GetLocation();
         }
 
         /// <summary>
@@ -56,11 +53,14 @@ namespace BarcodeGenerator
                 brdPayloadTypeSSID.IsVisible = true;
                 lblPayloadTypePassword.IsVisible = true;
                 brdPayloadTypePassword.IsVisible = true;
+                entPayloadTypeSSID.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
             {
                 lblPayloadTypeURL.IsVisible = true;
                 brdPayloadTypeURL.IsVisible = true;
+                entPayloadTypeURL.Focus();
+                entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text?.Length ?? 0; // Move cursor to the end of the text
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_BOOKMARK)
             {
@@ -68,6 +68,8 @@ namespace BarcodeGenerator
                 brdPayloadTypeURL.IsVisible = true;
                 lblPayloadTypeTitle.IsVisible = true;
                 brdPayloadTypeTitle.IsVisible = true;
+                entPayloadTypeURL.Focus();
+                entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MAIL)
             {
@@ -77,16 +79,21 @@ namespace BarcodeGenerator
                 brdPayloadTypeSubject.IsVisible = true;
                 lblPayloadTypeMessage.IsVisible = true;
                 brdPayloadTypeMessage.IsVisible = true;
+                entPayloadTypeReceiver.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_SMS)
             {
                 lblPayloadTypeNumber.IsVisible = true;
                 brdPayloadTypeNumber.IsVisible = true;
+                entPayloadTypeNumber.Focus();
+                entPayloadTypeNumber.CursorPosition = entPayloadTypeNumber.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MMS)
             {
                 lblPayloadTypeNumber.IsVisible = true;
                 brdPayloadTypeNumber.IsVisible = true;
+                entPayloadTypeNumber.Focus();
+                entPayloadTypeNumber.CursorPosition = entPayloadTypeNumber.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
@@ -94,16 +101,23 @@ namespace BarcodeGenerator
                 brdPayloadTypeLatitude.IsVisible = true;
                 lblPayloadTypeLongitude.IsVisible = true;
                 brdPayloadTypeLongitude.IsVisible = true;
+                btnButtonGeoLocation.IsVisible = true;
+                brdPayloadTypeLatitudeDMS.IsVisible = true;
+                brdPayloadTypeLongitudeDMS.IsVisible = true;
+                entPayloadTypeLatitude.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
                 lblPayloadTypeNumber.IsVisible = true;
                 brdPayloadTypeNumber.IsVisible = true;
+                entPayloadTypeNumber.Focus();
+                entPayloadTypeNumber.CursorPosition = entPayloadTypeNumber.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_WHATSAPPMESSAGE)
             {
                 lblPayloadTypeMessage.IsVisible = true;
                 brdPayloadTypeMessage.IsVisible = true;
+                entPayloadTypeMessage.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CONTACTDATA)
             {
@@ -115,6 +129,7 @@ namespace BarcodeGenerator
                 brdPayloadTypeNumber.IsVisible = true;
                 lblPayloadTypeMail.IsVisible = true;
                 brdPayloadTypeMail.IsVisible = true;
+                entPayloadTypeFirstname.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)
             {
@@ -130,6 +145,7 @@ namespace BarcodeGenerator
                 lblPayloadTypeEnd.IsVisible = true;
                 brdPayloadTypeEndDate.IsVisible = true;
                 brdPayloadTypeEndTime.IsVisible = true;
+                entPayloadTypeSubject.Focus();
             }
         }
 
@@ -178,6 +194,9 @@ namespace BarcodeGenerator
             brdPayloadTypeLatitude.IsVisible = false;
             lblPayloadTypeLongitude.IsVisible = false;
             brdPayloadTypeLongitude.IsVisible = false;
+            btnButtonGeoLocation.IsVisible = false;
+            brdPayloadTypeLatitudeDMS.IsVisible = false;
+            brdPayloadTypeLongitudeDMS.IsVisible = false;
             lblPayloadTypeFirstname.IsVisible = false;
             brdPayloadTypeFirstname.IsVisible = false;
             lblPayloadTypeLastname.IsVisible = false;
@@ -359,33 +378,46 @@ END:VCALENDAR";
         /// available. It then attempts to obtain the current location and displays the result. If either location is
         /// unavailable, an appropriate message is shown. This method is asynchronous and returns immediately; any
         /// exceptions thrown during location retrieval or display may not be observed by the caller.</remarks>
-        public async void GetLocation()
+        public async void OnButtonGeoLocation_Clicked(object sender, EventArgs e)
         {
+            if (!Microsoft.Maui.Devices.Sensors.Geolocation.IsEnabled)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.GeolocationTitle_Text, CodeLang.GeolocationMessage_Text, CodeLang.ButtonClose_Text);
+                return;
+            }
+            
             Location? location;
 
-            location = await ClassGeolocation.GetCachedLocation();
-            if (location != null)
-            {
-                //await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Cached Location", $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}", "OK");
-                //entPayloadTypeLatitude.Text = location.Latitude.ToString();
-                //entPayloadTypeLongitude.Text = location.Longitude.ToString();
-            }
-            else
-            {
-                //await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Cached Location", "No cached location available", "OK");
-            }
+            // First attempt to get the cached location, which may be faster and does not require a new location request.
+            // If a cached location is available, display it immediately.
+            //location = await ClassGeolocation.GetCachedLocation();
+            //if (location != null)
+            //{
+            //    entPayloadTypeLatitude.Text = location.Latitude.ToString();
+            //    entPayloadTypeLongitude.Text = location.Longitude.ToString();
+            //}
 
+            // Then attempt to get the current location, which may provide a more accurate and up-to-date location but may take longer and require user permission.
+            // If a current location is available, display it and convert it to DMS format for display.
+            // If no location is available, show an appropriate message.
             location = await new ClassGeolocation().GetCurrentLocation();
-
             if (location != null)
             {
-                //await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Current Location", $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}", "OK");
                 entPayloadTypeLatitude.Text = location.Latitude.ToString();
                 entPayloadTypeLongitude.Text = location.Longitude.ToString();
             }
+
+            // If a location was obtained (either cached or current), convert the latitude and longitude to DMS format for display.
+            // If no location was obtained, show an appropriate message.
+            if (location != null)
+            {
+                // Convert to DMS format for display
+                lblPayloadTypeLatitudeDMS.Text = ClassGeolocation.DecimalToDMS(location.Latitude, true);
+                lblPayloadTypeLongitudeDMS.Text = ClassGeolocation.DecimalToDMS(location.Longitude, false);
+            }
             else
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Current Location", "No current location available", "OK");
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.GeolocationTitle_Text, CodeLang.GeolocationMessage_Text, CodeLang.ButtonClose_Text);
             }
         }
     }
