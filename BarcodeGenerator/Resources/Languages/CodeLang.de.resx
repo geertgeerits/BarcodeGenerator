@@ -938,4 +938,13 @@ Wählen Sie eine Option.</value>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Erstellen Sie intelligente QR-Codes mit verschiedenen Nutzdaten wie WLAN, Kontakten und mehr. Wählen Sie einfach einen Typ aus, geben Sie Ihre Daten ein, und fertig (diese Funktion kann in den Einstellungen aktiviert werden).</value>
   </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Standortanfrage</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Standort</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Auf diesem Gerät ist kein Standort verfügbar oder die Standortbestimmung ist deaktiviert.</value>
+  </data>
 </root>

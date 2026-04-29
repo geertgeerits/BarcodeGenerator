@@ -938,4 +938,13 @@ Escolha uma opção.</value>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Crie códigos QR inteligentes com tipos de conteúdo como Wi-Fi, contatos e muito mais. Basta escolher um tipo, inserir seus dados e pronto (ative essa opção nas configurações).</value>
   </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Solicitar geolocalização</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Geolocalização</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Nenhuma localização disponível neste dispositivo ou a localização não está ativada.</value>
+  </data>
 </root>

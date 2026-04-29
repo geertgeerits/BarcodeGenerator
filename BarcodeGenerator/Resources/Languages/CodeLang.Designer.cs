@@ -655,15 +655,6 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Request geolocation.
-        /// </summary>
-        internal static string ButtonGeoLocation_Text {
-            get {
-                return ResourceManager.GetString("ButtonGeoLocation_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Listen.
         /// </summary>
         internal static string ButtonListen_Text {
@@ -1151,7 +1142,16 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No location available on this device..
+        ///   Looks up a localized string similar to Request geolocation.
+        /// </summary>
+        internal static string GeoLocationButton_Text {
+            get {
+                return ResourceManager.GetString("GeoLocationButton_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No location available on this device or location is not enabled..
         /// </summary>
         internal static string GeolocationMessage_Text {
             get {

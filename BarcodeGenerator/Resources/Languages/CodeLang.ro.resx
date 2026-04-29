@@ -938,4 +938,13 @@ Alegeți o opțiune.</value>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Creați coduri QR inteligente cu tipuri de date utile precum Wi-Fi, contacte și multe altele. Alegeți doar un tip, introduceți detaliile și ați terminat (activați această opțiune în setări).</value>
   </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Solicitați geolocalizare</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Geolocalizare</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Nu există nicio locație disponibilă pe acest dispozitiv sau locația nu este activată.</value>
+  </data>
 </root>

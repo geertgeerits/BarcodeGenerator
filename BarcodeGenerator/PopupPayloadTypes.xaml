@@ -10,8 +10,8 @@
     MaximumHeightRequest="600"
     CanBeDismissedByTappingOutsideOfPopup="False">
 
-    <!--Set the Text property of the Entry controls to "" to eliminate null values if nothing has been entered.
-    This is necessary to prevent null reference exceptions when the Text properties are accessed in the code-behind-->
+    <!--Set the Text property of the Entry controls to "" for text values or 0 for numeric values to eliminate null values if nothing has been entered.
+    This is necessary to prevent null reference exceptions when the Text properties are accessed in the code-behind.-->
 
     <ScrollView
         Style="{StaticResource scrollviewStylePopup}">
@@ -238,8 +238,10 @@
                     Placeholder="-90.00000 - 90.00000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
-                    Text=""
-                    ReturnType="Next">
+                    Text="0"
+                    ReturnType="Next"
+                    TextChanged="EntPayloadTypeLatitude_TextChanged"
+                    Unfocused="EntPayloadTypeLatitude_Unfocused">
                 </Entry>
             </Border>
 
@@ -264,8 +266,10 @@
                     Placeholder="-180.00000 - 180.00000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
-                    Text=""
-                    ReturnType="Next">
+                    Text="0"
+                    ReturnType="Next"
+                    TextChanged="EntPayloadTypeLongitude_TextChanged"
+                    Unfocused="EntPayloadTypeLongitude_Unfocused">
                 </Entry>
             </Border>
 
@@ -278,7 +282,7 @@
                 VerticalOptions="Start"
                 WidthRequest="120"
                 Margin="0,15,0,10"
-                ToolTipProperties.Text="{Translate ButtonGeoLocation_Text}"
+                ToolTipProperties.Text="{Translate GeoLocationButton_Text}"
                 Source="ic_action_location.png"
                 Clicked="OnButtonGeoLocation_Clicked">
             </ImageButton>

@@ -938,4 +938,13 @@ Valitse vaihtoehto.</value>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Luo älykkäitä QR-koodeja, joissa on esimerkiksi Wi-Fi- ja yhteystietotyyppejä. Valitse vain tyyppi, anna tietosi ja olet valmis (ota tämä käyttöön asetuksista).</value>
   </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Pyydä sijaintia</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Maantieteellinen sijainti</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Sijaintia ei ole saatavilla tällä laitteella tai sijainti ei ole käytössä.</value>
+  </data>
 </root>

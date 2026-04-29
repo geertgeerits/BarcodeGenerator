@@ -938,4 +938,13 @@ Vælg en mulighed.</value>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Opret smarte QR-koder med datatyper som Wi-Fi, kontakter og mere. Vælg blot en type, indtast dine oplysninger, og så er du færdig (aktiver dette i indstillingerne).</value>
   </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Anmod om geoplacering</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Geoplacering</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Ingen placering tilgængelig på denne enhed, eller placeringen er ikke aktiveret.</value>
+  </data>
 </root>

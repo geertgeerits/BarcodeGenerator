@@ -36,16 +36,16 @@ namespace BarcodeGenerator
             // Initially set the visibility of all controls to false
             SetControlsVisibilityFalse();
             
-            // Set the visibility of controls based on the selected payload type
-            SetControlsVisibilityTrue(ClassPayloadTypes.cPayloadType);
+            // Set the control properties based on the selected payload type
+            SetControlsProperties(ClassPayloadTypes.cPayloadType);
         }
 
         /// <summary>
-        /// Sets the visibility of various controls based on the selected payload type name
+        /// Sets the properties of various controls based on the selected payload type name
         /// The method checks the selected payload type
         /// </summary>
         /// <param name="selectedName"></param>
-        private void SetControlsVisibilityTrue(string selectedName)
+        private void SetControlsProperties(string selectedName)
         {
             if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)
             {
@@ -105,6 +105,7 @@ namespace BarcodeGenerator
                 brdPayloadTypeLatitudeDMS.IsVisible = true;
                 brdPayloadTypeLongitudeDMS.IsVisible = true;
                 entPayloadTypeLatitude.Focus();
+                entPayloadTypeLatitude.CursorPosition = entPayloadTypeLatitude.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
@@ -165,7 +166,7 @@ namespace BarcodeGenerator
                 ClassPayloadTypes.cPayloadType = pckPayloadType.Items[ClassPayloadTypes.nPayloadTypeIndex];
 
                 SetControlsVisibilityFalse();
-                SetControlsVisibilityTrue(ClassPayloadTypes.cPayloadType);
+                SetControlsProperties(ClassPayloadTypes.cPayloadType);
             }
         }
 
@@ -242,6 +243,144 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Displays the device's cached and current geographic location to the user in alert dialogs.
+        /// </summary>
+        /// <remarks>This method first attempts to retrieve a cached location and displays it if
+        /// available. It then attempts to obtain the current location and displays the result. If either location is
+        /// unavailable, an appropriate message is shown. This method is asynchronous and returns immediately; any
+        /// exceptions thrown during location retrieval or display may not be observed by the caller.</remarks>
+        public async void OnButtonGeoLocation_Clicked(object sender, EventArgs e)
+        {
+            if (!Microsoft.Maui.Devices.Sensors.Geolocation.IsEnabled)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.GeolocationTitle_Text, CodeLang.GeolocationMessage_Text, CodeLang.ButtonClose_Text);
+                return;
+            }
+            
+            Location? location;
+
+            // First attempt to get the cached location, which may be faster and does not require a new location request.
+            // If a cached location is available, display it immediately.
+            //location = await ClassGeolocation.GetCachedLocation();
+            //if (location != null)
+            //{
+            //    entPayloadTypeLatitude.Text = location.Latitude.ToString();
+            //    entPayloadTypeLongitude.Text = location.Longitude.ToString();
+            //}
+
+            // Then attempt to get the current location, which may provide a more accurate and up-to-date location but may take longer and require user permission.
+            // If a current location is available, display it and convert it to DMS format for display.
+            // If no location is available, show an appropriate message.
+            location = await new ClassGeolocation().GetCurrentLocation();
+            if (location != null)
+            {
+                entPayloadTypeLatitude.Text = location.Latitude.ToString();
+                entPayloadTypeLongitude.Text = location.Longitude.ToString();
+            }
+
+            // If a location was obtained (either cached or current), convert the latitude and longitude to DMS format for display.
+            // If no location was obtained, show an appropriate message.
+            if (location != null)
+            {
+                // Convert to DMS format for display
+                lblPayloadTypeLatitudeDMS.Text = ClassGeolocation.DecimalToDMS(location.Latitude, true);
+                lblPayloadTypeLongitudeDMS.Text = ClassGeolocation.DecimalToDMS(location.Longitude, false);
+            }
+            else
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.GeolocationTitle_Text, CodeLang.GeolocationMessage_Text, CodeLang.ButtonClose_Text);
+            }
+        }
+
+        /// <summary>
+        /// Handles the TextChanged event for the latitude input control and resets the associated DMS label.
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the latitude input control.</param>
+        /// <param name="e">The event data containing information about the text change.</param>
+        private void EntPayloadTypeLatitude_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lblPayloadTypeLatitudeDMS.Text = string.Empty;
+        }
+
+        /// <summary>
+        /// Handles the TextChanged event for the longitude input field and resets the associated DMS label.
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the longitude input control.</param>
+        /// <param name="e">The event data containing information about the text change.</param>
+        private void EntPayloadTypeLongitude_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lblPayloadTypeLongitudeDMS.Text = string.Empty;
+        }
+
+        /// <summary>
+        /// Handles the Unfocused event for the latitude entry field, validating and normalizing the input value to
+        /// ensure it represents a valid latitude in decimal degrees.   
+        /// </summary>
+        /// <remarks>If the input is empty or invalid, the method displays an error message and returns
+        /// focus to the entry field. The latitude value is constrained to the range -90 to 90 degrees. The method also
+        /// updates the display of the latitude in degrees, minutes, and seconds (DMS) format.</remarks>
+        /// <param name="sender">The source of the event, typically the latitude entry control.</param>
+        /// <param name="e">The event data associated with the Unfocused event.</param>
+        private async void EntPayloadTypeLatitude_Unfocused(object sender, FocusEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(entPayloadTypeLatitude.Text))
+            {
+                entPayloadTypeLatitude.Text = "0";
+            }
+
+            // Replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
+            string latText = (entPayloadTypeLatitude.Text ?? string.Empty).Trim().Replace(',', '.');
+
+            // Latitude ranges from -90° to +90°
+            if (!double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeInvalid_Text, CodeLang.ButtonClose_Text);
+                entPayloadTypeLatitude.Focus();
+            }
+
+            // Validate inclusive min/max bounds
+            if (latitude < -90.0 || latitude > 90.0)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeRange_Text, CodeLang.ButtonClose_Text);
+                entPayloadTypeLatitude.Focus();
+            }
+
+            lblPayloadTypeLatitudeDMS.Text = ClassGeolocation.DecimalToDMS(latitude, true);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void EntPayloadTypeLongitude_Unfocused(object sender, FocusEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(entPayloadTypeLongitude.Text))
+            {
+                entPayloadTypeLongitude.Text = "0";
+            }
+
+            // Replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
+            string lonText = (entPayloadTypeLongitude.Text ?? string.Empty).Trim().Replace(',', '.');
+
+            // Longitude ranges from -180° to +180°
+            if (!double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeInvalid_Text, CodeLang.ButtonClose_Text);
+                entPayloadTypeLongitude.Focus();
+            }
+
+            // Validate inclusive min/max bounds
+            if (longitude < -180.0 || longitude > 180.0)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeRange_Text, CodeLang.ButtonClose_Text);
+                entPayloadTypeLongitude.Focus();
+            }
+
+            lblPayloadTypeLongitudeDMS.Text = ClassGeolocation.DecimalToDMS(longitude, false);
+        }
+
+        /// <summary>
         /// Builds a QR code payload string based on the selected payload type name.
         /// The method generates the appropriate payload string for the QR code based on the selected payload type.
         /// </summary>
@@ -291,26 +430,26 @@ namespace BarcodeGenerator
                 // Latitude ranges from -90° to +90° and longitude ranges from -180° to +180°
                 if (!double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeInvalid_Text, CodeLang.ButtonClose_Text);
+                    entPayloadTypeLatitude.Focus();     // Works in Windows but not in Android, which does not return focus to the entry field after the alert dialog is dismissed. Consider implementing a custom alert dialog in the future that returns focus to the entry field after dismissal.
                     return string.Empty;
                 }
 
                 if (!double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeInvalid_Text, CodeLang.ButtonClose_Text);
+                    entPayloadTypeLongitude.Focus();
                     return string.Empty;
                 }
 
                 // Validate inclusive min/max bounds
                 if (latitude < -90.0 || latitude > 90.0)
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeRange_Text, CodeLang.ButtonClose_Text);
+                    entPayloadTypeLatitude.Focus();
                     return string.Empty;
                 }
 
                 if (longitude < -180.0 || longitude > 180.0)
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeRange_Text, CodeLang.ButtonClose_Text);
+                    entPayloadTypeLongitude.Focus();
                     return string.Empty;
                 }
 
@@ -369,56 +508,6 @@ END:VCALENDAR";
             }
 
             return payload;
-        }
-
-        /// <summary>
-        /// Displays the device's cached and current geographic location to the user in alert dialogs.
-        /// </summary>
-        /// <remarks>This method first attempts to retrieve a cached location and displays it if
-        /// available. It then attempts to obtain the current location and displays the result. If either location is
-        /// unavailable, an appropriate message is shown. This method is asynchronous and returns immediately; any
-        /// exceptions thrown during location retrieval or display may not be observed by the caller.</remarks>
-        public async void OnButtonGeoLocation_Clicked(object sender, EventArgs e)
-        {
-            if (!Microsoft.Maui.Devices.Sensors.Geolocation.IsEnabled)
-            {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.GeolocationTitle_Text, CodeLang.GeolocationMessage_Text, CodeLang.ButtonClose_Text);
-                return;
-            }
-            
-            Location? location;
-
-            // First attempt to get the cached location, which may be faster and does not require a new location request.
-            // If a cached location is available, display it immediately.
-            //location = await ClassGeolocation.GetCachedLocation();
-            //if (location != null)
-            //{
-            //    entPayloadTypeLatitude.Text = location.Latitude.ToString();
-            //    entPayloadTypeLongitude.Text = location.Longitude.ToString();
-            //}
-
-            // Then attempt to get the current location, which may provide a more accurate and up-to-date location but may take longer and require user permission.
-            // If a current location is available, display it and convert it to DMS format for display.
-            // If no location is available, show an appropriate message.
-            location = await new ClassGeolocation().GetCurrentLocation();
-            if (location != null)
-            {
-                entPayloadTypeLatitude.Text = location.Latitude.ToString();
-                entPayloadTypeLongitude.Text = location.Longitude.ToString();
-            }
-
-            // If a location was obtained (either cached or current), convert the latitude and longitude to DMS format for display.
-            // If no location was obtained, show an appropriate message.
-            if (location != null)
-            {
-                // Convert to DMS format for display
-                lblPayloadTypeLatitudeDMS.Text = ClassGeolocation.DecimalToDMS(location.Latitude, true);
-                lblPayloadTypeLongitudeDMS.Text = ClassGeolocation.DecimalToDMS(location.Longitude, false);
-            }
-            else
-            {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.GeolocationTitle_Text, CodeLang.GeolocationMessage_Text, CodeLang.ButtonClose_Text);
-            }
         }
     }
 }

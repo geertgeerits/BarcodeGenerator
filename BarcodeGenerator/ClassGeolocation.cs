@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-
-namespace BarcodeGenerator
+﻿namespace BarcodeGenerator
 {
     internal class ClassGeolocation
     {
@@ -25,18 +22,22 @@ namespace BarcodeGenerator
             catch (FeatureNotSupportedException fnsEx)
             {
                 // Handle not supported on device exception
+                Debug.WriteLine($"GetCachedLocation: {fnsEx.Message}");
             }
             catch (FeatureNotEnabledException fneEx)
             {
                 // Handle not enabled on device exception
+                Debug.WriteLine($"GetCachedLocation: {fneEx.Message}");
             }
             catch (PermissionException pEx)
             {
                 // Handle permission exception
+                Debug.WriteLine($"GetCachedLocation: {pEx.Message}");
             }
             catch (Exception ex)
             {
                 // Unable to get location
+                Debug.WriteLine($"GetCachedLocation: {ex.Message}");
             }
 
             return null;
@@ -61,11 +62,14 @@ namespace BarcodeGenerator
                 location = await Microsoft.Maui.Devices.Sensors.Geolocation.Default.GetLocationAsync(request, _cancelTokenSource.Token);
 
                 if (location != null)
+                {
                     Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+                }
             }
             catch (Exception ex)
             {
                 // Unable to get location
+                Debug.WriteLine($"GetCurrentLocation: {ex.Message}");
             }
             finally
             {
@@ -78,7 +82,9 @@ namespace BarcodeGenerator
         public void CancelRequest()
         {
             if (_isCheckingLocation && _cancelTokenSource != null && _cancelTokenSource.IsCancellationRequested == false)
+            {
                 _cancelTokenSource.Cancel();
+            }
         }
 
         ///// <summary>
@@ -165,9 +171,9 @@ namespace BarcodeGenerator
             // Extract seconds
             double seconds = (minutesFull - minutes) * 60;
 
-            // Format with 2 decimal places for seconds
+            // Format with 6 decimal places for seconds
             return string.Format(CultureInfo.InvariantCulture,
-                "{0}° {1}' {2:0.##}\" {3}",
+                "{0}° {1}' {2:0.######}\" {3}",
                 degrees, minutes, seconds, hemisphere);
         }
     }

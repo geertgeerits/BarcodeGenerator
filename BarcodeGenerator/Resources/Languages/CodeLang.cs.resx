@@ -938,4 +938,13 @@ Vyberte možnost.</value>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Vytvářejte chytré QR kódy s různými typy dat, jako je Wi-Fi, kontakty a další. Stačí vybrat typ, zadat své údaje a je to (povolte tuto funkci v nastavení).</value>
   </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Vyžádat geolokaci</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Geolokace</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Na tomto zařízení není k dispozici žádná poloha nebo poloha není povolena.</value>
+  </data>
 </root>

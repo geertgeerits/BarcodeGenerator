@@ -938,4 +938,13 @@ Kies een optie.</value>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Maak slimme QR-codes met verschillende soorten gegevens, zoals wifi, contacten en meer. Kies een type, voer je gegevens in en klaar (schakel dit in de instellingen in).</value>
   </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Geolocation aanvragen</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Geolocation</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Geen locatie beschikbaar op dit apparaat of locatie is niet ingeschakeld.</value>
+  </data>
 </root>

@@ -938,4 +938,13 @@ Välj ett alternativ.</value>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Skapa smarta QR-koder med nyttolasttyper som Wi-Fi, kontakter och mer. Välj bara en typ, ange dina uppgifter och du är klar (aktivera detta i inställningarna).</value>
   </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Begär geolokalisering</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Geolokalisering</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Ingen plats tillgänglig på den här enheten eller så är platsen inte aktiverad.</value>
+  </data>
 </root>
