@@ -53,13 +53,13 @@ namespace BarcodeGenerator
                 brdPayloadTypeSSID.IsVisible = true;
                 lblPayloadTypePassword.IsVisible = true;
                 brdPayloadTypePassword.IsVisible = true;
-                entPayloadTypeSSID.Focus();
+                _ = entPayloadTypeSSID.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
             {
                 lblPayloadTypeURL.IsVisible = true;
                 brdPayloadTypeURL.IsVisible = true;
-                entPayloadTypeURL.Focus();
+                _ = entPayloadTypeURL.Focus();
                 entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text?.Length ?? 0; // Move cursor to the end of the text
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_BOOKMARK)
@@ -68,7 +68,7 @@ namespace BarcodeGenerator
                 brdPayloadTypeURL.IsVisible = true;
                 lblPayloadTypeTitle.IsVisible = true;
                 brdPayloadTypeTitle.IsVisible = true;
-                entPayloadTypeURL.Focus();
+                _ = entPayloadTypeURL.Focus();
                 entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MAIL)
@@ -79,20 +79,20 @@ namespace BarcodeGenerator
                 brdPayloadTypeSubject.IsVisible = true;
                 lblPayloadTypeMessage.IsVisible = true;
                 brdPayloadTypeMessage.IsVisible = true;
-                entPayloadTypeReceiver.Focus();
+                _ = entPayloadTypeReceiver.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_SMS)
             {
                 lblPayloadTypeNumber.IsVisible = true;
                 brdPayloadTypeNumber.IsVisible = true;
-                entPayloadTypeNumber.Focus();
+                _ = entPayloadTypeNumber.Focus();
                 entPayloadTypeNumber.CursorPosition = entPayloadTypeNumber.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MMS)
             {
                 lblPayloadTypeNumber.IsVisible = true;
                 brdPayloadTypeNumber.IsVisible = true;
-                entPayloadTypeNumber.Focus();
+                _ = entPayloadTypeNumber.Focus();
                 entPayloadTypeNumber.CursorPosition = entPayloadTypeNumber.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
@@ -104,21 +104,21 @@ namespace BarcodeGenerator
                 btnButtonGeoLocation.IsVisible = true;
                 brdPayloadTypeLatitudeDMS.IsVisible = true;
                 brdPayloadTypeLongitudeDMS.IsVisible = true;
-                entPayloadTypeLatitude.Focus();
+                _ = entPayloadTypeLatitude.Focus();
                 entPayloadTypeLatitude.CursorPosition = entPayloadTypeLatitude.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
                 lblPayloadTypeNumber.IsVisible = true;
                 brdPayloadTypeNumber.IsVisible = true;
-                entPayloadTypeNumber.Focus();
+                _ = entPayloadTypeNumber.Focus();
                 entPayloadTypeNumber.CursorPosition = entPayloadTypeNumber.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_WHATSAPPMESSAGE)
             {
                 lblPayloadTypeMessage.IsVisible = true;
                 brdPayloadTypeMessage.IsVisible = true;
-                entPayloadTypeMessage.Focus();
+                _ = entPayloadTypeMessage.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CONTACTDATA)
             {
@@ -130,7 +130,7 @@ namespace BarcodeGenerator
                 brdPayloadTypeNumber.IsVisible = true;
                 lblPayloadTypeMail.IsVisible = true;
                 brdPayloadTypeMail.IsVisible = true;
-                entPayloadTypeFirstname.Focus();
+                _ = entPayloadTypeFirstname.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)
             {
@@ -146,7 +146,7 @@ namespace BarcodeGenerator
                 lblPayloadTypeEnd.IsVisible = true;
                 brdPayloadTypeEndDate.IsVisible = true;
                 brdPayloadTypeEndTime.IsVisible = true;
-                entPayloadTypeSubject.Focus();
+                _ = entPayloadTypeSubject.Focus();
             }
         }
 
@@ -239,6 +239,14 @@ namespace BarcodeGenerator
             // Generate the payload result based on the selected payload type and user input, and then close the popup
             ClassPayloadTypes.cPayloadResult = await BuildPayload(ClassPayloadTypes.cPayloadType);
 
+            // If the payload result is empty, it indicates that there was an error in generating the payload (e.g., invalid input).
+            // In this case, do not close the popup and allow the user to correct their input.
+            if (string.IsNullOrEmpty(ClassPayloadTypes.cPayloadResult))
+            {
+                return;
+            }
+
+            // If the payload result is not empty, proceed to close the popup
             await CloseAsync();
         }
 
@@ -335,14 +343,14 @@ namespace BarcodeGenerator
             if (!double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeInvalid_Text, CodeLang.ButtonClose_Text);
-                entPayloadTypeLatitude.Focus();
+                _ = entPayloadTypeLatitude.Focus();
             }
 
             // Validate inclusive min/max bounds
             if (latitude < -90.0 || latitude > 90.0)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeRange_Text, CodeLang.ButtonClose_Text);
-                entPayloadTypeLatitude.Focus();
+                _ = entPayloadTypeLatitude.Focus();
             }
 
             lblPayloadTypeLatitudeDMS.Text = ClassGeolocation.DecimalToDMS(latitude, true);
@@ -367,14 +375,14 @@ namespace BarcodeGenerator
             if (!double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeInvalid_Text, CodeLang.ButtonClose_Text);
-                entPayloadTypeLongitude.Focus();
+                _ = entPayloadTypeLongitude.Focus();
             }
 
             // Validate inclusive min/max bounds
             if (longitude < -180.0 || longitude > 180.0)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeRange_Text, CodeLang.ButtonClose_Text);
-                entPayloadTypeLongitude.Focus();
+                _ = entPayloadTypeLongitude.Focus();
             }
 
             lblPayloadTypeLongitudeDMS.Text = ClassGeolocation.DecimalToDMS(longitude, false);
@@ -430,26 +438,26 @@ namespace BarcodeGenerator
                 // Latitude ranges from -90° to +90° and longitude ranges from -180° to +180°
                 if (!double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
                 {
-                    entPayloadTypeLatitude.Focus();     // Works in Windows but not in Android, which does not return focus to the entry field after the alert dialog is dismissed. Consider implementing a custom alert dialog in the future that returns focus to the entry field after dismissal.
+                    _ = entPayloadTypeLatitude.Focus();
                     return string.Empty;
                 }
 
                 if (!double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
                 {
-                    entPayloadTypeLongitude.Focus();
+                    _ = entPayloadTypeLongitude.Focus();
                     return string.Empty;
                 }
 
                 // Validate inclusive min/max bounds
                 if (latitude < -90.0 || latitude > 90.0)
                 {
-                    entPayloadTypeLatitude.Focus();
+                    _ = entPayloadTypeLatitude.Focus();
                     return string.Empty;
                 }
 
                 if (longitude < -180.0 || longitude > 180.0)
                 {
-                    entPayloadTypeLongitude.Focus();
+                    _ = entPayloadTypeLongitude.Focus();
                     return string.Empty;
                 }
 
