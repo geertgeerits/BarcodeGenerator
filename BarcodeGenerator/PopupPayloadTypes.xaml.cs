@@ -315,9 +315,16 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonGeoMap_Clicked(object sender, EventArgs e)
         {
+            // Validate the latitude and longitude input values before attempting to open the map. If the validation fails, the method will return early and not attempt to open the map.
+            if (await ValidateGeolocationValues() == string.Empty)
+            {
+                return;
+            }
+
             string latText = (entPayloadTypeLatitude.Text ?? string.Empty).Trim().Replace(',', '.');
             string lonText = (entPayloadTypeLongitude.Text ?? string.Empty).Trim().Replace(',', '.');
-            
+
+            // Construct the Google Maps URL using the validated latitude and longitude values. The URL format is "http://maps.google.com/maps?q=latitude,longitude".
             string url = $"http://maps.google.com/maps?q={latText},{lonText}";
             await Launcher.Default.OpenAsync(new Uri(url));
         }
@@ -355,27 +362,17 @@ namespace BarcodeGenerator
         {
             if (string.IsNullOrWhiteSpace(entPayloadTypeLatitude.Text))
             {
-                entPayloadTypeLatitude.Text = "0";
+                entPayloadTypeLatitude.Text = string.Empty;
             }
 
             // Replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
             string latText = (entPayloadTypeLatitude.Text ?? string.Empty).Trim().Replace(',', '.');
 
-            // Latitude ranges from -90° to +90°
-            if (!double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
+            // Validate that the input can be parsed as a double using invariant culture to ensure consistent decimal separator handling
+            if (double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeInvalid_Text, CodeLang.ButtonClose_Text);
-                _ = entPayloadTypeLatitude.Focus();
+                lblPayloadTypeLatitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(latitude, true);
             }
-
-            // Validate inclusive min/max bounds
-            if (latitude < -90.0 || latitude > 90.0)
-            {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeRange_Text, CodeLang.ButtonClose_Text);
-                _ = entPayloadTypeLatitude.Focus();
-            }
-
-            lblPayloadTypeLatitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(latitude, true);
         }
 
         /// <summary>
@@ -387,27 +384,17 @@ namespace BarcodeGenerator
         {
             if (string.IsNullOrWhiteSpace(entPayloadTypeLongitude.Text))
             {
-                entPayloadTypeLongitude.Text = "0";
+                entPayloadTypeLongitude.Text = string.Empty;
             }
 
             // Replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
             string lonText = (entPayloadTypeLongitude.Text ?? string.Empty).Trim().Replace(',', '.');
 
-            // Longitude ranges from -180° to +180°
-            if (!double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
+            // Validate that the input can be parsed as a double using invariant culture to ensure consistent decimal separator handling
+            if (double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeInvalid_Text, CodeLang.ButtonClose_Text);
-                _ = entPayloadTypeLongitude.Focus();
+                lblPayloadTypeLongitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(longitude, false);
             }
-
-            // Validate inclusive min/max bounds
-            if (longitude < -180.0 || longitude > 180.0)
-            {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeRange_Text, CodeLang.ButtonClose_Text);
-                _ = entPayloadTypeLongitude.Focus();
-            }
-
-            lblPayloadTypeLongitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(longitude, false);
         }
 
         /// <summary>
@@ -421,6 +408,20 @@ namespace BarcodeGenerator
             if (dtpPayloadTypeEndDate.Date < dtpPayloadTypeStartDate.Date)
             {
                 dtpPayloadTypeEndDate.Date = dtpPayloadTypeStartDate.Date;
+            }
+        }
+
+        /// <summary>
+        /// Checks if the end time is earlier than the start time when the end time picker loses focus,
+        /// and if so, sets the end time to match the start time to ensure a valid time range for calendar event payloads.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DtpPayloadTypeTime_Unfocused(object sender, FocusEventArgs e)
+        {
+            if (dtpPayloadTypeEndDate.Date == dtpPayloadTypeStartDate.Date && tmpPayloadTypeEndTime.Time < tmpPayloadTypeStartTime.Time)
+            {
+                tmpPayloadTypeEndTime.Time = tmpPayloadTypeStartTime.Time;
             }
         }
 
@@ -467,39 +468,15 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
-                // Replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
-                string latText = (entPayloadTypeLatitude.Text ?? string.Empty).Trim().Replace(',', '.');
-                string lonText = (entPayloadTypeLongitude.Text ?? string.Empty).Trim().Replace(',', '.');
+                // Validate the latitude and longitude input values and generate the geolocation payload string if valid.
+                payload = await ValidateGeolocationValues();
 
-                // Latitude ranges from -90° to +90° and longitude ranges from -180° to +180°
-                if (!double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
+                // If the payload is empty, it indicates that there was an error in validating the geolocation values (e.g., invalid latitude or longitude).
+                // In this case, return an empty string to indicate that the payload generation failed.
+                if (payload == string.Empty)
                 {
-                    _ = entPayloadTypeLatitude.Focus();
                     return string.Empty;
                 }
-
-                if (!double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
-                {
-                    _ = entPayloadTypeLongitude.Focus();
-                    return string.Empty;
-                }
-
-                // Validate inclusive min/max bounds
-                if (latitude < -90.0 || latitude > 90.0)
-                {
-                    _ = entPayloadTypeLatitude.Focus();
-                    return string.Empty;
-                }
-
-                if (longitude < -180.0 || longitude > 180.0)
-                {
-                    _ = entPayloadTypeLongitude.Focus();
-                    return string.Empty;
-                }
-
-                // Use invariant string formatting to ensure consistent decimal separator expected by payload generator
-                QRGeolocation generator = new(latitude: latitude.ToString(CultureInfo.InvariantCulture), longitude: longitude.ToString(CultureInfo.InvariantCulture), GeolocationEncoding.GoogleMaps);
-                payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
@@ -552,6 +529,52 @@ END:VCALENDAR";
             }
 
             return payload;
+        }
+
+        /// <summary>
+        /// Validates the latitude and longitude input values for geolocation payloads, ensuring they are properly formatted as decimal degrees and within valid ranges.
+        /// If the inputs are valid, it generates a geolocation payload string; otherwise, it displays appropriate error messages and returns an empty string.
+        /// </summary>
+        /// <returns></returns>
+        private async Task<string> ValidateGeolocationValues()
+        {
+            // Replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
+            string latText = (entPayloadTypeLatitude.Text ?? string.Empty).Trim().Replace(',', '.');
+            string lonText = (entPayloadTypeLongitude.Text ?? string.Empty).Trim().Replace(',', '.');
+
+            // Validate that the inputs can be parsed as doubles using invariant culture to ensure consistent decimal separator handling
+            if (!double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeLatitude.Focus();
+                return string.Empty;
+            }
+
+            if (!double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeLongitude.Focus();
+                return string.Empty;
+            }
+
+            // Validate inclusive min/max bounds
+            if (latitude < -90.0 || latitude > 90.0)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLatitudeRange_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeLatitude.Focus();
+                return string.Empty;
+            }
+
+            if (longitude < -180.0 || longitude > 180.0)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorLongitudeRange_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeLongitude.Focus();
+                return string.Empty;
+            }
+
+            // Use invariant string formatting to ensure consistent decimal separator expected by payload generator
+            QRGeolocation generator = new(latitude: latitude.ToString(CultureInfo.InvariantCulture), longitude: longitude.ToString(CultureInfo.InvariantCulture), GeolocationEncoding.GoogleMaps);
+            return generator.ToString();
         }
     }
 }

@@ -51,15 +51,6 @@ namespace BarcodeGenerator
         {
             Entry entry = (Entry)sender;
 
-#if IOS
-            // https://github.com/dotnet/maui/issues/33316 and https://github.com/dotnet/maui/issues/32016
-            // Workaround for iOS !!!BUG!!! The MaxLength property of an Entry control is not respected on iOS,
-            // so we have to set the text again to get the correct length of the text (Microsoft.Maui.Controls Version 10.0.41)
-            // Re-assign text to enforce MaxLength on iOS
-            string cTemp = entry.Text;
-            entry.Text = string.Empty;
-            entry.Text = cTemp;
-#endif
             // Add the opacity if length = 6 characters
             if (entry.Text?.Length == 6)
             {
@@ -182,11 +173,18 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
+        private async void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
         {
             if (!IsHex(e.NewTextValue))
             {
                 ((Entry)sender).Text = e.OldTextValue;
+            }
+
+            // Unfocus and hide the keyboard
+            if (entHexColor.IsSoftInputShowing() && entHexColor.Text.Length == 8)
+            {
+                entHexColor.Unfocus();
+                await entHexColor.HideSoftInputAsync(System.Threading.CancellationToken.None);
             }
         }
 

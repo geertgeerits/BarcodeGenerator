@@ -10,7 +10,7 @@
     MaximumHeightRequest="600"
     CanBeDismissedByTappingOutsideOfPopup="False">
 
-    <!--Set the Text property of the Entry controls to "" for text values or 0 for numeric values to eliminate null values if nothing has been entered.
+    <!--Set the Text property of the Entry controls to "" for text values to eliminate null values if nothing has been entered.
     This is necessary to prevent null reference exceptions when the Text properties are accessed in the code-behind.-->
 
     <ScrollView
@@ -238,7 +238,7 @@
                     Placeholder="-90.00000 - 90.00000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
-                    Text="0"
+                    Text=""
                     ReturnType="Next"
                     TextChanged="EntPayloadTypeLatitude_TextChanged"
                     Unfocused="EntPayloadTypeLatitude_Unfocused">
@@ -266,7 +266,7 @@
                     Placeholder="-180.00000 - 180.00000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
-                    Text="0"
+                    Text=""
                     ReturnType="Next"
                     TextChanged="EntPayloadTypeLongitude_TextChanged"
                     Unfocused="EntPayloadTypeLongitude_Unfocused">
@@ -534,7 +534,8 @@
 
                 <TimePicker
                     x:Name="tmpPayloadTypeStartTime"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}">
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                    Unfocused="DtpPayloadTypeTime_Unfocused">
                 </TimePicker>
             </Border>
 
@@ -572,7 +573,8 @@
 
                 <TimePicker
                     x:Name="tmpPayloadTypeEndTime"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}">
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                    Unfocused="DtpPayloadTypeTime_Unfocused">
                 </TimePicker>
             </Border>
 
