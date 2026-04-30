@@ -947,4 +947,7 @@ Vyberte možnost.</value>
   <data name="GeolocationMessage_Text" xml:space="preserve">
     <value>Na tomto zařízení není k dispozici žádná poloha nebo poloha není povolena.</value>
   </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Otevřít mapy</value>
+  </data>
 </root>

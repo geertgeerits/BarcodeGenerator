@@ -947,4 +947,7 @@ Alegeți o opțiune.</value>
   <data name="GeolocationMessage_Text" xml:space="preserve">
     <value>Nu există nicio locație disponibilă pe acest dispozitiv sau locația nu este activată.</value>
   </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Deschideți hărțile</value>
+  </data>
 </root>

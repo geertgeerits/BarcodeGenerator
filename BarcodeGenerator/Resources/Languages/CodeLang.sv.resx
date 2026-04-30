@@ -947,4 +947,7 @@ Välj ett alternativ.</value>
   <data name="GeolocationMessage_Text" xml:space="preserve">
     <value>Ingen plats tillgänglig på den här enheten eller så är platsen inte aktiverad.</value>
   </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Öppna kartor</value>
+  </data>
 </root>

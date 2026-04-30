@@ -947,4 +947,7 @@ Choose an option.</value>
   <data name="GeolocationMessage_Text" xml:space="preserve">
     <value>No location available on this device or location is not enabled.</value>
   </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Open maps</value>
+  </data>
 </root>

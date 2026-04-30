@@ -947,4 +947,7 @@ Válasszon egy lehetőséget.</value>
   <data name="GeolocationMessage_Text" xml:space="preserve">
     <value>Nincs elérhető helymeghatározás ezen az eszközön, vagy a helymeghatározás nincs engedélyezve.</value>
   </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Térképek megnyitása</value>
+  </data>
 </root>

@@ -273,15 +273,24 @@
                 </Entry>
             </Border>
 
+            <Label
+                x:Name="lblPayloadTypeLatitudeDMS"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="10"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeLatitude_Text}">
+            </Label>
+
             <Border
-                x:Name="brdPayloadTypeLatitudeDMS"
+                x:Name="brdPayloadTypeLatitudeDMSResult"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="10"
                 Grid.Column="1"
                 Margin="0,6,6,0">
 
                 <Label
-                    x:Name="lblPayloadTypeLatitudeDMS"
+                    x:Name="lblPayloadTypeLatitudeDMSResult"
                     Style="{StaticResource labelStyleDefault}"
                     VerticalTextAlignment="Center"
                     Margin="10,0,0,0"
@@ -289,15 +298,24 @@
                 </Label>
             </Border>
 
+            <Label
+                x:Name="lblPayloadTypeLongitudeDMS"
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="11"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                Text="{Translate PayloadTypeLongitude_Text}">
+            </Label>
+
             <Border
-                x:Name="brdPayloadTypeLongitudeDMS"
+                x:Name="brdPayloadTypeLongitudeDMSResult"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="11"
                 Grid.Column="1"
                 Margin="0,2,6,0">
 
                 <Label
-                    x:Name="lblPayloadTypeLongitudeDMS"
+                    x:Name="lblPayloadTypeLongitudeDMSResult"
                     Style="{StaticResource labelStyleDefault}"
                     VerticalTextAlignment="Center"
                     Margin="10,0,0,0">
@@ -327,7 +345,7 @@
                 VerticalOptions="Start"
                 WidthRequest="120"
                 Margin="0,15,6,10"
-                ToolTipProperties.Text="{Translate GeoLocationButton_Text}"
+                ToolTipProperties.Text="{Translate GeoMapButton_Text}"
                 Source="ic_action_map.png"
                 Clicked="OnButtonGeoMap_Clicked">
             </ImageButton>
@@ -501,7 +519,8 @@
 
                 <DatePicker
                     x:Name="dtpPayloadTypeStartDate"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}">
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                    Unfocused="DtpPayloadTypeDate_Unfocused">
                 </DatePicker>
             </Border>
 
@@ -538,7 +557,8 @@
 
                 <DatePicker
                     x:Name="dtpPayloadTypeEndDate"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}">
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                    Unfocused="DtpPayloadTypeDate_Unfocused">
                 </DatePicker>
             </Border>
 

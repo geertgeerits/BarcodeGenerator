@@ -947,4 +947,7 @@ Kies een optie.</value>
   <data name="GeolocationMessage_Text" xml:space="preserve">
     <value>Geen locatie beschikbaar op dit apparaat of locatie is niet ingeschakeld.</value>
   </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Open kaarten</value>
+  </data>
 </root>

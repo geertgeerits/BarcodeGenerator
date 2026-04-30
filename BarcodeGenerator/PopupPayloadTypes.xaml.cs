@@ -101,8 +101,10 @@ namespace BarcodeGenerator
                 brdPayloadTypeLatitude.IsVisible = true;
                 lblPayloadTypeLongitude.IsVisible = true;
                 brdPayloadTypeLongitude.IsVisible = true;
-                brdPayloadTypeLatitudeDMS.IsVisible = true;
-                brdPayloadTypeLongitudeDMS.IsVisible = true;
+                lblPayloadTypeLatitudeDMS.IsVisible = true;
+                lblPayloadTypeLongitudeDMS.IsVisible = true;
+                brdPayloadTypeLatitudeDMSResult.IsVisible = true;
+                brdPayloadTypeLongitudeDMSResult.IsVisible = true;
                 btnButtonGeoLocation.IsVisible = true;
                 btnButtonGeoMap.IsVisible = true;
 
@@ -197,8 +199,10 @@ namespace BarcodeGenerator
             brdPayloadTypeLatitude.IsVisible = false;
             lblPayloadTypeLongitude.IsVisible = false;
             brdPayloadTypeLongitude.IsVisible = false;
-            brdPayloadTypeLatitudeDMS.IsVisible = false;
-            brdPayloadTypeLongitudeDMS.IsVisible = false;
+            lblPayloadTypeLatitudeDMS.IsVisible = false;
+            lblPayloadTypeLongitudeDMS.IsVisible = false;
+            brdPayloadTypeLatitudeDMSResult.IsVisible = false;
+            brdPayloadTypeLongitudeDMSResult.IsVisible = false;
             btnButtonGeoLocation.IsVisible = false;
             btnButtonGeoMap.IsVisible = false;
             lblPayloadTypeFirstname.IsVisible = false;
@@ -294,8 +298,8 @@ namespace BarcodeGenerator
             if (location != null)
             {
                 // Convert to DMS format for display
-                lblPayloadTypeLatitudeDMS.Text = ClassGeolocation.DecimalToDMS(location.Latitude, true);
-                lblPayloadTypeLongitudeDMS.Text = ClassGeolocation.DecimalToDMS(location.Longitude, false);
+                lblPayloadTypeLatitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(location.Latitude, true);
+                lblPayloadTypeLongitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(location.Longitude, false);
             }
             else
             {
@@ -311,7 +315,10 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonGeoMap_Clicked(object sender, EventArgs e)
         {
-            string url = $"http://maps.google.com/maps?q={entPayloadTypeLatitude.Text},{entPayloadTypeLongitude.Text}";
+            string latText = (entPayloadTypeLatitude.Text ?? string.Empty).Trim().Replace(',', '.');
+            string lonText = (entPayloadTypeLongitude.Text ?? string.Empty).Trim().Replace(',', '.');
+            
+            string url = $"http://maps.google.com/maps?q={latText},{lonText}";
             await Launcher.Default.OpenAsync(new Uri(url));
         }
 
@@ -322,7 +329,7 @@ namespace BarcodeGenerator
         /// <param name="e">The event data containing information about the text change.</param>
         private void EntPayloadTypeLatitude_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lblPayloadTypeLatitudeDMS.Text = string.Empty;
+            lblPayloadTypeLatitudeDMSResult.Text = string.Empty;
         }
 
         /// <summary>
@@ -332,7 +339,7 @@ namespace BarcodeGenerator
         /// <param name="e">The event data containing information about the text change.</param>
         private void EntPayloadTypeLongitude_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lblPayloadTypeLongitudeDMS.Text = string.Empty;
+            lblPayloadTypeLongitudeDMSResult.Text = string.Empty;
         }
 
         /// <summary>
@@ -368,7 +375,7 @@ namespace BarcodeGenerator
                 _ = entPayloadTypeLatitude.Focus();
             }
 
-            lblPayloadTypeLatitudeDMS.Text = ClassGeolocation.DecimalToDMS(latitude, true);
+            lblPayloadTypeLatitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(latitude, true);
         }
 
         /// <summary>
@@ -400,7 +407,21 @@ namespace BarcodeGenerator
                 _ = entPayloadTypeLongitude.Focus();
             }
 
-            lblPayloadTypeLongitudeDMS.Text = ClassGeolocation.DecimalToDMS(longitude, false);
+            lblPayloadTypeLongitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(longitude, false);
+        }
+
+        /// <summary>
+        /// Checks if the end date is earlier than the start date when the end date picker loses focus,
+        /// and if so, sets the end date to match the start date to ensure a valid date range for calendar event payloads.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DtpPayloadTypeDate_Unfocused(object sender, FocusEventArgs e)
+        {
+            if (dtpPayloadTypeEndDate.Date < dtpPayloadTypeStartDate.Date)
+            {
+                dtpPayloadTypeEndDate.Date = dtpPayloadTypeStartDate.Date;
+            }
         }
 
         /// <summary>

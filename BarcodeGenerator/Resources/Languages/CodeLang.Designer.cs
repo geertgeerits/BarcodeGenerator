@@ -1169,6 +1169,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open maps.
+        /// </summary>
+        internal static string GeoMapButton_Text {
+            get {
+                return ResourceManager.GetString("GeoMapButton_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid start/end character:.
         /// </summary>
         internal static string GuardInvalidStartEnd_Text {

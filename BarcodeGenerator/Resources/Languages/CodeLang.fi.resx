@@ -947,4 +947,7 @@ Valitse vaihtoehto.</value>
   <data name="GeolocationMessage_Text" xml:space="preserve">
     <value>Sijaintia ei ole saatavilla tällä laitteella tai sijainti ei ole käytössä.</value>
   </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Avaa kartat</value>
+  </data>
 </root>

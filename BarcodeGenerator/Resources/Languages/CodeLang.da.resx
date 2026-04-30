@@ -947,4 +947,7 @@ Vælg en mulighed.</value>
   <data name="GeolocationMessage_Text" xml:space="preserve">
     <value>Ingen placering tilgængelig på denne enhed, eller placeringen er ikke aktiveret.</value>
   </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Åbne kort</value>
+  </data>
 </root>
