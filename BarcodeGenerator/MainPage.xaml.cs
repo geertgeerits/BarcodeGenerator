@@ -695,6 +695,7 @@ namespace BarcodeGenerator
         private async Task GenerateBarcode(int selectedIndex, string selectedName, string cTextToCode)
         {
             // Start the activity indicator
+            activityIndicator.IsVisible = true;
             activityIndicator.IsRunning = true;
             await Task.Delay(200);
 
@@ -727,12 +728,13 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
+
                 // Generate the Micro QR code using QRCoder
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
 
-                    ImageSource? qrImage = await ClassMicroQRCode.GenerateMicroQrCodeAsync(cTextToCode, -4);
+                    ImageSource? qrImage = await ClassMicroQRCode.GenerateMicroQrCodeAsync(cTextToCode, nVersion: -4);
                     imgQrCodeImage.Source = qrImage;
                 }
                 // Generate the other barcodes using the BarcodeView control from the ZXing.Net.MAUI library
@@ -755,6 +757,7 @@ namespace BarcodeGenerator
 
             // Stop the activity indicator
             activityIndicator.IsRunning = false;
+            activityIndicator.IsVisible = false;    // !!!BUG!!! iOS: sometimes the activity indicator keeps visible after generating a code, even after setting IsRunning to false. Setting IsVisible to false as well seems to fix this issue. This does not happen on Android and Windows. It might be related to the way the SkiaSharp bitmaps are generated and displayed in the Image control for the QR codes, but this is not yet confirmed.
         }
 
         /// <summary>

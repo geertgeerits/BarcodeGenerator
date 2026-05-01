@@ -98,6 +98,7 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
+                lblGeolocationEncoding.IsVisible = true;
                 brdGeolocationEncoding.IsVisible = true;
                 lblPayloadTypeLatitude.IsVisible = true;
                 brdPayloadTypeLatitude.IsVisible = true;
@@ -207,6 +208,7 @@ namespace BarcodeGenerator
             brdPayloadTypeSubject.IsVisible = false;
             lblPayloadTypeMessage.IsVisible = false;
             brdPayloadTypeMessage.IsVisible = false;
+            lblGeolocationEncoding.IsVisible = false;
             brdGeolocationEncoding.IsVisible = false;
             lblPayloadTypeLatitude.IsVisible = false;
             brdPayloadTypeLatitude.IsVisible = false;

@@ -262,11 +262,12 @@
                 Grid.Column="1"
                 Margin="0,6,6,0">
 
+                <!--The iOS numeric keyboard does not have a negative sign. On other platforms, the keyboard is set to Numeric to provide a more suitable input method for numeric values.-->
                 <Entry
                     x:Name="entPayloadTypeLatitude"
                     Placeholder="-90.00000 - 90.00000"
                     ClearButtonVisibility="WhileEditing"
-                    Keyboard="Numeric"
+                    Keyboard="{OnPlatform Default=Numeric, iOS=Text}"
                     Text=""
                     ReturnType="Next"
                     TextChanged="EntPayloadTypeLatitude_TextChanged"
@@ -294,7 +295,7 @@
                     x:Name="entPayloadTypeLongitude"
                     Placeholder="-180.00000 - 180.00000"
                     ClearButtonVisibility="WhileEditing"
-                    Keyboard="Numeric"
+                    Keyboard="{OnPlatform Default=Numeric, iOS=Text}"
                     Text=""
                     ReturnType="Next"
                     TextChanged="EntPayloadTypeLongitude_TextChanged"
