@@ -945,9 +945,12 @@ Valitse vaihtoehto.</value>
     <value>Maantieteellinen sijainti</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Sijaintia ei ole saatavilla tällä laitteella tai sijainti ei ole käytössä.</value>
+    <value>Sijainti ei ole saatavilla tällä laitteella tai sijaintipalvelut on poistettu käytöstä.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
     <value>Avaa kartat</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Koodaus:</value>
   </data>
 </root>

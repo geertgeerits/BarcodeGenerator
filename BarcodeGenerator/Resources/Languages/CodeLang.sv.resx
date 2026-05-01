@@ -945,9 +945,12 @@ Välj ett alternativ.</value>
     <value>Geolokalisering</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Ingen plats tillgänglig på den här enheten eller så är platsen inte aktiverad.</value>
+    <value>Platsfunktionen är inte tillgänglig på den här enheten, eller så är platstjänsterna inaktiverade.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
     <value>Öppna kartor</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Kodning:</value>
   </data>
 </root>

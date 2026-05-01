@@ -945,9 +945,12 @@ Scegli un'opzione.</value>
     <value>Geolocalizzazione</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Nessuna posizione disponibile su questo dispositivo o la geolocalizzazione non è abilitata.</value>
+    <value>La posizione non è disponibile su questo dispositivo oppure i servizi di localizzazione sono disabilitati.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
     <value>Apri le mappe</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Codifica:</value>
   </data>
 </root>

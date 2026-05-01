@@ -1,7 +1,5 @@
 using CommunityToolkit.Maui.Views;
 using static QRCoder.PayloadGenerator;
-using static QRCoder.PayloadGenerator.Geolocation;
-using QRGeolocation = QRCoder.PayloadGenerator.Geolocation;
 
 namespace BarcodeGenerator
 {
@@ -19,6 +17,9 @@ namespace BarcodeGenerator
 
             // Set the payload types in the picker
             pckPayloadType.ItemsSource = ClassPayloadTypes.GetQRCodePayloadTypes();
+
+            // Set the geolocation encoding options in the picker to the first item (Google maps) by default
+            pckGeolocationEncoding.SelectedIndex = Preferences.Default.Get("SettingGeolocationEncoding", 0);
 
             // Select the current barcode format in the picker for the barcode generator and scanner
             ClassPayloadTypes.SelectPayloadTypeIndex(pckPayloadType);
@@ -97,6 +98,7 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
+                brdGeolocationEncoding.IsVisible = true;
                 lblPayloadTypeLatitude.IsVisible = true;
                 brdPayloadTypeLatitude.IsVisible = true;
                 lblPayloadTypeLongitude.IsVisible = true;
@@ -175,6 +177,16 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Save the selected geolocation encoding option in the application preferences when the picker selection changes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PckGeolocationEncoding_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Preferences.Default.Set("SettingGeolocationEncoding", pckGeolocationEncoding.SelectedIndex);
+        }
+
+        /// <summary>
         /// Sets the visibility of all relevant controls to false, effectively hiding them from the user interface.
         /// </summary>
         /// <remarks>Call this method to ensure that none of the associated controls are visible. This can
@@ -195,6 +207,7 @@ namespace BarcodeGenerator
             brdPayloadTypeSubject.IsVisible = false;
             lblPayloadTypeMessage.IsVisible = false;
             brdPayloadTypeMessage.IsVisible = false;
+            brdGeolocationEncoding.IsVisible = false;
             lblPayloadTypeLatitude.IsVisible = false;
             brdPayloadTypeLatitude.IsVisible = false;
             lblPayloadTypeLongitude.IsVisible = false;
@@ -315,17 +328,15 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonGeoMap_Clicked(object sender, EventArgs e)
         {
-            // Validate the latitude and longitude input values before attempting to open the map. If the validation fails, the method will return early and not attempt to open the map.
-            if (await ValidateGeolocationValues() == string.Empty)
+            // Validate the latitude and longitude input values before attempting to open the map.
+            // If the validation fails, the method will return early and not attempt to open the map.
+            string url = await ValidateGeolocationValues();
+
+            if (url == string.Empty)
             {
                 return;
             }
 
-            string latText = (entPayloadTypeLatitude.Text ?? string.Empty).Trim().Replace(',', '.');
-            string lonText = (entPayloadTypeLongitude.Text ?? string.Empty).Trim().Replace(',', '.');
-
-            // Construct the Google Maps URL using the validated latitude and longitude values. The URL format is "http://maps.google.com/maps?q=latitude,longitude".
-            string url = $"http://maps.google.com/maps?q={latText},{lonText}";
             await Launcher.Default.OpenAsync(new Uri(url));
         }
 
@@ -472,7 +483,6 @@ namespace BarcodeGenerator
                 payload = await ValidateGeolocationValues();
 
                 // If the payload is empty, it indicates that there was an error in validating the geolocation values (e.g., invalid latitude or longitude).
-                // In this case, return an empty string to indicate that the payload generation failed.
                 if (payload == string.Empty)
                 {
                     return string.Empty;
@@ -572,9 +582,23 @@ END:VCALENDAR";
                 return string.Empty;
             }
 
+            // Construct the Google Maps URL using the validated latitude and longitude values.
             // Use invariant string formatting to ensure consistent decimal separator expected by payload generator
-            QRGeolocation generator = new(latitude: latitude.ToString(CultureInfo.InvariantCulture), longitude: longitude.ToString(CultureInfo.InvariantCulture), GeolocationEncoding.GoogleMaps);
-            return generator.ToString();
+            string url = string.Empty;
+
+            switch (pckGeolocationEncoding.SelectedIndex)
+            {
+                case 0:
+                    // GeolocationEncoding = GoogleMaps
+                    url = $"http://maps.google.com/maps?q={latitude.ToString(CultureInfo.InvariantCulture)},{longitude.ToString(CultureInfo.InvariantCulture)}";
+                    break;
+                case 1:
+                    // GeolocationEncoding = GEO
+                    url = $"geo:{latitude.ToString(CultureInfo.InvariantCulture)},{longitude.ToString(CultureInfo.InvariantCulture)}";
+                    break;
+            }
+
+            return url;
         }
     }
 }

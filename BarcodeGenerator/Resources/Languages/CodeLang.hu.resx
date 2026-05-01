@@ -945,9 +945,12 @@ Válasszon egy lehetőséget.</value>
     <value>Földrajzi helymeghatározás</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Nincs elérhető helymeghatározás ezen az eszközön, vagy a helymeghatározás nincs engedélyezve.</value>
+    <value>A helymeghatározás nem érhető el ezen az eszközön, vagy a helymeghatározási szolgáltatások le vannak tiltva.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
     <value>Térképek megnyitása</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Kódolás:</value>
   </data>
 </root>

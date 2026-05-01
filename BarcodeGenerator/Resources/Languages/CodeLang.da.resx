@@ -945,9 +945,12 @@ Vælg en mulighed.</value>
     <value>Geoplacering</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Ingen placering tilgængelig på denne enhed, eller placeringen er ikke aktiveret.</value>
+    <value>Placering er ikke tilgængelig på denne enhed, eller placeringstjenester er deaktiveret.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
     <value>Åbne kort</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Kodning:</value>
   </data>
 </root>

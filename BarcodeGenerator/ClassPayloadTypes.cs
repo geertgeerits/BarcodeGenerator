@@ -180,7 +180,7 @@
                     }
                 }
 
-                //string message = $"SSID: {ssid}\nPassword: {pass}\nEncryption: {auth}";
+                // string message = $"SSID: {ssid}\nPassword: {pass}\nEncryption: {auth}";
                 string action = await Application.Current!.Windows[0].Page!.DisplayActionSheetAsync(CodeLang.WiFiNetworkDetected_Text, CodeLang.ButtonClose_Text, null, CodeLang.ButtonCopy_Text, CodeLang.WiFiOpenSettings_Text);
 
                 if (action == CodeLang.ButtonCopy_Text)

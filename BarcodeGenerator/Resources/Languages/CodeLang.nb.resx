@@ -945,9 +945,12 @@ Velg et alternativ.</value>
     <value>Geolokalisering</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Ingen posisjon tilgjengelig på denne enheten, eller posisjonen er ikke aktivert.</value>
+    <value>Posisjon er ikke tilgjengelig på denne enheten, eller posisjonstjenestene er deaktivert.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
     <value>Åpne kart</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Koding:</value>
   </data>
 </root>

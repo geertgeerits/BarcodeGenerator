@@ -945,9 +945,12 @@ Wählen Sie eine Option.</value>
     <value>Standort</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Auf diesem Gerät ist kein Standort verfügbar oder die Standortbestimmung ist deaktiviert.</value>
+    <value>Die Standortbestimmung ist auf diesem Gerät nicht möglich oder die Ortungsdienste sind deaktiviert.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
     <value>Karten öffnen</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Verschlüsselung:</value>
   </data>
 </root>

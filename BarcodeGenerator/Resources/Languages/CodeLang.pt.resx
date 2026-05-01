@@ -945,9 +945,12 @@ Escolha uma opção.</value>
     <value>Geolocalização</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Nenhuma localização disponível neste dispositivo ou a localização não está ativada.</value>
+    <value>A localização não está disponível neste dispositivo ou os serviços de localização estão desativados.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
     <value>Abrir mapas</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Codificação:</value>
   </data>
 </root>

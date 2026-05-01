@@ -1151,7 +1151,16 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No location available on this device or location is not enabled..
+        ///   Looks up a localized string similar to Encoding:.
+        /// </summary>
+        internal static string GeolocationEncoding_Text {
+            get {
+                return ResourceManager.GetString("GeolocationEncoding_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location is not available on this device, or location services are disabled..
         /// </summary>
         internal static string GeolocationMessage_Text {
             get {

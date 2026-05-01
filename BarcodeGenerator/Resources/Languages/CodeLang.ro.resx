@@ -945,9 +945,12 @@ Alegeți o opțiune.</value>
     <value>Geolocalizare</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Nu există nicio locație disponibilă pe acest dispozitiv sau locația nu este activată.</value>
+    <value>Locația nu este disponibilă pe acest dispozitiv sau serviciile de localizare sunt dezactivate.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
     <value>Deschideți hărțile</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Codificare:</value>
   </data>
 </root>

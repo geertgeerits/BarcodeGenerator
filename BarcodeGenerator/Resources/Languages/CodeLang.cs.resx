@@ -945,9 +945,12 @@ Vyberte možnost.</value>
     <value>Geolokace</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Na tomto zařízení není k dispozici žádná poloha nebo poloha není povolena.</value>
+    <value>Poloha není na tomto zařízení k dispozici nebo jsou služby určování polohy zakázány.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
     <value>Otevřít mapy</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Kódování:</value>
   </data>
 </root>

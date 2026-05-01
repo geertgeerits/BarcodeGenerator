@@ -570,6 +570,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingCompressionEnabled");
                 Preferences.Default.Remove("SettingPayloadEnabled");
                 Preferences.Default.Remove("SettingPayloadType");
+                Preferences.Default.Remove("SettingGeolocationEncoding");
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");
                 Preferences.Default.Remove("SettingTheme");
