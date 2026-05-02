@@ -1,4 +1,5 @@
 using CommunityToolkit.Maui.Views;
+using System.ComponentModel.DataAnnotations;
 using static QRCoder.PayloadGenerator;
 
 namespace BarcodeGenerator
@@ -252,6 +253,7 @@ namespace BarcodeGenerator
         private async void OnButtonCancel_Clicked(object sender, EventArgs e)
         {
             Globals.bPopupCanceled = true;
+
             await CloseAsync();
         }
 
@@ -460,16 +462,31 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
             {
+                if (!await IsValidUrl(entPayloadTypeURL.Text))
+                {
+                    return string.Empty;
+                }
+
                 Url generator = new(url: entPayloadTypeURL.Text);
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_BOOKMARK)
             {
+                if (!await IsValidUrl(entPayloadTypeURL.Text))
+                {
+                    return string.Empty;
+                }
+
                 Bookmark generator = new(url: entPayloadTypeURL.Text, title: entPayloadTypeTitle.Text);
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MAIL)
             {
+                if (!await IsValidEmail(entPayloadTypeReceiver.Text))
+                {
+                    return string.Empty;
+                }
+
                 Mail generator = new(mailReceiver: entPayloadTypeReceiver.Text, subject: entPayloadTypeSubject.Text, message: entPayloadTypeMessage.Text);
                 payload = generator.ToString();
             }
@@ -485,10 +502,10 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
-                // Validate the latitude and longitude input values and generate the geolocation payload string if valid.
+                // Validate the latitude and longitude input values and generate the geolocation payload string if valid
                 payload = await ValidateGeolocationValues();
 
-                // If the payload is empty, it indicates that there was an error in validating the geolocation values (e.g., invalid latitude or longitude).
+                // If the payload is empty, it indicates that there was an error in validating the geolocation values
                 if (payload == string.Empty)
                 {
                     return string.Empty;
@@ -506,6 +523,11 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CONTACTDATA)
             {
+                if (!await IsValidEmail(entPayloadTypeMail.Text))
+                {
+                    return string.Empty;
+                }
+
                 ContactData generator = new(ContactData.ContactOutputType.VCard3, firstname: entPayloadTypeFirstname.Text, lastname: entPayloadTypeLastname.Text, nickname: "", phone: "", mobilePhone: entPayloadTypeNumber.Text, workPhone: "", email: entPayloadTypeMail.Text);
                 payload = generator.ToString();
             }
@@ -588,7 +610,7 @@ END:VCALENDAR";
                 return string.Empty;
             }
 
-            // Construct the Google Maps URL using the validated latitude and longitude values.
+            // Construct the Maps URL using the validated latitude and longitude values
             // Use invariant string formatting to ensure consistent decimal separator expected by payload generator
             string url = string.Empty;
 
@@ -605,6 +627,44 @@ END:VCALENDAR";
             }
 
             return url;
+        }
+
+        /// <summary>
+        /// Determines whether the specified string is a valid email address format.
+        /// </summary>
+        /// <remarks>This method checks the format of the email address but does not verify that the address exists or is reachable.</remarks>
+        /// <param name="email">The email address to validate. Cannot be null, empty, or consist only of white-space characters.</param>
+        /// <returns>true if the specified string is a valid email address format; otherwise, false.</returns>
+        private static async Task<bool> IsValidEmail(string email)
+        {
+            bool bIsValid = !string.IsNullOrWhiteSpace(email) && new EmailAddressAttribute().IsValid(email);
+
+            if (!bIsValid)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorEmailInvalid_Text, CodeLang.ButtonClose_Text);
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Determines whether the specified string is a valid absolute HTTP or HTTPS URL.
+        /// </summary>
+        /// <param name="url">The URL string to validate. Must not be null.</param>
+        /// <returns>true if the string is a well-formed absolute HTTP or HTTPS URL; otherwise, false.</returns>
+        private static async Task<bool> IsValidUrl(string url)
+        {
+            bool bIsValid = Uri.TryCreate(url, UriKind.Absolute, out Uri? uriResult) &&
+            (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+
+            if (!bIsValid)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorUrlInvalid_Text, CodeLang.ButtonClose_Text);
+                return false;
+            }
+
+            return true;
         }
     }
 }

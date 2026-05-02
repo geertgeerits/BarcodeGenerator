@@ -1007,6 +1007,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to E-mail address is not valid..
+        /// </summary>
+        internal static string ErrorEmailInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorEmailInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid latitude value..
         /// </summary>
         internal static string ErrorLatitudeInvalid_Text {
@@ -1057,6 +1066,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string ErrorTitle_Text {
             get {
                 return ResourceManager.GetString("ErrorTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL address is not valid..
+        /// </summary>
+        internal static string ErrorUrlInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorUrlInvalid_Text", resourceCulture);
             }
         }
         

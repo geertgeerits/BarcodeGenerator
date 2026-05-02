@@ -953,4 +953,10 @@ Choose an option.</value>
   <data name="GeolocationEncoding_Text" xml:space="preserve">
     <value>Encoding:</value>
   </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>E-mail address is not valid.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>URL address is not valid.</value>
+  </data>
 </root>

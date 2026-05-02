@@ -246,7 +246,7 @@
                 </Picker>
             </Border>
 
-                <Label
+            <Label
                 x:Name="lblPayloadTypeLatitude"
                 Style="{StaticResource labelStyleDefault}"
                 Grid.Row="9"
