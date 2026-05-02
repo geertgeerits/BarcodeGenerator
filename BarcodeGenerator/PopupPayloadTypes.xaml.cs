@@ -8,7 +8,11 @@ namespace BarcodeGenerator
         public PopupPayloadTypes()
     	{
             InitializeComponent();
-
+#if IOS
+            // Configure the numeric keyboard for these entry fields on iOS to use the NumbersAndPunctuation keyboard type
+            BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLatitude);
+            BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLongitude);
+#endif
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
             Globals.bPopupOpened = true;
 
