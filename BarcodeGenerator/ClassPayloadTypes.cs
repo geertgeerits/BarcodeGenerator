@@ -17,7 +17,6 @@
 
         // Global variables
         public static int nPayloadTypeIndex;
-        public static bool bPayloadEnabled;
         public static string cPayloadType = string.Empty;
         public static string cPayloadTypeDefault = string.Empty;
         public static string cPayloadResult = string.Empty;

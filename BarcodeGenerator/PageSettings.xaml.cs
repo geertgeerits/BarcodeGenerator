@@ -90,9 +90,6 @@ namespace BarcodeGenerator
             // Set the text compression variable to update the switch
             swtCompressionEnabled.IsToggled = ClassBarcodes.bCompressionEnabled;
 
-            // Set the payload enabled variable to update the switch
-            swtPayloadEnabled.IsToggled = ClassPayloadTypes.bPayloadEnabled;
-
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
         }
@@ -461,16 +458,6 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Handles the toggled event for enabling or disabling the SWT payload feature.
-        /// </summary>
-        /// <param name="sender">The source of the event, typically the toggle control that was interacted with.</param>
-        /// <param name="e">The event data containing the new toggle state.</param>
-        private void SwtPayloadEnabled_Toggled(object sender, ToggledEventArgs e)
-        {
-            ClassPayloadTypes.bPayloadEnabled = e.Value;
-        }
-
-        /// <summary>
         /// Show a modal popup to inform the user about the recommended image size before opening the file picker
         /// </summary>
         /// <param name="cMessage"></param>
@@ -517,7 +504,6 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeBackgroundImage", ClassBarcodes.bQRCodeBackgroundImage);
             Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
             Preferences.Default.Set("SettingCompressionEnabled", ClassBarcodes.bCompressionEnabled);
-            Preferences.Default.Set("SettingPayloadEnabled", ClassPayloadTypes.bPayloadEnabled);
             Preferences.Default.Set("SettingPayloadType", ClassPayloadTypes.cPayloadType);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
             Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
@@ -568,7 +554,6 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeBackgroundImage");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingCompressionEnabled");
-                Preferences.Default.Remove("SettingPayloadEnabled");
                 Preferences.Default.Remove("SettingPayloadType");
                 Preferences.Default.Remove("SettingGeolocationEncoding");
                 Preferences.Default.Remove("SettingLanguage");

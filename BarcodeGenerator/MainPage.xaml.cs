@@ -85,7 +85,6 @@ namespace BarcodeGenerator
             ClassBarcodes.bQRCodeBackgroundImage = Preferences.Default.Get("SettingQRCodeBackgroundImage", false);
             ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
             ClassBarcodes.bCompressionEnabled = Preferences.Default.Get("SettingCompressionEnabled", false);
-            ClassPayloadTypes.bPayloadEnabled = Preferences.Default.Get("SettingPayloadEnabled", false);
             ClassPayloadTypes.cPayloadType = Preferences.Default.Get("SettingPayloadType", ClassPayloadTypes.cPayloadTypeDefault);
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
@@ -101,9 +100,6 @@ namespace BarcodeGenerator
                 imgbtnScanNT.VerticalOptions = LayoutOptions.Start;
                 imgbtnSettings.VerticalOptions = LayoutOptions.Start;
             }
-
-            // Set the tooltips for the scanner buttons
-            ToolTipProperties.SetText(imgbtnScanNT, CodeLang.ToolTipBarcodeScanner_Text + " (Native)");
 
             // Set the theme
             Globals.SetTheme();
@@ -212,6 +208,34 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Open the PopupPayloadTypes page when the button is clicked if a payload type is allowed and a specific barcode is selected, to fill in the details for the selected payload type before generating the payload and setting it in the editor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnPagePayloadTypeClicked(object sender, EventArgs e)
+        {
+            // If a payload type is allowed and a specific barcode is selected, build the payload and set it in the editor
+            if (bPayloadTypeAllowed)
+            {
+                // Show a modal popup to fill in the details for the selected payload type before generating the payload and setting it in the editor
+                Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+                if (currentPage != null)
+                {
+                    _ = await currentPage.ShowPopupAsync(new PopupPayloadTypes());
+
+                    // Check if the popup was canceled by the user
+                    if (Globals.bPopupCanceled)
+                    {
+                        return;
+                    }
+                }
+
+                OnClearCodeClicked(sender, e);
+                edtTextToCode.Text = ClassPayloadTypes.cPayloadResult;
+            }
+        }
+
+        /// <summary>
         /// Handles the click event for the page scan button and navigates to the appropriate scanning page based on the
         /// platform.
         /// </summary>
@@ -278,7 +302,6 @@ namespace BarcodeGenerator
                 bgvBarcode.HorizontalOptions = LayoutOptions.Fill;
                 edtTextToCode.Placeholder = string.Empty;
                 edtTextToCode.TextTransform = TextTransform.None;
-                edtTextToCode.IsEnabled = true;
 
                 btnShare.Text = CodeLang.ButtonShare_Text;
                 btnShare.IsEnabled = false;
@@ -398,7 +421,6 @@ namespace BarcodeGenerator
                     bgvBarcode.WidthRequest = nWidthBarcode2D;
                     bgvBarcode.BarcodeMargin = 2;
                     bgvBarcode.Format = BarcodeFormat.DataMatrix;
-                    bPayloadTypeAllowed = true;
                 }
                 
                 else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
@@ -467,16 +489,9 @@ namespace BarcodeGenerator
                 edtTextToCode.Focus();
 
                 // If a payload type is allowed and a specific barcode is selected set the button text to payloads and disable the text input
-                if (ClassPayloadTypes.bPayloadEnabled && bPayloadTypeAllowed)
+                if (bPayloadTypeAllowed)
                 {
                     OnClearCodeClicked(sender, e);
-                    edtTextToCode.IsEnabled = false;
-                    btnGenerateCode.Text = CodeLang.Payloads_Text;
-                }
-                else
-                {
-                    edtTextToCode.IsEnabled = true;
-                    btnGenerateCode.Text = CodeLang.GenerateCode_Text;
                 }
             }
         }
@@ -595,28 +610,6 @@ namespace BarcodeGenerator
             // Hide the keyboard
             edtTextToCode.IsEnabled = false;
             edtTextToCode.IsEnabled = true;
-
-            // If a payload type is allowed and a specific barcode is selected, build the payload and set it in the editor
-            if (ClassPayloadTypes.bPayloadEnabled && bPayloadTypeAllowed)
-            {
-                OnClearCodeClicked(sender, e);
-                edtTextToCode.IsEnabled = false;
-
-                // Show a modal popup to fill in the details for the selected payload type before generating the payload and setting it in the editor
-                Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
-                if (currentPage != null)
-                {
-                    _ = await currentPage.ShowPopupAsync(new PopupPayloadTypes());
-
-                    // Check if the popup was canceled by the user
-                    if (Globals.bPopupCanceled)
-                    {
-                        return;
-                    }
-                }
-
-                edtTextToCode.Text = ClassPayloadTypes.cPayloadResult;
-            }
 
             // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
             ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
@@ -853,20 +846,6 @@ namespace BarcodeGenerator
             {
                 pckFormatCodeGenerator.SelectedIndex = ClassBarcodes.nBarcodeGeneratorIndex;
                 Globals.bPopupOpened = false;
-            }
-
-            // If a payload type is allowed and a specific barcode is selected set the button text to payloads and disable the text input
-            // This needs to be done here in the Appearing event when coming back from the Settings or PopupPayloadTypes page when the user has
-            // enabled or disabled the payload types or has selected a payload type
-            if (ClassPayloadTypes.bPayloadEnabled && bPayloadTypeAllowed)
-            {
-                edtTextToCode.IsEnabled = false;
-                btnGenerateCode.Text = CodeLang.Payloads_Text;
-            }
-            else
-            {
-                edtTextToCode.IsEnabled = true;
-                btnGenerateCode.Text = CodeLang.GenerateCode_Text;
             }
         }
 

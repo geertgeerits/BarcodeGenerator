@@ -32,7 +32,7 @@
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
                 RowSpacing="4"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -360,27 +360,12 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="14"
                     Grid.Column="0"
-                    Text="{Translate PayloadEnabled_Text}">
-                </Label>
-
-                <Switch
-                    x:Name="swtPayloadEnabled"
-                    Grid.Row="14"
-                    Grid.Column="2"
-                    Margin="0"
-                    Toggled="SwtPayloadEnabled_Toggled">
-                </Switch>
-
-                <Label
-                    Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="15"
-                    Grid.Column="0"
                     Text="{Translate PayloadType_Text}">
                 </Label>
                 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="15"
+                    Grid.Row="14"
                     Grid.Column="1">
 
                     <Picker
@@ -395,7 +380,7 @@
                 This option is not available for 2D barcodes because they do not have a caption.-->
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="16"
+                    Grid.Row="15"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
@@ -404,7 +389,7 @@
 
                 <Switch
                     x:Name="swtBarcodeWithCaption"
-                    Grid.Row="16"
+                    Grid.Row="15"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Toggled="SwtBarcodeWithCaption_Toggled">

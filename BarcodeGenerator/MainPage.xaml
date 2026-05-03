@@ -14,7 +14,7 @@
         <Grid
             x:Name="grdTitleView"
             RowDefinitions="Auto"
-            ColumnDefinitions="60, 140*, 42, 60">
+            ColumnDefinitions="50, 120*, 50, 50, 50">
 
             <ImageButton
                 x:Name="imgbtnAbout"
@@ -48,20 +48,35 @@
             </ActivityIndicator>
 
             <ImageButton
-                x:Name="imgbtnScanNT"
+                x:Name="imgbtnPayloadType"
                 Style="{StaticResource imageButtonStyleIcons}"
                 Grid.Column="2"
+                Source="payloadtype_800p.png"
+                HorizontalOptions="End"
+                HeightRequest="{OnPlatform Default='47', WinUI='37'}"
+                WidthRequest="{OnPlatform Default='47', WinUI='37'}"
+                SemanticProperties.Description="{Translate Payloads_Text}"
+                ToolTipProperties.Text="{Translate Payloads_Text}"
+                Clicked="OnPagePayloadTypeClicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="imgbtnScanNT"
+                Style="{StaticResource imageButtonStyleIcons}"
+                Grid.Column="3"
                 Source="scan_barcode_icon_128p.png"
                 HorizontalOptions="End"
                 HeightRequest="{OnPlatform Default='36', WinUI='26'}"
                 WidthRequest="{OnPlatform Default='36', WinUI='26'}"
+                SemanticProperties.Description="{Translate ToolTipBarcodeScanner_Text}"
+                ToolTipProperties.Text="{Translate ToolTipBarcodeScanner_Text}"
                 Clicked="OnPageScanClickedNT">
             </ImageButton>
 
             <ImageButton
                 x:Name="imgbtnSettings"
                 Style="{StaticResource imageButtonStyleIcons}"
-                Grid.Column="3"
+                Grid.Column="4"
                 Source="settings_32p.png"
                 SemanticProperties.Description="{Translate Settings_Text}"
                 ToolTipProperties.Text="{Translate Settings_Text}"
