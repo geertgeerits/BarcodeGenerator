@@ -936,7 +936,7 @@ Valitse vaihtoehto.</value>
     <value>Avaa Wi-Fi-asetukset -toimintoa ei tueta tällä alustalla.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Luo älykkäitä QR-koodeja, joissa on esimerkiksi Wi-Fi- ja yhteystietotyyppejä. Valitse vain tyyppi, anna tietosi ja olet valmis (ota tämä käyttöön asetuksista).</value>
+    <value>Luo älykkäitä QR-koodeja, joissa on hyötykutyyppien, kuten Wi-Fi, yhteystiedot ja paljon muuta, napauta vain yläreunassa olevaa kuvaketta ja valitse tyyppi, anna tietosi, luo ja jaa koodi.</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
     <value>Pyydä sijaintia</value>

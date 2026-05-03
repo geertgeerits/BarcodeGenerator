@@ -936,7 +936,7 @@ Alegeți o opțiune.</value>
     <value>Deschiderea setărilor Wi-Fi nu este acceptată pe această platformă.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Creați coduri QR inteligente cu tipuri de date utile precum Wi-Fi, contacte și multe altele. Alegeți doar un tip, introduceți detaliile și ați terminat (activați această opțiune în setări).</value>
+    <value>Creați coduri QR inteligente cu tipuri de date utile precum Wi-Fi, contacte și multe altele. Pur și simplu atingeți pictograma din partea de sus și alegeți un tip, introduceți detaliile, generați-l și partajați-l.</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
     <value>Solicitați geolocalizare</value>

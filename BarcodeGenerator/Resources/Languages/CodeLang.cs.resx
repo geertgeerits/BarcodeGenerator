@@ -936,7 +936,7 @@ Vyberte možnost.</value>
     <value>Nastavení Wi-Fi není na této platformě podporováno.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Vytvářejte chytré QR kódy s různými typy dat, jako je Wi-Fi, kontakty a další. Stačí vybrat typ, zadat své údaje a je to (povolte tuto funkci v nastavení).</value>
+    <value>Vytvářejte chytré QR kódy s různými typy dat, jako je Wi-Fi, kontakty a další. Stačí klepnout na ikonu v horní části, vybrat typ, zadat své údaje, vygenerovat a sdílet kód.</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
     <value>Vyžádat geolokaci</value>

@@ -936,7 +936,7 @@ Seleccione una opción.</value>
     <value>Abrir ajustes de Wi-Fi no está disponible en esta plataforma.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Crea códigos QR inteligentes con tipos de datos como Wi-Fi, contactos y más. Solo tienes que elegir un tipo, introducir tus datos y listo (activa esta opción en los ajustes).</value>
+    <value>Crea códigos QR inteligentes con información como Wi-Fi, contactos y más. Solo tienes que pulsar el icono superior, elegir un tipo, introducir tus datos, generarlo y compartirlo.</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
     <value>Solicitar geolocalización</value>

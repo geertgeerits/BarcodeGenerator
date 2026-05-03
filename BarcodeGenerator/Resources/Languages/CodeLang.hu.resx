@@ -936,7 +936,7 @@ Válasszon egy lehetőséget.</value>
     <value>A Wi-Fi beállítások megnyitása nem támogatott ezen a platformon.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Hozz létre intelligens QR-kódokat olyan adattípusokkal, mint a Wi-Fi, névjegyek és egyebek. Csak válassz egy típust, add meg az adataidat, és kész is vagy (ezt engedélyezd a beállításokban).</value>
+    <value>Hozz létre intelligens QR-kódokat olyan hasznos adattípusokkal, mint a Wi-Fi, névjegyek és egyebek. Csak koppints a tetején lévő ikonra, válassz egy típust, add meg az adataidat, generáld és oszd meg.</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
     <value>Földrajzi helymeghatározás kérése</value>

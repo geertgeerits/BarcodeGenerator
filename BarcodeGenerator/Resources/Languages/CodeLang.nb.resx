@@ -936,7 +936,7 @@ Velg et alternativ.</value>
     <value>Åpne Wi-Fi-innstillinger støttes ikke på denne plattformen.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Lag smarte QR-koder med nyttelasttyper som Wi-Fi, kontakter og mer. Bare velg en type, skriv inn detaljene dine, og du er ferdig (aktiver dette i innstillingene).</value>
+    <value>Lag smarte QR-koder med nyttelasttyper som Wi-Fi, kontakter og mer. Bare trykk på ikonet øverst og velg en type, skriv inn detaljene dine, generer og del den.</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
     <value>Be om geolokalisering</value>

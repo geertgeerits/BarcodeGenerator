@@ -936,7 +936,7 @@ Kies een optie.</value>
     <value>Het openen van Wi-Fi-instellingen wordt niet ondersteund op dit platform.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Maak slimme QR-codes met verschillende soorten gegevens, zoals wifi, contacten en meer. Kies een type, voer je gegevens in en klaar (schakel dit in de instellingen in).</value>
+    <value>Maak slimme QR-codes met verschillende soorten gegevens, zoals wifi-gegevens, contacten en meer. Tik gewoon op het pictogram bovenaan, kies een type, voer je gegevens in, genereer de code en deel hem.</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
     <value>Geolocation aanvragen</value>
