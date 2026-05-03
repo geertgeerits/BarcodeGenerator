@@ -269,7 +269,7 @@ namespace BarcodeGenerator
         /// available. It then attempts to obtain the current location and displays the result. If either location is
         /// unavailable, an appropriate message is shown. This method is asynchronous and returns immediately; any
         /// exceptions thrown during location retrieval or display may not be observed by the caller.</remarks>
-        public async void OnButtonGeoLocation_Clicked(object sender, EventArgs e)
+        private async void OnButtonGeoLocation_Clicked(object sender, EventArgs e)
         {
             if (!Microsoft.Maui.Devices.Sensors.Geolocation.IsEnabled)
             {
@@ -468,7 +468,7 @@ namespace BarcodeGenerator
         /// <param name="selectedName">The name of the selected payload type.</param>
         /// <returns>The generated payload string for the QR code.</returns>
         /// <remarks>https://github.com/Shane32/QRCoder</remarks>
-        public async Task<string> BuildPayload(string selectedName)
+        private async Task<string> BuildPayload(string selectedName)
         {
             string payload;
 
@@ -652,13 +652,15 @@ END:VCALENDAR";
         /// <remarks>This method checks the format of the email address but does not verify that the address exists or is reachable.</remarks>
         /// <param name="email">The email address to validate. Cannot be null, empty, or consist only of white-space characters.</param>
         /// <returns>true if the specified string is a valid email address format; otherwise, false.</returns>
-        private static async Task<bool> IsValidEmail(string email)
+        private async Task<bool> IsValidEmail(string email)
         {
             bool bIsValid = !string.IsNullOrWhiteSpace(email) && new EmailAddressAttribute().IsValid(email);
 
             if (!bIsValid)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorEmailInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeReceiver.Focus();
+                _ = entPayloadTypeMail.Focus();
                 return false;
             }
 
@@ -670,7 +672,7 @@ END:VCALENDAR";
         /// </summary>
         /// <param name="url">The URL string to validate. Must not be null.</param>
         /// <returns>true if the string is a well-formed absolute HTTP or HTTPS URL; otherwise, false.</returns>
-        private static async Task<bool> IsValidUrl(string url)
+        private async Task<bool> IsValidUrl(string url)
         {
             bool bIsValid = Uri.TryCreate(url, UriKind.Absolute, out Uri? uriResult) &&
             (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
@@ -678,6 +680,7 @@ END:VCALENDAR";
             if (!bIsValid)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorUrlInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeURL.Focus();
                 return false;
             }
 
