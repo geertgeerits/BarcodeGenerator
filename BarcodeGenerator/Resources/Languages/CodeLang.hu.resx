@@ -953,4 +953,13 @@ Válasszon egy lehetőséget.</value>
   <data name="GeolocationEncoding_Text" xml:space="preserve">
     <value>Kódolás:</value>
   </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>Az e-mail cím érvénytelen.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>Az URL-cím érvénytelen.</value>
+  </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>Nyissa meg az URL-linket</value>
+  </data>
 </root>

@@ -65,6 +65,7 @@ namespace BarcodeGenerator
             {
                 lblPayloadTypeURL.IsVisible = true;
                 brdPayloadTypeURL.IsVisible = true;
+                btnButtonURL.IsVisible = true;
                 _ = entPayloadTypeURL.Focus();
                 entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text?.Length ?? 0; // Move cursor to the end of the text
             }
@@ -74,6 +75,7 @@ namespace BarcodeGenerator
                 brdPayloadTypeURL.IsVisible = true;
                 lblPayloadTypeTitle.IsVisible = true;
                 brdPayloadTypeTitle.IsVisible = true;
+                btnButtonURL.IsVisible = true;
                 _ = entPayloadTypeURL.Focus();
                 entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text?.Length ?? 0;
             }
@@ -223,8 +225,6 @@ namespace BarcodeGenerator
             lblPayloadTypeLongitudeDMS.IsVisible = false;
             brdPayloadTypeLatitudeDMSResult.IsVisible = false;
             brdPayloadTypeLongitudeDMSResult.IsVisible = false;
-            btnButtonGeoLocation.IsVisible = false;
-            btnButtonGeoMap.IsVisible = false;
             lblPayloadTypeFirstname.IsVisible = false;
             brdPayloadTypeFirstname.IsVisible = false;
             lblPayloadTypeLastname.IsVisible = false;
@@ -243,39 +243,23 @@ namespace BarcodeGenerator
             lblPayloadTypeEnd.IsVisible = false;
             brdPayloadTypeEndDate.IsVisible = false;
             brdPayloadTypeEndTime.IsVisible = false;
+
+            btnButtonGeoLocation.IsVisible = false;
+            btnButtonGeoMap.IsVisible = false;
+            btnButtonURL.IsVisible = false;
         }
 
         /// <summary>
-        /// On click event for the cancel button, which cancels attempts to close the popup
+        /// Open the URL specified in the URL entry field using the device's default web browser when the associated button is clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnButtonCancel_Clicked(object sender, EventArgs e)
+        private async void OnButtonURL_Clicked(object sender, EventArgs e)
         {
-            Globals.bPopupCanceled = true;
-
-            await CloseAsync();
-        }
-
-        /// <summary>
-        /// Handles the click event for the close button by initiating an asynchronous attempt to close the popup
-        /// </summary>
-        /// <param name="sender">The source of the event, typically the close button that was clicked.</param>
-        /// <param name="e">The event data associated with the button click.</param>
-        private async void OnButtonClose_Clicked(object sender, EventArgs e)
-        {
-            // Generate the payload result based on the selected payload type and user input, and then close the popup
-            ClassPayloadTypes.cPayloadResult = await BuildPayload(ClassPayloadTypes.cPayloadType);
-
-            // If the payload result is empty, it indicates that there was an error in generating the payload (e.g., invalid input).
-            // In this case, do not close the popup and allow the user to correct their input.
-            if (string.IsNullOrEmpty(ClassPayloadTypes.cPayloadResult))
+            if (await IsValidUrl(entPayloadTypeURL.Text))
             {
-                return;
+                await Launcher.Default.OpenAsync(new Uri(entPayloadTypeURL.Text));
             }
-
-            // If the payload result is not empty, proceed to close the popup
-            await CloseAsync();
         }
 
         /// <summary>
@@ -346,6 +330,39 @@ namespace BarcodeGenerator
             }
 
             await Launcher.Default.OpenAsync(new Uri(url));
+        }
+
+        /// <summary>
+        /// On click event for the cancel button, which cancels attempts to close the popup
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonCancel_Clicked(object sender, EventArgs e)
+        {
+            Globals.bPopupCanceled = true;
+
+            await CloseAsync();
+        }
+
+        /// <summary>
+        /// Handles the click event for the close button by initiating an asynchronous attempt to close the popup
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the close button that was clicked.</param>
+        /// <param name="e">The event data associated with the button click.</param>
+        private async void OnButtonClose_Clicked(object sender, EventArgs e)
+        {
+            // Generate the payload result based on the selected payload type and user input, and then close the popup
+            ClassPayloadTypes.cPayloadResult = await BuildPayload(ClassPayloadTypes.cPayloadType);
+
+            // If the payload result is empty, it indicates that there was an error in generating the payload (e.g., invalid input).
+            // In this case, do not close the popup and allow the user to correct their input.
+            if (string.IsNullOrEmpty(ClassPayloadTypes.cPayloadResult))
+            {
+                return;
+            }
+
+            // If the payload result is not empty, proceed to close the popup
+            await CloseAsync();
         }
 
         /// <summary>

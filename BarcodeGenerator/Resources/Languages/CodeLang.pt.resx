@@ -953,4 +953,13 @@ Escolha uma opção.</value>
   <data name="GeolocationEncoding_Text" xml:space="preserve">
     <value>Codificação:</value>
   </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>O endereço de e-mail não é válido.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>O endereço URL não é válido.</value>
+  </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>Abrir o link URL</value>
+  </data>
 </root>

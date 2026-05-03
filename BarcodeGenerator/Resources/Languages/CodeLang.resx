@@ -959,4 +959,7 @@ Choose an option.</value>
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>URL address is not valid.</value>
   </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>Open the URL link</value>
+  </data>
 </root>

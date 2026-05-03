@@ -953,4 +953,13 @@ Vyberte možnost.</value>
   <data name="GeolocationEncoding_Text" xml:space="preserve">
     <value>Kódování:</value>
   </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>E-mailová adresa není platná.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>URL adresa není platná.</value>
+  </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>Otevřít URL odkaz</value>
+  </data>
 </root>
