@@ -860,7 +860,7 @@ Det rekommenderas att testa de genererade QR-koderna och andra streckkoder för 
     <value>Titel</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Mottagare</value>
+    <value>E-postadress</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
     <value>Ämne</value>
@@ -961,5 +961,8 @@ Välj ett alternativ.</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Telefonnummer</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Autentisering:</value>
   </data>
 </root>

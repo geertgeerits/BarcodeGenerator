@@ -555,6 +555,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingCompressionEnabled");
                 Preferences.Default.Remove("SettingPayloadType");
+                Preferences.Default.Remove("SettingWiFiAuthentication");
                 Preferences.Default.Remove("SettingGeolocationEncoding");
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");

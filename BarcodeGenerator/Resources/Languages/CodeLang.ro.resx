@@ -860,7 +860,7 @@ Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a
     <value>Titlu</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Destinatar</value>
+    <value>Adresa de e-mail</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
     <value>Subiect</value>
@@ -961,5 +961,8 @@ Alegeți o opțiune.</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Număr de telefon</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Autentificare:</value>
   </data>
 </root>

@@ -860,7 +860,7 @@ It is recommended to test the generated QR codes and other barcodes to ensure th
     <value>Title</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Receiver</value>
+    <value>E-mail address</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
     <value>Subject</value>
@@ -961,5 +961,8 @@ Choose an option.</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Phone number</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Authentication:</value>
   </data>
 </root>

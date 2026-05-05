@@ -23,6 +23,9 @@ namespace BarcodeGenerator
             // Set the payload types in the picker
             pckPayloadType.ItemsSource = ClassPayloadTypes.GetQRCodePayloadTypes();
 
+            // Set the authentication options in the picker to the second item (WPA) by default
+            pckWiFiAuthentication.SelectedIndex = Preferences.Default.Get("SettingWiFiAuthentication", 1);
+
             // Set the geolocation encoding options in the picker to the first item (Google maps) by default
             pckGeolocationEncoding.SelectedIndex = Preferences.Default.Get("SettingGeolocationEncoding", 0);
 
@@ -55,6 +58,8 @@ namespace BarcodeGenerator
         {
             if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)
             {
+                lblWiFiAuthentication.IsVisible = true;
+                brdWiFiAuthentication.IsVisible = true;
                 brdPayloadTypeSSID.IsVisible = true;
                 brdPayloadTypePassword.IsVisible = true;
                 _ = entPayloadTypeSSID.Focus();
@@ -165,6 +170,11 @@ namespace BarcodeGenerator
             }
         }
 
+        private void PckWiFiAuthentication_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Preferences.Default.Set("SettingWiFiAuthentication", pckWiFiAuthentication.SelectedIndex);
+        }
+
         /// <summary>
         /// Save the selected geolocation encoding option in the application preferences when the picker selection changes.
         /// </summary>
@@ -182,6 +192,8 @@ namespace BarcodeGenerator
         /// be useful when resetting the UI or preparing it for a different state.</remarks>
         private void SetControlsVisibilityFalse()
         {
+            lblWiFiAuthentication.IsVisible = false;
+            brdWiFiAuthentication.IsVisible = false;
             brdPayloadTypeSSID.IsVisible = false;
             brdPayloadTypePassword.IsVisible = false;
             brdPayloadTypeURL.IsVisible = false;
@@ -302,8 +314,8 @@ namespace BarcodeGenerator
             if (location != null)
             {
                 // Convert to DMS format for display
-                lblPayloadTypeLatitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(location.Latitude, true);
-                lblPayloadTypeLongitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(location.Longitude, false);
+                lblPayloadTypeLatitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(location.Latitude, isLatitude: true);
+                lblPayloadTypeLongitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(location.Longitude, isLatitude: false);
             }
             else
             {
@@ -328,6 +340,7 @@ namespace BarcodeGenerator
                 return;
             }
 
+            // If the URL is valid, open it in the device's default web browser to display the location on the map
             await Launcher.Default.OpenAsync(new Uri(url));
         }
 
@@ -406,7 +419,7 @@ namespace BarcodeGenerator
             // Validate that the input can be parsed as a double using invariant culture to ensure consistent decimal separator handling
             if (double.TryParse(latText, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude))
             {
-                lblPayloadTypeLatitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(latitude, true);
+                lblPayloadTypeLatitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(latitude, isLatitude: true);
             }
         }
 
@@ -428,7 +441,7 @@ namespace BarcodeGenerator
             // Validate that the input can be parsed as a double using invariant culture to ensure consistent decimal separator handling
             if (double.TryParse(lonText, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
             {
-                lblPayloadTypeLongitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(longitude, false);
+                lblPayloadTypeLongitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(longitude, isLatitude: false);
             }
         }
 
@@ -473,8 +486,11 @@ namespace BarcodeGenerator
 
             if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)
             {
-                WiFi generator = new(ssid: entPayloadTypeSSID.Text, password: entPayloadTypePassword.Text, authenticationMode: WiFi.Authentication.WPA);
-                payload = generator.ToString();
+                string cSsid = entPayloadTypeSSID.Text.Trim();
+                string cPassword = entPayloadTypePassword.Text.Trim();
+                string cAuthenticationMode = pckWiFiAuthentication.SelectedIndex != -1 ? pckWiFiAuthentication.Items[pckWiFiAuthentication.SelectedIndex].Trim() : "WPA";
+
+                payload = $"WIFI:T:{cAuthenticationMode};S:{cSsid};P:{cPassword};;";
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
             {

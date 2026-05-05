@@ -1642,6 +1642,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Authentication:.
+        /// </summary>
+        internal static string PayloadTypeAuthentication_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeAuthentication_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         internal static string PayloadTypeDescription_Text {
@@ -1741,7 +1750,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Receiver.
+        ///   Looks up a localized string similar to E-mail address.
         /// </summary>
         internal static string PayloadTypeReceiver_Text {
             get {

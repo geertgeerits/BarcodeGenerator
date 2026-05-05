@@ -860,7 +860,7 @@ Si consiglia di testare i codici QR e altri codici a barre generati per assicura
     <value>Titolo</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Destinatario</value>
+    <value>Indirizzo e-mail</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
     <value>Oggetto</value>
@@ -961,5 +961,8 @@ Scegli un'opzione.</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Numero di telefono</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Autenticazione:</value>
   </data>
 </root>

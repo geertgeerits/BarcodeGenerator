@@ -860,7 +860,7 @@ Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyst
     <value>Titulek</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Příjemce</value>
+    <value>E-mailová adresa</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
     <value>Předmět</value>
@@ -961,5 +961,8 @@ Vyberte možnost.</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Telefonní číslo</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Ověřování:</value>
   </data>
 </root>

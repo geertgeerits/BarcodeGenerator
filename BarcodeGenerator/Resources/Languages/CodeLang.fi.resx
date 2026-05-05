@@ -860,7 +860,7 @@ On suositeltavaa testata luodut QR-koodit ja muut viivakoodit varmistaaksesi, et
     <value>Otsikko</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Vastaanottaja</value>
+    <value>Sähköpostiosoite</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
     <value>Aihe</value>
@@ -961,5 +961,8 @@ Valitse vaihtoehto.</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Puhelinnumero</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Todennus:</value>
   </data>
 </root>

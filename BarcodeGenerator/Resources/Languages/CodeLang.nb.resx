@@ -860,7 +860,7 @@ Det anbefales å teste de genererte QR-kodene og andre strekkoder for å sikre a
     <value>Tittel</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Mottaker</value>
+    <value>E-postadresse</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
     <value>Emne</value>
@@ -961,5 +961,8 @@ Velg et alternativ.</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Telefonnummer</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Autentisering:</value>
   </data>
 </root>

@@ -860,7 +860,7 @@ Zaleca się przetestowanie wygenerowanych kodów QR i innych kodów kreskowych, 
     <value>Tytuł</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Odbiorca</value>
+    <value>Adres e-mail</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
     <value>Temat</value>
@@ -961,5 +961,8 @@ Wybierz opcję.</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Numer telefonu</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Uwierzytelnianie:</value>
   </data>
 </root>

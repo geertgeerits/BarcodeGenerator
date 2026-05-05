@@ -860,7 +860,7 @@ Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er 
     <value>Titel</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Ontvanger</value>
+    <value>E-mailadres</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
     <value>Onderwerp</value>
@@ -961,5 +961,8 @@ Kies een optie.</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Telefoonnummer</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Authenticatie:</value>
   </data>
 </root>
