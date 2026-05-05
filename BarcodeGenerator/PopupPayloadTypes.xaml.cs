@@ -484,13 +484,16 @@ namespace BarcodeGenerator
         {
             string payload;
 
-            if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)
+            if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)  // Galaxy S25: WIFI:S:Orange;T:WPA;P:123456;H:false;;
             {
                 string cSsid = entPayloadTypeSSID.Text.Trim();
                 string cPassword = entPayloadTypePassword.Text.Trim();
                 string cAuthenticationMode = pckWiFiAuthentication.SelectedIndex != -1 ? pckWiFiAuthentication.Items[pckWiFiAuthentication.SelectedIndex].Trim() : "WPA";
 
-                payload = $"WIFI:T:{cAuthenticationMode};S:{cSsid};P:{cPassword};;";
+                payload = $"WIFI:T:{cAuthenticationMode};S:{cSsid};P:{cPassword};;";    // this app: WIFI:T:WPA;S:Orange;P:123456;;
+
+                //WiFi generator = new(cSsid, cPassword, WiFi.Authentication.WPA);
+                //payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
             {
