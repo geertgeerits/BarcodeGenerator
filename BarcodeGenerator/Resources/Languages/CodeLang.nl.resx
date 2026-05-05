@@ -848,28 +848,25 @@ Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er 
     <value>Payloadtype:</value>
   </data>
   <data name="PayloadTypeSSID_Text" xml:space="preserve">
-    <value>Netwerknaam:</value>
+    <value>Netwerknaam</value>
   </data>
   <data name="PayloadTypePassword_Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
+    <value>Wachtwoord</value>
   </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>URL</value>
   </data>
   <data name="PayloadTypeTitle_Text" xml:space="preserve">
-    <value>Titel:</value>
+    <value>Titel</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Ontvanger:</value>
+    <value>Ontvanger</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
-    <value>Onderwerp:</value>
+    <value>Onderwerp</value>
   </data>
   <data name="PayloadTypeMessage_Text" xml:space="preserve">
-    <value>Bericht:</value>
-  </data>
-  <data name="PayloadTypeNumber_Text" xml:space="preserve">
-    <value>Nummer:</value>
+    <value>Bericht</value>
   </data>
   <data name="PayloadTypeLatitude_Text" xml:space="preserve">
     <value>Breedtegraad:</value>
@@ -878,19 +875,19 @@ Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er 
     <value>Lengtegraad:</value>
   </data>
   <data name="PayloadTypeFirstname_Text" xml:space="preserve">
-    <value>Voornaam:</value>
+    <value>Voornaam</value>
   </data>
   <data name="PayloadTypeLastname_Text" xml:space="preserve">
-    <value>Achternaam:</value>
+    <value>Achternaam</value>
   </data>
   <data name="PayloadTypeMail_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail</value>
   </data>
   <data name="PayloadTypeDescription_Text" xml:space="preserve">
-    <value>Omschrijving:</value>
+    <value>Omschrijving</value>
   </data>
   <data name="PayloadTypeLocation_Text" xml:space="preserve">
-    <value>Locatie:</value>
+    <value>Locatie</value>
   </data>
   <data name="PayloadTypeStart_Text" xml:space="preserve">
     <value>Begin:</value>
@@ -961,5 +958,8 @@ Kies een optie.</value>
   </data>
   <data name="ToolTipUrlLink_Text" xml:space="preserve">
     <value>Open de URL-link</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Telefoonnummer</value>
   </data>
 </root>

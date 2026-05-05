@@ -848,28 +848,25 @@ On suositeltavaa testata luodut QR-koodit ja muut viivakoodit varmistaaksesi, et
     <value>Tietotyyppi:</value>
   </data>
   <data name="PayloadTypeSSID_Text" xml:space="preserve">
-    <value>Verkon nimi:</value>
+    <value>Verkon nimi</value>
   </data>
   <data name="PayloadTypePassword_Text" xml:space="preserve">
-    <value>Salasana:</value>
+    <value>Salasana</value>
   </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>URL</value>
   </data>
   <data name="PayloadTypeTitle_Text" xml:space="preserve">
-    <value>Otsikko:</value>
+    <value>Otsikko</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Vastaanottaja:</value>
+    <value>Vastaanottaja</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
-    <value>Aihe:</value>
+    <value>Aihe</value>
   </data>
   <data name="PayloadTypeMessage_Text" xml:space="preserve">
-    <value>Viesti:</value>
-  </data>
-  <data name="PayloadTypeNumber_Text" xml:space="preserve">
-    <value>Numero:</value>
+    <value>Viesti</value>
   </data>
   <data name="PayloadTypeLatitude_Text" xml:space="preserve">
     <value>Leveysaste:</value>
@@ -878,19 +875,19 @@ On suositeltavaa testata luodut QR-koodit ja muut viivakoodit varmistaaksesi, et
     <value>Pituusaste:</value>
   </data>
   <data name="PayloadTypeFirstname_Text" xml:space="preserve">
-    <value>Etunimi:</value>
+    <value>Etunimi</value>
   </data>
   <data name="PayloadTypeLastname_Text" xml:space="preserve">
-    <value>Sukunimi:</value>
+    <value>Sukunimi</value>
   </data>
   <data name="PayloadTypeMail_Text" xml:space="preserve">
-    <value>Sähköpostiosoite:</value>
+    <value>Sähköpostiosoite</value>
   </data>
   <data name="PayloadTypeDescription_Text" xml:space="preserve">
-    <value>Kuvaus:</value>
+    <value>Kuvaus</value>
   </data>
   <data name="PayloadTypeLocation_Text" xml:space="preserve">
-    <value>Sijainti:</value>
+    <value>Sijainti</value>
   </data>
   <data name="PayloadTypeStart_Text" xml:space="preserve">
     <value>Aloitusosoite:</value>
@@ -961,5 +958,8 @@ Valitse vaihtoehto.</value>
   </data>
   <data name="ToolTipUrlLink_Text" xml:space="preserve">
     <value>Avaa URL-linkki</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Puhelinnumero</value>
   </data>
 </root>

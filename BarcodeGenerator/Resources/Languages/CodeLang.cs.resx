@@ -848,28 +848,25 @@ Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyst
     <value>Typ obsahu:</value>
   </data>
   <data name="PayloadTypeSSID_Text" xml:space="preserve">
-    <value>Název sítě:</value>
+    <value>Název sítě</value>
   </data>
   <data name="PayloadTypePassword_Text" xml:space="preserve">
-    <value>Heslo:</value>
+    <value>Heslo</value>
   </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>URL</value>
   </data>
   <data name="PayloadTypeTitle_Text" xml:space="preserve">
-    <value>Titulek:</value>
+    <value>Titulek</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Příjemce:</value>
+    <value>Příjemce</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
-    <value>Předmět:</value>
+    <value>Předmět</value>
   </data>
   <data name="PayloadTypeMessage_Text" xml:space="preserve">
-    <value>Zpráva:</value>
-  </data>
-  <data name="PayloadTypeNumber_Text" xml:space="preserve">
-    <value>Číslo:</value>
+    <value>Zpráva</value>
   </data>
   <data name="PayloadTypeLatitude_Text" xml:space="preserve">
     <value>Zeměpisná šířka:</value>
@@ -878,19 +875,19 @@ Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyst
     <value>Délka:</value>
   </data>
   <data name="PayloadTypeFirstname_Text" xml:space="preserve">
-    <value>Jméno:</value>
+    <value>Jméno</value>
   </data>
   <data name="PayloadTypeLastname_Text" xml:space="preserve">
-    <value>Příjmení:</value>
+    <value>Příjmení</value>
   </data>
   <data name="PayloadTypeMail_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail</value>
   </data>
   <data name="PayloadTypeDescription_Text" xml:space="preserve">
-    <value>Popis:</value>
+    <value>Popis</value>
   </data>
   <data name="PayloadTypeLocation_Text" xml:space="preserve">
-    <value>Poloha:</value>
+    <value>Poloha</value>
   </data>
   <data name="PayloadTypeStart_Text" xml:space="preserve">
     <value>Začátek:</value>
@@ -961,5 +958,8 @@ Vyberte možnost.</value>
   </data>
   <data name="ToolTipUrlLink_Text" xml:space="preserve">
     <value>Otevřít URL odkaz</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Telefonní číslo</value>
   </data>
 </root>

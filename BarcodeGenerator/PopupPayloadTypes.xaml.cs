@@ -55,15 +55,12 @@ namespace BarcodeGenerator
         {
             if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)
             {
-                lblPayloadTypeSSID.IsVisible = true;
                 brdPayloadTypeSSID.IsVisible = true;
-                lblPayloadTypePassword.IsVisible = true;
                 brdPayloadTypePassword.IsVisible = true;
                 _ = entPayloadTypeSSID.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
             {
-                lblPayloadTypeURL.IsVisible = true;
                 brdPayloadTypeURL.IsVisible = true;
                 btnButtonURL.IsVisible = true;
                 _ = entPayloadTypeURL.Focus();
@@ -71,9 +68,7 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_BOOKMARK)
             {
-                lblPayloadTypeURL.IsVisible = true;
                 brdPayloadTypeURL.IsVisible = true;
-                lblPayloadTypeTitle.IsVisible = true;
                 brdPayloadTypeTitle.IsVisible = true;
                 btnButtonURL.IsVisible = true;
                 _ = entPayloadTypeURL.Focus();
@@ -81,27 +76,22 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MAIL)
             {
-                lblPayloadTypeReceiver.IsVisible = true;
                 brdPayloadTypeReceiver.IsVisible = true;
-                lblPayloadTypeSubject.IsVisible = true;
                 brdPayloadTypeSubject.IsVisible = true;
-                lblPayloadTypeMessage.IsVisible = true;
                 brdPayloadTypeMessage.IsVisible = true;
                 _ = entPayloadTypeReceiver.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_SMS)
             {
-                lblPayloadTypeNumber.IsVisible = true;
-                brdPayloadTypeNumber.IsVisible = true;
-                _ = entPayloadTypeNumber.Focus();
-                entPayloadTypeNumber.CursorPosition = entPayloadTypeNumber.Text?.Length ?? 0;
+                brdPayloadTypePhoneNumber.IsVisible = true;
+                _ = entPayloadTypePhoneNumber.Focus();
+                entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MMS)
             {
-                lblPayloadTypeNumber.IsVisible = true;
-                brdPayloadTypeNumber.IsVisible = true;
-                _ = entPayloadTypeNumber.Focus();
-                entPayloadTypeNumber.CursorPosition = entPayloadTypeNumber.Text?.Length ?? 0;
+                brdPayloadTypePhoneNumber.IsVisible = true;
+                _ = entPayloadTypePhoneNumber.Focus();
+                entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
@@ -123,36 +113,27 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
-                lblPayloadTypeNumber.IsVisible = true;
-                brdPayloadTypeNumber.IsVisible = true;
-                _ = entPayloadTypeNumber.Focus();
-                entPayloadTypeNumber.CursorPosition = entPayloadTypeNumber.Text?.Length ?? 0;
+                brdPayloadTypePhoneNumber.IsVisible = true;
+                _ = entPayloadTypePhoneNumber.Focus();
+                entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_WHATSAPPMESSAGE)
             {
-                lblPayloadTypeMessage.IsVisible = true;
                 brdPayloadTypeMessage.IsVisible = true;
                 _ = entPayloadTypeMessage.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CONTACTDATA)
             {
-                lblPayloadTypeFirstname.IsVisible = true;
                 brdPayloadTypeFirstname.IsVisible = true;
-                lblPayloadTypeLastname.IsVisible = true;
                 brdPayloadTypeLastname.IsVisible = true;
-                lblPayloadTypeNumber.IsVisible = true;
-                brdPayloadTypeNumber.IsVisible = true;
-                lblPayloadTypeMail.IsVisible = true;
+                brdPayloadTypePhoneNumber.IsVisible = true;
                 brdPayloadTypeMail.IsVisible = true;
                 _ = entPayloadTypeFirstname.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)
             {
-                lblPayloadTypeSubject.IsVisible = true;
                 brdPayloadTypeSubject.IsVisible = true;
-                lblPayloadTypeDescription.IsVisible = true;
                 brdPayloadTypeDescription.IsVisible = true;
-                lblPayloadTypeLocation.IsVisible = true;
                 brdPayloadTypeLocation.IsVisible = true;
                 lblPayloadTypeStart.IsVisible = true;
                 brdPayloadTypeStartDate.IsVisible = true;
@@ -201,19 +182,12 @@ namespace BarcodeGenerator
         /// be useful when resetting the UI or preparing it for a different state.</remarks>
         private void SetControlsVisibilityFalse()
         {
-            lblPayloadTypeSSID.IsVisible = false;
             brdPayloadTypeSSID.IsVisible = false;
-            lblPayloadTypePassword.IsVisible = false;
             brdPayloadTypePassword.IsVisible = false;
-            lblPayloadTypeURL.IsVisible = false;
             brdPayloadTypeURL.IsVisible = false;
-            lblPayloadTypeTitle.IsVisible = false;
             brdPayloadTypeTitle.IsVisible = false;
-            lblPayloadTypeReceiver.IsVisible = false;
             brdPayloadTypeReceiver.IsVisible = false;
-            lblPayloadTypeSubject.IsVisible = false;
             brdPayloadTypeSubject.IsVisible = false;
-            lblPayloadTypeMessage.IsVisible = false;
             brdPayloadTypeMessage.IsVisible = false;
             lblGeolocationEncoding.IsVisible = false;
             brdGeolocationEncoding.IsVisible = false;
@@ -225,18 +199,12 @@ namespace BarcodeGenerator
             lblPayloadTypeLongitudeDMS.IsVisible = false;
             brdPayloadTypeLatitudeDMSResult.IsVisible = false;
             brdPayloadTypeLongitudeDMSResult.IsVisible = false;
-            lblPayloadTypeFirstname.IsVisible = false;
             brdPayloadTypeFirstname.IsVisible = false;
-            lblPayloadTypeLastname.IsVisible = false;
             brdPayloadTypeLastname.IsVisible = false;
-            lblPayloadTypeNumber.IsVisible = false;
-            brdPayloadTypeNumber.IsVisible = false;
-            lblPayloadTypeMail.IsVisible = false;
+            brdPayloadTypePhoneNumber.IsVisible = false;
             brdPayloadTypeMail.IsVisible = false;
-            lblPayloadTypeDescription.IsVisible = false;
             brdPayloadTypeDescription.IsVisible = false;
             brdPayloadTypeLocation.IsVisible = false;
-            lblPayloadTypeLocation.IsVisible = false;
             lblPayloadTypeStart.IsVisible = false;
             brdPayloadTypeStartDate.IsVisible = false;
             brdPayloadTypeStartTime.IsVisible = false;
@@ -247,6 +215,37 @@ namespace BarcodeGenerator
             btnButtonGeoLocation.IsVisible = false;
             btnButtonGeoMap.IsVisible = false;
             btnButtonURL.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Handles the focus event for the payload type phone number entry field, initializing it with a default plus sign
+        /// if it is empty.
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the entry field that received focus.</param>
+        /// <param name="e">The event data associated with the focus event.</param>
+        private void EntPayloadTypePhoneNumber_Focused(object sender, FocusEventArgs e)
+        {
+            if (entPayloadTypePhoneNumber.Text == string.Empty)
+            {
+                entPayloadTypePhoneNumber.Text = "+";
+                entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text.Length; // Move cursor to the end of the text
+            }
+        }
+
+        /// <summary>
+        /// Handles the focus event for the payload type URL entry field, initializing it with a default URL if it is empty.
+        /// </summary>
+        /// <remarks>If the entry field is empty when it receives focus, this method sets its text to a
+        /// default URL and moves the cursor to the end.</remarks>
+        /// <param name="sender">The source of the event, typically the entry field that received focus.</param>
+        /// <param name="e">The event data associated with the focus event.</param>
+        private void EntPayloadTypeURL_Focused(object sender, FocusEventArgs e)
+        {
+            if (entPayloadTypeURL.Text == string.Empty)
+            {
+                entPayloadTypeURL.Text = "http://";
+                entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text.Length; // Move cursor to the end of the text
+            }
         }
 
         /// <summary>
@@ -509,12 +508,12 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_SMS)
             {
-                SMS generator = new(number: entPayloadTypeNumber.Text);
+                SMS generator = new(number: entPayloadTypePhoneNumber.Text);
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MMS)
             {
-                MMS generator = new(number: entPayloadTypeNumber.Text);
+                MMS generator = new(number: entPayloadTypePhoneNumber.Text);
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
@@ -530,7 +529,7 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
-                PhoneNumber generator = new(number: entPayloadTypeNumber.Text);
+                PhoneNumber generator = new(number: entPayloadTypePhoneNumber.Text);
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_WHATSAPPMESSAGE)
@@ -545,7 +544,7 @@ namespace BarcodeGenerator
                     return string.Empty;
                 }
 
-                ContactData generator = new(ContactData.ContactOutputType.VCard3, firstname: entPayloadTypeFirstname.Text, lastname: entPayloadTypeLastname.Text, nickname: "", phone: "", mobilePhone: entPayloadTypeNumber.Text, workPhone: "", email: entPayloadTypeMail.Text);
+                ContactData generator = new(ContactData.ContactOutputType.VCard3, firstname: entPayloadTypeFirstname.Text, lastname: entPayloadTypeLastname.Text, nickname: "", phone: "", mobilePhone: entPayloadTypePhoneNumber.Text, workPhone: "", email: entPayloadTypeMail.Text);
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)

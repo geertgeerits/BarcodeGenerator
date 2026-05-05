@@ -848,28 +848,25 @@ It is recommended to test the generated QR codes and other barcodes to ensure th
     <value>Payload type:</value>
   </data>
   <data name="PayloadTypeSSID_Text" xml:space="preserve">
-    <value>Name network:</value>
+    <value>Name network</value>
   </data>
   <data name="PayloadTypePassword_Text" xml:space="preserve">
-    <value>Password:</value>
+    <value>Password</value>
   </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>URL</value>
   </data>
   <data name="PayloadTypeTitle_Text" xml:space="preserve">
-    <value>Title:</value>
+    <value>Title</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Receiver:</value>
+    <value>Receiver</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
-    <value>Subject:</value>
+    <value>Subject</value>
   </data>
   <data name="PayloadTypeMessage_Text" xml:space="preserve">
-    <value>Message:</value>
-  </data>
-  <data name="PayloadTypeNumber_Text" xml:space="preserve">
-    <value>Number:</value>
+    <value>Message</value>
   </data>
   <data name="PayloadTypeLatitude_Text" xml:space="preserve">
     <value>Latitude:</value>
@@ -878,19 +875,19 @@ It is recommended to test the generated QR codes and other barcodes to ensure th
     <value>Longitude:</value>
   </data>
   <data name="PayloadTypeFirstname_Text" xml:space="preserve">
-    <value>Firstname:</value>
+    <value>Firstname</value>
   </data>
   <data name="PayloadTypeLastname_Text" xml:space="preserve">
-    <value>Lastname:</value>
+    <value>Lastname</value>
   </data>
   <data name="PayloadTypeMail_Text" xml:space="preserve">
-    <value>E-Mail:</value>
+    <value>E-Mail</value>
   </data>
   <data name="PayloadTypeDescription_Text" xml:space="preserve">
-    <value>Description:</value>
+    <value>Description</value>
   </data>
   <data name="PayloadTypeLocation_Text" xml:space="preserve">
-    <value>Location:</value>
+    <value>Location</value>
   </data>
   <data name="PayloadTypeStart_Text" xml:space="preserve">
     <value>Start:</value>
@@ -961,5 +958,8 @@ Choose an option.</value>
   </data>
   <data name="ToolTipUrlLink_Text" xml:space="preserve">
     <value>Open the URL link</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Phone number</value>
   </data>
 </root>

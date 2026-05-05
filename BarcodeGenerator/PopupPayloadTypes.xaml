@@ -43,99 +43,76 @@
                 </Picker>
             </Border>
 
-            <Label
-                x:Name="lblPayloadTypeSSID"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="1"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeSSID_Text}">
-            </Label>
-
             <Border
                 x:Name="brdPayloadTypeSSID"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="1"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeSSID"
+                    ToolTipProperties.Text="{Translate PayloadTypeSSID_Text}"
+                    Placeholder="{Translate PayloadTypeSSID_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
-
-            <Label
-                x:Name="lblPayloadTypePassword"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="2"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypePassword_Text}">
-            </Label>
 
             <Border
                 x:Name="brdPayloadTypePassword"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="2"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypePassword"
+                    ToolTipProperties.Text="{Translate PayloadTypePassword_Text}"
+                    Placeholder="{Translate PayloadTypePassword_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
-
-            <Label
-                x:Name="lblPayloadTypeURL"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="3"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeURL_Text}">
-            </Label>
 
             <Border
                 x:Name="brdPayloadTypeURL"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="3"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeURL"
+                    ToolTipProperties.Text="{Translate PayloadTypeURL_Text}"
+                    Placeholder="{Translate PayloadTypeURL_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Url"
-                    Text="http://"
-                    ReturnType="Next">
+                    Text=""
+                    ReturnType="Next"
+                    Focused="EntPayloadTypeURL_Focused">
                 </Entry>
             </Border>
-
-            <Label
-                x:Name="lblPayloadTypeTitle"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="4"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeTitle_Text}">
-            </Label>
 
             <Border
                 x:Name="brdPayloadTypeTitle"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="4"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeTitle"
+                    ToolTipProperties.Text="{Translate PayloadTypeTitle_Text}"
+                    Placeholder="{Translate PayloadTypeTitle_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     Text=""
@@ -143,24 +120,18 @@
                 </Entry>
             </Border>
 
-            <Label
-                x:Name="lblPayloadTypeReceiver"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="5"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeReceiver_Text}">
-            </Label>
-
             <Border
                 x:Name="brdPayloadTypeReceiver"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="5"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeReceiver"
+                    ToolTipProperties.Text="{Translate PayloadTypeReceiver_Text}"
+                    Placeholder="{Translate PayloadTypeReceiver_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Email"
                     Text=""
@@ -168,24 +139,18 @@
                 </Entry>
             </Border>
 
-            <Label
-                x:Name="lblPayloadTypeSubject"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="6"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeSubject_Text}">
-            </Label>
-
             <Border
                 x:Name="brdPayloadTypeSubject"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="6"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeSubject"
+                    ToolTipProperties.Text="{Translate PayloadTypeSubject_Text}"
+                    Placeholder="{Translate PayloadTypeSubject_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     Text=""
@@ -193,24 +158,18 @@
                 </Entry>
             </Border>
 
-            <Label
-                x:Name="lblPayloadTypeMessage"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="7"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeMessage_Text}">
-            </Label>
-
             <Border
                 x:Name="brdPayloadTypeMessage"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="7"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeMessage"
+                    ToolTipProperties.Text="{Translate PayloadTypeMessage_Text}"
+                    Placeholder="{Translate PayloadTypeMessage_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     Text=""
@@ -354,49 +313,37 @@
                 </Label>
             </Border>
 
-            <Label
-                x:Name="lblPayloadTypeFirstname"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="13"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeFirstname_Text}">
-            </Label>
-
             <Border
                 x:Name="brdPayloadTypeFirstname"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="13"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeFirstname"
+                    ToolTipProperties.Text="{Translate PayloadTypeFirstname_Text}"
+                    Placeholder="{Translate PayloadTypeFirstname_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
-
-            <Label
-                x:Name="lblPayloadTypeLastname"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="14"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeLastname_Text}">
-            </Label>
 
             <Border
                 x:Name="brdPayloadTypeLastname"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="14"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeLastname"
+                    ToolTipProperties.Text="{Translate PayloadTypeLastname_Text}"
+                    Placeholder="{Translate PayloadTypeLastname_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     Text=""
@@ -404,49 +351,38 @@
                 </Entry>
             </Border>
 
-            <Label
-                x:Name="lblPayloadTypeNumber"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="15"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeNumber_Text}">
-            </Label>
-
             <Border
-                x:Name="brdPayloadTypeNumber"
+                x:Name="brdPayloadTypePhoneNumber"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="15"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
-                    x:Name="entPayloadTypeNumber"
+                    x:Name="entPayloadTypePhoneNumber"
+                    ToolTipProperties.Text="{Translate PayloadTypePhoneNumber_Text}"
+                    Placeholder="{Translate PayloadTypePhoneNumber_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Telephone"
-                    Text="+"
-                    ReturnType="Next">
+                    Text=""
+                    ReturnType="Next"
+                    Focused="EntPayloadTypePhoneNumber_Focused">
                 </Entry>
             </Border>
-
-            <Label
-                x:Name="lblPayloadTypeMail"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="16"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeMail_Text}">
-            </Label>
 
             <Border
                 x:Name="brdPayloadTypeMail"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="16"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeMail"
+                    ToolTipProperties.Text="{Translate PayloadTypeMail_Text}"
+                    Placeholder="{Translate PayloadTypeMail_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Email"
                     Text=""
@@ -454,24 +390,18 @@
                 </Entry>
             </Border>
 
-            <Label
-                x:Name="lblPayloadTypeDescription"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="17"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeDescription_Text}">
-            </Label>
-
             <Border
                 x:Name="brdPayloadTypeDescription"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="17"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeDescription"
+                    ToolTipProperties.Text="{Translate PayloadTypeDescription_Text}"
+                    Placeholder="{Translate PayloadTypeDescription_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     Text=""
@@ -479,24 +409,18 @@
                 </Entry>
             </Border>
 
-            <Label
-                x:Name="lblPayloadTypeLocation"
-                Style="{StaticResource labelStyleDefault}"
-                Grid.Row="18"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                Text="{Translate PayloadTypeLocation_Text}">
-            </Label>
-
             <Border
                 x:Name="brdPayloadTypeLocation"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="18"
-                Grid.Column="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
                 <Entry
                     x:Name="entPayloadTypeLocation"
+                    ToolTipProperties.Text="{Translate PayloadTypeLocation_Text}"
+                    Placeholder="{Translate PayloadTypeLocation_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     Text=""

@@ -848,28 +848,25 @@ Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a
     <value>Tip de mesaj:</value>
   </data>
   <data name="PayloadTypeSSID_Text" xml:space="preserve">
-    <value>Nume rețea:</value>
+    <value>Nume rețea</value>
   </data>
   <data name="PayloadTypePassword_Text" xml:space="preserve">
-    <value>Parolă:</value>
+    <value>Parolă</value>
   </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>URL</value>
   </data>
   <data name="PayloadTypeTitle_Text" xml:space="preserve">
-    <value>Titlu:</value>
+    <value>Titlu</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Destinatar:</value>
+    <value>Destinatar</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
-    <value>Subiect:</value>
+    <value>Subiect</value>
   </data>
   <data name="PayloadTypeMessage_Text" xml:space="preserve">
-    <value>Mesaj:</value>
-  </data>
-  <data name="PayloadTypeNumber_Text" xml:space="preserve">
-    <value>Număr:</value>
+    <value>Mesaj</value>
   </data>
   <data name="PayloadTypeLatitude_Text" xml:space="preserve">
     <value>Latitudine:</value>
@@ -878,19 +875,19 @@ Se recomandă testarea codurilor QR generate și a altor coduri de bare pentru a
     <value>Longitudine:</value>
   </data>
   <data name="PayloadTypeFirstname_Text" xml:space="preserve">
-    <value>Prenume:</value>
+    <value>Prenume</value>
   </data>
   <data name="PayloadTypeLastname_Text" xml:space="preserve">
-    <value>Nume:</value>
+    <value>Nume</value>
   </data>
   <data name="PayloadTypeMail_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail</value>
   </data>
   <data name="PayloadTypeDescription_Text" xml:space="preserve">
-    <value>Descriere:</value>
+    <value>Descriere</value>
   </data>
   <data name="PayloadTypeLocation_Text" xml:space="preserve">
-    <value>Locație:</value>
+    <value>Locație</value>
   </data>
   <data name="PayloadTypeStart_Text" xml:space="preserve">
     <value>Început:</value>
@@ -961,5 +958,8 @@ Alegeți o opțiune.</value>
   </data>
   <data name="ToolTipUrlLink_Text" xml:space="preserve">
     <value>Deschideți linkul URL</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Număr de telefon</value>
   </data>
 </root>

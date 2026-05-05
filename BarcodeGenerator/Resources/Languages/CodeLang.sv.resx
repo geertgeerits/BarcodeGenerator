@@ -848,28 +848,25 @@ Det rekommenderas att testa de genererade QR-koderna och andra streckkoder för 
     <value>Nyttolasttyp:</value>
   </data>
   <data name="PayloadTypeSSID_Text" xml:space="preserve">
-    <value>Namn nätverk:</value>
+    <value>Namn nätverk</value>
   </data>
   <data name="PayloadTypePassword_Text" xml:space="preserve">
-    <value>Lösenord:</value>
+    <value>Lösenord</value>
   </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>URL</value>
   </data>
   <data name="PayloadTypeTitle_Text" xml:space="preserve">
-    <value>Titel:</value>
+    <value>Titel</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>Mottagare:</value>
+    <value>Mottagare</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
-    <value>Ämne:</value>
+    <value>Ämne</value>
   </data>
   <data name="PayloadTypeMessage_Text" xml:space="preserve">
-    <value>Meddelande:</value>
-  </data>
-  <data name="PayloadTypeNumber_Text" xml:space="preserve">
-    <value>Nummer:</value>
+    <value>Meddelande</value>
   </data>
   <data name="PayloadTypeLatitude_Text" xml:space="preserve">
     <value>Latitud:</value>
@@ -878,19 +875,19 @@ Det rekommenderas att testa de genererade QR-koderna och andra streckkoder för 
     <value>Longitud:</value>
   </data>
   <data name="PayloadTypeFirstname_Text" xml:space="preserve">
-    <value>Förnamn:</value>
+    <value>Förnamn</value>
   </data>
   <data name="PayloadTypeLastname_Text" xml:space="preserve">
-    <value>Efternamn:</value>
+    <value>Efternamn</value>
   </data>
   <data name="PayloadTypeMail_Text" xml:space="preserve">
-    <value>E-post:</value>
+    <value>E-post</value>
   </data>
   <data name="PayloadTypeDescription_Text" xml:space="preserve">
-    <value>Beskrivning:</value>
+    <value>Beskrivning</value>
   </data>
   <data name="PayloadTypeLocation_Text" xml:space="preserve">
-    <value>Plats:</value>
+    <value>Plats</value>
   </data>
   <data name="PayloadTypeStart_Text" xml:space="preserve">
     <value>Start:</value>
@@ -961,5 +958,8 @@ Välj ett alternativ.</value>
   </data>
   <data name="ToolTipUrlLink_Text" xml:space="preserve">
     <value>Öppna URL-länken</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Telefonnummer</value>
   </data>
 </root>
