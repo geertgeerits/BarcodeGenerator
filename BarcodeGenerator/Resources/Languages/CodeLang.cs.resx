@@ -965,4 +965,7 @@ Vyberte možnost.</value>
   <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
     <value>Ověřování:</value>
   </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Telefonní číslo není platné.</value>
+  </data>
 </root>

@@ -97,8 +97,10 @@ namespace BarcodeGenerator
                 imgbtnAbout.VerticalOptions = LayoutOptions.Start;
                 lblTitle.VerticalOptions = LayoutOptions.Start;
                 lblTitle.VerticalTextAlignment = TextAlignment.Start;
+                imgbtnPayloadType.VerticalOptions = LayoutOptions.Start;
                 imgbtnScanNT.VerticalOptions = LayoutOptions.Start;
                 imgbtnSettings.VerticalOptions = LayoutOptions.Start;
+                imgbtnPayloadType.Margin = new Thickness(0, -5, 0, 0);
             }
 
             // Set the theme

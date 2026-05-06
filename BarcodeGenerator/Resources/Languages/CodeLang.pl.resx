@@ -965,4 +965,7 @@ Wybierz opcję.</value>
   <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
     <value>Uwierzytelnianie:</value>
   </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Numer telefonu jest nieprawidłowy.</value>
+  </data>
 </root>

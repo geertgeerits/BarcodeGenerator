@@ -498,6 +498,7 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
             {
+                entPayloadTypeURL.Text = entPayloadTypeURL.Text.Trim();
                 if (!await IsValidUrl(entPayloadTypeURL.Text))
                 {
                     return string.Empty;
@@ -508,26 +509,29 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_BOOKMARK)
             {
+                entPayloadTypeURL.Text = entPayloadTypeURL.Text.Trim();
                 if (!await IsValidUrl(entPayloadTypeURL.Text))
                 {
                     return string.Empty;
                 }
 
-                Bookmark generator = new(url: entPayloadTypeURL.Text, title: entPayloadTypeTitle.Text);
+                Bookmark generator = new(url: entPayloadTypeURL.Text, title: entPayloadTypeTitle.Text.Trim());
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MAIL)
             {
+                entPayloadTypeReceiver.Text = entPayloadTypeReceiver.Text.Trim();
                 if (!await IsValidEmail(entPayloadTypeReceiver.Text))
                 {
                     return string.Empty;
                 }
 
-                Mail generator = new(mailReceiver: entPayloadTypeReceiver.Text, subject: entPayloadTypeSubject.Text, message: entPayloadTypeMessage.Text);
+                Mail generator = new(mailReceiver: entPayloadTypeReceiver.Text, subject: entPayloadTypeSubject.Text.Trim(), message: entPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_SMS)
             {
+                entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
                 if (! await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
                 {
                     return string.Empty;
@@ -538,6 +542,7 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MMS)
             {
+                entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
                 if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
                 {
                     return string.Empty;
@@ -559,6 +564,7 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
+                entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
                 if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
                 {
                     return string.Empty;
@@ -569,22 +575,32 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_WHATSAPPMESSAGE)
             {
-                WhatsAppMessage generator = new(message: entPayloadTypeMessage.Text);
+                WhatsAppMessage generator = new(message: entPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CONTACTDATA)
             {
-                if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
+                entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
+                if (entPayloadTypePhoneNumber.Text.Length < 2)
+                {
+                    entPayloadTypePhoneNumber.Text = string.Empty;
+                }
+                else if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
                 {
                     return string.Empty;
                 }
 
-                if (!await IsValidEmail(entPayloadTypeMail.Text))
+                entPayloadTypeMail.Text = entPayloadTypeMail.Text.Trim();
+                if (entPayloadTypeMail.Text.Length < 3)
+                {
+                    entPayloadTypeMail.Text = string.Empty;
+                }
+                else if (!await IsValidEmail(entPayloadTypeMail.Text))
                 {
                     return string.Empty;
                 }
 
-                ContactData generator = new(ContactData.ContactOutputType.VCard3, firstname: entPayloadTypeFirstname.Text, lastname: entPayloadTypeLastname.Text, nickname: "", phone: "", mobilePhone: entPayloadTypePhoneNumber.Text, workPhone: "", email: entPayloadTypeMail.Text);
+                ContactData generator = new(ContactData.ContactOutputType.VCard3, firstname: entPayloadTypeFirstname.Text.Trim(), lastname: entPayloadTypeLastname.Text.Trim(), nickname: "", phone: "", mobilePhone: entPayloadTypePhoneNumber.Text, workPhone: "", email: entPayloadTypeMail.Text);
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)
@@ -607,9 +623,9 @@ namespace BarcodeGenerator
                 payload = $@"BEGIN:VCALENDAR
 VERSION:2.0
 BEGIN:VEVENT
-SUMMARY:{entPayloadTypeSubject.Text}
-DESCRIPTION:{entPayloadTypeDescription.Text}
-LOCATION:{entPayloadTypeLocation.Text}
+SUMMARY:{entPayloadTypeSubject.Text.Trim()}
+DESCRIPTION:{entPayloadTypeDescription.Text.Trim()}
+LOCATION:{entPayloadTypeLocation.Text.Trim()}
 DTSTART:{startUtc}
 DTEND:{endUtc}
 UID:{DateTime.UtcNow.Ticks + random.Next(1000, 9999)}
@@ -743,8 +759,15 @@ END:VCALENDAR";
             return true;
         }
 
-        // Basic regex for validating phone numbers (international + local formats)
-        // Allows optional '+' at start, digits, spaces, dashes, parentheses, and dots
-        private static Regex PhoneRegex() => new(@"^\+?[0-9\s\-\(\).]{7,20}$", RegexOptions.Compiled);
+        /// <summary>
+        /// Basic regex for validating phone numbers (international + local formats).
+        /// Allows optional '+' at start, digits, spaces, dashes, parentheses, and dots.
+        /// Minimum length of 3 characters and maximum length of 20 characters to prevent excessively long inputs.
+        /// </summary>
+        /// <returns>A compiled regular expression for validating phone numbers.</returns>
+        private static Regex PhoneRegex()
+        {
+            return new(@"^\+?[0-9\s\-\(\).]{3,20}$", RegexOptions.Compiled);
+        }
     }
 }

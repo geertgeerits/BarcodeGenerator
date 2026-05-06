@@ -965,4 +965,7 @@ Valitse vaihtoehto.</value>
   <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
     <value>Todennus:</value>
   </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Puhelinnumero ei ole kelvollinen.</value>
+  </data>
 </root>

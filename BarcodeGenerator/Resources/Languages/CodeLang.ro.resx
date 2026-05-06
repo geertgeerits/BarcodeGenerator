@@ -965,4 +965,7 @@ Alegeți o opțiune.</value>
   <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
     <value>Autentificare:</value>
   </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Numărul de telefon nu este valid.</value>
+  </data>
 </root>

@@ -965,4 +965,7 @@ Válasszon egy lehetőséget.</value>
   <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
     <value>Hitelesítés:</value>
   </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>A telefonszám érvénytelen.</value>
+  </data>
 </root>
