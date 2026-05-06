@@ -1052,6 +1052,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Phone number is not valid..
+        /// </summary>
+        internal static string ErrorPhoneNumberInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorPhoneNumberInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start date cannot be later than end date..
         /// </summary>
         internal static string ErrorStartdateLaterEnddate_Text {

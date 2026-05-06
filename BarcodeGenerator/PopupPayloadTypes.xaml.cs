@@ -1,5 +1,6 @@
 using CommunityToolkit.Maui.Views;
 using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 using static QRCoder.PayloadGenerator;
 
 namespace BarcodeGenerator
@@ -484,15 +485,15 @@ namespace BarcodeGenerator
         {
             string payload;
 
-            if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)  // Galaxy S25: WIFI:S:Orange;T:WPA;P:123456;H:false;;
+            if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)
             {
                 string cSsid = entPayloadTypeSSID.Text.Trim();
                 string cPassword = entPayloadTypePassword.Text.Trim();
                 string cAuthenticationMode = pckWiFiAuthentication.SelectedIndex != -1 ? pckWiFiAuthentication.Items[pckWiFiAuthentication.SelectedIndex].Trim() : "WPA";
 
-                payload = $"WIFI:T:{cAuthenticationMode};S:{cSsid};P:{cPassword};;";    // this app: WIFI:T:WPA;S:Orange;P:123456;;
+                payload = $"WIFI:S:{cSsid};T:{cAuthenticationMode};P:{cPassword};H:false;;";  // WIFI:S:Orange;T:WPA;P:123456;H:false;;
 
-                //WiFi generator = new(cSsid, cPassword, WiFi.Authentication.WPA);
+                //WiFi generator = new(ssid: cSsid, password: cPassword, authenticationMode: WiFi.Authentication.WPA, isHiddenSSID: false, escapeHexStrings: false);
                 //payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
@@ -527,11 +528,21 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_SMS)
             {
+                if (! await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
+                {
+                    return string.Empty;
+                }
+
                 SMS generator = new(number: entPayloadTypePhoneNumber.Text);
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MMS)
             {
+                if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
+                {
+                    return string.Empty;
+                }
+
                 MMS generator = new(number: entPayloadTypePhoneNumber.Text);
                 payload = generator.ToString();
             }
@@ -548,6 +559,11 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
+                if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
+                {
+                    return string.Empty;
+                }
+
                 PhoneNumber generator = new(number: entPayloadTypePhoneNumber.Text);
                 payload = generator.ToString();
             }
@@ -558,6 +574,11 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CONTACTDATA)
             {
+                if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
+                {
+                    return string.Empty;
+                }
+
                 if (!await IsValidEmail(entPayloadTypeMail.Text))
                 {
                     return string.Empty;
@@ -704,5 +725,26 @@ END:VCALENDAR";
 
             return true;
         }
+
+        /// <summary>
+        /// Determines whether the specified string is a valid phone number format based on a regular expression pattern that allows for international and local formats, including optional country code, spaces, dashes, and parentheses.
+        /// </summary>
+        /// <param name="cPhoneNumber">The phone number string to validate. Cannot be null, empty, or consist only of white-space characters.</param>
+        /// <returns>true if the specified string is a valid phone number format; otherwise, false.</returns>
+        private async Task<bool> IsValidPhoneNumber(string cPhoneNumber)
+        {
+            if (!PhoneRegex().IsMatch(cPhoneNumber))
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorPhoneNumberInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypePhoneNumber.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        // Basic regex for validating phone numbers (international + local formats)
+        // Allows optional '+' at start, digits, spaces, dashes, parentheses, and dots
+        private static Regex PhoneRegex() => new(@"^\+?[0-9\s\-\(\).]{7,20}$", RegexOptions.Compiled);
     }
 }

@@ -359,8 +359,8 @@
                             <Setter Property="ColumnDefinitions">
                                 <Setter.Value>
                                     <ColumnDefinitionCollection>
-                                        <ColumnDefinition Width="{OnIdiom 250, Phone=250, Tablet=250, Desktop=250}" />
-                                        <ColumnDefinition Width="{OnIdiom 290, Phone=290, Tablet=290, Desktop=290}" />
+                                        <ColumnDefinition Width="{OnIdiom 200, Phone=200, Tablet=200, Desktop=200}" />
+                                        <ColumnDefinition Width="{OnIdiom 400, Phone=400, Tablet=500, Desktop=500}" />
                                     </ColumnDefinitionCollection>
                                 </Setter.Value>
                             </Setter>
@@ -391,7 +391,7 @@
                             <OrientationStateTrigger Orientation="Landscape" />
                         </VisualState.StateTriggers>
                         <VisualState.Setters>
-                            <Setter Property="WidthRequest" Value="{OnIdiom 540, Phone=540, Tablet=540, Desktop=540}" />
+                            <Setter Property="WidthRequest" Value="{OnIdiom 600, Phone=600, Tablet=700, Desktop=700}" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
