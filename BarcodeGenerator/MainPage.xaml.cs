@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.51
- * Date ........: 2026-05-06 (YYYY-MM-DD)
+ * Date ........: 2026-05-07 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -39,6 +39,20 @@ namespace BarcodeGenerator
 
         public MainPage()
         {
+#if ANDROID
+            // !!!BUG!!! On some Android versions the software keyboard covers the UI when it is opened and the editor is focused
+            // Workaround: set WindowSoftInputModeAdjust.Resize in MainActivity and here in the constructor of the MainPage
+            // Setting WindowSoftInputModeAdjust.Resize on app start (without it - soft keyboard covers UI)
+            // https://github.com/dotnet/maui/issues/33922#issuecomment-4338782788
+            Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific.Application.SetWindowSoftInputModeAdjust(
+                App.Current,
+                Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize
+            );
+
+            // MainActivity set ConfigChanges.Density, without it on some android versions still software keyboard covers UI
+            //Android.Views.SoftInput WindowSoftInputMode = Android.Views.SoftInput.AdjustNothing;
+            // On ContentPage "SafeAreaEdges" = "All"
+#endif
             try
             {
                 InitializeComponent();

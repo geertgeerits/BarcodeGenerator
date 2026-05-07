@@ -5,6 +5,7 @@
     xmlns:barcodegenerator="clr-namespace:BarcodeGenerator"
     x:DataType="barcodegenerator:LocalizationResourceManager"
     x:Class="BarcodeGenerator.PopupMessage"
+    SafeAreaEdges="All"
     BackgroundColor="DeepSkyBlue"
     CanBeDismissedByTappingOutsideOfPopup="False"
     Loaded="Popup_Loaded">

@@ -480,7 +480,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="selectedName">The name of the selected payload type.</param>
         /// <returns>The generated payload string for the QR code.</returns>
-        /// <remarks>https://github.com/Shane32/QRCoder</remarks>
+        /// <remarks>https://github.com/Shane32/QRCoder - https://deepwiki.com/codebude/QRCoder/3.2-basic-payloads</remarks>
         private async Task<string> BuildPayload(string selectedName)
         {
             string payload;

@@ -5,7 +5,9 @@
     xmlns:barcodegenerator="clr-namespace:BarcodeGenerator"
     x:DataType="barcodegenerator:HyperlinkSpan"
     x:Class="BarcodeGenerator.PopupColorPicker"
+    SafeAreaEdges="All"
     BackgroundColor="DimGray"
+    VerticalOptions="{OnIdiom Default=Center, Phone=Start}"
     CanBeDismissedByTappingOutsideOfPopup="False"
     Loaded="Popup_Loaded">
 
@@ -62,67 +64,10 @@
                 HorizontalTextAlignment="Center"
                 TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
             </Label>
-        
-            <Border
-                Style="{StaticResource borderStyleGroup}"
-                Grid.Row="2"
-                Grid.Column="0"
-                Grid.RowSpan="4"
-                Grid.ColumnSpan="3"
-                Margin="4">
-            </Border>
-
-            <Slider
-                x:Name="sldOpacity"
-                Style="{StaticResource sliderStyleColor}"
-                Grid.Row="2"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Margin="10,5,10,0"
-                ThumbColor="Grey"
-                MinimumTrackColor="Black"
-                ValueChanged="OnSliderColorValueChanged">
-            </Slider>
-
-            <Slider
-                x:Name="sldColorRed"
-                Style="{StaticResource sliderStyleColor}"
-                Grid.Row="3"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Margin="10,0,10,0"
-                ThumbColor="Red"
-                MinimumTrackColor="Red"
-                ValueChanged="OnSliderColorValueChanged">
-            </Slider>
-
-            <Slider
-                x:Name="sldColorGreen"
-                Style="{StaticResource sliderStyleColor}"
-                Grid.Row="4"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Margin="10,0,10,0"
-                ThumbColor="Green"
-                MinimumTrackColor="Green"
-                ValueChanged="OnSliderColorValueChanged">
-            </Slider>
-
-            <Slider
-                x:Name="sldColorBlue"
-                Style="{StaticResource sliderStyleColor}"
-                Grid.Row="5"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Margin="10,0,10,0"
-                ThumbColor="Blue"
-                MinimumTrackColor="Blue"
-                ValueChanged="OnSliderColorValueChanged">
-            </Slider>
 
             <Border
                 Style="{StaticResource borderStyleDefault}"
-                Grid.Row="6"
+                Grid.Row="2"
                 Grid.Column="0"
                 WidthRequest="120"
                 HorizontalOptions="Start"
@@ -140,8 +85,21 @@
                 </Entry>
             </Border>
 
+            <Button
+                Style="{StaticResource buttonStyleHelp}"
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="39"
+                WidthRequest="39"
+                SemanticProperties.Description="{Translate ToolTipHelp_Text}"
+                ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
+                Clicked="OnSettingsHexColorHelpClicked">
+            </Button>
+
             <Border
-                Grid.Row="6"
+                Grid.Row="2"
                 Grid.Column="2"
                 HeightRequest="40"
                 WidthRequest="120"
@@ -157,6 +115,63 @@
                 </BoxView>
             </Border>
 
+            <Border
+                Style="{StaticResource borderStyleGroup}"
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.RowSpan="4"
+                Grid.ColumnSpan="3"
+                Margin="4">
+            </Border>
+
+            <Slider
+                x:Name="sldOpacity"
+                Style="{StaticResource sliderStyleColor}"
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="10,5,10,0"
+                ThumbColor="Grey"
+                MinimumTrackColor="Black"
+                ValueChanged="OnSliderColorValueChanged">
+            </Slider>
+
+            <Slider
+                x:Name="sldColorRed"
+                Style="{StaticResource sliderStyleColor}"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="10,0,10,0"
+                ThumbColor="Red"
+                MinimumTrackColor="Red"
+                ValueChanged="OnSliderColorValueChanged">
+            </Slider>
+
+            <Slider
+                x:Name="sldColorGreen"
+                Style="{StaticResource sliderStyleColor}"
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="10,0,10,0"
+                ThumbColor="Green"
+                MinimumTrackColor="Green"
+                ValueChanged="OnSliderColorValueChanged">
+            </Slider>
+
+            <Slider
+                x:Name="sldColorBlue"
+                Style="{StaticResource sliderStyleColor}"
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="10,0,10,0"
+                ThumbColor="Blue"
+                MinimumTrackColor="Blue"
+                ValueChanged="OnSliderColorValueChanged">
+            </Slider>
+
             <ImageButton
                 x:Name="btnButtonCancel"
                 Style="{StaticResource imageButtonStyleColorPicker}"
@@ -170,20 +185,6 @@
                 Source="ic_action_cancel_red.png"
                 Clicked="OnButtonCancel_Clicked">
             </ImageButton>
-
-            <Button
-                Style="{StaticResource buttonStyleHelp}"
-                Grid.Row="7"
-                Grid.Column="1"
-                HorizontalOptions="Center"
-                VerticalOptions="End"
-                HeightRequest="39"
-                WidthRequest="39"
-                Margin="0,0,0,5"
-                SemanticProperties.Description="{Translate ToolTipHelp_Text}"
-                ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
-                Clicked="OnSettingsHexColorHelpClicked">
-            </Button>
 
             <ImageButton
                 x:Name="btnButtonClose"

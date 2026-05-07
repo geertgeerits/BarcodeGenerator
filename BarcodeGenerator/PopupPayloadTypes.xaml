@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:BarcodeGenerator"
     x:DataType="local:LocalizationResourceManager"
     x:Class="BarcodeGenerator.PopupPayloadTypes"
+    SafeAreaEdges="All"
     BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
     VerticalOptions="{OnIdiom Default=Center, Phone=Start}"
     MaximumHeightRequest="600"
