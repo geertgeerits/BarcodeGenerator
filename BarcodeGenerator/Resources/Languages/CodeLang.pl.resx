@@ -933,7 +933,8 @@ Wybierz opcję.</value>
     <value>Opcja Otwórz ustawienia Wi-Fi nie jest obsługiwana na tej platformie.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Twórz inteligentne kody QR z typami danych, takimi jak Wi‑Fi, kontakty i inne. Wystarczy dotknąć ikony u góry i wybrać typ, wprowadzić dane, wygenerować i udostępnić.</value>
+    <value>Twórz inteligentne kody QR z różnymi typami danych, takimi jak geolokalizacja, kontakty i inne. Dotknij ikony u góry, wybierz typ, wprowadź swoje dane, a następnie wygeneruj i udostępnij kod QR.
+Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
     <value>Zapytaj o geolokalizację</value>

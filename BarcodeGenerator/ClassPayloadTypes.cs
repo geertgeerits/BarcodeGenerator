@@ -45,7 +45,7 @@
             cPayloadType_CALENDAREVENT = CodeLang.PayloadType_CALENDAREVENT_Text;
 
             // Default values for the payload type
-            cPayloadTypeDefault = CodeLang.PayloadType_URL_Text;
+            cPayloadTypeDefault = CodeLang.PayloadType_GEOLOCATION_Text;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@
             {
                 CodeLang.PayloadType_WIFI_Text,
                 CodeLang.PayloadType_URL_Text,
-                CodeLang.PayloadType_BOOKMARK_Text,
+                //CodeLang.PayloadType_BOOKMARK_Text,   // Does not work - No longer supported ???
                 CodeLang.PayloadType_MAIL_Text,
                 CodeLang.PayloadType_SMS_Text,
                 CodeLang.PayloadType_MMS_Text,
@@ -155,7 +155,6 @@
             if (text.StartsWith("https://wa.me/", StringComparison.OrdinalIgnoreCase))
             {
                 await Launcher.Default.OpenAsync(new Uri(text));
-                return;
             }
 
             // Wi‑Fi QR payload: show details and offer to copy or open Wi‑Fi settings
@@ -209,8 +208,6 @@
                     await Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.WiFiOpenSettingsNotSupported_Text, CodeLang.ButtonClose_Text);
 #endif
                 }
-
-                return;
             }
 
             // Generic URI handlers (URL, geo, mailto, sms, mms, etc.)
@@ -222,7 +219,6 @@
                 text.StartsWith("geo:", StringComparison.OrdinalIgnoreCase))
             {
                 await Launcher.Default.OpenAsync(new Uri(text));
-                return;
             }
 
             // Telephone numbers - prefer PhoneDialer where available
@@ -237,7 +233,6 @@
                 {
                     await Launcher.Default.OpenAsync(new Uri(text));
                 }
-                return;
             }
 
             // Contact (vCard) - write to a temp .vcf and let the system open/share it
@@ -260,6 +255,20 @@
                 {
                     File = new ReadOnlyFile(file)
                 });
+            }
+
+            // Bookmark - treat as URL - Does not work - No longer supported ???
+            else if (text.StartsWith("MEBKM:", StringComparison.OrdinalIgnoreCase))
+            {
+                try
+                {
+                    await Launcher.Default.OpenAsync(new Uri(text));
+                }
+                catch (Exception Exception)
+                {
+                    // No Activity found to handle Intent { act=android.intent.action.VIEW dat=MEBKM: flg=0x14000000 xflg=0x4 }
+                    Debug.WriteLine("SharePayloadTypes Bookmark: " + Exception.Message);
+                }
             }
 
             // Fallback: use existing generic share method

@@ -1304,7 +1304,8 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create smart QR codes with payload types like Wi‑Fi, contacts, and more. Just tap the icon at the top and choose a type, enter your details, generate and share it..
+        ///   Looks up a localized string similar to Create smart QR codes with payload types like geolocation, contacts, and more. Tap the icon at the top, choose a type, enter your details, then generate and share your QR code.
+        ///Not all payload types are supported on every device..
         /// </summary>
         internal static string InfoPayloadTypes_Text {
             get {

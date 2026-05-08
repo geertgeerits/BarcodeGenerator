@@ -933,7 +933,7 @@ Wählen Sie eine Option.</value>
     <value>Das Öffnen der WLAN-Einstellungen wird auf dieser Plattform nicht unterstützt.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Erstellen Sie intelligente QR-Codes mit verschiedenen Nutzdaten wie WLAN, Kontakten und mehr. Tippen Sie einfach auf das Symbol oben, wählen Sie einen Typ aus, geben Sie Ihre Daten ein, generieren Sie den Code und teilen Sie ihn.</value>
+    <value>Erstellen Sie intelligente QR-Codes mit verschiedenen Nutzdaten wie Standort, Kontakten und mehr. Tippen Sie oben auf das Symbol, wählen Sie einen Typ aus, geben Sie Ihre Daten ein und generieren und teilen Sie Ihren QR-Code. Nicht alle Nutzdatentypen werden von jedem Gerät unterstützt.</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
     <value>Standortanfrage</value>
