@@ -90,12 +90,14 @@ namespace BarcodeGenerator
             else if (selectedName == ClassPayloadTypes.cPayloadType_SMS)
             {
                 brdPayloadTypePhoneNumber.IsVisible = true;
+                brdPayloadTypeMessage.IsVisible = true;
                 _ = entPayloadTypePhoneNumber.Focus();
                 entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MMS)
             {
                 brdPayloadTypePhoneNumber.IsVisible = true;
+                brdPayloadTypeMessage.IsVisible = true;
                 _ = entPayloadTypePhoneNumber.Focus();
                 entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
@@ -125,8 +127,9 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_WHATSAPPMESSAGE)
             {
+                brdPayloadTypePhoneNumber.IsVisible = true;
                 brdPayloadTypeMessage.IsVisible = true;
-                _ = entPayloadTypeMessage.Focus();
+                _ = entPayloadTypePhoneNumber.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CONTACTDATA)
             {
@@ -537,7 +540,7 @@ namespace BarcodeGenerator
                     return string.Empty;
                 }
 
-                SMS generator = new(number: entPayloadTypePhoneNumber.Text);
+                SMS generator = new(number: entPayloadTypePhoneNumber.Text, subject: entPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_MMS)
@@ -548,7 +551,7 @@ namespace BarcodeGenerator
                     return string.Empty;
                 }
 
-                MMS generator = new(number: entPayloadTypePhoneNumber.Text);
+                MMS generator = new(number: entPayloadTypePhoneNumber.Text, subject: entPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
@@ -575,7 +578,13 @@ namespace BarcodeGenerator
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_WHATSAPPMESSAGE)
             {
-                WhatsAppMessage generator = new(message: entPayloadTypeMessage.Text.Trim());
+                entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
+                if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
+                {
+                    return string.Empty;
+                }
+
+                WhatsAppMessage generator = new(number: entPayloadTypePhoneNumber.Text, message: entPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CONTACTDATA)

@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.51
- * Date ........: 2026-05-08 (YYYY-MM-DD)
+ * Date ........: 2026-05-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -117,6 +117,9 @@ namespace BarcodeGenerator
                 imgbtnPayloadType.Margin = new Thickness(0, -5, 0, 0);
             }
 
+            // Set the payload type button enabled if a specific payload type is allowed for the selected barcode format
+            imgbtnPayloadType.IsEnabled = bPayloadTypeAllowed;
+
             // Set the theme
             Globals.SetTheme();
 
@@ -230,25 +233,21 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnPagePayloadTypeClicked(object sender, EventArgs e)
         {
-            // If a payload type is allowed and a specific barcode is selected, build the payload and set it in the editor
-            if (bPayloadTypeAllowed)
+            // Show a modal popup to fill in the details for the selected payload type before generating the payload and setting it in the editor
+            Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+            if (currentPage != null)
             {
-                // Show a modal popup to fill in the details for the selected payload type before generating the payload and setting it in the editor
-                Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
-                if (currentPage != null)
+                _ = await currentPage.ShowPopupAsync(new PopupPayloadTypes());
+
+                // Check if the popup was canceled by the user
+                if (Globals.bPopupCanceled)
                 {
-                    _ = await currentPage.ShowPopupAsync(new PopupPayloadTypes());
-
-                    // Check if the popup was canceled by the user
-                    if (Globals.bPopupCanceled)
-                    {
-                        return;
-                    }
+                    return;
                 }
-
-                OnClearCodeClicked(sender, e);
-                edtTextToCode.Text = ClassPayloadTypes.cPayloadResult;
             }
+
+            OnClearCodeClicked(sender, e);
+            edtTextToCode.Text = ClassPayloadTypes.cPayloadResult;
         }
 
         /// <summary>
@@ -497,6 +496,9 @@ namespace BarcodeGenerator
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                 }
+
+                // Set the payload type button enabled if a specific payload type is allowed for the selected barcode format
+                imgbtnPayloadType.IsEnabled = bPayloadTypeAllowed;
 
                 // Set the placeholder text for the editor based on the selected format code
                 SetEditorPlaceholder();
