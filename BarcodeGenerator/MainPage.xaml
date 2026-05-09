@@ -57,6 +57,7 @@
                 WidthRequest="{OnPlatform Default='47', WinUI='37'}"
                 SemanticProperties.Description="{Translate Payloads_Text}"
                 ToolTipProperties.Text="{Translate Payloads_Text}"
+                IsEnabled="False"
                 Clicked="OnPagePayloadTypeClicked">
             </ImageButton>
 

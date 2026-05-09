@@ -117,9 +117,6 @@ namespace BarcodeGenerator
                 imgbtnPayloadType.Margin = new Thickness(0, -5, 0, 0);
             }
 
-            // Set the payload type button enabled if a specific payload type is allowed for the selected barcode format
-            imgbtnPayloadType.IsEnabled = bPayloadTypeAllowed;
-
             // Set the theme
             Globals.SetTheme();
 
