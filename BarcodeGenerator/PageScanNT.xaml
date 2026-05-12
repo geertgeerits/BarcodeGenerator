@@ -8,11 +8,28 @@
              SafeAreaEdges="All">
 
     <Shell.TitleView>
-        <Label
-            x:Name="lblTitle"
-            Style="{StaticResource labelStyleTitleView}"
-            Text="{Translate BarcodeScanner_Text}">
-        </Label>
+        <Grid
+            ColumnDefinitions="100*, 60">
+            
+            <Label
+                x:Name="lblTitle"
+                Style="{StaticResource labelStyleTitleView}"
+                Text="{Translate BarcodeScanner_Text}">
+            </Label>
+
+            <ImageButton
+                x:Name="imgbtnScanFromImage"
+                Grid.Column="1"
+                Source="ic_action_picture.png"
+                HeightRequest="44"
+                WidthRequest="44"
+                SemanticProperties.Description="{Translate ToolTipCopy_Text}"
+                ToolTipProperties.Text="{Translate ToolTipCopy_Text}"
+                IsEnabled="True"
+                Clicked="OnScanFromImage_Clicked">
+            </ImageButton>
+        </Grid>
+
     </Shell.TitleView>
 
     <ScrollView>

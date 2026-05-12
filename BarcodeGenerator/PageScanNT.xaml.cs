@@ -581,6 +581,72 @@ namespace BarcodeGenerator
             }
         }
 
+        /// <summary>
+        /// Handles the click event to initiate scanning from an image asynchronously.
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the button that was clicked.</param>
+        /// <param name="e">An EventArgs object that contains the event data.</param>
+        private async void OnScanFromImage_Clicked(object sender, EventArgs e)
+        {
+            await ScanFromImageAsync();
+        }
+
+        // https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/107
+        /// <summary>
+        /// This method allows you to scan a barcode from an image selected by the user. It uses the MediaPicker to let the user choose a photo, reads the image data, and then processes it to extract any barcodes present in the image. If a barcode is found, it displays the result; otherwise, it logs that no QR code was found.
+        /// </summary>
+        /// <returns></returns>
+        private async Task ScanFromImageAsync()
+        {
+            lblBarcodeResult.Text = string.Empty;
+            btnShare.Text = CodeLang.ButtonShare_Text;
+            imgbtnCopyToClipboard.IsEnabled = false;
+            btnShare.IsEnabled = false;
+            imgbtnTextToSpeech.IsEnabled = false;
+
+            // Open the media picker to select photos
+            List<FileResult> results = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
+            {
+                SelectionLimit = 1,             // Default is 1; set to 0 for no limit
+                RotateImage = true,
+                PreserveMetaData = true,
+            });
+
+            // Process each selected file
+            foreach (FileResult file in results)
+            {
+                using Stream stream = await file.OpenReadAsync();
+                {
+                    byte[] bytes = new byte[stream.Length];
+                    stream.ReadExactly(bytes);
+                    stream.Seek(0, SeekOrigin.Begin);
+
+                    IReadOnlySet<BarcodeResult> list = await Methods.ScanFromImageAsync(bytes);
+                    List<BarcodeResult> obj = [.. list];
+
+                    if (obj.Count > 0)
+                    {
+                        string result = string.Empty;
+                        for (int i = 0; i < obj.Count; i++)
+                        {
+                            result = $"{obj[i].DisplayValue}";
+                        }
+
+                        lblBarcodeResult.Text = result;
+                        
+                        //btnShare.Text = CodeLang.ButtonShare_Text;
+                        imgbtnCopyToClipboard.IsEnabled = true;
+                        btnShare.IsEnabled = true;
+                        imgbtnTextToSpeech.IsEnabled = true;
+                    }
+                    else
+                    {
+                        lblBarcodeResult.Text = "Barcode not found";
+                    }
+                }
+            }
+        }
+
         ///// <summary>
         ///// Read the device information
         ///// </summary>

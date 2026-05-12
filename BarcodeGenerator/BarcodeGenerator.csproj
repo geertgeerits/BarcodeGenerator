@@ -267,5 +267,9 @@
 	<ItemGroup>
 	  <Folder Include="Platforms\Android\Resources\xml\" />
 	</ItemGroup>
-	
+	<!--<ItemGroup>
+		<Reference Include="ZXingCpp">
+			<HintPath>..\..\..\..\nuget\zxingcpp\0.5.1\lib\net5.0\ZXingCpp.dll</HintPath>
+		</Reference>
+	</ItemGroup>-->	
 </Project>
