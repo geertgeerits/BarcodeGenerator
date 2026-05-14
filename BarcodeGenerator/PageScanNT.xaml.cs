@@ -85,9 +85,6 @@ namespace BarcodeGenerator
             // Set the barcode list and the select the saved or default barcode format for the barcode scanner
             ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
 
-            //// Select the barcode format in the picker
-            //pckFormatCodeScanner.SelectedIndex = ClassBarcodes.nBarcodeScannerIndex;
-
             // Set controls for text to speech
             if (Globals.bTextToSpeechAvailable)
             {
