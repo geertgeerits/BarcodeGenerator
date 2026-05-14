@@ -969,4 +969,10 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>Número de telefone inválido.</value>
   </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>Nenhum código de barras encontrado</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Escanear uma imagem</value>
+  </data>
 </root>

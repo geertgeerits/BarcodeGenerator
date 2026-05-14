@@ -968,4 +968,10 @@ Wählen Sie eine Option.</value>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>Die Telefonnummer ist ungültig.</value>
   </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>Kein Barcode gefunden</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Bild scannen</value>
+  </data>
 </root>

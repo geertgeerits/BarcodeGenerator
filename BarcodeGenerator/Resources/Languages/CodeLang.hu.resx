@@ -969,4 +969,10 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>A telefonszám érvénytelen.</value>
   </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>Nem található vonalkód</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Szkenneljen képet</value>
+  </data>
 </root>

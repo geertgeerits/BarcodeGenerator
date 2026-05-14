@@ -969,4 +969,10 @@ Not all payload types are supported on every device.</value>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>Phone number is not valid.</value>
   </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>No barcode found</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Scan an image</value>
+  </data>
 </root>

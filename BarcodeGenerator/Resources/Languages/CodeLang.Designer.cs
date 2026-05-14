@@ -610,6 +610,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No barcode found.
+        /// </summary>
+        internal static string BarcodeNotFound_Text {
+            get {
+                return ResourceManager.GetString("BarcodeNotFound_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scanner.
         /// </summary>
         internal static string BarcodeScanner_Text {
@@ -2361,6 +2370,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string ToolTipPaste_Text {
             get {
                 return ResourceManager.GetString("ToolTipPaste_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan an image.
+        /// </summary>
+        internal static string ToolTipScanImage_Text {
+            get {
+                return ResourceManager.GetString("ToolTipScanImage_Text", resourceCulture);
             }
         }
         

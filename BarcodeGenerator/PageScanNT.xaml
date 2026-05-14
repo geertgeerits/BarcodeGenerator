@@ -9,7 +9,7 @@
 
     <Shell.TitleView>
         <Grid
-            ColumnDefinitions="100*, 60">
+            ColumnDefinitions="100*, 60, 60">
             
             <Label
                 x:Name="lblTitle"
@@ -17,14 +17,26 @@
                 Text="{Translate BarcodeScanner_Text}">
             </Label>
 
+            <ActivityIndicator
+                x:Name="activityIndicator"
+                Grid.Column="1"
+                HeightRequest="46"
+                WidthRequest="46"
+                Margin="2"
+                VerticalOptions="Center"
+                HorizontalOptions="End"
+                Color="Gold"
+                IsRunning="False">
+            </ActivityIndicator>
+
             <ImageButton
                 x:Name="imgbtnScanFromImage"
-                Grid.Column="1"
+                Grid.Column="2"
                 Source="ic_action_picture.png"
                 HeightRequest="44"
                 WidthRequest="44"
-                SemanticProperties.Description="{Translate ToolTipCopy_Text}"
-                ToolTipProperties.Text="{Translate ToolTipCopy_Text}"
+                SemanticProperties.Description="{Translate ToolTipScanImage_Text}"
+                ToolTipProperties.Text="{Translate ToolTipScanImage_Text}"
                 IsEnabled="True"
                 Clicked="OnScanFromImage_Clicked">
             </ImageButton>

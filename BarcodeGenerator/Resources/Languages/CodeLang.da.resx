@@ -969,4 +969,10 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>Telefonnummeret er ikke gyldigt.</value>
   </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>Ingen stregkode fundet</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Scan et billede</value>
+  </data>
 </root>

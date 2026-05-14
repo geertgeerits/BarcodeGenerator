@@ -46,6 +46,9 @@ namespace BarcodeGenerator
             // iOS back camera quality settings
             qualities.Add(CodeLang.CameraQualityHigh_Text);
             pckCameraQualityBack.ItemsSource = qualities;
+
+            // Set the scale for the activity indicator for iOS (otherwise it is very small on an iPad)
+            activityIndicator.Scale = 2;
 #else
             // Front and back camera quality settings
             qualities.Add(CodeLang.CameraQualityLow_Text);
@@ -236,7 +239,7 @@ namespace BarcodeGenerator
                     cBarcodeFormat = barcode.BarcodeFormat.ToString();
                     // Use RawValue for consistent raw data across platforms
                     // The DisplayValue property may be parsed differently by the underlying platform barcode APIs:
-                    // - Android(Google ML Kit): Automatically parses Wi - Fi QR codes and returns formatted text
+                    // - Android(Google ML Kit): Automatically parses Wi-Fi QR codes and returns formatted text
                     // - iOS(Apple Vision / AVFoundation): Returns the raw QR code string
                     cDisplayValue = barcode.RawValue ?? barcode.DisplayValue;
 
@@ -586,10 +589,15 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender">The source of the event, typically the button that was clicked.</param>
         /// <param name="e">An EventArgs object that contains the event data.</param>
+        /// <remarks>https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/107</remarks>
         private async void OnScanFromImage_Clicked(object sender, EventArgs e)
         {
-            // https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/107
+            // Start the activity indicator
+            activityIndicator.IsVisible = true;
+            activityIndicator.IsRunning = true;
+            await Task.Delay(200);
 
+            // Settings before scanning from an image
             barcodeReader.CameraEnabled = false;
             lblBarcodeResult.Text = string.Empty;
             btnShare.Text = CodeLang.ButtonShare_Text;
@@ -598,18 +606,16 @@ namespace BarcodeGenerator
             imgbtnTextToSpeech.IsEnabled = false;
 
             string cBarcodeFormat = string.Empty;
+            string cDisplayValue = string.Empty;
             List<string> listBarcodes = [];
-            //string cDisplayValue = string.Empty;
 
             // Open the media picker to select photos
             List<FileResult> results = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
             {
-                SelectionLimit = 1,             // Default is 1; set to 0 for no limit
+                SelectionLimit = 5,             // Default is 1; set to 0 for no limit
                 RotateImage = true,
                 PreserveMetaData = true,
             });
-
-            listBarcodes.Clear();
 
             // Process each selected file
             foreach (FileResult file in results)
@@ -622,16 +628,15 @@ namespace BarcodeGenerator
 
                     IReadOnlySet<BarcodeResult> list = await Methods.ScanFromImageAsync(bytes);
                     List<BarcodeResult> obj = [.. list];
-                    string cDisplayValue = string.Empty;
 
                     if (obj.Count > 0)
                     {
                         Debug.WriteLine($"obj.Count: {obj.Count}");
 
-                        foreach (BarcodeResult v in obj)
+                        foreach (BarcodeResult code in obj)
                         {
-                            cBarcodeFormat = v.BarcodeFormat.ToString();
-                            cDisplayValue = v.RawValue ?? cDisplayValue;
+                            cBarcodeFormat = code.BarcodeFormat.ToString();
+                            cDisplayValue = code.RawValue ?? cDisplayValue;
 
                             // Decompress the QR code result if compressed
                             cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
@@ -639,85 +644,79 @@ namespace BarcodeGenerator
                             // Add the barcode format and display value to the list 'listBarcodes'
                             listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
                         }
-
-                        // Remove duplicates and convert back to List
-                        listBarcodes = [.. listBarcodes.Distinct()];
-
-                        // Sort the list
-                        listBarcodes.Sort();
-
-                        // Set the barcode results in the label 'lblBarcodeResult.Text'
-                        if (listBarcodes.Count == 1)
-                        {
-                            btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
-                            lblBarcodeResult.Text = cDisplayValue;
-                        }
-                        else if (listBarcodes.Count > 1)
-                        {
-                            btnShare.Text = CodeLang.ButtonShare_Text;
-                            foreach (string barcode in listBarcodes)
-                            {
-                                lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode}\n\n";
-                            }
-                        }
-
-                        imgbtnCopyToClipboard.IsEnabled = true;
-                        btnShare.IsEnabled = true;
-                        imgbtnTextToSpeech.IsEnabled = true;
-                    }
-                    else
-                    {
-                        lblBarcodeResult.Text = "Barcode not found";
                     }
                 }
             }
-            
+
+            // Remove duplicates and convert back to List
+            listBarcodes = [.. listBarcodes.Distinct()];
+
+            // Sort the list
+            listBarcodes.Sort();
+
+            // Set the barcode results in the label 'lblBarcodeResult.Text'
+            if (listBarcodes.Count == 1)
+            {
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
+                lblBarcodeResult.Text = cDisplayValue;
+            }
+            else if (listBarcodes.Count > 1)
+            {
+                btnShare.Text = CodeLang.ButtonShare_Text;
+                foreach (string barcode in listBarcodes)
+                {
+                    lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode}\n\n";
+                }
+            }
+            else
+            {
+                lblBarcodeResult.Text = CodeLang.BarcodeNotFound_Text;
+            }
+
+            // Settings after scanning from an image
+            imgbtnCopyToClipboard.IsEnabled = true;
+            btnShare.IsEnabled = true;
+            imgbtnTextToSpeech.IsEnabled = true;
             barcodeReader.CameraEnabled = true;
+
+            // Stop the activity indicator
+            activityIndicator.IsRunning = false;
+            activityIndicator.IsVisible = false;
         }
 
-        //private async Task ProcessScannedBarcodes()
-        //{
-        //    foreach (var barcode in e.BarcodeResults)
-        //    {
-        //        cBarcodeFormat = barcode.BarcodeFormat.ToString();
-        //        // Use RawValue for consistent raw data across platforms
-        //        // The DisplayValue property may be parsed differently by the underlying platform barcode APIs:
-        //        // - Android(Google ML Kit): Automatically parses Wi - Fi QR codes and returns formatted text
-        //        // - iOS(Apple Vision / AVFoundation): Returns the raw QR code string
-        //        cDisplayValue = barcode.RawValue ?? barcode.DisplayValue;
+        /// <summary>
+        /// Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="cBarcodeFormat"></param>
+        /// <param name="cDisplayValue"></param>
+        private void ProcessBarcodes(List<BarcodeResult> list, string cBarcodeFormat, string cDisplayValue)
+        {
+            // Remove duplicates and convert back to List
+            list = [.. list.Distinct()];
 
-        //        // Decompress the QR code result if compressed
-        //        cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
+            // Sort the list
+            list.Sort();
 
-        //        // Add the barcode format and display value to the list 'listBarcodes'
-        //        listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
-        //    }
-
-        //    // Remove duplicates and convert back to List
-        //    listBarcodes = [.. listBarcodes.Distinct()];
-
-        //    // Sort the list
-        //    listBarcodes.Sort();
-
-        //    // Set the barcode results in the label 'lblBarcodeResult.Text'
-        //    if (listBarcodes.Count == 1)
-        //    {
-        //        btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
-        //        lblBarcodeResult.Text = cDisplayValue;
-        //    }
-        //    else if (listBarcodes.Count > 1)
-        //    {
-        //        btnShare.Text = CodeLang.ButtonShare_Text;
-        //        foreach (string barcode in listBarcodes)
-        //        {
-        //            lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode}\n\n";
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return;
-        //    }
-        //}
+            // Set the barcode results in the label 'lblBarcodeResult.Text'
+            if (list.Count == 1)
+            {
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
+                lblBarcodeResult.Text = cDisplayValue;
+            }
+            else if (list.Count > 1)
+            {
+                btnShare.Text = CodeLang.ButtonShare_Text;
+                foreach (BarcodeResult barcode in list)
+                {
+                    lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode.RawValue}\n\n";
+                }
+            }
+            else
+            {
+                lblBarcodeResult.Text = CodeLang.BarcodeNotFound_Text;
+            }
+        }
 
         ///// <summary>
         ///// Read the device information

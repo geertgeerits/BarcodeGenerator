@@ -969,4 +969,10 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>El número de teléfono no es válido.</value>
   </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>No se encontró código de barras</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Escanee una imagen</value>
+  </data>
 </root>
