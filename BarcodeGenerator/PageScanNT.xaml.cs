@@ -250,30 +250,8 @@ namespace BarcodeGenerator
                     listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
                 }
 
-                // Remove duplicates and convert back to List
-                listBarcodes = [.. listBarcodes.Distinct()];
-
-                // Sort the list
-                listBarcodes.Sort();
-
-                // Set the barcode results in the label 'lblBarcodeResult.Text'
-                if (listBarcodes.Count == 1)
-                {
-                    btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
-                    lblBarcodeResult.Text = cDisplayValue;
-                }
-                else if (listBarcodes.Count > 1)
-                {
-                    btnShare.Text = CodeLang.ButtonShare_Text;
-                    foreach (string barcode in listBarcodes)
-                    {
-                        lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode}\n\n";
-                    }
-                }
-                else
-                {
-                    return;
-                }
+                // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
+                ProcessBarcodes(listBarcodes, cBarcodeFormat, cDisplayValue);
 
                 imgbtnCopyToClipboard.IsEnabled = true;
                 btnShare.IsEnabled = true;
@@ -612,7 +590,7 @@ namespace BarcodeGenerator
             // Open the media picker to select photos
             List<FileResult> results = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
             {
-                SelectionLimit = 5,             // Default is 1; set to 0 for no limit
+                SelectionLimit = 3,             // Default is 1; set to 0 for no limit
                 RotateImage = true,
                 PreserveMetaData = true,
             });
@@ -638,40 +616,29 @@ namespace BarcodeGenerator
                             cBarcodeFormat = code.BarcodeFormat.ToString();
                             cDisplayValue = code.RawValue ?? cDisplayValue;
 
+                            Debug.WriteLine($"Barcode format: {code.BarcodeFormat}");
+
                             // Decompress the QR code result if compressed
                             cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
 
                             // Add the barcode format and display value to the list 'listBarcodes'
-                            listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
+                            // If all symbologies are selected in the picker
+                            if (barcodeReader.BarcodeSymbologies == BarcodeFormats.All)
+                            {
+                                listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
+                            }
+                            // If the barcode symbology is the same as the selected one in the picker
+                            else if (barcodeReader.BarcodeSymbologies == code.BarcodeFormat)
+                            {
+                                listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
+                            }
                         }
                     }
                 }
             }
 
-            // Remove duplicates and convert back to List
-            listBarcodes = [.. listBarcodes.Distinct()];
-
-            // Sort the list
-            listBarcodes.Sort();
-
-            // Set the barcode results in the label 'lblBarcodeResult.Text'
-            if (listBarcodes.Count == 1)
-            {
-                btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
-                lblBarcodeResult.Text = cDisplayValue;
-            }
-            else if (listBarcodes.Count > 1)
-            {
-                btnShare.Text = CodeLang.ButtonShare_Text;
-                foreach (string barcode in listBarcodes)
-                {
-                    lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode}\n\n";
-                }
-            }
-            else
-            {
-                lblBarcodeResult.Text = CodeLang.BarcodeNotFound_Text;
-            }
+            // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
+            ProcessBarcodes(listBarcodes, cBarcodeFormat, cDisplayValue);
 
             // Settings after scanning from an image
             imgbtnCopyToClipboard.IsEnabled = true;
@@ -690,7 +657,7 @@ namespace BarcodeGenerator
         /// <param name="list"></param>
         /// <param name="cBarcodeFormat"></param>
         /// <param name="cDisplayValue"></param>
-        private void ProcessBarcodes(List<BarcodeResult> list, string cBarcodeFormat, string cDisplayValue)
+        private void ProcessBarcodes(List<string> list, string cBarcodeFormat, string cDisplayValue)
         {
             // Remove duplicates and convert back to List
             list = [.. list.Distinct()];
@@ -707,9 +674,9 @@ namespace BarcodeGenerator
             else if (list.Count > 1)
             {
                 btnShare.Text = CodeLang.ButtonShare_Text;
-                foreach (BarcodeResult barcode in list)
+                foreach (string barcode in list)
                 {
-                    lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode.RawValue}\n\n";
+                    lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode}\n\n";
                 }
             }
             else
