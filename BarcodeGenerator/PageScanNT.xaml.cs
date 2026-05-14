@@ -31,7 +31,7 @@ namespace BarcodeGenerator
 
 #if DEBUG
             // Read the device information
-            //ReadDeviceInfo();
+            //Task task = ClassDeviceInfo.ReadDeviceInfoAsync();
 #endif
             // Settings for iOS and Android
             // Set the quality for the camera pickers
@@ -206,64 +206,6 @@ namespace BarcodeGenerator
 
             // Give it some time to save the settings
             Task.Delay(200).Wait();
-        }
-
-        /// <summary>
-        /// CameraView OnDetected event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
-        {
-            if (e.BarcodeResults.Count == 0)
-            {
-                return;
-            }
-
-            imgbtnCopyToClipboard.IsEnabled = false;
-            btnShare.IsEnabled = false;
-            imgbtnTextToSpeech.IsEnabled = false;
-
-            lblBarcodeResult.Text = string.Empty;
-            string cBarcodeFormat = string.Empty;
-            string cDisplayValue = string.Empty;
-            List<string> listBarcodes = [];
-
-            try
-            {
-                _drawable.barcodeResults = e.BarcodeResults;
-                Graphics.Invalidate();
-
-                foreach (var barcode in e.BarcodeResults)
-                {
-                    cBarcodeFormat = barcode.BarcodeFormat.ToString();
-                    // Use RawValue for consistent raw data across platforms
-                    // The DisplayValue property may be parsed differently by the underlying platform barcode APIs:
-                    // - Android(Google ML Kit): Automatically parses Wi-Fi QR codes and returns formatted text
-                    // - iOS(Apple Vision / AVFoundation): Returns the raw QR code string
-                    cDisplayValue = barcode.RawValue ?? barcode.DisplayValue;
-
-                    // Decompress the QR code result if compressed
-                    cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
-
-                    // Add the barcode format and display value to the list 'listBarcodes'
-                    listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
-                }
-
-                // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-                ProcessBarcodes(listBarcodes, cBarcodeFormat, cDisplayValue);
-
-                imgbtnCopyToClipboard.IsEnabled = true;
-                btnShare.IsEnabled = true;
-                imgbtnTextToSpeech.IsEnabled = true;
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureException(ex);
-#if DEBUG
-                _ = DisplayAlertAsync("OnCameraDetectionFinished", ex.Message, CodeLang.ButtonClose_Text);
-#endif
-            }
         }
 
         /// <summary>
@@ -529,36 +471,60 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Class for drawing the barcode bounding box
+        /// CameraView OnDetected event
         /// </summary>
-        private sealed class BarcodeDrawable : IDrawable
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnCameraDetectionFinished(object sender, OnDetectionFinishedEventArg e)
         {
-            public IReadOnlySet<BarcodeResult>? barcodeResults;
-
-            public void Draw(ICanvas canvas, RectF dirtyRect)
+            if (e.BarcodeResults.Count == 0)
             {
-                if (barcodeResults is not null && barcodeResults.Count > 0)
-                {
-                    canvas.StrokeSize = 15;
-                    canvas.StrokeColor = Colors.Green;
-                    var scale = 1 / canvas.DisplayScale;
-                    canvas.Scale(scale, scale);
+                return;
+            }
 
-                    try
-                    {
-                        foreach (var barcode in barcodeResults)
-                        {
-                            canvas.DrawRectangle(barcode.PreviewBoundingBox);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        SentrySdk.CaptureException(ex);
-#if DEBUG
-                        Application.Current!.Windows[0].Page!.DisplayAlertAsync("Draw", ex.Message, CodeLang.ButtonClose_Text);
-#endif
-                    }               
+            imgbtnCopyToClipboard.IsEnabled = false;
+            btnShare.IsEnabled = false;
+            imgbtnTextToSpeech.IsEnabled = false;
+
+            lblBarcodeResult.Text = string.Empty;
+            string cBarcodeFormat = string.Empty;
+            string cDisplayValue = string.Empty;
+            List<string> listBarcodes = [];
+
+            try
+            {
+                _drawable.barcodeResults = e.BarcodeResults;
+                Graphics.Invalidate();
+
+                foreach (var barcode in e.BarcodeResults)
+                {
+                    cBarcodeFormat = barcode.BarcodeFormat.ToString();
+                    // Use RawValue for consistent raw data across platforms
+                    // The DisplayValue property may be parsed differently by the underlying platform barcode APIs:
+                    // - Android(Google ML Kit): Automatically parses Wi-Fi QR codes and returns formatted text
+                    // - iOS(Apple Vision / AVFoundation): Returns the raw QR code string
+                    cDisplayValue = barcode.RawValue ?? barcode.DisplayValue;
+
+                    // Decompress the QR code result if compressed
+                    cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
+
+                    // Add the barcode format and display value to the list 'listBarcodes'
+                    listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
                 }
+
+                // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
+                ProcessBarcodes(listBarcodes, cBarcodeFormat, cDisplayValue);
+
+                imgbtnCopyToClipboard.IsEnabled = true;
+                btnShare.IsEnabled = true;
+                imgbtnTextToSpeech.IsEnabled = true;
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+#if DEBUG
+                _ = DisplayAlertAsync("OnCameraDetectionFinished", ex.Message, CodeLang.ButtonClose_Text);
+#endif
             }
         }
 
@@ -585,6 +551,8 @@ namespace BarcodeGenerator
 
             string cBarcodeFormat = string.Empty;
             string cDisplayValue = string.Empty;
+            string cFormat = string.Empty;
+            string cValue = string.Empty;
             List<string> listBarcodes = [];
 
             // Open the media picker to select photos
@@ -616,7 +584,7 @@ namespace BarcodeGenerator
                             cBarcodeFormat = code.BarcodeFormat.ToString();
                             cDisplayValue = code.RawValue ?? cDisplayValue;
 
-                            Debug.WriteLine($"Barcode format: {code.BarcodeFormat}");
+                            Debug.WriteLine($"cBarcodeFormat: {code.BarcodeFormat} - cDisplayValue: {cDisplayValue}");
 
                             // Decompress the QR code result if compressed
                             cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
@@ -626,11 +594,16 @@ namespace BarcodeGenerator
                             if (barcodeReader.BarcodeSymbologies == BarcodeFormats.All)
                             {
                                 listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
+                                cFormat = cBarcodeFormat;
+                                cValue = cDisplayValue;
                             }
                             // If the barcode symbology is the same as the selected one in the picker
                             else if (barcodeReader.BarcodeSymbologies == code.BarcodeFormat)
                             {
+                                Debug.WriteLine($"Selected symbology: {barcodeReader.BarcodeSymbologies} == {code.BarcodeFormat}");
                                 listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
+                                cFormat = cBarcodeFormat;
+                                cValue = cDisplayValue;
                             }
                         }
                     }
@@ -638,7 +611,7 @@ namespace BarcodeGenerator
             }
 
             // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-            ProcessBarcodes(listBarcodes, cBarcodeFormat, cDisplayValue);
+            ProcessBarcodes(listBarcodes, cFormat, cValue);
 
             // Settings after scanning from an image
             imgbtnCopyToClipboard.IsEnabled = true;
@@ -655,9 +628,9 @@ namespace BarcodeGenerator
         /// Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
         /// </summary>
         /// <param name="list"></param>
-        /// <param name="cBarcodeFormat"></param>
-        /// <param name="cDisplayValue"></param>
-        private void ProcessBarcodes(List<string> list, string cBarcodeFormat, string cDisplayValue)
+        /// <param name="cFormat"></param>
+        /// <param name="cValue"></param>
+        private void ProcessBarcodes(List<string> list, string cFormat, string cValue)
         {
             // Remove duplicates and convert back to List
             list = [.. list.Distinct()];
@@ -668,8 +641,8 @@ namespace BarcodeGenerator
             // Set the barcode results in the label 'lblBarcodeResult.Text'
             if (list.Count == 1)
             {
-                btnShare.Text = $"{CodeLang.ButtonShare_Text} {cBarcodeFormat}";
-                lblBarcodeResult.Text = cDisplayValue;
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} {cFormat}";
+                lblBarcodeResult.Text = cValue;
             }
             else if (list.Count > 1)
             {
@@ -685,30 +658,38 @@ namespace BarcodeGenerator
             }
         }
 
-        ///// <summary>
-        ///// Read the device information
-        ///// </summary>
-        //private void ReadDeviceInfo()
-        //{
-        //    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        /// <summary>
+        /// Class for drawing the barcode bounding box
+        /// </summary>
+        private sealed class BarcodeDrawable : IDrawable
+        {
+            public IReadOnlySet<BarcodeResult>? barcodeResults;
 
-        //    sb.AppendLine($"Model: {DeviceInfo.Current.Model}");
-        //    sb.AppendLine($"Manufacturer: {DeviceInfo.Current.Manufacturer}");
-        //    sb.AppendLine($"Name: {DeviceInfo.Current.Name}");
-        //    sb.AppendLine($"OS Version: {DeviceInfo.Current.VersionString}");
-        //    sb.AppendLine($"Idiom: {DeviceInfo.Current.Idiom}");
-        //    sb.AppendLine($"Platform: {DeviceInfo.Current.Platform}");
+            public void Draw(ICanvas canvas, RectF dirtyRect)
+            {
+                if (barcodeResults is not null && barcodeResults.Count > 0)
+                {
+                    canvas.StrokeSize = 15;
+                    canvas.StrokeColor = Colors.Green;
+                    var scale = 1 / canvas.DisplayScale;
+                    canvas.Scale(scale, scale);
 
-        //    bool isVirtual = DeviceInfo.Current.DeviceType switch
-        //    {
-        //        DeviceType.Physical => false,
-        //        DeviceType.Virtual => true,
-        //        _ => false
-        //    };
-
-        //    sb.AppendLine($"Virtual device? {isVirtual}");
-
-        //    _ = DisplayAlertAsync("Device info", sb.ToString(), "OK");
-        //}
+                    try
+                    {
+                        foreach (var barcode in barcodeResults)
+                        {
+                            canvas.DrawRectangle(barcode.PreviewBoundingBox);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        SentrySdk.CaptureException(ex);
+#if DEBUG
+                        Application.Current!.Windows[0].Page!.DisplayAlertAsync("Draw", ex.Message, CodeLang.ButtonClose_Text);
+#endif
+                    }
+                }
+            }
+        }
     }
 }

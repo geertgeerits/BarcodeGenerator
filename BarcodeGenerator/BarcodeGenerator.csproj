@@ -73,7 +73,6 @@
 
 	<ItemGroup>
 	  <Compile Remove="ClassArtQRCodeWin.cs" />
-	  <Compile Remove="ClassScanFromImageNT.cs" />
 	  <Compile Remove="ClassScanFromImageZX.cs" />
 	  <Compile Remove="ClassValidateBarcodesOLD.cs" />
 	  <Compile Remove="PageScanGV.xaml.cs" />
