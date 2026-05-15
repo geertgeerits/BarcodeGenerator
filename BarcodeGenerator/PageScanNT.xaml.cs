@@ -1,3 +1,4 @@
+using System.Text;
 using BarcodeScanning;
 
 namespace BarcodeGenerator
@@ -510,7 +511,7 @@ namespace BarcodeGenerator
                 }
 
                 // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-                ProcessBarcodes(listBarcodes, cBarcodeFormat, cDisplayValue);
+                ProcessBarcodes(listBarcodes);
 
                 imgbtnCopyToClipboard.IsEnabled = true;
                 btnShare.IsEnabled = true;
@@ -548,8 +549,6 @@ namespace BarcodeGenerator
 
             string cBarcodeFormat = string.Empty;
             string cDisplayValue = string.Empty;
-            string cFormat = string.Empty;
-            string cValue = string.Empty;
             List<string> listBarcodes = [];
 
             // Open the media picker to select photos
@@ -591,16 +590,12 @@ namespace BarcodeGenerator
                             if (barcodeReader.BarcodeSymbologies == BarcodeFormats.All)
                             {
                                 listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
-                                cFormat = cBarcodeFormat;
-                                cValue = cDisplayValue;
                             }
                             // If the barcode symbology is the same as the selected one in the picker
                             else if (barcodeReader.BarcodeSymbologies == code.BarcodeFormat)
                             {
                                 Debug.WriteLine($"Selected symbology: {barcodeReader.BarcodeSymbologies} == {code.BarcodeFormat}");
                                 listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
-                                cFormat = cBarcodeFormat;
-                                cValue = cDisplayValue;
                             }
                         }
                     }
@@ -608,7 +603,7 @@ namespace BarcodeGenerator
             }
 
             // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-            ProcessBarcodes(listBarcodes, cFormat, cValue);
+            ProcessBarcodes(listBarcodes);
 
             // Settings after scanning from an image
             imgbtnCopyToClipboard.IsEnabled = true;
@@ -625,29 +620,24 @@ namespace BarcodeGenerator
         /// Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
         /// </summary>
         /// <param name="list"></param>
-        /// <param name="cFormat"></param>
-        /// <param name="cValue"></param>
-        private void ProcessBarcodes(List<string> list, string cFormat, string cValue)
+        private void ProcessBarcodes(List<string> list)
         {
-            // Remove duplicates and convert back to List
-            list = [.. list.Distinct()];
-
-            // Sort the list
-            list.Sort();
+            // Remove duplicates and sort the list
+            list = [.. list.Distinct().OrderBy(x => x)];
 
             // Set the barcode results in the label 'lblBarcodeResult.Text'
             if (list.Count == 1)
             {
-                btnShare.Text = $"{CodeLang.ButtonShare_Text} {cFormat}";
-                lblBarcodeResult.Text = cValue;
+                string[] parts = list[0].Split([":\n"], StringSplitOptions.None);
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
+                lblBarcodeResult.Text = parts.Length > 1 ? parts[1] : "";
             }
             else if (list.Count > 1)
             {
                 btnShare.Text = CodeLang.ButtonShare_Text;
-                foreach (string barcode in list)
-                {
-                    lblBarcodeResult.Text = $"{lblBarcodeResult.Text}{barcode}\n\n";
-                }
+                StringBuilder sb = new();
+                foreach (string item in list) sb.AppendLine(item).AppendLine();
+                lblBarcodeResult.Text = sb.ToString();
             }
             else
             {

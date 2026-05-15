@@ -9,6 +9,7 @@
 
     <Shell.TitleView>
         <Grid
+            RowDefinitions="Auto"
             ColumnDefinitions="100*, 60, 60">
             
             <Label
@@ -37,7 +38,6 @@
                 WidthRequest="44"
                 SemanticProperties.Description="{Translate ToolTipScanImage_Text}"
                 ToolTipProperties.Text="{Translate ToolTipScanImage_Text}"
-                IsEnabled="True"
                 Clicked="OnScanFromImage_Clicked">
             </ImageButton>
         </Grid>

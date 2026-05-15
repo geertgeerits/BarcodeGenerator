@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Text;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator
@@ -306,66 +307,6 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Barcode detected event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnBarcodesDetected(object? sender, BarcodeDetectionEventArgs e)
-        {
-            if (e.Results == null || e.Results.Length == 0)
-            {
-                return;
-            }
-
-            // Build the display list on the background thread
-            List<string> list = [];
-            foreach (BarcodeResult? barcode in e.Results)
-            {
-                string fmt = barcode.Format.ToString();
-                string val = barcode.Value;
-                if (!string.IsNullOrEmpty(fmt) && !string.IsNullOrEmpty(val))
-                {
-                    list.Add($"{fmt}:\n{val}");
-                }
-            }
-
-            // Remove duplicates and sort the list
-            list = [.. list.Distinct().OrderBy(x => x)];
-
-            // Marshal UI updates to the main thread
-            Dispatcher.Dispatch(() =>
-            {
-                imgbtnCopyToClipboard.IsEnabled = false;
-                btnShare.IsEnabled = false;
-                imgbtnTextToSpeech.IsEnabled = false;
-
-                lblBarcodeResult.Text = string.Empty;
-
-                // Set the barcode results in the label 'lblBarcodeResult.Text'
-                if (list.Count == 1)
-                {
-                    string[] parts = list[0].Split([":\n"], StringSplitOptions.None);
-                    btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
-                    lblBarcodeResult.Text = parts.Length > 1 ? parts[1] : "";
-                }
-                else if (list.Count > 1)
-                {
-                    btnShare.Text = CodeLang.ButtonShare_Text;
-                    System.Text.StringBuilder sb = new();
-                    foreach (string item in list) sb.AppendLine(item).AppendLine();
-                    lblBarcodeResult.Text = sb.ToString();
-                }
-
-                // Decompress the QR code result if compressed
-                lblBarcodeResult.Text = ClassCompression.DecompressFromBase64(lblBarcodeResult.Text);
-
-                imgbtnCopyToClipboard.IsEnabled = true;
-                btnShare.IsEnabled = true;
-                imgbtnTextToSpeech.IsEnabled = true;
-            });
-        }
-
-        /// <summary>
         /// Button share event
         /// </summary>
         /// <param name="sender"></param>
@@ -384,6 +325,25 @@ namespace BarcodeGenerator
         private void OnPageAppearing(object sender, EventArgs e)
         {
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+        }
+
+        /// <summary>
+        /// Toggle the camera detecting state of the barcode reader and update the image button source accordingly.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnCameraDetecting_Clicked(object sender, EventArgs e)
+        {
+            if (barcodeReader.IsDetecting)
+            {
+                barcodeReader.IsDetecting = false;
+                imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
+            }
+            else
+            {
+                barcodeReader.IsDetecting = true;
+                imgbtnCameraDetecting.Source = "camera_detect_on_128x128p.png";
+            }
         }
 
         /// <summary>
@@ -469,6 +429,98 @@ namespace BarcodeGenerator
             }
 
             return status;
+        }
+
+        /// <summary>
+        /// Barcode detected event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnBarcodesDetected(object? sender, BarcodeDetectionEventArgs e)
+        {
+            if (e.Results == null || e.Results.Length == 0)
+            {
+                return;
+            }
+
+            // Marshal UI updates to the main thread
+            Dispatcher.Dispatch(() =>
+            {
+                imgbtnCopyToClipboard.IsEnabled = false;
+                btnShare.IsEnabled = false;
+                imgbtnTextToSpeech.IsEnabled = false;
+                lblBarcodeResult.Text = string.Empty;
+            });
+
+            string fmt = string.Empty;
+            string val = string.Empty;
+
+            // Build the display list on the background thread
+            List<string> list = [];
+            foreach (BarcodeResult? barcode in e.Results)
+            {
+                fmt = barcode.Format.ToString();
+                val = barcode.Value;
+
+                // Decompress the QR code result if compressed
+                val = ClassCompression.DecompressFromBase64(val);
+
+                if (!string.IsNullOrEmpty(fmt) && !string.IsNullOrEmpty(val))
+                {
+                    list.Add($"{fmt}:\n{val}");
+                }
+            }
+
+            // Marshal UI updates to the main thread
+            Dispatcher.Dispatch(() =>
+            {
+                // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
+                ProcessBarcodes(list);
+
+                // Enable the buttons after processing the results
+                imgbtnCopyToClipboard.IsEnabled = true;
+                btnShare.IsEnabled = true;
+                imgbtnTextToSpeech.IsEnabled = true;
+            });
+        }
+
+        /// <summary>
+        /// Handles the click event to initiate scanning from an image asynchronously.
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the button that was clicked.</param>
+        /// <param name="e">An EventArgs object that contains the event data.</param>
+        private void OnScanFromImage_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
+        /// </summary>
+        /// <param name="list"></param>
+        private void ProcessBarcodes(List<string> list)
+        {
+            // Remove duplicates and sort the list
+            list = [.. list.Distinct().OrderBy(x => x)];
+
+            // Set the barcode results in the label 'lblBarcodeResult.Text'
+            if (list.Count == 1)
+            {
+                string[] parts = list[0].Split([":\n"], StringSplitOptions.None);
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
+                lblBarcodeResult.Text = parts.Length > 1 ? parts[1] : "";
+            }
+            else if (list.Count > 1)
+            {
+                btnShare.Text = CodeLang.ButtonShare_Text;
+                StringBuilder sb = new();
+                foreach (string item in list) sb.AppendLine(item).AppendLine();
+                lblBarcodeResult.Text = sb.ToString();
+            }
+            else
+            {
+                lblBarcodeResult.Text = CodeLang.BarcodeNotFound_Text;
+            }
         }
     }
 }
