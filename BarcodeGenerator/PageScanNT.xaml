@@ -10,7 +10,7 @@
     <Shell.TitleView>
         <Grid
             RowDefinitions="Auto"
-            ColumnDefinitions="100*, 60, 60">
+            ColumnDefinitions="100*, 60, 60, 60">
             
             <Label
                 x:Name="lblTitle"
@@ -31,8 +31,19 @@
             </ActivityIndicator>
 
             <ImageButton
-                x:Name="imgbtnScanFromImage"
+                x:Name="imgbtnScanFromCamera"
                 Grid.Column="2"
+                Source="ic_action_camera.png"
+                HeightRequest="44"
+                WidthRequest="44"
+                SemanticProperties.Description="{Translate ToolTipScanCamera_Text}"
+                ToolTipProperties.Text="{Translate ToolTipScanCamera_Text}"
+                Clicked="OnScanFromCamera_Clicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="imgbtnScanFromImage"
+                Grid.Column="3"
                 Source="ic_action_picture.png"
                 HeightRequest="44"
                 WidthRequest="44"
@@ -121,6 +132,13 @@
                             x:Name="Graphics"
                             InputTransparent="True">
                         </GraphicsView>
+
+                        <Image
+                            x:Name="imgScanFromImage"
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            IsVisible="False">
+                        </Image>
 
                         <Grid
                             ColumnDefinitions="*, *, *, *, *"

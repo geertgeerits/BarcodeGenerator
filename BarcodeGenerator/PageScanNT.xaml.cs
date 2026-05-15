@@ -1,4 +1,3 @@
-using System.Text;
 using BarcodeScanning;
 
 namespace BarcodeGenerator
@@ -469,6 +468,23 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Handles the click event to activate camera-based barcode scanning by hiding the image scan option and
+        /// enabling the camera reader.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
+        private void OnScanFromCamera_Clicked(object sender, EventArgs e)
+        {
+            imgScanFromImage.IsVisible = false;
+            imgScanFromImage.Source = null;
+            barcodeReader.CameraEnabled = true;
+            barcodeReader.IsVisible = true;
+
+            barcodeReader.PauseScanning = false;
+            imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
+        }
+
+        /// <summary>
         /// CameraView OnDetected event
         /// </summary>
         /// <param name="sender"></param>
@@ -511,7 +527,7 @@ namespace BarcodeGenerator
                 }
 
                 // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-                ProcessBarcodes(listBarcodes);
+                lblBarcodeResult.Text = ClassBarcodes.ProcessScannedBarcodes(listBarcodes, btnShare);
 
                 imgbtnCopyToClipboard.IsEnabled = true;
                 btnShare.IsEnabled = true;
@@ -541,20 +557,22 @@ namespace BarcodeGenerator
 
             // Settings before scanning from an image
             barcodeReader.CameraEnabled = false;
+            barcodeReader.IsVisible = false;
+            imgScanFromImage.IsVisible = true;
             lblBarcodeResult.Text = string.Empty;
             btnShare.Text = CodeLang.ButtonShare_Text;
             imgbtnCopyToClipboard.IsEnabled = false;
             btnShare.IsEnabled = false;
             imgbtnTextToSpeech.IsEnabled = false;
 
-            string cBarcodeFormat = string.Empty;
+            string cBarcodeFormat;
             string cDisplayValue = string.Empty;
             List<string> listBarcodes = [];
 
             // Open the media picker to select photos
             List<FileResult> results = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
             {
-                SelectionLimit = 3,             // Default is 1; set to 0 for no limit
+                SelectionLimit = 1,             // Default is 1; set to 0 for no limit
                 RotateImage = true,
                 PreserveMetaData = true,
             });
@@ -567,6 +585,8 @@ namespace BarcodeGenerator
                     byte[] bytes = new byte[stream.Length];
                     stream.ReadExactly(bytes);
                     stream.Seek(0, SeekOrigin.Begin);
+
+                    imgScanFromImage.Source = ImageSource.FromStream(() => stream);
 
                     IReadOnlySet<BarcodeResult> list = await Methods.ScanFromImageAsync(bytes);
                     List<BarcodeResult> obj = [.. list];
@@ -603,46 +623,16 @@ namespace BarcodeGenerator
             }
 
             // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-            ProcessBarcodes(listBarcodes);
+            lblBarcodeResult.Text = ClassBarcodes.ProcessScannedBarcodes(listBarcodes, btnShare);
 
             // Settings after scanning from an image
             imgbtnCopyToClipboard.IsEnabled = true;
             btnShare.IsEnabled = true;
             imgbtnTextToSpeech.IsEnabled = true;
-            barcodeReader.CameraEnabled = true;
 
             // Stop the activity indicator
             activityIndicator.IsRunning = false;
             activityIndicator.IsVisible = false;
-        }
-
-        /// <summary>
-        /// Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-        /// </summary>
-        /// <param name="list"></param>
-        private void ProcessBarcodes(List<string> list)
-        {
-            // Remove duplicates and sort the list
-            list = [.. list.Distinct().OrderBy(x => x)];
-
-            // Set the barcode results in the label 'lblBarcodeResult.Text'
-            if (list.Count == 1)
-            {
-                string[] parts = list[0].Split([":\n"], StringSplitOptions.None);
-                btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
-                lblBarcodeResult.Text = parts.Length > 1 ? parts[1] : "";
-            }
-            else if (list.Count > 1)
-            {
-                btnShare.Text = CodeLang.ButtonShare_Text;
-                StringBuilder sb = new();
-                foreach (string item in list) sb.AppendLine(item).AppendLine();
-                lblBarcodeResult.Text = sb.ToString();
-            }
-            else
-            {
-                lblBarcodeResult.Text = CodeLang.BarcodeNotFound_Text;
-            }
         }
 
         /// <summary>

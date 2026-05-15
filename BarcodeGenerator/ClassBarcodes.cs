@@ -1,4 +1,6 @@
-﻿namespace BarcodeGenerator
+﻿using System.Text;
+
+namespace BarcodeGenerator
 {
     internal class ClassBarcodes
     {
@@ -570,6 +572,45 @@
 
             // Select the barcode format in the picker
             picker.SelectedIndex = nBarcodeScannerIndex;
+        }
+
+        /// <summary>
+        /// Process the list of scanned BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="btnShare"></param>
+        public static string ProcessScannedBarcodes(List<string> list, Button btnShare)
+        {
+            // Remove duplicates and sort the list
+            list = [.. list.Distinct().OrderBy(x => x)];
+
+            // If there is only one result, display the format and value in the share button text
+            // If there are multiple results, display the count in the share button text and show all results in the label
+            string cBarcodeResult = string.Empty;
+
+            if (list.Count == 1)
+            {
+                string[] parts = list[0].Split([":\n"], StringSplitOptions.None);
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
+                cBarcodeResult = parts.Length > 1 ? parts[1] : "";
+            }
+            else if (list.Count > 1)
+            {
+                btnShare.Text = $"{CodeLang.ButtonShare_Text} ({list.Count})";
+                StringBuilder sb = new();
+                foreach (string item in list)
+                {
+                    sb.AppendLine(item).AppendLine();
+                }
+
+                cBarcodeResult = sb.ToString();
+            }
+            else
+            {
+                cBarcodeResult = CodeLang.BarcodeNotFound_Text;
+            }
+
+            return cBarcodeResult;
         }
     }
 }

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Text;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator
@@ -432,6 +431,20 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Handles the click event to activate camera-based barcode scanning by hiding the image scan option and
+        /// enabling the camera reader.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
+        private void OnScanFromCamera_Clicked(object sender, EventArgs e)
+        {
+            imgScanFromImage.IsVisible = false;
+            imgScanFromImage.Source = null;
+            barcodeReader.IsEnabled = true;
+            barcodeReader.IsVisible = true;
+        }
+
+        /// <summary>
         /// Barcode detected event
         /// </summary>
         /// <param name="sender"></param>
@@ -475,7 +488,7 @@ namespace BarcodeGenerator
             Dispatcher.Dispatch(() =>
             {
                 // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-                ProcessBarcodes(list);
+                lblBarcodeResult.Text = ClassBarcodes.ProcessScannedBarcodes(list, btnShare);
 
                 // Enable the buttons after processing the results
                 imgbtnCopyToClipboard.IsEnabled = true;
@@ -492,35 +505,6 @@ namespace BarcodeGenerator
         private void OnScanFromImage_Clicked(object sender, EventArgs e)
         {
 
-        }
-
-        /// <summary>
-        /// Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-        /// </summary>
-        /// <param name="list"></param>
-        private void ProcessBarcodes(List<string> list)
-        {
-            // Remove duplicates and sort the list
-            list = [.. list.Distinct().OrderBy(x => x)];
-
-            // Set the barcode results in the label 'lblBarcodeResult.Text'
-            if (list.Count == 1)
-            {
-                string[] parts = list[0].Split([":\n"], StringSplitOptions.None);
-                btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
-                lblBarcodeResult.Text = parts.Length > 1 ? parts[1] : "";
-            }
-            else if (list.Count > 1)
-            {
-                btnShare.Text = CodeLang.ButtonShare_Text;
-                StringBuilder sb = new();
-                foreach (string item in list) sb.AppendLine(item).AppendLine();
-                lblBarcodeResult.Text = sb.ToString();
-            }
-            else
-            {
-                lblBarcodeResult.Text = CodeLang.BarcodeNotFound_Text;
-            }
         }
     }
 }

@@ -43,7 +43,7 @@
     <Shell.TitleView>
         <Grid
             RowDefinitions="Auto"
-            ColumnDefinitions="100*, 60, 60, 60, 60">
+            ColumnDefinitions="100*, 60, 60, 60, 60, 60">
 
             <Label
                 x:Name="lblTitle"
@@ -94,8 +94,19 @@
             </ImageButton>
 
             <ImageButton
-                x:Name="imgbtnScanFromImage"
+                x:Name="imgbtnScanFromCamera"
                 Grid.Column="4"
+                Source="ic_action_camera.png"
+                HeightRequest="44"
+                WidthRequest="44"
+                SemanticProperties.Description="{Translate ToolTipScanCamera_Text}"
+                ToolTipProperties.Text="{Translate ToolTipScanCamera_Text}"
+                Clicked="OnScanFromCamera_Clicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="imgbtnScanFromImage"
+                Grid.Column="5"
                 Source="ic_action_picture.png"
                 HeightRequest="50"
                 WidthRequest="50"
@@ -153,7 +164,15 @@
                         BarcodesDetected="OnBarcodesDetected">
                     </zxing:CameraBarcodeReaderView>
                 </Border>
-            
+
+                <Image
+                    x:Name="imgScanFromImage"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    IsVisible="False">
+                </Image>
+
                 <HorizontalStackLayout
                     Grid.Row="4"
                     Grid.Column="0"
