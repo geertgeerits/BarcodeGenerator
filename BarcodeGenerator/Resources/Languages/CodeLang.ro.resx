@@ -975,4 +975,7 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Scanați o imagine</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Scanare de pe cameră</value>
+  </data>
 </root>

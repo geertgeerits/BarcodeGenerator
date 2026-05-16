@@ -975,4 +975,7 @@ Tous les types de données ne sont pas compatibles avec tous les appareils.</val
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Scanner une image</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Numérisation depuis l'appareil photo</value>
+  </data>
 </root>

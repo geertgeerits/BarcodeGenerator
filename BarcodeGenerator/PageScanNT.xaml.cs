@@ -478,7 +478,16 @@ namespace BarcodeGenerator
             imgScanFromImage.IsVisible = false;
             imgScanFromImage.Source = null;
             barcodeReader.CameraEnabled = true;
-            barcodeReader.IsVisible = true;
+
+            sldCameraZoom.IsEnabled = true;
+
+            pckCameraQualityBack.IsVisible = true;
+            pckCameraQualityFront.IsVisible = true;
+            imgbtnCameraQuality.IsVisible = true;
+            imgbtnCameraFacing.IsVisible = true;
+            imgbtnCameraDetecting.IsVisible = true;
+            imgbtnCameraVibrate.IsVisible = true;
+            imgbtnCameraTorch.IsVisible = true;
 
             barcodeReader.PauseScanning = false;
             imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
@@ -557,8 +566,18 @@ namespace BarcodeGenerator
 
             // Settings before scanning from an image
             barcodeReader.CameraEnabled = false;
-            barcodeReader.IsVisible = false;
+
+            sldCameraZoom.IsEnabled = false;
+            pckCameraQualityBack.IsVisible = false;
+            pckCameraQualityFront.IsVisible = false;
+            imgbtnCameraQuality.IsVisible = false;
+            imgbtnCameraFacing.IsVisible = false;
+            imgbtnCameraDetecting.IsVisible = false;
+            imgbtnCameraVibrate.IsVisible = false;
+            imgbtnCameraTorch.IsVisible = false;
+
             imgScanFromImage.IsVisible = true;
+            
             lblBarcodeResult.Text = string.Empty;
             btnShare.Text = CodeLang.ButtonShare_Text;
             imgbtnCopyToClipboard.IsEnabled = false;
@@ -586,8 +605,10 @@ namespace BarcodeGenerator
                     stream.ReadExactly(bytes);
                     stream.Seek(0, SeekOrigin.Begin);
 
+                    // Display the selected image in the Image control
                     imgScanFromImage.Source = ImageSource.FromStream(() => stream);
 
+                    // Scan the image for barcodes using the native library and get the results as a list of BarcodeResult objects
                     IReadOnlySet<BarcodeResult> list = await Methods.ScanFromImageAsync(bytes);
                     List<BarcodeResult> obj = [.. list];
 

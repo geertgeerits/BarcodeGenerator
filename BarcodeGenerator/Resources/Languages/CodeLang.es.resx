@@ -975,4 +975,7 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Escanee una imagen</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Escaneo desde la cámara</value>
+  </data>
 </root>

@@ -974,4 +974,7 @@ Wählen Sie eine Option.</value>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Bild scannen</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Scan von der Kamera</value>
+  </data>
 </root>

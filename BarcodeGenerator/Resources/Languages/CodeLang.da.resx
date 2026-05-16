@@ -975,4 +975,7 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Scan et billede</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Scan fra kamera</value>
+  </data>
 </root>

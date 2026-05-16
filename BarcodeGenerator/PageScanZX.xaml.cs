@@ -459,16 +459,18 @@ namespace BarcodeGenerator
             // Marshal UI updates to the main thread
             Dispatcher.Dispatch(() =>
             {
+                // Settings
                 imgbtnCopyToClipboard.IsEnabled = false;
                 btnShare.IsEnabled = false;
                 imgbtnTextToSpeech.IsEnabled = false;
+                
                 lblBarcodeResult.Text = string.Empty;
             });
 
+            // Build the display list on the background thread
             string fmt = string.Empty;
             string val = string.Empty;
 
-            // Build the display list on the background thread
             List<string> list = [];
             foreach (BarcodeResult? barcode in e.Results)
             {
@@ -502,9 +504,11 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender">The source of the event, typically the button that was clicked.</param>
         /// <param name="e">An EventArgs object that contains the event data.</param>
-        private void OnScanFromImage_Clicked(object sender, EventArgs e)
+        private async void OnScanFromImage_Clicked(object sender, EventArgs e)
         {
-
+            // Not possible to implement scanning from an image with ZXing.Net.Maui,
+            // because the BarcodeReader class and its Decode method for processing images are not available in the ZXing.Net.Maui library.
+            await DisplayAlertAsync(CodeLang.ErrorTitle_Text, "Scan from image is not supported", CodeLang.ButtonClose_Text);
         }
     }
 }

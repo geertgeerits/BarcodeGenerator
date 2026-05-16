@@ -975,4 +975,7 @@ Ikke alle nyttelasttyper støttes på alle enheter.</value>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Skann et bilde</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Skann fra kamera</value>
+  </data>
 </root>

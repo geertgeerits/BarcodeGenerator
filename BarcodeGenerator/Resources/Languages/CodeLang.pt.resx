@@ -975,4 +975,7 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Escanear uma imagem</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Digitalização da câmera</value>
+  </data>
 </root>

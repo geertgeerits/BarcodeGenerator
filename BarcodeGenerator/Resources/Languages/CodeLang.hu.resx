@@ -975,4 +975,7 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Szkenneljen képet</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Szkennelés kameráról</value>
+  </data>
 </root>

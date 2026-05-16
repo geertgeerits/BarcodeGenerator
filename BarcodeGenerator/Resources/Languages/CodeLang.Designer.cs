@@ -2374,6 +2374,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scan from camera.
+        /// </summary>
+        internal static string ToolTipScanCamera_Text {
+            get {
+                return ResourceManager.GetString("ToolTipScanCamera_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scan an image.
         /// </summary>
         internal static string ToolTipScanImage_Text {

@@ -137,6 +137,7 @@
                             x:Name="imgScanFromImage"
                             AbsoluteLayout.LayoutFlags="All"
                             AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            BackgroundColor="Black"
                             IsVisible="False">
                         </Image>
 

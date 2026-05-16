@@ -975,4 +975,7 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Naskenujte obrázek</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Skenování z fotoaparátu</value>
+  </data>
 </root>

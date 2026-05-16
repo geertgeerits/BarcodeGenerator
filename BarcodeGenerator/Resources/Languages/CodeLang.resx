@@ -975,4 +975,7 @@ Not all payload types are supported on every device.</value>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Scan an image</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Scan from camera</value>
+  </data>
 </root>

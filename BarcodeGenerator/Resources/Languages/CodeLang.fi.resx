@@ -975,4 +975,7 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Skannaa kuva</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Skannaa kamerasta</value>
+  </data>
 </root>

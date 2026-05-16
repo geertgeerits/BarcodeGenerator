@@ -975,4 +975,7 @@ Non tutti i tipi di dati sono supportati su tutti i dispositivi.</value>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Scansiona un'immagine</value>
   </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Scansione dalla fotocamera</value>
+  </data>
 </root>
