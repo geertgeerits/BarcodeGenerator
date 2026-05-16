@@ -475,15 +475,22 @@ namespace BarcodeGenerator
         /// <param name="e">The event data.</param>
         private void OnScanFromCamera_Clicked(object sender, EventArgs e)
         {
-            imgScanFromImage.IsVisible = false;
+            // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
+            _drawable.barcodeResults = null;
+            Graphics.Invalidate();
+
+            // Settings before scanning from the camera
             imgScanFromImage.Source = null;
+            imgScanFromImage.IsVisible = false;
+            
             barcodeReader.CameraEnabled = true;
 
             sldCameraZoom.IsEnabled = true;
+            sldCameraZoom.Value = 1;
 
             pckCameraQualityBack.IsVisible = true;
             pckCameraQualityFront.IsVisible = true;
-            imgbtnCameraQuality.IsVisible = true;
+            imgbtnCameraQuality.IsVisible = true;                                                                                                
             imgbtnCameraFacing.IsVisible = true;
             imgbtnCameraDetecting.IsVisible = true;
             imgbtnCameraVibrate.IsVisible = true;
@@ -491,6 +498,9 @@ namespace BarcodeGenerator
 
             barcodeReader.PauseScanning = false;
             imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
+
+            lblBarcodeResult.Text = string.Empty;
+            btnShare.Text = CodeLang.ButtonShare_Text;
         }
 
         /// <summary>
