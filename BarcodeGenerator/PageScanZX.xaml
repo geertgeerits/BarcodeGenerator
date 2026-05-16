@@ -76,6 +76,7 @@
                 Source="camera_detect_off_128x128p.png"
                 SemanticProperties.Description="{Translate ToolTipCameraDetecting_Text}"
                 ToolTipProperties.Text="{Translate ToolTipCameraDetecting_Text}"
+                IsVisible="False"
                 Clicked="OnCameraDetecting_Clicked">
             </ImageButton>
             

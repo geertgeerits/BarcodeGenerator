@@ -379,6 +379,10 @@ namespace BarcodeGenerator
             {
                 barcodeReader.PauseScanning = false;
                 imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
+
+                // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
+                _drawable.barcodeResults = null;
+                Graphics.Invalidate();
             }
             else
             {
