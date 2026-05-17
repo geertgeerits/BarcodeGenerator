@@ -23,7 +23,7 @@
                 Width = 900,
                 MinimumHeight = 800,
                 MinimumWidth = 900,
-                MaximumHeight = 1300,
+                MaximumHeight = 1500,
                 MaximumWidth = 900
             };
         }
