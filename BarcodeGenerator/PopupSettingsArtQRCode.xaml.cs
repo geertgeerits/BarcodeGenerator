@@ -48,6 +48,17 @@ namespace BarcodeGenerator
         /// <param name="e">The event data associated with the button click.</param>
         private async void OnButtonClose_Clicked(object sender, EventArgs e)
         {
+            // !!!BUG!!! in NuGet package SkiaSharp.QrCode version 0.12.0.
+            // The background color of the finder pattern shape is not being applied correctly,
+            // so we need to manually adjust the background color to ensure it is fully opaque when using Rounded or Circle shapes
+            if (ClassBarcodes.cQRCodeFinderPatternShape == "Rounded" || ClassBarcodes.cQRCodeFinderPatternShape == "Circle")
+            {
+                if (ClassBarcodes.cCodeColorBgArtQRCode.Length == 8)
+                {
+                    ClassBarcodes.cCodeColorBgArtQRCode = $"FF{ClassBarcodes.cCodeColorBgArtQRCode.Substring(2, 6)}";
+                }
+            }
+
             await CloseAsync();
         }
     }
