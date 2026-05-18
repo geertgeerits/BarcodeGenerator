@@ -129,7 +129,7 @@
                         <GraphicsView
                             AbsoluteLayout.LayoutFlags="All"
                             AbsoluteLayout.LayoutBounds="0,0,1,1"
-                            x:Name="Graphics"
+                            x:Name="GraphicsCamera"
                             InputTransparent="True">
                         </GraphicsView>
 
@@ -140,6 +140,13 @@
                             BackgroundColor="Black"
                             IsVisible="False">
                         </Image>
+
+                        <GraphicsView
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            x:Name="GraphicsImage"
+                            InputTransparent="True">
+                        </GraphicsView>
 
                         <Grid
                             ColumnDefinitions="*, *, *, *, *"

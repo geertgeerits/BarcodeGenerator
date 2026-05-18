@@ -161,7 +161,7 @@ namespace BarcodeGenerator
 
             // Enable the camera
             barcodeReader.CameraEnabled = true;
-            Graphics.Drawable = _drawable;
+            GraphicsCamera.Drawable = _drawable;
 
             // Set language text to speech using the Appearing event of the PageScanNT.xaml
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
@@ -382,7 +382,7 @@ namespace BarcodeGenerator
 
                 // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
                 _drawable.barcodeResults = null;
-                Graphics.Invalidate();
+                GraphicsCamera.Invalidate();
             }
             else
             {
@@ -481,7 +481,7 @@ namespace BarcodeGenerator
         {
             // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
             _drawable.barcodeResults = null;
-            Graphics.Invalidate();
+            GraphicsCamera.Invalidate();
 
             // Settings before scanning from the camera
             imgScanFromImage.Source = null;
@@ -531,7 +531,7 @@ namespace BarcodeGenerator
             try
             {
                 _drawable.barcodeResults = e.BarcodeResults;
-                Graphics.Invalidate();
+                GraphicsCamera.Invalidate();
 
                 foreach (var barcode in e.BarcodeResults)
                 {
@@ -577,6 +577,10 @@ namespace BarcodeGenerator
             activityIndicator.IsVisible = true;
             activityIndicator.IsRunning = true;
             await Task.Delay(200);
+
+            // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
+            _drawable.barcodeResults = null;
+            GraphicsCamera.Invalidate();
 
             // Settings before scanning from an image
             barcodeReader.CameraEnabled = false;
@@ -629,6 +633,12 @@ namespace BarcodeGenerator
                     if (obj.Count > 0)
                     {
                         Debug.WriteLine($"obj.Count: {obj.Count}");
+
+                        // The location and size of the rectangle is wrong when scanning from an image,
+                        // the ImageBoundingBox is used instead of the PreviewBoundingBox,
+                        // this is a known issue in the native libraries
+                        //_drawable.barcodeResults = list;
+                        //GraphicsImage.Invalidate();
 
                         foreach (BarcodeResult code in obj)
                         {
@@ -690,7 +700,16 @@ namespace BarcodeGenerator
                     {
                         foreach (var barcode in barcodeResults)
                         {
-                            canvas.DrawRectangle(barcode.PreviewBoundingBox);
+                            // If barcode is scanned from the camera use the PreviewBoundingBox
+                            if (barcode.PreviewBoundingBox.Width > 0 && barcode.PreviewBoundingBox.Height > 0)
+                            {
+                                canvas.DrawRectangle(barcode.PreviewBoundingBox);
+                            }
+                            // If barcode is scanned from an image use the ImageBoundingBox - The location and size of the rectangle is wrong
+                            else
+                            {
+                                //canvas.DrawRectangle(barcode.ImageBoundingBox);
+                            }
                         }
                     }
                     catch (Exception ex)
