@@ -10,6 +10,9 @@ namespace BarcodeGenerator
         private int nQualityCameraBack;
         private int nQualityCameraFront;
 
+        //public static double nScaleWidth;
+        //public static double nScaleHeight;
+
         public PageScanNT()
     	{
             try
@@ -623,9 +626,15 @@ namespace BarcodeGenerator
                     stream.ReadExactly(bytes);
                     stream.Seek(0, SeekOrigin.Begin);
 
-                    //// Get the dimensions of the image using the utility method
+                    //// Get the dimensions and aspect ratio of the image using the utility method
                     //(int fileWidth, int fileHeight) = ClassImageUtilities.GetImageDimensions(file.FullPath);
-                    //Debug.WriteLine($"File dimensions: {fileWidth}x{fileHeight}");
+                    //double nAspectRatio = ClassImageUtilities.GetAspectRatioImage(fileWidth, fileHeight);
+                    //Debug.WriteLine($"File dimensions: {fileWidth}x{fileHeight} - Aspect ratio: {nAspectRatio}");
+
+                    //// Set the dimensions of the image control and set the width and height to the same value to fill the control (otherwise the barcode bounding box is not in the right location)
+                    //imgScanFromImage.WidthRequest = imgScanFromImage.Height;
+                    //imgScanFromImage.HeightRequest = imgScanFromImage.Height;
+                    ////imgScanFromImage.Aspect = Aspect.AspectFit;
 
                     //// Get the dimensions of the image control
                     //double imgControlWidth = imgScanFromImage.Width;
@@ -633,9 +642,9 @@ namespace BarcodeGenerator
                     //Debug.WriteLine($"Image control dimensions: {imgControlWidth}x{imgControlHeight}");
 
                     //// Calculate the scale factors for width and height
-                    //double scaleWidth = fileWidth / imgControlWidth;
-                    //double scaleHeight = fileHeight / imgControlHeight;
-                    //Debug.WriteLine($"Scale factors - Width: {scaleWidth}, Height: {scaleHeight}");
+                    //nScaleWidth = fileWidth / imgControlWidth;
+                    //nScaleHeight = fileHeight / imgControlHeight;
+                    //Debug.WriteLine($"Scale factors - Width: {nScaleWidth}, Height: {nScaleHeight}");
 
                     // Display the selected image in the Image control
                     imgScanFromImage.Source = ImageSource.FromStream(() => stream);
@@ -733,7 +742,17 @@ namespace BarcodeGenerator
 
                             //    //canvas.DrawRectangle(nX, nY, nWidth, nHeight);
 
-                            //    // Solution 3: does not work - The location and size of the rectangle are wrong
+                            //    // Solution 3: Works when the image control is filled
+                            //    //double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
+                            //    //float nX = barcode.ImageBoundingBox.X / (float)nScaleWidth * (float)nDensity;
+                            //    //float nY = barcode.ImageBoundingBox.Y / (float)nScaleHeight * (float)nDensity;
+                            //    //float nWidth = barcode.ImageBoundingBox.Width / (float)nScaleWidth * (float)nDensity;
+                            //    //float nHeight = barcode.ImageBoundingBox.Height / (float)nScaleHeight * (float)nDensity;
+                            //    //Debug.WriteLine($"nX: {nX}, nY: {nY}, nWidth: {nWidth}, nHeight: {nHeight}");
+
+                            //    //canvas.DrawRectangle(nX, nY, nWidth, nHeight);
+
+                            //    // Solution 4: does not work - The location and size of the rectangle are wrong
                             //    //RectF box = PreviewToImageMapper.ToPreviewBoundingBox(
                             //    //    barcode.ImageBoundingBox,
                             //    //    dirtyRect.Width,

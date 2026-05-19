@@ -2,19 +2,25 @@
 {
     internal class ClassImageUtilities
     {
-        // Returns (width, height). Returns (0,0) if format not recognized or on error.
+        /// <summary>
+        /// Returns (width, height). Returns (0,0) if format not recognized or on error.
+        /// </summary>
+        /// <param name="path">The path to the image file.</param>
+        /// <returns>A tuple containing the width and height of the image.</returns>
         public static (int width, int height) GetImageDimensions(string path)
         {
             if (string.IsNullOrEmpty(path) || !File.Exists(path))
+            {
                 return (0, 0);
+            }
 
             try
             {
-                using var fs = File.OpenRead(path);
-                using var br = new BinaryReader(fs);
+                using FileStream fs = File.OpenRead(path);
+                using BinaryReader br = new(fs);
 
                 // Read header signature
-                var sig = br.ReadBytes(8);
+                byte[] sig = br.ReadBytes(8);
 
                 // PNG: signature then IHDR chunk contains width/height at offset 16 (big-endian)
                 if (sig.Length >= 8 && sig[0] == 0x89 && sig[1] == 0x50 && sig[2] == 0x4E && sig[3] == 0x47)
@@ -44,18 +50,26 @@
                         byte markerPrefix = br.ReadByte();
                         while (markerPrefix != 0xFF)
                         {
-                            if (fs.Position >= fs.Length) return (0, 0);
+                            if (fs.Position >= fs.Length)
+                            {
+                                return (0, 0);
+                            }
+
                             markerPrefix = br.ReadByte();
                         }
 
                         // skip any padding 0xFF bytes
                         byte marker = br.ReadByte();
                         while (marker == 0xFF)
+                        {
                             marker = br.ReadByte();
+                        }
 
                         // Start of Scan or End of Image: stop
                         if (marker == 0xDA || marker == 0xD9)
+                        {
                             break;
+                        }
 
                         int length = ReadUInt16BigEndian(br);
                         // check for SOF markers: 0xC0..0xC3, 0xC5..0xC7, 0xC9..0xCB, 0xCD..0xCF
@@ -78,7 +92,7 @@
 
                 // BMP: header "BM" then width/height at offset 18 (little-endian 4 bytes)
                 fs.Seek(0, SeekOrigin.Begin);
-                var start = br.ReadBytes(2);
+                byte[] start = br.ReadBytes(2);
                 if (start.Length == 2 && start[0] == 'B' && start[1] == 'M')
                 {
                     br.BaseStream.Seek(18, SeekOrigin.Begin);
@@ -95,18 +109,56 @@
             return (0, 0);
         }
 
+        /// <summary>
+        /// Read a 4-byte big-endian integer from the binary reader. Returns 0 if not enough bytes are available.
+        /// </summary>
+        /// <param name="br">The binary reader to read from.</param>
+        /// <returns>The 4-byte big-endian integer, or 0 if not enough bytes are available.</returns>
         static int ReadInt32BigEndian(BinaryReader br)
         {
-            var b = br.ReadBytes(4);
-            if (b.Length < 4) return 0;
+            byte[] b = br.ReadBytes(4);
+            if (b.Length < 4)
+            {
+                return 0;
+            }
+
             return (b[0] << 24) | (b[1] << 16) | (b[2] << 8) | b[3];
         }
 
+        /// <summary>
+        /// Reads a 16-bit unsigned integer in big-endian byte order.
+        /// </summary>
+        /// <param name="br">The binary reader to read from.</param>
+        /// <returns>The 16-bit unsigned integer value, or 0 if fewer than 2 bytes are available.</returns>
         static int ReadUInt16BigEndian(BinaryReader br)
         {
-            var b = br.ReadBytes(2);
-            if (b.Length < 2) return 0;
+            byte[] b = br.ReadBytes(2);
+            if (b.Length < 2)
+            {
+                return 0;
+            }
+
             return (b[0] << 8) | b[1];
+        }
+
+        /// <summary>
+        /// Get aspect ratio of image. Returns 0 if width or height is 0, or if they are equal (square image).
+        /// </summary>
+        /// <param name="nWidth"></param>
+        /// <param name="nHeight"></param>
+        /// <returns></returns>
+        public static double GetAspectRatioImage(double nWidth, double nHeight)
+        {
+            if (nWidth > 0 && nHeight > nWidth)
+            {
+                return (double)nHeight / nWidth;
+            }
+            else if (nHeight > 0 && nWidth > nHeight)
+            {
+                return (double)nWidth / nHeight;
+            }
+            
+            return 0;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace BarcodeGenerator
         /// </summary>
         public static async Task ReadDeviceInfoAsync()
         {
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            System.Text.StringBuilder sb = new();
 
             sb.AppendLine($"Model: {DeviceInfo.Current.Model}");
             sb.AppendLine($"Manufacturer: {DeviceInfo.Current.Manufacturer}");
@@ -30,6 +30,23 @@ namespace BarcodeGenerator
             sb.AppendLine($"Virtual device? {isVirtual}");
 
             await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Device info", sb.ToString(), "OK");
+        }
+
+        /// <summary>
+        /// Get the main display info
+        /// </summary>
+        public static void ReadDeviceDisplay()
+        {
+            System.Text.StringBuilder sb = new();
+
+            sb.AppendLine($"Pixel width: {DeviceDisplay.Current.MainDisplayInfo.Width} / Pixel Height: {DeviceDisplay.Current.MainDisplayInfo.Height}");
+            sb.AppendLine($"Density: {DeviceDisplay.Current.MainDisplayInfo.Density}");
+            sb.AppendLine($"Orientation: {DeviceDisplay.Current.MainDisplayInfo.Orientation}");
+            sb.AppendLine($"Rotation: {DeviceDisplay.Current.MainDisplayInfo.Rotation}");
+            sb.AppendLine($"Refresh Rate: {DeviceDisplay.Current.MainDisplayInfo.RefreshRate}");
+
+            //DisplayDetailsLabel.Text = sb.ToString();
+            Debug.WriteLine($"ReadDeviceDisplay:\n{sb}");
         }
     }
 }
