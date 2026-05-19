@@ -99,7 +99,6 @@
                     ValueChanged="OnSliderCameraZoomValueChanged">
                 </Slider>
 
-                <!--// Border does not show the camera on old Android 8.0.0 phones like the Samsung Galaxy A3 A320: use Frame.-->
                 <Border
                     Grid.Row="2"
                     Grid.Column="0"
@@ -126,13 +125,6 @@
                             OnDetectionFinished="OnCameraDetectionFinished">
                         </native:CameraView>
 
-                        <GraphicsView
-                            AbsoluteLayout.LayoutFlags="All"
-                            AbsoluteLayout.LayoutBounds="0,0,1,1"
-                            x:Name="GraphicsCamera"
-                            InputTransparent="True">
-                        </GraphicsView>
-
                         <Image
                             x:Name="imgScanFromImage"
                             AbsoluteLayout.LayoutFlags="All"
@@ -144,7 +136,7 @@
                         <GraphicsView
                             AbsoluteLayout.LayoutFlags="All"
                             AbsoluteLayout.LayoutBounds="0,0,1,1"
-                            x:Name="GraphicsImage"
+                            x:Name="GraphicsBox"
                             InputTransparent="True">
                         </GraphicsView>
 

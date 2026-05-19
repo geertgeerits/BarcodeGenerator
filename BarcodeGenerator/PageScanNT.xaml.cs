@@ -161,7 +161,7 @@ namespace BarcodeGenerator
 
             // Enable the camera
             barcodeReader.CameraEnabled = true;
-            GraphicsCamera.Drawable = _drawable;
+            GraphicsBox.Drawable = _drawable;
 
             // Set language text to speech using the Appearing event of the PageScanNT.xaml
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
@@ -382,7 +382,7 @@ namespace BarcodeGenerator
 
                 // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
                 _drawable.barcodeResults = null;
-                GraphicsCamera.Invalidate();
+                GraphicsBox.Invalidate();
             }
             else
             {
@@ -481,7 +481,7 @@ namespace BarcodeGenerator
         {
             // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
             _drawable.barcodeResults = null;
-            GraphicsCamera.Invalidate();
+            GraphicsBox.Invalidate();
 
             // Settings before scanning from the camera
             imgScanFromImage.Source = null;
@@ -531,7 +531,7 @@ namespace BarcodeGenerator
             try
             {
                 _drawable.barcodeResults = e.BarcodeResults;
-                GraphicsCamera.Invalidate();
+                GraphicsBox.Invalidate();
 
                 foreach (var barcode in e.BarcodeResults)
                 {
@@ -580,7 +580,7 @@ namespace BarcodeGenerator
 
             // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
             _drawable.barcodeResults = null;
-            GraphicsCamera.Invalidate();
+            GraphicsBox.Invalidate();
 
             // Settings before scanning from an image
             barcodeReader.CameraEnabled = false;
@@ -638,7 +638,7 @@ namespace BarcodeGenerator
                         // the ImageBoundingBox is used instead of the PreviewBoundingBox,
                         // this is a known issue in the native libraries
                         //_drawable.barcodeResults = list;
-                        //GraphicsImage.Invalidate();
+                        //GraphicsBox.Invalidate();
 
                         foreach (BarcodeResult code in obj)
                         {
@@ -693,7 +693,7 @@ namespace BarcodeGenerator
                 {
                     canvas.StrokeSize = 15;
                     canvas.StrokeColor = Colors.Green;
-                    var scale = 1 / canvas.DisplayScale;
+                    float scale = 1 / canvas.DisplayScale;
                     canvas.Scale(scale, scale);
 
                     try
@@ -705,11 +705,32 @@ namespace BarcodeGenerator
                             {
                                 canvas.DrawRectangle(barcode.PreviewBoundingBox);
                             }
-                            // If barcode is scanned from an image use the ImageBoundingBox - The location and size of the rectangle is wrong
-                            else
-                            {
-                                //canvas.DrawRectangle(barcode.ImageBoundingBox);
-                            }
+                            // If barcode is scanned from an image use the ImageBoundingBox - The location and size of the rectangle are wrong
+                            //else
+                            //{
+                            //    // Solution 1: does not work - The location and size of the rectangle are wrong
+                            //    //canvas.DrawRectangle(barcode.ImageBoundingBox);
+
+                            //    // Solution 2: can be set for 1 box, not for the others
+                            //    //float nX = barcode.ImageBoundingBox.X * 1.4f;
+                            //    //float nY = barcode.ImageBoundingBox.Y * 0.571f;
+                            //    //float nWidth = barcode.ImageBoundingBox.Width * 0.7f;
+                            //    //float nHeight = barcode.ImageBoundingBox.Height * 0.7f;
+
+                            //    //canvas.DrawRectangle(nX, nY, nWidth, nHeight);
+
+                            //    // Solution 3: does not work - The location and size of the rectangle are wrong
+                            //    //RectF box = PreviewToImageMapper.ToPreviewBoundingBox(
+                            //    //    barcode.ImageBoundingBox,
+                            //    //    dirtyRect.Width,
+                            //    //    dirtyRect.Height,
+                            //    //    barcode.ImageBoundingBox.Width,
+                            //    //    barcode.ImageBoundingBox.Height,
+                            //    //    true
+                            //    //);
+
+                            //    //canvas.DrawRectangle(box);
+                            //}
                         }
                     }
                     catch (Exception ex)
@@ -722,5 +743,74 @@ namespace BarcodeGenerator
                 }
             }
         }
+        //private static class PreviewToImageMapper
+        //{
+        //    /// <summary>
+        //    /// Converts a bounding box from preview coordinates (camera preview)
+        //    /// into image coordinates (full-resolution MediaPicker image).
+        //    /// </summary>
+        //    public static RectF ToImageBoundingBox(RectF previewBox, float previewWidth, float previewHeight, float imageWidth, float imageHeight)
+        //    {
+        //        if (previewWidth <= 0 || previewHeight <= 0)
+        //        {
+        //            return RectF.Zero;
+        //        }
+
+        //        float scaleX = imageWidth / previewWidth;
+        //        float scaleY = imageHeight / previewHeight;
+
+        //        return new RectF(
+        //            previewBox.X * scaleX,
+        //            previewBox.Y * scaleY,
+        //            previewBox.Width * scaleX,
+        //            previewBox.Height * scaleY
+        //        );
+        //    }
+
+        //    /// <summary>
+        //    /// Converts a bounding box from image coordinates (full-resolution image)
+        //    /// into preview coordinates (camera preview / view).
+        //    /// Supports both simple non-uniform scaling and aspect-fit mapping with centering.
+        //    /// </summary>
+        //    public static RectF ToPreviewBoundingBox(RectF imageBox, float previewWidth, float previewHeight, float imageWidth, float imageHeight, bool aspectFit = true)
+        //    {
+        //        if (previewWidth <= 0 || previewHeight <= 0 || imageWidth <= 0 || imageHeight <= 0)
+        //        {
+        //            return RectF.Zero;
+        //        }
+
+        //        if (aspectFit)
+        //        {
+        //            // scale the image to fit into the preview while preserving aspect ratio,
+        //            // then compute the centered offset (letterboxing) and map the image rect.
+        //            float scale = Math.Min(previewWidth / imageWidth, previewHeight / imageHeight);
+        //            float scaledImageW = imageWidth * scale;
+        //            float scaledImageH = imageHeight * scale;
+
+        //            float offsetX = (previewWidth - scaledImageW) / 2f;
+        //            float offsetY = (previewHeight - scaledImageH) / 2f;
+
+        //            float x = offsetX + imageBox.X * scale;
+        //            float y = offsetY + imageBox.Y * scale;
+        //            float w = imageBox.Width * scale;
+        //            float h = imageBox.Height * scale;
+
+        //            return new RectF(x, y, w, h);
+        //        }
+        //        else
+        //        {
+        //            // non-uniform scale: map image pixels directly to preview pixels
+        //            float scaleX = previewWidth / imageWidth;
+        //            float scaleY = previewHeight / imageHeight;
+
+        //            return new RectF(
+        //                imageBox.X * scaleX,
+        //                imageBox.Y * scaleY,
+        //                imageBox.Width * scaleX,
+        //                imageBox.Height * scaleY
+        //            );
+        //        }
+        //    }
+        //}
     }
 }
