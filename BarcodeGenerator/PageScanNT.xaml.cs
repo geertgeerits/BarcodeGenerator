@@ -623,6 +623,20 @@ namespace BarcodeGenerator
                     stream.ReadExactly(bytes);
                     stream.Seek(0, SeekOrigin.Begin);
 
+                    //// Get the dimensions of the image using the utility method
+                    //(int fileWidth, int fileHeight) = ClassImageUtilities.GetImageDimensions(file.FullPath);
+                    //Debug.WriteLine($"File dimensions: {fileWidth}x{fileHeight}");
+
+                    //// Get the dimensions of the image control
+                    //double imgControlWidth = imgScanFromImage.Width;
+                    //double imgControlHeight = imgScanFromImage.Height;
+                    //Debug.WriteLine($"Image control dimensions: {imgControlWidth}x{imgControlHeight}");
+
+                    //// Calculate the scale factors for width and height
+                    //double scaleWidth = fileWidth / imgControlWidth;
+                    //double scaleHeight = fileHeight / imgControlHeight;
+                    //Debug.WriteLine($"Scale factors - Width: {scaleWidth}, Height: {scaleHeight}");
+
                     // Display the selected image in the Image control
                     imgScanFromImage.Source = ImageSource.FromStream(() => stream);
 
