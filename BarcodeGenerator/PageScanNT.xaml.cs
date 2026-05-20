@@ -731,7 +731,7 @@ namespace BarcodeGenerator
                     canvas.Scale(scale, scale);
 
                     // Get the density of the device display if the barcode is scanned from an image
-                    double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
+                    //double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
 
                     try
                     {

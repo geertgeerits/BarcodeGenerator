@@ -142,11 +142,11 @@
         }
 
         /// <summary>
-        /// Get aspect ratio of image. Returns 0 if width or height is 0, or if they are equal (square image).
+        /// Get aspect ratio of image
         /// </summary>
         /// <param name="nWidth"></param>
         /// <param name="nHeight"></param>
-        /// <returns></returns>
+        /// <returns>Returns 0 if width or height is 0</returns>
         public static double GetAspectRatioImage(double nWidth, double nHeight)
         {
             if (nWidth > 0 && nHeight > nWidth)
@@ -157,7 +157,11 @@
             {
                 return (double)nWidth / nHeight;
             }
-            
+            else if (nWidth == nHeight)
+            {
+                return 1;
+            }
+
             return 0;
         }
     }
