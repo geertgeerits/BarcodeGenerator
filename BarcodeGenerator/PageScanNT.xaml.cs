@@ -164,7 +164,7 @@ namespace BarcodeGenerator
 
             // Enable the camera
             barcodeReader.CameraEnabled = true;
-            GraphicsBox.Drawable = _drawable;
+            graphicsBox.Drawable = _drawable;
 
             // Set language text to speech using the Appearing event of the PageScanNT.xaml
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
@@ -385,7 +385,7 @@ namespace BarcodeGenerator
 
                 // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
                 _drawable.barcodeResults = null;
-                GraphicsBox.Invalidate();
+                graphicsBox.Invalidate();
             }
             else
             {
@@ -484,7 +484,8 @@ namespace BarcodeGenerator
         {
             // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
             _drawable.barcodeResults = null;
-            GraphicsBox.Invalidate();
+            graphicsBox.Invalidate();
+            graphicsBox.IsVisible = true;
 
             // Settings before scanning from the camera
             imgScanFromImage.Source = null;
@@ -534,7 +535,7 @@ namespace BarcodeGenerator
             try
             {
                 _drawable.barcodeResults = e.BarcodeResults;
-                GraphicsBox.Invalidate();
+                graphicsBox.Invalidate();
 
                 foreach (var barcode in e.BarcodeResults)
                 {
@@ -583,7 +584,8 @@ namespace BarcodeGenerator
 
             // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
             _drawable.barcodeResults = null;
-            GraphicsBox.Invalidate();
+            graphicsBox.Invalidate();
+            graphicsBox.IsVisible = false;
 
             // Settings before scanning from an image
             barcodeReader.CameraEnabled = false;
@@ -626,14 +628,22 @@ namespace BarcodeGenerator
                     stream.ReadExactly(bytes);
                     stream.Seek(0, SeekOrigin.Begin);
 
-                    //// Get the dimensions and aspect ratio of the image using the utility method
+                    //// Get the dimensions and aspect ratio of the image on disk using the utility method
                     //(int fileWidth, int fileHeight) = ClassImageUtilities.GetImageDimensions(file.FullPath);
                     //double nAspectRatio = ClassImageUtilities.GetAspectRatioImage(fileWidth, fileHeight);
                     //Debug.WriteLine($"File dimensions: {fileWidth}x{fileHeight} - Aspect ratio: {nAspectRatio}");
 
                     //// Set the dimensions of the image control and set the width and height to the same value to fill the control (otherwise the barcode bounding box is not in the right location)
-                    //imgScanFromImage.WidthRequest = imgScanFromImage.Height;
-                    //imgScanFromImage.HeightRequest = imgScanFromImage.Height;
+                    //if (imgScanFromImage.Width > 0 && imgScanFromImage.Height > imgScanFromImage.Width)
+                    //{
+                    //    imgScanFromImage.WidthRequest = (double)imgScanFromImage.Height / nAspectRatio;
+                    //}
+                    //else if (imgScanFromImage.Height > 0 && imgScanFromImage.Width > imgScanFromImage.Height)
+                    //{
+                    //    imgScanFromImage.HeightRequest = (double)imgScanFromImage.Width * nAspectRatio;
+                    //}
+                    //Debug.WriteLine($"Image control dimensions after setting: {imgScanFromImage.Width}x{imgScanFromImage.Height}");
+                    //imgScanFromImage.HorizontalOptions = LayoutOptions.Start;
                     ////imgScanFromImage.Aspect = Aspect.AspectFit;
 
                     //// Get the dimensions of the image control
@@ -660,8 +670,9 @@ namespace BarcodeGenerator
                         // The location and size of the rectangle is wrong when scanning from an image,
                         // the ImageBoundingBox is used instead of the PreviewBoundingBox,
                         // this is a known issue in the native libraries
-                        //_drawable.barcodeResults = list;
-                        //GraphicsBox.Invalidate();
+                        _drawable.barcodeResults = list;
+                        graphicsBox.Invalidate();
+                        graphicsBox.IsVisible = true;
 
                         foreach (BarcodeResult code in obj)
                         {
@@ -719,6 +730,9 @@ namespace BarcodeGenerator
                     float scale = 1 / canvas.DisplayScale;
                     canvas.Scale(scale, scale);
 
+                    // Get the density of the device display if the barcode is scanned from an image
+                    double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
+
                     try
                     {
                         foreach (var barcode in barcodeResults)
@@ -728,31 +742,21 @@ namespace BarcodeGenerator
                             {
                                 canvas.DrawRectangle(barcode.PreviewBoundingBox);
                             }
-                            // If barcode is scanned from an image use the ImageBoundingBox - The location and size of the rectangle are wrong
+                            ////If barcode is scanned from an image use the ImageBoundingBox - The location and size of the rectangle are wrong
                             //else
                             //{
-                            //    // Solution 1: does not work - The location and size of the rectangle are wrong
+                            //    // Solution 1: Works when the image control is filled with the image, but not when the image is resized to fit the control (the location and size of the rectangle are wrong)
+                            //    float nX = barcode.ImageBoundingBox.X / (float)nScaleWidth * (float)nDensity;
+                            //    float nY = barcode.ImageBoundingBox.Y / (float)nScaleHeight * (float)nDensity;
+                            //    float nWidth = barcode.ImageBoundingBox.Width / (float)nScaleWidth * (float)nDensity;
+                            //    float nHeight = barcode.ImageBoundingBox.Height / (float)nScaleHeight * (float)nDensity;
+                            //    Debug.WriteLine($"nX: {nX}, nY: {nY}, nWidth: {nWidth}, nHeight: {nHeight}");
+                            //    canvas.DrawRectangle(nX, nY, nWidth, nHeight);
+
+                            //    // Solution 2: does not work - The location and size of the rectangle are wrong
                             //    //canvas.DrawRectangle(barcode.ImageBoundingBox);
 
-                            //    // Solution 2: can be set for 1 box, not for the others
-                            //    //float nX = barcode.ImageBoundingBox.X * 1.4f;
-                            //    //float nY = barcode.ImageBoundingBox.Y * 0.571f;
-                            //    //float nWidth = barcode.ImageBoundingBox.Width * 0.7f;
-                            //    //float nHeight = barcode.ImageBoundingBox.Height * 0.7f;
-
-                            //    //canvas.DrawRectangle(nX, nY, nWidth, nHeight);
-
-                            //    // Solution 3: Works when the image control is filled
-                            //    //double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
-                            //    //float nX = barcode.ImageBoundingBox.X / (float)nScaleWidth * (float)nDensity;
-                            //    //float nY = barcode.ImageBoundingBox.Y / (float)nScaleHeight * (float)nDensity;
-                            //    //float nWidth = barcode.ImageBoundingBox.Width / (float)nScaleWidth * (float)nDensity;
-                            //    //float nHeight = barcode.ImageBoundingBox.Height / (float)nScaleHeight * (float)nDensity;
-                            //    //Debug.WriteLine($"nX: {nX}, nY: {nY}, nWidth: {nWidth}, nHeight: {nHeight}");
-
-                            //    //canvas.DrawRectangle(nX, nY, nWidth, nHeight);
-
-                            //    // Solution 4: does not work - The location and size of the rectangle are wrong
+                            //    // Solution 3: does not work - The location and size of the rectangle are wrong
                             //    //RectF box = PreviewToImageMapper.ToPreviewBoundingBox(
                             //    //    barcode.ImageBoundingBox,
                             //    //    dirtyRect.Width,
@@ -761,7 +765,6 @@ namespace BarcodeGenerator
                             //    //    barcode.ImageBoundingBox.Height,
                             //    //    true
                             //    //);
-
                             //    //canvas.DrawRectangle(box);
                             //}
                         }

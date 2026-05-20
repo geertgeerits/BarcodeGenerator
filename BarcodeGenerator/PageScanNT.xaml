@@ -130,14 +130,13 @@
                             AbsoluteLayout.LayoutFlags="All"
                             AbsoluteLayout.LayoutBounds="0,0,1,1"
                             BackgroundColor="Black"
-                            Aspect="AspectFit"
                             IsVisible="False">
                         </Image>
 
                         <GraphicsView
                             AbsoluteLayout.LayoutFlags="All"
                             AbsoluteLayout.LayoutBounds="0,0,1,1"
-                            x:Name="GraphicsBox"
+                            x:Name="graphicsBox"
                             InputTransparent="True">
                         </GraphicsView>
 
