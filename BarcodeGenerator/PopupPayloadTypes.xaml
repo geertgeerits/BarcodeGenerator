@@ -585,6 +585,7 @@
                     Placeholder="{Translate PayloadTypeSctName_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    MaxLength="70"
                     Text=""
                     ReturnType="Next">
                 </Entry>
@@ -625,6 +626,7 @@
                     Placeholder="{Translate PayloadTypeSctAmountEur_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
+                    MaxLength="12"
                     Text=""
                     ReturnType="Next">
                 </Entry>
@@ -644,6 +646,8 @@
                     Placeholder="{Translate PayloadTypeSctPurpose_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    MaxLength="4"
+                    TextTransform="Uppercase"
                     Text=""
                     ReturnType="Next">
                 </Entry>
@@ -663,6 +667,7 @@
                     Placeholder="{Translate PayloadTypeSctRemittanceReference_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    MaxLength="35"
                     Text=""
                     ReturnType="Next">
                 </Entry>
@@ -682,6 +687,7 @@
                     Placeholder="{Translate PayloadTypeSctRemittanceText_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    MaxLength="140"
                     Text=""
                     ReturnType="Next">
                 </Entry>
@@ -701,6 +707,7 @@
                     Placeholder="{Translate PayloadTypeSctInformation_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    MaxLength="70"
                     Text=""
                     ReturnType="Next">
                 </Entry>

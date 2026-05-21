@@ -1014,4 +1014,7 @@ Not all payload types are supported on every device.</value>
   <data name="ErrorBicInvalid_Text" xml:space="preserve">
     <value>BIC is invalid.</value>
   </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Name is mandatory.</value>
+  </data>
 </root>

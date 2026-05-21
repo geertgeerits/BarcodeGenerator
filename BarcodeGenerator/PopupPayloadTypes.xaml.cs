@@ -680,8 +680,7 @@ EUR{entPayloadTypeSctAmountEur.Text.Trim()}
 {entPayloadTypeSctPurpose.Text.Trim()}
 {entPayloadTypeSctRemittanceReference.Text.Trim()}
 {entPayloadTypeSctRemittanceText.Text.Trim()}
-{entPayloadTypeSctInformation.Text.Trim()}
-";
+{entPayloadTypeSctInformation.Text.Trim()}";
             }
             else
             {
@@ -826,15 +825,23 @@ EUR{entPayloadTypeSctAmountEur.Text.Trim()}
         /// <returns></returns>
         private async Task<bool> IsValidSepaCreditTransfer()
         {
-            // Validate that the BIC, as they are required for a valid SEPA Credit Transfer payload.
-            if (string.IsNullOrWhiteSpace(entPayloadTypeSctBic.Text) || entPayloadTypeSctBic.Text.Length < 8)
+            // BIC: validate that the BIC, as they are required for a valid SEPA Credit Transfer payload.
+            if (entPayloadTypeSctBic.Text.Length is not (8 or 11))
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorBicInvalid_Text, CodeLang.ButtonClose_Text);
                 _ = entPayloadTypeSctBic.Focus();
                 return false;
             }
 
-            // Validate the IBAN number using the IsValidIban method, which checks both the format and checksum of the IBAN. If the IBAN is invalid, display an error message and return false to indicate that the validation failed.
+            // Name: validate that the name field is not empty or whitespace, as it is required for a valid SEPA Credit Transfer payload. If the name is invalid, display an error message and return false to indicate that the validation failed.
+            if (string.IsNullOrWhiteSpace(entPayloadTypeSctName.Text))
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorNameInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeSctName.Focus();
+                return false;
+            }
+
+            // IBAN: validate the IBAN number using the IsValidIban method, which checks both the format and checksum of the IBAN. If the IBAN is invalid, display an error message and return false to indicate that the validation failed.
             if (!IsValidIban(entPayloadTypeSctIban.Text))
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorIbanInvalid_Text, CodeLang.ButtonClose_Text);
@@ -842,22 +849,19 @@ EUR{entPayloadTypeSctAmountEur.Text.Trim()}
                 return false;
             }
 
-            // Replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
+            // Amount: replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
             entPayloadTypeSctAmountEur.Text = (entPayloadTypeSctAmountEur.Text ?? string.Empty).Trim().Replace(',', '.');
 
-            // Validate that the inputs can be parsed as doubles using invariant culture to ensure consistent decimal separator handling
-            if (!double.TryParse(entPayloadTypeSctAmountEur.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out double Amount))
+            // Amount: validate that the inputs can be parsed as decimals using invariant culture to ensure consistent decimal separator handling
+            if (!decimal.TryParse(entPayloadTypeSctAmountEur.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out decimal nAmount) || nAmount is < 0.01m or > 999_999_999.99m)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorAmountInvalid_Text, CodeLang.ButtonClose_Text);
                 _ = entPayloadTypeSctAmountEur.Focus();
                 return false;
             }
-            else if (Amount < 0.0)  // Amount must be greater than zero
-            {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorAmountInvalid_Text, CodeLang.ButtonClose_Text);
-                _ = entPayloadTypeSctAmountEur.Focus();
-                return false;
-            }
+
+            // Amount: format the amount to have exactly two decimal places and use a period as the decimal separator, regardless of the user's locale settings. This ensures that the amount is correctly formatted for the SEPA Credit Transfer payload.
+            entPayloadTypeSctAmountEur.Text = nAmount.ToString("F2", CultureInfo.InvariantCulture);
 
             return true;
         }

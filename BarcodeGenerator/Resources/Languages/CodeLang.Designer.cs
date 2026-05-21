@@ -1088,6 +1088,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name is mandatory..
+        /// </summary>
+        internal static string ErrorNameInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorNameInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phone number is not valid..
         /// </summary>
         internal static string ErrorPhoneNumberInvalid_Text {
