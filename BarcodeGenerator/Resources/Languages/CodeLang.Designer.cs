@@ -1016,11 +1016,38 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount is invalid..
+        /// </summary>
+        internal static string ErrorAmountInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorAmountInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BIC is invalid..
+        /// </summary>
+        internal static string ErrorBicInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorBicInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to E-mail address is not valid..
         /// </summary>
         internal static string ErrorEmailInvalid_Text {
             get {
                 return ResourceManager.GetString("ErrorEmailInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IBAN number is not valid..
+        /// </summary>
+        internal static string ErrorIbanInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorIbanInvalid_Text", resourceCulture);
             }
         }
         
@@ -1616,6 +1643,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SEPA credit transfer.
+        /// </summary>
+        internal static string PayloadType_SEPACREDITTRANSFER_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_SEPACREDITTRANSFER_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SMS.
         /// </summary>
         internal static string PayloadType_SMS_Text {
@@ -1774,6 +1810,78 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string PayloadTypeReceiver_Text {
             get {
                 return ResourceManager.GetString("PayloadTypeReceiver_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount EUR.
+        /// </summary>
+        internal static string PayloadTypeSctAmountEur_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeSctAmountEur_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BIC.
+        /// </summary>
+        internal static string PayloadTypeSctBic_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeSctBic_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IBAN.
+        /// </summary>
+        internal static string PayloadTypeSctIban_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeSctIban_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string PayloadTypeSctInformation_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeSctInformation_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string PayloadTypeSctName_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeSctName_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purpose.
+        /// </summary>
+        internal static string PayloadTypeSctPurpose_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeSctPurpose_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remittance (reference).
+        /// </summary>
+        internal static string PayloadTypeSctRemittanceReference_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeSctRemittanceReference_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remittance (text).
+        /// </summary>
+        internal static string PayloadTypeSctRemittanceText_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeSctRemittanceText_Text", resourceCulture);
             }
         }
         

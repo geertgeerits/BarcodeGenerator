@@ -21,7 +21,7 @@
         <Grid
             x:Name="grdSettingsPayloadTypes"
             Style="{StaticResource gridStylePopup}"
-            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
             VerticalOptions="Start">
 
             <Label
@@ -550,10 +550,166 @@
                 </TimePicker>
             </Border>
 
+            <Border
+                x:Name="brdPayloadTypeSctBic"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="24"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,6,6,0">
+
+                <Entry
+                    x:Name="entPayloadTypeSctBic"
+                    ToolTipProperties.Text="{Translate PayloadTypeSctBic_Text}"
+                    Placeholder="{Translate PayloadTypeSctBic_Text}"                    
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    MaxLength="11"
+                    TextTransform="Uppercase"
+                    Text=""
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Border
+                x:Name="brdPayloadTypeSctName"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="25"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,6,6,0">
+
+                <Entry
+                    x:Name="entPayloadTypeSctName"
+                    ToolTipProperties.Text="{Translate PayloadTypeSctName_Text}"
+                    Placeholder="{Translate PayloadTypeSctName_Text}"                    
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    Text=""
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Border
+                x:Name="brdPayloadTypeSctIban"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="26"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,6,6,0">
+
+                <Entry
+                    x:Name="entPayloadTypeSctIban"
+                    ToolTipProperties.Text="{Translate PayloadTypeSctIban_Text}"
+                    Placeholder="{Translate PayloadTypeSctIban_Text}"                    
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    MaxLength="34"
+                    TextTransform="Uppercase"
+                    Text=""
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Border
+                x:Name="brdPayloadTypeSctAmountEur"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="27"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,6,6,0">
+
+                <Entry
+                    x:Name="entPayloadTypeSctAmountEur"
+                    ToolTipProperties.Text="{Translate PayloadTypeSctAmountEur_Text}"
+                    Placeholder="{Translate PayloadTypeSctAmountEur_Text}"                    
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Numeric"
+                    Text=""
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Border
+                x:Name="brdPayloadTypeSctPurpose"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="28"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,6,6,0">
+
+                <Entry
+                    x:Name="entPayloadTypeSctPurpose"
+                    ToolTipProperties.Text="{Translate PayloadTypeSctPurpose_Text}"
+                    Placeholder="{Translate PayloadTypeSctPurpose_Text}"                    
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    Text=""
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Border
+                x:Name="brdPayloadTypeSctRemittanceReference"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="29"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,6,6,0">
+
+                <Entry
+                    x:Name="entPayloadTypeSctRemittanceReference"
+                    ToolTipProperties.Text="{Translate PayloadTypeSctRemittanceReference_Text}"
+                    Placeholder="{Translate PayloadTypeSctRemittanceReference_Text}"                    
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    Text=""
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Border
+                x:Name="brdPayloadTypeSctRemittanceText"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="30"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,6,6,0">
+
+                <Entry
+                    x:Name="entPayloadTypeSctRemittanceText"
+                    ToolTipProperties.Text="{Translate PayloadTypeSctRemittanceText_Text}"
+                    Placeholder="{Translate PayloadTypeSctRemittanceText_Text}"                    
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    Text=""
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
+            <Border
+                x:Name="brdPayloadTypeSctInformation"
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="31"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,6,6,0">
+
+                <Entry
+                    x:Name="entPayloadTypeSctInformation"
+                    ToolTipProperties.Text="{Translate PayloadTypeSctInformation_Text}"
+                    Placeholder="{Translate PayloadTypeSctInformation_Text}"                    
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Text"
+                    Text=""
+                    ReturnType="Next">
+                </Entry>
+            </Border>
+
             <ImageButton
                 x:Name="btnButtonURL"
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Row="24"
+                Grid.Row="32"
                 Grid.Column="1"
                 HorizontalOptions="End"
                 VerticalOptions="Start"
@@ -568,7 +724,7 @@
             <ImageButton
                 x:Name="btnButtonGeoLocation"
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Row="24"
+                Grid.Row="32"
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
@@ -583,7 +739,7 @@
             <ImageButton
                 x:Name="btnButtonGeoMap"
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Row="24"
+                Grid.Row="32"
                 Grid.Column="1"
                 HorizontalOptions="End"
                 VerticalOptions="Start"
@@ -598,7 +754,7 @@
             <ImageButton
                 x:Name="btnButtonCancel"
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Row="25"
+                Grid.Row="33"
                 Grid.Column="0"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
@@ -613,7 +769,7 @@
             <ImageButton
                 x:Name="btnButtonClose"
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Row="25"
+                Grid.Row="33"
                 Grid.Column="1"
                 HorizontalOptions="End"
                 VerticalOptions="Start"

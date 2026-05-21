@@ -978,4 +978,40 @@ Not all payload types are supported on every device.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Scan from camera</value>
   </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>SEPA credit transfer</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Amount EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Purpose</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+    <value>Remittance (reference)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+    <value>Remittance (text)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN number is not valid.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Amount is invalid.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC is invalid.</value>
+  </data>
 </root>

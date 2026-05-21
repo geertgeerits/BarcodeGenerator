@@ -152,6 +152,17 @@ namespace BarcodeGenerator
                 brdPayloadTypeEndTime.IsVisible = true;
                 _ = entPayloadTypeSubject.Focus();
             }
+            else if (selectedName == ClassPayloadTypes.cPayloadType_SEPACREDITTRANSFER)
+            {
+                brdPayloadTypeSctBic.IsVisible = true;
+                brdPayloadTypeSctName.IsVisible = true;
+                brdPayloadTypeSctIban.IsVisible = true;
+                brdPayloadTypeSctAmountEur.IsVisible = true;
+                brdPayloadTypeSctPurpose.IsVisible = true;
+                brdPayloadTypeSctRemittanceReference.IsVisible = true;
+                brdPayloadTypeSctRemittanceText.IsVisible = true;
+                brdPayloadTypeSctInformation.IsVisible = true;
+            }
         }
 
         /// <summary>
@@ -227,6 +238,14 @@ namespace BarcodeGenerator
             lblPayloadTypeEnd.IsVisible = false;
             brdPayloadTypeEndDate.IsVisible = false;
             brdPayloadTypeEndTime.IsVisible = false;
+            brdPayloadTypeSctBic.IsVisible = false;
+            brdPayloadTypeSctName.IsVisible = false;
+            brdPayloadTypeSctIban.IsVisible = false;
+            brdPayloadTypeSctAmountEur.IsVisible = false;
+            brdPayloadTypeSctPurpose.IsVisible = false;
+            brdPayloadTypeSctRemittanceReference.IsVisible = false;
+            brdPayloadTypeSctRemittanceText.IsVisible = false;
+            brdPayloadTypeSctInformation.IsVisible = false;
 
             btnButtonGeoLocation.IsVisible = false;
             btnButtonGeoMap.IsVisible = false;
@@ -642,6 +661,28 @@ DTSTAMP:{DateTime.UtcNow:yyyyMMddTHHmmssZ}
 END:VEVENT
 END:VCALENDAR";
             }
+            else if (selectedName == ClassPayloadTypes.cPayloadType_SEPACREDITTRANSFER)
+            {
+                // Validate the latitude and longitude input values and generate the geolocation payload string if valid
+                if (!await IsValidSepaCreditTransfer())
+                {
+                    return string.Empty;
+                }
+
+                payload = $@"BCD
+001
+1
+SCT
+{entPayloadTypeSctBic.Text.Trim()}
+{entPayloadTypeSctName.Text.Trim()}
+{entPayloadTypeSctIban.Text.Trim()}
+EUR{entPayloadTypeSctAmountEur.Text.Trim()}
+{entPayloadTypeSctPurpose.Text.Trim()}
+{entPayloadTypeSctRemittanceReference.Text.Trim()}
+{entPayloadTypeSctRemittanceText.Text.Trim()}
+{entPayloadTypeSctInformation.Text.Trim()}
+";
+            }
             else
             {
                 payload = string.Empty;
@@ -777,6 +818,97 @@ END:VCALENDAR";
         private static Regex PhoneRegex()
         {
             return new(@"^\+?[0-9\s\-\(\).]{3,20}$", RegexOptions.Compiled);
+        }
+
+        /// <summary>
+        /// Validates the input values for a SEPA Credit Transfer payload, ensuring that the amount is properly formatted as a decimal number and that all required fields are filled out. If the inputs are valid, it generates the appropriate payload string; otherwise, it displays error messages and returns an empty string.
+        /// </summary>
+        /// <returns></returns>
+        private async Task<bool> IsValidSepaCreditTransfer()
+        {
+            // Validate that the BIC, as they are required for a valid SEPA Credit Transfer payload.
+            if (string.IsNullOrWhiteSpace(entPayloadTypeSctBic.Text) || entPayloadTypeSctBic.Text.Length < 8)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorBicInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeSctBic.Focus();
+                return false;
+            }
+
+            // Validate the IBAN number using the IsValidIban method, which checks both the format and checksum of the IBAN. If the IBAN is invalid, display an error message and return false to indicate that the validation failed.
+            if (!IsValidIban(entPayloadTypeSctIban.Text))
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorIbanInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeSctIban.Focus();
+                return false;
+            }
+
+            // Replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
+            entPayloadTypeSctAmountEur.Text = (entPayloadTypeSctAmountEur.Text ?? string.Empty).Trim().Replace(',', '.');
+
+            // Validate that the inputs can be parsed as doubles using invariant culture to ensure consistent decimal separator handling
+            if (!double.TryParse(entPayloadTypeSctAmountEur.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out double Amount))
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorAmountInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeSctAmountEur.Focus();
+                return false;
+            }
+            else if (Amount < 0.0)  // Amount must be greater than zero
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorAmountInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeSctAmountEur.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Determines whether the specified string is a valid IBAN (International Bank Account Number).
+        /// </summary>
+        /// <remarks>Validates both the format and checksum using the mod-97 algorithm defined in ISO
+        /// 13616. Spaces in the input are automatically removed during validation.</remarks>
+        /// <param name="iban">The IBAN string to validate.</param>
+        /// <returns>true if the IBAN is valid; otherwise, false.</returns>
+        public static bool IsValidIban(string iban)
+        {
+            // Remove spaces and convert to uppercase for standardization
+            string cleanIban = iban.Replace(" ", string.Empty).ToUpper();
+
+            // Basic IBAN format check: starts with 2 letters (country code), followed by 2 digits (check digits), and then up to 30 alphanumeric characters (BBAN)
+            if (!Regex.IsMatch(cleanIban, "^[A-Z]{2}[0-9]{2}[A-Z0-9]{1,30}$"))
+            {
+                return false;
+            }
+
+            // Move the first four characters to the end of the string
+            string rearrangedIban = cleanIban.Substring(4) + cleanIban.Substring(0, 4);
+
+            // Convert letters to numbers (A=10, B=11, ..., Z=35) and concatenate the result into a single numeric string
+            string numericIban = string.Empty;
+            
+            foreach (char character in rearrangedIban)
+            {
+                if (char.IsLetter(character))
+                {
+                    numericIban += (character - 55).ToString();
+                }
+                else
+                {
+                    numericIban += character;
+                }
+            }
+
+            // Perform the modulo 97 operation on the numeric IBAN string.
+            // This is done by processing the string in chunks to avoid overflow issues with very long numbers.
+            // If the result is 1, the IBAN is valid; otherwise, it is invalid.
+            int remainder = 0;
+            
+            foreach (char digit in numericIban)
+            {
+                remainder = (remainder * 10 + int.Parse(digit.ToString())) % 97;
+            }
+            
+            return remainder == 1;
         }
     }
 }
