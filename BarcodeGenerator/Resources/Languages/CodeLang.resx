@@ -985,7 +985,7 @@ Not all payload types are supported on every device.</value>
     <value>BIC</value>
   </data>
   <data name="PayloadTypeSctName_Text" xml:space="preserve">
-    <value>Name</value>
+    <value>Name beneficiary</value>
   </data>
   <data name="PayloadTypeSctIban_Text" xml:space="preserve">
     <value>IBAN</value>
@@ -1009,12 +1009,15 @@ Not all payload types are supported on every device.</value>
     <value>IBAN number is not valid.</value>
   </data>
   <data name="ErrorAmountInvalid_Text" xml:space="preserve">
-    <value>Amount is invalid.</value>
+    <value>Amount is not valid.</value>
   </data>
   <data name="ErrorBicInvalid_Text" xml:space="preserve">
-    <value>BIC is invalid.</value>
+    <value>BIC is not valid.</value>
   </data>
   <data name="ErrorNameInvalid_Text" xml:space="preserve">
     <value>Name is mandatory.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Only one of the remittance fields may be populated.</value>
   </data>
 </root>

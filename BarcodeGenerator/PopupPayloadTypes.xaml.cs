@@ -863,6 +863,14 @@ EUR{entPayloadTypeSctAmountEur.Text.Trim()}
             // Amount: format the amount to have exactly two decimal places and use a period as the decimal separator, regardless of the user's locale settings. This ensures that the amount is correctly formatted for the SEPA Credit Transfer payload.
             entPayloadTypeSctAmountEur.Text = nAmount.ToString("F2", CultureInfo.InvariantCulture);
 
+            // Remittance: Only one of the remittance fields may be populated but both can be empty. If both fields are populated, display an error message and return false to indicate that the validation failed.
+            if (!string.IsNullOrWhiteSpace(entPayloadTypeSctRemittanceReference.Text) && !string.IsNullOrWhiteSpace(entPayloadTypeSctRemittanceText.Text))
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorRemittanceInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeSctRemittanceReference.Focus();
+                return false;
+            }
+
             return true;
         }
 

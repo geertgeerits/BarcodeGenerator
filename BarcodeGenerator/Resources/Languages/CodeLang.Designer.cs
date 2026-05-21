@@ -1016,7 +1016,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Amount is invalid..
+        ///   Looks up a localized string similar to Amount is not valid..
         /// </summary>
         internal static string ErrorAmountInvalid_Text {
             get {
@@ -1025,7 +1025,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BIC is invalid..
+        ///   Looks up a localized string similar to BIC is not valid..
         /// </summary>
         internal static string ErrorBicInvalid_Text {
             get {
@@ -1102,6 +1102,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string ErrorPhoneNumberInvalid_Text {
             get {
                 return ResourceManager.GetString("ErrorPhoneNumberInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only one of the remittance fields may be populated..
+        /// </summary>
+        internal static string ErrorRemittanceInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorRemittanceInvalid_Text", resourceCulture);
             }
         }
         
@@ -1859,7 +1868,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
+        ///   Looks up a localized string similar to Name beneficiary.
         /// </summary>
         internal static string PayloadTypeSctName_Text {
             get {
