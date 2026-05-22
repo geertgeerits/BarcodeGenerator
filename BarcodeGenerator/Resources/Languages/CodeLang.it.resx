@@ -978,4 +978,19 @@ Non tutti i tipi di dati sono supportati su tutti i dispositivi.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Scansione dalla fotocamera</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>L'IBAN non è valido.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>L'importo non è valido.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>Il codice BIC non è valido.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Il nome è obbligatorio.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>È possibile compilare solo uno dei campi relativi al pagamento.</value>
+  </data>
 </root>

@@ -978,4 +978,19 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Skanna från kameran</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN är ogiltigt.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Beloppet är ogiltigt.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC är ogiltigt.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Namn är obligatoriskt.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Endast ett av betalningsfälten får fyllas i.</value>
+  </data>
 </root>

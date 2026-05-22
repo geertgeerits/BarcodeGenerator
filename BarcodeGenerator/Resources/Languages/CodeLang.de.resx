@@ -977,4 +977,19 @@ Wählen Sie eine Option.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Scan von der Kamera</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>Die IBAN ist ungültig.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Der Betrag ist ungültig.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>Der BIC ist ungültig.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Der Name ist ein Pflichtfeld.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Nur eines der Überweisungsfelder darf ausgefüllt werden.</value>
+  </data>
 </root>

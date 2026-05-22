@@ -978,4 +978,19 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Skanowanie z aparatu</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>Numer IBAN jest nieprawidłowy.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Kwota jest nieprawidłowa.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>Kod BIC jest nieprawidłowy.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Imię i nazwisko jest obowiązkowe.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Można wypełnić tylko jedno pole przelewu.</value>
+  </data>
 </root>

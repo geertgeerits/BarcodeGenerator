@@ -978,4 +978,19 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Skannaa kamerasta</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN ei ole kelvollinen.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Summa ei ole kelvollinen.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC ei ole kelvollinen.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Nimi on pakollinen.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Vain yksi maksukentistä saa täyttää.</value>
+  </data>
 </root>

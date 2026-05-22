@@ -978,4 +978,19 @@ Tous les types de données ne sont pas compatibles avec tous les appareils.</val
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Numérisation depuis l'appareil photo</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN invalide.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Montant invalide.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>Code BIC invalide.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Nom obligatoire.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Un seul champ de virement peut être renseigné.</value>
+  </data>
 </root>

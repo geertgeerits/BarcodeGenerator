@@ -978,4 +978,19 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Skenování z fotoaparátu</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN není platný.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Částka není platná.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC není platný.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Jméno je povinné.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Lze vyplnit pouze jedno z polí pro platbu.</value>
+  </data>
 </root>

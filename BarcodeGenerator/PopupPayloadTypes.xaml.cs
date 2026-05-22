@@ -663,24 +663,35 @@ END:VCALENDAR";
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_SEPACREDITTRANSFER)
             {
+                // Trim all input values to remove leading and trailing whitespace, which can cause validation errors or incorrect payload generation
+                entPayloadTypeSctBic.Text = entPayloadTypeSctBic.Text.Trim();
+                entPayloadTypeSctName.Text = entPayloadTypeSctName.Text.Trim();
+                entPayloadTypeSctIban.Text = entPayloadTypeSctIban.Text.Trim();
+                entPayloadTypeSctAmountEur.Text = entPayloadTypeSctAmountEur.Text.Trim();
+                entPayloadTypeSctPurpose.Text = entPayloadTypeSctPurpose.Text.Trim();
+                entPayloadTypeSctRemittanceReference.Text = entPayloadTypeSctRemittanceReference.Text.Trim();
+                entPayloadTypeSctRemittanceText.Text = entPayloadTypeSctRemittanceText.Text.Trim();
+                entPayloadTypeSctInformation.Text = entPayloadTypeSctInformation.Text.Trim();
+
                 // Validate the latitude and longitude input values and generate the geolocation payload string if valid
                 if (!await IsValidSepaCreditTransfer())
                 {
                     return string.Empty;
                 }
 
+                // Create the SEPA Credit Transfer payload string in the EPC QR code format
                 payload = $@"BCD
-001
+002
 1
 SCT
-{entPayloadTypeSctBic.Text.Trim()}
-{entPayloadTypeSctName.Text.Trim()}
-{entPayloadTypeSctIban.Text.Trim()}
-EUR{entPayloadTypeSctAmountEur.Text.Trim()}
-{entPayloadTypeSctPurpose.Text.Trim()}
-{entPayloadTypeSctRemittanceReference.Text.Trim()}
-{entPayloadTypeSctRemittanceText.Text.Trim()}
-{entPayloadTypeSctInformation.Text.Trim()}";
+{entPayloadTypeSctBic.Text}
+{entPayloadTypeSctName.Text}
+{entPayloadTypeSctIban.Text}
+EUR{entPayloadTypeSctAmountEur.Text}
+{entPayloadTypeSctPurpose.Text}
+{entPayloadTypeSctRemittanceReference.Text}
+{entPayloadTypeSctRemittanceText.Text}
+{entPayloadTypeSctInformation.Text}";
             }
             else
             {
@@ -816,7 +827,7 @@ EUR{entPayloadTypeSctAmountEur.Text.Trim()}
         /// <returns>A compiled regular expression for validating phone numbers.</returns>
         private static Regex PhoneRegex()
         {
-            return new(@"^\+?[0-9\s\-\(\).]{3,20}$", RegexOptions.Compiled);
+            return RegexPhone();
         }
 
         /// <summary>
@@ -826,7 +837,10 @@ EUR{entPayloadTypeSctAmountEur.Text.Trim()}
         private async Task<bool> IsValidSepaCreditTransfer()
         {
             // BIC: validate that the BIC, as they are required for a valid SEPA Credit Transfer payload.
-            if (entPayloadTypeSctBic.Text.Length is not (8 or 11))
+            // BIC: remove spaces for standardization
+            entPayloadTypeSctBic.Text = entPayloadTypeSctBic.Text.Replace(" ", string.Empty);
+
+            if (entPayloadTypeSctBic.Text.Length is not (0 or 8 or 11))
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorBicInvalid_Text, CodeLang.ButtonClose_Text);
                 _ = entPayloadTypeSctBic.Focus();
@@ -849,8 +863,8 @@ EUR{entPayloadTypeSctAmountEur.Text.Trim()}
                 return false;
             }
 
-            // Amount: replace the decimal comma with a decimal point in both values to ensure correct parsing regardless of the user's locale settings
-            entPayloadTypeSctAmountEur.Text = (entPayloadTypeSctAmountEur.Text ?? string.Empty).Trim().Replace(',', '.');
+            // Amount: replace the decimal comma with a decimal point in the value to ensure correct parsing regardless of the user's locale settings
+            entPayloadTypeSctAmountEur.Text = (entPayloadTypeSctAmountEur.Text ?? string.Empty).Replace(',', '.');
 
             // Amount: validate that the inputs can be parsed as decimals using invariant culture to ensure consistent decimal separator handling
             if (!decimal.TryParse(entPayloadTypeSctAmountEur.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out decimal nAmount) || nAmount is < 0.01m or > 999_999_999.99m)
@@ -881,19 +895,20 @@ EUR{entPayloadTypeSctAmountEur.Text.Trim()}
         /// 13616. Spaces in the input are automatically removed during validation.</remarks>
         /// <param name="iban">The IBAN string to validate.</param>
         /// <returns>true if the IBAN is valid; otherwise, false.</returns>
-        public static bool IsValidIban(string iban)
+        private bool IsValidIban(string iban)
         {
-            // Remove spaces and convert to uppercase for standardization
-            string cleanIban = iban.Replace(" ", string.Empty).ToUpper();
+            // Remove spaces for standardization
+            string cleanIban = iban.Replace(" ", string.Empty);
+            entPayloadTypeSctIban.Text = cleanIban;
 
             // Basic IBAN format check: starts with 2 letters (country code), followed by 2 digits (check digits), and then up to 30 alphanumeric characters (BBAN)
-            if (!Regex.IsMatch(cleanIban, "^[A-Z]{2}[0-9]{2}[A-Z0-9]{1,30}$"))
+            if (!RegexIban().IsMatch(cleanIban))
             {
                 return false;
             }
 
             // Move the first four characters to the end of the string
-            string rearrangedIban = cleanIban.Substring(4) + cleanIban.Substring(0, 4);
+            string rearrangedIban = string.Concat(cleanIban.AsSpan(4), cleanIban.AsSpan(0, 4));
 
             // Convert letters to numbers (A=10, B=11, ..., Z=35) and concatenate the result into a single numeric string
             string numericIban = string.Empty;
@@ -922,5 +937,19 @@ EUR{entPayloadTypeSctAmountEur.Text.Trim()}
             
             return remainder == 1;
         }
+
+        /// <summary>
+        /// Basic regex for validating phone number format
+        /// </summary>
+        /// <returns></returns>
+        [GeneratedRegex(@"^\+?[0-9\s\-\(\).]{3,20}$", RegexOptions.Compiled)]
+        private static partial Regex RegexPhone();
+
+        /// <summary>
+        /// Basic regex for validating IBAN format: starts with 2 letters (country code), followed by 2 digits (check digits), and then up to 30 alphanumeric characters (BBAN).
+        /// </summary>
+        /// <returns></returns>
+        [GeneratedRegex("^[A-Z]{2}[0-9]{2}[A-Z0-9]{1,30}$")]
+        private static partial Regex RegexIban();
     }
 }

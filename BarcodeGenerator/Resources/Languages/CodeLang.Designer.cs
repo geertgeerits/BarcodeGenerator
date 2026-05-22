@@ -1043,7 +1043,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IBAN number is not valid..
+        ///   Looks up a localized string similar to IBAN is not valid..
         /// </summary>
         internal static string ErrorIbanInvalid_Text {
             get {
@@ -1841,7 +1841,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BIC.
+        ///   Looks up a localized string similar to BIC beneficiary.
         /// </summary>
         internal static string PayloadTypeSctBic_Text {
             get {
@@ -1850,7 +1850,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IBAN.
+        ///   Looks up a localized string similar to IBAN beneficiary.
         /// </summary>
         internal static string PayloadTypeSctIban_Text {
             get {

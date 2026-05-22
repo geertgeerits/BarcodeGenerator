@@ -4,6 +4,7 @@
     {
         // Global variables for Payload Types - https://github.com/Shane32/QRCoder
         // https://www.europeanpaymentscouncil.eu/sites/default/files/KB/files/EPC069-12%20v2.1%20Quick%20Response%20Code%20-%20Guidelines%20to%20Enable%20the%20Data%20Capture%20for%20the%20Initiation%20of%20a%20SCT.pdf
+        // https://en.wikipedia.org/wiki/EPC_QR_code
         public static string cPayloadType_WIFI = string.Empty;
         public static string cPayloadType_URL = string.Empty;
         public static string cPayloadType_BOOKMARK = string.Empty;

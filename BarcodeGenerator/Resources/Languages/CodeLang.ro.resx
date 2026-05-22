@@ -978,4 +978,19 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Scanare de pe cameră</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN-ul nu este valid.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Suma nu este validă.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC-ul nu este valid.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Numele este obligatoriu.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Doar unul dintre câmpurile de remitere poate fi completat.</value>
+  </data>
 </root>

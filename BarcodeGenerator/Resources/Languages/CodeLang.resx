@@ -982,13 +982,13 @@ Not all payload types are supported on every device.</value>
     <value>SEPA credit transfer</value>
   </data>
   <data name="PayloadTypeSctBic_Text" xml:space="preserve">
-    <value>BIC</value>
+    <value>BIC beneficiary</value>
   </data>
   <data name="PayloadTypeSctName_Text" xml:space="preserve">
     <value>Name beneficiary</value>
   </data>
   <data name="PayloadTypeSctIban_Text" xml:space="preserve">
-    <value>IBAN</value>
+    <value>IBAN beneficiary</value>
   </data>
   <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
     <value>Amount EUR</value>
@@ -1006,7 +1006,7 @@ Not all payload types are supported on every device.</value>
     <value>Information</value>
   </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
-    <value>IBAN number is not valid.</value>
+    <value>IBAN is not valid.</value>
   </data>
   <data name="ErrorAmountInvalid_Text" xml:space="preserve">
     <value>Amount is not valid.</value>

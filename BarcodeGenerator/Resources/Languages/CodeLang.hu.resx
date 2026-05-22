@@ -978,4 +978,19 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Szkennelés kameráról</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>Az IBAN szám érvénytelen.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Az összeg érvénytelen.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>A BIC kód érvénytelen.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>A név kitöltése kötelező.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Csak egy átutalási mező tölthető ki.</value>
+  </data>
 </root>

@@ -978,4 +978,19 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Digitalização da câmera</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>O código IBAN não é válido.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>O valor não é válido.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>O código BIC não é válido.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>O nome é obrigatório.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Apenas um dos campos de remessa pode ser preenchido.</value>
+  </data>
 </root>

@@ -978,4 +978,19 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Scan fra kamera</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN er ikke gyldigt.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Beløbet er ikke gyldigt.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC er ikke gyldigt.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Navn er obligatorisk.</value>
+  </data>
+  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+    <value>Kun ét af betalingsfelterne må udfyldes.</value>
+  </data>
 </root>
