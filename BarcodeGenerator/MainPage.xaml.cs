@@ -721,12 +721,15 @@ namespace BarcodeGenerator
                 // For testing crashes - DivideByZeroException
                 //int divByZero = 51 / int.Parse("0");
 
-                imgQrCodeImage.IsVisible = true;
-                imgQrCodeImage.Source = PopupPayloadTypes.qrCodeImage;
-                return;
-
+                // Payload type is allowed and equals to cPayloadType_SEPACREDITTRANSFER using the QRCoder library
+                if (bPayloadTypeAllowed && PopupPayloadTypes.qrCodeImage is not null)
+                {
+                    imgQrCodeImage.Source = PopupPayloadTypes.qrCodeImage;
+                    PopupPayloadTypes.qrCodeImage = null;
+                }
+                
                 // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
-                if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
+                else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
                     
@@ -734,7 +737,8 @@ namespace BarcodeGenerator
                     imgQrCodeImage.Source = qrImage;
                     
                 }
-                // Generate the QR code with or without an image using QRCoder (and SkiaSharp)
+                
+                // Generate the QR code with or without an image using the QRCoder or SkiaSharp library
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
@@ -743,7 +747,7 @@ namespace BarcodeGenerator
                     imgQrCodeImage.Source = qrImage;
                 }
 
-                // Generate the Micro QR code using QRCoder
+                // Generate the Micro QR code using the QRCoder library
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
@@ -751,6 +755,7 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassMicroQRCode.GenerateMicroQrCodeAsync(cTextToCode, nVersion: -4);
                     imgQrCodeImage.Source = qrImage;
                 }
+                
                 // Generate the other barcodes using the BarcodeView control from the ZXing.Net.MAUI library
                 else
                 {

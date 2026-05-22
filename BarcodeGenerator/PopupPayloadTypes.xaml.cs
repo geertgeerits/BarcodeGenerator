@@ -1,7 +1,8 @@
 using CommunityToolkit.Maui.Views;
-using QRCoder;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
 using System.Text.RegularExpressions;
+using QRCoder;
 using static QRCoder.PayloadGenerator;
 using static QRCoder.PayloadGenerator.Girocode;
 
@@ -9,7 +10,7 @@ namespace BarcodeGenerator
 {
     public partial class PopupPayloadTypes : Popup
     {
-        public static ImageSource qrCodeImage;
+        public static ImageSource? qrCodeImage;
 
         public PopupPayloadTypes()
     	{
@@ -667,6 +668,7 @@ END:VCALENDAR";
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_SEPACREDITTRANSFER)
             {
+                // https://github.com/Shane32/QRCoder/wiki/Advanced-usage---Payload-generators#37-girocode
                 // Trim all input values to remove leading and trailing whitespace, which can cause validation errors or incorrect payload generation
                 entPayloadTypeSctBic.Text = entPayloadTypeSctBic.Text.Trim();
                 entPayloadTypeSctName.Text = entPayloadTypeSctName.Text.Trim();
@@ -677,38 +679,39 @@ END:VCALENDAR";
                 entPayloadTypeSctRemittanceText.Text = entPayloadTypeSctRemittanceText.Text.Trim();
                 entPayloadTypeSctInformation.Text = entPayloadTypeSctInformation.Text.Trim();
 
-                // Validate the latitude and longitude input values and generate the geolocation payload string if valid
+                // Validate the SEPA Credit Transfer input values
                 if (!await IsValidSepaCreditTransfer())
                 {
                     return string.Empty;
                 }
 
                 // Create the SEPA Credit Transfer payload string in the EPC QR code format
-//                payload = $@"BCD
-//002
-//1
-//SCT
-//{entPayloadTypeSctBic.Text}
-//{entPayloadTypeSctName.Text}
-//{entPayloadTypeSctIban.Text}
-//EUR{entPayloadTypeSctAmountEur.Text}
-//{entPayloadTypeSctPurpose.Text}
-//{entPayloadTypeSctRemittanceReference.Text}
-//{entPayloadTypeSctRemittanceText.Text}
-//{entPayloadTypeSctInformation.Text}";
+                //                payload = $@"BCD
+                //002
+                //1
+                //SCT
+                //{entPayloadTypeSctBic.Text}
+                //{entPayloadTypeSctName.Text}
+                //{entPayloadTypeSctIban.Text}
+                //EUR{entPayloadTypeSctAmountEur.Text}
+                //{entPayloadTypeSctPurpose.Text}
+                //{entPayloadTypeSctRemittanceReference.Text}
+                //{entPayloadTypeSctRemittanceText.Text}
+                //{entPayloadTypeSctInformation.Text}";
 
+                // Use the QRCoder library to generate the SEPA Credit Transfer payload and create a QR code bitmap
                 string cRemittance = string.Empty;
-                string cTypeOfRemittance = string.Empty;
+                TypeOfRemittance typeOfRemittance = new();
 
                 if (entPayloadTypeSctRemittanceReference.Text == string.Empty)
                 {
                     cRemittance = entPayloadTypeSctRemittanceText.Text;
-                    cTypeOfRemittance = "Unstructured";
+                    typeOfRemittance = TypeOfRemittance.Unstructured;
                 }
                 else
                 {
                     cRemittance = entPayloadTypeSctRemittanceReference.Text;
-                    cTypeOfRemittance = "Structured";
+                    typeOfRemittance = TypeOfRemittance.Structured;
                 }
 
                 Girocode generator = new(entPayloadTypeSctIban.Text,
@@ -716,7 +719,7 @@ END:VCALENDAR";
                     entPayloadTypeSctName.Text,
                     decimal.Parse(entPayloadTypeSctAmountEur.Text, CultureInfo.InvariantCulture),
                     cRemittance,
-                    TypeOfRemittance.Unstructured,
+                    typeOfRemittance,
                     entPayloadTypeSctPurpose.Text,
                     entPayloadTypeSctInformation.Text,
                     GirocodeVersion.Version2,
@@ -724,18 +727,16 @@ END:VCALENDAR";
 
                 payload = generator.ToString();
 
-                QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                QRCodeGenerator qrGenerator = new();
                 QRCodeData qrCodeData = qrGenerator.CreateQrCode(generator);
-                QRCode qrCode = new QRCode(qrCodeData);
-                var qrCodeBitmap = qrCode.GetGraphic(20);
+                QRCode qrCode = new(qrCodeData);
+                Bitmap qrCodeBitmap = qrCode.GetGraphic(20);
 
                 // Convert System.Drawing.Bitmap to Microsoft.Maui.Controls.ImageSource
-                using (var ms = new MemoryStream())
-                {
-                    qrCodeBitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                    ms.Position = 0;
-                    PopupPayloadTypes.qrCodeImage = ImageSource.FromStream(() => new MemoryStream(ms.ToArray()));
-                }
+                using MemoryStream ms = new();
+                qrCodeBitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                ms.Position = 0;
+                PopupPayloadTypes.qrCodeImage = ImageSource.FromStream(() => new MemoryStream(ms.ToArray()));
             }
             else
             {
