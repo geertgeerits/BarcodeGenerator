@@ -1,12 +1,16 @@
 using CommunityToolkit.Maui.Views;
+using QRCoder;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 using static QRCoder.PayloadGenerator;
+using static QRCoder.PayloadGenerator.Girocode;
 
 namespace BarcodeGenerator
 {
     public partial class PopupPayloadTypes : Popup
     {
+        public static ImageSource qrCodeImage;
+
         public PopupPayloadTypes()
     	{
             InitializeComponent();
@@ -680,18 +684,58 @@ END:VCALENDAR";
                 }
 
                 // Create the SEPA Credit Transfer payload string in the EPC QR code format
-                payload = $@"BCD
-002
-1
-SCT
-{entPayloadTypeSctBic.Text}
-{entPayloadTypeSctName.Text}
-{entPayloadTypeSctIban.Text}
-EUR{entPayloadTypeSctAmountEur.Text}
-{entPayloadTypeSctPurpose.Text}
-{entPayloadTypeSctRemittanceReference.Text}
-{entPayloadTypeSctRemittanceText.Text}
-{entPayloadTypeSctInformation.Text}";
+//                payload = $@"BCD
+//002
+//1
+//SCT
+//{entPayloadTypeSctBic.Text}
+//{entPayloadTypeSctName.Text}
+//{entPayloadTypeSctIban.Text}
+//EUR{entPayloadTypeSctAmountEur.Text}
+//{entPayloadTypeSctPurpose.Text}
+//{entPayloadTypeSctRemittanceReference.Text}
+//{entPayloadTypeSctRemittanceText.Text}
+//{entPayloadTypeSctInformation.Text}";
+
+                string cRemittance = string.Empty;
+                string cTypeOfRemittance = string.Empty;
+
+                if (entPayloadTypeSctRemittanceReference.Text == string.Empty)
+                {
+                    cRemittance = entPayloadTypeSctRemittanceText.Text;
+                    cTypeOfRemittance = "Unstructured";
+                }
+                else
+                {
+                    cRemittance = entPayloadTypeSctRemittanceReference.Text;
+                    cTypeOfRemittance = "Structured";
+                }
+
+                Girocode generator = new(entPayloadTypeSctIban.Text,
+                    entPayloadTypeSctBic.Text,
+                    entPayloadTypeSctName.Text,
+                    decimal.Parse(entPayloadTypeSctAmountEur.Text, CultureInfo.InvariantCulture),
+                    cRemittance,
+                    TypeOfRemittance.Unstructured,
+                    entPayloadTypeSctPurpose.Text,
+                    entPayloadTypeSctInformation.Text,
+                    GirocodeVersion.Version2,
+                    GirocodeEncoding.UTF_8);
+
+                payload = generator.ToString();
+
+                QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                QRCodeData qrCodeData = qrGenerator.CreateQrCode(generator);
+                QRCode qrCode = new QRCode(qrCodeData);
+                var qrCodeBitmap = qrCode.GetGraphic(20);
+
+                // Convert System.Drawing.Bitmap to Microsoft.Maui.Controls.ImageSource
+                using (var ms = new MemoryStream())
+                {
+                    qrCodeBitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    ms.Position = 0;
+                    PopupPayloadTypes.qrCodeImage = ImageSource.FromStream(() => new MemoryStream(ms.ToArray()));
+                }
             }
             else
             {

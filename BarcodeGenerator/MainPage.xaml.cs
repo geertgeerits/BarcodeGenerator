@@ -721,6 +721,10 @@ namespace BarcodeGenerator
                 // For testing crashes - DivideByZeroException
                 //int divByZero = 51 / int.Parse("0");
 
+                imgQrCodeImage.IsVisible = true;
+                imgQrCodeImage.Source = PopupPayloadTypes.qrCodeImage;
+                return;
+
                 // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
                 if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {

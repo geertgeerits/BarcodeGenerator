@@ -101,7 +101,7 @@
                 CodeLang.PayloadType_WHATSAPPMESSAGE_Text,
                 CodeLang.PayloadType_CONTACTDATA_Text,
                 CodeLang.PayloadType_CALENDAREVENT_Text,
-                //CodeLang.PayloadType_SEPACREDITTRANSFER_Text
+                CodeLang.PayloadType_SEPACREDITTRANSFER_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
