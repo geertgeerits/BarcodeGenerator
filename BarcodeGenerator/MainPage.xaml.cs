@@ -317,6 +317,8 @@ namespace BarcodeGenerator
                 edtTextToCode.Placeholder = string.Empty;
                 edtTextToCode.TextTransform = TextTransform.None;
 
+                edtTextToCode.IsEnabled = true;
+                btnGenerateCode.IsEnabled = true;
                 btnShare.IsEnabled = false;
 
                 bCompressionAllowed = false;
@@ -628,8 +630,11 @@ namespace BarcodeGenerator
             edtTextToCode.IsEnabled = true;
 
             // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
-            //ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
-            //ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
+            if (!PopupPayloadTypes.bPayloadSepaCreditTransfer)
+            {
+                ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
+                ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
+            }
 
             // Set the barcode colors
             bgvBarcode.ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg);
@@ -707,6 +712,10 @@ namespace BarcodeGenerator
             activityIndicator.IsRunning = true;
             await Task.Delay(200);
 
+            // Enable controls
+            edtTextToCode.IsEnabled = true;
+            btnGenerateCode.IsEnabled = true;
+
             // Compress then encode (gzip->base64) to reduce bytes and allow encoding larger text content than the QR code
             // would normally allow, at the cost of requiring a custom decoder on the scanning side
             if (ClassBarcodes.bCompressionEnabled && bCompressionAllowed)
@@ -719,11 +728,15 @@ namespace BarcodeGenerator
                 // For testing crashes - DivideByZeroException
                 //int divByZero = 51 / int.Parse("0");
 
-                // Payload type is allowed and equals to cPayloadType_SEPACREDITTRANSFER using the QRCoder library
-                if (bPayloadTypeAllowed && PopupPayloadTypes.bPayloadSepaCreditTransfer && PopupPayloadTypes.qrCodeImage is not null)
+                // Payload type is 'Sepa credit transfer' using the QRCoder library
+                if (PopupPayloadTypes.bPayloadSepaCreditTransfer && PopupPayloadTypes.qrCodeImage is not null)
                 {
                     imgQrCodeImage.Source = PopupPayloadTypes.qrCodeImage;
                     PopupPayloadTypes.qrCodeImage = null;
+
+                    // Disable controls
+                    edtTextToCode.IsEnabled = false;
+                    btnGenerateCode.IsEnabled = false;
                 }
                 
                 // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
@@ -786,6 +799,9 @@ namespace BarcodeGenerator
             edtTextToCode.Text = string.Empty;
             bgvBarcode.Value = string.Empty;
             imgQrCodeImage.Source = null;
+
+            edtTextToCode.IsEnabled = true;
+            btnGenerateCode.IsEnabled = true;
             btnShare.IsEnabled = false;
 
             _ = edtTextToCode.Focus();
@@ -895,7 +911,7 @@ namespace BarcodeGenerator
             try
             {
                 // Payload type is allowed and equals to cPayloadType_SEPACREDITTRANSFER
-                if (bPayloadTypeAllowed && PopupPayloadTypes.bPayloadSepaCreditTransfer)
+                if (PopupPayloadTypes.bPayloadSepaCreditTransfer)
                 {
                     if (!await ClassFileOperations.ShareMultipleFilesAsync())
                     {

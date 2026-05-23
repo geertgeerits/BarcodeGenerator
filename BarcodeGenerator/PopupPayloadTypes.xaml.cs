@@ -167,6 +167,7 @@ namespace BarcodeGenerator
                 brdPayloadTypeSctRemittanceReference.IsVisible = true;
                 brdPayloadTypeSctRemittanceText.IsVisible = true;
                 brdPayloadTypeSctInformation.IsVisible = true;
+                _ = entPayloadTypeSctBic.Focus();
             }
         }
 
@@ -716,16 +717,16 @@ END:VCALENDAR";
 
                 try
                 {
-                    Girocode generator = new(entPayloadTypeSctIban.Text,
-                        entPayloadTypeSctBic.Text,
-                        entPayloadTypeSctName.Text,
-                        decimal.Parse(entPayloadTypeSctAmountEur.Text, CultureInfo.InvariantCulture),
-                        cRemittance,
-                        typeOfRemittance,
-                        entPayloadTypeSctPurpose.Text,
-                        entPayloadTypeSctInformation.Text,
-                        GirocodeVersion.Version2,
-                        GirocodeEncoding.UTF_8);
+                    Girocode generator = new(iban: entPayloadTypeSctIban.Text,
+                        bic: entPayloadTypeSctBic.Text,
+                        name: entPayloadTypeSctName.Text,
+                        amount: decimal.Parse(entPayloadTypeSctAmountEur.Text, CultureInfo.InvariantCulture),
+                        remittanceInformation: cRemittance,
+                        typeOfRemittance: typeOfRemittance,
+                        purposeOfCreditTransfer: entPayloadTypeSctPurpose.Text,
+                        messageToGirocodeUser: entPayloadTypeSctInformation.Text,
+                        version: GirocodeVersion.Version2,
+                        encoding: GirocodeEncoding.UTF_8);
 
                     QRCodeGenerator qrGenerator = new();
                     QRCodeData qrCodeData = qrGenerator.CreateQrCode(generator);
@@ -750,6 +751,7 @@ END:VCALENDAR";
 #if DEBUG
                     await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
+                    bPayloadSepaCreditTransfer = false;
                     return string.Empty;
                 }
             }
