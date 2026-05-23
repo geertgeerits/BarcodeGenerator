@@ -978,6 +978,33 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Szkennelés kameráról</value>
   </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>SEPA átutalás</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC kedvezményezett</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Kedvezményezett neve</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN kedvezményezett</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Összeg EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Cél</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+    <value>Átutalási mód (strukturált)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+    <value>Átutalási mód (szöveges)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Adatok</value>
+  </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>Az IBAN szám érvénytelen.</value>
   </data>

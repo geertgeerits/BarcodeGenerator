@@ -977,6 +977,33 @@ Wählen Sie eine Option.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Scan von der Kamera</value>
   </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>SEPA-Überweisung</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC-Empfänger</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Name des Empfängers</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN-Empfänger</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Betrag EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Zweck</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+    <value>Überweisung (strukturiert)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+    <value>Überweisung (Text)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Informationen</value>
+  </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>Die IBAN ist ungültig.</value>
   </data>

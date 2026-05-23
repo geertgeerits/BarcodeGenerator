@@ -978,6 +978,33 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Scan van de camera</value>
   </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>SEPA-overschrijving</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC-nummer begunstigde</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Naam begunstigde</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN-nummer begunstigde</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Bedrag EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Doel</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+    <value>Mededeling (gestructureerd)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+    <value>Mededeling (tekst)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Informatie</value>
+  </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>IBAN is niet geldig.</value>
   </data>

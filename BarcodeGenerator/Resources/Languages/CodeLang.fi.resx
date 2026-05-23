@@ -978,6 +978,33 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Skannaa kamerasta</value>
   </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>SEPA-tilisiirto</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>Saajan BIC-koodi</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Saajan nimi</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>Saajan IBAN-tilinumero</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Määrä EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Tarkoitus</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+    <value>Maksu (strukturoitu)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+    <value>Maksu (teksti)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Tiedot</value>
+  </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>IBAN ei ole kelvollinen.</value>
   </data>

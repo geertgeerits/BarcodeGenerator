@@ -978,6 +978,33 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Scan fra kamera</value>
   </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>SEPA-kreditoverførsel</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC-modtager</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Navn på modtager</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN-modtager</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Beløb EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Formål</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+    <value>Betaling (struktureret)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+    <value>Betaling (tekst)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Oplysninger</value>
+  </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>IBAN er ikke gyldigt.</value>
   </data>

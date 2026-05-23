@@ -978,6 +978,33 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Digitalização da câmera</value>
   </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>Transferência de crédito SEPA</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC do beneficiário</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Nome do beneficiário</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN do beneficiário</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Valor em EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Finalidade</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+    <value>Remessa (estruturada)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+    <value>Remessa (texto)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Informações</value>
+  </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>O código IBAN não é válido.</value>
   </data>

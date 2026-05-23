@@ -997,7 +997,7 @@ Not all payload types are supported on every device.</value>
     <value>Purpose</value>
   </data>
   <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
-    <value>Remittance (reference)</value>
+    <value>Remittance (structured)</value>
   </data>
   <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
     <value>Remittance (text)</value>

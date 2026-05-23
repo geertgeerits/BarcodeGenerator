@@ -1,8 +1,7 @@
 using CommunityToolkit.Maui.Views;
-using System.ComponentModel.DataAnnotations;
-using System.Drawing;
-using System.Text.RegularExpressions;
 using QRCoder;
+using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 using static QRCoder.PayloadGenerator;
 using static QRCoder.PayloadGenerator.Girocode;
 
@@ -11,6 +10,7 @@ namespace BarcodeGenerator
     public partial class PopupPayloadTypes : Popup
     {
         public static ImageSource? qrCodeImage;
+        public static bool bPayloadSepaCreditTransfer;
 
         public PopupPayloadTypes()
     	{
@@ -510,7 +510,7 @@ namespace BarcodeGenerator
         /// <remarks>https://github.com/Shane32/QRCoder - https://deepwiki.com/codebude/QRCoder/3.2-basic-payloads</remarks>
         private async Task<string> BuildPayload(string selectedName)
         {
-            string payload;
+            string payload = string.Empty;
 
             if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)
             {
@@ -699,7 +699,7 @@ END:VCALENDAR";
                 //{entPayloadTypeSctRemittanceText.Text}
                 //{entPayloadTypeSctInformation.Text}";
 
-                // Use the QRCoder library to generate the SEPA Credit Transfer payload and create a QR code bitmap
+                // Use the QRCoder library to generate the SEPA Credit Transfer payload and create the QR code image
                 string cRemittance = string.Empty;
                 TypeOfRemittance typeOfRemittance = new();
 
@@ -714,29 +714,44 @@ END:VCALENDAR";
                     typeOfRemittance = TypeOfRemittance.Structured;
                 }
 
-                Girocode generator = new(entPayloadTypeSctIban.Text,
-                    entPayloadTypeSctBic.Text,
-                    entPayloadTypeSctName.Text,
-                    decimal.Parse(entPayloadTypeSctAmountEur.Text, CultureInfo.InvariantCulture),
-                    cRemittance,
-                    typeOfRemittance,
-                    entPayloadTypeSctPurpose.Text,
-                    entPayloadTypeSctInformation.Text,
-                    GirocodeVersion.Version2,
-                    GirocodeEncoding.UTF_8);
+                try
+                {
+                    Girocode generator = new(entPayloadTypeSctIban.Text,
+                        entPayloadTypeSctBic.Text,
+                        entPayloadTypeSctName.Text,
+                        decimal.Parse(entPayloadTypeSctAmountEur.Text, CultureInfo.InvariantCulture),
+                        cRemittance,
+                        typeOfRemittance,
+                        entPayloadTypeSctPurpose.Text,
+                        entPayloadTypeSctInformation.Text,
+                        GirocodeVersion.Version2,
+                        GirocodeEncoding.UTF_8);
 
-                payload = generator.ToString();
+                    QRCodeGenerator qrGenerator = new();
+                    QRCodeData qrCodeData = qrGenerator.CreateQrCode(generator);
+                    PngByteQRCode qrCode = new(qrCodeData);
+                    byte[] qrCodeAsPngByteArr = qrCode.GetGraphic(20);
 
-                QRCodeGenerator qrGenerator = new();
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(generator);
-                QRCode qrCode = new(qrCodeData);
-                Bitmap qrCodeBitmap = qrCode.GetGraphic(20);
+                    payload = generator.ToString();
+                    qrCodeImage = ImageSource.FromStream(() => new MemoryStream(qrCodeAsPngByteArr));
+                    bPayloadSepaCreditTransfer = true;
 
-                // Convert System.Drawing.Bitmap to Microsoft.Maui.Controls.ImageSource
-                using MemoryStream ms = new();
-                qrCodeBitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                ms.Position = 0;
-                PopupPayloadTypes.qrCodeImage = ImageSource.FromStream(() => new MemoryStream(ms.ToArray()));
+                    // Save the generated QR code image to a file in the cache directory for later retrieval and display
+                    await File.WriteAllBytesAsync(ClassBarcodes.cFileBarcodePng, qrCodeAsPngByteArr);
+
+                    // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
+                    SvgQRCode qrCodeSvg = new(qrCodeData);
+                    string qrCodeAsSvg = qrCodeSvg.GetGraphic(20);
+                    
+                    await File.WriteAllTextAsync(ClassBarcodes.cFileBarcodeSvg, qrCodeAsSvg);
+                }
+                catch (Exception ex)
+                {
+#if DEBUG
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
+                    return string.Empty;
+                }
             }
             else
             {

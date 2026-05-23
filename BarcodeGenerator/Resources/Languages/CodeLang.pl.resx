@@ -978,6 +978,33 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Skanowanie z aparatu</value>
   </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>Przelew SEPA</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>Odbiorca BIC</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Nazwa odbiorcy</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>Odbiorca IBAN</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Kwota EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Cel</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+    <value>Przelew (strukturyzowany)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+    <value>Przelew (tekstowy)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Informacje</value>
+  </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>Numer IBAN jest nieprawidłowy.</value>
   </data>

@@ -1886,7 +1886,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remittance (reference).
+        ///   Looks up a localized string similar to Remittance (structured).
         /// </summary>
         internal static string PayloadTypeSctRemittanceReference_Text {
             get {

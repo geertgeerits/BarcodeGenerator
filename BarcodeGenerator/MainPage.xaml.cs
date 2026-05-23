@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.51
- * Date ........: 2026-05-22 (YYYY-MM-DD)
+ * Date ........: 2026-05-23 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -317,7 +317,6 @@ namespace BarcodeGenerator
                 edtTextToCode.Placeholder = string.Empty;
                 edtTextToCode.TextTransform = TextTransform.None;
 
-                btnShare.Text = CodeLang.ButtonShare_Text;
                 btnShare.IsEnabled = false;
 
                 bCompressionAllowed = false;
@@ -629,8 +628,8 @@ namespace BarcodeGenerator
             edtTextToCode.IsEnabled = true;
 
             // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
-            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
-            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
+            //ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
+            //ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
 
             // Set the barcode colors
             bgvBarcode.ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg);
@@ -692,17 +691,16 @@ namespace BarcodeGenerator
             }
 
             // Generate the barcode
-            _ = GenerateBarcode(selectedIndex, selectedName!, cTextToCode);
+            _ = GenerateBarcode(selectedName!, cTextToCode);
         }
 
         /// <summary>
         /// Generate the barcode based on the selected format and the input text
         /// </summary>
-        /// <param name="selectedIndex">The index of the selected barcode format.</param>
         /// <param name="selectedName">The name of the selected barcode format.</param>
         /// <param name="cTextToCode">The text to encode into the barcode.</param>
         /// <returns>A task representing the asynchronous operation.</returns>
-        private async Task GenerateBarcode(int selectedIndex, string selectedName, string cTextToCode)
+        private async Task GenerateBarcode(string selectedName, string cTextToCode)
         {
             // Start the activity indicator
             activityIndicator.IsVisible = true;
@@ -722,7 +720,7 @@ namespace BarcodeGenerator
                 //int divByZero = 51 / int.Parse("0");
 
                 // Payload type is allowed and equals to cPayloadType_SEPACREDITTRANSFER using the QRCoder library
-                if (bPayloadTypeAllowed && PopupPayloadTypes.qrCodeImage is not null)
+                if (bPayloadTypeAllowed && PopupPayloadTypes.bPayloadSepaCreditTransfer && PopupPayloadTypes.qrCodeImage is not null)
                 {
                     imgQrCodeImage.Source = PopupPayloadTypes.qrCodeImage;
                     PopupPayloadTypes.qrCodeImage = null;
@@ -762,7 +760,6 @@ namespace BarcodeGenerator
                     bgvBarcode.Value = cTextToCode;
                 }
 
-                btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[selectedIndex]}";
                 btnShare.IsEnabled = true;
             }
             catch (Exception ex)
@@ -789,7 +786,6 @@ namespace BarcodeGenerator
             edtTextToCode.Text = string.Empty;
             bgvBarcode.Value = string.Empty;
             imgQrCodeImage.Source = null;
-            btnShare.Text = CodeLang.ButtonShare_Text;
             btnShare.IsEnabled = false;
 
             _ = edtTextToCode.Focus();
@@ -898,8 +894,8 @@ namespace BarcodeGenerator
         {
             try
             {
-                // Share the QR code or the Micro QR code as an image file using the Share API
-                if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
+                // Payload type is allowed and equals to cPayloadType_SEPACREDITTRANSFER
+                if (bPayloadTypeAllowed && PopupPayloadTypes.bPayloadSepaCreditTransfer)
                 {
                     if (!await ClassFileOperations.ShareMultipleFilesAsync())
                     {
@@ -910,6 +906,20 @@ namespace BarcodeGenerator
                         });
                     }
                 }
+
+                // Share the QR code or the Micro QR code as an image file using the Share API
+                else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
+                {
+                    if (!await ClassFileOperations.ShareMultipleFilesAsync())
+                    {
+                        await Share.Default.RequestAsync(new ShareFileRequest
+                        {
+                            Title = "Barcode Generator",
+                            File = new ShareFile(ClassBarcodes.cFileBarcodePng)
+                        });
+                    }
+                }
+
                 // Share the QR code with the image as an image file using the Share API
                 else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
@@ -919,6 +929,7 @@ namespace BarcodeGenerator
                         File = new ShareFile(ClassBarcodes.cFileBarcodePng)
                     });
                 }
+
                 // Share the barcode by capturing the barcode view and saving it as a file using the Share API
                 else if (Screenshot.Default.IsCaptureSupported)
                 {
@@ -981,14 +992,11 @@ namespace BarcodeGenerator
             
             if (pckFormatCodeGenerator.SelectedIndex >= 0)
             {
-                btnShare.Text = $"{CodeLang.ButtonShare_Text} {pckFormatCodeGenerator.Items[pckFormatCodeGenerator.SelectedIndex]}";
-
                 // Set the placeholder text for the editor based on the selected format code after the language has been changed
                 SetEditorPlaceholder();
             }
             else
             {
-                btnShare.Text = CodeLang.ButtonShare_Text;
                 edtTextToCode.Placeholder = string.Empty;
             }
         }

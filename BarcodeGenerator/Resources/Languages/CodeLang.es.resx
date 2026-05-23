@@ -978,6 +978,33 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
     <value>Escaneo desde la cámara</value>
   </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>Transferencia bancaria SEPA</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>Código BIC del beneficiario</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Nombre del beneficiario</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>Código IBAN del beneficiario</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Importe en EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Objetivo</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+    <value>Transferencia (estructurada)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+    <value>Transferencia (texto)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Información</value>
+  </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>El IBAN no es válido.</value>
   </data>
