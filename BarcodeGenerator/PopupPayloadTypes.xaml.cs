@@ -692,6 +692,10 @@ END:VCALENDAR";
             // PayloadType SEPA Credit Transfer
             else if (selectedName == ClassPayloadTypes.cPayloadType_SEPACREDITTRANSFER)
             {
+                // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
+                ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
+                ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
+
                 // https://github.com/Shane32/QRCoder/wiki/Advanced-usage---Payload-generators#37-girocode
                 // Trim all input values to remove leading and trailing whitespace, which can cause validation errors or incorrect payload generation
                 entPayloadTypeSctBic.Text = entPayloadTypeSctBic.Text.Trim();
@@ -754,7 +758,7 @@ END:VCALENDAR";
                     QRCodeGenerator qrGenerator = new();
                     QRCodeData qrCodeData = qrGenerator.CreateQrCode(generator);
                     PngByteQRCode qrCode = new(qrCodeData);
-                    byte[] qrCodeAsPngByteArr = qrCode.GetGraphic(20);
+                    byte[] qrCodeAsPngByteArr = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
 
                     payload = generator.ToString();
                     qrCodeImage = ImageSource.FromStream(() => new MemoryStream(qrCodeAsPngByteArr));
@@ -765,7 +769,7 @@ END:VCALENDAR";
 
                     // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
                     SvgQRCode qrCodeSvg = new(qrCodeData);
-                    string qrCodeAsSvg = qrCodeSvg.GetGraphic(20);
+                    string qrCodeAsSvg = qrCodeSvg.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
                     
                     await File.WriteAllTextAsync(ClassBarcodes.cFileBarcodeSvg, qrCodeAsSvg);
                 }
@@ -1040,7 +1044,13 @@ END:VCALENDAR";
         /// <returns>true if valid structured remittance information; otherwise, false.</returns>
         private bool IsValidRemittanceInfoStructured(string cRemittanceInfo)
         {
-            // Remove spaces and '/' for standardization
+            // Structured remittance information is optional, so empty or whitespace is considered valid
+            if (string.IsNullOrWhiteSpace(cRemittanceInfo))
+            {
+                return true;
+            }
+
+            // Remove spaces for standardization
             cRemittanceInfo = cRemittanceInfo.Replace(" ", string.Empty);
             entPayloadTypeSctRemittanceInfoStructured.Text = cRemittanceInfo;
 

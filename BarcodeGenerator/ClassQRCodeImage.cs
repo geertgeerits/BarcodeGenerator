@@ -54,9 +54,7 @@ namespace BarcodeGenerator
                 {
                     cErrorTitle = CodeLang.Barcode_QR_CODE_Text;
                     qrDataPng = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
-                    //qrDataPng = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.M);
                     //qrDataPng = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.M, forceUtf8: true, utf8BOM: true, eciMode: QRCodeGenerator.EciMode.Utf8, requestedVersion: -1);
-                    //qrDataPng = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.M, requestedVersion: 6);
 
                     // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
                     qrDataSvg = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
