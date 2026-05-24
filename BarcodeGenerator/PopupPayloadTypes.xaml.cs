@@ -21,6 +21,10 @@ namespace BarcodeGenerator
             BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLatitude);
             BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLongitude);
 #endif
+            // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
+            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
+            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
+
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
             Globals.bPopupOpened = true;
 
@@ -692,10 +696,6 @@ END:VCALENDAR";
             // PayloadType SEPA Credit Transfer
             else if (selectedName == ClassPayloadTypes.cPayloadType_SEPACREDITTRANSFER)
             {
-                // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
-                ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
-                ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
-
                 // https://github.com/Shane32/QRCoder/wiki/Advanced-usage---Payload-generators#37-girocode
                 // Trim all input values to remove leading and trailing whitespace, which can cause validation errors or incorrect payload generation
                 entPayloadTypeSctBic.Text = entPayloadTypeSctBic.Text.Trim();

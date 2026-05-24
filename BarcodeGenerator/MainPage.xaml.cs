@@ -247,6 +247,19 @@ namespace BarcodeGenerator
 
             OnClearCodeClicked(sender, e);
             edtTextToCode.Text = ClassPayloadTypes.cPayloadResult;
+
+            // If the payload type is SEPA Credit Transfer, show the QR-code immediately after setting the payload result in the editor, otherwise the user can modify the payload result, without effect, because the code is already generated
+            if (PopupPayloadTypes.bPayloadSepaCreditTransfer && PopupPayloadTypes.qrCodeImage is not null)
+            {
+                // Payload type is 'Sepa credit transfer' using the QRCoder library
+                imgQrCodeImage.Source = PopupPayloadTypes.qrCodeImage;
+                PopupPayloadTypes.qrCodeImage = null;
+
+                // Disable/Enable controls
+                edtTextToCode.IsEnabled = false;
+                btnGenerateCode.IsEnabled = false;
+                btnShare.IsEnabled = true;
+            }
         }
 
         /// <summary>
@@ -630,11 +643,8 @@ namespace BarcodeGenerator
             edtTextToCode.IsEnabled = true;
 
             // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
-            if (!PopupPayloadTypes.bPayloadSepaCreditTransfer)
-            {
-                ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
-                ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
-            }
+            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
+            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
 
             // Set the barcode colors
             bgvBarcode.ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg);
@@ -728,28 +738,13 @@ namespace BarcodeGenerator
                 // For testing crashes - DivideByZeroException
                 //int divByZero = 51 / int.Parse("0");
 
-                // Payload type is 'Sepa credit transfer' using the QRCoder library
-                if (PopupPayloadTypes.bPayloadSepaCreditTransfer && PopupPayloadTypes.qrCodeImage is not null)
-                {
-                    imgQrCodeImage.Source = PopupPayloadTypes.qrCodeImage;
-                    PopupPayloadTypes.qrCodeImage = null;
-
-                    // Disable controls
-                    edtTextToCode.IsEnabled = false;
-                    btnGenerateCode.IsEnabled = false;
-                }
-                
                 // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
-                else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
+                if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {
-                    // Delete the existing SVG file if it exists because the Art QR code does not create a SVG file but the file might exist from a previous generated QR code
-                    ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
-
                     ClassBarcodes.cQRCodeType = selectedName;
                     
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
-                    
                 }
                 
                 // Generate the QR code with or without an image using the QRCoder or SkiaSharp library
