@@ -997,10 +997,10 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
     <value>Objetivo</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Transferencia (estructurada)</value>
+    <value>Información de la remesa (estructurada)</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Transferencia (texto)</value>
+    <value>Información de la remesa (no estructurada)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Información</value>
@@ -1019,5 +1019,8 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>Solo se puede completar uno de los campos de remesa.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>La información de la remesa no es válida.</value>
   </data>
 </root>

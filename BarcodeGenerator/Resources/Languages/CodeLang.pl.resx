@@ -997,10 +997,10 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
     <value>Cel</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Przelew (strukturyzowany)</value>
+    <value>Informacje o przekazie (ustrukturyzowane)</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Przelew (tekstowy)</value>
+    <value>Informacje o przekazie (nieustrukturyzowane)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Informacje</value>
@@ -1019,5 +1019,8 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>Można wypełnić tylko jedno pole przelewu.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Informacje o przekazie są nieprawidłowe.</value>
   </data>
 </root>

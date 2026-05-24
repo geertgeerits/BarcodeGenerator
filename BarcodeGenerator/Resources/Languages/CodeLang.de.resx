@@ -996,10 +996,10 @@ Wählen Sie eine Option.</value>
     <value>Zweck</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Überweisung (strukturiert)</value>
+    <value>Überweisungsdaten (strukturiert)</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Überweisung (Text)</value>
+    <value>Überweisungsdaten (unstrukturiert)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Informationen</value>
@@ -1018,5 +1018,8 @@ Wählen Sie eine Option.</value>
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>Nur eines der Überweisungsfelder darf ausgefüllt werden.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Die Überweisungsdaten sind ungültig.</value>
   </data>
 </root>

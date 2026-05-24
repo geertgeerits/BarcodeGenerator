@@ -997,10 +997,10 @@ Not all payload types are supported on every device.</value>
     <value>Purpose</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Remittance Information (structured) </value>
+    <value>Remittance information (structured) </value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Remittance Information (unstructured) </value>
+    <value>Remittance information (unstructured) </value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Information</value>

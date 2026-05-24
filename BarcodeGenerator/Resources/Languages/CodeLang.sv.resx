@@ -997,10 +997,10 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
     <value>Syfte</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Remittering (strukturerad)</value>
+    <value>Remitteringsinformation (strukturerad)</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Remittering (text)</value>
+    <value>Remitteringsinformation (ostrukturerad)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Information</value>
@@ -1019,5 +1019,8 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>Endast ett av betalningsfälten får fyllas i.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Remitteringsinformationen är inte giltig.</value>
   </data>
 </root>

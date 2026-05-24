@@ -997,10 +997,10 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
     <value>Finalidade</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Remessa (estruturada)</value>
+    <value>Informações de remessa (estruturadas)</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Remessa (texto)</value>
+    <value>Informações de remessa (não estruturadas)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Informações</value>
@@ -1019,5 +1019,8 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>Apenas um dos campos de remessa pode ser preenchido.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>As informações de remessa não são válidas.</value>
   </data>
 </root>

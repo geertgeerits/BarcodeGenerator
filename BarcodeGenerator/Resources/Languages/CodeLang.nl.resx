@@ -1000,7 +1000,7 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
     <value>Mededeling (gestructureerd)</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Mededeling (tekst)</value>
+    <value>Mededeling (ongestructureerd)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Informatie</value>
@@ -1019,5 +1019,8 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>Slechts één van de mededelingsvelden mag worden ingevuld.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>De mededeling is onjuist.</value>
   </data>
 </root>

@@ -1895,7 +1895,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remittance Information (structured) .
+        ///   Looks up a localized string similar to Remittance information (structured) .
         /// </summary>
         internal static string PayloadTypeSctRemittanceInfoStructured_Text {
             get {
@@ -1904,7 +1904,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remittance Information (unstructured) .
+        ///   Looks up a localized string similar to Remittance information (unstructured) .
         /// </summary>
         internal static string PayloadTypeSctRemittanceInfoUnstructured_Text {
             get {

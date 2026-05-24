@@ -997,10 +997,10 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
     <value>Cél</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Átutalási mód (strukturált)</value>
+    <value>Átutalási információk (strukturált)</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Átutalási mód (szöveges)</value>
+    <value>Átutalási információk (strukturálatlan)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Adatok</value>
@@ -1019,5 +1019,8 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>Csak egy átutalási mező tölthető ki.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Az átutalási információk érvénytelenek.</value>
   </data>
 </root>

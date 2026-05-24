@@ -997,10 +997,10 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
     <value>Účel</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Platba (strukturovaná)</value>
+    <value>Informace o platbě (strukturované)</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Platba (textová)</value>
+    <value>Informace o platbě (nestrukturované)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Informace</value>
@@ -1019,5 +1019,8 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>Lze vyplnit pouze jedno z polí pro platbu.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Informace o platbě nejsou platné.</value>
   </data>
 </root>

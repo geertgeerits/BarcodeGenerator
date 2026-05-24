@@ -997,10 +997,10 @@ Non tutti i tipi di dati sono supportati su tutti i dispositivi.</value>
     <value>Scopo</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Bonifico (strutturato)</value>
+    <value>Informazioni relative al bonifico (strutturate)</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Bonifico (testo)</value>
+    <value>Informazioni relative al bonifico (non strutturate)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Informazioni</value>
@@ -1019,5 +1019,8 @@ Non tutti i tipi di dati sono supportati su tutti i dispositivi.</value>
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>È possibile compilare solo uno dei campi relativi al pagamento.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Le informazioni relative al bonifico non sono valide.</value>
   </data>
 </root>
