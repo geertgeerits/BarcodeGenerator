@@ -762,7 +762,13 @@ END:VCALENDAR";
 
                     payload = generator.ToString();
                     qrCodeImage = ImageSource.FromStream(() => new MemoryStream(qrCodeAsPngByteArr));
-                    bPayloadSepaCreditTransfer = true;
+
+                    // The total payload is limited to 331 bytes for the SEPA Credit Transfer type
+                    if (System.Text.Encoding.UTF8.GetByteCount(payload) > 331)
+                    {
+                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorSepaCreditTransferPayloadTooLong_Text, CodeLang.ButtonClose_Text);
+                        return string.Empty;
+                    }
 
                     // Save the generated QR code image to a file in the cache directory for later retrieval and display
                     await File.WriteAllBytesAsync(ClassBarcodes.cFileBarcodePng, qrCodeAsPngByteArr);
@@ -772,13 +778,14 @@ END:VCALENDAR";
                     string qrCodeAsSvg = qrCodeSvg.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
                     
                     await File.WriteAllTextAsync(ClassBarcodes.cFileBarcodeSvg, qrCodeAsSvg);
+
+                    bPayloadSepaCreditTransfer = true;
                 }
                 catch (Exception ex)
                 {
 #if DEBUG
                     await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
-                    bPayloadSepaCreditTransfer = false;
                     return string.Empty;
                 }
             }

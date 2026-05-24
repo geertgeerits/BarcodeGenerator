@@ -1023,4 +1023,7 @@ Tous les types de données ne sont pas compatibles avec tous les appareils.</val
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
     <value>Les informations relatives au virement ne sont pas valides.</value>
   </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>La longueur cumulée de tous les champs est trop importante. La taille totale de la charge utile est limitée à 331 octets.</value>
+  </data>
 </root>

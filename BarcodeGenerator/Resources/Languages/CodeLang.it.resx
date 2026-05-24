@@ -1023,4 +1023,7 @@ Non tutti i tipi di dati sono supportati su tutti i dispositivi.</value>
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
     <value>Le informazioni relative al bonifico non sono valide.</value>
   </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>La lunghezza complessiva di tutti i campi è eccessiva. La dimensione totale del payload è limitata a 331 byte.</value>
+  </data>
 </root>

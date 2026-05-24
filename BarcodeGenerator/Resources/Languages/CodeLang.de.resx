@@ -1022,4 +1022,7 @@ Wählen Sie eine Option.</value>
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
     <value>Die Überweisungsdaten sind ungültig.</value>
   </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Die Gesamtlänge aller Felder ist zu lang. Die gesamte Nutzlastgröße ist auf 331 Byte begrenzt.</value>
+  </data>
 </root>

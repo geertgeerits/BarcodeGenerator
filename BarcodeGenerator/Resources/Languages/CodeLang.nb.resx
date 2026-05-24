@@ -1023,4 +1023,7 @@ Ikke alle nyttelasttyper støttes på alle enheter.</value>
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
     <value>Overføringsinformasjonen er ikke gyldig.</value>
   </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Den samlede lengden på alle feltene er for lang. Den totale nyttelaststørrelsen er begrenset til 331 byte.</value>
+  </data>
 </root>

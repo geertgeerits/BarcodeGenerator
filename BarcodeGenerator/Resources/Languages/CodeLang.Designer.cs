@@ -1124,6 +1124,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The combined length of all fields is too long. The total payload size is limited to 331 bytes..
+        /// </summary>
+        internal static string ErrorSepaCreditTransferPayloadTooLong_Text {
+            get {
+                return ResourceManager.GetString("ErrorSepaCreditTransferPayloadTooLong_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start date cannot be later than end date..
         /// </summary>
         internal static string ErrorStartdateLaterEnddate_Text {

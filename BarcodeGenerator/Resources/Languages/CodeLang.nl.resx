@@ -1023,4 +1023,7 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
     <value>De mededeling is onjuist.</value>
   </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>De gecombineerde lengte van alle velden is te groot. De totale payloadgrootte is beperkt tot 331 bytes.</value>
+  </data>
 </root>

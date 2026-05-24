@@ -1023,4 +1023,7 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
     <value>Informacje o przekazie są nieprawidłowe.</value>
   </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Łączna długość wszystkich pól jest za duża. Całkowity rozmiar danych jest ograniczony do 331 bajtów.</value>
+  </data>
 </root>

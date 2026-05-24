@@ -1023,4 +1023,7 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
     <value>Informace o platbě nejsou platné.</value>
   </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Celková délka všech polí je příliš dlouhá. Celková velikost datové části je omezena na 331 bajtů.</value>
+  </data>
 </root>

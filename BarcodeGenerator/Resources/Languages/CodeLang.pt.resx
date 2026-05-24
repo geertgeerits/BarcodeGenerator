@@ -1023,4 +1023,7 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
     <value>As informações de remessa não são válidas.</value>
   </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>O comprimento combinado de todos os campos é muito longo. O tamanho total da carga útil está limitado a 331 bytes.</value>
+  </data>
 </root>

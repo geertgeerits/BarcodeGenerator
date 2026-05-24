@@ -1023,4 +1023,7 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
     <value>Informațiile despre remitere nu sunt valide.</value>
   </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Lungimea combinată a tuturor câmpurilor este prea mare. Dimensiunea totală a sarcinii utile este limitată la 331 de octeți.</value>
+  </data>
 </root>
