@@ -996,11 +996,11 @@ Not all payload types are supported on every device.</value>
   <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
     <value>Purpose</value>
   </data>
-  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
-    <value>Remittance (structured)</value>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>Remittance Information (structured) </value>
   </data>
-  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
-    <value>Remittance (text)</value>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>Remittance Information (unstructured) </value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
     <value>Information</value>
@@ -1017,7 +1017,10 @@ Not all payload types are supported on every device.</value>
   <data name="ErrorNameInvalid_Text" xml:space="preserve">
     <value>Name is mandatory.</value>
   </data>
-  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
-    <value>Only one of the remittance fields may be populated.</value>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>Only one of the remittance information fields may be populated.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Remittance information is not valid.</value>
   </data>
 </root>

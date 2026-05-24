@@ -1106,11 +1106,20 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Only one of the remittance fields may be populated..
+        ///   Looks up a localized string similar to Remittance information is not valid..
         /// </summary>
-        internal static string ErrorRemittanceInvalid_Text {
+        internal static string ErrorRemittanceInfoStructuredInvalid_Text {
             get {
-                return ResourceManager.GetString("ErrorRemittanceInvalid_Text", resourceCulture);
+                return ResourceManager.GetString("ErrorRemittanceInfoStructuredInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only one of the remittance information fields may be populated..
+        /// </summary>
+        internal static string ErrorRemittanceInfoTwoFieldsInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorRemittanceInfoTwoFieldsInvalid_Text", resourceCulture);
             }
         }
         
@@ -1886,20 +1895,20 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remittance (structured).
+        ///   Looks up a localized string similar to Remittance Information (structured) .
         /// </summary>
-        internal static string PayloadTypeSctRemittanceReference_Text {
+        internal static string PayloadTypeSctRemittanceInfoStructured_Text {
             get {
-                return ResourceManager.GetString("PayloadTypeSctRemittanceReference_Text", resourceCulture);
+                return ResourceManager.GetString("PayloadTypeSctRemittanceInfoStructured_Text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remittance (text).
+        ///   Looks up a localized string similar to Remittance Information (unstructured) .
         /// </summary>
-        internal static string PayloadTypeSctRemittanceText_Text {
+        internal static string PayloadTypeSctRemittanceInfoUnstructured_Text {
             get {
-                return ResourceManager.GetString("PayloadTypeSctRemittanceText_Text", resourceCulture);
+                return ResourceManager.GetString("PayloadTypeSctRemittanceInfoUnstructured_Text", resourceCulture);
             }
         }
         

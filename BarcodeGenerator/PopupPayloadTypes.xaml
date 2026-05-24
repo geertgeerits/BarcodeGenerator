@@ -654,7 +654,7 @@
             </Border>
 
             <Border
-                x:Name="brdPayloadTypeSctRemittanceReference"
+                x:Name="brdPayloadTypeSctRemittanceInfoStructured"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="29"
                 Grid.Column="0"
@@ -662,19 +662,20 @@
                 Margin="0,6,6,0">
 
                 <Entry
-                    x:Name="entPayloadTypeSctRemittanceReference"
-                    ToolTipProperties.Text="{Translate PayloadTypeSctRemittanceReference_Text}"
-                    Placeholder="{Translate PayloadTypeSctRemittanceReference_Text}"                    
+                    x:Name="entPayloadTypeSctRemittanceInfoStructured"
+                    ToolTipProperties.Text="{Translate PayloadTypeSctRemittanceInfoStructured_Text}"
+                    Placeholder="{Translate PayloadTypeSctRemittanceInfoStructured_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     MaxLength="35"
+                    TextTransform="Uppercase"
                     Text=""
                     ReturnType="Next">
                 </Entry>
             </Border>
 
             <Border
-                x:Name="brdPayloadTypeSctRemittanceText"
+                x:Name="brdPayloadTypeSctRemittanceInfoUnstructured"
                 Style="{StaticResource borderStyleDefault}"
                 Grid.Row="30"
                 Grid.Column="0"
@@ -682,9 +683,9 @@
                 Margin="0,6,6,0">
 
                 <Entry
-                    x:Name="entPayloadTypeSctRemittanceText"
-                    ToolTipProperties.Text="{Translate PayloadTypeSctRemittanceText_Text}"
-                    Placeholder="{Translate PayloadTypeSctRemittanceText_Text}"                    
+                    x:Name="entPayloadTypeSctRemittanceInfoUnstructured"
+                    ToolTipProperties.Text="{Translate PayloadTypeSctRemittanceInfoUnstructured_Text}"
+                    Placeholder="{Translate PayloadTypeSctRemittanceInfoUnstructured_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     MaxLength="140"

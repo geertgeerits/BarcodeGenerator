@@ -996,10 +996,10 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
     <value>Formål</value>
   </data>
-  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
     <value>Betaling (struktureret)</value>
   </data>
-  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
     <value>Betaling (tekst)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
@@ -1017,7 +1017,7 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="ErrorNameInvalid_Text" xml:space="preserve">
     <value>Navn er obligatorisk.</value>
   </data>
-  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>Kun ét af betalingsfelterne må udfyldes.</value>
   </data>
 </root>

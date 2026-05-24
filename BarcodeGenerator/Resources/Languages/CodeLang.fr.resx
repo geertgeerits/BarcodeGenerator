@@ -996,10 +996,10 @@ Tous les types de données ne sont pas compatibles avec tous les appareils.</val
   <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
     <value>Motif</value>
   </data>
-  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
     <value>Virement structuré</value>
   </data>
-  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
     <value>Virement texte</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
@@ -1017,7 +1017,7 @@ Tous les types de données ne sont pas compatibles avec tous les appareils.</val
   <data name="ErrorNameInvalid_Text" xml:space="preserve">
     <value>Nom obligatoire.</value>
   </data>
-  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>Un seul champ de virement peut être renseigné.</value>
   </data>
 </root>

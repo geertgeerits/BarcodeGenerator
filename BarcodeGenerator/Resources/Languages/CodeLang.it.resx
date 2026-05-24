@@ -996,10 +996,10 @@ Non tutti i tipi di dati sono supportati su tutti i dispositivi.</value>
   <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
     <value>Scopo</value>
   </data>
-  <data name="PayloadTypeSctRemittanceReference_Text" xml:space="preserve">
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
     <value>Bonifico (strutturato)</value>
   </data>
-  <data name="PayloadTypeSctRemittanceText_Text" xml:space="preserve">
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
     <value>Bonifico (testo)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
@@ -1017,7 +1017,7 @@ Non tutti i tipi di dati sono supportati su tutti i dispositivi.</value>
   <data name="ErrorNameInvalid_Text" xml:space="preserve">
     <value>Il nome è obbligatorio.</value>
   </data>
-  <data name="ErrorRemittanceInvalid_Text" xml:space="preserve">
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
     <value>È possibile compilare solo uno dei campi relativi al pagamento.</value>
   </data>
 </root>

@@ -1,6 +1,7 @@
 using CommunityToolkit.Maui.Views;
 using QRCoder;
 using System.ComponentModel.DataAnnotations;
+using System.Numerics;
 using System.Text.RegularExpressions;
 using static QRCoder.PayloadGenerator;
 using static QRCoder.PayloadGenerator.Girocode;
@@ -164,8 +165,8 @@ namespace BarcodeGenerator
                 brdPayloadTypeSctIban.IsVisible = true;
                 brdPayloadTypeSctAmountEur.IsVisible = true;
                 brdPayloadTypeSctPurpose.IsVisible = true;
-                brdPayloadTypeSctRemittanceReference.IsVisible = true;
-                brdPayloadTypeSctRemittanceText.IsVisible = true;
+                brdPayloadTypeSctRemittanceInfoStructured.IsVisible = true;
+                brdPayloadTypeSctRemittanceInfoUnstructured.IsVisible = true;
                 brdPayloadTypeSctInformation.IsVisible = true;
                 _ = entPayloadTypeSctBic.Focus();
             }
@@ -249,8 +250,8 @@ namespace BarcodeGenerator
             brdPayloadTypeSctIban.IsVisible = false;
             brdPayloadTypeSctAmountEur.IsVisible = false;
             brdPayloadTypeSctPurpose.IsVisible = false;
-            brdPayloadTypeSctRemittanceReference.IsVisible = false;
-            brdPayloadTypeSctRemittanceText.IsVisible = false;
+            brdPayloadTypeSctRemittanceInfoStructured.IsVisible = false;
+            brdPayloadTypeSctRemittanceInfoUnstructured.IsVisible = false;
             brdPayloadTypeSctInformation.IsVisible = false;
 
             btnButtonGeoLocation.IsVisible = false;
@@ -513,6 +514,7 @@ namespace BarcodeGenerator
         {
             string payload = string.Empty;
 
+            // PayloadType WIFI
             if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)
             {
                 string cSsid = entPayloadTypeSSID.Text.Trim();
@@ -524,6 +526,8 @@ namespace BarcodeGenerator
                 //WiFi generator = new(ssid: cSsid, password: cPassword, authenticationMode: WiFi.Authentication.WPA, isHiddenSSID: false, escapeHexStrings: false);
                 //payload = generator.ToString();
             }
+
+            // PayloadType URL
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
             {
                 entPayloadTypeURL.Text = entPayloadTypeURL.Text.Trim();
@@ -535,6 +539,8 @@ namespace BarcodeGenerator
                 Url generator = new(url: entPayloadTypeURL.Text);
                 payload = generator.ToString();
             }
+
+            // PayloadType Bookmark
             else if (selectedName == ClassPayloadTypes.cPayloadType_BOOKMARK)
             {
                 entPayloadTypeURL.Text = entPayloadTypeURL.Text.Trim();
@@ -546,6 +552,8 @@ namespace BarcodeGenerator
                 Bookmark generator = new(url: entPayloadTypeURL.Text, title: entPayloadTypeTitle.Text.Trim());
                 payload = generator.ToString();
             }
+
+            // PayloadType Mail
             else if (selectedName == ClassPayloadTypes.cPayloadType_MAIL)
             {
                 entPayloadTypeReceiver.Text = entPayloadTypeReceiver.Text.Trim();
@@ -557,6 +565,8 @@ namespace BarcodeGenerator
                 Mail generator = new(mailReceiver: entPayloadTypeReceiver.Text, subject: entPayloadTypeSubject.Text.Trim(), message: entPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
+
+            // PayloadType SMS
             else if (selectedName == ClassPayloadTypes.cPayloadType_SMS)
             {
                 entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
@@ -568,6 +578,8 @@ namespace BarcodeGenerator
                 SMS generator = new(number: entPayloadTypePhoneNumber.Text, subject: entPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
+
+            // PayloadType MMS
             else if (selectedName == ClassPayloadTypes.cPayloadType_MMS)
             {
                 entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
@@ -579,6 +591,7 @@ namespace BarcodeGenerator
                 MMS generator = new(number: entPayloadTypePhoneNumber.Text, subject: entPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
+            // PayloadType Geolocation
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
                 // Validate the latitude and longitude input values and generate the geolocation payload string if valid
@@ -590,6 +603,8 @@ namespace BarcodeGenerator
                     return string.Empty;
                 }
             }
+
+            // PayloadType Phone number
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
                 entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
@@ -601,6 +616,8 @@ namespace BarcodeGenerator
                 PhoneNumber generator = new(number: entPayloadTypePhoneNumber.Text);
                 payload = generator.ToString();
             }
+
+            // PayloadType WhatsApp message
             else if (selectedName == ClassPayloadTypes.cPayloadType_WHATSAPPMESSAGE)
             {
                 entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
@@ -612,6 +629,8 @@ namespace BarcodeGenerator
                 WhatsAppMessage generator = new(number: entPayloadTypePhoneNumber.Text, message: entPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
+
+            // PayloadType Contact data
             else if (selectedName == ClassPayloadTypes.cPayloadType_CONTACTDATA)
             {
                 entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
@@ -637,6 +656,8 @@ namespace BarcodeGenerator
                 ContactData generator = new(ContactData.ContactOutputType.VCard3, firstname: entPayloadTypeFirstname.Text.Trim(), lastname: entPayloadTypeLastname.Text.Trim(), nickname: "", phone: "", mobilePhone: entPayloadTypePhoneNumber.Text, workPhone: "", email: entPayloadTypeMail.Text);
                 payload = generator.ToString();
             }
+
+            // PayloadType Calendar event
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)
             {
                 // https://github.com/Shane32/QRCoder
@@ -667,6 +688,8 @@ DTSTAMP:{DateTime.UtcNow:yyyyMMddTHHmmssZ}
 END:VEVENT
 END:VCALENDAR";
             }
+
+            // PayloadType SEPA Credit Transfer
             else if (selectedName == ClassPayloadTypes.cPayloadType_SEPACREDITTRANSFER)
             {
                 // https://github.com/Shane32/QRCoder/wiki/Advanced-usage---Payload-generators#37-girocode
@@ -676,8 +699,8 @@ END:VCALENDAR";
                 entPayloadTypeSctIban.Text = entPayloadTypeSctIban.Text.Trim();
                 entPayloadTypeSctAmountEur.Text = entPayloadTypeSctAmountEur.Text.Trim();
                 entPayloadTypeSctPurpose.Text = entPayloadTypeSctPurpose.Text.Trim();
-                entPayloadTypeSctRemittanceReference.Text = entPayloadTypeSctRemittanceReference.Text.Trim();
-                entPayloadTypeSctRemittanceText.Text = entPayloadTypeSctRemittanceText.Text.Trim();
+                entPayloadTypeSctRemittanceInfoStructured.Text = entPayloadTypeSctRemittanceInfoStructured.Text.Trim();
+                entPayloadTypeSctRemittanceInfoUnstructured.Text = entPayloadTypeSctRemittanceInfoUnstructured.Text.Trim();
                 entPayloadTypeSctInformation.Text = entPayloadTypeSctInformation.Text.Trim();
 
                 // Validate the SEPA Credit Transfer input values
@@ -696,22 +719,22 @@ END:VCALENDAR";
                 //{entPayloadTypeSctIban.Text}
                 //EUR{entPayloadTypeSctAmountEur.Text}
                 //{entPayloadTypeSctPurpose.Text}
-                //{entPayloadTypeSctRemittanceReference.Text}
-                //{entPayloadTypeSctRemittanceText.Text}
+                //{entPayloadTypeSctRemittanceInfoStructured.Text}
+                //{entPayloadTypeSctRemittanceInfoUnstructured.Text}
                 //{entPayloadTypeSctInformation.Text}";
 
                 // Use the QRCoder library to generate the SEPA Credit Transfer payload and create the QR code image
                 string cRemittance = string.Empty;
                 TypeOfRemittance typeOfRemittance = new();
 
-                if (entPayloadTypeSctRemittanceReference.Text == string.Empty)
+                if (entPayloadTypeSctRemittanceInfoStructured.Text == string.Empty)
                 {
-                    cRemittance = entPayloadTypeSctRemittanceText.Text;
+                    cRemittance = entPayloadTypeSctRemittanceInfoUnstructured.Text;
                     typeOfRemittance = TypeOfRemittance.Unstructured;
                 }
                 else
                 {
-                    cRemittance = entPayloadTypeSctRemittanceReference.Text;
+                    cRemittance = entPayloadTypeSctRemittanceInfoStructured.Text;
                     typeOfRemittance = TypeOfRemittance.Structured;
                 }
 
@@ -755,6 +778,8 @@ END:VCALENDAR";
                     return string.Empty;
                 }
             }
+
+            // If the selected payload type does not match any of the known types, return an empty string to indicate that no payload could be generated
             else
             {
                 payload = string.Empty;
@@ -939,11 +964,19 @@ END:VCALENDAR";
             // Amount: format the amount to have exactly two decimal places and use a period as the decimal separator, regardless of the user's locale settings. This ensures that the amount is correctly formatted for the SEPA Credit Transfer payload.
             entPayloadTypeSctAmountEur.Text = nAmount.ToString("F2", CultureInfo.InvariantCulture);
 
-            // Remittance: Only one of the remittance fields may be populated but both can be empty. If both fields are populated, display an error message and return false to indicate that the validation failed.
-            if (!string.IsNullOrWhiteSpace(entPayloadTypeSctRemittanceReference.Text) && !string.IsNullOrWhiteSpace(entPayloadTypeSctRemittanceText.Text))
+            // Remittance information: Only one of the remittance fields may be populated but both can be empty.
+            if (!string.IsNullOrWhiteSpace(entPayloadTypeSctRemittanceInfoStructured.Text) && !string.IsNullOrWhiteSpace(entPayloadTypeSctRemittanceInfoUnstructured.Text))
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorRemittanceInvalid_Text, CodeLang.ButtonClose_Text);
-                _ = entPayloadTypeSctRemittanceReference.Focus();
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorRemittanceInfoTwoFieldsInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeSctRemittanceInfoStructured.Focus();
+                return false;
+            }
+
+            // Remittance information: If the structured remittance reference field is populated, validate that it meets the required format for structured remittance information.
+            if (!IsValidRemittanceInfoStructured(entPayloadTypeSctRemittanceInfoStructured.Text))
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorRemittanceInfoStructuredInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeSctRemittanceInfoStructured.Focus();
                 return false;
             }
 
@@ -998,6 +1031,133 @@ END:VCALENDAR";
             }
             
             return remainder == 1;
+        }
+
+        /// <summary>
+        /// Determines whether a remittance information string is in a valid structured format (European RF or Belgian).
+        /// </summary>
+        /// <param name="cRemittanceInfo">The remittance information string to validate.</param>
+        /// <returns>true if valid structured remittance information; otherwise, false.</returns>
+        private bool IsValidRemittanceInfoStructured(string cRemittanceInfo)
+        {
+            // Remove spaces and '/' for standardization
+            cRemittanceInfo = cRemittanceInfo.Replace(" ", string.Empty);
+            entPayloadTypeSctRemittanceInfoStructured.Text = cRemittanceInfo;
+
+            // European RF structured remittance information looks like this: RF18539007547034
+            if (cRemittanceInfo.StartsWith("RF"))
+            {
+                return IsValidRfStructuredReference(cRemittanceInfo);
+            }
+
+            // Belgian structured remittance information looks like this: +++026/0129/40240+++
+            else if (cRemittanceInfo.StartsWith("+++"))
+            {
+                return IsValidBelgianStructuredReference(cRemittanceInfo);
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Validates an ISO 11649 RF Creditor Reference
+        /// </summary>
+        /// <param name="reference"></param>
+        /// <returns></returns>
+        private static bool IsValidRfStructuredReference(string reference)
+        {
+            // RF + 2 check digits + up to 21 alphanumeric characters
+            // The check digits are calculated using the mod 97 algorithm (similar to IBAN validation)
+
+            // RF18539007547034     // valid
+            // RF001234567890       // invalid
+            // RF18 5390 0754 7034  // valid with spaces
+
+            // Remove spaces
+            string cleanRef = new([.. reference.Where(char.IsLetterOrDigit)]);
+
+            // Must start with "RF" and be between 5 and 25 characters
+            if (!cleanRef.StartsWith("RF") || cleanRef.Length < 5 || cleanRef.Length > 25)
+            {
+                return false;
+            }
+
+            // Move first 4 chars to the end (like IBAN check)
+            string rearranged = string.Concat(cleanRef.AsSpan(4), cleanRef.AsSpan(0, 4));
+
+            // Convert letters to numbers (A=10, B=11, ..., Z=35)
+            string numericString = "";
+            foreach (char c in rearranged)
+            {
+                if (char.IsLetter(c))
+                {
+                    numericString += (c - 'A' + 10).ToString();
+                }
+                else if (char.IsDigit(c))
+                {
+                    numericString += c;
+                }
+                else
+                {
+                    return false; // Invalid character
+                }
+            }
+
+            // Use BigInteger for large numbers
+            if (!BigInteger.TryParse(numericString, out BigInteger bigNum))
+            {
+                return false;
+            }
+
+            // Valid if mod 97 == 1
+            return bigNum % 97 == 1;
+        }
+
+        /// <summary>
+        /// Validates a Belgian structured reference (OGM) using modulo 97 check digit verification.
+        /// </summary>
+        /// <param name="reference">The structured reference to validate. May contain spaces, dots, plus signs, or slashes as separators.</param>
+        /// <returns><see langword="true"/> if the reference is valid; otherwise, <see langword="false"/>.</returns>
+        private static bool IsValidBelgianStructuredReference(string reference)
+        {
+            // First 10 digits: base number
+            // Last 2 digits: check digits
+            // Check rule: Compute first 10 % 97
+            // If result is 0, check digits must be 97
+            // Otherwise, check digits must equal the remainder
+
+            // +++026/0129/40240+++ // Valid
+            // 123456789012         // Invalid
+            // 12345678903          // Invalid
+
+            if (reference.Substring(6, 1) != "/" || reference.Substring(11, 1) != "/" || !reference.EndsWith("+++"))
+            {
+                return false;
+            }
+
+            // Remove spaces, dots, and other separators
+            string cleanRef = reference.Replace(" ", "").Replace(".", "").Replace("+", "").Replace("/", "").Replace("-", "");
+
+            // Must be exactly 12 digits
+            if (cleanRef.Length != 12 || !ulong.TryParse(cleanRef, out _))
+            {
+                return false;
+            }
+
+            // Extract parts
+            string first10 = cleanRef[..10];
+            string last2 = cleanRef.Substring(10, 2);
+
+            if (!ulong.TryParse(first10, out ulong baseNumber) || !int.TryParse(last2, out int checkDigits))
+            {
+                return false;
+            }
+
+            // Calculate modulo 97
+            int remainder = (int)(baseNumber % 97);
+            int expectedCheck = remainder == 0 ? 97 : remainder;
+
+            return checkDigits == expectedCheck;
         }
 
         /// <summary>
