@@ -742,6 +742,9 @@ namespace BarcodeGenerator
                 // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
                 else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {
+                    // Delete the existing SVG file if it exists because the Art QR code does not create a SVG file but the file might exist from a previous generated QR code
+                    ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
+
                     ClassBarcodes.cQRCodeType = selectedName;
                     
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
