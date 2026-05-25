@@ -100,7 +100,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.70" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.8" />
         <PackageReference Include="QRCoder" Version="1.8.0" />
-        <PackageReference Include="SkiaSharp" Version="3.119.2" />
+        <PackageReference Include="SkiaSharp" Version="3.119.4" />
         <PackageReference Include="SkiaSharp.QrCode" Version="1.2.3" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.7.4" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.7.4" />
@@ -268,9 +268,16 @@
 	<ItemGroup>
 	  <Folder Include="Platforms\Android\Resources\xml\" />
 	</ItemGroup>
+
+	<!--System.MissingMethodException - Method not found: void AndroidX.Core.View.Accessibility.AccessibilityNodeInfoCompat.set_Checked(bool)-->
+	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
+	  <PackageReference Include="Xamarin.AndroidX.Core">
+	    <Version>1.18.0</Version>
+	  </PackageReference>
+	</ItemGroup>
 	<!--<ItemGroup>
 		<Reference Include="ZXingCpp">
 			<HintPath>..\..\..\..\nuget\zxingcpp\0.5.1\lib\net5.0\ZXingCpp.dll</HintPath>
 		</Reference>
-	</ItemGroup>-->	
+	</ItemGroup>-->
 </Project>

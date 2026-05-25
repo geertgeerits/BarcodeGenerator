@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.51
- * Date ........: 2026-05-24 (YYYY-MM-DD)
+ * Date ........: 2026-05-25 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -908,7 +908,7 @@ namespace BarcodeGenerator
         {
             try
             {
-                // Payload type is allowed and equals to cPayloadType_SEPACREDITTRANSFER
+                // Payload type is SEPA credit transfer - share 1 PNG and 1 SVG file
                 if (PopupPayloadTypes.bPayloadSepaCreditTransfer)
                 {
                     if (!await ClassFileOperations.ShareMultipleFilesAsync())
@@ -921,7 +921,7 @@ namespace BarcodeGenerator
                     }
                 }
 
-                // Share the QR code or the Micro QR code as an image file using the Share API
+                // Share the QR code or the Micro QR code as an image file using the Share API - share 1 PNG and 1 SVG file
                 else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     if (!await ClassFileOperations.ShareMultipleFilesAsync())
@@ -934,7 +934,7 @@ namespace BarcodeGenerator
                     }
                 }
 
-                // Share the QR code with the image as an image file using the Share API
+                // Share the QR code with the image as an image file using the Share API - share 1 PNG file
                 else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     await Share.Default.RequestAsync(new ShareFileRequest

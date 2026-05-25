@@ -142,9 +142,9 @@
         /// <summary>
         /// Converts a decimal degree value to a DMS string
         /// </summary>
-        /// <param name="decimalDegree"></param>
-        /// <param name="isLatitude"></param>
-        /// <returns></returns>
+        /// <param name="decimalDegree">The decimal degree value to convert.</param>
+        /// <param name="isLatitude">Indicates whether the value represents latitude (true) or longitude (false).</param>
+        /// <returns>A string representing the DMS (degrees, minutes, seconds) format of the input decimal degree.</returns>
         public static string DecimalToDMS(double decimalDegree, bool isLatitude)
         {
             // Determine hemisphere
