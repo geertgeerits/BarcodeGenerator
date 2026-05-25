@@ -301,9 +301,21 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnButtonURL_Clicked(object sender, EventArgs e)
         {
-            if (await IsValidUrl(entPayloadTypeURL.Text))
+            try
             {
-                await Launcher.Default.OpenAsync(new Uri(entPayloadTypeURL.Text));
+                if (await IsValidUrl(entPayloadTypeURL.Text))
+                {
+#if ANDROID
+                    // !!!BUGG!!! in Android - System.MissingMethodException - Method not found: void AndroidX.Core.View.Accessibility.AccessibilityNodeInfoCompat.set_Checked(bool)
+                    await Browser.Default.OpenAsync(new Uri(entPayloadTypeURL.Text), BrowserLaunchMode.SystemPreferred);
+#else
+                    await Launcher.Default.OpenAsync(new Uri(entPayloadTypeURL.Text));
+#endif
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"OnButtonURL_Clicked: {ex.Message}");
             }
         }
 
@@ -397,18 +409,25 @@ namespace BarcodeGenerator
         /// <param name="e">The event data associated with the button click.</param>
         private async void OnButtonClose_Clicked(object sender, EventArgs e)
         {
-            // Generate the payload result based on the selected payload type and user input, and then close the popup
-            ClassPayloadTypes.cPayloadResult = await BuildPayload(ClassPayloadTypes.cPayloadType);
-
-            // If the payload result is empty, it indicates that there was an error in generating the payload (e.g., invalid input).
-            // In this case, do not close the popup and allow the user to correct their input.
-            if (string.IsNullOrEmpty(ClassPayloadTypes.cPayloadResult))
+            try
             {
-                return;
-            }
+                // Generate the payload result based on the selected payload type and user input, and then close the popup
+                ClassPayloadTypes.cPayloadResult = await BuildPayload(ClassPayloadTypes.cPayloadType);
 
-            // If the payload result is not empty, proceed to close the popup
-            await CloseAsync();
+                // If the payload result is empty, it indicates that there was an error in generating the payload (e.g., invalid input).
+                // In this case, do not close the popup and allow the user to correct their input.
+                if (string.IsNullOrEmpty(ClassPayloadTypes.cPayloadResult))
+                {
+                    return;
+                }
+
+                // If the payload result is not empty, proceed to close the popup
+                await CloseAsync();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in OnButtonClose_Clicked: {ex.Message}");
+            }
         }
 
         /// <summary>
@@ -534,14 +553,22 @@ namespace BarcodeGenerator
             // PayloadType URL
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
             {
-                entPayloadTypeURL.Text = entPayloadTypeURL.Text.Trim();
-                if (!await IsValidUrl(entPayloadTypeURL.Text))
+                try
                 {
-                    return string.Empty;
-                }
+                    entPayloadTypeURL.Text = entPayloadTypeURL.Text.Trim();
+                    if (!await IsValidUrl(entPayloadTypeURL.Text))
+                    {
+                        return string.Empty;
+                    }
 
-                Url generator = new(url: entPayloadTypeURL.Text);
-                payload = generator.ToString();
+                    Url generator = new(url: entPayloadTypeURL.Text);
+                    payload = generator.ToString();
+                    //payload = entPayloadTypeURL.Text;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error in BuildPayload (URL): {ex.Message}");
+                }
             }
 
             // PayloadType Bookmark
