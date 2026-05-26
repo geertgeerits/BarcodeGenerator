@@ -546,7 +546,11 @@ namespace BarcodeGenerator
 
                 payload = $"WIFI:S:{cSsid};T:{cAuthenticationMode};P:{cPassword};H:false;;";  // WIFI:S:Orange;T:WPA;P:123456;H:false;;
 
-                //WiFi generator = new(ssid: cSsid, password: cPassword, authenticationMode: WiFi.Authentication.WPA, isHiddenSSID: false, escapeHexStrings: false);
+                //WiFi generator = new(ssid: cSsid,
+                //    password: cPassword,
+                //    authenticationMode: WiFi.Authentication.WPA,
+                //    isHiddenSSID: false,
+                //    escapeHexStrings: false);
                 //payload = generator.ToString();
             }
 
@@ -561,9 +565,10 @@ namespace BarcodeGenerator
                         return string.Empty;
                     }
 
+                    //payload = entPayloadTypeURL.Text;
+
                     Url generator = new(url: entPayloadTypeURL.Text);
                     payload = generator.ToString();
-                    //payload = entPayloadTypeURL.Text;
                 }
                 catch (Exception ex)
                 {
@@ -684,7 +689,14 @@ namespace BarcodeGenerator
                     return string.Empty;
                 }
 
-                ContactData generator = new(ContactData.ContactOutputType.VCard3, firstname: entPayloadTypeFirstname.Text.Trim(), lastname: entPayloadTypeLastname.Text.Trim(), nickname: "", phone: "", mobilePhone: entPayloadTypePhoneNumber.Text, workPhone: "", email: entPayloadTypeMail.Text);
+                ContactData generator = new(ContactData.ContactOutputType.VCard3,
+                    firstname: entPayloadTypeFirstname.Text.Trim(),
+                    lastname: entPayloadTypeLastname.Text.Trim(),
+                    nickname: "",
+                    phone: "",
+                    mobilePhone: entPayloadTypePhoneNumber.Text,
+                    workPhone: "",
+                    email: entPayloadTypeMail.Text);
                 payload = generator.ToString();
             }
 
@@ -718,6 +730,14 @@ UID:{DateTime.UtcNow.Ticks + random.Next(1000, 9999)}
 DTSTAMP:{DateTime.UtcNow:yyyyMMddTHHmmssZ}
 END:VEVENT
 END:VCALENDAR";
+
+                //CalendarEvent generator = new(subject: entPayloadTypeSubject.Text.Trim(),
+                //    description: entPayloadTypeDescription.Text.Trim(),
+                //    location: entPayloadTypeLocation.Text.Trim(),
+                //    start: startDate,
+                //    end: endDate,
+                //    allDayEvent: false);
+                //payload = generator.ToString();
             }
 
             // PayloadType SEPA Credit Transfer
@@ -1010,7 +1030,7 @@ END:VCALENDAR";
                 return false;
             }
 
-            // Remittance information: If the structured remittance reference field is populated, validate that it meets the required format for structured remittance information.
+            // Remittance information: if the structured remittance reference field is populated, validate that it meets the required format for structured remittance information.
             if (!IsValidRemittanceInfoStructured(entPayloadTypeSctRemittanceInfoStructured.Text))
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorRemittanceInfoStructuredInvalid_Text, CodeLang.ButtonClose_Text);

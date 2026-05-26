@@ -168,6 +168,7 @@
             {
                 string ssid = string.Empty, pass = string.Empty, auth = string.Empty;
                 string payload = text[5..];
+                
                 foreach (string part in payload.Split(';', StringSplitOptions.RemoveEmptyEntries))
                 {
                     if (part.StartsWith("S:"))
