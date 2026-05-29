@@ -104,8 +104,8 @@
         <PackageReference Include="SkiaSharp.QrCode" Version="1.2.3" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.7.4" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.7.4" />
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.3" />
-		<PackageReference Include="Sentry.Maui" Version="6.5.0" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.4" />
+		<PackageReference Include="Sentry.Maui" Version="6.6.0" />
 		<!--<PackageReference Include="ZXingCpp" Version="0.4.0-alpha" />-->
 	</ItemGroup>
 
