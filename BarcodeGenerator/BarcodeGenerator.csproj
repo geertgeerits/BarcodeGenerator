@@ -265,9 +265,10 @@
 			<ExcludeAssets>native</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>
-	<ItemGroup>
+	
+	<!--<ItemGroup>
 	  <Folder Include="Platforms\Android\Resources\xml\" />
-	</ItemGroup>
+	</ItemGroup>-->
 
 	<!--System.MissingMethodException - Method not found: void AndroidX.Core.View.Accessibility.AccessibilityNodeInfoCompat.set_Checked(bool)-->
 	<!--<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">

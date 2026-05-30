@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.52
- * Date ........: 2026-05-29 (YYYY-MM-DD)
+ * Date ........: 2026-05-30 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -274,7 +274,12 @@ namespace BarcodeGenerator
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
 #if WINDOWS
-            //await Navigation.PushAsync(new PageScanNT());  // !!!BUG!!! Error in NuGet package when using the native Windows scanner ??? - if DEBUG && !DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION in file 'App.g.i.cs'
+            /* !!!BUG!!! Error with NuGet package 'zxingcpp' when using the native Windows scanner ???
+            Error: if DEBUG && !DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION in file 'App.g.i.cs'
+            It has to do with the way the ZXing.Net.Maui library is implemented for Windows and the fact
+            that the native Windows scanner is not working properly in this application,
+            while it works in the Native sample application */
+            //await Navigation.PushAsync(new PageScanNT());
             await Navigation.PushAsync(new PageScanZX());
 #else
             await Navigation.PushAsync(new PageScanNT());

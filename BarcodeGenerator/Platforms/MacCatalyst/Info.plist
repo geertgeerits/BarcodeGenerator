@@ -37,6 +37,8 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app needs access to the photo gallery to save photos and videos.</string>
 	<key>com.apple.security.personal-information.location</key>
+	<key>NSCameraUsageDescription</key>
+	<string>Enable camera for barcode scanning.</string>
 	<true/>
 </dict>
 </plist>
