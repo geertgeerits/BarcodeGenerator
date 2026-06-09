@@ -12,8 +12,8 @@ namespace BarcodeGenerator
 
         private static double nOffsetX;
         private static double nOffsetY;
-        public static double nScaleWidth;
-        public static double nScaleHeight;
+        private static double nScaleWidth;
+        private static double nScaleHeight;
 
         public PageScanNT()
     	{
@@ -623,7 +623,10 @@ namespace BarcodeGenerator
                 _drawable.barcodeResults = null;
                 graphicsBox.Invalidate();
                 graphicsBox.IsVisible = false;
+                imgScanFromImage.Source = null;
+                await Task.Delay(200);
 
+                // Open the selected file as a stream and read its bytes
                 using Stream stream = await file.OpenReadAsync();
                 {
                     byte[] bytes = new byte[stream.Length];
@@ -635,14 +638,9 @@ namespace BarcodeGenerator
                     double nAspectRatio = ClassImageUtilities.GetAspectRatioImage(fileWidth, fileHeight);
                     Debug.WriteLine($"File dimensions: {fileWidth}x{fileHeight} - Aspect ratio: {nAspectRatio}");
 
-                    // Get the dimensions of the image control
-                    double imgControlWidth = imgScanFromImage.Width;
-                    double imgControlHeight = imgScanFromImage.Height;
-                    Debug.WriteLine($"Image control dimensions: {imgControlWidth}x{imgControlHeight}");
-
                     // Load the selected image in the image control
                     imgScanFromImage.Source = ImageSource.FromStream(() => stream);
-                    await Task.Delay(200); // Wait briefly for the image to load and layout to update
+                    await Task.Delay(200);  // Wait briefly for the image to load and layout to update
 
                     // Get the rendered size of the image in the image control after it has been laid
                     double nImageWidthInControl;
@@ -721,7 +719,7 @@ namespace BarcodeGenerator
         /// <param name="ct"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        private async Task<(double X, double Y, double Width, double Height)> GetRenderedImageRectAsync(Microsoft.Maui.Controls.Image image, CancellationToken ct = default)
+        private static async Task<(double X, double Y, double Width, double Height)> GetRenderedImageRectAsync(Image image, CancellationToken ct = default)
         {
             if (image == null)
             {
@@ -729,14 +727,14 @@ namespace BarcodeGenerator
             }
 
             // Wait until the control has a measured size and a handler is attached (up to a short timeout).
-            var sw = System.Diagnostics.Stopwatch.StartNew();
+            Stopwatch sw = Stopwatch.StartNew();
             while ((image.Width <= 0 || image.Height <= 0 || image.Handler == null) && sw.ElapsedMilliseconds < 2000)
             {
                 await Task.Delay(25, ct).ConfigureAwait(false);
             }
 
-            var containerW = image.Width;
-            var containerH = image.Height;
+            double containerW = image.Width;
+            double containerH = image.Height;
 
             // Fallback: if control size is still zero, return empty rect
             if (containerW <= 0 || containerH <= 0)
@@ -795,7 +793,7 @@ namespace BarcodeGenerator
             double offsetX = 0;
             double offsetY = 0;
 
-            var aspect = image.Aspect;
+            Aspect aspect = image.Aspect;
 
             if (aspect == Aspect.AspectFill)
             {
@@ -862,6 +860,7 @@ namespace BarcodeGenerator
                                 float nWidth = barcode.ImageBoundingBox.Width / (float)nScaleWidth * (float)nDensity;
                                 float nHeight = barcode.ImageBoundingBox.Height / (float)nScaleHeight * (float)nDensity;
                                 Debug.WriteLine($"nOffsetX: {nOffsetX}, nOffsetY: {nOffsetY}, nX: {nX}, nY: {nY}, nWidth: {nWidth}, nHeight: {nHeight}");
+                                
                                 canvas.DrawRectangle(nX, nY, nWidth, nHeight);
                             }
                         }
