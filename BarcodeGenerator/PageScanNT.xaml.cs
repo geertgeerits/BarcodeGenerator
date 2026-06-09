@@ -723,7 +723,10 @@ namespace BarcodeGenerator
         /// <exception cref="ArgumentNullException"></exception>
         private async Task<(double X, double Y, double Width, double Height)> GetRenderedImageRectAsync(Microsoft.Maui.Controls.Image image, CancellationToken ct = default)
         {
-            if (image == null) throw new ArgumentNullException(nameof(image));
+            if (image == null)
+            {
+                return (0, 0, 0, 0);
+            }
 
             // Wait until the control has a measured size and a handler is attached (up to a short timeout).
             var sw = System.Diagnostics.Stopwatch.StartNew();
@@ -737,7 +740,9 @@ namespace BarcodeGenerator
 
             // Fallback: if control size is still zero, return empty rect
             if (containerW <= 0 || containerH <= 0)
+            {
                 return (0, 0, 0, 0);
+            }
 
             // Try to get the intrinsic/native pixel size of the image source
             double nativeW = 0, nativeH = 0;

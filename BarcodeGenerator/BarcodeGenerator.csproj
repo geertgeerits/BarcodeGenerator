@@ -75,7 +75,6 @@
 	  <Compile Remove="ClassArtQRCodeWin.cs" />
 	  <Compile Remove="ClassScanFromImageZX.cs" />
 	  <Compile Remove="ClassValidateBarcodesOLD.cs" />
-	  <Compile Remove="ImageSizeHelper.cs" />
 	  <Compile Remove="PageScanGV.xaml.cs" />
 	  <Compile Remove="PageWebsite.xaml.cs" />
 	  <Compile Remove="Platforms\Android\ShareFileHandler.cs" />
