@@ -75,6 +75,7 @@
 	  <Compile Remove="ClassArtQRCodeWin.cs" />
 	  <Compile Remove="ClassScanFromImageZX.cs" />
 	  <Compile Remove="ClassValidateBarcodesOLD.cs" />
+	  <Compile Remove="ImageSizeHelper.cs" />
 	  <Compile Remove="PageScanGV.xaml.cs" />
 	  <Compile Remove="PageWebsite.xaml.cs" />
 	  <Compile Remove="Platforms\Android\ShareFileHandler.cs" />
@@ -96,7 +97,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="14.1.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="14.2.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.70" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.8" />
         <PackageReference Include="QRCoder" Version="1.8.0" />
@@ -106,7 +107,7 @@
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.7.4" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.4" />
 		<PackageReference Include="Sentry.Maui" Version="6.6.0" />
-		<!--<PackageReference Include="ZXingCpp" Version="0.4.0-alpha" />-->
+		<!--<PackageReference Include="zxingcpp" Version="0.5.1" />-->
 	</ItemGroup>
 
 	<ItemGroup>

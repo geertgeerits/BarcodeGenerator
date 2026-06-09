@@ -10,8 +10,10 @@ namespace BarcodeGenerator
         private int nQualityCameraBack;
         private int nQualityCameraFront;
 
-        //public static double nScaleWidth;
-        //public static double nScaleHeight;
+        private static double nOffsetX;
+        private static double nOffsetY;
+        public static double nScaleWidth;
+        public static double nScaleHeight;
 
         public PageScanNT()
     	{
@@ -582,11 +584,6 @@ namespace BarcodeGenerator
             activityIndicator.IsRunning = true;
             await Task.Delay(200);
 
-            // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
-            _drawable.barcodeResults = null;
-            graphicsBox.Invalidate();
-            graphicsBox.IsVisible = false;
-
             // Settings before scanning from an image
             barcodeReader.CameraEnabled = false;
 
@@ -622,42 +619,42 @@ namespace BarcodeGenerator
             // Process each selected file
             foreach (FileResult file in results)
             {
+                // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
+                _drawable.barcodeResults = null;
+                graphicsBox.Invalidate();
+                graphicsBox.IsVisible = false;
+
                 using Stream stream = await file.OpenReadAsync();
                 {
                     byte[] bytes = new byte[stream.Length];
                     stream.ReadExactly(bytes);
                     stream.Seek(0, SeekOrigin.Begin);
 
-                    //// Get the dimensions and aspect ratio of the image on disk using the utility method
-                    //(int fileWidth, int fileHeight) = ClassImageUtilities.GetImageDimensions(file.FullPath);
-                    //double nAspectRatio = ClassImageUtilities.GetAspectRatioImage(fileWidth, fileHeight);
-                    //Debug.WriteLine($"File dimensions: {fileWidth}x{fileHeight} - Aspect ratio: {nAspectRatio}");
+                    // Get the dimensions and aspect ratio of the image on disk using the utility method
+                    (double fileWidth, double fileHeight) = ClassImageUtilities.GetImageDimensions(file.FullPath);
+                    double nAspectRatio = ClassImageUtilities.GetAspectRatioImage(fileWidth, fileHeight);
+                    Debug.WriteLine($"File dimensions: {fileWidth}x{fileHeight} - Aspect ratio: {nAspectRatio}");
 
-                    //// Set the dimensions of the image control and set the width and height to the same value to fill the control (otherwise the barcode bounding box is not in the right location)
-                    //if (imgScanFromImage.Width > 0 && imgScanFromImage.Height > imgScanFromImage.Width)
-                    //{
-                    //    imgScanFromImage.WidthRequest = (double)imgScanFromImage.Height / nAspectRatio;
-                    //}
-                    //else if (imgScanFromImage.Height > 0 && imgScanFromImage.Width > imgScanFromImage.Height)
-                    //{
-                    //    imgScanFromImage.HeightRequest = (double)imgScanFromImage.Width * nAspectRatio;
-                    //}
-                    //Debug.WriteLine($"Image control dimensions after setting: {imgScanFromImage.Width}x{imgScanFromImage.Height}");
-                    //imgScanFromImage.HorizontalOptions = LayoutOptions.Start;
-                    ////imgScanFromImage.Aspect = Aspect.AspectFit;
+                    // Get the dimensions of the image control
+                    double imgControlWidth = imgScanFromImage.Width;
+                    double imgControlHeight = imgScanFromImage.Height;
+                    Debug.WriteLine($"Image control dimensions: {imgControlWidth}x{imgControlHeight}");
 
-                    //// Get the dimensions of the image control
-                    //double imgControlWidth = imgScanFromImage.Width;
-                    //double imgControlHeight = imgScanFromImage.Height;
-                    //Debug.WriteLine($"Image control dimensions: {imgControlWidth}x{imgControlHeight}");
-
-                    //// Calculate the scale factors for width and height
-                    //nScaleWidth = fileWidth / imgControlWidth;
-                    //nScaleHeight = fileHeight / imgControlHeight;
-                    //Debug.WriteLine($"Scale factors - Width: {nScaleWidth}, Height: {nScaleHeight}");
-
-                    // Display the selected image in the Image control
+                    // Load the selected image in the image control
                     imgScanFromImage.Source = ImageSource.FromStream(() => stream);
+                    await Task.Delay(200); // Wait briefly for the image to load and layout to update
+
+                    // Get the rendered size of the image in the image control after it has been laid
+                    double nImageWidthInControl;
+                    double nImageHeightInControl;
+
+                    (nOffsetX, nOffsetY, nImageWidthInControl, nImageHeightInControl) = await GetRenderedImageRectAsync(imgScanFromImage);
+                    Debug.WriteLine($"Rendered image rect - X: {nOffsetX}, Y: {nOffsetY}, Width: {nImageWidthInControl}, Height: {nImageHeightInControl}");
+
+                    // Calculate the scale factors for width and height
+                    nScaleWidth = fileWidth / nImageWidthInControl;
+                    nScaleHeight = fileHeight / nImageHeightInControl;
+                    Debug.WriteLine($"Scale factors - Width: {nScaleWidth}, Height: {nScaleHeight}");
 
                     // Scan the image for barcodes using the native library and get the results as a list of BarcodeResult objects
                     IReadOnlySet<BarcodeResult> list = await Methods.ScanFromImageAsync(bytes);
@@ -715,6 +712,115 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Call this async method after the Image control has been created (for example from OnAppearing
+        /// or in a SizeChanged handler). It waits briefly for layout, retrieves the native image size
+        /// and computes the rectangle within the control where the image content is actually drawn
+        /// (taking Aspect, AspectFit/AspectFill/Fill into account).
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="ct"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        private async Task<(double X, double Y, double Width, double Height)> GetRenderedImageRectAsync(Microsoft.Maui.Controls.Image image, CancellationToken ct = default)
+        {
+            if (image == null) throw new ArgumentNullException(nameof(image));
+
+            // Wait until the control has a measured size and a handler is attached (up to a short timeout).
+            var sw = System.Diagnostics.Stopwatch.StartNew();
+            while ((image.Width <= 0 || image.Height <= 0 || image.Handler == null) && sw.ElapsedMilliseconds < 2000)
+            {
+                await Task.Delay(25, ct).ConfigureAwait(false);
+            }
+
+            var containerW = image.Width;
+            var containerH = image.Height;
+
+            // Fallback: if control size is still zero, return empty rect
+            if (containerW <= 0 || containerH <= 0)
+                return (0, 0, 0, 0);
+
+            // Try to get the intrinsic/native pixel size of the image source
+            double nativeW = 0, nativeH = 0;
+
+#if ANDROID
+            try
+            {
+                var nativeView = image.Handler?.PlatformView as Android.Widget.ImageView;
+                var drawable = nativeView?.Drawable;
+                if (drawable != null)
+                {
+                    nativeW = drawable.IntrinsicWidth;
+                    nativeH = drawable.IntrinsicHeight;
+                }
+            }
+            catch { }
+#elif IOS || MACCATALYST
+    try
+    {
+        var nativeView = image.Handler?.PlatformView as UIKit.UIImageView;
+        var uiImage = nativeView?.Image;
+        if (uiImage != null)
+        {
+            nativeW = uiImage.Size.Width;
+            nativeH = uiImage.Size.Height;
+        }
+    }
+    catch { }
+#elif WINDOWS
+    try
+    {
+        var nativeView = image.Handler?.PlatformView as Microsoft.UI.Xaml.Controls.Image;
+        if (nativeView?.Source is Microsoft.UI.Xaml.Media.Imaging.BitmapSource bmp)
+        {
+            nativeW = bmp.PixelWidth;
+            nativeH = bmp.PixelHeight;
+        }
+    }
+    catch { }
+#endif
+            // If we couldn't get intrinsic size, fall back to using control size (image fills the control)
+            if (nativeW <= 0 || nativeH <= 0)
+            {
+                return (0, 0, containerW, containerH);
+            }
+
+            // Compute scaling based on Aspect
+            double displayW = containerW;
+            double displayH = containerH;
+            double offsetX = 0;
+            double offsetY = 0;
+
+            var aspect = image.Aspect;
+
+            if (aspect == Aspect.AspectFill)
+            {
+                var scale = Math.Max(containerW / nativeW, containerH / nativeH);
+                displayW = nativeW * scale;
+                displayH = nativeH * scale;
+                offsetX = (containerW - displayW) / 2.0;
+                offsetY = (containerH - displayH) / 2.0;
+            }
+            else if (aspect == Aspect.AspectFit)
+            {
+                var scale = Math.Min(containerW / nativeW, containerH / nativeH);
+                displayW = nativeW * scale;
+                displayH = nativeH * scale;
+                offsetX = (containerW - displayW) / 2.0;
+                offsetY = (containerH - displayH) / 2.0;
+            }
+            else // Aspect.Fill
+            {
+                // Fill stretches to container; content scaled independently in X/Y
+                displayW = containerW;
+                displayH = containerH;
+                offsetX = 0;
+                offsetY = 0;
+            }
+
+            return (offsetX, offsetY, displayW, displayH);
+        }
+
+        /// <summary>
         /// Class for drawing the barcode bounding box
         /// </summary>
         private sealed class BarcodeDrawable : IDrawable
@@ -731,7 +837,7 @@ namespace BarcodeGenerator
                     canvas.Scale(scale, scale);
 
                     // Get the density of the device display if the barcode is scanned from an image
-                    //double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
+                    double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
 
                     try
                     {
@@ -742,31 +848,17 @@ namespace BarcodeGenerator
                             {
                                 canvas.DrawRectangle(barcode.PreviewBoundingBox);
                             }
-                            ////If barcode is scanned from an image use the ImageBoundingBox - The location and size of the rectangle are wrong
-                            //else
-                            //{
-                            //    // Solution 1: Works when the image control is filled with the image, but not when the image is resized to fit the control (the location and size of the rectangle are wrong)
-                            //    float nX = barcode.ImageBoundingBox.X / (float)nScaleWidth * (float)nDensity;
-                            //    float nY = barcode.ImageBoundingBox.Y / (float)nScaleHeight * (float)nDensity;
-                            //    float nWidth = barcode.ImageBoundingBox.Width / (float)nScaleWidth * (float)nDensity;
-                            //    float nHeight = barcode.ImageBoundingBox.Height / (float)nScaleHeight * (float)nDensity;
-                            //    Debug.WriteLine($"nX: {nX}, nY: {nY}, nWidth: {nWidth}, nHeight: {nHeight}");
-                            //    canvas.DrawRectangle(nX, nY, nWidth, nHeight);
-
-                            //    // Solution 2: does not work - The location and size of the rectangle are wrong
-                            //    //canvas.DrawRectangle(barcode.ImageBoundingBox);
-
-                            //    // Solution 3: does not work - The location and size of the rectangle are wrong
-                            //    //RectF box = PreviewToImageMapper.ToPreviewBoundingBox(
-                            //    //    barcode.ImageBoundingBox,
-                            //    //    dirtyRect.Width,
-                            //    //    dirtyRect.Height,
-                            //    //    barcode.ImageBoundingBox.Width,
-                            //    //    barcode.ImageBoundingBox.Height,
-                            //    //    true
-                            //    //);
-                            //    //canvas.DrawRectangle(box);
-                            //}
+                            //If barcode is scanned from an image use the ImageBoundingBox - The location and size of the rectangle are wrong
+                            else
+                            {
+                                // Solution 1: Works when the image control is filled with the image, but not when the image is resized to fit the control (the location and size of the rectangle are wrong)
+                                float nX = ((float)nOffsetX + (barcode.ImageBoundingBox.X / (float)nScaleWidth)) * (float)nDensity;
+                                float nY = ((float)nOffsetY + (barcode.ImageBoundingBox.Y / (float)nScaleHeight)) * (float)nDensity;
+                                float nWidth = barcode.ImageBoundingBox.Width / (float)nScaleWidth * (float)nDensity;
+                                float nHeight = barcode.ImageBoundingBox.Height / (float)nScaleHeight * (float)nDensity;
+                                Debug.WriteLine($"nOffsetX: {nOffsetX}, nOffsetY: {nOffsetY}, nX: {nX}, nY: {nY}, nWidth: {nWidth}, nHeight: {nHeight}");
+                                canvas.DrawRectangle(nX, nY, nWidth, nHeight);
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -779,74 +871,5 @@ namespace BarcodeGenerator
                 }
             }
         }
-        //private static class PreviewToImageMapper
-        //{
-        //    /// <summary>
-        //    /// Converts a bounding box from preview coordinates (camera preview)
-        //    /// into image coordinates (full-resolution MediaPicker image).
-        //    /// </summary>
-        //    public static RectF ToImageBoundingBox(RectF previewBox, float previewWidth, float previewHeight, float imageWidth, float imageHeight)
-        //    {
-        //        if (previewWidth <= 0 || previewHeight <= 0)
-        //        {
-        //            return RectF.Zero;
-        //        }
-
-        //        float scaleX = imageWidth / previewWidth;
-        //        float scaleY = imageHeight / previewHeight;
-
-        //        return new RectF(
-        //            previewBox.X * scaleX,
-        //            previewBox.Y * scaleY,
-        //            previewBox.Width * scaleX,
-        //            previewBox.Height * scaleY
-        //        );
-        //    }
-
-        //    /// <summary>
-        //    /// Converts a bounding box from image coordinates (full-resolution image)
-        //    /// into preview coordinates (camera preview / view).
-        //    /// Supports both simple non-uniform scaling and aspect-fit mapping with centering.
-        //    /// </summary>
-        //    public static RectF ToPreviewBoundingBox(RectF imageBox, float previewWidth, float previewHeight, float imageWidth, float imageHeight, bool aspectFit = true)
-        //    {
-        //        if (previewWidth <= 0 || previewHeight <= 0 || imageWidth <= 0 || imageHeight <= 0)
-        //        {
-        //            return RectF.Zero;
-        //        }
-
-        //        if (aspectFit)
-        //        {
-        //            // scale the image to fit into the preview while preserving aspect ratio,
-        //            // then compute the centered offset (letterboxing) and map the image rect.
-        //            float scale = Math.Min(previewWidth / imageWidth, previewHeight / imageHeight);
-        //            float scaledImageW = imageWidth * scale;
-        //            float scaledImageH = imageHeight * scale;
-
-        //            float offsetX = (previewWidth - scaledImageW) / 2f;
-        //            float offsetY = (previewHeight - scaledImageH) / 2f;
-
-        //            float x = offsetX + imageBox.X * scale;
-        //            float y = offsetY + imageBox.Y * scale;
-        //            float w = imageBox.Width * scale;
-        //            float h = imageBox.Height * scale;
-
-        //            return new RectF(x, y, w, h);
-        //        }
-        //        else
-        //        {
-        //            // non-uniform scale: map image pixels directly to preview pixels
-        //            float scaleX = previewWidth / imageWidth;
-        //            float scaleY = previewHeight / imageHeight;
-
-        //            return new RectF(
-        //                imageBox.X * scaleX,
-        //                imageBox.Y * scaleY,
-        //                imageBox.Width * scaleX,
-        //                imageBox.Height * scaleY
-        //            );
-        //        }
-        //    }
-        //}
     }
 }

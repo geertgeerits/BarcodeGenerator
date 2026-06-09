@@ -1,4 +1,6 @@
-﻿namespace BarcodeGenerator
+﻿using Microsoft.Maui.Graphics.Platform;
+
+namespace BarcodeGenerator
 {
     internal class ClassImageUtilities
     {
@@ -163,6 +165,96 @@
             }
 
             return 0;
+        }
+
+        /// <summary>
+        /// Returns the width and height of an ImageSource. Returns (0, 0) if the format is not recognized or on error.
+        /// Currently only supports FileImageSource. You can extend it to support other types like StreamImageSource or UriImageSource
+        /// by adding more cases to the switch statement and using the appropriate method to get a stream from those sources.
+        /// Note that this method reads the image data to determine its dimensions, so it may be slow for large images or certain formats.
+        /// Use with caution in performance-sensitive code.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static async Task<(float width, float height)> GetImageSizeAsync(ImageSource source)
+        {
+            if (source is FileImageSource fileSource)
+            {
+                using var stream = await FileSystem.OpenAppPackageFileAsync(fileSource.File);
+                var image = PlatformImage.FromStream(stream);
+
+                return (image.Width, image.Height);
+            }
+
+            return (0, 0);
+        }
+
+        /*
+        How to use the next methods 'GetPixelSizeAsync' and 'GetRenderedSizeAsync' in your code
+        1. Get original pixel size
+        csharp
+        var (pxW, pxH) = await ClassImageUtilities.GetPixelSizeAsync(MyImage.Source);
+        Console.WriteLine($"Pixel size: {pxW} x {pxH}");
+
+        2. Get rendered size
+        csharp
+        var (renderW, renderH) = await ClassImageUtilities.GetRenderedSizeAsync(MyImage);
+        Console.WriteLine($"Rendered size: {renderW} x {renderH}");
+
+        3. Combine both
+        csharp
+        var pixel = await ClassImageUtilities.GetPixelSizeAsync(MyImage.Source);
+        var rendered = await ClassImageUtilities.GetRenderedSizeAsync(MyImage);
+        Console.WriteLine($"Pixel: {pixel.pixelWidth} x {pixel.pixelHeight}");
+        Console.WriteLine($"Rendered: {rendered.width} x {rendered.height}");
+        */
+
+        /// <summary>
+        /// Returns the pixel width and height of an ImageSource. Returns (0, 0) if the format is not recognized or on error.
+        /// </summary>
+        /// <param name="source">The ImageSource to get the pixel size from.</param>
+        /// <returns>A tuple containing the pixel width and height.</returns>
+        public static async Task<(float pixelWidth, float pixelHeight)> GetPixelSizeAsync(ImageSource source)
+        {
+            if (source == null)
+                return (0, 0);
+
+            Stream? stream = source switch
+            {
+                FileImageSource file => await FileSystem.OpenAppPackageFileAsync(file.File),
+                StreamImageSource sis => await sis.Stream(CancellationToken.None),
+                UriImageSource uri => await ((IStreamImageSource)uri).GetStreamAsync(CancellationToken.None),
+                _ => null
+            };
+
+            if (stream == null)
+                return (0, 0);
+
+            using var image = PlatformImage.FromStream(stream);
+            return (image.Width, image.Height);
+        }
+
+        /// <summary>
+        /// Returns a Task that completes when the Image's rendered size is available (Width and Height > 0). The result is a tuple containing the rendered width and height. If the Image is already rendered, it will complete immediately with the current size. Otherwise, it will wait for the SizeChanged event to fire and return the size at that time.
+        /// </summary>
+        /// <param name="image">The Image to get the rendered size from.</param>
+        /// <returns>A TaskCompletionSource that will be completed with the rendered size.</returns>
+        public static TaskCompletionSource<(double width, double height)> GetRenderedSizeAsync(Image image)
+        {
+            var tcs = new TaskCompletionSource<(double, double)>();
+
+            void Handler(object? s, EventArgs e)
+            {
+                if (image.Width > 0 && image.Height > 0)
+                {
+                    image.SizeChanged -= Handler;
+                    tcs.TrySetResult((image.Width, image.Height));
+                }
+            }
+
+            image.SizeChanged += Handler;
+
+            return tcs;
         }
     }
 }
