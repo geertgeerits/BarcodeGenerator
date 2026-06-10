@@ -604,6 +604,14 @@ namespace BarcodeGenerator
             btnShare.IsEnabled = false;
             imgbtnTextToSpeech.IsEnabled = false;
 
+            // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
+            _drawable.barcodeResults = null;
+            graphicsBox.Invalidate();
+            graphicsBox.IsVisible = false;
+            imgScanFromImage.Source = null;
+            imgScanFromImage.IsVisible = false;
+            await Task.Delay(200);
+
             string cBarcodeFormat;
             string cDisplayValue = string.Empty;
             List<string> listBarcodes = [];
@@ -613,18 +621,45 @@ namespace BarcodeGenerator
             {
                 SelectionLimit = 1,             // Default is 1; set to 0 for no limit
                 RotateImage = true,
-                PreserveMetaData = true,
+                PreserveMetaData = true
             });
 
             // Process each selected file
             foreach (FileResult file in results)
             {
+                // Add null check at the start of the loop
+                if (file == null)
+                {
+                    continue;
+                }
+
                 // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
                 _drawable.barcodeResults = null;
                 graphicsBox.Invalidate();
                 graphicsBox.IsVisible = false;
                 imgScanFromImage.Source = null;
+                imgScanFromImage.IsVisible = false;
                 await Task.Delay(200);
+
+                Debug.WriteLine($"Selected file: {file.FullPath} - ContentType: {file.ContentType}");
+
+                // Validate the selected file
+                // Get the file name with extension
+                string? fileNameWithExt = file.FileName;
+                if (!string.IsNullOrEmpty(fileNameWithExt))
+                {
+                    if (fileNameWithExt.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
+                        fileNameWithExt.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                        fileNameWithExt.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Valid image file
+                    }
+                    else
+                    {
+                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.QRCodeImageTypeError_Text}", CodeLang.ButtonClose_Text);
+                        return;
+                    }
+                }
 
                 // Open the selected file as a stream and read its bytes
                 using Stream stream = await file.OpenReadAsync();
@@ -640,11 +675,19 @@ namespace BarcodeGenerator
 
                     // Load the selected image in the image control
                     imgScanFromImage.Source = ImageSource.FromStream(() => stream);
+                    imgScanFromImage.IsVisible = true;
                     await Task.Delay(200);  // Wait briefly for the image to load and layout to update
 
                     // Get the rendered size of the image in the image control after it has been laid
                     double nImageWidthInControl;
                     double nImageHeightInControl;
+
+                    //imgScanFromImage.HandlerChanged += (s, args) =>
+                    //{
+                    //    Debug.WriteLine($"Image Handler changed - Handler: {imgScanFromImage.Handler}, Width: {imgScanFromImage.Width}, Height: {imgScanFromImage.Height}");
+                    //};
+
+                    //await WaitForImageReadyAsync(imgScanFromImage);
 
                     (nOffsetX, nOffsetY, nImageWidthInControl, nImageHeightInControl) = await GetRenderedImageRectAsync(imgScanFromImage);
                     Debug.WriteLine($"Rendered image rect - X: {nOffsetX}, Y: {nOffsetY}, Width: {nImageWidthInControl}, Height: {nImageHeightInControl}");
@@ -707,6 +750,36 @@ namespace BarcodeGenerator
             // Stop the activity indicator
             activityIndicator.IsRunning = false;
             activityIndicator.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Utility method to wait until the Image control has a handler attached and its size is greater than zero,
+        /// indicating that it is ready for operations like retrieving the rendered image rectangle.
+        /// It uses a TaskCompletionSource to await the HandlerChanged event and checks the image dimensions, with a timeout to avoid waiting indefinitely.
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="timeoutMs"></param>
+        /// <returns></returns>
+        private static async Task WaitForImageReadyAsync(Image image, int timeoutMs = 2000)
+        {
+            if (image.Handler != null && image.Width > 0 && image.Height > 0)
+            {
+                return;
+            }
+
+            var tcs = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+            void OnHandlerChanged(object? s, EventArgs e)
+            {
+                if (image.Handler != null && image.Width > 0 && image.Height > 0)
+                {
+                    image.HandlerChanged -= OnHandlerChanged;
+                    tcs.TrySetResult(true);
+                }
+            }
+
+            image.HandlerChanged += OnHandlerChanged;
+            var completed = await Task.WhenAny(tcs.Task, Task.Delay(timeoutMs));
+            image.HandlerChanged -= OnHandlerChanged;
         }
 
         /// <summary>
