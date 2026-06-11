@@ -11,8 +11,8 @@
             try
             {
                 // Let user pick photos (multiple possible). We take the first one
-                var photos = await MediaPicker.Default.PickPhotosAsync();
-                var selected = photos?.FirstOrDefault();
+                List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync();
+                FileResult? selected = photos?.FirstOrDefault();
 
                 // Get the file name with extension
                 // FileResult.FileName provides the name including the extension
@@ -23,15 +23,15 @@
                 // Validate the selected file
                 if (!string.IsNullOrEmpty(fileNameWithExt))
                 {
-                    if (fileNameWithExt.EndsWith("png", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith("jpeg", StringComparison.OrdinalIgnoreCase))
+                    if (fileNameWithExt.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
+                        fileNameWithExt.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                        fileNameWithExt.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
                     {
                         return selected;
                     }
                     else
                     {
-                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.QRCodeImageTypeError_Text}", CodeLang.ButtonClose_Text);
+                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
                         return null;
                     }
                 }
@@ -43,6 +43,83 @@
                 Debug.WriteLine($"ClassFileOperations.PickImage: File picking error: {ex.Message}");
                 return null;
             }
+        }
+
+        /// <summary>
+        /// Opens a media picker dialog that allows the user to select one image file (PNG, JPG, or JPEG).
+        /// </summary>
+        /// <returns>The selected file result, or null if no file was selected.</returns>
+        public static async Task<FileResult?> PickOneImage()
+        {
+            List<FileResult> photos = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
+            {
+                SelectionLimit = 1,             // Default is 1; set to 0 for no limit
+                RotateImage = true,
+                PreserveMetaData = true
+            });
+
+            FileResult? file = photos?.FirstOrDefault();
+            Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file name: {file?.FileName ?? "<none>"}");
+
+            if (file != null)
+            {
+                string ext = Path.GetExtension(file.FullPath).ToLowerInvariant();
+                Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file extension: {ext}");
+
+                if (ext is ".png" or ".jpg" or ".jpeg")
+                {
+                    // OK
+                    return file;
+                }
+            }
+
+            // Reject file
+            await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
+            
+            return null;
+        }
+
+        /// <summary>
+        /// Opens a file picker dialog that allows the user to select one image file (PNG, JPG, or JPEG) using custom file type filters.
+        /// </summary>
+        /// <returns>The selected file name, or null if no file was selected.</returns>
+        public static async Task<string?> PickOneImage2()
+        {
+            try
+            {
+                var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+                {
+                    { DevicePlatform.iOS, new[] { ".png", ".jpg", ".jpeg" } }, // UTType values
+                    { DevicePlatform.Android, new[] { "image/png", "image/jpeg" } }, // MIME type
+                    { DevicePlatform.WinUI, new[] { ".png", ".jpg", ".jpeg" } }, // file extension
+                });
+
+                PickOptions pickerOptions = new()
+                {
+                    PickerTitle = "",
+                    FileTypes = customFileType,
+                };
+
+                FileResult? result = await FilePicker.Default.PickAsync(pickerOptions);
+                if (result != null)
+                {
+                    if (result.FileName.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                        result.FileName.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
+                        result.FileName.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
+                    {
+                        using Stream stream = await result.OpenReadAsync();
+                        ImageSource image = ImageSource.FromStream(() => stream);
+
+                        return result.FileName;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                // The user canceled or something went wrong
+            }
+
+            return null;
         }
 
         /// <summary>

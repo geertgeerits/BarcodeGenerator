@@ -492,7 +492,7 @@ Kiitos jo etukäteen.</value>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
     <value>QR-koodin kuvan koko: {0} %</value>
   </data>
-  <data name="QRCodeImageTypeError_Text" xml:space="preserve">
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Virheellinen tiedostotyyppi valittu. Valitse JPG- tai PNG-kuva.</value>
   </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">

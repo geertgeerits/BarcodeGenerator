@@ -1052,6 +1052,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid file type selected. Please select a JPG or PNG image..
+        /// </summary>
+        internal static string ErrorInvalidImageType_Text {
+            get {
+                return ResourceManager.GetString("ErrorInvalidImageType_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid latitude value..
         /// </summary>
         internal static string ErrorLatitudeInvalid_Text {
@@ -2179,15 +2188,6 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string QRCodeImageSize_Text {
             get {
                 return ResourceManager.GetString("QRCodeImageSize_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Invalid file type selected. Please select a JPG or PNG image..
-        /// </summary>
-        internal static string QRCodeImageTypeError_Text {
-            get {
-                return ResourceManager.GetString("QRCodeImageTypeError_Text", resourceCulture);
             }
         }
         

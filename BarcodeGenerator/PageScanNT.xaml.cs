@@ -612,128 +612,106 @@ namespace BarcodeGenerator
             imgScanFromImage.IsVisible = false;
             await Task.Delay(200);
 
+            // Open the file picker to select an image and get the selected file as a FileResult object
+            FileResult? file = await ClassFileOperations.PickOneImage();
+            Debug.WriteLine($"Selected file: {file?.FullPath} - ContentType: {file?.ContentType}");
+
+            // Add null check
+            if (file == null)
+            {
+                // Stop the activity indicator
+                activityIndicator.IsRunning = false;
+                activityIndicator.IsVisible = false;
+
+                return;
+            }
+
+            // Initialize variables for processing the image and barcode results
             string cBarcodeFormat;
             string cDisplayValue = string.Empty;
             List<string> listBarcodes = [];
 
-            // Open the media picker to select photos
-            List<FileResult> results = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
+            // Process the selected file
+            // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
+            _drawable.barcodeResults = null;
+            graphicsBox.Invalidate();
+            graphicsBox.IsVisible = false;
+            imgScanFromImage.Source = null;
+            imgScanFromImage.IsVisible = false;
+            await Task.Delay(200);
+
+            // Open the selected file as a stream and read its bytes
+            using Stream stream = await file.OpenReadAsync();
             {
-                SelectionLimit = 1,             // Default is 1; set to 0 for no limit
-                RotateImage = true,
-                PreserveMetaData = true
-            });
+                byte[] bytes = new byte[stream.Length];
+                stream.ReadExactly(bytes);
+                stream.Seek(0, SeekOrigin.Begin);
 
-            // Process each selected file
-            foreach (FileResult file in results)
-            {
-                // Add null check at the start of the loop
-                if (file == null)
+                // Get the dimensions and aspect ratio of the image on disk using the utility method
+                (double fileWidth, double fileHeight) = ClassImageUtilities.GetImageDimensions(file.FullPath);
+                double nAspectRatio = ClassImageUtilities.GetAspectRatioImage(fileWidth, fileHeight);
+                Debug.WriteLine($"File dimensions: {fileWidth}x{fileHeight} - Aspect ratio: {nAspectRatio}");
+
+                // Load the selected image in the image control
+                imgScanFromImage.Source = ImageSource.FromStream(() => stream);
+                imgScanFromImage.IsVisible = true;
+                await Task.Delay(200);  // Wait briefly for the image to load and layout to update
+
+                // Get the rendered size of the image in the image control after it has been laid
+                double nImageWidthInControl;
+                double nImageHeightInControl;
+
+                //imgScanFromImage.HandlerChanged += (s, args) =>
+                //{
+                //    Debug.WriteLine($"Image Handler changed - Handler: {imgScanFromImage.Handler}, Width: {imgScanFromImage.Width}, Height: {imgScanFromImage.Height}");
+                //};
+
+                //await WaitForImageReadyAsync(imgScanFromImage);
+
+                (nOffsetX, nOffsetY, nImageWidthInControl, nImageHeightInControl) = await GetRenderedImageRectAsync(imgScanFromImage);
+                Debug.WriteLine($"Rendered image rect - X: {nOffsetX}, Y: {nOffsetY}, Width: {nImageWidthInControl}, Height: {nImageHeightInControl}");
+
+                // Calculate the scale factors for width and height
+                nScaleWidth = fileWidth / nImageWidthInControl;
+                nScaleHeight = fileHeight / nImageHeightInControl;
+                Debug.WriteLine($"Scale factors - Width: {nScaleWidth}, Height: {nScaleHeight}");
+
+                // Scan the image for barcodes using the native library and get the results as a list of BarcodeResult objects
+                IReadOnlySet<BarcodeResult> list = await Methods.ScanFromImageAsync(bytes);
+                List<BarcodeResult> obj = [.. list];
+
+                if (obj.Count > 0)
                 {
-                    continue;
-                }
+                    Debug.WriteLine($"obj.Count: {obj.Count}");
 
-                // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
-                _drawable.barcodeResults = null;
-                graphicsBox.Invalidate();
-                graphicsBox.IsVisible = false;
-                imgScanFromImage.Source = null;
-                imgScanFromImage.IsVisible = false;
-                await Task.Delay(200);
+                    // The location and size of the rectangle is wrong when scanning from an image,
+                    // the ImageBoundingBox is used instead of the PreviewBoundingBox,
+                    // this is a known issue in the native libraries
+                    _drawable.barcodeResults = list;
+                    graphicsBox.Invalidate();
+                    graphicsBox.IsVisible = true;
 
-                Debug.WriteLine($"Selected file: {file.FullPath} - ContentType: {file.ContentType}");
-
-                // Validate the selected file
-                // Get the file name with extension
-                string? fileNameWithExt = file.FileName;
-                if (!string.IsNullOrEmpty(fileNameWithExt))
-                {
-                    if (fileNameWithExt.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
+                    foreach (BarcodeResult code in obj)
                     {
-                        // Valid image file
-                    }
-                    else
-                    {
-                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.QRCodeImageTypeError_Text}", CodeLang.ButtonClose_Text);
-                        return;
-                    }
-                }
+                        cBarcodeFormat = code.BarcodeFormat.ToString();
+                        cDisplayValue = code.RawValue ?? cDisplayValue;
 
-                // Open the selected file as a stream and read its bytes
-                using Stream stream = await file.OpenReadAsync();
-                {
-                    byte[] bytes = new byte[stream.Length];
-                    stream.ReadExactly(bytes);
-                    stream.Seek(0, SeekOrigin.Begin);
+                        Debug.WriteLine($"cBarcodeFormat: {code.BarcodeFormat} - cDisplayValue: {cDisplayValue}");
 
-                    // Get the dimensions and aspect ratio of the image on disk using the utility method
-                    (double fileWidth, double fileHeight) = ClassImageUtilities.GetImageDimensions(file.FullPath);
-                    double nAspectRatio = ClassImageUtilities.GetAspectRatioImage(fileWidth, fileHeight);
-                    Debug.WriteLine($"File dimensions: {fileWidth}x{fileHeight} - Aspect ratio: {nAspectRatio}");
+                        // Decompress the QR code result if compressed
+                        cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
 
-                    // Load the selected image in the image control
-                    imgScanFromImage.Source = ImageSource.FromStream(() => stream);
-                    imgScanFromImage.IsVisible = true;
-                    await Task.Delay(200);  // Wait briefly for the image to load and layout to update
-
-                    // Get the rendered size of the image in the image control after it has been laid
-                    double nImageWidthInControl;
-                    double nImageHeightInControl;
-
-                    //imgScanFromImage.HandlerChanged += (s, args) =>
-                    //{
-                    //    Debug.WriteLine($"Image Handler changed - Handler: {imgScanFromImage.Handler}, Width: {imgScanFromImage.Width}, Height: {imgScanFromImage.Height}");
-                    //};
-
-                    //await WaitForImageReadyAsync(imgScanFromImage);
-
-                    (nOffsetX, nOffsetY, nImageWidthInControl, nImageHeightInControl) = await GetRenderedImageRectAsync(imgScanFromImage);
-                    Debug.WriteLine($"Rendered image rect - X: {nOffsetX}, Y: {nOffsetY}, Width: {nImageWidthInControl}, Height: {nImageHeightInControl}");
-
-                    // Calculate the scale factors for width and height
-                    nScaleWidth = fileWidth / nImageWidthInControl;
-                    nScaleHeight = fileHeight / nImageHeightInControl;
-                    Debug.WriteLine($"Scale factors - Width: {nScaleWidth}, Height: {nScaleHeight}");
-
-                    // Scan the image for barcodes using the native library and get the results as a list of BarcodeResult objects
-                    IReadOnlySet<BarcodeResult> list = await Methods.ScanFromImageAsync(bytes);
-                    List<BarcodeResult> obj = [.. list];
-
-                    if (obj.Count > 0)
-                    {
-                        Debug.WriteLine($"obj.Count: {obj.Count}");
-
-                        // The location and size of the rectangle is wrong when scanning from an image,
-                        // the ImageBoundingBox is used instead of the PreviewBoundingBox,
-                        // this is a known issue in the native libraries
-                        _drawable.barcodeResults = list;
-                        graphicsBox.Invalidate();
-                        graphicsBox.IsVisible = true;
-
-                        foreach (BarcodeResult code in obj)
+                        // Add the barcode format and display value to the list 'listBarcodes'
+                        // If all symbologies are selected in the picker
+                        if (barcodeReader.BarcodeSymbologies == BarcodeFormats.All)
                         {
-                            cBarcodeFormat = code.BarcodeFormat.ToString();
-                            cDisplayValue = code.RawValue ?? cDisplayValue;
-
-                            Debug.WriteLine($"cBarcodeFormat: {code.BarcodeFormat} - cDisplayValue: {cDisplayValue}");
-
-                            // Decompress the QR code result if compressed
-                            cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
-
-                            // Add the barcode format and display value to the list 'listBarcodes'
-                            // If all symbologies are selected in the picker
-                            if (barcodeReader.BarcodeSymbologies == BarcodeFormats.All)
-                            {
-                                listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
-                            }
-                            // If the barcode symbology is the same as the selected one in the picker
-                            else if (barcodeReader.BarcodeSymbologies == code.BarcodeFormat)
-                            {
-                                Debug.WriteLine($"Selected symbology: {barcodeReader.BarcodeSymbologies} == {code.BarcodeFormat}");
-                                listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
-                            }
+                            listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
+                        }
+                        // If the barcode symbology is the same as the selected one in the picker
+                        else if (barcodeReader.BarcodeSymbologies == code.BarcodeFormat)
+                        {
+                            Debug.WriteLine($"Selected symbology: {barcodeReader.BarcodeSymbologies} == {code.BarcodeFormat}");
+                            listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
                         }
                     }
                 }
