@@ -51,19 +51,22 @@
         /// <returns>The selected file result, or null if no file was selected.</returns>
         public static async Task<FileResult?> PickOneImage()
         {
-            List<FileResult> photos = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
+            List<FileResult> result = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
             {
                 SelectionLimit = 1,             // Default is 1; set to 0 for no limit
                 RotateImage = true,
                 PreserveMetaData = true
             });
 
-            FileResult? file = photos?.FirstOrDefault();
-            Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file name: {file?.FileName ?? "<none>"}");
+            FileResult? file = result?.FirstOrDefault();
+            Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file name: {file?.FileName ?? "<none>"} ");
+            
+            string fullPath = file?.FullPath ?? string.Empty;
+            Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file full path: {fullPath}");
 
             if (file != null)
             {
-                string ext = Path.GetExtension(file.FullPath).ToLowerInvariant();
+                string ext = Path.GetExtension(fullPath).ToLowerInvariant();
                 Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file extension: {ext}");
 
                 if (ext is ".png" or ".jpg" or ".jpeg")
@@ -73,54 +76,121 @@
                 }
             }
 
-            // Reject file
+            // Try to remove the temporary cached copy if it lives in the app cache
+            try
+            {
+                //if (File.Exists(fullPath))
+                //{
+                //    File.Delete(fullPath);
+                //}
+
+                if (!string.IsNullOrEmpty(fullPath))
+                {
+                    var cacheDir = FileSystem.CacheDirectory;
+                    if (fullPath.StartsWith(cacheDir, StringComparison.OrdinalIgnoreCase) && File.Exists(fullPath))
+                    {
+                        File.Delete(fullPath);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"ClassFileOperations.PickOneImage: Error deleting cached file: {ex.Message}");
+            }
+
             await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
             
             return null;
         }
 
-        /// <summary>
-        /// Opens a file picker dialog that allows the user to select one image file (PNG, JPG, or JPEG) using custom file type filters.
-        /// </summary>
-        /// <returns>The selected file name, or null if no file was selected.</returns>
-        public static async Task<string?> PickOneImage2()
-        {
-            try
-            {
-                var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
-                {
-                    { DevicePlatform.iOS, new[] { ".png", ".jpg", ".jpeg" } }, // UTType values
-                    { DevicePlatform.Android, new[] { "image/png", "image/jpeg" } }, // MIME type
-                    { DevicePlatform.WinUI, new[] { ".png", ".jpg", ".jpeg" } }, // file extension
-                });
+        ///// <summary>
+        ///// Opens a file picker dialog that allows the user to select one image file (PNG, JPG, or JPEG) using custom file type filters.
+        ///// </summary>
+        ///// <returns>The selected file result, or null if no file was selected.</returns>
+        ///// <remarks>iOS: shows only the recent images.  Android: sometimes a problem with the orientation for the drawed rectangles</remarks>
+        //public static async Task<FileResult?> PickOneImage()
+        //{
+        //    try
+        //    {
+        //        var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+        //        {
+        //            { DevicePlatform.Android, new[] { "image/png", "image/jpeg" } },    // MIME type
+        //            { DevicePlatform.iOS, new[] { "public.png", "public.jpeg" } },      // UTType values
+        //            { DevicePlatform.WinUI, new[] { ".png", ".jpeg", ".jpg" } }         // file extension
+        //        });
 
-                PickOptions pickerOptions = new()
-                {
-                    PickerTitle = "",
-                    FileTypes = customFileType,
-                };
+        //        PickOptions pickerOptions = new()
+        //        {
+        //            PickerTitle = "",
+        //            FileTypes = customFileType,
+        //        };
 
-                FileResult? result = await FilePicker.Default.PickAsync(pickerOptions);
-                if (result != null)
-                {
-                    if (result.FileName.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
-                        result.FileName.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
-                        result.FileName.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
-                    {
-                        using Stream stream = await result.OpenReadAsync();
-                        ImageSource image = ImageSource.FromStream(() => stream);
+        //        FileResult? result = await FilePicker.Default.PickAsync(pickerOptions);
+        //        if (result != null)
+        //        {
+        //            return result;
+        //        }
 
-                        return result.FileName;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                // The user canceled or something went wrong
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // The user canceled or something went wrong
+        //        Debug.WriteLine($"PickOneImage ex.Message: {ex.Message}");
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
+
+        ///// <summary>
+        ///// Opens a media picker dialog that allows the user to select multiple image files (PNG, JPG, or JPEG) and returns a list of tuples
+        ///// containing the file data as byte arrays and their corresponding file names.
+        ///// The method also attempts to clean up any temporary cached files in the app cache directory after processing the selected files.
+        ///// </summary>
+        ///// <returns>A list of tuples containing the file data as byte arrays and their corresponding file names.</returns>
+        //public static async Task<List<(byte[] Data, string? FileName)>> PickPhotosAndCleanupCacheAsync()
+        //{
+        //    List<FileResult> results = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
+        //    {
+        //        SelectionLimit = 0, // 0 = no limit
+        //        RotateImage = true,
+        //        PreserveMetaData = true
+        //    });
+
+        //    var output = new List<(byte[] Data, string? FileName)>();
+        //    foreach (var file in results)
+        //    {
+        //        if (file == null)
+        //        {
+        //            continue;
+        //        }
+
+        //        // Read the file stream (do not rely on FullPath)
+        //        using var stream = await file.OpenReadAsync();
+        //        using var ms = new MemoryStream();
+        //        await stream.CopyToAsync(ms);
+        //        output.Add((ms.ToArray(), file.FileName));
+
+        //        // Try to remove the temporary cached copy if it lives in the app cache
+        //        try
+        //        {
+        //            string fullPath = file!.FullPath;
+        //            if (!string.IsNullOrEmpty(fullPath))
+        //            {
+        //                var cacheDir = FileSystem.CacheDirectory;
+        //                if (fullPath.StartsWith(cacheDir, StringComparison.OrdinalIgnoreCase) && File.Exists(fullPath))
+        //                {
+        //                    File.Delete(fullPath);
+        //                }
+        //            }
+        //        }
+        //        catch
+        //        {
+        //            // Swallow or log — deletion is best-effort
+        //        }
+        //    }
+
+        //    return output;
+        //}
 
         /// <summary>
         /// Asynchronously saves a PNG image from the specified memory stream to the given file path.
