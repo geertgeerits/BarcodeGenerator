@@ -31,7 +31,7 @@
                     }
                     else
                     {
-                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
+                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{fileNameWithExt}\n\n{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
                         return null;
                     }
                 }
@@ -46,45 +46,119 @@
         }
 
         /// <summary>
-        /// Opens a media picker dialog that allows the user to select one image file (PNG, JPG, or JPEG).
+        /// Opens a media picker dialog that allows the user to select one image file (PNG, JPG, JPEG, or BMP) and validates the selected file type.
         /// </summary>
         /// <returns>The selected file result, or null if no file was selected.</returns>
+        /// <remarks>On iOS, if the user selects an invalid file type, the method attempts to clean up any temporary cached copy
+        /// of the file in the app cache directory.
+        /// !!!BUG!!! in iOS, the temporary cached copy may not always be deleted correctly when using the MediaPickerOptions.</remarks>
         public static async Task<FileResult?> PickOneImage()
         {
-            List<FileResult> result = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
+            try
             {
-                SelectionLimit = 1,             // Default is 1; set to 0 for no limit
-                RotateImage = true,
-                PreserveMetaData = true
-            });
+                // Let user pick a photo. We take the first one
+                List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync();
+                //List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
+                //{
+                //    SelectionLimit = 1,             // Default is 1; set to 0 for no limit
+                //    RotateImage = true,
+                //    PreserveMetaData = true
+                //});
 
-            FileResult? file = result?.FirstOrDefault();
-            Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file name: {file?.FileName ?? "<none>"} ");
-            
-            string fullPath = file?.FullPath ?? string.Empty;
-            Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file full path: {fullPath}");
-            
-            //return file;
+                FileResult? selected = photos?.FirstOrDefault();
 
-            if (file != null)
-            {
-                string ext = Path.GetExtension(fullPath).ToLowerInvariant();
-                Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file extension: {ext}");
+                // Get the file name with extension
+                // FileResult.FileName provides the name including the extension
+                string? fileNameWithExt = selected?.FileName;
 
-                if (ext is ".png" or ".jpg" or ".jpeg")
+                Debug.WriteLine($"ClassFileOperations.PickImage: selected file name: {fileNameWithExt ?? "<none>"}");
+
+                // Validate the selected file
+                if (!string.IsNullOrEmpty(fileNameWithExt))
                 {
-                    // OK
-                    return file;
+                    if (fileNameWithExt.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
+                        fileNameWithExt.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                        fileNameWithExt.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) ||
+                        fileNameWithExt.EndsWith(".bmp", StringComparison.OrdinalIgnoreCase))
+                    {
+                        return selected;
+                    }
+                    else
+                    {
+                        // On iOS the picker may leave a temporary cached copy. Make sure we close any handle and remove it
+                        try
+                        {
+                            if (!string.IsNullOrEmpty(selected?.FullPath))
+                            {
+                                // Try to dispose any open stream (harmless if it fails)
+                                try
+                                {
+                                    using var s = await selected.OpenReadAsync();
+                                }
+                                catch { /* ignore */ }
+
+                                DeleteFileInCache(selected.FullPath);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.WriteLine($"ClassFileOperations.PickImage: cleanup error: {ex.Message}");
+                        }
+
+                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{fileNameWithExt}\n\n{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
+                        return null;
+                    }
                 }
+
+                return selected;
             }
-
-            // Try to remove the temporary cached copy if it lives in the app cache
-            DeleteFileInCache(fullPath);
-
-            await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
-            
-            return null;
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"ClassFileOperations.PickImage: File picking error: {ex.Message}");
+                return null;
+            }
         }
+
+        ///// <summary>
+        ///// Opens a media picker dialog that allows the user to select one image file (PNG, JPG, or JPEG).
+        ///// </summary>
+        ///// <returns>The selected file result, or null if no file was selected.</returns>
+        //public static async Task<FileResult?> PickOneImage2()
+        //{
+        //    List<FileResult> result = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
+        //    {
+        //        SelectionLimit = 1,             // Default is 1; set to 0 for no limit
+        //        RotateImage = true,
+        //        PreserveMetaData = true
+        //    });
+
+        //    FileResult? file = result?.FirstOrDefault();
+        //    Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file name: {file?.FileName ?? "<none>"} ");
+
+        //    string fullPath = file?.FullPath ?? string.Empty;
+        //    Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file full path: {fullPath}");
+
+        //    //return file;
+
+        //    if (file != null)
+        //    {
+        //        string ext = Path.GetExtension(fullPath).ToLowerInvariant();
+        //        Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file extension: {ext}");
+
+        //        if (ext is ".png" or ".jpg" or ".jpeg" or ".bmp")
+        //        {
+        //            // OK
+        //            return file;
+        //        }
+        //    }
+
+        //    // Try to remove the temporary cached copy if it lives in the app cache
+        //    DeleteFileInCache(fullPath);
+
+        //    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{file?.FileName}\n\n{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
+
+        //    return null;
+        //}
 
         ///// <summary>
         ///// Opens a file picker dialog that allows the user to select one image file (PNG, JPG, or JPEG) using custom file type filters.
