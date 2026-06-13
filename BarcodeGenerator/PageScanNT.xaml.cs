@@ -653,9 +653,24 @@ namespace BarcodeGenerator
                 Debug.WriteLine($"File dimensions: {fileWidth}x{fileHeight} - Aspect ratio: {nAspectRatio}");
 
                 // Load the selected image in the image control
-                imgScanFromImage.Source = ImageSource.FromStream(() => stream);
+                try
+                {
+                    imgScanFromImage.Source = ImageSource.FromStream(() => stream);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error loading image: {ex.Message}");
+                    imgScanFromImage.Source = null;
+                }
+                
                 imgScanFromImage.IsVisible = true;
                 await Task.Delay(200);  // Wait briefly for the image to load and layout to update
+
+                if (imgScanFromImage.Source == null)
+                {
+                    stream.Dispose();
+                    return;
+                }
 
                 // Get the rendered size of the image in the image control after it has been laid
                 double nImageWidthInControl;
@@ -718,7 +733,7 @@ namespace BarcodeGenerator
             }
 
             // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-            lblBarcodeResult.Text = ClassBarcodes.ProcessScannedBarcodes(listBarcodes, btnShare);
+            lblBarcodeResult.Text = file.FileName + "\n\n" + ClassBarcodes.ProcessScannedBarcodes(listBarcodes, btnShare);
 
             // Settings after scanning from an image
             imgbtnCopyToClipboard.IsEnabled = true;
@@ -728,6 +743,10 @@ namespace BarcodeGenerator
             // Stop the activity indicator
             activityIndicator.IsRunning = false;
             activityIndicator.IsVisible = false;
+
+            // Delete the file from the cache and dispose the stream
+            ClassFileOperations.DeleteFileInCache(file.FullPath);
+            stream.Dispose();
         }
 
         /// <summary>

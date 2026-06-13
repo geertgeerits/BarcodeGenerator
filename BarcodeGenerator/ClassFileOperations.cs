@@ -63,6 +63,8 @@
             
             string fullPath = file?.FullPath ?? string.Empty;
             Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file full path: {fullPath}");
+            
+            //return file;
 
             if (file != null)
             {
@@ -77,26 +79,7 @@
             }
 
             // Try to remove the temporary cached copy if it lives in the app cache
-            try
-            {
-                //if (File.Exists(fullPath))
-                //{
-                //    File.Delete(fullPath);
-                //}
-
-                if (!string.IsNullOrEmpty(fullPath))
-                {
-                    var cacheDir = FileSystem.CacheDirectory;
-                    if (fullPath.StartsWith(cacheDir, StringComparison.OrdinalIgnoreCase) && File.Exists(fullPath))
-                    {
-                        File.Delete(fullPath);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"ClassFileOperations.PickOneImage: Error deleting cached file: {ex.Message}");
-            }
+            DeleteFileInCache(fullPath);
 
             await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
             
@@ -108,7 +91,7 @@
         ///// </summary>
         ///// <returns>The selected file result, or null if no file was selected.</returns>
         ///// <remarks>iOS: shows only the recent images.  Android: sometimes a problem with the orientation for the drawed rectangles</remarks>
-        //public static async Task<FileResult?> PickOneImage()
+        //public static async Task<FileResult?> PickOneImage2()
         //{
         //    try
         //    {
@@ -122,7 +105,7 @@
         //        PickOptions pickerOptions = new()
         //        {
         //            PickerTitle = "",
-        //            FileTypes = customFileType,
+        //            FileTypes = FilePickerFileType.Images
         //        };
 
         //        FileResult? result = await FilePicker.Default.PickAsync(pickerOptions);
@@ -147,7 +130,7 @@
         ///// The method also attempts to clean up any temporary cached files in the app cache directory after processing the selected files.
         ///// </summary>
         ///// <returns>A list of tuples containing the file data as byte arrays and their corresponding file names.</returns>
-        //public static async Task<List<(byte[] Data, string? FileName)>> PickPhotosAndCleanupCacheAsync()
+        //public static async Task<List<(byte[] Data, string? FileName)>> PickMultiplePhotosAsync()
         //{
         //    List<FileResult> results = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
         //    {
@@ -171,22 +154,7 @@
         //        output.Add((ms.ToArray(), file.FileName));
 
         //        // Try to remove the temporary cached copy if it lives in the app cache
-        //        try
-        //        {
-        //            string fullPath = file!.FullPath;
-        //            if (!string.IsNullOrEmpty(fullPath))
-        //            {
-        //                var cacheDir = FileSystem.CacheDirectory;
-        //                if (fullPath.StartsWith(cacheDir, StringComparison.OrdinalIgnoreCase) && File.Exists(fullPath))
-        //                {
-        //                    File.Delete(fullPath);
-        //                }
-        //            }
-        //        }
-        //        catch
-        //        {
-        //            // Swallow or log — deletion is best-effort
-        //        }
+        //        DeleteFileInCache(file.FullPath);
         //    }
 
         //    return output;
@@ -336,7 +304,7 @@
         /// <summary>
         /// Deletes the specified file if it exists
         /// </summary>
-        /// <param name="filePath">The path of the file to delete.</param>
+        /// <param name="filePath">The path of the file to delete</param>
         public static void DeleteFileIfExists(string filePath)
         {
             try
@@ -350,6 +318,37 @@
             catch (Exception ex)
             {
                 Debug.WriteLine($"ClassFileOperations.DeleteFileIfExists: Failed to delete file at {filePath}: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Deletes the specified file if it exists in the app cache directory
+        /// </summary>
+        /// <param name="filePath">The path of the file to delete</param>
+        public static void DeleteFileInCache(string filePath)
+        {
+            Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Attempting to delete file in cache at: {filePath}");
+
+            try
+            {
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    var cacheDir = FileSystem.CacheDirectory;
+                    if (filePath.StartsWith(cacheDir, StringComparison.OrdinalIgnoreCase) && File.Exists(filePath))
+                    {
+                        File.Delete(filePath);
+                        Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted existing cache file at: {filePath}");
+                    }
+                    else if (File.Exists(filePath))
+                    {
+                        File.Delete(filePath);
+                        Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted existing file at: {filePath}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Failed to delete file at {filePath}: {ex.Message}", ex);
             }
         }
 
