@@ -902,6 +902,21 @@ namespace BarcodeGenerator
 
             public void Draw(ICanvas canvas, RectF dirtyRect)
             {
+#if IOS
+                /*
+                !!!BUG!!! in iOS? The values of the ImageBoundingBox in iOS are all less than 1 and do not correspond to the actual location and size
+                of the barcode in the image, even when adjusting with the scale factors and offsets.
+                It seems like the ImageBoundingBox values are normalized to the range [0, 1] relative to the original image dimensions,
+                but this does not match the expected pixel coordinates for drawing the rectangle.
+                This issue does not occur in Android where the ImageBoundingBox values are in pixel coordinates as expected.
+                Sample scanning from image:
+                - Android: PreviewBoundingBox: {X=0 Y=0 Width=0 Height=0} - ImageBoundingBox: {X=78 Y=79 Width=420 Height=421}
+                - iOS: PreviewBoundingBox:     {X=0 Y=0 Width=0 Height=0} - ImageBoundingBox: {X=0.14041096 Y=0.14041096 Width=0.7191781 Height=0.7191781}
+                - Windows: PreviewBoundingBox: ? - ImageBoundingBox: ?
+                */
+
+                return;
+#else
                 if (barcodeResults is not null && barcodeResults.Count > 0)
                 {
                     canvas.StrokeSize = 15;
@@ -916,15 +931,21 @@ namespace BarcodeGenerator
                     {
                         foreach (var barcode in barcodeResults)
                         {
+                            Debug.WriteLine($"PreviewBoundingBox: {barcode.PreviewBoundingBox}");
+                            Debug.WriteLine($"ImageBoundingBox: {barcode.ImageBoundingBox}");
+
                             // If barcode is scanned from the camera use the PreviewBoundingBox
                             if (barcode.PreviewBoundingBox.Width > 0 && barcode.PreviewBoundingBox.Height > 0)
                             {
                                 canvas.DrawRectangle(barcode.PreviewBoundingBox);
                             }
-                            //If barcode is scanned from an image use the ImageBoundingBox - The location and size of the rectangle are wrong
+                            // If barcode is scanned from an image use the ImageBoundingBox.
+                            // The location and size of the rectangle has to be adjusted based on the scale factors and offsets of the rendered image in the control.
+                            // The ImageBoundingBox is used instead of the PreviewBoundingBox, because the PreviewBoundingBox is not supported when scanning from an image,
+                            // this is a known issue in the native libraries.
                             else
                             {
-                                // Solution 1: Works when the image control is filled with the image, but not when the image is resized to fit the control (the location and size of the rectangle are wrong)
+                                // Solution: works when the image control is filled with the image, but not when the image is resized to fit the control (the location and size of the rectangle are wrong)
                                 float nX = ((float)nOffsetX + (barcode.ImageBoundingBox.X / (float)nScaleWidth)) * (float)nDensity;
                                 float nY = ((float)nOffsetY + (barcode.ImageBoundingBox.Y / (float)nScaleHeight)) * (float)nDensity;
                                 float nWidth = barcode.ImageBoundingBox.Width / (float)nScaleWidth * (float)nDensity;
@@ -943,6 +964,7 @@ namespace BarcodeGenerator
 #endif
                     }
                 }
+#endif
             }
         }
     }
