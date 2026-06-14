@@ -50,21 +50,23 @@
         /// </summary>
         /// <returns>The selected file result, or null if no file was selected.</returns>
         /// <remarks>On iOS, if the user selects an invalid file type, the method attempts to clean up any temporary cached copy
-        /// of the file in the app cache directory.
-        /// !!!BUG!!! in iOS, the temporary cached copy may not always be deleted correctly when using the MediaPickerOptions.</remarks>
+        /// of the file in the app cache directory.</remarks>
         public static async Task<FileResult?> PickOneImage()
         {
             try
             {
                 // Let user pick a photo. We take the first one
+#if IOS
+                // !!!BUG!!! in iOS, the temporary cached copy may not always be deleted correctly when using the 'MediaPickerOptions'
                 List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync();
-                //List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
-                //{
-                //    SelectionLimit = 1,             // Default is 1; set to 0 for no limit
-                //    RotateImage = true,
-                //    PreserveMetaData = true
-                //});
-
+#else
+                List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
+                {
+                    SelectionLimit = 1,             // Default is 1; set to 0 for no limit
+                    RotateImage = true,
+                    PreserveMetaData = true
+                });
+#endif
                 FileResult? selected = photos?.FirstOrDefault();
 
                 // Get the file name with extension
@@ -119,120 +121,35 @@
             }
         }
 
-        ///// <summary>
-        ///// Opens a media picker dialog that allows the user to select one image file (PNG, JPG, or JPEG).
-        ///// </summary>
-        ///// <returns>The selected file result, or null if no file was selected.</returns>
-        //public static async Task<FileResult?> PickOneImage2()
-        //{
-        //    List<FileResult> result = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
-        //    {
-        //        SelectionLimit = 1,             // Default is 1; set to 0 for no limit
-        //        RotateImage = true,
-        //        PreserveMetaData = true
-        //    });
+        /* Alternatives for 'PickOneImage()' method using custom file type filters.
+         * The following code is commented out but kept for reference.
+           
+            var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+            {
+                { DevicePlatform.Android, new[] { "image/png", "image/jpeg" } },    // MIME type
+                { DevicePlatform.iOS, new[] { "public.png", "public.jpeg" } },      // UTType values
+                { DevicePlatform.WinUI, new[] { ".png", ".jpeg", ".jpg" } }         // file extension
+            });
 
-        //    FileResult? file = result?.FirstOrDefault();
-        //    Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file name: {file?.FileName ?? "<none>"} ");
+            PickOptions pickerOptions = new()
+            {
+                PickerTitle = "",
+                FileTypes = FilePickerFileType.Images
+            };
 
-        //    string fullPath = file?.FullPath ?? string.Empty;
-        //    Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file full path: {fullPath}");
 
-        //    //return file;
+            if (file != null)
+            {
+                string ext = Path.GetExtension(fullPath).ToLowerInvariant();
+                Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file extension: {ext}");
 
-        //    if (file != null)
-        //    {
-        //        string ext = Path.GetExtension(fullPath).ToLowerInvariant();
-        //        Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file extension: {ext}");
-
-        //        if (ext is ".png" or ".jpg" or ".jpeg" or ".bmp")
-        //        {
-        //            // OK
-        //            return file;
-        //        }
-        //    }
-
-        //    // Try to remove the temporary cached copy if it lives in the app cache
-        //    DeleteFileInCache(fullPath);
-
-        //    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{file?.FileName}\n\n{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
-
-        //    return null;
-        //}
-
-        ///// <summary>
-        ///// Opens a file picker dialog that allows the user to select one image file (PNG, JPG, or JPEG) using custom file type filters.
-        ///// </summary>
-        ///// <returns>The selected file result, or null if no file was selected.</returns>
-        ///// <remarks>iOS: shows only the recent images.  Android: sometimes a problem with the orientation for the drawed rectangles</remarks>
-        //public static async Task<FileResult?> PickOneImage2()
-        //{
-        //    try
-        //    {
-        //        var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
-        //        {
-        //            { DevicePlatform.Android, new[] { "image/png", "image/jpeg" } },    // MIME type
-        //            { DevicePlatform.iOS, new[] { "public.png", "public.jpeg" } },      // UTType values
-        //            { DevicePlatform.WinUI, new[] { ".png", ".jpeg", ".jpg" } }         // file extension
-        //        });
-
-        //        PickOptions pickerOptions = new()
-        //        {
-        //            PickerTitle = "",
-        //            FileTypes = FilePickerFileType.Images
-        //        };
-
-        //        FileResult? result = await FilePicker.Default.PickAsync(pickerOptions);
-        //        if (result != null)
-        //        {
-        //            return result;
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // The user canceled or something went wrong
-        //        Debug.WriteLine($"PickOneImage ex.Message: {ex.Message}");
-        //    }
-
-        //    return null;
-        //}
-
-        ///// <summary>
-        ///// Opens a media picker dialog that allows the user to select multiple image files (PNG, JPG, or JPEG) and returns a list of tuples
-        ///// containing the file data as byte arrays and their corresponding file names.
-        ///// The method also attempts to clean up any temporary cached files in the app cache directory after processing the selected files.
-        ///// </summary>
-        ///// <returns>A list of tuples containing the file data as byte arrays and their corresponding file names.</returns>
-        //public static async Task<List<(byte[] Data, string? FileName)>> PickMultiplePhotosAsync()
-        //{
-        //    List<FileResult> results = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
-        //    {
-        //        SelectionLimit = 0, // 0 = no limit
-        //        RotateImage = true,
-        //        PreserveMetaData = true
-        //    });
-
-        //    var output = new List<(byte[] Data, string? FileName)>();
-        //    foreach (var file in results)
-        //    {
-        //        if (file == null)
-        //        {
-        //            continue;
-        //        }
-
-        //        // Read the file stream (do not rely on FullPath)
-        //        using var stream = await file.OpenReadAsync();
-        //        using var ms = new MemoryStream();
-        //        await stream.CopyToAsync(ms);
-        //        output.Add((ms.ToArray(), file.FileName));
-
-        //        // Try to remove the temporary cached copy if it lives in the app cache
-        //        DeleteFileInCache(file.FullPath);
-        //    }
-
-        //    return output;
-        //}
+                if (ext is ".png" or ".jpg" or ".jpeg" or ".bmp")
+                {
+                    // OK
+                    return file;
+                }
+            }
+        */
 
         /// <summary>
         /// Asynchronously saves a PNG image from the specified memory stream to the given file path.
@@ -426,55 +343,57 @@
             }
         }
 
-        /////<summary>
-        ///// Requests storage permissions and saves a file if permissions are granted.
-        ///// </summary>
-        ///// <param name="cancellationToken">A cancellation token to cancel the operation.</param>        
+        /*
+        ///<summary>
+        /// Requests storage permissions and saves a file if permissions are granted.
+        /// </summary>
+        /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>        
         //[SupportedOSPlatform("android")]
         //[SupportedOSPlatform("ios14.0")]
         //[SupportedOSPlatform("maccatalyst14.0")]
         ////[SupportedOSPlatform("tizen")]
         //[SupportedOSPlatform("windows")]
-        //public static async Task RequestStoragePermissionsAndSaveFile(CancellationToken cancellationToken)
-        //{
-        //    var readPermissionStatus = await Permissions.RequestAsync<Permissions.StorageRead>();
-        //    var writePermissionStatus = await Permissions.RequestAsync<Permissions.StorageWrite>();
+        public static async Task RequestStoragePermissionsAndSaveFile(CancellationToken cancellationToken)
+        {
+            var readPermissionStatus = await Permissions.RequestAsync<Permissions.StorageRead>();
+            var writePermissionStatus = await Permissions.RequestAsync<Permissions.StorageWrite>();
 
-        //    if (readPermissionStatus != PermissionStatus.Granted ||
-        //        writePermissionStatus != PermissionStatus.Granted)
-        //    {
-        //        await Toast
-        //            .Make("Storage permissions are required to save files.")
-        //            .Show(cancellationToken);
+            if (readPermissionStatus != PermissionStatus.Granted ||
+                writePermissionStatus != PermissionStatus.Granted)
+            {
+                await Toast
+                    .Make("Storage permissions are required to save files.")
+                    .Show(cancellationToken);
 
-        //        return;
-        //    }
+                return;
+            }
 
-        //    await SaveFile(cancellationToken);
-        //}
+            await SaveFile(cancellationToken);
+        }*/
 
-        ///// <summary>
-        ///// Saves a file asynchronously.
-        ///// </summary>
-        ///// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
-        ///// <returns>A task representing the asynchronous operation.</returns>
+        /*
+        /// <summary>
+        /// Saves a file asynchronously.
+        /// </summary>
+        /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
         //[SupportedOSPlatform("android")]
         //[SupportedOSPlatform("ios14.0")]
         //[SupportedOSPlatform("maccatalyst14.0")]
         ////[SupportedOSPlatform("tizen")]
         //[SupportedOSPlatform("windows")]
-        //public static async Task SaveFile(CancellationToken cancellationToken)
-        //{
-        //    using var stream = new MemoryStream(Encoding.Default.GetBytes("Hello from the Community Toolkit!"));
-        //    var fileSaverResult = await FileSaver.Default.SaveAsync("test.txt", stream, cancellationToken);
-        //    if (fileSaverResult.IsSuccessful)
-        //    {
-        //        await Toast.Make($"The file was saved successfully to location: {fileSaverResult.FilePath}").Show(cancellationToken);
-        //    }
-        //    else
-        //    {
-        //        await Toast.Make($"The file was not saved successfully with error: {fileSaverResult.Exception.Message}").Show(cancellationToken);
-        //    }
-        //}
+        public static async Task SaveFile(CancellationToken cancellationToken)
+        {
+            using var stream = new MemoryStream(Encoding.Default.GetBytes("Hello from the Community Toolkit!"));
+            var fileSaverResult = await FileSaver.Default.SaveAsync("test.txt", stream, cancellationToken);
+            if (fileSaverResult.IsSuccessful)
+            {
+                await Toast.Make($"The file was saved successfully to location: {fileSaverResult.FilePath}").Show(cancellationToken);
+            }
+            else
+            {
+                await Toast.Make($"The file was not saved successfully with error: {fileSaverResult.Exception.Message}").Show(cancellationToken);
+            }
+        }*/
     }
 }
