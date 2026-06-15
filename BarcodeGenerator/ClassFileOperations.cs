@@ -134,7 +134,7 @@
             PickOptions pickerOptions = new()
             {
                 PickerTitle = "",
-                FileTypes = FilePickerFileType.Images
+                FileTypes = FilePickerFileType.Images   // or use 'customFileType' for custom filtering
             };
 
 

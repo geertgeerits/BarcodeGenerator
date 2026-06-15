@@ -577,7 +577,21 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender">The source of the event, typically the button that was clicked.</param>
         /// <param name="e">An EventArgs object that contains the event data.</param>
-        /// <remarks>https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/107</remarks>
+        /// <remarks>https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/107
+        /// Why such a difference in values between Android and iOS for the PreviewBoundingBox?
+        /// Android (and Windows?) are OK but iOS is it a disaster because the bounding box is not correctly placed on the image when scanning
+        /// from an image (the file path flow).
+        /// - Android returns absolute pixel coordinates for bounding boxes (so values look like 78, 420, …).
+        /// - iOS (Vision/AVFoundation) often returns normalized coordinates(0..1) for image/object bounds, 
+        ///   those fractions are relative to the image size, not pixels. That's why you see values like 0.14 and 0.72.
+        /// - Also be aware of coordinate - origin differences (some iOS APIs return normalized coords with a flipped Y axis).
+        ///   PreviewBoundingBox is typically only populated for camera frames,
+        ///   when scanning from a static image it is often empty(0s) on both platforms.
+        /// Keep the mapping call only when scanning from images (the file path flow).
+        /// For camera frames you can keep the previous PreviewBoundingBox logic.
+        /// If you still see vertical flip or misplacement on iOS, tweak the flip logic in MapImageBoundingBoxToControl
+        /// (the code already tries a Y-flip when mapped rect seems outside bounds).  
+        /// </remarks>
         private async void OnScanFromImage_Clicked(object sender, EventArgs e)
         {
             // Start the activity indicator
@@ -687,75 +701,75 @@ namespace BarcodeGenerator
 
                 // Scan the image for barcodes using the native library and get the results as a list of BarcodeResult objects
                 IReadOnlySet<BarcodeResult> list = await Methods.ScanFromImageAsync(bytes);
-                //List<BarcodeResult> obj = [.. list];
+                List<BarcodeResult> obj = [.. list];
 
-                //if (obj.Count > 0)
-                //{
-                //    Debug.WriteLine($"obj.Count: {obj.Count}");
-
-                //    // The location and size of the rectangle is wrong when scanning from an image,
-                //    // the ImageBoundingBox is used instead of the PreviewBoundingBox,
-                //    // this is a known issue in the native libraries
-                //    _drawable.barcodeResults = list;
-                //    graphicsBox.Invalidate();
-                //    graphicsBox.IsVisible = true;
-
-                //    foreach (BarcodeResult code in obj)
-                //    {
-                //        cBarcodeFormat = code.BarcodeFormat.ToString();
-                //        cDisplayValue = code.RawValue ?? cDisplayValue;
-
-                //        Debug.WriteLine($"cBarcodeFormat: {code.BarcodeFormat} - cDisplayValue: {cDisplayValue}");
-
-                //        // Decompress the QR code result if compressed
-                //        cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
-
-                //        // Add the barcode format and display value to the list 'listBarcodes'
-                //        // If all symbologies are selected in the picker
-                //        if (barcodeReader.BarcodeSymbologies == BarcodeFormats.All)
-                //        {
-                //            listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
-                //        }
-                //        // If the barcode symbology is the same as the selected one in the picker
-                //        else if (barcodeReader.BarcodeSymbologies == code.BarcodeFormat)
-                //        {
-                //            Debug.WriteLine($"Selected symbology: {barcodeReader.BarcodeSymbologies} == {code.BarcodeFormat}");
-                //            listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
-                //        }
-                //    }
-                //}
-
-                // Replace or insert this right after obtaining 'list' and after computing nOffsetX,nOffsetY,nImageWidthInControl,nImageHeightInControl,nScaleWidth,nScaleHeight
-                List<RectF> mapped = new();
-
-                if (list.Count > 0)
+                if (obj.Count > 0)
                 {
-                    double renderedX = nOffsetX;
-                    double renderedY = nOffsetY;
-                    double renderedW = nImageWidthInControl;
-                    double renderedH = nImageHeightInControl;
+                    Debug.WriteLine($"obj.Count: {obj.Count}");
 
-                    foreach (var code in list)
+                    // The location and size of the rectangle is wrong when scanning from an image,
+                    // the ImageBoundingBox is used instead of the PreviewBoundingBox,
+                    // this is a known issue in the native libraries
+                    _drawable.barcodeResults = list;
+                    graphicsBox.Invalidate();
+                    graphicsBox.IsVisible = true;
+
+                    foreach (BarcodeResult code in obj)
                     {
-                        // Prefer PreviewBoundingBox if present (camera case)
-                        var box = code.PreviewBoundingBox.Width > 0 && code.PreviewBoundingBox.Height > 0
-                            ? code.PreviewBoundingBox
-                            : code.ImageBoundingBox;
+                        cBarcodeFormat = code.BarcodeFormat.ToString();
+                        cDisplayValue = code.RawValue ?? cDisplayValue;
 
-                        // If still empty, skip
-                        if (box.Width <= 0 || box.Height <= 0) continue;
+                        Debug.WriteLine($"cBarcodeFormat: {code.BarcodeFormat} - cDisplayValue: {cDisplayValue}");
 
-                        mapped.Add(MapImageBoundingBoxToControl(box, renderedX, renderedY, renderedW, renderedH, nScaleWidth, nScaleHeight));
+                        // Decompress the QR code result if compressed
+                        cDisplayValue = ClassCompression.DecompressFromBase64(cDisplayValue);
+
+                        // Add the barcode format and display value to the list 'listBarcodes'
+                        // If all symbologies are selected in the picker
+                        if (barcodeReader.BarcodeSymbologies == BarcodeFormats.All)
+                        {
+                            listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
+                        }
+                        // If the barcode symbology is the same as the selected one in the picker
+                        else if (barcodeReader.BarcodeSymbologies == code.BarcodeFormat)
+                        {
+                            Debug.WriteLine($"Selected symbology: {barcodeReader.BarcodeSymbologies} == {code.BarcodeFormat}");
+                            listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
+                        }
                     }
                 }
 
-                // Keep the raw results for debug if you want
-                _drawable.barcodeResults = list;
+                //// Replace or insert this right after obtaining 'list' and after computing nOffsetX,nOffsetY,nImageWidthInControl,nImageHeightInControl,nScaleWidth,nScaleHeight
+                //List<RectF> mapped = new();
 
-                // Set mapped rects on the drawable (new field shown below)
-                _drawable.mappedRectangles = mapped;
-                graphicsBox.Invalidate();
-                graphicsBox.IsVisible = true;
+                //if (list.Count > 0)
+                //{
+                //    double renderedX = nOffsetX;
+                //    double renderedY = nOffsetY;
+                //    double renderedW = nImageWidthInControl;
+                //    double renderedH = nImageHeightInControl;
+
+                //    foreach (var code in list)
+                //    {
+                //        // Prefer PreviewBoundingBox if present (camera case)
+                //        var box = code.PreviewBoundingBox.Width > 0 && code.PreviewBoundingBox.Height > 0
+                //            ? code.PreviewBoundingBox
+                //            : code.ImageBoundingBox;
+
+                //        // If still empty, skip
+                //        if (box.Width <= 0 || box.Height <= 0) continue;
+
+                //        mapped.Add(MapImageBoundingBoxToControl(box, renderedX, renderedY, renderedW, renderedH, nScaleWidth, nScaleHeight));
+                //    }
+                //}
+
+                //// Keep the raw results for debug if you want
+                //_drawable.barcodeResults = list;
+
+                //// Set mapped rects on the drawable (new field shown below)
+                //_drawable.mappedRectangles = mapped;
+                //graphicsBox.Invalidate();
+                //graphicsBox.IsVisible = true;
             }
 
             // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
@@ -889,62 +903,130 @@ namespace BarcodeGenerator
             return (offsetX, offsetY, displayW, displayH);
         }
 
+        ///// <summary>
+        ///// Maps the bounding box of the detected barcode from the image coordinates to the control coordinates, taking into account the rendered size and position of the image in the control, as well as the scale factors between the original image and the rendered image.
+        ///// </summary>
+        ///// <param name="imageBox"></param>
+        ///// <param name="renderedX"></param>
+        ///// <param name="renderedY"></param>
+        ///// <param name="renderedW"></param>
+        ///// <param name="renderedH"></param>
+        ///// <param name="nScaleWidth"></param>
+        ///// <param name="nScaleHeight"></param>
+        ///// <returns></returns>
+        //private static RectF MapImageBoundingBoxToControl(RectF imageBox, double renderedX, double renderedY, double renderedW, double renderedH, double nScaleWidth, double nScaleHeight)
+        //{
+        //    // device density used elsewhere in Draw
+        //    double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
+
+        //    // Decide if values are normalized (0..1) or absolute pixels
+        //    bool normalized = imageBox.X <= 1.0 && imageBox.Y <= 1.0 && imageBox.Width <= 1.0 && imageBox.Height <= 1.0;
+
+        //    float x, y, w, h;
+
+        //    // iOS
+        //    if (normalized)
+        //    {
+        //        // normalized -> control coordinates
+        //        x = (float)(renderedX + imageBox.X * renderedW);
+        //        y = (float)(renderedY + imageBox.Y * renderedH);
+        //        w = (float)(imageBox.Width * renderedW);
+        //        h = (float)(imageBox.Height * renderedH);
+
+        //        // If box looks outside, try flipping Y (iOS origin differences)
+        //        if (y + h < renderedY || y > renderedY + renderedH)
+        //        {
+        //            y = (float)(renderedY + (1.0 - imageBox.Y - imageBox.Height) * renderedH);
+        //        }
+
+        //        // Convert to device pixels the same way existing Draw expects (it multiplies by density)
+        //        return new RectF(x, y, w * (float)nDensity, h * (float)nDensity);
+        //    }
+        //    // Android and Windows
+        //    else
+        //    {
+        //        // values appear to be pixel coords relative to full image -> convert to control coords using scales
+        //        x = (float)(renderedX + imageBox.X / nScaleWidth);
+        //        y = (float)(renderedY + imageBox.Y / nScaleHeight);
+        //        w = (float)(imageBox.Width / nScaleWidth);
+        //        h = (float)(imageBox.Height / nScaleHeight);
+
+        //        // Convert to device pixels the same way existing Draw expects (it multiplies by density)
+        //        return new RectF(x * (float)nDensity, y * (float)nDensity, w * (float)nDensity, h * (float)nDensity);
+        //    }
+        //}
+
         /// <summary>
-        /// Maps the bounding box of the detected barcode from the image coordinates to the control coordinates, taking into account the rendered size and position of the image in the control, as well as the scale factors between the original image and the rendered image.
+        /// Class for drawing the barcode bounding box.
+        /// Inside the BarcodeDrawable class: add a field and prefer mappedRectangles when drawing
         /// </summary>
-        /// <param name="imageBox"></param>
-        /// <param name="renderedX"></param>
-        /// <param name="renderedY"></param>
-        /// <param name="renderedW"></param>
-        /// <param name="renderedH"></param>
-        /// <param name="nScaleWidth"></param>
-        /// <param name="nScaleHeight"></param>
-        /// <returns></returns>
-        private static RectF MapImageBoundingBoxToControl(RectF imageBox, double renderedX, double renderedY, double renderedW, double renderedH, double nScaleWidth, double nScaleHeight)
+        public sealed class BarcodeDrawable : IDrawable
         {
-            // device density used elsewhere in Draw
-            double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
+            public IReadOnlySet<BarcodeResult>? barcodeResults;
+            public List<RectF>? mappedRectangles; // new
 
-            // Decide if values are normalized (0..1) or absolute pixels
-            bool normalized = imageBox.X <= 1.0 && imageBox.Y <= 1.0 && imageBox.Width <= 1.0 && imageBox.Height <= 1.0;
-
-            float x, y, w, h;
-
-            // iOS
-            if (normalized)
+            public void Draw(ICanvas canvas, RectF dirtyRect)
             {
-                // normalized -> control coordinates
-                x = (float)(renderedX + imageBox.X * renderedW);
-                y = (float)(renderedY + imageBox.Y * renderedH);
-                w = (float)(imageBox.Width * renderedW);
-                h = (float)(imageBox.Height * renderedH);
-
-                // If box looks outside, try flipping Y (iOS origin differences)
-                if (y + h < renderedY || y > renderedY + renderedH)
+                if ((mappedRectangles is null || mappedRectangles.Count == 0) && (barcodeResults is null || barcodeResults.Count == 0))
                 {
-                    y = (float)(renderedY + (1.0 - imageBox.Y - imageBox.Height) * renderedH);
+                    return;
                 }
+#if IOS
+                //canvas.Rotate(180, 300, 300); // Workaround for a possible SkiaSharp bug that causes the canvas to be rotated on some platforms after invalidation, resulting in incorrectly drawn rectangles
+                canvas.StrokeSize = 10;
+#else
+                canvas.StrokeSize = 15;
+#endif
+                canvas.StrokeColor = Colors.Green;
+                float scale = 1 / canvas.DisplayScale;
+                canvas.Scale(scale, scale);
 
-                // Convert to device pixels the same way existing Draw expects (it multiplies by density)
-                return new RectF(x, y, w * (float)nDensity, h * (float)nDensity);
-            }
-            // Android and Windows
-            else
-            {
-                // values appear to be pixel coords relative to full image -> convert to control coords using scales
-                x = (float)(renderedX + imageBox.X / nScaleWidth);
-                y = (float)(renderedY + imageBox.Y / nScaleHeight);
-                w = (float)(imageBox.Width / nScaleWidth);
-                h = (float)(imageBox.Height / nScaleHeight);
+                try
+                {
+                    if (mappedRectangles is not null && mappedRectangles.Count > 0)
+                    {
+                        // mappedRectangles already includes density multiplication (matches prior Draw logic)
+                        foreach (var r in mappedRectangles)
+                        {
+                            canvas.DrawRectangle(r);
+                        }
+                    }
+                    else
+                    {
+                        // fallback to original behavior (camera preview / pixel coords)
+                        double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
 
-                // Convert to device pixels the same way existing Draw expects (it multiplies by density)
-                return new RectF(x * (float)nDensity, y * (float)nDensity, w * (float)nDensity, h * (float)nDensity);
+                        foreach (var barcode in barcodeResults!)
+                        {
+                            if (barcode.PreviewBoundingBox.Width > 0 && barcode.PreviewBoundingBox.Height > 0)
+                            {
+                                canvas.DrawRectangle(barcode.PreviewBoundingBox);
+                            }
+                            else
+                            {
+                                float nX = ((float)nOffsetX + (barcode.ImageBoundingBox.X / (float)nScaleWidth)) * (float)nDensity;
+                                float nY = ((float)nOffsetY + (barcode.ImageBoundingBox.Y / (float)nScaleHeight)) * (float)nDensity;
+                                float nWidth = barcode.ImageBoundingBox.Width / (float)nScaleWidth * (float)nDensity;
+                                float nHeight = barcode.ImageBoundingBox.Height / (float)nScaleHeight * (float)nDensity;
+
+                                canvas.DrawRectangle(nX, nY, nWidth, nHeight);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    SentrySdk.CaptureException(ex);
+#if DEBUG
+                    Application.Current!.Windows[0].Page!.DisplayAlertAsync("Draw", ex.Message, CodeLang.ButtonClose_Text);
+#endif
+                }
             }
         }
 
-        /// <summary>
-        /// Class for drawing the barcode bounding box
-        /// </summary>
+        ///// <summary>
+        ///// Class for drawing the barcode bounding box
+        ///// </summary>
         //        private sealed class BarcodeDrawable : IDrawable
         //        {
         //            public IReadOnlySet<BarcodeResult>? barcodeResults;
@@ -1018,69 +1100,5 @@ namespace BarcodeGenerator
         //#endif
         //            }
         //        }
-
-        /// <summary>
-        /// Class for drawing the barcode bounding box.
-        /// Inside the BarcodeDrawable class: add a field and prefer mappedRectangles when drawing
-        /// </summary>
-        public sealed class BarcodeDrawable : IDrawable
-        {
-            public IReadOnlySet<BarcodeResult>? barcodeResults;
-            public List<RectF>? mappedRectangles; // new
-
-            public void Draw(ICanvas canvas, RectF dirtyRect)
-            {
-                if ((mappedRectangles is null || mappedRectangles.Count == 0) && (barcodeResults is null || barcodeResults.Count == 0))
-                {
-                    return;
-                }
-
-                canvas.StrokeSize = 15;
-                canvas.StrokeColor = Colors.Green;
-                float scale = 1 / canvas.DisplayScale;
-                canvas.Scale(scale, scale);
-
-                try
-                {
-                    if (mappedRectangles is not null && mappedRectangles.Count > 0)
-                    {
-                        // mappedRectangles already includes density multiplication (matches prior Draw logic)
-                        foreach (var r in mappedRectangles)
-                        {
-                            canvas.DrawRectangle(r);
-                        }
-                    }
-                    else
-                    {
-                        // fallback to original behavior (camera preview / pixel coords)
-                        double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
-
-                        foreach (var barcode in barcodeResults!)
-                        {
-                            if (barcode.PreviewBoundingBox.Width > 0 && barcode.PreviewBoundingBox.Height > 0)
-                            {
-                                canvas.DrawRectangle(barcode.PreviewBoundingBox);
-                            }
-                            else
-                            {
-                                float nX = ((float)nOffsetX + (barcode.ImageBoundingBox.X / (float)nScaleWidth)) * (float)nDensity;
-                                float nY = ((float)nOffsetY + (barcode.ImageBoundingBox.Y / (float)nScaleHeight)) * (float)nDensity;
-                                float nWidth = barcode.ImageBoundingBox.Width / (float)nScaleWidth * (float)nDensity;
-                                float nHeight = barcode.ImageBoundingBox.Height / (float)nScaleHeight * (float)nDensity;
-
-                                canvas.DrawRectangle(nX, nY, nWidth, nHeight);
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    SentrySdk.CaptureException(ex);
-#if DEBUG
-                    Application.Current!.Windows[0].Page!.DisplayAlertAsync("Draw", ex.Message, CodeLang.ButtonClose_Text);
-#endif
-                }
-            }
-        }
     }
 }
