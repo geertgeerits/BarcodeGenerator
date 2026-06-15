@@ -14,6 +14,7 @@ namespace BarcodeGenerator
         private static double nOffsetY;
         private static double nScaleWidth;
         private static double nScaleHeight;
+        private static bool bScanningFromImage;
 
         public PageScanNT()
     	{
@@ -494,6 +495,7 @@ namespace BarcodeGenerator
             imgScanFromImage.IsVisible = false;
             await Task.Delay(200);
 
+            bScanningFromImage = false;
             barcodeReader.CameraEnabled = true;
 
             sldCameraZoom.IsEnabled = true;
@@ -525,6 +527,9 @@ namespace BarcodeGenerator
             {
                 return;
             }
+
+            bScanningFromImage = false;
+            graphicsBox.IsVisible = true;
 
             imgbtnCopyToClipboard.IsEnabled = false;
             btnShare.IsEnabled = false;
@@ -579,7 +584,7 @@ namespace BarcodeGenerator
         /// <param name="e">An EventArgs object that contains the event data.</param>
         /// <remarks>https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/107
         /// Why such a difference in values between Android and iOS for the PreviewBoundingBox?
-        /// Android (and Windows?) are OK but iOS is it a disaster because the bounding box is not correctly placed on the image when scanning
+        /// Android (and Windows?) are OK but iOS is a disaster because the bounding box is not correctly placed on the image when scanning
         /// from an image (the file path flow).
         /// - Android returns absolute pixel coordinates for bounding boxes (so values look like 78, 420, …).
         /// - iOS (Vision/AVFoundation) often returns normalized coordinates(0..1) for image/object bounds, 
@@ -612,7 +617,8 @@ namespace BarcodeGenerator
             imgbtnCameraTorch.IsVisible = false;
 
             imgScanFromImage.IsVisible = true;
-            
+            bScanningFromImage = true;
+
             lblBarcodeResult.Text = string.Empty;
             btnShare.Text = CodeLang.ButtonShare_Text;
             imgbtnCopyToClipboard.IsEnabled = false;
@@ -972,7 +978,13 @@ namespace BarcodeGenerator
                     return;
                 }
 #if IOS
-                //canvas.Rotate(180, 300, 300); // Workaround for a possible SkiaSharp bug that causes the canvas to be rotated on some platforms after invalidation, resulting in incorrectly drawn rectangles
+                if (bScanningFromImage)
+                {
+                    //canvas.Rotate(180, 300, 300); // Workaround for a possible SkiaSharp bug that causes the canvas to be rotated on some platforms after invalidation, resulting in incorrectly drawn rectangles
+
+                    // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping issues described in the comments. The rectangles are not drawn correctly on iOS when scanning from images, so we avoid drawing them to prevent confusion.
+                    return;
+                }
                 canvas.StrokeSize = 10;
 #else
                 canvas.StrokeSize = 15;
@@ -993,7 +1005,7 @@ namespace BarcodeGenerator
                     }
                     else
                     {
-                        // fallback to original behavior (camera preview / pixel coords)
+                        // Fallback to original behavior (camera preview / pixel coords)
                         double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
 
                         foreach (var barcode in barcodeResults!)
