@@ -1003,11 +1003,9 @@ namespace BarcodeGenerator
                     // Workaround for a possible SkiaSharp bug that causes the canvas to be rotated on some platforms after invalidation,
                     // resulting in incorrectly drawn rectangles
                     //canvas.Rotate(180, 300, 300);
-                    //mappedRectangles!.Reverse();
-                    //barcodeResults!.Reverse();
                     
                     // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping issues described in the comments.
-                    //The rectangles are not drawn correctly on iOS when scanning from images, so we avoid drawing them to prevent confusion.
+                    // The rectangles are not drawn correctly on iOS when scanning from images, so we avoid drawing them to prevent confusion.
                     return;
                 }
                 canvas.StrokeSize = 10;
