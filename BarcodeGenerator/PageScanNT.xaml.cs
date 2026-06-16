@@ -707,9 +707,9 @@ namespace BarcodeGenerator
 
                 // Scan the image for barcodes using the native library and get the results as a list of BarcodeResult objects
                 IReadOnlySet<BarcodeResult> list = await Methods.ScanFromImageAsync(bytes);
-                
+
                 //------------------------------------------------------------------------------------------------------------
-                
+
                 List<BarcodeResult> obj = [.. list];
 
                 if (obj.Count > 0)
@@ -747,7 +747,7 @@ namespace BarcodeGenerator
                         }
                     }
                 }
-                
+
                 //------------------------------------------------------------------------------------------------------------
 
                 //// Replace or insert this right after obtaining 'list' and after computing nOffsetX,nOffsetY,nImageWidthInControl,nImageHeightInControl,nScaleWidth,nScaleHeight
@@ -774,14 +774,14 @@ namespace BarcodeGenerator
                 //    }
                 //}
 
-                // Keep the raw results for debug if you want
+                //// Keep the raw results for debug if you want
                 //_drawable.barcodeResults = list;
 
                 //// Set mapped rects on the drawable (new field shown below)
                 //_drawable.mappedRectangles = mapped;
                 //graphicsBox.Invalidate();
                 //graphicsBox.IsVisible = true;
-                
+
                 //------------------------------------------------------------------------------------------------------------
             }
 
