@@ -31,6 +31,10 @@ namespace BarcodeGenerator
                 return;
             }
 
+            // Subscribe to the MainDisplayInfoChanged event to handle device orientation changes
+            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
+            this.Unloaded += OnUnloaded;
+
             // Get the saved quality settings
             nQualityCameraBack = Preferences.Default.Get("SettingQualityCameraBack", 2);
             nQualityCameraFront = Preferences.Default.Get("SettingQualityCameraFront", 1);
@@ -100,6 +104,21 @@ namespace BarcodeGenerator
 
             // For testing crashes - DivideByZeroException
             //int divByZero = 51 / int.Parse("0");
+        }
+
+        /// <summary>
+        /// Remove the boxes arround the barcodes when the device is rotated and when scanning from an image
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnMainDisplayInfoChanged(object? sender, DisplayInfoChangedEventArgs e)
+        {
+            if (bScanningFromImage)
+            {
+                _drawable.barcodeResults = null;
+                _drawable.mappedRectangles = null;
+                graphicsBox.Invalidate();
+            }
         }
 
         /// <summary>
@@ -968,6 +987,17 @@ namespace BarcodeGenerator
                 // Convert to device pixels the same way existing Draw expects (it multiplies by density)
                 return new RectF(x * (float)nDensity, y * (float)nDensity, w * (float)nDensity, h * (float)nDensity);
             }
+        }
+
+        /// <summary>
+        /// Unsubscribe from the MainDisplayInfoChanged event when the page is unloaded to prevent memory leaks and unnecessary event handling.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnUnloaded(object? sender, EventArgs e)
+        {
+            DeviceDisplay.MainDisplayInfoChanged -= OnMainDisplayInfoChanged;
+            this.Unloaded -= OnUnloaded;
         }
 
         /// <summary>

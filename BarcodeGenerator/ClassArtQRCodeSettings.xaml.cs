@@ -16,6 +16,7 @@ namespace BarcodeGenerator
             // Adjust the column widths based on the current orientation
             UpdateGridColumns(displayInfo.Orientation);
 
+            // Subscribe to the MainDisplayInfoChanged event to handle device orientation changes
             DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
             this.Unloaded += OnUnloaded;
 
@@ -71,9 +72,6 @@ namespace BarcodeGenerator
             }
 
             Globals.bPopupCanceled = false;
-
-            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
-            this.Unloaded += OnUnloaded;
         }
 
         /// <summary>
