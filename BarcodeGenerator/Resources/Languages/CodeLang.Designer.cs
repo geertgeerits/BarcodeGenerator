@@ -1052,7 +1052,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid file type selected. Please select a JPG or PNG image..
+        ///   Looks up a localized string similar to The selected file is not supported..
         /// </summary>
         internal static string ErrorInvalidImageType_Text {
             get {

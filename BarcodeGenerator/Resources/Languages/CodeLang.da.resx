@@ -493,7 +493,7 @@ Tak på forhånd.</value>
     <value>QR-kode billedstørrelse: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
-    <value>Ugyldig filtype valgt. Vælg venligst et JPG- eller PNG-billede.</value>
+    <value>Den valgte fil understøttes ikke.</value>
   </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
     <value>Anbefalet billedstørrelse</value>

@@ -493,7 +493,7 @@ Tack på förhand.</value>
     <value>QR-kodens bildstorlek: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
-    <value>Ogiltig filtyp vald. Välj en JPG- eller PNG-bild.</value>
+    <value>Den valda filen stöds inte.</value>
   </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
     <value>Rekommenderad bildstorlek</value>

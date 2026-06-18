@@ -493,7 +493,7 @@ Előre is köszönöm.</value>
     <value>QR-kód képmérete: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
-    <value>Érvénytelen fájltípust választott. Kérjük, válasszon JPG vagy PNG képet.</value>
+    <value>A kiválasztott fájl nem támogatott.</value>
   </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
     <value>Ajánlott képméret</value>

@@ -493,7 +493,7 @@ Alvast bedankt.</value>
     <value>Formaat afbeelding QR-code: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
-    <value>Ongeldig bestandstype geselecteerd. Selecteer een JPG- of PNG-afbeelding.</value>
+    <value>Het geselecteerde bestand wordt niet ondersteund.</value>
   </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
     <value>Aanbevolen formaat afbeelding</value>

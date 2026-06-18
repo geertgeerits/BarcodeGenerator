@@ -493,7 +493,7 @@ Děkuji předem.</value>
     <value>Velikost obrázku QR kódu: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
-    <value>Vybrán neplatný typ souboru. Vyberte prosím obrázek JPG nebo PNG.</value>
+    <value>Vybraný soubor není podporován.</value>
   </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
     <value>Doporučená velikost obrázku</value>

@@ -1,4 +1,6 @@
-﻿namespace BarcodeGenerator
+﻿using SkiaSharp;
+
+namespace BarcodeGenerator
 {
     internal class ClassFileOperations
     {
@@ -59,6 +61,9 @@
 #if IOS
                 // !!!BUG!!! in iOS, the temporary cached copy may not always be deleted correctly when using the 'MediaPickerOptions'
                 List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync();
+                //Stream? stream = await GetImageStreamWithCorrectOrientationAsync(photos.FirstOrDefault());
+                //ImageSource imageSource = ImageSource.FromStream(() => stream);
+                //photos = imageSource;
 #else
                 List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
                 {
@@ -78,41 +83,36 @@
                 // Validate the selected file
                 if (!string.IsNullOrEmpty(fileNameWithExt))
                 {
-                    if (fileNameWithExt.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith(".bmp", StringComparison.OrdinalIgnoreCase))
-                    {
-                        return selected;
-                    }
-                    else
-                    {
-                        // On iOS the picker may leave a temporary cached copy. Make sure we close any handle and remove it
-                        try
-                        {
-                            if (!string.IsNullOrEmpty(selected?.FullPath))
-                            {
-                                // Try to dispose any open stream (harmless if it fails)
-                                try
-                                {
-                                    using var s = await selected.OpenReadAsync();
-                                }
-                                catch { /* ignore */ }
-
-                                DeleteFileInCache(selected.FullPath);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Debug.WriteLine($"ClassFileOperations.PickImage: cleanup error: {ex.Message}");
-                        }
-
-                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{fileNameWithExt}\n\n{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
-                        return null;
-                    }
+                    return selected;
                 }
+                else
+                {
+                    // On iOS the picker may leave a temporary cached copy. Make sure we close any handle and remove it
+                    try
+                    {
+                        if (!string.IsNullOrEmpty(selected?.FullPath))
+                        {
+                            // Try to dispose any open stream (harmless if it fails)
+                            try
+                            {
+                                using Stream s = await selected.OpenReadAsync();
+                            }
+                            catch
+                            {
+                                /* ignore */
+                            }
 
-                return selected;
+                            DeleteFileInCache(selected.FullPath);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine($"ClassFileOperations.PickImage: cleanup error: {ex.Message}");
+                    }
+
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{fileNameWithExt}\n\n{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
+                    return null;
+                }
             }
             catch (Exception ex)
             {
@@ -150,6 +150,100 @@
                 }
             }
         */
+
+        public static async Task<Stream?> GetImageStreamWithCorrectOrientationAsync(FileResult file)
+        {
+            if (file == null) return null;
+
+            // Read into memory so SKCodec can seek
+            MemoryStream input = new();
+            using (Stream s = await file.OpenReadAsync())
+            await s.CopyToAsync(input);
+            input.Position = 0;
+
+            SKBitmap bitmap;
+            using (SKCodec? codec = SKCodec.Create(input))
+            {
+                if (codec != null)
+                {
+                    SKImageInfo info = codec.Info;
+                    bitmap = new SKBitmap(info.Width, info.Height, info.ColorType, info.AlphaType);
+                    codec.GetPixels(bitmap.Info, bitmap.GetPixels());
+
+                    // Fix orientation according to EXIF
+                    SKBitmap oriented = FixOrientation(bitmap, codec.EncodedOrigin);
+                    if (!ReferenceEquals(oriented, bitmap))
+                    {
+                        bitmap.Dispose();
+                        bitmap = oriented;
+                    }
+                }
+                else
+                {
+                    input.Position = 0;
+                    bitmap = SKBitmap.Decode(input);
+                    if (bitmap == null) return null;
+                }
+            }
+
+            // Encode to PNG into a MemoryStream and return
+            using SKImage image = SKImage.FromBitmap(bitmap);
+            using SKData encoded = image.Encode(SKEncodedImageFormat.Png, 100);
+            MemoryStream output = new();
+            encoded.SaveTo(output);
+            output.Position = 0;
+
+            bitmap.Dispose();
+            return output;
+        }
+
+        // Helper rotation/flip methods (same strategy as used in ClassQRCodeImage)
+        private static SKBitmap FixOrientation(SKBitmap src, SKEncodedOrigin origin)
+        {
+            switch (origin)
+            {
+                case SKEncodedOrigin.TopLeft: return src;
+                case SKEncodedOrigin.TopRight: return FlipBitmap(src, horizontal: true);
+                case SKEncodedOrigin.BottomRight: return RotateBitmap(src, 180);
+                case SKEncodedOrigin.BottomLeft: return FlipBitmap(src, horizontal: false);
+                case SKEncodedOrigin.LeftTop:
+                    using (SKBitmap r1 = RotateBitmap(src, 90))
+                    using (SKBitmap f1 = FlipBitmap(r1, horizontal: true))
+                        return f1;
+                case SKEncodedOrigin.RightTop: return RotateBitmap(src, 90);
+                case SKEncodedOrigin.RightBottom:
+                    using (SKBitmap r2 = RotateBitmap(src, 270))
+                    using (SKBitmap f2 = FlipBitmap(r2, horizontal: true))
+                        return f2;
+                case SKEncodedOrigin.LeftBottom: return RotateBitmap(src, 270);
+                default: return src;
+            }
+        }
+        private static SKBitmap RotateBitmap(SKBitmap src, float degrees)
+        {
+            int w = (degrees % 180 == 0) ? src.Width : src.Height;
+            int h = (degrees % 180 == 0) ? src.Height : src.Width;
+            SKBitmap dest = new(new SKImageInfo(w, h, src.ColorType, src.AlphaType));
+            using SKCanvas canvas = new(dest);
+            canvas.Clear(SKColors.Transparent);
+            canvas.Translate(w / 2f, h / 2f);
+            canvas.RotateDegrees(degrees);
+            canvas.Translate(-src.Width / 2f, -src.Height / 2f);
+            canvas.DrawBitmap(src, 0, 0);
+            canvas.Flush();
+            return dest;
+        }
+        private static SKBitmap FlipBitmap(SKBitmap src, bool horizontal)
+        {
+            SKBitmap dest = new(new SKImageInfo(src.Width, src.Height, src.ColorType, src.AlphaType));
+            using SKCanvas canvas = new(dest);
+            canvas.Clear(SKColors.Transparent);
+            if (horizontal) { canvas.Translate(src.Width, 0); canvas.Scale(-1, 1); }
+            else { canvas.Translate(0, src.Height); canvas.Scale(1, -1); }
+            canvas.DrawBitmap(src, 0, 0);
+            canvas.Flush();
+            return dest;
+        }
 
         /// <summary>
         /// Asynchronously saves a PNG image from the specified memory stream to the given file path.
