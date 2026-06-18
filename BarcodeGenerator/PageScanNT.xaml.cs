@@ -407,6 +407,7 @@ namespace BarcodeGenerator
 
                 // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
                 _drawable.barcodeResults = null;
+                _drawable.mappedRectangles = null;
                 graphicsBox.Invalidate();
             }
             else
@@ -506,6 +507,7 @@ namespace BarcodeGenerator
         {
             // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
             _drawable.barcodeResults = null;
+            _drawable.mappedRectangles = null;
             graphicsBox.Invalidate();
             graphicsBox.IsVisible = false;
 
@@ -646,6 +648,7 @@ namespace BarcodeGenerator
 
             // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
             _drawable.barcodeResults = null;
+            _drawable.mappedRectangles = null;
             graphicsBox.Invalidate();
             graphicsBox.IsVisible = false;
             imgScanFromImage.Source = null;
@@ -674,6 +677,7 @@ namespace BarcodeGenerator
             // Process the selected file
             // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
             _drawable.barcodeResults = null;
+            _drawable.mappedRectangles = null;
             graphicsBox.Invalidate();
             graphicsBox.IsVisible = false;
             imgScanFromImage.Source = null;
@@ -726,9 +730,6 @@ namespace BarcodeGenerator
 
                 // Scan the image for barcodes using the native library and get the results as a list of BarcodeResult objects
                 IReadOnlySet<BarcodeResult> list = await Methods.ScanFromImageAsync(bytes);
-
-                //------------------------------------------------------------------------------------------------------------
-
                 List<BarcodeResult> obj = [.. list];
 
                 if (obj.Count > 0)
@@ -767,41 +768,40 @@ namespace BarcodeGenerator
                     }
                 }
 
-                //------------------------------------------------------------------------------------------------------------
+                // Map the bounding boxes of the detected barcodes to the coordinate space of the Image control
+                List<RectF> mapped = [];
 
-                //// Replace or insert this right after obtaining 'list' and after computing nOffsetX,nOffsetY,nImageWidthInControl,nImageHeightInControl,nScaleWidth,nScaleHeight
-                //List<RectF> mapped = new();
+                if (list.Count > 0)
+                {
+                    double renderedX = nOffsetX;
+                    double renderedY = nOffsetY;
+                    double renderedW = nImageWidthInControl;
+                    double renderedH = nImageHeightInControl;
 
-                //if (list.Count > 0)
-                //{
-                //    double renderedX = nOffsetX;
-                //    double renderedY = nOffsetY;
-                //    double renderedW = nImageWidthInControl;
-                //    double renderedH = nImageHeightInControl;
+                    foreach (var code in list)
+                    {
+                        // Prefer PreviewBoundingBox if present (camera case)
+                        RectF box = code.PreviewBoundingBox.Width > 0 && code.PreviewBoundingBox.Height > 0
+                            ? code.PreviewBoundingBox
+                            : code.ImageBoundingBox;
 
-                //    foreach (var code in list)
-                //    {
-                //        // Prefer PreviewBoundingBox if present (camera case)
-                //        var box = code.PreviewBoundingBox.Width > 0 && code.PreviewBoundingBox.Height > 0
-                //            ? code.PreviewBoundingBox
-                //            : code.ImageBoundingBox;
+                        // If still empty, skip
+                        if (box.Width <= 0 || box.Height <= 0)
+                        {
+                            continue;
+                        }
 
-                //        // If still empty, skip
-                //        if (box.Width <= 0 || box.Height <= 0) continue;
+                        mapped.Add(MapImageBoundingBoxToControl(box, renderedX, renderedY, renderedW, renderedH, nScaleWidth, nScaleHeight));
+                    }
+                }
 
-                //        mapped.Add(MapImageBoundingBoxToControl(box, renderedX, renderedY, renderedW, renderedH, nScaleWidth, nScaleHeight));
-                //    }
-                //}
+                // Keep the raw results for debug if you want
+                _drawable.barcodeResults = list;
 
-                //// Keep the raw results for debug if you want
-                //_drawable.barcodeResults = list;
-
-                //// Set mapped rects on the drawable (new field shown below)
-                //_drawable.mappedRectangles = mapped;
-                //graphicsBox.Invalidate();
-                //graphicsBox.IsVisible = true;
-
-                //------------------------------------------------------------------------------------------------------------
+                // Set mapped rects on the drawable (new field shown below)
+                _drawable.mappedRectangles = mapped;
+                graphicsBox.Invalidate();
+                graphicsBox.IsVisible = true;
             }
 
             // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
@@ -962,14 +962,15 @@ namespace BarcodeGenerator
                 // normalized -> control coordinates
                 x = (float)(renderedX + imageBox.X * renderedW);
                 y = (float)(renderedY + imageBox.Y * renderedH);
-                w = (float)(imageBox.Width * renderedW);
-                h = (float)(imageBox.Height * renderedH);
+                w = (float)(imageBox.Width * renderedW) / 2f;
+                h = (float)(imageBox.Height * renderedH) / 2f;
 
                 // If box looks outside, try flipping Y (iOS origin differences)
-                if (y + h < renderedY || y > renderedY + renderedH)
-                {
-                    y = (float)(renderedY + (1.0 - imageBox.Y - imageBox.Height) * renderedH);
-                }
+                //if (y + h < renderedY || y > renderedY + renderedH)
+                //{
+                //    y = (float)(renderedY + (1.0 - imageBox.Y - imageBox.Height) * renderedH);
+                //}
+                y = (float)(renderedY + (1.0 - imageBox.Y - imageBox.Height) * renderedH);
 
                 // Convert to device pixels the same way existing Draw expects (it multiplies by density)
                 //return new RectF(x * (float)nDensity, y * (float)nDensity, w * (float)nDensity, h * (float)nDensity);
@@ -1030,15 +1031,10 @@ namespace BarcodeGenerator
 
                 if (bScanningFromImage)
                 {
-                    // Workaround for a possible SkiaSharp bug that causes the canvas to be rotated on some platforms after invalidation,
-                    // resulting in incorrectly drawn rectangles
-                    //canvas.Rotate(180, 300, 300);
-                    
-                    // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping issues described in the comments.
-                    // The rectangles are not drawn correctly on iOS when scanning from images, so we avoid drawing them to prevent confusion.
-                    return;
+                    // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping issues and orientation issues.
+                    //return;
                 }
-                canvas.StrokeSize = 10;
+                canvas.StrokeSize = 6;
 #else
                 canvas.StrokeSize = 15;
 #endif
