@@ -58,12 +58,18 @@ namespace BarcodeGenerator
             try
             {
                 // Let user pick a photo. We take the first one
+                //FileResult? selected;
 #if IOS
                 // !!!BUG!!! in iOS, the temporary cached copy may not always be deleted correctly when using the 'MediaPickerOptions'
-                List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync();
+                //List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync();
+                var photos = await MediaPicker.Default.PickPhotosAsync();
+                
                 //Stream? stream = await GetImageStreamWithCorrectOrientationAsync(photos.FirstOrDefault());
                 //ImageSource imageSource = ImageSource.FromStream(() => stream);
-                //photos = imageSource;
+                //SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
+                //imageSource = ImageSource.FromFile(ClassBarcodes.cFileBarcodePng);
+                //stream = await ConvertImageSourceToStreamAsync(imageSource);
+                //selected = photos?.FirstOrDefault();
 #else
                 List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
                 {
@@ -73,6 +79,7 @@ namespace BarcodeGenerator
                 });
 #endif
                 FileResult? selected = photos?.FirstOrDefault();
+                //selected = photos?.FirstOrDefault();
 
                 // Get the file name with extension
                 // FileResult.FileName provides the name including the extension
@@ -150,6 +157,18 @@ namespace BarcodeGenerator
                 }
             }
         */
+
+        //public async static Task<Stream> ConvertImageSourceToStreamAsync(ImageSource imageSource)
+        //{ 
+        //    using var stream = await ((StreamImageSource)imageSource).Stream(CancellationToken.None); return stream;
+        //}
+
+        public static async Task<Stream> ConvertImageSourceToStreamAsync(ImageSource imageSource)
+        {
+            var sis = imageSource as StreamImageSource ?? throw new InvalidOperationException("ImageSource is not a StreamImageSource");
+            Stream stream = await sis.Stream(CancellationToken.None);
+            return stream;
+        }
 
         public static async Task<Stream?> GetImageStreamWithCorrectOrientationAsync(FileResult file)
         {
@@ -380,7 +399,8 @@ namespace BarcodeGenerator
             await Share.Default.RequestAsync(new ShareMultipleFilesRequest
             {
                 Title = "Barcode Generator",
-                Files = [new(ClassBarcodes.cFileBarcodePng), new ShareFile(ClassBarcodes.cFileBarcodeSvg)]
+                //Files = [new(ClassBarcodes.cFileBarcodePng), new ShareFile(ClassBarcodes.cFileBarcodeSvg)]
+                Files = [new ShareFile(ClassBarcodes.cFileBarcodePng), new ShareFile(ClassBarcodes.cFileBarcodeSvg)]
             });
             
             return true;
