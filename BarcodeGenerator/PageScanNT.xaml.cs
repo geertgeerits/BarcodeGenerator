@@ -14,6 +14,7 @@ namespace BarcodeGenerator
         private static double nOffsetY;
         private static double nScaleWidth;
         private static double nScaleHeight;
+        private static string cFileExtension = string.Empty;
         private static bool bScanningFromImage;
 
         public PageScanNT()
@@ -669,6 +670,9 @@ namespace BarcodeGenerator
                 return;
             }
 
+            // Get the file extension of the selected image file in lowercase
+            cFileExtension = Path.GetExtension(file.FullPath).ToLowerInvariant();
+
             // Initialize variables for processing the image and barcode results
             string cBarcodeFormat = string.Empty;
             string cDisplayValue = string.Empty;
@@ -1029,11 +1033,15 @@ namespace BarcodeGenerator
                 - Windows: PreviewBoundingBox: ? - ImageBoundingBox: ?
                 */
 
-                if (bScanningFromImage)
+                // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping issues and orientation issues.
+                if (bScanningFromImage && mappedRectangles?.Count > 1)
                 {
-                    // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping issues and orientation issues.
-                    return;
+                    if (cFileExtension is ".jpeg")
+                    {
+                        return;
+                    }
                 }
+
                 canvas.StrokeSize = 6;
 #else
                 canvas.StrokeSize = 15;

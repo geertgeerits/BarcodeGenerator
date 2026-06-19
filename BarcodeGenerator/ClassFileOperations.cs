@@ -62,12 +62,12 @@ namespace BarcodeGenerator
 #if IOS
                 // !!!BUG!!! in iOS, the temporary cached copy may not always be deleted correctly when using the 'MediaPickerOptions'
                 var photos = await MediaPicker.Default.PickPhotosAsync();
-                selected = photos?.FirstOrDefault();
+                //selected = photos?.FirstOrDefault();
 
                 // Correct the orientation of the selected image stream based on EXIF data
                 // !!!BUG!!! in iOS, the orientation of the bounding box of the selected images may be incorrect with jpeg, heic and heif files.
                 // However, the 'GetSelectedImageStreamAsync()' method does not correct the orientation of the bounding box
-                //selected = (await GetSelectedImageStreamAsync(photos)).selected;
+                selected = (await GetSelectedImageStreamAsync(photos)).selected;
 #else
                 List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
                 {
