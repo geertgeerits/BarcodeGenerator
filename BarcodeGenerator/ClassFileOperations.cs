@@ -12,8 +12,14 @@ namespace BarcodeGenerator
         {
             try
             {
-                // Let user pick photos (multiple possible). We take the first one
-                List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync();
+                // Let user pick a photo
+                List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
+                {
+                    SelectionLimit = 1,             // Default is 1; set to 0 for no limit
+                    RotateImage = true,
+                    PreserveMetaData = true
+                });
+
                 FileResult? selected = photos?.FirstOrDefault();
 
                 // Get the file name with extension
