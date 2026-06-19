@@ -1032,7 +1032,7 @@ namespace BarcodeGenerator
                 if (bScanningFromImage)
                 {
                     // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping issues and orientation issues.
-                    //return;
+                    return;
                 }
                 canvas.StrokeSize = 6;
 #else

@@ -58,18 +58,16 @@ namespace BarcodeGenerator
             try
             {
                 // Let user pick a photo. We take the first one
-                //FileResult? selected;
+                FileResult? selected;
 #if IOS
                 // !!!BUG!!! in iOS, the temporary cached copy may not always be deleted correctly when using the 'MediaPickerOptions'
-                //List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync();
                 var photos = await MediaPicker.Default.PickPhotosAsync();
-                
-                //Stream? stream = await GetImageStreamWithCorrectOrientationAsync(photos.FirstOrDefault());
-                //ImageSource imageSource = ImageSource.FromStream(() => stream);
-                //SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
-                //imageSource = ImageSource.FromFile(ClassBarcodes.cFileBarcodePng);
-                //stream = await ConvertImageSourceToStreamAsync(imageSource);
-                //selected = photos?.FirstOrDefault();
+                selected = photos?.FirstOrDefault();
+
+                // Correct the orientation of the selected image stream based on EXIF data
+                // !!!BUG!!! in iOS, the orientation of the bounding box of the selected images may be incorrect with jpeg, heic and heif files.
+                // However, the 'GetSelectedImageStreamAsync()' method does not correct the orientation of the bounding box
+                //selected = (await GetSelectedImageStreamAsync(photos)).selected;
 #else
                 List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
                 {
@@ -77,10 +75,9 @@ namespace BarcodeGenerator
                     RotateImage = true,
                     PreserveMetaData = true
                 });
+                
+                selected = photos?.FirstOrDefault();
 #endif
-                FileResult? selected = photos?.FirstOrDefault();
-                //selected = photos?.FirstOrDefault();
-
                 // Get the file name with extension
                 // FileResult.FileName provides the name including the extension
                 string? fileNameWithExt = selected?.FileName;
@@ -168,100 +165,6 @@ namespace BarcodeGenerator
             var sis = imageSource as StreamImageSource ?? throw new InvalidOperationException("ImageSource is not a StreamImageSource");
             Stream stream = await sis.Stream(CancellationToken.None);
             return stream;
-        }
-
-        public static async Task<Stream?> GetImageStreamWithCorrectOrientationAsync(FileResult file)
-        {
-            if (file == null) return null;
-
-            // Read into memory so SKCodec can seek
-            MemoryStream input = new();
-            using (Stream s = await file.OpenReadAsync())
-            await s.CopyToAsync(input);
-            input.Position = 0;
-
-            SKBitmap bitmap;
-            using (SKCodec? codec = SKCodec.Create(input))
-            {
-                if (codec != null)
-                {
-                    SKImageInfo info = codec.Info;
-                    bitmap = new SKBitmap(info.Width, info.Height, info.ColorType, info.AlphaType);
-                    codec.GetPixels(bitmap.Info, bitmap.GetPixels());
-
-                    // Fix orientation according to EXIF
-                    SKBitmap oriented = FixOrientation(bitmap, codec.EncodedOrigin);
-                    if (!ReferenceEquals(oriented, bitmap))
-                    {
-                        bitmap.Dispose();
-                        bitmap = oriented;
-                    }
-                }
-                else
-                {
-                    input.Position = 0;
-                    bitmap = SKBitmap.Decode(input);
-                    if (bitmap == null) return null;
-                }
-            }
-
-            // Encode to PNG into a MemoryStream and return
-            using SKImage image = SKImage.FromBitmap(bitmap);
-            using SKData encoded = image.Encode(SKEncodedImageFormat.Png, 100);
-            MemoryStream output = new();
-            encoded.SaveTo(output);
-            output.Position = 0;
-
-            bitmap.Dispose();
-            return output;
-        }
-
-        // Helper rotation/flip methods (same strategy as used in ClassQRCodeImage)
-        private static SKBitmap FixOrientation(SKBitmap src, SKEncodedOrigin origin)
-        {
-            switch (origin)
-            {
-                case SKEncodedOrigin.TopLeft: return src;
-                case SKEncodedOrigin.TopRight: return FlipBitmap(src, horizontal: true);
-                case SKEncodedOrigin.BottomRight: return RotateBitmap(src, 180);
-                case SKEncodedOrigin.BottomLeft: return FlipBitmap(src, horizontal: false);
-                case SKEncodedOrigin.LeftTop:
-                    using (SKBitmap r1 = RotateBitmap(src, 90))
-                    using (SKBitmap f1 = FlipBitmap(r1, horizontal: true))
-                        return f1;
-                case SKEncodedOrigin.RightTop: return RotateBitmap(src, 90);
-                case SKEncodedOrigin.RightBottom:
-                    using (SKBitmap r2 = RotateBitmap(src, 270))
-                    using (SKBitmap f2 = FlipBitmap(r2, horizontal: true))
-                        return f2;
-                case SKEncodedOrigin.LeftBottom: return RotateBitmap(src, 270);
-                default: return src;
-            }
-        }
-        private static SKBitmap RotateBitmap(SKBitmap src, float degrees)
-        {
-            int w = (degrees % 180 == 0) ? src.Width : src.Height;
-            int h = (degrees % 180 == 0) ? src.Height : src.Width;
-            SKBitmap dest = new(new SKImageInfo(w, h, src.ColorType, src.AlphaType));
-            using SKCanvas canvas = new(dest);
-            canvas.Clear(SKColors.Transparent);
-            canvas.Translate(w / 2f, h / 2f);
-            canvas.RotateDegrees(degrees);
-            canvas.Translate(-src.Width / 2f, -src.Height / 2f);
-            canvas.DrawBitmap(src, 0, 0);
-            canvas.Flush();
-            return dest;
-        }
-        private static SKBitmap FlipBitmap(SKBitmap src, bool horizontal)
-        {
-            SKBitmap dest = new(new SKImageInfo(src.Width, src.Height, src.ColorType, src.AlphaType));
-            using SKCanvas canvas = new(dest);
-            canvas.Clear(SKColors.Transparent);
-            if (horizontal) { canvas.Translate(src.Width, 0); canvas.Scale(-1, 1); }
-            else { canvas.Translate(0, src.Height); canvas.Scale(1, -1); }
-            canvas.DrawBitmap(src, 0, 0);
-            canvas.Flush();
-            return dest;
         }
 
         /// <summary>
@@ -455,6 +358,133 @@ namespace BarcodeGenerator
             {
                 Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Failed to delete file at {filePath}: {ex.Message}", ex);
             }
+        }
+
+        /// <summary>
+        /// Gets the first selected image stream from a collection of file results, correcting the orientation based on EXIF data if necessary.
+        /// </summary>
+        /// <param name="photos">A collection of file results representing the selected images.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains a tuple with the image stream and the selected file result, or null if no file is selected or cannot be processed.</returns>
+        public async static Task<(Stream? stream, FileResult? selected)> GetSelectedImageStreamAsync(IEnumerable<FileResult>? photos)
+        {
+            FileResult? selected = photos?.FirstOrDefault();
+            if (selected == null)
+            {
+                return (null, null);
+            }
+
+            Stream? stream = await GetImageStreamWithCorrectOrientationAsync(selected);
+            return (stream, selected);
+        }
+
+        /// <summary>
+        /// Gets an image stream from the specified file result, correcting the orientation based on EXIF data if necessary.
+        /// </summary>
+        /// <param name="file">The file result representing the image.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains the image stream with the correct orientation, or null if the file is null or cannot be processed.</returns>
+        public static async Task<Stream?> GetImageStreamWithCorrectOrientationAsync(FileResult? file)
+        {
+            if (file == null)
+            {
+                return null;
+            }
+
+            // Read into memory so SKCodec can seek
+            MemoryStream input = new();
+            using (Stream s = await file.OpenReadAsync())
+            await s.CopyToAsync(input);
+            input.Position = 0;
+
+            SKBitmap bitmap;
+            using (SKCodec? codec = SKCodec.Create(input))
+            {
+                if (codec != null)
+                {
+                    SKImageInfo info = codec.Info;
+                    bitmap = new SKBitmap(info.Width, info.Height, info.ColorType, info.AlphaType);
+                    codec.GetPixels(bitmap.Info, bitmap.GetPixels());
+
+                    // Fix orientation according to EXIF
+                    SKBitmap oriented = FixOrientation(bitmap, codec.EncodedOrigin);
+                    if (!ReferenceEquals(oriented, bitmap))
+                    {
+                        bitmap.Dispose();
+                        bitmap = oriented;
+                    }
+                }
+                else
+                {
+                    input.Position = 0;
+                    bitmap = SKBitmap.Decode(input);
+                    if (bitmap == null) return null;
+                }
+            }
+
+            // Encode to PNG into a MemoryStream and return
+            using SKImage image = SKImage.FromBitmap(bitmap);
+            using SKData encoded = image.Encode(SKEncodedImageFormat.Png, 100);
+            MemoryStream output = new();
+            encoded.SaveTo(output);
+            output.Position = 0;
+
+            bitmap.Dispose();
+            return output;
+        }
+
+        // Helper rotation/flip methods (same strategy as used in ClassQRCodeImage)
+        private static SKBitmap FixOrientation(SKBitmap src, SKEncodedOrigin origin)
+        {
+            switch (origin)
+            {
+                case SKEncodedOrigin.TopLeft: return src;
+                case SKEncodedOrigin.TopRight: return FlipBitmap(src, horizontal: true);
+                case SKEncodedOrigin.BottomRight: return RotateBitmap(src, 180);
+                case SKEncodedOrigin.BottomLeft: return FlipBitmap(src, horizontal: false);
+                case SKEncodedOrigin.LeftTop:
+                    using (SKBitmap r1 = RotateBitmap(src, 90))
+                    using (SKBitmap f1 = FlipBitmap(r1, horizontal: true))
+                    {
+                        return f1;
+                    }
+
+                case SKEncodedOrigin.RightTop: return RotateBitmap(src, 90);
+                case SKEncodedOrigin.RightBottom:
+                    using (SKBitmap r2 = RotateBitmap(src, 270))
+                    using (SKBitmap f2 = FlipBitmap(r2, horizontal: true))
+                    {
+                        return f2;
+                    }
+
+                case SKEncodedOrigin.LeftBottom: return RotateBitmap(src, 270);
+                default: return src;
+            }
+        }
+        private static SKBitmap RotateBitmap(SKBitmap src, float degrees)
+        {
+            int w = (degrees % 180 == 0) ? src.Width : src.Height;
+            int h = (degrees % 180 == 0) ? src.Height : src.Width;
+            SKBitmap dest = new(new SKImageInfo(w, h, src.ColorType, src.AlphaType));
+            using SKCanvas canvas = new(dest);
+            canvas.Clear(SKColors.Transparent);
+            canvas.Translate(w / 2f, h / 2f);
+            canvas.RotateDegrees(degrees);
+            canvas.Translate(-src.Width / 2f, -src.Height / 2f);
+            canvas.DrawBitmap(src, 0, 0);
+            canvas.Flush();
+            return dest;
+        }
+        private static SKBitmap FlipBitmap(SKBitmap src, bool horizontal)
+        {
+            SKBitmap dest = new(new SKImageInfo(src.Width, src.Height, src.ColorType, src.AlphaType));
+            using SKCanvas canvas = new(dest);
+            canvas.Clear(SKColors.Transparent);
+            
+            if (horizontal) { canvas.Translate(src.Width, 0); canvas.Scale(-1, 1); }
+            else { canvas.Translate(0, src.Height); canvas.Scale(1, -1); }
+            
+            canvas.DrawBitmap(src, 0, 0);
+            canvas.Flush();
+            return dest;
         }
 
         /*
