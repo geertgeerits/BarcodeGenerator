@@ -17,34 +17,20 @@ namespace BarcodeGenerator
                 FileResult? selected = photos?.FirstOrDefault();
 
                 // Get the file name with extension
-                // FileResult.FileName provides the name including the extension
-                string? fileNameWithExt = selected?.FileName;
-
-                Debug.WriteLine($"ClassFileOperations.PickImage: selected file name: {fileNameWithExt ?? "<none>"}");
+                Debug.WriteLine($"ClassFileOperations.PickImage: selected file name: {selected?.FileName ?? "<none>"}");
 
                 // Validate the selected file
-                if (!string.IsNullOrEmpty(fileNameWithExt))
+                if (!string.IsNullOrEmpty(selected?.FileName))
                 {
-                    if (fileNameWithExt.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
-                        fileNameWithExt.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
-                    {
-                        return selected;
-                    }
-                    else
-                    {
-                        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{fileNameWithExt}\n\n{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
-                        return null;
-                    }
+                    return selected;
                 }
-
-                return selected;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"ClassFileOperations.PickImage: File picking error: {ex.Message}");
-                return null;
             }
+
+            return null;
         }
 
         /// <summary>
@@ -103,7 +89,7 @@ namespace BarcodeGenerator
                             }
                             catch
                             {
-                                /* ignore */
+                                // Ignore
                             }
 
                             DeleteFileInCache(selected.FullPath);
@@ -114,7 +100,6 @@ namespace BarcodeGenerator
                         Debug.WriteLine($"ClassFileOperations.PickImage: cleanup error: {ex.Message}");
                     }
 
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{fileNameWithExt}\n\n{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
                     return null;
                 }
             }
@@ -154,18 +139,6 @@ namespace BarcodeGenerator
                 }
             }
         */
-
-        //public async static Task<Stream> ConvertImageSourceToStreamAsync(ImageSource imageSource)
-        //{ 
-        //    using var stream = await ((StreamImageSource)imageSource).Stream(CancellationToken.None); return stream;
-        //}
-
-        public static async Task<Stream> ConvertImageSourceToStreamAsync(ImageSource imageSource)
-        {
-            var sis = imageSource as StreamImageSource ?? throw new InvalidOperationException("ImageSource is not a StreamImageSource");
-            Stream stream = await sis.Stream(CancellationToken.None);
-            return stream;
-        }
 
         /// <summary>
         /// Asynchronously saves a PNG image from the specified memory stream to the given file path.
@@ -302,8 +275,7 @@ namespace BarcodeGenerator
             await Share.Default.RequestAsync(new ShareMultipleFilesRequest
             {
                 Title = "Barcode Generator",
-                //Files = [new(ClassBarcodes.cFileBarcodePng), new ShareFile(ClassBarcodes.cFileBarcodeSvg)]
-                Files = [new ShareFile(ClassBarcodes.cFileBarcodePng), new ShareFile(ClassBarcodes.cFileBarcodeSvg)]
+                Files = [new(ClassBarcodes.cFileBarcodePng), new(ClassBarcodes.cFileBarcodeSvg)]
             });
             
             return true;
@@ -365,7 +337,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="photos">A collection of file results representing the selected images.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains a tuple with the image stream and the selected file result, or null if no file is selected or cannot be processed.</returns>
-        public async static Task<(Stream? stream, FileResult? selected)> GetSelectedImageStreamAsync(IEnumerable<FileResult>? photos)
+        public static async Task<(Stream? stream, FileResult? selected)> GetSelectedImageStreamAsync(IEnumerable<FileResult>? photos)
         {
             FileResult? selected = photos?.FirstOrDefault();
             if (selected == null)

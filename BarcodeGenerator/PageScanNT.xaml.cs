@@ -708,6 +708,7 @@ namespace BarcodeGenerator
                 catch (Exception ex)
                 {
                     Debug.WriteLine($"Error loading image: {ex.Message}");
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{file.FileName}\n\n{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
                     imgScanFromImage.Source = null;
                 }
                 
@@ -1029,8 +1030,8 @@ namespace BarcodeGenerator
                 This issue does not occur in Android where the ImageBoundingBox values are in pixel coordinates as expected.
                 Sample scanning from image:
                 - Android: PreviewBoundingBox: {X=0 Y=0 Width=0 Height=0} - ImageBoundingBox: {X=78 Y=79 Width=420 Height=421}
-                - iOS: PreviewBoundingBox:     {X=0 Y=0 Width=0 Height=0} - ImageBoundingBox: {X=0.14041096 Y=0.14041096 Width=0.7191781 Height=0.7191781}
-                - Windows: PreviewBoundingBox: ? - ImageBoundingBox: ?
+                - iOS:     PreviewBoundingBox: {X=0 Y=0 Width=0 Height=0} - ImageBoundingBox: {X=0.14041096 Y=0.14041096 Width=0.7191781 Height=0.7191781}
+                - Windows: PreviewBoundingBox: {X=0 Y=0 Width=0 Height=0} - ImageBoundingBox: {?}
                 */
 
                 // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping issues and orientation issues.
