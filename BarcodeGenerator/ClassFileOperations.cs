@@ -17,7 +17,8 @@ namespace BarcodeGenerator
                 {
                     SelectionLimit = 1,             // Default is 1; set to 0 for no limit
                     RotateImage = true,
-                    PreserveMetaData = true
+                    PreserveMetaData = true,
+                    CompressionQuality = 100
                 });
 
                 FileResult? selected = photos?.FirstOrDefault();
@@ -40,7 +41,7 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Opens a media picker dialog that allows the user to select one image file (PNG, JPG, JPEG, or BMP) and validates the selected file type.
+        /// Opens a media picker dialog that allows the user to select one image file
         /// </summary>
         /// <returns>The selected file result, or null if no file was selected.</returns>
         /// <remarks>On iOS, if the user selects an invalid file type, the method attempts to clean up any temporary cached copy
@@ -53,7 +54,14 @@ namespace BarcodeGenerator
                 FileResult? selected;
 #if IOS
                 // !!!BUG!!! in iOS, the temporary cached copy may not always be deleted correctly when using the 'MediaPickerOptions'
-                var photos = await MediaPicker.Default.PickPhotosAsync();
+                List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
+                {
+                    SelectionLimit = 1,             // Default is 1; set to 0 for no limit
+                    RotateImage = false,            // !!!BUG!!! in iOS, the 'RotateImage' option does not work correctly and may cause issues with the orientation of the bounding box of the selected images. We will handle rotation manually later.
+                    PreserveMetaData = true,
+                    CompressionQuality = 100
+                });
+
                 //selected = photos?.FirstOrDefault();
 
                 // Correct the orientation of the selected image stream based on EXIF data
@@ -65,7 +73,8 @@ namespace BarcodeGenerator
                 {
                     SelectionLimit = 1,             // Default is 1; set to 0 for no limit
                     RotateImage = true,
-                    PreserveMetaData = true
+                    PreserveMetaData = true,
+                    CompressionQuality = 100
                 });
                 
                 selected = photos?.FirstOrDefault();
@@ -319,16 +328,11 @@ namespace BarcodeGenerator
             {
                 if (!string.IsNullOrEmpty(filePath))
                 {
-                    var cacheDir = FileSystem.CacheDirectory;
+                    string cacheDir = FileSystem.CacheDirectory;
                     if (filePath.StartsWith(cacheDir, StringComparison.OrdinalIgnoreCase) && File.Exists(filePath))
                     {
                         File.Delete(filePath);
                         Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted existing cache file at: {filePath}");
-                    }
-                    else if (File.Exists(filePath))
-                    {
-                        File.Delete(filePath);
-                        Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted existing file at: {filePath}");
                     }
                 }
             }

@@ -1034,7 +1034,7 @@ namespace BarcodeGenerator
                 - Windows: PreviewBoundingBox: {X=0 Y=0 Width=0 Height=0} - ImageBoundingBox: {?}
                 */
 
-                // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping issues and orientation issues.
+                // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping and orientation issues.
                 if (bScanningFromImage && mappedRectangles?.Count > 1)
                 {
                     if (cFileExtension is ".jpeg")
