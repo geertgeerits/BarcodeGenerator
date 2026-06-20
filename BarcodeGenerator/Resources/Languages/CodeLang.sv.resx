@@ -970,7 +970,7 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
     <value>Telefonnumret är ogiltigt.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>Ingen streckkod hittades</value>
+    <value>Ingen streckkod hittades.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Skanna en bild</value>

@@ -970,7 +970,7 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
     <value>Numărul de telefon nu este valid.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>Nu s-a găsit niciun cod de bare</value>
+    <value>Nu s-a găsit niciun cod de bare.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Scanați o imagine</value>

@@ -970,7 +970,7 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
     <value>Het telefoonnummer is ongeldig.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>Geen barcode gevonden</value>
+    <value>Geen barcode gevonden.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Scan een afbeelding</value>

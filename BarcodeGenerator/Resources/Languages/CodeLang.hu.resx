@@ -970,7 +970,7 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
     <value>A telefonszám érvénytelen.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>Nem található vonalkód</value>
+    <value>Nem található vonalkód.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Szkenneljen képet</value>

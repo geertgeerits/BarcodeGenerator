@@ -121,7 +121,7 @@
                             TorchOn="False"
                             VibrationOnDetected="False"
                             RequestZoomFactor="1"
-                            CameraEnabled="True"
+                            CameraEnabled="False"
                             OnDetectionFinished="OnCameraDetectionFinished">
                         </native:CameraView>
 

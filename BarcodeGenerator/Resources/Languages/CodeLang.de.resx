@@ -969,7 +969,7 @@ Wählen Sie eine Option.</value>
     <value>Die Telefonnummer ist ungültig.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>Kein Barcode gefunden</value>
+    <value>Kein Barcode gefunden.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Bild scannen</value>

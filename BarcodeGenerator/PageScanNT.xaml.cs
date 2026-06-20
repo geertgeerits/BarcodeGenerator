@@ -5,6 +5,7 @@ namespace BarcodeGenerator
     public sealed partial class PageScanNT : ContentPage
     {
         // Local variables
+        private bool _permissionsRequested;
         private readonly BarcodeDrawable _drawable = new();
         private readonly List<string> qualities = [];
         private int nQualityCameraBack;
@@ -16,7 +17,7 @@ namespace BarcodeGenerator
         private static double nScaleHeight;
         private static string cFileExtension = string.Empty;
         private static bool bScanningFromImage;
-
+        
         public PageScanNT()
     	{
             try
@@ -75,7 +76,7 @@ namespace BarcodeGenerator
             pckCameraQualityBack.SelectedIndex = nQualityCameraBack;
             pckCameraQualityFront.SelectedIndex = nQualityCameraFront;
 
-            // The height of the title bar is lower when an iPhone is in horizontal position
+            // The height of the title bar is lower when an iPhone is in landscape position
             if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
                 lblTitle.VerticalOptions = LayoutOptions.Start;
@@ -181,9 +182,14 @@ namespace BarcodeGenerator
         /// </summary>
         protected override async void OnAppearing()
         {
-            // Ask for permission to use the camera
-            _ = await Methods.AskForRequiredPermissionAsync();
             base.OnAppearing();
+
+            // Ask for permission to use the camera
+            if (!_permissionsRequested)
+            {
+                _permissionsRequested = true;
+                await Methods.AskForRequiredPermissionAsync();
+            }
 
             // Enable the camera
             barcodeReader.CameraEnabled = true;

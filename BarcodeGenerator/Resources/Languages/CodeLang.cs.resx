@@ -970,7 +970,7 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
     <value>Telefonní číslo není platné.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>Nenalezen žádný čárový kód</value>
+    <value>Nenalezen žádný čárový kód.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Naskenujte obrázek</value>

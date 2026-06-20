@@ -970,7 +970,7 @@ Not all payload types are supported on every device.</value>
     <value>Phone number is not valid.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>No barcode found</value>
+    <value>No barcode found.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Scan an image</value>

@@ -970,7 +970,7 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
     <value>Puhelinnumero ei ole kelvollinen.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>Viivakoodia ei löytynyt</value>
+    <value>Viivakoodia ei löytynyt.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Skannaa kuva</value>

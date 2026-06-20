@@ -970,7 +970,7 @@ Non tutti i tipi di dati sono supportati su tutti i dispositivi.</value>
     <value>Il numero di telefono non è valido.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>Codice a barre non trovato</value>
+    <value>Codice a barre non trovato.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Scansiona un'immagine</value>

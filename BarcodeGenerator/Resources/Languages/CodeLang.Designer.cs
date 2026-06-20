@@ -610,7 +610,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No barcode found.
+        ///   Looks up a localized string similar to No barcode found..
         /// </summary>
         internal static string BarcodeNotFound_Text {
             get {

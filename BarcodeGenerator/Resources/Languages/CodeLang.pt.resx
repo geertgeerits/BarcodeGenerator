@@ -970,7 +970,7 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
     <value>Número de telefone inválido.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>Nenhum código de barras encontrado</value>
+    <value>Nenhum código de barras encontrado.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
     <value>Escanear uma imagem</value>
