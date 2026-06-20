@@ -44,8 +44,6 @@ namespace BarcodeGenerator
         /// Opens a media picker dialog that allows the user to select one image file
         /// </summary>
         /// <returns>The selected file result, or null if no file was selected.</returns>
-        /// <remarks>On iOS, if the user selects an invalid file type, the method attempts to clean up any temporary cached copy
-        /// of the file in the app cache directory.</remarks>
         public static async Task<FileResult?> PickOneImage()
         {
             try
@@ -53,7 +51,6 @@ namespace BarcodeGenerator
                 // Let user pick a photo. We take the first one
                 FileResult? selected;
 #if IOS
-                // !!!BUG!!! in iOS, the temporary cached copy may not always be deleted correctly when using the 'MediaPickerOptions'
                 List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
                 {
                     SelectionLimit = 1,             // Default is 1; set to 0 for no limit
