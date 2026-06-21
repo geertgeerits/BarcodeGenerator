@@ -59,7 +59,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleScanner}"
-                RowDefinitions="Auto, 24, 500, 1, Auto, Auto">
+                RowDefinitions="Auto, 24, 500, 1, Auto, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -300,6 +300,20 @@
                         Text="">
                     </Label>
                 </Border>
+
+                <Label
+                    x:Name="lblFileName"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Start"
+                    HorizontalTextAlignment="Start"
+                    Margin="6,0,0,0"
+                    LineBreakMode="HeadTruncation"
+                    IsVisible="False"
+                    Text="">
+                </Label>
             </Grid>
 
         </StackLayout>

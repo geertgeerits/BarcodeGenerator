@@ -536,6 +536,7 @@ namespace BarcodeGenerator
             imgbtnCameraDetecting.IsVisible = true;
             imgbtnCameraVibrate.IsVisible = true;
             imgbtnCameraTorch.IsVisible = true;
+            lblFileName.IsVisible = false;
 
             barcodeReader.PauseScanning = false;
             imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
@@ -645,6 +646,8 @@ namespace BarcodeGenerator
             imgbtnCameraTorch.IsVisible = false;
 
             imgScanFromImage.IsVisible = true;
+            lblFileName.Text = string.Empty;
+            lblFileName.IsVisible = true;
             bScanningFromImage = true;
 
             lblBarcodeResult.Text = string.Empty;
@@ -816,7 +819,10 @@ namespace BarcodeGenerator
             }
 
             // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-            lblBarcodeResult.Text = file.FileName + "\n\n" + ClassBarcodes.ProcessScannedBarcodes(listBarcodes, btnShare);
+            lblBarcodeResult.Text = ClassBarcodes.ProcessScannedBarcodes(listBarcodes, btnShare);
+
+            // Set the file name in the label 'lblFileName.Text'
+            lblFileName.Text = file.FileName;
 
             // Settings after scanning from an image
             imgbtnCopyToClipboard.IsEnabled = true;
