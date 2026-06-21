@@ -398,15 +398,22 @@
                 Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
-                <Entry
-                    x:Name="entPayloadTypeMessage"
-                    ToolTipProperties.Text="{Translate PayloadTypeMessage_Text}"
-                    Placeholder="{Translate PayloadTypeMessage_Text}"
-                    ClearButtonVisibility="WhileEditing"
-                    Keyboard="Text"
-                    Text=""
-                    ReturnType="Next">
-                </Entry>
+                <ScrollView
+                    VerticalScrollBarVisibility="Always">
+                    
+                    <Editor
+                        x:Name="edtPayloadTypeMessage"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        AutoSize="TextChanges"
+                        MinimumHeightRequest="100"
+                        ToolTipProperties.Text="{Translate PayloadTypeMessage_Text}"
+                        Placeholder="{Translate PayloadTypeMessage_Text}"
+                        MaxLength="700"
+                        Keyboard="Text"
+                        Text="">
+                    </Editor>
+                </ScrollView>
             </Border>
 
             <Border
@@ -772,6 +779,21 @@
                 ToolTipProperties.Text="{Translate ButtonCancel_Text}"
                 Source="ic_action_cancel_red.png"
                 Clicked="OnButtonCancel_Clicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="imgbtnPasteFromClipboard"
+                Grid.Row="33"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Source="paste_icon_48p_blue.png"
+                HeightRequest="32"
+                WidthRequest="32"
+                SemanticProperties.Description="{Translate ToolTipPaste_Text}"
+                ToolTipProperties.Text="{Translate ToolTipPaste_Text}"
+                Clicked="OnPasteFromClipboard_Clicked">
             </ImageButton>
 
             <ImageButton

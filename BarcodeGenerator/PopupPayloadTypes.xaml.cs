@@ -391,6 +391,43 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Event handler for the "Paste from Clipboard" button click event. This method checks if the clipboard contains text,
+        /// retrieves it, and pastes it into the message input field for payload types that support a message (e.g., SMS, MMS, WhatsApp).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnPasteFromClipboard_Clicked(object sender, EventArgs e)
+        {
+            if (!Clipboard.Default.HasText)
+            {
+                return;
+            }
+
+            try
+            {
+                string cTextToPaste = await Clipboard.Default.GetTextAsync() ?? string.Empty;
+                int cursor = edtPayloadTypeMessage.CursorPosition;
+                int length = edtPayloadTypeMessage.SelectionLength;
+                string original = edtPayloadTypeMessage.Text ?? string.Empty;
+
+                if (length > 0)
+                {
+                    original = original.Remove(cursor, length);
+                }
+
+                edtPayloadTypeMessage.Text = original.Insert(cursor, cTextToPaste);
+                edtPayloadTypeMessage.CursorPosition = cursor + cTextToPaste.Length;
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+#if DEBUG
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("OnPasteFromClipboard_Clicked", ex.Message, CodeLang.ButtonClose_Text);
+#endif
+            }
+        }
+
+        /// <summary>
         /// On click event for the cancel button, which cancels attempts to close the popup
         /// </summary>
         /// <param name="sender"></param>
@@ -598,7 +635,7 @@ namespace BarcodeGenerator
                     return string.Empty;
                 }
 
-                Mail generator = new(mailReceiver: entPayloadTypeReceiver.Text, subject: entPayloadTypeSubject.Text.Trim(), message: entPayloadTypeMessage.Text.Trim());
+                Mail generator = new(mailReceiver: entPayloadTypeReceiver.Text, subject: entPayloadTypeSubject.Text.Trim(), message: edtPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
 
@@ -611,7 +648,7 @@ namespace BarcodeGenerator
                     return string.Empty;
                 }
 
-                SMS generator = new(number: entPayloadTypePhoneNumber.Text, subject: entPayloadTypeMessage.Text.Trim());
+                SMS generator = new(number: entPayloadTypePhoneNumber.Text, subject: edtPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
 
@@ -624,7 +661,7 @@ namespace BarcodeGenerator
                     return string.Empty;
                 }
 
-                MMS generator = new(number: entPayloadTypePhoneNumber.Text, subject: entPayloadTypeMessage.Text.Trim());
+                MMS generator = new(number: entPayloadTypePhoneNumber.Text, subject: edtPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
             // PayloadType Geolocation
@@ -662,7 +699,7 @@ namespace BarcodeGenerator
                     return string.Empty;
                 }
 
-                WhatsAppMessage generator = new(number: entPayloadTypePhoneNumber.Text, message: entPayloadTypeMessage.Text.Trim());
+                WhatsAppMessage generator = new(number: entPayloadTypePhoneNumber.Text, message: edtPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
 
