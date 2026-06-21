@@ -411,7 +411,8 @@
                         Placeholder="{Translate PayloadTypeMessage_Text}"
                         MaxLength="700"
                         Keyboard="Text"
-                        Text="">
+                        Text=""
+                        Focused="EdtPayloadTypeMessage_Focused">
                     </Editor>
                 </ScrollView>
             </Border>
@@ -793,6 +794,7 @@
                 WidthRequest="32"
                 SemanticProperties.Description="{Translate ToolTipPaste_Text}"
                 ToolTipProperties.Text="{Translate ToolTipPaste_Text}"
+                IsVisible="False"
                 Clicked="OnPasteFromClipboard_Clicked">
             </ImageButton>
 

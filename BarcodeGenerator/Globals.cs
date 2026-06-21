@@ -218,5 +218,41 @@ namespace BarcodeGenerator
 #endif
             }
         }
+
+        /// <summary>
+        /// Paste text from the clipboard into the editor at the current cursor position, replacing any selected text
+        /// </summary>
+        /// <param name="editor"></param>
+        /// <returns></returns>
+        public static async Task PasteFromClipboardAsync(Editor editor)
+        {
+            if (!Clipboard.Default.HasText || editor == null)
+            {
+                return;
+            }
+
+            try
+            {
+                string cTextToPaste = await Clipboard.Default.GetTextAsync() ?? string.Empty;
+                int cursor = editor.CursorPosition;
+                int length = editor.SelectionLength;
+                string original = editor.Text ?? string.Empty;
+
+                if (length > 0)
+                {
+                    original = original.Remove(cursor, length);
+                }
+
+                editor.Text = original.Insert(cursor, cTextToPaste);
+                editor.CursorPosition = cursor + cTextToPaste.Length;
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+#if DEBUG
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("OnPasteFromClipboard_Clicked", ex.Message, CodeLang.ButtonClose_Text);
+#endif
+            }
+        }
     }
 }

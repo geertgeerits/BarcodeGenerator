@@ -264,6 +264,28 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Handles the focus event for the payload type message field,
+        /// making the "Paste from Clipboard" button visible when the field receives focus.
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the entry field that received focus.</param>
+        /// <param name="e">The event data associated with the focus event.</param>
+        private void EdtPayloadTypeMessage_Focused(object sender, FocusEventArgs e)
+        {
+            imgbtnPasteFromClipboard.IsVisible = true;
+        }
+
+        /// <summary>
+        /// Event handler for the "Paste from Clipboard" button click event.,
+        /// retrieves it, and pastes it into the message input field for payload types that support a message (e.g., SMS, MMS, WhatsApp).
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the button that was clicked.</param>
+        /// <param name="e">The event data associated with the click event.</param>
+        private async void OnPasteFromClipboard_Clicked(object sender, EventArgs e)
+        {
+            await Globals.PasteFromClipboardAsync(edtPayloadTypeMessage);
+        }
+
+        /// <summary>
         /// Handles the focus event for the payload type phone number entry field, initializing it with a default plus sign
         /// if it is empty.
         /// </summary>
@@ -388,43 +410,6 @@ namespace BarcodeGenerator
 
             // If the URL is valid, open it in the device's default web browser to display the location on the map
             await Launcher.Default.OpenAsync(new Uri(url));
-        }
-
-        /// <summary>
-        /// Event handler for the "Paste from Clipboard" button click event. This method checks if the clipboard contains text,
-        /// retrieves it, and pastes it into the message input field for payload types that support a message (e.g., SMS, MMS, WhatsApp).
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnPasteFromClipboard_Clicked(object sender, EventArgs e)
-        {
-            if (!Clipboard.Default.HasText)
-            {
-                return;
-            }
-
-            try
-            {
-                string cTextToPaste = await Clipboard.Default.GetTextAsync() ?? string.Empty;
-                int cursor = edtPayloadTypeMessage.CursorPosition;
-                int length = edtPayloadTypeMessage.SelectionLength;
-                string original = edtPayloadTypeMessage.Text ?? string.Empty;
-
-                if (length > 0)
-                {
-                    original = original.Remove(cursor, length);
-                }
-
-                edtPayloadTypeMessage.Text = original.Insert(cursor, cTextToPaste);
-                edtPayloadTypeMessage.CursorPosition = cursor + cTextToPaste.Length;
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureException(ex);
-#if DEBUG
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync("OnPasteFromClipboard_Clicked", ex.Message, CodeLang.ButtonClose_Text);
-#endif
-            }
         }
 
         /// <summary>

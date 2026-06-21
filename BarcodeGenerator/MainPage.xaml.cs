@@ -1045,32 +1045,7 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnPasteFromClipboardClicked(object sender, EventArgs e)
         {
-            if (Clipboard.Default.HasText)
-            {
-                try
-                {
-                    string cTextToPaste = await Clipboard.Default.GetTextAsync() ?? string.Empty;
-
-                    if (string.IsNullOrEmpty(cTextToPaste))
-                    {
-                        return;
-                    }
-
-                    if (cTextToPaste.Length > edtTextToCode.MaxLength)
-                    {
-                        cTextToPaste = cTextToPaste[..edtTextToCode.MaxLength];
-                    }
-
-                    edtTextToCode.Text = cTextToPaste;
-                }
-                catch (Exception ex)
-                {
-                    SentrySdk.CaptureException(ex);
-#if DEBUG
-                    await DisplayAlertAsync("OnPasteFromClipboardClicked", ex.Message, CodeLang.ButtonClose_Text);
-#endif
-                }
-            }
+            await Globals.PasteFromClipboardAsync(edtTextToCode);
         }
     }
 }
