@@ -15,6 +15,9 @@
     <!--Set the Text property of the Entry controls to "" for text values to eliminate null values if nothing has been entered.
     This is necessary to prevent null reference exceptions when the Text properties are accessed in the code-behind.-->
 
+    <!--!!!BUG!!! in Android: The Editor and Entry controls do not have a 'Cut Copy Paste' context menu when using
+    the 'ToolTipProperties' property.-->
+
     <ScrollView
         Style="{StaticResource scrollviewStylePopup}">
 
@@ -86,7 +89,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeSSID"
-                    ToolTipProperties.Text="{Translate PayloadTypeSSID_Text}"
                     Placeholder="{Translate PayloadTypeSSID_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -105,7 +107,6 @@
 
                 <Entry
                     x:Name="entPayloadTypePassword"
-                    ToolTipProperties.Text="{Translate PayloadTypePassword_Text}"
                     Placeholder="{Translate PayloadTypePassword_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -124,7 +125,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeURL"
-                    ToolTipProperties.Text="{Translate PayloadTypeURL_Text}"
                     Placeholder="{Translate PayloadTypeURL_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Url"
@@ -144,7 +144,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeTitle"
-                    ToolTipProperties.Text="{Translate PayloadTypeTitle_Text}"
                     Placeholder="{Translate PayloadTypeTitle_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -163,7 +162,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeReceiver"
-                    ToolTipProperties.Text="{Translate PayloadTypeReceiver_Text}"
                     Placeholder="{Translate PayloadTypeReceiver_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Email"
@@ -183,7 +181,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeSubject"
-                    ToolTipProperties.Text="{Translate PayloadTypeSubject_Text}"
                     Placeholder="{Translate PayloadTypeSubject_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -344,7 +341,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeFirstname"
-                    ToolTipProperties.Text="{Translate PayloadTypeFirstname_Text}"
                     Placeholder="{Translate PayloadTypeFirstname_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -363,7 +359,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeLastname"
-                    ToolTipProperties.Text="{Translate PayloadTypeLastname_Text}"
                     Placeholder="{Translate PayloadTypeLastname_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -382,7 +377,6 @@
 
                 <Entry
                     x:Name="entPayloadTypePhoneNumber"
-                    ToolTipProperties.Text="{Translate PayloadTypePhoneNumber_Text}"
                     Placeholder="{Translate PayloadTypePhoneNumber_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Telephone"
@@ -402,14 +396,13 @@
 
                 <ScrollView
                     VerticalScrollBarVisibility="Always">
-                    
+
                     <Editor
                         x:Name="edtPayloadTypeMessage"
                         HorizontalOptions="Fill"
                         VerticalOptions="Fill"
                         AutoSize="TextChanges"
                         MinimumHeightRequest="100"
-                        ToolTipProperties.Text="{Translate PayloadTypeMessage_Text}"
                         Placeholder="{Translate PayloadTypeMessage_Text}"
                         MaxLength="700"
                         Keyboard="Text"
@@ -429,7 +422,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeMail"
-                    ToolTipProperties.Text="{Translate PayloadTypeMail_Text}"
                     Placeholder="{Translate PayloadTypeMail_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Email"
@@ -448,7 +440,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeDescription"
-                    ToolTipProperties.Text="{Translate PayloadTypeDescription_Text}"
                     Placeholder="{Translate PayloadTypeDescription_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -467,7 +458,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeLocation"
-                    ToolTipProperties.Text="{Translate PayloadTypeLocation_Text}"
                     Placeholder="{Translate PayloadTypeLocation_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -570,7 +560,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeSctBic"
-                    ToolTipProperties.Text="{Translate PayloadTypeSctBic_Text}"
                     Placeholder="{Translate PayloadTypeSctBic_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -591,7 +580,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeSctName"
-                    ToolTipProperties.Text="{Translate PayloadTypeSctName_Text}"
                     Placeholder="{Translate PayloadTypeSctName_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -611,7 +599,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeSctIban"
-                    ToolTipProperties.Text="{Translate PayloadTypeSctIban_Text}"
                     Placeholder="{Translate PayloadTypeSctIban_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -632,7 +619,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeSctAmountEur"
-                    ToolTipProperties.Text="{Translate PayloadTypeSctAmountEur_Text}"
                     Placeholder="{Translate PayloadTypeSctAmountEur_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
@@ -652,7 +638,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeSctPurpose"
-                    ToolTipProperties.Text="{Translate PayloadTypeSctPurpose_Text}"
                     Placeholder="{Translate PayloadTypeSctPurpose_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -673,7 +658,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeSctRemittanceInfoStructured"
-                    ToolTipProperties.Text="{Translate PayloadTypeSctRemittanceInfoStructured_Text}"
                     Placeholder="{Translate PayloadTypeSctRemittanceInfoStructured_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -694,7 +678,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeSctRemittanceInfoUnstructured"
-                    ToolTipProperties.Text="{Translate PayloadTypeSctRemittanceInfoUnstructured_Text}"
                     Placeholder="{Translate PayloadTypeSctRemittanceInfoUnstructured_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
@@ -714,7 +697,6 @@
 
                 <Entry
                     x:Name="entPayloadTypeSctInformation"
-                    ToolTipProperties.Text="{Translate PayloadTypeSctInformation_Text}"
                     Placeholder="{Translate PayloadTypeSctInformation_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
