@@ -261,6 +261,7 @@ namespace BarcodeGenerator
             btnButtonGeoLocation.IsVisible = false;
             btnButtonGeoMap.IsVisible = false;
             btnButtonURL.IsVisible = false;
+            imgbtnPasteFromClipboard.IsVisible = false;
         }
 
         /// <summary>
@@ -286,8 +287,8 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Handles the focus event for the payload type phone number entry field, initializing it with a default plus sign
-        /// if it is empty.
+        /// Handles the focus event for the payload type phone number entry field, initializing it with a default plus sign if it is empty.
+        /// Hide the "Paste from Clipboard" button to prevent it from obstructing the input field and to provide a cleaner user interface.
         /// </summary>
         /// <param name="sender">The source of the event, typically the entry field that received focus.</param>
         /// <param name="e">The event data associated with the focus event.</param>
@@ -298,6 +299,19 @@ namespace BarcodeGenerator
                 entPayloadTypePhoneNumber.Text = "+";
                 entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text.Length; // Move cursor to the end of the text
             }
+
+            imgbtnPasteFromClipboard.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Event handler for when the payload type input field receives focus.
+        /// Hides the "Paste from Clipboard" button to prevent it from obstructing the input field and to provide a cleaner user interface.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EntPayloadType_Focused(object sender, FocusEventArgs e)
+        {
+            imgbtnPasteFromClipboard.IsVisible = false;
         }
 
         /// <summary>

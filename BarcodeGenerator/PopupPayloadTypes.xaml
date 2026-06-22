@@ -168,7 +168,8 @@
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Email"
                     Text=""
-                    ReturnType="Next">
+                    ReturnType="Next"
+                    Focused="EntPayloadType_Focused">
                 </Entry>
             </Border>
 
@@ -187,7 +188,8 @@
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
                     Text=""
-                    ReturnType="Next">
+                    ReturnType="Next"
+                    Focused="EntPayloadType_Focused">
                 </Entry>
             </Border>
 
