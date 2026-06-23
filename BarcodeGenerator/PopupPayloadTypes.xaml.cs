@@ -287,25 +287,28 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Handles the focus event for the payload type phone number entry field, initializing it with a default plus sign if it is empty.
-        /// Hide the "Paste from Clipboard" button to prevent it from obstructing the input field and to provide a cleaner user interface.
+        /// Handles the TextChanged event for the payload type phone number entry field, ensuring that a plus sign is added at the beginning of the text if the field was previously empty.
         /// </summary>
-        /// <param name="sender">The source of the event, typically the entry field that received focus.</param>
-        /// <param name="e">The event data associated with the focus event.</param>
-        private void EntPayloadTypePhoneNumber_Focused(object sender, FocusEventArgs e)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EntPayloadTypePhoneNumber_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (entPayloadTypePhoneNumber.Text == string.Empty)
+            if (e.OldTextValue == string.Empty && !e.NewTextValue.Contains('+'))
             {
-                entPayloadTypePhoneNumber.Text = "+";
-                entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text.Length; // Move cursor to the end of the text
+                entPayloadTypePhoneNumber.Text = "+" + e.NewTextValue;
+                
+                // !!!BUG!!! in Android - Defer cursor placement to the UI thread so Android doesn't place it one position too early
+                Dispatcher.Dispatch(() =>
+                {
+                    int len = entPayloadTypePhoneNumber.Text?.Length ?? 0;
+                    entPayloadTypePhoneNumber.CursorPosition = len;
+                    entPayloadTypePhoneNumber.SelectionLength = 0;
+                });
             }
-
-            imgbtnPasteFromClipboard.IsVisible = false;
         }
 
         /// <summary>
-        /// Event handler for when the payload type input field receives focus.
-        /// Hides the "Paste from Clipboard" button to prevent it from obstructing the input field and to provide a cleaner user interface.
+        /// Event handler for when the payload type input field receives focus. Hides the "Paste from Clipboard" button.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

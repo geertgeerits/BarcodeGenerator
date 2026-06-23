@@ -382,7 +382,8 @@
                     Keyboard="Telephone"
                     Text=""
                     ReturnType="Next"
-                    Focused="EntPayloadTypePhoneNumber_Focused">
+                    TextChanged="EntPayloadTypePhoneNumber_TextChanged"
+                    Focused="EntPayloadType_Focused">
                 </Entry>
             </Border>
 
