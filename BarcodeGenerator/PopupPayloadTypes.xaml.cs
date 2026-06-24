@@ -22,8 +22,8 @@ namespace BarcodeGenerator
             BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLongitude);
 #endif
             // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
-            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
-            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
+            ClassFileUtilities.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
+            ClassFileUtilities.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
 
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
             Globals.bPopupOpened = true;

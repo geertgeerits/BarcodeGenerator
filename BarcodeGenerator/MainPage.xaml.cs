@@ -648,8 +648,8 @@ namespace BarcodeGenerator
             edtTextToCode.IsEnabled = true;
 
             // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
-            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
-            ClassFileOperations.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
+            ClassFileUtilities.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
+            ClassFileUtilities.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
 
             // Set the barcode colors
             bgvBarcode.ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg);
@@ -916,7 +916,7 @@ namespace BarcodeGenerator
                 // Payload type is SEPA credit transfer - share 1 PNG and 1 SVG file
                 if (PopupPayloadTypes.bPayloadSepaCreditTransfer)
                 {
-                    if (!await ClassFileOperations.ShareMultipleFilesAsync())
+                    if (!await ClassFileUtilities.ShareMultipleFilesAsync())
                     {
                         await Share.Default.RequestAsync(new ShareFileRequest
                         {
@@ -929,7 +929,7 @@ namespace BarcodeGenerator
                 // Share the QR code or the Micro QR code as an image file using the Share API - share 1 PNG and 1 SVG file
                 else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
-                    if (!await ClassFileOperations.ShareMultipleFilesAsync())
+                    if (!await ClassFileUtilities.ShareMultipleFilesAsync())
                     {
                         await Share.Default.RequestAsync(new ShareFileRequest
                         {
@@ -961,7 +961,7 @@ namespace BarcodeGenerator
                         string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
 
                         // Open the share interface to share the file
-                        await ClassFileOperations.OpenShareInterfaceAsync(cFile);
+                        await ClassFileUtilities.OpenShareInterfaceAsync(cFile);
                     }
                     // Barcode without caption
                     else
@@ -969,10 +969,10 @@ namespace BarcodeGenerator
                         Stream stream = await screen!.OpenReadAsync();
 
                         // Save the barcode as a file
-                        ClassFileOperations.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
+                        ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
 
                         // Open the share interface to share the file
-                        await ClassFileOperations.OpenShareInterfaceAsync(ClassBarcodes.cFileBarcodePng);
+                        await ClassFileUtilities.OpenShareInterfaceAsync(ClassBarcodes.cFileBarcodePng);
                     }
                 }
             }

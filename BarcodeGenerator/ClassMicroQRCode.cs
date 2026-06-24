@@ -41,7 +41,7 @@ namespace BarcodeGenerator
                 string qrCodeAsSvg = qrCodeSvg.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
 
                 // Save the string 'qrCodeAsSvg' as a SVG file
-                ClassFileOperations.SaveStringAsFileSvg(qrCodeAsSvg, ClassBarcodes.cFileBarcodeSvg);
+                ClassFileUtilities.SaveStringAsFileSvg(qrCodeAsSvg, ClassBarcodes.cFileBarcodeSvg);
 
                 // Generate the Micro QR code as PNG file with the specified version and error correction level
                 using QRCodeData qrDataPng = QRCodeGenerator.GenerateMicroQrCode(text, QRCodeGenerator.ECCLevel.L, requestedVersion: nVersion);
@@ -49,7 +49,7 @@ namespace BarcodeGenerator
                 byte[] qrCodeImage = qrCodePng.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
 
                 // Save the byte array 'qrCodeImage' as a PNG file
-                await ClassFileOperations.SavePngFromStreamAsync(new MemoryStream(qrCodeImage), ClassBarcodes.cFileBarcodePng);
+                await ClassFileUtilities.SavePngFromStreamAsync(new MemoryStream(qrCodeImage), ClassBarcodes.cFileBarcodePng);
 
                 // Return an ImageSource that opens a fresh stream when needed
                 return ImageSource.FromStream(() => new MemoryStream(qrCodeImage));

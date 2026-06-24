@@ -67,7 +67,7 @@ namespace BarcodeGenerator
                     else
                     {
                         // Open the file picker to select an image file for the foreground of the Art QR code
-                        cFileForeground = await ClassFileOperations.PickImage();
+                        cFileForeground = await ClassFileUtilities.PickImage();
                     }
                 }
             }
@@ -90,7 +90,7 @@ namespace BarcodeGenerator
                     else
                     {
                         // Open the file picker to select an image file for the background of the Art QR code
-                        cFileBackground = await ClassFileOperations.PickImage();
+                        cFileBackground = await ClassFileUtilities.PickImage();
                     }
                 }
             }

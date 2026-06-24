@@ -666,7 +666,7 @@ namespace BarcodeGenerator
             await Task.Delay(200);
 
             // Open the file picker to select an image and get the selected file as a FileResult object
-            FileResult? file = await ClassFileOperations.PickImage();
+            FileResult? file = await ClassFileUtilities.PickImage();
             Debug.WriteLine($"Selected file: {file?.FullPath} - ContentType: {file?.ContentType}");
 
             // Add null check
@@ -834,7 +834,7 @@ namespace BarcodeGenerator
             activityIndicator.IsVisible = false;
 
             // Delete the file from the cache and dispose the stream
-            ClassFileOperations.DeleteFileInCache(file.FullPath);
+            ClassFileUtilities.DeleteFileInCache(file.FullPath);
             stream.Dispose();
         }
 
