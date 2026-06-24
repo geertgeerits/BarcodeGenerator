@@ -205,7 +205,7 @@ namespace BarcodeGenerator
                     canvas.DrawRoundRect(borderRect, 6f, 6f, borderPaint);
 
                     // Draw the logo scaled, centered, and preserving aspect ratio
-                    canvas.DrawBitmap(logoBitmap, dest);
+                    canvas.DrawBitmap(logoBitmap, dest, new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear));
                 }
 
                 logoBitmap?.Dispose();
@@ -292,7 +292,7 @@ namespace BarcodeGenerator
                     canvas.Translate(w / 2f, h / 2f);
                     canvas.RotateDegrees(degrees);
                     canvas.Translate(-src.Width / 2f, -src.Height / 2f);
-                    canvas.DrawBitmap(src, 0, 0);
+                    canvas.DrawBitmap(src, 0, 0, new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear));
                     canvas.Flush();
                 }
                 return dest;
@@ -309,7 +309,7 @@ namespace BarcodeGenerator
                     canvas.Translate(w / 2f, h / 2f);
                     canvas.RotateDegrees(degrees);
                     canvas.Translate(-src.Width / 2f, -src.Height / 2f);
-                    canvas.DrawBitmap(src, 0, 0);
+                    canvas.DrawBitmap(src, 0, 0, new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear));
                     canvas.Flush();
                 }
                 return dest;
@@ -344,7 +344,7 @@ namespace BarcodeGenerator
                     canvas.Scale(1, -1);
                 }
 
-                canvas.DrawBitmap(src, 0, 0);
+                canvas.DrawBitmap(src, 0, 0, new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear));
                 canvas.Flush();
             }
             return dest;

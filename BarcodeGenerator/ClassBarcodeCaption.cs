@@ -147,7 +147,7 @@ namespace BarcodeGenerator
 
                     // Use an SKPaint when calling DrawBitmap overload that accepts SKRect; avoid obsolete FilterQuality
                     using SKPaint paintImage = new() { IsAntialias = true };
-                    canvas.DrawBitmap(skBitmap, destRect, paintImage);
+                    canvas.DrawBitmap(skBitmap, destRect, SKSamplingOptions.Default, paintImage);
 
                     // Draw caption centered horizontally below the image
                     float textX = outWidth / 2f;

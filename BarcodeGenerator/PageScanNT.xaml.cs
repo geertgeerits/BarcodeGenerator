@@ -666,7 +666,7 @@ namespace BarcodeGenerator
             await Task.Delay(200);
 
             // Open the file picker to select an image and get the selected file as a FileResult object
-            FileResult? file = await ClassFileOperations.PickOneImage();
+            FileResult? file = await ClassFileOperations.PickImage();
             Debug.WriteLine($"Selected file: {file?.FullPath} - ContentType: {file?.ContentType}");
 
             // Add null check
@@ -978,7 +978,7 @@ namespace BarcodeGenerator
             {
                 // normalized -> control coordinates
                 x = (float)(renderedX + imageBox.X * renderedW);
-                y = (float)(renderedY + imageBox.Y * renderedH);
+                //y = (float)(renderedY + imageBox.Y * renderedH);
                 w = (float)(imageBox.Width * renderedW) / 2f;
                 h = (float)(imageBox.Height * renderedH) / 2f;
 

@@ -5,46 +5,10 @@ namespace BarcodeGenerator
     internal class ClassFileOperations
     {
         /// <summary>
-        /// Opens a media picker dialog and return the selected file.
-        /// </summary>
-        /// <returns>The selected file result, or null if no file was selected.</returns>
-        public static async Task<FileResult?> PickImage()
-        {
-            try
-            {
-                // Let user pick a photo
-                List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
-                {
-                    SelectionLimit = 1,             // Default is 1; set to 0 for no limit
-                    RotateImage = true,
-                    PreserveMetaData = true,
-                    CompressionQuality = 100
-                });
-
-                FileResult? selected = photos?.FirstOrDefault();
-
-                // Get the file name with extension
-                Debug.WriteLine($"ClassFileOperations.PickImage: selected file name: {selected?.FileName ?? "<none>"}");
-
-                // Validate the selected file
-                if (!string.IsNullOrEmpty(selected?.FileName))
-                {
-                    return selected;
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"ClassFileOperations.PickImage: File picking error: {ex.Message}");
-            }
-
-            return null;
-        }
-
-        /// <summary>
         /// Opens a media picker dialog that allows the user to select one image file
         /// </summary>
         /// <returns>The selected file result, or null if no file was selected.</returns>
-        public static async Task<FileResult?> PickOneImage()
+        public static async Task<FileResult?> PickImage()
         {
             try
             {
@@ -122,7 +86,7 @@ namespace BarcodeGenerator
             }
         }
 
-        /* Alternatives for 'PickOneImage()' method using custom file type filters.
+        /* Alternatives for 'PickImage()' method using custom file type filters.
          * The following code is commented out but kept for reference.
            
             var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
@@ -142,7 +106,7 @@ namespace BarcodeGenerator
             if (file != null)
             {
                 string ext = Path.GetExtension(fullPath).ToLowerInvariant();
-                Debug.WriteLine($"ClassFileOperations.PickOneImage: selected file extension: {ext}");
+                Debug.WriteLine($"ClassFileOperations.PickImage: selected file extension: {ext}");
 
                 if (ext is ".png" or ".jpg" or ".jpeg" or ".bmp")
                 {
@@ -448,7 +412,7 @@ namespace BarcodeGenerator
             canvas.Translate(w / 2f, h / 2f);
             canvas.RotateDegrees(degrees);
             canvas.Translate(-src.Width / 2f, -src.Height / 2f);
-            canvas.DrawBitmap(src, 0, 0);
+            canvas.DrawBitmap(src, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
             canvas.Flush();
             return dest;
         }
@@ -461,7 +425,7 @@ namespace BarcodeGenerator
             if (horizontal) { canvas.Translate(src.Width, 0); canvas.Scale(-1, 1); }
             else { canvas.Translate(0, src.Height); canvas.Scale(1, -1); }
             
-            canvas.DrawBitmap(src, 0, 0);
+            canvas.DrawBitmap(src, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
             canvas.Flush();
             return dest;
         }

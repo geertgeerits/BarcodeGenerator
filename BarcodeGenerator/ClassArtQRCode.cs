@@ -232,10 +232,10 @@ namespace BarcodeGenerator
                                 if (bImageStretched)
                                 {
                                     // Draw bgBitmap stretched to the target size (preserves no aspect ratio)
-                                    using SKPaint paint = new() { IsAntialias = true, FilterQuality = SKFilterQuality.High };
+                                    using SKPaint paint = new() { IsAntialias = true };
                                     SKRect srcRect = new(0, 0, bgBitmap.Width, bgBitmap.Height);
                                     SKRect dstRect = new(0, 0, targetWidth, targetHeight);
-                                    bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, paint);
+                                    bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, new SKSamplingOptions(SKFilterMode.Linear), paint);
                                 }
                                 else
                                 {
@@ -245,10 +245,11 @@ namespace BarcodeGenerator
                                     float scaledHeight = bgBitmap.Height * scale;
                                     float left = (targetWidth - scaledWidth) / 2;
                                     float top = (targetHeight - scaledHeight) / 2;
-                                    using SKPaint paint = new() { IsAntialias = true, FilterQuality = SKFilterQuality.High };
+                                    using SKPaint paint = new() { IsAntialias = true };
                                     SKRect srcRect = new(0, 0, bgBitmap.Width, bgBitmap.Height);
                                     SKRect dstRect = new(left, top, left + scaledWidth, top + scaledHeight);
-                                    bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, paint);
+                                    bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, new SKSamplingOptions(SKFilterMode.Linear), paint);
+
                                 }
                             }
 
@@ -265,8 +266,8 @@ namespace BarcodeGenerator
                             canvas.Clear(SKColors.Transparent);
 
                             // Draw scaled background then QR
-                            canvas.DrawBitmap(scaledBg, 0, 0);
-                            canvas.DrawBitmap(qrBitmap, 0, 0);
+                            canvas.DrawBitmap(scaledBg, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
+                            canvas.DrawBitmap(qrBitmap, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
 
                             // Snapshot and encode to PNG
                             canvas.Flush();
@@ -370,35 +371,35 @@ namespace BarcodeGenerator
                         // Flip horizontal
                         canvas.Scale(-1, 1);
                         canvas.Translate(-w, 0);
-                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        canvas.DrawBitmap(srcBitmap, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
                         break;
 
                     case SKEncodedOrigin.BottomRight:
                         // Rotate 180
                         canvas.RotateDegrees(180);
                         canvas.Translate(-w, -h);
-                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        canvas.DrawBitmap(srcBitmap, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
                         break;
 
                     case SKEncodedOrigin.BottomLeft:
                         // Flip vertical
                         canvas.Scale(1, -1);
                         canvas.Translate(0, -h);
-                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        canvas.DrawBitmap(srcBitmap, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
                         break;
 
                     case SKEncodedOrigin.RightTop:
                         // Rotate 90 CW
                         canvas.Translate(resultW, 0);
                         canvas.RotateDegrees(90);
-                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        canvas.DrawBitmap(srcBitmap, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
                         break;
 
                     case SKEncodedOrigin.LeftBottom:
                         // Rotate 270 CW (or 90 CCW)
                         canvas.Translate(0, resultH);
                         canvas.RotateDegrees(270);
-                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        canvas.DrawBitmap(srcBitmap, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
                         break;
 
                     case SKEncodedOrigin.LeftTop:
@@ -407,7 +408,7 @@ namespace BarcodeGenerator
                         canvas.Translate(resultW, 0);
                         canvas.RotateDegrees(90);
                         canvas.Scale(-1, 1);
-                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        canvas.DrawBitmap(srcBitmap, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
                         break;
 
                     case SKEncodedOrigin.RightBottom:
@@ -416,11 +417,11 @@ namespace BarcodeGenerator
                         canvas.Translate(0, resultH);
                         canvas.RotateDegrees(270);
                         canvas.Scale(-1, 1);
-                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        canvas.DrawBitmap(srcBitmap, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
                         break;
 
                     default:
-                        canvas.DrawBitmap(srcBitmap, 0, 0);
+                        canvas.DrawBitmap(srcBitmap, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
                         break;
                 }
             }
