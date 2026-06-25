@@ -47,7 +47,7 @@ namespace BarcodeGenerator
             }
 
             // Show a modal popup to inform the user about the recommended foreground image size before opening the file picker
-            FileResult? cFileForeground = null;
+            FileResult? fileForeground = null;
 
             if (ClassBarcodes.bQRCodeForegroundImage)
             {
@@ -67,13 +67,13 @@ namespace BarcodeGenerator
                     else
                     {
                         // Open the file picker to select an image file for the foreground of the Art QR code
-                        cFileForeground = await ClassFileUtilities.PickImage();
+                        fileForeground = await ClassFileUtilities.PickImage();
                     }
                 }
             }
 
             // Show a modal popup to inform the user about the recommended background image size before opening the file picker
-            FileResult? cFileBackground = null;
+            FileResult? fileBackground = null;
 
             if (ClassBarcodes.bQRCodeBackgroundImage)
             {
@@ -90,7 +90,7 @@ namespace BarcodeGenerator
                     else
                     {
                         // Open the file picker to select an image file for the background of the Art QR code
-                        cFileBackground = await ClassFileUtilities.PickImage();
+                        fileBackground = await ClassFileUtilities.PickImage();
                     }
                 }
             }
@@ -103,11 +103,11 @@ namespace BarcodeGenerator
 
             try
             {
-                if (cFileForeground != null)
+                if (fileForeground != null)
                 {
                     // Read foreground image bytes (async) and apply EXIF orientation
                     byte[] fgBytes;
-                    await using (Stream fgStream = await cFileForeground.OpenReadAsync())
+                    await using (Stream fgStream = await fileForeground.OpenReadAsync())
                     {
                         using MemoryStream ms = new();
                         await fgStream.CopyToAsync(ms);
@@ -192,13 +192,13 @@ namespace BarcodeGenerator
             }
 
             // If a background image was selected, composite the QR code on top of the background on a background thread
-            if (cFileBackground != null)
+            if (fileBackground != null)
             {
                 try
                 {
                     // Read background image into memory first (safe to pass bytes into Task.Run)
                     byte[] bgBytes;
-                    await using (Stream bgStream = await cFileBackground.OpenReadAsync())
+                    await using (Stream bgStream = await fileBackground.OpenReadAsync())
                     {
                         using MemoryStream ms = new();
                         await bgStream.CopyToAsync(ms);
@@ -325,7 +325,9 @@ namespace BarcodeGenerator
         private static SKBitmap? DecodeAndOrientBitmap(byte[] bytes)
         {
             if (bytes == null || bytes.Length == 0)
+            {
                 return null;
+            }
 
             SKEncodedOrigin origin = SKEncodedOrigin.TopLeft;
             try
@@ -345,11 +347,15 @@ namespace BarcodeGenerator
             // Decode original bitmap
             SKBitmap? srcBitmap = SKBitmap.Decode(bytes);
             if (srcBitmap == null)
+            {
                 return null;
+            }
 
             // If already top-left, return as-is
             if (origin == SKEncodedOrigin.TopLeft)
+            {
                 return srcBitmap;
+            }
 
             int w = srcBitmap.Width;
             int h = srcBitmap.Height;
@@ -431,15 +437,3 @@ namespace BarcodeGenerator
         }
     }
 }
-
-/*
-SKPaint' does not contain a definition for 'SamplingOptions'
-The SamplingOptions property isn't available on your SKPaint type in the SkiaSharp version you're using. Two options:
-1. Use the older FilterQuality property (no package change required). Replace the line with:
-   using SKPaint paint = new() { IsAntialias = true, FilterQuality = SKFilterQuality.High };
-2. Or upgrade your SkiaSharp package to a newer version that exposes SamplingOptions and then your original code will compile.
-   using SKPaint paint = new() { SamplingOptions = new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear) };
-Option 1 is the simplest and works with existing SkiaSharp releases.
-
-https://mono.github.io/SkiaSharp/docs/basics/bitmaps.html
-*/
