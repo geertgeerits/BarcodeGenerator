@@ -14,11 +14,18 @@ namespace BarcodeGenerator
             {
                 // Let user pick a photo. We take the first one
                 FileResult? selected;
-#if IOS || WINDOWS
+
+                bool bRotateImage;
+#if WINDOWS
+                bRotateImage = false;
+#else
+                bRotateImage = true;
+#endif
+                // Open the media picker to select a photo
                 List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
                 {
                     SelectionLimit = 1,             // Default is 1; set to 0 for no limit
-                    RotateImage = false,            // !!!BUG!!! in iOS/Windows, the 'RotateImage' option does not work correctly and may cause issues with the orientation of the bounding box of the selected images. We will handle rotation manually later.
+                    RotateImage = bRotateImage,
                     PreserveMetaData = true,
                     CompressionQuality = 100
                 });
@@ -29,25 +36,14 @@ namespace BarcodeGenerator
                 // !!!BUG!!! in iOS, the orientation of the bounding box of the selected images may be incorrect with jpeg, heic and heif files.
                 // However, the 'GetSelectedImageStreamAsync()' method does not correct the orientation of the bounding box.
                 //selected = (await GetSelectedImageStreamAsync(photos)).selected;
-#else
-                List<FileResult> photos = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
-                {
-                    SelectionLimit = 1,             // Default is 1; set to 0 for no limit
-                    RotateImage = true,
-                    PreserveMetaData = true,
-                    CompressionQuality = 100
-                });
-                
-                selected = photos?.FirstOrDefault();
-#endif
-                // Get the file name with extension
-                // FileResult.FileName provides the name including the extension
-                string? fileNameWithExt = selected?.FileName;
 
-                Debug.WriteLine($"ClassFileOperations.PickImage: selected file name: {fileNameWithExt ?? "<none>"}");
+                // Get the file name
+                string? fileName = selected?.FileName;
+
+                Debug.WriteLine($"ClassFileOperations.PickImage: selected file name: {fileName ?? "<none>"}");
 
                 // Validate the selected file
-                if (!string.IsNullOrEmpty(fileNameWithExt))
+                if (!string.IsNullOrEmpty(fileName))
                 {
                     return selected;
                 }

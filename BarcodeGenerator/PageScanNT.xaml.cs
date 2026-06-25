@@ -15,7 +15,6 @@ namespace BarcodeGenerator
         private static double nOffsetY;
         private static double nScaleWidth;
         private static double nScaleHeight;
-        private static string cFileExtension = string.Empty;
         private static bool bScanningFromImage;
         
         public PageScanNT()
@@ -679,9 +678,6 @@ namespace BarcodeGenerator
                 return;
             }
 
-            // Get the file extension of the selected image file in lowercase
-            cFileExtension = Path.GetExtension(file.FullPath).ToLowerInvariant();
-
             // Initialize variables for processing the image and barcode results
             string cBarcodeFormat = string.Empty;
             string cDisplayValue = string.Empty;
@@ -1034,11 +1030,9 @@ namespace BarcodeGenerator
                     return;
                 }
 
-                // - PreviewBoundingBox: Used when scanning from the camera, the location and size of the rectangle is correct
-                // - ImageBoundingBox: Used when scanning from an image, the location and size of the rectangle is wrong,
-                //   the ImageBoundingBox is used instead of the PreviewBoundingBox, this is a known issue in the native libraries.
-#if IOS
                 /*
+                - PreviewBoundingBox: Used when scanning from the camera, the location and size of the rectangle is correct.
+                - ImageBoundingBox: Used when scanning from an image, the location and size of the rectangle are wrong,
                 The ImageBoundingBox values are normalized to the range [0, 1] relative to the original image dimensions,
                 but this does not match the expected pixel coordinates for drawing the rectangle.
                 This issue does not occur in Android where the ImageBoundingBox values are in pixel coordinates as expected.
@@ -1047,16 +1041,7 @@ namespace BarcodeGenerator
                 - iOS:     PreviewBoundingBox: {X=0 Y=0 Width=0 Height=0} - ImageBoundingBox: {X=0.14041096 Y=0.14041096 Width=0.7191781 Height=0.7191781}
                 - Windows: PreviewBoundingBox: {X=0 Y=0 Width=0 Height=0} - ImageBoundingBox: {?}
                 */
-
-                // Skip drawing rectangles when scanning from an image on iOS due to the bounding box mapping and orientation issues.
-                if (bScanningFromImage && mappedRectangles?.Count > 1)
-                {
-                    if (cFileExtension is ".jpeg")
-                    {
-                        return;
-                    }
-                }
-
+#if IOS
                 canvas.StrokeSize = 6;
 #else
                 canvas.StrokeSize = 15;
