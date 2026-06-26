@@ -70,7 +70,9 @@ namespace BarcodeGenerator
         {
             // Ensure only one caller proceeds to call CloseAsync
             if (Interlocked.CompareExchange(ref _closing, 1, 0) != 0)
+            {
                 return;
+            }
 
             try
             {

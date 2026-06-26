@@ -1,4 +1,5 @@
 using BarcodeScanning;
+using System.Collections;
 
 namespace BarcodeGenerator
 {
@@ -138,12 +139,12 @@ namespace BarcodeGenerator
             //    This avoids CS9135 which requires compile-time constant patterns.
             // 4. Map each known barcode name to the corresponding BarcodeFormats value.
             // 5. Fallback to BarcodeFormats.All for unknown or null values.
-            var picker = (Picker)sender;
+            Picker picker = (Picker)sender;
             int selectedIndex = picker.SelectedIndex;
 
             if (selectedIndex != -1)
             {
-                var itemsSource = picker.ItemsSource;
+                IList? itemsSource = picker.ItemsSource;
                 string? item = itemsSource is not null && itemsSource.Count > selectedIndex
                     ? itemsSource[selectedIndex] as string : null;
 
@@ -573,7 +574,7 @@ namespace BarcodeGenerator
                 _drawable.barcodeResults = e.BarcodeResults;
                 graphicsBox.Invalidate();
 
-                foreach (var barcode in e.BarcodeResults)
+                foreach (BarcodeResult barcode in e.BarcodeResults)
                 {
                     cBarcodeFormat = barcode.BarcodeFormat.ToString();
                     // Use RawValue for consistent raw data across platforms
@@ -788,7 +789,7 @@ namespace BarcodeGenerator
                     double renderedW = nImageWidthInControl;
                     double renderedH = nImageHeightInControl;
 
-                    foreach (var code in list)
+                    foreach (BarcodeResult code in list)
                     {
                         // Prefer PreviewBoundingBox if present (camera case)
                         RectF box = code.PreviewBoundingBox.Width > 0 && code.PreviewBoundingBox.Height > 0
@@ -922,7 +923,7 @@ namespace BarcodeGenerator
 
             if (aspect == Aspect.AspectFill)
             {
-                var scale = Math.Max(containerW / nativeW, containerH / nativeH);
+                double scale = Math.Max(containerW / nativeW, containerH / nativeH);
                 displayW = nativeW * scale;
                 displayH = nativeH * scale;
                 offsetX = (containerW - displayW) / 2.0;
@@ -930,7 +931,7 @@ namespace BarcodeGenerator
             }
             else if (aspect == Aspect.AspectFit)
             {
-                var scale = Math.Min(containerW / nativeW, containerH / nativeH);
+                double scale = Math.Min(containerW / nativeW, containerH / nativeH);
                 displayW = nativeW * scale;
                 displayH = nativeH * scale;
                 offsetX = (containerW - displayW) / 2.0;
@@ -1056,7 +1057,7 @@ namespace BarcodeGenerator
                     if (mappedRectangles is not null && mappedRectangles.Count > 0)
                     {
                         // mappedRectangles already includes density multiplication (matches prior Draw logic)
-                        foreach (var r in mappedRectangles)
+                        foreach (RectF r in mappedRectangles)
                         {
                             canvas.DrawRectangle(r);
                         }
@@ -1067,7 +1068,7 @@ namespace BarcodeGenerator
                         // Get the density of the device display if the barcode is scanned from an image
                         double nDensity = DeviceDisplay.Current.MainDisplayInfo.Density;
 
-                        foreach (var barcode in barcodeResults!)
+                        foreach (BarcodeResult barcode in barcodeResults!)
                         {
                             Debug.WriteLine($"PreviewBoundingBox: {barcode.PreviewBoundingBox}");
                             Debug.WriteLine($"ImageBoundingBox: {barcode.ImageBoundingBox}");

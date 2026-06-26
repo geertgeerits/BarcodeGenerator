@@ -4,7 +4,8 @@ namespace BarcodeGenerator
 {
     public partial class ClassArtQRCodeSettings : ContentView
     {
-        private readonly string cGradientDirectionBackgroundColor = "000099";  // navy blue
+        // Define a constant for the background color of the selected gradient direction button
+        private readonly string cGradientDirectionBackgroundColor = "000099";  // 000099 navy blue
 
         public ClassArtQRCodeSettings()
     	{

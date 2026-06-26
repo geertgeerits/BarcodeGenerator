@@ -97,7 +97,7 @@ namespace BarcodeGenerator
                 string body = string.Empty;
                 string[] recipients = [url];
 
-                var message = new EmailMessage
+                EmailMessage message = new()
                 {
                     Subject = subject,
                     Body = body,

@@ -361,5 +361,108 @@ namespace BarcodeGenerator
 
         //    return tcs;
         //}
+
+        ///// <summary>
+        ///// Adjusts the orientation of the specified bitmap according to the provided EXIF encoded origin.
+        ///// </summary>
+        ///// <remarks>This method supports all standard EXIF orientation values, including rotations and
+        ///// flips, to ensure the bitmap is displayed as intended. The original bitmap is not modified.</remarks>
+        ///// <param name="src">The source bitmap to be reoriented.</param>
+        ///// <param name="origin">The EXIF encoded origin value that specifies the intended orientation of the bitmap.</param>
+        ///// <returns>A new SKBitmap instance with the orientation corrected based on the specified origin.</returns>
+        //public static SKBitmap FixOrientation(SKBitmap src, SKEncodedOrigin origin)
+        //{
+        //    switch (origin)
+        //    {
+        //        case SKEncodedOrigin.TopLeft:
+        //            return src;
+        //        case SKEncodedOrigin.TopRight:
+        //            return FlipBitmap(src, horizontal: true);
+        //        case SKEncodedOrigin.BottomRight:
+        //            return RotateBitmap(src, 180);
+        //        case SKEncodedOrigin.BottomLeft:
+        //            return FlipBitmap(src, horizontal: false);
+        //        case SKEncodedOrigin.LeftTop:
+        //            using (SKBitmap r1 = RotateBitmap(src, 90))
+        //            using (SKBitmap f1 = FlipBitmap(r1, horizontal: true))
+        //            {
+        //                return f1;
+        //            }
+        //        case SKEncodedOrigin.RightTop:
+        //            return RotateBitmap(src, 90);
+        //        case SKEncodedOrigin.RightBottom:
+        //            using (SKBitmap r2 = RotateBitmap(src, 270))
+        //            using (SKBitmap f2 = FlipBitmap(r2, horizontal: true))
+        //            {
+        //                return f2;
+        //            }
+
+        //        case SKEncodedOrigin.LeftBottom:
+        //            return RotateBitmap(src, 270);
+        //        default:
+        //            return src;
+        //    }
+        //}
+
+        ///// <summary>
+        ///// Rotates the specified bitmap by the given angle in degrees and returns a new bitmap containing the rotated
+        ///// image.
+        ///// </summary>
+        ///// <remarks>If the rotation angle is a multiple of 180 degrees, the returned bitmap has the same
+        ///// width and height as the source. For angles of 90 or 270 degrees, the width and height are swapped in the
+        ///// result. The returned bitmap uses the same color and alpha types as the source.</remarks>
+        ///// <param name="src">The source bitmap to rotate. Cannot be null.</param>
+        ///// <param name="degrees">The angle, in degrees, by which to rotate the bitmap. Valid values are typically 90, 180, or 270.</param>
+        ///// <returns>A new SKBitmap instance containing the rotated image. The original bitmap is not modified.</returns>
+        //private static SKBitmap RotateBitmap(SKBitmap src, float degrees)
+        //{
+        //    int w = (degrees % 180 == 0) ? src.Width : src.Height;
+        //    int h = (degrees % 180 == 0) ? src.Height : src.Width;
+        //    SKBitmap dest = new(new SKImageInfo(w, h, src.ColorType, src.AlphaType));
+
+        //    using SKCanvas canvas = new(dest);
+        //    canvas.Clear(SKColors.Transparent);
+        //    canvas.Translate(w / 2f, h / 2f);
+        //    canvas.RotateDegrees(degrees);
+        //    canvas.Translate(-src.Width / 2f, -src.Height / 2f);
+        //    canvas.DrawBitmap(src, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
+        //    canvas.Flush();
+
+        //    return dest;
+        //}
+
+        ///// <summary>
+        ///// Creates a new bitmap that is a flipped version of the specified source bitmap, either horizontally or
+        ///// vertically.
+        ///// </summary>
+        ///// <remarks>The returned bitmap has the same dimensions and color settings as the source. The
+        ///// destination bitmap is cleared to transparent before the flip is applied. Ensure that the source bitmap is
+        ///// valid and properly initialized before calling this method.</remarks>
+        ///// <param name="src">The source bitmap to flip. This parameter must not be null.</param>
+        ///// <param name="horizontal">A value indicating the direction of the flip. If <see langword="true"/>, the bitmap is flipped horizontally;
+        ///// otherwise, it is flipped vertically.</param>
+        ///// <returns>A new <see cref="SKBitmap"/> instance containing the flipped image. The original bitmap is not modified.</returns>
+        //private static SKBitmap FlipBitmap(SKBitmap src, bool horizontal)
+        //{
+        //    SKBitmap dest = new(new SKImageInfo(src.Width, src.Height, src.ColorType, src.AlphaType));
+        //    using SKCanvas canvas = new(dest);
+        //    canvas.Clear(SKColors.Transparent);
+
+        //    if (horizontal)
+        //    { 
+        //        canvas.Translate(src.Width, 0);
+        //        canvas.Scale(-1, 1);
+        //    }
+        //    else
+        //    { 
+        //        canvas.Translate(0, src.Height);
+        //        canvas.Scale(1, -1);
+        //    }
+
+        //    canvas.DrawBitmap(src, 0, 0, new SKSamplingOptions(SKFilterMode.Linear));
+        //    canvas.Flush();
+
+        //    return dest;
+        //}
     }
 }

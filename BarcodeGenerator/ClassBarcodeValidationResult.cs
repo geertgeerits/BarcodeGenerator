@@ -41,10 +41,14 @@ namespace BarcodeGenerator
                     cTextToCode = cTextToCode.ToUpper();
 
                     if (!await TestAllowedCharacters(cAllowedCharactersCodabar, cTextToCode))
+                    {
                         return result;
+                    }
 
                     if (!await TestStartEndGuards("ABCD", cTextToCode))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                     result.Caption = cTextToCode;
@@ -54,10 +58,14 @@ namespace BarcodeGenerator
                     cTextToCode = cTextToCode.ToUpper();
 
                     if (!await TestAllowedCharacters(cAllowedCharactersCode39_93, cTextToCode))
+                    {
                         return result;
+                    }
 
                     if (!await TestStartEndGuards("*", cTextToCode))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                     result.Caption = cTextToCode;
@@ -67,7 +75,9 @@ namespace BarcodeGenerator
                     cTextToCode = ReplaceCharacters(cTextToCode);
 
                     if (!await TestAllowedAsciiValues(1, 127, cTextToCode))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                     result.Caption = cTextToCode;
@@ -75,7 +85,9 @@ namespace BarcodeGenerator
                 else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
                 {
                     if (!await TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode))
+                    {
                         return result;
+                    }
 
                     if (nLenTextToCode < 7 || nLenTextToCode > 8)
                     {
@@ -84,13 +96,17 @@ namespace BarcodeGenerator
                     }
 
                     if (nLenTextToCode == 8)
+                    {
                         cChecksum = cTextToCode.Substring(7, 1);
+                    }
 
                     cTextToCode = cTextToCode[..7];
                     cTextToCode += CalculateChecksumEanUpcA(ReverseString(cTextToCode));
 
                     if (nLenTextToCode == 8 && cChecksum != cTextToCode.Substring(7, 1))
+                    {
                         result.ErrorMessage = CodeLang.CheckDigitError_Text;
+                    }
 
                     result.Text = cTextToCode;
                     result.Caption = InsertCharacterInCaption(cTextToCode, 4);
@@ -98,7 +114,9 @@ namespace BarcodeGenerator
                 else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
                 {
                     if (!await TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode))
+                    {
                         return result;
+                    }
 
                     if (nLenTextToCode < 12 || nLenTextToCode > 13)
                     {
@@ -113,7 +131,9 @@ namespace BarcodeGenerator
                     cTextToCode += CalculateChecksumEanUpcA(ReverseString(cTextToCode));
 
                     if (nLenTextToCode == 13 && cChecksum != cTextToCode.Substring(12, 1))
+                    {
                         result.ErrorMessage = CodeLang.CheckDigitError_Text;
+                    }
 
                     result.Text = cTextToCode;
                     result.Caption = InsertCharacterInCaption(cTextToCode, 7);
@@ -122,7 +142,9 @@ namespace BarcodeGenerator
                 else if (selectedName == ClassBarcodes.cBarcode_ITF)
                 {
                     if (!await TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode))
+                    {
                         return result;
+                    }
 
                     if (nLenTextToCode % 2 != 0)
                     {
@@ -136,7 +158,9 @@ namespace BarcodeGenerator
                 else if (selectedName == ClassBarcodes.cBarcode_MSI)
                 {
                     if (!await TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                     result.Caption = cTextToCode;
@@ -146,7 +170,9 @@ namespace BarcodeGenerator
                     cTextToCode = cTextToCode.ToUpper();
 
                     if (!await TestAllowedCharacters(cAllowedCharactersHex, cTextToCode))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                     result.Caption = cTextToCode;
@@ -154,7 +180,9 @@ namespace BarcodeGenerator
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
                 {
                     if (!await TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode))
+                    {
                         return result;
+                    }
 
                     if (nLenTextToCode < 11 || nLenTextToCode > 12)
                     {
@@ -163,13 +191,17 @@ namespace BarcodeGenerator
                     }
 
                     if (nLenTextToCode == 12)
+                    {
                         cChecksum = cTextToCode.Substring(11, 1);
+                    }
 
                     cTextToCode = cTextToCode[..11];
                     cTextToCode += CalculateChecksumEanUpcA(cTextToCode);
 
                     if (nLenTextToCode == 12 && cChecksum != cTextToCode.Substring(11, 1))
+                    {
                         result.ErrorMessage = CodeLang.CheckDigitError_Text;
+                    }
 
                     result.Text = cTextToCode;
                     result.Caption = InsertCharacterInCaption(cTextToCode, 11);
@@ -179,7 +211,9 @@ namespace BarcodeGenerator
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
                 {
                     if (!await TestAllowedCharacters(cAllowedCharactersDecimal, cTextToCode))
+                    {
                         return result;
+                    }
 
                     if (nLenTextToCode < 7 || nLenTextToCode > 8)
                     {
@@ -194,7 +228,9 @@ namespace BarcodeGenerator
                     }
 
                     if (nLenTextToCode == 8)
+                    {
                         cChecksum = cTextToCode.Substring(7, 1);
+                    }
 
                     string cUpcA = ConvertUpcEToUpcA(cTextToCode);
                     cUpcA += CalculateChecksumEanUpcA(cUpcA);
@@ -202,7 +238,9 @@ namespace BarcodeGenerator
                     cTextToCode = string.Concat(cTextToCode.AsSpan(0, 7), cUpcA.AsSpan(11, 1));
 
                     if (nLenTextToCode == 8 && cChecksum != cTextToCode.Substring(7, 1))
+                    {
                         result.ErrorMessage = CodeLang.CheckDigitError_Text;
+                    }
 
                     result.Text = cTextToCode;
                     result.Caption = InsertCharacterInCaption(cTextToCode, 7);
@@ -215,7 +253,9 @@ namespace BarcodeGenerator
                     cTextToCode = ReplaceCharacters(cTextToCode);
 
                     if (!await TestAllowedAsciiValues(1, 255, cTextToCode))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                 }
@@ -224,7 +264,9 @@ namespace BarcodeGenerator
                     cTextToCode = ReplaceCharacters(cTextToCode);
 
                     if (!await TestAllowedAsciiValues(1, 255, cTextToCode))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                 }
@@ -233,28 +275,36 @@ namespace BarcodeGenerator
                     cTextToCode = ReplaceCharacters(cTextToCode);
 
                     if (!await TestAllowedAsciiValues(1, 255, cTextToCode))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)
                 {
                     if (!await CheckValidateTextAsync(cTextToCode, 3993, 2420, 1663, 1024))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE || selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
                 {
                     if (!await CheckValidateTextAsync(cTextToCode, 3057, 1852, 1273, 784))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                 }
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     if (!await CheckValidateTextAsync(cTextToCode, 35, 21, 15, 9))
+                    {
                         return result;
+                    }
 
                     result.Text = cTextToCode;
                 }

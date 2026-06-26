@@ -471,7 +471,7 @@ namespace BarcodeGenerator
         {
             if (!string.IsNullOrEmpty(searchKey))
             {
-                if (dic.TryGetValue(searchKey, out var value))
+                if (dic.TryGetValue(searchKey, out string? value))
                 {
                     return value;
                 }

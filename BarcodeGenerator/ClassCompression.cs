@@ -56,7 +56,10 @@ namespace BarcodeGenerator
         /// <returns>True if the Base64 string represents GZip-compressed data; otherwise, false.</returns>
         private static bool IsGzipBase64(string base64)
         {
-            if (string.IsNullOrEmpty(base64)) return false;
+            if (string.IsNullOrEmpty(base64))
+            {
+                return false;
+            }
 
             byte[] data;
             try

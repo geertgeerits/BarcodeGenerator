@@ -178,7 +178,10 @@ namespace BarcodeGenerator
                 pngBytes = await Task.Run(() => qrData.ToByteArray());
                 
                 logo?.Dispose();
-                if (icon is IDisposable d) d.Dispose();
+                if (icon is IDisposable d)
+                {
+                    d.Dispose();
+                }
             }
             catch (Exception ex)
             {

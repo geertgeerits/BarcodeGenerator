@@ -88,6 +88,7 @@ namespace BarcodeGenerator
             {
                 // Extract URLs from the text and confirm/open them
                 List<string> cUrls = ParseUrlsFromText(cText);
+                
                 if (cUrls.Count > 0)
                 {
                     await ConfirmAndOpenLinksAsync(cUrls);
@@ -115,7 +116,7 @@ namespace BarcodeGenerator
         /// <returns>List of matched URL strings</returns>
         private static List<string> ParseUrlsFromText(string cText)
         {
-            var urls = new List<string>();
+            List<string> urls = [];
 
             if (string.IsNullOrEmpty(cText))
             {
