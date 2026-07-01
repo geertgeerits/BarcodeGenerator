@@ -4,8 +4,8 @@ namespace BarcodeGenerator
 {
     public partial class PopupMessage : Popup
     {
-        private CancellationTokenSource _closeCts = new();
-        private int _closing;                                // 0 == not closing, 1 == closing
+        private readonly CancellationTokenSource _closeCts = new();
+        private int _closing;                                           // 0 == not closing, 1 == closing
 
         public PopupMessage(int nSeconds = 3, string cTitle = "", string cMessage = "")
         {
@@ -104,7 +104,9 @@ namespace BarcodeGenerator
             {
                 _closeCts.Cancel();
             }
-            catch { }
+            catch
+            {
+            }
 
             try
             {
@@ -123,7 +125,9 @@ namespace BarcodeGenerator
             {
                 _closeCts.Cancel();
             }
-            catch { }
+            catch
+            {
+            }
 
             try
             {

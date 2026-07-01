@@ -4,7 +4,8 @@ namespace BarcodeGenerator
 {
     public sealed partial class LocalizationResourceManager : INotifyPropertyChanged
     {
-        private LocalizationResourceManager() {
+        private LocalizationResourceManager()
+        {
             CodeLang.Culture = CultureInfo.CurrentUICulture;
         }
 
@@ -15,7 +16,8 @@ namespace BarcodeGenerator
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public void SetCulture(CultureInfo culture) {
+        public void SetCulture(CultureInfo culture)
+        {
             CodeLang.Culture = culture;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
         }
