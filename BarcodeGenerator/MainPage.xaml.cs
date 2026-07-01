@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.52
- * Date ........: 2026-06-26 (YYYY-MM-DD)
+ * Date ........: 2026-07-01 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -69,9 +69,21 @@ namespace BarcodeGenerator
             // Disable Sentry for testing - https://github.com/getsentry/sentry-dotnet/discussions/3325
             //SentrySdk.Close();
 #if IOS
-            // AutoSize has to be disabled for iOS
+            // !!!BUG!!! in iOS.  AutoSize has to be disabled for iOS, otherwise scrolling is more difficult when in landscape mode.
             edtTextToCode.AutoSize = EditorAutoSizeOption.Disabled;
             
+            // The height of the title bar is lower when an iPhone is in horizontal position
+            if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+            {
+                imgbtnAbout.VerticalOptions = LayoutOptions.Start;
+                lblTitle.VerticalOptions = LayoutOptions.Start;
+                lblTitle.VerticalTextAlignment = TextAlignment.Start;
+                imgbtnPayloadType.VerticalOptions = LayoutOptions.Start;
+                imgbtnScanNT.VerticalOptions = LayoutOptions.Start;
+                imgbtnSettings.VerticalOptions = LayoutOptions.Start;
+                imgbtnPayloadType.Margin = new Thickness(0, -5, 0, 0);
+            }
+
             // Set the scale for the activity indicator for iOS (otherwise it is very small on an iPad)
             activityIndicator.Scale = 2;
 #endif
@@ -106,18 +118,6 @@ namespace BarcodeGenerator
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
-
-            // The height of the title bar is lower when an iPhone is in horizontal position
-            if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
-            {
-                imgbtnAbout.VerticalOptions = LayoutOptions.Start;
-                lblTitle.VerticalOptions = LayoutOptions.Start;
-                lblTitle.VerticalTextAlignment = TextAlignment.Start;
-                imgbtnPayloadType.VerticalOptions = LayoutOptions.Start;
-                imgbtnScanNT.VerticalOptions = LayoutOptions.Start;
-                imgbtnSettings.VerticalOptions = LayoutOptions.Start;
-                imgbtnPayloadType.Margin = new Thickness(0, -5, 0, 0);
-            }
 
             // Set the theme
             Globals.SetTheme();
