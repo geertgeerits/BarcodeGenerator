@@ -479,77 +479,75 @@
 
             <!--!!!BUG!!! in Windows: The DatePicker and TimePicker do not take the width setting into account in Windows.-->
 
-            <Border
-                x:Name="brdPayloadTypeStartDate"
-                Style="{StaticResource borderStyleDefault}"
+            <HorizontalStackLayout
                 Grid.Row="20"
-                Grid.Column="1"
-                HorizontalOptions="Start"
-                Margin="0,6,6,0">
+                Grid.Column="1">
 
-                <DatePicker
-                    x:Name="dtpPayloadTypeStartDate"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
-                    Format="d"
-                    Unfocused="DtpPayloadTypeDate_Unfocused">
-                </DatePicker>
-            </Border>
+                <Border
+                    x:Name="brdPayloadTypeStartDate"
+                    Style="{StaticResource borderStyleDefault}"
+                    Margin="0,6,6,0">
 
-            <Border
-                x:Name="brdPayloadTypeStartTime"
-                Style="{StaticResource borderStyleDefault}"
-                Grid.Row="{OnPlatform Default=20, WinUI=21}"
-                Grid.Column="1"
-                HorizontalOptions="{OnPlatform Default=End, WinUI=Start}"
-                Margin="0,6,6,0">
+                    <DatePicker
+                        x:Name="dtpPayloadTypeStartDate"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                        Format="d"
+                        Unfocused="DtpPayloadTypeDate_Unfocused">
+                    </DatePicker>
+                </Border>
 
-                <TimePicker
-                    x:Name="tmpPayloadTypeStartTime"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
-                    Unfocused="DtpPayloadTypeTime_Unfocused">
-                </TimePicker>
-            </Border>
+                <Border
+                    x:Name="brdPayloadTypeStartTime"
+                    Style="{StaticResource borderStyleDefault}"
+                    Margin="10,6,6,0">
+
+                    <TimePicker
+                        x:Name="tmpPayloadTypeStartTime"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                        Unfocused="DtpPayloadTypeTime_Unfocused">
+                    </TimePicker>
+                </Border>
+            </HorizontalStackLayout>
 
             <Label
                 x:Name="lblPayloadTypeEnd"
                 Style="{StaticResource labelStyleDefault}"
-                Grid.Row="22"
+                Grid.Row="21"
                 Grid.Column="0"
                 VerticalTextAlignment="Start"
                 SemanticProperties.Description="{Translate PayloadTypeEnd_Text}"
                 Text="{Translate PayloadTypeEnd_Text}">
             </Label>
 
-            <Border
-                x:Name="brdPayloadTypeEndDate"
-                Style="{StaticResource borderStyleDefault}"
-                Grid.Row="22"
-                Grid.Column="1"
-                HorizontalOptions="Start"
-                Margin="0,6,6,0">
+            <HorizontalStackLayout
+                Grid.Row="21"
+                Grid.Column="1">
 
-                <DatePicker
-                    x:Name="dtpPayloadTypeEndDate"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
-                    Format="d"
-                    Unfocused="DtpPayloadTypeDate_Unfocused">
-                </DatePicker>
-            </Border>
+                <Border
+                    x:Name="brdPayloadTypeEndDate"
+                    Style="{StaticResource borderStyleDefault}"
+                    Margin="0,6,6,0">
 
-            <Border
-                x:Name="brdPayloadTypeEndTime"
-                Style="{StaticResource borderStyleDefault}"
-                Grid.Row="{OnPlatform Default=22, WinUI=23}"
-                Grid.Column="1"
-                HorizontalOptions="{OnPlatform Default=End, WinUI=Start}"
-                Margin="0,6,6,0">
+                    <DatePicker
+                        x:Name="dtpPayloadTypeEndDate"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                        Format="d"
+                        Unfocused="DtpPayloadTypeDate_Unfocused">
+                    </DatePicker>
+                </Border>
 
-                <TimePicker
-                    x:Name="tmpPayloadTypeEndTime"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
-                    Unfocused="DtpPayloadTypeTime_Unfocused">
-                </TimePicker>
-            </Border>
+                <Border
+                    x:Name="brdPayloadTypeEndTime"
+                    Style="{StaticResource borderStyleDefault}"
+                    Margin="10,6,6,0">
+
+                    <TimePicker
+                        x:Name="tmpPayloadTypeEndTime"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}"
+                        Unfocused="DtpPayloadTypeTime_Unfocused">
+                    </TimePicker>
+                </Border>
+            </HorizontalStackLayout>
 
             <Border
                 x:Name="brdPayloadTypeSctBic"
