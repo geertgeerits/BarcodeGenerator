@@ -87,24 +87,24 @@ namespace BarcodeGenerator
             SetControlsProperties(ClassPayloadTypes.cPayloadType);
         }
 
-//        private void Popup_PayloadTypes_Closed(object? sender, EventArgs e)
-//        {
-//#if IOS
-//            try
-//            {
-//                BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillShow -= (sender, e) => { };
-//                BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillHide -= (sender, e) => { };
-//                BarcodeGenerator.Platforms.iOS.KeyboardHelper.StopListening();
-//            }
-//            catch
-//            {
-            
-//            }
-//#endif
+        //        private void Popup_PayloadTypes_Closed(object? sender, EventArgs e)
+        //        {
+        //#if IOS
+        //            try
+        //            {
+        //                BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillShow -= (sender, e) => { };
+        //                BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillHide -= (sender, e) => { };
+        //                BarcodeGenerator.Platforms.iOS.KeyboardHelper.StopListening();
+        //            }
+        //            catch
+        //            {
 
-//    // existing cleanup the popup already uses
-//    Globals.bPopupOpened = false;
-//        }
+        //            }
+        //#endif
+
+        //    // existing cleanup the popup already uses
+        //    Globals.bPopupOpened = false;
+        //        }
 
         /// <summary>
         /// Sets the properties of various controls based on the selected payload type name
@@ -113,6 +113,12 @@ namespace BarcodeGenerator
         /// <param name="selectedName"></param>
         private void SetControlsProperties(string selectedName)
         {
+#if IOS
+            // !!!BUGG!!! in iOS - Popup page is partially covered by the keyboard and ScrollView is not working,
+            // so limit the maximum height of the popup to 400 points to ensure it fits on the screen.
+            // Restore the original maximum height request when the popup is opened.
+            popupPayloadTypes.MaximumHeightRequest = 600;
+#endif            
             if (selectedName == ClassPayloadTypes.cPayloadType_WIFI)
             {
                 lblWiFiAuthentication.IsVisible = true;
@@ -174,7 +180,6 @@ namespace BarcodeGenerator
                 brdPayloadTypeLongitudeDMSResult.IsVisible = true;
                 btnButtonGeoLocation.IsVisible = true;
                 btnButtonGeoMap.IsVisible = true;
-
                 _ = entPayloadTypeLatitude.Focus();
                 entPayloadTypeLatitude.CursorPosition = entPayloadTypeLatitude.Text?.Length ?? 0;
             }
@@ -224,8 +229,8 @@ namespace BarcodeGenerator
                 brdPayloadTypeSctRemittanceInfoUnstructured.IsVisible = true;
                 brdPayloadTypeSctInformation.IsVisible = true;
 #if IOS
-                // !!!BUGG!!! in iOS - Popup page is covered by the keyboard and ScrollView is not working,
-                // so limit the maximum height of the popup to 400 points to ensure it fits on the screen
+                // !!!BUGG!!! in iOS - Popup page is partially covered by the keyboard and ScrollView is not working,
+                // so limit the maximum height of the popup to 400 points to ensure it fits on the screen.
                 popupPayloadTypes.MaximumHeightRequest = 400;
 #endif
                 _ = entPayloadTypeSctBic.Focus();

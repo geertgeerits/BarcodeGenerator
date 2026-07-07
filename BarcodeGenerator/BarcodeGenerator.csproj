@@ -75,6 +75,7 @@
 	  <Compile Remove="ClassArtQRCodeWin.cs" />
 	  <Compile Remove="ClassScanFromImageZX.cs" />
 	  <Compile Remove="ClassValidateBarcodesOLD.cs" />
+	  <Compile Remove="KeyboardAwareBehavior.cs" />
 	  <Compile Remove="PageScanGV.xaml.cs" />
 	  <Compile Remove="PageWebsite.xaml.cs" />
 	  <Compile Remove="Platforms\Android\ShareFileHandler.cs" />
@@ -265,6 +266,9 @@
 		<PackageReference Include="zxingcpp" Version="0.5.1">
 			<ExcludeAssets>native</ExcludeAssets>
 		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="KeyboardAwareBehavior.cs" />
 	</ItemGroup>
 	
 	<!--<ItemGroup>
