@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolkit:Popup
+    x:Name="popupPayloadTypes"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
@@ -92,8 +93,8 @@
                     Placeholder="{Translate PayloadTypeSSID_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    Text=""
-                    ReturnType="Next">
+                    ReturnType="Next"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -110,8 +111,8 @@
                     Placeholder="{Translate PayloadTypePassword_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    Text=""
-                    ReturnType="Next">
+                    ReturnType="Done"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -128,8 +129,8 @@
                     Placeholder="{Translate PayloadTypeURL_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Url"
-                    Text=""
                     ReturnType="Next"
+                    Text=""
                     Focused="EntPayloadTypeURL_Focused">
                 </Entry>
             </Border>
@@ -147,8 +148,8 @@
                     Placeholder="{Translate PayloadTypeTitle_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    Text=""
-                    ReturnType="Next">
+                    ReturnType="Next"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -165,8 +166,8 @@
                     Placeholder="{Translate PayloadTypeReceiver_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Email"
-                    Text=""
                     ReturnType="Next"
+                    Text=""
                     Focused="EntPayloadType_Focused">
                 </Entry>
             </Border>
@@ -184,8 +185,8 @@
                     Placeholder="{Translate PayloadTypeSubject_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    Text=""
                     ReturnType="Next"
+                    Text=""
                     Focused="EntPayloadType_Focused">
                 </Entry>
             </Border>
@@ -244,8 +245,8 @@
                     Placeholder="-90.00000 - 90.00000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="{OnPlatform Default=Numeric, iOS=Default}"
-                    Text=""
                     ReturnType="Next"
+                    Text=""
                     TextChanged="EntPayloadTypeLatitude_TextChanged"
                     Unfocused="EntPayloadTypeLatitude_Unfocused">
                 </Entry>
@@ -273,8 +274,8 @@
                     Placeholder="-180.00000 - 180.00000"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="{OnPlatform Default=Numeric, iOS=Default}"
+                    ReturnType="Done"
                     Text=""
-                    ReturnType="Next"
                     TextChanged="EntPayloadTypeLongitude_TextChanged"
                     Unfocused="EntPayloadTypeLongitude_Unfocused">
                 </Entry>
@@ -344,8 +345,8 @@
                     Placeholder="{Translate PayloadTypeFirstname_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    Text=""
-                    ReturnType="Next">
+                    ReturnType="Next"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -362,8 +363,8 @@
                     Placeholder="{Translate PayloadTypeLastname_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    Text=""
-                    ReturnType="Next">
+                    ReturnType="Next"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -380,8 +381,8 @@
                     Placeholder="{Translate PayloadTypePhoneNumber_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Telephone"
-                    Text=""
                     ReturnType="Next"
+                    Text=""
                     TextChanged="EntPayloadTypePhoneNumber_TextChanged"
                     Focused="EntPayloadType_Focused">
                 </Entry>
@@ -426,8 +427,8 @@
                     Placeholder="{Translate PayloadTypeMail_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Email"
-                    Text=""
-                    ReturnType="Next">
+                    ReturnType="Next"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -444,8 +445,8 @@
                     Placeholder="{Translate PayloadTypeDescription_Text}"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    Text=""
-                    ReturnType="Next">
+                    ReturnType="Next"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -462,8 +463,8 @@
                     Placeholder="{Translate PayloadTypeLocation_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    Text=""
-                    ReturnType="Next">
+                    ReturnType="Done"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -562,10 +563,10 @@
                     Placeholder="{Translate PayloadTypeSctBic_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    MaxLength="11"
+                    ReturnType="Next"
                     TextTransform="Uppercase"
-                    Text=""
-                    ReturnType="Next">
+                    MaxLength="11"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -582,9 +583,9 @@
                     Placeholder="{Translate PayloadTypeSctName_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    ReturnType="Next"
                     MaxLength="70"
-                    Text=""
-                    ReturnType="Next">
+                    Text="">
                 </Entry>
             </Border>
 
@@ -601,10 +602,10 @@
                     Placeholder="{Translate PayloadTypeSctIban_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    MaxLength="34"
+                    ReturnType="Next"
                     TextTransform="Uppercase"
-                    Text=""
-                    ReturnType="Next">
+                    MaxLength="34"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -621,9 +622,9 @@
                     Placeholder="{Translate PayloadTypeSctAmountEur_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Numeric"
+                    ReturnType="Next"
                     MaxLength="12"
-                    Text=""
-                    ReturnType="Next">
+                    Text="">
                 </Entry>
             </Border>
 
@@ -640,10 +641,10 @@
                     Placeholder="{Translate PayloadTypeSctPurpose_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    MaxLength="4"
+                    ReturnType="Next"
                     TextTransform="Uppercase"
-                    Text=""
-                    ReturnType="Next">
+                    MaxLength="4"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -660,10 +661,10 @@
                     Placeholder="{Translate PayloadTypeSctRemittanceInfoStructured_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    MaxLength="35"
+                    ReturnType="Next"
                     TextTransform="Uppercase"
-                    Text=""
-                    ReturnType="Next">
+                    MaxLength="35"
+                    Text="">
                 </Entry>
             </Border>
 
@@ -680,9 +681,9 @@
                     Placeholder="{Translate PayloadTypeSctRemittanceInfoUnstructured_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    ReturnType="Next"
                     MaxLength="140"
-                    Text=""
-                    ReturnType="Next">
+                    Text="">
                 </Entry>
             </Border>
 
@@ -699,9 +700,9 @@
                     Placeholder="{Translate PayloadTypeSctInformation_Text}"                    
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
+                    ReturnType="Done"
                     MaxLength="70"
-                    Text=""
-                    ReturnType="Next">
+                    Text="">
                 </Entry>
             </Border>
 

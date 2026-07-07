@@ -10,12 +10,39 @@ namespace BarcodeGenerator
 {
     public partial class PopupPayloadTypes : Popup
     {
-        public static ImageSource? qrCodeImage;
+        public static ImageSource? qrCodeImageSource;
         public static bool bPayloadSepaCreditTransfer;
 
         public PopupPayloadTypes()
-    	{
+        {
             InitializeComponent();
+//#if IOS
+//    // existing numeric keyboard config
+//    BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLatitude);
+//    BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLongitude);
+
+//    // Start observing keyboard notifications and subscribe to messages to adjust the popup.
+//    BarcodeGenerator.Platforms.iOS.KeyboardHelper.StartListening();
+
+//    BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillShow += (sender, e) =>
+//    {
+//        // Move the popup up so focused entry is visible. Cap the translation to a reasonable max.
+//        Dispatcher.Dispatch(async () =>
+//        {
+//            double cap = Math.Min(e.Height, 400);
+//            // move up by cap/2 (tweak if necessary for your layout)
+//            await this.TranslateTo(0, -cap / 2, 150);
+//        });
+//    };
+
+//    BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillHide += (sender, e) =>
+//    {
+//        Dispatcher.Dispatch(async () => await this.TranslateTo(0, 0, 150));
+//    };
+
+//    // Make sure we cleanup when the popup closes
+//    this.Closed += Popup_PayloadTypes_Closed;
+//#endif
 #if IOS
             // Configure the numeric keyboard for these entry fields on iOS to use the NumbersAndPunctuation keyboard type
             BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLatitude);
@@ -60,6 +87,25 @@ namespace BarcodeGenerator
             SetControlsProperties(ClassPayloadTypes.cPayloadType);
         }
 
+//        private void Popup_PayloadTypes_Closed(object? sender, EventArgs e)
+//        {
+//#if IOS
+//            try
+//            {
+//                BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillShow -= (sender, e) => { };
+//                BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillHide -= (sender, e) => { };
+//                BarcodeGenerator.Platforms.iOS.KeyboardHelper.StopListening();
+//            }
+//            catch
+//            {
+            
+//            }
+//#endif
+
+//    // existing cleanup the popup already uses
+//    Globals.bPopupOpened = false;
+//        }
+
         /// <summary>
         /// Sets the properties of various controls based on the selected payload type name
         /// The method checks the selected payload type
@@ -79,6 +125,7 @@ namespace BarcodeGenerator
             {
                 brdPayloadTypeURL.IsVisible = true;
                 btnButtonURL.IsVisible = true;
+                entPayloadTypeURL.ReturnType = ReturnType.Done;
                 _ = entPayloadTypeURL.Focus();
                 entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text?.Length ?? 0; // Move cursor to the end of the text
             }
@@ -101,6 +148,7 @@ namespace BarcodeGenerator
             {
                 brdPayloadTypePhoneNumber.IsVisible = true;
                 brdPayloadTypeMessage.IsVisible = true;
+                entPayloadTypePhoneNumber.ReturnType = ReturnType.Next;
                 _ = entPayloadTypePhoneNumber.Focus();
                 entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
@@ -108,6 +156,7 @@ namespace BarcodeGenerator
             {
                 brdPayloadTypePhoneNumber.IsVisible = true;
                 brdPayloadTypeMessage.IsVisible = true;
+                entPayloadTypePhoneNumber.ReturnType = ReturnType.Next;
                 _ = entPayloadTypePhoneNumber.Focus();
                 entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
@@ -132,6 +181,7 @@ namespace BarcodeGenerator
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
                 brdPayloadTypePhoneNumber.IsVisible = true;
+                entPayloadTypePhoneNumber.ReturnType = ReturnType.Done;
                 _ = entPayloadTypePhoneNumber.Focus();
                 entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
@@ -147,6 +197,7 @@ namespace BarcodeGenerator
                 brdPayloadTypeLastname.IsVisible = true;
                 brdPayloadTypePhoneNumber.IsVisible = true;
                 brdPayloadTypeMail.IsVisible = true;
+                entPayloadTypeMail.ReturnType = ReturnType.Done;
                 _ = entPayloadTypeFirstname.Focus();
             }
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)
@@ -172,6 +223,11 @@ namespace BarcodeGenerator
                 brdPayloadTypeSctRemittanceInfoStructured.IsVisible = true;
                 brdPayloadTypeSctRemittanceInfoUnstructured.IsVisible = true;
                 brdPayloadTypeSctInformation.IsVisible = true;
+#if IOS
+                // !!!BUGG!!! in iOS - Popup page is covered by the keyboard and ScrollView is not working,
+                // so limit the maximum height of the popup to 400 points to ensure it fits on the screen
+                popupPayloadTypes.MaximumHeightRequest = 400;
+#endif
                 _ = entPayloadTypeSctBic.Focus();
             }
         }
@@ -847,7 +903,7 @@ END:VCALENDAR";
                     byte[] qrCodeAsPngByteArr = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
 
                     payload = generator.ToString();
-                    qrCodeImage = ImageSource.FromStream(() => new MemoryStream(qrCodeAsPngByteArr));
+                    qrCodeImageSource = ImageSource.FromStream(() => new MemoryStream(qrCodeAsPngByteArr));
 
                     // The total payload is limited to 331 bytes for the SEPA Credit Transfer type
                     if (System.Text.Encoding.UTF8.GetByteCount(payload) > 331)

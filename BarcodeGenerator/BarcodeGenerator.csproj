@@ -78,6 +78,7 @@
 	  <Compile Remove="PageScanGV.xaml.cs" />
 	  <Compile Remove="PageWebsite.xaml.cs" />
 	  <Compile Remove="Platforms\Android\ShareFileHandler.cs" />
+	  <Compile Remove="Platforms\iOS\KeyboardHelper.cs" />
 	  <Compile Remove="Platforms\iOS\ShareFileHandler.cs" />
 	</ItemGroup>
 

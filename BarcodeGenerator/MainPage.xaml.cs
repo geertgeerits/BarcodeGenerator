@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.52
- * Date ........: 2026-07-04 (YYYY-MM-DD)
+ * Date ........: 2026-07-07 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -249,11 +249,11 @@ namespace BarcodeGenerator
             edtTextToCode.Text = ClassPayloadTypes.cPayloadResult;
 
             // If the payload type is SEPA Credit Transfer, show the QR-code immediately after setting the payload result in the editor, otherwise the user can modify the payload result, without effect, because the code is already generated
-            if (PopupPayloadTypes.bPayloadSepaCreditTransfer && PopupPayloadTypes.qrCodeImage is not null)
+            if (PopupPayloadTypes.bPayloadSepaCreditTransfer && PopupPayloadTypes.qrCodeImageSource is not null)
             {
                 // Payload type is 'Sepa credit transfer' using the QRCoder library
-                imgQrCodeImage.Source = PopupPayloadTypes.qrCodeImage;
-                PopupPayloadTypes.qrCodeImage = null;
+                imgQrCodeImage.Source = PopupPayloadTypes.qrCodeImageSource;
+                PopupPayloadTypes.qrCodeImageSource = null;
 
                 // Disable/Enable controls
                 edtTextToCode.IsEnabled = false;
