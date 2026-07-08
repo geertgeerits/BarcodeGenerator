@@ -68,7 +68,7 @@ namespace BarcodeGenerator
         private void SetControlsProperties(string selectedName)
         {
 #if IOS
-            // !!!BUGG!!! in iOS - Popup page is partially covered by the keyboard and ScrollView is not working,
+            // !!!BUGG!!! in iOS - When the Popup page is partially covered by the keyboard, the ScrollView is not working,
             // so limit the maximum height of the popup to 400 points to ensure it fits on the screen.
             // Restore the original maximum height request when the popup is opened.
             popupPayloadTypes.MaximumHeightRequest = 600;
@@ -183,7 +183,7 @@ namespace BarcodeGenerator
                 brdPayloadTypeSctRemittanceInfoUnstructured.IsVisible = true;
                 brdPayloadTypeSctInformation.IsVisible = true;
 #if IOS
-                // !!!BUGG!!! in iOS - Popup page is partially covered by the keyboard and ScrollView is not working,
+                // !!!BUGG!!! in iOS - When the Popup page is partially covered by the keyboard, the ScrollView is not working,
                 // so limit the maximum height of the popup to 400 points to ensure it fits on the screen.
                 popupPayloadTypes.MaximumHeightRequest = 400;
 #endif
@@ -1286,10 +1286,25 @@ END:VCALENDAR";
         private static partial Regex RegexPhone();
 
         /// <summary>
-        /// Basic regex for validating IBAN format: starts with 2 letters (country code), followed by 2 digits (check digits), and then up to 30 alphanumeric characters (BBAN).
+        /// Basic regex for validating IBAN format: starts with 2 letters (country code), followed by 2 digits (check digits),
+        /// and then up to 30 alphanumeric characters (BBAN).
         /// </summary>
         /// <returns></returns>
         [GeneratedRegex("^[A-Z]{2}[0-9]{2}[A-Z0-9]{1,30}$")]
         private static partial Regex RegexIban();
+
+        /// <summary>
+        /// Scrolls the view to the structured remittance information entry field when it receives focus,
+        /// ensuring that the field is visible to the user on iOS devices.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void EntPayloadTypeSctRemittanceInfoStructured_Focused(object sender, FocusEventArgs e)
+        {
+            // !!!BUGG!!! in iOS - When the Popup page is partially covered by the keyboard, the ScrollView is not working.
+#if IOS
+            await scrollViewPayloadTypes.ScrollToAsync(brdPayloadTypeSctRemittanceInfoStructured, ScrollToPosition.Start, true);
+#endif
+        }
     }
 }

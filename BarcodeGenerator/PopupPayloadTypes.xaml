@@ -20,6 +20,7 @@
     the 'ToolTipProperties' property.-->
 
     <ScrollView
+        x:Name="scrollViewPayloadTypes"
         Style="{StaticResource scrollviewStylePopup}">
 
         <Grid
@@ -664,7 +665,8 @@
                     ReturnType="Next"
                     TextTransform="Uppercase"
                     MaxLength="35"
-                    Text="">
+                    Text=""
+                    Focused="EntPayloadTypeSctRemittanceInfoStructured_Focused">
                 </Entry>
             </Border>
 

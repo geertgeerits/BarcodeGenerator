@@ -360,27 +360,27 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Handles the Unfocused event for the QR code image size entry, ensuring that the entered value is within the valid range.
+        /// Handles the Completed event for the QR code image size entry, ensuring that the entered value is within the valid range.
         /// </summary>
-        /// <param name="sender">The source of the event, typically the Entry control that triggered the Unfocused event.</param>
-        /// <param name="e">The event data containing information about the focus change.</param>
-        private void EntQRCodeSizePixels_Unfocused(object sender, FocusEventArgs e)
+        /// <param name="sender">The source of the event, typically the Entry control that triggered the Completed event.</param>
+        /// <param name="e">The event data containing information about the completion of the entry.</param>
+        private void EntQRCodeSizePixels_Completed(object sender, EventArgs e)
         {
             string cText = ((Entry)sender).Text;
 
             if (!int.TryParse(cText, out int nValue))
             {
                 entQRCodeSizePixels.Focus();
-                return;
             }
 
             if (nValue < 500 || nValue > 10000)
             {
                 entQRCodeSizePixels.Focus();
-                return;
             }
-
-            ClassBarcodes.nQRCodeSizePixels = nValue;
+            else
+            {
+                ClassBarcodes.nQRCodeSizePixels = nValue;
+            }
         }
 
         /// <summary>
@@ -569,6 +569,20 @@ namespace BarcodeGenerator
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
+        }
+
+        /// <summary>
+        /// Handles the Focused event for the QR code image size entry, ensuring that the entry is scrolled into view when focused,
+        /// particularly on iOS where keyboard behavior can affect visibility.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void EntQRCodeSizePixels_Focused(object sender, FocusEventArgs e)
+        {
+            // !!!BUGG!!! in iOS - When the page is partially covered by the keyboard, the ScrollView is not working.
+#if IOS
+            await scrollViewSettings.ScrollToAsync(entQRCodeSizePixels, ScrollToPosition.Start, true);
+#endif
         }
     }
 }

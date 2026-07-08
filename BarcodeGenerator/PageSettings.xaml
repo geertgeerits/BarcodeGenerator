@@ -24,15 +24,19 @@
         SafeAreaEdges="Container,SoftInput">
 
         <ScrollView
+            x:Name="scrollViewSettings"
             Grid.Row="1"
             Grid.Column="0"
             Orientation="Vertical">
+
+            <!--!!!BUGG!!! in iOS - When the page is partially covered by the keyboard, the ScrollView is not working,
+            Adding a row with a fixed height of 70 at the end of the grid solves this issue, but it is not a perfect solution.-->
 
             <Grid
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
                 RowSpacing="4"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, 70">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -283,18 +287,6 @@
                     Text="{Translate QRCodeSizePixels_Text}">
                 </Label>
 
-                <!-- Dummy entry to set focus to when using the 'Next' key on the keyboard when the previous entry 'entQRCodeSizePixels' had focus.
-                     This is necessary to trigger the Unfocused event of 'entQRCodeSizePixels' to validate the size value and update the sliders and preview accordingly.
-                     This dummy entry is placed behind the other entry and is not visible and not interactive. -->
-                <Entry
-                    x:Name="entDummy"
-                    Grid.Row="11"
-                    Grid.Column="1"
-                    HeightRequest="20"
-                    WidthRequest="50"
-                    Margin="10,0,0,0">
-                </Entry>
-
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="11"
@@ -306,9 +298,10 @@
                         MaxLength="5"
                         Placeholder="500 - 10000"
                         Keyboard="Numeric"
-                        ReturnType="Next"
+                        ReturnType="Done"
                         TextChanged="EntQRCodeSizePixels_TextChanged"
-                        Unfocused="EntQRCodeSizePixels_Unfocused" >
+                        Focused="EntQRCodeSizePixels_Focused"
+                        Completed="EntQRCodeSizePixels_Completed">
                     </Entry>
                 </Border>
 
