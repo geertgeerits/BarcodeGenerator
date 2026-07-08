@@ -248,7 +248,8 @@ namespace BarcodeGenerator
             OnClearCodeClicked(sender, e);
             edtTextToCode.Text = ClassPayloadTypes.cPayloadResult;
 
-            // If the payload type is SEPA Credit Transfer, show the QR-code immediately after setting the payload result in the editor, otherwise the user can modify the payload result, without effect, because the code is already generated
+            // If the payload type is SEPA Credit Transfer, show the QR-code immediately after setting the payload result in the editor,
+            // otherwise the user can modify the payload result, without effect, because the code is already generated
             if (PopupPayloadTypes.bPayloadSepaCreditTransfer && PopupPayloadTypes.qrCodeImageSource is not null)
             {
                 // Payload type is 'Sepa credit transfer' using the QRCoder library
