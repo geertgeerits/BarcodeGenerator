@@ -16,33 +16,6 @@ namespace BarcodeGenerator
         public PopupPayloadTypes()
         {
             InitializeComponent();
-//#if IOS
-//    // existing numeric keyboard config
-//    BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLatitude);
-//    BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLongitude);
-
-//    // Start observing keyboard notifications and subscribe to messages to adjust the popup.
-//    BarcodeGenerator.Platforms.iOS.KeyboardHelper.StartListening();
-
-//    BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillShow += (sender, e) =>
-//    {
-//        // Move the popup up so focused entry is visible. Cap the translation to a reasonable max.
-//        Dispatcher.Dispatch(async () =>
-//        {
-//            double cap = Math.Min(e.Height, 400);
-//            // move up by cap/2 (tweak if necessary for your layout)
-//            await this.TranslateTo(0, -cap / 2, 150);
-//        });
-//    };
-
-//    BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillHide += (sender, e) =>
-//    {
-//        Dispatcher.Dispatch(async () => await this.TranslateTo(0, 0, 150));
-//    };
-
-//    // Make sure we cleanup when the popup closes
-//    this.Closed += Popup_PayloadTypes_Closed;
-//#endif
 #if IOS
             // Configure the numeric keyboard for these entry fields on iOS to use the NumbersAndPunctuation keyboard type
             BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLatitude);
@@ -86,25 +59,6 @@ namespace BarcodeGenerator
             // Set the control properties based on the selected payload type
             SetControlsProperties(ClassPayloadTypes.cPayloadType);
         }
-
-        //        private void Popup_PayloadTypes_Closed(object? sender, EventArgs e)
-        //        {
-        //#if IOS
-        //            try
-        //            {
-        //                BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillShow -= (sender, e) => { };
-        //                BarcodeGenerator.Platforms.iOS.KeyboardHelper.KeyboardWillHide -= (sender, e) => { };
-        //                BarcodeGenerator.Platforms.iOS.KeyboardHelper.StopListening();
-        //            }
-        //            catch
-        //            {
-
-        //            }
-        //#endif
-
-        //    // existing cleanup the popup already uses
-        //    Globals.bPopupOpened = false;
-        //        }
 
         /// <summary>
         /// Sets the properties of various controls based on the selected payload type name

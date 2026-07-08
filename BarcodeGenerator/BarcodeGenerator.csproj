@@ -263,7 +263,7 @@
        This prevents the native ZXing.dll (runtimes\win-x64\native\ZXing.dll) from colliding with the managed
        zxing.dll provided by zxing.net in the publish output. -->
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
-		<PackageReference Include="zxingcpp" Version="0.5.1">
+		<PackageReference Include="zxingcpp" Version="0.5.2">
 			<ExcludeAssets>native</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>
