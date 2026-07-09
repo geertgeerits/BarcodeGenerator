@@ -366,20 +366,30 @@ namespace BarcodeGenerator
         /// <param name="e">The event data containing information about the completion of the entry.</param>
         private void EntQRCodeSizePixels_Completed(object sender, EventArgs e)
         {
-            string cText = ((Entry)sender).Text;
+            _ = ValidateQRCodeSizePixels(entQRCodeSizePixels);
+        }
 
-            if (!int.TryParse(cText, out int nValue))
+        /// <summary>
+        /// Validates the QR code image size entered in the specified Entry control, ensuring that it is a valid integer within the range of 500 to 10000 pixels.
+        /// If the value is invalid, the focus is set back to the Entry control for correction.
+        /// </summary>
+        /// <param name="entry"></param>
+        private static bool ValidateQRCodeSizePixels(Entry entry)
+        {
+            if (!int.TryParse(entry.Text, out int nValue))
             {
-                entQRCodeSizePixels.Focus();
+                entry.Focus();
+                return false;
             }
 
-            if (nValue < 500 || nValue > 10000)
+            switch (nValue)
             {
-                entQRCodeSizePixels.Focus();
-            }
-            else
-            {
-                ClassBarcodes.nQRCodeSizePixels = nValue;
+                case < 500 or > 10000:
+                    entry.Focus();
+                    return false;
+                default:
+                    ClassBarcodes.nQRCodeSizePixels = nValue;
+                    return true;
             }
         }
 
@@ -482,8 +492,15 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private static void OnSettingsSaveClicked(object sender, EventArgs e)
+        private void OnSettingsSaveClicked(object sender, EventArgs e)
         {
+            // Validate the QR code image size entry before saving the settings
+            if (!ValidateQRCodeSizePixels(entQRCodeSizePixels))
+            {
+                return;
+            }
+
+            // Save the settings to the Preferences
             Preferences.Default.Set("SettingBarcodeGeneratorName", ClassBarcodes.cBarcodeGeneratorName);
             Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
             Preferences.Default.Set("SettingQRCodeSizeVariable", ClassBarcodes.bQRCodeSizeVariable);
