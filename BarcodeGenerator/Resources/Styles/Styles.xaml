@@ -399,6 +399,7 @@
         </Setter>
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Always" />
     </Style>
 
     <Style x:Key="borderStyleDefault" TargetType="Border">

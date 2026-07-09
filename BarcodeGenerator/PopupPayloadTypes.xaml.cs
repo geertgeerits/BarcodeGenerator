@@ -182,10 +182,14 @@ namespace BarcodeGenerator
                 brdPayloadTypeSctRemittanceInfoStructured.IsVisible = true;
                 brdPayloadTypeSctRemittanceInfoUnstructured.IsVisible = true;
                 brdPayloadTypeSctInformation.IsVisible = true;
-#if IOS
+
                 // !!!BUGG!!! in iOS - When the Popup page is partially covered by the keyboard, the ScrollView is not working,
                 // so limit the maximum height of the popup to 400 points to ensure it fits on the screen.
-                popupPayloadTypes.MaximumHeightRequest = 400;
+#if IOS
+                if (DeviceInfo.Idiom == DeviceIdiom.Phone || (DeviceInfo.Idiom == DeviceIdiom.Tablet && DeviceDisplay.Current.MainDisplayInfo.Orientation == DisplayOrientation.Landscape))
+                {
+                    popupPayloadTypes.MaximumHeightRequest = 400;
+                }
 #endif
                 _ = entPayloadTypeSctBic.Focus();
             }
@@ -1303,7 +1307,10 @@ END:VCALENDAR";
         {
             // !!!BUGG!!! in iOS - When the Popup page is partially covered by the keyboard, the ScrollView is not working.
 #if IOS
-            await scrollViewPayloadTypes.ScrollToAsync(brdPayloadTypeSctRemittanceInfoStructured, ScrollToPosition.Start, true);
+            if (DeviceInfo.Idiom == DeviceIdiom.Phone || (DeviceInfo.Idiom == DeviceIdiom.Tablet && DeviceDisplay.Current.MainDisplayInfo.Orientation == DisplayOrientation.Landscape))
+            {
+                await scrollViewPayloadTypes.ScrollToAsync(entPayloadTypeSctInformation, ScrollToPosition.Start, true);
+            }
 #endif
         }
     }

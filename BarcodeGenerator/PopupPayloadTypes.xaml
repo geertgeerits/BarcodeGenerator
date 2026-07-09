@@ -19,6 +19,9 @@
     <!--!!!BUG!!! in Android: The Editor and Entry controls do not have a 'Cut Copy Paste' context menu when using
     the 'ToolTipProperties' property.-->
 
+    <!--!!!BUG!!! in iOS: Add a extra row to the Grid with a height of 20 to provide space for the ScrollView to scroll when the virtual
+    keyboard is displayed on the screen. This prevents the virtual keyboard from covering the controls in the Grid.-->
+
     <ScrollView
         x:Name="scrollViewPayloadTypes"
         Style="{StaticResource scrollviewStylePopup}">
@@ -26,7 +29,7 @@
         <Grid
             x:Name="grdSettingsPayloadTypes"
             Style="{StaticResource gridStylePopup}"
-            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, 20"
             VerticalOptions="Start">
 
             <Label
