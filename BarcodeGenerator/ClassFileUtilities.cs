@@ -35,6 +35,7 @@ namespace BarcodeGenerator
                 // Correct the orientation of the selected image stream based on EXIF data
                 // !!!BUG!!! in iOS, the orientation of the bounding box of the selected images may be incorrect with jpeg, heic and heif files.
                 // However, the 'GetSelectedImageStreamAsync()' method does not correct the orientation of the bounding box.
+                // Setting the 'RotateImage = true' in the MediaPickerOptions did fix the bounding box orientation issue on iOS.
                 //selected = (await GetSelectedImageStreamAsync(photos)).selected;
 
                 // Get the file name
@@ -285,8 +286,7 @@ namespace BarcodeGenerator
             {
                 if (!string.IsNullOrEmpty(filePath))
                 {
-                    string cacheDir = FileSystem.CacheDirectory;
-                    if (filePath.StartsWith(cacheDir, StringComparison.OrdinalIgnoreCase) && File.Exists(filePath))
+                    if (filePath.StartsWith(FileSystem.Current.CacheDirectory, StringComparison.OrdinalIgnoreCase) && File.Exists(filePath))
                     {
                         File.Delete(filePath);
                         Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted existing cache file at: {filePath}");
