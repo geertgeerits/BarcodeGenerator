@@ -77,11 +77,12 @@
                     x:Name="entHexColor"
                     ClearButtonVisibility="WhileEditing"
                     Keyboard="Text"
-                    ReturnType="Next"
+                    ReturnType="Done"
                     MaxLength="8"
                     TextTransform="Uppercase"
-                    TextChanged="EntryHexColorTextChanged"
-                    Unfocused="EntryHexColorUnfocused">
+                    TextChanged="EntryHexColor_TextChanged"
+                    Unfocused="EntryHexColor_Unfocused"
+                    Completed="EntHexColor_Completed">
                 </Entry>
             </Border>
 
@@ -95,7 +96,7 @@
                 WidthRequest="39"
                 SemanticProperties.Description="{Translate ToolTipHelp_Text}"
                 ToolTipProperties.Text="{Translate ToolTipHelp_Text}"
-                Clicked="OnSettingsHexColorHelpClicked">
+                Clicked="OnSettingsHexColorHelp_Clicked">
             </Button>
 
             <Border
@@ -133,7 +134,7 @@
                 Margin="10,5,10,0"
                 ThumbColor="Grey"
                 MinimumTrackColor="Black"
-                ValueChanged="OnSliderColorValueChanged">
+                ValueChanged="OnSliderColor_ValueChanged">
             </Slider>
 
             <Slider
@@ -145,7 +146,7 @@
                 Margin="10,0,10,0"
                 ThumbColor="Red"
                 MinimumTrackColor="Red"
-                ValueChanged="OnSliderColorValueChanged">
+                ValueChanged="OnSliderColor_ValueChanged">
             </Slider>
 
             <Slider
@@ -157,7 +158,7 @@
                 Margin="10,0,10,0"
                 ThumbColor="Green"
                 MinimumTrackColor="Green"
-                ValueChanged="OnSliderColorValueChanged">
+                ValueChanged="OnSliderColor_ValueChanged">
             </Slider>
 
             <Slider
@@ -169,7 +170,7 @@
                 Margin="10,0,10,0"
                 ThumbColor="Blue"
                 MinimumTrackColor="Blue"
-                ValueChanged="OnSliderColorValueChanged">
+                ValueChanged="OnSliderColor_ValueChanged">
             </Slider>
 
             <ImageButton

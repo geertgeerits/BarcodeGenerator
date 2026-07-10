@@ -41,13 +41,23 @@ namespace BarcodeGenerator
         {
             btnButtonClose.Focus();
         }
-   
+
+        /// <summary>
+        /// Entry HexColor Completed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EntHexColor_Completed(object sender, EventArgs e)
+        {
+            EntryHexColor_Unfocused(sender, e);
+        }
+
         /// <summary>
         /// Entry HexColor Unfocused event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void EntryHexColorUnfocused(object sender, EventArgs e)
+        private void EntryHexColor_Unfocused(object sender, EventArgs e)
         {
             Entry entry = (Entry)sender;
 
@@ -85,7 +95,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void OnSliderColorValueChanged(object sender, ValueChangedEventArgs args)
+        private void OnSliderColor_ValueChanged(object sender, ValueChangedEventArgs args)
         {
             int nAmountOpacity = 0;
             int nColorRed = 0;
@@ -173,7 +183,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
+        private async void EntryHexColor_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (!IsHex(e.NewTextValue))
             {
@@ -211,7 +221,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnSettingsHexColorHelpClicked(object sender, EventArgs e)
+        private async void OnSettingsHexColorHelp_Clicked(object sender, EventArgs e)
         {
             await Application.Current!.Windows[0].Page!.DisplayAlertAsync("?", $"{CodeLang.HexColorCodes_Text}\n\n{CodeLang.AllowedChar_Text}\n{cHexCharacters}", CodeLang.ButtonClose_Text);
         }
