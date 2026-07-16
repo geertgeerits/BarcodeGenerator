@@ -49,14 +49,20 @@ namespace BarcodeGenerator
             // ???!!!BUG!!!??? in NuGet package SkiaSharp.QrCode
             // The background color of the finder pattern shape is not being applied correctly when the opacity is less than 255,
             // so we need to manually adjust the opacity of the background color to ensure it is fully opaque when using Rounded or Circle shapes
-            if (ClassBarcodes.cQRCodeFinderPatternShape == "Rounded" || ClassBarcodes.cQRCodeFinderPatternShape == "Circle")
+            
+            // Workaround for bug
+            if (ClassArtQRCodeSettings.bQRCodeFinderPatternShapeBug)
             {
-                if (ClassBarcodes.cCodeColorBgArtQRCode.Length == 8)
+                if (ClassBarcodes.cQRCodeFinderPatternShape == "Rounded" || ClassBarcodes.cQRCodeFinderPatternShape == "Circle")
                 {
-                    ClassBarcodes.cCodeColorBgArtQRCode = $"FF{ClassBarcodes.cCodeColorBgArtQRCode.Substring(2, 6)}";
+                    if (ClassBarcodes.cCodeColorBgArtQRCode.Length == 8)
+                    {
+                        ClassBarcodes.cCodeColorBgArtQRCode = $"FF{ClassBarcodes.cCodeColorBgArtQRCode.Substring(2, 6)}";
+                    }
                 }
             }
 
+            // Close the popup asynchronously
             await CloseAsync();
         }
     }
