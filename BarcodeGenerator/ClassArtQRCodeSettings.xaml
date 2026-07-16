@@ -132,8 +132,7 @@
                 HorizontalOptions="Start"
                 Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeSquare_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}"
->
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}">
             </BoxView>
 
             <RadioButton
