@@ -233,35 +233,6 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Radio button QR code FinderPattern shape checked changed event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RbtQRCodeFinderPatternShape_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            // !!!BUG!!! in NuGet package SkiaSharp.QrCode version 0.12.0.
-            // The background color of the finder pattern shape is not being applied correctly,
-            // so we need to manually disable the background image switch when using Rounded or Circle shapes
-            if (rbtQRCodeFinderPatternShapeSquare.IsChecked)
-            {
-                ClassBarcodes.cQRCodeFinderPatternShape = "Square";
-                swtBackgroundImage.IsEnabled = true;
-            }
-            else if (rbtQRCodeFinderPatternShapeRounded.IsChecked)
-            {
-                ClassBarcodes.cQRCodeFinderPatternShape = "Rounded";
-                swtBackgroundImage.IsToggled = false;
-                swtBackgroundImage.IsEnabled = false;
-            }
-            else if (rbtQRCodeFinderPatternShapeCircle.IsChecked)
-            {
-                ClassBarcodes.cQRCodeFinderPatternShape = "Circle";
-                swtBackgroundImage.IsToggled = false;
-                swtBackgroundImage.IsEnabled = false;
-            }
-        }
-
-        /// <summary>
         /// Radio button QR code module shape checked changed event
         /// </summary>
         /// <param name="sender"></param>

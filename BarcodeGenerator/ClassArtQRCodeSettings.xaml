@@ -120,8 +120,7 @@
                 HorizontalOptions="Start"
                 Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeSquare_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}"
-                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}">
             </RadioButton>
 
             <BoxView
@@ -142,8 +141,7 @@
                 HorizontalOptions="Start"
                 Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeRounded_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRounded_Text}"
-                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRounded_Text}">
             </RadioButton>
 
             <BoxView
@@ -164,8 +162,7 @@
                 HorizontalOptions="Start"
                 Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeCircle_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeCircle_Text}"
-                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeCircle_Text}">
             </RadioButton>
 
             <BoxView
