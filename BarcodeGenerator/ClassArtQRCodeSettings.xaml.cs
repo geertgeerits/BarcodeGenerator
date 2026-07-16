@@ -233,6 +233,27 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Radio button QR code FinderPattern shape checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RbtQRCodeFinderPatternShape_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (rbtQRCodeFinderPatternShapeSquare.IsChecked)
+            {
+                ClassBarcodes.cQRCodeFinderPatternShape = "Square";
+            }
+            else if (rbtQRCodeFinderPatternShapeRounded.IsChecked)
+            {
+                ClassBarcodes.cQRCodeFinderPatternShape = "Rounded";
+            }
+            else if (rbtQRCodeFinderPatternShapeCircle.IsChecked)
+            {
+                ClassBarcodes.cQRCodeFinderPatternShape = "Circle";
+            }
+        }
+
+        /// <summary>
         /// Radio button QR code module shape checked changed event
         /// </summary>
         /// <param name="sender"></param>

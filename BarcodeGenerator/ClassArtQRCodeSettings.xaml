@@ -120,7 +120,8 @@
                 HorizontalOptions="Start"
                 Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeSquare_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}">
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}"
+                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
             </RadioButton>
 
             <BoxView
@@ -131,7 +132,8 @@
                 HorizontalOptions="Start"
                 Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeSquare_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}">
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}"
+>
             </BoxView>
 
             <RadioButton
@@ -141,7 +143,8 @@
                 HorizontalOptions="Start"
                 Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeRounded_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRounded_Text}">
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRounded_Text}"
+                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
             </RadioButton>
 
             <BoxView
@@ -162,7 +165,8 @@
                 HorizontalOptions="Start"
                 Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeCircle_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeCircle_Text}">
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeCircle_Text}"
+                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
             </RadioButton>
 
             <BoxView
