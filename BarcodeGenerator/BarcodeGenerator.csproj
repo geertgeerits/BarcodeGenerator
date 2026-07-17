@@ -98,7 +98,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="14.2.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="14.2.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.80" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.10" />
         <PackageReference Include="QRCoder" Version="1.8.0" />
@@ -106,9 +106,9 @@
         <PackageReference Include="SkiaSharp.QrCode" Version="1.0.1" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.10.3" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.10.3" />
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.4" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.5" />
 		<PackageReference Include="Sentry.Maui" Version="6.7.0" />
-		<!--<PackageReference Include="zxingcpp" Version="0.5.2" />-->
+		<!--<PackageReference Include="ZXingCpp" Version="0.5.2" />-->
 	</ItemGroup>
 
 	<ItemGroup>
@@ -253,17 +253,17 @@
 
 	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
 	   --><!--Remove the native DLL from publish if it conflicts--><!-- 
-	  <None Remove="$(UserProfile)\.nuget\packages\zxingcpp\0.5.2\runtimes\win-x64\native\ZXing.dll" />
+	  <None Remove="$(UserProfile)\.nuget\packages\ZXingCpp\0.5.2\runtimes\win-x64\native\ZXing.dll" />
 	</ItemGroup>-->
 
 	<!--Error (active)	NETSDK1152	Found multiple publish output files with the same relative path:
-	    C:\nuget\zxing.net\0.16.11\lib\net9.0\zxing.dll, C:\nuget\zxingcpp\0.5.2\runtimes\win-x64\native\ZXing.dll.
+	    C:\nuget\zxing.net\0.16.11\lib\net9.0\zxing.dll, C:\nuget\ZXingCpp\0.5.2\runtimes\win-x64\native\ZXing.dll.
 		BarcodeGenerator (net10.0-windows10.0.19041.0)	C:\Program Files\dotnet\sdk\10.0.101\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ConflictResolution.targets 112-->
-	<!-- Exclude native runtime/native assets from the transitive zxingcpp package when building Windows.
+	<!-- Exclude native runtime/native assets from the transitive ZXingCpp package when building Windows.
        This prevents the native ZXing.dll (runtimes\win-x64\native\ZXing.dll) from colliding with the managed
        zxing.dll provided by zxing.net in the publish output. -->
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
-		<PackageReference Include="zxingcpp" Version="0.5.2">
+		<PackageReference Include="ZXingCpp" Version="0.5.2">
 			<ExcludeAssets>native</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>
@@ -289,7 +289,7 @@
 	
 	<!--<ItemGroup>
 		<Reference Include="ZXingCpp">
-			<HintPath>..\..\..\..\nuget\zxingcpp\0.5.2\lib\net5.0\ZXingCpp.dll</HintPath>
+			<HintPath>..\..\..\..\nuget\ZXingCpp\0.5.2\lib\net5.0\ZXingCpp.dll</HintPath>
 		</Reference>
 	</ItemGroup>-->
 </Project>
