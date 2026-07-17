@@ -7,7 +7,7 @@ namespace BarcodeGenerator
         // ???!!!BUG!!!??? in NuGet package SkiaSharp.QrCode
         // The background color of the finder pattern shape is not being applied correctly when the opacity is less than 255
         // Used in 'ClassArtQRCodeSettings' and 'PopupSettingsArtQRCode' to determine whether to apply a workaround for the bug
-        public static bool bQRCodeFinderPatternShapeBug = true;  // true: use workaround, false: no workaround
+        public static readonly bool bQRCodeFinderPatternShapeBug = true;  // true: use workaround, false: no workaround
 
         // Define a constant for the background color of the selected gradient direction button
         private readonly string cGradientDirectionBackgroundColor = "000099";  // 000099 navy blue
@@ -244,45 +244,32 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void RbtQRCodeFinderPatternShape_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
+            // Update the QR code finder pattern shape based on the selected radio button
+            if (rbtQRCodeFinderPatternShapeSquare.IsChecked)
+            {
+                ClassBarcodes.cQRCodeFinderPatternShape = "Square";
+            }
+            else if (rbtQRCodeFinderPatternShapeRounded.IsChecked)
+            {
+                ClassBarcodes.cQRCodeFinderPatternShape = "Rounded";
+            }
+            else if (rbtQRCodeFinderPatternShapeCircle.IsChecked)
+            {
+                ClassBarcodes.cQRCodeFinderPatternShape = "Circle";
+            }
+            
             // ???!!!BUG!!!??? in NuGet package SkiaSharp.QrCode
             // The background color of the finder pattern shape is not being applied correctly when the opacity is less than 255,
             // so we need to manually disable the background image switch 'swtBackgroundImage' when using Rounded or Circle shapes
             // This is a workaround for the bug, and it will be removed when the bug is fixed in the NuGet package
-            
-            // No workaround for bug
-            if (!bQRCodeFinderPatternShapeBug)
+            if (bQRCodeFinderPatternShapeBug)
             {
                 if (rbtQRCodeFinderPatternShapeSquare.IsChecked)
                 {
-                    ClassBarcodes.cQRCodeFinderPatternShape = "Square";
-                }
-                else if (rbtQRCodeFinderPatternShapeRounded.IsChecked)
-                {
-                    ClassBarcodes.cQRCodeFinderPatternShape = "Rounded";
-                }
-                else if (rbtQRCodeFinderPatternShapeCircle.IsChecked)
-                {
-                    ClassBarcodes.cQRCodeFinderPatternShape = "Circle";
-                }
-            }
-            
-            // Workaround for bug
-            else
-            {
-                if (rbtQRCodeFinderPatternShapeSquare.IsChecked)
-                {
-                    ClassBarcodes.cQRCodeFinderPatternShape = "Square";
                     swtBackgroundImage.IsEnabled = true;
                 }
-                else if (rbtQRCodeFinderPatternShapeRounded.IsChecked)
+                else  // rbtQRCodeFinderPatternShapeRounded.IsChecked or rbtQRCodeFinderPatternShapeCircle.IsChecked
                 {
-                    ClassBarcodes.cQRCodeFinderPatternShape = "Rounded";
-                    swtBackgroundImage.IsToggled = false;
-                    swtBackgroundImage.IsEnabled = false;
-                }
-                else if (rbtQRCodeFinderPatternShapeCircle.IsChecked)
-                {
-                    ClassBarcodes.cQRCodeFinderPatternShape = "Circle";
                     swtBackgroundImage.IsToggled = false;
                     swtBackgroundImage.IsEnabled = false;
                 }

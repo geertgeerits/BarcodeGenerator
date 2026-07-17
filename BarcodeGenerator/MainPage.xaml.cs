@@ -2,17 +2,17 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.52
- * Date ........: 2026-07-16 (YYYY-MM-DD)
+ * Date ........: 2026-07-17 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
  *                Apple Vision framework: https://developer.apple.com/documentation/vision
  *                Google Vision: https://developers.google.com/android/reference/com/google/android/gms/vision/CameraSource.Builder
  *                Google ML Kit: https://developers.google.com/ml-kit
- *                zxing-cpp: https://github.com/zxing-cpp/zxing-cpp
  * Dependencies : NuGet Package: CommunityToolkit.Maui
  *                NuGet Package: ZXing.Net.Maui by Redth - https://github.com/redth/ZXing.Net.Maui
  *                NuGet Package: ZXing.Net.Maui.Controls by Redth
+ *                NuGet Package: ZXingCpp by Axxel - https://github.com/zxing-cpp/zxing-cpp ; https://www.nuget.org/packages/ZXingCpp#readme-body-tab ;https://www.nuget.org/packages/ZXingCpp
  *                NuGet Package: QRCoder by Raffael Herrmann, Shane Krueger - https://github.com/Shane32/QRCoder - https://github.com/Shane32/QRCoder/wiki
  *                NuGet Package: SkiaSharp by Microsoft - https://github.com/mono/SkiaSharp
  *                NuGet Package: SkiaSharp.QrCode by Ikiru Yoshizaki - https://github.com/guitarrapc/SkiaSharp.QrCode
