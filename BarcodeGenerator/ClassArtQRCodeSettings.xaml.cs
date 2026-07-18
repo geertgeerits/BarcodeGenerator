@@ -7,7 +7,7 @@ namespace BarcodeGenerator
         // ???!!!BUG!!!??? in NuGet package SkiaSharp.QrCode
         // The background color of the finder pattern shape is not being applied correctly when the opacity is less than 255
         // Used in 'ClassArtQRCodeSettings' and 'PopupSettingsArtQRCode' to determine whether to apply a workaround for the bug
-        public static readonly bool bQRCodeFinderPatternShapeBug = true;  // true: use workaround, false: no workaround
+        public static readonly bool bQRCodeFinderPatternShapeBug = false;  // true: use workaround, false: no workaround
 
         // Define a constant for the background color of the selected gradient direction button
         private readonly string cGradientDirectionBackgroundColor = "000099";  // 000099 navy blue
