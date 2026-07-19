@@ -280,6 +280,18 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Slider QR code module size value changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SldQRCodeModuleSize_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            ClassBarcodes.nQRCodeModuleSizePercent = MathF.Round((float)e.NewValue, 0);
+            sldQRCodeModuleSize.Value = ClassBarcodes.nQRCodeModuleSizePercent;
+            lblQRCodeModuleSize.Text = $"{string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent)}";
+        }
+
+        /// <summary>
         /// Switch QR code gradient toggled event
         /// </summary>
         /// <param name="sender"></param>
@@ -447,13 +459,6 @@ namespace BarcodeGenerator
         {
             DeviceDisplay.MainDisplayInfoChanged -= OnMainDisplayInfoChanged;
             this.Unloaded -= OnUnloaded;
-        }
-
-        private void SldQRCodeModuleSize_ValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            ClassBarcodes.nQRCodeModuleSizePercent = MathF.Round((float)e.NewValue, 0);
-            sldQRCodeModuleSize.Value = ClassBarcodes.nQRCodeModuleSizePercent;
-            lblQRCodeModuleSize.Text = $"{string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent)}";
         }
     }
 }
