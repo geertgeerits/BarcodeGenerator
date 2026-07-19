@@ -1026,4 +1026,7 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>Az összes mező együttes hossza túl hosszú. A teljes hasznos adatméret 331 bájtra korlátozódik.</value>
   </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Modul mérete: {0}%</value>
+  </data>
 </root>

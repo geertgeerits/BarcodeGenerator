@@ -1026,4 +1026,7 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>Celková délka všech polí je příliš dlouhá. Celková velikost datové části je omezena na 331 bajtů.</value>
   </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Velikost modulu: {0}%</value>
+  </data>
 </root>

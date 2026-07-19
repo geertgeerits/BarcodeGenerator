@@ -1026,4 +1026,7 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>Łączna długość wszystkich pól jest za duża. Całkowity rozmiar danych jest ograniczony do 331 bajtów.</value>
   </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Rozmiar modułu: {0}%</value>
+  </data>
 </root>

@@ -1025,4 +1025,7 @@ Wählen Sie eine Option.</value>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>Die Gesamtlänge aller Felder ist zu lang. Die gesamte Nutzlastgröße ist auf 331 Byte begrenzt.</value>
   </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Modulgröße: {0}%</value>
+  </data>
 </root>

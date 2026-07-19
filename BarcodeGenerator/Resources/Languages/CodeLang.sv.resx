@@ -1026,4 +1026,7 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>Den sammanlagda längden på alla fält är för lång. Den totala nyttolaststorleken är begränsad till 331 byte.</value>
   </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Modulstorlek: {0}%</value>
+  </data>
 </root>

@@ -1026,4 +1026,7 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>Kaikkien kenttien yhteenlaskettu pituus on liian pitkä. Kokonaishyötykuorman koko on rajoitettu 331 tavuun.</value>
   </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Moduulin koko: {0}%</value>
+  </data>
 </root>

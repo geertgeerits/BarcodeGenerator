@@ -1026,4 +1026,7 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>O comprimento combinado de todos os campos é muito longo. O tamanho total da carga útil está limitado a 331 bytes.</value>
   </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Tamanho do módulo: {0}%</value>
+  </data>
 </root>

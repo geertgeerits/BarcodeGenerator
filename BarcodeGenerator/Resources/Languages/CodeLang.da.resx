@@ -1026,4 +1026,7 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>Den samlede længde af alle felter er for lang. Den samlede nyttelaststørrelse er begrænset til 331 bytes.</value>
   </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Modulstørrelse: {0}%</value>
+  </data>
 </root>

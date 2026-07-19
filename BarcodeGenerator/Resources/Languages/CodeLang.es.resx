@@ -1026,4 +1026,7 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>La longitud combinada de todos los campos es demasiado grande. El tamaño total de la carga útil está limitado a 331 bytes.</value>
   </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Tamaño del módulo: {0}%</value>
+  </data>
 </root>
