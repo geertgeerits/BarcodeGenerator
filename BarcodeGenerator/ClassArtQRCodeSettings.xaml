@@ -276,13 +276,13 @@
             Style="{StaticResource borderStyleGroup}"
             Grid.Row="5"
             Grid.Column="2"
-            Grid.RowSpan="1"
             Margin="0,0,8,0">
 
             <Slider
                 x:Name="sldQRCodeModuleSize"
                 Style="{StaticResource sliderStyleColor}"
-                Margin="10,7,10,0"
+                VerticalOptions="Center"
+                Margin="{OnPlatform Default='0,0,0,0', iOS='8,3,8,0', WinUI='10,2,10,0'}"
                 ThumbColor="Orange"
                 MinimumTrackColor="Orange"
                 Minimum="50"

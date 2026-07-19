@@ -27,7 +27,7 @@ namespace BarcodeGenerator
             Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
             {
-                _ = await currentPage.ShowPopupAsync(new PopupSettingsArtQRCode(CodeLang.Settings_Text));
+                _ = await currentPage.ShowPopupAsync(new PopupSettingsArtQRCode());
 
                 // Check if the popup was canceled by the user before proceeding to open the file picker
                 if (Globals.bPopupCanceled)

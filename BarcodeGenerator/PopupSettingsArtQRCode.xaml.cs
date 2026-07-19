@@ -4,7 +4,7 @@ namespace BarcodeGenerator
 {
     public partial class PopupSettingsArtQRCode : Popup
     {
-        public PopupSettingsArtQRCode(string cMessage = "")
+        public PopupSettingsArtQRCode()
         {
             // Name of the current page
             Globals.cCurrentPage = "PopupSettingsArtQRCode";
@@ -13,9 +13,6 @@ namespace BarcodeGenerator
 
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
             Globals.bPopupOpened = true;
-
-            // Set the message text
-            lblPopupTitle.Text = cMessage;
         }
 
         /// <summary>
