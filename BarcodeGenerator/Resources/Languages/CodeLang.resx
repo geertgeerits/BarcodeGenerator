@@ -1026,4 +1026,7 @@ Not all payload types are supported on every device.</value>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>The combined length of all fields is too long. The total payload size is limited to 331 bytes.</value>
   </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Module size: {0}%</value>
+  </data>
 </root>

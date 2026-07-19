@@ -141,28 +141,20 @@ namespace BarcodeGenerator
                 .WithIcon(icon);
 
             // Apply module shape if a non-default shape is selected
-            switch (ClassBarcodes.cQRCodeModuleShape)
+            qrData = ClassBarcodes.cQRCodeModuleShape switch
             {
-                case "Rounded":
-                    qrData = qrData.WithModuleShape(RoundedRectangleModuleShape.Default);
-                    break;
-                case "Circle":
-                    qrData = qrData.WithModuleShape(CircleModuleShape.Default);
-                    break;
-                // "Square" or unknown: leave default module shape
-            }
+                "Rounded" => qrData.WithModuleShape(RoundedRectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100),
+                "Circle" => qrData.WithModuleShape(CircleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100),
+                _ => qrData.WithModuleShape(RectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100),
+            };
 
             // Apply finder pattern shape independently from module shape
-            switch (ClassBarcodes.cQRCodeFinderPatternShape)
+            qrData = ClassBarcodes.cQRCodeFinderPatternShape switch
             {
-                case "Rounded":
-                    qrData = qrData.WithFinderPatternShape(RoundedRectangleFinderPatternShape.Default);
-                    break;
-                case "Circle":
-                    qrData = qrData.WithFinderPatternShape(CircleFinderPatternShape.Default);
-                    break;
-                // "Square" or unknown: leave default finder pattern shape
-            }
+                "Rounded" => qrData.WithFinderPatternShape(RoundedRectangleFinderPatternShape.Default),
+                "Circle" => qrData.WithFinderPatternShape(CircleFinderPatternShape.Default),
+                _ => qrData.WithFinderPatternShape(RectangleFinderPatternShape.Default),
+            };
 
             // Add a null check before using qrData
             if (qrData == null)

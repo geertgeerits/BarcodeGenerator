@@ -508,6 +508,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassBarcodes.nQRCodeImageSizePercent);
             Preferences.Default.Set("SettingQRCodeFinderPatternShape", ClassBarcodes.cQRCodeFinderPatternShape);
             Preferences.Default.Set("SettingQRCodeModuleShape", ClassBarcodes.cQRCodeModuleShape);
+            Preferences.Default.Set("SettingQRCodeModuleSizePercent", ClassBarcodes.nQRCodeModuleSizePercent);
             Preferences.Default.Set("SettingCodeColorFg", ClassBarcodes.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", ClassBarcodes.cCodeColorBg);
             Preferences.Default.Set("SettingCodeColorFgArtQRCode", ClassBarcodes.cCodeColorFgArtQRCode);
@@ -558,6 +559,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
                 Preferences.Default.Remove("SettingQRCodeFinderPatternShape");
                 Preferences.Default.Remove("SettingQRCodeModuleShape");
+                Preferences.Default.Remove("SettingQRCodeModuleSizePercent");
                 Preferences.Default.Remove("SettingCodeColorFg");
                 Preferences.Default.Remove("SettingCodeColorBg");
                 Preferences.Default.Remove("SettingCodeColorFgArtQRCode");

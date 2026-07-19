@@ -4,11 +4,6 @@ namespace BarcodeGenerator
 {
     public partial class ClassArtQRCodeSettings : ContentView
     {
-        // ???!!!BUG!!!??? in NuGet package SkiaSharp.QrCode
-        // The background color of the finder pattern shape is not being applied correctly when the opacity is less than 255
-        // Used in 'ClassArtQRCodeSettings' and 'PopupSettingsArtQRCode' to determine whether to apply a workaround for the bug
-        public static readonly bool bQRCodeFinderPatternShapeBug = false;  // true: use workaround, false: no workaround
-
         // Define a constant for the background color of the selected gradient direction button
         private readonly string cGradientDirectionBackgroundColor = "000099";  // 000099 navy blue
 
@@ -35,6 +30,10 @@ namespace BarcodeGenerator
             rbtQRCodeModuleShapeSquare.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Square";
             rbtQRCodeModuleShapeRounded.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Rounded";
             rbtQRCodeModuleShapeCircle.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Circle";
+
+            // Set the QR code module size percent in the label
+            lblQRCodeModuleSize.Text = $"{string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent)}";
+            sldQRCodeModuleSize.Value = ClassBarcodes.nQRCodeModuleSizePercent;
 
             // Set the initial states of the switches based on the current settings
             swtForegroundImage.IsToggled = ClassBarcodes.bQRCodeForegroundImage;
@@ -257,23 +256,6 @@ namespace BarcodeGenerator
             {
                 ClassBarcodes.cQRCodeFinderPatternShape = "Circle";
             }
-            
-            // ???!!!BUG!!!??? in NuGet package SkiaSharp.QrCode
-            // The background color of the finder pattern shape is not being applied correctly when the opacity is less than 255,
-            // so we need to manually disable the background image switch 'swtBackgroundImage' when using Rounded or Circle shapes
-            // This is a workaround for the bug, and it will be removed when the bug is fixed in the NuGet package
-            if (bQRCodeFinderPatternShapeBug)
-            {
-                if (rbtQRCodeFinderPatternShapeSquare.IsChecked)
-                {
-                    swtBackgroundImage.IsEnabled = true;
-                }
-                else  // rbtQRCodeFinderPatternShapeRounded.IsChecked or rbtQRCodeFinderPatternShapeCircle.IsChecked
-                {
-                    swtBackgroundImage.IsToggled = false;
-                    swtBackgroundImage.IsEnabled = false;
-                }
-            }
         }
 
         /// <summary>
@@ -465,6 +447,13 @@ namespace BarcodeGenerator
         {
             DeviceDisplay.MainDisplayInfoChanged -= OnMainDisplayInfoChanged;
             this.Unloaded -= OnUnloaded;
+        }
+
+        private void SldQRCodeModuleSize_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            ClassBarcodes.nQRCodeModuleSizePercent = MathF.Round((float)e.NewValue, 0);
+            sldQRCodeModuleSize.Value = ClassBarcodes.nQRCodeModuleSizePercent;
+            lblQRCodeModuleSize.Text = $"{string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent)}";
         }
     }
 }

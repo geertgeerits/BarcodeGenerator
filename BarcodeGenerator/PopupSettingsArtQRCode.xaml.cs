@@ -46,23 +46,6 @@ namespace BarcodeGenerator
         /// <param name="e">The event data associated with the button click.</param>
         private async void OnButtonClose_Clicked(object sender, EventArgs e)
         {
-            // ???!!!BUG!!!??? in NuGet package SkiaSharp.QrCode
-            // The background color of the finder pattern shape is not being applied correctly when the opacity is less than 255,
-            // so we need to manually adjust the opacity of the background color to ensure it is fully opaque when using Rounded or Circle shapes
-            
-            // Workaround for bug
-            if (ClassArtQRCodeSettings.bQRCodeFinderPatternShapeBug)
-            {
-                if (ClassBarcodes.cQRCodeFinderPatternShape == "Rounded" || ClassBarcodes.cQRCodeFinderPatternShape == "Circle")
-                {
-                    if (ClassBarcodes.cCodeColorBgArtQRCode.Length == 8)
-                    {
-                        ClassBarcodes.cCodeColorBgArtQRCode = $"FF{ClassBarcodes.cCodeColorBgArtQRCode.Substring(2, 6)}";
-                    }
-                }
-            }
-
-            // Close the popup asynchronously
             await CloseAsync();
         }
     }

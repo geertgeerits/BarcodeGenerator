@@ -2228,6 +2228,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Module size: {0}%.
+        /// </summary>
+        internal static string QRCodeModuleSize_Text {
+            get {
+                return ResourceManager.GetString("QRCodeModuleSize_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recommended image size.
         /// </summary>
         internal static string QRCodeRecommendedImageSize_Text {

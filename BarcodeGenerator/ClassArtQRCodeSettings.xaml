@@ -8,7 +8,7 @@
 
     <Grid
         x:Name="grdSettingsArtQRCode"
-        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
         RowSpacing="5"
         HorizontalOptions="Center"
         VerticalOptions="Start">
@@ -17,7 +17,7 @@
             Style="{StaticResource borderStyleGroup}"
             Grid.Row="0"
             Grid.Column="0"
-            Grid.RowSpan="10"
+            Grid.RowSpan="11"
             Grid.ColumnSpan="2">
         </Border>
 
@@ -262,8 +262,38 @@
         </Grid>
 
         <Label
+            x:Name="lblQRCodeModuleSize"
             Style="{StaticResource labelStyleDefault}"
             Grid.Row="5"
+            Grid.Column="0"
+            Padding="8,0,0,0"
+            VerticalTextAlignment="Start"
+            Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"            
+            Text="{Translate QRCodeModuleSize_Text}">
+        </Label>
+
+        <Border
+            Style="{StaticResource borderStyleGroup}"
+            Grid.Row="5"
+            Grid.Column="2"
+            Grid.RowSpan="1"
+            Margin="0,0,8,0">
+
+            <Slider
+                x:Name="sldQRCodeModuleSize"
+                Style="{StaticResource sliderStyleColor}"
+                Margin="10,7,10,0"
+                ThumbColor="Orange"
+                MinimumTrackColor="Orange"
+                Minimum="50"
+                Maximum="100"
+                ValueChanged="SldQRCodeModuleSize_ValueChanged">
+            </Slider>
+        </Border>
+
+        <Label
+            Style="{StaticResource labelStyleDefault}"
+            Grid.Row="6"
             Grid.Column="0"
             Padding="8,0,0,0"
             VerticalTextAlignment="Start"
@@ -273,7 +303,7 @@
 
         <Switch
             x:Name="swtQRCodeGradient"
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="2"
             Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
             Toggled="SwtQRCodeGradient_Toggled">
@@ -281,14 +311,14 @@
 
         <Label
             Style="{StaticResource labelStyleDefault}"
-            Grid.Row="6"
+            Grid.Row="7"
             Grid.Column="0"
             Padding="8,0,0,0"
             Text="{Translate QRCodeGradientColors_Text}">
         </Label>
 
         <Grid
-            Grid.Row="6"
+            Grid.Row="7"
             Grid.Column="2"
             RowDefinitions="Auto"
             ColumnDefinitions="Auto, Auto, Auto"
@@ -381,7 +411,7 @@
 
         <Label
             Style="{StaticResource labelStyleDefault}"
-            Grid.Row="7"
+            Grid.Row="8"
             Grid.Column="0"
             Padding="8,0,0,0"
             VerticalOptions="Start"
@@ -389,7 +419,7 @@
         </Label>
 
         <Grid
-            Grid.Row="7"
+            Grid.Row="8"
             Grid.Column="2"
             RowDefinitions="Auto, Auto"
             ColumnDefinitions="Auto, Auto, Auto, Auto"
@@ -488,7 +518,7 @@
 
         <Label
             Style="{StaticResource labelStyleDefault}"
-            Grid.Row="8"
+            Grid.Row="9"
             Grid.Column="0"
             Padding="8,0,0,0"
             VerticalTextAlignment="Start"
@@ -498,7 +528,7 @@
 
         <Switch
             x:Name="swtForegroundImage"
-            Grid.Row="8"
+            Grid.Row="9"
             Grid.Column="2"
             Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
             Toggled="SwtForegroundImage_Toggled">
@@ -506,7 +536,7 @@
 
         <Label
             Style="{StaticResource labelStyleDefault}"
-            Grid.Row="9"
+            Grid.Row="10"
             Grid.Column="0"
             Padding="8,0,0,8"
             VerticalTextAlignment="Start"
@@ -516,7 +546,7 @@
 
         <Switch
             x:Name="swtBackgroundImage"
-            Grid.Row="9"
+            Grid.Row="10"
             Grid.Column="2"
             HorizontalOptions="Start"
             Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"

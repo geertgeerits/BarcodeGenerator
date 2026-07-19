@@ -95,6 +95,7 @@ namespace BarcodeGenerator
         public static float nQRCodeImageSizePercent;                    // Size of the QR code image as a percentage
         public static string cQRCodeFinderPatternShape = string.Empty;  // Shape of the QR code finder pattern shapes
         public static string cQRCodeModuleShape = string.Empty;         // Shape of the QR code modules
+        public static float nQRCodeModuleSizePercent;                   // Size of the QR code modules as a percentage (50% to 100%)
         public static string cCodeColor = string.Empty;                 // Color of the barcode (text and bars) for the popup color picker
         public static string cCodeColorFg = string.Empty;               // Foreground color of the barcode (text and bars)
         public static string cCodeColorBg = string.Empty;               // Background color of the barcode
