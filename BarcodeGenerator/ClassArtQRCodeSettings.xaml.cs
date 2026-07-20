@@ -286,7 +286,7 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void SldQRCodeModuleSize_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            ClassBarcodes.nQRCodeModuleSizePercent = MathF.Round((float)e.NewValue, 0);
+            ClassBarcodes.nQRCodeModuleSizePercent = (int)MathF.Round((float)e.NewValue, 0);
             sldQRCodeModuleSize.Value = ClassBarcodes.nQRCodeModuleSizePercent;
             lblQRCodeModuleSize.Text = $"{string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent)}";
         }

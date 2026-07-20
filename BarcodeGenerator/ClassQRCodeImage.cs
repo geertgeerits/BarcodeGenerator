@@ -87,7 +87,7 @@ namespace BarcodeGenerator
             Debug.WriteLine($"QR code generated with module count: {moduleCount}, size: {size}x{size}, pixels per module: {pixelsPerModule}");
 
             // Calculate the recommended image size based on the QR code size and the configured percentage
-            int nImageRecommendedSize = (int)(size * ClassBarcodes.nQRCodeImageSizePercent / 100f);
+            int nImageRecommendedSize = (int)(size * ClassBarcodes.nQRCodeImageSizePercent / 100.0f);
 
             Stream? logoStream = null;
 
@@ -174,7 +174,7 @@ namespace BarcodeGenerator
                 if (logoBitmap != null && logoBitmap.Width > 0 && logoBitmap.Height > 0)
                 {
                     // Maximum box for the logo (as a fraction of the QR size)
-                    float iconMaxSize = size * ClassBarcodes.nQRCodeImageSizePercent / 100f;
+                    float iconMaxSize = size * ClassBarcodes.nQRCodeImageSizePercent / 100.0f;
                     Debug.WriteLine($"Original logo size: {logoBitmap.Width}x{logoBitmap.Height}, QR code size: {size}x{size}, icon max size: {iconMaxSize}x{iconMaxSize}");
 
                     // Compute scale to fit the logo inside a square of iconMaxSize while preserving aspect ratio.
@@ -199,7 +199,8 @@ namespace BarcodeGenerator
                         IsAntialias = true
                     };
 
-                    float borderPadding = Math.Max(4f, iconMaxSize * 0.06f);
+                    float borderPadding = ClassBarcodes.nQRCodeImageSizeBorder;
+                    //float borderPadding = Math.Max(4f, iconMaxSize * 0.06f);
                     SKRect borderRect = new(dest.Left - borderPadding, dest.Top - borderPadding,
                                                  dest.Right + borderPadding, dest.Bottom + borderPadding);
                     canvas.DrawRoundRect(borderRect, 6f, 6f, borderPaint);

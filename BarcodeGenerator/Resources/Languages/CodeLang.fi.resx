@@ -1029,4 +1029,7 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Moduulin koko: {0}%</value>
   </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>QR-koodin kuvan reunuksen koko: {0} pikseliä</value>
+  </data>
 </root>

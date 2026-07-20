@@ -1029,4 +1029,7 @@ Ikke alle nyttelasttyper støttes på alle enheter.</value>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Modulstørrelse: {0}%</value>
   </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Størrelse på bildekanten for QR-kode: {0} piksler</value>
+  </data>
 </root>

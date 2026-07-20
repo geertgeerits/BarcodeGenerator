@@ -1029,4 +1029,7 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Velikost modulu: {0}%</value>
   </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Velikost okraje obrázku QR kódu: {0} pixelů</value>
+  </data>
 </root>

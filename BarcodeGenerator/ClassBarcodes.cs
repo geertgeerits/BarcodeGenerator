@@ -92,11 +92,11 @@ namespace BarcodeGenerator
         public static string cQRCodeType = string.Empty;                // QR code type: QR Code Model 1, QR Code Model 2, Frame QR Code, Micro QR Code, RMQR, SQRC, QR Code with image in the center or Artistic QR Code
         public static bool bQRCodeSizeVariable;                         // Control whether the size of the QR code is variable or fixed
         public static int nQRCodeSizePixels;                            // Size of the QR code in pixels (if the size is fixed)
-        public static int nQRCodeImageSizePercent;                      // Size of the QR code image as a percentage
+        public static float nQRCodeImageSizePercent;                    // Size of the QR code image as a percentage
         public static int nQRCodeImageSizeBorder;                       // Size of the QR code image border in pixels
         public static string cQRCodeFinderPatternShape = string.Empty;  // Shape of the QR code finder pattern shapes
         public static string cQRCodeModuleShape = string.Empty;         // Shape of the QR code modules
-        public static float nQRCodeModuleSizePercent;                   // Size of the QR code modules as a percentage (50% to 100%)
+        public static int nQRCodeModuleSizePercent;                     // Size of the QR code modules as a percentage
         public static string cCodeColor = string.Empty;                 // Color of the barcode (text and bars) for the popup color picker
         public static string cCodeColorFg = string.Empty;               // Foreground color of the barcode (text and bars)
         public static string cCodeColorBg = string.Empty;               // Background color of the barcode

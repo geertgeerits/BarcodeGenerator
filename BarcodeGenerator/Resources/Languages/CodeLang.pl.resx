@@ -1029,4 +1029,7 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Rozmiar modułu: {0}%</value>
   </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Rozmiar obramowania obrazu kodu QR: {0} pikseli</value>
+  </data>
 </root>

@@ -97,11 +97,11 @@ namespace BarcodeGenerator
             ClassBarcodes.cBarcodeScannerName = Preferences.Default.Get("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerDefault);
             ClassBarcodes.bQRCodeSizeVariable = Preferences.Default.Get("SettingQRCodeSizeVariable", true);
             ClassBarcodes.nQRCodeSizePixels = Preferences.Default.Get("SettingQRCodeSizePixels", 800);
-            ClassBarcodes.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 25);
-            ClassBarcodes.nQRCodeImageSizeBorder = Preferences.Default.Get("SettingQRCodeImageSizeBorder", 10);
+            ClassBarcodes.nQRCodeImageSizePercent = Preferences.Default.Get("SettingQRCodeImageSizePercent", 20.0f);
+            ClassBarcodes.nQRCodeImageSizeBorder = Preferences.Default.Get("SettingQRCodeImageSizeBorder", 6);
             ClassBarcodes.cQRCodeFinderPatternShape = Preferences.Default.Get("SettingQRCodeFinderPatternShape", "Square");  // Square, Rounded, Circle
             ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Square");  // Square, Rounded, Circle
-            ClassBarcodes.nQRCodeModuleSizePercent = Preferences.Default.Get("SettingQRCodeModuleSizePercent", 100.0f);  // Size of the QR code modules as a percentage (50% - 100%)
+            ClassBarcodes.nQRCodeModuleSizePercent = Preferences.Default.Get("SettingQRCodeModuleSizePercent", 100);  // Size of the QR code modules as a percentage
             ClassBarcodes.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             ClassBarcodes.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
             ClassBarcodes.cCodeColorFgArtQRCode = Preferences.Default.Get("SettingCodeColorFgArtQRCode", "FF000000");

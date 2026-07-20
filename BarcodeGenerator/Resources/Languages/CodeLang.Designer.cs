@@ -2192,7 +2192,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code image size border: {0} pixels.
+        ///   Looks up a localized string similar to QR Code image border size: {0} pixels.
         /// </summary>
         internal static string QRCodeImageSizeBorder_Text {
             get {

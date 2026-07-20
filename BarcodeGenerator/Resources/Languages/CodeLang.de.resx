@@ -1028,4 +1028,7 @@ Wählen Sie eine Option.</value>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Modulgröße: {0}%</value>
   </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Rahmengröße des QR-Code-Bildes: {0} Pixel</value>
+  </data>
 </root>

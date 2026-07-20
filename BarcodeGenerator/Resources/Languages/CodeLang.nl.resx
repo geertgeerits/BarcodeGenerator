@@ -1029,4 +1029,7 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Modulegrootte: {0}%</value>
   </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Randgrootte van de QR-codeafbeelding: {0} pixels</value>
+  </data>
 </root>

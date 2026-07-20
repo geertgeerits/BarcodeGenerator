@@ -326,7 +326,7 @@
                         Margin="{OnPlatform Default='0,0,0,0', iOS='8,3,8,0', WinUI='10,2,10,0'}"
                         ThumbColor="Orange"
                         MinimumTrackColor="Orange"
-                        Minimum="10"
+                        Minimum="5"
                         Maximum="35"
                         ValueChanged="OnSliderQRCodeImageSize_ValueChanged">
                     </Slider>

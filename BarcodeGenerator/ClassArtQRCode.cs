@@ -143,9 +143,9 @@ namespace BarcodeGenerator
             // Apply module shape if a non-default shape is selected
             qrData = ClassBarcodes.cQRCodeModuleShape switch
             {
-                "Rounded" => qrData.WithModuleShape(RoundedRectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100),
-                "Circle" => qrData.WithModuleShape(CircleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100),
-                _ => qrData.WithModuleShape(RectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100),
+                "Rounded" => qrData.WithModuleShape(RoundedRectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                "Circle" => qrData.WithModuleShape(CircleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                _ => qrData.WithModuleShape(RectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
             };
 
             // Apply finder pattern shape independently from module shape

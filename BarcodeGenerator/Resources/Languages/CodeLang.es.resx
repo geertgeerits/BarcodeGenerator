@@ -1029,4 +1029,7 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Tamaño del módulo: {0}%</value>
   </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Tamaño del borde de la imagen del código QR: {0} píxeles</value>
+  </data>
 </root>
