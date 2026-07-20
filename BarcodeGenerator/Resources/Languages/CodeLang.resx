@@ -490,7 +490,7 @@ Thank you in advance.</value>
     <value>No personal and other data is stored or passed on to myself and others.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>QR Code image size: {0}%</value>
+    <value>Image size: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>The selected file is not supported.</value>
@@ -674,10 +674,10 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>SQRC Secure QR Code</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Variable‑size QR Code:</value>
+    <value>Variable size:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
-    <value>QR Code size in pixels:</value>
+    <value>Size in pixels:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Barcode with caption:</value>
@@ -785,7 +785,7 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>Foreground color artistic QR code:</value>
   </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
-    <value>Compression QR Code:</value>
+    <value>Compress the text:</value>
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>The text in the QR code can be compressed (see the settings to enable this). To make the text readable again, it must be decompressed by a scanner that supports GZip compression, such as the scanner in this app.</value>
@@ -1028,5 +1028,8 @@ Not all payload types are supported on every device.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Module size: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Image border size: {0} pixels</value>
   </data>
 </root>

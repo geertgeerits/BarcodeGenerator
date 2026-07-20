@@ -899,7 +899,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Compression QR Code:.
+        ///   Looks up a localized string similar to Compress the text:.
         /// </summary>
         internal static string CompressionEnabled_Text {
             get {
@@ -2183,11 +2183,20 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code image size: {0}%.
+        ///   Looks up a localized string similar to Image size: {0}%.
         /// </summary>
         internal static string QRCodeImageSize_Text {
             get {
                 return ResourceManager.GetString("QRCodeImageSize_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image border size: {0} pixels.
+        /// </summary>
+        internal static string QRCodeImageSizeBorder_Text {
+            get {
+                return ResourceManager.GetString("QRCodeImageSizeBorder_Text", resourceCulture);
             }
         }
         
@@ -2246,7 +2255,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code size in pixels:.
+        ///   Looks up a localized string similar to Size in pixels:.
         /// </summary>
         internal static string QRCodeSizePixels_Text {
             get {
@@ -2255,7 +2264,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Variable‑size QR Code:.
+        ///   Looks up a localized string similar to Variable size:.
         /// </summary>
         internal static string QRCodeSizeVariable_Text {
             get {
