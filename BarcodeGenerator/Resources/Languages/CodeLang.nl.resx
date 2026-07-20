@@ -1,0 +1,1032 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Agree_Text" xml:space="preserve">
+    <value>Akkoord</value>
+  </data>
+  <data name="Barcode_AllCodes_Text" xml:space="preserve">
+    <value>Alle codes</value>
+  </data>
+  <data name="AllowedCharNot_Text" xml:space="preserve">
+    <value>Niet toegestaan:</value>
+  </data>
+  <data name="AllowedChar_Text" xml:space="preserve">
+    <value>Toegestane karakters:</value>
+  </data>
+  <data name="BackgroundColor_Text" xml:space="preserve">
+    <value>Kleur achtergrond:</value>
+  </data>
+  <data name="BackgroundOpacity_Text" xml:space="preserve">
+    <value>Dekking achtergrond:</value>
+  </data>
+  <data name="BarcodeGenerator_Text" xml:space="preserve">
+    <value>Generator</value>
+  </data>
+  <data name="BarcodeScanner_Text" xml:space="preserve">
+    <value>Scanner</value>
+  </data>
+  <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
+    <value>Aztec code</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
+    <value>Code 39 checksum modulo 10</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
+    <value>Code 39 checksum modulo 43</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
+    <value>Code 39 volledige ASCII checksum</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
+    <value>Code 39 volledige ASCII</value>
+  </data>
+  <data name="Barcode_CODE_39_Text" xml:space="preserve">
+    <value>Code 39</value>
+  </data>
+  <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
+    <value>Code 93i</value>
+  </data>
+  <data name="Barcode_CODE_93_Text" xml:space="preserve">
+    <value>Code 93</value>
+  </data>
+  <data name="Barcode_CODE_128_Text" xml:space="preserve">
+    <value>Code 128</value>
+  </data>
+  <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
+    <value>Compacte PDF417</value>
+  </data>
+  <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
+    <value>Frame QR-code</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar uitgebreid gestapeld</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>GS1 Databar uitgebreid</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 Databar beperkt</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar omnidirectioneel</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar gestapeld omnidirectioneel</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar gestapeld</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>IMb Intelligent Mail</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>ISBN Internationaal standaardboeknummer</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF Interleaved 2 of 5 14</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>ITF Interleaved 2 of 5 checksum</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF Interleaved 2 of 5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Micro QR-code</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI Modified Plessey</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN Pharma centrala nummer</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>QR-code model 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>QR-code model 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>QR-code</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>RMQR Rechthoekige micro-QR-code</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>RSS-uitbreiding</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>UPC-EAN-extensie</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>Luisteren</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>Volgende</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>Deel tekst</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>Delen</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>Spreek</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Geen camera gevonden.</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Wanneer er geen toelating gegeven werd voor het gebruik van de camera, dan kan de camera aangezet worden in de instellingen van het toestel, selecteer de toepassing en schakel de camera in.
+Een andere mogelijkheid is de toepassing te verwijderen en opnieuw te installeren.</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Die kwaliteit wordt niet ondersteund door deze camera. Zet de kwaliteit lager.</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Hoogste</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Hoog</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Laagste</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Laag</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Kwaliteit</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>De code is fout.</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>Wissen</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Gelieve de toepassing te sluiten.</value>
+  </data>
+  <data name="CodeLengthPart1_Text" xml:space="preserve">
+    <value>De code moet</value>
+  </data>
+  <data name="CodeLengthPart2_Text" xml:space="preserve">
+    <value>(zonder controlecijfer) of</value>
+  </data>
+  <data name="CodeLengthPart3_Text" xml:space="preserve">
+    <value>cijfers lang zijn.</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>Contact:</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>Auteursrechten</value>
+  </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Om ons te helpen eventuele problemen op te lossen, stuurt de applicatie anonieme crash- en foutrapporten wanneer de applicatie opnieuw wordt opgestart.
+De rapporten bevatten informatie over de crash of fout, inclusief apparaatspecificaties, besturingssysteem, applicatieversie, tijdstempel en anonieme installatie-ID.
+De gegevens worden uitsluitend verzameld om ons te helpen de applicatie te verbeteren en bevatten geen persoonlijke informatie. Er worden geen andere gegevens verzameld.
+Anonieme crash- en foutrapporten worden opgeslagen in het Microsoft App Center.
+Ze worden niet gedeeld met iemand anders buiten de ontwikkelaar van de applicatie.
+De rapportgegevens worden 28 dagen bewaard.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Privacyverklaring: Crashrapportage met Sentry.
+
+Barcode Generator maakt gebruik van Sentry, een service van derden, om crashrapporten te verzamelen en te beheren om de stabiliteit en prestaties van onze applicatie te verbeteren. Wij doen er alles aan om uw privacy te beschermen en transparantie te bieden over de manier waarop met uw gegevens wordt omgegaan.
+
+Welke gegevens worden verzameld:
+Wanneer er een crash optreedt binnen deze applicatie, kan bepaalde informatie worden verzameld en naar Sentry worden verzonden, inclusief maar niet beperkt tot:
+Apparaatinformatie zoals model, versie van het besturingssysteem en hardwareconfiguratie.
+Applicatielogboeken en foutmeldingen die tot de crash hebben geleid.
+Informatie over de status van de applicatie op het moment van de crash, inclusief gebruikersacties.
+
+Hoe wij deze gegevens gebruiken:
+De door Sentry verzamelde gegevens worden uitsluitend gebruikt voor het identificeren en oplossen van bugs en fouten binnen onze applicatie. Deze informatie helpt ons de hoofdoorzaken van crashes te begrijpen, waardoor we onze gebruikers een stabielere en betrouwbaardere ervaring kunnen bieden.
+
+Gegevensbeveiliging en retentie:
+Wij nemen de veiligheid van uw gegevens serieus. Sentry maakt gebruik van industriestandaard beveiligingsmaatregelen om de verzamelde informatie te beschermen tegen ongeoorloofde toegang of openbaarmaking.
+
+Door Sentry verzamelde crashrapporten kunnen worden bewaard in overeenstemming met het gegevensbewaarbeleid van Sentry (30 dagen voor deze toepassing). Voor meer informatie over de gegevensverwerkingspraktijken van Sentry kunt u hun privacybeleid raadplegen op https://sentry.io/welcome/.
+
+Uw toestemming:
+Door deze applicatie te gebruiken, geeft u toestemming voor het verzamelen en verwerken van crashrapportgegevens door Sentry zoals beschreven in deze privacyverklaring.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Crash- en foutrapporten: </value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Standaard formaat generator:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Standaard formaat scanner:</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>Standaard</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>Genereer en scan verschillende barcodes.</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>Niet akkoord</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>E-mail: </value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>Fout</value>
+  </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>Het eerste cijfer moet 0 zijn.</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>Kleur voorgrond:</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Dekking voorgrond:</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Formaat:</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>Selecteer formaat:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>wordt momenteel niet ondersteund.</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>Formaat</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>Genereren</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>Ongeldige begin/eind karakter:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>Eindkarakter ontbreekt.</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>Startkarakter ontbreekt.</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Hexadecimale kleurcodes:
+
+Karakters 1-2: dekking/transparantie
+Karakters 3-4: rood
+Karakters 5-6: groen
+Karakters 7-8: blauw</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Tekst naar spraak: niet alle talen die beschikbaar zijn in de applicatie-instellingen worden ondersteund.
+Spraak naar tekst: activeer het via uw apparaatinstellingen. Er verschijnt dan een microfoon in het virtuele toetsenbord.
+Beide opties zijn afhankelijk van apparaat tot apparaat en de geïnstalleerde talen. Het is mogelijk dat voor sommige talen de vertaling van en naar spraak via het internet wordt gedaan door de betrokken diensten.
+
+Voor de vertaling van de tekst werd gebruik gemaakt van Google Translate.  Dit is geen garantie dat alle vertalingen correct zijn.
+De ondersteunende talen zijn: Tsjechisch, Deens, Nederlands, Engels, Fins, Frans, Duits, Hongaars, Italiaans, Noors, Pools, Portugees, Roemeens, Spaans en Zweeds.
+
+Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>De QR-code wordt gegenereerd met een vaste of variabele pixelgrootte, afhankelijk van het aantal tekens en de maximale pixelgrootte die in de instellingen is gedefinieerd.
+Wanneer een afbeelding (logo) bovenop de QR-code wordt geplaatst, wordt deze gecentreerd en geschaald naar 10% tot 35% van de grootte van de QR-code. Dit bereik kan worden aangepast in de instellingen. Er wordt een rand toegevoegd om de zichtbaarheid te verbeteren.
+De artistieke QR-code is zeer aanpasbaar, met opties zoals verlopen, aangepaste vormen, kleuren, een voorgrondafbeelding (logo) en een achtergrondafbeelding. In dit geval moet de achtergronddoorzichtigheid worden ingesteld tussen 0% en minder dan 100% (zie instellingen).
+Gebruik voor het beste resultaat vierkante afbeeldingen en experimenteer met de afbeeldingsgrootte om overmatig schalen te voorkomen. De voorkeursbestandsindelingen zijn PNG (eventueel met een transparante achtergrond) of JPEG.</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informatie</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Taal spraak:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>Taal:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>De lengte van de invoer moet even zijn.</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>De software wordt geleverd 'zoals ze is', zonder enige vorm van garantie, expliciet of impliciet, inclusief maar niet beperkt tot de garanties van verkoopbaarheid, geschiktheid voor een bepaald doel en niet-inbreuk. In geen geval zal de auteur en/of uitgever aansprakelijk zijn voor enige claim, schade of andere aansprakelijkheid, hetzij in een contractuele actie, onrechtmatige daad of anderszins, die voortvloeit van, uit of in verband staat met de software of het gebruik of andere transacties in de software.</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>Barcode scannen en genereren voor .NET MAUI-toepassingen.
+MIT-licentie:
+Hierbij wordt kosteloos toestemming verleend aan elke persoon die een kopie van deze software en bijbehorende documentatiebestanden (de "Software") verkrijgt, om zonder beperking in de Software te handelen, inclusief maar niet beperkt tot de rechten om te gebruiken, kopiëren, wijzigen, samenvoegen , publiceren, distribueren, in sublicentie geven en/of kopieën van de Software verkopen, en om personen aan wie de Software wordt geleverd toe te staan dit te doen, met inachtneming van de volgende voorwaarden:
+
+De bovenstaande copyrightkennisgeving en deze toestemmingskennisgeving (inclusief de volgende paragraaf) zullen worden opgenomen in alle kopieën of substantiële delen van de Software.</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>Licentie</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>Deze applicatie mag vrij worden gebruikt voor niet-commerciële doeleinden.
+Gebruik dit programma geheel op eigen risico.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Verstuur altijd</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Niet versturen</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>De toepassing heeft in een vorige sessie een fout vastgesteld.
+Om de toepassing beter te maken had ik graag het logboek met die fout ontvangen.
+Mag het logboek van die fout verzonden worden?
+Alvast bedankt.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Versturen</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>Er werd een fout vastgesteld.  Het foutenlogboek verzenden?</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Verzenden van het foutenlogboek</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>Barcode Generator and Scanner</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>Neen</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>Deze link openen?</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>Website link</value>
+  </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>pixels</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>Privacybeleid:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>Er worden geen persoonlijke en andere gegevens opgeslagen of doorgegeven aan mezelf en anderen.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>Formaat afbeelding QR-code: {0}%</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>Het geselecteerde bestand wordt niet ondersteund.</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Aanbevolen formaat afbeelding</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>De toepassing wordt opnieuw gestart.</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Sommige gewijzigde instellingen moeten worden opgeslagen om ze toe te passen.</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>Instellingen</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>De tekst bevat een of meer karakters die niet zijn toegestaan.
+
+Niet toegestaan:</value>
+  </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>Tekst om te coderen:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>Tekst-naar-spraak wordt niet ondersteund op dit apparaat.</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>Donker</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>Licht</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>Systeem</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>Thema:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Stuur een e-mail naar de auteur van deze applicatie</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Open de website van deze applicatie</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>Scanner</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Start of stop het scannen naar barcodes</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Selecteer de camera aan de achterzijde of aan de voorzijde</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Stel de kwaliteit van de camera in</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Schakel de camerazaklamp in of uit</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Schakel apparaattrilling in of uit bij het vinden van een barcode</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Camera: in- en uitzoomen</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>Kopieer tekst naar het klembord</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Storings- en foutrapporten</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Ga terug</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Ga vooruit</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Hulp</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>Plak tekst van het klembord</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Reset de instellingen naar hun standaardwaarden</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Sla de instellingen op</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Tekst naar spraak: aan of uit</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store en het App Store-logo zijn handelsmerken van Apple Inc., geregistreerd in de VS en andere landen en regio's.
+Google, Google Play, het Google Play-logo en Android zijn handelsmerken van Google LLC.
+Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerken van Microsoft Corporation.</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Versie:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Website: </value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Micro PDF417</value>
+  </data>
+  <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
+    <value>DX Film Edge</value>
+  </data>
+  <data name="Barcode_EAN_2_Text" xml:space="preserve">
+    <value>EAN-2</value>
+  </data>
+  <data name="Barcode_EAN_5_Text" xml:space="preserve">
+    <value>EAN-5</value>
+  </data>
+  <data name="Barcode_EAN_8_Text" xml:space="preserve">
+    <value>EAN-8</value>
+  </data>
+  <data name="Barcode_EAN_13_Text" xml:space="preserve">
+    <value>EAN-13</value>
+  </data>
+  <data name="Barcode_EAN_UPC_Text" xml:space="preserve">
+    <value>EAN/UPC</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
+    <value>GS1 Databar</value>
+  </data>
+  <data name="Barcode_CODABAR_Text" xml:space="preserve">
+    <value>Codabar</value>
+  </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>Pharmacode</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>Plessey</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>RSS 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
+  <data name="Barcode_AZTEC_Text" xml:space="preserve">
+    <value>Aztec</value>
+  </data>
+  <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
+    <value>Aztec Rune</value>
+  </data>
+  <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
+    <value>Data Matrix</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>MaxiCode</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>QR-code met afbeelding</value>
+  </data>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Kies een voorgrondafbeelding</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC beveiligde QR-code</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>QR-code met variabele grootte:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>QR-codegrootte in pixels:</value>
+  </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Barcode met onderschrift:</value>
+  </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>numeriek {0}, alfanumeriek {1}, bytes {2}, kanji/kana {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Maximum aantal karakters:</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Aantal cijfers:</value>
+  </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Artistieke QR-code</value>
+  </data>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Kleur achtergrond artistieke QR-code:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Kleurenkiezer</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Numeriek teken gedetecteerd.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Alfanumeriek teken gedetecteerd.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Byte-teken gedetecteerd.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Kana-teken gedetecteerd.</value>
+  </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>De tekstlengte is beperkt tot {0} tekens.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>De tekstlengte is beperkt tot {0} bytes.</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>Vorm QR-codemodule: vierkant</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>Vorm QR-codemodule: cirkel</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>Vorm QR-codemodule: afgerond</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Kies een achtergrondafbeelding</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>Gebruik gradiëntkleuren:</value>
+  </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Richting van de gradiënt:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>Gradiëntkleuren:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Van onder naar boven</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Van links onder naar rechts boven</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Van links naar rechts</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Van links boven naar rechts onder</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Van boven naar beneden</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Van rechtsboven naar linksonder</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Van rechts naar links</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Van rechtsonder naar linksboven</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>Gradiëntkleur 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>Gradiëntkleur 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>Gradiëntkleur 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>Vorm module:</value>
+  </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Afbeelding voorgrond:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Afbeelding achtergrond:</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Kleur voorgrond artistieke QR-code:</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Compressie QR-code:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>De tekst in de QR-code kan worden gecomprimeerd (zie de instellingen om dit in te schakelen). Om de tekst weer leesbaar te maken, moet deze worden gedecomprimeerd met een scanner die GZip-compressie ondersteunt, zoals de scanner in deze app.</value>
+  </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Vorm zoekpatroon:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>Vorm QR-code zoekpatroon: cirkel</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>Vorm QR-code zoekpatroon: afgerond</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>Vorm QR-code zoekpatroon: vierkant</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Voor optimale scanbetrouwbaarheid raden we het volgende aan voor QR-codes:
+Zorg voor een hoog contrast tussen de voorgrond- en achtergrondkleuren.
+Gebruik vierkante modules (standaard): vierkante modules leveren over het algemeen het laagste foutpercentage op bij het scannen van QR-codes.
+Vermijd openingen tussen modules: kleinere modules of vormen zoals cirkels of afgeronde modules kunnen openingen creëren, wat het aantal scanfouten kan verhogen.
+Foutcorrectie is standaard ingesteld op hoog (30% herstel): een hoog foutcorrectieniveau compenseert voor verminderde leesbaarheid.
+
+Het is aan te raden de gegenereerde QR-codes en andere barcodes te testen om er zeker van te zijn dat ze correct scannen.</value>
+  </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>WiFi</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>Bladwijzer</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>Geolocatie</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>Telefoonnummer</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>WhatsApp-bericht</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>Contactgegevens</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>Agenda-evenement</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>Payloadtype:</value>
+  </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>Netwerknaam</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>Wachtwoord</value>
+  </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>E-mailadres</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>Onderwerp</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>Bericht</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>Breedtegraad:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>Lengtegraad:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>Voornaam</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>Achternaam</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>Omschrijving</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>Locatie</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>Begin:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>Einde:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Payloads:</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Payloads</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Ongeldige breedtegraadwaarde.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Ongeldige lengtegraadwaarde.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Breedtegraad buiten bereik. De waarde moet tussen -90 en 90 liggen (inclusief).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Lengtegraad buiten bereik. De waarde moet tussen -180 en 180 liggen (inclusief).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>De startdatum mag niet later zijn dan de einddatum.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Wi-Fi-netwerk gedetecteerd.
+Kies een optie.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopiëren</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Wi-Fi-instellingen openen</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Open Instellingen - Wi-Fi om verbinding te maken met het netwerk.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Het openen van Wi-Fi-instellingen wordt niet ondersteund op dit platform.</value>
+  </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Maak slimme QR-codes met verschillende soorten gegevens, zoals geolocatie, contactgegevens en meer. Tik op het pictogram bovenaan, kies een type, voer uw gegevens in en genereer en deel uw QR-code.
+Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Geolocation aanvragen</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Geolocation</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Locatie is niet beschikbaar op dit apparaat, of locatieservices zijn uitgeschakeld.</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Open kaarten</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Codering:</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>Het e-mailadres is ongeldig.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>Het URL-adres is ongeldig.</value>
+  </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>Open de URL-link</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Telefoonnummer</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Authenticatie:</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Het telefoonnummer is ongeldig.</value>
+  </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>Geen barcode gevonden.</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Scan een afbeelding</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Scan van de camera</value>
+  </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>SEPA-overschrijving</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC-nummer begunstigde</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Naam begunstigde</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN-nummer begunstigde</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Bedrag EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Doel</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>Mededeling (gestructureerd)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>Mededeling (ongestructureerd)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Informatie</value>
+  </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN is niet geldig.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Het bedrag is niet geldig.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC is niet geldig.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Naam is verplicht.</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>Slechts één van de mededelingsvelden mag worden ingevuld.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>De mededeling is onjuist.</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>De gecombineerde lengte van alle velden is te groot. De totale payloadgrootte is beperkt tot 331 bytes.</value>
+  </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Modulegrootte: {0}%</value>
+  </data>
+</root>

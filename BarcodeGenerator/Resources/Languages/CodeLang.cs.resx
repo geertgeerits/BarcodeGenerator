@@ -1,0 +1,1032 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Agree_Text" xml:space="preserve">
+    <value>Souhlasit</value>
+  </data>
+  <data name="Barcode_AllCodes_Text" xml:space="preserve">
+    <value>Všechny kódy</value>
+  </data>
+  <data name="AllowedCharNot_Text" xml:space="preserve">
+    <value>Nepovoleno:</value>
+  </data>
+  <data name="AllowedChar_Text" xml:space="preserve">
+    <value>Povolené znaky:</value>
+  </data>
+  <data name="BackgroundColor_Text" xml:space="preserve">
+    <value>Barva pozadí:</value>
+  </data>
+  <data name="BackgroundOpacity_Text" xml:space="preserve">
+    <value>Neprůhlednost pozadí:</value>
+  </data>
+  <data name="BarcodeGenerator_Text" xml:space="preserve">
+    <value>Generátor</value>
+  </data>
+  <data name="BarcodeScanner_Text" xml:space="preserve">
+    <value>Skener</value>
+  </data>
+  <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
+    <value>Aztec kód</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
+    <value>Kód 39 kontrolní součet modul 10</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
+    <value>Kód 39 kontrolní součet modul 43</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
+    <value>Kód 39, plný kontrolní součet ASCII</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
+    <value>Kód 39 plný ASCII</value>
+  </data>
+  <data name="Barcode_CODE_39_Text" xml:space="preserve">
+    <value>Kód 39</value>
+  </data>
+  <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
+    <value>Kód 93i</value>
+  </data>
+  <data name="Barcode_CODE_93_Text" xml:space="preserve">
+    <value>Kód 93</value>
+  </data>
+  <data name="Barcode_CODE_128_Text" xml:space="preserve">
+    <value>Kód 128</value>
+  </data>
+  <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
+    <value>Kompaktní PDF417</value>
+  </data>
+  <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
+    <value>QR kód rámce</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar rozšířený, vrstvený</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>GS1 Databar rozšířený</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 Databar omezený</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar všesměrový</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar vrstvený, všesměrový</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar vrstvený</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>IMb Inteligentní pošta</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>ISBN Mezinárodní standardní číslo knihy</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF-14 Prokládané 2 z 5</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>ITF Prokládané 2 z 5 kontrolní součet</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF Prokládané 2 z 5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Mikro QR kód</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI Modifikovaný Plessey</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN Centrální číslo Pharma</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>QR kód model 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>QR kód model 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>QR kód</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>RMQR Obdélníkový mikro QR kód</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>RSS rozšířený</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>UPC-EAN rozšíření</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>Zavřít</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>Poslouchat</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>Další</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>Sdílejte text</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>Podíl</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>Mluvit</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Nenalezena žádná kamera.</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Pokud nebylo uděleno povolení k použití kamery, lze kameru povolit v nastavení zařízení, vybrat aplikaci a povolit kameru.
+Další možností je odinstalovat a znovu nainstalovat aplikaci.</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Tato kvalita není tímto fotoaparátem podporována. Snižte kvalitu.</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Nejvyšší</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Vysoký</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Nejnižší</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Nízký</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Střední</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Kvalitní</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Zrušení</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>Kód je špatný.</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>Vymazat</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Zavřete aplikaci.</value>
+  </data>
+  <data name="CodeLengthPart1_Text" xml:space="preserve">
+    <value>Kód by měl být</value>
+  </data>
+  <data name="CodeLengthPart2_Text" xml:space="preserve">
+    <value>(bez číslice kontrolního součtu) nebo</value>
+  </data>
+  <data name="CodeLengthPart3_Text" xml:space="preserve">
+    <value>číslice dlouhé.</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>Kontakt:</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>Autorská práva</value>
+  </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Aby nám pomohla opravit jakékoli problémy, aplikace bude po restartu odesílat anonymní zprávy o pádech a chybách.
+Zprávy obsahují informace o havárii nebo chybě, včetně specifikací zařízení, operačního systému, verze aplikace, časového razítka a anonymního identifikátoru instalace.
+Údaje jsou shromažďovány výhradně za účelem pomoci nám vylepšit aplikaci a neobsahují žádné osobní údaje. Žádné další údaje se neshromažďují.
+Anonymní zprávy o selhání a chybách jsou uloženy v Microsoft App Center.
+Nejsou sdíleny s nikým jiným mimo vývojáře aplikace.
+Údaje přehledu jsou uchovávány po dobu 28 dnů.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Prohlášení o ochraně osobních údajů: Hlášení o selhání s Sentry.
+
+Barcode Generator využívá Sentry, službu třetí strany, ke shromažďování a správě zpráv o selhání s cílem zlepšit stabilitu a výkon naší aplikace. Zavázali jsme se chránit vaše soukromí a poskytovat transparentnost ohledně toho, jak je s vašimi údaji nakládáno.
+
+Jaká data se shromažďují:
+Když dojde k selhání této aplikace, mohou být shromážděny a přeneseny určité informace do Sentry, včetně, ale nejen:
+Informace o zařízení, jako je model, verze operačního systému a konfigurace hardwaru.
+Protokoly aplikací a chybové zprávy vedoucí k selhání.
+Informace o stavu aplikace v době havárie, včetně akcí uživatele.
+
+Jak tato data používáme:
+Údaje shromážděné Sentry se používají výhradně za účelem identifikace a opravy chyb a chyb v naší aplikaci. Tyto informace nám pomáhají porozumět hlavním příčinám selhání a umožňují nám poskytovat stabilnější a spolehlivější prostředí pro naše uživatele.
+
+Zabezpečení a uchovávání dat:
+Bezpečnost vašich dat bereme vážně. Sentry využívá standardní bezpečnostní opatření k ochraně shromážděných informací před neoprávněným přístupem nebo zveřejněním.
+
+Zprávy o selhání shromážděné společností Sentry mohou být uchovávány v souladu se zásadami uchovávání dat společnosti Sentry (30 dní pro tuto aplikaci). Další informace o postupech nakládání s daty společnosti Sentry naleznete v jejích zásadách ochrany osobních údajů na adrese https://sentry.io/welcome/.
+
+Váš souhlas:
+Používáním této aplikace souhlasíte se shromažďováním a zpracováním dat zpráv o selhání společností Sentry, jak je popsáno v tomto prohlášení o ochraně osobních údajů.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Zprávy o pádech a chybách: </value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Výchozí generátor formátu:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Výchozí formát skeneru:</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>Výchozí</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>Generujte a skenujte různé čárové kódy.</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>Nesouhlasit</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>E-mailem: </value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>Chyba</value>
+  </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>První číslo by mělo být 0.</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>Barva popředí:</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Neprůhlednost popředí:</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Formát:</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>Vyberte formát:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>v současné době není podporováno.</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>Formát</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>Generovat</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>Neplatný počáteční/koncový znak:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>Chybí koncový znak.</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>Chybí počáteční znak.</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Hexadecimální barevné kódy:
+
+Postavy 1-2: Neprůhlednost/průhlednost
+Postavy 3-4: Červená
+Postavy 5-6: Zelená
+Postavy 7-8: Modrá</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Převod textu na řeč: nejsou podporovány všechny jazyky uvedené v nastavení aplikace.
+Převod řeči na text: aktivujte ji prostřednictvím nastavení zařízení. Poté se na virtuální klávesnici objeví mikrofon.
+Obě tyto možnosti závisí na zařízení a na nainstalovaných jazycích. Je možné, že u některých jazyků je překlad do az řeči prováděn prostřednictvím internetu příslušnými službami.
+
+K překladu textu byl použit Google Translate. To nezaručuje, že všechny překlady jsou správné.
+Podporované jazyky jsou: čeština, dánština, holandština, angličtina, finština, francouzština, němčina, maďarština, italština, norština, polština, portugalština, rumunština, španělština a švédština.
+
+Pro případné opravy mě můžete vždy kontaktovat.</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>QR kód se generuje s pevnou nebo proměnnou velikostí v pixelech v závislosti na počtu znaků, které obsahuje, a maximální velikosti v pixelech definované v nastavení.
+Když je obrázek (logo) umístěn na QR kód, je vycentrován a zmenšen na 10 % až 35 % velikosti QR kódu. Tento rozsah lze upravit v nastavení. Pro zlepšení viditelnosti je přidán okraj.
+Umělecký QR kód je vysoce přizpůsobitelný a nabízí možnosti, jako jsou přechody, vlastní tvary, barvy, obrázek v popředí (logo) a obrázek na pozadí. V tomto případě musí být neprůhlednost pozadí nastavena mezi 0 % a méně než 100 % (viz nastavení).
+Pro dosažení nejlepších výsledků používejte čtvercové obrázky a experimentujte s jejich velikostí, abyste se vyhnuli nadměrnému zvětšování. Preferované formáty souborů jsou PNG (volitelně s průhledným pozadím) nebo JPEG.</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informace</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Jazyková řeč:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>Jazyk:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>Délka vstupu by měla být rovnoměrná.</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>Software je poskytován „tak, jak je“, bez záruky jakéhokoli druhu, výslovné nebo předpokládané, včetně, ale bez omezení na záruky prodejnosti, vhodnosti pro konkrétní účel a neporušení práv. V žádném případě nenese autor a/nebo vydavatel odpovědnost za jakýkoli nárok, škody nebo jinou odpovědnost, ať už v případě smluvního jednání, deliktu nebo jinak, vyplývající z, z nebo v souvislosti se softwarem nebo používáním či jinými jednáními v software.</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>Skenování a generování čárových kódů pro aplikace .NET MAUI.
+Licence MIT:
+Tímto se bezplatně uděluje povolení jakékoli osobě, která získá kopii tohoto softwaru a přidružených souborů dokumentace (dále jen „Software“), nakládat se softwarem bez omezení, včetně, bez omezení, práv na používání, kopírování, úpravy, slučování publikovat, distribuovat, udělovat sublicence a/nebo prodávat kopie Softwaru a umožnit osobám, kterým je Software poskytnut, aby tak činily, za následujících podmínek:
+
+Výše uvedené oznámení o autorských právech a toto oznámení o povolení (včetně dalšího odstavce) musí být součástí všech kopií nebo podstatných částí Softwaru.</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>Licence</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>Tuto aplikaci lze volně používat pro nekomerční účely.
+Používejte tento program zcela na vlastní nebezpečí.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Vždy posílejte</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Neposílejte</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>Aplikace zjistila chybu v předchozí relaci.
+Pro vylepšení aplikace bych rád obdržel protokol s touto chybou.
+Je možné zaslat protokol o této chybě?
+Děkuji předem.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Poslat</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>Byla zjištěna chyba. Odeslat protokol chyb?</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Odeslání protokolu chyb</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>Barcode Generator and Scanner</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>Otevřít tento odkaz?</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>Odkaz na webovou stránku</value>
+  </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>pixely</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>Zásady ochrany osobních údajů:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>Žádné osobní a jiné údaje nejsou ukládány ani předávány mně a ostatním.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>Velikost obrázku QR kódu: {0} %</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>Vybraný soubor není podporován.</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Doporučená velikost obrázku</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>Aplikace bude restartována.</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>Resetovat</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Některá změněná nastavení musí být uložena, aby je bylo možné použít.</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>Text obsahuje jeden nebo více znaků, které nejsou povoleny.
+
+Nepovoleno:</value>
+  </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>Text ke kódování:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>Převod textu na řeč není na tomto zařízení podporován.</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>Tmavá</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>Světlo</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>Systém</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>Téma:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Poslat e-mail autorovi této aplikace</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Otevřete webové stránky této aplikace</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>Skener</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Spusťte nebo zastavte skenování čárových kódů</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Vyberte zadní nebo přední fotoaparát</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Nastavte kvalitu fotoaparátu</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Zapněte nebo vypněte svítilnu fotoaparátu</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Povolit nebo zakázat vibrace zařízení při hledání čárového kódu</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Fotoaparát: přiblížení a oddálení</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>Zkopírujte text do schránky</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Zprávy o selhání a chybách</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Vraťte se</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Jdi dopředu</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>Vložte text ze schránky</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Obnovte nastavení na výchozí hodnoty</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Uložte nastavení</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Převod textu na řeč: zapnuto nebo vypnuto</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store a logo App Store jsou ochranné známky společnosti Apple Inc., registrované v USA a dalších zemích a regionech.
+Google, Google Play, logo Google Play a Android jsou ochranné známky společnosti Google LLC.
+Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známky společnosti Microsoft Corporation.</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Verze:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Webová stránka: </value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Ano</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Mikro PDF417</value>
+  </data>
+  <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
+    <value>DX Film Edge</value>
+  </data>
+  <data name="Barcode_EAN_2_Text" xml:space="preserve">
+    <value>EAN-2</value>
+  </data>
+  <data name="Barcode_EAN_5_Text" xml:space="preserve">
+    <value>EAN-5</value>
+  </data>
+  <data name="Barcode_EAN_8_Text" xml:space="preserve">
+    <value>EAN-8</value>
+  </data>
+  <data name="Barcode_EAN_13_Text" xml:space="preserve">
+    <value>EAN-13</value>
+  </data>
+  <data name="Barcode_EAN_UPC_Text" xml:space="preserve">
+    <value>EAN/UPC</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
+    <value>GS1 Databar</value>
+  </data>
+  <data name="Barcode_CODABAR_Text" xml:space="preserve">
+    <value>Codabar</value>
+  </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>Pharmacode</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>Plessey</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>RSS 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
+  <data name="Barcode_AZTEC_Text" xml:space="preserve">
+    <value>Aztec</value>
+  </data>
+  <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
+    <value>Aztec Rune</value>
+  </data>
+  <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
+    <value>Data Matrix</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>MaxiCode</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>QR kód s obrázkem</value>
+  </data>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Vyberte obrázek popředí</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC zabezpečený QR kód</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>QR kód s proměnnou velikostí:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>Velikost QR kódu v pixelech:</value>
+  </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Čárový kód s popiskem:</value>
+  </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>numerické {0}, alfanumerické {1}, bajty {2}, kanji/kana {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Maximální počet znaků:</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Počet číslic:</value>
+  </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Umělecký QR kód</value>
+  </data>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Umělecký QR kód pro barvu pozadí:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Výběr barev</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Detekován číselný znak.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Detekován alfanumerický znak.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Detekován bajtový znak.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Detekován znak kanji/kana.</value>
+  </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>Délka textu je omezena na {0} znaků.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>Délka textu je omezena na {0} bajtů.</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>Tvar modulu QR kódu: čtverec</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>Tvar modulu QR kódu: kruh</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>Tvar modulu QR kódu: zaoblený</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Vyberte obrázek pozadí</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>Použití barev přechodu:</value>
+  </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Směr přechodu:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>Barvy přechodu:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Zdola nahoru</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Zleva dole doprava</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Zleva doprava</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Zleva nahoře doprava</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Shora dolů</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Zprava nahoře doleva doleva</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Zprava doleva</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Zprava doleva doleva</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>Barva přechodu 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>Barva přechodu 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>Barva přechodu 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>Tvar modulu:</value>
+  </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Obrázek v popředí:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Obrázek na pozadí:</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Umělecký QR kód pro barvu popředí:</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Komprese QR kódu:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>Text v QR kódu lze komprimovat (viz nastavení, jak tuto funkci povolit). Aby byl text opět čitelný, musí být dekomprimován skenerem, který podporuje kompresi GZip, jako je skener v této aplikaci.</value>
+  </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Tvar vzoru pro vyhledávač:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>Tvar vzoru pro vyhledávač QR kódů: kruh</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>Tvar vzoru pro vyhledávač QR kódů: zaoblený</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>Tvar vzoru pro vyhledávač QR kódů: čtverec</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Pro optimální spolehlivost skenování doporučujeme pro QR kódy následující:
+Udržujte vysoký kontrast mezi barvami popředí a pozadí.
+Používejte čtvercové moduly (výchozí): čtvercové moduly obecně vykazují nejnižší míru chyb při skenování QR kódů.
+Vyhněte se mezerám mezi moduly: menší moduly nebo tvary, jako jsou kruhy nebo zaoblené moduly, mohou vytvářet mezery, což může zvýšit chyby skenování.
+Korekce chyb je ve výchozím nastavení nastavena na vysokou hodnotu (30% zotavení): vysoká úroveň korekce chyb pomáhá kompenzovat sníženou čitelnost.
+
+Doporučuje se otestovat vygenerované QR kódy a další čárové kódy, abyste se ujistili, že se skenují správně.</value>
+  </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>Wi-Fi</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>Záložka</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>Geolokace</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>Telefonní číslo</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>Zpráva WhatsApp</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>Kontaktní údaje</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>Událost v kalendáři</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>Typ obsahu:</value>
+  </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>Název sítě</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>Heslo</value>
+  </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>Titulek</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>E-mailová adresa</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>Předmět</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>Zpráva</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>Zeměpisná šířka:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>Délka:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>Jméno</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>Příjmení</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>Popis</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>Poloha</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>Začátek:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>Konec:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Užitečné zatížení:</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Užitečné zatížení</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Neplatná hodnota zeměpisné šířky.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Neplatná hodnota zeměpisné délky.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Zeměpisná šířka mimo rozsah. Hodnota musí být mezi -90 a 90 (včetně).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Zeměpisná délka mimo rozsah. Hodnota musí být mezi -180 a 180 (včetně).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Datum zahájení nemůže být pozdější než datum ukončení.</value>
+  </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Detekována síť Wi-Fi.
+Vyberte možnost.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopie</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Otevřít nastavení Wi-Fi</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Pro připojení k síti otevřete Nastavení – Wi-Fi.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Nastavení Wi-Fi není na této platformě podporováno.</value>
+  </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Vytvořte chytré QR kódy s různými typy dat, jako je geolokace, kontakty a další. Klepněte na ikonu v horní části, vyberte typ, zadejte své údaje a poté vygenerujte a sdílejte svůj QR kód.
+Ne všechny typy dat jsou podporovány na každém zařízení.</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Vyžádat geolokaci</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Geolokace</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Poloha není na tomto zařízení k dispozici nebo jsou služby určování polohy zakázány.</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Otevřít mapy</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Kódování:</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>E-mailová adresa není platná.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>URL adresa není platná.</value>
+  </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>Otevřít URL odkaz</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Telefonní číslo</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Ověřování:</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Telefonní číslo není platné.</value>
+  </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>Nenalezen žádný čárový kód.</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Naskenujte obrázek</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Skenování z fotoaparátu</value>
+  </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>SEPA platební převod</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC příjemce</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Jméno příjemce</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN příjemce</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Částka EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Účel</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>Informace o platbě (strukturované)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>Informace o platbě (nestrukturované)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Informace</value>
+  </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN není platný.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Částka není platná.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC není platný.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Jméno je povinné.</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>Lze vyplnit pouze jedno z polí pro platbu.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Informace o platbě nejsou platné.</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Celková délka všech polí je příliš dlouhá. Celková velikost datové části je omezena na 331 bajtů.</value>
+  </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Velikost modulu: {0}%</value>
+  </data>
+</root>
