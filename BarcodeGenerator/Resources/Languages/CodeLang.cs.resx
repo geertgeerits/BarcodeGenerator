@@ -490,7 +490,7 @@ Děkuji předem.</value>
     <value>Žádné osobní a jiné údaje nejsou ukládány ani předávány mně a ostatním.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Velikost obrázku QR kódu: {0} %</value>
+    <value>Velikost obrázku: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Vybraný soubor není podporován.</value>
@@ -674,10 +674,10 @@ Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známk
     <value>SQRC zabezpečený QR kód</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>QR kód s proměnnou velikostí:</value>
+    <value>Proměnná velikost:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
-    <value>Velikost QR kódu v pixelech:</value>
+    <value>Velikost v pixelech:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Čárový kód s popiskem:</value>
@@ -1028,5 +1028,8 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Velikost modulu: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Velikost okraje obrázku: {0} pixelů</value>
   </data>
 </root>

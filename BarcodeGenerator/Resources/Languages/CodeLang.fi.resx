@@ -490,7 +490,7 @@ Kiitos jo etukäteen.</value>
     <value>Mitään henkilö- tai muita tietoja ei tallenneta tai luovuteta minulle tai muille.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>QR-koodin kuvan koko: {0} %</value>
+    <value>Kuvan koko: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Valittua tiedostoa ei tueta.</value>
@@ -674,10 +674,10 @@ Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corp
     <value>SQRC suojattu QR-koodi</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Muuttuvan kokoinen QR-koodi:</value>
+    <value>Muuttuva koko:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
-    <value>QR-koodin koko pikseleinä:</value>
+    <value>Koko pikseleinä:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Viivakoodi kuvatekstillä:</value>
@@ -1028,5 +1028,8 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Moduulin koko: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Kuvan reunuksen koko: {0} pikseliä</value>
   </data>
 </root>

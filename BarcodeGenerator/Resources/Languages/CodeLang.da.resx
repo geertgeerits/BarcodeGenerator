@@ -490,7 +490,7 @@ Tak på forhånd.</value>
     <value>Ingen personlige og andre data gemmes eller videregives til mig selv og andre.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>QR-kode billedstørrelse: {0}%</value>
+    <value>Billedstørrelse: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Den valgte fil understøttes ikke.</value>
@@ -674,10 +674,10 @@ Microsoft, Microsoft Store, Microsoft Store-logoet og Windows er varemærker til
     <value>SQRC sikker QR-kode</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>QR-kode i variabel størrelse:</value>
+    <value>Variabel størrelse:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
-    <value>QR-kodestørrelse i pixels:</value>
+    <value>Størrelse i pixels:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Stregkode med billedtekst:</value>
@@ -1028,5 +1028,8 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Modulstørrelse: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Billedrammestørrelse: {0} pixels</value>
   </data>
 </root>

@@ -490,7 +490,7 @@ Agradeço antecipadamente.</value>
     <value>Nenhum dado pessoal e outros são armazenados ou transmitidos para mim e para outros.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Tamanho da imagem do código QR: {0}%</value>
+    <value>Tamanho da imagem: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>O arquivo selecionado não é compatível.</value>
@@ -674,10 +674,10 @@ Microsoft, Microsoft Store, o logotipo da Microsoft Store e Windows são marcas 
     <value>SQRC Código QR Seguro</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Código QR de tamanho variável:</value>
+    <value>Tamanho variável:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
-    <value>Tamanho do código QR em pixels:</value>
+    <value>Tamanho em pixels:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Código de barras com legenda:</value>
@@ -1028,5 +1028,8 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Tamanho do módulo: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Tamanho da borda da imagem: {0} pixels</value>
   </data>
 </root>

@@ -490,7 +490,7 @@ Alvast bedankt.</value>
     <value>Er worden geen persoonlijke en andere gegevens opgeslagen of doorgegeven aan mezelf en anderen.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Formaat afbeelding QR-code: {0}%</value>
+    <value>Afbeeldingsgrootte: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Het geselecteerde bestand wordt niet ondersteund.</value>
@@ -674,10 +674,10 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
     <value>SQRC beveiligde QR-code</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>QR-code met variabele grootte:</value>
+    <value>Variabele grootte:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
-    <value>QR-codegrootte in pixels:</value>
+    <value>Grootte in pixels:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Barcode met onderschrift:</value>
@@ -1028,5 +1028,8 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Modulegrootte: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Randgrootte van de afbeelding: {0} pixels</value>
   </data>
 </root>

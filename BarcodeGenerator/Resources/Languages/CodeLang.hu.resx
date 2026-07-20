@@ -490,7 +490,7 @@ Előre is köszönöm.</value>
     <value>Személyes és egyéb adatokat nem tárolunk, illetve nem adunk át magamnak és másoknak.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>QR-kód képmérete: {0}%</value>
+    <value>Képméret: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>A kiválasztott fájl nem támogatott.</value>
@@ -674,10 +674,10 @@ A Microsoft, a Microsoft Store, a Microsoft Store logó és a Windows a Microsof
     <value>SQRC biztonságos QR-kód</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Változó méretű QR-kód:</value>
+    <value>Változó méret:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
-    <value>QR-kód mérete pixelben:</value>
+    <value>Méret képpontban:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Vonalkód felirattal:</value>
@@ -1028,5 +1028,8 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Modul mérete: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Képszegély mérete: {0} képpont</value>
   </data>
 </root>

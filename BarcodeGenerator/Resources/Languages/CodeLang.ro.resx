@@ -490,7 +490,7 @@ Vă mulțumesc anticipat.</value>
     <value>Nicio dată cu caracter personal sau de altă natură nu este stocată sau transmisă mie și altora.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Dimensiunea imaginii codului QR: {0}%</value>
+    <value>Dimensiunea imaginii: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Fișierul selectat nu este acceptat.</value>
@@ -674,10 +674,10 @@ Microsoft, Microsoft Store, sigla Microsoft Store și Windows sunt mărci comerc
     <value>SQRC Cod QR securizat</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Cod QR de dimensiune variabilă:</value>
+    <value>Dimensiunea variabilă:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
-    <value>Dimensiunea codului QR în pixeli:</value>
+    <value>Dimensiunea în pixeli:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Cod de bare cu legendă:</value>
@@ -1028,5 +1028,8 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Dimensiunea modulului: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Dimensiunea marginii imaginii: {0} pixeli</value>
   </data>
 </root>
