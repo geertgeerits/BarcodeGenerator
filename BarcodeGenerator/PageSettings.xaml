@@ -36,7 +36,7 @@
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
                 RowSpacing="4"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, 70">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, 70">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -328,13 +328,40 @@
                         MinimumTrackColor="Orange"
                         Minimum="10"
                         Maximum="35"
-                        ValueChanged="OnSliderQRCodeImageSizeValueChanged">
+                        ValueChanged="OnSliderQRCodeImageSize_ValueChanged">
+                    </Slider>
+                </Border>
+
+                <Label
+                    x:Name="lblQRCodeImageSizeBorder"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="13"
+                    Grid.Column="0"
+                    VerticalTextAlignment="Start"
+                    Text="{Translate QRCodeImageSizeBorder_Text}">
+                </Label>
+
+                <Border
+                    Style="{StaticResource borderStyleGroup}"
+                    Grid.Row="13"
+                    Grid.Column="2">
+
+                    <Slider
+                        x:Name="sldQRCodeImageSizeBorder"
+                        Style="{StaticResource sliderStyleColor}"
+                        VerticalOptions="Center"
+                        Margin="{OnPlatform Default='0,0,0,0', iOS='8,3,8,0', WinUI='10,2,10,0'}"
+                        ThumbColor="Orange"
+                        MinimumTrackColor="Orange"
+                        Minimum="0"
+                        Maximum="25"
+                        ValueChanged="OnSliderQRCodeImageSizeBorder_ValueChanged">
                     </Slider>
                 </Border>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="13"
+                    Grid.Row="14"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="0"
@@ -343,7 +370,7 @@
 
                 <Switch
                     x:Name="swtCompressionEnabled"
-                    Grid.Row="13"
+                    Grid.Row="14"
                     Grid.Column="2"
                     Margin="0"
                     Toggled="SwtCompressionEnabled_Toggled">
@@ -351,14 +378,14 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="14"
+                    Grid.Row="15"
                     Grid.Column="0"
                     Text="{Translate PayloadType_Text}">
                 </Label>
                 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="14"
+                    Grid.Row="15"
                     Grid.Column="1">
 
                     <Picker
@@ -373,7 +400,7 @@
                 This option is not available for 2D barcodes because they do not have a caption.-->
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="15"
+                    Grid.Row="16"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
@@ -382,7 +409,7 @@
 
                 <Switch
                     x:Name="swtBarcodeWithCaption"
-                    Grid.Row="15"
+                    Grid.Row="16"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Toggled="SwtBarcodeWithCaption_Toggled">

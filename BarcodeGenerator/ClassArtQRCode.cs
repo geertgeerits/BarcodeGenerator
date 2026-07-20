@@ -117,7 +117,7 @@ namespace BarcodeGenerator
                     logo = DecodeAndOrientBitmap(fgBytes);
                     if (logo != null)
                     {
-                        icon = IconData.FromImage(logo, iconSizePercent: (int)ClassBarcodes.nQRCodeImageSizePercent, iconBorderWidth: 10);
+                        icon = IconData.FromImage(logo, iconSizePercent: (int)ClassBarcodes.nQRCodeImageSizePercent, iconBorderWidth: ClassBarcodes.nQRCodeImageSizeBorder);
                     }
                 }
             }

@@ -208,6 +208,10 @@ namespace BarcodeGenerator
             // Set the QR code image size percent in the label
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
             sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
+
+            // Set the QR code image size border in the label
+            lblQRCodeImageSizeBorder.Text = $"{string.Format(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder)}";
+            sldQRCodeImageSizeBorder.Value = ClassBarcodes.nQRCodeImageSizeBorder;
         }
 
         /// <summary>
@@ -440,11 +444,24 @@ namespace BarcodeGenerator
         /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
         /// <param name="e">An object that contains the event data, including the new value of the slider representing the desired QR
         /// code image size percentage.</param>
-        private void OnSliderQRCodeImageSizeValueChanged(object sender, ValueChangedEventArgs e)
+        private void OnSliderQRCodeImageSize_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            ClassBarcodes.nQRCodeImageSizePercent = MathF.Round((float)e.NewValue, 1);
+            ClassBarcodes.nQRCodeImageSizePercent = (int)Math.Round(e.NewValue, 1);
             sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
             lblQRCodeImageSize.Text = $"{string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent)}";
+        }
+
+        /// <summary>
+        /// Handles the ValueChanged event for the QR code image size border slider, updating the QR code image size border
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
+        /// <param name="e">An object that contains the event data, including the new value of the slider representing the desired QR
+        /// code image size border.</param>
+        private void OnSliderQRCodeImageSizeBorder_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            ClassBarcodes.nQRCodeImageSizeBorder = (int)Math.Round(e.NewValue, 1);
+            sldQRCodeImageSizeBorder.Value = ClassBarcodes.nQRCodeImageSizeBorder;
+            lblQRCodeImageSizeBorder.Text = $"{string.Format(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder)}";
         }
 
         /// <summary>
@@ -506,6 +523,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeSizeVariable", ClassBarcodes.bQRCodeSizeVariable);
             Preferences.Default.Set("SettingQRCodeSizePixels", ClassBarcodes.nQRCodeSizePixels);
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassBarcodes.nQRCodeImageSizePercent);
+            Preferences.Default.Set("SettingQRCodeImageSizeBorder", ClassBarcodes.nQRCodeImageSizeBorder);
             Preferences.Default.Set("SettingQRCodeFinderPatternShape", ClassBarcodes.cQRCodeFinderPatternShape);
             Preferences.Default.Set("SettingQRCodeModuleShape", ClassBarcodes.cQRCodeModuleShape);
             Preferences.Default.Set("SettingQRCodeModuleSizePercent", ClassBarcodes.nQRCodeModuleSizePercent);
@@ -557,6 +575,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeSizeVariable");
                 Preferences.Default.Remove("SettingQRCodeSizePixels");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
+                Preferences.Default.Remove("SettingQRCodeImageSizeBorder");
                 Preferences.Default.Remove("SettingQRCodeFinderPatternShape");
                 Preferences.Default.Remove("SettingQRCodeModuleShape");
                 Preferences.Default.Remove("SettingQRCodeModuleSizePercent");

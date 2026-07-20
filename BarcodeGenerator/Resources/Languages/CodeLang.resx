@@ -1029,4 +1029,7 @@ Not all payload types are supported on every device.</value>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
     <value>Module size: {0}%</value>
   </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>QR Code image size border: {0} pixels</value>
+  </data>
 </root>
