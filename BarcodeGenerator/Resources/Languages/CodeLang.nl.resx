@@ -785,7 +785,7 @@ Microsoft, Microsoft Store, het Microsoft Store-logo en Windows zijn handelsmerk
     <value>Kleur voorgrond artistieke QR-code:</value>
   </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
-    <value>Compressie QR-code:</value>
+    <value>Tekst comprimeren:</value>
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>De tekst in de QR-code kan worden gecomprimeerd (zie de instellingen om dit in te schakelen). Om de tekst weer leesbaar te maken, moet deze worden gedecomprimeerd met een scanner die GZip-compressie ondersteunt, zoals de scanner in deze app.</value>
