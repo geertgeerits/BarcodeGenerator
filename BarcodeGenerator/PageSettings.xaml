@@ -36,7 +36,7 @@
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
                 RowSpacing="4"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, 70">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, 70">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -262,35 +262,58 @@
                 the option to set the size and an entry where users can input the size in pixels.
                 For Art QR Code, the size is determined by the slider which sets the size of individual modules
                 of the QR code. The bigger the modules are, the bigger the whole QR code is.-->
+
                 <Label
+                    x:Name="lblQRCode"
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="10"
                     Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center"
+                    Padding="0,10,0,0"
+                    TextDecorations="Underline"
+                    Text="{Translate Barcode_QR_CODE_Text}">
+                </Label>
+                
+                <Border
+                    Grid.Row="11"
+                    Grid.Column="0"
+                    Grid.RowSpan="6"
+                    Grid.ColumnSpan="2"
+                    Margin="{OnPlatform Default='2,0,2,0', iOS='9,0,9,0', WinUI='9,0,9,0'}">
+                </Border>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="11"
+                    Grid.Column="0"
                     VerticalTextAlignment="Start"
-                    Margin="{OnPlatform Default='0,5,0,0', iOS='0,5,0,0'}"
+                    Margin="{OnPlatform Default='10,5,0,0', iOS='16,5,0,0', WinUI='16,5,0,0'}"
                     Text="{Translate QRCodeSizeVariable_Text}">
                 </Label>
 
                 <Switch
                     x:Name="swtQRCodeSizeVariable"
-                    Grid.Row="10"
+                    Grid.Row="11"
                     Grid.Column="2"
-                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0', WinUI='0,6,0,0'}"
                     Toggled="SwtQRCodeSizeVariable_Toggled">
                 </Switch>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="11"
+                    Grid.Row="12"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
+                    Margin="{OnPlatform Default='10,0,0,0', iOS='16,0,0,0', WinUI='16,0,0,0'}"
                     Text="{Translate QRCodeSizePixels_Text}">
                 </Label>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="11"
-                    Grid.Column="1">
+                    Grid.Row="12"
+                    Grid.Column="1"
+                    Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
                     <Entry
                         x:Name="entQRCodeSizePixels"
@@ -308,16 +331,18 @@
                 <Label
                     x:Name="lblQRCodeImageSize"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="12"
+                    Grid.Row="13"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
+                    Margin="{OnPlatform Default='10,0,0,0', iOS='16,0,0,0', WinUI='16,0,0,0'}"
                     Text="{Translate QRCodeImageSize_Text}">
                 </Label>
                 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="12"
-                    Grid.Column="2">
+                    Grid.Row="13"
+                    Grid.Column="2"
+                    Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
                 
                     <Slider
                         x:Name="sldQRCodeImageSize"
@@ -335,16 +360,18 @@
                 <Label
                     x:Name="lblQRCodeImageSizeBorder"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="13"
+                    Grid.Row="14"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
+                    Margin="{OnPlatform Default='10,0,0,0', iOS='16,0,0,0', WinUI='16,0,0,0'}"
                     Text="{Translate QRCodeImageSizeBorder_Text}">
                 </Label>
 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="13"
-                    Grid.Column="2">
+                    Grid.Row="14"
+                    Grid.Column="2"
+                    Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
                     <Slider
                         x:Name="sldQRCodeImageSizeBorder"
@@ -361,32 +388,34 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="14"
+                    Grid.Row="15"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
-                    Margin="0"
+                    Margin="{OnPlatform Default='10,0,0,0', iOS='16,0,0,0', WinUI='16,0,0,0'}"
                     Text="{Translate CompressionEnabled_Text}">
                 </Label>
 
                 <Switch
                     x:Name="swtCompressionEnabled"
-                    Grid.Row="14"
+                    Grid.Row="15"
                     Grid.Column="2"
-                    Margin="0"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,0,0,0', WinUI='0,0,0,0'}"
                     Toggled="SwtCompressionEnabled_Toggled">
                 </Switch>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="15"
+                    Grid.Row="16"
                     Grid.Column="0"
+                    Margin="{OnPlatform Default='10,0,0,0', iOS='16,0,0,0', WinUI='16,0,0,0'}"
                     Text="{Translate PayloadType_Text}">
                 </Label>
                 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="15"
-                    Grid.Column="1">
+                    Grid.Row="16"
+                    Grid.Column="1"
+                    Margin="{OnPlatform Default='0,0,11,10', iOS='0,0,16,10', WinUI='0,0,16,10'}">
 
                     <Picker
                         x:Name="pckPayloadType"
@@ -400,7 +429,7 @@
                 This option is not available for 2D barcodes because they do not have a caption.-->
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="16"
+                    Grid.Row="17"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
@@ -409,7 +438,7 @@
 
                 <Switch
                     x:Name="swtBarcodeWithCaption"
-                    Grid.Row="16"
+                    Grid.Row="17"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
                     Toggled="SwtBarcodeWithCaption_Toggled">
