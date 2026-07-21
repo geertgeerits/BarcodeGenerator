@@ -101,6 +101,7 @@ namespace BarcodeGenerator
             ClassBarcodes.nQRCodeImageSizeBorder = Preferences.Default.Get("SettingQRCodeImageSizeBorder", 6);
             ClassBarcodes.cQRCodeFinderPatternShape = Preferences.Default.Get("SettingQRCodeFinderPatternShape", "Square");  // Square, Rounded, Circle
             ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Square");  // Square, Rounded, Circle
+            ClassBarcodes.nQRCodeQuietZoneSize = Preferences.Default.Get("SettingQRCodeQuietZoneSize", 4);  // Size of the QR code quiet zone in modules
             ClassBarcodes.nQRCodeModuleSizePercent = Preferences.Default.Get("SettingQRCodeModuleSizePercent", 100);  // Size of the QR code modules as a percentage
             ClassBarcodes.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             ClassBarcodes.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
