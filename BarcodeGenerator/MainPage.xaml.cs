@@ -916,42 +916,18 @@ namespace BarcodeGenerator
         {
             try
             {
-                // Payload type is SEPA credit transfer - share 1 PNG and 1 SVG file
-                if (PopupPayloadTypes.bPayloadSepaCreditTransfer)
+                // Share the barcode as image files - 1 PNG and 1 SVG file
+                if (File.Exists(ClassBarcodes.cFileBarcodePng) && File.Exists(ClassBarcodes.cFileBarcodeSvg))
                 {
-                    if (!await ClassFileUtilities.ShareMultipleFilesAsync())
-                    {
-                        await Share.Default.RequestAsync(new ShareFileRequest
-                        {
-                            Title = "Barcode Generator",
-                            File = new ShareFile(ClassBarcodes.cFileBarcodePng)
-                        });
-                    }
+                    await ClassFileUtilities.ShareMultipleFilesAsync(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cFileBarcodeSvg);
                 }
-
-                // Share the QR code or the Micro QR code as an image file using the Share API - share 1 PNG and 1 SVG file
-                else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_MICRO_QR_CODE)
+                
+                // Share the barcode as an image file - 1 PNG file
+                else if (File.Exists(ClassBarcodes.cFileBarcodePng))
                 {
-                    if (!await ClassFileUtilities.ShareMultipleFilesAsync())
-                    {
-                        await Share.Default.RequestAsync(new ShareFileRequest
-                        {
-                            Title = "Barcode Generator",
-                            File = new ShareFile(ClassBarcodes.cFileBarcodePng)
-                        });
-                    }
+                    await ClassFileUtilities.OpenShareInterfaceAsync(ClassBarcodes.cFileBarcodePng);
                 }
-
-                // Share the QR code with the image as an image file using the Share API - share 1 PNG file
-                else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
-                {
-                    await Share.Default.RequestAsync(new ShareFileRequest
-                    {
-                        Title = "Barcode Generator",
-                        File = new ShareFile(ClassBarcodes.cFileBarcodePng)
-                    });
-                }
-
+                
                 // Share the barcode by capturing the barcode view and saving it as a file using the Share API
                 else if (Screenshot.Default.IsCaptureSupported)
                 {
@@ -966,6 +942,7 @@ namespace BarcodeGenerator
                         // Open the share interface to share the file
                         await ClassFileUtilities.OpenShareInterfaceAsync(cFile);
                     }
+                    
                     // Barcode without caption
                     else
                     {

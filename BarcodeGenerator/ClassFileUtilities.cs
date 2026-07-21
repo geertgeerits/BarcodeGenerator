@@ -237,9 +237,9 @@ namespace BarcodeGenerator
         /// This method checks for the existence of the specified files before attempting to share them
         /// </summary>
         /// <returns></returns>
-        public static async Task<bool> ShareMultipleFilesAsync()
+        public static async Task<bool> ShareMultipleFilesAsync(string cFile1, string cFile2)
         {
-            if (!File.Exists(ClassBarcodes.cFileBarcodePng) || !File.Exists(ClassBarcodes.cFileBarcodeSvg))
+            if (!File.Exists(cFile1) || !File.Exists(cFile2))
             {
                 Debug.WriteLine("ClassFileOperations.ShareMultipleFilesAsync: One or more files to share do not exist.");
                 return false;
@@ -248,7 +248,7 @@ namespace BarcodeGenerator
             await Share.Default.RequestAsync(new ShareMultipleFilesRequest
             {
                 Title = "Barcode Generator",
-                Files = [new(ClassBarcodes.cFileBarcodePng), new(ClassBarcodes.cFileBarcodeSvg)]
+                Files = [new(cFile1), new(cFile2)]
             });
             
             return true;

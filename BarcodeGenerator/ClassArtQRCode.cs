@@ -168,12 +168,6 @@ namespace BarcodeGenerator
             try
             {
                 pngBytes = await Task.Run(() => qrData.ToByteArray());
-                
-                logo?.Dispose();
-                if (icon is IDisposable d)
-                {
-                    d.Dispose();
-                }
             }
             catch (Exception ex)
             {
@@ -184,6 +178,45 @@ namespace BarcodeGenerator
             if (pngBytes == null || pngBytes.Length == 0)
             {
                 return null;
+            }
+
+            // Generate SVG bytes off the UI thread (QRCode creation can be heavy)
+            // Only generate SVG if no background image was selected and the background color is fully opaque (i.e., starts with "FF")
+            // This is because SVG does not support transparent backgrounds well, and we want to avoid generating an SVG with a transparent background.
+            if (fileBackground == null && ClassBarcodes.cCodeColorBgArtQRCode.StartsWith("FF"))
+            {
+                byte[]? svgBytes = null;
+                try
+                {
+                    string svgString = await Task.Run(() => qrData.ToSvgString());
+                    svgBytes = System.Text.Encoding.UTF8.GetBytes(svgString);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error generating SVG bytes: {ex.Message}");
+                    return null;
+                }
+
+                // Save SVG to file if no background image was selected
+                if (svgBytes != null && svgBytes.Length > 0)
+                {
+                    try
+                    {
+                        await File.WriteAllBytesAsync(ClassBarcodes.cFileBarcodeSvg, svgBytes);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine($"Error saving SVG file: {ex.Message}");
+                        return null;
+                    }
+                }
+            }
+
+            // Dispose of the logo and icon to free resources
+            logo?.Dispose();
+            if (icon is IDisposable d)
+            {
+                d.Dispose();
             }
 
             // If a background image was selected, composite the QR code on top of the background on a background thread
@@ -244,7 +277,6 @@ namespace BarcodeGenerator
                                     SKRect srcRect = new(0, 0, bgBitmap.Width, bgBitmap.Height);
                                     SKRect dstRect = new(left, top, left + scaledWidth, top + scaledHeight);
                                     bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, new SKSamplingOptions(SKFilterMode.Linear), paint);
-
                                 }
                             }
 
