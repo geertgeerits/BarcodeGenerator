@@ -259,6 +259,7 @@
                 </Label>
 
                 <local:ClassArtQRCodeSettings
+                    x:Name="artQRCodeSettings"
                     Grid.Row="9"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"

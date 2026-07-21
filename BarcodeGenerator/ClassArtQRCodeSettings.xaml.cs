@@ -32,7 +32,7 @@ namespace BarcodeGenerator
             rbtQRCodeModuleShapeCircle.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Circle";
 
             // Set the QR code module size percent in the label
-            lblQRCodeModuleSize.Text = $"{string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent)}";
+            lblQRCodeModuleSize.Text = string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent);
             sldQRCodeModuleSize.Value = ClassBarcodes.nQRCodeModuleSizePercent;
 
             // Set the initial states of the switches based on the current settings
@@ -428,6 +428,15 @@ namespace BarcodeGenerator
         private void SwtBackgroundImage_Toggled(object sender, ToggledEventArgs e)
         {
             ClassBarcodes.bQRCodeBackgroundImage = e.Value;
+        }
+
+        /// <summary>
+        /// Set the language for the QR code settings page by updating the text of the labels and other UI elements based on the current language settings.
+        /// </summary>
+        /// <remarks>This method is called from the class PageSettings (PageSettings.xaml.cs) when the language is changed.</remarks>
+        public void SetLanguage()
+        {
+            lblQRCodeModuleSize.Text = string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent);
         }
 
         /// <summary>

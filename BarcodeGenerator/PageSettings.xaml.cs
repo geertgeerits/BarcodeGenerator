@@ -212,6 +212,12 @@ namespace BarcodeGenerator
             // Set the QR code image size border in the label
             lblQRCodeImageSizeBorder.Text = $"{string.Format(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder)}";
             sldQRCodeImageSizeBorder.Value = ClassBarcodes.nQRCodeImageSizeBorder;
+
+            // Set the QR code module size percent in the label. Calls the method 'SetLanguage()' in the class
+            // 'ClassArtQRCodeSettings' (ClassArtQRCodeSettings.xaml.cs) to set the text in the chosen language in the controls
+            // and variables of the ArtQRCodeSettings page.
+            // 'artQRCodeSettings' is the x:Name of the ArtQRCodeSettings page in the PageSettings.xaml file.
+            artQRCodeSettings.SetLanguage();
         }
 
         /// <summary>
