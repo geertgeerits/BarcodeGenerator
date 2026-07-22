@@ -306,7 +306,7 @@ namespace BarcodeGenerator
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
         /// <summary>
-        /// Put the generator barcode formats in a List string using the ZXing and QRCoder library for Windows
+        /// Put the generator barcode formats in a List string using the ZXing, QRCoder and SkiaSharp.QrCode library for Windows
         /// </summary>
         /// <returns></returns>
         public static List<string> GetFormatCodeListGenerator_ZX_Windows() => [.. new List<string>
@@ -713,6 +713,8 @@ namespace BarcodeGenerator
    Micro QR                      35         35         21         15         9             M4       L (low)
    Micro QR                      30         30         18         13         8             M4       M (medium)
    Micro QR                      21         21         13          9         5             M4       Q (quartile)
+
+   Art Micro QR                  35         35         21         15         9             M4       L (low)
    
    rMQR Rectangular Micro QR
    

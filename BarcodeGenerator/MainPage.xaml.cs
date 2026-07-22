@@ -519,7 +519,7 @@ namespace BarcodeGenerator
                     imgQrCodeImage.IsVisible = true;
                 }
 
-                else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Model 2 - ECCLevel.High
+                else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
                 {
                     edtTextToCode.MaxLength = 35;
                     edtTextToCode.Keyboard = Keyboard.Default;
