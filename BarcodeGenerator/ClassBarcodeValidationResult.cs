@@ -308,7 +308,16 @@ namespace BarcodeGenerator
 
                     result.Text = cTextToCode;
                 }
+                else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
+                {
+                    if (!await CheckValidateTextAsync(cTextToCode, 30, 18, 13, 8))
+                    {
+                        return result;
+                    }
 
+                    result.Text = cTextToCode;
+                }
+                
                 // If no error message was set above, success
                 if (string.IsNullOrEmpty(result.ErrorMessage))
                 {

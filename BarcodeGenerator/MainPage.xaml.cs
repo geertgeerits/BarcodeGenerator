@@ -519,9 +519,9 @@ namespace BarcodeGenerator
                     imgQrCodeImage.IsVisible = true;
                 }
 
-                else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
+                else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M3/M4 ? - ECCLevel.Medium
                 {
-                    edtTextToCode.MaxLength = 35;
+                    edtTextToCode.MaxLength = 30;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;
@@ -643,9 +643,9 @@ namespace BarcodeGenerator
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
             }
-            else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
+            else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M3/M4 ? - ECCLevel.Medium
             {
-                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 30, 18, 13, 8)}";
             }
             else
             {

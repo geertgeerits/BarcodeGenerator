@@ -130,12 +130,12 @@ namespace BarcodeGenerator
             MicroQRCodeImageBuilder? microQrData = null;
             QRCodeImageBuilder? standardQrData = null;
 
-            // Create a Micro QR code
+            // Create a Micro QR code with custom styling
             if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
             {
                 microQrData = new MicroQRCodeImageBuilder(text)
                     .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
-                    .WithErrorCorrection(MicroQREccLevel.L)
+                    .WithErrorCorrection(MicroQREccLevel.M)
                     .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
                                 backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
@@ -151,13 +151,9 @@ namespace BarcodeGenerator
                 };
             }
 
-            // Create a standard QR code
+            // Create a standard QR code with custom styling
             else
             {
-                // Create QR code with custom styling and non-compressed text
-                // If no size is given then the default size = 512 x 512 pixels
-
-                // Build base QRCodeImageBuilder with common settings
                 standardQrData = new QRCodeImageBuilder(text)
                     .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(ECCLevel.H)

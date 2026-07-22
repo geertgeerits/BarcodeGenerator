@@ -714,7 +714,8 @@ namespace BarcodeGenerator
    Micro QR                      30         30         18         13         8             M4       M (medium)
    Micro QR                      21         21         13          9         5             M4       Q (quartile)
 
-   Art Micro QR                  35         35         21         15         9             M4       L (low)
+   Art Micro QR                  30         30         18         13         8             M3       M (medium)
+   Art Micro QR                  30         30         18         13         8             M4       M (medium)
    
    rMQR Rectangular Micro QR
    
