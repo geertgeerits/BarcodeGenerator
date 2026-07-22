@@ -1032,4 +1032,7 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Billedrammestørrelse: {0} pixels</value>
   </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Størrelse på stillezonen: {0} moduler</value>
+  </data>
 </root>

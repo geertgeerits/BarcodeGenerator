@@ -1032,4 +1032,7 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Velikost okraje obrázku: {0} pixelů</value>
   </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Velikost klidové zóny: {0} modulů</value>
+  </data>
 </root>

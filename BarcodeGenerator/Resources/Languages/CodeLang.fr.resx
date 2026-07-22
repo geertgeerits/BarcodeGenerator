@@ -1032,4 +1032,7 @@ Tous les types de données ne sont pas compatibles avec tous les appareils.</val
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Taille de la bordure de l'image: {0} pixels</value>
   </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Taille de la zone silencieuse: {0} modules</value>
+  </data>
 </root>

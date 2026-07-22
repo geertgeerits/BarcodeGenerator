@@ -1032,4 +1032,7 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Randgrootte van de afbeelding: {0} pixels</value>
   </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Grootte van de stille zone: {0} modules</value>
+  </data>
 </root>

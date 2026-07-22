@@ -1032,4 +1032,7 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Bildkantstorlek: {0} pixlar</value>
   </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Storlek på tyst zon: {0} moduler</value>
+  </data>
 </root>

@@ -90,6 +90,11 @@ namespace BarcodeGenerator
             // Set the text compression variable to update the switch
             swtCompressionEnabled.IsToggled = ClassBarcodes.bCompressionEnabled;
 
+            // Set the QR code quiet zone size, image size and image size border to update the sliders
+            sldQRCodeQuietZoneSize.Value = ClassBarcodes.nQRCodeQuietZoneSize;
+            sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
+            sldQRCodeImageSizeBorder.Value = ClassBarcodes.nQRCodeImageSizeBorder;
+
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
         }
@@ -205,13 +210,10 @@ namespace BarcodeGenerator
             ClassBarcodes.SelectBarcodeScannerNameIndex(pckFormatCodeScanner);
             ClassPayloadTypes.SelectPayloadTypeIndex(pckPayloadType);
 
-            // Set the QR code image size percent in the label
+            // Set the QR code quiet zone size, image size and image size border to update the labels
+            lblQRCodeQuietZoneSize.Text = string.Format(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
             lblQRCodeImageSize.Text = string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent.ToString("F1"));
-            sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
-
-            // Set the QR code image size border in the label
             lblQRCodeImageSizeBorder.Text = $"{string.Format(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder)}";
-            sldQRCodeImageSizeBorder.Value = ClassBarcodes.nQRCodeImageSizeBorder;
 
             // Set the QR code module size percent in the label. Calls the method 'SetLanguage()' in the class
             // 'ClassArtQRCodeSettings' (ClassArtQRCodeSettings.xaml.cs) to set the text in the chosen language in the controls
@@ -441,12 +443,22 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Handles the ValueChanged event for the QR code quiet zone size slider, updating the quiet zone size
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
+        /// <param name="e">An object that contains the event data, including the new value of the slider representing the desired QR
+        /// code quiet zone size.</param>
+        private void OnSliderQRCodeQuietZoneSize_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            ClassBarcodes.nQRCodeQuietZoneSize = (int)Math.Round(e.NewValue, 0);
+            sldQRCodeQuietZoneSize.Value = ClassBarcodes.nQRCodeQuietZoneSize;
+            lblQRCodeQuietZoneSize.Text = string.Format(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
+        }
+
+        /// <summary>
         /// Handles the ValueChanged event for the QR code image size slider, updating the QR code image size percentage
         /// and pixel dimensions based on the new slider value.
         /// </summary>
-        /// <remarks>This method recalculates the QR code image size in pixels and updates the associated
-        /// label to reflect the current size selection. It should be connected to the slider's ValueChanged event to
-        /// ensure the UI remains in sync with user input.</remarks>
         /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
         /// <param name="e">An object that contains the event data, including the new value of the slider representing the desired QR
         /// code image size percentage.</param>
@@ -467,7 +479,7 @@ namespace BarcodeGenerator
         {
             ClassBarcodes.nQRCodeImageSizeBorder = (int)Math.Round(e.NewValue, 0);
             sldQRCodeImageSizeBorder.Value = ClassBarcodes.nQRCodeImageSizeBorder;
-            lblQRCodeImageSizeBorder.Text = $"{string.Format(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder)}";
+            lblQRCodeImageSizeBorder.Text = string.Format(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder);
         }
 
         /// <summary>

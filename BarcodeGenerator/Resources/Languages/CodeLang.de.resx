@@ -1031,4 +1031,7 @@ Wählen Sie eine Option.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Bildrandgröße: {0} Pixel</value>
   </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Größe der Ruhezone: {0} Module</value>
+  </data>
 </root>

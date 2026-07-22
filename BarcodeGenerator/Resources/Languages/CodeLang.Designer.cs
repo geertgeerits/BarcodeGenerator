@@ -2246,6 +2246,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quiet zone size: {0} modules.
+        /// </summary>
+        internal static string QRCodeQuietZoneSize_Text {
+            get {
+                return ResourceManager.GetString("QRCodeQuietZoneSize_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recommended image size.
         /// </summary>
         internal static string QRCodeRecommendedImageSize_Text {

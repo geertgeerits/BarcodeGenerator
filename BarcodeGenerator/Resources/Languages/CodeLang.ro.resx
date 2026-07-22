@@ -1032,4 +1032,7 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Dimensiunea marginii imaginii: {0} pixeli</value>
   </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Dimensiunea zonei liniștite: {0} module</value>
+  </data>
 </root>

@@ -1032,4 +1032,7 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Tamanho da borda da imagem: {0} pixels</value>
   </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Tamanho da zona silenciosa: {0} módulos</value>
+  </data>
 </root>
