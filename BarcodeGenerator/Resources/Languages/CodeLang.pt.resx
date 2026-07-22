@@ -1035,4 +1035,7 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Tamanho da zona silenciosa: {0} módulos</value>
   </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Microcódigo QR artístico</value>
+  </data>
 </root>

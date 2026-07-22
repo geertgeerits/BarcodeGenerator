@@ -1035,4 +1035,7 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Grootte van de stille zone: {0} modules</value>
   </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Artistieke micro-QR-code</value>
+  </data>
 </root>

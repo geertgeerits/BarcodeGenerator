@@ -1035,4 +1035,7 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Størrelse på stillezonen: {0} moduler</value>
   </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Kunstnerisk mikro-QR-kode</value>
+  </data>
 </root>

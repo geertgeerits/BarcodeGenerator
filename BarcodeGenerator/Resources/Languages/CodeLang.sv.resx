@@ -1035,4 +1035,7 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Storlek på tyst zon: {0} moduler</value>
   </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Artistic Micro QR-kod</value>
+  </data>
 </root>

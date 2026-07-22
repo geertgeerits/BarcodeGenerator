@@ -1034,4 +1034,7 @@ Wählen Sie eine Option.</value>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Größe der Ruhezone: {0} Module</value>
   </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Künstlerischer Mikro-QR-Code</value>
+  </data>
 </root>

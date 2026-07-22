@@ -1035,4 +1035,7 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Velikost klidové zóny: {0} modulů</value>
   </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Umělecký mikro QR kód</value>
+  </data>
 </root>

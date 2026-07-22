@@ -1035,4 +1035,7 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Csendes zóna mérete: {0} modul</value>
   </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Művészi mikro QR-kód</value>
+  </data>
 </root>

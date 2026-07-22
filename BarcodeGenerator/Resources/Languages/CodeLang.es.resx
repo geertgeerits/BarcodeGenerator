@@ -1035,4 +1035,7 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Tamaño de la zona silenciosa: {0} módulos</value>
   </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Código QR micro artístico</value>
+  </data>
 </root>

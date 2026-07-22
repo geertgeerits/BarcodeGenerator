@@ -1035,4 +1035,7 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Hiljaisen alueen koko: {0} moduulia</value>
   </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Taiteellinen mikro-QR-koodi</value>
+  </data>
 </root>
