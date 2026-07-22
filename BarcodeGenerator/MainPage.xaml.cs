@@ -519,6 +519,16 @@ namespace BarcodeGenerator
                     imgQrCodeImage.IsVisible = true;
                 }
 
+                else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Model 2 - ECCLevel.High
+                {
+                    edtTextToCode.MaxLength = 35;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
+                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
+                    bgvBarcode.IsVisible = false;
+                    imgQrCodeImage.IsVisible = true;
+                }
+
                 // Set the payload type button enabled if a specific payload type is allowed for the selected barcode format
                 imgbtnPayloadType.IsEnabled = bPayloadTypeAllowed;
 
@@ -630,6 +640,10 @@ namespace BarcodeGenerator
                     1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
             }
             else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
+            }
+            else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
             }
@@ -748,7 +762,7 @@ namespace BarcodeGenerator
                 //int divByZero = 51 / int.Parse("0");
 
                 // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
-                if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)
+                if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE || selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
                     

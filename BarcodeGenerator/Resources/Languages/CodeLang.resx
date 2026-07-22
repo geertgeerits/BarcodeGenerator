@@ -1035,4 +1035,7 @@ Not all payload types are supported on every device.</value>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Quiet zone size: {0} modules</value>
   </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Artistic Micro QR Code</value>
+  </data>
 </root>

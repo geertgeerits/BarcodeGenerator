@@ -528,6 +528,7 @@
 
         <Switch
             x:Name="swtForegroundImage"
+            x:FieldModifier="public"
             Grid.Row="9"
             Grid.Column="2"
             Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
@@ -546,6 +547,7 @@
 
         <Switch
             x:Name="swtBackgroundImage"
+            x:FieldModifier="public"
             Grid.Row="10"
             Grid.Column="2"
             HorizontalOptions="Start"

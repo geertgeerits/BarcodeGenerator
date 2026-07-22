@@ -126,39 +126,67 @@ namespace BarcodeGenerator
                 Debug.WriteLine($"ClassArtQRCode.GenerateArtQrCodeAsync (foreground): {ex.Message}");
             }
 
-            // Create QR code with custom styling and non-compressed text
-            // If no size is given then the default size = 512 x 512 pixels
-            QRCodeImageBuilder? qrData = null;
+            // Declare qrData before the if-else block so it's accessible afterwards
+            MicroQRCodeImageBuilder? microQrData = null;
+            QRCodeImageBuilder? standardQrData = null;
 
-            // Build base QRCodeImageBuilder with common settings
-            qrData = new QRCodeImageBuilder(text)
-                .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
-                .WithErrorCorrection(ECCLevel.H)
-                .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
-                            backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
-                            clearColor: SKColors.Transparent)
-                .WithGradient(gradient)
-                .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
-                .WithIcon(icon);
-
-            // Apply module shape if a non-default shape is selected
-            qrData = ClassBarcodes.cQRCodeModuleShape switch
+            // Create a Micro QR code
+            if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
             {
-                "Rounded" => qrData.WithModuleShape(RoundedRectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
-                "Circle" => qrData.WithModuleShape(CircleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
-                _ => qrData.WithModuleShape(RectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
-            };
+                microQrData = new MicroQRCodeImageBuilder(text)
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
+                    .WithErrorCorrection(MicroQREccLevel.L)
+                    .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
+                                backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
+                                clearColor: SKColors.Transparent)
+                    .WithGradient(gradient)
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
 
-            // Apply finder pattern shape independently from module shape
-            qrData = ClassBarcodes.cQRCodeFinderPatternShape switch
+                // Apply module shape if a non-default shape is selected
+                microQrData = ClassBarcodes.cQRCodeModuleShape switch
+                {
+                    "Rounded" => microQrData.WithModuleShape(RoundedRectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                    "Circle" => microQrData.WithModuleShape(CircleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                    _ => microQrData.WithModuleShape(RectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                };
+            }
+
+            // Create a standard QR code
+            else
             {
-                "Rounded" => qrData.WithFinderPatternShape(RoundedRectangleFinderPatternShape.Default),
-                "Circle" => qrData.WithFinderPatternShape(CircleFinderPatternShape.Default),
-                _ => qrData.WithFinderPatternShape(RectangleFinderPatternShape.Default),
-            };
+                // Create QR code with custom styling and non-compressed text
+                // If no size is given then the default size = 512 x 512 pixels
+
+                // Build base QRCodeImageBuilder with common settings
+                standardQrData = new QRCodeImageBuilder(text)
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
+                    .WithErrorCorrection(ECCLevel.H)
+                    .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
+                                backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
+                                clearColor: SKColors.Transparent)
+                    .WithGradient(gradient)
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
+                    .WithIcon(icon);
+
+                // Apply module shape if a non-default shape is selected
+                standardQrData = ClassBarcodes.cQRCodeModuleShape switch
+                {
+                    "Rounded" => standardQrData.WithModuleShape(RoundedRectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                    "Circle" => standardQrData.WithModuleShape(CircleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                    _ => standardQrData.WithModuleShape(RectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                };
+
+                // Apply finder pattern shape independently from module shape
+                standardQrData = ClassBarcodes.cQRCodeFinderPatternShape switch
+                {
+                    "Rounded" => standardQrData.WithFinderPatternShape(RoundedRectangleFinderPatternShape.Default),
+                    "Circle" => standardQrData.WithFinderPatternShape(CircleFinderPatternShape.Default),
+                    _ => standardQrData.WithFinderPatternShape(RectangleFinderPatternShape.Default),
+                };
+            }
 
             // Add a null check before using qrData
-            if (qrData == null)
+            if (microQrData == null && standardQrData == null)
             {
                 Debug.WriteLine("Invalid QR code module shape");
                 return null;
@@ -168,7 +196,7 @@ namespace BarcodeGenerator
             byte[]? pngBytes = null;
             try
             {
-                pngBytes = await Task.Run(() => qrData.ToByteArray());
+                pngBytes = await Task.Run(() => microQrData != null ? microQrData.ToByteArray() : standardQrData!.ToByteArray());
             }
             catch (Exception ex)
             {
@@ -189,7 +217,7 @@ namespace BarcodeGenerator
                 byte[]? svgBytes = null;
                 try
                 {
-                    string svgString = await Task.Run(() => qrData.ToSvgString());
+                    string svgString = await Task.Run(() => microQrData != null ? microQrData.ToSvgString() : standardQrData!.ToSvgString());
                     svgBytes = System.Text.Encoding.UTF8.GetBytes(svgString);
                 }
                 catch (Exception ex)

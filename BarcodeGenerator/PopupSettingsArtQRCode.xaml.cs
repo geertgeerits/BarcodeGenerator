@@ -11,6 +11,15 @@ namespace BarcodeGenerator
 
             InitializeComponent();
 
+            if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
+            {
+                // Disable the foreground image option for Micro QR Codes, as they do not support this feature
+                artQRCodeSettings.swtForegroundImage.IsToggled = false;
+                artQRCodeSettings.swtBackgroundImage.IsToggled = false;
+                artQRCodeSettings.swtForegroundImage.IsEnabled = false;
+                artQRCodeSettings.swtBackgroundImage.IsEnabled = false;
+            }
+
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
             Globals.bPopupOpened = true;
         }
