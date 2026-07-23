@@ -99,7 +99,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="14.2.2" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.80" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.90" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.10" />
         <PackageReference Include="QRCoder" Version="1.8.0" />
         <PackageReference Include="SkiaSharp" Version="4.150.1" />
@@ -257,8 +257,7 @@
 	</ItemGroup>-->
 
 	<!--Error (active)	NETSDK1152	Found multiple publish output files with the same relative path:
-	    C:\nuget\zxing.net\0.16.11\lib\net9.0\zxing.dll, C:\nuget\ZXingCpp\0.5.2\runtimes\win-x64\native\ZXing.dll.
-		BarcodeGenerator (net10.0-windows10.0.19041.0)	C:\Program Files\dotnet\sdk\10.0.101\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ConflictResolution.targets 112-->
+	C:\nuget\zxing.net\0.16.11\lib\net9.0\zxing.dll, C:\nuget\zxingcpp\0.5.2\runtimes\win-x64\native\ZXing.dll.-->
 	<!-- Exclude native runtime/native assets from the transitive ZXingCpp package when building Windows.
        This prevents the native ZXing.dll (runtimes\win-x64\native\ZXing.dll) from colliding with the managed
        zxing.dll provided by zxing.net in the publish output. -->

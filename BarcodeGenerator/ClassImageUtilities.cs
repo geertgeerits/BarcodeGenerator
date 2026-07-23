@@ -1,6 +1,4 @@
-﻿//using Microsoft.Maui.Graphics.Platform;
-
-using SkiaSharp;
+﻿using SkiaSharp;
 
 namespace BarcodeGenerator
 {
