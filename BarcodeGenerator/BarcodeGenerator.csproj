@@ -33,9 +33,9 @@
 		<ApplicationIdGuid>7A6A918B-29C3-433A-82AE-16D589F3D8A2</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<PackageVersion>1.0.52</PackageVersion>
-		<ApplicationDisplayVersion>1.0.52</ApplicationDisplayVersion>
-		<ApplicationVersion>52</ApplicationVersion>
+		<PackageVersion>1.0.53</PackageVersion>
+		<ApplicationDisplayVersion>1.0.53</ApplicationDisplayVersion>
+		<ApplicationVersion>53</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
@@ -91,6 +91,7 @@
 	<ItemGroup>
 	  <None Remove="Linker.xml" />
 	  <None Remove="Platforms\Android\AndroidManifest.xml.tmp" />
+	  <None Remove="Platforms\Android\ILLink.Descriptors.xml" />
 	  <None Remove="Platforms\Android\Resources\xml\file_paths.xml.tmp" />
 	  <None Remove="Platforms\Android\ShareFileHandler.cs.tmp" />
 	  <None Remove="Platforms\iOS\Info.plist.tmp" />
@@ -98,7 +99,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="14.2.2" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="15.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.90" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.10" />
         <PackageReference Include="QRCoder" Version="1.8.0" />
@@ -177,8 +178,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.52</ApplicationDisplayVersion>
-		<ApplicationVersion>52</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.53</ApplicationDisplayVersion>
+		<ApplicationVersion>53</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
@@ -197,8 +198,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.52</ApplicationDisplayVersion>
-		<ApplicationVersion>52</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.53</ApplicationDisplayVersion>
+		<ApplicationVersion>53</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
