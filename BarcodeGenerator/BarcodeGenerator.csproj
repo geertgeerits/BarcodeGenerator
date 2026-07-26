@@ -245,12 +245,22 @@
 	</PropertyGroup>-->
 
 	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171 since .NET10
-        Add the following to the csproj until the trimming bug is fixed.
-		This disables trimming for Xamarin.AndroidX.Camera.Core.
-        https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171--> 
-	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
-	</ItemGroup>
+     Add the following to the csproj until the trimming bug is fixed.
+     This disables trimming for Xamarin.AndroidX.Camera.Core (and variants) so the API remains available.
+	 This solution is not working anymore since the app version 1.0.52
+     https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171-->
+	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android' and ('$(Configuration)' == 'Release' or '$(PublishTrimmed)' == 'true')">
+	  --><!-- Cover possible assembly name variants across package/SDK versions --><!--
+	  <TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
+	  --><!--<TrimmerRootAssembly Include="AndroidX.Camera.Core" RootMode="All" />--><!--
+	  <TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Lifecycle" RootMode="All" />
+	  --><!--<TrimmerRootAssembly Include="AndroidX.Camera.Lifecycle" RootMode="All" />--><!--
+	</ItemGroup>-->
+	
+	<!--This solution does also not work anymore since the app version 1.0.52-->
+	<!--<ItemGroup>
+		<TrimmerRootDescriptor Include="Platforms\Android\ILLink.Descriptors.xml" Condition="Exists('Platforms\Android\ILLink.Descriptors.xml')" />
+	</ItemGroup>-->
 
 	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
 	   --><!--Remove the native DLL from publish if it conflicts--><!-- 

@@ -8,4 +8,5 @@
 
 <!--!!!BUG!!! in Android
 RequestZoomFactor does not work in Release-Mode #171
-https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171--> 
+https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171
+This solution does also not work anymore since the app version 1.0.52--> 
