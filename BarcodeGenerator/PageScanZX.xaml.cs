@@ -37,10 +37,7 @@ namespace BarcodeGenerator
                 lblTitle.VerticalTextAlignment = TextAlignment.Start;
                 imgbtnTorch.VerticalOptions = LayoutOptions.Start;
             }
-#if WINDOWS
-            // Does not work on Windows, so hide the slider for camera zoom            
-            sldCameraZoom.IsVisible = false;
-#endif
+
             // Initialize the barcode pickers
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_ZX();
 
