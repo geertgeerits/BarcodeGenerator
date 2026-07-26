@@ -126,7 +126,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleScanner}"
-                RowDefinitions="Auto, 5, Auto, 5, Auto, Auto">
+                RowDefinitions="Auto, Auto, Auto, 5, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -147,6 +147,24 @@
                         SelectedIndexChanged="OnPickerFormatCodeChanged">
                     </Picker>
                 </Border>
+                
+                <Slider
+                    x:Name="sldCameraZoom"
+                    Style="{StaticResource sliderStyleColor}"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HeightRequest="24"
+                    VerticalOptions="Center"
+                    ThumbColor="DeepSkyBlue"
+                    MinimumTrackColor="DeepSkyBlue"
+                    Value="0"
+                    Minimum="0"
+                    Maximum="1"
+                    SemanticProperties.Description="{Translate ToolTipCameraZoom_Text}"
+                    ToolTipProperties.Text="{Translate ToolTipCameraZoom_Text}"
+                    ValueChanged="OnSliderCameraZoom_ValueChanged">
+                </Slider>
 
                 <Border
                     Grid.Row="2"
@@ -162,6 +180,7 @@
                         Style="{StaticResource zxingCameraView}"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
+                        ZoomFactor="0"
                         IsTorchOn="False"
                         BarcodesDetected="OnBarcodesDetected">
                     </zxing:CameraBarcodeReaderView>

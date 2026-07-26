@@ -37,7 +37,10 @@ namespace BarcodeGenerator
                 lblTitle.VerticalTextAlignment = TextAlignment.Start;
                 imgbtnTorch.VerticalOptions = LayoutOptions.Start;
             }
-
+#if WINDOWS
+            // Does not work on Windows, so hide the slider for camera zoom            
+            sldCameraZoom.IsVisible = false;
+#endif
             // Initialize the barcode pickers
             pckFormatCodeScanner.ItemsSource = ClassBarcodes.GetFormatCodeListScanner_ZX();
 
@@ -343,6 +346,16 @@ namespace BarcodeGenerator
                 barcodeReader.IsDetecting = true;
                 imgbtnCameraDetecting.Source = "camera_detect_on_128x128p.png";
             }
+        }
+
+        /// <summary>
+        /// Handles the value changed event of the camera zoom slider, updating the barcode reader's zoom factor accordingly.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnSliderCameraZoom_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            barcodeReader.ZoomFactor = (float)e.NewValue;
         }
 
         /// <summary>
