@@ -108,7 +108,7 @@
 		<PackageReference Include="ZXing.Net.Maui" Version="0.10.3" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.10.3" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.6" />
-		<PackageReference Include="Sentry.Maui" Version="6.7.0" />
+		<PackageReference Include="Sentry.Maui" Version="6.8.0" />
 		<!--<PackageReference Include="ZXingCpp" Version="0.5.2" />-->
 	</ItemGroup>
 
@@ -256,7 +256,12 @@
 	  <TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Lifecycle" RootMode="All" />
 	  --><!--<TrimmerRootAssembly Include="AndroidX.Camera.Lifecycle" RootMode="All" />--><!--
 	</ItemGroup>-->
-	
+
+	<!--Does also not work-->
+	<!--<ItemGroup>
+		<AndroidLinkerDescriptor Include="Platforms\Android\LinkerConfig.xml" />
+	</ItemGroup>-->
+
 	<!--This solution does also not work anymore since the app version 1.0.52-->
 	<!--<ItemGroup>
 		<TrimmerRootDescriptor Include="Platforms\Android\ILLink.Descriptors.xml" Condition="Exists('Platforms\Android\ILLink.Descriptors.xml')" />

@@ -1,0 +1,16 @@
+﻿<!--<?xml version="1.0" encoding="utf-8" ?>-->
+
+<linker>
+	<assembly fullname="BarcodeScanning.Native.Maui">
+		<type fullname="BarcodeScanning.Native.Maui.CameraView" preserve="all" />
+	</assembly>
+
+	<assembly fullname="Xamarin.AndroidX.Camera.Core">
+		<type fullname="AndroidX.Camera.Core.ZoomState" preserve="all" />
+		<type fullname="AndroidX.Camera.Core.CameraControl" preserve="all" />
+	</assembly>
+
+	<assembly fullname="Xamarin.AndroidX.Camera.Camera2" preserve="all" />
+	<assembly fullname="Xamarin.AndroidX.Camera.View" preserve="all" />
+</linker>
+
