@@ -107,9 +107,9 @@
         <PackageReference Include="SkiaSharp.QrCode" Version="1.1.1" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.10.3" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.10.3" />
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.6" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.1.0" />
 		<PackageReference Include="Sentry.Maui" Version="6.8.0" />
-		<!--<PackageReference Include="ZXingCpp" Version="0.5.2" />-->
+		<!--<PackageReference Include="ZXingCpp" Version="0.5.3" />-->
 	</ItemGroup>
 
 	<ItemGroup>
@@ -245,11 +245,14 @@
 	</PropertyGroup>-->
 
 	<!--!!!BUG!!! Android Camera RequestZoomFactor does not work in Release-Mode #171 since .NET10
-     Add the following to the csproj until the trimming bug is fixed.
-     This disables trimming for Xamarin.AndroidX.Camera.Core (and variants) so the API remains available.
-	 This solution is not working anymore since the app version 1.0.52
-     https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171-->
-	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android' and ('$(Configuration)' == 'Release' or '$(PublishTrimmed)' == 'true')">
+		Add the following to the csproj until the trimming bug is fixed.
+		This disables trimming for Xamarin.AndroidX.Camera.Core (and variants) so the API remains available.
+	    This solution is not working anymore since the app version 1.0.52
+		https://github.com/afriscic/BarcodeScanning.Native.Maui/issues/171-->
+	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+		<TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
+	</ItemGroup>
+			<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android' and ('$(Configuration)' == 'Release' or '$(PublishTrimmed)' == 'true')">
 	  --><!-- Cover possible assembly name variants across package/SDK versions --><!--
 	  <TrimmerRootAssembly Include="Xamarin.AndroidX.Camera.Core" RootMode="All" />
 	  --><!--<TrimmerRootAssembly Include="AndroidX.Camera.Core" RootMode="All" />--><!--
@@ -269,16 +272,16 @@
 
 	<!--<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
 	   --><!--Remove the native DLL from publish if it conflicts--><!-- 
-	  <None Remove="$(UserProfile)\.nuget\packages\ZXingCpp\0.5.2\runtimes\win-x64\native\ZXing.dll" />
+	  <None Remove="$(UserProfile)\.nuget\packages\ZXingCpp\0.5.3\runtimes\win-x64\native\ZXing.dll" />
 	</ItemGroup>-->
 
 	<!--Error (active)	NETSDK1152	Found multiple publish output files with the same relative path:
-	C:\nuget\zxing.net\0.16.11\lib\net9.0\zxing.dll, C:\nuget\zxingcpp\0.5.2\runtimes\win-x64\native\ZXing.dll.-->
+	C:\nuget\zxing.net\0.16.11\lib\net9.0\zxing.dll, C:\nuget\zxingcpp\0.5.3\runtimes\win-x64\native\ZXing.dll.-->
 	<!-- Exclude native runtime/native assets from the transitive ZXingCpp package when building Windows.
        This prevents the native ZXing.dll (runtimes\win-x64\native\ZXing.dll) from colliding with the managed
        zxing.dll provided by zxing.net in the publish output. -->
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
-		<PackageReference Include="ZXingCpp" Version="0.5.2">
+		<PackageReference Include="ZXingCpp" Version="0.5.3">
 			<ExcludeAssets>native</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>
@@ -304,7 +307,7 @@
 	
 	<!--<ItemGroup>
 		<Reference Include="ZXingCpp">
-			<HintPath>..\..\..\..\nuget\ZXingCpp\0.5.2\lib\net5.0\ZXingCpp.dll</HintPath>
+			<HintPath>..\..\..\..\nuget\ZXingCpp\0.5.3\lib\net5.0\ZXingCpp.dll</HintPath>
 		</Reference>
 	</ItemGroup>-->
 </Project>
