@@ -158,9 +158,9 @@
                     VerticalOptions="Center"
                     ThumbColor="DeepSkyBlue"
                     MinimumTrackColor="DeepSkyBlue"
-                    Value="0"
-                    Minimum="0"
-                    Maximum="1"
+                    Minimum="0.0"
+                    Maximum="1.0"
+                    Value="0.0"
                     SemanticProperties.Description="{Translate ToolTipCameraZoom_Text}"
                     ToolTipProperties.Text="{Translate ToolTipCameraZoom_Text}"
                     ValueChanged="OnSliderCameraZoom_ValueChanged">
@@ -180,7 +180,7 @@
                         Style="{StaticResource zxingCameraView}"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        ZoomFactor="0"
+                        ZoomFactor="0.0"
                         IsTorchOn="False"
                         BarcodesDetected="OnBarcodesDetected">
                     </zxing:CameraBarcodeReaderView>

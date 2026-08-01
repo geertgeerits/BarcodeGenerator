@@ -91,9 +91,9 @@
                     VerticalOptions="Center"
                     ThumbColor="DeepSkyBlue"
                     MinimumTrackColor="DeepSkyBlue"
-                    Value="1"
-                    Minimum="{OnPlatform Default=0, iOS=1}"
+                    Minimum="1"
                     Maximum="10"
+                    Value="1"
                     SemanticProperties.Description="{Translate ToolTipCameraZoom_Text}"
                     ToolTipProperties.Text="{Translate ToolTipCameraZoom_Text}"
                     ValueChanged="OnSliderCameraZoomValueChanged">
@@ -120,6 +120,8 @@
                             AimMode="False"
                             TorchOn="False"
                             VibrationOnDetected="False"
+                            MinZoomFactor="1"
+                            MaxZoomFactor="10"
                             RequestZoomFactor="1"
                             CameraEnabled="False"
                             OnDetectionFinished="OnCameraDetectionFinished">
