@@ -292,15 +292,6 @@ Een andere mogelijkheid is de toepassing te verwijderen en opnieuw te installere
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Gelieve de toepassing te sluiten.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>De code moet</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(zonder controlecijfer) of</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>cijfers lang zijn.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Contact:</value>
   </data>
@@ -1037,5 +1028,8 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Artistieke micro-QR-code</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>De code moet {0} cijfers lang zijn (exclusief het controlecijfer) of {1} cijfers lang.</value>
   </data>
 </root>

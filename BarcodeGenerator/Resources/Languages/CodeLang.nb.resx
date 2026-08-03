@@ -292,15 +292,6 @@ Et annet alternativ er å avinstallere og installere programmet på nytt.</value
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Vennligst lukk applikasjonen.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>Koden skal være</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(uten kontrollsumsiffer) eller</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>sifre lange.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Kontakt:</value>
   </data>
@@ -1037,5 +1028,8 @@ Ikke alle nyttelasttyper støttes på alle enheter.</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Kunstnerisk mikro-QR-kode</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>Koden skal være {0} sifre lang (unntatt kontrollsumsifferet) eller {1} sifre lang.</value>
   </data>
 </root>

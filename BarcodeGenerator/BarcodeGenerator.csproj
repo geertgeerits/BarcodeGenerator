@@ -33,9 +33,9 @@
 		<ApplicationIdGuid>7A6A918B-29C3-433A-82AE-16D589F3D8A2</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<PackageVersion>1.0.53</PackageVersion>
-		<ApplicationDisplayVersion>1.0.53</ApplicationDisplayVersion>
-		<ApplicationVersion>53</ApplicationVersion>
+		<PackageVersion>1.0.54</PackageVersion>
+		<ApplicationDisplayVersion>1.0.54</ApplicationDisplayVersion>
+		<ApplicationVersion>54</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
@@ -178,8 +178,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.53</ApplicationDisplayVersion>
-		<ApplicationVersion>53</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.54</ApplicationDisplayVersion>
+		<ApplicationVersion>54</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
@@ -198,8 +198,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.53</ApplicationDisplayVersion>
-		<ApplicationVersion>53</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.54</ApplicationDisplayVersion>
+		<ApplicationVersion>54</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 

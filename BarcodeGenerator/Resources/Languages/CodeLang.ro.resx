@@ -292,15 +292,6 @@ O altă opțiune este să dezinstalați și să reinstalați aplicația.</value>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Vă rugăm să închideți aplicația.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>Codul ar trebui să fie</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(fără cifra sumei de control) sau</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>cifre lungi.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Contact:</value>
   </data>
@@ -1037,5 +1028,8 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Cod QR micro artistic</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>Codul trebuie să aibă o lungime de {0} cifre (excluzând cifra sumei de control) sau {1} cifre.</value>
   </data>
 </root>

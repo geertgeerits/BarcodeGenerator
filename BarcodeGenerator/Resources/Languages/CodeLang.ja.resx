@@ -118,488 +118,502 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Agree_Text" xml:space="preserve">
-    <value>Agree</value>
+    <value>同意する</value>
   </data>
   <data name="Barcode_AllCodes_Text" xml:space="preserve">
-    <value>All codes</value>
+    <value>すべてのコード</value>
   </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
-    <value>Not allowed:</value>
+    <value>許可されていない文字：</value>
   </data>
   <data name="AllowedChar_Text" xml:space="preserve">
-    <value>Allowed characters:</value>
+    <value>許可されている文字：</value>
   </data>
   <data name="BackgroundColor_Text" xml:space="preserve">
-    <value>Background color:</value>
+    <value>背景色：</value>
   </data>
   <data name="BackgroundOpacity_Text" xml:space="preserve">
-    <value>Background opacity:</value>
+    <value>背景の不透明度：</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Generator</value>
+    <value>ジェネレーター</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Scanner</value>
+    <value>スキャナー</value>
   </data>
   <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
-    <value>Aztec Code</value>
+    <value>アステカコード</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
-    <value>Code 39 checksum modulus 10</value>
+    <value>コード39チェックサム（法10）</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
-    <value>Code 39 checksum modulus 43</value>
+    <value>コード39チェックサム（法43）</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
-    <value>Code 39 full ASCII checksum</value>
+    <value>コード39フルASCIIチェックサム</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
-    <value>Code 39 full ASCII</value>
+    <value>コード39（フルASCII）</value>
   </data>
   <data name="Barcode_CODE_39_Text" xml:space="preserve">
-    <value>Code 39</value>
+    <value>コード39</value>
   </data>
   <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
-    <value>Code 93i</value>
+    <value>コード93i</value>
   </data>
   <data name="Barcode_CODE_93_Text" xml:space="preserve">
-    <value>Code 93</value>
+    <value>コード93</value>
   </data>
   <data name="Barcode_CODE_128_Text" xml:space="preserve">
-    <value>Code 128</value>
+    <value>コード128</value>
   </data>
   <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
-    <value>Compact PDF417</value>
+    <value>コンパクトPDF417</value>
   </data>
   <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
-    <value>Frame QR Code</value>
+    <value>フレーム付きQRコード</value>
   </data>
   <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
-    <value>GS1 Databar expanded stacked</value>
+    <value>GS1データバー（拡張スタック型）</value>
   </data>
   <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
-    <value>GS1 Databar expanded</value>
+    <value>GS1データバー（拡張型）</value>
   </data>
   <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
-    <value>GS1 Databar limited</value>
+    <value>GS1データバー（限定型）</value>
   </data>
   <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
-    <value>GS1 Databar omnidirectional</value>
+    <value>GS1データバー（全方向）</value>
   </data>
   <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
-    <value>GS1 Databar stacked omnidirectional</value>
+    <value>GS1データバー（スタック型、全方向）</value>
   </data>
   <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
-    <value>GS1 Databar stacked</value>
+    <value>GS1データバー（スタック型）</value>
   </data>
   <data name="Barcode_IMB_Text" xml:space="preserve">
-    <value>IMb Intelligent Mail</value>
+    <value>IMB（インテリジェントメール）</value>
   </data>
   <data name="Barcode_ISBN_Text" xml:space="preserve">
-    <value>ISBN Int. Standard Book Number</value>
+    <value>ISBN（国際標準図書番号）</value>
   </data>
   <data name="Barcode_ITF_14_Text" xml:space="preserve">
-    <value>ITF-14 Interleaved 2 of 5</value>
+    <value>ITF-14 インターリーブド 2/5</value>
   </data>
   <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
-    <value>ITF Interleaved 2 of 5 checksum</value>
+    <value>ITF インターリーブド 2/5 チェックサム</value>
   </data>
   <data name="Barcode_ITF_Text" xml:space="preserve">
-    <value>ITF Interleaved 2 of 5</value>
+    <value>ITF インターリーブド 2/5</value>
   </data>
   <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
-    <value>Micro QR Code</value>
+    <value>マイクロQRコード</value>
   </data>
   <data name="Barcode_MSI_Text" xml:space="preserve">
     <value>MSI Modified Plessey</value>
   </data>
   <data name="Barcode_PZN_Text" xml:space="preserve">
-    <value>PZN Pharma Central Number</value>
+    <value>PZNファーマセントラル番号</value>
   </data>
   <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
-    <value>QR Code model 1</value>
+    <value>QRコード モデル1</value>
   </data>
   <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
-    <value>QR Code model 2</value>
+    <value>QRコード モデル2</value>
   </data>
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
-    <value>QR Code</value>
+    <value>QRコード</value>
   </data>
   <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR Rectangular Micro QR Code</value>
+    <value>RMQR長方形マイクロQRコード</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
-    <value>RSS Expanded</value>
+    <value>RSS展開</value>
   </data>
   <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
-    <value>UPC-EAN Extension</value>
+    <value>UPC-EAN拡張</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>閉じる</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
-    <value>Listen</value>
+    <value>聞く</value>
   </data>
   <data name="ButtonNext_Text" xml:space="preserve">
-    <value>Next</value>
+    <value>次へ</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
-    <value>Share text</value>
+    <value>テキストを共有</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Share</value>
+    <value>共有</value>
   </data>
   <data name="ButtonSpeak_Text" xml:space="preserve">
-    <value>Speak</value>
+    <value>話す</value>
   </data>
   <data name="CameraNotFound_Text" xml:space="preserve">
-    <value>No camera found.</value>
+    <value>カメラが見つかりません。</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>If permission to use the camera has not been given, the camera can be enabled in the device settings, select the application and enable the camera.
-Another option is to uninstall and reinstall the application.</value>
+    <value>カメラの使用許可が与えられていない場合は、デバイスの設定でアプリを選択し、カメラを有効にしてください。
+別の方法として、アプリをアンインストールして再インストールすることもできます。</value>
   </data>
   <data name="CameraQualityError_Text" xml:space="preserve">
-    <value>That quality is not supported by this camera. Set the quality lower.</value>
+    <value>このカメラはその画質に対応していません。画質設定を下げてください。</value>
   </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
-    <value>Highest</value>
+    <value>最高</value>
   </data>
   <data name="CameraQualityHigh_Text" xml:space="preserve">
-    <value>High</value>
+    <value>高</value>
   </data>
   <data name="CameraQualityLowest_Text" xml:space="preserve">
-    <value>Lowest</value>
+    <value>最低</value>
   </data>
   <data name="CameraQualityLow_Text" xml:space="preserve">
-    <value>Low</value>
+    <value>低</value>
   </data>
   <data name="CameraQualityMedium_Text" xml:space="preserve">
-    <value>Medium</value>
+    <value>中</value>
   </data>
   <data name="CameraQualityTitle_Text" xml:space="preserve">
-    <value>Quality</value>
+    <value>品質</value>
   </data>
   <data name="Cancel_Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>キャンセル</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>The code is wrong.</value>
+    <value>コードが間違っています。</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Clear</value>
+    <value>クリア</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Please close the application.</value>
+    <value>アプリケーションを閉じてください。</value>
   </data>
   <data name="Contact_Text" xml:space="preserve">
-    <value>Contact:</value>
+    <value>お問い合わせ：</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>著作権</value>
   </data>
   <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
-    <value>To help us fixing any problems, the application will send anonymous crash and error reports when the application is restarted.
-The reports contain information on the crash or error, including device specifications, operating system, application version, timestamp, and anonymous installation identifier.
-The data is collected for the sole purpose of helping us to improve the application and does not include any personal information.  No other data is collected.
-Anonymous crash and error reports are stored in the Microsoft App Center.
-They are not shared with anyone else outside the developer of the appliciation.
-The report data is retained for 28 days.</value>
+    <value>問題解決を支援するため、アプリケーションは再起動時に匿名化されたクラッシュおよびエラーレポートを送信します。
+
+レポートには、デバイスの仕様、オペレーティングシステム、アプリケーションのバージョン、タイムスタンプ、匿名化されたインストール識別子など、クラッシュまたはエラーに関する情報が含まれます。
+
+このデータは、アプリケーションの改善のみを目的として収集され、個人情報は一切含まれません。その他のデータは収集されません。
+
+匿名化されたクラッシュおよびエラーレポートは、Microsoft App Centerに保存されます。
+
+これらのレポートは、アプリケーション開発者以外の第三者と共有されることはありません。
+
+レポートデータは28日間保持されます。</value>
   </data>
   <data name="CrashErrorReportSentry_Text" xml:space="preserve">
-    <value>Privacy Statement: Crash Reporting with Sentry.
+    <value>プライバシーに関する声明：Sentryによるクラッシュレポート
 
-Barcode Generator uses Sentry, a third-party service, to collect and manage crash reports in order to improve the stability and performance of our application. We are committed to protecting your privacy and providing transparency about how your data is handled.
+Barcode Generatorは、アプリケーションの安定性とパフォーマンスを向上させるため、サードパーティサービスであるSentryを利用してクラッシュレポートを収集・管理しています。当社は、お客様のプライバシーを保護し、データの取り扱い方法について透明性を確保することに尽力しています。
 
-What data is collected:
-When a crash occurs within this application, certain information may be collected and transmitted to Sentry, including but not limited to:
-Device information such as model, operating system version, and hardware configuration.
-Application logs and error messages leading up to the crash.
-Information about the state of the application at the time of the crash, including user actions.
+収集されるデータ：
+本アプリケーション内でクラッシュが発生した場合、以下の情報を含む（ただしこれらに限定されない）特定の情報が収集され、Sentryに送信されることがあります。
+デバイス情報（モデル、オペレーティングシステムバージョン、ハードウェア構成など）。
 
-How we use this data:
-The data collected by Sentry is used solely for the purpose of identifying and fixing bugs and errors within our application. This information helps us understand the root causes of crashes, allowing us to provide a more stable and reliable experience for our users.
+クラッシュに至るまでのアプリケーションログとエラーメッセージ。
 
-Data security and retention:
-We take the security of your data seriously. Sentry employs industry-standard security measures to protect the information collected from unauthorized access or disclosure.
+クラッシュ発生時のアプリケーションの状態に関する情報（ユーザー操作を含む）。
 
-Crash reports collected by Sentry may be retained in accordance with Sentry's data retention policies (30 days for this application). For more information about Sentry's data handling practices, please refer to their Privacy Policy at https://sentry.io/welcome/.
+データの利用方法：
+Sentryによって収集されたデータは、アプリケーション内のバグやエラーの特定と修正のみを目的として使用されます。この情報は、クラッシュの根本原因を理解し、ユーザーにより安定した信頼性の高いエクスペリエンスを提供するために役立ちます。
 
-Your consent:
-By using this application, you consent to the collection and processing of crash report data by Sentry as described in this privacy statement.</value>
+データのセキュリティと保持：
+当社は、お客様のデータのセキュリティを真剣に考えています。Sentryは、収集された情報を不正アクセスや漏洩から保護するために、業界標準のセキュリティ対策を採用しています。
+
+
+Sentryが収集したクラッシュレポートは、Sentryのデータ保持ポリシー（本アプリケーションの場合は30日間）に従って保持される場合があります。Sentryのデータ処理方法の詳細については、https://sentry.io/welcome/ に掲載されているSentryのプライバシーポリシーをご覧ください。
+
+お客様の同意：本アプリケーションを使用することにより、お客様は、本プライバシーポリシーに記載されているとおり、Sentryによるクラッシュレポートデータの収集および処理に同意したものとみなされます。</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Crash and error reports: </value>
+    <value>クラッシュおよびエラーレポート：</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Default format generator:</value>
+    <value>デフォルトフォーマットジェネレーター：</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Default format scanner:</value>
+    <value>デフォルトフォーマットスキャナー：</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Default</value>
+    <value>デフォルト</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Generate and scan various barcodes.</value>
+    <value>様々なバーコードを生成し、スキャンする。</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Disagree</value>
+    <value>同意しない</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail: </value>
+    <value>Eメール:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Error</value>
+    <value>エラー</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
-    <value>First number should be 0.</value>
+    <value>最初の数字は0である必要があります。</value>
   </data>
   <data name="ForegroundColor_Text" xml:space="preserve">
-    <value>Foreground color:</value>
+    <value>前景色：</value>
   </data>
   <data name="ForegroundOpacity_Text" xml:space="preserve">
-    <value>Foreground opacity:</value>
+    <value>前景の不透明度：</value>
   </data>
   <data name="FormatCode2_Text" xml:space="preserve">
-    <value>Format:</value>
+    <value>フォーマット：</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
-    <value>Select a format:</value>
+    <value>フォーマットを選択してください：</value>
   </data>
   <data name="FormatNotSupported_Text" xml:space="preserve">
-    <value>is currently not supported.</value>
+    <value>現在サポートされていません。</value>
   </data>
   <data name="FormatTitle_Text" xml:space="preserve">
-    <value>Format</value>
+    <value>フォーマット</value>
   </data>
   <data name="GenerateCode_Text" xml:space="preserve">
-    <value>Generate</value>
+    <value>生成</value>
   </data>
   <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
-    <value>Invalid start/end character:</value>
+    <value>無効な開始/終了文字:</value>
   </data>
   <data name="GuardMissingEnd_Text" xml:space="preserve">
-    <value>Missing end character.</value>
+    <value>終了文字がありません。</value>
   </data>
   <data name="GuardMissingStart_Text" xml:space="preserve">
-    <value>Missing start character.</value>
+    <value>開始文字がありません。</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
-    <value>Hexadecimal color codes:
+    <value>16進数カラーコード：
 
-Characters 1-2: Opacity/Transparency
-Characters 3-4: Red
-Characters 5-6: Green
-Characters 7-8: Blue</value>
+1～2文字目：不透明度／透明度
+3～4文字目：赤
+5～6文字目：緑
+7～8文字目：青</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text to speech: not all languages are supported that are provided in the application settings.
-Speech to text: activate it through your device settings. A microphone will then appear in the virtual keyboard.
-Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
+    <value>テキスト読み上げ：アプリ設定で選択できる言語の一部のみがサポートされているわけではありません。
 
-Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
-The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Polish, Portuguese, Romanian, Spanish and Swedish.
+音声認識：デバイスの設定から有効にしてください。有効にすると、仮想キーボードにマイクアイコンが表示されます。
 
-You can always contact me for any corrections.</value>
+これらの機能は、デバイスの種類やインストールされている言語によって異なります。言語によっては、音声とテキストの翻訳がインターネット経由で行われる場合があります。
+
+テキストの翻訳にはGoogle翻訳を使用しました。翻訳の正確性を保証するものではありません。
+
+対応言語は、チェコ語、デンマーク語、オランダ語、英語、フィンランド語、フランス語、ドイツ語、ハンガリー語、イタリア語、ノルウェー語、ポーランド語、ポルトガル語、ルーマニア語、スペイン語、スウェーデン語です。
+
+修正点などございましたら、いつでもご連絡ください。</value>
   </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
-    <value>The QR code is generated at either a fixed or variable pixel size, depending on the number of characters it contains and the maximum pixel size defined in the settings.
-When an image (logo) is placed on top of the QR code, it is centered and scaled to between 10% and 35% of the QR code’s size. This range can be adjusted in the settings. A border is added to improve visibility.
-The artistic QR code is highly customizable, with options such as gradients, custom shapes, colors, a foreground image (logo), and a background image. In this case, the background opacity must be set between 0% and less than 100% (see settings).
-For best results, use square images and experiment with image size to avoid excessive resizing. Preferred file formats are PNG (optionally with a transparent background) or JPEG.</value>
+    <value>QRコードは、含まれる文字数と設定で定義された最大ピクセルサイズに応じて、固定ピクセルサイズまたは可変ピクセルサイズで生成されます。
+
+画像（ロゴ）をQRコードの上に配置する場合、画像は中央に配置され、QRコードのサイズの10%～35%に縮小されます。この範囲は設定で調整可能です。視認性を高めるために、境界線が追加されます。
+
+アーティスティックなQRコードは、グラデーション、カスタムシェイプ、色、前景画像（ロゴ）、背景画像など、さまざまなオプションで高度にカスタマイズできます。背景画像を使用する場合は、背景の不透明度を0%～100%未満に設定する必要があります（設定を参照）。
+
+最適な結果を得るには、正方形の画像を使用し、過度なリサイズを避けるために画像サイズを調整してください。推奨ファイル形式はPNG（背景透過オプションあり）またはJPEGです。</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
-    <value>Information</value>
+    <value>情報</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Language speech:</value>
+    <value>音声言語：</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Language:</value>
+    <value>言語：</value>
   </data>
   <data name="LengthInputEven_Text" xml:space="preserve">
-    <value>The length of the input should be even.</value>
+    <value>入力の長さは偶数である必要があります。</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
+    <value>本ソフトウェアは「現状のまま」提供され、明示的または黙示的を問わず、いかなる種類の保証もありません。これには、商品性、特定目的への適合性、および非侵害に関する保証が含まれますが、これらに限定されません。いかなる場合においても、著者および／または発行者は、契約、不法行為、またはその他の訴訟において、本ソフトウェアまたはその使用もしくはその他の取引から生じる、またはこれに関連するいかなる請求、損害、またはその他の責任についても責任を負いません。</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>Barcode scanning and generation for .NET MAUI applications.
-MIT License:
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    <value>.NET MAUIアプリケーション向けバーコードスキャンおよび生成ツール。
 
-The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.</value>
+MITライセンス：
+本ソフトウェアおよび関連ドキュメントファイル（以下「本ソフトウェア」）の複製を入手した者は、本ソフトウェアを無制限に取り扱う権利（使用、複製、改変、結合、公開、頒布、サブライセンス、販売を含むがこれらに限定されない）を無償で許諾される。また、本ソフトウェアの提供を受けた者に対しても同様の権利を許諾する。ただし、以下の条件に従うものとする。
+
+上記の著作権表示および本許諾表示（次項を含む）は、本ソフトウェアのすべての複製または実質的な部分に含めるものとする。</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>License</value>
+    <value>ライセンス</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>This application may be used freely for non-commercial purposes.
-Use this program entirely at your own risk.</value>
+    <value>このアプリケーションは非営利目的であれば自由にご利用いただけます。
+本プログラムの使用は、すべてご自身の責任において行ってください。</value>
   </data>
   <data name="LogAlwaysSend_Text" xml:space="preserve">
-    <value>Always send</value>
+    <value>常に送信</value>
   </data>
   <data name="LogDontSend_Text" xml:space="preserve">
-    <value>Don't send</value>
+    <value>送信しない</value>
   </data>
   <data name="LogMessage_Text" xml:space="preserve">
-    <value>The application detected an error in a previous session.
-To improve the application, I would like to receive the log with that error.
-May the log of that error be sent?
-Thank you in advance.</value>
+    <value>前回のセッションでアプリケーションがエラーを検出しました。
+アプリケーションの改善のため、そのエラーのログを受け取りたいです。
+そのエラーのログを送信していただけますでしょうか？
+よろしくお願いいたします。</value>
   </data>
   <data name="LogSend_Text" xml:space="preserve">
-    <value>Send</value>
+    <value>送信</value>
   </data>
   <data name="LogTitle2_Text" xml:space="preserve">
-    <value>An error has been detected. Send the error log?</value>
+    <value>エラーが検出されました。エラーログを送信しますか？</value>
   </data>
   <data name="LogTitle_Text" xml:space="preserve">
-    <value>Sending the error log</value>
+    <value>エラーログを送信しています</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Barcode Generator and Scanner</value>
+    <value>バーコードジェネレーターとスキャナー</value>
   </data>
   <data name="No_Text" xml:space="preserve">
-    <value>No</value>
+    <value>いいえ</value>
   </data>
   <data name="OpenLinkText_Text" xml:space="preserve">
-    <value>Open this link?</value>
+    <value>このリンクを開きますか？</value>
   </data>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Website link</value>
+    <value>ウェブサイトリンク</value>
   </data>
   <data name="Pixels_Text" xml:space="preserve">
-    <value>pixels</value>
+    <value>ピクセル</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Privacy Policy:</value>
+    <value>プライバシーポリシー：</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>No personal and other data is stored or passed on to myself and others.</value>
+    <value>個人情報およびその他のデータは、私自身または他者に保存または提供されることはありません。</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Image size: {0}%</value>
+    <value>画像サイズ：{0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
-    <value>The selected file is not supported.</value>
+    <value>選択されたファイルはサポートされていません。</value>
   </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
-    <value>Recommended image size</value>
+    <value>推奨画像サイズ</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>The application will be restarted.</value>
+    <value>アプリケーションが再起動されます。</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>リセット</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Some changed settings must be saved in order to apply them.</value>
+    <value>一部の設定変更は保存しないと適用されません。</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>保存</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>設定</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>The text contains one or more characters that are not allowed.
+    <value>テキストに、使用できない文字が1つ以上含まれています。
 
-Not allowed:</value>
+使用できない文字：</value>
   </data>
   <data name="TextToEncode_Text" xml:space="preserve">
-    <value>Text to encode:</value>
+    <value>エンコードするテキスト：</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>このデバイスではテキスト読み上げ機能はサポートされていません。</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>ダーク</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>ライト</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>システム</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>テーマ：</value>
   </data>
   <data name="ToolTipAppEmail_Text" xml:space="preserve">
-    <value>Send an email to the author of this application</value>
+    <value>このアプリケーションの作者にメールを送信する</value>
   </data>
   <data name="ToolTipAppWebsite_Text" xml:space="preserve">
-    <value>Open the website of this application</value>
+    <value>このアプリケーションのウェブサイトを開く</value>
   </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
-    <value>Scanner</value>
+    <value>スキャナー</value>
   </data>
   <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
-    <value>Start or stop scanning for barcodes</value>
+    <value>バーコードのスキャンを開始または停止する</value>
   </data>
   <data name="ToolTipCameraFacing_Text" xml:space="preserve">
-    <value>Select the rear or front camera</value>
+    <value>背面カメラまたは前面カメラを選択する</value>
   </data>
   <data name="ToolTipCameraQuality_Text" xml:space="preserve">
-    <value>Set the quality of the camera</value>
+    <value>カメラの画質を設定する</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
-    <value>Turn the camera torch on or off</value>
+    <value>カメラのライトをオン/オフにする</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Enable or disable device vibration when finding a barcode</value>
+    <value>バーコード読み取り時のデバイスの振動を有効/無効にする</value>
   </data>
   <data name="ToolTipCameraZoom_Text" xml:space="preserve">
-    <value>Camera: zoom in and out</value>
+    <value>カメラ：ズームイン/ズームアウト</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copy text to the clipboard</value>
+    <value>テキストをクリップボードにコピーする</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Crash and error reports</value>
+    <value>クラッシュとエラーのレポート</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Go back</value>
+    <value>戻る</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Go forward</value>
+    <value>進む</value>
   </data>
   <data name="ToolTipHelp_Text" xml:space="preserve">
-    <value>Help</value>
+    <value>ヘルプ</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Paste text from the clipboard</value>
+    <value>クリップボードからテキストを貼り付ける</value>
   </data>
   <data name="ToolTipSettingsReset_Text" xml:space="preserve">
-    <value>Reset the settings to their default values</value>
+    <value>設定を初期値に戻す</value>
   </data>
   <data name="ToolTipSettingsSave_Text" xml:space="preserve">
-    <value>Save the settings</value>
+    <value>設定を保存する</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
-    <value>Text to speech: on or off</value>
+    <value>テキスト読み上げ：オン／オフ</value>
   </data>
   <data name="Trademarks_Text" xml:space="preserve">
-    <value>Apple, App Store and the App Store logo are trademarks of Apple Inc., registered in the U.S. and other countries and regions.
-Google, Google Play, the Google Play logo and Android are trademarks of Google LLC.
-Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks of Microsoft Corporation.</value>
+    <value>Apple、App Store、およびApp Storeロゴは、米国およびその他の国・地域で登録されたApple Inc.の商標です。
+Google、Google Play、Google Playロゴ、およびAndroidは、Google LLCの商標です。
+Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Microsoft Corporationの商標です。</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>バージョン：</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website: </value>
+    <value>ウェブサイト：</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Yes</value>
+    <value>はい</value>
   </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
-    <value>Micro PDF417</value>
+    <value>マイクロPDF417</value>
   </data>
   <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
-    <value>DX Film Edge</value>
+    <value>DXフィルムエッジ</value>
   </data>
   <data name="Barcode_EAN_2_Text" xml:space="preserve">
     <value>EAN-2</value>
@@ -617,16 +631,16 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>EAN/UPC</value>
   </data>
   <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
-    <value>GS1 Databar</value>
+    <value>GS1データバー</value>
   </data>
   <data name="Barcode_CODABAR_Text" xml:space="preserve">
-    <value>Codabar</value>
+    <value>コダバー</value>
   </data>
   <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
-    <value>Pharmacode</value>
+    <value>ファーマコード</value>
   </data>
   <data name="Barcode_PLESSEY_Text" xml:space="preserve">
-    <value>Plessey</value>
+    <value>プレッシー</value>
   </data>
   <data name="Barcode_RSS_14_Text" xml:space="preserve">
     <value>RSS 14</value>
@@ -638,13 +652,13 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>UPC-E</value>
   </data>
   <data name="Barcode_AZTEC_Text" xml:space="preserve">
-    <value>Aztec</value>
+    <value>アステカ</value>
   </data>
   <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
-    <value>Aztec Rune</value>
+    <value>アステカルーン</value>
   </data>
   <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
-    <value>Data Matrix</value>
+    <value>データマトリックス</value>
   </data>
   <data name="Barcode_MAXICODE_Text" xml:space="preserve">
     <value>MaxiCode</value>
@@ -653,166 +667,169 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>PDF417</value>
   </data>
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
-    <value>QR Code with image</value>
+    <value>画像付きQRコード</value>
   </data>
   <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
-    <value>Choose a foreground image</value>
+    <value>前景画像を選択</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>キャンセル</value>
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
-    <value>SQRC Secure QR Code</value>
+    <value>SQRCセキュアQRコード</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Variable size:</value>
+    <value>可変サイズ：</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
-    <value>Size in pixels:</value>
+    <value>ピクセル単位のサイズ：</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
-    <value>Barcode with caption:</value>
+    <value>キャプション付きバーコード：</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>numeric {0}, alphanumeric {1}, bytes {2}, kanji/kana {3}</value>
+    <value>数値 {0}、英数字 {1}、バイト列 {2}、漢字/かな {3}</value>
   </data>
   <data name="MaximumCharacters_Text" xml:space="preserve">
-    <value>Maximum characters:</value>
+    <value>最大文字数：</value>
   </data>
   <data name="NumberOfDigits_Text" xml:space="preserve">
-    <value>Number of digits:</value>
+    <value>桁数：</value>
   </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
-    <value>Artistic QR Code</value>
+    <value>芸術的なQRコード</value>
   </data>
   <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
-    <value>Background color artistic QR code:</value>
+    <value>背景色のアーティスティックなQRコード：</value>
   </data>
   <data name="ColorPicker_Text" xml:space="preserve">
-    <value>Color picker</value>
+    <value>カラーピッカー</value>
   </data>
   <data name="CharacterNumericDetected_Text" xml:space="preserve">
-    <value>Numeric character detected.</value>
+    <value>数字が検出されました。</value>
   </data>
   <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
-    <value>Alphanumeric character detected.</value>
+    <value>英数字が検出されました。</value>
   </data>
   <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
-    <value>Byte character detected.</value>
+    <value>バイト文字が検出されました。</value>
   </data>
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
-    <value>Kanji/Kana character detected.</value>
+    <value>漢字／仮名文字が検出されました。</value>
   </data>
   <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
-    <value>The text length is limited to {0} characters.</value>
+    <value>テキストの長さは{0} 文字に制限されています。</value>
   </data>
   <data name="TextLengthLimitedByte_Text" xml:space="preserve">
-    <value>The text length is limited to {0} bytes.</value>
+    <value>テキストの長さは{0} バイトに制限されています。</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
-    <value>QR Code module shape: square</value>
+    <value>QRコードモジュールの形状：正方形</value>
   </data>
   <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
-    <value>QR Code module shape: circle</value>
+    <value>QRコードモジュールの形状：円形</value>
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
-    <value>QR Code module shape: rounded</value>
+    <value>QRコードモジュールの形状：角丸</value>
   </data>
   <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
-    <value>Choose a background image</value>
+    <value>背景画像を選択</value>
   </data>
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
-    <value>Use gradient colors:</value>
+    <value>グラデーションカラーを使用：</value>
   </data>
   <data name="QRCodeGradientDirection_Text" xml:space="preserve">
-    <value>Gradient direction:</value>
+    <value>グラデーションの方向：</value>
   </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
-    <value>Gradient colors:</value>
+    <value>グラデーションカラー：</value>
   </data>
   <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
-    <value>Bottom to top</value>
+    <value>下から上へ</value>
   </data>
   <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
-    <value>Bottom left to top right</value>
+    <value>左下から右上へ</value>
   </data>
   <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
-    <value>Left to right</value>
+    <value>左から右へ</value>
   </data>
   <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
-    <value>Top left to bottom right</value>
+    <value>左上から右下へ</value>
   </data>
   <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
-    <value>Top to bottom</value>
+    <value>上から下へ</value>
   </data>
   <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
-    <value>Top right to bottom left</value>
+    <value>右上から左下へ</value>
   </data>
   <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
-    <value>Right to left</value>
+    <value>右から左へ</value>
   </data>
   <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
-    <value>Bottom right to top left</value>
+    <value>右下から左上へ</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
-    <value>Gradient color 1</value>
+    <value>グラデーションカラー1</value>
   </data>
   <data name="QRCodeGradientColor2_Text" xml:space="preserve">
-    <value>Gradient color 2</value>
+    <value>グラデーションカラー2</value>
   </data>
   <data name="QRCodeGradientColor3_Text" xml:space="preserve">
-    <value>Gradient color 3</value>
+    <value>グラデーションカラー3</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
-    <value>Module shape:</value>
+    <value>モジュールの形状：</value>
   </data>
   <data name="ImageForeground_Text" xml:space="preserve">
-    <value>Foreground image:</value>
+    <value>前景画像：</value>
   </data>
   <data name="ImageBackground_Text" xml:space="preserve">
-    <value>Background image:</value>
+    <value>背景画像：</value>
   </data>
   <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
-    <value>Foreground color artistic QR code:</value>
+    <value>前景色のアーティスティックQRコード：</value>
   </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
-    <value>Compress the text:</value>
+    <value>テキストを圧縮：</value>
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
-    <value>The text in the QR code can be compressed (see the settings to enable this). To make the text readable again, it must be decompressed by a scanner that supports GZip compression, such as the scanner in this app.</value>
+    <value>QRコードのテキストは圧縮できます（設定で有効にしてください）。テキストを再び読み取るには、このアプリのスキャナーのように、GZip圧縮に対応したスキャナーで解凍する必要があります。</value>
   </data>
   <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
-    <value>Finder pattern shape:</value>
+    <value>ファインダーパターン形状：</value>
   </data>
   <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
-    <value>QR Code finder pattern shape: circle</value>
+    <value>QRコードファインダーパターン形状：円形</value>
   </data>
   <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
-    <value>QR Code finder pattern shape: rounded</value>
+    <value>QRコードファインダーパターン形状：角丸</value>
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
-    <value>QR Code finder pattern shape: square</value>
+    <value>QRコードファインダーパターン形状：正方形</value>
   </data>
   <data name="InfoQRCodeSettings_Text" xml:space="preserve">
-    <value>For optimal scan reliability, we recommend the following for QR codes:
-Keep high contrast between the foreground and background colors.
-Use square modules (default): square modules generally produce the lowest error rate when scanning QR codes.
-Avoid gaps between modules: smaller modules or shapes such as circles or rounded modules can create gaps, which may increase scan errors.
-Error correction is set to high (30% recovery) by default: a high error-correction level helps compensate for reduced readability.
+    <value>最適なスキャン精度を実現するため、QRコードについては以下の点にご注意ください。
+前景と背景のコントラストを高く保ってください。
 
-It is recommended to test the generated QR codes and other barcodes to ensure they scan correctly.</value>
+正方形モジュールを使用してください（デフォルト）。正方形モジュールは、QRコードのスキャン時に一般的に最も低いエラー率を実現します。
+
+モジュール間の隙間を避けてください。モジュールが小さかったり、円形や丸みを帯びた形状のモジュールを使用すると隙間ができ、スキャンエラーが増加する可能性があります。
+
+エラー訂正レベルはデフォルトで高（30%回復）に設定されています。高いエラー訂正レベルは、読み取り精度の低下を補うのに役立ちます。
+
+生成されたQRコードやその他のバーコードが正しくスキャンできることを確認するために、テストを行うことをお勧めします。</value>
   </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
-    <value>WiFi</value>
+    <value>Wi-Fi</value>
   </data>
   <data name="PayloadType_URL_Text" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
-    <value>Bookmark</value>
+    <value>ブックマーク</value>
   </data>
   <data name="PayloadType_MAIL_Text" xml:space="preserve">
-    <value>E-mail</value>
+    <value>Eメール</value>
   </data>
   <data name="PayloadType_SMS_Text" xml:space="preserve">
     <value>SMS</value>
@@ -821,215 +838,215 @@ It is recommended to test the generated QR codes and other barcodes to ensure th
     <value>MMS</value>
   </data>
   <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
-    <value>Geolocation</value>
+    <value>地理位置情報</value>
   </data>
   <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
-    <value>Phone number</value>
+    <value>電話番号</value>
   </data>
   <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
-    <value>WhatsApp message</value>
+    <value>WhatsAppメッセージ</value>
   </data>
   <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
-    <value>Contact data</value>
+    <value>連絡先データ</value>
   </data>
   <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
-    <value>Calendar event</value>
+    <value>カレンダーイベント</value>
   </data>
   <data name="PayloadType_Text" xml:space="preserve">
-    <value>Payload type:</value>
+    <value>ペイロードタイプ：</value>
   </data>
   <data name="PayloadTypeSSID_Text" xml:space="preserve">
-    <value>Name network</value>
+    <value>ネームネットワーク</value>
   </data>
   <data name="PayloadTypePassword_Text" xml:space="preserve">
-    <value>Password</value>
+    <value>パスワード</value>
   </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="PayloadTypeTitle_Text" xml:space="preserve">
-    <value>Title</value>
+    <value>タイトル</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>E-mail address</value>
+    <value>Eメールアドレス</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
-    <value>Subject</value>
+    <value>件名</value>
   </data>
   <data name="PayloadTypeMessage_Text" xml:space="preserve">
-    <value>Message</value>
+    <value>メッセージ</value>
   </data>
   <data name="PayloadTypeLatitude_Text" xml:space="preserve">
-    <value>Latitude:</value>
+    <value>緯度:</value>
   </data>
   <data name="PayloadTypeLongitude_Text" xml:space="preserve">
-    <value>Longitude:</value>
+    <value>経度:</value>
   </data>
   <data name="PayloadTypeFirstname_Text" xml:space="preserve">
-    <value>Firstname</value>
+    <value>名</value>
   </data>
   <data name="PayloadTypeLastname_Text" xml:space="preserve">
-    <value>Lastname</value>
+    <value>姓</value>
   </data>
   <data name="PayloadTypeMail_Text" xml:space="preserve">
-    <value>E-Mail</value>
+    <value>Eメール</value>
   </data>
   <data name="PayloadTypeDescription_Text" xml:space="preserve">
-    <value>Description</value>
+    <value>説明</value>
   </data>
   <data name="PayloadTypeLocation_Text" xml:space="preserve">
-    <value>Location</value>
+    <value>場所</value>
   </data>
   <data name="PayloadTypeStart_Text" xml:space="preserve">
-    <value>Start:</value>
+    <value>開始:</value>
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
-    <value>End:</value>
+    <value>終了:</value>
   </data>
   <data name="PayloadEnabled_Text" xml:space="preserve">
-    <value>Payloads:</value>
+    <value>ペイロード：</value>
   </data>
   <data name="Payloads_Text" xml:space="preserve">
-    <value>Payloads</value>
+    <value>ペイロード</value>
   </data>
   <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
-    <value>Invalid latitude value.</value>
+    <value>緯度の値が無効です。</value>
   </data>
   <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
-    <value>Invalid longitude value.</value>
+    <value>経度の値が無効です。</value>
   </data>
   <data name="ErrorLatitudeRange_Text" xml:space="preserve">
-    <value>Latitude out of range. Value must be between -90 and 90 (inclusive).</value>
+    <value>緯度が範囲外です。値は-90～90（両端を含む）である必要があります。</value>
   </data>
   <data name="ErrorLongitudeRange_Text" xml:space="preserve">
-    <value>Longitude out of range. Value must be between -180 and 180 (inclusive).</value>
+    <value>経度が範囲外です。値は-180～180（両端を含む）である必要があります。</value>
   </data>
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
-    <value>Start date cannot be later than end date.</value>
+    <value>開始日は終了日より後であってはなりません。</value>
   </data>
   <data name="WiFiNetworkDetected_Text" xml:space="preserve">
-    <value>Wi‑Fi network detected.
-Choose an option.</value>
+    <value>Wi-Fiネットワークを検出しました。
+オプションを選択してください。</value>
   </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
-    <value>Copy</value>
+    <value>コピー</value>
   </data>
   <data name="WiFiOpenSettings_Text" xml:space="preserve">
-    <value>Open Wi‑Fi Settings</value>
+    <value>Wi-Fi設定を開く</value>
   </data>
   <data name="WiFiJoinNetwork_Text" xml:space="preserve">
-    <value>Please open Settings - Wi‑Fi to join the network.</value>
+    <value>ネットワークに接続するには、「設定」→「Wi-Fi」を開いてください。</value>
   </data>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
-    <value>Open Wi‑Fi settings is not supported on this platform.</value>
+    <value>このプラットフォームでは、オープンWi-Fi設定はサポートされていません。</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Create smart QR codes with payload types like geolocation, contacts, and more. Tap the icon at the top, choose a type, enter your details, then generate and share your QR code.
-Not all payload types are supported on every device.</value>
+    <value>位置情報、連絡先など、さまざまなペイロードタイプを含むスマートQRコードを作成できます。画面上部のアイコンをタップし、タイプを選択して詳細情報を入力後、QRコードを生成して共有してください。
+すべてのペイロードタイプがすべてのデバイスでサポートされているわけではありません。</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
-    <value>Request geolocation</value>
+    <value>位置情報リクエスト</value>
   </data>
   <data name="GeolocationTitle_Text" xml:space="preserve">
-    <value>Geolocation</value>
+    <value>位置情報</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Location is not available on this device, or location services are disabled.</value>
+    <value>このデバイスでは位置情報が利用できません。または、位置情報サービスが無効になっています。</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
-    <value>Open maps</value>
+    <value>マップを開く</value>
   </data>
   <data name="GeolocationEncoding_Text" xml:space="preserve">
-    <value>Encoding:</value>
+    <value>エンコード:</value>
   </data>
   <data name="ErrorEmailInvalid_Text" xml:space="preserve">
-    <value>E-mail address is not valid.</value>
+    <value>メールアドレスが無効です。</value>
   </data>
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
-    <value>URL address is not valid.</value>
+    <value>URLアドレスが無効です。</value>
   </data>
   <data name="ToolTipUrlLink_Text" xml:space="preserve">
-    <value>Open the URL link</value>
+    <value>URLリンクを開く</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
-    <value>Phone number</value>
+    <value>電話番号</value>
   </data>
   <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
-    <value>Authentication:</value>
+    <value>認証:</value>
   </data>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
-    <value>Phone number is not valid.</value>
+    <value>電話番号が無効です。</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>No barcode found.</value>
+    <value>バーコードが見つかりませんでした。</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
-    <value>Scan an image</value>
+    <value>画像をスキャンする</value>
   </data>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
-    <value>Scan from camera</value>
+    <value>カメラからスキャンする</value>
   </data>
   <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
-    <value>SEPA credit transfer</value>
+    <value>SEPAクレジット送金</value>
   </data>
   <data name="PayloadTypeSctBic_Text" xml:space="preserve">
-    <value>BIC beneficiary</value>
+    <value>受取人BICコード</value>
   </data>
   <data name="PayloadTypeSctName_Text" xml:space="preserve">
-    <value>Name beneficiary</value>
+    <value>受取人氏名</value>
   </data>
   <data name="PayloadTypeSctIban_Text" xml:space="preserve">
-    <value>IBAN beneficiary</value>
+    <value>受取人IBANコード</value>
   </data>
   <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
-    <value>Amount EUR</value>
+    <value>送金額（ユーロ）</value>
   </data>
   <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
-    <value>Purpose</value>
+    <value>目的</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Remittance information (structured) </value>
+    <value>送金情報（構造化形式）</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Remittance information (unstructured) </value>
+    <value>送金情報（非構造化）</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
-    <value>Information</value>
+    <value>情報</value>
   </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
-    <value>IBAN is not valid.</value>
+    <value>IBANが無効です。</value>
   </data>
   <data name="ErrorAmountInvalid_Text" xml:space="preserve">
-    <value>Amount is not valid.</value>
+    <value>金額が無効です。</value>
   </data>
   <data name="ErrorBicInvalid_Text" xml:space="preserve">
-    <value>BIC is not valid.</value>
+    <value>BICが無効です。</value>
   </data>
   <data name="ErrorNameInvalid_Text" xml:space="preserve">
-    <value>Name is mandatory.</value>
+    <value>氏名は必須です。</value>
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
-    <value>Only one of the remittance information fields may be populated.</value>
+    <value>送金情報欄は1つしか入力できません。</value>
   </data>
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
-    <value>Remittance information is not valid.</value>
+    <value>送金情報が無効です。</value>
   </data>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
-    <value>The combined length of all fields is too long. The total payload size is limited to 331 bytes.</value>
+    <value>すべての項目の合計長が長すぎます。ペイロードの合計サイズは331バイトに制限されています。</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Module size: {0}%</value>
+    <value>モジュールのサイズ：{0}%</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
-    <value>Image border size: {0} pixels</value>
+    <value>画像の境界線サイズ：{0} ピクセル</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Quiet zone size: {0} modules</value>
+    <value>静止領域のサイズ：{0} モジュール</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
-    <value>Artistic Micro QR Code</value>
+    <value>芸術的なマイクロQRコード</value>
   </data>
   <data name="CodeLength_Text" xml:space="preserve">
-    <value>The code should be {0} digits long (excluding the checksum digit) or {1} digits long.</value>
+    <value>コードは、チェックサム桁を除いて {0} 桁または {1} 桁である必要があります。</value>
   </data>
 </root>

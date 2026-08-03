@@ -292,15 +292,6 @@ Otra opción es desinstalar y reinstalar la aplicación.</value>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Cierra la aplicación.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>El código debe tener</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(sin dígito de suma de verificación) o </value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>dígitos.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Contacto:</value>
   </data>
@@ -1037,5 +1028,8 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Código QR micro artístico</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>El código debe tener {0} dígitos de longitud (excluyendo el dígito de control) o {1} dígitos de longitud.</value>
   </data>
 </root>

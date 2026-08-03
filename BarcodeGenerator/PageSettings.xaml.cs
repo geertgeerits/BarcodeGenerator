@@ -50,15 +50,17 @@ namespace BarcodeGenerator
                 "de" => 2,      // Deutsch - German
                 "es" => 4,      // Español - Spanish
                 "fr" => 5,      // Français - French
-                "it" => 6,      // Italiano - Italian
-                "hu" => 7,      // Magyar - Hungarian
-                "nl" => 8,      // Nederlands - Dutch
-                "nb" => 9,      // Norsk Bokmål - Norwegian Bokmål
-                "pl" => 10,     // Polski - Polish
-                "pt" => 11,     // Português - Portuguese
-                "ro" => 12,     // Română - Romanian
-                "fi" => 13,     // Suomi - Finnish
-                "sv" => 14,     // Svenska - Swedish
+                "ko" => 6,      // 한국어 (Hangugeo) - Korean
+                "it" => 7,      // Italiano - Italian
+                "hu" => 8,      // Magyar - Hungarian
+                "nl" => 9,      // Nederlands - Dutch
+                "ja" => 10,     // 日本語 (Nihongo) - Japanese
+                "nb" => 11,     // Norsk Bokmål - Norwegian Bokmål
+                "pl" => 12,     // Polski - Polish
+                "pt" => 13,     // Português - Portuguese
+                "ro" => 14,     // Română - Romanian
+                "fi" => 15,     // Suomi - Finnish
+                "sv" => 16,     // Svenska - Swedish
                 _ => 3          // English
             };
 
@@ -120,15 +122,17 @@ namespace BarcodeGenerator
                     2 => "de",      // Deutsch - German
                     4 => "es",      // Español - Spanish
                     5 => "fr",      // Français - French
-                    6 => "it",      // Italiano - Italian
-                    7 => "hu",      // Magyar - Hungarian
-                    8 => "nl",      // Nederlands - Dutch
-                    9 => "nb",      // Norsk Bokmål - Norwegian Bokmål
-                    10 => "pl",     // Polski - Polish
-                    11 => "pt",     // Português - Portuguese
-                    12 => "ro",     // Română - Romanian
-                    13 => "fi",     // Suomi - Finnish
-                    14 => "sv",     // Svenska - Swedish
+                    6 => "ko",      // 한국어 (Hangugeo) - Korean
+                    7 => "it",      // Italiano - Italian
+                    8 => "hu",      // Magyar - Hungarian
+                    9 => "nl",      // Nederlands - Dutch
+                    10 => "ja",     // 日本語 (Nihongo) - Japanese
+                    11 => "nb",     // Norsk Bokmål - Norwegian Bokmål
+                    12 => "pl",     // Polski - Polish
+                    13 => "pt",     // Português - Portuguese
+                    14 => "ro",     // Română - Romanian
+                    15 => "fi",     // Suomi - Finnish
+                    16 => "sv",     // Svenska - Swedish
                     _ => "en"       // English
                 };
             }

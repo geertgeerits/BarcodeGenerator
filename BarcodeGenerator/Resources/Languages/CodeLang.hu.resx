@@ -292,15 +292,6 @@ Egy másik lehetőség az alkalmazás eltávolítása és újratelepítése.</va
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Kérjük, zárja be az alkalmazást.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>A kódnak kell lennie</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(ellenőrző összeg számjegy nélkül) ill</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>számjegyek hosszúak.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Kontakt:</value>
   </data>
@@ -1037,5 +1028,8 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Művészi mikro QR-kód</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>A kódnak {0} számjegyből (az ellenőrzőösszeg-számjegyet nem számítva) vagy {1} számjegyből kell állnia.</value>
   </data>
 </root>

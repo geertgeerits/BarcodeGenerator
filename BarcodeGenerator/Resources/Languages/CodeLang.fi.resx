@@ -292,15 +292,6 @@ Toinen vaihtoehto on poistaa sovellus ja asentaa se uudelleen.</value>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Sulje sovellus.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>Koodin pitäisi olla</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(ilman tarkistussummanumeroa) tai</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>numeroa pitkä.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Ottaa yhteyttä:</value>
   </data>
@@ -1037,5 +1028,8 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Taiteellinen mikro-QR-koodi</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>Koodin tulee olla {0} numeroa pitkä (tarkistussummanumeroa lukuun ottamatta) tai {1} numeroa pitkä.</value>
   </data>
 </root>

@@ -872,29 +872,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The code should be.
+        ///   Looks up a localized string similar to The code should be {0} digits long (excluding the checksum digit) or {1} digits long..
         /// </summary>
-        internal static string CodeLengthPart1_Text {
+        internal static string CodeLength_Text {
             get {
-                return ResourceManager.GetString("CodeLengthPart1_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (without checksum digit) or.
-        /// </summary>
-        internal static string CodeLengthPart2_Text {
-            get {
-                return ResourceManager.GetString("CodeLengthPart2_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to digits long..
-        /// </summary>
-        internal static string CodeLengthPart3_Text {
-            get {
-                return ResourceManager.GetString("CodeLengthPart3_Text", resourceCulture);
+                return ResourceManager.GetString("CodeLength_Text", resourceCulture);
             }
         }
         

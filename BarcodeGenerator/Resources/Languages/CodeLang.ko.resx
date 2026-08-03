@@ -118,488 +118,490 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Agree_Text" xml:space="preserve">
-    <value>Agree</value>
+    <value>동의</value>
   </data>
   <data name="Barcode_AllCodes_Text" xml:space="preserve">
-    <value>All codes</value>
+    <value>모든 코드</value>
   </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
-    <value>Not allowed:</value>
+    <value>허용되지 않음:</value>
   </data>
   <data name="AllowedChar_Text" xml:space="preserve">
-    <value>Allowed characters:</value>
+    <value>허용되는 문자:</value>
   </data>
   <data name="BackgroundColor_Text" xml:space="preserve">
-    <value>Background color:</value>
+    <value>배경색:</value>
   </data>
   <data name="BackgroundOpacity_Text" xml:space="preserve">
-    <value>Background opacity:</value>
+    <value>배경 투명도:</value>
   </data>
   <data name="BarcodeGenerator_Text" xml:space="preserve">
-    <value>Generator</value>
+    <value>생성기</value>
   </data>
   <data name="BarcodeScanner_Text" xml:space="preserve">
-    <value>Scanner</value>
+    <value>스캐너</value>
   </data>
   <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
-    <value>Aztec Code</value>
+    <value>아즈텍 코드</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
-    <value>Code 39 checksum modulus 10</value>
+    <value>코드 39 체크섬 모듈러스 10</value>
   </data>
   <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
-    <value>Code 39 checksum modulus 43</value>
+    <value>코드 39 체크섬 모듈러스 43</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
-    <value>Code 39 full ASCII checksum</value>
+    <value>코드 39 전체 ASCII 체크섬</value>
   </data>
   <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
-    <value>Code 39 full ASCII</value>
+    <value>코드 39 전체 ASCII</value>
   </data>
   <data name="Barcode_CODE_39_Text" xml:space="preserve">
-    <value>Code 39</value>
+    <value>코드 39</value>
   </data>
   <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
-    <value>Code 93i</value>
+    <value>코드 93i</value>
   </data>
   <data name="Barcode_CODE_93_Text" xml:space="preserve">
-    <value>Code 93</value>
+    <value>코드 93</value>
   </data>
   <data name="Barcode_CODE_128_Text" xml:space="preserve">
-    <value>Code 128</value>
+    <value>코드 128</value>
   </data>
   <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
-    <value>Compact PDF417</value>
+    <value>컴팩트 PDF417</value>
   </data>
   <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
-    <value>Frame QR Code</value>
+    <value>프레임 QR 코드</value>
   </data>
   <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
-    <value>GS1 Databar expanded stacked</value>
+    <value>GS1 데이터바 확장형 스택</value>
   </data>
   <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
-    <value>GS1 Databar expanded</value>
+    <value>GS1 데이터바 확장형</value>
   </data>
   <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
-    <value>GS1 Databar limited</value>
+    <value>GS1 데이터바 제한형</value>
   </data>
   <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
-    <value>GS1 Databar omnidirectional</value>
+    <value>GS1 데이터바 전방향형</value>
   </data>
   <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
-    <value>GS1 Databar stacked omnidirectional</value>
+    <value>GS1 데이터바 스택형 전방향형</value>
   </data>
   <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
-    <value>GS1 Databar stacked</value>
+    <value>GS1 데이터바 스택형</value>
   </data>
   <data name="Barcode_IMB_Text" xml:space="preserve">
-    <value>IMb Intelligent Mail</value>
+    <value>IMb 지능형 메일</value>
   </data>
   <data name="Barcode_ISBN_Text" xml:space="preserve">
-    <value>ISBN Int. Standard Book Number</value>
+    <value>ISBN 국제 표준 도서 번호</value>
   </data>
   <data name="Barcode_ITF_14_Text" xml:space="preserve">
-    <value>ITF-14 Interleaved 2 of 5</value>
+    <value>ITF-14 인터리브드 2/5</value>
   </data>
   <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
-    <value>ITF Interleaved 2 of 5 checksum</value>
+    <value>ITF 인터리브드 2/5 체크섬</value>
   </data>
   <data name="Barcode_ITF_Text" xml:space="preserve">
-    <value>ITF Interleaved 2 of 5</value>
+    <value>ITF 인터리브드 2/5</value>
   </data>
   <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
-    <value>Micro QR Code</value>
+    <value>마이크로 QR 코드</value>
   </data>
   <data name="Barcode_MSI_Text" xml:space="preserve">
-    <value>MSI Modified Plessey</value>
+    <value>MSI 수정된 플레시</value>
   </data>
   <data name="Barcode_PZN_Text" xml:space="preserve">
-    <value>PZN Pharma Central Number</value>
+    <value>PZN 파마 센트럴 번호</value>
   </data>
   <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
-    <value>QR Code model 1</value>
+    <value>QR 코드 모델 1</value>
   </data>
   <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
-    <value>QR Code model 2</value>
+    <value>QR 코드 모델 2</value>
   </data>
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
-    <value>QR Code</value>
+    <value>QR 코드</value>
   </data>
   <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR Rectangular Micro QR Code</value>
+    <value>RMQR(직사각형 마이크로 QR 코드)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
-    <value>RSS Expanded</value>
+    <value>RSS 확장</value>
   </data>
   <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
-    <value>UPC-EAN Extension</value>
+    <value>UPC-EAN 확장자</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>닫기</value>
   </data>
   <data name="ButtonListen_Text" xml:space="preserve">
-    <value>Listen</value>
+    <value>듣기</value>
   </data>
   <data name="ButtonNext_Text" xml:space="preserve">
-    <value>Next</value>
+    <value>다음</value>
   </data>
   <data name="ButtonShareText_Text" xml:space="preserve">
-    <value>Share text</value>
+    <value>텍스트 공유</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Share</value>
+    <value>공유</value>
   </data>
   <data name="ButtonSpeak_Text" xml:space="preserve">
-    <value>Speak</value>
+    <value>말하기</value>
   </data>
   <data name="CameraNotFound_Text" xml:space="preserve">
-    <value>No camera found.</value>
+    <value>카메라를 찾을 수 없습니다.</value>
   </data>
   <data name="CameraPermissionIOS_Text" xml:space="preserve">
-    <value>If permission to use the camera has not been given, the camera can be enabled in the device settings, select the application and enable the camera.
-Another option is to uninstall and reinstall the application.</value>
+    <value>카메라 사용 권한이 부여되지 않은 경우, 기기 설정에서 앱을 선택하고 카메라를 활성화하세요.
+또는 앱을 삭제하고 다시 설치하는 방법도 있습니다.</value>
   </data>
   <data name="CameraQualityError_Text" xml:space="preserve">
-    <value>That quality is not supported by this camera. Set the quality lower.</value>
+    <value>이 카메라는 해당 화질을 지원하지 않습니다. 화질을 낮추세요.</value>
   </data>
   <data name="CameraQualityHighest_Text" xml:space="preserve">
-    <value>Highest</value>
+    <value>최고</value>
   </data>
   <data name="CameraQualityHigh_Text" xml:space="preserve">
-    <value>High</value>
+    <value>높음</value>
   </data>
   <data name="CameraQualityLowest_Text" xml:space="preserve">
-    <value>Lowest</value>
+    <value>최저</value>
   </data>
   <data name="CameraQualityLow_Text" xml:space="preserve">
-    <value>Low</value>
+    <value>낮음</value>
   </data>
   <data name="CameraQualityMedium_Text" xml:space="preserve">
-    <value>Medium</value>
+    <value>중간</value>
   </data>
   <data name="CameraQualityTitle_Text" xml:space="preserve">
-    <value>Quality</value>
+    <value>품질</value>
   </data>
   <data name="Cancel_Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>취소</value>
   </data>
   <data name="CheckDigitError_Text" xml:space="preserve">
-    <value>The code is wrong.</value>
+    <value>코드가 잘못되었습니다.</value>
   </data>
   <data name="ClearCode_Text" xml:space="preserve">
-    <value>Clear</value>
+    <value>지우기</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Please close the application.</value>
+    <value>애플리케이션을 종료해 주세요.</value>
   </data>
   <data name="Contact_Text" xml:space="preserve">
-    <value>Contact:</value>
+    <value>연락처:</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>저작권</value>
   </data>
   <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
-    <value>To help us fixing any problems, the application will send anonymous crash and error reports when the application is restarted.
-The reports contain information on the crash or error, including device specifications, operating system, application version, timestamp, and anonymous installation identifier.
-The data is collected for the sole purpose of helping us to improve the application and does not include any personal information.  No other data is collected.
-Anonymous crash and error reports are stored in the Microsoft App Center.
-They are not shared with anyone else outside the developer of the appliciation.
-The report data is retained for 28 days.</value>
+    <value>문제를 해결하는 데 도움이 되도록, 애플리케이션이 다시 시작될 때 익명의 충돌 및 오류 보고서가 전송됩니다.
+보고서에는 장치 사양, 운영 체제, 애플리케이션 버전, 타임스탬프 및 익명 설치 식별자를 포함하여 충돌 또는 오류에 대한 정보가 포함됩니다.
+이 데이터는 애플리케이션 개선을 위한 목적으로만 수집되며 개인 정보는 포함하지 않습니다. 다른 데이터는 수집되지 않습니다.
+익명의 충돌 및 오류 보고서는 Microsoft 앱 센터에 저장됩니다.
+이 보고서는 애플리케이션 개발자 외에는 누구와도 공유되지 않습니다.
+보고서 ​​데이터는 28일 동안 보관됩니다.</value>
   </data>
   <data name="CrashErrorReportSentry_Text" xml:space="preserve">
-    <value>Privacy Statement: Crash Reporting with Sentry.
+    <value>개인정보 보호 정책: Sentry를 이용한 크래시 보고
 
-Barcode Generator uses Sentry, a third-party service, to collect and manage crash reports in order to improve the stability and performance of our application. We are committed to protecting your privacy and providing transparency about how your data is handled.
+바코드 제너레이터는 타사 서비스인 Sentry를 사용하여 애플리케이션의 안정성과 성능 향상을 위해 크래시 보고서를 수집 및 관리합니다. 당사는 사용자의 개인정보를 보호하고 데이터 처리 방식에 대한 투명성을 제공하기 위해 최선을 다하고 있습니다.
 
-What data is collected:
-When a crash occurs within this application, certain information may be collected and transmitted to Sentry, including but not limited to:
-Device information such as model, operating system version, and hardware configuration.
-Application logs and error messages leading up to the crash.
-Information about the state of the application at the time of the crash, including user actions.
+수집되는 데이터:
+이 애플리케이션에서 크래시가 발생하면 다음과 같은 정보가 수집되어 Sentry로 전송될 수 있습니다.
+기기 모델, 운영 체제 버전, 하드웨어 구성 등의 기기 정보
+크래시 발생 직전의 애플리케이션 로그 및 오류 메시지
+크래시 발생 당시 애플리케이션 상태 정보(사용자 작업 포함)
 
-How we use this data:
-The data collected by Sentry is used solely for the purpose of identifying and fixing bugs and errors within our application. This information helps us understand the root causes of crashes, allowing us to provide a more stable and reliable experience for our users.
+데이터 사용 방식:
+Sentry에서 수집한 데이터는 당사 애플리케이션의 버그 및 오류를 식별하고 수정하는 목적으로만 사용됩니다. 이 정보는 크래시의 근본 원인을 파악하는 데 도움이 되며, 사용자에게 더욱 안정적이고 신뢰할 수 있는 환경을 제공할 수 있도록 합니다.
 
-Data security and retention:
-We take the security of your data seriously. Sentry employs industry-standard security measures to protect the information collected from unauthorized access or disclosure.
+데이터 보안 및 보존:
+당사는 사용자 데이터 보안을 매우 중요하게 생각합니다. Sentry는 수집된 정보를 무단 접근이나 유출로부터 보호하기 위해 업계 표준 보안 조치를 사용합니다.
 
-Crash reports collected by Sentry may be retained in accordance with Sentry's data retention policies (30 days for this application). For more information about Sentry's data handling practices, please refer to their Privacy Policy at https://sentry.io/welcome/.
+Sentry에서 수집한 크래시 보고서는 Sentry의 데이터 보존 정책(이 애플리케이션의 경우 30일)에 따라 보관될 수 있습니다. Sentry의 데이터 처리 방식에 대한 자세한 내용은 https://sentry.io/welcome/ 에서 Sentry의 개인정보 보호정책을 참조하십시오.
 
-Your consent:
-By using this application, you consent to the collection and processing of crash report data by Sentry as described in this privacy statement.</value>
+동의:
+이 애플리케이션을 사용함으로써 귀하는 본 개인정보 보호정책에 설명된 대로 Sentry가 크래시 보고서 데이터를 수집 및 처리하는 데 동의합니다.</value>
   </data>
   <data name="CrashErrorReport_Text" xml:space="preserve">
-    <value>Crash and error reports: </value>
+    <value>충돌 및 오류 보고서:</value>
   </data>
   <data name="DefaultFormatGenerator_Text" xml:space="preserve">
-    <value>Default format generator:</value>
+    <value>기본 형식 생성기:</value>
   </data>
   <data name="DefaultFormatScanner_Text" xml:space="preserve">
-    <value>Default format scanner:</value>
+    <value>기본 형식 스캐너:</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Default</value>
+    <value>기본값</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Generate and scan various barcodes.</value>
+    <value>다양한 바코드를 생성하고 스캔합니다.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Disagree</value>
+    <value>동의하지 않습니다</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail: </value>
+    <value>이메일:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Error</value>
+    <value>오류</value>
   </data>
   <data name="FirstNumber0_Text" xml:space="preserve">
-    <value>First number should be 0.</value>
+    <value>첫 번째 숫자는 0이어야 합니다.</value>
   </data>
   <data name="ForegroundColor_Text" xml:space="preserve">
-    <value>Foreground color:</value>
+    <value>전경색:</value>
   </data>
   <data name="ForegroundOpacity_Text" xml:space="preserve">
-    <value>Foreground opacity:</value>
+    <value>전경 투명도:</value>
   </data>
   <data name="FormatCode2_Text" xml:space="preserve">
-    <value>Format:</value>
+    <value>형식:</value>
   </data>
   <data name="FormatCode_Text" xml:space="preserve">
-    <value>Select a format:</value>
+    <value>형식을 선택하세요:</value>
   </data>
   <data name="FormatNotSupported_Text" xml:space="preserve">
-    <value>is currently not supported.</value>
+    <value>현재 지원되지 않습니다.</value>
   </data>
   <data name="FormatTitle_Text" xml:space="preserve">
-    <value>Format</value>
+    <value>형식</value>
   </data>
   <data name="GenerateCode_Text" xml:space="preserve">
-    <value>Generate</value>
+    <value>위치 정보 생성</value>
   </data>
   <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
-    <value>Invalid start/end character:</value>
+    <value>잘못된 시작/종료 문자:</value>
   </data>
   <data name="GuardMissingEnd_Text" xml:space="preserve">
-    <value>Missing end character.</value>
+    <value>종료 문자가 누락되었습니다.</value>
   </data>
   <data name="GuardMissingStart_Text" xml:space="preserve">
-    <value>Missing start character.</value>
+    <value>시작 문자가 누락되었습니다.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
-    <value>Hexadecimal color codes:
+    <value>16진수 색상 코드:
 
-Characters 1-2: Opacity/Transparency
-Characters 3-4: Red
-Characters 5-6: Green
-Characters 7-8: Blue</value>
+1-2번째 문자: 불투명도/투명도
+3-4번째 문자: 빨간색
+5-6번째 문자: 녹색
+7-8번째 문자: 파란색</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text to speech: not all languages are supported that are provided in the application settings.
-Speech to text: activate it through your device settings. A microphone will then appear in the virtual keyboard.
-Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
+    <value>텍스트 음성 변환: 애플리케이션 설정에서 제공되는 언어 중 일부는 지원되지 않습니다.
+음성 텍스트 변환: 기기 설정에서 활성화하세요. 그러면 가상 키보드에 마이크 아이콘이 나타납니다.
 
-Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
-The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Polish, Portuguese, Romanian, Spanish and Swedish.
+이 두 기능은 기기 및 설치된 언어에 따라 지원 여부가 다를 수 있습니다. 일부 언어의 경우 관련 서비스를 통해 인터넷을 이용한 음성-텍스트 변환이 이루어질 수 있습니다.
 
-You can always contact me for any corrections.</value>
+본문 번역에는 Google 번역이 사용되었습니다. 따라서 모든 번역이 정확하다고 보장할 수는 없습니다.
+지원 언어는 체코어, 덴마크어, 네덜란드어, 영어, 핀란드어, 프랑스어, 독일어, 헝가리어, 이탈리아어, 노르웨이어, 폴란드어, 포르투갈어, 루마니아어, 스페인어, 스웨덴어입니다.
+
+수정 사항이 있으면 언제든지 문의해 주세요.</value>
   </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
-    <value>The QR code is generated at either a fixed or variable pixel size, depending on the number of characters it contains and the maximum pixel size defined in the settings.
-When an image (logo) is placed on top of the QR code, it is centered and scaled to between 10% and 35% of the QR code’s size. This range can be adjusted in the settings. A border is added to improve visibility.
-The artistic QR code is highly customizable, with options such as gradients, custom shapes, colors, a foreground image (logo), and a background image. In this case, the background opacity must be set between 0% and less than 100% (see settings).
-For best results, use square images and experiment with image size to avoid excessive resizing. Preferred file formats are PNG (optionally with a transparent background) or JPEG.</value>
+    <value>QR 코드는 포함된 문자 수와 설정에서 정의된 최대 픽셀 크기에 따라 고정 또는 가변 픽셀 크기로 생성됩니다.
+이미지(로고)를 QR 코드 위에 배치할 경우, 이미지는 중앙에 배치되고 QR 코드 크기의 10%에서 35% 사이로 축소됩니다. 이 범위는 설정에서 조정할 수 있습니다. 가시성을 높이기 위해 테두리가 추가됩니다.
+예술적인 QR 코드는 그라데이션, 사용자 지정 모양, 색상, 전경 이미지(로고) 및 배경 이미지와 같은 다양한 옵션을 통해 고도로 맞춤 설정할 수 있습니다. 이 경우 배경의 불투명도는 0%에서 100% 미만으로 설정해야 합니다(설정 참조).
+최상의 결과를 얻으려면 정사각형 이미지를 사용하고 과도한 크기 조정을 피하기 위해 이미지 크기를 조정해 보세요. 권장 파일 형식은 PNG(투명 배경 포함 가능) 또는 JPEG입니다.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
-    <value>Information</value>
+    <value>정보</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Language speech:</value>
+    <value>언어 음성:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Language:</value>
+    <value>언어:</value>
   </data>
   <data name="LengthInputEven_Text" xml:space="preserve">
-    <value>The length of the input should be even.</value>
+    <value>입력 길이는 짝수여야 합니다.</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
+    <value>본 소프트웨어는 어떠한 종류의 명시적 또는 묵시적 보증 없이 "있는 그대로" 제공됩니다. 여기에는 상품성, 특정 목적에의 적합성 및 비침해에 대한 보증이 포함되지만 이에 국한되지 않습니다. 어떠한 경우에도 저작자 및/또는 배포자는 본 소프트웨어 또는 본 소프트웨어의 사용이나 기타 거래로 인해 발생하는 계약, 불법 행위 또는 기타 사유에 따른 청구, 손해 또는 기타 책임에 대해 책임을 지지 않습니다.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>Barcode scanning and generation for .NET MAUI applications.
-MIT License:
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    <value>.NET MAUI 애플리케이션용 바코드 스캔 및 생성 도구입니다.
 
-The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.</value>
+MIT 라이선스:
+본 소프트웨어 및 관련 문서 파일("소프트웨어")의 사본을 입수하는 모든 사람은 다음 조건을 준수하는 한, 소프트웨어를 제한 없이 사용할 수 있는 권한을 무료로 부여받습니다. 여기에는 사용, 복사, 수정, 병합, 게시, 배포, 서브라이선스 및/또는 판매를 포함하되 이에 국한되지 않는 모든 권한이 포함됩니다.
+
+위의 저작권 고지 및 본 사용 허가 고지(다음 단락 포함)는 소프트웨어의 모든 사본 또는 상당 부분에 포함되어야 합니다.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>License</value>
+    <value>특허</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>This application may be used freely for non-commercial purposes.
-Use this program entirely at your own risk.</value>
+    <value>이 애플리케이션은 비상업적 용도로 자유롭게 사용할 수 있습니다.
+이 프로그램을 사용하는 데 따른 모든 책임은 사용자에게 있습니다.</value>
   </data>
   <data name="LogAlwaysSend_Text" xml:space="preserve">
-    <value>Always send</value>
+    <value>항상 전송</value>
   </data>
   <data name="LogDontSend_Text" xml:space="preserve">
-    <value>Don't send</value>
+    <value>전송하지 않음</value>
   </data>
   <data name="LogMessage_Text" xml:space="preserve">
-    <value>The application detected an error in a previous session.
-To improve the application, I would like to receive the log with that error.
-May the log of that error be sent?
-Thank you in advance.</value>
+    <value>이전 세션에서 오류가 감지되었습니다.
+애플리케이션 개선을 위해 해당 오류에 대한 로그를 받고 싶습니다.
+해당 오류 로그를 보내주실 수 있습니까?
+감사합니다.</value>
   </data>
   <data name="LogSend_Text" xml:space="preserve">
-    <value>Send</value>
+    <value>보내기</value>
   </data>
   <data name="LogTitle2_Text" xml:space="preserve">
-    <value>An error has been detected. Send the error log?</value>
+    <value>오류가 감지되었습니다. 오류 로그를 보내시겠습니까?</value>
   </data>
   <data name="LogTitle_Text" xml:space="preserve">
-    <value>Sending the error log</value>
+    <value>오류 로그를 전송합니다</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Barcode Generator and Scanner</value>
+    <value>바코드 생성기 및 스캐너</value>
   </data>
   <data name="No_Text" xml:space="preserve">
-    <value>No</value>
+    <value>아니요</value>
   </data>
   <data name="OpenLinkText_Text" xml:space="preserve">
-    <value>Open this link?</value>
+    <value>이 링크를 열겠습니까?</value>
   </data>
   <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Website link</value>
+    <value>웹사이트 링크</value>
   </data>
   <data name="Pixels_Text" xml:space="preserve">
-    <value>pixels</value>
+    <value>픽셀</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Privacy Policy:</value>
+    <value>개인정보 보호정책:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>No personal and other data is stored or passed on to myself and others.</value>
+    <value>개인정보 및 기타 데이터는 저장되지 않으며, 본인 또는 타인에게 전달되지 않습니다.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Image size: {0}%</value>
+    <value>이미지 크기: {0}%</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
-    <value>The selected file is not supported.</value>
+    <value>선택한 파일이 지원되지 않습니다.</value>
   </data>
   <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
-    <value>Recommended image size</value>
+    <value>권장 이미지 크기</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>The application will be restarted.</value>
+    <value>애플리케이션이 다시 시작됩니다.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>재설정</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Some changed settings must be saved in order to apply them.</value>
+    <value>일부 변경된 설정은 적용하려면 저장해야 합니다.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>저장</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>설정</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>The text contains one or more characters that are not allowed.
+    <value>본문에 허용되지 않는 문자가 하나 이상 포함되어 있습니다.
 
-Not allowed:</value>
+허용되지 않는 문자:</value>
   </data>
   <data name="TextToEncode_Text" xml:space="preserve">
-    <value>Text to encode:</value>
+    <value>인코딩할 텍스트:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>이 기기에서는 텍스트 음성 변환이 지원되지 않습니다.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>어둡게</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>밝게</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>시스템</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>테마:</value>
   </data>
   <data name="ToolTipAppEmail_Text" xml:space="preserve">
-    <value>Send an email to the author of this application</value>
+    <value>이 애플리케이션 개발자에게 이메일 보내기</value>
   </data>
   <data name="ToolTipAppWebsite_Text" xml:space="preserve">
-    <value>Open the website of this application</value>
+    <value>이 애플리케이션 웹사이트 열기</value>
   </data>
   <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
-    <value>Scanner</value>
+    <value>스캐너</value>
   </data>
   <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
-    <value>Start or stop scanning for barcodes</value>
+    <value>바코드 스캔 시작 또는 중지</value>
   </data>
   <data name="ToolTipCameraFacing_Text" xml:space="preserve">
-    <value>Select the rear or front camera</value>
+    <value>전면 또는 후면 카메라 선택</value>
   </data>
   <data name="ToolTipCameraQuality_Text" xml:space="preserve">
-    <value>Set the quality of the camera</value>
+    <value>카메라 화질 설정</value>
   </data>
   <data name="ToolTipCameraTorch_Text" xml:space="preserve">
-    <value>Turn the camera torch on or off</value>
+    <value>카메라 플래시 켜기/끄기</value>
   </data>
   <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
-    <value>Enable or disable device vibration when finding a barcode</value>
+    <value>바코드 인식 시 기기 진동 켜기/끄기</value>
   </data>
   <data name="ToolTipCameraZoom_Text" xml:space="preserve">
-    <value>Camera: zoom in and out</value>
+    <value>카메라: 확대/축소</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copy text to the clipboard</value>
+    <value>텍스트를 클립보드에 복사</value>
   </data>
   <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
-    <value>Crash and error reports</value>
+    <value>충돌 및 오류 보고서</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Go back</value>
+    <value>뒤로 가기</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Go forward</value>
+    <value>앞으로 가기</value>
   </data>
   <data name="ToolTipHelp_Text" xml:space="preserve">
-    <value>Help</value>
+    <value>도움말</value>
   </data>
   <data name="ToolTipPaste_Text" xml:space="preserve">
-    <value>Paste text from the clipboard</value>
+    <value>클립보드에서 텍스트 붙여넣기</value>
   </data>
   <data name="ToolTipSettingsReset_Text" xml:space="preserve">
-    <value>Reset the settings to their default values</value>
+    <value>설정을 기본값으로 초기화합니다.</value>
   </data>
   <data name="ToolTipSettingsSave_Text" xml:space="preserve">
-    <value>Save the settings</value>
+    <value>설정을 저장합니다.</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
-    <value>Text to speech: on or off</value>
+    <value>텍스트 음성 변환: 켜기 또는 끄기</value>
   </data>
   <data name="Trademarks_Text" xml:space="preserve">
-    <value>Apple, App Store and the App Store logo are trademarks of Apple Inc., registered in the U.S. and other countries and regions.
-Google, Google Play, the Google Play logo and Android are trademarks of Google LLC.
-Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks of Microsoft Corporation.</value>
+    <value>Apple, App Store 및 App Store 로고는 미국 및 기타 국가와 지역에 등록된 Apple Inc.의 상표입니다.
+Google, Google Play, Google Play 로고 및 Android는 Google LLC의 상표입니다.
+Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corporation의 상표입니다.</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>버전:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website: </value>
+    <value>웹사이트:</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Yes</value>
+    <value>예</value>
   </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
-    <value>Micro PDF417</value>
+    <value>마이크로 PDF417</value>
   </data>
   <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
-    <value>DX Film Edge</value>
+    <value>DX 필름 에지</value>
   </data>
   <data name="Barcode_EAN_2_Text" xml:space="preserve">
     <value>EAN-2</value>
@@ -617,16 +619,16 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>EAN/UPC</value>
   </data>
   <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
-    <value>GS1 Databar</value>
+    <value>GS1 데이터바</value>
   </data>
   <data name="Barcode_CODABAR_Text" xml:space="preserve">
-    <value>Codabar</value>
+    <value>코다바</value>
   </data>
   <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
-    <value>Pharmacode</value>
+    <value>파마코드</value>
   </data>
   <data name="Barcode_PLESSEY_Text" xml:space="preserve">
-    <value>Plessey</value>
+    <value>플레시</value>
   </data>
   <data name="Barcode_RSS_14_Text" xml:space="preserve">
     <value>RSS 14</value>
@@ -638,181 +640,181 @@ Microsoft, Microsoft Store, the Microsoft Store logo and Windows are trademarks 
     <value>UPC-E</value>
   </data>
   <data name="Barcode_AZTEC_Text" xml:space="preserve">
-    <value>Aztec</value>
+    <value>아즈텍</value>
   </data>
   <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
-    <value>Aztec Rune</value>
+    <value>아즈텍 룬 문자</value>
   </data>
   <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
-    <value>Data Matrix</value>
+    <value>데이터 매트릭스</value>
   </data>
   <data name="Barcode_MAXICODE_Text" xml:space="preserve">
-    <value>MaxiCode</value>
+    <value>맥시코드</value>
   </data>
   <data name="Barcode_PDF_417_Text" xml:space="preserve">
     <value>PDF417</value>
   </data>
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
-    <value>QR Code with image</value>
+    <value>이미지가 포함된 QR 코드</value>
   </data>
   <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
-    <value>Choose a foreground image</value>
+    <value>전경 이미지 선택</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>취소</value>
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
-    <value>SQRC Secure QR Code</value>
+    <value>SQRC 보안 QR 코드</value>
   </data>
   <data name="QRCodeSizeVariable_Text" xml:space="preserve">
-    <value>Variable size:</value>
+    <value>가변 크기:</value>
   </data>
   <data name="QRCodeSizePixels_Text" xml:space="preserve">
-    <value>Size in pixels:</value>
+    <value>크기(픽셀):</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
-    <value>Barcode with caption:</value>
+    <value>캡션이 있는 바코드:</value>
   </data>
   <data name="MaximumCharactersNABK_Text" xml:space="preserve">
-    <value>numeric {0}, alphanumeric {1}, bytes {2}, kanji/kana {3}</value>
+    <value>숫자 {0}, 영숫자 {1}, 바이트 {2}, 한자/가나 {3}</value>
   </data>
   <data name="MaximumCharacters_Text" xml:space="preserve">
-    <value>Maximum characters:</value>
+    <value>최대 문자 수:</value>
   </data>
   <data name="NumberOfDigits_Text" xml:space="preserve">
-    <value>Number of digits:</value>
+    <value>자릿수:</value>
   </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
-    <value>Artistic QR Code</value>
+    <value>예술적인 QR 코드</value>
   </data>
   <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
-    <value>Background color artistic QR code:</value>
+    <value>배경색(예술적 QR 코드):</value>
   </data>
   <data name="ColorPicker_Text" xml:space="preserve">
-    <value>Color picker</value>
+    <value>색상 선택기</value>
   </data>
   <data name="CharacterNumericDetected_Text" xml:space="preserve">
-    <value>Numeric character detected.</value>
+    <value>숫자 문자가 감지되었습니다.</value>
   </data>
   <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
-    <value>Alphanumeric character detected.</value>
+    <value>영숫자 문자가 감지되었습니다.</value>
   </data>
   <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
-    <value>Byte character detected.</value>
+    <value>바이트 문자가 감지되었습니다.</value>
   </data>
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
-    <value>Kanji/Kana character detected.</value>
+    <value>한자/가나 문자가 감지되었습니다.</value>
   </data>
   <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
-    <value>The text length is limited to {0} characters.</value>
+    <value>텍스트 길이는 {0} 자로 제한됩니다.</value>
   </data>
   <data name="TextLengthLimitedByte_Text" xml:space="preserve">
-    <value>The text length is limited to {0} bytes.</value>
+    <value>텍스트 길이는 {0} 바이트로 제한됩니다.</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
-    <value>QR Code module shape: square</value>
+    <value>QR 코드 모듈 모양: 정사각형</value>
   </data>
   <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
-    <value>QR Code module shape: circle</value>
+    <value>QR 코드 모듈 모양: 원형</value>
   </data>
   <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
-    <value>QR Code module shape: rounded</value>
+    <value>QR 코드 모듈 모양: 둥근 모서리</value>
   </data>
   <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
-    <value>Choose a background image</value>
+    <value>배경 이미지 선택</value>
   </data>
   <data name="QRCodeGradientUse_Text" xml:space="preserve">
-    <value>Use gradient colors:</value>
+    <value>그라디언트 색상 사용:</value>
   </data>
   <data name="QRCodeGradientDirection_Text" xml:space="preserve">
-    <value>Gradient direction:</value>
+    <value>그라디언트 방향:</value>
   </data>
   <data name="QRCodeGradientColors_Text" xml:space="preserve">
-    <value>Gradient colors:</value>
+    <value>그라디언트 색상:</value>
   </data>
   <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
-    <value>Bottom to top</value>
+    <value>아래에서 위로</value>
   </data>
   <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
-    <value>Bottom left to top right</value>
+    <value>왼쪽 아래에서 오른쪽 위로</value>
   </data>
   <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
-    <value>Left to right</value>
+    <value>왼쪽에서 오른쪽으로</value>
   </data>
   <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
-    <value>Top left to bottom right</value>
+    <value>왼쪽 위에서 오른쪽 아래로</value>
   </data>
   <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
-    <value>Top to bottom</value>
+    <value>위에서 아래로</value>
   </data>
   <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
-    <value>Top right to bottom left</value>
+    <value>오른쪽 위에서 왼쪽 아래로</value>
   </data>
   <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
-    <value>Right to left</value>
+    <value>오른쪽에서 왼쪽으로</value>
   </data>
   <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
-    <value>Bottom right to top left</value>
+    <value>오른쪽 아래에서 왼쪽 위로</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
-    <value>Gradient color 1</value>
+    <value>그라디언트 색상 1</value>
   </data>
   <data name="QRCodeGradientColor2_Text" xml:space="preserve">
-    <value>Gradient color 2</value>
+    <value>그라디언트 색상 2</value>
   </data>
   <data name="QRCodeGradientColor3_Text" xml:space="preserve">
-    <value>Gradient color 3</value>
+    <value>그라디언트 색상 3</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
-    <value>Module shape:</value>
+    <value>모듈 모양:</value>
   </data>
   <data name="ImageForeground_Text" xml:space="preserve">
-    <value>Foreground image:</value>
+    <value>전경 이미지:</value>
   </data>
   <data name="ImageBackground_Text" xml:space="preserve">
-    <value>Background image:</value>
+    <value>배경 이미지:</value>
   </data>
   <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
-    <value>Foreground color artistic QR code:</value>
+    <value>전경색 아트 QR 코드:</value>
   </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
-    <value>Compress the text:</value>
+    <value>텍스트 압축:</value>
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
-    <value>The text in the QR code can be compressed (see the settings to enable this). To make the text readable again, it must be decompressed by a scanner that supports GZip compression, such as the scanner in this app.</value>
+    <value>QR 코드의 텍스트는 압축될 수 있습니다(설정에서 이 기능을 활성화하세요). 텍스트를 다시 읽을 수 있도록 하려면 이 앱의 스캐너처럼 GZip 압축을 지원하는 스캐너를 사용하여 압축을 해제해야 합니다.</value>
   </data>
   <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
-    <value>Finder pattern shape:</value>
+    <value>찾기 패턴 모양:</value>
   </data>
   <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
-    <value>QR Code finder pattern shape: circle</value>
+    <value>QR 코드 찾기 패턴 모양: 원형</value>
   </data>
   <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
-    <value>QR Code finder pattern shape: rounded</value>
+    <value>QR 코드 찾기 패턴 모양: 둥근형</value>
   </data>
   <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
-    <value>QR Code finder pattern shape: square</value>
+    <value>QR 코드 찾기 패턴 모양: 사각형</value>
   </data>
   <data name="InfoQRCodeSettings_Text" xml:space="preserve">
-    <value>For optimal scan reliability, we recommend the following for QR codes:
-Keep high contrast between the foreground and background colors.
-Use square modules (default): square modules generally produce the lowest error rate when scanning QR codes.
-Avoid gaps between modules: smaller modules or shapes such as circles or rounded modules can create gaps, which may increase scan errors.
-Error correction is set to high (30% recovery) by default: a high error-correction level helps compensate for reduced readability.
+    <value>최적의 스캔 신뢰성을 위해 QR 코드에 대해 다음 사항을 권장합니다.
+전경색과 배경색의 대비를 높게 유지하세요.
+정사각형 모듈(기본값)을 사용하세요. 정사각형 모듈은 일반적으로 QR 코드 스캔 시 오류율을 가장 낮춥니다.
+모듈 사이에 간격이 없도록 하세요. 작은 모듈이나 원형 또는 둥근 모양의 모듈은 간격을 만들어 스캔 오류를 증가시킬 수 있습니다.
+오류 수정은 기본적으로 높음(30% 복구)으로 설정되어 있습니다. 높은 오류 수정 수준은 가독성 저하를 보완하는 데 도움이 됩니다.
 
-It is recommended to test the generated QR codes and other barcodes to ensure they scan correctly.</value>
+생성된 QR 코드 및 기타 바코드가 올바르게 스캔되는지 테스트하는 것이 좋습니다.</value>
   </data>
   <data name="PayloadType_WIFI_Text" xml:space="preserve">
-    <value>WiFi</value>
+    <value>Wi-Fi</value>
   </data>
   <data name="PayloadType_URL_Text" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
-    <value>Bookmark</value>
+    <value>북마크</value>
   </data>
   <data name="PayloadType_MAIL_Text" xml:space="preserve">
-    <value>E-mail</value>
+    <value>이메일</value>
   </data>
   <data name="PayloadType_SMS_Text" xml:space="preserve">
     <value>SMS</value>
@@ -821,215 +823,215 @@ It is recommended to test the generated QR codes and other barcodes to ensure th
     <value>MMS</value>
   </data>
   <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
-    <value>Geolocation</value>
+    <value>위치 정보</value>
   </data>
   <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
-    <value>Phone number</value>
+    <value>전화번호</value>
   </data>
   <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
-    <value>WhatsApp message</value>
+    <value>WhatsApp 메시지</value>
   </data>
   <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
-    <value>Contact data</value>
+    <value>연락처 정보</value>
   </data>
   <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
-    <value>Calendar event</value>
+    <value>캘린더 이벤트</value>
   </data>
   <data name="PayloadType_Text" xml:space="preserve">
-    <value>Payload type:</value>
+    <value>페이로드 유형:</value>
   </data>
   <data name="PayloadTypeSSID_Text" xml:space="preserve">
-    <value>Name network</value>
+    <value>네트워크 이름</value>
   </data>
   <data name="PayloadTypePassword_Text" xml:space="preserve">
-    <value>Password</value>
+    <value>비밀번호</value>
   </data>
   <data name="PayloadTypeURL_Text" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="PayloadTypeTitle_Text" xml:space="preserve">
-    <value>Title</value>
+    <value>제목</value>
   </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
-    <value>E-mail address</value>
+    <value>이메일 주소</value>
   </data>
   <data name="PayloadTypeSubject_Text" xml:space="preserve">
-    <value>Subject</value>
+    <value>주제</value>
   </data>
   <data name="PayloadTypeMessage_Text" xml:space="preserve">
-    <value>Message</value>
+    <value>메시지</value>
   </data>
   <data name="PayloadTypeLatitude_Text" xml:space="preserve">
-    <value>Latitude:</value>
+    <value>위도:</value>
   </data>
   <data name="PayloadTypeLongitude_Text" xml:space="preserve">
-    <value>Longitude:</value>
+    <value>경도:</value>
   </data>
   <data name="PayloadTypeFirstname_Text" xml:space="preserve">
-    <value>Firstname</value>
+    <value>이름</value>
   </data>
   <data name="PayloadTypeLastname_Text" xml:space="preserve">
-    <value>Lastname</value>
+    <value>성</value>
   </data>
   <data name="PayloadTypeMail_Text" xml:space="preserve">
-    <value>E-Mail</value>
+    <value>이메일</value>
   </data>
   <data name="PayloadTypeDescription_Text" xml:space="preserve">
-    <value>Description</value>
+    <value>설명</value>
   </data>
   <data name="PayloadTypeLocation_Text" xml:space="preserve">
-    <value>Location</value>
+    <value>위치</value>
   </data>
   <data name="PayloadTypeStart_Text" xml:space="preserve">
-    <value>Start:</value>
+    <value>시작:</value>
   </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
-    <value>End:</value>
+    <value>끝:</value>
   </data>
   <data name="PayloadEnabled_Text" xml:space="preserve">
-    <value>Payloads:</value>
+    <value>페이로드:</value>
   </data>
   <data name="Payloads_Text" xml:space="preserve">
-    <value>Payloads</value>
+    <value>페이로드</value>
   </data>
   <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
-    <value>Invalid latitude value.</value>
+    <value>위도 값이 잘못되었습니다.</value>
   </data>
   <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
-    <value>Invalid longitude value.</value>
+    <value>경도 값이 잘못되었습니다.</value>
   </data>
   <data name="ErrorLatitudeRange_Text" xml:space="preserve">
-    <value>Latitude out of range. Value must be between -90 and 90 (inclusive).</value>
+    <value>위도 값이 범위를 벗어났습니다. 값은 -90에서 90 사이(포함)여야 합니다.</value>
   </data>
   <data name="ErrorLongitudeRange_Text" xml:space="preserve">
-    <value>Longitude out of range. Value must be between -180 and 180 (inclusive).</value>
+    <value>경도 값이 범위를 벗어났습니다. 값은 -180에서 180 사이(포함)여야 합니다.</value>
   </data>
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
-    <value>Start date cannot be later than end date.</value>
+    <value>시작일은 종료일보다 늦을 수 없습니다.</value>
   </data>
   <data name="WiFiNetworkDetected_Text" xml:space="preserve">
-    <value>Wi‑Fi network detected.
-Choose an option.</value>
+    <value>Wi-Fi 네트워크가 감지되었습니다.
+옵션을 선택하세요.</value>
   </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
-    <value>Copy</value>
+    <value>복사</value>
   </data>
   <data name="WiFiOpenSettings_Text" xml:space="preserve">
-    <value>Open Wi‑Fi Settings</value>
+    <value>Wi-Fi 설정 열기</value>
   </data>
   <data name="WiFiJoinNetwork_Text" xml:space="preserve">
-    <value>Please open Settings - Wi‑Fi to join the network.</value>
+    <value>네트워크에 연결하려면 설정 &gt; Wi-Fi를 여세요.</value>
   </data>
   <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
-    <value>Open Wi‑Fi settings is not supported on this platform.</value>
+    <value>이 플랫폼에서는 개방형 Wi-Fi 설정이 지원되지 않습니다.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
-    <value>Create smart QR codes with payload types like geolocation, contacts, and more. Tap the icon at the top, choose a type, enter your details, then generate and share your QR code.
-Not all payload types are supported on every device.</value>
+    <value>위치 정보, 연락처 등 다양한 페이로드 유형을 사용하여 스마트 QR 코드를 생성하세요. 상단의 아이콘을 탭하고 유형을 선택한 다음 세부 정보를 입력하고 QR 코드를 생성하여 공유하세요.
+모든 기기에서 모든 페이로드 유형이 지원되는 것은 아닙니다.</value>
   </data>
   <data name="GeoLocationButton_Text" xml:space="preserve">
-    <value>Request geolocation</value>
+    <value>위치 정보 요청</value>
   </data>
   <data name="GeolocationTitle_Text" xml:space="preserve">
-    <value>Geolocation</value>
+    <value>위치 정보</value>
   </data>
   <data name="GeolocationMessage_Text" xml:space="preserve">
-    <value>Location is not available on this device, or location services are disabled.</value>
+    <value>이 기기에서 위치 정보를 사용할 수 없거나 위치 서비스가 비활성화되어 있습니다.</value>
   </data>
   <data name="GeoMapButton_Text" xml:space="preserve">
-    <value>Open maps</value>
+    <value>지도 열기</value>
   </data>
   <data name="GeolocationEncoding_Text" xml:space="preserve">
-    <value>Encoding:</value>
+    <value>인코딩:</value>
   </data>
   <data name="ErrorEmailInvalid_Text" xml:space="preserve">
-    <value>E-mail address is not valid.</value>
+    <value>이메일 주소가 유효하지 않습니다.</value>
   </data>
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
-    <value>URL address is not valid.</value>
+    <value>URL 주소가 유효하지 않습니다.</value>
   </data>
   <data name="ToolTipUrlLink_Text" xml:space="preserve">
-    <value>Open the URL link</value>
+    <value>URL 링크를 엽니다.</value>
   </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
-    <value>Phone number</value>
+    <value>전화번호</value>
   </data>
   <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
-    <value>Authentication:</value>
+    <value>인증:</value>
   </data>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
-    <value>Phone number is not valid.</value>
+    <value>전화번호가 유효하지 않습니다.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
-    <value>No barcode found.</value>
+    <value>바코드를 찾을 수 없습니다.</value>
   </data>
   <data name="ToolTipScanImage_Text" xml:space="preserve">
-    <value>Scan an image</value>
+    <value>이미지 스캔</value>
   </data>
   <data name="ToolTipScanCamera_Text" xml:space="preserve">
-    <value>Scan from camera</value>
+    <value>카메라로 스캔</value>
   </data>
   <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
-    <value>SEPA credit transfer</value>
+    <value>SEPA 크레딧 이체</value>
   </data>
   <data name="PayloadTypeSctBic_Text" xml:space="preserve">
-    <value>BIC beneficiary</value>
+    <value>BIC 수취인</value>
   </data>
   <data name="PayloadTypeSctName_Text" xml:space="preserve">
-    <value>Name beneficiary</value>
+    <value>수취인 이름</value>
   </data>
   <data name="PayloadTypeSctIban_Text" xml:space="preserve">
-    <value>IBAN beneficiary</value>
+    <value>IBAN 수취인</value>
   </data>
   <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
-    <value>Amount EUR</value>
+    <value>송금액(유로)</value>
   </data>
   <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
-    <value>Purpose</value>
+    <value>목적</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
-    <value>Remittance information (structured) </value>
+    <value>송금 정보(구조화됨)</value>
   </data>
   <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
-    <value>Remittance information (unstructured) </value>
+    <value>송금 정보 (비정형)</value>
   </data>
   <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
-    <value>Information</value>
+    <value>정보</value>
   </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
-    <value>IBAN is not valid.</value>
+    <value>IBAN이 유효하지 않습니다.</value>
   </data>
   <data name="ErrorAmountInvalid_Text" xml:space="preserve">
-    <value>Amount is not valid.</value>
+    <value>금액이 유효하지 않습니다.</value>
   </data>
   <data name="ErrorBicInvalid_Text" xml:space="preserve">
-    <value>BIC is not valid.</value>
+    <value>BIC 코드가 유효하지 않습니다.</value>
   </data>
   <data name="ErrorNameInvalid_Text" xml:space="preserve">
-    <value>Name is mandatory.</value>
+    <value>이름은 필수 입력 사항입니다.</value>
   </data>
   <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
-    <value>Only one of the remittance information fields may be populated.</value>
+    <value>송금 정보 항목 중 하나만 입력할 수 있습니다.</value>
   </data>
   <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
-    <value>Remittance information is not valid.</value>
+    <value>송금 정보가 유효하지 않습니다.</value>
   </data>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
-    <value>The combined length of all fields is too long. The total payload size is limited to 331 bytes.</value>
+    <value>모든 항목의 총 길이가 초과되었습니다. 전체 페이로드 크기는 331바이트로 제한됩니다.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Module size: {0}%</value>
+    <value>모듈 크기: {0}%</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
-    <value>Image border size: {0} pixels</value>
+    <value>이미지 테두리 크기: {0} 픽셀</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Quiet zone size: {0} modules</value>
+    <value>무음 영역 크기: {0} 모듈</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
-    <value>Artistic Micro QR Code</value>
+    <value>예술적인 마이크로 QR 코드</value>
   </data>
   <data name="CodeLength_Text" xml:space="preserve">
-    <value>The code should be {0} digits long (excluding the checksum digit) or {1} digits long.</value>
+    <value>코드는 체크섬 숫자를 제외하고 {0} 자리 또는 {1} 자리여야 합니다.</value>
   </data>
 </root>

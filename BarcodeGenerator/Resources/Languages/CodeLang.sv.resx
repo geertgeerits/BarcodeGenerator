@@ -292,15 +292,6 @@ Ett annat alternativ är att avinstallera och installera om programmet.</value>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Stäng applikationen.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>Koden ska vara</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(utan kontrollsiffra) eller</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>siffror långa.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Kontakt:</value>
   </data>
@@ -1037,5 +1028,8 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Artistic Micro QR-kod</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>Koden ska vara {0} siffror lång (exklusive kontrollsumman) eller {1} siffror lång.</value>
   </data>
 </root>

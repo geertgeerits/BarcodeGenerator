@@ -292,15 +292,6 @@ Outra opção é desinstalar e reinstalar o aplicativo.</value>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Feche o aplicativo.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>O código deve ter</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(sem dígito de checksum) ou</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>dígitos.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Contato:</value>
   </data>
@@ -1037,5 +1028,8 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Microcódigo QR artístico</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>O código deve ter {0} dígitos (excluindo o dígito de verificação) ou {1} dígitos.</value>
   </data>
 </root>

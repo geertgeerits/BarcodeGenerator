@@ -292,15 +292,6 @@ Další možností je odinstalovat a znovu nainstalovat aplikaci.</value>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Zavřete aplikaci.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>Kód by měl být</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(bez číslice kontrolního součtu) nebo</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>číslice dlouhé.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Kontakt:</value>
   </data>
@@ -1037,5 +1028,8 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Umělecký mikro QR kód</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>Kód by měl mít {0} číslic (bez kontrolního součtu) nebo {1} číslic.</value>
   </data>
 </root>

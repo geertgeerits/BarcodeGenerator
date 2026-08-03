@@ -292,15 +292,6 @@ En anden mulighed er at afinstallere og geninstallere programmet.</value>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Luk venligst ansøgningen.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>Koden skal være</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(uden kontrolsum ciffer) eller</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>cifre lange.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Kontakt:</value>
   </data>
@@ -1037,5 +1028,8 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Kunstnerisk mikro-QR-kode</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>Koden skal være {0} cifre lang (eksklusive checksumcifferet) eller {1} cifre lang.</value>
   </data>
 </root>

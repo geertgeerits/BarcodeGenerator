@@ -91,7 +91,7 @@ namespace BarcodeGenerator
 
                     if (nLenTextToCode < 7 || nLenTextToCode > 8)
                     {
-                        result.ErrorMessage = $"{CodeLang.CodeLengthPart1_Text} 7 {CodeLang.CodeLengthPart2_Text} 8 {CodeLang.CodeLengthPart3_Text}";
+                        result.ErrorMessage = string.Format(CodeLang.CodeLength_Text, 7, 8);
                         return result;
                     }
 
@@ -120,7 +120,7 @@ namespace BarcodeGenerator
 
                     if (nLenTextToCode < 12 || nLenTextToCode > 13)
                     {
-                        result.ErrorMessage = $"{CodeLang.CodeLengthPart1_Text} 12 {CodeLang.CodeLengthPart2_Text} 13 {CodeLang.CodeLengthPart3_Text}";
+                        result.ErrorMessage = string.Format(CodeLang.CodeLength_Text, 12, 13);
                         return result;
                     }
 
@@ -186,7 +186,7 @@ namespace BarcodeGenerator
 
                     if (nLenTextToCode < 11 || nLenTextToCode > 12)
                     {
-                        result.ErrorMessage = $"{CodeLang.CodeLengthPart1_Text} 11 {CodeLang.CodeLengthPart2_Text} 12 {CodeLang.CodeLengthPart3_Text}";
+                        result.ErrorMessage = string.Format(CodeLang.CodeLength_Text, 11, 12);
                         return result;
                     }
 
@@ -217,7 +217,7 @@ namespace BarcodeGenerator
 
                     if (nLenTextToCode < 7 || nLenTextToCode > 8)
                     {
-                        result.ErrorMessage = $"{CodeLang.CodeLengthPart1_Text} 7 {CodeLang.CodeLengthPart2_Text} 8 {CodeLang.CodeLengthPart3_Text}";
+                        result.ErrorMessage = string.Format(CodeLang.CodeLength_Text, 7, 8);
                         return result;
                     }
 
