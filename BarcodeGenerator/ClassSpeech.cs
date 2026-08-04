@@ -1,4 +1,6 @@
-﻿namespace BarcodeGenerator
+﻿using System.Text;
+
+namespace BarcodeGenerator
 {
     internal sealed class ClassSpeech
     {
@@ -14,6 +16,9 @@
         /// </summary>
         public static async Task<bool> InitializeTextToSpeechAsync()
         {
+            // Dump the available locales to a text file for debugging purposes
+            //await DumpLocalesToFileAsync();
+
             try
             {
                 // Initialize text to speech
@@ -31,6 +36,15 @@
                 cLanguageLocales = new string[nTotalItems];
                 int nItem = 0;
 
+#if ANDROID
+                // Populate the locales with the Id for Android because the Id is needed to select the correct voice for text-to-speech
+                // starting with Samsung S25 ???
+                foreach (Locale l in locales)
+                {
+                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} : {l.Id}";
+                    nItem++;
+                }
+#else
                 foreach (Locale l in locales)
                 {
                     cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
@@ -51,7 +65,7 @@
                 }
 
                 cLanguageLocales = [.. uniqueLocales];
-
+#endif
                 // Sort the locales
                 Array.Sort(cLanguageLocales);
 
@@ -258,7 +272,11 @@
 
                     SpeechOptions options = new()
                     {
+#if ANDROID
+                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name} : {l.Id}" == Globals.cLanguageSpeech)
+#else
                         Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
+#endif
                     };
 
                     await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
@@ -294,6 +312,120 @@
             }
 
             return Globals.cImageTextToSpeech;
+        }
+
+        /// <summary>
+        /// Dump the available locales to a text file for debugging purposes
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        public static async Task<string> DumpLocalesToFileAsync(string? filename = null)
+        {
+            try
+            {
+                var localesList = locales ?? await TextToSpeech.Default.GetLocalesAsync();
+
+                string appDir = Microsoft.Maui.Storage.FileSystem.AppDataDirectory;
+                filename ??= Path.Combine(appDir, $"tts_locales_{Microsoft.Maui.Devices.DeviceInfo.Model}_{DateTime.UtcNow:yyyyMMdd_HHmmss}.txt");
+
+                var sb = new StringBuilder();
+                sb.AppendLine($"DeviceManufacturer: {Microsoft.Maui.Devices.DeviceInfo.Manufacturer}");
+                sb.AppendLine($"DeviceModel: {Microsoft.Maui.Devices.DeviceInfo.Model}");
+                sb.AppendLine($"Platform: {Microsoft.Maui.Devices.DeviceInfo.Platform}");
+                sb.AppendLine($"OSVersion: {Microsoft.Maui.Devices.DeviceInfo.VersionString}");
+                sb.AppendLine($"TimestampUtc: {DateTime.UtcNow:o}");
+                sb.AppendLine($"LocalesCount: {localesList?.Count() ?? 0}");
+                sb.AppendLine(new string('-', 60));
+
+                foreach (var l in localesList)
+                {
+                    // include both the raw properties and the display string used by the app
+                    sb.AppendLine($"Id: {l.Id}");
+                    sb.AppendLine($"Language: {l.Language}");
+                    sb.AppendLine($"Country: {l.Country}");
+                    sb.AppendLine($"Name: {l.Name}");
+                    sb.AppendLine($"Display: {l.Language}-{l.Country} {l.Name} : {l.Id}");
+                    sb.AppendLine(new string('-', 20));
+                }
+
+                // Write the locales to a text file
+                await File.WriteAllTextAsync(filename, sb.ToString(), Encoding.UTF8);
+
+                // Open the share interface to allow the user to share or save the file
+                await ClassFileUtilities.OpenShareInterfaceAsync(filename);
+
+                return filename;
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+                Debug.WriteLine($"DumpLocalesToFileAsync error: {ex.Message}");
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Compare two locale dump files and output the differences to a new file
+        /// </summary>
+        /// <param name="fileA"></param>
+        /// <param name="fileB"></param>
+        /// <param name="outFilename"></param>
+        /// <returns></returns>
+        public static async Task<string> CompareLocaleDumpFilesAsync(string fileA, string fileB, string? outFilename = null)
+        {
+            try
+            {
+                var linesA = await File.ReadAllLinesAsync(fileA);
+                var linesB = await File.ReadAllLinesAsync(fileB);
+
+                // Extract Id lines (fall back to Display lines if Id not present)
+                static IEnumerable<string> ExtractKeys(string[] lines)
+                {
+                    foreach (var line in lines)
+                    {
+                        if (line.StartsWith("Id: "))
+                            yield return line.Substring(4).Trim();
+                    }
+                    // if no Id lines found, try Display
+                    if (!lines.Any(l => l.StartsWith("Id: ")))
+                    {
+                        foreach (var line in lines)
+                        {
+                            if (line.StartsWith("Display: "))
+                                yield return line.Substring(9).Trim();
+                        }
+                    }
+                }
+
+                var setA = new HashSet<string>(ExtractKeys(linesA));
+                var setB = new HashSet<string>(ExtractKeys(linesB));
+
+                var onlyInA = setA.Except(setB).OrderBy(x => x).ToList();
+                var onlyInB = setB.Except(setA).OrderBy(x => x).ToList();
+                var inBoth = setA.Intersect(setB).OrderBy(x => x).ToList();
+
+                string appDir = Microsoft.Maui.Storage.FileSystem.AppDataDirectory;
+                outFilename ??= Path.Combine(appDir, $"tts_locales_diff_{DateTime.UtcNow:yyyyMMdd_HHmmss}.txt");
+
+                var sb = new StringBuilder();
+                sb.AppendLine($"Compare: {Path.GetFileName(fileA)}  vs  {Path.GetFileName(fileB)}");
+                sb.AppendLine($"TimestampUtc: {DateTime.UtcNow:o}");
+                sb.AppendLine($"Count A: {setA.Count}, Count B: {setB.Count}");
+                sb.AppendLine($"In both: {inBoth.Count}");
+                sb.AppendLine($"Only in A: {onlyInA.Count}");
+                foreach (var k in onlyInA) sb.AppendLine($"  - {k}");
+                sb.AppendLine($"Only in B: {onlyInB.Count}");
+                foreach (var k in onlyInB) sb.AppendLine($"  - {k}");
+
+                await File.WriteAllTextAsync(outFilename, sb.ToString(), Encoding.UTF8);
+                return outFilename;
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+                Debug.WriteLine($"CompareLocaleDumpFilesAsync error: {ex.Message}");
+                throw;
+            }
         }
     }
 }
