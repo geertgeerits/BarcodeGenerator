@@ -1,4 +1,4 @@
-﻿using System.Text;
+﻿//using System.Text;
 
 namespace BarcodeGenerator
 {
@@ -331,55 +331,55 @@ namespace BarcodeGenerator
             return Globals.cImageTextToSpeech;
         }
 
-        /// <summary>
-        /// Dump the available locales to a text file for debugging purposes
-        /// </summary>
-        /// <param name="filename"></param>
-        /// <returns></returns>
-        public static async Task<string> DumpLocalesToFileAsync(string? filename = null)
-        {
-            try
-            {
-                IEnumerable<Locale>? localesList = locales ?? await TextToSpeech.Default.GetLocalesAsync();
+        ///// <summary>
+        ///// Dump the available locales to a text file for debugging purposes
+        ///// </summary>
+        ///// <param name="filename"></param>
+        ///// <returns></returns>
+        //public static async Task<string> DumpLocalesToFileAsync(string? filename = null)
+        //{
+        //    try
+        //    {
+        //        IEnumerable<Locale>? localesList = locales ?? await TextToSpeech.Default.GetLocalesAsync();
 
-                string appDir = Microsoft.Maui.Storage.FileSystem.AppDataDirectory;
-                filename ??= Path.Combine(appDir, $"tts_locales_{Microsoft.Maui.Devices.DeviceInfo.Model}_{DateTime.UtcNow:yyyyMMdd_HHmmss}.txt");
+        //        string appDir = Microsoft.Maui.Storage.FileSystem.AppDataDirectory;
+        //        filename ??= Path.Combine(appDir, $"tts_locales_{Microsoft.Maui.Devices.DeviceInfo.Model}_{DateTime.UtcNow:yyyyMMdd_HHmmss}.txt");
 
-                StringBuilder sb = new();
-                sb.AppendLine($"DeviceManufacturer: {Microsoft.Maui.Devices.DeviceInfo.Manufacturer}");
-                sb.AppendLine($"DeviceModel: {Microsoft.Maui.Devices.DeviceInfo.Model}");
-                sb.AppendLine($"Platform: {Microsoft.Maui.Devices.DeviceInfo.Platform}");
-                sb.AppendLine($"OSVersion: {Microsoft.Maui.Devices.DeviceInfo.VersionString}");
-                sb.AppendLine($"TimestampUtc: {DateTime.UtcNow:o}");
-                sb.AppendLine($"LocalesCount: {localesList?.Count() ?? 0}");
-                sb.AppendLine(new string('-', 60));
+        //        StringBuilder sb = new();
+        //        sb.AppendLine($"DeviceManufacturer: {Microsoft.Maui.Devices.DeviceInfo.Manufacturer}");
+        //        sb.AppendLine($"DeviceModel: {Microsoft.Maui.Devices.DeviceInfo.Model}");
+        //        sb.AppendLine($"Platform: {Microsoft.Maui.Devices.DeviceInfo.Platform}");
+        //        sb.AppendLine($"OSVersion: {Microsoft.Maui.Devices.DeviceInfo.VersionString}");
+        //        sb.AppendLine($"TimestampUtc: {DateTime.UtcNow:o}");
+        //        sb.AppendLine($"LocalesCount: {localesList?.Count() ?? 0}");
+        //        sb.AppendLine(new string('-', 60));
 
-                foreach (Locale l in localesList)
-                {
-                    // include both the raw properties and the display string used by the app
-                    sb.AppendLine($"Id: {l.Id}");
-                    sb.AppendLine($"Language: {l.Language}");
-                    sb.AppendLine($"Country: {l.Country}");
-                    sb.AppendLine($"Name: {l.Name}");
-                    sb.AppendLine($"Display: {l.Language}-{l.Country} {l.Name} : {l.Id}");
-                    sb.AppendLine(new string('-', 20));
-                }
+        //        foreach (Locale l in localesList)
+        //        {
+        //            // include both the raw properties and the display string used by the app
+        //            sb.AppendLine($"Id: {l.Id}");
+        //            sb.AppendLine($"Language: {l.Language}");
+        //            sb.AppendLine($"Country: {l.Country}");
+        //            sb.AppendLine($"Name: {l.Name}");
+        //            sb.AppendLine($"Display: {l.Language}-{l.Country} {l.Name} : {l.Id}");
+        //            sb.AppendLine(new string('-', 20));
+        //        }
 
-                // Write the locales to a text file
-                await File.WriteAllTextAsync(filename, sb.ToString(), Encoding.UTF8);
+        //        // Write the locales to a text file
+        //        await File.WriteAllTextAsync(filename, sb.ToString(), Encoding.UTF8);
 
-                // Open the share interface to allow the user to share or save the file
-                await ClassFileUtilities.OpenShareInterfaceAsync(filename);
+        //        // Open the share interface to allow the user to share or save the file
+        //        await ClassFileUtilities.OpenShareInterfaceAsync(filename);
 
-                return filename;
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureException(ex);
-                Debug.WriteLine($"DumpLocalesToFileAsync error: {ex.Message}");
-                throw;
-            }
-        }
+        //        return filename;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        SentrySdk.CaptureException(ex);
+        //        Debug.WriteLine($"DumpLocalesToFileAsync error: {ex.Message}");
+        //        throw;
+        //    }
+        //}
 
         ///// <summary>
         ///// Compare two locale dump files and output the differences to a new file
