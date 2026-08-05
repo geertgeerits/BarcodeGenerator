@@ -37,35 +37,48 @@ namespace BarcodeGenerator
                 int nItem = 0;
 
 #if ANDROID
-                // Populate the locales with the Id for Android because the Id is needed to select the correct voice for text-to-speech
-                // starting with Samsung S25 ???
+                /*
+                Populate the locales with the Id for Android because the Id is needed to select the correct voice for text-to-speech
+                starting with Samsung S25 ???
+                Possible causes
+                - The S25 likely ships with a different TTS engine / voice set than the S21 (Samsung vs Google/other).
+                  If a language voice is not installed by that engine, those languages will fail.
+                - Newer Android / OEM changes can use different locale IDs or voice names; exact string matching in your app can fail
+                  (so locale exists but your match logic misses it).
+                - Some voices are optional downloads or “neural” voices that must be installed or enabled in Settings → General
+                  management → Text-to-speech → Install voice data.
+                - Manufacturer/OS bugs or changed permissions on newer builds (rare) — check adb logcat for TTS errors.                 
+                */
                 foreach (Locale l in locales)
                 {
                     cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} : {l.Id}";
                     nItem++;
                 }
-#else
+
+#elif IOS
+                // Exclude the voices that contain 'synthesis.voice' in the Id because they are not real voices and stupid
+                foreach (Locale l in locales)
+                {
+                    if (!l.Id.Contains("synthesis.voice"))
+                    {
+                        cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
+                        nItem++;
+                    }
+                }
+
+#else           // Windows and other platforms
                 foreach (Locale l in locales)
                 {
                     cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
                     nItem++;
                 }
-
-                // Remove the items in the array where the 5 first characters are duplicates of the first occurring 5 characters
-                List<string> uniqueLocales = [];
-                HashSet<string> seenPrefixes = [];
-
-                foreach (string item in cLanguageLocales)
+#endif
+                // Shrink the array to the number of items actually written (handles iOS branch skipping entries)
+                if (nItem < cLanguageLocales.Length)
                 {
-                    string prefix = item[..5];
-                    if (seenPrefixes.Add(prefix))
-                    {
-                        uniqueLocales.Add(item);
-                    }
+                    Array.Resize(ref cLanguageLocales, nItem);
                 }
 
-                cLanguageLocales = [.. uniqueLocales];
-#endif
                 // Sort the locales
                 Array.Sort(cLanguageLocales);
 
@@ -247,12 +260,17 @@ namespace BarcodeGenerator
             // Cancel the text to speech
             if (Globals.bTextToSpeechIsBusy)
             {
-                if (cts?.IsCancellationRequested ?? true)
+                if (cts != null && !cts.IsCancellationRequested)
                 {
-                    return;
+                    // Cancel outstanding speech and give it a short moment to settle
+                    cts.Cancel();
+                    await Task.Delay(100);
                 }
-
-                cts.Cancel();
+                else
+                {
+                    // No cancellable token present — clear busy flag so we can proceed
+                    Globals.bTextToSpeechIsBusy = false;
+                }
             }
 
             ImageButton imageButton = (ImageButton)sender;
@@ -302,12 +320,11 @@ namespace BarcodeGenerator
         {
             if (Globals.bTextToSpeechIsBusy)
             {
-                if (cts?.IsCancellationRequested ?? true)
+                if (cts != null && !cts.IsCancellationRequested)
                 {
-                    return Globals.cImageTextToSpeechCancel;
+                    cts.Cancel();
                 }
 
-                cts.Cancel();
                 Globals.bTextToSpeechIsBusy = false;
             }
 
@@ -323,12 +340,12 @@ namespace BarcodeGenerator
         {
             try
             {
-                var localesList = locales ?? await TextToSpeech.Default.GetLocalesAsync();
+                IEnumerable<Locale>? localesList = locales ?? await TextToSpeech.Default.GetLocalesAsync();
 
                 string appDir = Microsoft.Maui.Storage.FileSystem.AppDataDirectory;
                 filename ??= Path.Combine(appDir, $"tts_locales_{Microsoft.Maui.Devices.DeviceInfo.Model}_{DateTime.UtcNow:yyyyMMdd_HHmmss}.txt");
 
-                var sb = new StringBuilder();
+                StringBuilder sb = new();
                 sb.AppendLine($"DeviceManufacturer: {Microsoft.Maui.Devices.DeviceInfo.Manufacturer}");
                 sb.AppendLine($"DeviceModel: {Microsoft.Maui.Devices.DeviceInfo.Model}");
                 sb.AppendLine($"Platform: {Microsoft.Maui.Devices.DeviceInfo.Platform}");
@@ -337,7 +354,7 @@ namespace BarcodeGenerator
                 sb.AppendLine($"LocalesCount: {localesList?.Count() ?? 0}");
                 sb.AppendLine(new string('-', 60));
 
-                foreach (var l in localesList)
+                foreach (Locale l in localesList)
                 {
                     // include both the raw properties and the display string used by the app
                     sb.AppendLine($"Id: {l.Id}");
@@ -364,68 +381,68 @@ namespace BarcodeGenerator
             }
         }
 
-        /// <summary>
-        /// Compare two locale dump files and output the differences to a new file
-        /// </summary>
-        /// <param name="fileA"></param>
-        /// <param name="fileB"></param>
-        /// <param name="outFilename"></param>
-        /// <returns></returns>
-        public static async Task<string> CompareLocaleDumpFilesAsync(string fileA, string fileB, string? outFilename = null)
-        {
-            try
-            {
-                var linesA = await File.ReadAllLinesAsync(fileA);
-                var linesB = await File.ReadAllLinesAsync(fileB);
+        ///// <summary>
+        ///// Compare two locale dump files and output the differences to a new file
+        ///// </summary>
+        ///// <param name="fileA"></param>
+        ///// <param name="fileB"></param>
+        ///// <param name="outFilename"></param>
+        ///// <returns></returns>
+        //public static async Task<string> CompareLocaleDumpFilesAsync(string fileA, string fileB, string? outFilename = null)
+        //{
+        //    try
+        //    {
+        //        string[] linesA = await File.ReadAllLinesAsync(fileA);
+        //        string[] linesB = await File.ReadAllLinesAsync(fileB);
 
-                // Extract Id lines (fall back to Display lines if Id not present)
-                static IEnumerable<string> ExtractKeys(string[] lines)
-                {
-                    foreach (var line in lines)
-                    {
-                        if (line.StartsWith("Id: "))
-                            yield return line.Substring(4).Trim();
-                    }
-                    // if no Id lines found, try Display
-                    if (!lines.Any(l => l.StartsWith("Id: ")))
-                    {
-                        foreach (var line in lines)
-                        {
-                            if (line.StartsWith("Display: "))
-                                yield return line.Substring(9).Trim();
-                        }
-                    }
-                }
+        //        // Extract Id lines (fall back to Display lines if Id not present)
+        //        static IEnumerable<string> ExtractKeys(string[] lines)
+        //        {
+        //            foreach (string line in lines)
+        //            {
+        //                if (line.StartsWith("Id: "))
+        //                    yield return line.Substring(4).Trim();
+        //            }
+        //            // if no Id lines found, try Display
+        //            if (!lines.Any(l => l.StartsWith("Id: ")))
+        //            {
+        //                foreach (string line in lines)
+        //                {
+        //                    if (line.StartsWith("Display: "))
+        //                        yield return line.Substring(9).Trim();
+        //                }
+        //            }
+        //        }
 
-                var setA = new HashSet<string>(ExtractKeys(linesA));
-                var setB = new HashSet<string>(ExtractKeys(linesB));
+        //        HashSet<string> setA = new(ExtractKeys(linesA));
+        //        HashSet<string> setB = new(ExtractKeys(linesB));
 
-                var onlyInA = setA.Except(setB).OrderBy(x => x).ToList();
-                var onlyInB = setB.Except(setA).OrderBy(x => x).ToList();
-                var inBoth = setA.Intersect(setB).OrderBy(x => x).ToList();
+        //        List<string> onlyInA = setA.Except(setB).OrderBy(x => x).ToList();
+        //        List<string> onlyInB = setB.Except(setA).OrderBy(x => x).ToList();
+        //        List<string> inBoth = setA.Intersect(setB).OrderBy(x => x).ToList();
 
-                string appDir = Microsoft.Maui.Storage.FileSystem.AppDataDirectory;
-                outFilename ??= Path.Combine(appDir, $"tts_locales_diff_{DateTime.UtcNow:yyyyMMdd_HHmmss}.txt");
+        //        string appDir = Microsoft.Maui.Storage.FileSystem.AppDataDirectory;
+        //        outFilename ??= Path.Combine(appDir, $"tts_locales_diff_{DateTime.UtcNow:yyyyMMdd_HHmmss}.txt");
 
-                var sb = new StringBuilder();
-                sb.AppendLine($"Compare: {Path.GetFileName(fileA)}  vs  {Path.GetFileName(fileB)}");
-                sb.AppendLine($"TimestampUtc: {DateTime.UtcNow:o}");
-                sb.AppendLine($"Count A: {setA.Count}, Count B: {setB.Count}");
-                sb.AppendLine($"In both: {inBoth.Count}");
-                sb.AppendLine($"Only in A: {onlyInA.Count}");
-                foreach (var k in onlyInA) sb.AppendLine($"  - {k}");
-                sb.AppendLine($"Only in B: {onlyInB.Count}");
-                foreach (var k in onlyInB) sb.AppendLine($"  - {k}");
+        //        StringBuilder sb = new();
+        //        sb.AppendLine($"Compare: {Path.GetFileName(fileA)}  vs  {Path.GetFileName(fileB)}");
+        //        sb.AppendLine($"TimestampUtc: {DateTime.UtcNow:o}");
+        //        sb.AppendLine($"Count A: {setA.Count}, Count B: {setB.Count}");
+        //        sb.AppendLine($"In both: {inBoth.Count}");
+        //        sb.AppendLine($"Only in A: {onlyInA.Count}");
+        //        foreach (string k in onlyInA) sb.AppendLine($"  - {k}");
+        //        sb.AppendLine($"Only in B: {onlyInB.Count}");
+        //        foreach (string k in onlyInB) sb.AppendLine($"  - {k}");
 
-                await File.WriteAllTextAsync(outFilename, sb.ToString(), Encoding.UTF8);
-                return outFilename;
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureException(ex);
-                Debug.WriteLine($"CompareLocaleDumpFilesAsync error: {ex.Message}");
-                throw;
-            }
-        }
+        //        await File.WriteAllTextAsync(outFilename, sb.ToString(), Encoding.UTF8);
+        //        return outFilename;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        SentrySdk.CaptureException(ex);
+        //        Debug.WriteLine($"CompareLocaleDumpFilesAsync error: {ex.Message}");
+        //        throw;
+        //    }
+        //}
     }
 }
