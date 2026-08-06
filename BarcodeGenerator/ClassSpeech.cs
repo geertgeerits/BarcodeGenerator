@@ -36,6 +36,12 @@ namespace BarcodeGenerator
                 cLanguageLocales = new string[nTotalItems];
                 int nItem = 0;
 
+                // Define a set of allowed languages to filter the locales
+                HashSet<string> allowedLanguages =
+                [
+                    with(StringComparer.OrdinalIgnoreCase), "cs","da","de","en","es","fi","fr","hu","it","ja","ko","nb","nl","pl","pt","ro","sv"
+                ];
+
 #if ANDROID
                 /*
                 Populate the locales with the Id for Android because the Id is needed to select the correct voice for text-to-speech
@@ -47,19 +53,40 @@ namespace BarcodeGenerator
                   (so locale exists but your match logic misses it).
                 - Some voices are optional downloads or “neural” voices that must be installed or enabled in Settings → General
                   management → Text-to-speech → Install voice data.
-                - Manufacturer/OS bugs or changed permissions on newer builds (rare) — check adb logcat for TTS errors.                 
+                - Manufacturer/OS bugs or changed permissions on newer builds (rare) — check adb logcat for TTS errors.
+                */
+                /*
+                Id: en-us-x-tpf-local
+                Language: en
+                Country: US
+                Name: English (United States)
+                Display: en-US English (United States)
                 */
                 foreach (Locale l in locales)
                 {
-                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} : {l.Id}";
-                    nItem++;
+                    if (allowedLanguages.Contains(l.Language))
+                    {
+                        cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} : {l.Id}";
+                        nItem++;
+                    }
                 }
 
 #elif IOS
+                // l.Language can be "en" or "en-US" (or "en_US") so we use the l.Country anyway if in the future the l.Country is needed for the voice selection
                 // Exclude the voices that contain 'synthesis.voice' in the Id because they are not real voices and stupid
+                /*
+                Id: com.apple.eloquence.en-US.Eddy
+                Language: en-US
+                Country: 
+                Name: Eddy
+                Display: en-US- Eddy : com.apple.eloquence.en-US.Eddy
+                */
                 foreach (Locale l in locales)
                 {
-                    if (!l.Id.Contains("synthesis.voice"))
+                    string lang = l.Language ?? string.Empty;
+                    string primary = lang.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
+
+                    if ((allowedLanguages.Contains(lang) || allowedLanguages.Contains(primary)) && !l.Id.Contains("synthesis.voice"))
                     {
                         cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
                         nItem++;
@@ -67,10 +94,25 @@ namespace BarcodeGenerator
                 }
 
 #else           // Windows and other platforms
+                // l.Language can be "en" or "en-US" (or "en_US") so we use the l.Country anyway if in the future the l.Country is needed for the voice selection
+                /*
+                Id: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM
+                Language: en-US
+                Country: 
+                Name: Microsoft David
+                Display: en-US- Microsoft David : HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM
+                */
                 foreach (Locale l in locales)
                 {
-                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
-                    nItem++;
+                    // l.Language can be "en" or "en-US" (or "en_US")
+                    string lang = l.Language ?? string.Empty;
+                    string primary = lang.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
+
+                    if (allowedLanguages.Contains(lang) || allowedLanguages.Contains(primary))
+                    {
+                        cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
+                        nItem++;
+                    }
                 }
 #endif
                 // Shrink the array to the number of items actually written (handles iOS branch skipping entries)
