@@ -76,6 +76,7 @@
 
         <Button
             x:Name="btnButtonClose"
+            x:FieldModifier="public"
             Grid.Row="2"
             Grid.Column="1"
             HorizontalOptions="End"

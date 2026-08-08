@@ -258,6 +258,7 @@ namespace BarcodeGenerator
                     PopupMessage popupMessage = new(3, "", CodeLang.TextToSpeechError_Text);
                     popupMessage.lblPopupTitle.IsVisible = false;
                     popupMessage.btnButtonCancel.IsVisible = false;
+                    popupMessage.btnButtonClose.Text = CodeLang.ButtonClose_Text;
 
                     Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
                     if (currentPage != null)
