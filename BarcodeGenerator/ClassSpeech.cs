@@ -1,4 +1,5 @@
 ﻿//using System.Text;
+using CommunityToolkit.Maui.Extensions;
 
 namespace BarcodeGenerator
 {
@@ -195,7 +196,6 @@ namespace BarcodeGenerator
 
             try
             {
-                int nTotalItems = cLanguageLocales?.Length ?? 0;
                 int index;
 
                 if (cLanguageLocales is not null)
@@ -252,8 +252,20 @@ namespace BarcodeGenerator
                 }
 
                 // If the language is not found use the first language in the array
-                if (string.IsNullOrEmpty(Globals.cLanguageSpeech) && nTotalItems > 0)
+                if (cLanguageLocales?.Length > 0)
                 {
+                    // Show a popup message to the user
+                    PopupMessage popupMessage = new(3, "", CodeLang.TextToSpeechError_Text);
+                    popupMessage.lblPopupTitle.IsVisible = false;
+                    popupMessage.btnButtonCancel.IsVisible = false;
+
+                    Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+                    if (currentPage != null)
+                    {
+                        _ = currentPage.ShowPopupAsync(popupMessage);
+                    }
+
+                    // Select the first language in the array
                     Globals.cLanguageSpeech = cLanguageLocales![0];
                     return 0;
                 }

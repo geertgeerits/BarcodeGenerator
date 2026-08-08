@@ -29,6 +29,7 @@
 
         <Label
             x:Name="lblPopupTitle"
+            x:FieldModifier="public"
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2"
@@ -59,6 +60,7 @@
 
         <Button
             x:Name="btnButtonCancel"
+            x:FieldModifier="public"
             Grid.Row="2"
             Grid.Column="0"
             HorizontalOptions="Start"
