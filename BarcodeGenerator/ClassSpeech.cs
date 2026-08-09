@@ -255,16 +255,7 @@ namespace BarcodeGenerator
                 if (cLanguageLocales?.Length > 0)
                 {
                     // Show a popup message to the user
-                    PopupMessage popupMessage = new(3, "", CodeLang.TextToSpeechError_Text);
-                    popupMessage.lblPopupTitle.IsVisible = false;
-                    popupMessage.btnButtonCancel.IsVisible = false;
-                    popupMessage.btnButtonClose.Text = CodeLang.ButtonClose_Text;
-
-                    Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
-                    if (currentPage != null)
-                    {
-                        _ = currentPage.ShowPopupAsync(popupMessage);
-                    }
+                    Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.TextToSpeechError_Text, CodeLang.ButtonClose_Text);
 
                     // Select the first language in the array
                     Globals.cLanguageSpeech = cLanguageLocales![0];
