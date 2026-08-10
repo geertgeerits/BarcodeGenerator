@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Agree_Text" xml:space="preserve">
+    <value>Kabul Et</value>
+  </data>
+  <data name="Barcode_AllCodes_Text" xml:space="preserve">
+    <value>Tüm kodlar</value>
+  </data>
+  <data name="AllowedCharNot_Text" xml:space="preserve">
+    <value>İzin Verilmeyenler:</value>
+  </data>
+  <data name="AllowedChar_Text" xml:space="preserve">
+    <value>İzin Verilen Karakterler:</value>
+  </data>
+  <data name="BackgroundColor_Text" xml:space="preserve">
+    <value>Arka plan rengi:</value>
+  </data>
+  <data name="BackgroundOpacity_Text" xml:space="preserve">
+    <value>Arka plan şeffaflığı:</value>
+  </data>
+  <data name="BarcodeGenerator_Text" xml:space="preserve">
+    <value>Oluşturucu</value>
+  </data>
+  <data name="BarcodeScanner_Text" xml:space="preserve">
+    <value>Tarayıcı</value>
+  </data>
+  <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
+    <value>Aztek Kodu</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
+    <value>Kod 39 modül 10 sağlama toplamı</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
+    <value>Kod 39 modül 43 sağlama toplamı</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
+    <value>Kod 39 tam ASCII sağlama toplamı</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
+    <value>Kod 39 tam ASCII</value>
+  </data>
+  <data name="Barcode_CODE_39_Text" xml:space="preserve">
+    <value>Kod 39</value>
+  </data>
+  <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
+    <value>Kod 93i</value>
+  </data>
+  <data name="Barcode_CODE_93_Text" xml:space="preserve">
+    <value>Kod 93</value>
+  </data>
+  <data name="Barcode_CODE_128_Text" xml:space="preserve">
+    <value>Kod 128</value>
+  </data>
+  <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
+    <value>Kompakt PDF417</value>
+  </data>
+  <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
+    <value>Çerçeve QR Kodu</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar genişletilmiş istiflenmiş</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>GS1 Databar genişletilmiş</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 Databar sınırlı</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar çok yönlü</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar istiflenmiş çok yönlü</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar istiflenmiş</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>IMb Akıllı Posta</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>ISBN Uluslararası Standart Kitap Numarası</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF-14 Aralıklı 2/5</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>ITF Aralıklı 2/5 sağlama toplamı</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF Aralıklı 2/5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Micro QR Kodu</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI Modifiye Plessey</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN Pharma Central Numarası</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>QR Kodu Model 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>QR Kodu Model 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>QR Kodu</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>RMQR Dikdörtgen Mikro QR Kodu</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>Genişletilmiş RSS</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>UPC-EAN Uzantısı</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>Dinle</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>Sonraki</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>Metni paylaş</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>Paylaş</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>Konuş</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Kamera bulunamadı.</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Kamera kullanım izni verilmemişse, cihaz ayarlarından kamerayı etkinleştirebilirsiniz; uygulamayı seçin ve kamerayı açın.
+Diğer bir seçenek ise uygulamayı kaldırıp yeniden yüklemektir.</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Bu kamera bu kaliteyi desteklemiyor. Kaliteyi düşürün.</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>En Yüksek</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Yüksek</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>En Düşük</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Düşük</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Kalite</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>Kod yanlış.</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>Temizle</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Lütfen uygulamayı kapatın.</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>İletişim:</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>Telif Hakkı</value>
+  </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Sorunları gidermemize yardımcı olmak için, uygulama yeniden başlatıldığında anonim çökme ve hata raporları gönderilecektir.
+Raporlar, cihaz özellikleri, işletim sistemi, uygulama sürümü, zaman damgası ve anonim kurulum tanımlayıcısı dahil olmak üzere çökme veya hata hakkında bilgi içerir.
+Veriler, yalnızca uygulamayı geliştirmemize yardımcı olmak amacıyla toplanır ve herhangi bir kişisel bilgi içermez. Başka hiçbir veri toplanmaz.
+Anonim çökme ve hata raporları Microsoft Uygulama Merkezi'nde saklanır.
+Uygulamanın geliştiricisi dışında hiç kimseyle paylaşılmazlar.
+Rapor verileri 28 gün boyunca saklanır.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Gizlilik Bildirimi: Sentry ile Çökme Raporlaması.
+
+Barkod Oluşturucu, uygulamamızın kararlılığını ve performansını iyileştirmek amacıyla çökme raporlarını toplamak ve yönetmek için üçüncü taraf bir hizmet olan Sentry'yi kullanmaktadır. Gizliliğinizi korumaya ve verilerinizin nasıl işlendiği konusunda şeffaflık sağlamaya kararlıyız.
+
+Hangi veriler toplanır:
+Bu uygulamada bir çökme meydana geldiğinde, aşağıdakiler de dahil olmak üzere ancak bunlarla sınırlı olmamak üzere belirli bilgiler toplanabilir ve Sentry'ye iletilebilir:
+Model, işletim sistemi sürümü ve donanım yapılandırması gibi cihaz bilgileri.
+Çökmeden önceki uygulama günlükleri ve hata mesajları.
+Kullanıcı eylemleri de dahil olmak üzere, çökme anındaki uygulamanın durumu hakkında bilgiler.
+
+Bu verileri nasıl kullanıyoruz:
+Sentry tarafından toplanan veriler, yalnızca uygulamamızdaki hataları ve sorunları belirlemek ve düzeltmek amacıyla kullanılır. Bu bilgiler, çökmelerin temel nedenlerini anlamamıza yardımcı olarak kullanıcılarımız için daha istikrarlı ve güvenilir bir deneyim sunmamızı sağlar.
+
+Veri güvenliği ve saklama:
+Verilerinizin güvenliğini ciddiye alıyoruz. Sentry, toplanan bilgileri yetkisiz erişim veya ifşadan korumak için sektör standardı güvenlik önlemleri kullanmaktadır.
+
+Sentry tarafından toplanan kaza raporları, Sentry'nin veri saklama politikalarına uygun olarak (bu uygulama için 30 gün) saklanabilir. Sentry'nin veri işleme uygulamaları hakkında daha fazla bilgi için lütfen https://sentry.io/welcome/ adresindeki Gizlilik Politikasına bakın.
+
+Onayınız:
+Bu uygulamayı kullanarak, bu gizlilik bildiriminde açıklandığı gibi Sentry tarafından kaza raporu verilerinin toplanmasına ve işlenmesine onay vermiş olursunuz.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Çökme ve hata raporları:</value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Varsayılan format oluşturucu:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Varsayılan format tarayıcı:</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>Varsayılan</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>Çeşitli barkodları oluşturun ve tarayın.</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>Katılmıyorum</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>E-posta:</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>İlk rakam 0 olmalıdır.</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>Ön plan rengi:</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Ön plan saydamlığı:</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Biçim:</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>Bir biçim seçin:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>şu anda desteklenmiyor.</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>Biçim</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>Oluştur</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>Geçersiz başlangıç/bitiş karakteri:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>Bitiş karakteri eksik.</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>Başlangıç ​​karakteri eksik.</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Onaltılık renk kodları:
+
+1-2. Karakterler: Opaklık/Saydamlık
+3-4. Karakterler: Kırmızı
+5-6. Karakterler: Yeşil
+7-8. Karakterler: Mavi</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Metinden sese dönüştürme: Uygulama ayarlarında belirtilen tüm diller desteklenmemektedir.
+Sesden metne dönüştürme: Cihaz ayarlarınızdan etkinleştirin. Sanal klavyede bir mikrofon simgesi görünecektir.
+Bu seçeneklerin her ikisi de cihazdan cihaza ve yüklü dillere bağlıdır. Bazı diller için, sese ve sesten metne çeviri ilgili hizmetler tarafından internet üzerinden yapılabilir.
+
+Metin çevirisi için Google Translate kullanılmıştır. Bu, tüm çevirilerin doğru olduğunun garantisi değildir.
+Desteklenen diller: Çekçe, Danca, Felemenkçe, İngilizce, Fince, Fransızca, Almanca, Macarca, İtalyanca, Norveççe, Lehçe, Portekizce, Romence, İspanyolca ve İsveççe.
+
+Herhangi bir düzeltme için her zaman benimle iletişime geçebilirsiniz.</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>QR kodu, içerdiği karakter sayısına ve ayarlarda tanımlanan maksimum piksel boyutuna bağlı olarak sabit veya değişken piksel boyutunda oluşturulur.
+Bir resim (logo) QR kodunun üzerine yerleştirildiğinde, ortalanır ve QR kodunun boyutunun %10 ile %35'i arasında ölçeklendirilir. Bu aralık ayarlarda ayarlanabilir. Görünürlüğü artırmak için bir kenarlık eklenir.
+Sanatsal QR kodu, gradyanlar, özel şekiller, renkler, ön plan resmi (logo) ve arka plan resmi gibi seçeneklerle oldukça özelleştirilebilir. Bu durumda, arka plan opaklığı %0 ile %100'den az arasında ayarlanmalıdır (ayarlara bakın).
+En iyi sonuçlar için, kare resimler kullanın ve aşırı yeniden boyutlandırmayı önlemek için resim boyutuyla denemeler yapın. Tercih edilen dosya biçimleri PNG (isteğe bağlı olarak şeffaf arka planlı) veya JPEG'dir.</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Bilgi</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Dil konuşması:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>Dil:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>Giriş verilerinin uzunluğu çift sayı olmalıdır.</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>Yazılım, satılabilirlik, belirli bir amaca uygunluk ve ihlal etmeme garantileri de dahil ancak bunlarla sınırlı olmamak üzere, açık veya zımni hiçbir garanti verilmeksizin "olduğu gibi" sağlanmaktadır. Hiçbir durumda yazar ve/veya yayıncı, yazılımdan veya yazılımın kullanımından veya yazılımla ilgili diğer işlemlerden kaynaklanan, sözleşme, haksız fiil veya başka bir şekilde ortaya çıkan herhangi bir talep, zarar veya diğer yükümlülükten sorumlu tutulamaz.</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>.NET MAUI uygulamaları için barkod tarama ve oluşturma.
+MIT Lisansı:
+Bu yazılımın ve ilgili dokümantasyon dosyalarının ("Yazılım") bir kopyasını edinen herhangi bir kişiye, Yazılımı kısıtlama olmaksızın kullanma, kopyalama, değiştirme, birleştirme, yayınlama, dağıtma, alt lisanslama ve/veya satma hakları da dahil olmak üzere, Yazılımla ilgili işlem yapma izni ücretsiz olarak verilmektedir ve Yazılımın kendisine sağlandığı kişilere aşağıdaki koşullara tabi olarak izin verilmektedir:
+
+Yukarıdaki telif hakkı bildirimi ve bu izin bildirimi (bir sonraki paragraf dahil), Yazılımın tüm kopyalarına veya önemli bölümlerine dahil edilecektir.</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>Lisans</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>Bu uygulama ticari olmayan amaçlar için serbestçe kullanılabilir.
+Bu programı tamamen kendi sorumluluğunuzda kullanın.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Her zaman gönder</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Gönderme</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>Uygulama önceki bir oturumda bir hata tespit etti.
+Uygulamayı geliştirmek için bu hataya ait log dosyasını almak istiyorum.
+Bu hataya ait log dosyası gönderilebilir mi?
+Şimdiden teşekkür ederim.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Göndermek</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>Bir hata tespit edildi. Hata günlüğünü gönderebilir misiniz?</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Hata günlüğü gönderiliyor.</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>Barkod Üretici ve Tarayıcı</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>Bu bağlantıyı aç?</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>Web sitesi bağlantısı</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>Seçilen dosya desteklenmiyor.</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Micro PDF417</value>
+  </data>
+  <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
+    <value>DX Film Edge</value>
+  </data>
+  <data name="Barcode_EAN_2_Text" xml:space="preserve">
+    <value>EAN-2</value>
+  </data>
+  <data name="Barcode_EAN_5_Text" xml:space="preserve">
+    <value>EAN-5</value>
+  </data>
+  <data name="Barcode_EAN_8_Text" xml:space="preserve">
+    <value>EAN-8</value>
+  </data>
+  <data name="Barcode_EAN_13_Text" xml:space="preserve">
+    <value>EAN-13</value>
+  </data>
+  <data name="Barcode_EAN_UPC_Text" xml:space="preserve">
+    <value>EAN/UPC</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
+    <value>GS1 Databar</value>
+  </data>
+  <data name="Barcode_CODABAR_Text" xml:space="preserve">
+    <value>Codabar</value>
+  </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>Pharmacode</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>Plessey</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>RSS 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
+  <data name="Barcode_AZTEC_Text" xml:space="preserve">
+    <value>Aztek</value>
+  </data>
+  <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
+    <value>Aztek Runeleri</value>
+  </data>
+  <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
+    <value>Data Matrix</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>MaxiCode</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>Resimli QR Kodu</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC Güvenli QR Kodu</value>
+  </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Başlıklı barkod:</value>
+  </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>sayısal {0}, alfanümerik {1}, baytlar {2}, kanji/kana {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Maksimum karakter sayısı:</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Rakam sayısı:</value>
+  </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Sanatsal QR Kodu</value>
+  </data>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Arka plan rengi Sanatsal QR kodu:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Renk seçici</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Sayısal karakter algılandı.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Alfanümerik karakter algılandı.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Bayt karakteri algılandı.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Kanji/Kana karakteri algılandı.</value>
+  </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Ön plan resmi:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Arka plan resmi:</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Ön plan rengi sanatsal QR kodu:</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Metni sıkıştır:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>QR kodundaki metin sıkıştırılabilir (bunu etkinleştirmek için ayarlara bakın). Metni tekrar okunabilir hale getirmek için, bu uygulamadaki tarayıcı gibi GZip sıkıştırmayı destekleyen bir tarayıcı tarafından açılması gerekir.</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>QR kodlarının tarama güvenilirliğinin en üst düzeye çıkarılması için aşağıdaki önerilerde bulunuyoruz:
+Ön plan ve arka plan renkleri arasında yüksek kontrast sağlayın.
+Kare modüller kullanın (varsayılan): Kare modüller genellikle QR kodlarını tararken en düşük hata oranını üretir.
+Modüller arasında boşluklardan kaçının: Daire veya yuvarlak modüller gibi daha küçük modüller veya şekiller boşluklar oluşturabilir ve bu da tarama hatalarını artırabilir.
+Hata düzeltme varsayılan olarak yüksek ( %30 kurtarma) olarak ayarlanmıştır: Yüksek hata düzeltme seviyesi, okunabilirliğin azalmasını telafi etmeye yardımcı olur.
+
+Oluşturulan QR kodlarının ve diğer barkodların doğru şekilde tarandığından emin olmak için test edilmesi önerilir.</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Geçersiz enlem değeri.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Geçersiz boylam değeri.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Enlem aralık dışında. Değer -90 ile 90 (dahil) arasında olmalıdır.</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Boylam aralık dışında. Değer -180 ile 180 (dahil) arasında olmalıdır.</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Başlangıç ​​tarihi bitiş tarihinden daha geç olamaz.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopyala</value>
+  </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Konum bilgisi, kişiler ve daha fazlası gibi veri türleriyle akıllı QR kodları oluşturun. Üstteki simgeye dokunun, bir tür seçin, bilgilerinizi girin, ardından QR kodunuzu oluşturun ve paylaşın.
+Her cihazda tüm veri türleri desteklenmez.</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Konum isteği</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Konum belirleme</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Bu cihazda konum özelliği kullanılamıyor veya konum servisleri devre dışı bırakılmış.</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Haritaları aç</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Kodlama:</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>E-posta adresi geçerli değil.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>URL adresi geçerli değil.</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Telefon numarası geçerli değil.</value>
+  </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>Barkod bulunamadı.</value>
+  </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN geçerli değil.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Tutar geçerli değil.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC geçerli değil.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>İsim zorunludur.</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>Ödeme bilgisi alanlarından yalnızca biri doldurulabilir.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Para transferi bilgileri geçerli değil.</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Tüm alanların toplam uzunluğu çok uzun. Toplam veri boyutu 331 bayt ile sınırlıdır.</value>
+  </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Sanatsal Mikro QR Kodu</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>Kod, (sağlama toplamı rakamı hariç) {0} basamak uzunluğunda veya {1} basamak uzunluğunda olmalıdır.</value>
+  </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Yazı tipi boyutu:</value>
+  </data>
+</root>

@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Agree_Text" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="Barcode_AllCodes_Text" xml:space="preserve">
+    <value>جميع الرموز</value>
+  </data>
+  <data name="AllowedCharNot_Text" xml:space="preserve">
+    <value>غير مسموح به:</value>
+  </data>
+  <data name="AllowedChar_Text" xml:space="preserve">
+    <value>الأحرف المسموح بها:</value>
+  </data>
+  <data name="BackgroundColor_Text" xml:space="preserve">
+    <value>لون الخلفية:</value>
+  </data>
+  <data name="BackgroundOpacity_Text" xml:space="preserve">
+    <value>شفافية الخلفية:</value>
+  </data>
+  <data name="BarcodeGenerator_Text" xml:space="preserve">
+    <value>المولد</value>
+  </data>
+  <data name="BarcodeScanner_Text" xml:space="preserve">
+    <value>الماسح الضوئي</value>
+  </data>
+  <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
+    <value>رمز الأزتك</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
+    <value>رمز ٣٩، مجموع التحقق، معامل ١٠</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
+    <value>رمز ٣٩، مجموع التحقق، معامل ٤٣</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
+    <value>رمز ٣٩، مجموع التحقق الكامل ASCII</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
+    <value>رمز ٣٩، ASCII الكامل</value>
+  </data>
+  <data name="Barcode_CODE_39_Text" xml:space="preserve">
+    <value>رمز ٣٩</value>
+  </data>
+  <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
+    <value>رمز ٩٣i</value>
+  </data>
+  <data name="Barcode_CODE_93_Text" xml:space="preserve">
+    <value>رمز ٩٣</value>
+  </data>
+  <data name="Barcode_CODE_128_Text" xml:space="preserve">
+    <value>رمز ١٢٨</value>
+  </data>
+  <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
+    <value>ملف PDF مضغوط 417</value>
+  </data>
+  <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
+    <value>رمز الاستجابة السريعة للإطار</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>شريط بيانات GS1 الموسع والمكدس</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>شريط بيانات GS1 الموسع</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>شريط بيانات GS1 المحدود</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>شريط بيانات GS1 متعدد الاتجاهات</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>شريط بيانات GS1 المكدس متعدد الاتجاهات</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>شريط بيانات GS1 المكدس</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>البريد الذكي IMb</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>رقم الكتاب الدولي القياسي ISBN</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF-14 متداخل 2 من 5</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>مجموع التحقق لـ ITF متداخل 2 من 5</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF متداخل 2 من 5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Micro QR Code</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI معدل من Plessey</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN رقم مركز الصيدلة</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>نموذج رمز الاستجابة السريعة 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>نموذج رمز الاستجابة السريعة 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>رمز الاستجابة السريعة</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>رمز الاستجابة السريعة المستطيل الصغير RMQR</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>RSS الموسع</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>امتداد UPC-EAN</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>استماع</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>مشاركة النص</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>مشاركة</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>تحدث</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>لم يتم العثور على كاميرا.</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>إذا لم يتم منح الإذن باستخدام الكاميرا، فيمكن تفعيلها من إعدادات الجهاز، وذلك باختيار التطبيق وتفعيل الكاميرا.
+خيار آخر هو حذف التطبيق وإعادة تثبيته.</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>هذه الجودة غير مدعومة من قبل هذه الكاميرا. اضبط الجودة على مستوى أقل.</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>أعلى</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>عالي</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>أدنى</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>منخفض</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>متوسط</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>جودة</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>الرمز غير صحيح.</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>يرجى إغلاق التطبيق.</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>للتواصل:</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>حقوق النشر محفوظة</value>
+  </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>لمساعدتنا في حل أي مشاكل، سيرسل التطبيق تقارير أعطال وأخطاء مجهولة المصدر عند إعادة تشغيله.
+تحتوي التقارير على معلومات حول العطل أو الخطأ، بما في ذلك مواصفات الجهاز، ونظام التشغيل، وإصدار التطبيق، والطابع الزمني، ومعرّف التثبيت المجهول.
+تُجمع هذه البيانات لغرض وحيد هو مساعدتنا في تحسين التطبيق، ولا تتضمن أي معلومات شخصية. لا تُجمع أي بيانات أخرى.
+تُخزّن تقارير الأعطال والأخطاء المجهولة المصدر في مركز تطبيقات مايكروسوفت.
+لا تُشارك هذه التقارير مع أي جهة خارج مطوّر التطبيق.
+تُحفظ بيانات التقارير لمدة ٢٨ يومًا.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>بيان الخصوصية: الإبلاغ عن الأعطال باستخدام Sentry.
+
+يستخدم Barcode Generator Sentry، وهي خدمة تابعة لجهة خارجية، لجمع وإدارة تقارير الأعطال من أجل تحسين استقرار وأداء تطبيقنا. نحن ملتزمون بحماية خصوصيتك وتوفير الشفافية حول كيفية التعامل مع بياناتك.
+
+ما هي البيانات التي يتم جمعها:
+عند حدوث عطل داخل هذا التطبيق، قد يتم جمع معلومات معينة ونقلها إلى Sentry، بما في ذلك على سبيل المثال لا الحصر:
+معلومات الجهاز مثل الطراز وإصدار نظام التشغيل وتكوين الأجهزة.
+سجلات التطبيق ورسائل الخطأ التي سبقت العطل.
+معلومات حول حالة التطبيق في وقت التعطل، بما في ذلك إجراءات المستخدم.
+
+كيف نستخدم هذه البيانات:
+يتم استخدام البيانات التي تم جمعها بواسطة Sentry فقط لغرض تحديد وإصلاح الأخطاء داخل تطبيقنا. تساعدنا هذه المعلومات على فهم الأسباب الجذرية للأعطال، مما يتيح لنا توفير تجربة أكثر استقرارًا وموثوقية لمستخدمينا.
+
+أمن البيانات والاحتفاظ بها:
+نحن نأخذ أمن بياناتك على محمل الجد. تستخدم Sentry إجراءات أمنية متوافقة مع معايير الصناعة لحماية المعلومات التي تم جمعها من الوصول أو الكشف غير المصرح به.
+
+قد يتم الاحتفاظ بتقارير الأعطال التي تم جمعها بواسطة Sentry وفقًا لسياسات الاحتفاظ بالبيانات الخاصة بـ Sentry (30 يومًا لهذا التطبيق). لمزيد من المعلومات حول ممارسات معالجة البيانات لدى Sentry، يرجى الرجوع إلى سياسة الخصوصية الخاصة بهم على https://sentry.io/welcome/.
+
+موافقتك:
+باستخدام هذا التطبيق، فإنك توافق على جمع ومعالجة بيانات تقرير الأعطال بواسطة Sentry كما هو موضح في بيان الخصوصية هذا.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>تقارير الأعطال والأخطاء:</value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>مولد التنسيق الافتراضي:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>ماسح التنسيق الافتراضي:</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>افتراضي</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>إنشاء ومسح أنواع مختلفة من الرموز الشريطية.</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>غير موافق</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>البريد الإلكتروني:</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>يجب أن يكون الرقم الأول صفرًا.</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>اللون الأمامي:</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>عتامة المقدمة:</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>التنسيق:</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>حدد التنسيق:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>غير مدعوم حاليًا.</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>شكل</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>حرف بداية/نهاية غير صالح:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>حرف النهاية مفقود.</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>حرف البداية مفقود.</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>رموز الألوان السداسية العشرية:
+
+الحرفان ١-٢: الشفافية
+الحرفان ٣-٤: أحمر
+الحرفان ٥-٦: أخضر
+الحرفان ٧-٨: أزرق</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>تحويل النص إلى كلام: لا يدعم التطبيق جميع اللغات المتاحة في إعداداته.
+تحويل الكلام إلى نص: فعّل هذه الميزة من إعدادات جهازك. سيظهر رمز الميكروفون في لوحة المفاتيح الافتراضية.
+يختلف هذان الخياران باختلاف الجهاز واللغات المُثبّتة. قد تتم ترجمة بعض اللغات من وإلى الكلام عبر الإنترنت بواسطة الخدمات المعنية.
+استُخدمت ترجمة جوجل للنص، وهذا لا يضمن دقة جميع الترجمات.
+
+اللغات المدعومة هي: التشيكية، الدنماركية، الهولندية، الإنجليزية، الفنلندية، الفرنسية، الألمانية، المجرية، الإيطالية، النرويجية، البولندية، البرتغالية، الرومانية، الإسبانية، والسويدية.
+
+يمكنك التواصل معي في أي وقت لإجراء أي تصحيحات.</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>يتم إنشاء رمز الاستجابة السريعة (QR) بحجم بكسل ثابت أو متغير، وذلك حسب عدد الأحرف التي يحتويها والحد الأقصى لحجم البكسل المحدد في الإعدادات.
+عند وضع صورة (شعار) فوق رمز الاستجابة السريعة، يتم توسيطها وتغيير حجمها إلى ما بين 10% و35% من حجم الرمز. يمكن تعديل هذا النطاق في الإعدادات. كما تتم إضافة إطار لتحسين وضوحها.
+يتميز رمز الاستجابة السريعة الفني بإمكانية تخصيصه بشكل كبير، مع خيارات مثل التدرجات اللونية، والأشكال المخصصة، والألوان، وصورة أمامية (شعار)، وصورة خلفية. في هذه الحالة، يجب ضبط شفافية الخلفية بين 0% وأقل من 100% (راجع الإعدادات).
+للحصول على أفضل النتائج، استخدم صورًا مربعة وجرّب أحجامًا مختلفة للصور لتجنب تغيير الحجم بشكل مفرط. يُفضل استخدام تنسيقات ملفات PNG (مع خلفية شفافة اختياريًا) أو JPEG.</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>لغة الكلام:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>لغة:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>يجب أن يكون طول المدخلات زوجيًا.</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>يُقدَّم البرنامج "كما هو" دون أي ضمانات، صريحة أو ضمنية، بما في ذلك على سبيل المثال لا الحصر ضمانات صلاحية المنتج للاستخدام التجاري، وملاءمته لغرض معين، وعدم انتهاكه لحقوق الملكية الفكرية. ولا يتحمل المؤلف و/أو الناشر بأي حال من الأحوال أي مسؤولية عن أي مطالبة أو أضرار أو التزامات أخرى، سواء كانت ناشئة عن عقد أو تقصير أو غير ذلك، فيما يتعلق بالبرنامج أو استخدامه أو أي تعاملات أخرى به.</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>مسح وإنشاء الرموز الشريطية لتطبيقات .NET MAUI.
+رخصة MIT:
+يُمنح بموجب هذه الرخصة، مجانًا، لأي شخص يحصل على نسخة من هذا البرنامج وملفاته المرفقة ("البرنامج")، الحق في التعامل مع البرنامج دون قيود، بما في ذلك على سبيل المثال لا الحصر، حقوق الاستخدام والنسخ والتعديل والدمج والنشر والتوزيع والترخيص من الباطن و/أو بيع نسخ من البرنامج، والسماح للأشخاص الذين يُزوَّد البرنامج لهم بالقيام بذلك، وفقًا للشروط التالية:
+
+يجب تضمين إشعار حقوق النشر أعلاه وإشعار الإذن هذا (بما في ذلك الفقرة التالية) في جميع نسخ البرنامج أو أجزاء كبيرة منه.</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>رخصة</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>يمكن استخدام هذا التطبيق مجانًا للأغراض غير التجارية.
+استخدام هذا البرنامج على مسؤوليتك الشخصية بالكامل.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>أرسل دائمًا</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>لا ترسل</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>رصد التطبيق خطأً في جلسة سابقة.
+لتحسين التطبيق، أودّ الحصول على سجلّ الخطأ.
+هل يُمكن إرسال سجلّ الخطأ؟
+شكرًا مُقدّمًا.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>يرسل</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>تم اكتشاف خطأ. هل تريد إرسال سجل الأخطاء؟</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>إرسال سجل الأخطاء</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>مولد وممسح الباركود</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>هل تريد فتح هذا الرابط؟</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>رابط الموقع الإلكتروني</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>الملف المحدد غير مدعوم.</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Micro PDF417</value>
+  </data>
+  <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
+    <value>حافة فيلم DX</value>
+  </data>
+  <data name="Barcode_EAN_2_Text" xml:space="preserve">
+    <value>EAN-2</value>
+  </data>
+  <data name="Barcode_EAN_5_Text" xml:space="preserve">
+    <value>EAN-5</value>
+  </data>
+  <data name="Barcode_EAN_8_Text" xml:space="preserve">
+    <value>EAN-8</value>
+  </data>
+  <data name="Barcode_EAN_13_Text" xml:space="preserve">
+    <value>EAN-13</value>
+  </data>
+  <data name="Barcode_EAN_UPC_Text" xml:space="preserve">
+    <value>EAN/UPC</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
+    <value>شريط بيانات GS1</value>
+  </data>
+  <data name="Barcode_CODABAR_Text" xml:space="preserve">
+    <value>كودابار</value>
+  </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>Pharmacode</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>Plessey</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>RSS 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
+  <data name="Barcode_AZTEC_Text" xml:space="preserve">
+    <value>الأزتك</value>
+  </data>
+  <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
+    <value>رونية الأزتك</value>
+  </data>
+  <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
+    <value>مصفوفة البيانات</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>MaxiCode</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>رمز الاستجابة السريعة مع صورة</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>رمز الاستجابة السريعة الآمن SQRC</value>
+  </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>رمز شريطي مع شرح:</value>
+  </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>رقمي {0}، أبجدي رقمي {1}، بايتات {2}، كانجي/كانا {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>الحد الأقصى للأحرف:</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>عدد الأرقام:</value>
+  </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>رمز الاستجابة السريعة الفني</value>
+  </data>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>لون خلفية رمز الاستجابة السريعة الفني:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>منتقي الألوان</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>تم الكشف عن حرف رقمي.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>تم الكشف عن حرف أبجدي رقمي.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>تم الكشف عن حرف بايت.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>تم الكشف عن حرف كانجي/كانا.</value>
+  </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>صورة المقدمة:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>صورة الخلفية:</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>لون النص: رمز الاستجابة السريعة الفني:</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>ضغط النص:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>يمكن ضغط النص الموجود في رمز الاستجابة السريعة (راجع الإعدادات لتفعيل هذه الخاصية). ولجعل النص قابلاً للقراءة مرة أخرى، يجب فك ضغطه باستخدام ماسح ضوئي يدعم ضغط GZip، مثل الماسح الضوئي الموجود في هذا التطبيق.</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>لضمان موثوقية مسح مثالية، نوصي بما يلي لرموز QR:
+حافظ على تباين عالٍ بين لونَي المقدمة والخلفية.
+استخدم وحدات مربعة (الوضع الافتراضي): تُنتج الوحدات المربعة عمومًا أقل معدل خطأ عند مسح رموز QR.
+تجنب الفراغات بين الوحدات: قد تُسبب الوحدات الصغيرة أو الأشكال الدائرية أو ذات الزوايا المستديرة فراغات، مما قد يزيد من أخطاء المسح.
+يتم ضبط تصحيح الأخطاء على مستوى عالٍ (استعادة 30%) افتراضيًا: يساعد مستوى تصحيح الأخطاء العالي على تعويض انخفاض وضوح القراءة.
+
+يُنصح باختبار رموز QR المُنشأة والرموز الشريطية الأخرى للتأكد من مسحها بشكل صحيح.</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>قيمة خط العرض غير صالحة.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>قيمة خط الطول غير صالحة.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>خط العرض خارج النطاق. يجب أن تكون القيمة بين -90 و90 (شاملة).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>خط الطول خارج النطاق. يجب أن تكون القيمة بين -180 و180 (شاملة).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>لا يمكن أن يكون تاريخ البدء لاحقاً لتاريخ الانتهاء.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>نسخ</value>
+  </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>أنشئ رموز QR ذكية تتضمن أنواعًا مختلفة من البيانات، مثل الموقع الجغرافي وجهات الاتصال وغيرها. انقر على الأيقونة في الأعلى، واختر النوع، وأدخل بياناتك، ثم أنشئ رمز QR وشاركه.
+لا تدعم جميع الأجهزة جميع أنواع البيانات.</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>طلب تحديد الموقع الجغرافي</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>تحديد الموقع الجغرافي</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>الموقع غير متوفر على هذا الجهاز، أو أن خدمات الموقع معطلة.</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>افتح الخرائط</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>الترميز:</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>عنوان البريد الإلكتروني غير صالح.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>عنوان URL غير صالح.</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>رقم الهاتف غير صالح.</value>
+  </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>لم يتم العثور على رمز شريطي.</value>
+  </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>رقم الحساب المصرفي الدولي (IBAN) غير صالح.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>المبلغ غير صالح.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>رمز BIC غير صالح.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>الاسم إلزامي.</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>لا يُسمح بتعبئة سوى حقل واحد من حقول معلومات التحويلات المالية.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>معلومات التحويل غير صالحة.</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>يبلغ الطول الإجمالي لجميع الحقول أكثر من اللازم. حجم البيانات الإجمالي محدود بـ 331 بايت.</value>
+  </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>رمز الاستجابة السريعة المصغر الفني</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>يجب أن يتكون الرمز من {0} خانة (باستثناء خانة التحقق) أو {1} خانة.</value>
+  </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>حجم الخط:</value>
+  </data>
+</root>
