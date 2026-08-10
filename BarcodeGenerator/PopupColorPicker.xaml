@@ -80,6 +80,7 @@
                     ReturnType="Done"
                     MaxLength="8"
                     TextTransform="Uppercase"
+                    FlowDirection="LeftToRight"
                     TextChanged="EntryHexColor_TextChanged"
                     Unfocused="EntryHexColor_Unfocused"
                     Completed="EntHexColor_Completed">

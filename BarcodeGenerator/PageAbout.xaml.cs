@@ -4,8 +4,9 @@ namespace BarcodeGenerator
 {
     public sealed partial class PageAbout : ContentPage
     {
-        // TapCommand to open the crash and error report privacy information (Launcher.OpenAsync is provided by Essentials)
-        public ICommand TapCommand => new Command(async () => await DisplayAlertAsync(CodeLang.CrashErrorReport_Text, CodeLang.CrashErrorReportSentry_Text, CodeLang.ButtonClose_Text));
+        // TapCommand to open e-mail or the crash and error report privacy information (Launcher.OpenAsync is provided by Essentials)
+        public ICommand TapCommandEmail => new Command<string>(async (url) => await Launcher.OpenAsync(url));
+        public ICommand TapCommandReport => new Command(async () => await DisplayAlertAsync(CodeLang.CrashErrorReport_Text, CodeLang.CrashErrorReportSentry_Text, CodeLang.ButtonClose_Text));
 
         public PageAbout()
     	{
@@ -22,6 +23,10 @@ namespace BarcodeGenerator
 #endif
                 return;
             }
+
+            // !!!BUG!!! Do not use this when FlowDirection = "RightToLeft" in Android(and iOS)
+            // Set the flow direction of the text elements
+            Globals.SetFlowDirection(this);
 
             // Put text in the chosen language in the controls
             lblVersion.Text = $"{CodeLang.Version_Text} 1.0.54";

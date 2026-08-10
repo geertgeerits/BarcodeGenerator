@@ -10,7 +10,8 @@
     <Shell.TitleView>
         <Grid
             RowDefinitions="Auto"
-            ColumnDefinitions="100*, 60, 60, 60">
+            ColumnDefinitions="100*, 60, 60, 60"
+            FlowDirection="LeftToRight">
             
             <Label
                 x:Name="lblTitle"
@@ -59,7 +60,8 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleScanner}"
-                RowDefinitions="Auto, 24, 500, 1, Auto, Auto, Auto">
+                RowDefinitions="Auto, 24, 500, 1, Auto, Auto, Auto"
+                FlowDirection="LeftToRight">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"

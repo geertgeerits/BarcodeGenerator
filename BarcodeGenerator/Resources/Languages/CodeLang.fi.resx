@@ -1032,4 +1032,7 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Koodin tulee olla {0} numeroa pitkä (tarkistussummanumeroa lukuun ottamatta) tai {1} numeroa pitkä.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Fonttikoko:</value>
+  </data>
 </root>

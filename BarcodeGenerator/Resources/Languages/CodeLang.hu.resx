@@ -1032,4 +1032,7 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>A kódnak {0} számjegyből (az ellenőrzőösszeg-számjegyet nem számítva) vagy {1} számjegyből kell állnia.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Betűméret:</value>
+  </data>
 </root>

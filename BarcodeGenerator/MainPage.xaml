@@ -14,7 +14,8 @@
         <Grid
             x:Name="grdTitleView"
             RowDefinitions="Auto"
-            ColumnDefinitions="50, 120*, 50, 50, 50">
+            ColumnDefinitions="50, 120*, 50, 50, 50"
+            FlowDirection="LeftToRight">
 
             <ImageButton
                 x:Name="imgbtnAbout"
@@ -92,7 +93,8 @@
                 Style="{StaticResource gridStyleGenerator}"
                 RowDefinitions="Auto, Auto, 180, Auto, 290, Auto"
                 HorizontalOptions="Center"
-                RowSpacing="5">
+                RowSpacing="5"
+                FlowDirection="LeftToRight">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"

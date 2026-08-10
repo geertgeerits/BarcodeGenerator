@@ -1032,4 +1032,7 @@ Tous les types de données ne sont pas compatibles avec tous les appareils.</val
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Le code doit comporter {0} chiffres (à l'exclusion du chiffre de contrôle) ou {1} chiffres.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Taille de la police:</value>
+  </data>
 </root>

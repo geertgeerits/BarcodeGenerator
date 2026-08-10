@@ -1032,4 +1032,7 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Koden skal være {0} cifre lang (eksklusive checksumcifferet) eller {1} cifre lang.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Skriftstørrelse:</value>
+  </data>
 </root>

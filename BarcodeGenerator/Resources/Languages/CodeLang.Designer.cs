@@ -1169,6 +1169,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Font size:.
+        /// </summary>
+        internal static string FontSize_Text {
+            get {
+                return ResourceManager.GetString("FontSize_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Foreground color:.
         /// </summary>
         internal static string ForegroundColor_Text {

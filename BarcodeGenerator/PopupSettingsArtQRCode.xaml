@@ -18,7 +18,8 @@
             RowDefinitions="Auto, Auto, Auto"
             ColumnDefinitions="120, 120*"
             HorizontalOptions="Center"
-            VerticalOptions="Start">
+            VerticalOptions="Start"
+            FlowDirection="LeftToRight">
 
             <!--<Label
                 x:Name="lblPopupTitle"

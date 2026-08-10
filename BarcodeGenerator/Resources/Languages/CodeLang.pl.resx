@@ -1032,4 +1032,7 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Kod powinien mieć {0} cyfr (bez cyfry kontrolnej) lub {1} cyfr.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Rozmiar czcionki:</value>
+  </data>
 </root>

@@ -1034,4 +1034,7 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="CodeLength_Text" xml:space="preserve">
     <value>코드는 체크섬 숫자를 제외하고 {0} 자리 또는 {1} 자리여야 합니다.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>글꼴 크기:</value>
+  </data>
 </root>

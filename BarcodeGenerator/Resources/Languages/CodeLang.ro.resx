@@ -1032,4 +1032,7 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Codul trebuie să aibă o lungime de {0} cifre (excluzând cifra sumei de control) sau {1} cifre.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Dimensiunea fontului:</value>
+  </data>
 </root>

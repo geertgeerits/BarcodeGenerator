@@ -1032,4 +1032,7 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
   <data name="CodeLength_Text" xml:space="preserve">
     <value>El código debe tener {0} dígitos de longitud (excluyendo el dígito de control) o {1} dígitos de longitud.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Tamaño de fuente:</value>
+  </data>
 </root>

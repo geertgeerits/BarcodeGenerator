@@ -9,7 +9,8 @@
     <Shell.TitleView>
         <Label
             Style="{StaticResource labelStyleTitleView}"
-            Text="{Translate Info_Text}">
+            Text="{Translate Info_Text}"
+            FlowDirection="LeftToRight">
         </Label>
     </Shell.TitleView>
        
@@ -48,26 +49,18 @@
                                 <Span Text="{Translate Email_Text}"
                                       FontFamily="OpenSansRegular"
                                       FontAttributes="Bold"
-                                      FontSize="16" />
-                                <link:HyperlinkSpan Text="geertgeerits@gmail.com"
-                                                    Url="mailto:geertgeerits@gmail.com" />
+                                      FontSize="{DynamicResource GlobalFontSize}" />
+                                <Span Text="geertgeerits@gmail.com"
+                                      FontSize="{DynamicResource GlobalFontSize}"
+                                      TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapCommandEmail}"
+                                          CommandParameter="mailto:geertgeerits@gmail.com" />
+                                    </Span.GestureRecognizers>
+                                </Span>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-
-                    <!--<Label
-                        Style="{StaticResource labelStyleInfo}">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="{Translate Website_Text}"
-                                      FontFamily="OpenSansRegular"
-                                      FontAttributes="Bold"
-                                      FontSize="16" />
-                                <link:HyperlinkSpan Text="../barcode-generator"
-                                                    Url="https://geertgeerits.wixsite.com/geertgeerits/barcode-generator" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>-->
 
                     <Label
                         Style="{StaticResource labelStyleInfo}">
@@ -76,14 +69,14 @@
                                 <Span Text="{Translate CrashErrorReport_Text}"
                                       FontFamily="OpenSansRegular"
                                       FontAttributes="Bold"
-                                      FontSize="16" />
+                                      FontSize="{DynamicResource GlobalFontSize}" />
                                 <Span Text="{Translate Info_Text}"
                                       FontFamily="OpenSansRegular"
                                       FontAttributes="Bold"
-                                      FontSize="16"
+                                      FontSize="{DynamicResource GlobalFontSize}"
                                       TextDecorations="Underline">
                                     <Span.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding TapCommand}" />
+                                        <TapGestureRecognizer Command="{Binding TapCommandReport}" />
                                     </Span.GestureRecognizers>
                                 </Span>
                             </FormattedString>

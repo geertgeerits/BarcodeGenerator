@@ -1032,4 +1032,7 @@ Ikke alle nyttelasttyper støttes på alle enheter.</value>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Koden skal være {0} sifre lang (unntatt kontrollsumsifferet) eller {1} sifre lang.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Skriftstørrelse:</value>
+  </data>
 </root>

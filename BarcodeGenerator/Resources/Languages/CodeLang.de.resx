@@ -1031,4 +1031,7 @@ Wählen Sie eine Option.</value>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Der Code sollte {0} Ziffern lang sein (ohne die Prüfziffer) oder {1} Ziffern lang.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Schriftgröße:</value>
+  </data>
 </root>

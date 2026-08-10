@@ -1032,4 +1032,7 @@ Not all payload types are supported on every device.</value>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>The code should be {0} digits long (excluding the checksum digit) or {1} digits long.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Font size:</value>
+  </data>
 </root>

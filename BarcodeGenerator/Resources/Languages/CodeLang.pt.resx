@@ -1032,4 +1032,7 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
   <data name="CodeLength_Text" xml:space="preserve">
     <value>O código deve ter {0} dígitos (excluindo o dígito de verificação) ou {1} dígitos.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Tamanho da fonte:</value>
+  </data>
 </root>

@@ -97,6 +97,9 @@ namespace BarcodeGenerator
             sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
             sldQRCodeImageSizeBorder.Value = ClassBarcodes.nQRCodeImageSizeBorder;
 
+            // Set the slider font size
+            sldFontSize.Value = Globals.nFontSize;
+
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
         }
@@ -165,6 +168,15 @@ namespace BarcodeGenerator
         /// </summary>
         private void SetLanguage()
         {
+            // Set the font size label text
+            lblFontSize.Text = $"{CodeLang.FontSize_Text} {Globals.nFontSize:F0}";
+
+            // Set the global font size
+            Globals.SetGlobalFontSize();
+
+            // Set the flow direction of the text elements
+            Globals.SetFlowDirection(this);
+
             // Set the theme in the picker
             List<string> ThemeList =
             [
@@ -258,6 +270,19 @@ namespace BarcodeGenerator
                 // Set the theme
                 Globals.SetTheme();
             }
+        }
+
+        /// <summary>
+        /// Slider font size value changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnSliderFontSizeChanged(object sender, ValueChangedEventArgs e)
+        {
+            Globals.nFontSize = e.NewValue;
+            Globals.SetGlobalFontSize();
+
+            lblFontSize.Text = $"{CodeLang.FontSize_Text} {Globals.nFontSize:F0}";
         }
 
         /// <summary>
@@ -567,6 +592,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
             Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
+            Preferences.Default.Set("SettingFontSize", Globals.nFontSize);
 
             // Give it some time to save the settings
             Task.Delay(400).Wait();
@@ -622,6 +648,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");
                 Preferences.Default.Remove("SettingTheme");
+                Preferences.Default.Remove("SettingFontSize");
                 Preferences.Default.Remove("SettingQualityCameraBack");
                 Preferences.Default.Remove("SettingQualityCameraFront");
             }

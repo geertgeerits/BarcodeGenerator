@@ -1032,4 +1032,7 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>De code moet {0} cijfers lang zijn (exclusief het controlecijfer) of {1} cijfers lang.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Lettergrootte:</value>
+  </data>
 </root>

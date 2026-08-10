@@ -1049,4 +1049,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="CodeLength_Text" xml:space="preserve">
     <value>コードは、チェックサム桁を除いて {0} 桁または {1} 桁である必要があります。</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>フォントサイズ:</value>
+  </data>
 </root>

@@ -1032,4 +1032,7 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Kód by měl mít {0} číslic (bez kontrolního součtu) nebo {1} číslic.</value>
   </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Velikost písma:</value>
+  </data>
 </root>

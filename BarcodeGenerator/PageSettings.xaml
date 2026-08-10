@@ -11,7 +11,8 @@
     <Shell.TitleView>
         <Label
             Style="{StaticResource labelStyleTitleView}"
-            Text="{Translate Settings_Text}">
+            Text="{Translate Settings_Text}"
+            FlowDirection="LeftToRight">
         </Label>
     </Shell.TitleView>
 
@@ -36,7 +37,7 @@
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
                 RowSpacing="4"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, 70">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, 70">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -481,6 +482,32 @@
                         Style="{StaticResource pickerStyleSettings}"
                         SelectedIndexChanged="OnPickerPayloadTypeChanged">
                     </Picker>
+                </Border>
+
+                <Label
+                    x:Name="lblFontSize"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="19"
+                    Grid.Column="0"
+                    Text="">
+                </Label>
+
+                <Border
+                    Style="{StaticResource borderStyleGroup}"
+                    Grid.Row="19"
+                    Grid.Column="2"
+                    Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
+
+                    <Slider
+                        x:Name="sldFontSize"
+                        Style="{StaticResource sliderStyleColor}"
+                        Grid.Column="1"
+                        ThumbColor="Magenta"
+                        MinimumTrackColor="Magenta"
+                        Minimum="10"
+                        Maximum="30"
+                        ValueChanged="OnSliderFontSizeChanged">
+                    </Slider>
                 </Border>
 
             </Grid>
