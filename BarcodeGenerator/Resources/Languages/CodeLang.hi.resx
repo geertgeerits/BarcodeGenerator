@@ -468,6 +468,15 @@ MIT लाइसेंस:
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>वेबसाइट लिंक</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>पिक्सल</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>प्राइवेसी पॉलिसी:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>कोई भी पर्सनल और दूसरा डेटा स्टोर नहीं किया जाता है या मुझे या दूसरों को नहीं दिया जाता है।</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>चुनी गई फ़ाइल सपोर्टेड नहीं है।</value>
   </data>
@@ -594,6 +603,96 @@ MIT लाइसेंस:
 
 यह सलाह दी जाती है कि जेनरेट किए गए QR कोड और दूसरे बारकोड को टेस्ट करें ताकि यह पक्का हो सके कि वे सही तरीके से स्कैन हो रहे हैं।</value>
   </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>WiFi</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>बुकमार्क</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>ईमेल</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>जियोलोकेशन</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>फ़ोन नंबर</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>WhatsApp मैसेज</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>कॉन्टैक्ट डेटा</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>कैलेंडर ईवेंट</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>पेलोड टाइप:</value>
+  </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>नाम नेटवर्क</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>पासवर्ड</value>
+  </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>शीर्षक</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>ई-मेल एड्रेस</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>विषय</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>मैसेज</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>अक्षांश:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>देशांतर:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>पहला नाम</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>आखिरी नाम</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>ई-मेल</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>डिस्क्रिप्शन</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>जगह</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>शुरू:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>एंड:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>पेलोड:</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>पेलोड</value>
+  </data>
   <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
     <value>लैटीट्यूड वैल्यू गलत है।</value>
   </data>
@@ -637,11 +736,44 @@ MIT लाइसेंस:
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>URL एड्रेस वैलिड नहीं है।</value>
   </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>फ़ोन नंबर</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>ऑथेंटिकेशन:</value>
+  </data>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>फ़ोन नंबर मान्य नहीं है.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>कोई बारकोड नहीं मिला।</value>
+  </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>SEPA क्रेडिट ट्रांसफर</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC बेनिफिशियरी</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>बेनिफिशियरी का नाम</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN बेनिफिशियरी</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>रकम EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>मकसद</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>रेमिटेंस की जानकारी (स्ट्रक्चर्ड)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>रेमिटेंस की जानकारी (अनस्ट्रक्चर्ड)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>जानकारी</value>
   </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>IBAN वैलिड नहीं है।</value>

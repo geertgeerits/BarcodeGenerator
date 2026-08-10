@@ -471,6 +471,15 @@
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>رابط الموقع الإلكتروني</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>بكسل</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>سياسة الخصوصية:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>لا يتم تخزين أي بيانات شخصية أو غيرها، ولا يتم مشاركتها معي أو مع أي شخص آخر.</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>الملف المحدد غير مدعوم.</value>
   </data>
@@ -597,6 +606,96 @@
 
 يُنصح باختبار رموز QR المُنشأة والرموز الشريطية الأخرى للتأكد من مسحها بشكل صحيح.</value>
   </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>شبكة واي فاي</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>رابط URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>إضافة إلى المفضلة</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>رسالة نصية قصيرة (SMS)</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>رسائل الوسائط المتعددة</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>الموقع الجغرافي</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>رسالة واتساب</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>بيانات الاتصال</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>حدث في التقويم</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>نوع البيانات المرسلة:</value>
+  </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>اسم الشبكة</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>رابط الموقع</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>عنوان البريد الإلكتروني</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>الموضوع</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>خط العرض:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>خط الطول:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>الاسم الأول</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>اسم العائلة</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>البداية:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>النهاية:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>البيانات المُرسلة:</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>البيانات المُرسلة</value>
+  </data>
   <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
     <value>قيمة خط العرض غير صالحة.</value>
   </data>
@@ -640,11 +739,44 @@
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>عنوان URL غير صالح.</value>
   </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>المصادقة:</value>
+  </data>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>رقم الهاتف غير صالح.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>لم يتم العثور على رمز شريطي.</value>
+  </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>تحويل ائتماني عبر نظام المدفوعات الأوروبي الموحد (SEPA)</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>رمز تعريف البنك (BIC) للمستفيد</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>اسم المستفيد</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>رقم الحساب المصرفي الدولي (IBAN) للمستفيد</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>المبلغ باليورو</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>الغرض</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>معلومات التحويلات المالية (منظمة)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>معلومات التحويلات المالية (غير منظمة)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>معلومات</value>
   </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>رقم الحساب المصرفي الدولي (IBAN) غير صالح.</value>
