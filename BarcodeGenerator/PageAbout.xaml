@@ -42,7 +42,8 @@
                         Style="{StaticResource labelStyleInfo}">
                     </Label>
 
-                    <Label
+                    <!--!!!BUG!!! Does not work when FlowDirection="RightToLeft" in Android (and iOS)-->
+                    <!--<Label
                         Style="{StaticResource labelStyleInfo}">
                         <Label.FormattedText>
                             <FormattedString>
@@ -60,8 +61,26 @@
                                 </Span>
                             </FormattedString>
                         </Label.FormattedText>
-                    </Label>
+                    </Label>-->
+                    
+                    <HorizontalStackLayout>
+                        <Label
+                            Style="{StaticResource labelStyleInfo}"
+                            VerticalOptions="Center"
+                            Padding="0"
+                            Margin="0"
+                            Text="{Translate Email_Text}">
+                        </Label>
 
+                        <ImageButton
+                            Style="{StaticResource imageButtonInternet}"
+                            Clicked="OnButtonEmailClicked">
+                            <ImageButton.Source>
+                                <x:AppThemeBinding Light="ic_action_mail_black_32p.png" Dark="ic_action_mail_white_32p.png" />
+                            </ImageButton.Source>
+                        </ImageButton>
+                    </HorizontalStackLayout>
+                    
                     <Label
                         Style="{StaticResource labelStyleInfo}">
                         <Label.FormattedText>

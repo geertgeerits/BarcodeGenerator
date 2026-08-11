@@ -567,4 +567,15 @@
         <Setter Property="Maximum" Value="255" />
     </Style>
 
+    <Style x:Key="imageButtonInternet" TargetType="ImageButton">
+        <Setter Property="HeightRequest" Value="30" />
+        <Setter Property="WidthRequest" Value="40" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderWidth" Value="0" />
+        <!--<Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />-->
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0,1,0,0" />
+        <Setter Property="Aspect" Value="AspectFit" />
+    </Style>
+
 </ResourceDictionary>

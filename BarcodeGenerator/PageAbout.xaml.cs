@@ -5,7 +5,7 @@ namespace BarcodeGenerator
     public sealed partial class PageAbout : ContentPage
     {
         // TapCommand to open e-mail or the crash and error report privacy information (Launcher.OpenAsync is provided by Essentials)
-        public ICommand TapCommandEmail => new Command<string>(async (url) => await Launcher.OpenAsync(url));
+        //public ICommand TapCommandEmail => new Command<string>(async (url) => await Launcher.OpenAsync(url));
         public ICommand TapCommandReport => new Command(async () => await DisplayAlertAsync(CodeLang.CrashErrorReport_Text, CodeLang.CrashErrorReportSentry_Text, CodeLang.ButtonClose_Text));
 
         public PageAbout()
@@ -41,8 +41,41 @@ namespace BarcodeGenerator
             lblLicenseMit.Text = $"\n{CodeLang.Copyright_Text} © {CodeLang.LicenseMit_Text}\n\n{CodeLang.LicenseMit2_Text}";
             lblTrademarks.Text = $"\n{CodeLang.Trademarks_Text}";
         }
+
+        /// <summary>
+        /// Open the e-mail program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonEmailClicked(object sender, EventArgs e)
+        {
+            if (Email.Default.IsComposeSupported)
+            {
+                string subject = "Barcode generator and scanner";
+                string body = string.Empty;
+                string[] recipients = ["geertgeerits@gmail.com"];
+
+                EmailMessage message = new()
+                {
+                    Subject = subject,
+                    Body = body,
+                    BodyFormat = EmailBodyFormat.PlainText,
+                    To = [.. recipients]
+                };
+
+                try
+                {
+                    await Email.Default.ComposeAsync(message);
+                }
+                catch (Exception ex)
+                {
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+                }
+            }
+        }
     }
 
+    /*
     /// <summary>
     /// Open e-mail app and open webpage (reusable hyperlink class)
     /// </summary>
@@ -56,6 +89,7 @@ namespace BarcodeGenerator
             get { return (string)GetValue(UrlProperty); }
             set { SetValue(UrlProperty, value); }
         }
+
 
         public HyperlinkSpan()
         {
@@ -121,28 +155,28 @@ namespace BarcodeGenerator
             }
         }
 
-        ///// <summary>
-        ///// Open the website link in the default browser
-        ///// </summary>
-        ///// <param name="url"></param>
-        ///// <returns></returns>
-        //private static async Task OpenWebsiteLink(string url)
-        //{
-        //    try
-        //    {
-        //        Uri uri = new(url);
-        //        BrowserLaunchOptions options = new()
-        //        {
-        //            LaunchMode = BrowserLaunchMode.SystemPreferred,
-        //            TitleMode = BrowserTitleMode.Show
-        //        };
+        /// <summary>
+        /// Open the website link in the default browser
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        private static async Task OpenWebsiteLink(string url)
+        {
+            try
+            {
+                Uri uri = new(url);
+                BrowserLaunchOptions options = new()
+                {
+                    LaunchMode = BrowserLaunchMode.SystemPreferred,
+                    TitleMode = BrowserTitleMode.Show
+                };
 
-        //        await Browser.Default.OpenAsync(uri, options);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
-        //    }
-        //}
-    }
+                await Browser.Default.OpenAsync(uri, options);
+            }
+            catch (Exception ex)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
+            }
+        }
+    */
 }
