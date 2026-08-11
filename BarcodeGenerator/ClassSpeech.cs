@@ -40,7 +40,7 @@ namespace BarcodeGenerator
                 // Define a set of allowed languages to filter the locales
                 HashSet<string> allowedLanguages =
                 [
-                    with(StringComparer.OrdinalIgnoreCase), "cs","da","de","en","es","fi","fr","hu","it","ja","ko","nb","nl","pl","pt","ro","sv"
+                    with(StringComparer.OrdinalIgnoreCase), "ar","cs","da","de","en","es","fi","fr","hi","hu","it","ja","ko","nb","nl","pl","pt","ro","sv","tr"
                 ];
 
 #if ANDROID

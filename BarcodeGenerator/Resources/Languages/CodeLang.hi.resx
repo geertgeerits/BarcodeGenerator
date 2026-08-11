@@ -477,8 +477,120 @@ MIT लाइसेंस:
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>कोई भी पर्सनल और दूसरा डेटा स्टोर नहीं किया जाता है या मुझे या दूसरों को नहीं दिया जाता है।</value>
   </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>छवि का आकार: {0}%</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>चुनी गई फ़ाइल सपोर्टेड नहीं है।</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>सुझाया गया इमेज साइज़</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>एप्लिकेशन फिर से चालू हो जाएगा।</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>रीसेट करें</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>कुछ बदली हुई सेटिंग्स को लागू करने के लिए उन्हें सेव करना होगा।</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>बचाना</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>सेटिंग्स</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>टेक्स्ट में एक या ज़्यादा कैरेक्टर हैं जिनकी इजाज़त नहीं है।
+
+इजाज़त नहीं है:</value>
+  </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>एनकोड करने के लिए टेक्स्ट:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>इस डिवाइस पर टेक्स्ट टू स्पीच सपोर्टेड नहीं है।</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>डार्क</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>लाइट</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>सिस्टम</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>थीम:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>इस एप्लिकेशन के लेखक को एक ईमेल भेजें</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>इस एप्लिकेशन की वेबसाइट खोलें</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>स्कैनर</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>बारकोड के लिए स्कैनिंग शुरू या बंद करें</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>पीछे या सामने का कैमरा चुनें</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>कैमरे की क्वालिटी सेट करें</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>कैमरा टॉर्च चालू या बंद करें</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>बारकोड ढूंढते समय डिवाइस वाइब्रेशन को चालू या बंद करें</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>कैमरा: ज़ूम इन और ज़ूम आउट</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>टेक्स्ट को क्लिपबोर्ड पर कॉपी करें</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>क्रैश और त्रुटि रिपोर्ट</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>पीछे जाओ</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>आगे जाओ</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>मदद करो</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>क्लिपबोर्ड से टेक्स्ट पेस्ट करें</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>सेटिंग्स को उनके डिफ़ॉल्ट वैल्यू पर रीसेट करें</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>सेटिंग्स सहेजें</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>टेक्स्ट टू स्पीच: चालू या बंद</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store और App Store लोगो Apple Inc. के ट्रेडमार्क हैं, जो U.S. और दूसरे देशों और इलाकों में रजिस्टर्ड हैं।
+Google, Google Play, Google Play लोगो और Android, Google LLC के ट्रेडमार्क हैं।
+Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microsoft Corporation के ट्रेडमार्क हैं।</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>वर्शन:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>वेबसाइट:</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>हाँ</value>
   </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>माइक्रो PDF417</value>
@@ -540,11 +652,20 @@ MIT लाइसेंस:
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>इमेज के साथ QR कोड</value>
   </data>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>फ़ोरग्राउंड इमेज चुनें</value>
+  </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>कैंसल करें</value>
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>SQRC Secure QR Code</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>बदलने वाला साइज़:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>पिक्सेल में साइज़:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>कैप्शन वाला बारकोड:</value>
@@ -579,6 +700,69 @@ MIT लाइसेंस:
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>कांजी/काना कैरेक्टर मिला।</value>
   </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>टेक्स्ट की लंबाई {0} कैरेक्टर तक सीमित है।</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>टेक्स्ट की लंबाई {0} बाइट तक सीमित है।</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>QR कोड मॉड्यूल का आकार: चौकोर</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>QR कोड मॉड्यूल का आकार: गोल</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>QR कोड मॉड्यूल का आकार: गोल</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>बैकग्राउंड इमेज चुनें</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>ग्रेडिएंट रंगों का इस्तेमाल करें:</value>
+  </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>ग्रेडिएंट दिशा:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>ग्रेडिएंट कलर:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>नीचे से शीर्ष तक</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>नीचे बाएँ से ऊपर दाएँ</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>बाएं से दायां</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>ऊपर बाएँ से नीचे दाएँ</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>नीचे से ऊपर</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>ऊपर दाएं से नीचे बाएं</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>दाएं से बाएं</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>नीचे दाएं से ऊपर बाएं</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>ग्रेडिएंट कलर 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>ग्रेडिएंट कलर 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>ग्रेडिएंट कलर 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>मॉड्यूल का आकार:</value>
+  </data>
   <data name="ImageForeground_Text" xml:space="preserve">
     <value>फ़ोरग्राउंड इमेज:</value>
   </data>
@@ -593,6 +777,18 @@ MIT लाइसेंस:
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>QR कोड में टेक्स्ट को कम्प्रेस किया जा सकता है (इसे चालू करने के लिए सेटिंग्स देखें)। टेक्स्ट को फिर से पढ़ने लायक बनाने के लिए, इसे ऐसे स्कैनर से डीकम्प्रेस करना होगा जो GZip कम्प्रेशन को सपोर्ट करता हो, जैसे कि इस ऐप में स्कैनर।</value>
+  </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>फाइंडर पैटर्न शेप:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>QR कोड फाइंडर पैटर्न का आकार: गोल</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>QR कोड फाइंडर पैटर्न का आकार: गोल</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>QR कोड फाइंडर पैटर्न का आकार: चौकोर</value>
   </data>
   <data name="InfoQRCodeSettings_Text" xml:space="preserve">
     <value>सबसे अच्छे स्कैन रिलायबिलिटी के लिए, हम QR कोड के लिए ये सलाह देते हैं:
@@ -708,8 +904,21 @@ MIT लाइसेंस:
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
     <value>शुरू होने की तारीख, खत्म होने की तारीख के बाद की नहीं हो सकती।</value>
   </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Wi‑Fi नेटवर्क का पता चला.
+कोई ऑप्शन चुनें.</value>
+  </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>कॉपी करें</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>वाई-फ़ाई सेटिंग खोलें</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>नेटवर्क से जुड़ने के लिए कृपया सेटिंग्स - Wi‑Fi खोलें।</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>इस प्लेटफ़ॉर्म पर ओपन Wi‑Fi सेटिंग्स सपोर्टेड नहीं हैं।</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>जियोलोकेशन, कॉन्टैक्ट्स और दूसरे पेलोड टाइप के साथ स्मार्ट QR कोड बनाएं। सबसे ऊपर दिए गए आइकन पर टैप करें, टाइप चुनें, अपनी डिटेल्स डालें, फिर अपना QR कोड बनाएं और शेयर करें।
@@ -736,6 +945,9 @@ MIT लाइसेंस:
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>URL एड्रेस वैलिड नहीं है।</value>
   </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>URL लिंक खोलें</value>
+  </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>फ़ोन नंबर</value>
   </data>
@@ -747,6 +959,12 @@ MIT लाइसेंस:
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>कोई बारकोड नहीं मिला।</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>इमेज स्कैन करें</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>कैमरे से स्कैन करें</value>
   </data>
   <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
     <value>SEPA क्रेडिट ट्रांसफर</value>
@@ -795,6 +1013,15 @@ MIT लाइसेंस:
   </data>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>सभी फ़ील्ड की कुल लंबाई बहुत ज़्यादा है. कुल पेलोड साइज़ 331 बाइट्स तक सीमित है.</value>
+  </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>मॉड्यूल का आकार: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>छवि बॉर्डर का आकार: {0} पिक्सेल</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>शांत क्षेत्र का आकार: {0} मॉड्यूल</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>आर्टिस्टिक माइक्रो QR कोड</value>

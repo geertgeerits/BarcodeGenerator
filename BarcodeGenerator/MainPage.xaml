@@ -93,8 +93,7 @@
                 Style="{StaticResource gridStyleGenerator}"
                 RowDefinitions="Auto, Auto, 180, Auto, 290, Auto"
                 HorizontalOptions="Center"
-                RowSpacing="5"
-                FlowDirection="LeftToRight">
+                RowSpacing="5">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"

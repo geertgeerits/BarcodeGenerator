@@ -480,8 +480,120 @@ Bu hataya ait log dosyası gönderilebilir mi?
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>Hiçbir kişisel ve diğer veri saklanmaz veya bana ve başkalarına aktarılmaz.</value>
   </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>Görüntü boyutu: {0}%</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Seçilen dosya desteklenmiyor.</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Önerilen resim boyutu</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>Uygulama yeniden başlatılacak.</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>Sıfırla</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Bazı ayarların uygulanabilmesi için kaydedilmesi gerekir.</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>Kaydetmek</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>Metin, izin verilmeyen bir veya daha fazla karakter içermektedir.
+
+İzin verilmeyen karakterler:</value>
+  </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>Kodlanacak metin:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>Bu cihazda metinden sese dönüştürme özelliği desteklenmiyor.</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>Koyu</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>Aydınlık</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>Sistem</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>Tema:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Bu başvurunun yazarına bir e-posta gönderin.</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Bu uygulamanın web sitesini açın.</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>Tarayıcı</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Barkod taramasını başlatın veya durdurun</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Arka veya ön kamerayı seçin</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Kamera kalitesini ayarlayın</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Fotoğraf makinesinin flaşını açın veya kapatın.</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Barkod bulunduğunda cihaz titreşimini etkinleştirin veya devre dışı bırakın.</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Kamera: yakınlaştırma ve uzaklaştırma</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>Metni panoya kopyala</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Çökme ve hata raporları</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Geri dön</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>İleri git</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Yardım</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>Panodan metin yapıştır</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Ayarları varsayılan değerlerine sıfırlayın.</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Ayarları kaydedin</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Metinden sese dönüştürme: açık veya kapalı</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store ve App Store logosu, ABD ve diğer ülke ve bölgelerde tescilli Apple Inc.'in ticari markalarıdır.
+Google, Google Play, Google Play logosu ve Android, Google LLC'nin ticari markalarıdır.
+Microsoft, Microsoft Store, Microsoft Store logosu ve Windows, Microsoft Corporation'ın ticari markalarıdır.</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Sürüm:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Web sitesi:</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Evet</value>
   </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>Micro PDF417</value>
@@ -543,11 +655,20 @@ Bu hataya ait log dosyası gönderilebilir mi?
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>Resimli QR Kodu</value>
   </data>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Ön plan resmi seçin</value>
+  </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>İptal</value>
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>SQRC Güvenli QR Kodu</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>Değişken boyut:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>Boyut (psikre cinsinden):</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Başlıklı barkod:</value>
@@ -582,6 +703,69 @@ Bu hataya ait log dosyası gönderilebilir mi?
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Kanji/Kana karakteri algılandı.</value>
   </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>टेक्स्ट की लंबाई {0} कैरेक्टर तक सीमित है।</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>Metin uzunluğu {0} bayt ile sınırlıdır.</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>QR Kod modülü şekli: kare</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>QR Kod modülü şekli: daire</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>QR Kod modülü şekli: yuvarlak</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Arka plan resmi seçin</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>Gradyan renkleri kullanın:</value>
+  </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Gradyan yönü:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>Gradyan renkler:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Aşağıdan yukarıya</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Sol alttan sağ üste</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Soldan sağa</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Sol üstten sağ alta</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Yukarıdan aşağıya</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Sağ üstten sol alta</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Sağdan sola</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Sağ alttan sol üste</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>Gradyan renk 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>Gradyan renk 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>Gradyan renk 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>Modül şekli:</value>
+  </data>
   <data name="ImageForeground_Text" xml:space="preserve">
     <value>Ön plan resmi:</value>
   </data>
@@ -596,6 +780,18 @@ Bu hataya ait log dosyası gönderilebilir mi?
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>QR kodundaki metin sıkıştırılabilir (bunu etkinleştirmek için ayarlara bakın). Metni tekrar okunabilir hale getirmek için, bu uygulamadaki tarayıcı gibi GZip sıkıştırmayı destekleyen bir tarayıcı tarafından açılması gerekir.</value>
+  </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Bulucu desen şekli:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>QR kod bulucu desen şekli: daire</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>QR kod bulucu desen şekli: yuvarlak</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>QR kod bulucu desen şekli: kare</value>
   </data>
   <data name="InfoQRCodeSettings_Text" xml:space="preserve">
     <value>QR kodlarının tarama güvenilirliğinin en üst düzeye çıkarılması için aşağıdaki önerilerde bulunuyoruz:
@@ -711,8 +907,21 @@ Oluşturulan QR kodlarının ve diğer barkodların doğru şekilde tarandığı
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
     <value>Başlangıç ​​tarihi bitiş tarihinden daha geç olamaz.</value>
   </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Wi-Fi ağı algılandı.
+Bir seçenek belirleyin.</value>
+  </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>Kopyala</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Wi-Fi Ayarlarını Açın</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Lütfen ağa katılmak için Ayarlar - Wi-Fi bölümünü açın.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Bu platformda Wi-Fi ayarlarını açma özelliği desteklenmemektedir.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Konum bilgisi, kişiler ve daha fazlası gibi veri türleriyle akıllı QR kodları oluşturun. Üstteki simgeye dokunun, bir tür seçin, bilgilerinizi girin, ardından QR kodunuzu oluşturun ve paylaşın.
@@ -739,6 +948,9 @@ Her cihazda tüm veri türleri desteklenmez.</value>
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>URL adresi geçerli değil.</value>
   </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>URL bağlantısını açın</value>
+  </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Telefon numarası</value>
   </data>
@@ -750,6 +962,12 @@ Her cihazda tüm veri türleri desteklenmez.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>Barkod bulunamadı.</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Bir görüntüyü tarayın</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Kameradan tarama</value>
   </data>
   <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
     <value>SEPA kredi transferi</value>
@@ -798,6 +1016,15 @@ Her cihazda tüm veri türleri desteklenmez.</value>
   </data>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>Tüm alanların toplam uzunluğu çok uzun. Toplam veri boyutu 331 bayt ile sınırlıdır.</value>
+  </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Modül boyutu: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Görüntü kenar boyutu: {0} piksel</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Sessiz bölge boyutu: {0} modül</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Sanatsal Mikro QR Kodu</value>

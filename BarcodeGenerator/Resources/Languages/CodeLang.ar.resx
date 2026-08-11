@@ -480,8 +480,120 @@
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>لا يتم تخزين أي بيانات شخصية أو غيرها، ولا يتم مشاركتها معي أو مع أي شخص آخر.</value>
   </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>حجم الصورة: {0}%</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>الملف المحدد غير مدعوم.</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>حجم الصورة الموصى به</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>سيتم إعادة تشغيل التطبيق.</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>إعادة ضبط</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>يجب حفظ بعض الإعدادات التي تم تغييرها لتطبيقها.</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>يحفظ</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>إعدادات</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>يحتوي النص على حرف واحد أو أكثر غير مسموح به.
+
+غير مسموح به:</value>
+  </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>النص المراد ترميزه:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>لا يدعم هذا الجهاز خاصية تحويل النص إلى كلام.</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>داكن</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>فاتح</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>نظام</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>النمط:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>أرسل بريدًا إلكترونيًا إلى مؤلف هذا التطبيق</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>افتح موقع هذا التطبيق</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>الماسح الضوئي</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>بدء أو إيقاف مسح الرموز الشريطية</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>اختيار الكاميرا الخلفية أو الأمامية</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>ضبط جودة الكاميرا</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>قم بتشغيل أو إيقاف تشغيل مصباح الكاميرا</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>تفعيل أو تعطيل اهتزاز الجهاز عند البحث عن رمز شريطي</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>الكاميرا: تكبير وتصغير</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>انسخ النص إلى الحافظة</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>تقارير الأعطال والأخطاء</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>ارجع</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>المضي قدما</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>مساعدة</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>الصق النص من الحافظة</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>أعد ضبط الإعدادات إلى قيمها الافتراضية</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>احفظ الإعدادات</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>تحويل النص إلى كلام: تشغيل أو إيقاف</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>تُعدّ Apple وApp Store وشعار App Store علامات تجارية لشركة Apple Inc.، مسجلة في الولايات المتحدة الأمريكية ودول ومناطق أخرى.
+تُعدّ Google وGoogle Play وشعار Google Play وAndroid علامات تجارية لشركة Google LLC.
+تُعدّ Microsoft وMicrosoft Store وشعار Microsoft Store وWindows علامات تجارية لشركة Microsoft Corporation.</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>الإصدار:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>الموقع الإلكتروني:</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>نعم</value>
   </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>Micro PDF417</value>
@@ -543,11 +655,20 @@
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>رمز الاستجابة السريعة مع صورة</value>
   </data>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>اختر صورة أمامية</value>
+  </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>إلغاء</value>
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>رمز الاستجابة السريعة الآمن SQRC</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>حجم متغير:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>الحجم بالبكسل:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>رمز شريطي مع شرح:</value>
@@ -582,6 +703,69 @@
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>تم الكشف عن حرف كانجي/كانا.</value>
   </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>يقتصر طول النص على {0} حرفًا.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>يقتصر طول النص على {0} بايت.</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>شكل وحدة رمز الاستجابة السريعة: مربع</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>شكل وحدة رمز الاستجابة السريعة: دائرة</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>شكل وحدة رمز الاستجابة السريعة: منحني</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>اختر صورة خلفية</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>استخدم ألوان التدرج اللوني:</value>
+  </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>اتجاه التدرج اللوني:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>ألوان متدرجة:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>من الأسفل إلى الأعلى</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>من أسفل اليسار إلى أعلى اليمين</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>من اليسار إلى اليمين</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>من أعلى اليسار إلى أسفل اليمين</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>من الأعلى إلى الأسفل</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>من أعلى اليمين إلى أسفل اليسار</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>من اليمين إلى اليسار</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>من أسفل اليمين إلى أعلى اليسار</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>لون متدرج 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>لون متدرج 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>لون متدرج 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>شكل الوحدة:</value>
+  </data>
   <data name="ImageForeground_Text" xml:space="preserve">
     <value>صورة المقدمة:</value>
   </data>
@@ -596,6 +780,18 @@
   </data>
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>يمكن ضغط النص الموجود في رمز الاستجابة السريعة (راجع الإعدادات لتفعيل هذه الخاصية). ولجعل النص قابلاً للقراءة مرة أخرى، يجب فك ضغطه باستخدام ماسح ضوئي يدعم ضغط GZip، مثل الماسح الضوئي الموجود في هذا التطبيق.</value>
+  </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>شكل نمط البحث:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>شكل نمط البحث عن رمز الاستجابة السريعة: دائرة</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>شكل نمط البحث عن رمز الاستجابة السريعة: منحني</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>شكل نمط البحث عن رمز الاستجابة السريعة: مربع</value>
   </data>
   <data name="InfoQRCodeSettings_Text" xml:space="preserve">
     <value>لضمان موثوقية مسح مثالية، نوصي بما يلي لرموز QR:
@@ -711,8 +907,21 @@
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
     <value>لا يمكن أن يكون تاريخ البدء لاحقاً لتاريخ الانتهاء.</value>
   </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>تم اكتشاف شبكة واي فاي.
+اختر أحد الخيارات.</value>
+  </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>نسخ</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>افتح إعدادات الواي فاي</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>يرجى فتح الإعدادات - Wi-Fi للانضمام إلى الشبكة.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>لا يدعم هذا النظام الأساسي فتح إعدادات Wi-Fi.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>أنشئ رموز QR ذكية تتضمن أنواعًا مختلفة من البيانات، مثل الموقع الجغرافي وجهات الاتصال وغيرها. انقر على الأيقونة في الأعلى، واختر النوع، وأدخل بياناتك، ثم أنشئ رمز QR وشاركه.
@@ -739,6 +948,9 @@
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>عنوان URL غير صالح.</value>
   </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>افتح رابط URL</value>
+  </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>رقم الهاتف</value>
   </data>
@@ -750,6 +962,12 @@
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>لم يتم العثور على رمز شريطي.</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>مسح صورة ضوئياً</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>المسح الضوئي من الكاميرا</value>
   </data>
   <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
     <value>تحويل ائتماني عبر نظام المدفوعات الأوروبي الموحد (SEPA)</value>
@@ -798,6 +1016,15 @@
   </data>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>يبلغ الطول الإجمالي لجميع الحقول أكثر من اللازم. حجم البيانات الإجمالي محدود بـ 331 بايت.</value>
+  </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>حجم الوحدة: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>حجم حدود الصورة: {0} بكسل</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>حجم المنطقة الهادئة: {0} وحدة</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>رمز الاستجابة السريعة المصغر الفني</value>

@@ -127,8 +127,7 @@
         <StackLayout>
             <Grid
                 Style="{StaticResource gridStyleScanner}"
-                RowDefinitions="Auto, Auto, Auto, 5, Auto, Auto"
-                FlowDirection="LeftToRight">
+                RowDefinitions="Auto, Auto, Auto, 5, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"

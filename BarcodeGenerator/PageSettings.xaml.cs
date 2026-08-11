@@ -45,23 +45,26 @@ namespace BarcodeGenerator
             // Select the current language in the picker
             pckLanguage.SelectedIndex = Globals.cLanguage switch
             {
-                "cs" => 0,      // Čeština - Czech
-                "da" => 1,      // Dansk - Danish
-                "de" => 2,      // Deutsch - German
-                "es" => 4,      // Español - Spanish
-                "fr" => 5,      // Français - French
-                "ko" => 6,      // 한국어 (Hangugeo) - Korean
-                "it" => 7,      // Italiano - Italian
-                "hu" => 8,      // Magyar - Hungarian
-                "nl" => 9,      // Nederlands - Dutch
-                "ja" => 10,     // 日本語 (Nihongo) - Japanese
-                "nb" => 11,     // Norsk Bokmål - Norwegian Bokmål
-                "pl" => 12,     // Polski - Polish
-                "pt" => 13,     // Português - Portuguese
-                "ro" => 14,     // Română - Romanian
-                "fi" => 15,     // Suomi - Finnish
-                "sv" => 16,     // Svenska - Swedish
-                _ => 3          // English
+                "ar" => 0,      // العربية (al'Arabiyyeẗ) - Arabic
+                "cs" => 1,      // Čeština - Czech
+                "da" => 2,      // Dansk - Danish
+                "de" => 3,      // Deutsch - German
+                "es" => 5,      // Español - Spanish
+                "fr" => 6,      // Français - French
+                "ko" => 7,      // 한국어 (Hangugeo) - Korean
+                "hi" => 8,      // हिन्दी (Hindī)
+                "it" => 9,      // Italiano - Italian
+                "hu" => 10,     // Magyar - Hungarian
+                "nl" => 11,     // Nederlands - Dutch
+                "ja" => 12,     // 日本語 (Nihongo) - Japanese
+                "nb" => 13,     // Norsk Bokmål - Norwegian Bokmål
+                "pl" => 14,     // Polski - Polish
+                "pt" => 15,     // Português - Portuguese
+                "ro" => 16,     // Română - Romanian
+                "fi" => 17,     // Suomi - Finnish
+                "sv" => 18,     // Svenska - Swedish
+                "tr" => 19,     // Türkçe - Turkish
+                _ => 4          // English
             };
 
             // Fill the picker with the speech languages and select the current language in the picker
@@ -120,22 +123,25 @@ namespace BarcodeGenerator
             {
                 Globals.cLanguage = selectedIndex switch
                 {
-                    0 => "cs",      // Čeština - Czech
-                    1 => "da",      // Dansk - Danish
-                    2 => "de",      // Deutsch - German
-                    4 => "es",      // Español - Spanish
-                    5 => "fr",      // Français - French
-                    6 => "ko",      // 한국어 (Hangugeo) - Korean
-                    7 => "it",      // Italiano - Italian
-                    8 => "hu",      // Magyar - Hungarian
-                    9 => "nl",      // Nederlands - Dutch
-                    10 => "ja",     // 日本語 (Nihongo) - Japanese
-                    11 => "nb",     // Norsk Bokmål - Norwegian Bokmål
-                    12 => "pl",     // Polski - Polish
-                    13 => "pt",     // Português - Portuguese
-                    14 => "ro",     // Română - Romanian
-                    15 => "fi",     // Suomi - Finnish
-                    16 => "sv",     // Svenska - Swedish
+                    0 => "ar",      // العربية (al'Arabiyyeẗ) - Arabic
+                    1 => "cs",      // Čeština - Czech
+                    2 => "da",      // Dansk - Danish
+                    3 => "de",      // Deutsch - German
+                    5 => "es",      // Español - Spanish
+                    6 => "fr",      // Français - French
+                    7 => "ko",      // 한국어 (Hangugeo) - Korean
+                    8 => "hi",      // हिन्दी (Hindī)
+                    9 => "it",      // Italiano - Italian
+                    10 => "hu",     // Magyar - Hungarian
+                    11 => "nl",     // Nederlands - Dutch
+                    12 => "ja",     // 日本語 (Nihongo) - Japanese
+                    13 => "nb",     // Norsk Bokmål - Norwegian Bokmål
+                    14 => "pl",     // Polski - Polish
+                    15 => "pt",     // Português - Portuguese
+                    16 => "ro",     // Română - Romanian
+                    17 => "fi",     // Suomi - Finnish
+                    18 => "sv",     // Svenska - Swedish
+                    19 => "tr",     // Türkçe - Turkish
                     _ => "en"       // English
                 };
             }

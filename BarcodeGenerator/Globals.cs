@@ -39,8 +39,11 @@ namespace BarcodeGenerator
         {
             try
             {
-                CultureInfo switchToCulture = new(cCultureName);
-                LocalizationResourceManager.Instance.SetCulture(switchToCulture);
+                CultureInfo culture = new(cCultureName);
+                LocalizationResourceManager.Instance.SetCulture(culture);
+
+                // Necessary for the determination of the flow direction
+                CultureInfo.CurrentUICulture = new CultureInfo(cCultureName);
             }
             catch
             {
