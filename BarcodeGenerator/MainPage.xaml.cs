@@ -131,7 +131,7 @@ namespace BarcodeGenerator
             {
                 if (string.IsNullOrEmpty(Globals.cLanguage))
                 {
-                    Globals.cLanguage = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+                    Globals.cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
 
                     // Chinese needs the language code as zh-CN and zh-TW
                     if (Globals.cLanguage == "zh")
