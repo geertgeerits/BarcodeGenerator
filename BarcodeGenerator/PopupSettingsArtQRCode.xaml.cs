@@ -11,6 +11,9 @@ namespace BarcodeGenerator
 
             InitializeComponent();
 
+            // Set the flow direction of the text elements
+            Globals.SetFlowDirection(this);
+
             if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
             {
                 // Disable the foreground image option for Micro QR Codes, as they do not support this feature

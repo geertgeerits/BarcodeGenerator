@@ -11,6 +11,9 @@ namespace BarcodeGenerator
         {
             InitializeComponent();
 
+            // Set the flow direction of the text elements
+            Globals.SetFlowDirection(this);
+
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
             Globals.bPopupOpened = true;
 

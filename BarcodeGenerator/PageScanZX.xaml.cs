@@ -20,6 +20,9 @@ namespace BarcodeGenerator
                 return;
             }
 
+            // Set the flow direction of the text elements
+            Globals.SetFlowDirection(this);
+
             // Check if the device supports barcode scanning with ZXing.Net.Maui
             if (!ZXing.Net.Maui.BarcodeScanning.IsSupported)
             {

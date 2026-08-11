@@ -11,6 +11,9 @@ namespace BarcodeGenerator
         {
             InitializeComponent();
 
+            // Set the flow direction of the text elements
+            Globals.SetFlowDirection(this);
+
             // Set the message text
             lblPopupMessage.Text = cMessage;
         

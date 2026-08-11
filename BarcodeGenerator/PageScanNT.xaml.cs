@@ -33,6 +33,9 @@ namespace BarcodeGenerator
                 return;
             }
 
+            // Set the flow direction of the text elements
+            Globals.SetFlowDirection(this);
+
             // Subscribe to the MainDisplayInfoChanged event to handle device orientation changes
             DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
             this.Unloaded += OnUnloaded;

@@ -16,6 +16,9 @@ namespace BarcodeGenerator
         public PopupPayloadTypes()
         {
             InitializeComponent();
+
+            // Set the flow direction of the text elements
+            Globals.SetFlowDirection(this);
 #if IOS
             // Configure the numeric keyboard for these entry fields on iOS to use the NumbersAndPunctuation keyboard type
             BarcodeGenerator.Platforms.iOS.NumericKeyboardHandler.ConfigureNumbersAndPunctuation(entPayloadTypeLatitude);
