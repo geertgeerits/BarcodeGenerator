@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Agree_Text" xml:space="preserve">
+    <value>Đồng ý</value>
+  </data>
+  <data name="Barcode_AllCodes_Text" xml:space="preserve">
+    <value>Tất cả mã</value>
+  </data>
+  <data name="AllowedCharNot_Text" xml:space="preserve">
+    <value>Không được phép:</value>
+  </data>
+  <data name="AllowedChar_Text" xml:space="preserve">
+    <value>Các ký tự được phép:</value>
+  </data>
+  <data name="BackgroundColor_Text" xml:space="preserve">
+    <value>Màu nền:</value>
+  </data>
+  <data name="BackgroundOpacity_Text" xml:space="preserve">
+    <value>Độ mờ nền:</value>
+  </data>
+  <data name="BarcodeGenerator_Text" xml:space="preserve">
+    <value>Máy tạo</value>
+  </data>
+  <data name="BarcodeScanner_Text" xml:space="preserve">
+    <value>Máy quét</value>
+  </data>
+  <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
+    <value>Mã Aztec</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
+    <value>Mã kiểm tra Code 39 modulo 10</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
+    <value>Mã kiểm tra Code 39 modulo 43</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
+    <value>Mã kiểm tra Code 39 đầy đủ ASCII</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
+    <value>Mã kiểm tra Code 39 đầy đủ ASCII</value>
+  </data>
+  <data name="Barcode_CODE_39_Text" xml:space="preserve">
+    <value>Mã 39</value>
+  </data>
+  <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
+    <value>Mã 93i</value>
+  </data>
+  <data name="Barcode_CODE_93_Text" xml:space="preserve">
+    <value>Mã 93</value>
+  </data>
+  <data name="Barcode_CODE_128_Text" xml:space="preserve">
+    <value>Mã 128</value>
+  </data>
+  <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
+    <value>PDF417 nhỏ gọn</value>
+  </data>
+  <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
+    <value>Mã QR khung</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar mở rộng xếp chồng</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>GS1 Databar mở rộng</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 Databar giới hạn</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar đa hướng</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar đa hướng xếp chồng</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar xếp chồng</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>IMb Intelligent Mail</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>ISBN (Mã số sách tiêu chuẩn quốc tế)</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF-14 xen kẽ 2/5</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>Tổng kiểm tra ITF xen kẽ 2/5</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF xen kẽ 2/5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Mã QR Micro</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI Modified Plessey</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>Số trung tâm dược phẩm PZN</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>Mã QR mẫu 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>Mã QR mẫu 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>Mã QR</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>Mã QR hình chữ nhật siêu nhỏ RMQR</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>RSS mở rộng</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>Mở rộng UPC-EAN</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>Nghe</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>Tiếp theo</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>Chia sẻ văn bản</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>Chia sẻ</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>Nói</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Không tìm thấy camera.</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Nếu chưa được cấp quyền sử dụng camera, bạn có thể bật camera trong cài đặt thiết bị, chọn ứng dụng và bật camera.
+Một lựa chọn khác là gỡ cài đặt và cài đặt lại ứng dụng.</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Chất lượng hình ảnh đó không được máy ảnh này hỗ trợ. Hãy giảm chất lượng xuống thấp hơn.</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Cao nhất</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Cao</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Thấp nhất</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Thấp</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Trung bình</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Chất lượng</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>Mã này sai.</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Vui lòng đóng ứng dụng.</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>Liên hệ:</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>Bản quyền</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Micro PDF417</value>
+  </data>
+  <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
+    <value>Cạnh phim DX</value>
+  </data>
+  <data name="Barcode_EAN_2_Text" xml:space="preserve">
+    <value>EAN-2</value>
+  </data>
+  <data name="Barcode_EAN_5_Text" xml:space="preserve">
+    <value>EAN-5</value>
+  </data>
+  <data name="Barcode_EAN_8_Text" xml:space="preserve">
+    <value>EAN-8</value>
+  </data>
+  <data name="Barcode_EAN_13_Text" xml:space="preserve">
+    <value>EAN-13</value>
+  </data>
+  <data name="Barcode_EAN_UPC_Text" xml:space="preserve">
+    <value>EAN/UPC</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
+    <value>GS1 Databar</value>
+  </data>
+  <data name="Barcode_CODABAR_Text" xml:space="preserve">
+    <value>Codabar</value>
+  </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>Mã dược phẩm</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>Plessey</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>RSS 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
+  <data name="Barcode_AZTEC_Text" xml:space="preserve">
+    <value>Aztec</value>
+  </data>
+  <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
+    <value>Chữ rune Aztec</value>
+  </data>
+  <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
+    <value>Ma trận dữ liệu</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>MaxiCode</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>Mã QR có hình ảnh</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>Mã QR bảo mật SQRC</value>
+  </data>
+  <data name="BarcodeWithCaption_Text" xml:space="preserve">
+    <value>Mã vạch kèm chú thích:</value>
+  </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Mã QR nghệ thuật</value>
+  </data>
+  <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Màu nền mã QR nghệ thuật:</value>
+  </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Công cụ chọn màu</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Đã phát hiện ký tự số.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Đã phát hiện ký tự chữ và số.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Đã phát hiện ký tự byte.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Đã phát hiện ký tự Kanji/Kana.</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Nén văn bản:</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Sao chép</value>
+  </data>
+  <data name="BarcodeNotFound_Text" xml:space="preserve">
+    <value>Không tìm thấy mã vạch.</value>
+  </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Mã QR siêu nhỏ nghệ thuật</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>Mã phải có độ dài {0} chữ số (không bao gồm chữ số kiểm tra) hoặc {1} chữ số.</value>
+  </data>
+</root>
