@@ -207,6 +207,157 @@
   <data name="Barcode_ITF_Text" xml:space="preserve">
     <value>ITF Interleaved 2 з 5</value>
   </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Мікро QR-код</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>Модифікований Plessey від MSI</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>Центральний номер PZN Pharma</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>Модель QR-коду 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>Модель QR-коду 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>QR-код</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>Прямокутний мікро QR-код RMQR</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>Розширений RSS</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>Розширення UPC-EAN</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>Прослухати</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>Далі</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>Поділитися текстом</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>Поділитися</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>Говорити</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Камеру не знайдено.</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Якщо дозвіл на використання камери не надано, камеру можна ввімкнути в налаштуваннях пристрою, вибрати програму та ввімкнути камеру.
+Інший варіант – видалити та перевстановити програму.</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Ця камера не підтримує таку якість. Зменште якість.</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Найвищий</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Високий</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Найнижчий</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Низький</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Середня</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Якість</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>Код неправильний.</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>Очистити</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Будь ласка, закрийте програму.</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>Контакт:</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>Авторське право</value>
+  </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Щоб допомогти нам виправити будь-які проблеми, програма надсилатиме анонімні звіти про збої та помилки після перезапуску програми.
+Звіти містять інформацію про збій або помилку, включаючи характеристики пристрою, операційну систему, версію програми, позначку часу та анонімний ідентифікатор встановлення.
+Дані збираються виключно з метою покращення програми та не містять жодної особистої інформації. Жодні інші дані не збираються.
+Анонімні звіти про збої та помилки зберігаються в Центрі програм Microsoft.
+Вони не передаються нікому, окрім розробника програми.
+Дані звіту зберігаються протягом 28 днів.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Заява про конфіденційність: Звіти про збої за допомогою Sentry.
+
+Генератор штрих-кодів використовує Sentry, сторонній сервіс, для збору та керування звітами про збої з метою покращення стабільності та продуктивності нашої програми. Ми прагнемо захищати вашу конфіденційність та забезпечувати прозорість щодо обробки ваших даних.
+
+Які дані збираються:
+Коли в цій програмі відбувається збій, певна інформація може бути зібрана та передана до Sentry, включаючи, але не обмежуючись:
+Інформацію про пристрій, таку як модель, версія операційної системи та конфігурація обладнання.
+Журнали програми та повідомлення про помилки, що призвели до збою.
+Інформацію про стан програми на момент збою, включаючи дії користувача.
+
+Як ми використовуємо ці дані:
+Дані, зібрані Sentry, використовуються виключно з метою виявлення та виправлення помилок і помилок у нашій програмі. Ця інформація допомагає нам зрозуміти першопричини збоїв, дозволяючи нам забезпечити більш стабільний та надійний досвід для наших користувачів.
+
+Безпека та збереження даних:
+Ми серйозно ставимося до безпеки ваших даних. Sentry застосовує галузеві стандартні заходи безпеки для захисту зібраної інформації від несанкціонованого доступу або розголошення.
+
+Звіти про збої, зібрані Sentry, можуть зберігатися відповідно до політики зберігання даних Sentry (30 днів для цієї програми). Щоб отримати додаткову інформацію про методи обробки даних Sentry, зверніться до їхньої Політики конфіденційності за адресою https://sentry.io/welcome/.
+
+Ваша згода:
+Використовуючи цю програму, ви погоджуєтеся на збір та обробку даних звітів про збої компанією Sentry, як описано в цій заяві про конфіденційність.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Звіти про збої та помилки:</value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Генератор форматів за замовчуванням:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Сканер форматів за замовчуванням:</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>За замовчуванням</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>Генерувати та сканувати різні штрих-коди.</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>Не погоджуюся</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>Електронна пошта:</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>Вибраний файл не підтримується.</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Мікро PDF417</value>
+  </data>
   <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
     <value>Край плівки DX</value>
   </data>
@@ -231,6 +382,21 @@
   <data name="Barcode_CODABAR_Text" xml:space="preserve">
     <value>Кодабар</value>
   </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>Фармакод</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>Плесі</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>RSS 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
   <data name="Barcode_AZTEC_Text" xml:space="preserve">
     <value>Ацтек</value>
   </data>
@@ -239,6 +405,21 @@
   </data>
   <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
     <value>Матриця даних</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>MaxiCode</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>QR-код із зображенням</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>Захищений QR-код SQRC</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Штрих-код із підписом:</value>
@@ -249,10 +430,79 @@
   <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
     <value>Художній QR-код кольору фону:</value>
   </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Вибір кольору</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Виявлено числовий символ.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Виявлено буквено-цифровий символ.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Виявлено байтовий символ.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Виявлено символ кандзі/кана.</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Стиснути текст:</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Недійсне значення широти.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Недійсне значення довготи.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Широта поза діапазоном. Значення має бути від -90 до 90 (включно).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Довгота поза діапазоном. Значення має бути від -180 до 180 (включно).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Дата початку не може бути пізніше дати завершення.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Копіювати</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>Адреса електронної пошти недійсна.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>URL-адреса недійсна.</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Номер телефону недійсний.</value>
+  </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>Штрих-код не знайдено.</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN недійсний.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Сума недійсна.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC недійсний.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Ім'я обов'язкове.</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>Можна заповнити лише одне з полів інформації про грошовий переказ.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Інформація про грошовий переказ недійсна.</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Сумарна довжина всіх полів занадто велика. Загальний розмір корисного навантаження обмежено 331 байтом.</value>
+  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>QR-код Artistic Micro</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>Код має містити {0} цифр (без урахування контрольної суми) або {1} цифр.</value>
   </data>
 </root>

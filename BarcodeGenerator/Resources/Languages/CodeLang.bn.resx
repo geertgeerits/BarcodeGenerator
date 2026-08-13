@@ -207,6 +207,157 @@
   <data name="Barcode_ITF_Text" xml:space="preserve">
     <value>ITF ইন্টারলিভড ২/৫</value>
   </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>মাইক্রো কিউআর কোড</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>এমএসআই মডিফাইড প্লেসি</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>পিজেডএন ফার্মা সেন্ট্রাল নম্বর</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>কিউআর কোড মডেল ১</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>কিউআর কোড মডেল ২</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>কিউআর কোড</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>আরএমকিউআর আয়তাকার মাইক্রো কিউআর কোড</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>আরএসএস সম্প্রসারিত</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>ইউপিসি-ইএএন এক্সটেনশন</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>বন্ধ করুন</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>শুনুন</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>পরবর্তী</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>টেক্সট শেয়ার করুন</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>শেয়ার করুন</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>বলুন</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>কোনো ক্যামেরা পাওয়া যায়নি</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>ক্যামেরা ব্যবহারের অনুমতি না দেওয়া থাকলে, ডিভাইসের সেটিংসে গিয়ে অ্যাপ্লিকেশনটি নির্বাচন করে ক্যামেরাটি চালু করা যেতে পারে।
+আরেকটি উপায় হলো অ্যাপ্লিকেশনটি আনইনস্টল করে আবার ইনস্টল করা।</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>এই ক্যামেরাটি ওই কোয়ালিটি সমর্থন করে না। কোয়ালিটি কমিয়ে দিন।</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>সর্বোচ্চ</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>উচ্চ</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>সর্বনিম্ন</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>নিম্ন</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>মাঝারি</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>গুণমান</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>বাতিল করুন</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>কোডটি ভুল।</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>পরিষ্কার করুন</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>অনুগ্রহ করে অ্যাপ্লিকেশনটি বন্ধ করুন।</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>যোগাযোগ:</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>কপিরাইট</value>
+  </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>যেকোনো সমস্যা সমাধানে আমাদের সাহায্য করার জন্য, অ্যাপ্লিকেশনটি পুনরায় চালু করা হলে এটি বেনামী ক্র্যাশ এবং ত্রুটির রিপোর্ট পাঠাবে।
+এই রিপোর্টগুলিতে ক্র্যাশ বা ত্রুটি সম্পর্কিত তথ্য থাকে, যার মধ্যে অন্তর্ভুক্ত রয়েছে ডিভাইসের স্পেসিফিকেশন, অপারেটিং সিস্টেম, অ্যাপ্লিকেশন সংস্করণ, টাইমস্ট্যাম্প এবং বেনামী ইনস্টলেশন শনাক্তকারী।
+এই ডেটা শুধুমাত্র অ্যাপ্লিকেশনটির উন্নতিতে আমাদের সাহায্য করার উদ্দেশ্যে সংগ্রহ করা হয় এবং এতে কোনো ব্যক্তিগত তথ্য অন্তর্ভুক্ত থাকে না। অন্য কোনো ডেটা সংগ্রহ করা হয় না।
+বেনামী ক্র্যাশ এবং ত্রুটির রিপোর্টগুলি মাইক্রোসফট অ্যাপ সেন্টারে সংরক্ষিত থাকে।
+অ্যাপ্লিকেশনটির ডেভেলপার ছাড়া অন্য কারো সাথে এগুলি শেয়ার করা হয় না।
+রিপোর্টের ডেটা ২৮ দিনের জন্য সংরক্ষণ করা হয়।</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>গোপনীয়তা বিবৃতি: Sentry-এর মাধ্যমে ক্র্যাশ রিপোর্ট করা।
+
+বারকোড জেনারেটর আমাদের অ্যাপ্লিকেশনের স্থিতিশীলতা এবং কর্মক্ষমতা উন্নত করার জন্য ক্র্যাশ রিপোর্ট সংগ্রহ ও পরিচালনা করতে Sentry নামক একটি তৃতীয়-পক্ষ পরিষেবা ব্যবহার করে। আমরা আপনার গোপনীয়তা রক্ষা করতে এবং আপনার ডেটা কীভাবে পরিচালনা করা হয় সে সম্পর্কে স্বচ্ছতা প্রদানে প্রতিশ্রুতিবদ্ধ।
+
+কী ডেটা সংগ্রহ করা হয়:
+যখন এই অ্যাপ্লিকেশনের মধ্যে কোনো ক্র্যাশ ঘটে, তখন কিছু নির্দিষ্ট তথ্য সংগ্রহ করে Sentry-তে পাঠানো হতে পারে, যার মধ্যে অন্তর্ভুক্ত কিন্তু সীমাবদ্ধ নয়:
+ডিভাইসের তথ্য যেমন মডেল, অপারেটিং সিস্টেম সংস্করণ, এবং হার্ডওয়্যার কনফিগারেশন।
+ক্র্যাশের পূর্ববর্তী অ্যাপ্লিকেশন লগ এবং ত্রুটির বার্তা।
+
+ক্র্যাশের সময় অ্যাপ্লিকেশনের অবস্থা সম্পর্কিত তথ্য, যার মধ্যে ব্যবহারকারীর কার্যকলাপও অন্তর্ভুক্ত।
+
+আমরা কীভাবে এই ডেটা ব্যবহার করি:
+Sentry দ্বারা সংগৃহীত ডেটা শুধুমাত্র আমাদের অ্যাপ্লিকেশনের মধ্যে থাকা বাগ এবং ত্রুটি শনাক্ত ও সমাধান করার উদ্দেশ্যে ব্যবহৃত হয়। এই তথ্য আমাদের ক্র্যাশের মূল কারণ বুঝতে সাহায্য করে, যার ফলে আমরা আমাদের ব্যবহারকারীদের জন্য আরও স্থিতিশীল এবং নির্ভরযোগ্য অভিজ্ঞতা প্রদান করতে পারি।
+
+ডেটার নিরাপত্তা এবং সংরক্ষণ:
+আমরা আপনার ডেটার নিরাপত্তাকে গুরুত্ব সহকারে নিই। সংগৃহীত তথ্যকে অননুমোদিত অ্যাক্সেস বা প্রকাশ থেকে রক্ষা করার জন্য Sentry শিল্প-মানসম্মত নিরাপত্তা ব্যবস্থা প্রয়োগ করে।
+
+Sentry দ্বারা সংগৃহীত দুর্ঘটনার প্রতিবেদনগুলি Sentry-এর ডেটা সংরক্ষণ নীতি অনুসারে সংরক্ষণ করা হতে পারে (এই অ্যাপ্লিকেশনের জন্য ৩০ দিন)। Sentry-এর ডেটা পরিচালনার পদ্ধতি সম্পর্কে আরও তথ্যের জন্য, অনুগ্রহ করে https://sentry.io/welcome/ -এ তাদের গোপনীয়তা নীতি দেখুন।
+
+আপনার সম্মতি: এই অ্যাপ্লিকেশনটি ব্যবহার করার মাধ্যমে, আপনি এই গোপনীয়তা বিবৃতিতে বর্ণিত Sentry কর্তৃক দুর্ঘটনার প্রতিবেদনের ডেটা সংগ্রহ এবং প্রক্রিয়াকরণে সম্মতি দিচ্ছেন।</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>ক্র্যাশ এবং ত্রুটির প্রতিবেদন:</value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>ডিফল্ট ফরম্যাট জেনারেটর:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>ডিফল্ট ফরম্যাট স্ক্যানার:</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>ডিফল্ট</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>বিভিন্ন বারকোড তৈরি ও স্ক্যান করুন।</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>অসম্মত</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>ই-মেইল:</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>ত্রুটি</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>নির্বাচিত ফাইলটি সমর্থিত নয়।</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>মাইক্রো পিডিএফ৪১৭</value>
+  </data>
   <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
     <value>ডিএক্স ফিল্ম এজ</value>
   </data>
@@ -231,6 +382,21 @@
   <data name="Barcode_CODABAR_Text" xml:space="preserve">
     <value>কোডাবার</value>
   </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>ফার্মাকোড</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>প্লেসি</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>আরএসএস ১৪</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>ইউপিসি-এ</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>ইউপিসি-ই</value>
+  </data>
   <data name="Barcode_AZTEC_Text" xml:space="preserve">
     <value>অ্যাজটেক</value>
   </data>
@@ -239,6 +405,21 @@
   </data>
   <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
     <value>ডেটা ম্যাট্রিক্স</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>ম্যাক্সিকোড</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>পিডিএফ৪১৭</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>ছবি সহ কিউআর কোড</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>বাতিল করুন</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>এসকিউআরসি সুরক্ষিত কিউআর কোড</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>ক্যাপশন সহ বারকোড:</value>
@@ -249,10 +430,79 @@
   <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
     <value>শৈল্পিক কিউআর কোডের পটভূমির রঙ:</value>
   </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>রঙ বাছাইকারী</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>সংখ্যাসূচক অক্ষর শনাক্ত করা হয়েছে।</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>বর্ণ ও সংখ্যাযুক্ত অক্ষর শনাক্ত করা হয়েছে।</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>বাইট অক্ষর শনাক্ত করা হয়েছে।</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>কাঞ্জি/কানা অক্ষর শনাক্ত করা হয়েছে।</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>লেখাটি সংকুচিত করুন:</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>অক্ষাংশের মান অবৈধ।</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>অবৈধ দ্রাঘিমাংশের মান।</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>অক্ষাংশ সীমার বাইরে। মানটি অবশ্যই -৯০ এবং ৯০ (উভয়সহ) এর মধ্যে হতে হবে।</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>দ্রাঘিমাংশ সীমার বাইরে। মানটি অবশ্যই -১৮০ এবং ১৮০ (উভয়সহ) এর মধ্যে হতে হবে।</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>শুরুর তারিখ শেষের তারিখের পরে হতে পারবে না।</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>অনুলিপি করুন</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>ই-মেইল ঠিকানাটি বৈধ নয়।</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>ইউআরএল ঠিকানাটি বৈধ নয়।</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>ফোন নম্বরটি বৈধ নয়।</value>
+  </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>কোনো বারকোড পাওয়া যায়নি।</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN বৈধ নয়।</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>পরিমাণটি বৈধ নয়।</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC বৈধ নয়।</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>নাম আবশ্যক।</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>রেমিটেন্স তথ্যের ক্ষেত্রগুলোর মধ্যে কেবল একটি পূরণ করা যাবে।</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>রেমিটেন্সের তথ্য বৈধ নয়।</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>সমস্ত ফিল্ডের সম্মিলিত দৈর্ঘ্য অনেক বেশি। মোট পেলোড সাইজ ৩৩১ বাইটে সীমাবদ্ধ।</value>
+  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>শৈল্পিক মাইক্রো কিউআর কোড</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>কোডটি (চেকসাম ডিজিট বাদে) {0} ডিজিট অথবা {1} ডিজিটের হতে হবে।</value>
   </data>
 </root>

@@ -207,6 +207,157 @@
   <data name="Barcode_ITF_Text" xml:space="preserve">
     <value>ITF 交错式 2/5</value>
   </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Micro QR Code</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI 改良型 Plessey</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN 药品中心编号</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>二维码模型 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>二维码模型 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>二维码</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>矩形微型二维码</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>RSS 扩展版</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>UPC-EAN 扩展码</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>收听</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>下一个</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>分享文字</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>分享</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>说话</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>未找到摄像头。</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>如果未授予使用摄像头的权限，可以在设备设置中启用摄像头，选择应用程序并启用摄像头。
+另一种方法是卸载并重新安装该应用程序。</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>此相机不支持该画质。请降低画质。</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>最高</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>高</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>最低</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>低</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>中等</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>质量</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>代码有误。</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>请关闭应用程序。</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>联系方式：</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>版权所有</value>
+  </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>为了帮助我们修复任何问题，应用程序会在重启时发送匿名崩溃和错误报告。
+报告包含有关崩溃或错误的信息，包括设备规格、操作系统、应用程序版本、时间戳和匿名安装标识符。
+收集这些数据仅用于帮助我们改进应用程序，不包含任何个人信息。我们不会收集任何其他数据。
+匿名崩溃和错误报告存储在 Microsoft 应用中心。
+这些报告不会与应用程序开发者以外的任何人共享。
+报告数据保留 28 天。</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>隐私声明：使用 Sentry 进行崩溃报告
+
+条形码生成器使用第三方服务 Sentry 来收集和管理崩溃报告，以提升应用程序的稳定性和性能。我们致力于保护您的隐私，并确保您数据的处理方式透明公开。
+
+收集哪些数据：
+当此应用程序发生崩溃时，某些信息可能会被收集并传输给 Sentry，包括但不限于：
+设备信息，例如设备型号、操作系统版本和硬件配置。
+导致崩溃的应用程序日志和错误消息。
+
+崩溃时应用程序的状态信息，包括用户操作。
+我们如何使用这些数据：
+Sentry 收集的数据仅用于识别和修复应用程序中的错误。这些信息有助于我们了解崩溃的根本原因，从而为用户提供更稳定可靠的体验。
+
+数据安全和保留：
+我们非常重视您的数据安全。Sentry 采用行业标准的安全措施来保护收集的信息免遭未经授权的访问或泄露。
+
+Sentry 收集的崩溃报告可能会根据 Sentry 的数据保留政策进行保留（本应用保留 30 天）。有关 Sentry 数据处理实践的更多信息，请参阅其隐私政策：https://sentry.io/welcome/。
+
+您的同意：
+使用此应用即表示您同意 Sentry 按照本隐私声明中所述的方式收集和处理崩溃报告数据。</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>崩溃和错误报告：</value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>默认格式生成器：</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>默认格式扫描器：</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>生成并扫描各种条形码。</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>不同意</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>电子邮件：</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>所选文件不受支持。</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Micro PDF417</value>
+  </data>
   <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
     <value>DX 胶片边缘</value>
   </data>
@@ -231,6 +382,21 @@
   <data name="Barcode_CODABAR_Text" xml:space="preserve">
     <value>科达巴尔</value>
   </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>药品代码</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>普莱西</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>RSS 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
   <data name="Barcode_AZTEC_Text" xml:space="preserve">
     <value>阿兹特克</value>
   </data>
@@ -239,6 +405,21 @@
   </data>
   <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
     <value>数据矩阵</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>MaxiCode</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>带图像的二维码</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC 安全二维码</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>条形码及说明文字：</value>
@@ -249,10 +430,79 @@
   <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
     <value>艺术二维码背景色：</value>
   </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>颜色选择器</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>检测到数字字符。</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>检测到字母数字字符。</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>检测到字节字符。</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>检测到汉字/假名字符。</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>压缩文本：</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>纬度值无效。</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>经度值无效。</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>纬度值超出范围。该值必须介于 -90 和 90 之间（含 -90 和 90）。</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>经度超出范围。该值必须介于 -180 和 180 之间（含 -180 和 180）。</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>开始日期不能晚于结束日期。</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>电子邮件地址无效。</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>网址无效。</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>电话号码无效。</value>
+  </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>未找到条形码。</value>
   </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN 无效。</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>金额无效。</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>银行识别码 (BIC) 无效。</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>名称为必填项。</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>汇款信息字段中只能填写一个。</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>汇款信息无效。</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>所有字段的总长度过长。有效载荷总大小限制为 331 字节。</value>
+  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>艺术微型二维码</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>代码长度应为 {0} 位（不包括校验和位）或 {1} 位。</value>
   </data>
 </root>
