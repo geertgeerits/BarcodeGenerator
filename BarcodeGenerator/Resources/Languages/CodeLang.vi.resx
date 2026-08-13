@@ -298,6 +298,220 @@ Một lựa chọn khác là gỡ cài đặt và cài đặt lại ứng dụng
   <data name="Copyright_Text" xml:space="preserve">
     <value>Bản quyền</value>
   </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Để giúp chúng tôi khắc phục sự cố, ứng dụng sẽ gửi báo cáo lỗi và sự cố ẩn danh khi ứng dụng được khởi động lại.
+Các báo cáo này chứa thông tin về sự cố hoặc lỗi, bao gồm thông số kỹ thuật thiết bị, hệ điều hành, phiên bản ứng dụng, thời gian và mã định danh cài đặt ẩn danh.
+Dữ liệu được thu thập chỉ nhằm mục đích giúp chúng tôi cải thiện ứng dụng và không bao gồm bất kỳ thông tin cá nhân nào. Không có dữ liệu nào khác được thu thập.
+Các báo cáo lỗi và sự cố ẩn danh được lưu trữ trong Microsoft App Center.
+Chúng không được chia sẻ với bất kỳ ai khác ngoài nhà phát triển ứng dụng.
+Dữ liệu báo cáo được lưu giữ trong 28 ngày.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Tuyên bố về quyền riêng tư: Báo cáo sự cố với Sentry.
+
+Ứng dụng Barcode Generator sử dụng Sentry, một dịch vụ bên thứ ba, để thu thập và quản lý các báo cáo sự cố nhằm cải thiện tính ổn định và hiệu suất của ứng dụng. Chúng tôi cam kết bảo vệ quyền riêng tư của bạn và cung cấp sự minh bạch về cách dữ liệu của bạn được xử lý.
+
+Dữ liệu nào được thu thập:
+Khi xảy ra sự cố trong ứng dụng này, một số thông tin có thể được thu thập và truyền đến Sentry, bao gồm nhưng không giới hạn ở:
+
+Thông tin thiết bị như kiểu máy, phiên bản hệ điều hành và cấu hình phần cứng.
+
+Nhật ký ứng dụng và thông báo lỗi dẫn đến sự cố.
+
+Thông tin về trạng thái của ứng dụng tại thời điểm xảy ra sự cố, bao gồm cả hành động của người dùng.
+
+Cách chúng tôi sử dụng dữ liệu này:
+Dữ liệu được Sentry thu thập chỉ được sử dụng cho mục đích xác định và khắc phục lỗi trong ứng dụng của chúng tôi. Thông tin này giúp chúng tôi hiểu được nguyên nhân gốc rễ của các sự cố, cho phép chúng tôi cung cấp trải nghiệm ổn định và đáng tin cậy hơn cho người dùng.
+
+Bảo mật và lưu trữ dữ liệu:
+Chúng tôi coi trọng việc bảo mật dữ liệu của bạn. Sentry sử dụng các biện pháp bảo mật tiêu chuẩn ngành để bảo vệ thông tin được thu thập khỏi truy cập hoặc tiết lộ trái phép.
+
+Các báo cáo sự cố do Sentry thu thập có thể được lưu giữ theo chính sách lưu giữ dữ liệu của Sentry (30 ngày đối với ứng dụng này). Để biết thêm thông tin về các phương thức xử lý dữ liệu của Sentry, vui lòng tham khảo Chính sách Bảo mật của họ tại https://sentry.io/welcome/.
+
+Sự đồng ý của bạn:
+Bằng cách sử dụng ứng dụng này, bạn đồng ý với việc Sentry thu thập và xử lý dữ liệu báo cáo sự cố như được mô tả trong tuyên bố bảo mật này.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Báo cáo sự cố và lỗi:</value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Trình tạo định dạng mặc định:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Trình quét định dạng mặc định:</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>Mặc định</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>Tạo và quét nhiều loại mã vạch khác nhau.</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>Không đồng ý</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>Số đầu tiên phải là 0.</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>Màu nền trước:</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Độ mờ nền trước:</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Định dạng:</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>Chọn định dạng:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>Hiện không được hỗ trợ.</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>Định dạng</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>Tạo</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>Ký tự bắt đầu/kết thúc không hợp lệ:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>Thiếu ký tự kết thúc.</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>Thiếu ký tự bắt đầu.</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Mã màu thập lục phân:
+
+Ký tự 1-2: Độ mờ/Độ trong suốt
+Ký tự 3-4: Màu đỏ
+Ký tự 5-6: Màu xanh lá cây
+Ký tự 7-8: Màu xanh dương</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Chuyển văn bản thành giọng nói: không phải tất cả các ngôn ngữ được cung cấp trong cài đặt ứng dụng đều được hỗ trợ.
+Chuyển giọng nói thành văn bản: kích hoạt thông qua cài đặt thiết bị của bạn. Biểu tượng micro sẽ xuất hiện trên bàn phím ảo.
+Cả hai tùy chọn này đều tùy thuộc vào thiết bị và ngôn ngữ đã cài đặt. Có thể đối với một số ngôn ngữ, việc dịch từ và sang giọng nói được thực hiện qua internet bởi các dịch vụ liên quan.
+
+Văn bản được dịch bằng Google Translate. Điều này không đảm bảo tất cả các bản dịch đều chính xác.
+Các ngôn ngữ được hỗ trợ là: tiếng Séc, tiếng Đan Mạch, tiếng Hà Lan, tiếng Anh, tiếng Phần Lan, tiếng Pháp, tiếng Đức, tiếng Hungary, tiếng Ý, tiếng Na Uy, tiếng Ba Lan, tiếng Bồ Đào Nha, tiếng Rumani, tiếng Tây Ban Nha và tiếng Thụy Điển.
+
+Bạn luôn có thể liên hệ với tôi nếu cần chỉnh sửa.</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>Mã QR được tạo với kích thước pixel cố định hoặc thay đổi, tùy thuộc vào số lượng ký tự và kích thước pixel tối đa được xác định trong cài đặt.
+Khi đặt hình ảnh (logo) lên trên mã QR, hình ảnh sẽ được căn giữa và thu nhỏ xuống còn từ 10% đến 35% kích thước của mã QR. Phạm vi này có thể được điều chỉnh trong cài đặt. Một đường viền được thêm vào để cải thiện khả năng hiển thị.
+Mã QR nghệ thuật có thể tùy chỉnh cao, với các tùy chọn như hiệu ứng chuyển màu, hình dạng tùy chỉnh, màu sắc, hình ảnh nền (logo) và hình ảnh nền. Trong trường hợp này, độ mờ của nền phải được đặt từ 0% đến dưới 100% (xem cài đặt).
+Để có kết quả tốt nhất, hãy sử dụng hình ảnh vuông và thử nghiệm với kích thước hình ảnh để tránh việc thay đổi kích thước quá mức. Các định dạng tệp được ưu tiên là PNG (tùy chọn với nền trong suốt) hoặc JPEG.</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Ngôn ngữ nói:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>Ngôn ngữ:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>Độ dài của dữ liệu đầu vào phải là số chẵn.</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>Phần mềm được cung cấp "nguyên trạng", không kèm theo bất kỳ bảo hành nào, dù rõ ràng hay ngụ ý, bao gồm nhưng không giới hạn ở các bảo hành về khả năng bán được, sự phù hợp cho mục đích cụ thể và không vi phạm bản quyền. Trong mọi trường hợp, tác giả và/hoặc nhà xuất bản sẽ không chịu trách nhiệm đối với bất kỳ khiếu nại, thiệt hại hoặc trách nhiệm pháp lý nào khác, cho dù trong hành động hợp đồng, vi phạm pháp luật hay bất kỳ hình thức nào khác, phát sinh từ, liên quan đến hoặc do phần mềm hoặc việc sử dụng hoặc các giao dịch khác liên quan đến phần mềm.</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>Quét và tạo mã vạch cho các ứng dụng .NET MAUI.
+Giấy phép MIT:
+Quyền được cấp miễn phí cho bất kỳ người nào có được bản sao phần mềm này và các tệp tài liệu liên quan ("Phần mềm"), để sử dụng Phần mềm mà không bị hạn chế, bao gồm nhưng không giới hạn quyền sử dụng, sao chép, sửa đổi, hợp nhất, xuất bản, phân phối, cấp phép lại và/hoặc bán các bản sao của Phần mềm, và cho phép những người được cung cấp Phần mềm làm như vậy, tuân theo các điều kiện sau:
+
+Thông báo bản quyền ở trên và thông báo quyền này (bao gồm cả đoạn tiếp theo) phải được bao gồm trong tất cả các bản sao hoặc các phần quan trọng của Phần mềm.</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>Giấy phép</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>Ứng dụng này được phép sử dụng miễn phí cho mục đích phi thương mại.
+Việc sử dụng chương trình này hoàn toàn do bạn tự chịu rủi ro.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Luôn gửi</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Không gửi</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>Ứng dụng đã phát hiện lỗi trong phiên làm việc trước đó.
+Để cải thiện ứng dụng, tôi muốn nhận được nhật ký lỗi đó.
+Bạn có thể gửi nhật ký lỗi đó cho tôi được không?
+Cảm ơn trước.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Gửi</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>Đã phát hiện lỗi. Vui lòng gửi nhật ký lỗi?</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Đang gửi nhật ký lỗi</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>Máy tạo và quét mã vạch</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>Không</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>Mở liên kết này?</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>Liên kết trang web</value>
+  </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>pixel</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>Chính sách bảo mật:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>Tôi không lưu trữ hay chuyển giao bất kỳ dữ liệu cá nhân hoặc dữ liệu nào khác cho bản thân và người khác.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>Kích thước ảnh: {0}%</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>Tệp đã chọn không được hỗ trợ.</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Kích thước hình ảnh được đề xuất</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>Ứng dụng sẽ được khởi động lại.</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>Cài lại</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Một số cài đặt đã thay đổi cần được lưu lại để có hiệu lực.</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>Cứu</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>Cài đặt</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>Văn bản chứa một hoặc nhiều ký tự không được phép.
+
+Không được phép:</value>
+  </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>Micro PDF417</value>
   </data>
@@ -358,14 +572,32 @@ Một lựa chọn khác là gỡ cài đặt và cài đặt lại ứng dụng
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>Mã QR có hình ảnh</value>
   </data>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Chọn ảnh phía trước</value>
+  </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Hủy bỏ</value>
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>Mã QR bảo mật SQRC</value>
   </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>Kích thước thay đổi:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>Kích thước tính bằng pixel:</value>
+  </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Mã vạch kèm chú thích:</value>
+  </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>số {0}, chữ số và chữ cái {1}, byte {2}, chữ Hán/kana {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Số ký tự tối đa:</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Số chữ số:</value>
   </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Mã QR nghệ thuật</value>
@@ -388,19 +620,308 @@ Một lựa chọn khác là gỡ cài đặt và cài đặt lại ứng dụng
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Đã phát hiện ký tự Kanji/Kana.</value>
   </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>Hình dạng mô-đun mã QR: hình vuông</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>Hình dạng mô-đun mã QR: hình tròn</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>Hình dạng mô-đun mã QR: hình tròn bo tròn</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Chọn ảnh nền</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>Sử dụng màu chuyển sắc:</value>
+  </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Hướng chuyển màu:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>Các màu chuyển sắc:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Từ dưới lên trên</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Từ dưới bên trái lên trên bên phải</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Từ trái sang phải</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Từ trên cùng bên trái xuống dưới cùng bên phải</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Từ trên xuống dưới</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Từ trên cùng bên phải xuống dưới cùng bên trái</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Từ phải sang trái</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Từ dưới bên phải lên trên bên trái</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>Màu chuyển sắc 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>Màu chuyển sắc 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>Màu chuyển sắc 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>Hình dạng mô-đun:</value>
+  </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Ảnh phía trước:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Ảnh nền:</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Mã QR nghệ thuật với màu nền trước:</value>
+  </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
     <value>Nén văn bản:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>Văn bản trong mã QR có thể được nén (xem cài đặt để bật tính năng này). Để văn bản có thể đọc được trở lại, cần phải giải nén bằng máy quét hỗ trợ nén GZip, chẳng hạn như máy quét trong ứng dụng này.</value>
+  </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Hình dạng mẫu tìm kiếm:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>Hình dạng mẫu tìm mã QR: hình tròn</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>Hình dạng mẫu tìm mã QR: hình tròn bo tròn</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>Hình dạng mẫu tìm mã QR: hình vuông</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Để đạt độ tin cậy quét tối ưu, chúng tôi khuyến nghị các điều sau đây đối với mã QR:
+Giữ độ tương phản cao giữa màu nền và màu chữ.
+Sử dụng các mô-đun hình vuông (mặc định): các mô-đun hình vuông thường tạo ra tỷ lệ lỗi thấp nhất khi quét mã QR.
+Tránh khoảng trống giữa các mô-đun: các mô-đun nhỏ hơn hoặc các hình dạng như hình tròn hoặc hình bo tròn có thể tạo ra khoảng trống, làm tăng lỗi quét.
+Chế độ sửa lỗi được đặt ở mức cao (khả năng phục hồi 30%) theo mặc định: mức sửa lỗi cao giúp bù đắp cho khả năng đọc bị giảm.
+
+Nên kiểm tra các mã QR và các mã vạch khác được tạo ra để đảm bảo chúng quét chính xác.</value>
+  </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>WiFi</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>Đánh dấu trang</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>Vị trí địa lý</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>Tin nhắn WhatsApp</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>Thông tin liên hệ</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>Sự kiện lịch</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>Loại dữ liệu:</value>
+  </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>Tên mạng</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>Địa chỉ email</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>Chủ đề</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>Tin nhắn</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>Vĩ độ:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>Kinh độ:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>Họ</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>Vị trí</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>Bắt đầu:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>Kết thúc:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Tải trọng:</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Tải trọng</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Giá trị vĩ độ không hợp lệ.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Giá trị kinh độ không hợp lệ.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Vĩ độ nằm ngoài phạm vi cho phép. Giá trị phải nằm trong khoảng từ -90 đến 90 (bao gồm cả -90 và 90).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Kinh độ nằm ngoài phạm vi cho phép. Giá trị phải nằm trong khoảng từ -180 đến 180 (bao gồm cả hai giá trị này).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Ngày bắt đầu không được muộn hơn ngày kết thúc.</value>
   </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>Sao chép</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Tạo mã QR thông minh với các loại dữ liệu như vị trí địa lý, danh bạ, v.v. Chạm vào biểu tượng ở trên cùng, chọn loại dữ liệu, nhập thông tin chi tiết của bạn, sau đó tạo và chia sẻ mã QR.
+Không phải tất cả các loại dữ liệu đều được hỗ trợ trên mọi thiết bị.</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Yêu cầu định vị địa lý</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Định vị địa lý</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Vị trí không khả dụng trên thiết bị này hoặc dịch vụ định vị đã bị tắt.</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Mở bản đồ</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Mã hóa:</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>Địa chỉ email không hợp lệ.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>Địa chỉ URL không hợp lệ.</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Xác thực:</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Số điện thoại không hợp lệ.</value>
+  </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>Không tìm thấy mã vạch.</value>
+  </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>Chuyển khoản tín dụng SEPA</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>Mã BIC người thụ hưởng</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Tên người thụ hưởng</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>Mã IBAN người thụ hưởng</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Số tiền (EUR)</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Mục đích</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>Thông tin chuyển tiền (có cấu trúc)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>Thông tin chuyển tiền (không có cấu trúc)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>Mã IBAN không hợp lệ.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Số tiền không hợp lệ.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>Mã BIC không hợp lệ.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Họ tên là bắt buộc.</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>Chỉ được phép điền thông tin vào một trong các trường thông tin chuyển tiền.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Thông tin chuyển tiền không hợp lệ.</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Tổng chiều dài của tất cả các trường quá lớn. Kích thước dữ liệu tối đa bị giới hạn ở 331 byte.</value>
+  </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Kích thước mô-đun: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Kích thước viền ảnh: {0} pixel</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Kích thước vùng yên tĩnh: {0} mô-đun</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Mã QR siêu nhỏ nghệ thuật</value>
   </data>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Mã phải có độ dài {0} chữ số (không bao gồm chữ số kiểm tra) hoặc {1} chữ số.</value>
+  </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Cỡ chữ:</value>
   </data>
 </root>

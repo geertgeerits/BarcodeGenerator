@@ -704,7 +704,7 @@ Microsoft, Microsoft Store, Microsoft Store logosu ve Windows, Microsoft Corpora
     <value>Kanji/Kana karakteri algılandı.</value>
   </data>
   <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
-    <value>टेक्स्ट की लंबाई {0} कैरेक्टर तक सीमित है।</value>
+    <value>Metin uzunluğu {0} karakterle sınırlıdır.</value>
   </data>
   <data name="TextLengthLimitedByte_Text" xml:space="preserve">
     <value>Metin uzunluğu {0} bayt ile sınırlıdır.</value>

@@ -298,6 +298,217 @@
   <data name="Copyright_Text" xml:space="preserve">
     <value>Πνευματικά δικαιώματα</value>
   </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Για να μας βοηθήσει να διορθώσουμε τυχόν προβλήματα, η εφαρμογή θα στέλνει ανώνυμες αναφορές σφαλμάτων και σφαλμάτων κατά την επανεκκίνηση της εφαρμογής.
+Οι αναφορές περιέχουν πληροφορίες σχετικά με τη διακοπή λειτουργίας ή το σφάλμα, συμπεριλαμβανομένων των προδιαγραφών της συσκευής, του λειτουργικού συστήματος, της έκδοσης της εφαρμογής, της χρονικής σήμανσης και του ανώνυμου αναγνωριστικού εγκατάστασης.
+Τα δεδομένα συλλέγονται με μοναδικό σκοπό να μας βοηθήσουν να βελτιώσουμε την εφαρμογή και δεν περιλαμβάνουν προσωπικά στοιχεία. Δεν συλλέγονται άλλα δεδομένα.
+Οι ανώνυμες αναφορές σφαλμάτων και σφαλμάτων αποθηκεύονται στο Κέντρο Εφαρμογών της Microsoft.
+Δεν κοινοποιούνται σε κανέναν άλλο εκτός του προγραμματιστή της εφαρμογής.
+Τα δεδομένα αναφοράς διατηρούνται για 28 ημέρες.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Δήλωση Απορρήτου: Αναφορά Σφάλματος με το Sentry.
+
+Η Γεννήτρια Barcode χρησιμοποιεί το Sentry, μια υπηρεσία τρίτου μέρους, για τη συλλογή και διαχείριση αναφορών σφαλμάτων, προκειμένου να βελτιώσει τη σταθερότητα και την απόδοση της εφαρμογής μας. Δεσμευόμαστε να προστατεύουμε το απόρρητό σας και να παρέχουμε διαφάνεια σχετικά με τον τρόπο χειρισμού των δεδομένων σας.
+
+Ποια δεδομένα συλλέγονται:
+Όταν παρουσιάζεται σφάλμα σε αυτήν την εφαρμογή, ενδέχεται να συλλεχθούν και να μεταδοθούν στο Sentry ορισμένες πληροφορίες, συμπεριλαμβανομένων, ενδεικτικά:
+Πληροφορίες συσκευής, όπως μοντέλο, έκδοση λειτουργικού συστήματος και διαμόρφωση υλικού.
+Αρχεία καταγραφής εφαρμογών και μηνύματα σφάλματος που οδήγησαν στο σφάλμα.
+Πληροφορίες σχετικά με την κατάσταση της εφαρμογής κατά τη στιγμή του σφάλματος, συμπεριλαμβανομένων των ενεργειών του χρήστη.
+
+Πώς χρησιμοποιούμε αυτά τα δεδομένα:
+Τα δεδομένα που συλλέγονται από το Sentry χρησιμοποιούνται αποκλειστικά για τον εντοπισμό και τη διόρθωση σφαλμάτων και σφαλμάτων εντός της εφαρμογής μας. Αυτές οι πληροφορίες μας βοηθούν να κατανοήσουμε τις βασικές αιτίες των σφαλμάτων, επιτρέποντάς μας να παρέχουμε μια πιο σταθερή και αξιόπιστη εμπειρία στους χρήστες μας.
+
+Ασφάλεια και διατήρηση δεδομένων:
+Λαμβάνουμε σοβαρά υπόψη την ασφάλεια των δεδομένων σας. Το Sentry εφαρμόζει μέτρα ασφαλείας που ανταποκρίνονται στα πρότυπα του κλάδου για την προστασία των πληροφοριών που συλλέγονται από μη εξουσιοδοτημένη πρόσβαση ή αποκάλυψη.
+
+Οι αναφορές σφαλμάτων που συλλέγονται από την Sentry ενδέχεται να διατηρούνται σύμφωνα με τις πολιτικές διατήρησης δεδομένων της Sentry (30 ημέρες για αυτήν την εφαρμογή). Για περισσότερες πληροφορίες σχετικά με τις πρακτικές διαχείρισης δεδομένων της Sentry, ανατρέξτε στην Πολιτική Απορρήτου τους στη διεύθυνση https://sentry.io/welcome/.
+
+Η συγκατάθεσή σας:
+Χρησιμοποιώντας αυτήν την εφαρμογή, συναινείτε στη συλλογή και επεξεργασία δεδομένων αναφορών σφαλμάτων από την Sentry, όπως περιγράφεται σε αυτήν τη δήλωση απορρήτου.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Αναφορές σφαλμάτων και σφαλμάτων:</value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Προεπιλεγμένη γεννήτρια μορφής:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Προεπιλεγμένη σαρωτής μορφής:</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>Προεπιλογή</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>Δημιουργήστε και σαρώστε διάφορους γραμμωτούς κώδικες.</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>Διαφωνώ</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>Ηλεκτρονικό ταχυδρομείο:</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>Σφάλμα</value>
+  </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>Ο πρώτος αριθμός πρέπει να είναι 0.</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>Χρώμα προσκηνίου:</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Αδιαφάνεια προσκηνίου:</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Μορφή:</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>Επιλέξτε μια μορφή:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>δεν υποστηρίζεται προς το παρόν.</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>Μορφή</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>Δημιουργία</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>Μη έγκυρος χαρακτήρας έναρξης/τέλους:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>Λείπει ο χαρακτήρας λήξης.</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>Λείπει ο χαρακτήρας έναρξης.</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Δεκαεξαδικοί χρωματικοί κωδικοί:
+
+Χαρακτήρες 1-2: Αδιαφάνεια/Διαφάνεια
+Χαρακτήρες 3-4: Κόκκινο
+Χαρακτήρες 5-6: Πράσινο
+Χαρακτήρες 7-8: Μπλε</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Μετατροπή κειμένου σε ομιλία: δεν υποστηρίζονται όλες οι γλώσσες που παρέχονται στις ρυθμίσεις της εφαρμογής.
+Μετατροπή ομιλίας σε κείμενο: ενεργοποιήστε την μέσω των ρυθμίσεων της συσκευής σας. Στη συνέχεια, θα εμφανιστεί ένα μικρόφωνο στο εικονικό πληκτρολόγιο.
+Και οι δύο αυτές επιλογές εξαρτώνται από συσκευή σε συσκευή και από τις εγκατεστημένες γλώσσες. Είναι πιθανό για ορισμένες γλώσσες η μετάφραση από και προς ομιλία να γίνεται μέσω διαδικτύου από τις αρμόδιες υπηρεσίες.
+
+Το Google Translate χρησιμοποιήθηκε για τη μετάφραση του κειμένου. Αυτό δεν αποτελεί εγγύηση ότι όλες οι μεταφράσεις είναι σωστές.
+Οι υποστηριζόμενες γλώσσες είναι: Τσεχικά, Δανικά, Ολλανδικά, Αγγλικά, Φινλανδικά, Γαλλικά, Γερμανικά, Ουγγρικά, Ιταλικά, Νορβηγικά, Πολωνικά, Πορτογαλικά, Ρουμανικά, Ισπανικά και Σουηδικά.
+
+Μπορείτε πάντα να επικοινωνήσετε μαζί μου για τυχόν διορθώσεις.</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>Ο κώδικας QR δημιουργείται είτε σε σταθερό είτε σε μεταβλητό μέγεθος pixel, ανάλογα με τον αριθμό των χαρακτήρων που περιέχει και το μέγιστο μέγεθος pixel που ορίζεται στις ρυθμίσεις.
+Όταν μια εικόνα (λογότυπο) τοποθετείται πάνω από τον κώδικα QR, κεντράρεται και κλιμακώνεται μεταξύ 10% και 35% του μεγέθους του κώδικα QR. Αυτό το εύρος μπορεί να προσαρμοστεί στις ρυθμίσεις. Προστίθεται ένα περίγραμμα για βελτίωση της ορατότητας.
+Ο καλλιτεχνικός κώδικας QR είναι ιδιαίτερα προσαρμόσιμος, με επιλογές όπως διαβαθμίσεις, προσαρμοσμένα σχήματα, χρώματα, εικόνα προσκηνίου (λογότυπο) και εικόνα φόντου. Σε αυτήν την περίπτωση, η αδιαφάνεια του φόντου πρέπει να οριστεί μεταξύ 0% και λιγότερο από 100% (δείτε τις ρυθμίσεις).
+Για καλύτερα αποτελέσματα, χρησιμοποιήστε τετράγωνες εικόνες και πειραματιστείτε με το μέγεθος της εικόνας για να αποφύγετε την υπερβολική αλλαγή μεγέθους. Οι προτιμώμενες μορφές αρχείων είναι PNG (προαιρετικά με διαφανές φόντο) ή JPEG.</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Πληροφορίες</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Γλώσσα ομιλίας:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>Γλώσσα:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>Το μήκος της εισόδου πρέπει να είναι ομοιόμορφο.</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>Το λογισμικό παρέχεται «ως έχει», χωρίς κανενός είδους εγγύηση, ρητή ή σιωπηρή, συμπεριλαμβανομένων ενδεικτικά των εγγυήσεων εμπορευσιμότητας, καταλληλότητας για συγκεκριμένο σκοπό και μη παραβίασης. Σε καμία περίπτωση ο δημιουργός ή/και ο εκδότης δεν θα ευθύνονται για οποιαδήποτε αξίωση, ζημία ή άλλη ευθύνη, είτε σε αγωγή σύμβασης, αδικοπραξίας είτε άλλως, που προκύπτει από, από ή σε σχέση με το λογισμικό ή τη χρήση ή άλλες συναλλαγές στο λογισμικό.</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>Σάρωση και δημιουργία γραμμωτού κώδικα για εφαρμογές .NET MAUI.
+Άδεια MIT:
+Παρέχεται με το παρόν άδεια, δωρεάν, σε οποιοδήποτε άτομο αποκτά αντίγραφο αυτού του λογισμικού και των σχετικών αρχείων τεκμηρίωσης (το "Λογισμικό"), να διακινεί το Λογισμικό χωρίς περιορισμούς, συμπεριλαμβανομένων, ενδεικτικά, των δικαιωμάτων χρήσης, αντιγραφής, τροποποίησης, συγχώνευσης, δημοσίευσης, διανομής, υποαδειοδότησης ή/και πώλησης αντιγράφων του Λογισμικού, και να επιτρέπει σε άτομα στα οποία παρέχεται το Λογισμικό να το πράξουν, υπό τους ακόλουθους όρους:
+
+Η παραπάνω ειδοποίηση πνευματικών δικαιωμάτων και η παρούσα ειδοποίηση άδειας (συμπεριλαμβανομένης της επόμενης παραγράφου) θα περιλαμβάνονται σε όλα τα αντίγραφα ή σε σημαντικά τμήματα του Λογισμικού.</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>Αδεια</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>Αυτή η εφαρμογή μπορεί να χρησιμοποιηθεί ελεύθερα για μη εμπορικούς σκοπούς.
+Χρησιμοποιήστε αυτό το πρόγραμμα αποκλειστικά με δική σας ευθύνη.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Να αποστέλλεται πάντα</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Μην αποστέλλεται</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>Η εφαρμογή εντόπισε ένα σφάλμα σε μια προηγούμενη συνεδρία.
+Για να βελτιώσω την εφαρμογή, θα ήθελα να λάβω το αρχείο καταγραφής με αυτό το σφάλμα.
+Μπορεί να σταλεί το αρχείο καταγραφής αυτού του σφάλματος;
+Σας ευχαριστώ εκ των προτέρων.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Στέλνω</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>Εντοπίστηκε σφάλμα. Αποστολή του αρχείου καταγραφής σφαλμάτων;</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Αποστολή του αρχείου καταγραφής σφαλμάτων</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>Γεννήτρια και σαρωτής γραμμωτού κώδικα</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>Οχι</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>Άνοιγμα αυτού του συνδέσμου;</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>Σύνδεσμος ιστότοπου</value>
+  </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>εικονοστοιχεία</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>Πολιτική Απορρήτου:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>Δεν αποθηκεύονται ούτε διαβιβάζονται προσωπικά και άλλα δεδομένα σε εμένα και σε άλλους.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>Μέγεθος εικόνας: {0}%</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>Το επιλεγμένο αρχείο δεν υποστηρίζεται.</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Προτεινόμενο μέγεθος εικόνας</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>Η εφαρμογή θα επανεκκινηθεί.</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>Επαναφορά</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Ορισμένες τροποποιημένες ρυθμίσεις πρέπει να αποθηκευτούν για να εφαρμοστούν.</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>Εκτός</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>Το κείμενο περιέχει έναν ή περισσότερους χαρακτήρες που δεν επιτρέπονται.
+
+Δεν επιτρέπονται:</value>
+  </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>Micro PDF417</value>
   </data>
@@ -358,14 +569,32 @@
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>Κωδικός QR με εικόνα</value>
   </data>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Επιλέξτε μια εικόνα πρώτου πλάνου</value>
+  </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Ακύρωση</value>
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>Ασφαλής κωδικός QR SQRC</value>
   </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>Μεταβλητό μέγεθος:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>Μέγεθος σε pixel:</value>
+  </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Γραμμωτός κώδικας με λεζάντα:</value>
+  </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>αριθμητικό {0}, αλφαριθμητικό {1}, bytes {2}, kanji/kana {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Μέγιστος αριθμός χαρακτήρων:</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Αριθμός ψηφίων:</value>
   </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>Καλλιτεχνικός Κωδικός QR</value>
@@ -388,19 +617,308 @@
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Εντοπίστηκε χαρακτήρας Kanji/Kana.</value>
   </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>Σχήμα ενότητας QR Code: τετράγωνο</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>Σχήμα ενότητας QR Code: κύκλος</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>Σχήμα ενότητας QR Code: στρογγυλεμένο</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Επιλέξτε μια εικόνα φόντου</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>Χρησιμοποιήστε χρώματα διαβάθμισης:</value>
+  </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Κατεύθυνση διαβάθμισης:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>Χρώματα διαβάθμισης:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Από κάτω προς τα πάνω</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Από κάτω αριστερά προς τα πάνω δεξιά</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Από αριστερά προς δεξιά</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Πάνω αριστερά προς κάτω δεξιά</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Από πάνω προς τα κάτω</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Από πάνω δεξιά προς τα κάτω αριστερά</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Από δεξιά προς αριστερά</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Κάτω δεξιά προς πάνω αριστερά</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>Χρώμα διαβάθμισης 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>Χρώμα διαβάθμισης 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>Χρώμα διαβάθμισης 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>Σχήμα ενότητας:</value>
+  </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Εικόνα πρώτου πλάνου:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Εικόνα φόντου:</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Καλλιτεχνικός κωδικός QR χρώματος προσκηνίου:</value>
+  </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
     <value>Συμπίεση κειμένου:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>Το κείμενο στον κωδικό QR μπορεί να συμπιεστεί (δείτε τις ρυθμίσεις για να το ενεργοποιήσετε). Για να γίνει ξανά αναγνώσιμο το κείμενο, πρέπει να αποσυμπιεστεί από έναν σαρωτή που υποστηρίζει συμπίεση GZip, όπως ο σαρωτής σε αυτήν την εφαρμογή.</value>
+  </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Σχήμα μοτίβου εύρεσης:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>Σχήμα μοτίβου εύρεσης κωδικού QR: κύκλος</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>Σχήμα μοτίβου εύρεσης κωδικού QR: στρογγυλεμένο</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>Σχήμα μοτίβου εύρεσης κωδικού QR: τετράγωνο</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Για βέλτιστη αξιοπιστία σάρωσης, συνιστούμε τα εξής για τους κωδικούς QR:
+Διατηρήστε υψηλή αντίθεση μεταξύ των χρωμάτων του προσκηνίου και του φόντου.
+Χρησιμοποιήστε τετράγωνες ενότητες (προεπιλογή): οι τετράγωνες ενότητες γενικά παράγουν το χαμηλότερο ποσοστό σφάλματος κατά τη σάρωση κωδικών QR.
+Αποφύγετε τα κενά μεταξύ των ενοτήτων: μικρότερες ενότητες ή σχήματα, όπως κύκλοι ή στρογγυλεμένες ενότητες, μπορούν να δημιουργήσουν κενά, τα οποία μπορεί να αυξήσουν τα σφάλματα σάρωσης.
+Η διόρθωση σφαλμάτων έχει οριστεί σε υψηλή τιμή (ανάκτηση 30%) από προεπιλογή: ένα υψηλό επίπεδο διόρθωσης σφαλμάτων βοηθά στην αντιστάθμιση της μειωμένης αναγνωσιμότητας.
+
+Συνιστάται να ελέγχετε τους δημιουργημένους κωδικούς QR και άλλους γραμμωτούς κώδικες για να βεβαιωθείτε ότι σαρώνονται σωστά.</value>
+  </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>WiFi</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>Σελιδοδείκτης</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>Ηλεκτρονικό ταχυδρομείο</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>Γεωγραφική τοποθεσία</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>Αριθμός τηλεφώνου</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>Μήνυμα WhatsApp</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>Δεδομένα επικοινωνίας</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>Συμβάν ημερολογίου</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>Τύπος ωφέλιμου φορτίου:</value>
+  </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>Όνομα δικτύου</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>Κωδικός πρόσβασης</value>
+  </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>Τίτλος</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>Διεύθυνση ηλεκτρονικού ταχυδρομείου</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>Θέμα</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>Μήνυμα</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>Γεωγραφικό πλάτος:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>Γεωγραφικό μήκος:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>Επώνυμο</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>Ηλεκτρονικό ταχυδρομείο</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>Τοποθεσία</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>Έναρξη:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>Τέλος:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Ωφέλιμα φορτία:</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Ωφέλιμα φορτία</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Μη έγκυρη τιμή γεωγραφικού πλάτους.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Μη έγκυρη τιμή γεωγραφικού μήκους.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Γεωγραφικό πλάτος εκτός εύρους. Η τιμή πρέπει να είναι μεταξύ -90 και 90 (συμπεριλαμβανομένου).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Γεωγραφικό μήκος εκτός εύρους. Η τιμή πρέπει να είναι μεταξύ -180 και 180 (συμπεριλαμβανομένου).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Η ημερομηνία έναρξης δεν μπορεί να είναι μεταγενέστερη της ημερομηνίας λήξης.</value>
   </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>Αντιγραφή</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Δημιουργήστε έξυπνους κωδικούς QR με τύπους ωφέλιμου φορτίου όπως γεωγραφική τοποθεσία, επαφές και άλλα. Πατήστε το εικονίδιο στο επάνω μέρος, επιλέξτε έναν τύπο, εισαγάγετε τα στοιχεία σας και, στη συνέχεια, δημιουργήστε και μοιραστείτε τον κωδικό QR σας.
+Δεν υποστηρίζονται όλοι οι τύποι ωφέλιμου φορτίου σε κάθε συσκευή.</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Αίτημα γεωγραφικής τοποθεσίας</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Γεωγραφική τοποθεσία</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Η τοποθεσία δεν είναι διαθέσιμη σε αυτήν τη συσκευή ή οι υπηρεσίες τοποθεσίας είναι απενεργοποιημένες.</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Άνοιγμα χαρτών</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Κωδικοποίηση:</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν είναι έγκυρη.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>Η διεύθυνση URL δεν είναι έγκυρη.</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Αριθμός τηλεφώνου</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Έλεγχος ταυτότητας:</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Ο αριθμός τηλεφώνου δεν είναι έγκυρος.</value>
+  </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>Δεν βρέθηκε γραμμωτός κώδικας.</value>
+  </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>Μεταφορά πίστωσης SEPA</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>Δικαιούχος BIC</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Όνομα δικαιούχου</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>Δικαιούχος IBAN</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Ποσό σε ευρώ</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Σκοπός</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>Πληροφορίες εμβάσματος (δομημένες)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>Πληροφορίες εμβάσματος (μη δομημένες)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Πληροφορίες</value>
+  </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>Ο IBAN δεν είναι έγκυρος.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Το ποσό δεν είναι έγκυρο.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>Ο κωδικός BIC δεν είναι έγκυρος.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Το όνομα είναι υποχρεωτικό.</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>Μόνο ένα από τα πεδία πληροφοριών πληρωμής μπορεί να συμπληρωθεί.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Οι πληροφορίες πληρωμής δεν είναι έγκυρες.</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Το συνολικό μήκος όλων των πεδίων είναι πολύ μεγάλο. Το συνολικό μέγεθος ωφέλιμου φορτίου περιορίζεται σε 331 byte.</value>
+  </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Μέγεθος ενότητας: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Μέγεθος περιγράμματος εικόνας: {0} pixel</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Μέγεθος ζώνης ηρεμίας: {0} ενότητες</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Καλλιτεχνικός Μικροκωδικός QR</value>
   </data>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Ο κωδικός θα πρέπει να έχει μήκος {0} ψηφία (εκτός του ψηφίου ελέγχου) ή {1} ψηφία.</value>
+  </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Μέγεθος γραμματοσειράς:</value>
   </data>
 </root>
