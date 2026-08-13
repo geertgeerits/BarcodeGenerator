@@ -512,6 +512,92 @@ Cảm ơn trước.</value>
 
 Không được phép:</value>
   </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>Văn bản cần mã hóa:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>Tính năng chuyển văn bản thành giọng nói không được hỗ trợ trên thiết bị này.</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>Tối</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>Sáng</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>Hệ thống</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>Chủ đề:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Hãy gửi email cho tác giả của ứng dụng này.</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Mở trang web của ứng dụng này</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>Máy quét</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Bắt đầu hoặc dừng quét mã vạch</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Chọn camera sau hoặc camera trước</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Thiết lập chất lượng camera</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Bật hoặc tắt đèn flash của máy ảnh.</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Bật hoặc tắt chế độ rung của thiết bị khi tìm thấy mã vạch.</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Máy ảnh: phóng to và thu nhỏ</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>Sao chép văn bản vào clipboard</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Báo cáo sự cố và lỗi</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Tiến lên</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Trợ giúp</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>Dán văn bản từ clipboard</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Đặt lại các cài đặt về giá trị mặc định.</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Lưu cài đặt</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Chuyển văn bản thành giọng nói: bật hoặc tắt</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store và logo App Store là các nhãn hiệu đã được đăng ký của Apple Inc., tại Hoa Kỳ và các quốc gia, khu vực khác.
+Google, Google Play, logo Google Play và Android là các nhãn hiệu đã được đăng ký của Google LLC.
+Microsoft, Microsoft Store, logo Microsoft Store và Windows là các nhãn hiệu đã được đăng ký của Microsoft Corporation.</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Phiên bản:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Trang web:</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Đúng</value>
+  </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>Micro PDF417</value>
   </data>
@@ -619,6 +705,12 @@ Không được phép:</value>
   </data>
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Đã phát hiện ký tự Kanji/Kana.</value>
+  </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>Độ dài văn bản bị giới hạn ở {0} ký tự.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>Độ dài văn bản bị giới hạn ở {0} byte.</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>Hình dạng mô-đun mã QR: hình vuông</value>
@@ -818,8 +910,21 @@ Nên kiểm tra các mã QR và các mã vạch khác được tạo ra để đ
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
     <value>Ngày bắt đầu không được muộn hơn ngày kết thúc.</value>
   </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Đã phát hiện mạng Wi-Fi.
+Chọn một tùy chọn.</value>
+  </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>Sao chép</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Mở cài đặt Wi-Fi</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Vui lòng mở Cài đặt - Wi-Fi để kết nối với mạng.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Nền tảng này không hỗ trợ cài đặt Wi-Fi mở.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Tạo mã QR thông minh với các loại dữ liệu như vị trí địa lý, danh bạ, v.v. Chạm vào biểu tượng ở trên cùng, chọn loại dữ liệu, nhập thông tin chi tiết của bạn, sau đó tạo và chia sẻ mã QR.
@@ -846,6 +951,9 @@ Không phải tất cả các loại dữ liệu đều được hỗ trợ trê
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>Địa chỉ URL không hợp lệ.</value>
   </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>Mở liên kết URL</value>
+  </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Số điện thoại</value>
   </data>
@@ -857,6 +965,12 @@ Không phải tất cả các loại dữ liệu đều được hỗ trợ trê
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>Không tìm thấy mã vạch.</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Quét một hình ảnh</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Quét từ máy ảnh</value>
   </data>
   <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
     <value>Chuyển khoản tín dụng SEPA</value>

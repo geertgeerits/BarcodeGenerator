@@ -509,6 +509,92 @@
 
 Δεν επιτρέπονται:</value>
   </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>Κείμενο προς κωδικοποίηση:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>Η μετατροπή κειμένου σε ομιλία δεν υποστηρίζεται σε αυτήν τη συσκευή.</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>Σκοτάδι</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>Φως</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>Σύστημα</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>Θέμα:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Στείλτε ένα email στον δημιουργό αυτής της εφαρμογής</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Ανοίξτε τον ιστότοπο αυτής της εφαρμογής</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>Ερευνητής</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Έναρξη ή διακοπή σάρωσης για γραμμωτούς κώδικες</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Επιλέξτε την πίσω ή την μπροστινή κάμερα</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Ρυθμίστε την ποιότητα της κάμερας</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Ενεργοποίηση ή απενεργοποίηση του φακού της κάμερας</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Ενεργοποίηση ή απενεργοποίηση δόνησης συσκευής κατά την εύρεση γραμμωτού κώδικα</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Κάμερα: μεγέθυνση και σμίκρυνση</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>Αντιγραφή κειμένου στο πρόχειρο</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Αναφορές σφαλμάτων και σφαλμάτων</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Επιστροφή</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Εμπρός</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Βοήθεια</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>Επικόλληση κειμένου από το πρόχειρο</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Επαναφορά των ρυθμίσεων στις προεπιλεγμένες τιμές τους</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Αποθήκευση ρυθμίσεων</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Κείμενο σε ομιλία: ενεργοποιημένο ή απενεργοποιημένο</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Οι ονομασίες Apple, App Store και το λογότυπο App Store είναι εμπορικά σήματα της Apple Inc., καταχωρισμένα στις ΗΠΑ και σε άλλες χώρες και περιοχές.
+Οι ονομασίες Google, Google Play, το λογότυπο Google Play και Android είναι εμπορικά σήματα της Google LLC.
+Οι ονομασίες Microsoft, Microsoft Store, το λογότυπο Microsoft Store και τα Windows είναι εμπορικά σήματα της Microsoft Corporation.</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Έκδοση:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Ιστότοπος:</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Ναί</value>
+  </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>Micro PDF417</value>
   </data>
@@ -616,6 +702,12 @@
   </data>
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Εντοπίστηκε χαρακτήρας Kanji/Kana.</value>
+  </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>Το μήκος του κειμένου περιορίζεται σε {0} χαρακτήρες.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>Το μήκος του κειμένου περιορίζεται σε {0} bytes.</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>Σχήμα ενότητας QR Code: τετράγωνο</value>
@@ -815,8 +907,21 @@
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
     <value>Η ημερομηνία έναρξης δεν μπορεί να είναι μεταγενέστερη της ημερομηνίας λήξης.</value>
   </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Εντοπίστηκε δίκτυο Wi‑Fi.
+Ορίστε μια επιλογή.</value>
+  </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>Αντιγραφή</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Άνοιγμα ρυθμίσεων Wi-Fi</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Ανοίξτε τις Ρυθμίσεις - Wi-Fi για να συνδεθείτε στο δίκτυο.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Οι ανοιχτές ρυθμίσεις Wi-Fi δεν υποστηρίζονται σε αυτήν την πλατφόρμα.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Δημιουργήστε έξυπνους κωδικούς QR με τύπους ωφέλιμου φορτίου όπως γεωγραφική τοποθεσία, επαφές και άλλα. Πατήστε το εικονίδιο στο επάνω μέρος, επιλέξτε έναν τύπο, εισαγάγετε τα στοιχεία σας και, στη συνέχεια, δημιουργήστε και μοιραστείτε τον κωδικό QR σας.
@@ -843,6 +948,9 @@
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>Η διεύθυνση URL δεν είναι έγκυρη.</value>
   </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>Άνοιγμα του συνδέσμου URL</value>
+  </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Αριθμός τηλεφώνου</value>
   </data>
@@ -854,6 +962,12 @@
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>Δεν βρέθηκε γραμμωτός κώδικας.</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Σάρωση εικόνας</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Σάρωση από κάμερα</value>
   </data>
   <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
     <value>Μεταφορά πίστωσης SEPA</value>

@@ -509,6 +509,92 @@ Terima kasih sebelumnya.</value>
 
 Tidak diizinkan:</value>
   </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>Teks yang akan dikodekan:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>Fitur text-to-speech tidak didukung pada perangkat ini.</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>Gelap</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>Terang</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>Sistem</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>Tema:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Kirim email ke penulis aplikasi ini</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Buka situs web aplikasi ini</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>Pemindai</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Mulai atau hentikan pemindaian kode batang</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Pilih kamera belakang atau depan</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Atur kualitas kamera</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Nyalakan atau matikan lampu senter kamera</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Aktifkan atau nonaktifkan getaran perangkat saat mencari kode batang.</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Kamera: perbesar dan perkecil</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>Salin teks ke papan klip</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Laporan kerusakan dan kesalahan</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Kembali</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Maju</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Bantuan</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>Salin teks dari papan klip</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Atur ulang pengaturan ke nilai defaultnya.</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Simpan pengaturan</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Teks ke suara: aktif atau nonaktif</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store, dan logo App Store adalah merek dagang Apple Inc., yang terdaftar di AS dan negara serta wilayah lain.
+Google, Google Play, logo Google Play, dan Android adalah merek dagang Google LLC.
+Microsoft, Microsoft Store, logo Microsoft Store, dan Windows adalah merek dagang Microsoft Corporation.</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Versi:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Situs web:</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Ya</value>
+  </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>Micro PDF417</value>
   </data>
@@ -616,6 +702,12 @@ Tidak diizinkan:</value>
   </data>
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Karakter Kanji/Kana terdeteksi.</value>
+  </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>Panjang teks dibatasi hingga {0} karakter.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>Panjang teks dibatasi hingga {0} byte.</value>
   </data>
   <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
     <value>Bentuk modul Kode QR: persegi</value>
@@ -815,8 +907,21 @@ Disarankan untuk menguji kode QR dan barcode lain yang dihasilkan untuk memastik
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
     <value>Tanggal mulai tidak boleh lebih lambat dari tanggal akhir.</value>
   </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Jaringan Wi-Fi terdeteksi.
+Pilih salah satu opsi.</value>
+  </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>Salin</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Buka Pengaturan Wi-Fi</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Silakan buka Pengaturan - Wi-Fi untuk bergabung ke jaringan.</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Pengaturan Wi-Fi terbuka tidak didukung pada platform ini.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Buat kode QR pintar dengan jenis muatan seperti geolokasi, kontak, dan lainnya. Ketuk ikon di bagian atas, pilih jenisnya, masukkan detail Anda, lalu buat dan bagikan kode QR Anda.
@@ -843,6 +948,9 @@ Tidak semua jenis muatan didukung di setiap perangkat.</value>
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>Alamat URL tidak valid.</value>
   </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>Buka tautan URL</value>
+  </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>Nomor telepon</value>
   </data>
@@ -854,6 +962,12 @@ Tidak semua jenis muatan didukung di setiap perangkat.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>Tidak ditemukan kode batang.</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Pindai gambar</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Pindai dari kamera</value>
   </data>
   <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
     <value>Transfer kredit SEPA</value>
