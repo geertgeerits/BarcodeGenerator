@@ -469,8 +469,129 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>ওয়েবসাইট লিঙ্ক</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>পিক্সেল</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>গোপনীয়তা নীতি:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>কোনো ব্যক্তিগত ও অন্যান্য তথ্য আমার এবং অন্যদের কাছে সংরক্ষণ বা হস্তান্তর করা হয় না।</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>ছবির আকার: {0}%</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>নির্বাচিত ফাইলটি সমর্থিত নয়।</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>প্রস্তাবিত ছবির আকার</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>অ্যাপ্লিকেশনটি পুনরায় চালু করা হবে।</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>রিসেট</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>কিছু পরিবর্তিত সেটিংস প্রয়োগ করার জন্য অবশ্যই সংরক্ষণ করতে হবে।</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>সংরক্ষণ করুন</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>সেটিংস</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>এই লেখায় এক বা একাধিক অননুমোদিত অক্ষর রয়েছে।
+
+অননুমোদিত:</value>
+  </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>এনকোড করার জন্য টেক্সট:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>এই ডিভাইসে টেক্সট টু স্পিচ সমর্থিত নয়।</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>অন্ধকার</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>আলো</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>সিস্টেম</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>থিম:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>এই অ্যাপ্লিকেশনটির লেখককে একটি ইমেল পাঠান।</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>এই অ্যাপ্লিকেশনটির ওয়েবসাইটটি খুলুন</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>স্ক্যানার</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>বারকোড স্ক্যান করা শুরু বা বন্ধ করুন</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>পেছনের বা সামনের ক্যামেরা নির্বাচন করুন</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>ক্যামেরার কোয়ালিটি সেট করুন</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>ক্যামেরার টর্চ চালু বা বন্ধ করুন</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>বারকোড খুঁজে পেলে ডিভাইসের ভাইব্রেশন চালু বা বন্ধ করুন</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>ক্যামেরা: জুম ইন এবং আউট</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>ক্লিপবোর্ডে টেক্সট কপি করুন</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>ক্র্যাশ এবং ত্রুটি রিপোর্ট</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>ফিরে যান</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>এগিয়ে যান</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>সাহায্য</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>ক্লিপবোর্ড থেকে টেক্সট পেস্ট করুন</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>সেটিংসগুলিকে তাদের ডিফল্ট মানে রিসেট করুন।</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>সেটিংস সংরক্ষণ করুন</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>টেক্সট টু স্পিচ: চালু বা বন্ধ</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store এবং App Store লোগো হলো Apple Inc.-এর ট্রেডমার্ক, যা মার্কিন যুক্তরাষ্ট্র এবং অন্যান্য দেশ ও অঞ্চলে নিবন্ধিত।
+Google, Google Play, Google Play লোগো এবং Android হলো Google LLC-এর ট্রেডমার্ক।
+Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হলো Microsoft Corporation-এর ট্রেডমার্ক।</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>সংস্করণ:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>ওয়েবসাইট:</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>হ্যাঁ</value>
   </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>মাইক্রো পিডিএফ৪১৭</value>
@@ -532,11 +653,20 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>ছবি সহ কিউআর কোড</value>
   </data>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>একটি সম্মুখভাগের ছবি নির্বাচন করুন</value>
+  </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>বাতিল করুন</value>
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>এসকিউআরসি সুরক্ষিত কিউআর কোড</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>পরিবর্তনশীল আকার:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>পিক্সেল-এ আকার:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>ক্যাপশন সহ বারকোড:</value>
@@ -571,6 +701,69 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>কাঞ্জি/কানা অক্ষর শনাক্ত করা হয়েছে।</value>
   </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>লেখার দৈর্ঘ্য {0} অক্ষরে সীমাবদ্ধ।</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>টেক্সটের দৈর্ঘ্য {0} বাইটে সীমাবদ্ধ।</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>কিউআর কোড মডিউলের আকৃতি: বর্গাকার</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>কিউআর কোড মডিউলের আকৃতি: বৃত্তাকার</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>কিউআর কোড মডিউলের আকৃতি: গোলাকার</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>একটি পটভূমির ছবি নির্বাচন করুন</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>গ্রেডিয়েন্ট রং ব্যবহার করুন:</value>
+  </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>গ্রেডিয়েন্টের দিক:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>গ্রেডিয়েন্ট রঙসমূহ:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>নিচ থেকে উপরে</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>নিচের বাম থেকে উপরের ডান</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>বাম থেকে ডান</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>উপরের বাম থেকে নিচের ডান</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>উপর থেকে নিচে</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>উপরের ডান থেকে নিচের বাম</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>ডান থেকে বামে</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>নিচের ডান থেকে উপরের বামে</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>গ্রেডিয়েন্ট রঙ ১</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>গ্রেডিয়েন্ট রঙ ২</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>গ্রেডিয়েন্ট রঙ ৩</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>মডিউলের আকৃতি:</value>
+  </data>
   <data name="ImageForeground_Text" xml:space="preserve">
     <value>সম্মুখভাগের ছবি:</value>
   </data>
@@ -586,6 +779,18 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>কিউআর কোডের লেখা সংকুচিত করা যায় (এটি চালু করতে সেটিংস দেখুন)। লেখাটিকে পুনরায় পাঠযোগ্য করতে, এটিকে অবশ্যই জি-জিপ (GZip) কম্প্রেশন সমর্থনকারী কোনো স্ক্যানার দিয়ে অসংকুচিত করতে হবে, যেমন এই অ্যাপের স্ক্যানারটি।</value>
   </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>ফাইন্ডার প্যাটার্নের আকৃতি:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>কিউআর কোড ফাইন্ডার প্যাটার্নের আকৃতি: বৃত্তাকার</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>কিউআর কোড ফাইন্ডার প্যাটার্নের আকৃতি: গোলাকার</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>কিউআর কোড ফাইন্ডার প্যাটার্নের আকৃতি: বর্গাকার</value>
+  </data>
   <data name="InfoQRCodeSettings_Text" xml:space="preserve">
     <value>স্ক্যানের সর্বোত্তম নির্ভরযোগ্যতার জন্য, আমরা QR কোডের ক্ষেত্রে নিম্নলিখিত বিষয়গুলো সুপারিশ করি:
 ফোরগ্রাউন্ড এবং ব্যাকগ্রাউন্ড রঙের মধ্যে উচ্চ বৈসাদৃশ্য বজায় রাখুন।
@@ -595,11 +800,59 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
 
 তৈরি করা QR কোড এবং অন্যান্য বারকোডগুলো সঠিকভাবে স্ক্যান হচ্ছে কিনা তা নিশ্চিত করার জন্য পরীক্ষা করে দেখার পরামর্শ দেওয়া হয়।</value>
   </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>ওয়াইফাই</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>ইউআরএল</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>বুকমার্ক</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>ই-মেইল</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>এসএমএস</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>এমএমএস</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>ভৌগোলিক অবস্থান</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>ফোন নম্বর</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>হোয়াটসঅ্যাপ বার্তা</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>যোগাযোগের তথ্য</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>ক্যালেন্ডারের ইভেন্ট</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>পেলোডের ধরন:</value>
+  </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>নেটওয়ার্কের নাম</value>
+  </data>
   <data name="PayloadTypePassword_Text" xml:space="preserve">
     <value>পাসওয়ার্ড</value>
   </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>ইউআরএল</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>শিরোনাম</value>
+  </data>
   <data name="PayloadTypeReceiver_Text" xml:space="preserve">
     <value>ই-মেইল ঠিকানা</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>বিষয়</value>
   </data>
   <data name="PayloadTypeMessage_Text" xml:space="preserve">
     <value>বার্তা</value>
@@ -625,6 +878,9 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="PayloadTypeLocation_Text" xml:space="preserve">
     <value>অবস্থান</value>
   </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>শুরু:</value>
+  </data>
   <data name="PayloadTypeEnd_Text" xml:space="preserve">
     <value>শেষ:</value>
   </data>
@@ -649,8 +905,21 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
     <value>শুরুর তারিখ শেষের তারিখের পরে হতে পারবে না।</value>
   </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>ওয়াই-ফাই নেটওয়ার্ক শনাক্ত করা হয়েছে।
+একটি বিকল্প বেছে নিন।</value>
+  </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>অনুলিপি করুন</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>ওয়াই-ফাই সেটিংস খুলুন</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>নেটওয়ার্কে যোগ দিতে অনুগ্রহ করে সেটিংস - ওয়াই-ফাই খুলুন।</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>এই প্ল্যাটফর্মে উন্মুক্ত ওয়াই-ফাই সেটিংস সমর্থিত নয়।</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>জিওলোকেশন, কন্টাক্টস এবং আরও অনেক কিছুর মতো পেলোড টাইপ ব্যবহার করে স্মার্ট কিউআর কোড তৈরি করুন। উপরের আইকনে ট্যাপ করুন, একটি টাইপ বেছে নিন, আপনার বিবরণ লিখুন, তারপর আপনার কিউআর কোড তৈরি ও শেয়ার করুন।
@@ -677,6 +946,9 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>ইউআরএল ঠিকানাটি বৈধ নয়।</value>
   </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>ইউআরএল লিঙ্কটি খুলুন</value>
+  </data>
   <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
     <value>ফোন নম্বর</value>
   </data>
@@ -688,6 +960,15 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>কোনো বারকোড পাওয়া যায়নি।</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>একটি ছবি স্ক্যান করুন</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>ক্যামেরা থেকে স্ক্যান করুন</value>
+  </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>সেপা ক্রেডিট ট্রান্সফার</value>
   </data>
   <data name="PayloadTypeSctBic_Text" xml:space="preserve">
     <value>বিআইসি সুবিধাভোগী</value>
@@ -733,6 +1014,15 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   </data>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>সমস্ত ফিল্ডের সম্মিলিত দৈর্ঘ্য অনেক বেশি। মোট পেলোড সাইজ ৩৩১ বাইটে সীমাবদ্ধ।</value>
+  </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>মডিউলের আকার: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>ছবির বর্ডারের আকার: {0} পিক্সেল</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>শান্ত অঞ্চলের আকার: {0} মডিউল</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>শৈল্পিক মাইক্রো কিউআর কোড</value>
