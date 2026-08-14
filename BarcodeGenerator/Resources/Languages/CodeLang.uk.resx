@@ -352,6 +352,124 @@
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Помилка</value>
   </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>Перше число має бути 0.</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>Колір переднього плану:</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Непрозорість переднього плану:</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Формат:</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>Виберіть формат:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>наразі не підтримується.</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>Формат</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>Згенерувати</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>Недійсний початковий/кінцевий символ:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>Відсутній кінцевий символ.</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>Відсутній початковий символ.</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Шістнадцяткові колірні коди:
+
+Символи 1-2: Непрозорість/Прозорість
+Символи 3-4: Червоний
+Символи 5-6: Зелений
+Символи 7-8: Синій</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Перетворення тексту на мовлення: підтримуються не всі мови, що вказані в налаштуваннях програми.
+Перетворення мовлення на текст: активуйте його через налаштування вашого пристрою. Після цього на віртуальній клавіатурі з’явиться мікрофон.
+Обидва ці параметри залежать від пристрою до пристрою та встановлених мов. Можливо, для деяких мов переклад на мовлення та з мовлення здійснюється через Інтернет відповідними службами.
+
+Для перекладу тексту було використано Google Translate. Це не гарантує правильності всіх перекладів.
+Підтримувані мови: чеська, данська, голландська, англійська, фінська, французька, німецька, угорська, італійська, норвезька, польська, португальська, румунська, іспанська та шведська.
+
+Ви завжди можете зв’язатися зі мною для будь-яких виправлень.</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>QR-код генерується з фіксованим або змінним розміром у пікселях, залежно від кількості символів, які він містить, та максимального розміру в пікселях, визначеного в налаштуваннях.
+Коли зображення (логотип) розміщується поверх QR-коду, воно центрується та масштабується до розміру від 10% до 35% від розміру QR-коду. Цей діапазон можна налаштувати в налаштуваннях. Для покращення видимості додається рамка.
+Художній QR-код має високі можливості налаштування, з такими опціями, як градієнти, власні форми, кольори, зображення переднього плану (логотип) та фонове зображення. У цьому випадку непрозорість фону має бути встановлена ​​в межах від 0% до менше 100% (див. налаштування).
+Для найкращих результатів використовуйте квадратні зображення та експериментуйте з розміром зображення, щоб уникнути надмірного зміни розміру. Бажані формати файлів: PNG (за бажанням з прозорим фоном) або JPEG.</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Інформація</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Мова мовлення:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>Мова:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>Довжина вхідних даних має бути парною.</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>Програмне забезпечення надається «як є», без будь-яких гарантій, явних чи неявних, включаючи, але не обмежуючись гарантіями товарної придатності, придатності для певної мети та відсутності порушень. Автор та/або видавець за жодних обставин не несуть відповідальності за будь-які претензії, збитки чи іншу відповідальність, незалежно від того, чи це пов’язано з договірною діяльністю, деліктом чи іншим чином, що виникають внаслідок, з або у зв’язку з програмним забезпеченням або використанням чи іншими діями з програмним забезпеченням.</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>Сканування та генерація штрих-кодів для програм .NET MAUI.
+Ліцензія MIT:
+Цим надається безкоштовний дозвіл будь-якій особі, яка отримує копію цього програмного забезпечення та пов'язаних з ним файлів документації («Програмне забезпечення»), використовувати Програмне забезпечення без обмежень, включаючи, без обмежень, права на використання, копіювання, зміну, об'єднання, публікацію, розповсюдження, субліцензування та/або продаж копій Програмного забезпечення, а також дозволяти особам, яким надається Програмне забезпечення, робити це, за таких умов:
+
+Вищезазначене повідомлення про авторські права та це повідомлення про дозвіл (включаючи наступний абзац) повинні бути включені до всіх копій або суттєвих частин Програмного забезпечення.</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>Ліцензія</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>Цю програму можна вільно використовувати в некомерційних цілях.
+Використовуйте цю програму виключно на свій страх і ризик.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Завжди надсилати</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Не надсилати</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>У попередньому сеансі програми виявлено помилку.
+Щоб покращити роботу програми, я хотів би отримати журнал із цією помилкою.
+Чи можна надіслати журнал цієї помилки? Заздалегідь дякую.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Надіслати</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>Виявлено помилку. Надіслати журнал помилок?</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Надсилання журналу помилок</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>Генератор та сканер штрих-кодів</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>Ні</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>Відкрити це посилання?</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>Посилання на веб-сайт</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Вибраний файл не підтримується.</value>
   </data>
@@ -424,6 +542,15 @@
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Штрих-код із підписом:</value>
   </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>числовий {0}, буквено-цифровий {1}, байти {2}, кандзі/кана {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Максимальна кількість символів:</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Кількість цифр:</value>
+  </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>QR-код Artistic</value>
   </data>
@@ -445,8 +572,68 @@
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Виявлено символ кандзі/кана.</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Зображення переднього плану:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Фонове зображення:</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>Колір переднього плану, художній QR-код:</value>
+  </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
     <value>Стиснути текст:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>Текст у QR-коді можна стиснути (див. налаштування, щоб увімкнути цю функцію). Щоб текст знову став читабельним, його потрібно розпакувати сканером, який підтримує стиснення GZip, таким як сканер у цьому додатку.</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Для оптимальної надійності сканування ми рекомендуємо наступне для QR-кодів:
+Забезпечуйте високий контраст між кольорами переднього плану та фону.
+Використовуйте квадратні модулі (за замовчуванням): квадратні модулі зазвичай створюють найнижчий рівень помилок під час сканування QR-кодів.
+Уникайте проміжків між модулями: менші модулі або форми, такі як кола або округлі модулі, можуть створювати проміжки, що може збільшити кількість помилок сканування.
+Корекція помилок за замовчуванням встановлена ​​на високий рівень (30% відновлення): високий рівень корекції помилок допомагає компенсувати зниження читабельності.
+
+Рекомендується протестувати згенеровані QR-коди та інші штрих-коди, щоб переконатися, що вони скануються правильно.</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>Адреса електронної пошти</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>Повідомлення</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>Широта:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>Довгота:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>Ім'я</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>Прізвище</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>Електронна пошта</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>Опис</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>Місцезнаходження</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>Кінець:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Корисні навантаження:</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Корисні навантаження</value>
   </data>
   <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
     <value>Недійсне значення широти.</value>
@@ -466,17 +653,66 @@
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>Копіювати</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Створюйте розумні QR-коди з такими типами даних, як геолокація, контакти тощо. Натисніть значок угорі, виберіть тип, введіть свої дані, а потім згенеруйте та поділіться своїм QR-кодом.
+Не всі типи даних підтримуються на кожному пристрої.</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Запит геолокації</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Геолокація</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Геолокація недоступна на цьому пристрої або служби геолокації вимкнено.</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Відкрити карти</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Кодування:</value>
+  </data>
   <data name="ErrorEmailInvalid_Text" xml:space="preserve">
     <value>Адреса електронної пошти недійсна.</value>
   </data>
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>URL-адреса недійсна.</value>
   </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Номер телефону</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Автентифікація:</value>
+  </data>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>Номер телефону недійсний.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>Штрих-код не знайдено.</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC бенефіціара</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Ім'я бенефіціара</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN бенефіціара</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Сума в євро</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Мета</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>Інформація про грошові перекази (структурована)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>Інформація про грошові перекази (неструктурована)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Інформація</value>
   </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>IBAN недійсний.</value>
@@ -504,5 +740,8 @@
   </data>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>Код має містити {0} цифр (без урахування контрольної суми) або {1} цифр.</value>
+  </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Розмір шрифту:</value>
   </data>
 </root>

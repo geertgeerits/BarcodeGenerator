@@ -352,6 +352,125 @@ Sentry 收集的崩溃报告可能会根据 Sentry 的数据保留政策进行�
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>错误</value>
   </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>第一个数字应为 0。</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>前景色：</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>前景色不透明度：</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>格式：</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>选择格式：</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>目前不支持。</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>格式</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>无效的起始/结束字符：</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>缺少结束字符。</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>缺少起始字符。</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>十六进制颜色代码：
+
+字符 1-2：不透明度/透明度
+字符 3-4：红色
+字符 5-6：绿色
+字符 7-8：蓝色</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>文本转语音：并非所有应用设置中提供的语言都受支持。
+语音转文本：请在设备设置中启用此功能。启用后，虚拟键盘中将出现麦克风图标。
+这两个选项的兼容性取决于设备和已安装的语言。某些语言的语音转文本功能可能需要通过相关服务在互联网上进行。
+
+文本翻译使用了谷歌翻译。但这并不保证所有翻译都完全正确。
+支持的语言包括：捷克语、丹麦语、荷兰语、英语、芬兰语、法语、德语、匈牙利语、意大利语、挪威语、波兰语、葡萄牙语、罗马尼亚语、西班牙语和瑞典语。
+
+如有任何更正，欢迎随时联系我。</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>二维码的像素大小可以是固定的，也可以是可变的，具体取决于其包含的字符数以及设置中定义的最大像素大小。
+当图像（例如徽标）放置在二维码上方时，图像将居中并缩放至二维码大小的 10% 到 35% 之间。此范围可在设置中进行调整。此外，还会添加边框以提高可见性。
+艺术二维码具有高度可定制性，例如渐变、自定义形状、颜色、前景图像（徽标）和背景图像。在这种情况下，背景不透明度必须设置为 0% 到小于 100% 之间（请参阅设置）。
+为获得最佳效果，请使用正方形图像，并尝试调整图像大小以避免过度缩放。推荐的文件格式为 PNG（可选择透明背景）或 JPEG。</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>语言：</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>语言：</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>输入文本的长度必须为偶数。</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>本软件按“原样”提供，不提供任何形式的明示或暗示担保，包括但不限于适销性、特定用途适用性和不侵权担保。在任何情况下，作者和/或出版商均不对因本软件或其使用或其他交易而引起的任何索赔、损害或其他责任承担责任，无论该责任是基于合同、侵权或其他法律理论。</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>用于 .NET MAUI 应用程序的条形码扫描和生成。
+MIT 许可证：
+特此授予任何人免费获得本软件及其相关文档文件（以下简称“软件”）副本的许可，允许其不受限制地处理本软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或出售本软件副本的权利，并允许向其提供本软件的人员这样做，但须遵守以下条件：
+
+上述版权声明和本许可声明（包括下一段）应包含在本软件的所有副本或实质性部分中。</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>执照</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>本应用程序可免费用于非商业用途。
+使用本程序需自行承担全部风险。</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>务必发送</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>不要发送</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>应用程序在之前的会话中检测到错误。
+为了改进应用程序，我需要该错误的日志。
+能否提供该错误的日志？
+谢谢。</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>发送</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>检测到错误。是否发送错误日志？</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>发送错误日志</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>条形码生成器和扫描器</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>打开此链接？</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>网站链接</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>所选文件不受支持。</value>
   </data>
@@ -424,6 +543,15 @@ Sentry 收集的崩溃报告可能会根据 Sentry 的数据保留政策进行�
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>条形码及说明文字：</value>
   </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>数字{0}，字母数字{1}，字节{2}，汉字/假名{3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>最大字符数：</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>数字位数：</value>
+  </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>艺术二维码</value>
   </data>
@@ -445,8 +573,68 @@ Sentry 收集的崩溃报告可能会根据 Sentry 的数据保留政策进行�
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>检测到汉字/假名字符。</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>前景图片：</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>背景图片：</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>艺术二维码前景色：</value>
+  </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
     <value>压缩文本：</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>二维码中的文字可以压缩（请在设置中启用此功能）。要使文字再次可读，必须使用支持 GZip 压缩的扫描器（例如本应用内置的扫描器）进行解压缩。</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>为了获得最佳扫描可靠性，我们建议对二维码进行以下设置：
+保持前景和背景颜色之间的高对比度。
+使用方形模块（默认）：方形模块通常在扫描二维码时能产生最低的错误率。
+避免模块之间出现间隙：较小的模块或圆形、弧形等形状可能会造成间隙，从而增加扫描错误。
+默认纠错级别设置为高（30% 恢复率）：较高的纠错级别有助于弥补可读性降低带来的影响。
+
+建议测试生成的二维码和其他条形码，以确保它们能够正确扫描。</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>电子邮件地址</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>留言</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>纬度：</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>经度：</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>名字</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>姓氏</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>电子邮件</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>结束：</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>有效载荷：</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>有效载荷</value>
   </data>
   <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
     <value>纬度值无效。</value>
@@ -466,17 +654,66 @@ Sentry 收集的崩溃报告可能会根据 Sentry 的数据保留政策进行�
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>复制</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>创建智能二维码，支持多种有效载荷类型，例如地理位置、联系人等。点击顶部图标，选择类型，输入详细信息，即可生成并分享您的二维码。
+并非所有设备都支持所有有效载荷类型。</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>请求地理位置信息</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>地理位置</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>此设备无法使用定位服务，或定位服务已禁用。</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>打开地图</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>编码：</value>
+  </data>
   <data name="ErrorEmailInvalid_Text" xml:space="preserve">
     <value>电子邮件地址无效。</value>
   </data>
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>网址无效。</value>
   </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>电话号码</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>身份验证：</value>
+  </data>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>电话号码无效。</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>未找到条形码。</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>收款人 BIC 代码</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>收款人姓名</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN收款人</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>金额（欧元）</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>用途</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>汇款信息（结构化）</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>汇款信息（非结构化）</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>信息</value>
   </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>IBAN 无效。</value>
@@ -504,5 +741,8 @@ Sentry 收集的崩溃报告可能会根据 Sentry 的数据保留政策进行�
   </data>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>代码长度应为 {0} 位（不包括校验和位）或 {1} 位。</value>
+  </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>字体大小：</value>
   </data>
 </root>

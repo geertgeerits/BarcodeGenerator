@@ -352,6 +352,123 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>ত্রুটি</value>
   </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>প্রথম সংখ্যাটি ০ হতে হবে।</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>ফোরগ্রাউন্ড কালার:</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>ফোরগ্রাউন্ড অপাসিটি:</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>ফরম্যাট:</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>একটি ফরম্যাট নির্বাচন করুন:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>বর্তমানে সমর্থিত নয়।</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>ফরম্যাট</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>তৈরি করুন</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>ভুল শুরু/শেষ অক্ষর:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>শেষ অক্ষর নেই।</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>শুরুর অক্ষর নেই।</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>হেক্সাডেসিমাল রঙের কোড:
+
+অক্ষর ১-২: অস্বচ্ছতা/স্বচ্ছতা
+অক্ষর ৩-৪: লাল
+অক্ষর ৫-৬: সবুজ
+অক্ষর ৭-৮: নীল</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>টেক্সট টু স্পিচ: অ্যাপ্লিকেশন সেটিংসে দেওয়া সমস্ত ভাষা সমর্থিত নয়।
+স্পিচ টু টেক্সট: আপনার ডিভাইসের সেটিংসের মাধ্যমে এটি সক্রিয় করুন। এরপর ভার্চুয়াল কীবোর্ডে একটি মাইক্রোফোন দেখা যাবে।
+এই দুটি বিকল্পই ডিভাইস এবং ইনস্টল করা ভাষার উপর নির্ভর করে। এমন হতে পারে যে কিছু ভাষার ক্ষেত্রে, সংশ্লিষ্ট পরিষেবাগুলো ইন্টারনেটের মাধ্যমে কথা থেকে কথায় এবং কথা থেকে কথায় অনুবাদ করে থাকে।
+
+এই লেখাটি অনুবাদের জন্য গুগল ট্রান্সলেট ব্যবহার করা হয়েছে। এটি কোনো নিশ্চয়তা দেয় না যে সমস্ত অনুবাদ সঠিক।
+সমর্থিত ভাষাগুলো হলো: চেক, ড্যানিশ, ডাচ, ইংরেজি, ফিনিশ, ফরাসি, জার্মান, হাঙ্গেরিয়ান, ইতালীয়, নরওয়েজিয়ান, পোলিশ, পর্তুগিজ, রোমানিয়ান, স্প্যানিশ এবং সুইডিশ।
+
+যেকোনো সংশোধনের জন্য আপনি সর্বদা আমার সাথে যোগাযোগ করতে পারেন।</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>কিউআর কোডটি একটি নির্দিষ্ট বা পরিবর্তনশীল পিক্সেল আকারে তৈরি হয়, যা নির্ভর করে এতে থাকা অক্ষরের সংখ্যা এবং সেটিংসে নির্ধারিত সর্বোচ্চ পিক্সেল আকারের উপর।
+যখন কিউআর কোডের উপরে একটি ছবি (লোগো) বসানো হয়, তখন এটিকে কেন্দ্রে স্থাপন করা হয় এবং কিউআর কোডের আকারের ১০% থেকে ৩৫% এর মধ্যে স্কেল করা হয়। এই পরিসরটি সেটিংসে সামঞ্জস্য করা যায়। দৃশ্যমানতা বাড়ানোর জন্য একটি বর্ডার যোগ করা হয়। শৈল্পিক কিউআর কোডটি ব্যাপকভাবে কাস্টমাইজযোগ্য, যেখানে গ্রেডিয়েন্ট, কাস্টম আকার, রঙ, একটি ফোরগ্রাউন্ড ছবি (লোগো) এবং একটি ব্যাকগ্রাউন্ড ছবির মতো বিকল্প রয়েছে। এক্ষেত্রে, ব্যাকগ্রাউন্ডের অস্বচ্ছতা অবশ্যই ০% এবং ১০০% এর কমের মধ্যে সেট করতে হবে (সেটিংস দেখুন)।
+সেরা ফলাফলের জন্য, বর্গাকার ছবি ব্যবহার করুন এবং অতিরিক্ত আকার পরিবর্তন এড়াতে ছবির আকার নিয়ে পরীক্ষা-নিরীক্ষা করুন। পছন্দের ফাইল ফরম্যাট হলো পিএনজি (ঐচ্ছিকভাবে একটি স্বচ্ছ ব্যাকগ্রাউন্ড সহ) বা জেপিইজি।</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>তথ্য</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>ভাষা বক্তৃতা:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>ভাষা:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>ইনপুটের দৈর্ঘ্য জোড় হতে হবে।</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>সফটওয়্যারটি কোনো প্রকার প্রকাশ্য বা উহ্য ওয়ারেন্টি ছাড়া 'যেমন আছে তেমন' ভিত্তিতে প্রদান করা হয়, যার মধ্যে বাণিজ্যিক উপযোগিতা, নির্দিষ্ট উদ্দেশ্যে উপযুক্ততা এবং স্বত্ব লঙ্ঘন না করার ওয়ারেন্টি অন্তর্ভুক্ত, তবে এতেই সীমাবদ্ধ নয়। কোনো অবস্থাতেই লেখক এবং/অথবা প্রকাশক চুক্তি, অপকার বা অন্য কোনো ধরনের পদক্ষেপের অধীনে সফটওয়্যারটি অথবা এর ব্যবহার বা এর সাথে সম্পর্কিত অন্য কোনো লেনদেন থেকে উদ্ভূত কোনো দাবি, ক্ষতি বা অন্য কোনো দায়ের জন্য দায়ী থাকবেন না।</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>.NET MAUI অ্যাপ্লিকেশনের জন্য বারকোড স্ক্যানিং এবং তৈরি করা।
+এমআইটি লাইসেন্স:
+এই সফটওয়্যার এবং এর সাথে সম্পর্কিত ডকুমেন্টেশন ফাইলগুলির ("সফটওয়্যার") একটি কপি প্রাপ্ত যে কোনও ব্যক্তিকে এতদ্বারা বিনামূল্যে অনুমতি দেওয়া হল, সফটওয়্যারটি কোনো বিধিনিষেধ ছাড়াই ব্যবহার করার জন্য, যার মধ্যে সীমাবদ্ধতা ছাড়াই সফটওয়্যারটির কপি ব্যবহার, পরিবর্তন, একত্রীকরণ, প্রকাশ, বিতরণ, সাবলাইসেন্স এবং/অথবা বিক্রি করার অধিকার অন্তর্ভুক্ত, এবং যাদের কাছে সফটওয়্যারটি সরবরাহ করা হয়েছে তাদেরও তা করার অনুমতি দেওয়া হল, নিম্নলিখিত শর্ত সাপেক্ষে:
+
+উপরোক্ত কপিরাইট বিজ্ঞপ্তি এবং এই অনুমতি বিজ্ঞপ্তি (পরবর্তী অনুচ্ছেদ সহ) সফটওয়্যারের সমস্ত কপি বা উল্লেখযোগ্য অংশে অন্তর্ভুক্ত করতে হবে।</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>লাইসেন্স</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>এই অ্যাপ্লিকেশনটি অবাণিজ্যিক উদ্দেশ্যে অবাধে ব্যবহার করা যেতে পারে।
+এই প্রোগ্রামটি সম্পূর্ণ নিজ দায়িত্বে ব্যবহার করুন।</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>সর্বদা পাঠান</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>পাঠাবেন না</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>অ্যাপ্লিকেশনটি পূর্ববর্তী সেশনে একটি ত্রুটি শনাক্ত করেছে।
+অ্যাপ্লিকেশনটির উন্নতি করার জন্য, আমি সেই ত্রুটিসহ লগটি পেতে চাই। অনুগ্রহ করে কি সেই ত্রুটির লগটি পাঠানো যাবে?
+অগ্রিম ধন্যবাদ।</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>পাঠান</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>একটি ত্রুটি শনাক্ত করা হয়েছে। ত্রুটির লগটি পাঠাবেন?</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>ত্রুটির লগ পাঠানো হচ্ছে</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>বারকোড জেনারেটর এবং স্ক্যানার</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>না</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>এই লিঙ্কটি খুলবেন?</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>ওয়েবসাইট লিঙ্ক</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>নির্বাচিত ফাইলটি সমর্থিত নয়।</value>
   </data>
@@ -424,6 +541,15 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>ক্যাপশন সহ বারকোড:</value>
   </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>সংখ্যাসূচক {0}, বর্ণ-সংখ্যাসূচক {1}, বাইট {2}, কাঞ্জি/কানা {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>সর্বাধিক অক্ষর সংখ্যা:</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>অঙ্কের সংখ্যা:</value>
+  </data>
   <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
     <value>শৈল্পিক কিউআর কোড</value>
   </data>
@@ -445,8 +571,68 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>কাঞ্জি/কানা অক্ষর শনাক্ত করা হয়েছে।</value>
   </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>সম্মুখভাগের ছবি:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>পটভূমির ছবি:</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>ফোরগ্রাউন্ড কালার আর্টিস্টিক কিউআর কোড:</value>
+  </data>
   <data name="CompressionEnabled_Text" xml:space="preserve">
     <value>লেখাটি সংকুচিত করুন:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>কিউআর কোডের লেখা সংকুচিত করা যায় (এটি চালু করতে সেটিংস দেখুন)। লেখাটিকে পুনরায় পাঠযোগ্য করতে, এটিকে অবশ্যই জি-জিপ (GZip) কম্প্রেশন সমর্থনকারী কোনো স্ক্যানার দিয়ে অসংকুচিত করতে হবে, যেমন এই অ্যাপের স্ক্যানারটি।</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>স্ক্যানের সর্বোত্তম নির্ভরযোগ্যতার জন্য, আমরা QR কোডের ক্ষেত্রে নিম্নলিখিত বিষয়গুলো সুপারিশ করি:
+ফোরগ্রাউন্ড এবং ব্যাকগ্রাউন্ড রঙের মধ্যে উচ্চ বৈসাদৃশ্য বজায় রাখুন।
+বর্গাকার মডিউল ব্যবহার করুন (ডিফল্ট): QR কোড স্ক্যান করার সময় বর্গাকার মডিউলগুলোতে সাধারণত ভুলের হার সবচেয়ে কম থাকে।
+মডিউলগুলোর মধ্যে ফাঁক এড়িয়ে চলুন: ছোট মডিউল বা বৃত্তাকার বা গোলাকার মডিউলের মতো আকৃতি ফাঁক তৈরি করতে পারে, যা স্ক্যানের ভুল বাড়িয়ে দিতে পারে।
+ডিফল্টরূপে ত্রুটি সংশোধন উচ্চ (৩০% রিকভারি) স্তরে সেট করা থাকে: উচ্চ ত্রুটি-সংশোধন স্তর পাঠযোগ্যতা হ্রাসের ক্ষতিপূরণ করতে সাহায্য করে।
+
+তৈরি করা QR কোড এবং অন্যান্য বারকোডগুলো সঠিকভাবে স্ক্যান হচ্ছে কিনা তা নিশ্চিত করার জন্য পরীক্ষা করে দেখার পরামর্শ দেওয়া হয়।</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>পাসওয়ার্ড</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>ই-মেইল ঠিকানা</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>বার্তা</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>অক্ষাংশ:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>দ্রাঘিমাংশ:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>প্রথম নাম</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>পদবি</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>ই-মেইল</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>বিবরণ</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>অবস্থান</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>শেষ:</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>পেলোড:</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>পেলোড</value>
   </data>
   <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
     <value>অক্ষাংশের মান অবৈধ।</value>
@@ -466,17 +652,66 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>অনুলিপি করুন</value>
   </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>জিওলোকেশন, কন্টাক্টস এবং আরও অনেক কিছুর মতো পেলোড টাইপ ব্যবহার করে স্মার্ট কিউআর কোড তৈরি করুন। উপরের আইকনে ট্যাপ করুন, একটি টাইপ বেছে নিন, আপনার বিবরণ লিখুন, তারপর আপনার কিউআর কোড তৈরি ও শেয়ার করুন।
+সব পেলোড টাইপ সব ডিভাইসে সমর্থিত নয়।</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>ভূ-অবস্থান অনুরোধ করুন</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>ভূ-অবস্থান</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>এই ডিভাইসে অবস্থান উপলব্ধ নেই, অথবা অবস্থান পরিষেবা নিষ্ক্রিয় করা আছে।</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>মানচিত্র খুলুন</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>এনকোডিং:</value>
+  </data>
   <data name="ErrorEmailInvalid_Text" xml:space="preserve">
     <value>ই-মেইল ঠিকানাটি বৈধ নয়।</value>
   </data>
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>ইউআরএল ঠিকানাটি বৈধ নয়।</value>
   </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>ফোন নম্বর</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>প্রমাণীকরণ:</value>
+  </data>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>ফোন নম্বরটি বৈধ নয়।</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>কোনো বারকোড পাওয়া যায়নি।</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>বিআইসি সুবিধাভোগী</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>সুবিধাভোগীর নাম</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>আইবিএএন সুবিধাভোগী</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>পরিমাণ ইউরো</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>উদ্দেশ্য</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>রেমিটেন্সের তথ্য (কাঠামোগত)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>রেমিটেন্সের তথ্য (অকাঠামোগত)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>তথ্য</value>
   </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>IBAN বৈধ নয়।</value>
@@ -504,5 +739,8 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
   </data>
   <data name="CodeLength_Text" xml:space="preserve">
     <value>কোডটি (চেকসাম ডিজিট বাদে) {0} ডিজিট অথবা {1} ডিজিটের হতে হবে।</value>
+  </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>ফন্ট সাইজ:</value>
   </data>
 </root>
