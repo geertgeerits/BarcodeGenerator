@@ -120,6 +120,9 @@
   <data name="Agree_Text" xml:space="preserve">
     <value>同意</value>
   </data>
+  <data name="Barcode_AllCodes_Text" xml:space="preserve">
+    <value>所有二維碼</value>
+  </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
     <value>不允許：</value>
   </data>
@@ -138,13 +141,545 @@
   <data name="BarcodeScanner_Text" xml:space="preserve">
     <value>條碼掃描器</value>
   </data>
+  <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
+    <value>阿茲特克密碼</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
+    <value>Code 39 校驗和模數為 10</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
+    <value>Code 39 校驗和模數為 43</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
+    <value>Code 39 完整 ASCII 校驗和</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
+    <value>Code 39 完整 ASCII 碼</value>
+  </data>
+  <data name="Barcode_CODE_39_Text" xml:space="preserve">
+    <value>Code 39</value>
+  </data>
+  <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
+    <value>代碼 93i</value>
+  </data>
+  <data name="Barcode_CODE_93_Text" xml:space="preserve">
+    <value>代碼 93</value>
+  </data>
+  <data name="Barcode_CODE_128_Text" xml:space="preserve">
+    <value>代碼 128</value>
+  </data>
+  <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
+    <value>緊湊型 PDF417</value>
+  </data>
+  <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
+    <value>框架二維碼</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 資料條擴充堆疊</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>GS1 資料條擴展</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 Databar 有限公司</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 資料條全向</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar 堆疊式全向</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar 堆疊</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>IMb智能郵件</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>國際標準書號 (ISBN)</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF-14 交錯式 2/5 編碼</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>ITF 交錯式 2/5 編碼校驗和</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF 交錯式 2/5 編碼</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>微型二維碼</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>MSI 改良型 Plessey</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN 藥品中心編號</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>二維碼模型 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>二維碼模型 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>QR 圖碼</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>RMQR 矩形微型二維碼</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>RSS 擴充版</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>UPC-EAN 擴充碼</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>收聽</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>分享文字</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>分享</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>朗讀</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>未找到攝影機。</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>如果未授予使用攝影機的權限，可以在裝置設定中啟用攝影機，選擇應用程式並啟用攝影機。
+另一種方法是卸載並重新安裝該應用程式。</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>此相機不支援該畫質。請降低畫質。</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>最高</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>高</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>最低</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>低</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>中等</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>品質</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>代碼有誤。</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>請關閉應用程式。</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>聯絡方式：</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>版權所有</value>
+  </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>為了幫助我們修復任何問題，應用程式會在重新啟動時發送匿名崩潰和錯誤報告。
+報告包含有關崩潰或錯誤的訊息，包括裝置規格、作業系統、應用程式版本、時間戳記和匿名安裝識別碼。
+收集這些數據僅用於幫助我們改進應用程序，不包含任何個人資訊。我們不會收集任何其他數據。
+匿名崩潰和錯誤報告儲存在 Microsoft 應用中心。
+這些報告不會與應用程式開發者以外的任何人共用。
+報告資料保留 28 天。</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>隱私權聲明：使用 Sentry 進行崩潰報告
+
+條碼產生器使用第三方服務 Sentry 來收集和管理崩潰報告，以提升應用程式的穩定性和效能。我們致力於保護您的隱私，並確保您資料的處理方式透明公開。
+
+收集哪些數據：
+當此應用程式發生崩潰時，某些資訊可能會被收集並傳輸給 Sentry，包括但不限於：
+設備訊息，例如設備型號、作業系統版本和硬體配置。
+導致崩潰的應用程式日誌和錯誤訊息。
+崩潰時應用程式的狀態訊息，包括使用者操作。
+
+我們如何使用這些數據：
+Sentry 收集的資料僅用於識別和修復應用程式中的錯誤。這些資訊有助於我們了解崩潰的根本原因，從而為用戶提供更穩定可靠的體驗。
+
+資料安全和保留：
+我們非常重視您的資料安全。 Sentry 採用業界標準的安全措施來保護收集的資訊免遭未經授權的存取或洩露。
+
+Sentry 收集的崩潰報告可能會根據 Sentry 的資料保留政策進行保留（本應用程式保留 30 天）。有關 Sentry 資料處理實踐的更多信息，請參閱其隱私權政策：https://sentry.io/welcome/。
+
+您的同意：
+使用此應用程式即表示您同意 Sentry 依照本隱私權聲明中所述的方式收集和處理崩潰報告資料。</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>崩潰和錯誤報告：</value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>預設格式產生器：</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>預設格式掃描器：</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>預設</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>產生並掃描各種條碼。</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>不同意</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>電子郵件：</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>第一個數字應為 0。</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>前景色：</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>前景色不透明度：</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>格式：</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>請選擇格式：</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>目前不支援此格式。</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>格式</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>產生</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>無效的起始/結束字元：</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>缺少結束字元。</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>缺少起始字元。</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>十六進位顏色代碼：
+
+字元 1-2：不透明度/透明度
+字元 3-4：紅色
+字元 5-6：綠色
+字元 7-8：藍色</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>文字轉語音：並非所有應用程式設定中提供的語言都受支援。
+語音轉文字：請在裝置設定中啟用此功能。啟用後，虛擬鍵盤中將出現麥克風圖示。
+這兩個選項的相容性取決於裝置和已安裝的語言。某些語言的語音轉文字功能可能需要透過相關服務在網路上進行。
+文字翻譯使用了谷歌翻譯。但這並不保證所有翻譯都完全正確。
+
+支援的語言包括：捷克語、丹麥語、荷蘭語、英語、芬蘭語、法語、德語、匈牙利語、義大利語、挪威語、波蘭語、葡萄牙語、羅馬尼亞語、西班牙語和瑞典語。
+
+如有任何更正，歡迎隨時與我聯絡。</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>二維碼的像素大小可以是固定的，也可以是可變的，這取決於其包含的字元數以及設定中定義的最大像素大小。
+當圖像（例如徽標）放置在二維碼上方時，圖像將居中並縮放至二維碼大小的 10% 到 35% 之間。此範圍可在設定中進行調整。此外，還會新增邊框以提高可見度。
+藝術二維碼具有高度可自訂性，例如漸層、自訂形狀、顏色、前景圖像（徽標）和背景圖像。在這種情況下，背景不透明度必須設定為 0% 到小於 100% 之間（請參閱設定）。
+為獲得最佳效果，請使用正方形影像，並嘗試調整影像大小以避免過度縮放。建議的文件格式為 PNG（可選擇透明背景）或 JPEG。</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>資訊</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>語言：</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>語言：</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>輸入文字的長度必須為偶數。</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>本軟體以「現況」提供，不提供任何形式的明示或暗示擔保，包括但不限於適銷性、特定用途適用性和不侵權擔保。在任何情況下，作者和/或出版商均不對因本軟體或其使用或其他交易而引起的任何索賠、損害或其他責任承擔責任，無論該責任是基於合約、侵權或其他法律理論。</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>用於 .NET MAUI 應用程式的條碼掃描和產生。
+MIT 許可證：
+特此授予任何人免費獲得本軟體及其相關文件文件（以下簡稱「軟體」）副本的許可，允許其不受限制地處理本軟體，包括但不限於使用、複製、修改、合併、發布、分發、再授權和/或出售本軟體副本的權利，並允許向其提供本軟體的人員這樣做，但須遵守以下條件：
+
+上述版權聲明和本授權聲明（包括下一段）應包含在本軟體的所有副本或實質部分。</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>執照</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>本應用程式可免費用於非商業用途。
+使用本程式需自行承擔全部風險。</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>務必發送</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>不要發送</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>應用程式在先前的會話中偵測到錯誤。
+為了改進應用程序，我需要該錯誤的日誌。
+能否提供該錯誤的日誌？
+謝謝。</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>傳送</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>檢測到錯誤。是否發送錯誤日誌？</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>傳送錯誤日誌</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>條碼產生器和掃描器</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>打開此連結？</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>網站連結</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>所選文件不受支援。</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>微型 PDF417</value>
+  </data>
+  <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
+    <value>DX 底片邊緣</value>
+  </data>
+  <data name="Barcode_EAN_2_Text" xml:space="preserve">
+    <value>EAN-2</value>
+  </data>
+  <data name="Barcode_EAN_5_Text" xml:space="preserve">
+    <value>EAN-5</value>
+  </data>
+  <data name="Barcode_EAN_8_Text" xml:space="preserve">
+    <value>EAN-8</value>
+  </data>
+  <data name="Barcode_EAN_13_Text" xml:space="preserve">
+    <value>EAN-13</value>
+  </data>
+  <data name="Barcode_EAN_UPC_Text" xml:space="preserve">
+    <value>EAN/UPC</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
+    <value>GS1 資料條</value>
+  </data>
+  <data name="Barcode_CODABAR_Text" xml:space="preserve">
+    <value>科達巴爾</value>
+  </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>藥品代碼</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>普萊西</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>RSS 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
+  <data name="Barcode_AZTEC_Text" xml:space="preserve">
+    <value>阿茲特克</value>
+  </data>
+  <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
+    <value>阿茲特克符文</value>
+  </data>
+  <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
+    <value>數據矩陣</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>MaxiCode</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>帶圖像的二維碼</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC 安全二維碼</value>
+  </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>條碼及說明文字：</value>
+  </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>數字{0}，字母數字{1}，位元組{2}，漢字/假名{3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>最多可輸入：</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>位數：</value>
+  </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>藝術二維碼</value>
   </data>
   <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
     <value>藝術二維碼背景色：</value>
   </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>顏色選擇器</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>檢測到數字字元。</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>偵測到字母數字字元。</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>偵測到位元組字元。</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>偵測到漢字/假名字元。</value>
+  </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>前景圖片：</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>背景圖片：</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>藝術二維碼前景色：</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>壓縮文字：</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>QR 碼中的文字可以壓縮（請參閱設定以啟用此功能）。若要讓文字再次可讀，必須使用支援 GZip 壓縮的掃描器對其進行解壓縮，例如本應用中的掃描器。</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>為了獲得最佳掃描可靠性，我們建議對二維碼進行以下設定：
+保持前景和背景顏色之間的高對比。
+使用方形模組（預設）：方形模組通常在掃描二維碼時能產生最低的錯誤率。
+避免模​​組之間出現間隙：較小的模組或圓形、弧形等形狀可能會造成間隙，從而增加掃描錯誤。
+預設糾錯等級設定為高（30% 恢復率）：較高的糾錯等級有助於彌補可讀性降低的影響。
+
+建議測試產生的二維碼和其他條碼，以確保它們能夠正確掃描。</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>有效載荷：</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>有效載荷</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>緯度值無效。</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>經度值無效。</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>緯度值超出範圍。該值必須介於 -90 和 90 之間（含 -90 和 90）。</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>經度超出範圍。該值必須介於 -180 和 180 之間（含 -180 和 180）。</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>開始日期不能晚於結束日期。</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>建立智慧二維碼，支援多種有效載荷類型，例如地理位置、聯絡人等。點擊頂部圖標，選擇類型，輸入詳細信息，即可產生並分享您的二維碼。
+並非所有設備都支援所有有效載荷類型。</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>請求地理位置訊息</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>地理位置</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>此設備無法使用定位服務，或定位服務已停用。</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>打開地圖</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>編碼：</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>電子郵件地址無效。</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>網址無效。</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>電話號碼無效。</value>
+  </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>未找到條碼。</value>
+  </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN 無效。</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>金額無效。</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>銀行識別碼 (BIC) 無效。</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>姓名為必填項。</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>匯款資訊欄位中只能填寫一個。</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>匯款資訊無效。</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>所有欄位的總長度過長。有效載荷總大小限制為 331 位元組。</value>
+  </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>藝術微型二維碼</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>代碼長度應為 {0} 位元（不包括校驗和位元）或 {1} 位元。</value>
+  </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>字體大小：</value>
   </data>
 </root>

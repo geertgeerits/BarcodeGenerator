@@ -120,6 +120,9 @@
   <data name="Agree_Text" xml:space="preserve">
     <value>متفق</value>
   </data>
+  <data name="Barcode_AllCodes_Text" xml:space="preserve">
+    <value>تمام کوڈز</value>
+  </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
     <value>اجازت نہیں ہے:</value>
   </data>
@@ -138,13 +141,545 @@
   <data name="BarcodeScanner_Text" xml:space="preserve">
     <value>سکینر</value>
   </data>
+  <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
+    <value>ایزٹیک کوڈ</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
+    <value>کوڈ 39 چیکسم ماڈیولس 10</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
+    <value>کوڈ 39 چیکسم ماڈیولس 43</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
+    <value>کوڈ 39 مکمل ASCII چیکسم</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
+    <value>کوڈ 39 مکمل ASCII</value>
+  </data>
+  <data name="Barcode_CODE_39_Text" xml:space="preserve">
+    <value>کوڈ 39</value>
+  </data>
+  <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
+    <value>کوڈ 93i</value>
+  </data>
+  <data name="Barcode_CODE_93_Text" xml:space="preserve">
+    <value>کوڈ 93</value>
+  </data>
+  <data name="Barcode_CODE_128_Text" xml:space="preserve">
+    <value>کوڈ 128</value>
+  </data>
+  <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
+    <value>کومپیکٹ PDF417</value>
+  </data>
+  <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
+    <value>فریم QR کوڈ</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 ڈیٹا بار کو پھیلایا گیا</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>GS1 ڈیٹا بار کو بڑھا دیا گیا۔</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 ڈیٹا بار لمیٹڈ</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 ڈیٹابار ہمہ جہتی</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>جی ایس 1 ڈیٹا بار میں ہمہ جہتی اسٹیک کیا گیا ہے۔</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 ڈیٹا بار اسٹیک ہو گیا۔</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>آئی ایم بی انٹیلجنٹ میل</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>ISBN Int. معیاری کتاب نمبر</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF-14 انٹرلیوڈ 2 میں سے 5</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>آئی ٹی ایف نے 5 چیکسم میں سے 2 کو انٹرلیویڈ کیا۔</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF انٹرلیوڈ 2 میں سے 5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>مائیکرو کیو آر کوڈ</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>ایم ایس آئی موڈیفائیڈ پلیسی</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>PZN فارما سنٹرل نمبر</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>کیو آر کوڈ ماڈل 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>QR کوڈ ماڈل 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>کیو آر کوڈ</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>RMQR مستطیل مائکرو QR کوڈ</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>آر ایس ایس کی توسیع</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>UPC-EAN توسیع</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>بند</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>سنو</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>اگلا</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>متن کا اشتراک کریں۔</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>شیئر کریں۔</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>بولو</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>کوئی کیمرہ نہیں ملا۔</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>اگر کیمرہ استعمال کرنے کی اجازت نہیں دی گئی ہے تو، کیمرہ کو ڈیوائس کی سیٹنگز میں فعال کیا جا سکتا ہے، ایپلیکیشن کو منتخب کریں اور کیمرہ کو فعال کریں۔
+دوسرا آپشن یہ ہے کہ ایپلیکیشن کو ان انسٹال اور دوبارہ انسٹال کریں۔</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>یہ معیار اس کیمرے کے ذریعے تعاون یافتہ نہیں ہے۔ معیار کو کم رکھیں۔</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>سب سے زیادہ</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>اعلی</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>سب سے کم</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>کم</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>درمیانہ</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>معیار</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>منسوخ کریں۔</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>کوڈ غلط ہے۔</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>صاف</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>براہ کرم درخواست بند کریں۔</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>رابطہ:</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>کاپی رائٹ</value>
+  </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>کسی بھی مسائل کو حل کرنے میں ہماری مدد کرنے کے لیے، ایپلیکیشن دوبارہ شروع ہونے پر گمنام کریش اور خرابی کی رپورٹیں بھیجے گی۔
+رپورٹس میں کریش یا خرابی کے بارے میں معلومات ہوتی ہیں، بشمول ڈیوائس کی وضاحتیں، آپریٹنگ سسٹم، ایپلیکیشن ورژن، ٹائم اسٹیمپ، اور گمنام انسٹالیشن شناخت کنندہ۔
+ڈیٹا کو ایپلی کیشن کو بہتر بنانے میں ہماری مدد کرنے کے واحد مقصد کے لیے جمع کیا گیا ہے اور اس میں کوئی ذاتی معلومات شامل نہیں ہے۔ کوئی دوسرا ڈیٹا اکٹھا نہیں کیا گیا ہے۔
+مائیکروسافٹ ایپ سینٹر میں گمنام کریش اور ایرر رپورٹس محفوظ ہیں۔
+ان کا اشتراک ایپلیکیشن کے ڈویلپر سے باہر کسی اور کے ساتھ نہیں کیا جاتا ہے۔
+رپورٹ کا ڈیٹا 28 دنوں تک محفوظ رکھا جاتا ہے۔</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>رازداری کا بیان: سینٹری کے ساتھ کریش رپورٹنگ۔
+
+بارکوڈ جنریٹر ہماری ایپلیکیشن کے استحکام اور کارکردگی کو بہتر بنانے کے لیے کریش رپورٹس کو جمع کرنے اور ان کا نظم کرنے کے لیے، ایک فریق ثالث کی خدمت Sentry کا استعمال کرتا ہے۔ ہم آپ کی رازداری کے تحفظ اور آپ کے ڈیٹا کو ہینڈل کرنے کے طریقے کے بارے میں شفافیت فراہم کرنے کے لیے پرعزم ہیں۔
+
+کیا ڈیٹا اکٹھا کیا جاتا ہے:
+جب اس ایپلیکیشن کے اندر کوئی حادثہ پیش آتا ہے، تو کچھ معلومات جمع کی جا سکتی ہیں اور سنٹری کو منتقل کی جا سکتی ہیں، بشمول لیکن ان تک محدود نہیں:
+ڈیوائس کی معلومات جیسے ماڈل، آپریٹنگ سسٹم کا ورژن، اور ہارڈویئر کنفیگریشن۔
+ایپلیکیشن لاگز اور خرابی کے پیغامات جو کریش تک لے جاتے ہیں۔
+کریش کے وقت ایپلیکیشن کی حالت کے بارے میں معلومات، بشمول صارف کے اعمال۔
+
+ہم اس ڈیٹا کو کیسے استعمال کرتے ہیں:
+سینٹری کے ذریعہ جمع کردہ ڈیٹا کا استعمال صرف اور صرف ہماری درخواست میں کیڑے اور غلطیوں کی شناخت اور ان کو ٹھیک کرنے کے لیے کیا جاتا ہے۔ یہ معلومات ہمیں کریشوں کی بنیادی وجوہات کو سمجھنے میں مدد دیتی ہے، جس سے ہمیں اپنے صارفین کو زیادہ مستحکم اور قابل اعتماد تجربہ فراہم کرنے کی اجازت ملتی ہے۔
+
+ڈیٹا کی حفاظت اور برقراری:
+ہم آپ کے ڈیٹا کی حفاظت کو سنجیدگی سے لیتے ہیں۔ سینٹری غیر مجاز رسائی یا افشاء سے اکٹھی کی گئی معلومات کی حفاظت کے لیے صنعت کے معیاری حفاظتی اقدامات کا استعمال کرتی ہے۔
+
+سینٹری کے ذریعہ جمع کردہ کریش رپورٹس کو سینٹری کی ڈیٹا برقرار رکھنے کی پالیسیوں (اس درخواست کے لئے 30 دن) کے مطابق برقرار رکھا جاسکتا ہے۔ Sentry کے ڈیٹا ہینڈلنگ کے طریقوں کے بارے میں مزید معلومات کے لیے، براہ کرم https://sentry.io/welcome/ پر ان کی رازداری کی پالیسی سے رجوع کریں۔
+
+آپ کی رضامندی:
+اس ایپلیکیشن کو استعمال کرتے ہوئے، آپ سینٹری کے ذریعے کریش رپورٹ کے ڈیٹا کو جمع کرنے اور اس پر کارروائی کرنے کی رضامندی دیتے ہیں جیسا کہ اس رازداری کے بیان میں بیان کیا گیا ہے۔</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>کریش اور خرابی کی رپورٹس:</value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>ڈیفالٹ فارمیٹ جنریٹر:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>ڈیفالٹ فارمیٹ سکینر:</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>طے شدہ</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>مختلف بارکوڈز بنائیں اور اسکین کریں۔</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>اختلاف کرنا</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>ای میل:</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>خرابی</value>
+  </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>پہلا نمبر 0 ہونا چاہیے۔</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>پیش منظر کا رنگ:</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>پیش منظر کی دھندلاپن:</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>فارمیٹ:</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>ایک فارمیٹ منتخب کریں:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>فی الحال تعاون یافتہ نہیں ہے۔</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>فارمیٹ</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>پیدا کریں۔</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>غلط آغاز/اختتام حرف:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>غائب اختتامی کردار۔</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>غائب آغاز کردار۔</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>ہیکساڈیسیمل کلر کوڈز:
+
+حروف 1-2: دھندلاپن/شفافیت
+حروف 3-4: سرخ
+حروف 5-6: سبز
+حروف 7-8: نیلا</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>متن سے تقریر: تمام زبانیں تعاون یافتہ نہیں ہیں جو ایپلیکیشن کی ترتیبات میں فراہم کی گئی ہیں۔
+اسپیچ ٹو ٹیکسٹ: اسے اپنے آلے کی سیٹنگز کے ذریعے فعال کریں۔ اس کے بعد ورچوئل کی بورڈ میں ایک مائکروفون ظاہر ہوگا۔
+یہ دونوں آپشنز ڈیوائس سے ڈیوائس اور انسٹال شدہ زبانوں پر منحصر ہیں۔ یہ ممکن ہے کہ کچھ زبانوں کے لیے تقریر کا ترجمہ انٹرنیٹ پر متعلقہ خدمات کے ذریعے کیا جاتا ہے۔
+
+متن کے ترجمے کے لیے گوگل ٹرانسلیٹ کا استعمال کیا گیا۔ یہ اس بات کی ضمانت نہیں ہے کہ تمام ترجمے درست ہیں۔
+معاون زبانیں ہیں: چیک، ڈینش، ڈچ، انگریزی، فننش، فرانسیسی، جرمن، ہنگری، اطالوی، نارویجن، پولش، پرتگالی، رومانیہ، ہسپانوی اور سویڈش۔
+
+آپ کسی بھی اصلاح کے لیے مجھ سے ہمیشہ رابطہ کر سکتے ہیں۔</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>QR کوڈ یا تو ایک مقررہ یا متغیر پکسل سائز پر تیار کیا جاتا ہے، یہ اس میں موجود حروف کی تعداد اور سیٹنگز میں بیان کردہ زیادہ سے زیادہ پکسل سائز پر منحصر ہوتا ہے۔
+جب ایک تصویر (لوگو) کو QR کوڈ کے اوپر رکھا جاتا ہے، تو اسے مرکز میں رکھا جاتا ہے اور QR کوڈ کے سائز کے 10% اور 35% کے درمیان اسکیل کیا جاتا ہے۔ اس رینج کو سیٹنگز میں ایڈجسٹ کیا جا سکتا ہے۔ مرئیت کو بہتر بنانے کے لیے ایک بارڈر شامل کیا گیا ہے۔
+آرٹسٹک QR کوڈ انتہائی حسب ضرورت ہے، جس میں گریڈیئنٹس، حسب ضرورت شکلیں، رنگ، پیش منظر کی تصویر (لوگو) اور پس منظر کی تصویر جیسے اختیارات شامل ہیں۔ اس صورت میں، پس منظر کی دھندلاپن کو 0% اور 100% سے کم کے درمیان سیٹ کیا جانا چاہیے (ترتیبات دیکھیں)۔
+بہترین نتائج کے لیے، مربع تصاویر کا استعمال کریں اور ضرورت سے زیادہ سائز تبدیل کرنے سے بچنے کے لیے تصویر کے سائز کے ساتھ تجربہ کریں۔ ترجیحی فائل فارمیٹس PNG (اختیاری طور پر شفاف پس منظر کے ساتھ) یا JPEG ہیں۔</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>زبان کی تقریر:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>زبان:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>ان پٹ کی لمبائی برابر ہونی چاہیے۔</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>سافٹ ویئر 'جیسے ہے' فراہم کیا جاتا ہے، بغیر کسی قسم کی وارنٹی کے، ظاہر یا مضمر، بشمول تجارتی قابلیت، کسی خاص مقصد کے لیے فٹنس اور خلاف ورزی کی وارنٹیوں تک محدود نہیں۔ کسی بھی صورت میں مصنف اور/یا ناشر کسی بھی دعوے، نقصانات یا دیگر ذمہ داریوں کے لیے ذمہ دار نہیں ہوں گے، خواہ وہ معاہدے کی کارروائی، تشدد یا کسی اور صورت میں، سافٹ ویئر یا سافٹ ویئر کے استعمال یا دیگر معاملات سے پیدا ہونے والے، اس سے یا اس کے سلسلے میں ہو۔</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>.NET MAUI ایپلیکیشنز کے لیے بارکوڈ اسکیننگ اور جنریشن۔
+MIT لائسنس:
+اس سافٹ ویئر اور اس سے منسلک دستاویزات فائلوں ("سافٹ ویئر") کی ایک کاپی حاصل کرنے والے کسی بھی شخص کو بغیر کسی پابندی کے سافٹ ویئر میں ڈیل کرنے کی اجازت یہاں سے مفت دی جاتی ہے، بشمول بغیر کسی پابندی کے سافٹ ویئر کے استعمال، کاپی، ترمیم، انضمام، شائع، تقسیم، ذیلی لائسنس، اور/یا کاپیاں فروخت کرنے کے حقوق، اور جو شخص سوفٹ ویئر کو اجازت دیتا ہے، اس کی اجازت دیتا ہے۔ مندرجہ ذیل شرائط پر:
+
+مندرجہ بالا کاپی رائٹ نوٹس اور یہ اجازت نوٹس (بشمول اگلے پیراگراف) کو سافٹ ویئر کی تمام کاپیوں یا کافی حصوں میں شامل کیا جائے گا۔</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>لائسنس</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>یہ ایپلیکیشن غیر تجارتی مقاصد کے لیے آزادانہ طور پر استعمال کی جا سکتی ہے۔
+اس پروگرام کو مکمل طور پر اپنی ذمہ داری پر استعمال کریں۔</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>ہمیشہ بھیجیں۔</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>مت بھیجیں۔</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>ایپلیکیشن کو پچھلے سیشن میں ایک خرابی کا پتہ چلا۔
+ایپلیکیشن کو بہتر بنانے کے لیے، میں اس غلطی کے ساتھ لاگ وصول کرنا چاہوں گا۔
+کیا اس غلطی کا لاگ بھیجا جا سکتا ہے؟
+پیشگی شکریہ۔</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>بھیجیں۔</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>ایک خرابی کا پتہ چلا ہے۔ غلطی لاگ بھیجیں؟</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>غلطی لاگ بھیج رہا ہے۔</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>بارکوڈ جنریٹر اور سکینر</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>نہیں</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>اس لنک کو کھولیں؟</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>ویب سائٹ کا لنک</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>منتخب کردہ فائل تعاون یافتہ نہیں ہے۔</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>مائیکرو پی ڈی ایف 417</value>
+  </data>
+  <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
+    <value>ڈی ایکس فلم ایج</value>
+  </data>
+  <data name="Barcode_EAN_2_Text" xml:space="preserve">
+    <value>EAN-2</value>
+  </data>
+  <data name="Barcode_EAN_5_Text" xml:space="preserve">
+    <value>EAN-5</value>
+  </data>
+  <data name="Barcode_EAN_8_Text" xml:space="preserve">
+    <value>EAN-8</value>
+  </data>
+  <data name="Barcode_EAN_13_Text" xml:space="preserve">
+    <value>EAN-13</value>
+  </data>
+  <data name="Barcode_EAN_UPC_Text" xml:space="preserve">
+    <value>EAN/UPC</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
+    <value>GS1 ڈیٹا بار</value>
+  </data>
+  <data name="Barcode_CODABAR_Text" xml:space="preserve">
+    <value>کوڈبار</value>
+  </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>فارما کوڈ</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>پلیسی</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>آر ایس ایس 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
+  <data name="Barcode_AZTEC_Text" xml:space="preserve">
+    <value>ایزٹیک</value>
+  </data>
+  <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
+    <value>Aztec Rune</value>
+  </data>
+  <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
+    <value>ڈیٹا میٹرکس</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>میکسی کوڈ</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>تصویر کے ساتھ QR کوڈ</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>منسوخ کریں۔</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>SQRC محفوظ QR کوڈ</value>
+  </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>کیپشن کے ساتھ بارکوڈ:</value>
+  </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>عددی {0}، حروف نمبری {1}، بائٹس {2}، کانجی/کانا {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>زیادہ سے زیادہ حروف:</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>ہندسوں کی تعداد:</value>
+  </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>آرٹسٹک QR کوڈ</value>
   </data>
   <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
     <value>پس منظر کا رنگ فنکارانہ QR کوڈ:</value>
   </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>رنگ چننے والا</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>عددی کریکٹر کا پتہ چلا۔</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>روف نمبری کریکٹر کا پتہ چلا۔</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>بائٹ کریکٹر کا پتہ چلا۔</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>کانجی/کانا کردار کا پتہ چلا۔</value>
+  </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>پیش منظر تصویر:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>پس منظر کی تصویر:</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>پیش منظر کا رنگ فنکارانہ QR کوڈ:</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>متن کو دبائیں:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>QR کوڈ میں موجود متن کو کمپریس کیا جا سکتا ہے (اس کو فعال کرنے کے لیے سیٹنگز دیکھیں)۔ متن کو دوبارہ پڑھنے کے قابل بنانے کے لیے، اسے ایک اسکینر کے ذریعے ڈیکمپریس کیا جانا چاہیے جو GZip کمپریشن کو سپورٹ کرتا ہو، جیسے کہ اس ایپ میں موجود اسکینر۔</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>اسکین کی زیادہ سے زیادہ بھروسے کے لیے، ہم QR کوڈز کے لیے درج ذیل تجویز کرتے ہیں:
+پیش منظر اور پس منظر کے رنگوں کے درمیان زیادہ تضاد رکھیں۔
+مربع ماڈیولز کا استعمال کریں (پہلے سے طے شدہ): مربع ماڈیول عام طور پر QR کوڈز کو اسکین کرتے وقت خرابی کی سب سے کم شرح پیدا کرتے ہیں۔
+ماڈیولز کے درمیان فاصلوں سے بچیں: چھوٹے ماڈیول یا شکلیں جیسے دائرے یا گول ماڈیول خلا پیدا کر سکتے ہیں، جو اسکین کی غلطیوں کو بڑھا سکتے ہیں۔
+خرابی کی تصحیح ڈیفالٹ کے لحاظ سے ہائی (30% ریکوری) پر سیٹ کی جاتی ہے: اعلی غلطی کی اصلاح کی سطح کم پڑھنے کی اہلیت کی تلافی میں مدد کرتی ہے۔
+
+تیار کردہ QR کوڈز اور دیگر بارکوڈز کو جانچنے کی سفارش کی جاتی ہے تاکہ یہ یقینی بنایا جا سکے کہ وہ صحیح طریقے سے اسکین کر رہے ہیں۔</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>پے لوڈز:</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>پے لوڈز</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>عرض بلد کی غلط قدر۔</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>طول البلد کی غلط قدر۔</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>عرض بلد رینج سے باہر۔ قدر -90 اور 90 کے درمیان ہونی چاہیے (بشمول)۔</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>經度超出範圍。該值必須介於 -180 和 180 之間（含 -180 和 180）。</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>آغاز کی تاریخ اختتامی تاریخ سے بعد کی نہیں ہو سکتی۔</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>کاپی</value>
+  </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>پے لوڈ کی اقسام جیسے جغرافیائی محل وقوع، رابطے اور مزید کے ساتھ اسمارٹ QR کوڈز بنائیں۔ سب سے اوپر آئیکن کو تھپتھپائیں، ایک قسم منتخب کریں، اپنی تفصیلات درج کریں، پھر اپنا QR کوڈ بنائیں اور شیئر کریں۔
+پے لوڈ کی تمام اقسام ہر ڈیوائس پر تعاون یافتہ نہیں ہیں۔</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>جغرافیائی محل وقوع کی درخواست کریں۔</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>جغرافیائی محل وقوع</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>اس آلہ پر مقام دستیاب نہیں ہے، یا مقام کی خدمات غیر فعال ہیں۔</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>نقشے کھولیں۔</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>انکوڈنگ:</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>ای میل ایڈریس درست نہیں ہے۔</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>URL ایڈریس درست نہیں ہے۔</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>فون نمبر درست نہیں ہے۔</value>
+  </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>کوئی بارکوڈ نہیں ملا۔</value>
+  </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN درست نہیں ہے۔</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>رقم درست نہیں ہے۔</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC درست نہیں ہے۔</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>نام لازمی ہے۔</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>ترسیلات زر کی معلومات کے شعبوں میں سے صرف ایک کو آباد کیا جا سکتا ہے۔</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>ترسیلات زر کی معلومات درست نہیں ہے۔</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>تمام فیلڈز کی مشترکہ لمبائی بہت لمبی ہے۔ کل پے لوڈ سائز 331 بائٹس تک محدود ہے۔</value>
+  </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>آرٹسٹک مائیکرو کیو آر کوڈ</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>کوڈ {0} ہندسے لمبا ہونا چاہئے (چیکسم ہندسوں کو چھوڑ کر) یا {1} ہندسوں کا لمبا ہونا چاہئے۔</value>
+  </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>فونٹ سائز:</value>
   </data>
 </root>

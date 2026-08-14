@@ -120,6 +120,9 @@
   <data name="Agree_Text" xml:space="preserve">
     <value>Согласен</value>
   </data>
+  <data name="Barcode_AllCodes_Text" xml:space="preserve">
+    <value>Все коды</value>
+  </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
     <value>Не разрешено:</value>
   </data>
@@ -138,13 +141,545 @@
   <data name="BarcodeScanner_Text" xml:space="preserve">
     <value>Сканер</value>
   </data>
+  <data name="Barcode_AZTEC_CODE_Text" xml:space="preserve">
+    <value>Ацтекский кодекс</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_10_Text" xml:space="preserve">
+    <value>Контрольная сумма кода 39 по модулю 10</value>
+  </data>
+  <data name="Barcode_CODE_39_CHECKSUM_MOD_43_Text" xml:space="preserve">
+    <value>Контрольная сумма кода 39 по модулю 43</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_CHECKSUM_Text" xml:space="preserve">
+    <value>Полная контрольная сумма ASCII кода 39</value>
+  </data>
+  <data name="Barcode_CODE_39_FULL_ASCII_Text" xml:space="preserve">
+    <value>Полная контрольная сумма ASCII кода 39</value>
+  </data>
+  <data name="Barcode_CODE_39_Text" xml:space="preserve">
+    <value>Код 39</value>
+  </data>
+  <data name="Barcode_CODE_93_I_Text" xml:space="preserve">
+    <value>Код 93i</value>
+  </data>
+  <data name="Barcode_CODE_93_Text" xml:space="preserve">
+    <value>Код 93</value>
+  </data>
+  <data name="Barcode_CODE_128_Text" xml:space="preserve">
+    <value>Код 128</value>
+  </data>
+  <data name="Barcode_COMPACT_PDF_417_Text" xml:space="preserve">
+    <value>Компактный PDF417</value>
+  </data>
+  <data name="Barcode_FRAME_QR_CODE_Text" xml:space="preserve">
+    <value>QR-код рамки</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar расширенный многослойный</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_EXPANDED_Text" xml:space="preserve">
+    <value>Расширенная панель данных GS1</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_LIMITED_Text" xml:space="preserve">
+    <value>GS1 Databar limited</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar всенаправленный</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_OMNI_Text" xml:space="preserve">
+    <value>GS1 Databar многонаправленный</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_STACKED_Text" xml:space="preserve">
+    <value>GS1 Databar в стопке</value>
+  </data>
+  <data name="Barcode_IMB_Text" xml:space="preserve">
+    <value>IMb Интеллектуальная почта</value>
+  </data>
+  <data name="Barcode_ISBN_Text" xml:space="preserve">
+    <value>ISBN (Международный стандартный книжный номер)</value>
+  </data>
+  <data name="Barcode_ITF_14_Text" xml:space="preserve">
+    <value>ITF-14 Interleaved 2 of 5</value>
+  </data>
+  <data name="Barcode_ITF_CHECKSUM_Text" xml:space="preserve">
+    <value>Контрольная сумма ITF Interleaved 2 of 5</value>
+  </data>
+  <data name="Barcode_ITF_Text" xml:space="preserve">
+    <value>ITF Interleaved 2 of 5</value>
+  </data>
+  <data name="Barcode_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Микро QR-код</value>
+  </data>
+  <data name="Barcode_MSI_Text" xml:space="preserve">
+    <value>Модифицированный Plessey от MSI</value>
+  </data>
+  <data name="Barcode_PZN_Text" xml:space="preserve">
+    <value>Центральный номер PZN Pharma</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_1_Text" xml:space="preserve">
+    <value>Модель QR-кода 1</value>
+  </data>
+  <data name="Barcode_QR_CODE_MODEL_2_Text" xml:space="preserve">
+    <value>Модель QR-кода 2</value>
+  </data>
+  <data name="Barcode_QR_CODE_Text" xml:space="preserve">
+    <value>QR-код</value>
+  </data>
+  <data name="Barcode_RMQR_Text" xml:space="preserve">
+    <value>RMQR 矩形微型二維碼</value>
+  </data>
+  <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
+    <value>Расширенный RSS</value>
+  </data>
+  <data name="Barcode_UPC_EAN_EXTENSION_Text" xml:space="preserve">
+    <value>Расширение UPC-EAN</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="ButtonListen_Text" xml:space="preserve">
+    <value>Слушать</value>
+  </data>
+  <data name="ButtonNext_Text" xml:space="preserve">
+    <value>Далее</value>
+  </data>
+  <data name="ButtonShareText_Text" xml:space="preserve">
+    <value>Поделиться текстом</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>Поделиться</value>
+  </data>
+  <data name="ButtonSpeak_Text" xml:space="preserve">
+    <value>Говорить</value>
+  </data>
+  <data name="CameraNotFound_Text" xml:space="preserve">
+    <value>Камера не обнаружена.</value>
+  </data>
+  <data name="CameraPermissionIOS_Text" xml:space="preserve">
+    <value>Если разрешение на использование камеры не было предоставлено, камеру можно включить в настройках устройства, выбрав приложение и активировав камеру.
+Другой вариант — удалить и переустановить приложение.</value>
+  </data>
+  <data name="CameraQualityError_Text" xml:space="preserve">
+    <value>Данная камера не поддерживает это качество. Установите более низкое качество.</value>
+  </data>
+  <data name="CameraQualityHighest_Text" xml:space="preserve">
+    <value>Самый высокий</value>
+  </data>
+  <data name="CameraQualityHigh_Text" xml:space="preserve">
+    <value>Высокий</value>
+  </data>
+  <data name="CameraQualityLowest_Text" xml:space="preserve">
+    <value>Самый низкий</value>
+  </data>
+  <data name="CameraQualityLow_Text" xml:space="preserve">
+    <value>Низкий</value>
+  </data>
+  <data name="CameraQualityMedium_Text" xml:space="preserve">
+    <value>Средний</value>
+  </data>
+  <data name="CameraQualityTitle_Text" xml:space="preserve">
+    <value>Качество</value>
+  </data>
+  <data name="Cancel_Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="CheckDigitError_Text" xml:space="preserve">
+    <value>Код неверен.</value>
+  </data>
+  <data name="ClearCode_Text" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Пожалуйста, закройте приложение.</value>
+  </data>
+  <data name="Contact_Text" xml:space="preserve">
+    <value>Контакты:</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>Авторские права</value>
+  </data>
+  <data name="CrashErrorReportAppCenter_Text" xml:space="preserve">
+    <value>Для устранения любых проблем приложение будет отправлять анонимные отчеты о сбоях и ошибках при перезапуске.
+Отчеты содержат информацию о сбое или ошибке, включая характеристики устройства, операционную систему, версию приложения, метку времени и анонимный идентификатор установки.
+Данные собираются исключительно с целью улучшения приложения и не содержат никакой личной информации. Никакие другие данные не собираются.
+Анонимные отчеты о сбоях и ошибках хранятся в Microsoft App Center.
+Они не передаются никому, кроме разработчика приложения.
+Данные отчета хранятся в течение 28 дней.</value>
+  </data>
+  <data name="CrashErrorReportSentry_Text" xml:space="preserve">
+    <value>Заявление о конфиденциальности: отчеты о сбоях с помощью Sentry.
+
+Генератор штрих-кода использует Sentry, стороннюю службу, для сбора и управления отчетами о сбоях с целью повышения стабильности и производительности нашего приложения. Мы стремимся защищать вашу конфиденциальность и обеспечивать прозрачность обработки ваших данных.
+
+Какие данные собираются:
+Когда в этом приложении происходит сбой, определенная информация может быть собрана и передана в Sentry, включая, помимо прочего:
+Информация об устройстве, такая как модель, версия операционной системы и конфигурация оборудования.
+Журналы приложений и сообщения об ошибках, приведшие к сбою.
+Информация о состоянии приложения на момент сбоя, включая действия пользователя.
+
+Как мы используем эти данные:
+Данные, собранные Sentry, используются исключительно с целью выявления и исправления ошибок и ошибок в нашем приложении. Эта информация помогает нам понять основные причины сбоев, что позволяет нам обеспечить более стабильную и надежную работу для наших пользователей.
+
+Безопасность и хранение данных:
+Мы серьезно относимся к безопасности ваших данных. Sentry использует стандартные отраслевые меры безопасности для защиты собранной информации от несанкционированного доступа или раскрытия.
+
+Отчеты о сбоях, собранные Sentry, могут храниться в соответствии с политикой хранения данных Sentry (30 дней для этого приложения). Для получения дополнительной информации о методах обработки данных Sentry см. их Политику конфиденциальности по адресу https://sentry.io/welcome/.
+
+Ваше согласие:
+Используя это приложение, вы соглашаетесь на сбор и обработку данных отчетов о сбоях компанией Sentry, как описано в этом заявлении о конфиденциальности.</value>
+  </data>
+  <data name="CrashErrorReport_Text" xml:space="preserve">
+    <value>Отчеты о сбоях и ошибках:</value>
+  </data>
+  <data name="DefaultFormatGenerator_Text" xml:space="preserve">
+    <value>Генератор формата по умолчанию:</value>
+  </data>
+  <data name="DefaultFormatScanner_Text" xml:space="preserve">
+    <value>Сканер формата по умолчанию:</value>
+  </data>
+  <data name="Default_Text" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>Генерируйте и сканируйте различные штрихкоды.</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>Не согласен</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>Электронная почта:</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="FirstNumber0_Text" xml:space="preserve">
+    <value>Первая цифра должна быть 0.</value>
+  </data>
+  <data name="ForegroundColor_Text" xml:space="preserve">
+    <value>Цвет переднего плана:</value>
+  </data>
+  <data name="ForegroundOpacity_Text" xml:space="preserve">
+    <value>Прозрачность переднего плана:</value>
+  </data>
+  <data name="FormatCode2_Text" xml:space="preserve">
+    <value>Формат:</value>
+  </data>
+  <data name="FormatCode_Text" xml:space="preserve">
+    <value>Выберите формат:</value>
+  </data>
+  <data name="FormatNotSupported_Text" xml:space="preserve">
+    <value>в настоящее время не поддерживается.</value>
+  </data>
+  <data name="FormatTitle_Text" xml:space="preserve">
+    <value>Формат</value>
+  </data>
+  <data name="GenerateCode_Text" xml:space="preserve">
+    <value>Сгенерировать</value>
+  </data>
+  <data name="GuardInvalidStartEnd_Text" xml:space="preserve">
+    <value>Недопустимый начальный/конечный символ:</value>
+  </data>
+  <data name="GuardMissingEnd_Text" xml:space="preserve">
+    <value>Отсутствует конечный символ.</value>
+  </data>
+  <data name="GuardMissingStart_Text" xml:space="preserve">
+    <value>Отсутствует начальный символ.</value>
+  </data>
+  <data name="HexColorCodes_Text" xml:space="preserve">
+    <value>Шестнадцатеричные коды цветов:
+
+Символы 1-2: Непрозрачность/Прозрачность
+Символы 3-4: Красный
+Символы 5-6: Зеленый
+Символы 7-8: Синий</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Преобразование текста в речь: поддерживаются не все языки, указанные в настройках приложения.
+Преобразование речи в текст: активируйте эту функцию в настройках вашего устройства. После этого на виртуальной клавиатуре появится значок микрофона.
+Оба варианта зависят от устройства и установленных языков. Возможно, для некоторых языков перевод речи и речи осуществляется через интернет соответствующими сервисами.
+
+Для перевода текста использовался Google Translate. Это не гарантирует правильность всех переводов.
+Поддерживаемые языки: чешский, датский, голландский, английский, финский, французский, немецкий, венгерский, итальянский, норвежский, польский, португальский, румынский, испанский и шведский.
+
+Вы всегда можете связаться со мной для внесения исправлений.</value>
+  </data>
+  <data name="InfoQRCodeArt_Text" xml:space="preserve">
+    <value>QR-код генерируется с фиксированным или переменным размером в пикселях, в зависимости от количества символов и максимального размера в пикселях, заданного в настройках.
+Когда изображение (логотип) размещается поверх QR-кода, оно центрируется и масштабируется до 10–35% от размера QR-кода. Этот диапазон можно настроить в параметрах. Для улучшения видимости добавляется рамка.
+Художественный QR-код обладает широкими возможностями настройки, включая градиенты, пользовательские формы, цвета, изображение переднего плана (логотип) и фоновое изображение. В этом случае прозрачность фона должна быть установлена ​​в диапазоне от 0% до менее 100% (см. настройки).
+Для достижения наилучших результатов используйте квадратные изображения и экспериментируйте с размером изображений, чтобы избежать чрезмерного изменения размера. Предпочтительные форматы файлов — PNG (опционально с прозрачным фоном) или JPEG.</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Язык речи:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>Язык:</value>
+  </data>
+  <data name="LengthInputEven_Text" xml:space="preserve">
+    <value>Длина входных данных должна быть четной.</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>Программное обеспечение предоставляется «как есть», без каких-либо гарантий, явных или подразумеваемых, включая, помимо прочего, гарантии товарной пригодности, пригодности для определенной цели и отсутствия нарушений прав. Ни при каких обстоятельствах автор и/или издатель не несут ответственности за любые претензии, убытки или иную ответственность, будь то в рамках договорного права, деликта или иным образом, возникающие из, вследствие или в связи с программным обеспечением или его использованием или иными операциями с ним.</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>Сканирование и генерация штрих-кодов для приложений .NET MAUI.
+Лицензия MIT:
+Настоящим бесплатно любому лицу, получившему копию этого программного обеспечения и связанных с ним файлов документации («Программное обеспечение»), предоставляется разрешение на работу с Программным обеспечением без ограничений, включая, помимо прочего, права на использование, копирование, изменение, объединение, публикацию, распространение, сублицензирование и/или продажу копий Программного обеспечения, а также разрешение лицам, которым Программное обеспечение предоставляется, делать это при соблюдении следующих условий:
+
+Вышеупомянутое уведомление об авторских правах и данное уведомление о разрешении (включая следующий абзац) должны быть включены во все копии или существенные части Программного обеспечения.</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>Лицензия</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>Данное приложение может свободно использоваться в некоммерческих целях.
+Используйте эту программу исключительно на свой страх и риск.</value>
+  </data>
+  <data name="LogAlwaysSend_Text" xml:space="preserve">
+    <value>Всегда отправляйте</value>
+  </data>
+  <data name="LogDontSend_Text" xml:space="preserve">
+    <value>Не отправляйте</value>
+  </data>
+  <data name="LogMessage_Text" xml:space="preserve">
+    <value>Приложение обнаружило ошибку в предыдущей сессии.
+Для улучшения работы приложения я хотел бы получить лог с этой ошибкой.
+Можете ли вы прислать лог этой ошибки?
+Заранее спасибо.</value>
+  </data>
+  <data name="LogSend_Text" xml:space="preserve">
+    <value>Отправлять</value>
+  </data>
+  <data name="LogTitle2_Text" xml:space="preserve">
+    <value>Обнаружена ошибка. Необходимо отправить журнал ошибок?</value>
+  </data>
+  <data name="LogTitle_Text" xml:space="preserve">
+    <value>Отправка журнала ошибок</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>Генератор и сканер штрих-кодов</value>
+  </data>
+  <data name="No_Text" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="OpenLinkText_Text" xml:space="preserve">
+    <value>Открыть эту ссылку?</value>
+  </data>
+  <data name="OpenLinkTitle_Text" xml:space="preserve">
+    <value>Ссылка на сайт</value>
+  </data>
+  <data name="ErrorInvalidImageType_Text" xml:space="preserve">
+    <value>Выбранный файл не поддерживается.</value>
+  </data>
+  <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
+    <value>Микро PDF417</value>
+  </data>
+  <data name="Barcode_DX_FILM_EDGE_Text" xml:space="preserve">
+    <value>Край пленки DX</value>
+  </data>
+  <data name="Barcode_EAN_2_Text" xml:space="preserve">
+    <value>ЕАН-2</value>
+  </data>
+  <data name="Barcode_EAN_5_Text" xml:space="preserve">
+    <value>ЕАН-5</value>
+  </data>
+  <data name="Barcode_EAN_8_Text" xml:space="preserve">
+    <value>ЕАН-8</value>
+  </data>
+  <data name="Barcode_EAN_13_Text" xml:space="preserve">
+    <value>ЕАН-13</value>
+  </data>
+  <data name="Barcode_EAN_UPC_Text" xml:space="preserve">
+    <value>ЕАН/УПК</value>
+  </data>
+  <data name="Barcode_GS1_DATABAR_Text" xml:space="preserve">
+    <value>GS1 Databar</value>
+  </data>
+  <data name="Barcode_CODABAR_Text" xml:space="preserve">
+    <value>Кодабар</value>
+  </data>
+  <data name="Barcode_PHARMACODE_Text" xml:space="preserve">
+    <value>Фармакод</value>
+  </data>
+  <data name="Barcode_PLESSEY_Text" xml:space="preserve">
+    <value>Плесси</value>
+  </data>
+  <data name="Barcode_RSS_14_Text" xml:space="preserve">
+    <value>RSS 14</value>
+  </data>
+  <data name="Barcode_UPC_A_Text" xml:space="preserve">
+    <value>UPC-A</value>
+  </data>
+  <data name="Barcode_UPC_E_Text" xml:space="preserve">
+    <value>UPC-E</value>
+  </data>
+  <data name="Barcode_AZTEC_Text" xml:space="preserve">
+    <value>Ацтекский</value>
+  </data>
+  <data name="Barcode_AZTEC_RUNE_Text" xml:space="preserve">
+    <value>Ацтекская руна</value>
+  </data>
+  <data name="Barcode_DATA_MATRIX_Text" xml:space="preserve">
+    <value>Дата Матрица</value>
+  </data>
+  <data name="Barcode_MAXICODE_Text" xml:space="preserve">
+    <value>MaxiCode</value>
+  </data>
+  <data name="Barcode_PDF_417_Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
+    <value>QR-код с изображением</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Barcode_SQRC_Text" xml:space="preserve">
+    <value>Защищенный QR-код SQRC</value>
+  </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Штрихкод с подписью:</value>
+  </data>
+  <data name="MaximumCharactersNABK_Text" xml:space="preserve">
+    <value>числовой {0}, буквенно-цифровой {1}, байты {2}, кандзи/кана {3}</value>
+  </data>
+  <data name="MaximumCharacters_Text" xml:space="preserve">
+    <value>Максимальное количество символов:</value>
+  </data>
+  <data name="NumberOfDigits_Text" xml:space="preserve">
+    <value>Количество цифр:</value>
+  </data>
+  <data name="Barcode_ART_QR_CODE_Text" xml:space="preserve">
+    <value>Художественный QR-код</value>
   </data>
   <data name="BackgroundColorArtQRCode_Text" xml:space="preserve">
     <value>Цвет фона для художественного QR-кода:</value>
   </data>
+  <data name="ColorPicker_Text" xml:space="preserve">
+    <value>Палитра цветов</value>
+  </data>
+  <data name="CharacterNumericDetected_Text" xml:space="preserve">
+    <value>Обнаружен цифровой символ.</value>
+  </data>
+  <data name="CharacterAlphanumericDetected_Text" xml:space="preserve">
+    <value>Обнаружен буквенно-цифровой символ.</value>
+  </data>
+  <data name="CharacterBinaryByteDetected_Text" xml:space="preserve">
+    <value>Обнаружен байтовый символ.</value>
+  </data>
+  <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
+    <value>Обнаружен символ кандзи/кана.</value>
+  </data>
+  <data name="ImageForeground_Text" xml:space="preserve">
+    <value>Изображение переднего плана:</value>
+  </data>
+  <data name="ImageBackground_Text" xml:space="preserve">
+    <value>Фоновое изображение:</value>
+  </data>
+  <data name="ForegroundColorArtQRCode_Text" xml:space="preserve">
+    <value>QR-код для отображения цвета переднего плана:</value>
+  </data>
+  <data name="CompressionEnabled_Text" xml:space="preserve">
+    <value>Сжать текст:</value>
+  </data>
+  <data name="InfoCompression_Text" xml:space="preserve">
+    <value>Текст в QR-коде может быть сжат (см. настройки, чтобы включить эту функцию). Чтобы текст снова стал читаемым, его необходимо распаковать с помощью сканера, поддерживающего сжатие GZip, например, сканера в этом приложении.</value>
+  </data>
+  <data name="InfoQRCodeSettings_Text" xml:space="preserve">
+    <value>Для обеспечения оптимальной надежности сканирования QR-кодов мы рекомендуем следующее:
+Поддерживайте высокий контраст между цветами переднего и заднего плана.
+Используйте квадратные модули (по умолчанию): квадратные модули, как правило, обеспечивают наименьший процент ошибок при сканировании QR-кодов.
+Избегайте зазоров между модулями: меньшие модули или формы, такие как круги или закругленные модули, могут создавать зазоры, что может увеличить количество ошибок сканирования.
+По умолчанию уровень коррекции ошибок установлен на высокий (30% восстановления): высокий уровень коррекции ошибок помогает компенсировать снижение читаемости.
+
+Рекомендуется протестировать сгенерированные QR-коды и другие штрихкоды, чтобы убедиться в их правильном сканировании.</value>
+  </data>
+  <data name="PayloadEnabled_Text" xml:space="preserve">
+    <value>Полезная нагрузка:</value>
+  </data>
+  <data name="Payloads_Text" xml:space="preserve">
+    <value>Полезная нагрузка</value>
+  </data>
+  <data name="ErrorLatitudeInvalid_Text" xml:space="preserve">
+    <value>Недопустимое значение широты.</value>
+  </data>
+  <data name="ErrorLongitudeInvalid_Text" xml:space="preserve">
+    <value>Недопустимое значение долготы.</value>
+  </data>
+  <data name="ErrorLatitudeRange_Text" xml:space="preserve">
+    <value>Широта выходит за пределы допустимого диапазона. Значение должно быть в пределах от -90 до 90 (включительно).</value>
+  </data>
+  <data name="ErrorLongitudeRange_Text" xml:space="preserve">
+    <value>Долгота выходит за пределы допустимого диапазона. Значение должно быть в пределах от -180 до 180 (включительно).</value>
+  </data>
+  <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
+    <value>Дата начала не может быть позже даты окончания.</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="InfoPayloadTypes_Text" xml:space="preserve">
+    <value>Создавайте умные QR-коды с различными типами данных, такими как геолокация, контакты и многое другое. Нажмите на значок вверху, выберите тип, введите свои данные, затем сгенерируйте и поделитесь своим QR-кодом.
+Не все типы данных поддерживаются на всех устройствах.</value>
+  </data>
+  <data name="GeoLocationButton_Text" xml:space="preserve">
+    <value>Запросить геолокацию</value>
+  </data>
+  <data name="GeolocationTitle_Text" xml:space="preserve">
+    <value>Геолокация</value>
+  </data>
+  <data name="GeolocationMessage_Text" xml:space="preserve">
+    <value>Местоположение недоступно на этом устройстве, или службы определения местоположения отключены.</value>
+  </data>
+  <data name="GeoMapButton_Text" xml:space="preserve">
+    <value>Открыть карты</value>
+  </data>
+  <data name="GeolocationEncoding_Text" xml:space="preserve">
+    <value>Кодирование:</value>
+  </data>
+  <data name="ErrorEmailInvalid_Text" xml:space="preserve">
+    <value>Адрес электронной почты недействителен.</value>
+  </data>
+  <data name="ErrorUrlInvalid_Text" xml:space="preserve">
+    <value>URL-адрес недействителен.</value>
+  </data>
+  <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
+    <value>Номер телефона недействителен.</value>
+  </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>Штрихкод не найден.</value>
+  </data>
+  <data name="ErrorIbanInvalid_Text" xml:space="preserve">
+    <value>IBAN недействителен.</value>
+  </data>
+  <data name="ErrorAmountInvalid_Text" xml:space="preserve">
+    <value>Сумма недействительна.</value>
+  </data>
+  <data name="ErrorBicInvalid_Text" xml:space="preserve">
+    <value>BIC недействителен.</value>
+  </data>
+  <data name="ErrorNameInvalid_Text" xml:space="preserve">
+    <value>Имя обязательно.</value>
+  </data>
+  <data name="ErrorRemittanceInfoTwoFieldsInvalid_Text" xml:space="preserve">
+    <value>Можно заполнить только одно из полей с информацией о платеже.</value>
+  </data>
+  <data name="ErrorRemittanceInfoStructuredInvalid_Text" xml:space="preserve">
+    <value>Информация о платеже недействительна.</value>
+  </data>
+  <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
+    <value>Суммарная длина всех полей слишком велика. Общий размер полезной нагрузки ограничен 331 байтом.</value>
+  </data>
+  <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
+    <value>Художественный микро QR-код</value>
+  </data>
+  <data name="CodeLength_Text" xml:space="preserve">
+    <value>Код должен состоять из {0} цифр (исключая контрольную сумму) или из {1} цифр.</value>
+  </data>
+  <data name="FontSize_Text" xml:space="preserve">
+    <value>Размер шрифта:</value>
   </data>
 </root>
