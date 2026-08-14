@@ -25,7 +25,39 @@
     <Resource Language="x-generate" />
   </Resources>-->
 
-  <Resources>
+	<Resources>
+		<Resource Language="en" />
+		<Resource Language="ar" />
+		<Resource Language="bn" />
+		<Resource Language="cs" />
+		<Resource Language="da" />
+		<Resource Language="de" />
+		<Resource Language="el" />
+		<Resource Language="es" />
+		<Resource Language="fi" />
+		<Resource Language="fr" />
+		<Resource Language="hi" />
+		<Resource Language="hu" />
+		<Resource Language="id" />
+		<Resource Language="it" />
+		<Resource Language="ja" />
+		<Resource Language="ko" />
+		<Resource Language="nb" />
+		<Resource Language="nl" />
+		<Resource Language="pl" />
+		<Resource Language="pt" />
+		<Resource Language="ro" />
+		<Resource Language="ru" />
+		<Resource Language="sv" />
+		<Resource Language="tr" />
+		<Resource Language="uk" />
+		<Resource Language="ur" />
+		<Resource Language="vi" />
+		<Resource Language="zh-CN"/>
+		<Resource Language="zh-TW"/>
+	</Resources>
+
+	<!--<Resources>
 	<Resource Language="en-US" />
 	<Resource Language="ar" />
 	<Resource Language="cs-CZ" />
@@ -46,7 +78,7 @@
 	<Resource Language="ro-RO" />
 	<Resource Language="sv-SE" />
 	<Resource Language="tr" />
-  </Resources>
+  </Resources>-->
 	
 	<Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">

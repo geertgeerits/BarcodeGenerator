@@ -71,9 +71,12 @@
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>العربية (al'Arabiyyeẗ)</x:String>
+                                <x:String>Bahasa Indonesia</x:String>
+                                <x:String>বাংলা (Bāŋlā)</x:String>
                                 <x:String>Čeština</x:String>
                                 <x:String>Dansk</x:String>
                                 <x:String>Deutsch</x:String>
+                                <x:String>Ελληνικά (Elliniká)</x:String>
                                 <x:String>English</x:String>
                                 <x:String>Español</x:String>
                                 <x:String>Français</x:String>
@@ -83,13 +86,19 @@
                                 <x:String>Magyar</x:String>
                                 <x:String>Nederlands</x:String>
                                 <x:String>日本語 (Nihongo)</x:String>
-                                <x:String>Norsk</x:String>
+                                <x:String>Norsk Bokmål</x:String>
                                 <x:String>Polski</x:String>
                                 <x:String>Português</x:String>
                                 <x:String>Română</x:String>
+                                <x:String>Русский язык (Russkiĭ âzyk)</x:String>
                                 <x:String>Suomi</x:String>
                                 <x:String>Svenska</x:String>
+                                <x:String>Tiếng Việt (Việt ngữ)</x:String>
                                 <x:String>Türkçe</x:String>
+                                <x:String>اُردُو (Urduw)</x:String>
+                                <x:String>Українська (Ukraїnska)</x:String>
+                                <x:String>中文（繁體）(Zhōngguó rén)</x:String>
+                                <x:String>中文（简体）(Zhōngwén)</x:String>
                             </x:Array>
                         </Picker.ItemsSource>
                     </Picker>

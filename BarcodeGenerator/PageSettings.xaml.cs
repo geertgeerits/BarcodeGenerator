@@ -46,25 +46,34 @@ namespace BarcodeGenerator
             pckLanguage.SelectedIndex = Globals.cLanguage switch
             {
                 "ar" => 0,      // العربية (al'Arabiyyeẗ) - Arabic
-                "cs" => 1,      // Čeština - Czech
-                "da" => 2,      // Dansk - Danish
-                "de" => 3,      // Deutsch - German
-                "es" => 5,      // Español - Spanish
-                "fr" => 6,      // Français - French
-                "ko" => 7,      // 한국어 (Hangugeo) - Korean
-                "hi" => 8,      // हिन्दी (Hindī)
-                "it" => 9,      // Italiano - Italian
-                "hu" => 10,     // Magyar - Hungarian
-                "nl" => 11,     // Nederlands - Dutch
-                "ja" => 12,     // 日本語 (Nihongo) - Japanese
-                "nb" => 13,     // Norsk Bokmål - Norwegian Bokmål
-                "pl" => 14,     // Polski - Polish
-                "pt" => 15,     // Português - Portuguese
-                "ro" => 16,     // Română - Romanian
-                "fi" => 17,     // Suomi - Finnish
-                "sv" => 18,     // Svenska - Swedish
-                "tr" => 19,     // Türkçe - Turkish
-                _ => 4          // English
+                "id" => 1,      // Bahasa Indonesia
+                "bn" => 2,      // বাংলা (Bāŋlā) - Bengali
+                "cs" => 3,      // Čeština - Czech
+                "da" => 4,      // Dansk - Danish
+                "de" => 5,      // Deutsch - German
+                "el" => 6,      // Ελληνικά (Elliniká) - Greek
+                "es" => 8,      // Español - Spanish
+                "fr" => 9,      // Français - French
+                "ko" => 10,     // 한국어 (Hangugeo) - Korean
+                "hi" => 11,     // हिन्दी (Hindī)
+                "it" => 12,     // Italiano - Italian
+                "hu" => 13,     // Magyar - Hungarian
+                "nl" => 14,     // Nederlands - Dutch
+                "ja" => 15,     // 日本語 (Nihongo) - Japanese
+                "nb" => 16,     // Norsk Bokmål - Norwegian Bokmål
+                "pl" => 17,     // Polski - Polish
+                "pt" => 18,     // Português - Portuguese
+                "ro" => 19,     // Română - Romanian
+                "ru" => 20,     // Русский язык (Russkiĭ âzyk) - Russian
+                "fi" => 21,     // Suomi - Finnish
+                "sv" => 22,     // Svenska - Swedish
+                "vi" => 23,     // Tiếng Việt (Việt ngữ) - Vietnamese
+                "tr" => 24,     // Türkçe - Turkish
+                "ur" => 25,     // اُردُو (Urduw) - Urdu
+                "uk" => 26,     // Українська (Ukraїnska) - Ukrainian
+                "zh-TW" => 27,  // 中文 (Zhōngguó rén) - Chinese traditional
+                "zh-CN" => 28,  // 中文 (Zhōngwén) - Chinese simplified
+                _ => 7,         // English
             };
 
             // Fill the picker with the speech languages and select the current language in the picker
@@ -124,25 +133,34 @@ namespace BarcodeGenerator
                 Globals.cLanguage = selectedIndex switch
                 {
                     0 => "ar",      // العربية (al'Arabiyyeẗ) - Arabic
-                    1 => "cs",      // Čeština - Czech
-                    2 => "da",      // Dansk - Danish
-                    3 => "de",      // Deutsch - German
-                    5 => "es",      // Español - Spanish
-                    6 => "fr",      // Français - French
-                    7 => "ko",      // 한국어 (Hangugeo) - Korean
-                    8 => "hi",      // हिन्दी (Hindī)
-                    9 => "it",      // Italiano - Italian
-                    10 => "hu",     // Magyar - Hungarian
-                    11 => "nl",     // Nederlands - Dutch
-                    12 => "ja",     // 日本語 (Nihongo) - Japanese
-                    13 => "nb",     // Norsk Bokmål - Norwegian Bokmål
-                    14 => "pl",     // Polski - Polish
-                    15 => "pt",     // Português - Portuguese
-                    16 => "ro",     // Română - Romanian
-                    17 => "fi",     // Suomi - Finnish
-                    18 => "sv",     // Svenska - Swedish
-                    19 => "tr",     // Türkçe - Turkish
-                    _ => "en"       // English
+                    1 => "id",      // Bahasa Indonesia
+                    2 => "bn",      // বাংলা (Bāŋlā) - Bengali
+                    3 => "cs",      // Čeština - Czech
+                    4 => "da",      // Dansk - Danish
+                    5 => "de",      // Deutsch - German
+                    6 => "el",      // Ελληνικά (Elliniká) - Greek
+                    8 => "es",      // Español - Spanish
+                    9 => "fr",      // Français - French
+                    10 => "ko",     // 한국어 (Hangugeo) - Korean
+                    11 => "hi",     // हिन्दी (Hindī)
+                    12 => "it",     // Italiano - Italian
+                    13 => "hu",     // Magyar - Hungarian
+                    14 => "nl",     // Nederlands - Dutch
+                    15 => "ja",     // 日本語 (Nihongo) - Japanese
+                    16 => "nb",     // Norsk Bokmål - Norwegian Bokmål
+                    17 => "pl",     // Polski - Polish
+                    18 => "pt",     // Português - Portuguese
+                    19 => "ro",     // Română - Romanian
+                    20 => "ru",     // Русский язык (Russkiĭ âzyk) - Russian
+                    21 => "fi",     // Suomi - Finnish
+                    22 => "sv",     // Svenska - Swedish
+                    23 => "vi",     // Tiếng Việt (Việt ngữ) - Vietnamese
+                    24 => "tr",     // Türkçe - Turkish
+                    25 => "ur",     // اُردُو (Urduw) - Urdu
+                    26 => "uk",     // Українська (Ukraїnska) - Ukrainian
+                    27 => "zh-TW",  // 中文 (Zhōngguó rén) - Chinese traditional
+                    28 => "zh-CN",  // 中文 (Zhōngwén) - Chinese simplified
+                    _ => "en",      // English
                 };
             }
 
