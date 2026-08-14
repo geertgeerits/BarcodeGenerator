@@ -471,8 +471,129 @@
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>Ссылка на сайт</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>пиксели</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>Политика конфиденциальности:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>Никакие личные и иные данные не хранятся и не передаются мне или другим лицам.</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>Размер изображения: {0}%</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Выбранный файл не поддерживается.</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>Рекомендуемый размер изображения</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>Приложение будет перезапущено.</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>Сброс</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Для применения некоторых измененных настроек необходимо их сохранить.</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>Текст содержит один или несколько недопустимых символов.
+
+Недопустимо:</value>
+  </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>Текст для кодирования:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>Преобразование текста в речь на этом устройстве не поддерживается.</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>Тёмный</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>Светлый</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>Система</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>Тема:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Отправьте электронное письмо автору этого приложения.</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Откройте веб-сайт этого приложения.</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>Сканер</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>Начать или остановить сканирование штрих-кодов</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>Выберите заднюю или переднюю камеру</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>Установите качество изображения</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>Включите или выключите фонарик камеры</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>Включить или отключить вибрацию устройства при обнаружении штрихкода</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>Камера: увеличение и уменьшение масштаба</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>Скопировать текст в буфер обмена</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>Отчеты о сбоях и ошибках</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Вернуться назад</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Вперед</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>Вставьте текст из буфера обмена</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Сбросьте настройки до значений по умолчанию.</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>Сохраните настройки</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Преобразование текста в речь: включено или выключено</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store и логотип App Store являются товарными знаками Apple Inc., зарегистрированными в США и других странах и регионах.
+Google, Google Play, логотип Google Play и Android являются товарными знаками Google LLC.
+Microsoft, Microsoft Store, логотип Microsoft Store и Windows являются товарными знаками Microsoft Corporation.</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Версия:Версия:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Веб-сайт:</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Да</value>
   </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>Микро PDF417</value>
@@ -534,11 +655,20 @@
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>QR-код с изображением</value>
   </data>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>Выберите изображение переднего плана</value>
+  </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>Отмена</value>
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>Защищенный QR-код SQRC</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>Переменный размер:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>Размер в пикселях:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>Штрихкод с подписью:</value>
@@ -573,6 +703,69 @@
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>Обнаружен символ кандзи/кана.</value>
   </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>Длина текста ограничена {0} символами.</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>Длина текста ограничена {0} байтами.</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>Форма модуля QR-кода: квадратная</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>Форма модуля QR-кода: круглая</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>Форма модуля QR-кода: закругленная</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>Выберите фоновое изображение</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>Использовать цвета градиента:</value>
+  </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>Направление градиента:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>Цвета градиента:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>Снизу вверх</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>Снизу слева вверху справа</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>Слева направо</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>Сверху слева вниз справа</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>Сверху вниз</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>Сверху справа вниз слева</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>Справа налево</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>Снизу справа наверх слева</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>Цвет градиента 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>Цвет градиента 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>Цвет градиента 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>Форма модуля:</value>
+  </data>
   <data name="ImageForeground_Text" xml:space="preserve">
     <value>Изображение переднего плана:</value>
   </data>
@@ -588,6 +781,18 @@
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>Текст в QR-коде может быть сжат (см. настройки, чтобы включить эту функцию). Чтобы текст снова стал читаемым, его необходимо распаковать с помощью сканера, поддерживающего сжатие GZip, например, сканера в этом приложении.</value>
   </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>Форма шаблона Finder:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>Форма шаблона для поиска QR-кода: круг</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>Форма шаблона для поиска QR-кода: закругленная</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>Форма шаблона для поиска QR-кода: квадратная</value>
+  </data>
   <data name="InfoQRCodeSettings_Text" xml:space="preserve">
     <value>Для обеспечения оптимальной надежности сканирования QR-кодов мы рекомендуем следующее:
 Поддерживайте высокий контраст между цветами переднего и заднего плана.
@@ -596,6 +801,90 @@
 По умолчанию уровень коррекции ошибок установлен на высокий (30% восстановления): высокий уровень коррекции ошибок помогает компенсировать снижение читаемости.
 
 Рекомендуется протестировать сгенерированные QR-коды и другие штрихкоды, чтобы убедиться в их правильном сканировании.</value>
+  </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>Wi-Fi</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>Добавить в закладки</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>Электронная почта</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>Геолокация</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>Номер телефона</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>Сообщение WhatsApp</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>Контактные данные</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>Событие в календаре</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>Тип полезной нагрузки:</value>
+  </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>Сеть имен</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>Заголовок</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>Адрес электронной почты</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>Сообщение</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>Широта:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>Долгота:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>Электронная почта</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>Местоположение</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>Начало:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>Конец:</value>
   </data>
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>Полезная нагрузка:</value>
@@ -618,8 +907,21 @@
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
     <value>Дата начала не может быть позже даты окончания.</value>
   </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Обнаружена сеть Wi-Fi.
+Выберите один из вариантов.</value>
+  </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>Копировать</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Откройте настройки Wi-Fi</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>Чтобы подключиться к сети, откройте «Настройки» — «Wi-Fi».</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>Открытие настроек Wi-Fi на этой платформе не поддерживается.</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>Создавайте умные QR-коды с различными типами данных, такими как геолокация, контакты и многое другое. Нажмите на значок вверху, выберите тип, введите свои данные, затем сгенерируйте и поделитесь своим QR-кодом.
@@ -646,11 +948,53 @@
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>URL-адрес недействителен.</value>
   </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>Откройте URL-ссылку</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>Номер телефона</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>Аутентификация:</value>
+  </data>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>Номер телефона недействителен.</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>Штрихкод не найден.</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>Сканирование изображения</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>Сканирование с камеры</value>
+  </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>Перевод средств по SEPA</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>Получатель BIC</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>Имя получателя</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>Получатель IBAN</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>Сумма в евро</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>Цель</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>Информация о денежных переводах (структурированная)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>Информация о денежных переводах (неструктурированная)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>Информация</value>
   </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>IBAN недействителен.</value>
@@ -672,6 +1016,15 @@
   </data>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>Суммарная длина всех полей слишком велика. Общий размер полезной нагрузки ограничен 331 байтом.</value>
+  </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>Размер модуля: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>Размер границы изображения: {0} пикселей</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Размер тихой зоны: {0} модулей</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Художественный микро QR-код</value>

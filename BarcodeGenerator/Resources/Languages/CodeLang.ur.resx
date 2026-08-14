@@ -471,8 +471,129 @@ MIT لائسنس:
   <data name="OpenLinkTitle_Text" xml:space="preserve">
     <value>ویب سائٹ کا لنک</value>
   </data>
+  <data name="Pixels_Text" xml:space="preserve">
+    <value>پکسلز</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>رازداری کی پالیسی:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>کوئی ذاتی اور دیگر ڈیٹا میرے اور دوسروں کو محفوظ یا منتقل نہیں کیا جاتا ہے۔</value>
+  </data>
+  <data name="QRCodeImageSize_Text" xml:space="preserve">
+    <value>تصویر کا سائز: {0}%</value>
+  </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>منتخب کردہ فائل تعاون یافتہ نہیں ہے۔</value>
+  </data>
+  <data name="QRCodeRecommendedImageSize_Text" xml:space="preserve">
+    <value>تجویز کردہ تصویر کا سائز</value>
+  </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>درخواست دوبارہ شروع کی جائے گی۔</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>دوبارہ ترتیب دیں۔</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>کچھ تبدیل شدہ ترتیبات کو لاگو کرنے کے لیے محفوظ کرنا ضروری ہے۔</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>محفوظ کریں۔</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>ترتیبات</value>
+  </data>
+  <data name="TextContainsChar_Text" xml:space="preserve">
+    <value>متن میں ایک یا زیادہ حروف ہیں جن کی اجازت نہیں ہے۔
+
+اجازت نہیں ہے:</value>
+  </data>
+  <data name="TextToEncode_Text" xml:space="preserve">
+    <value>انکوڈ کرنے کے لیے متن:</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>اس ڈیوائس پر ٹیکسٹ ٹو اسپیچ تعاون یافتہ نہیں ہے۔</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>اندھیرا</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>روشنی</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>سسٹم</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>تھیم:</value>
+  </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>اس درخواست کے مصنف کو ای میل بھیجیں۔</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>اس ایپلی کیشن کی ویب سائٹ کھولیں۔</value>
+  </data>
+  <data name="ToolTipBarcodeScanner_Text" xml:space="preserve">
+    <value>سکینر</value>
+  </data>
+  <data name="ToolTipCameraDetecting_Text" xml:space="preserve">
+    <value>بارکوڈز کے لیے اسکیننگ شروع کریں یا بند کریں۔</value>
+  </data>
+  <data name="ToolTipCameraFacing_Text" xml:space="preserve">
+    <value>پیچھے یا سامنے والا کیمرہ منتخب کریں۔</value>
+  </data>
+  <data name="ToolTipCameraQuality_Text" xml:space="preserve">
+    <value>کیمرے کی کوالٹی سیٹ کریں۔</value>
+  </data>
+  <data name="ToolTipCameraTorch_Text" xml:space="preserve">
+    <value>کیمرے کی ٹارچ کو آن یا آف کریں۔</value>
+  </data>
+  <data name="ToolTipCameraVibrate_Text" xml:space="preserve">
+    <value>بار کوڈ تلاش کرتے وقت ڈیوائس وائبریشن کو فعال یا غیر فعال کریں۔</value>
+  </data>
+  <data name="ToolTipCameraZoom_Text" xml:space="preserve">
+    <value>کیمرہ: زوم ان اور آؤٹ</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>کلپ بورڈ پر متن کاپی کریں۔</value>
+  </data>
+  <data name="ToolTipCrashErrorReport_Text" xml:space="preserve">
+    <value>کریش اور خرابی کی اطلاعات</value>
+  </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>واپس جاؤ</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>آگے بڑھو</value>
+  </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>مدد</value>
+  </data>
+  <data name="ToolTipPaste_Text" xml:space="preserve">
+    <value>کلپ بورڈ سے متن چسپاں کریں۔</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>ترتیبات کو ان کی ڈیفالٹ اقدار پر دوبارہ ترتیب دیں۔</value>
+  </data>
+  <data name="ToolTipSettingsSave_Text" xml:space="preserve">
+    <value>ترتیبات کو محفوظ کریں۔</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>متن سے تقریر: آن یا آف</value>
+  </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store اور App Store لوگو Apple Inc. کے ٹریڈ مارک ہیں، جو امریکہ اور دیگر ممالک اور خطوں میں رجسٹرڈ ہیں۔
+گوگل، گوگل پلے، گوگل پلے لوگو اور اینڈرائیڈ گوگل ایل ایل سی کے ٹریڈ مارک ہیں۔
+Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft Corporation کے ٹریڈ مارک ہیں۔</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>ورژن:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>ویب سائٹ:</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>جی ہاں</value>
   </data>
   <data name="Barcode_MICRO_PDF_417_Text" xml:space="preserve">
     <value>مائیکرو پی ڈی ایف 417</value>
@@ -534,11 +655,20 @@ MIT لائسنس:
   <data name="Barcode_QR_CODE_IMAGE_Text" xml:space="preserve">
     <value>تصویر کے ساتھ QR کوڈ</value>
   </data>
+  <data name="QRCodeImageForegroundTitle_Text" xml:space="preserve">
+    <value>پیش منظر کی تصویر منتخب کریں۔</value>
+  </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
     <value>منسوخ کریں۔</value>
   </data>
   <data name="Barcode_SQRC_Text" xml:space="preserve">
     <value>SQRC محفوظ QR کوڈ</value>
+  </data>
+  <data name="QRCodeSizeVariable_Text" xml:space="preserve">
+    <value>متغیر سائز:</value>
+  </data>
+  <data name="QRCodeSizePixels_Text" xml:space="preserve">
+    <value>پکسلز میں سائز:</value>
   </data>
   <data name="BarcodeWithCaption_Text" xml:space="preserve">
     <value>کیپشن کے ساتھ بارکوڈ:</value>
@@ -573,6 +703,69 @@ MIT لائسنس:
   <data name="CharacterKanjiKanaDetected_Text" xml:space="preserve">
     <value>کانجی/کانا کردار کا پتہ چلا۔</value>
   </data>
+  <data name="TextLengthLimitedCharacter_Text" xml:space="preserve">
+    <value>متن کی لمبائی {0} حروف تک محدود ہے۔</value>
+  </data>
+  <data name="TextLengthLimitedByte_Text" xml:space="preserve">
+    <value>متن کی لمبائی {0} بائٹس تک محدود ہے۔</value>
+  </data>
+  <data name="QRCodeModuleShapeSquare_Text" xml:space="preserve">
+    <value>QR کوڈ ماڈیول شکل: مربع</value>
+  </data>
+  <data name="QRCodeModuleShapeCircle_Text" xml:space="preserve">
+    <value>QR کوڈ ماڈیول شکل: دائرہ</value>
+  </data>
+  <data name="QRCodeModuleShapeRounded_Text" xml:space="preserve">
+    <value>QR کوڈ ماڈیول کی شکل: گول</value>
+  </data>
+  <data name="QRCodeImageBackgroundTitle_Text" xml:space="preserve">
+    <value>پس منظر کی تصویر منتخب کریں۔</value>
+  </data>
+  <data name="QRCodeGradientUse_Text" xml:space="preserve">
+    <value>تدریجی رنگ استعمال کریں:</value>
+  </data>
+  <data name="QRCodeGradientDirection_Text" xml:space="preserve">
+    <value>تدریجی سمت:</value>
+  </data>
+  <data name="QRCodeGradientColors_Text" xml:space="preserve">
+    <value>تدریجی رنگ:</value>
+  </data>
+  <data name="QRCodeGradientDirection1_Text" xml:space="preserve">
+    <value>نیچے سے اوپر</value>
+  </data>
+  <data name="QRCodeGradientDirection2_Text" xml:space="preserve">
+    <value>نیچے بائیں سے اوپر دائیں</value>
+  </data>
+  <data name="QRCodeGradientDirection3_Text" xml:space="preserve">
+    <value>بائیں سے دائیں</value>
+  </data>
+  <data name="QRCodeGradientDirection4_Text" xml:space="preserve">
+    <value>اوپر بائیں سے نیچے دائیں</value>
+  </data>
+  <data name="QRCodeGradientDirection5_Text" xml:space="preserve">
+    <value>اوپر سے نیچے تک</value>
+  </data>
+  <data name="QRCodeGradientDirection6_Text" xml:space="preserve">
+    <value>اوپر دائیں سے نیچے بائیں</value>
+  </data>
+  <data name="QRCodeGradientDirection7_Text" xml:space="preserve">
+    <value>دائیں بائیں</value>
+  </data>
+  <data name="QRCodeGradientDirection8_Text" xml:space="preserve">
+    <value>نیچے دائیں سے اوپر بائیں</value>
+  </data>
+  <data name="QRCodeGradientColor1_Text" xml:space="preserve">
+    <value>گریڈینٹ رنگ 1</value>
+  </data>
+  <data name="QRCodeGradientColor2_Text" xml:space="preserve">
+    <value>گریڈینٹ رنگ 2</value>
+  </data>
+  <data name="QRCodeGradientColor3_Text" xml:space="preserve">
+    <value>گریڈینٹ رنگ 3</value>
+  </data>
+  <data name="QRCodeModuleShape_Text" xml:space="preserve">
+    <value>ماڈیول کی شکل:</value>
+  </data>
   <data name="ImageForeground_Text" xml:space="preserve">
     <value>پیش منظر تصویر:</value>
   </data>
@@ -588,6 +781,18 @@ MIT لائسنس:
   <data name="InfoCompression_Text" xml:space="preserve">
     <value>QR کوڈ میں موجود متن کو کمپریس کیا جا سکتا ہے (اس کو فعال کرنے کے لیے سیٹنگز دیکھیں)۔ متن کو دوبارہ پڑھنے کے قابل بنانے کے لیے، اسے ایک اسکینر کے ذریعے ڈیکمپریس کیا جانا چاہیے جو GZip کمپریشن کو سپورٹ کرتا ہو، جیسے کہ اس ایپ میں موجود اسکینر۔</value>
   </data>
+  <data name="QRCodeFinderPatternShape_Text" xml:space="preserve">
+    <value>فائنڈر پیٹرن کی شکل:</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeCircle_Text" xml:space="preserve">
+    <value>QR کوڈ فائنڈر پیٹرن کی شکل: دائرہ</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeRounded_Text" xml:space="preserve">
+    <value>QR کوڈ فائنڈر پیٹرن کی شکل: گول</value>
+  </data>
+  <data name="QRCodeFinderPatternShapeSquare_Text" xml:space="preserve">
+    <value>QR کوڈ فائنڈر پیٹرن کی شکل: مربع</value>
+  </data>
   <data name="InfoQRCodeSettings_Text" xml:space="preserve">
     <value>اسکین کی زیادہ سے زیادہ بھروسے کے لیے، ہم QR کوڈز کے لیے درج ذیل تجویز کرتے ہیں:
 پیش منظر اور پس منظر کے رنگوں کے درمیان زیادہ تضاد رکھیں۔
@@ -596,6 +801,90 @@ MIT لائسنس:
 خرابی کی تصحیح ڈیفالٹ کے لحاظ سے ہائی (30% ریکوری) پر سیٹ کی جاتی ہے: اعلی غلطی کی اصلاح کی سطح کم پڑھنے کی اہلیت کی تلافی میں مدد کرتی ہے۔
 
 تیار کردہ QR کوڈز اور دیگر بارکوڈز کو جانچنے کی سفارش کی جاتی ہے تاکہ یہ یقینی بنایا جا سکے کہ وہ صحیح طریقے سے اسکین کر رہے ہیں۔</value>
+  </data>
+  <data name="PayloadType_WIFI_Text" xml:space="preserve">
+    <value>وائی ​​فائی</value>
+  </data>
+  <data name="PayloadType_URL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadType_BOOKMARK_Text" xml:space="preserve">
+    <value>بک مارک</value>
+  </data>
+  <data name="PayloadType_MAIL_Text" xml:space="preserve">
+    <value>ای میل</value>
+  </data>
+  <data name="PayloadType_SMS_Text" xml:space="preserve">
+    <value>ایس ایم ایس</value>
+  </data>
+  <data name="PayloadType_MMS_Text" xml:space="preserve">
+    <value>ایم ایم ایس</value>
+  </data>
+  <data name="PayloadType_GEOLOCATION_Text" xml:space="preserve">
+    <value>جغرافیائی محل وقوع</value>
+  </data>
+  <data name="PayloadType_PHONENUMBER_Text" xml:space="preserve">
+    <value>فون نمبر</value>
+  </data>
+  <data name="PayloadType_WHATSAPPMESSAGE_Text" xml:space="preserve">
+    <value>واٹس ایپ پیغام</value>
+  </data>
+  <data name="PayloadType_CONTACTDATA_Text" xml:space="preserve">
+    <value>رابطہ ڈیٹا</value>
+  </data>
+  <data name="PayloadType_CALENDAREVENT_Text" xml:space="preserve">
+    <value>کیلنڈر ایونٹ</value>
+  </data>
+  <data name="PayloadType_Text" xml:space="preserve">
+    <value>پے لوڈ کی قسم:</value>
+  </data>
+  <data name="PayloadTypeSSID_Text" xml:space="preserve">
+    <value>نام کا نیٹ ورک</value>
+  </data>
+  <data name="PayloadTypePassword_Text" xml:space="preserve">
+    <value>پاس ورڈ</value>
+  </data>
+  <data name="PayloadTypeURL_Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="PayloadTypeTitle_Text" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="PayloadTypeReceiver_Text" xml:space="preserve">
+    <value>ای میل ایڈریس</value>
+  </data>
+  <data name="PayloadTypeSubject_Text" xml:space="preserve">
+    <value>موضوع</value>
+  </data>
+  <data name="PayloadTypeMessage_Text" xml:space="preserve">
+    <value>پیغام</value>
+  </data>
+  <data name="PayloadTypeLatitude_Text" xml:space="preserve">
+    <value>عرض بلد:</value>
+  </data>
+  <data name="PayloadTypeLongitude_Text" xml:space="preserve">
+    <value>طول البلد:</value>
+  </data>
+  <data name="PayloadTypeFirstname_Text" xml:space="preserve">
+    <value>پہلا نام</value>
+  </data>
+  <data name="PayloadTypeLastname_Text" xml:space="preserve">
+    <value>آخری نام</value>
+  </data>
+  <data name="PayloadTypeMail_Text" xml:space="preserve">
+    <value>ای میل</value>
+  </data>
+  <data name="PayloadTypeDescription_Text" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="PayloadTypeLocation_Text" xml:space="preserve">
+    <value>مقام</value>
+  </data>
+  <data name="PayloadTypeStart_Text" xml:space="preserve">
+    <value>شروع کریں:</value>
+  </data>
+  <data name="PayloadTypeEnd_Text" xml:space="preserve">
+    <value>اختتام:</value>
   </data>
   <data name="PayloadEnabled_Text" xml:space="preserve">
     <value>پے لوڈز:</value>
@@ -618,8 +907,21 @@ MIT لائسنس:
   <data name="ErrorStartdateLaterEnddate_Text" xml:space="preserve">
     <value>آغاز کی تاریخ اختتامی تاریخ سے بعد کی نہیں ہو سکتی۔</value>
   </data>
+  <data name="WiFiNetworkDetected_Text" xml:space="preserve">
+    <value>Wi‑Fi نیٹ ورک کا پتہ چلا۔
+ایک آپشن منتخب کریں۔</value>
+  </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
     <value>کاپی</value>
+  </data>
+  <data name="WiFiOpenSettings_Text" xml:space="preserve">
+    <value>Wi‑Fi کی ترتیبات کھولیں۔</value>
+  </data>
+  <data name="WiFiJoinNetwork_Text" xml:space="preserve">
+    <value>نیٹ ورک میں شامل ہونے کے لیے براہ کرم ترتیبات - Wi‑Fi کھولیں۔</value>
+  </data>
+  <data name="WiFiOpenSettingsNotSupported_Text" xml:space="preserve">
+    <value>اوپن وائی فائی کی ترتیبات اس پلیٹ فارم پر تعاون یافتہ نہیں ہیں۔</value>
   </data>
   <data name="InfoPayloadTypes_Text" xml:space="preserve">
     <value>پے لوڈ کی اقسام جیسے جغرافیائی محل وقوع، رابطے اور مزید کے ساتھ اسمارٹ QR کوڈز بنائیں۔ سب سے اوپر آئیکن کو تھپتھپائیں، ایک قسم منتخب کریں، اپنی تفصیلات درج کریں، پھر اپنا QR کوڈ بنائیں اور شیئر کریں۔
@@ -646,11 +948,53 @@ MIT لائسنس:
   <data name="ErrorUrlInvalid_Text" xml:space="preserve">
     <value>URL ایڈریس درست نہیں ہے۔</value>
   </data>
+  <data name="ToolTipUrlLink_Text" xml:space="preserve">
+    <value>یو آر ایل کا لنک کھولیں۔</value>
+  </data>
+  <data name="PayloadTypePhoneNumber_Text" xml:space="preserve">
+    <value>فون نمبر</value>
+  </data>
+  <data name="PayloadTypeAuthentication_Text" xml:space="preserve">
+    <value>تصدیق:</value>
+  </data>
   <data name="ErrorPhoneNumberInvalid_Text" xml:space="preserve">
     <value>فون نمبر درست نہیں ہے۔</value>
   </data>
   <data name="BarcodeNotFound_Text" xml:space="preserve">
     <value>کوئی بارکوڈ نہیں ملا۔</value>
+  </data>
+  <data name="ToolTipScanImage_Text" xml:space="preserve">
+    <value>ایک تصویر اسکین کریں۔</value>
+  </data>
+  <data name="ToolTipScanCamera_Text" xml:space="preserve">
+    <value>کیمرے سے اسکین کریں۔</value>
+  </data>
+  <data name="PayloadType_SEPACREDITTRANSFER_Text" xml:space="preserve">
+    <value>SEPA کریڈٹ ٹرانسفر</value>
+  </data>
+  <data name="PayloadTypeSctBic_Text" xml:space="preserve">
+    <value>BIC سے فائدہ اٹھانے والا</value>
+  </data>
+  <data name="PayloadTypeSctName_Text" xml:space="preserve">
+    <value>فائدہ اٹھانے والے کا نام</value>
+  </data>
+  <data name="PayloadTypeSctIban_Text" xml:space="preserve">
+    <value>IBAN سے فائدہ اٹھانے والا</value>
+  </data>
+  <data name="PayloadTypeSctAmountEur_Text" xml:space="preserve">
+    <value>رقم EUR</value>
+  </data>
+  <data name="PayloadTypeSctPurpose_Text" xml:space="preserve">
+    <value>مقصد</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoStructured_Text" xml:space="preserve">
+    <value>ترسیلات زر کی معلومات (ساختہ)</value>
+  </data>
+  <data name="PayloadTypeSctRemittanceInfoUnstructured_Text" xml:space="preserve">
+    <value>ترسیلات زر کی معلومات (غیر ساختہ)</value>
+  </data>
+  <data name="PayloadTypeSctInformation_Text" xml:space="preserve">
+    <value>معلومات</value>
   </data>
   <data name="ErrorIbanInvalid_Text" xml:space="preserve">
     <value>IBAN درست نہیں ہے۔</value>
@@ -672,6 +1016,15 @@ MIT لائسنس:
   </data>
   <data name="ErrorSepaCreditTransferPayloadTooLong_Text" xml:space="preserve">
     <value>تمام فیلڈز کی مشترکہ لمبائی بہت لمبی ہے۔ کل پے لوڈ سائز 331 بائٹس تک محدود ہے۔</value>
+  </data>
+  <data name="QRCodeModuleSize_Text" xml:space="preserve">
+    <value>ماڈیول کا سائز: {0}%</value>
+  </data>
+  <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
+    <value>تصویر کے بارڈر کا سائز: {0} پکسلز</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>خاموش زون کا سائز: {0} ماڈیول</value>
   </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>آرٹسٹک مائیکرو کیو آر کوڈ</value>
