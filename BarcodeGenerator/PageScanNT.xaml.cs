@@ -200,6 +200,9 @@ namespace BarcodeGenerator
 
             // Set language text to speech using the Appearing event of the PageScanNT.xaml
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+
+            // Enable or disable the text to speech button based on whether a language is selected
+            imgbtnTextToSpeech.IsEnabled = Globals.bTextToSpeechLanguageSelected;
         }
 
         /// <summary>

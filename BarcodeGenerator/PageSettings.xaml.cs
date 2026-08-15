@@ -168,6 +168,9 @@ namespace BarcodeGenerator
             {
                 Globals.bLanguageChanged = true;
 
+                // Fill the picker with the speech languages and select the current language in the picker
+                ClassSpeech.FillPickerWithSpeechLanguages(pckLanguageSpeech);
+
                 // Search the barcode generator and scanner name with the search key to get the new name in the selected language
                 searchKeyGenerator = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeGeneratorName, ClassBarcodes.barcodeSearch);
                 searchKeyScanner = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeScannerName, ClassBarcodes.barcodeSearch);

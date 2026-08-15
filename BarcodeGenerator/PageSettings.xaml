@@ -145,15 +145,41 @@
                 </Border>
 
                 <Label
+                    x:Name="lblFontSize"
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="4"
+                    Grid.Column="0"
+                    Text="">
+                </Label>
+
+                <Border
+                    Style="{StaticResource borderStyleGroup}"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,0,0,0', WinUI='0,0,12,0'}">
+
+                    <Slider
+                        x:Name="sldFontSize"
+                        Style="{StaticResource sliderStyleColor}"
+                        Grid.Column="1"
+                        ThumbColor="Magenta"
+                        MinimumTrackColor="Magenta"
+                        Minimum="10"
+                        Maximum="30"
+                        ValueChanged="OnSliderFontSizeChanged">
+                    </Slider>
+                </Border>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="5"
                     Grid.Column="0"
                     Text="{Translate DefaultFormatGenerator_Text}">
                 </Label>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="4"
+                    Grid.Row="5"
                     Grid.Column="1"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,0,0,0', WinUI='0,0,12,0'}">
 
@@ -166,14 +192,14 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="5"
+                    Grid.Row="6"
                     Grid.Column="0"
                     Text="{Translate DefaultFormatScanner_Text}">
                 </Label>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="5"
+                    Grid.Row="6"
                     Grid.Column="1"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,0,0,0', WinUI='0,0,12,0'}">
 
@@ -187,13 +213,13 @@
                 <Label
                     x:Name="lblHexColorFg"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="6"
+                    Grid.Row="7"
                     Grid.Column="0"
                     Text="{Translate ForegroundColor_Text}">
                 </Label>
 
                 <Grid
-                    Grid.Row="6"
+                    Grid.Row="7"
                     Grid.Column="2"
                     ColumnDefinitions="48, 100*">
 
@@ -224,13 +250,13 @@
                 <Label
                     x:Name="lblHexColorBg"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="7"
+                    Grid.Row="8"
                     Grid.Column="0"
                     Text="{Translate BackgroundColor_Text}">
                 </Label>
 
                 <Grid
-                    Grid.Row="7"
+                    Grid.Row="8"
                     Grid.Column="2"
                     ColumnDefinitions="48, 100*">
 
@@ -263,7 +289,7 @@
                 This option is not available for 2D barcodes because they do not have a caption.-->
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="8"
+                    Grid.Row="9"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
@@ -272,7 +298,7 @@
 
                 <Switch
                     x:Name="swtBarcodeWithCaption"
-                    Grid.Row="8"
+                    Grid.Row="9"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,8,0,0'}"
                     Toggled="SwtBarcodeWithCaption_Toggled">
@@ -284,7 +310,7 @@
                 <Label
                     x:Name="lblArtQRCode"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="9"
+                    Grid.Row="10"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Center"
@@ -295,7 +321,7 @@
 
                 <local:ClassArtQRCodeSettings
                     x:Name="artQRCodeSettings"
-                    Grid.Row="10"
+                    Grid.Row="11"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalOptions="Start">
@@ -309,7 +335,7 @@
                 <Label
                     x:Name="lblQRCode"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="11"
+                    Grid.Row="12"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Center"
@@ -319,7 +345,7 @@
                 </Label>
                 
                 <Border
-                    Grid.Row="12"
+                    Grid.Row="13"
                     Grid.Column="0"
                     Grid.RowSpan="7"
                     Grid.ColumnSpan="2"
@@ -328,7 +354,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="12"
+                    Grid.Row="13"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,5,0,0', iOS='14,5,0,0', WinUI='16,5,0,0'}"
@@ -337,7 +363,7 @@
 
                 <Switch
                     x:Name="swtQRCodeSizeVariable"
-                    Grid.Row="12"
+                    Grid.Row="13"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0', WinUI='0,6,0,0'}"
                     Toggled="SwtQRCodeSizeVariable_Toggled">
@@ -345,7 +371,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="13"
+                    Grid.Row="14"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -354,7 +380,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="13"
+                    Grid.Row="14"
                     Grid.Column="1"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -374,7 +400,7 @@
                 <Label
                     x:Name="lblQRCodeQuietZoneSize"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="14"
+                    Grid.Row="15"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -383,7 +409,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="14"
+                    Grid.Row="15"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -403,7 +429,7 @@
                 <Label
                     x:Name="lblQRCodeImageSize"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="15"
+                    Grid.Row="16"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -412,7 +438,7 @@
                 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="15"
+                    Grid.Row="16"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
                 
@@ -432,7 +458,7 @@
                 <Label
                     x:Name="lblQRCodeImageSizeBorder"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="16"
+                    Grid.Row="17"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -441,7 +467,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="16"
+                    Grid.Row="17"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -460,7 +486,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="17"
+                    Grid.Row="18"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -469,7 +495,7 @@
 
                 <Switch
                     x:Name="swtCompressionEnabled"
-                    Grid.Row="17"
+                    Grid.Row="18"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,0,0,0', WinUI='0,0,0,0'}"
                     Toggled="SwtCompressionEnabled_Toggled">
@@ -477,7 +503,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="18"
+                    Grid.Row="19"
                     Grid.Column="0"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
                     Text="{Translate PayloadType_Text}">
@@ -485,7 +511,7 @@
                 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="18"
+                    Grid.Row="19"
                     Grid.Column="1"
                     Margin="{OnPlatform Default='0,0,11,10', iOS='0,0,16,10', WinUI='0,0,16,10'}">
 
@@ -494,32 +520,6 @@
                         Style="{StaticResource pickerStyleSettings}"
                         SelectedIndexChanged="OnPickerPayloadTypeChanged">
                     </Picker>
-                </Border>
-
-                <Label
-                    x:Name="lblFontSize"
-                    Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="19"
-                    Grid.Column="0"
-                    Text="">
-                </Label>
-
-                <Border
-                    Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="19"
-                    Grid.Column="2"
-                    Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
-
-                    <Slider
-                        x:Name="sldFontSize"
-                        Style="{StaticResource sliderStyleColor}"
-                        Grid.Column="1"
-                        ThumbColor="Magenta"
-                        MinimumTrackColor="Magenta"
-                        Minimum="10"
-                        Maximum="30"
-                        ValueChanged="OnSliderFontSizeChanged">
-                    </Slider>
                 </Border>
 
             </Grid>

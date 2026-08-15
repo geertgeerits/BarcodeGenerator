@@ -903,6 +903,9 @@ namespace BarcodeGenerator
             // Set the speech language
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
+            // Enable or disable the text to speech button based on whether a language is selected
+            imgbtnTextToSpeech.IsEnabled = Globals.bTextToSpeechLanguageSelected;
+
             // Set the selected generator format in the picker
             if (!Globals.bPopupOpened)
             {

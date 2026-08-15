@@ -153,13 +153,39 @@ namespace BarcodeGenerator
             if (cLanguageLocales is null)
             {
                 picker.IsEnabled = false;
+                Globals.bTextToSpeechLanguageSelected = false;
                 return;
             }
 
-            // Populate the picker with the Language, Country and Name (without the Id) from the sorted locales array
+            // Clear the picker items
+            picker.Items.Clear();
+
+            // Get the primary language code from the UI language (e.g., "en" from "en-US")
+            string langUI = Globals.cLanguage.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
+
+            // Populate the picker with the Language, Country, Name, (Id) from the sorted locales array
             foreach (string locale in cLanguageLocales)
             {
-                picker.Items.Add(locale);
+                // Get the primary language code from the speech language (e.g., "en" from "en-US")
+                string langSpeech = locale.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
+
+                if (langUI == langSpeech)
+                {
+                    picker.Items.Add(locale);
+                }
+            }
+
+            // If there are no languages in the picker, disable the picker and return
+            if (picker.Items.Count == 0)
+            {
+                picker.IsEnabled = false;
+                Globals.bTextToSpeechLanguageSelected = false;
+                return;
+            }
+            else
+            { 
+                picker.IsEnabled = true;
+                Globals.bTextToSpeechLanguageSelected = true;
             }
 
             // Select the saved language
