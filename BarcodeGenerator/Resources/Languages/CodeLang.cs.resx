@@ -393,16 +393,6 @@ Postavy 3-4: Červená
 Postavy 5-6: Zelená
 Postavy 7-8: Modrá</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Převod textu na řeč: nejsou podporovány všechny jazyky uvedené v nastavení aplikace.
-Převod řeči na text: aktivujte ji prostřednictvím nastavení zařízení. Poté se na virtuální klávesnici objeví mikrofon.
-Obě tyto možnosti závisí na zařízení a na nainstalovaných jazycích. Je možné, že u některých jazyků je překlad do az řeči prováděn prostřednictvím internetu příslušnými službami.
-
-K překladu textu byl použit Google Translate. To nezaručuje, že všechny překlady jsou správné.
-Podporované jazyky jsou: čeština, dánština, holandština, angličtina, finština, francouzština, němčina, maďarština, italština, norština, polština, portugalština, rumunština, španělština a švédština.
-
-Pro případné opravy mě můžete vždy kontaktovat.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>QR kód se generuje s pevnou nebo proměnnou velikostí v pixelech v závislosti na počtu znaků, které obsahuje, a maximální velikosti v pixelech definované v nastavení.
 Když je obrázek (logo) umístěn na QR kód, je vycentrován a zmenšen na 10 % až 35 % velikosti QR kódu. Tento rozsah lze upravit v nastavení. Pro zlepšení viditelnosti je přidán okraj.
@@ -1034,5 +1024,12 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Velikost písma:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Převod textu na řeč: Ne všechny jazyky uvedené v nastavení aplikace jsou podporovány. Dostupnost závisí na vašem zařízení a nainstalovaných jazycích. Některé překlady na řeč mohou vyžadovat připojení k internetu, které zajišťují příslušné služby.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Pro překlad textu byl použit Google Translate. To nezaručuje, že všechny překlady jsou správné.
+Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština, tradiční čínština, čeština, dánština, holandština, angličtina, finština, francouzština, němčina, řečtina, hindština, maďarština, indonéština, italština, japonština, korejština, norština, polština, portugalština, rumunština, ruština, španělština, švédština, turečtina, ukrajinština, urdština a vietnamština.</value>
   </data>
 </root>

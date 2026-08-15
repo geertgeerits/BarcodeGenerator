@@ -133,7 +133,12 @@
                     </Label>
 
                     <Label
-                        x:Name="lblExplanation"
+                        x:Name="lblTextToSpeech"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
+
+                    <Label
+                        x:Name="lblLanguage"
                         Style="{StaticResource labelStyleInfo}">
                     </Label>
 

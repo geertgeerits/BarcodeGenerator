@@ -393,16 +393,6 @@ Karakters 3-4: rood
 Karakters 5-6: groen
 Karakters 7-8: blauw</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Tekst naar spraak: niet alle talen die beschikbaar zijn in de applicatie-instellingen worden ondersteund.
-Spraak naar tekst: activeer het via uw apparaatinstellingen. Er verschijnt dan een microfoon in het virtuele toetsenbord.
-Beide opties zijn afhankelijk van apparaat tot apparaat en de geïnstalleerde talen. Het is mogelijk dat voor sommige talen de vertaling van en naar spraak via het internet wordt gedaan door de betrokken diensten.
-
-Voor de vertaling van de tekst werd gebruik gemaakt van Google Translate.  Dit is geen garantie dat alle vertalingen correct zijn.
-De ondersteunende talen zijn: Tsjechisch, Deens, Nederlands, Engels, Fins, Frans, Duits, Hongaars, Italiaans, Noors, Pools, Portugees, Roemeens, Spaans en Zweeds.
-
-Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>De QR-code wordt gegenereerd met een vaste of variabele pixelgrootte, afhankelijk van het aantal tekens en de maximale pixelgrootte die in de instellingen is gedefinieerd.
 Wanneer een afbeelding (logo) bovenop de QR-code wordt geplaatst, wordt deze gecentreerd en geschaald naar 10% tot 35% van de grootte van de QR-code. Dit bereik kan worden aangepast in de instellingen. Er wordt een rand toegevoegd om de zichtbaarheid te verbeteren.
@@ -1034,5 +1024,12 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Lettergrootte:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Tekst-naar-spraak: Niet alle talen die in de applicatie-instellingen worden vermeld, worden ondersteund. De beschikbaarheid is afhankelijk van uw apparaat en de geïnstalleerde talen. Voor sommige spraakvertalingen is mogelijk een internetverbinding vereist, die door de betreffende services wordt verzorgd.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Voor de vertaling van de tekst is Google Translate gebruikt. Dit is geen garantie dat alle vertalingen correct zijn.
+De ondersteunde talen zijn: Arabisch, Bengaals, Vereenvoudigd Chinees, Traditioneel Chinees, Tsjechisch, Deens, Nederlands, Engels, Fins, Frans, Duits, Grieks, Hindi, Hongaars, Indonesisch, Italiaans, Japans, Koreaans, Noors, Pools, Portugees, Roemeens, Russisch, Spaans, Zweeds, Turks, Oekraïens, Urdu en Vietnamees.</value>
   </data>
 </root>

@@ -393,16 +393,6 @@ Sentry 收集的崩溃报告可能会根据 Sentry 的数据保留政策进行�
 字符 5-6：绿色
 字符 7-8：蓝色</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>文本转语音：并非所有应用设置中提供的语言都受支持。
-语音转文本：请在设备设置中启用此功能。启用后，虚拟键盘中将出现麦克风图标。
-这两个选项的兼容性取决于设备和已安装的语言。某些语言的语音转文本功能可能需要通过相关服务在互联网上进行。
-
-文本翻译使用了谷歌翻译。但这并不保证所有翻译都完全正确。
-支持的语言包括：捷克语、丹麦语、荷兰语、英语、芬兰语、法语、德语、匈牙利语、意大利语、挪威语、波兰语、葡萄牙语、罗马尼亚语、西班牙语和瑞典语。
-
-如有任何更正，欢迎随时联系我。</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>二维码的像素大小可以是固定的，也可以是可变的，具体取决于其包含的字符数以及设置中定义的最大像素大小。
 当图像（例如徽标）放置在二维码上方时，图像将居中并缩放至二维码大小的 10% 到 35% 之间。此范围可在设置中进行调整。此外，还会添加边框以提高可见性。
@@ -1034,5 +1024,12 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>字体大小：</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>文本转语音：并非应用设置中列出的所有语言都受支持。可用性取决于您的设备和已安装的语言。某些翻译转语音功能可能需要互联网连接，具体由相应的服务提供商处理。</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>本文使用谷歌翻译进行翻译。但这并不保证所有译文完全正确。
+支持的语言包括：阿拉伯语、孟加拉语、简体中文、繁体中文、捷克语、丹麦语、荷兰语、英语、芬兰语、法语、德语、希腊语、印地语、匈牙利语、印尼语、意大利语、日语、韩语、挪威语、波兰语、葡萄牙语、罗马尼亚语、俄语、西班牙语、瑞典语、土耳其语、乌克兰语、乌尔都语和越南语。</value>
   </data>
 </root>

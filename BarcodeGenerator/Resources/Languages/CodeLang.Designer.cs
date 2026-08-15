@@ -1372,15 +1372,12 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Text to speech: not all languages are supported that are provided in the application settings.
-        ///Speech to text: activate it through your device settings. A microphone will then appear in the virtual keyboard.
-        ///Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
-        ///
-        ///Google Translate was used for the translation of the text. This is not a guarantee that all  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
+        ///The supporting languages are: Arabic, Bengali, Chinese simplified, Chinese traditional, Czech, Danish, Dutch, English, Finnish, French, German, Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Norwegian, Polish, Portuguese, Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, Urdu and Vietnamese..
         /// </summary>
-        internal static string InfoExplanation_Text {
+        internal static string InfoLanguage_Text {
             get {
-                return ResourceManager.GetString("InfoExplanation_Text", resourceCulture);
+                return ResourceManager.GetString("InfoLanguage_Text", resourceCulture);
             }
         }
         
@@ -1415,6 +1412,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string InfoQRCodeSettings_Text {
             get {
                 return ResourceManager.GetString("InfoQRCodeSettings_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text-to-speech: Not all languages listed in the application settings are supported. Availability depends on your device and the installed languages. Some translations to speech may require an internet connection, handled by the respective services..
+        /// </summary>
+        internal static string InfoTextToSpeech_Text {
+            get {
+                return ResourceManager.GetString("InfoTextToSpeech_Text", resourceCulture);
             }
         }
         

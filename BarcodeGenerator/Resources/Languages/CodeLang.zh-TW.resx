@@ -393,16 +393,6 @@ Sentry 收集的崩潰報告可能會根據 Sentry 的資料保留政策進行�
 字元 5-6：綠色
 字元 7-8：藍色</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>文字轉語音：並非所有應用程式設定中提供的語言都受支援。
-語音轉文字：請在裝置設定中啟用此功能。啟用後，虛擬鍵盤中將出現麥克風圖示。
-這兩個選項的相容性取決於裝置和已安裝的語言。某些語言的語音轉文字功能可能需要透過相關服務在網路上進行。
-文字翻譯使用了谷歌翻譯。但這並不保證所有翻譯都完全正確。
-
-支援的語言包括：捷克語、丹麥語、荷蘭語、英語、芬蘭語、法語、德語、匈牙利語、義大利語、挪威語、波蘭語、葡萄牙語、羅馬尼亞語、西班牙語和瑞典語。
-
-如有任何更正，歡迎隨時與我聯絡。</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>二維碼的像素大小可以是固定的，也可以是可變的，這取決於其包含的字元數以及設定中定義的最大像素大小。
 當圖像（例如徽標）放置在二維碼上方時，圖像將居中並縮放至二維碼大小的 10% 到 35% 之間。此範圍可在設定中進行調整。此外，還會新增邊框以提高可見度。
@@ -1034,5 +1024,12 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>字體大小：</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>文字轉語音：並非應用程式設定中列出的所有語言都支援。可用性取決於您的裝置和已安裝的語言。某些翻譯轉語音功能可能需要網路連接，具體由相應的服務供應商處理。</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>本文使用谷歌翻譯進行翻譯。但這並不保證所有譯文完全正確。
+支援的語言包括：阿拉伯語、孟加拉語、簡體中文、繁體中文、捷克語、丹麥語、荷蘭語、英語、芬蘭語、法語、德語、希臘語、印地語、匈牙利語、印尼語、義大利語、日語、韓語、挪威語、波蘭語、葡萄牙語、羅馬尼亞語、俄語、西班牙語、瑞典語、俄語、烏克蘭語、烏爾都語和越南語。</value>
   </data>
 </root>

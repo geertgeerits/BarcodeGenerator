@@ -393,16 +393,6 @@ Characters 3-4: Red
 Characters 5-6: Green
 Characters 7-8: Blue</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text to speech: not all languages are supported that are provided in the application settings.
-Speech to text: activate it through your device settings. A microphone will then appear in the virtual keyboard.
-Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
-
-Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
-The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Polish, Portuguese, Romanian, Spanish and Swedish.
-
-You can always contact me for any corrections.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>The QR code is generated at either a fixed or variable pixel size, depending on the number of characters it contains and the maximum pixel size defined in the settings.
 When an image (logo) is placed on top of the QR code, it is centered and scaled to between 10% and 35% of the QR code’s size. This range can be adjusted in the settings. A border is added to improve visibility.
@@ -1034,5 +1024,12 @@ Not all payload types are supported on every device.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Font size:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Text-to-speech: Not all languages listed in the application settings are supported. Availability depends on your device and the installed languages. Some translations to speech may require an internet connection, handled by the respective services.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
+The supporting languages are: Arabic, Bengali, Chinese simplified, Chinese traditional, Czech, Danish, Dutch, English, Finnish, French, German, Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Norwegian, Polish, Portuguese, Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, Urdu and Vietnamese.</value>
   </data>
 </root>

@@ -393,16 +393,6 @@ Caractere 3-4: Roșu
 Caractere 5-6: Verde
 Caractere 7-8: Albastru</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text în vorbire: nu sunt acceptate toate limbile care sunt furnizate în setările aplicației.
-Vorbire în text: activează-l prin setările dispozitivului. Un microfon va apărea apoi pe tastatura virtuală.
-Ambele opțiuni depind de la dispozitiv la dispozitiv și de la limbile instalate. Este posibil ca, pentru unele limbi, traducerea către și din vorbire să se facă prin internet de către serviciile respective.
-
-Google Translate a fost folosit pentru traducerea textului. Aceasta nu este o garanție că toate traducerile sunt corecte.
-Limbile suportate sunt: cehă, daneză, olandeză, engleză, finlandeză, franceză, germană, maghiară, italiană, norvegiană, poloneză, portugheză, română, spaniolă și suedeză.
-
-Mă puteți contacta oricând pentru orice corecturi.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>Codul QR este generat la o dimensiune fixă ​​sau variabilă a pixelilor, în funcție de numărul de caractere pe care îl conține și de dimensiunea maximă a pixelilor definită în setări.
 Când o imagine (logo) este plasată deasupra codului QR, aceasta este centrată și scalată la o valoare între 10% și 35% din dimensiunea codului QR. Acest interval poate fi ajustat în setări. Se adaugă o bordură pentru a îmbunătăți vizibilitatea.
@@ -1034,5 +1024,12 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Dimensiunea fontului:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Text-vorbire: Nu toate limbile listate în setările aplicației sunt acceptate. Disponibilitatea depinde de dispozitiv și de limbile instalate. Unele traduceri în vorbire pot necesita o conexiune la internet, gestionată de serviciile respective.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Google Translate a fost utilizat pentru traducerea textului. Aceasta nu garantează că toate traducerile sunt corecte.
+Limbile acceptate sunt: ​​arabă, bengaleză, chineză simplificată, chineză tradițională, cehă, daneză, olandeză, engleză, finlandeză, franceză, germană, greacă, hindi, maghiară, indoneziană, italiană, japoneză, coreeană, norvegiană, poloneză, portugheză, română, rusă, spaniolă, suedeză, turcă, ucraineană, urdu și vietnameză.</value>
   </data>
 </root>

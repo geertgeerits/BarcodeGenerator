@@ -393,16 +393,6 @@ Hahmot 3-4: Punainen
 Hahmot 5-6: Vihreä
 Hahmot 7-8: Sininen</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Teksti puheeksi: kaikkia sovellusasetuksissa olevia kieliä ei tueta.
-Puhe tekstiksi: aktivoi se laitteen asetuksista. Mikrofoni ilmestyy sitten virtuaaliseen näppäimistöön.
-Molemmat vaihtoehdot riippuvat laitteesta toiseen ja asennetuista kielistä. On mahdollista, että joillekin kielille käännös puheeseen ja puheesta tapahtuu Internetin kautta asianomaisten palveluiden toimesta.
-
-Tekstin kääntämiseen käytettiin Google Translatea. Tämä ei takaa, että kaikki käännökset ovat oikein.
-Tukikielet ovat: tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, unkari, italia, norja, puola, portugali, romania, espanja ja ruotsi.
-
-Voit aina ottaa minuun yhteyttä korjauksista.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>QR-koodi luodaan joko kiinteällä tai muuttuvalla pikselikoolla riippuen sen sisältämien merkkien määrästä ja asetuksissa määritetystä enimmäispikselikoosta.
 Kun kuva (logo) sijoitetaan QR-koodin päälle, se keskitetään ja skaalataan 10–35 %:iin QR-koodin koosta. Tätä aluetta voidaan säätää asetuksissa. Näkyvyyden parantamiseksi lisätään reunus.
@@ -1034,5 +1024,12 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Fonttikoko:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Tekstistä puheeksi: Kaikkia sovelluksen asetuksissa lueteltuja kieliä ei tueta. Saatavuus riippuu laitteestasi ja asennetuista kielistä. Jotkin puheeksi käännökset saattavat vaatia internetyhteyden, jonka käsittelevät kyseiset palvelut.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Tekstin kääntämiseen käytettiin Google Kääntäjää. Tämä ei takaa, että kaikki käännökset ovat oikeita.
+Tuetut kielet ovat: arabia, bengali, kiina (yksinkertaistettu), kiina (perinteinen), tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, kreikka, hindi, unkari, indonesia, italia, japani, korea, norja, puola, portugali, romania, venäjä, espanja, ruotsi, turkki, ukraina, urdu ja vietnam.</value>
   </data>
 </root>

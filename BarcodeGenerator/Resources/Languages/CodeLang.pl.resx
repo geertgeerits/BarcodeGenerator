@@ -393,16 +393,6 @@ Postacie 3-4: czerwony
 Postacie 5-6: Zielony
 Postacie 7-8: niebieski</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Tekst na mowę: nie wszystkie języki, które są dostępne w ustawieniach aplikacji, są obsługiwane.
-Mowa na tekst: aktywuj ją w ustawieniach urządzenia. Mikrofon pojawi się wtedy na wirtualnej klawiaturze.
-Obie te opcje zależą od urządzenia i zainstalowanych języków. Możliwe jest, że w przypadku niektórych języków tłumaczenie na mowę iz mowy odbywa się przez Internet przez odpowiednie służby.
-
-Do tłumaczenia tekstu użyto Tłumacza Google. Nie gwarantuje to, że wszystkie tłumaczenia są poprawne.
-Obsługiwane języki to: czeski, duński, holenderski, angielski, fiński, francuski, niemiecki, węgierski, włoski, norweski, polski, portugalski, rumuński, hiszpański i szwedzki.
-
-Zawsze możesz skontaktować się ze mną w sprawie ewentualnych poprawek.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>Kod QR jest generowany ze stałym lub zmiennym rozmiarem pikseli, w zależności od liczby znaków i maksymalnego rozmiaru piksela zdefiniowanego w ustawieniach.
 Po umieszczeniu obrazu (logo) na kodzie QR, jest on wyśrodkowany i skalowany do rozmiaru od 10% do 35% rozmiaru kodu QR. Zakres ten można dostosować w ustawieniach. Dodana jest ramka w celu poprawy widoczności.
@@ -1034,5 +1024,12 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Rozmiar czcionki:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Tekst na mowę: Nie wszystkie języki wymienione w ustawieniach aplikacji są obsługiwane. Dostępność zależy od urządzenia i zainstalowanych języków. Niektóre tłumaczenia na mowę mogą wymagać połączenia internetowego, obsługiwanego przez odpowiednie usługi.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Do przetłumaczenia tekstu wykorzystano Tłumacz Google. Nie gwarantuje to poprawności wszystkich tłumaczeń.
+Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradycyjny, czeski, duński, niderlandzki, angielski, fiński, francuski, niemiecki, grecki, hindi, węgierski, indonezyjski, włoski, japoński, koreański, norweski, polski, portugalski, rumuński, rosyjski, hiszpański, szwedzki, turecki, ukraiński, urdu i wietnamski.</value>
   </data>
 </root>

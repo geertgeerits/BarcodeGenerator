@@ -393,16 +393,6 @@ Karakter 3-4: Merah
 Karakter 5-6: Hijau
 Karakter 7-8: Biru</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Teks ke ucapan: tidak semua bahasa yang tersedia di pengaturan aplikasi didukung.
-Ucapan ke teks: aktifkan melalui pengaturan perangkat Anda. Mikrofon kemudian akan muncul di papan ketik virtual.
-Kedua opsi ini bergantung pada perangkat dan bahasa yang terinstal. Ada kemungkinan bahwa untuk beberapa bahasa, terjemahan ke dan dari ucapan dilakukan melalui internet oleh layanan terkait.
-
-Google Translate digunakan untuk menerjemahkan teks. Ini bukan jaminan bahwa semua terjemahan akurat.
-Bahasa yang didukung adalah: Ceko, Denmark, Belanda, Inggris, Finlandia, Prancis, Jerman, Hongaria, Italia, Norwegia, Polandia, Portugis, Rumania, Spanyol, dan Swedia.
-
-Anda selalu dapat menghubungi saya untuk koreksi apa pun.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>Kode QR dihasilkan dengan ukuran piksel tetap atau variabel, tergantung pada jumlah karakter yang dikandungnya dan ukuran piksel maksimum yang ditentukan dalam pengaturan.
 Saat gambar (logo) ditempatkan di atas kode QR, gambar tersebut akan dipusatkan dan diskalakan antara 10% dan 35% dari ukuran kode QR. Rentang ini dapat disesuaikan dalam pengaturan. Batas ditambahkan untuk meningkatkan visibilitas.
@@ -1034,5 +1024,12 @@ Tidak semua jenis muatan didukung di setiap perangkat.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Ukuran font:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Konversi teks ke suara: Tidak semua bahasa yang tercantum dalam pengaturan aplikasi didukung. Ketersediaan bergantung pada perangkat Anda dan bahasa yang terpasang. Beberapa terjemahan ke suara mungkin memerlukan koneksi internet, yang ditangani oleh layanan masing-masing.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Google Translate digunakan untuk menerjemahkan teks. Ini bukan jaminan bahwa semua terjemahan akurat.
+Bahasa yang didukung adalah: Arab, Bengali, Tionghoa Sederhana, Tionghoa Tradisional, Ceko, Denmark, Belanda, Inggris, Finlandia, Prancis, Jerman, Yunani, Hindi, Hongaria, Indonesia, Italia, Jepang, Korea, Norwegia, Polandia, Portugis, Rumania, Rusia, Spanyol, Swedia, Turki, Ukraina, Urdu, dan Vietnam.</value>
   </data>
 </root>

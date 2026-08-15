@@ -393,16 +393,6 @@ Tecken 3-4: Röd
 Tecken 5-6: Grön
 Tecken 7-8: Blå</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text till tal: alla språk som finns i programinställningarna stöds inte.
-Tal till text: aktivera den via dina enhetsinställningar. En mikrofon kommer då att dyka upp på det virtuella tangentbordet.
-Båda dessa alternativ beror från enhet till enhet och de installerade språken. Det är möjligt att för vissa språk görs översättningen till och från tal över internet av de berörda tjänsterna.
-
-Google Translate användes för översättningen av texten. Detta är inte en garanti för att alla översättningar är korrekta.
-Stödspråken är: tjeckiska, danska, holländska, engelska, finska, franska, tyska, ungerska, italienska, norska, polska, portugisiska, rumänska, spanska och svenska.
-
-Du kan alltid kontakta mig för eventuella korrigeringar.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>QR-koden genereras med antingen en fast eller variabel pixelstorlek, beroende på antalet tecken den innehåller och den maximala pixelstorleken som definierats i inställningarna.
 När en bild (logotyp) placeras ovanpå QR-koden centreras och skalas den till mellan 10 % och 35 % av QR-kodens storlek. Detta intervall kan justeras i inställningarna. En ram läggs till för att förbättra synligheten.
@@ -1034,5 +1024,12 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Fontstorlek:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Text-till-tal: Inte alla språk som listas i appinställningarna stöds. Tillgängligheten beror på din enhet och de installerade språken. Vissa översättningar till tal kan kräva en internetanslutning, vilket hanteras av respektive tjänst.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Google Translate användes för översättningen av texten. Detta är ingen garanti för att alla översättningar är korrekta.
+De språk som stöds är: arabiska, bengali, förenklad kinesiska, traditionell kinesiska, tjeckiska, danska, nederländska, engelska, finska, franska, tyska, grekiska, hindi, ungerska, indonesiska, italienska, japanska, koreanska, norska, polska, portugisiska, rumänska, ryska, spanska, svenska, turkiska, ukrainska, urdu och vietnamesiska.</value>
   </data>
 </root>

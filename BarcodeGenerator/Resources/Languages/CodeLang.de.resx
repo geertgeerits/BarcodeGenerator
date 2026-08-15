@@ -393,16 +393,6 @@ Zeichen 3-4: Rot
 Zeichen 5-6: Grün
 Zeichen 7-8: Blau</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text zu Sprache: Es werden nicht alle Sprachen unterstützt, die in den Anwendungseinstellungen bereitgestellt werden.
-Sprache zu Text: Aktivieren Sie es über Ihre Geräteeinstellungen. Auf der virtuellen Tastatur erscheint dann ein Mikrofon.
-Beide Optionen hängen von Gerät zu Gerät und den installierten Sprachen ab. Es ist möglich, dass für einige Sprachen die Übersetzung in und aus der Sprache von den betreffenden Diensten über das Internet durchgeführt wird.
-
-Für die Übersetzung des Textes wurde Google Translate verwendet. Dies ist keine Garantie dafür, dass alle Übersetzungen korrekt sind.
-Die unterstützten Sprachen sind: Tschechisch, Dänisch, Niederländisch, Englisch, Finnisch, Französisch, Deutsch, Ungarisch, Italienisch, Norwegisch, Polnisch, Portugiesisch, Rumänisch, Spanisch und Schwedisch.
-
-Sie können mich jederzeit für Korrekturen kontaktieren.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>Der QR-Code wird je nach Zeichenanzahl und der in den Einstellungen festgelegten maximalen Pixelgröße entweder mit fester oder variabler Pixelgröße generiert.
 Wird ein Bild (Logo) über den QR-Code gelegt, wird es zentriert und auf 10 % bis 35 % der QR-Code-Größe skaliert. Dieser Bereich lässt sich in den Einstellungen anpassen. Ein Rahmen verbessert die Lesbarkeit.
@@ -1033,5 +1023,12 @@ Wählen Sie eine Option.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Schriftgröße:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Text-to-Speech: Nicht alle in den Anwendungseinstellungen aufgeführten Sprachen werden unterstützt. Die Verfügbarkeit hängt von Ihrem Gerät und den installierten Sprachen ab. Für einige Übersetzungen in Sprache ist möglicherweise eine Internetverbindung erforderlich, die von den jeweiligen Diensten bereitgestellt wird.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Für die Übersetzung des Textes wurde Google Translate verwendet. Dies ist keine Garantie für die Korrektheit aller Übersetzungen.
+Die unterstützten Sprachen sind: Arabisch, Bengali, Chinesisch (vereinfacht), Chinesisch (traditionell), Tschechisch, Dänisch, Niederländisch, Englisch, Finnisch, Französisch, Deutsch, Griechisch, Hindi, Ungarisch, Indonesisch, Italienisch, Japanisch, Koreanisch, Norwegisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Spanisch, Schwedisch, Türkisch, Ukrainisch, Urdu und Vietnamesisch.</value>
   </data>
 </root>

@@ -24,7 +24,6 @@ namespace BarcodeGenerator
                 return;
             }
 
-            // !!!BUG!!! Do not use this when FlowDirection = "RightToLeft" in Android(and iOS)
             // Set the flow direction of the text elements
             Globals.SetFlowDirection(this);
 
@@ -37,7 +36,8 @@ namespace BarcodeGenerator
             lblPayloadTypes.Text = $"\n{CodeLang.InfoPayloadTypes_Text}";
             lblQRCodeSettings.Text = $"\n{CodeLang.InfoQRCodeSettings_Text}";
             lblCompression.Text = $"\n{CodeLang.InfoCompression_Text}";
-            lblExplanation.Text = $"\n{CodeLang.InfoExplanation_Text}";
+            lblTextToSpeech.Text = $"\n{CodeLang.InfoTextToSpeech_Text}";
+            lblLanguage.Text = $"\n{CodeLang.InfoLanguage_Text}";
             lblLicenseMit.Text = $"\n{CodeLang.Copyright_Text} © {CodeLang.LicenseMit_Text}\n\n{CodeLang.LicenseMit2_Text}";
             lblTrademarks.Text = $"\n{CodeLang.Trademarks_Text}";
         }

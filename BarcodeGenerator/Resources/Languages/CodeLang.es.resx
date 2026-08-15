@@ -393,16 +393,6 @@ Caracteres 3-4: Rojo
 Caracteres 5-6: Verde
 Caracteres 7-8: Azul</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Texto a voz: no se admiten todos los idiomas que se proporcionan en la configuración de la aplicación.
-Voz a texto: actívala a través de la configuración de tu dispositivo. Entonces aparecerá un micrófono en el teclado virtual.
-Ambas opciones dependen de un dispositivo a otro y de los idiomas instalados. Es posible que, para algunos idiomas, la traducción hacia y desde el habla la realicen los servicios correspondientes a través de Internet.
-
-Para la traducción del texto se utilizó Google Translate. Esto no es una garantía de que todas las traducciones sean correctas.
-Los idiomas de soporte son: checo, danés, holandés, inglés, finlandés, francés, alemán, húngaro, italiano, noruego, polaco, portugués, rumano, español y sueco.
-
-Siempre puedes contactarme para cualquier corrección.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>El código QR se genera con un tamaño de píxel fijo o variable, según la cantidad de caracteres que contenga y el tamaño máximo de píxel definido en la configuración.
 Cuando se coloca una imagen (logotipo) sobre el código QR, esta se centra y se escala a un tamaño entre el 10 % y el 35 % del tamaño del código QR. Este rango se puede ajustar en la configuración. Se añade un borde para mejorar la visibilidad.
@@ -1034,5 +1024,12 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Tamaño de fuente:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Conversión de texto a voz: No todos los idiomas que aparecen en la configuración de la aplicación son compatibles. La disponibilidad depende de su dispositivo y de los idiomas instalados. Algunas traducciones a voz pueden requerir conexión a internet, gestionada por los servicios correspondientes.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Se utilizó Google Translate para la traducción del texto. Esto no garantiza que todas las traducciones sean correctas.
+Los idiomas compatibles son: árabe, bengalí, chino simplificado, chino tradicional, checo, danés, neerlandés, inglés, finlandés, francés, alemán, griego, hindi, húngaro, indonesio, italiano, japonés, coreano, noruego, polaco, portugués, rumano, ruso, español, sueco, turco, ucraniano, urdu y vietnamita.</value>
   </data>
 </root>

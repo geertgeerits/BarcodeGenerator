@@ -393,16 +393,6 @@ Tegn 3-4: Rød
 Tegn 5-6: Grønn
 Tegn 7-8: Blå</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Tekst til tale: ikke alle språk støttes som er gitt i applikasjonsinnstillingene.
-Tale til tekst: aktiver den via enhetsinnstillingene. En mikrofon vil da vises på det virtuelle tastaturet.
-Begge disse alternativene avhenger fra enhet til enhet og de installerte språkene. Det er mulig at for noen språk blir oversettelsen til og fra tale gjort over internett av de aktuelle tjenestene.
-
-Google Translate ble brukt til oversettelsen av teksten. Dette er ikke en garanti for at alle oversettelser er korrekte.
-Støttespråkene er: tsjekkisk, dansk, nederlandsk, engelsk, finsk, fransk, tysk, ungarsk, italiensk, norsk, polsk, portugisisk, rumensk, spansk og svensk.
-
-Du kan alltid kontakte meg for eventuelle rettelser.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>QR-koden genereres med enten en fast eller variabel pikselstørrelse, avhengig av antall tegn den inneholder og den maksimale pikselstørrelsen som er definert i innstillingene.
 Når et bilde (logo) plasseres oppå QR-koden, sentreres og skaleres det til mellom 10 % og 35 % av QR-kodens størrelse. Dette området kan justeres i innstillingene. En kant legges til for å forbedre synligheten.
@@ -1034,5 +1024,12 @@ Ikke alle nyttelasttyper støttes på alle enheter.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Skriftstørrelse:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Tekst-til-tale: Ikke alle språkene som er oppført i appinnstillingene støttes. Tilgjengeligheten avhenger av enheten din og de installerte språkene. Noen oversettelser til tale kan kreve en internettforbindelse, som håndteres av de respektive tjenestene.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Google Translate ble brukt til oversettelsen av teksten. Dette er ingen garanti for at alle oversettelser er korrekte.
+Støttede språk er: arabisk, bengali, forenklet kinesisk, tradisjonell kinesisk, tsjekkisk, dansk, nederlandsk, engelsk, finsk, fransk, tysk, gresk, hindi, ungarsk, indonesisk, italiensk, japansk, koreansk, norsk, polsk, portugisisk, rumensk, russisk, spansk, svensk, tyrkisk, ukrainsk, urdu og vietnamesisk.</value>
   </data>
 </root>

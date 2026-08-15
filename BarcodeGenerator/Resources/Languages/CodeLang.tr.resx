@@ -393,16 +393,6 @@ Bu uygulamayı kullanarak, bu gizlilik bildiriminde açıklandığı gibi Sentry
 5-6. Karakterler: Yeşil
 7-8. Karakterler: Mavi</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Metinden sese dönüştürme: Uygulama ayarlarında belirtilen tüm diller desteklenmemektedir.
-Sesden metne dönüştürme: Cihaz ayarlarınızdan etkinleştirin. Sanal klavyede bir mikrofon simgesi görünecektir.
-Bu seçeneklerin her ikisi de cihazdan cihaza ve yüklü dillere bağlıdır. Bazı diller için, sese ve sesten metne çeviri ilgili hizmetler tarafından internet üzerinden yapılabilir.
-
-Metin çevirisi için Google Translate kullanılmıştır. Bu, tüm çevirilerin doğru olduğunun garantisi değildir.
-Desteklenen diller: Çekçe, Danca, Felemenkçe, İngilizce, Fince, Fransızca, Almanca, Macarca, İtalyanca, Norveççe, Lehçe, Portekizce, Romence, İspanyolca ve İsveççe.
-
-Herhangi bir düzeltme için her zaman benimle iletişime geçebilirsiniz.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>QR kodu, içerdiği karakter sayısına ve ayarlarda tanımlanan maksimum piksel boyutuna bağlı olarak sabit veya değişken piksel boyutunda oluşturulur.
 Bir resim (logo) QR kodunun üzerine yerleştirildiğinde, ortalanır ve QR kodunun boyutunun %10 ile %35'i arasında ölçeklendirilir. Bu aralık ayarlarda ayarlanabilir. Görünürlüğü artırmak için bir kenarlık eklenir.
@@ -1034,5 +1024,12 @@ Her cihazda tüm veri türleri desteklenmez.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Yazı tipi boyutu:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Metinden sese dönüştürme: Uygulama ayarlarında listelenen tüm diller desteklenmemektedir. Kullanılabilirlik, cihazınıza ve yüklü dillere bağlıdır. Bazı ses çevirileri, ilgili hizmetler tarafından sağlanan internet bağlantısı gerektirebilir.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Metnin çevirisi için Google Translate kullanılmıştır. Bu, tüm çevirilerin doğru olduğunun garantisi değildir.
+Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Geleneksel Çince, Çekçe, Danca, Felemenkçe, İngilizce, Fince, Fransızca, Almanca, Yunanca, Hintçe, Macarca, Endonezce, İtalyanca, Japonca, Korece, Norveççe, Lehçe, Portekizce, Romence, Rusça, İspanyolca, İsveççe, Türkçe, Ukraynaca, Urduca ve Vietnamca.</value>
   </data>
 </root>

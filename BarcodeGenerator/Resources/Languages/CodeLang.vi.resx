@@ -396,16 +396,6 @@ Ký tự 3-4: Màu đỏ
 Ký tự 5-6: Màu xanh lá cây
 Ký tự 7-8: Màu xanh dương</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Chuyển văn bản thành giọng nói: không phải tất cả các ngôn ngữ được cung cấp trong cài đặt ứng dụng đều được hỗ trợ.
-Chuyển giọng nói thành văn bản: kích hoạt thông qua cài đặt thiết bị của bạn. Biểu tượng micro sẽ xuất hiện trên bàn phím ảo.
-Cả hai tùy chọn này đều tùy thuộc vào thiết bị và ngôn ngữ đã cài đặt. Có thể đối với một số ngôn ngữ, việc dịch từ và sang giọng nói được thực hiện qua internet bởi các dịch vụ liên quan.
-
-Văn bản được dịch bằng Google Translate. Điều này không đảm bảo tất cả các bản dịch đều chính xác.
-Các ngôn ngữ được hỗ trợ là: tiếng Séc, tiếng Đan Mạch, tiếng Hà Lan, tiếng Anh, tiếng Phần Lan, tiếng Pháp, tiếng Đức, tiếng Hungary, tiếng Ý, tiếng Na Uy, tiếng Ba Lan, tiếng Bồ Đào Nha, tiếng Rumani, tiếng Tây Ban Nha và tiếng Thụy Điển.
-
-Bạn luôn có thể liên hệ với tôi nếu cần chỉnh sửa.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>Mã QR được tạo với kích thước pixel cố định hoặc thay đổi, tùy thuộc vào số lượng ký tự và kích thước pixel tối đa được xác định trong cài đặt.
 Khi đặt hình ảnh (logo) lên trên mã QR, hình ảnh sẽ được căn giữa và thu nhỏ xuống còn từ 10% đến 35% kích thước của mã QR. Phạm vi này có thể được điều chỉnh trong cài đặt. Một đường viền được thêm vào để cải thiện khả năng hiển thị.
@@ -1037,5 +1027,12 @@ Không phải tất cả các loại dữ liệu đều được hỗ trợ trê
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Cỡ chữ:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Chuyển văn bản thành giọng nói: Không phải tất cả các ngôn ngữ được liệt kê trong cài đặt ứng dụng đều được hỗ trợ. Tính khả dụng phụ thuộc vào thiết bị của bạn và các ngôn ngữ đã được cài đặt. Một số bản dịch thành giọng nói có thể yêu cầu kết nối internet, được xử lý bởi các dịch vụ tương ứng.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>Văn bản này được dịch bằng Google Translate. Tuy nhiên, điều này không đảm bảo tất cả các bản dịch đều chính xác.
+Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Bengal, tiếng Trung giản thể, tiếng Trung phồn thể, tiếng Séc, tiếng Đan Mạch, tiếng Hà Lan, tiếng Anh, tiếng Phần Lan, tiếng Pháp, tiếng Đức, tiếng Hy Lạp, tiếng Hindi, tiếng Hungary, tiếng Indonesia, tiếng Ý, tiếng Nhật, tiếng Hàn, tiếng Na Uy, tiếng Ba Lan, tiếng Bồ Đào Nha, tiếng Rumani, tiếng Nga, tiếng Tây Ban Nha, tiếng Thụy Điển, tiếng Thổ Nhĩ Kỳ, tiếng Ukraina, tiếng Urdu và tiếng Việt.</value>
   </data>
 </root>

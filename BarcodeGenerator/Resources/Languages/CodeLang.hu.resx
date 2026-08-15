@@ -393,16 +393,6 @@ Karakterek 3-4: Piros
 Karakterek 5-6: Zöld
 Karakterek 7-8: Kék</value>
   </data>
-  <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Szövegfelolvasó: nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
-Beszédből szöveggé: aktiválja az eszköz beállításaiban. Ekkor egy mikrofon jelenik meg a virtuális billentyűzeten.
-Mindkét lehetőség készülékenként és a telepített nyelvektől függ. Lehetséges, hogy egyes nyelvek esetében a beszédre és beszédről történő fordítást az interneten keresztül végzik az érintett szolgálatok.
-
-A szöveg fordításához a Google Fordítót használtuk. Ez nem garancia arra, hogy minden fordítás helyes.
-A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar, olasz, norvég, lengyel, portugál, román, spanyol és svéd.
-
-Bármilyen javításért bármikor fordulhat hozzám.</value>
-  </data>
   <data name="InfoQRCodeArt_Text" xml:space="preserve">
     <value>A QR-kód fix vagy változó pixelmérettel generálódik, a benne lévő karakterek számától és a beállításokban meghatározott maximális pixelmérettől függően.
 Amikor egy képet (logót) helyezünk a QR-kódra, az középre igazodik, és a QR-kód méretének 10% és 35%-a közötti méretarányra méreteződik. Ez a tartomány a beállításokban módosítható. A jobb láthatóság érdekében egy szegély kerül hozzáadásra.
@@ -1034,5 +1024,12 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
     <value>Betűméret:</value>
+  </data>
+  <data name="InfoTextToSpeech_Text" xml:space="preserve">
+    <value>Szövegfelolvasó: Nem minden, az alkalmazás beállításaiban felsorolt ​​nyelv támogatott. Az elérhetőség az eszköztől és a telepített nyelvektől függ. Egyes beszédfelolvasó fordításokhoz internetkapcsolat szükséges, amelyet a megfelelő szolgáltatások kezelnek.</value>
+  </data>
+  <data name="InfoLanguage_Text" xml:space="preserve">
+    <value>A szöveg fordításához a Google Fordítót használtuk. Ez nem garantálja, hogy minden fordítás helyes.
+A támogatott nyelvek: arab, bengáli, kínai (egyszerűsített), kínai (hagyományos), cseh, dán, holland, angol, finn, francia, német, görög, hindi, magyar, indonéz, olasz, japán, koreai, norvég, lengyel, portugál, román, orosz, spanyol, svéd, török, ukrán, urdu és vietnami.</value>
   </data>
 </root>
