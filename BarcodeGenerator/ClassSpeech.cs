@@ -5,9 +5,10 @@ namespace BarcodeGenerator
 {
     internal sealed class ClassSpeech
     {
-        private static string[]? cLanguageLocales;
-        private static IEnumerable<Locale>? locales;
-        private static CancellationTokenSource? cts;
+        private static string[]? cLanguageLocales;              // Array to hold the speech languages (Language-Country Name : Id)
+        private static IEnumerable<Locale>? locales;            // Collection of available locales for text-to-speech
+        private static CancellationTokenSource? cts;            // CancellationTokenSource for managing cancellation of text-to-speech operations
+        private static bool bTextToSpeechLanguageSelected;      // Flag to indicate if a text-to-speech language has been selected
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages ( : is separator before the Id)
@@ -153,7 +154,7 @@ namespace BarcodeGenerator
             if (cLanguageLocales is null)
             {
                 picker.IsEnabled = false;
-                Globals.bTextToSpeechLanguageSelected = false;
+                bTextToSpeechLanguageSelected = false;
                 return;
             }
 
@@ -161,31 +162,33 @@ namespace BarcodeGenerator
             picker.Items.Clear();
 
             // Get the primary language code from the UI language (e.g., "en" from "en-US")
-            string langUI = Globals.cLanguage.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
+            //string langUI = Globals.cLanguage.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
 
             // Populate the picker with the Language, Country, Name, (Id) from the sorted locales array
             foreach (string locale in cLanguageLocales)
             {
                 // Get the primary language code from the speech language (e.g., "en" from "en-US")
-                string langSpeech = locale.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
+                //string langSpeech = locale.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
 
-                if (langUI == langSpeech)
-                {
-                    picker.Items.Add(locale);
-                }
+                //if (langUI == langSpeech)
+                //{
+                //    picker.Items.Add(locale);
+                //}
+
+                picker.Items.Add(locale);
             }
 
             // If there are no languages in the picker, disable the picker and return
             if (picker.Items.Count == 0)
             {
                 picker.IsEnabled = false;
-                Globals.bTextToSpeechLanguageSelected = false;
+                bTextToSpeechLanguageSelected = false;
                 return;
             }
             else
-            { 
+            {
                 picker.IsEnabled = true;
-                Globals.bTextToSpeechLanguageSelected = true;
+                bTextToSpeechLanguageSelected = true;
             }
 
             // Select the saved language
@@ -351,7 +354,7 @@ namespace BarcodeGenerator
             Debug.WriteLine("ConvertTextToSpeechAsync + cText: " + cText);
             Debug.WriteLine("ConvertTextToSpeechAsync + Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
 
-            if (!string.IsNullOrEmpty(cText))
+            if (!string.IsNullOrEmpty(cText) && bTextToSpeechLanguageSelected)
             {
                 Globals.bTextToSpeechIsBusy = true;
                 imageButton.Source = Globals.cImageTextToSpeechCancel;
