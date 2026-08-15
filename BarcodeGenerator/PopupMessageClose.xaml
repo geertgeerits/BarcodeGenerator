@@ -3,9 +3,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:barcodegenerator="clr-namespace:BarcodeGenerator"
-    x:Class="BarcodeGenerator.PopupMessage"
+    x:Class="BarcodeGenerator.PopupMessageClose"
     SafeAreaEdges="All"
-    BackgroundColor="DeepSkyBlue"
+    BackgroundColor="DimGray"
     CanBeDismissedByTappingOutsideOfPopup="False"
     Loaded="Popup_Loaded">
     
@@ -37,7 +37,7 @@
             BackgroundColor="Transparent"
             Margin="10,5,10,5"
             Padding="5"
-            HorizontalTextAlignment="Center"
+            HorizontalTextAlignment="Start"
             TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
         </Label>
 
@@ -52,24 +52,9 @@
             BackgroundColor="Transparent"
             Margin="10,5,10,5"
             Padding="5,5,5,10"
-            HorizontalTextAlignment="Center"
+            HorizontalTextAlignment="Start"
             TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
         </Label>
-
-        <Button
-            x:Name="btnButtonCancel"
-            Grid.Row="2"
-            Grid.Column="0"
-            HorizontalOptions="Start"
-            VerticalOptions="End"
-            WidthRequest="130"
-            BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
-            Margin="0,5,0,0"
-            Padding="5"
-            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
-            Text="{Translate ButtonCancel_Text}"
-            Clicked="OnButtonCancel_Clicked">
-        </Button>
 
         <Button
             x:Name="btnButtonClose"
@@ -82,7 +67,7 @@
             Margin="0,5,0,0"
             Padding="5"
             TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
-            Text="{Translate ButtonNext_Text}"
+            Text="{Translate ButtonClose_Text}"
             Clicked="OnButtonClose_Clicked">
         </Button>
 

@@ -1,3 +1,4 @@
+using CommunityToolkit.Maui.Extensions;
 using CommunityToolkit.Maui.Views;
 
 namespace BarcodeGenerator
@@ -226,7 +227,15 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnSettingsHexColorHelp_Clicked(object sender, EventArgs e)
         {
-            await Application.Current!.Windows[0].Page!.DisplayAlertAsync("?", $"{CodeLang.HexColorCodes_Text}\n\n{CodeLang.AllowedChar_Text}\n{cHexCharacters}", CodeLang.ButtonClose_Text);
+            // !!!BUG!!! Does not use the correct flow direction (right to left) for the alert, so using a custom popup instead
+            //await Application.Current!.Windows[0].Page!.DisplayAlertAsync("?", $"{CodeLang.HexColorCodes_Text}\n\n{CodeLang.AllowedChar_Text}\n{cHexCharacters}", CodeLang.ButtonClose_Text);
+
+            // Show a modal popup
+            Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+            if (currentPage != null)
+            {
+                _ = await currentPage.ShowPopupAsync(new PopupMessageClose(20, "?", $"{CodeLang.HexColorCodes_Text}\n\n{CodeLang.AllowedChar_Text}\n{cHexCharacters}"));
+            }
         }
 
         /// <summary>
