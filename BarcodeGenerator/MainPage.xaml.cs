@@ -120,7 +120,7 @@ namespace BarcodeGenerator
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
-            Globals.nFontSize = Preferences.Default.Get("SettingFontSize", 16d);
+            Globals.nFontSize = Preferences.Default.Get("SettingFontSize", 18d);
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
             // Set the theme
