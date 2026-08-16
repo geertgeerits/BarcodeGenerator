@@ -7,7 +7,7 @@ namespace BarcodeGenerator
         private static string[]? cLanguageLocales;                  // Array to hold the speech languages (Language-Country Name : Id)
         private static IEnumerable<Locale>? locales;                // Collection of available locales for text-to-speech
         private static CancellationTokenSource? cts;                // CancellationTokenSource for managing cancellation of text-to-speech operations
-        private static bool bTextToSpeechLanguageSelected = true;   // Flag to indicate if a text-to-speech language has been selected
+        private static bool bTextToSpeechLanguageSelected;          // Flag to indicate if a text-to-speech language has been selected
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the selected speech languages ( : is separator before the Id)
@@ -33,11 +33,12 @@ namespace BarcodeGenerator
                     return false;
                 }
 
-                // Populate the locales
+                // Populate the array with the selected speech languages (Language-Country Name : Id)
+                // Create an array to hold the speech languages (Language-Country Name : Id)
                 cLanguageLocales = new string[nTotalItems];
                 int nItem = 0;
 
-                // Define the allowed languages to filter the locales
+                // Define the allowed language to filter the locales
                 // Get the primary language code from the UI language (e.g., "en" from "en-US")
                 string allowedLanguages = Globals.cLanguage.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
 
