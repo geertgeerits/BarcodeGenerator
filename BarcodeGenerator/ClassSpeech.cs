@@ -1,5 +1,4 @@
 ﻿//using System.Text;
-using CommunityToolkit.Maui.Extensions;
 
 namespace BarcodeGenerator
 {
@@ -11,7 +10,7 @@ namespace BarcodeGenerator
         private static bool bTextToSpeechLanguageSelected;      // Flag to indicate if a text-to-speech language has been selected
 
         /// <summary>
-        /// Initialize text to speech and fill the the array with the speech languages ( : is separator before the Id)
+        /// Initialize text to speech and fill the the array with the selected speech languages ( : is separator before the Id)
         /// Android: .Language = ko- .Country = KR  .Name = Korean (South Korea) : .Id = ko-kr-x-ism-local
         /// iOS:     .Language = ko- .Country = KR- .Name = Yuna : .Id = com.apple.voice.compact.ko-KR.Yuna
         /// Windows: .Language = ko- .Country = KR- .Name = Microsoft David : .Id = HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM
@@ -38,11 +37,9 @@ namespace BarcodeGenerator
                 cLanguageLocales = new string[nTotalItems];
                 int nItem = 0;
 
-                // Define a set of allowed languages to filter the locales
-                HashSet<string> allowedLanguages =
-                [
-                    with(StringComparer.OrdinalIgnoreCase), "ar","bn","cs","da","de","el","en","es","fi","fr","hi","hu","id","it","ja","ko","nb","nl","pl","pt","ro","ru","sv","tr","uk","ur","vi","zh"
-                ];
+                // Define the allowed languages to filter the locales
+                // Get the primary language code from the UI language (e.g., "en" from "en-US")
+                string allowedLanguages = Globals.cLanguage.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
 
 #if ANDROID
                 /*
@@ -150,6 +147,9 @@ namespace BarcodeGenerator
         /// <param name="picker"></param>
         public static void FillPickerWithSpeechLanguages(Picker picker)
         {
+            // Initialize text to speech and fill the array with the selected speech languages
+            _ = InitializeTextToSpeechAsync();
+
             // If there are no locales, disable the picker and return
             if (cLanguageLocales is null)
             {
@@ -161,20 +161,9 @@ namespace BarcodeGenerator
             // Clear the picker items
             picker.Items.Clear();
 
-            // Get the primary language code from the UI language (e.g., "en" from "en-US")
-            //string langUI = Globals.cLanguage.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
-
             // Populate the picker with the Language, Country, Name, (Id) from the sorted locales array
             foreach (string locale in cLanguageLocales)
             {
-                // Get the primary language code from the speech language (e.g., "en" from "en-US")
-                //string langSpeech = locale.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
-
-                //if (langUI == langSpeech)
-                //{
-                //    picker.Items.Add(locale);
-                //}
-
                 picker.Items.Add(locale);
             }
 
@@ -284,7 +273,7 @@ namespace BarcodeGenerator
                 if (cLanguageLocales?.Length > 0)
                 {
                     // Show a popup message to the user
-                    Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.TextToSpeechError_Text, CodeLang.ButtonClose_Text);
+                    //Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.TextToSpeechError_Text, CodeLang.ButtonClose_Text);
 
                     // Select the first language in the array
                     Globals.cLanguageSpeech = cLanguageLocales![0];
