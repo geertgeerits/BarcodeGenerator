@@ -168,6 +168,9 @@ namespace BarcodeGenerator
             {
                 Globals.bLanguageChanged = true;
 
+                // Set the current UI culture of the selected language
+                Globals.SetCultureSelectedLanguage(Globals.cLanguage);
+
                 // Fill the picker with the speech languages and select the current language in the picker
                 ClassSpeech.FillPickerWithSpeechLanguages(pckLanguageSpeech);
 
@@ -175,9 +178,6 @@ namespace BarcodeGenerator
                 searchKeyGenerator = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeGeneratorName, ClassBarcodes.barcodeSearch);
                 searchKeyScanner = ClassBarcodes.SearchValueInDictionary(ClassBarcodes.cBarcodeScannerName, ClassBarcodes.barcodeSearch);
                 searchKeyPayloadType = ClassBarcodes.SearchValueInDictionary(ClassPayloadTypes.cPayloadType, ClassPayloadTypes.payloadSearch);
-
-                // Set the current UI culture of the selected language
-                Globals.SetCultureSelectedLanguage(Globals.cLanguage);
 
                 // Put text in the chosen language in the controls and variables
                 SetLanguage();

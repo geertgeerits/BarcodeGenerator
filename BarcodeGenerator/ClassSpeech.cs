@@ -4,10 +4,10 @@ namespace BarcodeGenerator
 {
     internal sealed class ClassSpeech
     {
-        private static string[]? cLanguageLocales;              // Array to hold the speech languages (Language-Country Name : Id)
-        private static IEnumerable<Locale>? locales;            // Collection of available locales for text-to-speech
-        private static CancellationTokenSource? cts;            // CancellationTokenSource for managing cancellation of text-to-speech operations
-        private static bool bTextToSpeechLanguageSelected;      // Flag to indicate if a text-to-speech language has been selected
+        private static string[]? cLanguageLocales;                  // Array to hold the speech languages (Language-Country Name : Id)
+        private static IEnumerable<Locale>? locales;                // Collection of available locales for text-to-speech
+        private static CancellationTokenSource? cts;                // CancellationTokenSource for managing cancellation of text-to-speech operations
+        private static bool bTextToSpeechLanguageSelected = true;   // Flag to indicate if a text-to-speech language has been selected
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the selected speech languages ( : is separator before the Id)
@@ -172,6 +172,10 @@ namespace BarcodeGenerator
             {
                 picker.IsEnabled = false;
                 bTextToSpeechLanguageSelected = false;
+
+                // Show a popup message to the user
+                Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.TextToSpeechError_Text, CodeLang.ButtonClose_Text);
+
                 return;
             }
             else
@@ -272,9 +276,6 @@ namespace BarcodeGenerator
                 // If the language is not found use the first language in the array
                 if (cLanguageLocales?.Length > 0)
                 {
-                    // Show a popup message to the user
-                    //Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.TextToSpeechError_Text, CodeLang.ButtonClose_Text);
-
                     // Select the first language in the array
                     Globals.cLanguageSpeech = cLanguageLocales![0];
                     return 0;
