@@ -7,7 +7,7 @@ namespace BarcodeGenerator
         private static string[]? cLanguageLocales;                  // Array to hold the speech languages (Language-Country Name : Id)
         private static IEnumerable<Locale>? locales;                // Collection of available locales for text-to-speech
         private static CancellationTokenSource? cts;                // CancellationTokenSource for managing cancellation of text-to-speech operations
-        private static bool bTextToSpeechLanguageSelected;          // Flag to indicate if a text-to-speech language has been selected
+        private static bool bTextToSpeechLanguageExist = true;      // Flag to indicate if a text-to-speech language exist
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the selected speech languages ( : is separator before the Id)
@@ -155,7 +155,7 @@ namespace BarcodeGenerator
             if (cLanguageLocales is null)
             {
                 picker.IsEnabled = false;
-                bTextToSpeechLanguageSelected = false;
+                bTextToSpeechLanguageExist = false;
                 return;
             }
 
@@ -172,17 +172,17 @@ namespace BarcodeGenerator
             if (picker.Items.Count == 0)
             {
                 picker.IsEnabled = false;
-                bTextToSpeechLanguageSelected = false;
+                bTextToSpeechLanguageExist = false;
 
                 // Show a popup message to the user
-                Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.TextToSpeechError_Text, CodeLang.ButtonClose_Text);
+                //Application.Current!.Windows[0].Page!.DisplayAlertAsync("", CodeLang.TextToSpeechError_Text, CodeLang.ButtonClose_Text);
 
                 return;
             }
             else
             {
                 picker.IsEnabled = true;
-                bTextToSpeechLanguageSelected = true;
+                bTextToSpeechLanguageExist = true;
             }
 
             // Select the saved language
@@ -219,6 +219,7 @@ namespace BarcodeGenerator
 
             try
             {
+                bTextToSpeechLanguageExist = true;
                 int index;
 
                 if (cLanguageLocales is not null)
@@ -289,7 +290,9 @@ namespace BarcodeGenerator
                 Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
-
+            
+            bTextToSpeechLanguageExist = false;
+            Globals.cLanguageSpeech = string.Empty;
             return 0;
         }
 
@@ -345,7 +348,7 @@ namespace BarcodeGenerator
             Debug.WriteLine("ConvertTextToSpeechAsync + cText: " + cText);
             Debug.WriteLine("ConvertTextToSpeechAsync + Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
 
-            if (!string.IsNullOrEmpty(cText) && bTextToSpeechLanguageSelected)
+            if (!string.IsNullOrEmpty(cText) && bTextToSpeechLanguageExist)
             {
                 Globals.bTextToSpeechIsBusy = true;
                 imageButton.Source = Globals.cImageTextToSpeechCancel;
@@ -395,6 +398,23 @@ namespace BarcodeGenerator
             }
 
             return Globals.cImageTextToSpeech;
+        }
+
+        /// <summary>
+        /// Get ISO language (and country) code from locales
+        /// </summary>
+        /// <returns></returns>
+        public static string GetIsoLanguageSpeechCode()
+        {
+            // Split before first space and remove last character '-' if there
+            string cLanguageIso = Globals.cLanguageSpeech.Split(' ').First();
+
+            if (cLanguageIso.EndsWith('-'))
+            {
+                cLanguageIso = cLanguageIso[..^1];
+            }
+
+            return cLanguageIso;
         }
 
         ///// <summary>

@@ -327,7 +327,7 @@ namespace BarcodeGenerator
         private void OnPageAppearing(object sender, EventArgs e)
         {
             // Set the language for text to speech
-            lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+            lblTextToSpeech.Text = ClassSpeech.GetIsoLanguageSpeechCode();
         }
 
         /// <summary>

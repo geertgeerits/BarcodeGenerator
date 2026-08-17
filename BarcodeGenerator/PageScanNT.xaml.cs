@@ -199,7 +199,7 @@ namespace BarcodeGenerator
             graphicsBox.Drawable = _drawable;
 
             // Set language text to speech using the Appearing event of the PageScanNT.xaml
-            lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+            lblTextToSpeech.Text = ClassSpeech.GetIsoLanguageSpeechCode();
         }
 
         /// <summary>
