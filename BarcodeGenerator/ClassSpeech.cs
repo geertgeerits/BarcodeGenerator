@@ -406,6 +406,11 @@ namespace BarcodeGenerator
         /// <returns></returns>
         public static string GetIsoLanguageSpeechCode()
         {
+            if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
+            {
+                return string.Empty;
+            }
+
             // Split before first space and remove last character '-' if there
             string cLanguageIso = Globals.cLanguageSpeech.Split(' ').First();
 
