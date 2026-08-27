@@ -16,3 +16,4 @@ https://apps.apple.com/app/barcode-generator-and-scanner/id1658516092
 Link to the Microsoft Store:
 https://apps.microsoft.com/detail/9NHP7ZWQG618
 ms-windows-store://pdp/?productid=9NHP7ZWQG618
+
