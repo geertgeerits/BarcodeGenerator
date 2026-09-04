@@ -141,7 +141,8 @@ namespace BarcodeGenerator
                     .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
                                 backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
-                    .WithGradient(gradient);
+                    .WithGradient(gradient)
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
 
                 // Apply module shape if a non-default shape is selected
                 rmqrData = ClassBarcodes.cQRCodeModuleShape switch

@@ -14,7 +14,7 @@ namespace BarcodeGenerator
             // Set the flow direction of the text elements
             Globals.SetFlowDirection(this);
 
-            if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
+            if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_RMQR_CODE)
             {
                 // Disable the foreground image option for Micro QR Codes, as they do not support this feature
                 artQRCodeSettings.swtForegroundImage.IsToggled = false;
