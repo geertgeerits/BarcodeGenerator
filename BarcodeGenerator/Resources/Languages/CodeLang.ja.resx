@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QRコード</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR長方形マイクロQRコード</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>長方形マイクロQRコード（rMQRコード）</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS展開</value>
@@ -1045,5 +1045,8 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>テキストの翻訳にはGoogle翻訳を使用しました。翻訳の正確性を保証するものではありません。
 対応言語は、アラビア語、ベンガル語、中国語（簡体字）、中国語（繁体字）、チェコ語、デンマーク語、オランダ語、英語、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヒンディー語、ハンガリー語、インドネシア語、イタリア語、日本語、韓国語、ノルウェー語、ポーランド語、ポルトガル語、ルーマニア語、ロシア語、スペイン語、スウェーデン語、トルコ語、ウクライナ語、ウルドゥー語、ベトナム語です。</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>芸術的な長方形マイクロQRコード（rMQRコード）</value>
   </data>
 </root>

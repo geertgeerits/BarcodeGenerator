@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QR-code</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR Rechthoekige micro-QR-code</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>Rechthoekige micro-QR-code (rMQR-code)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS-uitbreiding</value>
@@ -1031,5 +1031,8 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>Voor de vertaling van de tekst is Google Translate gebruikt. Dit is geen garantie dat alle vertalingen correct zijn.
 De ondersteunde talen zijn: Arabisch, Bengaals, Vereenvoudigd Chinees, Traditioneel Chinees, Tsjechisch, Deens, Nederlands, Engels, Fins, Frans, Duits, Grieks, Hindi, Hongaars, Indonesisch, Italiaans, Japans, Koreaans, Noors, Pools, Portugees, Roemeens, Russisch, Spaans, Zweeds, Turks, Oekraïens, Urdu en Vietnamees.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>Artistieke rechthoekige micro-QR-code (rMQR-code)</value>
   </data>
 </root>

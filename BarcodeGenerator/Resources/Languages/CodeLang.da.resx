@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QR-kode</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR Rektangulær mikro QR-kode</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>Rektangulær Mikro QR-kode (rMQR-kode)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS Udvidet</value>
@@ -1031,5 +1031,8 @@ Ikke alle datatyper understøttes på alle enheder.</value>
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>Google Translate blev brugt til oversættelsen af ​​teksten. Dette er ikke en garanti for, at alle oversættelser er korrekte.
 De understøttede sprog er: arabisk, bengali, forenklet kinesisk, traditionelt kinesisk, tjekkisk, dansk, hollandsk, engelsk, finsk, fransk, tysk, græsk, hindi, ungarsk, indonesisk, italiensk, japansk, koreansk, norsk, polsk, portugisisk, rumænsk, russisk, spansk, svensk, tyrkisk, ukrainsk, urdu og vietnamesisk.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>Kunstnerisk Rektangulær Mikro QR-kode (rMQR-kode)</value>
   </data>
 </root>

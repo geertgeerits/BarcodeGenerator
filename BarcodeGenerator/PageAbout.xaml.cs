@@ -28,7 +28,7 @@ namespace BarcodeGenerator
             Globals.SetFlowDirection(this);
 
             // Put text in the chosen language in the controls
-            lblVersion.Text = $"{CodeLang.Version_Text} 1.0.54";
+            lblVersion.Text = $"{CodeLang.Version_Text} 1.0.55";
             lblCopyright.Text = $"{CodeLang.Copyright_Text} © 2022-2026 Geert Geerits";
             lblPrivacyPolicy.Text = $"\n{CodeLang.PrivacyPolicyTitle_Text} {CodeLang.PrivacyPolicy_Text}";
             lblLicense.Text = $"\n{CodeLang.LicenseTitle_Text}: {CodeLang.License_Text}";

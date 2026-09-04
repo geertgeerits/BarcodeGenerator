@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QR 코드</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR(직사각형 마이크로 QR 코드)</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>직사각형 마이크로 QR 코드(rMQR 코드)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS 확장</value>
@@ -1032,5 +1032,8 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>본문 번역에는 Google 번역이 사용되었습니다. 따라서 모든 번역이 정확하다고 보장할 수는 없습니다.
 지원 언어는 아랍어, 벵골어, 중국어 간체, 중국어 번체, 체코어, 덴마크어, 네덜란드어, 영어, 핀란드어, 프랑스어, 독일어, 그리스어, 힌디어, 헝가리어, 인도네시아어, 이탈리아어, 일본어, 한국어, 노르웨이어, 폴란드어, 포르투갈어, 루마니아어, 러시아어, 스페인어, 스웨덴어, 터키어, 우크라이나어, 우르두어, 베트남어입니다.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>예술적인 직사각형 마이크로 QR 코드(rMQR 코드)</value>
   </data>
 </root>

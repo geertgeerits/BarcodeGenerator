@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>Code QR</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR Micro code QR rectangulaire</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>Code QR miniature rectangulaire (code rMQR)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS étendu</value>
@@ -1031,5 +1031,8 @@ Tous les types de données ne sont pas compatibles avec tous les appareils.</val
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>Google Traduction a été utilisé pour la traduction du texte. L'exactitude des traductions n'est donc pas garantie.
 Les langues prises en charge sont : l'arabe, le bengali, le chinois simplifié, le chinois traditionnel, le tchèque, le danois, le néerlandais, l'anglais, le finnois, le français, l'allemand, le grec, l'hindi, le hongrois, l'indonésien, l'italien, le japonais, le coréen, le norvégien, le polonais, le portugais, le roumain, le russe, l'espagnol, le suédois, le turc, l'ukrainien, l'ourdou et le vietnamien.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>Code QR miniature rectangulaire artistique (code rMQR)</value>
   </data>
 </root>

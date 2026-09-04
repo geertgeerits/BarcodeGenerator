@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>Kode QR</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>Kode QR Mikro Persegi Panjang RMQR</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>Kode QR Mikro Persegi Panjang (Kode rMQR)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS yang Diperluas</value>
@@ -1031,5 +1031,8 @@ Tidak semua jenis muatan didukung di setiap perangkat.</value>
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>Google Translate digunakan untuk menerjemahkan teks. Ini bukan jaminan bahwa semua terjemahan akurat.
 Bahasa yang didukung adalah: Arab, Bengali, Tionghoa Sederhana, Tionghoa Tradisional, Ceko, Denmark, Belanda, Inggris, Finlandia, Prancis, Jerman, Yunani, Hindi, Hongaria, Indonesia, Italia, Jepang, Korea, Norwegia, Polandia, Portugis, Rumania, Rusia, Spanyol, Swedia, Turki, Ukraina, Urdu, dan Vietnam.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>Kode QR Mikro Persegi Panjang Artistik (Kode rMQR)</value>
   </data>
 </root>

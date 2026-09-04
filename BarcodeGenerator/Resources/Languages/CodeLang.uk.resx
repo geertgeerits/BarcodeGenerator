@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QR-код</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>Прямокутний мікро QR-код RMQR</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>Прямокутний мікро QR-код (rMQR-код)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>Розширений RSS</value>
@@ -1029,5 +1029,8 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>Для перекладу тексту було використано Google Translate. Це не гарантує, що всі переклади правильні.
 Підтримувані мови: арабська, бенгальська, спрощена китайська, традиційна китайська, чеська, данська, голландська, англійська, фінська, французька, німецька, грецька, хінді, угорська, індонезійська, італійська, японська, корейська, норвезька, польська, португальська, румунська, російська, іспанська, шведська, турецька, українська, урду та в'єтнамська.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>Художній прямокутний мікро QR-код (rMQR-код)</value>
   </data>
 </root>

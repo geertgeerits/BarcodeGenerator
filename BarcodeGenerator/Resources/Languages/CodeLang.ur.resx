@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>کیو آر کوڈ</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR مستطیل مائکرو QR کوڈ</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>مستطیل مائکرو QR کوڈ (rMQR کوڈ)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>آر ایس ایس کی توسیع</value>
@@ -1031,5 +1031,8 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>متن کے ترجمے کے لیے گوگل ٹرانسلیٹ کا استعمال کیا گیا۔ یہ اس بات کی ضمانت نہیں ہے کہ تمام ترجمے درست ہیں۔
 معاون زبانیں ہیں: عربی، بنگالی، چینی آسان، چینی روایتی، چیک، ڈینش، ڈچ، انگریزی، فننش، فرانسیسی، جرمن، یونانی، ہندی، ہنگری، انڈونیشی، اطالوی، جاپانی، کورین، نارویجن، پولش، پرتگالی، رومانیہ، روسی، ہسپانوی، سویڈش، ترکی، یوکرینی، اردو اور ویتنامی۔</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>آرٹسٹک مستطیل مائکرو QR کوڈ (rMQR کوڈ)</value>
   </data>
 </root>

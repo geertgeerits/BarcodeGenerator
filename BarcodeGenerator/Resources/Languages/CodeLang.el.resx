@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>Κωδικός QR</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR ορθογώνιος μικροκωδικός QR</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>Ορθογώνιος μικροκωδικός QR (rMQR Code)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS Extended</value>
@@ -1031,5 +1031,8 @@
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>Για τη μετάφραση του κειμένου χρησιμοποιήθηκε το Google Translate. Αυτό δεν αποτελεί εγγύηση ότι όλες οι μεταφράσεις είναι σωστές.
 Οι υποστηριζόμενες γλώσσες είναι: Αραβικά, Βενγκάλι, απλοποιημένα Κινέζικα, παραδοσιακά Κινέζικα, Τσεχικά, Δανικά, Ολλανδικά, Αγγλικά, Φινλανδικά, Γαλλικά, Γερμανικά, Ελληνικά, Χίντι, Ουγγρικά, Ινδονησιακά, Ιταλικά, Ιαπωνικά, Κορεατικά, Νορβηγικά, Πολωνικά, Πορτογαλικά, Ρουμανικά, Ρωσικά, Ισπανικά, Σουηδικά, Τουρκικά, Ουκρανικά, Ουρντού και Βιετναμέζικα.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>Καλλιτεχνικός ορθογώνιος μικροκωδικός QR (rMQR Code)</value>
   </data>
 </root>

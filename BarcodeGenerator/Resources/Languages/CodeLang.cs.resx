@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QR kód</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR Obdélníkový mikro QR kód</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>Obdélníkový mikro QR kód (rMQR kód)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS rozšířený</value>
@@ -1031,5 +1031,8 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>Pro překlad textu byl použit Google Translate. To nezaručuje, že všechny překlady jsou správné.
 Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština, tradiční čínština, čeština, dánština, holandština, angličtina, finština, francouzština, němčina, řečtina, hindština, maďarština, indonéština, italština, japonština, korejština, norština, polština, portugalština, rumunština, ruština, španělština, švédština, turečtina, ukrajinština, urdština a vietnamština.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>Umělecký obdélníkový mikro QR kód (rMQR kód)</value>
   </data>
 </root>

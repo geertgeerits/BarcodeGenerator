@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QR-koodi</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR Suorakulmainen mikro-QR-koodi</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>Suorakulmainen mikro-QR-koodi (rMQR-koodi)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS Laajennettu</value>
@@ -1031,5 +1031,8 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>Tekstin kääntämiseen käytettiin Google Kääntäjää. Tämä ei takaa, että kaikki käännökset ovat oikeita.
 Tuetut kielet ovat: arabia, bengali, kiina (yksinkertaistettu), kiina (perinteinen), tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, kreikka, hindi, unkari, indonesia, italia, japani, korea, norja, puola, portugali, romania, venäjä, espanja, ruotsi, turkki, ukraina, urdu ja vietnam.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>Taiteellinen suorakulmainen mikro-QR-koodi (rMQR-koodi)</value>
   </data>
 </root>

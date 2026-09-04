@@ -1,8 +1,8 @@
 ﻿/* Program .....: BarcodeGenerator.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
- * Version .....: 1.0.54
- * Date ........: 2026-08-18 (YYYY-MM-DD)
+ * Version .....: 1.0.55
+ * Date ........: 2026-09-04 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -532,6 +532,26 @@ namespace BarcodeGenerator
                     imgQrCodeImage.IsVisible = true;
                 }
 
+                else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)  // 
+                {
+                    edtTextToCode.MaxLength = 35;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
+                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
+                    bgvBarcode.IsVisible = false;
+                    imgQrCodeImage.IsVisible = true;
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_ART_RMQR_CODE)  // 
+                {
+                    edtTextToCode.MaxLength = 30;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
+                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
+                    bgvBarcode.IsVisible = false;
+                    imgQrCodeImage.IsVisible = true;
+                }
+
                 // Set the payload type button enabled if a specific payload type is allowed for the selected barcode format
                 imgbtnPayloadType.IsEnabled = bPayloadTypeAllowed;
 
@@ -765,7 +785,7 @@ namespace BarcodeGenerator
                 //int divByZero = 51 / int.Parse("0");
 
                 // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
-                if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE || selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
+                if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE || selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE || selectedName == ClassBarcodes.cBarcode_ART_RMQR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
                     
@@ -790,7 +810,16 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassMicroQRCode.GenerateMicroQrCodeAsync(cTextToCode, nVersion: -4);
                     imgQrCodeImage.Source = qrImage;
                 }
-                
+
+                // Generate the rMQR code using the QRCoder library
+                else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)
+                {
+                    ClassBarcodes.cQRCodeType = selectedName;
+
+                    ImageSource? qrImage = await ClassRMQRCode.GenerateRMQRCodeAsync(cTextToCode);
+                    imgQrCodeImage.Source = qrImage;
+                }
+
                 // Generate the other barcodes using the BarcodeView control from the ZXing.Net.MAUI library
                 else
                 {

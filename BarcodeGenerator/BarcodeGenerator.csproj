@@ -33,9 +33,9 @@
 		<ApplicationIdGuid>7A6A918B-29C3-433A-82AE-16D589F3D8A2</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<PackageVersion>1.0.54</PackageVersion>
-		<ApplicationDisplayVersion>1.0.54</ApplicationDisplayVersion>
-		<ApplicationVersion>54</ApplicationVersion>
+		<PackageVersion>1.0.55</PackageVersion>
+		<ApplicationDisplayVersion>1.0.55</ApplicationDisplayVersion>
+		<ApplicationVersion>55</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
@@ -99,16 +99,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="15.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.90" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="15.0.1" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.100" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.11" />
         <PackageReference Include="QRCoder" Version="1.8.0" />
-        <PackageReference Include="SkiaSharp" Version="4.151.1" />
-        <PackageReference Include="SkiaSharp.QrCode" Version="1.1.1" />
+        <PackageReference Include="SkiaSharp" Version="4.151.2" />
+        <PackageReference Include="SkiaSharp.QrCode" Version="1.2.0" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.10.4" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.10.4" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.1.0" />
-		<PackageReference Include="Sentry.Maui" Version="6.9.0" />
+		<PackageReference Include="Sentry.Maui" Version="6.10.0" />
 		<!--<PackageReference Include="ZXingCpp" Version="0.5.3" />-->
 	</ItemGroup>
 
@@ -178,8 +178,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.54</ApplicationDisplayVersion>
-		<ApplicationVersion>54</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.55</ApplicationDisplayVersion>
+		<ApplicationVersion>55</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 
@@ -198,8 +198,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.54</ApplicationDisplayVersion>
-		<ApplicationVersion>54</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.55</ApplicationDisplayVersion>
+		<ApplicationVersion>55</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.barcodegenerator</ApplicationId>
 	</PropertyGroup>
 

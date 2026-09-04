@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>Cod QR</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR Cod QR micro dreptunghiular</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>Cod QR dreptunghiular (cod rMQR)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS extins</value>
@@ -1031,5 +1031,8 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>Google Translate a fost utilizat pentru traducerea textului. Aceasta nu garantează că toate traducerile sunt corecte.
 Limbile acceptate sunt: ​​arabă, bengaleză, chineză simplificată, chineză tradițională, cehă, daneză, olandeză, engleză, finlandeză, franceză, germană, greacă, hindi, maghiară, indoneziană, italiană, japoneză, coreeană, norvegiană, poloneză, portugheză, română, rusă, spaniolă, suedeză, turcă, ucraineană, urdu și vietnameză.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>Cod QR dreptunghiular artistic (cod rMQR)</value>
   </data>
 </root>

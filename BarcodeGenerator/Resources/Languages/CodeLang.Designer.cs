@@ -142,6 +142,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Artistic Rectangular Micro QR Code (rMQR Code).
+        /// </summary>
+        internal static string Barcode_ART_RMQR_CODE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_ART_RMQR_CODE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aztec Code.
         /// </summary>
         internal static string Barcode_AZTEC_CODE_Text {
@@ -547,11 +556,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RMQR Rectangular Micro QR Code.
+        ///   Looks up a localized string similar to Rectangular Micro QR Code (rMQR Code).
         /// </summary>
-        internal static string Barcode_RMQR_Text {
+        internal static string Barcode_RMQR_CODE_Text {
             get {
-                return ResourceManager.GetString("Barcode_RMQR_Text", resourceCulture);
+                return ResourceManager.GetString("Barcode_RMQR_CODE_Text", resourceCulture);
             }
         }
         

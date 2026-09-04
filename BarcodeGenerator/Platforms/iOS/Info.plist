@@ -43,9 +43,9 @@
 	<key>CFBundleDisplayName</key>
 	<string>Barcode Generator and Scanner</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.54</string>
+	<string>1.0.55</string>
 	<key>CFBundleVersion</key>
-	<string>54</string>
+	<string>55</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.geertgeerits.barcodegenerator</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

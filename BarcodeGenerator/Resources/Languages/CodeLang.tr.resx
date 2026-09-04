@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QR Kodu</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR Dikdörtgen Mikro QR Kodu</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>Dikdörtgen Mikro QR Kodu (rMQR Kodu)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>Genişletilmiş RSS</value>
@@ -1031,5 +1031,8 @@ Her cihazda tüm veri türleri desteklenmez.</value>
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>Metnin çevirisi için Google Translate kullanılmıştır. Bu, tüm çevirilerin doğru olduğunun garantisi değildir.
 Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Geleneksel Çince, Çekçe, Danca, Felemenkçe, İngilizce, Fince, Fransızca, Almanca, Yunanca, Hintçe, Macarca, Endonezce, İtalyanca, Japonca, Korece, Norveççe, Lehçe, Portekizce, Romence, Rusça, İspanyolca, İsveççe, Türkçe, Ukraynaca, Urduca ve Vietnamca.</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>Sanatsal Dikdörtgen Mikro QR Kodu (rMQR Kodu)</value>
   </data>
 </root>

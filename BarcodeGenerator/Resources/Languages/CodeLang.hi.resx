@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QR कोड</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR रेक्टेंगुलर माइक्रो QR कोड</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>रेक्टेंगुलर माइक्रो QR कोड (rMQR कोड)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS Expanded</value>
@@ -1028,5 +1028,8 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>टेक्स्ट के ट्रांसलेशन के लिए Google Translate का इस्तेमाल किया गया था। यह गारंटी नहीं है कि सभी ट्रांसलेशन सही हैं।
 सपोर्ट करने वाली भाषाएँ हैं: अरबी, बंगाली, चीनी सिंपलीफाइड, चीनी ट्रेडिशनल, चेक, डेनिश, डच, इंग्लिश, फिनिश, फ्रेंच, जर्मन, ग्रीक, हिंदी, हंगेरियन, इंडोनेशियन, इटैलियन, जापानी, कोरियन, नॉर्वेजियन, पोलिश, पुर्तगाली, रोमानियन, रशियन, स्पैनिश, स्वीडिश, टर्किश, यूक्रेनी, उर्दू और वियतनामी।</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>आर्टिस्टिक रेक्टेंगुलर माइक्रो QR कोड (rMQR कोड)</value>
   </data>
 </root>

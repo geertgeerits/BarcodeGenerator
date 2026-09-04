@@ -127,8 +127,19 @@ namespace BarcodeGenerator
             }
 
             // Declare qrData before the if-else block so it's accessible afterwards
+            RMQRCodeImageBuilder? rmqrData = null;
             MicroQRCodeImageBuilder? microQrData = null;
             QRCodeImageBuilder? standardQrData = null;
+
+            // Create a rMQR code with custom styling
+            if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_RMQR_CODE)
+            {
+                rmqrData = new RmQRCodeImageBuilder(text)
+                    .WithSegmentation(RmQRSegmentation.Optimal)
+                    .ToByteArray();
+
+            }
+
 
             // Create a Micro QR code with custom styling
             if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)

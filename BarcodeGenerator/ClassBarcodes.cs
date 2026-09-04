@@ -75,11 +75,12 @@ namespace BarcodeGenerator
         public static string cBarcode_QR_CODE_MODEL_2 = string.Empty;           // QR Code Model 2
         public static string cBarcode_FRAME_QR_CODE = string.Empty;             // Frame QR Code
         public static string cBarcode_MICRO_QR_CODE = string.Empty;             // Micro QR Code symbol version -4 (M4) with error correction level L, M, or Q
-        public static string cBarcode_RMQR = string.Empty;                      // Rectangular Micro QR Code
+        public static string cBarcode_RMQR_CODE = string.Empty;                 // Rectangular Micro QR Code
         public static string cBarcode_SQRC = string.Empty;                      // Secure Quick Response Code
         public static string cBarcode_QR_CODE_IMAGE = string.Empty;             // QR Code with image in the center
         public static string cBarcode_ART_QR_CODE = string.Empty;               // Artistic QR Code
         public static string cBarcode_ART_MICRO_QR_CODE = string.Empty;         // Artistic Micro QR Code
+        public static string cBarcode_ART_RMQR_CODE = string.Empty;             // Artistic Rectangular Micro QR Code (rMQR Code)
 
         // Global variables
         public static int nBarcodeGeneratorIndex;
@@ -192,11 +193,12 @@ namespace BarcodeGenerator
             cBarcode_QR_CODE_MODEL_2 = CodeLang.Barcode_QR_CODE_MODEL_2_Text;       // QR Code Model 2
             cBarcode_FRAME_QR_CODE = CodeLang.Barcode_FRAME_QR_CODE_Text;           // Frame QR Code
             cBarcode_MICRO_QR_CODE = CodeLang.Barcode_MICRO_QR_CODE_Text;           // Micro QR Code symbol version -4 (M4) with error correction level L, M, or Q
-            cBarcode_RMQR = CodeLang.Barcode_RMQR_Text;                             // Rectangular Micro QR Code
+            cBarcode_RMQR_CODE = CodeLang.Barcode_RMQR_CODE_Text;                   // Rectangular Micro QR Code
             cBarcode_SQRC = CodeLang.Barcode_SQRC_Text;                             // Secure Quick Response Code
             cBarcode_QR_CODE_IMAGE = CodeLang.Barcode_QR_CODE_IMAGE_Text;           // QR Code with image in the center
             cBarcode_ART_QR_CODE = CodeLang.Barcode_ART_QR_CODE_Text;               // Artistic QR Code
             cBarcode_ART_MICRO_QR_CODE = CodeLang.Barcode_ART_MICRO_QR_CODE_Text;   // Artistic Micro QR Code
+            cBarcode_ART_RMQR_CODE = CodeLang.Barcode_ART_RMQR_CODE_Text;           // Artistic Rectangular Micro QR Code (rMQR Code)   
 
             // Default values for the barcode generator and scanner
             cBarcodeGeneratorDefault = cBarcode_ART_QR_CODE;
@@ -267,11 +269,12 @@ namespace BarcodeGenerator
             barcodeSearch.Add("QR_CODE_MODEL_2", CodeLang.Barcode_QR_CODE_MODEL_2_Text);
             barcodeSearch.Add("FRAME_QR_CODE", CodeLang.Barcode_FRAME_QR_CODE_Text);
             barcodeSearch.Add("MICRO_QR_CODE", CodeLang.Barcode_MICRO_QR_CODE_Text);
-            barcodeSearch.Add("RMQR", CodeLang.Barcode_RMQR_Text);
+            barcodeSearch.Add("RMQR_CODE", CodeLang.Barcode_RMQR_CODE_Text);
             barcodeSearch.Add("SQRC", CodeLang.Barcode_SQRC_Text);
             barcodeSearch.Add("QR_CODE_IMAGE", CodeLang.Barcode_QR_CODE_IMAGE_Text);
             barcodeSearch.Add("ART_QR_CODE", CodeLang.Barcode_ART_QR_CODE_Text);
             barcodeSearch.Add("ART_MICRO_QR_CODE", CodeLang.Barcode_ART_MICRO_QR_CODE_Text);
+            barcodeSearch.Add("ART_RMQR_CODE", CodeLang.Barcode_ART_RMQR_CODE_Text);
         }
 
         /// <summary>
@@ -301,7 +304,9 @@ namespace BarcodeGenerator
                 CodeLang.Barcode_QR_CODE_IMAGE_Text,
                 CodeLang.Barcode_ART_QR_CODE_Text,
                 CodeLang.Barcode_MICRO_QR_CODE_Text,
-                CodeLang.Barcode_ART_MICRO_QR_CODE_Text
+                CodeLang.Barcode_ART_MICRO_QR_CODE_Text,
+                CodeLang.Barcode_RMQR_CODE_Text,
+                CodeLang.Barcode_ART_RMQR_CODE_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
@@ -323,7 +328,9 @@ namespace BarcodeGenerator
                 CodeLang.Barcode_QR_CODE_IMAGE_Text,
                 CodeLang.Barcode_ART_QR_CODE_Text,
                 CodeLang.Barcode_MICRO_QR_CODE_Text,
-                CodeLang.Barcode_ART_MICRO_QR_CODE_Text
+                CodeLang.Barcode_ART_MICRO_QR_CODE_Text,
+                CodeLang.Barcode_RMQR_CODE_Text,
+                CodeLang.Barcode_ART_RMQR_CODE_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
@@ -463,7 +470,7 @@ namespace BarcodeGenerator
                 CodeLang.Barcode_QR_CODE_MODEL_1_Text,
                 CodeLang.Barcode_QR_CODE_MODEL_2_Text,
                 CodeLang.Barcode_MICRO_QR_CODE_Text,
-                CodeLang.Barcode_RMQR_Text
+                CodeLang.Barcode_RMQR_CODE_Text,
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
@@ -717,6 +724,8 @@ namespace BarcodeGenerator
    Art Micro QR                  30         30         18         13         8             M4       M (medium)
    
    rMQR Rectangular Micro QR
+
+   rMQR Art Rectangular Micro QR
    
    SQRC Secure QR Code
 

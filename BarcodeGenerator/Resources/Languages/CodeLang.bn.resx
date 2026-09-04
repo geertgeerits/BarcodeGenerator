@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>কিউআর কোড</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>আরএমকিউআর আয়তাকার মাইক্রো কিউআর কোড</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>আয়তাকার মাইক্রো কিউআর কোড (আরএমকিউআর কোড)</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>আরএসএস সম্প্রসারিত</value>
@@ -1029,5 +1029,8 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>পাঠ্যটি অনুবাদের জন্য গুগল ট্রান্সলেট ব্যবহার করা হয়েছে। এটি কোনো নিশ্চয়তা দেয় না যে সমস্ত অনুবাদ সঠিক।
 সমর্থিত ভাষাগুলো হলো: আরবি, বাংলা, সরলীকৃত চীনা, প্রথাগত চীনা, চেক, ড্যানিশ, ডাচ, ইংরেজি, ফিনিশ, ফরাসি, জার্মান, গ্রিক, হিন্দি, হাঙ্গেরীয়, ইন্দোনেশীয়, ইতালীয়, জাপানি, কোরীয়, নরওয়েজীয়, পোলিশ, পর্তুগিজ, রোমানীয়, রুশ, স্প্যানিশ, সুইডিশ, তুর্কি, ইউক্রেনীয়, উর্দু এবং ভিয়েতনামী।</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>শৈল্পিক আয়তাকার মাইক্রো কিউআর কোড (আরএমকিউআর কোড)</value>
   </data>
 </root>

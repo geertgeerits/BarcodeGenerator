@@ -225,8 +225,8 @@
   <data name="Barcode_QR_CODE_Text" xml:space="preserve">
     <value>QR 圖碼</value>
   </data>
-  <data name="Barcode_RMQR_Text" xml:space="preserve">
-    <value>RMQR 矩形微型二維碼</value>
+  <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
+    <value>矩形微型二維碼（rMQR碼）</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS 擴充版</value>
@@ -1031,5 +1031,8 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="InfoLanguage_Text" xml:space="preserve">
     <value>本文使用谷歌翻譯進行翻譯。但這並不保證所有譯文完全正確。
 支援的語言包括：阿拉伯語、孟加拉語、簡體中文、繁體中文、捷克語、丹麥語、荷蘭語、英語、芬蘭語、法語、德語、希臘語、印地語、匈牙利語、印尼語、義大利語、日語、韓語、挪威語、波蘭語、葡萄牙語、羅馬尼亞語、俄語、西班牙語、瑞典語、俄語、烏克蘭語、烏爾都語和越南語。</value>
+  </data>
+  <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
+    <value>藝術矩形微型二維碼（rMQR碼）</value>
   </data>
 </root>
