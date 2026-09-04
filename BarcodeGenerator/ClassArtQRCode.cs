@@ -127,7 +127,7 @@ namespace BarcodeGenerator
             }
 
             // Declare qrData before the if-else block so it's accessible afterwards
-            RMQRCodeImageBuilder? rmqrData = null;
+            RmQRCodeImageBuilder? rmqrData = null;
             MicroQRCodeImageBuilder? microQrData = null;
             QRCodeImageBuilder? standardQrData = null;
 
@@ -136,13 +136,24 @@ namespace BarcodeGenerator
             {
                 rmqrData = new RmQRCodeImageBuilder(text)
                     .WithSegmentation(RmQRSegmentation.Optimal)
-                    .ToByteArray();
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
+                    .WithErrorCorrection(RmQREccLevel.M)
+                    .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
+                                backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
+                                clearColor: SKColors.Transparent)
+                    .WithGradient(gradient);
 
+                // Apply module shape if a non-default shape is selected
+                rmqrData = ClassBarcodes.cQRCodeModuleShape switch
+                {
+                    "Rounded" => rmqrData.WithModuleShape(RoundedRectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                    "Circle" => rmqrData.WithModuleShape(CircleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                    _ => rmqrData.WithModuleShape(RectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
+                };
             }
 
-
             // Create a Micro QR code with custom styling
-            if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
+            else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
             {
                 microQrData = new MicroQRCodeImageBuilder(text)
                     .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
@@ -193,7 +204,7 @@ namespace BarcodeGenerator
             }
 
             // Add a null check before using qrData
-            if (microQrData == null && standardQrData == null)
+            if (rmqrData == null && microQrData == null && standardQrData == null)
             {
                 Debug.WriteLine("Invalid QR code module shape");
                 return null;
@@ -203,7 +214,18 @@ namespace BarcodeGenerator
             byte[]? pngBytes = null;
             try
             {
-                pngBytes = await Task.Run(() => microQrData != null ? microQrData.ToByteArray() : standardQrData!.ToByteArray());
+                if (rmqrData != null)
+                {
+                    pngBytes = await Task.Run(() => rmqrData.ToByteArray());
+                }
+                else if (microQrData != null)
+                {
+                    pngBytes = await Task.Run(() => microQrData.ToByteArray());
+                }
+                else
+                {
+                    pngBytes = await Task.Run(() => standardQrData!.ToByteArray());
+                }
             }
             catch (Exception ex)
             {
@@ -224,7 +246,21 @@ namespace BarcodeGenerator
                 byte[]? svgBytes = null;
                 try
                 {
-                    string svgString = await Task.Run(() => microQrData != null ? microQrData.ToSvgString() : standardQrData!.ToSvgString());
+                    string svgString;
+
+                    if (rmqrData != null)
+                    {
+                        svgString = await Task.Run(() => rmqrData.ToSvgString());
+                    }
+                    else if (microQrData != null)
+                    {
+                        svgString = await Task.Run(() => microQrData.ToSvgString());
+                    }
+                    else
+                    {
+                        svgString = await Task.Run(() => standardQrData!.ToSvgString());
+                    }
+
                     svgBytes = System.Text.Encoding.UTF8.GetBytes(svgString);
                 }
                 catch (Exception ex)
