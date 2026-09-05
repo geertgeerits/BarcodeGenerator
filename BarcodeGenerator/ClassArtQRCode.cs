@@ -1,4 +1,6 @@
-﻿using CommunityToolkit.Maui.Extensions;
+﻿// https://www.nuget.org/packages/SkiaSharp.QrCode/1.2.0#show-readme-container
+
+using CommunityToolkit.Maui.Extensions;
 using SkiaSharp;
 using SkiaSharp.QrCode;
 using SkiaSharp.QrCode.Image;
@@ -137,7 +139,7 @@ namespace BarcodeGenerator
                 rmqrData = new RmQRCodeImageBuilder(text)
                     .WithSegmentation(RmQRSegmentation.Optimal)
                     .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
-                    .WithErrorCorrection(RmQREccLevel.M)
+                    .WithErrorCorrection(RmQREccLevel.H)
                     .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
                                 backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)

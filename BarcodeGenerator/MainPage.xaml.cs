@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-04 (YYYY-MM-DD)
+ * Date ........: 2026-09-05 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -534,7 +534,7 @@ namespace BarcodeGenerator
 
                 else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)  // 
                 {
-                    edtTextToCode.MaxLength = 35;
+                    edtTextToCode.MaxLength = 361;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;
@@ -544,7 +544,7 @@ namespace BarcodeGenerator
 
                 else if (selectedName == ClassBarcodes.cBarcode_ART_RMQR_CODE)  // 
                 {
-                    edtTextToCode.MaxLength = 30;
+                    edtTextToCode.MaxLength = 178;
                     edtTextToCode.Keyboard = Keyboard.Default;
                     imgQrCodeImage.HeightRequest = nHeightBarcode2D;
                     imgQrCodeImage.WidthRequest = nWidthBarcode2D;
@@ -669,6 +669,14 @@ namespace BarcodeGenerator
             else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M3/M4 ? - ECCLevel.Medium
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 30, 18, 13, 8)}";
+            }
+            else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)  // Version 31 - ECCLevel.Medium
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 361, 219, 150, 92)}";
+            }
+            else if (selectedName == ClassBarcodes.cBarcode_ART_RMQR_CODE)  // Version 31 - ECCLevel.High
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 178, 108, 74, 46)}";
             }
             else
             {

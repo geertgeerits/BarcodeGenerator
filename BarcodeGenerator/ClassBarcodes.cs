@@ -70,17 +70,17 @@ namespace BarcodeGenerator
         public static string cBarcode_COMPACT_PDF_417 = string.Empty;
         public static string cBarcode_MICRO_PDF_417 = string.Empty;
 
-        public static string cBarcode_QR_CODE = string.Empty;                   // Quick Response Code Model 2
+        public static string cBarcode_QR_CODE = string.Empty;                   // Quick Response Code Model 2 - Standard QR (versions 1–40)
         public static string cBarcode_QR_CODE_MODEL_1 = string.Empty;           // QR Code Model 1
         public static string cBarcode_QR_CODE_MODEL_2 = string.Empty;           // QR Code Model 2
         public static string cBarcode_FRAME_QR_CODE = string.Empty;             // Frame QR Code
-        public static string cBarcode_MICRO_QR_CODE = string.Empty;             // Micro QR Code symbol version -4 (M4) with error correction level L, M, or Q
-        public static string cBarcode_RMQR_CODE = string.Empty;                 // Rectangular Micro QR Code
+        public static string cBarcode_MICRO_QR_CODE = string.Empty;             // Micro QR Code symbol (versions M1-M4) with error correction level L, M, or Q
+        public static string cBarcode_RMQR_CODE = string.Empty;                 // Rectangular Micro QR Code (versionsR7x43 – R17x139 = 0 - 31)
         public static string cBarcode_SQRC = string.Empty;                      // Secure Quick Response Code
         public static string cBarcode_QR_CODE_IMAGE = string.Empty;             // QR Code with image in the center
         public static string cBarcode_ART_QR_CODE = string.Empty;               // Artistic QR Code
         public static string cBarcode_ART_MICRO_QR_CODE = string.Empty;         // Artistic Micro QR Code
-        public static string cBarcode_ART_RMQR_CODE = string.Empty;             // Artistic Rectangular Micro QR Code (rMQR Code)
+        public static string cBarcode_ART_RMQR_CODE = string.Empty;             // Artistic Rectangular Micro QR Code (rMQR Code) (versionsR7x43 – R17x139 = 0 - 31)
 
         // Global variables
         public static int nBarcodeGeneratorIndex;
@@ -723,13 +723,14 @@ namespace BarcodeGenerator
 
    Art Micro QR                  30         30         18         13         8             M4       M (medium)
    
-   rMQR Rectangular Micro QR
+   rMQR Code                    361        361        219        150        92             31       M (medium 15%)
 
-   rMQR Art Rectangular Micro QR
+   Art rMQR Code                178        178        108         74        46             31       H (high 30%)
    
    SQRC Secure QR Code
 
    https://www.qrcode.com/en/about/version.html
    https://camcode.com/blog/guide-to-barcode-types-standards/
    https://www.bartendersoftware.com/
+   https://en.wikipedia.org/wiki/Rectangular_Micro_QR_Code
    _____________________________________________________________________________________________________________ */
