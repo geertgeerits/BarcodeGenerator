@@ -682,10 +682,20 @@ namespace BarcodeGenerator
                 return;
             }
 
-            // Decode the QR code from the selected image file using the ClassQRCodeScanning.QRCodeDecoderImage method
-            // Works for standard QR code images but not for Micro QR codes and rectangular QR codes.
-            //string cText = ClassQRCodeScanning.QRCodeDecoderImage(file.FullPath);
-            //await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Result", $"{cText}", CodeLang.ButtonClose_Text);
+            // Decode the QR code from the selected image file
+            string cText = ClassQRCodeScanning.QRCodeDecoderImage(file.FullPath);
+            
+            if (string.IsNullOrEmpty(cText))
+            {
+                // If the standard QR code decoding fails, try decoding Micro QR codes and rectangular QR codes
+                cText = ClassQRCodeScanning.MicroQRCodeDecoderImage(file.FullPath);
+                if (string.IsNullOrEmpty(cText))
+                {
+                    cText = ClassQRCodeScanning.RectangularQRCodeDecoderImage(file.FullPath);
+                }
+            }
+            lblBarcodeResult.Text = cText;
+            await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Result", $"{cText}", CodeLang.ButtonClose_Text);
 
             // Initialize variables for processing the image and barcode results
             string cBarcodeFormat = string.Empty;

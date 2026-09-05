@@ -105,7 +105,6 @@
         <PackageReference Include="QRCoder" Version="1.8.0" />
         <PackageReference Include="SkiaSharp" Version="4.151.2" />
         <PackageReference Include="SkiaSharp.QrCode" Version="1.2.0" />
-		<!--<PackageReference Include="SkiaSharp.NativeAssets.Win32" Version="4.151.2" />-->
 		<PackageReference Include="ZXing.Net.Maui" Version="0.10.4" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.10.4" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.1.0" />
@@ -228,16 +227,6 @@
 		<GenerateTemporaryStoreCertificate>false</GenerateTemporaryStoreCertificate>
 		<PackageCertificateThumbprint>A2A5128B9B944FFA55672C9F6958E595EFA4432A</PackageCertificateThumbprint>
 	</PropertyGroup>
-	
-	<!--2026-09-04 NativeAOT Support - !!! Share does not work with NativeAOT, so we need to disable it for now.!!!
-	SkiaSharp.QrCode fully supports .NET NativeAOT. The library is marked IsAotCompatible, and CI publishes a NativeAOT gate
-	project that roots the whole library and fails on any trim/AOT analysis warning, so this claim is toolchain-verified
-	on every change. You need to include platform-specific native assets:-->
-	<!--<PropertyGroup>
-		<PublishAot>true</PublishAot>
-		<PublishTrimmed>true</PublishTrimmed>
-		<InvariantGlobalization>true</InvariantGlobalization>
-	</PropertyGroup>-->
 	
 	<!--Buttons do not work after linking is enabled in iOS Release builds #150 - Does not work in xCode 26.1 -->
 	<!--<PropertyGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">

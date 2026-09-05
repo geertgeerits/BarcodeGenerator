@@ -9,13 +9,13 @@ namespace BarcodeGenerator
     {
         public static string QRCodeDecoderText(string text)
         {
-            QRCodeData qrData = QRCodeGenerator.CreateQrCode(text, ECCLevel.M);
+            //QRCodeData qrData = QRCodeGenerator.CreateQrCode(text, ECCLevel.M);
             
-            if (QRCodeDecoder.TryDecode(qrData, out var decodedText))
-            {
-                Debug.WriteLine(decodedText);
-                return decodedText;
-            }
+            //if (QRCodeDecoder.TryDecode(qrData, out var decodedText))
+            //{
+            //    Debug.WriteLine(decodedText);
+            //    return decodedText;
+            //}
 
             return string.Empty;
         }
