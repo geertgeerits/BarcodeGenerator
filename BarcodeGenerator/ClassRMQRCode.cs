@@ -16,7 +16,6 @@ namespace BarcodeGenerator
         /// returned ImageSource can be used directly in UI elements that support image sources. The generated PNG and SVG image
         /// is also saved to disk for sharing or further processing.</remarks>
         /// <param name="text">The text to encode in the Micro QR code. Cannot be null or empty.</param>
-        /// <param name="nVersion">The requested Micro QR code version (-1 to -4). Default is -4 (M4), which supports the largest data capacity. If the specified version cannot accommodate the text, a smaller version may be generated if possible.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains an ImageSource representing the
         /// generated Micro QR code, or null if the code could not be generated.</returns>
         public static async Task<ImageSource?> GenerateRMQRCodeAsync(string text)

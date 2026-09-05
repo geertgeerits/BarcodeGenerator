@@ -20,13 +20,19 @@ namespace BarcodeGenerator
             return string.Empty;
         }
 
+        /// <summary>
+        /// Decodes a QR code from an image file and returns the decoded text.
+        /// </summary>
+        /// <param name="cImageFile"></param>
+        /// <returns></returns>
+        /// <remarks>Works for standard QR code images but not for Micro QR codes and rectangular QR codes.</remarks>
         public static string QRCodeDecoderImage(string cImageFile)
         {
             using SKBitmap bitmap = SKBitmap.Decode(cImageFile);
             
             if (QRCodeDecoder.TryDecode(bitmap, out var decodedText, out var info))
             {
-                Debug.WriteLine($"{decodedText} (version {info.Version}, ECC {info.EccLevel})");
+                Debug.WriteLine($"Result decoder image: {decodedText} (version {info.Version}, ECC {info.EccLevel})");
                 return decodedText;
             }
 
