@@ -1038,4 +1038,7 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Mã QR siêu nhỏ hình chữ nhật nghệ thuật</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Tính năng quét dựa trên hình ảnh chỉ được hỗ trợ cho Mã QR, Mã Micro QR và Mã Micro QR hình chữ nhật. Chỉ một mã được quét cho mỗi loại mã.</value>
+  </data>
 </root>

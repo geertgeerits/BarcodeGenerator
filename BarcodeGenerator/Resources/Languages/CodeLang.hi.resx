@@ -1032,4 +1032,7 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>कलात्मक आयताकार माइक्रो क्यूआर कोड</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>इमेज-बेस्ड स्कैनिंग सिर्फ़ QR कोड, माइक्रो QR कोड और रेक्टेंगुलर माइक्रो QR कोड के लिए सपोर्टेड है। हर कोड टाइप के लिए सिर्फ़ एक कोड स्कैन किया जाता है।</value>
+  </data>
 </root>

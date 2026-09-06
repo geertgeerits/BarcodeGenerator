@@ -1034,4 +1034,7 @@ Die unterstützten Sprachen sind: Arabisch, Bengali, Chinesisch (vereinfacht), C
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Künstlerischer rechteckiger Mikro-QR-Code</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Bildbasiertes Scannen wird nur für QR-Codes, Micro-QR-Codes und rechteckige Micro-QR-Codes unterstützt. Pro Codetyp wird nur ein Code gescannt.</value>
+  </data>
 </root>

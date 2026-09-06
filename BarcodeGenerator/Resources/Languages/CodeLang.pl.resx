@@ -1035,4 +1035,7 @@ Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradyc
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Artystyczny, prostokątny mikrokod QR</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Skanowanie oparte na obrazie jest obsługiwane tylko dla kodów QR, mikrokodów QR i prostokątnych mikrokodów QR. Skanowany jest tylko jeden kod z danego typu kodu.</value>
+  </data>
 </root>

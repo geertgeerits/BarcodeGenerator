@@ -1363,6 +1363,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image-based scanning is only supported for QR Codes, Micro QR Codes, and Rectangular Micro QR Codes. Only one code is scanned per code type..
+        /// </summary>
+        internal static string ImageScanning_Text {
+            get {
+                return ResourceManager.GetString("ImageScanning_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Information.
         /// </summary>
         internal static string Info_Text {

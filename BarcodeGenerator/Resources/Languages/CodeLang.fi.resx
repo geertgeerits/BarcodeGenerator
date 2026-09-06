@@ -1035,4 +1035,7 @@ Tuetut kielet ovat: arabia, bengali, kiina (yksinkertaistettu), kiina (perintein
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Taiteellinen suorakulmainen mikro-QR-koodi</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Kuvapohjaista skannausta tuetaan vain QR-koodeille, mikro-QR-koodeille ja suorakulmaisille mikro-QR-koodeille. Vain yksi koodi skannataan koodityyppiä kohden.</value>
+  </data>
 </root>

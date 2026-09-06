@@ -1035,4 +1035,7 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>آرٹسٹک مستطیل مائکرو QR کوڈ</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>تصویر پر مبنی اسکیننگ صرف QR کوڈز، مائیکرو QR کوڈز، اور مستطیل مائیکرو QR کوڈز کے لیے معاون ہے۔ فی کوڈ کی قسم صرف ایک کوڈ اسکین کیا جاتا ہے۔</value>
+  </data>
 </root>

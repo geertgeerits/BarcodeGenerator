@@ -1035,4 +1035,7 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>藝術矩形微型二維碼</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>影像掃描僅支援二維碼、微型二維碼和矩形微型二維碼。每種類型的二維碼只能掃描一個。</value>
+  </data>
 </root>

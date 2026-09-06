@@ -1049,4 +1049,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>芸術的な長方形のマイクロQRコード</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>画像ベースのスキャンは、QRコード、マイクロQRコード、および長方形マイクロQRコードのみに対応しています。コードの種類ごとにスキャンできるコードは1つだけです。</value>
+  </data>
 </root>

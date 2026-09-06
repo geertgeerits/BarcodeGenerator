@@ -1033,4 +1033,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Художній прямокутний мікро QR-код</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Сканування на основі зображень підтримується лише для QR-кодів, мікро-QR-кодів та прямокутних мікро-QR-кодів. Для кожного типу коду сканується лише один код.</value>
+  </data>
 </root>

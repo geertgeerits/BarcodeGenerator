@@ -473,10 +473,16 @@ namespace BarcodeGenerator
         /// <param name="e">The event data.</param>
         private void OnScanFromCamera_Clicked(object sender, EventArgs e)
         {
+            sldCameraZoom.IsEnabled = true;
+            imgbtnTorch.IsEnabled = true;
             imgScanFromImage.IsVisible = false;
             imgScanFromImage.Source = null;
             barcodeReader.IsEnabled = true;
             barcodeReader.IsVisible = true;
+            barcodeReader.IsDetecting = true;
+            lblBarcodeResult.Text = string.Empty;
+            lblFileName.Text = string.Empty;
+            lblFileName.IsVisible = false;
         }
 
         /// <summary>
@@ -543,7 +549,6 @@ namespace BarcodeGenerator
         {
             // Not possible to implement scanning from an image with ZXing.Net.Maui,
             // because the BarcodeReader class and its Decode method for processing images are not available in the ZXing.Net.Maui library.
-            await DisplayAlertAsync(CodeLang.ErrorTitle_Text, "Scan from image is only supported for 'QR Codes', 'Micro QR Codes' and 'Rectangular Micro QR Codes'", CodeLang.ButtonClose_Text);
 
             // Start the activity indicator
             activityIndicator.IsVisible = true;
@@ -552,12 +557,13 @@ namespace BarcodeGenerator
 
             // Settings before scanning from an image
             sldCameraZoom.IsEnabled = false;
+            imgbtnTorch.IsEnabled = false;
+            barcodeReader.IsDetecting = false;
             imgScanFromImage.IsVisible = true;
-            //lblFileName.Text = string.Empty;
-            //lblFileName.IsVisible = true;
-            //bScanningFromImage = true;
+            lblFileName.Text = string.Empty;
+            lblFileName.IsVisible = true;
 
-            lblBarcodeResult.Text = string.Empty;
+            lblBarcodeResult.Text = CodeLang.ImageScanning_Text;
             btnShare.Text = CodeLang.ButtonShare_Text;
             imgbtnCopyToClipboard.IsEnabled = false;
             btnShare.IsEnabled = false;
@@ -583,8 +589,6 @@ namespace BarcodeGenerator
             }
 
             // Initialize variables for processing the image and barcode results
-            string cBarcodeFormat = string.Empty;
-            string cDisplayValue = string.Empty;
             List<string> listBarcodes = [];
 
             // Process the selected file
@@ -653,7 +657,7 @@ namespace BarcodeGenerator
                 lblBarcodeResult.Text = ClassBarcodes.ProcessScannedBarcodes(listBarcodes, btnShare);
 
                 // Set the file name in the label 'lblFileName.Text'
-                //lblFileName.Text = file.FileName;
+                lblFileName.Text = file.FileName;
 
                 // Settings after scanning from an image
                 imgbtnCopyToClipboard.IsEnabled = true;

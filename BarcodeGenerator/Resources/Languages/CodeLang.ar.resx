@@ -1036,4 +1036,7 @@
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>رمز الاستجابة السريعة المستطيل الفني الصغير</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>لا يدعم المسح الضوئي القائم على الصور إلا رموز QR، ورموز QR المصغرة، ورموز QR المصغرة المستطيلة. ويتم مسح رمز واحد فقط لكل نوع من أنواع الرموز.</value>
+  </data>
 </root>

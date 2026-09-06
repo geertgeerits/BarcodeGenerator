@@ -1035,4 +1035,7 @@ Limbile acceptate sunt: ​​arabă, bengaleză, chineză simplificată, chinez
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Cod QR dreptunghiular artistic</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Scanarea bazată pe imagini este acceptată numai pentru coduri QR, microcoduri QR și microcoduri QR dreptunghiulare. Se scanează un singur cod per tip de cod.</value>
+  </data>
 </root>

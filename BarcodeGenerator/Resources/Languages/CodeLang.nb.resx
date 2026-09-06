@@ -1035,4 +1035,7 @@ Støttede språk er: arabisk, bengali, forenklet kinesisk, tradisjonell kinesisk
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Kunstnerisk rektangulær mikro QR-kode</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Bildebasert skanning støttes bare for QR-koder, mikro-QR-koder og rektangulære mikro-QR-koder. Bare én kode skannes per kodetype.</value>
+  </data>
 </root>

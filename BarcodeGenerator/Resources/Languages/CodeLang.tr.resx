@@ -1035,4 +1035,7 @@ Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Ge
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Sanatsal Dikdörtgen Mikro QR Kodu</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Görüntü tabanlı tarama yalnızca QR Kodları, Mikro QR Kodları ve Dikdörtgen Mikro QR Kodları için desteklenmektedir. Her kod türü için yalnızca bir kod taranır.</value>
+  </data>
 </root>

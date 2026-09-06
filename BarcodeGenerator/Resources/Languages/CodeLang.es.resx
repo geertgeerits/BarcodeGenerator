@@ -1035,4 +1035,7 @@ Los idiomas compatibles son: árabe, bengalí, chino simplificado, chino tradici
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Código QR micro rectangular artístico</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>El escaneo basado en imágenes solo es compatible con códigos QR, micro códigos QR y micro códigos QR rectangulares. Solo se escanea un código por tipo.</value>
+  </data>
 </root>

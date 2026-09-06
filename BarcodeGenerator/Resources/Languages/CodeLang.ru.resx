@@ -1035,4 +1035,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Художественный прямоугольный микро-QR-код</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Сканирование изображений поддерживается только для QR-кодов, микро-QR-кодов и прямоугольных микро-QR-кодов. Для каждого типа кода сканируется только один код.</value>
+  </data>
 </root>

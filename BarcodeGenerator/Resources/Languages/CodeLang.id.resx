@@ -1035,4 +1035,7 @@ Bahasa yang didukung adalah: Arab, Bengali, Tionghoa Sederhana, Tionghoa Tradisi
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Kode QR Mikro Persegi Panjang Artistik</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Pemindaian berbasis gambar hanya didukung untuk Kode QR, Kode QR Mikro, dan Kode QR Mikro Persegi Panjang. Hanya satu kode yang dipindai per jenis kode.</value>
+  </data>
 </root>

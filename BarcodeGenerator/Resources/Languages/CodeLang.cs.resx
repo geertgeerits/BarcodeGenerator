@@ -1035,4 +1035,7 @@ Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština,
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Umělecký obdélníkový mikro QR kód</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Skenování na základě obrázků je podporováno pouze pro QR kódy, mikro QR kódy a obdélníkové mikro QR kódy. Pro každý typ kódu se skenuje pouze jeden kód.</value>
+  </data>
 </root>

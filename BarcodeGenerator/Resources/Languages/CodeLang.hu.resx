@@ -1035,4 +1035,7 @@ A támogatott nyelvek: arab, bengáli, kínai (egyszerűsített), kínai (hagyom
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Művészi téglalap alakú mikro QR-kód</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>A képalapú szkennelés csak QR-kódok, mikro QR-kódok és téglalap alakú mikro QR-kódok esetén támogatott. Kódtípusonként csak egy kód kerül beolvasásra.</value>
+  </data>
 </root>

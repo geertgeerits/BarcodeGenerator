@@ -1035,4 +1035,7 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>艺术矩形微型二维码</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>图像扫描仅支持二维码、微型二维码和矩形微型二维码。每种类型的二维码只能扫描一个。</value>
+  </data>
 </root>

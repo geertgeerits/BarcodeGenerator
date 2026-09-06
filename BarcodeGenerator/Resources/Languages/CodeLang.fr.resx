@@ -1035,4 +1035,7 @@ Les langues prises en charge sont : l'arabe, le bengali, le chinois simplifié,
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Code QR miniature rectangulaire artistique</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>La numérisation par image est uniquement prise en charge pour les codes QR, les micro-codes QR et les micro-codes QR rectangulaires. Un seul code est scanné par type de code.</value>
+  </data>
 </root>

@@ -1033,4 +1033,7 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>শৈল্পিক আয়তক্ষেত্রাকার মাইক্রো কিউআর কোড</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>ইমেজ-ভিত্তিক স্ক্যানিং শুধুমাত্র কিউআর কোড, মাইক্রো কিউআর কোড এবং আয়তাকার মাইক্রো কিউআর কোডের জন্য সমর্থিত। প্রতি প্রকার কোড থেকে কেবল একটি কোড স্ক্যান করা হয়।</value>
+  </data>
 </root>

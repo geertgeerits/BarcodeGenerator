@@ -1035,4 +1035,7 @@ De ondersteunde talen zijn: Arabisch, Bengaals, Vereenvoudigd Chinees, Tradition
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Artistieke rechthoekige micro-QR-code</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Scannen op basis van afbeeldingen wordt alleen ondersteund voor QR-codes, micro-QR-codes en rechthoekige micro-QR-codes. Er wordt slechts één code per codetype gescand.</value>
+  </data>
 </root>

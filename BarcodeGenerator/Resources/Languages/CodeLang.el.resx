@@ -1035,4 +1035,7 @@
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
     <value>Καλλιτεχνικός ορθογώνιος μικροκωδικός QR</value>
   </data>
+  <data name="ImageScanning_Text" xml:space="preserve">
+    <value>Η σάρωση βάσει εικόνας υποστηρίζεται μόνο για QR Codes, Micro QR Codes και Rectangular Micro QR Codes. Σαρώνεται μόνο ένας κωδικός ανά τύπο κωδικού.</value>
+  </data>
 </root>
