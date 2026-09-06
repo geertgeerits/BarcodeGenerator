@@ -1033,6 +1033,6 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
 Os idiomas suportados são: árabe, bengali, chinês simplificado, chinês tradicional, tcheco, dinamarquês, holandês, inglês, finlandês, francês, alemão, grego, hindi, húngaro, indonésio, italiano, japonês, coreano, norueguês, polonês, português, romeno, russo, espanhol, sueco, turco, ucraniano, urdu e vietnamita.</value>
   </data>
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
-    <value>Código QR micro retangular artístico (código rMQR)</value>
+    <value>Código QR micro retangular artístico</value>
   </data>
 </root>

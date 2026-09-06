@@ -1033,6 +1033,6 @@ Non tutti i tipi di dati sono supportati su tutti i dispositivi.</value>
 Le lingue supportate sono: arabo, bengalese, cinese semplificato, cinese tradizionale, ceco, danese, olandese, inglese, finlandese, francese, tedesco, greco, hindi, ungherese, indonesiano, italiano, giapponese, coreano, norvegese, polacco, portoghese, rumeno, russo, spagnolo, svedese, turco, ucraino, urdu e vietnamita.</value>
   </data>
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
-    <value>Micro codice QR rettangolare artistico (codice rMQR)</value>
+    <value>Micro codice QR rettangolare artistico</value>
   </data>
 </root>

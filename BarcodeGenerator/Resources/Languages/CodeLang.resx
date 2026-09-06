@@ -1033,6 +1033,6 @@ Not all payload types are supported on every device.</value>
 The supporting languages are: Arabic, Bengali, Chinese simplified, Chinese traditional, Czech, Danish, Dutch, English, Finnish, French, German, Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Norwegian, Polish, Portuguese, Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, Urdu and Vietnamese.</value>
   </data>
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
-    <value>Artistic Rectangular Micro QR Code (rMQR Code)</value>
+    <value>Artistic Rectangular Micro QR Code</value>
   </data>
 </root>

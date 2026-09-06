@@ -1033,6 +1033,6 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
 Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradycyjny, czeski, duński, niderlandzki, angielski, fiński, francuski, niemiecki, grecki, hindi, węgierski, indonezyjski, włoski, japoński, koreański, norweski, polski, portugalski, rumuński, rosyjski, hiszpański, szwedzki, turecki, ukraiński, urdu i wietnamski.</value>
   </data>
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
-    <value>Artystyczny, prostokątny mikrokod QR (kod rMQR)</value>
+    <value>Artystyczny, prostokątny mikrokod QR</value>
   </data>
 </root>

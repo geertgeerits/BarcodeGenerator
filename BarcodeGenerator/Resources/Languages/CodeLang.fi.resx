@@ -1033,6 +1033,6 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
 Tuetut kielet ovat: arabia, bengali, kiina (yksinkertaistettu), kiina (perinteinen), tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, kreikka, hindi, unkari, indonesia, italia, japani, korea, norja, puola, portugali, romania, venäjä, espanja, ruotsi, turkki, ukraina, urdu ja vietnam.</value>
   </data>
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
-    <value>Taiteellinen suorakulmainen mikro-QR-koodi (rMQR-koodi)</value>
+    <value>Taiteellinen suorakulmainen mikro-QR-koodi</value>
   </data>
 </root>

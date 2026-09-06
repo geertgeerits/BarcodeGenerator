@@ -1033,6 +1033,6 @@ No todos los tipos de información son compatibles con todos los dispositivos.</
 Los idiomas compatibles son: árabe, bengalí, chino simplificado, chino tradicional, checo, danés, neerlandés, inglés, finlandés, francés, alemán, griego, hindi, húngaro, indonesio, italiano, japonés, coreano, noruego, polaco, portugués, rumano, ruso, español, sueco, turco, ucraniano, urdu y vietnamita.</value>
   </data>
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
-    <value>Código QR micro rectangular artístico (código rMQR)</value>
+    <value>Código QR micro rectangular artístico</value>
   </data>
 </root>

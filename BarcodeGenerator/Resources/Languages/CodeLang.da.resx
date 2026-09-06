@@ -1033,6 +1033,6 @@ Ikke alle datatyper understøttes på alle enheder.</value>
 De understøttede sprog er: arabisk, bengali, forenklet kinesisk, traditionelt kinesisk, tjekkisk, dansk, hollandsk, engelsk, finsk, fransk, tysk, græsk, hindi, ungarsk, indonesisk, italiensk, japansk, koreansk, norsk, polsk, portugisisk, rumænsk, russisk, spansk, svensk, tyrkisk, ukrainsk, urdu og vietnamesisk.</value>
   </data>
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
-    <value>Kunstnerisk Rektangulær Mikro QR-kode (rMQR-kode)</value>
+    <value>Kunstnerisk Rektangulær Mikro QR-kode</value>
   </data>
 </root>

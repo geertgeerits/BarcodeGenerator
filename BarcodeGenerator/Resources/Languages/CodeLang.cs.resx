@@ -1033,6 +1033,6 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
 Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština, tradiční čínština, čeština, dánština, holandština, angličtina, finština, francouzština, němčina, řečtina, hindština, maďarština, indonéština, italština, japonština, korejština, norština, polština, portugalština, rumunština, ruština, španělština, švédština, turečtina, ukrajinština, urdština a vietnamština.</value>
   </data>
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
-    <value>Umělecký obdélníkový mikro QR kód (rMQR kód)</value>
+    <value>Umělecký obdélníkový mikro QR kód</value>
   </data>
 </root>

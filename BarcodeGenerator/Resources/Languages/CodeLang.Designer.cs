@@ -142,7 +142,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Artistic Rectangular Micro QR Code (rMQR Code).
+        ///   Looks up a localized string similar to Artistic Rectangular Micro QR Code.
         /// </summary>
         internal static string Barcode_ART_RMQR_CODE_Text {
             get {

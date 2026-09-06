@@ -1033,6 +1033,6 @@ Her cihazda tüm veri türleri desteklenmez.</value>
 Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Geleneksel Çince, Çekçe, Danca, Felemenkçe, İngilizce, Fince, Fransızca, Almanca, Yunanca, Hintçe, Macarca, Endonezce, İtalyanca, Japonca, Korece, Norveççe, Lehçe, Portekizce, Romence, Rusça, İspanyolca, İsveççe, Türkçe, Ukraynaca, Urduca ve Vietnamca.</value>
   </data>
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
-    <value>Sanatsal Dikdörtgen Mikro QR Kodu (rMQR Kodu)</value>
+    <value>Sanatsal Dikdörtgen Mikro QR Kodu</value>
   </data>
 </root>

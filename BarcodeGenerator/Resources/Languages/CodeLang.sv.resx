@@ -1033,6 +1033,6 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
 De språk som stöds är: arabiska, bengali, förenklad kinesiska, traditionell kinesiska, tjeckiska, danska, nederländska, engelska, finska, franska, tyska, grekiska, hindi, ungerska, indonesiska, italienska, japanska, koreanska, norska, polska, portugisiska, rumänska, ryska, spanska, svenska, turkiska, ukrainska, urdu och vietnamesiska.</value>
   </data>
   <data name="Barcode_ART_RMQR_CODE_Text" xml:space="preserve">
-    <value>Konstnärlig rektangulär mikro-QR-kod (rMQR-kod)</value>
+    <value>Konstnärlig rektangulär mikro-QR-kod</value>
   </data>
 </root>
