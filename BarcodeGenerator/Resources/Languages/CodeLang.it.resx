@@ -226,7 +226,7 @@
     <value>Codice QR</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>Micro codice QR rettangolare (codice rMQR)</value>
+    <value>Micro codice QR rettangolare</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS espanso</value>

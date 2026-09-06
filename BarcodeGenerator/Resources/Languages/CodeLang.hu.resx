@@ -226,7 +226,7 @@
     <value>QR-kód</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>Téglalap alakú mikro QR-kód (rMQR kód)</value>
+    <value>Téglalap alakú mikro QR-kód</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS Kibővített</value>

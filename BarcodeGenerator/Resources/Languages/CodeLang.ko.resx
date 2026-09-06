@@ -226,7 +226,7 @@
     <value>QR 코드</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>직사각형 마이크로 QR 코드(rMQR 코드)</value>
+    <value>직사각형 마이크로 QR 코드</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS 확장</value>

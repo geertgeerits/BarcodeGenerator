@@ -226,7 +226,7 @@
     <value>二维码</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>矩形微型二维码（rMQR码）</value>
+    <value>矩形微型二维码</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS 扩展版</value>

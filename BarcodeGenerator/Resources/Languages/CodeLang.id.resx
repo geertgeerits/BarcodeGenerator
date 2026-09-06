@@ -226,7 +226,7 @@
     <value>Kode QR</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>Kode QR Mikro Persegi Panjang (Kode rMQR)</value>
+    <value>Kode QR Mikro Persegi Panjang</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS yang Diperluas</value>

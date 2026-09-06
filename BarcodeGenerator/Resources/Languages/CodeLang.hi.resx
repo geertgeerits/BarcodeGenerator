@@ -226,7 +226,7 @@
     <value>QR कोड</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>रेक्टेंगुलर माइक्रो QR कोड (rMQR कोड)</value>
+    <value>आयताकार माइक्रो क्यूआर कोड</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS Expanded</value>

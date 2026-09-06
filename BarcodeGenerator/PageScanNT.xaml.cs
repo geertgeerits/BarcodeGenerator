@@ -682,21 +682,6 @@ namespace BarcodeGenerator
                 return;
             }
 
-            // Decode the QR code from the selected image file
-            string cText = ClassQRCodeScanning.QRCodeDecoderImage(file.FullPath);
-            
-            if (string.IsNullOrEmpty(cText))
-            {
-                // If the standard QR code decoding fails, try decoding Micro QR codes and rectangular QR codes
-                cText = ClassQRCodeScanning.MicroQRCodeDecoderImage(file.FullPath);
-                if (string.IsNullOrEmpty(cText))
-                {
-                    cText = ClassQRCodeScanning.RectangularQRCodeDecoderImage(file.FullPath);
-                }
-            }
-            lblBarcodeResult.Text = cText;
-            await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Result", $"{cText}", CodeLang.ButtonClose_Text);
-
             // Initialize variables for processing the image and barcode results
             string cBarcodeFormat = string.Empty;
             string cDisplayValue = string.Empty;
@@ -831,6 +816,26 @@ namespace BarcodeGenerator
                 _drawable.mappedRectangles = mapped;
                 graphicsBox.Invalidate();
                 graphicsBox.IsVisible = true;
+            }
+
+            // Scanning Micro QR code and Rectangular QR code are not yet supported by the Android, iOS and Windows native libraries,
+            // but can be implemented with the SkiaSharp.QrCode decoder
+            // Decode the Micro QR code from the selected image file
+            string cResult;
+            
+            cResult = ClassQRCodeScanning.MicroQRCodeDecoderImage(file.FullPath);
+            if (!string.IsNullOrEmpty(cResult))
+            {
+                listBarcodes.Add($"{CodeLang.Barcode_MICRO_QR_CODE_Text}:\n{cResult}");
+                Debug.WriteLine($"Result: {cResult}");
+            }
+            
+            // Decode the Rectangular QR code from the selected image file
+            cResult = ClassQRCodeScanning.RectangularQRCodeDecoderImage(file.FullPath);
+            if (!string.IsNullOrEmpty(cResult))
+            {
+                listBarcodes.Add($"{CodeLang.Barcode_RMQR_CODE_Text}:\n{cResult}");
+                Debug.WriteLine($"Result: {cResult}");
             }
 
             // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'

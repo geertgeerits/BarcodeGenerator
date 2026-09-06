@@ -226,7 +226,7 @@
     <value>Mã QR</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>Mã QR siêu nhỏ hình chữ nhật (Mã rMQR)</value>
+    <value>Mã QR siêu nhỏ hình chữ nhật</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS mở rộng</value>

@@ -226,7 +226,7 @@
     <value>QR 圖碼</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>矩形微型二維碼（rMQR碼）</value>
+    <value>矩形微型二維碼</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS 擴充版</value>

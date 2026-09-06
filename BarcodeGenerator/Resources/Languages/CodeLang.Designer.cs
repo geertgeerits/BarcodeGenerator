@@ -556,7 +556,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rectangular Micro QR Code (rMQR Code).
+        ///   Looks up a localized string similar to Rectangular Micro QR Code.
         /// </summary>
         internal static string Barcode_RMQR_CODE_Text {
             get {

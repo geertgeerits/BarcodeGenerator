@@ -226,7 +226,7 @@
     <value>رمز الاستجابة السريعة</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>رمز الاستجابة السريعة المستطيل الصغير (رمز rMQR)</value>
+    <value>رمز الاستجابة السريعة المصغر المستطيل</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS الموسع</value>

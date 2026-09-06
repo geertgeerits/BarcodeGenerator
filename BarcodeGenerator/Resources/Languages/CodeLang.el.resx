@@ -226,7 +226,7 @@
     <value>Κωδικός QR</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>Ορθογώνιος μικροκωδικός QR (rMQR Code)</value>
+    <value>Ορθογώνιος μικροκωδικός QR</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>RSS Extended</value>

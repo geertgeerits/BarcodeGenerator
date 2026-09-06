@@ -226,7 +226,7 @@
     <value>QR-код</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>Прямокутний мікро QR-код (rMQR-код)</value>
+    <value>Прямокутний мікро QR-код</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>Розширений RSS</value>

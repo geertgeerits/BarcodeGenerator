@@ -226,7 +226,7 @@
     <value>কিউআর কোড</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>আয়তাকার মাইক্রো কিউআর কোড (আরএমকিউআর কোড)</value>
+    <value>আয়তক্ষেত্রাকার মাইক্রো কিউআর কোড</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>আরএসএস সম্প্রসারিত</value>

@@ -226,7 +226,7 @@
     <value>QR Kodu</value>
   </data>
   <data name="Barcode_RMQR_CODE_Text" xml:space="preserve">
-    <value>Dikdörtgen Mikro QR Kodu (rMQR Kodu)</value>
+    <value>Dikdörtgen Mikro QR Kodu</value>
   </data>
   <data name="Barcode_RSS_EXPANDED_Text" xml:space="preserve">
     <value>Genişletilmiş RSS</value>
