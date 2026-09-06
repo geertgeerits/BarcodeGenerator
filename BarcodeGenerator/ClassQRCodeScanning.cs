@@ -1,4 +1,6 @@
-﻿// https://www.nuget.org/packages/SkiaSharp.QrCode/1.2.0#decoders
+﻿// Scanning Micro QR code and Rectangular QR code are not yet supported by the Android, iOS and Windows native libraries,
+// but can be implemented with the SkiaSharp.QrCode decoder.
+// https://www.nuget.org/packages/SkiaSharp.QrCode/1.2.0#decoders
 
 using SkiaSharp;
 using SkiaSharp.QrCode;
@@ -7,39 +9,6 @@ namespace BarcodeGenerator
 {
     internal class ClassQRCodeScanning
     {
-        public static string QRCodeDecoderMain(string cImageFile)
-        {
-            if (string.IsNullOrEmpty(cImageFile))
-            {
-                return string.Empty;
-            }
-
-            string cText;
-
-            // Attempt to decode the QR code from the image file
-            cText = QRCodeDecoderImage(cImageFile);
-            if (!string.IsNullOrEmpty(cText))
-            {
-                return $"{CodeLang.Barcode_QR_CODE_Text}:\n{cText}";
-            }
-
-            // If the QR code decoding fails, attempt to decode a Micro QR code
-            cText = MicroQRCodeDecoderImage(cImageFile);
-            if (!string.IsNullOrEmpty(cText))
-            {
-                return $"{CodeLang.Barcode_MICRO_QR_CODE_Text}:\n{cText}";
-            }
-
-            // If both QR code and Micro QR code decoding fail, attempt to decode a Rectangular QR code
-            cText = RectangularQRCodeDecoderImage(cImageFile);
-            if (!string.IsNullOrEmpty(cText))
-            {
-                return $"{CodeLang.Barcode_RMQR_CODE_Text}:\n{cText}";
-            }
-
-            return string.Empty;
-        }
-
         /// <summary>
         /// Decodes a QR code from an image file and returns the decoded text.
         /// </summary>

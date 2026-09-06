@@ -95,6 +95,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_CODABAR)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -105,6 +106,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_128)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -115,6 +117,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -125,6 +128,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_93)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -135,6 +139,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -145,6 +150,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -155,6 +161,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -165,6 +172,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_IMB)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -175,6 +183,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_ITF)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -185,6 +194,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_MAXICODE)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -195,6 +205,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_MSI)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -205,6 +216,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -215,6 +227,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_PHARMACODE)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -225,6 +238,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -235,6 +249,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -245,6 +260,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_RSS_14)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -255,6 +271,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_RSS_EXPANDED)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -265,6 +282,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -275,6 +293,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -285,6 +304,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_EAN_EXTENSION)
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -295,6 +315,7 @@ namespace BarcodeGenerator
                         TryHarder = true
                     };
                 }
+
                 else
                 {
                     barcodeReader.Options = new BarcodeReaderOptions
@@ -477,7 +498,7 @@ namespace BarcodeGenerator
                 imgbtnCopyToClipboard.IsEnabled = false;
                 btnShare.IsEnabled = false;
                 imgbtnTextToSpeech.IsEnabled = false;
-                
+
                 lblBarcodeResult.Text = string.Empty;
             });
 
@@ -522,7 +543,131 @@ namespace BarcodeGenerator
         {
             // Not possible to implement scanning from an image with ZXing.Net.Maui,
             // because the BarcodeReader class and its Decode method for processing images are not available in the ZXing.Net.Maui library.
-            await DisplayAlertAsync(CodeLang.ErrorTitle_Text, "Scan from image is not supported", CodeLang.ButtonClose_Text);
+            await DisplayAlertAsync(CodeLang.ErrorTitle_Text, "Scan from image is only supported for 'QR Codes', 'Micro QR Codes' and 'Rectangular Micro QR Codes'", CodeLang.ButtonClose_Text);
+
+            // Start the activity indicator
+            activityIndicator.IsVisible = true;
+            activityIndicator.IsRunning = true;
+            await Task.Delay(200);
+
+            // Settings before scanning from an image
+            sldCameraZoom.IsEnabled = false;
+            imgScanFromImage.IsVisible = true;
+            //lblFileName.Text = string.Empty;
+            //lblFileName.IsVisible = true;
+            //bScanningFromImage = true;
+
+            lblBarcodeResult.Text = string.Empty;
+            btnShare.Text = CodeLang.ButtonShare_Text;
+            imgbtnCopyToClipboard.IsEnabled = false;
+            btnShare.IsEnabled = false;
+            imgbtnTextToSpeech.IsEnabled = false;
+
+            // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
+            imgScanFromImage.Source = null;
+            imgScanFromImage.IsVisible = false;
+            await Task.Delay(200);
+
+            // Open the file picker to select an image and get the selected file as a FileResult object
+            FileResult? file = await ClassFileUtilities.PickImage();
+            Debug.WriteLine($"Selected file: {file?.FullPath} - ContentType: {file?.ContentType}");
+
+            // Add null check
+            if (file == null)
+            {
+                // Stop the activity indicator
+                activityIndicator.IsRunning = false;
+                activityIndicator.IsVisible = false;
+
+                return;
+            }
+
+            // Initialize variables for processing the image and barcode results
+            string cBarcodeFormat = string.Empty;
+            string cDisplayValue = string.Empty;
+            List<string> listBarcodes = [];
+
+            // Process the selected file
+            // Clear the barcode results and invalidate the graphics to remove any existing bounding boxes
+            imgScanFromImage.Source = null;
+            imgScanFromImage.IsVisible = false;
+            await Task.Delay(200);
+
+            // Open the selected file as a stream and read its bytes
+            using Stream stream = await file.OpenReadAsync();
+            {
+                byte[] bytes = new byte[stream.Length];
+                stream.ReadExactly(bytes);
+                stream.Seek(0, SeekOrigin.Begin);
+
+                // Load the selected image in the image control
+                try
+                {
+                    imgScanFromImage.Source = file.FullPath;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error loading image: {ex.Message}");
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{file.FileName}\n\n{CodeLang.ErrorInvalidImageType_Text}", CodeLang.ButtonClose_Text);
+                    imgScanFromImage.Source = null;
+                }
+
+                imgScanFromImage.IsVisible = true;
+                await Task.Delay(200);  // Wait briefly for the image to load and layout to update
+
+                if (imgScanFromImage.Source == null)
+                {
+                    stream.Dispose();
+                    return;
+                }
+
+                // Scanning Micro QR code and Rectangular QR code are not yet supported by the Android, iOS and Windows native libraries,
+                // but can be implemented with the SkiaSharp.QrCode decoder
+                // Decode the QR code from the selected image file
+                string cResult;
+
+                cResult = ClassQRCodeScanning.QRCodeDecoderImage(file.FullPath);
+                if (!string.IsNullOrEmpty(cResult))
+                {
+                    listBarcodes.Add($"{CodeLang.Barcode_QR_CODE_Text}:\n{cResult}");
+                    Debug.WriteLine($"Result: {cResult}");
+                }
+
+                // Decode the Micro QR code from the selected image file
+                cResult = ClassQRCodeScanning.MicroQRCodeDecoderImage(file.FullPath);
+                if (!string.IsNullOrEmpty(cResult))
+                {
+                    listBarcodes.Add($"{CodeLang.Barcode_MICRO_QR_CODE_Text}:\n{cResult}");
+                    Debug.WriteLine($"Result: {cResult}");
+                }
+
+                // Decode the Rectangular QR code from the selected image file
+                cResult = ClassQRCodeScanning.RectangularQRCodeDecoderImage(file.FullPath);
+                if (!string.IsNullOrEmpty(cResult))
+                {
+                    listBarcodes.Add($"{CodeLang.Barcode_RMQR_CODE_Text}:\n{cResult}");
+                    Debug.WriteLine($"Result: {cResult}");
+                }
+
+                // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
+                lblBarcodeResult.Text = ClassBarcodes.ProcessScannedBarcodes(listBarcodes, btnShare);
+
+                // Set the file name in the label 'lblFileName.Text'
+                //lblFileName.Text = file.FileName;
+
+                // Settings after scanning from an image
+                imgbtnCopyToClipboard.IsEnabled = true;
+                btnShare.IsEnabled = true;
+                imgbtnTextToSpeech.IsEnabled = true;
+
+                // Stop the activity indicator
+                activityIndicator.IsRunning = false;
+                activityIndicator.IsVisible = false;
+
+                // Delete the file from the cache and dispose the stream
+                ClassFileUtilities.DeleteFileInCache(file.FullPath);
+                stream.Dispose();
+            }
         }
     }
 }

@@ -609,6 +609,7 @@ namespace BarcodeGenerator
                 btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
                 cBarcodeResult = parts.Length > 1 ? parts[1] : "";
             }
+            
             else if (list.Count > 1)
             {
                 btnShare.Text = $"{CodeLang.ButtonShare_Text} ({list.Count})";
@@ -620,6 +621,7 @@ namespace BarcodeGenerator
 
                 cBarcodeResult = sb.ToString();
             }
+            
             else
             {
                 cBarcodeResult = CodeLang.BarcodeNotFound_Text;

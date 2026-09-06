@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-05 (YYYY-MM-DD)
+ * Date ........: 2026-09-06 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -590,42 +590,52 @@ namespace BarcodeGenerator
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 20\n{CodeLang.AllowedChar_Text} {cAllowedCharactersCodabar}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 43\n{CodeLang.AllowedChar_Text} {cAllowedCharactersCode39_93}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_CODE_93)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 48\n{CodeLang.AllowedChar_Text} {cAllowedCharactersCode39_93}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_CODE_128)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 48";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 13";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_ITF)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 2-14";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_MSI)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 1-255";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 16\n{CodeLang.AllowedChar_Text} {cAllowedCharactersHex}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 12";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
@@ -636,48 +646,58 @@ namespace BarcodeGenerator
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1900.ToString("N0", CultureInfo.CurrentCulture)}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1500.ToString("N0", CultureInfo.CurrentCulture)}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1100.ToString("N0", CultureInfo.CurrentCulture)}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)        // Model 2 - ECCLevel.Quartile
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
                     3993.ToString("N0", CultureInfo.CurrentCulture), 2420.ToString("N0", CultureInfo.CurrentCulture),
                     1663.ToString("N0", CultureInfo.CurrentCulture), 1024.ToString("N0", CultureInfo.CurrentCulture))}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)  // Model 2 - ECCLevel.High
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
                     3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
                     1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)    // Model 2 - ECCLevel.High
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
                     3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
                     1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M3/M4 ? - ECCLevel.Medium
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 30, 18, 13, 8)}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)  // Version 31 - ECCLevel.Medium
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 361, 219, 150, 92)}";
             }
+            
             else if (selectedName == ClassBarcodes.cBarcode_ART_RMQR_CODE)  // Version 31 - ECCLevel.High
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 178, 108, 74, 46)}";
             }
+            
             else
             {
                 edtTextToCode.Placeholder = string.Empty;

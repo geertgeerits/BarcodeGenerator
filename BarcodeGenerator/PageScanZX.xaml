@@ -103,7 +103,6 @@
                 WidthRequest="44"
                 SemanticProperties.Description="{Translate ToolTipScanCamera_Text}"
                 ToolTipProperties.Text="{Translate ToolTipScanCamera_Text}"
-                IsVisible="False"
                 Clicked="OnScanFromCamera_Clicked">
             </ImageButton>
 
@@ -117,7 +116,6 @@
                 VerticalOptions="Center"
                 SemanticProperties.Description="{Translate ToolTipScanImage_Text}"
                 ToolTipProperties.Text="{Translate ToolTipScanImage_Text}"
-                IsVisible="False"
                 Clicked="OnScanFromImage_Clicked">
             </ImageButton>
         </Grid>

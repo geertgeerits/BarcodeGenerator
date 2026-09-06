@@ -773,6 +773,7 @@ namespace BarcodeGenerator
                         {
                             listBarcodes.Add($"{cBarcodeFormat}:\n{cDisplayValue}");
                         }
+                        
                         // If the barcode symbology is the same as the selected one in the picker
                         else if (barcodeReader.BarcodeSymbologies == code.BarcodeFormat)
                         {
@@ -952,6 +953,7 @@ namespace BarcodeGenerator
                 offsetX = (containerW - displayW) / 2.0;
                 offsetY = (containerH - displayH) / 2.0;
             }
+            
             else if (aspect == Aspect.AspectFit)
             {
                 double scale = Math.Min(containerW / nativeW, containerH / nativeH);
@@ -960,6 +962,7 @@ namespace BarcodeGenerator
                 offsetX = (containerW - displayW) / 2.0;
                 offsetY = (containerH - displayH) / 2.0;
             }
+            
             else // Aspect.Fill
             {
                 // Fill stretches to container; content scaled independently in X/Y
