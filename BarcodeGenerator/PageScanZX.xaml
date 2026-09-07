@@ -43,7 +43,7 @@
     <Shell.TitleView>
         <Grid
             RowDefinitions="Auto"
-            ColumnDefinitions="100*, 60, 60, 60, Auto, Auto"
+            ColumnDefinitions="100*, 60, Auto, Auto"
             FlowDirection="LeftToRight">
 
             <Label
@@ -68,36 +68,8 @@
             </ActivityIndicator>
 
             <ImageButton
-                x:Name="imgbtnCameraDetecting"
-                Grid.Column="2"
-                HeightRequest="40"
-                WidthRequest="40"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Source="camera_detect_off_128x128p.png"
-                SemanticProperties.Description="{Translate ToolTipCameraDetecting_Text}"
-                ToolTipProperties.Text="{Translate ToolTipCameraDetecting_Text}"
-                IsVisible="False"
-                Clicked="OnCameraDetecting_Clicked">
-            </ImageButton>
-            
-            <ImageButton
-                x:Name="imgbtnTorch"
-                Grid.Row="0"
-                Grid.Column="3"
-                Source="camera_torch_on_64x64p.png"
-                HeightRequest="36"
-                WidthRequest="36"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                SemanticProperties.Description="{Translate ToolTipCameraTorch_Text}"
-                ToolTipProperties.Text="{Translate ToolTipCameraTorch_Text}"
-                Clicked="OnTorchClicked">
-            </ImageButton>
-
-            <ImageButton
                 x:Name="imgbtnScanFromCamera"
-                Grid.Column="4"
+                Grid.Column="2"
                 Source="ic_action_camera.png"
                 HeightRequest="44"
                 WidthRequest="44"
@@ -108,7 +80,7 @@
 
             <ImageButton
                 x:Name="imgbtnScanFromImage"
-                Grid.Column="5"
+                Grid.Column="3"
                 Source="ic_action_picture.png"
                 HeightRequest="50"
                 WidthRequest="50"
@@ -146,24 +118,62 @@
                         SelectedIndexChanged="OnPickerFormatCodeChanged">
                     </Picker>
                 </Border>
-                
-                <Slider
-                    x:Name="sldCameraZoom"
-                    Style="{StaticResource sliderStyleColor}"
+
+                <Grid
                     Grid.Row="1"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HeightRequest="24"
-                    VerticalOptions="Center"
-                    ThumbColor="DeepSkyBlue"
-                    MinimumTrackColor="DeepSkyBlue"
-                    Minimum="0.0"
-                    Maximum="1.0"
-                    Value="0.0"
-                    SemanticProperties.Description="{Translate ToolTipCameraZoom_Text}"
-                    ToolTipProperties.Text="{Translate ToolTipCameraZoom_Text}"
-                    ValueChanged="OnSliderCameraZoom_ValueChanged">
-                </Slider>
+                    ColumnDefinitions="*, 80, 80, 80">
+
+                    <Slider
+                        x:Name="sldCameraZoom"
+                        Style="{StaticResource sliderStyleColor}"
+                        Grid.Column="0"
+                        HeightRequest="24"
+                        VerticalOptions="End"
+                        ThumbColor="DeepSkyBlue"
+                        MinimumTrackColor="DeepSkyBlue"
+                        Minimum="0.0"
+                        Maximum="1.0"
+                        Value="0.0"
+                        SemanticProperties.Description="{Translate ToolTipCameraZoom_Text}"
+                        ToolTipProperties.Text="{Translate ToolTipCameraZoom_Text}"
+                        ValueChanged="OnSliderCameraZoom_ValueChanged">
+                    </Slider>
+
+                    <ImageButton
+                        x:Name="imgbtnCameraLocation"
+                        Style="{StaticResource imageButtonStyleCamera}"
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                        Source="camera_facing_128x128p.png"
+                        SemanticProperties.Description="{Translate ToolTipCameraFacing_Text}"
+                        ToolTipProperties.Text="{Translate ToolTipCameraFacing_Text}"
+                        Clicked="OnCameraLocationClicked">
+                    </ImageButton>
+
+                    <ImageButton
+                        x:Name="imgbtnCameraDetecting"
+                        Style="{StaticResource imageButtonStyleCamera}"
+                        Grid.Column="2"
+                        HorizontalOptions="End"
+                        Source="camera_detect_off_128x128p.png"
+                        SemanticProperties.Description="{Translate ToolTipCameraDetecting_Text}"
+                        ToolTipProperties.Text="{Translate ToolTipCameraDetecting_Text}"
+                        Clicked="OnCameraDetectingClicked">
+                    </ImageButton>
+
+                    <ImageButton
+                        x:Name="imgbtnCameraTorch"
+                        Style="{StaticResource imageButtonStyleCamera}"
+                        Grid.Column="3"
+                        HorizontalOptions="End"
+                        Source="camera_torch_off_64x64p.png"
+                        SemanticProperties.Description="{Translate ToolTipCameraTorch_Text}"
+                        ToolTipProperties.Text="{Translate ToolTipCameraTorch_Text}"
+                        Clicked="OnCameraTorchClicked">
+                    </ImageButton>
+                </Grid>
 
                 <Border
                     Grid.Row="2"
@@ -179,7 +189,9 @@
                         Style="{StaticResource zxingCameraView}"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
+                        CameraLocation="Front"
                         ZoomFactor="0.0"
+                        IsDetecting="True"
                         IsTorchOn="False"
                         BarcodesDetected="OnBarcodesDetected">
                     </zxing:CameraBarcodeReaderView>

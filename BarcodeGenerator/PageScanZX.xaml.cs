@@ -38,7 +38,7 @@ namespace BarcodeGenerator
             {
                 lblTitle.VerticalOptions = LayoutOptions.Start;
                 lblTitle.VerticalTextAlignment = TextAlignment.Start;
-                imgbtnTorch.VerticalOptions = LayoutOptions.Start;
+                imgbtnCameraTorch.VerticalOptions = LayoutOptions.Start;
             }
 
             // Initialize the barcode pickers
@@ -352,25 +352,6 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Toggle the camera detecting state of the barcode reader and update the image button source accordingly.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnCameraDetecting_Clicked(object sender, EventArgs e)
-        {
-            if (barcodeReader.IsDetecting)
-            {
-                barcodeReader.IsDetecting = false;
-                imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
-            }
-            else
-            {
-                barcodeReader.IsDetecting = true;
-                imgbtnCameraDetecting.Source = "camera_detect_on_128x128p.png";
-            }
-        }
-
-        /// <summary>
         /// Handles the value changed event of the camera zoom slider, updating the barcode reader's zoom factor accordingly.
         /// </summary>
         /// <param name="sender"></param>
@@ -381,11 +362,52 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// ImageButton camera facing clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnCameraLocationClicked(object sender, EventArgs e)
+        {
+            // If the high or the highest quality is selected and the front camera is used then set the quality to medium
+            // The high and highest quality are not on every device supported by the front camera
+            switch (barcodeReader.CameraLocation)
+            {
+                case CameraLocation.Rear:
+                    barcodeReader.CameraLocation = CameraLocation.Front;
+                    break;
+
+                case CameraLocation.Front:
+                    // Set the quality to the saved setting from the back camera
+                    barcodeReader.CameraLocation = CameraLocation.Rear;
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// ImageButton camera detecting clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnCameraDetectingClicked(object sender, EventArgs e)
+        {
+            if (barcodeReader.IsDetecting)
+            {
+                barcodeReader.IsDetecting = false;
+                imgbtnCameraDetecting.Source = "camera_detect_on_128x128p.png";
+            }
+            else
+            {
+                barcodeReader.IsDetecting = true;
+                imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
+            }
+        }
+
+        /// <summary>
         /// ImageButton torch clicked event.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnTorchClicked(object sender, EventArgs e)
+        private void OnCameraTorchClicked(object sender, EventArgs e)
         {
             barcodeReader.IsTorchOn = !barcodeReader.IsTorchOn;
         }
@@ -474,12 +496,13 @@ namespace BarcodeGenerator
         private void OnScanFromCamera_Clicked(object sender, EventArgs e)
         {
             sldCameraZoom.IsEnabled = true;
-            imgbtnTorch.IsEnabled = true;
+            imgbtnCameraTorch.IsEnabled = true;
             imgScanFromImage.IsVisible = false;
             imgScanFromImage.Source = null;
             barcodeReader.IsEnabled = true;
             barcodeReader.IsVisible = true;
             barcodeReader.IsDetecting = true;
+            imgbtnCameraDetecting.Source = "camera_detect_off_128x128p.png";
             lblBarcodeResult.Text = string.Empty;
             lblFileName.Text = string.Empty;
             lblFileName.IsVisible = false;
@@ -557,7 +580,7 @@ namespace BarcodeGenerator
 
             // Settings before scanning from an image
             sldCameraZoom.IsEnabled = false;
-            imgbtnTorch.IsEnabled = false;
+            imgbtnCameraTorch.IsEnabled = false;
             barcodeReader.IsDetecting = false;
             imgScanFromImage.IsVisible = true;
             lblFileName.Text = string.Empty;
@@ -625,7 +648,7 @@ namespace BarcodeGenerator
                     return;
                 }
 
-                // Scanning Micro QR code and Rectangular QR code are not yet supported by the Android, iOS and Windows native libraries,
+                // Scanning Micro QR code and Rectangular Micro QR code are not yet supported by the Android, iOS and Windows native libraries,
                 // but can be implemented with the SkiaSharp.QrCode decoder
                 // Decode the QR code from the selected image file
                 string cResult;
@@ -645,7 +668,7 @@ namespace BarcodeGenerator
                     Debug.WriteLine($"Result: {cResult}");
                 }
 
-                // Decode the Rectangular QR code from the selected image file
+                // Decode the Rectangular Micro QR code from the selected image file
                 cResult = ClassQRCodeScanning.RectangularQRCodeDecoderImage(file.FullPath);
                 if (!string.IsNullOrEmpty(cResult))
                 {
