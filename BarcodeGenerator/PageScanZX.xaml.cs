@@ -538,7 +538,7 @@ namespace BarcodeGenerator
             List<string> list = [];
             foreach (BarcodeResult? barcode in e.Results)
             {
-                fmt = barcode.Format.ToString();
+                fmt = ClassBarcodes.GetBarcodeFormatName(barcode.Format.ToString());
                 val = barcode.Value;
 
                 // Decompress the QR code result if compressed

@@ -579,7 +579,7 @@ namespace BarcodeGenerator
 
                 foreach (BarcodeResult barcode in e.BarcodeResults)
                 {
-                    cBarcodeFormat = barcode.BarcodeFormat.ToString();
+                    cBarcodeFormat = ClassBarcodes.GetBarcodeFormatName(barcode.BarcodeFormat.ToString());
                     // Use RawValue for consistent raw data across platforms
                     // The DisplayValue property may be parsed differently by the underlying platform barcode APIs:
                     // - Android(Google ML Kit): Automatically parses Wi-Fi QR codes and returns formatted text
@@ -759,7 +759,7 @@ namespace BarcodeGenerator
 
                     foreach (BarcodeResult code in obj)
                     {
-                        cBarcodeFormat = code.BarcodeFormat.ToString();
+                        cBarcodeFormat = ClassBarcodes.GetBarcodeFormatName(code.BarcodeFormat.ToString());
                         cDisplayValue = code.RawValue ?? cDisplayValue;
 
                         Debug.WriteLine($"cBarcodeFormat: {code.BarcodeFormat} - cDisplayValue: {cDisplayValue}");

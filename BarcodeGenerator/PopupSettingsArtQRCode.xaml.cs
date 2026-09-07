@@ -14,13 +14,17 @@ namespace BarcodeGenerator
             // Set the flow direction of the text elements
             Globals.SetFlowDirection(this);
 
+            // Disable certain options for Artistic Micro QR Codes and Artistic Rectangular Micro QR Codes
             if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_RMQR_CODE)
             {
-                // Disable the foreground image option for Micro QR Codes, as they do not support this feature
                 artQRCodeSettings.swtForegroundImage.IsToggled = false;
                 artQRCodeSettings.swtBackgroundImage.IsToggled = false;
                 artQRCodeSettings.swtForegroundImage.IsEnabled = false;
                 artQRCodeSettings.swtBackgroundImage.IsEnabled = false;
+
+                artQRCodeSettings.rbtQRCodeFinderPatternShapeSquare.IsEnabled = false;
+                artQRCodeSettings.rbtQRCodeFinderPatternShapeRounded.IsEnabled = false;
+                artQRCodeSettings.rbtQRCodeFinderPatternShapeCircle.IsEnabled = false;
             }
 
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event

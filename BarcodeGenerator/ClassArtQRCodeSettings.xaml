@@ -115,6 +115,7 @@
 
             <RadioButton
                 x:Name="rbtQRCodeFinderPatternShapeSquare"
+                x:FieldModifier="public"
                 GroupName="FinderPatternShape"
                 Grid.Column="0"
                 HorizontalOptions="Start"
@@ -137,6 +138,7 @@
 
             <RadioButton
                 x:Name="rbtQRCodeFinderPatternShapeRounded"
+                x:FieldModifier="public"
                 GroupName="FinderPatternShape"
                 Grid.Column="2"
                 HorizontalOptions="Start"
@@ -159,6 +161,7 @@
 
             <RadioButton
                 x:Name="rbtQRCodeFinderPatternShapeCircle"
+                x:FieldModifier="public"
                 GroupName="FinderPatternShape"
                 Grid.Column="4"
                 HorizontalOptions="Start"

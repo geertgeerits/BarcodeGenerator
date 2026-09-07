@@ -19,20 +19,6 @@
             HorizontalOptions="Center"
             VerticalOptions="Start">
 
-            <!--<Label
-                x:Name="lblPopupTitle"
-                Grid.Row="0"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill"
-                BackgroundColor="Transparent"
-                Margin="10,5,10,0"
-                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
-                HorizontalTextAlignment="Center"
-                Text="{Translate Settings_Text}">
-            </Label>-->
-
             <local:ClassArtQRCodeSettings
                 x:Name="artQRCodeSettings"
                 x:FieldModifier="public"

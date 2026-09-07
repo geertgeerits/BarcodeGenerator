@@ -254,7 +254,7 @@ namespace BarcodeGenerator
             barcodeSearch.Add("UPC_A", CodeLang.Barcode_UPC_A_Text);
             barcodeSearch.Add("UPC_E", CodeLang.Barcode_UPC_E_Text);
             barcodeSearch.Add("UPC_EAN_EXTENSION", CodeLang.Barcode_UPC_EAN_EXTENSION_Text);
-            
+
             // 2D barcode formats
             barcodeSearch.Add("AZTEC", CodeLang.Barcode_AZTEC_Text);
             barcodeSearch.Add("AZTEC_CODE", CodeLang.Barcode_AZTEC_CODE_Text);
@@ -509,7 +509,7 @@ namespace BarcodeGenerator
             {
                 // More efficient reverse lookup using LINQ
                 string foundKey = dic.FirstOrDefault(x => x.Value == searchValue).Key;
-                
+
                 if (!string.IsNullOrEmpty(foundKey))
                 {
                     return foundKey;
@@ -590,6 +590,111 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Get the name of the barcode format based on the provided format string.
+        /// If the format is not recognized, it returns the original format string.
+        /// </summary>
+        /// <param name="format"></param>
+        /// <returns></returns>
+        public static string GetBarcodeFormatName(string format)
+        {
+            string barcodeFormatName;
+
+            switch (format)
+            {
+                case "Aztec":
+                    barcodeFormatName = CodeLang.Barcode_AZTEC_Text;
+                    break;
+                case "Codabar":
+                case "CodaBar":
+                    barcodeFormatName = CodeLang.Barcode_CODABAR_Text;
+                    break;
+                case "Code128":
+                    barcodeFormatName = CodeLang.Barcode_CODE_128_Text;
+                    break;
+                case "Code39":
+                    barcodeFormatName = CodeLang.Barcode_CODE_39_Text;
+                    break;
+                case "Code93":
+                    barcodeFormatName = CodeLang.Barcode_CODE_93_Text;
+                    break;
+                case "DataMatrix":
+                    barcodeFormatName = CodeLang.Barcode_DATA_MATRIX_Text;
+                    break;
+                case "DXFilmEdge":
+                    barcodeFormatName = CodeLang.Barcode_DX_FILM_EDGE_Text;
+                    break;
+                case "Ean13":
+                    barcodeFormatName = CodeLang.Barcode_EAN_13_Text;
+                    break;
+                case "Ean8":
+                    barcodeFormatName = CodeLang.Barcode_EAN_8_Text;
+                    break;
+                case "Gs1Databar":
+                    barcodeFormatName = CodeLang.Barcode_GS1_DATABAR_Text;
+                    break;
+                case "Imb":
+                    barcodeFormatName = CodeLang.Barcode_IMB_Text;
+                    break;
+                case "Itf":
+                case "I2OF5":
+                    barcodeFormatName = CodeLang.Barcode_ITF_Text;
+                    break;
+                case "ISBN":
+                    barcodeFormatName = CodeLang.Barcode_ISBN_Text;
+                    break;
+                case "MaxiCode":
+                    barcodeFormatName = CodeLang.Barcode_MAXICODE_Text;
+                    break;
+                case "MicroPdf417":
+                    barcodeFormatName = CodeLang.Barcode_MICRO_PDF_417_Text;
+                    break;
+                case "MicroQR":
+                    barcodeFormatName = CodeLang.Barcode_MICRO_QR_CODE_Text;
+                    break;
+                case "Msi":
+                    barcodeFormatName = CodeLang.Barcode_MSI_Text;
+                    break;
+                case "Pdf417":
+                    barcodeFormatName = CodeLang.Barcode_PDF_417_Text;
+                    break;
+                case "PharmaCode":
+                    barcodeFormatName = CodeLang.Barcode_PHARMACODE_Text;
+                    break;
+                case "Plessey":
+                    barcodeFormatName = CodeLang.Barcode_PLESSEY_Text;
+                    break;
+                case "QrCode":
+                case "QRCode":
+                    barcodeFormatName = CodeLang.Barcode_QR_CODE_Text;
+                    break;
+                case "Rss14":
+                    barcodeFormatName = CodeLang.Barcode_RSS_14_Text;
+                    break;
+                case "RssExpanded":
+                    barcodeFormatName = CodeLang.Barcode_RSS_EXPANDED_Text;
+                    break;
+                case "UpcA":
+                case "Upca":
+                    barcodeFormatName = CodeLang.Barcode_UPC_A_Text;
+                    break;
+                case "UpcE":
+                case "Upce":
+                    barcodeFormatName = CodeLang.Barcode_UPC_E_Text;
+                    break;
+                case "UpcEanExtension":
+                    barcodeFormatName = CodeLang.Barcode_UPC_EAN_EXTENSION_Text;
+                    break;
+                case "All":
+                    barcodeFormatName = CodeLang.Barcode_AllCodes_Text;
+                    break;
+                default:
+                    return format;
+            }
+
+            return barcodeFormatName;
+        }
+
+        /// <summary>
         /// Process the list of scanned BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
         /// </summary>
         /// <param name="list"></param>
@@ -609,7 +714,7 @@ namespace BarcodeGenerator
                 btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
                 cBarcodeResult = parts.Length > 1 ? parts[1] : "";
             }
-            
+
             else if (list.Count > 1)
             {
                 btnShare.Text = $"{CodeLang.ButtonShare_Text} ({list.Count})";
@@ -621,7 +726,7 @@ namespace BarcodeGenerator
 
                 cBarcodeResult = sb.ToString();
             }
-            
+
             else
             {
                 cBarcodeResult = CodeLang.BarcodeNotFound_Text;
