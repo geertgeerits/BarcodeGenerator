@@ -388,7 +388,7 @@
                         x:Name="entQRCodeSizePixels"
                         ClearButtonVisibility="WhileEditing"
                         MaxLength="5"
-                        Placeholder="500 - 10000"
+                        Placeholder="500 - 5000"
                         Keyboard="Numeric"
                         ReturnType="Done"
                         TextChanged="EntQRCodeSizePixels_TextChanged"

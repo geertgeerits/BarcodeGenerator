@@ -1,16 +1,5 @@
-﻿/*
-QRCoder supports Micro QR codes, which are smaller versions of standard QR codes suitable for applications
-with limited space. Micro QR codes have significantly limited storage capacity—as few as 5 numeric digits (M1)
-or as many as 35 numeric digits (M4), with alphanumeric and byte data storing considerably less.
-Micro QR codes have limitations on data capacity and error correction levels.
-They support versions M1 through M4 (specified as -1 to -4), and not all ECC levels are available for all versions.
-M1 only supports detection (no ECC), M2 and M3 support L and M levels, and M4 supports L, M, and Q levels.
-For detailed capacity tables, see the Micro QR Code specification.
-https://www.nuget.org/packages/QRCoder/1.7.0#show-readme-container
-https://www.qrcode.com/en/codes/microqr.html  
-*/
-
-using QRCoder;
+﻿using SkiaSharp.QrCode;
+using SkiaSharp.QrCode.Image;
 
 namespace BarcodeGenerator
 {
@@ -35,24 +24,20 @@ namespace BarcodeGenerator
 
             try
             {
-                // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
-                using QRCodeData qrDataSvg = QRCodeGenerator.GenerateMicroQrCode(text, QRCodeGenerator.ECCLevel.L, requestedVersion: nVersion);
-                using SvgQRCode qrCodeSvg = new(qrDataSvg);
-                string qrCodeAsSvg = qrCodeSvg.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
+                // Generate the Micro QR code as a PNG byte array
+                byte[] pngBytes = MicroQRCodeImageBuilder.GetPngBytes(text, MicroQREccLevel.M, size: ClassBarcodes.nQRCodeSizePixels);
+
+                // Save the byte array 'qrCodeImage' as a PNG file
+                await ClassFileUtilities.SavePngFromStreamAsync(new MemoryStream(pngBytes), ClassBarcodes.cFileBarcodePng);
+
+                // Generate the Micro QR code as an SVG string and save it to disk for sharing or other purposes
+                string qrCodeAsSvg = MicroQRCodeImageBuilder.GetSvgString(text, MicroQREccLevel.M, size: ClassBarcodes.nQRCodeSizePixels);
 
                 // Save the string 'qrCodeAsSvg' as a SVG file
                 ClassFileUtilities.SaveStringAsFileSvg(qrCodeAsSvg, ClassBarcodes.cFileBarcodeSvg);
 
-                // Generate the Micro QR code as PNG file with the specified version and error correction level
-                using QRCodeData qrDataPng = QRCodeGenerator.GenerateMicroQrCode(text, QRCodeGenerator.ECCLevel.L, requestedVersion: nVersion);
-                using PngByteQRCode qrCodePng = new(qrDataPng);
-                byte[] qrCodeImage = qrCodePng.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
-
-                // Save the byte array 'qrCodeImage' as a PNG file
-                await ClassFileUtilities.SavePngFromStreamAsync(new MemoryStream(qrCodeImage), ClassBarcodes.cFileBarcodePng);
-
                 // Return an ImageSource that opens a fresh stream when needed
-                return ImageSource.FromStream(() => new MemoryStream(qrCodeImage));
+                return ImageSource.FromStream(() => new MemoryStream(pngBytes));
             }
             catch (Exception ex)
             {

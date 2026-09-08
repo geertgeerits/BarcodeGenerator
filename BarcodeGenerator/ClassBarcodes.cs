@@ -601,9 +601,36 @@ namespace BarcodeGenerator
 
             switch (format)
             {
+                // All codes
+                case "All":
+                    barcodeFormatName = CodeLang.Barcode_AllCodes_Text;
+                    break;
+
+                // 2D barcode formats
                 case "Aztec":
                     barcodeFormatName = CodeLang.Barcode_AZTEC_Text;
                     break;
+                case "DataMatrix":
+                    barcodeFormatName = CodeLang.Barcode_DATA_MATRIX_Text;
+                    break;
+                case "MaxiCode":
+                    barcodeFormatName = CodeLang.Barcode_MAXICODE_Text;
+                    break;
+                case "MicroPdf417":
+                    barcodeFormatName = CodeLang.Barcode_MICRO_PDF_417_Text;
+                    break;
+                case "MicroQR":
+                    barcodeFormatName = CodeLang.Barcode_MICRO_QR_CODE_Text;
+                    break;
+                case "Pdf417":
+                    barcodeFormatName = CodeLang.Barcode_PDF_417_Text;
+                    break;
+                case "QrCode":
+                case "QRCode":
+                    barcodeFormatName = CodeLang.Barcode_QR_CODE_Text;
+                    break;
+
+                // 1D barcode formats
                 case "Codabar":
                 case "CodaBar":
                     barcodeFormatName = CodeLang.Barcode_CODABAR_Text;
@@ -616,9 +643,6 @@ namespace BarcodeGenerator
                     break;
                 case "Code93":
                     barcodeFormatName = CodeLang.Barcode_CODE_93_Text;
-                    break;
-                case "DataMatrix":
-                    barcodeFormatName = CodeLang.Barcode_DATA_MATRIX_Text;
                     break;
                 case "DXFilmEdge":
                     barcodeFormatName = CodeLang.Barcode_DX_FILM_EDGE_Text;
@@ -642,30 +666,14 @@ namespace BarcodeGenerator
                 case "ISBN":
                     barcodeFormatName = CodeLang.Barcode_ISBN_Text;
                     break;
-                case "MaxiCode":
-                    barcodeFormatName = CodeLang.Barcode_MAXICODE_Text;
-                    break;
-                case "MicroPdf417":
-                    barcodeFormatName = CodeLang.Barcode_MICRO_PDF_417_Text;
-                    break;
-                case "MicroQR":
-                    barcodeFormatName = CodeLang.Barcode_MICRO_QR_CODE_Text;
-                    break;
                 case "Msi":
                     barcodeFormatName = CodeLang.Barcode_MSI_Text;
-                    break;
-                case "Pdf417":
-                    barcodeFormatName = CodeLang.Barcode_PDF_417_Text;
                     break;
                 case "PharmaCode":
                     barcodeFormatName = CodeLang.Barcode_PHARMACODE_Text;
                     break;
                 case "Plessey":
                     barcodeFormatName = CodeLang.Barcode_PLESSEY_Text;
-                    break;
-                case "QrCode":
-                case "QRCode":
-                    barcodeFormatName = CodeLang.Barcode_QR_CODE_Text;
                     break;
                 case "Rss14":
                     barcodeFormatName = CodeLang.Barcode_RSS_14_Text;
@@ -684,9 +692,7 @@ namespace BarcodeGenerator
                 case "UpcEanExtension":
                     barcodeFormatName = CodeLang.Barcode_UPC_EAN_EXTENSION_Text;
                     break;
-                case "All":
-                    barcodeFormatName = CodeLang.Barcode_AllCodes_Text;
-                    break;
+
                 default:
                     return format;
             }

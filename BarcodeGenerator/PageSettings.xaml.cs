@@ -438,7 +438,7 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Validates the QR code image size entered in the specified Entry control, ensuring that it is a valid integer within the range of 500 to 10000 pixels.
+        /// Validates the QR code image size entered in the specified Entry control, ensuring that it is a valid integer within the range of 500 to 5000 pixels.
         /// If the value is invalid, the focus is set back to the Entry control for correction.
         /// </summary>
         /// <param name="entry"></param>
@@ -452,7 +452,7 @@ namespace BarcodeGenerator
 
             switch (nValue)
             {
-                case < 500 or > 10000:
+                case < 500 or > 5000:
                     entry.Focus();
                     return false;
                 default:
