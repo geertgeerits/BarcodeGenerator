@@ -820,31 +820,40 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
-                
-                // Generate the QR code with or without an image using the QRCoder or SkiaSharp library
-                else if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
+
+                // Generate the QR code with an image using the QRCoder library
+                else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
-                    
+
                     ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
 
-                // Generate the Micro QR code using the QRCoder library
+                // Generate the QR code using the QRCoder library
+                else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)
+                {
+                    ClassBarcodes.cQRCodeType = selectedName;
+
+                    ImageSource? qrImage = await ClassQRCodes.GenerateQrCodeAsync(cTextToCode);
+                    imgQrCodeImage.Source = qrImage;
+                }
+
+                // Generate the Micro QR code using the SkiaSharp library
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
 
-                    ImageSource? qrImage = await ClassMicroQRCode.GenerateMicroQrCodeAsync(cTextToCode, nVersion: -4);
+                    ImageSource? qrImage = await ClassQRCodes.GenerateMicroQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
 
-                // Generate the rMQR code using the QRCoder library
+                // Generate the rMQR code using the SkiaSharp library
                 else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
 
-                    ImageSource? qrImage = await ClassRMQRCode.GenerateRMQRCodeAsync(cTextToCode);
+                    ImageSource? qrImage = await ClassQRCodes.GenerateRMQRCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
 
