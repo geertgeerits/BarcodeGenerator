@@ -123,6 +123,15 @@ namespace BarcodeGenerator
             Globals.nFontSize = Preferences.Default.Get("SettingFontSize", 18d);
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
+            // Limit the QR code size to a maximum of 5000 pixels to prevent excessive memory usage and potential crashes
+            // Before version 1.0.55 the maximum QR code size was 10000 pixels, but it was decreased to 5000 pixels in version 1.0.55
+            if (ClassBarcodes.nQRCodeSizePixels > 5000)
+            {
+                // Default QR code size is 800 pixels, but it can be changed in the settings page
+                ClassBarcodes.nQRCodeSizePixels = 800;
+                Preferences.Default.Set("SettingQRCodeSizePixels", ClassBarcodes.nQRCodeSizePixels);
+            }
+
             // Set the theme
             Globals.SetTheme();
 
