@@ -101,7 +101,7 @@ namespace BarcodeGenerator
             ClassBarcodes.nQRCodeImageSizeBorder = Preferences.Default.Get("SettingQRCodeImageSizeBorder", 6);
             ClassBarcodes.cQRCodeFinderPatternShape = Preferences.Default.Get("SettingQRCodeFinderPatternShape", "Square");  // Square, Rounded, Circle
             ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Square");  // Square, Rounded, Circle
-            ClassBarcodes.nQRCodeQuietZoneSize = Preferences.Default.Get("SettingQRCodeQuietZoneSize", 4);  // Size of the QR code quiet zone in modules
+            ClassBarcodes.nQRCodeQuietZoneSize = Preferences.Default.Get("SettingQRCodeQuietZoneSize", 3);  // Size of the QR code quiet zone in modules
             ClassBarcodes.nQRCodeModuleSizePercent = Preferences.Default.Get("SettingQRCodeModuleSizePercent", 100);  // Size of the QR code modules as a percentage
             ClassBarcodes.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             ClassBarcodes.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");
@@ -839,7 +839,7 @@ namespace BarcodeGenerator
                     imgQrCodeImage.Source = qrImage;
                 }
 
-                // Generate the QR code using the QRCoder library
+                // Generate the QR code using the SkiaSharp.QrCode library
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
@@ -848,7 +848,7 @@ namespace BarcodeGenerator
                     imgQrCodeImage.Source = qrImage;
                 }
 
-                // Generate the Micro QR code using the SkiaSharp library
+                // Generate the Micro QR code using the SkiaSharp.QrCode library
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
@@ -857,7 +857,7 @@ namespace BarcodeGenerator
                     imgQrCodeImage.Source = qrImage;
                 }
 
-                // Generate the rMQR code using the SkiaSharp library
+                // Generate the rMQR code using the SkiaSharp.QrCode library
                 else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
