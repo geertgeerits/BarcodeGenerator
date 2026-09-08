@@ -40,7 +40,9 @@ namespace BarcodeGenerator
             }
             catch (Exception ex)
             {
+#if DEBUG                
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.Barcode_RMQR_CODE_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
                 return null;
             }
         }
