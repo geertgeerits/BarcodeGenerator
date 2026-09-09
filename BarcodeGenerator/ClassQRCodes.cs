@@ -19,6 +19,7 @@ namespace BarcodeGenerator
         /// <param name="text">The text to encode in the QR code. Cannot be null or empty.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains an ImageSource representing the
         /// generated QR code, or null if the code could not be generated.</returns>
+        /// <remarks>!!! Do not use '.WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)' for Rectangular Micro QR codes.!!!</remarks>
 
         public static async Task<ImageSource?> GenerateQrCodeAsync(string text)
         {
@@ -32,7 +33,7 @@ namespace BarcodeGenerator
                 // Generate the QR code as a PNG byte array
                 // Fix the symbol height; the width is selected automatically
                 byte[] pngBytes = new QRCodeImageBuilder(text)
-                    .WithModulePixelSize(12)
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(ECCLevel.M)
                     .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
@@ -43,7 +44,7 @@ namespace BarcodeGenerator
 
                 // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
                 string qrCodeAsSvg = new QRCodeImageBuilder(text)
-                    .WithModulePixelSize(12)
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(ECCLevel.M)
                     .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
@@ -85,7 +86,7 @@ namespace BarcodeGenerator
                 // Generate the Micro QR code as a PNG byte array
                 // Fix the symbol height; the width is selected automatically
                 byte[] pngBytes = new MicroQRCodeImageBuilder(text)
-                    .WithModulePixelSize(12)
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(MicroQREccLevel.M)
                     .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2)
@@ -96,7 +97,7 @@ namespace BarcodeGenerator
 
                 // Generate the Micro QR code as an SVG string and save it to disk for sharing or other purposes
                 string qrCodeAsSvg = new MicroQRCodeImageBuilder(text)
-                    .WithModulePixelSize(12)
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(MicroQREccLevel.M)
                     .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2)
@@ -138,7 +139,6 @@ namespace BarcodeGenerator
                 // Generate the rMQR code as a PNG byte array
                 // Fix the symbol height; the width is selected automatically
                 byte[] pngBytes = new RmQRCodeImageBuilder(text)
-                    .WithModulePixelSize(12)
                     .WithHeight(RmQRHeight.H9)
                     .WithErrorCorrection(RmQREccLevel.M)
                     .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
@@ -150,7 +150,6 @@ namespace BarcodeGenerator
 
                 // Generate the rMQR code as an SVG string and save it to disk for sharing or other purposes
                 string qrCodeAsSvg = new RmQRCodeImageBuilder(text)
-                    .WithModulePixelSize(12)
                     .WithHeight(RmQRHeight.H9)
                     .WithErrorCorrection(RmQREccLevel.M)
                     .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
@@ -173,7 +172,7 @@ namespace BarcodeGenerator
         }
 
         // Convert stored hex color strings (ARGB or RRGGBB) to SKColor
-        private static SkiaSharp.SKColor SkColorFromHex(string hex)
+        public static SkiaSharp.SKColor SkColorFromHex(string hex)
         {
             // Allow hex with or without leading '#'
             if (hex.StartsWith("#")) hex = hex[1..];

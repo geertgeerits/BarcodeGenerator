@@ -836,7 +836,7 @@ namespace BarcodeGenerator
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
 
-                    ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeAsync(cTextToCode);
+                    ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeImageAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
 

@@ -1,8 +1,7 @@
 ﻿using CommunityToolkit.Maui.Extensions;
-using QRCoder;
 using SkiaSharp;
-//using SkiaSharp.QrCode;
-using System.Collections;
+using SkiaSharp.QrCode;
+using SkiaSharp.QrCode.Image;
 
 namespace BarcodeGenerator
 {
@@ -28,80 +27,63 @@ namespace BarcodeGenerator
         /// <param name="text">The text to encode within the generated QR code.
         /// without a logo. The stream must be positioned at the beginning.</param>
         /// <returns>An ImageSource representing the generated QR code image, including the logo overlay if provided.</returns>
-        public static async Task<ImageSource?> GenerateQrCodeAsync(string text)
+        public static async Task<ImageSource?> GenerateQrCodeImageAsync(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
             {
                 return null;
             }
 
-            // Generate QR code data using QRCoder with the appropriate error correction level based on whether an image will be included
-            using QRCodeGenerator qrGenerator = new();
-            QRCodeData qrDataPng;
-            QRCodeData qrDataSvg;
-            string cErrorTitle = string.Empty;
+            byte[] pngBytes;
 
-            // QR codes with images require a higher error correction level to ensure the code remains scannable even if part of it is obscured by the image
             try
             {
-                // QR code with image, use ECC Level H (30% error correction) to allow for the central image overlay without compromising scannability
-                if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
-                {
-                    cErrorTitle = CodeLang.Barcode_QR_CODE_IMAGE_Text;
-                    qrDataPng = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.H);
-                }
-                // QR codes without image, a lower error correction level can be used to reduce the overall size of the QR code
-                else
-                {
-                    cErrorTitle = CodeLang.Barcode_QR_CODE_Text;
-                    qrDataPng = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
-                    //qrDataPng = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.M, forceUtf8: true, utf8BOM: true, eciMode: QRCodeGenerator.EciMode.Utf8, requestedVersion: -1);
-
-                    // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
-                    qrDataSvg = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
-                    using SvgQRCode qrCode = new(qrDataSvg);
-                    string qrCodeAsSvg = qrCode.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
-
-                    ClassFileUtilities.SaveStringAsFileSvg(qrCodeAsSvg, ClassBarcodes.cFileBarcodeSvg);
-                }
+                pngBytes = new QRCodeImageBuilder(text)
+                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
+                    .WithErrorCorrection(ECCLevel.H)
+                    .WithColors(codeColor: ClassQRCodes.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassQRCodes.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
+                    .ToByteArray();
             }
             catch (Exception ex)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(cErrorTitle, ex.Message, CodeLang.ButtonClose_Text);
+#if DEBUG                
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.Barcode_QR_CODE_IMAGE_Text, ex.Message, CodeLang.ButtonClose_Text);
+#endif
                 return null;
             }
 
-            List<BitArray> modules = qrDataPng.ModuleMatrix;
-            int moduleCount = modules.Count;
-
-            // For simplicity, you can also use a fixed value like 20, but be aware that very large module counts can lead to very large bitmaps
-            int pixelsPerModule = 20;
-
-            // Compute the pixelsPerModule from a desired output size to avoid extreme bitmap dimensions
-            if (!ClassBarcodes.bQRCodeSizeVariable)
+            // Decode generated PNG into a bitmap and draw that bitmap instead of trying to build a BitArray module matrix.
+            using SKBitmap? sourceQrBitmap = SKBitmap.Decode(pngBytes);
+            if (sourceQrBitmap == null || sourceQrBitmap.Width == 0)
             {
-                int desiredOutputPx = ClassBarcodes.nQRCodeSizePixels;                                // e.g. target image width
-                pixelsPerModule = Math.Clamp(desiredOutputPx / moduleCount, 4, 40);     // Keep between 4 and 40
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.Barcode_QR_CODE_IMAGE_Text, "Failed to decode generated QR image.", CodeLang.ButtonClose_Text);
+                return null;
             }
 
-            int size = moduleCount * pixelsPerModule;
-            Debug.WriteLine($"QR code generated with module count: {moduleCount}, size: {size}x{size}, pixels per module: {pixelsPerModule}");
+            // Determine final drawing size. Use generated bitmap size unless user requested a fixed output size.
+            int size = sourceQrBitmap.Width;
+            if (!ClassBarcodes.bQRCodeSizeVariable)
+            {
+                // If non-variable requested, scale the QR to the configured pixel size.
+                // We will render into a bitmap of that pixel size.
+                size = ClassBarcodes.nQRCodeSizePixels;
+            }
 
-            // Calculate the recommended image size based on the QR code size and the configured percentage
+            Debug.WriteLine($"QR code generated (decoded) with source size: {sourceQrBitmap.Width}, drawing size: {size}x{size}");
+
+            // Calculate the recommended image size based on the QR code drawing size and the configured percentage
             int nImageRecommendedSize = (int)(size * ClassBarcodes.nQRCodeImageSizePercent / 100.0f);
 
             Stream? logoStream = null;
 
-            // If the QR Code with image has been selected, show a message about the recommended image size and open the file picker
             if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
             {
-                // Show a modal popup to inform the user about the recommended image size before opening the file picker
                 Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
                 if (currentPage != null)
                 {
                     await currentPage.ShowPopupAsync(new PopupMessage(20, CodeLang.QRCodeImageForegroundTitle_Text, $"{CodeLang.QRCodeRecommendedImageSize_Text}:\n\n{nImageRecommendedSize:N0} x {nImageRecommendedSize:N0} {CodeLang.Pixels_Text}"));
 
-                    // Check if the popup was canceled by the user before proceeding to open the file picker
                     if (Globals.bPopupCanceled)
                     {
                         Globals.bPopupCanceled = false;
@@ -109,45 +91,28 @@ namespace BarcodeGenerator
                     }
                 }
 
-                // Open the file picker to select an image file
                 FileResult? cFileForeground = await ClassFileUtilities.PickImage();
-
-                // Read the selected file as a stream
                 if (cFileForeground != null)
                 {
                     logoStream = await cFileForeground.OpenReadAsync();
                 }
             }
 
-            // Calculate the maximum image size in pixels based on the QR code size and the configured percentage
+            // Create destination bitmap with final size and draw the decoded QR bitmap into it (scaling if necessary)
             using SKBitmap bitmap = new(width: size, height: size);
             using SKCanvas canvas = new(bitmap);
             canvas.Clear(SKColor.Parse(ClassBarcodes.cCodeColorBg));
 
             SKPaint paint = new() { Style = SKPaintStyle.Fill, Color = SKColor.Parse(ClassBarcodes.cCodeColorFg), IsAntialias = false };
 
-            // Draw QR code modules
-            for (int y = 0; y < moduleCount; y++)
-            {
-                for (int x = 0; x < moduleCount; x++)
-                {
-                    bool moduleOn = modules[y][x];
+            // Draw the generated QR bitmap into the canvas. Use nearest filtering to keep modules crisp when scaling.
+            SKRect destRect = new SKRect(0, 0, size, size);
+            canvas.DrawBitmap(sourceQrBitmap, destRect, new SKSamplingOptions(SKFilterMode.Nearest, SKMipmapMode.None));
 
-                    if (moduleOn)
-                    {
-                        SKRect rect = new(x * pixelsPerModule, y * pixelsPerModule,
-                                              (x + 1) * pixelsPerModule, (y + 1) * pixelsPerModule);
-                        canvas.DrawRect(rect, paint);
-                    }
-                }
-            }
-
-            // Draw logo if provided
+            // Draw logo if provided (rest of your existing logic unchanged)...
             if (logoStream != null)
             {
                 logoStream.Position = 0;
-
-                // Use SKCodec to read encoded origin (EXIF orientation) so we can correct rotation
                 using SKCodec codec = SKCodec.Create(logoStream);
 
                 SKBitmap? logoBitmap = null;
@@ -157,7 +122,6 @@ namespace BarcodeGenerator
                     logoBitmap = new SKBitmap(info.Width, info.Height, info.ColorType, info.AlphaType);
                     codec.GetPixels(logoBitmap.Info, logoBitmap.GetPixels());
 
-                    // Fix orientation according to EXIF
                     SKBitmap oriented = ClassImageUtilities.FixOrientation(logoBitmap, codec.EncodedOrigin);
                     if (!ReferenceEquals(oriented, logoBitmap))
                     {
@@ -167,32 +131,20 @@ namespace BarcodeGenerator
                 }
                 else
                 {
-                    // Fallback to simple decoding if codec not available
                     logoStream.Position = 0;
                     logoBitmap = SKBitmap.Decode(logoStream);
                 }
 
                 if (logoBitmap != null && logoBitmap.Width > 0 && logoBitmap.Height > 0)
                 {
-                    // Maximum box for the logo (as a fraction of the QR size)
                     float iconMaxSize = size * ClassBarcodes.nQRCodeImageSizePercent / 100.0f;
-                    Debug.WriteLine($"Original logo size: {logoBitmap.Width}x{logoBitmap.Height}, QR code size: {size}x{size}, icon max size: {iconMaxSize}x{iconMaxSize}");
-
-                    // Compute scale to fit the logo inside a square of iconMaxSize while preserving aspect ratio.
                     float scale = Math.Min(iconMaxSize / logoBitmap.Width, iconMaxSize / logoBitmap.Height);
-
-                    // Optionally avoid upscaling to reduce pixelation
-                    // If you want to allow upscaling, remove the scale = Math.Min(1f, scale) clamp or increase iconMaxSize.
-                    //scale = Math.Min(1f, scale);
-
                     float destWidth = logoBitmap.Width * scale;
                     float destHeight = logoBitmap.Height * scale;
-
                     float left = (size - destWidth) / 2f;
                     float top = (size - destHeight) / 2f;
                     SKRect dest = new(left, top, left + destWidth, top + destHeight);
 
-                    // Draw a background/border behind the logo for contrast
                     SKPaint borderPaint = new()
                     {
                         Style = SKPaintStyle.Fill,
@@ -201,12 +153,10 @@ namespace BarcodeGenerator
                     };
 
                     float borderPadding = ClassBarcodes.nQRCodeImageSizeBorder;
-                    //float borderPadding = Math.Max(4f, iconMaxSize * 0.06f);
                     SKRect borderRect = new(dest.Left - borderPadding, dest.Top - borderPadding,
                                                  dest.Right + borderPadding, dest.Bottom + borderPadding);
                     canvas.DrawRoundRect(borderRect, 6f, 6f, borderPaint);
 
-                    // Draw the logo scaled, centered, and preserving aspect ratio
                     canvas.DrawBitmap(logoBitmap, dest, new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear));
                 }
 
@@ -215,18 +165,15 @@ namespace BarcodeGenerator
 
             canvas.Flush();
 
-            // Convert SKBitmap to ImageSource
             using SKImage image = SKImage.FromBitmap(bitmap);
             using SKData encoded = image.Encode(SKEncodedImageFormat.Png, 100);
             MemoryStream ms = new();
             encoded.SaveTo(ms);
             ms.Position = 0;
 
-            // Save the generated PNG to disk with the original pixel size for sharing or other purposes
             using MemoryStream memoryStream = new(ms.ToArray());
             _ = ClassFileUtilities.SavePngFromStreamAsync(memoryStream, ClassBarcodes.cFileBarcodePng);
 
-            // Return the ImageSource for use in the UI
             return ImageSource.FromStream(() => ms);
         }
     }

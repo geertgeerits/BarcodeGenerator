@@ -20,6 +20,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="text">The text to encode in the QR code.</param>
         /// <returns>An ImageSource pointing to the generated QR code PNG file, or null if the input text is invalid.</returns>
+        /// <remarks>!!! Do not use '.WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)' for Rectangular Micro QR codes.!!!</remarks>
         public static async Task<ImageSource?> GenerateArtQrCodeAsync(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -139,7 +140,6 @@ namespace BarcodeGenerator
             if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_RMQR_CODE)
             {
                 rmqrData = new RmQRCodeImageBuilder(text)
-                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(RmQREccLevel.H)
                     .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
                                 backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
