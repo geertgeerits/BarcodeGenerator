@@ -477,6 +477,11 @@ namespace BarcodeGenerator
             {
                 ((Entry)sender).Text = e.OldTextValue;
             }
+            
+            else
+            {
+                _ = ValidateQRCodeSizePixels(entQRCodeSizePixels);
+            }
         }
 
         /// <summary>

@@ -160,13 +160,18 @@ namespace BarcodeGenerator
             else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)
             {
                 microQrData = new MicroQRCodeImageBuilder(text)
-                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(MicroQREccLevel.M)
                     .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
                                 backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
                     .WithGradient(gradient)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2);
+
+                // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
+                if (!ClassBarcodes.bQRCodeSizeVariable)
+                {
+                    microQrData = microQrData.WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels);
+                }
 
                 // Apply module shape if a non-default shape is selected
                 microQrData = ClassBarcodes.cQRCodeModuleShape switch
@@ -181,7 +186,6 @@ namespace BarcodeGenerator
             else
             {
                 standardQrData = new QRCodeImageBuilder(text)
-                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(ECCLevel.H)
                     .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
                                 backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
@@ -189,6 +193,12 @@ namespace BarcodeGenerator
                     .WithGradient(gradient)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
                     .WithIcon(icon);
+
+                // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
+                if (!ClassBarcodes.bQRCodeSizeVariable)
+                {
+                    standardQrData = standardQrData.WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels);
+                }
 
                 // Apply module shape if a non-default shape is selected
                 standardQrData = ClassBarcodes.cQRCodeModuleShape switch
