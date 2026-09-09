@@ -2270,7 +2270,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quiet zone size QR Code: {0} modules.
+        ///   Looks up a localized string similar to Quiet zone QR Code: {0} modules.
         /// </summary>
         internal static string QRCodeQuietZoneSize_Text {
             get {
@@ -2279,7 +2279,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quiet zone size Micro and Rectangular QR Code: {0} modules.
+        ///   Looks up a localized string similar to Quiet zone Micro / Rectangular QR Code: {0} modules.
         /// </summary>
         internal static string QRCodeQuietZoneSize2_Text {
             get {

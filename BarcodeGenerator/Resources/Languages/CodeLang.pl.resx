@@ -1036,9 +1036,9 @@ Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradyc
     <value>Skanowanie oparte na obrazie jest obsługiwane tylko dla kodów QR, mikrokodów QR i prostokątnych mikrokodów QR. Skanowany jest tylko jeden kod z danego typu kodu.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Rozmiar strefy ciszy dla kodów QR typu Micro i prostokątnych: {0} modułów</value>
+    <value>Strefa ciszy kodu QR typu Micro / prostokątnego: {0} modułów</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Rozmiar strefy ciszy kodu QR: {0} modułów</value>
+    <value>Kod QR strefy ciszy: {0} modułów</value>
   </data>
 </root>

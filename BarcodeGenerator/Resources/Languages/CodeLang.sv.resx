@@ -1036,9 +1036,9 @@ De språk som stöds är: arabiska, bengali, förenklad kinesiska, traditionell 
     <value>Bildbaserad skanning stöds endast för QR-koder, mikro-QR-koder och rektangulära mikro-QR-koder. Endast en kod skannas per kodtyp.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Tyst zonstorlek Mikro och rektangulär QR-kod: {0} moduler</value>
+    <value>Tyst zon Mikro / Rektangulär QR-kod: {0} moduler</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Storlek på tyst zon QR-kod: {0} moduler</value>
+    <value>QR-kod för tyst zon: {0} moduler</value>
   </data>
 </root>

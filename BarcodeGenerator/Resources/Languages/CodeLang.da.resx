@@ -1036,9 +1036,9 @@ De understøttede sprog er: arabisk, bengali, forenklet kinesisk, traditionelt k
     <value>Billedbaseret scanning understøttes kun for QR-koder, mikro-QR-koder og rektangulære mikro-QR-koder. Kun én kode scannes pr. kodetype.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Mikro- og rektangulær QR-kode for stillezone: {0} moduler</value>
+    <value>Stillezone Mikro / Rektangulær QR-kode: {0} moduler</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>QR-kode for stillezonestørrelse: {0} moduler</value>
+    <value>Stillezone QR-kodee: {0} moduler</value>
   </data>
 </root>

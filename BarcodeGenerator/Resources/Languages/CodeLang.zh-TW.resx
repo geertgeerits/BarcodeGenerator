@@ -1036,9 +1036,9 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
     <value>影像掃描僅支援二維碼、微型二維碼和矩形微型二維碼。每種類型的二維碼只能掃描一個。</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>靜音區尺寸 微型與矩形二維碼：{0} 模組</value>
+    <value>靜音區微型/矩形二維碼：{0} 模組</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>靜音區尺寸二維碼：{0} 個模組</value>
+    <value>靜音區二維碼：{0} 個模組</value>
   </data>
 </root>

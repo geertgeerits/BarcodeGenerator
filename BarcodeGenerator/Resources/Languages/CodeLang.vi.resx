@@ -1039,9 +1039,9 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
     <value>Tính năng quét dựa trên hình ảnh chỉ được hỗ trợ cho Mã QR, Mã Micro QR và Mã Micro QR hình chữ nhật. Chỉ một mã được quét cho mỗi loại mã.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Kích thước vùng đệm (quiet zone) của mã QR dạng Micro và hình chữ nhật: {0} mô-đun</value>
+    <value>Vùng đệm mã QR Micro / Hình chữ nhật: {0} mô-đun</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Kích thước vùng đệm mã QR: {0} mô-đun</value>
+    <value>Mã QR vùng tĩnh: {0} mô-đun</value>
   </data>
 </root>

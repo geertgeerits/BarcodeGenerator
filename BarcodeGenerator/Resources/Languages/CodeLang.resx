@@ -1036,9 +1036,9 @@ The supporting languages are: Arabic, Bengali, Chinese simplified, Chinese tradi
     <value>Image-based scanning is only supported for QR Codes, Micro QR Codes, and Rectangular Micro QR Codes. Only one code is scanned per code type.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Quiet zone size Micro and Rectangular QR Code: {0} modules</value>
+    <value>Quiet zone Micro / Rectangular QR Code: {0} modules</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Quiet zone size QR Code: {0} modules</value>
+    <value>Quiet zone QR Code: {0} modules</value>
   </data>
 </root>

@@ -1036,9 +1036,9 @@
     <value>Η σάρωση βάσει εικόνας υποστηρίζεται μόνο για QR Codes, Micro QR Codes και Rectangular Micro QR Codes. Σαρώνεται μόνο ένας κωδικός ανά τύπο κωδικού.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Μέγεθος ζώνης ηρεμίας Μικρο και ορθογώνιος κωδικός QR: {0} ενότητες</value>
+    <value>Ήσυχη ζώνη Μικρο / Ορθογώνιος Κωδικός QR: {0} μονάδες</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Κωδικός QR μεγέθους ζώνης ηρεμίας: {0} ενότητες</value>
+    <value>Κωδικός QR για ήσυχη ζώνη: {0} ενότητες</value>
   </data>
 </root>

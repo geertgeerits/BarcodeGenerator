@@ -1036,9 +1036,9 @@ Les langues prises en charge sont : l'arabe, le bengali, le chinois simplifié,
     <value>La numérisation par image est uniquement prise en charge pour les codes QR, les micro-codes QR et les micro-codes QR rectangulaires. Un seul code est scanné par type de code.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Taille de la zone de silence pour les codes QR Micro et rectangulaires : {0} modules</value>
+    <value>Zone de silence Micro / QR Code rectangulaire: {0} modules</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Taille de la zone de silence du code QR : {0} modules</value>
+    <value>Zone de silence Code QR: {0} modules</value>
   </data>
 </root>

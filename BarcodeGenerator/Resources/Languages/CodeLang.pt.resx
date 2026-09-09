@@ -1036,9 +1036,9 @@ Os idiomas suportados são: árabe, bengali, chinês simplificado, chinês tradi
     <value>A leitura baseada em imagem é compatível apenas com códigos QR, microcódigos QR e microcódigos QR retangulares. Apenas um código é lido por tipo de código.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Rozmiar strefy ciszy dla kodów QR typu Micro i prostokątnych: {0} modułów</value>
+    <value>Zona de silêncio do QR Code Micro / Retangular: {0} módulos</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Tamanho da zona de silêncio do QR Code: {0} módulos</value>
+    <value>Código QR da zona de silêncio: {0} módulos</value>
   </data>
 </root>

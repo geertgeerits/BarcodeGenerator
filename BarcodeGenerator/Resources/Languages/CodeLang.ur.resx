@@ -1036,9 +1036,9 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
     <value>تصویر پر مبنی اسکیننگ صرف QR کوڈز، مائیکرو QR کوڈز، اور مستطیل مائیکرو QR کوڈز کے لیے معاون ہے۔ فی کوڈ کی قسم صرف ایک کوڈ اسکین کیا جاتا ہے۔</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>خاموش زون کا سائز مائیکرو اور مستطیل QR کوڈ: {0} ماڈیولز</value>
+    <value>خاموش زون مائیکرو / مستطیل QR کوڈ: {0} ماڈیولز</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>خاموش زون کا سائز QR کوڈ: {0} ماڈیولز</value>
+    <value>خاموش زون QR کوڈ: {0} ماڈیولز</value>
   </data>
 </root>

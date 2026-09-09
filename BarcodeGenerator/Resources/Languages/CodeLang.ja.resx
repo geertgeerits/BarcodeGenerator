@@ -1050,9 +1050,9 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
     <value>画像ベースのスキャンは、QRコード、マイクロQRコード、および長方形マイクロQRコードのみに対応しています。コードの種類ごとにスキャンできるコードは1つだけです。</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>マイクロQRコードおよび長方形QRコードのクワイエットゾーンサイズ：{0}モジュール</value>
+    <value>クワイエットゾーン マイクロ／長方形QRコード：{0} モジュール</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>クワイエットゾーンのサイズ QRコード: {0} モジュール</value>
+    <value>クワイエットゾーン QRコード: {0} モジュール</value>
   </data>
 </root>

@@ -1036,9 +1036,9 @@ Limbile acceptate sunt: ​​arabă, bengaleză, chineză simplificată, chinez
     <value>Scanarea bazată pe imagini este acceptată numai pentru coduri QR, microcoduri QR și microcoduri QR dreptunghiulare. Se scanează un singur cod per tip de cod.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Dimensiunea zonei liniștite Cod QR micro și dreptunghiular: {0} module</value>
+    <value>Zonă liniștită Micro / Cod QR dreptunghiular: {0} module</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Dimensiunea zonei liniștite Cod QR: {0} module</value>
+    <value>Cod QR pentru zonă liniștită: {0} module</value>
   </data>
 </root>

@@ -1036,9 +1036,9 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
     <value>Сканирование изображений поддерживается только для QR-кодов, микро-QR-кодов и прямоугольных микро-QR-кодов. Для каждого типа кода сканируется только один код.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Размер защитной зоны для Micro QR-кода и прямоугольного QR-кода: {0} модулей</value>
+    <value>Зона тишины микро-QR-кода / прямоугольного QR-кода: {0} модулей</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Размер защитной зоны QR-кода: {0} модулей</value>
+    <value>QR-код, свободная зона: {0} модулей</value>
   </data>
 </root>

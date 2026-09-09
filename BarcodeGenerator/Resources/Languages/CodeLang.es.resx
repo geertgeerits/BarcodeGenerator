@@ -1036,9 +1036,9 @@ Los idiomas compatibles son: árabe, bengalí, chino simplificado, chino tradici
     <value>El escaneo basado en imágenes solo es compatible con códigos QR, micro códigos QR y micro códigos QR rectangulares. Solo se escanea un código por tipo.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Tamaño de la zona de silencio para códigos QR Micro y rectangulares: {0} módulos</value>
+    <value>Zona de silencio Micro / Código QR rectangular: {0} módulos</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Tamaño de la zona de silencio del código QR: {0} módulos</value>
+    <value>Zona de silencio Código QR: {0} módulos</value>
   </data>
 </root>

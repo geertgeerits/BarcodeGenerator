@@ -1033,9 +1033,9 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
     <value>इमेज-बेस्ड स्कैनिंग सिर्फ़ QR कोड, माइक्रो QR कोड और रेक्टेंगुलर माइक्रो QR कोड के लिए सपोर्टेड है। हर कोड टाइप के लिए सिर्फ़ एक कोड स्कैन किया जाता है।</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>क्वाइट ज़ोन का साइज़ (माइक्रो और रेक्टेंगुलर QR कोड): {0} मॉड्यूल</value>
+    <value>क्वाइट ज़ोन माइक्रो / आयताकार QR कोड: {0} मॉड्यूल</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>क्वाइट ज़ोन साइज़ QR कोड: {0} मॉड्यूल</value>
+    <value>क्वाइट ज़ोन QR कोड: {0} मॉड्यूल</value>
   </data>
 </root>

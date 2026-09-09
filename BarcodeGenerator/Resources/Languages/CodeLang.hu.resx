@@ -1036,9 +1036,9 @@ A támogatott nyelvek: arab, bengáli, kínai (egyszerűsített), kínai (hagyom
     <value>A képalapú szkennelés csak QR-kódok, mikro QR-kódok és téglalap alakú mikro QR-kódok esetén támogatott. Kódtípusonként csak egy kód kerül beolvasásra.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Csendes zóna mérete Mikro és téglalap alakú QR-kód: {0} modulok</value>
+    <value>Csendes zóna Mikro / Téglalap alakú QR-kód: {0} modulok</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Csendes zóna mérete QR-kód: {0} modul</value>
+    <value>Csendes zóna QR-kódja: {0} modul</value>
   </data>
 </root>

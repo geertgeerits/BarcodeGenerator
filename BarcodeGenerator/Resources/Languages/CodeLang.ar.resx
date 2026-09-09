@@ -1037,9 +1037,9 @@
     <value>لا يدعم المسح الضوئي القائم على الصور إلا رموز QR، ورموز QR المصغرة، ورموز QR المصغرة المستطيلة. ويتم مسح رمز واحد فقط لكل نوع من أنواع الرموز.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>حجم المنطقة الهادئة لرموز QR الصغيرة والمستطيلة: {0} وحدة</value>
+    <value>منطقة الأمان لرمز QR المصغر / المستطيل: {0} وحدة</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>حجم منطقة الهدوء لرمز الاستجابة السريعة (QR Code): {0} وحدة</value>
+    <value>رمز الاستجابة السريعة (QR Code) للمنطقة الهادئة: {0} وحدة</value>
   </data>
 </root>

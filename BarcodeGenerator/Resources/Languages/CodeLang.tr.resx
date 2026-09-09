@@ -1036,9 +1036,9 @@ Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Ge
     <value>Görüntü tabanlı tarama yalnızca QR Kodları, Mikro QR Kodları ve Dikdörtgen Mikro QR Kodları için desteklenmektedir. Her kod türü için yalnızca bir kod taranır.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Mikro ve Dikdörtgen QR Kod sessiz bölge boyutu: {0} modül</value>
+    <value>Sessiz bölge Mikro / Dikdörtgen QR Kodu: {0} modül</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Sessiz bölge boyutu QR Kodu: {0} modül</value>
+    <value>Sessiz bölge QR Kodu: {0} modül</value>
   </data>
 </root>

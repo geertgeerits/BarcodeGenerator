@@ -1036,9 +1036,9 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
     <value>图像扫描仅支持二维码、微型二维码和矩形微型二维码。每种类型的二维码只能扫描一个。</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>微型及矩形 QR 码静区尺寸：{0} 个模块</value>
+    <value>静区 微型/矩形 QR 码：{0} 个模块</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>静区尺寸 QR 码：{0} 个模块</value>
+    <value>静区二维码：{0} 个模块</value>
   </data>
 </root>

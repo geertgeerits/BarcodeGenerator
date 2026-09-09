@@ -1036,9 +1036,9 @@ Le lingue supportate sono: arabo, bengalese, cinese semplificato, cinese tradizi
     <value>La scansione basata su immagini è supportata solo per i codici QR, i micro codici QR e i micro codici QR rettangolari. Viene scansionato un solo codice per tipo.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Dimensione della zona di rispetto per QR Code Micro e rettangolari: {0} moduli</value>
+    <value>Zona di quiete Micro / QR Code rettangolare: {0} moduli</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Dimensione della zona di quiete del codice QR: {0} moduli</value>
+    <value>Zona di quiete Codice QR: {0} moduli</value>
   </data>
 </root>

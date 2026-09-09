@@ -1036,9 +1036,9 @@ De ondersteunde talen zijn: Arabisch, Bengaals, Vereenvoudigd Chinees, Tradition
     <value>Scannen op basis van afbeeldingen wordt alleen ondersteund voor QR-codes, micro-QR-codes en rechthoekige micro-QR-codes. Er wordt slechts één code per codetype gescand.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Grootte rustzone Micro- en rechthoekige QR-codes: {0} modules</value>
+    <value>Stille zone Micro / Rechthoekige QR-code: {0} modules</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Grootte rustzone QR-code: {0} modules</value>
+    <value>Stille zone QR-code: {0} modules</value>
   </data>
 </root>

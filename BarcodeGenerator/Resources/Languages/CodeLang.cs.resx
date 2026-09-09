@@ -1036,9 +1036,9 @@ Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština,
     <value>Skenování na základě obrázků je podporováno pouze pro QR kódy, mikro QR kódy a obdélníkové mikro QR kódy. Pro každý typ kódu se skenuje pouze jeden kód.</value>
   </data>
   <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
-    <value>Velikost klidové zóny Mikro a obdélníkový QR kód: {0} modulů</value>
+    <value>Klidová zóna Mikro / Obdélníkový QR kód: {0} modulů</value>
   </data>
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>QR kód pro velikost klidové zóny: {0} modulů</value>
+    <value>Klidové zóny QR kód: {0} modulů</value>
   </data>
 </root>

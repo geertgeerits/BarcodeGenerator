@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui.Extensions;
 using QRCoder;
 using SkiaSharp;
+//using SkiaSharp.QrCode;
 using System.Collections;
 
 namespace BarcodeGenerator
