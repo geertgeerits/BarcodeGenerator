@@ -1013,9 +1013,6 @@
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>حجم حدود الصورة: {0} بكسل</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>حجم المنطقة الهادئة: {0} وحدة</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>رمز الاستجابة السريعة المصغر الفني</value>
   </data>
@@ -1038,5 +1035,11 @@
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>لا يدعم المسح الضوئي القائم على الصور إلا رموز QR، ورموز QR المصغرة، ورموز QR المصغرة المستطيلة. ويتم مسح رمز واحد فقط لكل نوع من أنواع الرموز.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>حجم المنطقة الهادئة لرموز QR الصغيرة والمستطيلة: {0} وحدة</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>حجم منطقة الهدوء لرمز الاستجابة السريعة (QR Code): {0} وحدة</value>
   </data>
 </root>

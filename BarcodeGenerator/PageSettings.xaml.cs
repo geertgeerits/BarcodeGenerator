@@ -106,6 +106,7 @@ namespace BarcodeGenerator
 
             // Set the QR code quiet zone size, image size and image size border to update the sliders
             sldQRCodeQuietZoneSize.Value = ClassBarcodes.nQRCodeQuietZoneSize;
+            sldQRCodeQuietZoneSize2.Value = ClassBarcodes.nQRCodeQuietZoneSize2;
             sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
             sldQRCodeImageSizeBorder.Value = ClassBarcodes.nQRCodeImageSizeBorder;
 
@@ -255,6 +256,7 @@ namespace BarcodeGenerator
 
             // Set the QR code quiet zone size, image size and image size border to update the labels
             lblQRCodeQuietZoneSize.Text = string.Format(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
+            lblQRCodeQuietZoneSize2.Text = string.Format(CodeLang.QRCodeQuietZoneSize2_Text, ClassBarcodes.nQRCodeQuietZoneSize2);
             lblQRCodeImageSize.Text = string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent.ToString("F1"));
             lblQRCodeImageSizeBorder.Text = $"{string.Format(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder)}";
 
@@ -512,6 +514,19 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Handles the ValueChanged event for the Micro QR code and Rectangular QR code quiet zone size slider, updating the quiet zone size
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
+        /// <param name="e">An object that contains the event data, including the new value of the slider representing the desired QR
+        /// code quiet zone size.</param>
+        private void OnSliderQRCodeQuietZoneSize2_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            ClassBarcodes.nQRCodeQuietZoneSize2 = (int)Math.Round(e.NewValue, 0);
+            sldQRCodeQuietZoneSize2.Value = ClassBarcodes.nQRCodeQuietZoneSize2;
+            lblQRCodeQuietZoneSize2.Text = string.Format(CodeLang.QRCodeQuietZoneSize2_Text, ClassBarcodes.nQRCodeQuietZoneSize2);
+        }
+
+        /// <summary>
         /// Handles the ValueChanged event for the QR code image size slider, updating the QR code image size percentage
         /// and pixel dimensions based on the new slider value.
         /// </summary>
@@ -601,6 +616,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeFinderPatternShape", ClassBarcodes.cQRCodeFinderPatternShape);
             Preferences.Default.Set("SettingQRCodeModuleShape", ClassBarcodes.cQRCodeModuleShape);
             Preferences.Default.Set("SettingQRCodeQuietZoneSize", ClassBarcodes.nQRCodeQuietZoneSize);
+            Preferences.Default.Set("SettingQRCodeQuietZoneSize2", ClassBarcodes.nQRCodeQuietZoneSize2);
             Preferences.Default.Set("SettingQRCodeModuleSizePercent", ClassBarcodes.nQRCodeModuleSizePercent);
             Preferences.Default.Set("SettingCodeColorFg", ClassBarcodes.cCodeColorFg);
             Preferences.Default.Set("SettingCodeColorBg", ClassBarcodes.cCodeColorBg);
@@ -655,6 +671,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeFinderPatternShape");
                 Preferences.Default.Remove("SettingQRCodeModuleShape");
                 Preferences.Default.Remove("SettingQRCodeQuietZoneSize");
+                Preferences.Default.Remove("SettingQRCodeQuietZoneSize2");
                 Preferences.Default.Remove("SettingQRCodeModuleSizePercent");
                 Preferences.Default.Remove("SettingCodeColorFg");
                 Preferences.Default.Remove("SettingCodeColorBg");

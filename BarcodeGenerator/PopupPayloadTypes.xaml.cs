@@ -84,6 +84,7 @@ namespace BarcodeGenerator
                 brdPayloadTypePassword.IsVisible = true;
                 _ = entPayloadTypeSSID.Focus();
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_URL)
             {
                 brdPayloadTypeURL.IsVisible = true;
@@ -92,6 +93,7 @@ namespace BarcodeGenerator
                 _ = entPayloadTypeURL.Focus();
                 entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text?.Length ?? 0; // Move cursor to the end of the text
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_BOOKMARK)
             {
                 brdPayloadTypeURL.IsVisible = true;
@@ -100,6 +102,7 @@ namespace BarcodeGenerator
                 _ = entPayloadTypeURL.Focus();
                 entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text?.Length ?? 0;
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_MAIL)
             {
                 brdPayloadTypeReceiver.IsVisible = true;
@@ -107,6 +110,7 @@ namespace BarcodeGenerator
                 brdPayloadTypeMessage.IsVisible = true;
                 _ = entPayloadTypeReceiver.Focus();
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_SMS)
             {
                 brdPayloadTypePhoneNumber.IsVisible = true;
@@ -115,6 +119,7 @@ namespace BarcodeGenerator
                 _ = entPayloadTypePhoneNumber.Focus();
                 entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_MMS)
             {
                 brdPayloadTypePhoneNumber.IsVisible = true;
@@ -123,6 +128,7 @@ namespace BarcodeGenerator
                 _ = entPayloadTypePhoneNumber.Focus();
                 entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
                 lblGeolocationEncoding.IsVisible = true;
@@ -140,6 +146,7 @@ namespace BarcodeGenerator
                 _ = entPayloadTypeLatitude.Focus();
                 entPayloadTypeLatitude.CursorPosition = entPayloadTypeLatitude.Text?.Length ?? 0;
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_PHONENUMBER)
             {
                 brdPayloadTypePhoneNumber.IsVisible = true;
@@ -147,12 +154,14 @@ namespace BarcodeGenerator
                 _ = entPayloadTypePhoneNumber.Focus();
                 entPayloadTypePhoneNumber.CursorPosition = entPayloadTypePhoneNumber.Text?.Length ?? 0;
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_WHATSAPPMESSAGE)
             {
                 brdPayloadTypePhoneNumber.IsVisible = true;
                 brdPayloadTypeMessage.IsVisible = true;
                 _ = entPayloadTypePhoneNumber.Focus();
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_CONTACTDATA)
             {
                 brdPayloadTypeFirstname.IsVisible = true;
@@ -162,6 +171,7 @@ namespace BarcodeGenerator
                 entPayloadTypeMail.ReturnType = ReturnType.Done;
                 _ = entPayloadTypeFirstname.Focus();
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_CALENDAREVENT)
             {
                 brdPayloadTypeSubject.IsVisible = true;
@@ -175,6 +185,7 @@ namespace BarcodeGenerator
                 brdPayloadTypeEndTime.IsVisible = true;
                 _ = entPayloadTypeSubject.Focus();
             }
+            
             else if (selectedName == ClassPayloadTypes.cPayloadType_SEPACREDITTRANSFER)
             {
                 brdPayloadTypeSctBic.IsVisible = true;
@@ -424,6 +435,7 @@ namespace BarcodeGenerator
                 lblPayloadTypeLatitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(location.Latitude, isLatitude: true);
                 lblPayloadTypeLongitudeDMSResult.Text = ClassGeolocation.DecimalToDMS(location.Longitude, isLatitude: false);
             }
+            
             else
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.GeolocationTitle_Text, CodeLang.GeolocationMessage_Text, CodeLang.ButtonClose_Text);
@@ -688,6 +700,7 @@ namespace BarcodeGenerator
                 MMS generator = new(number: entPayloadTypePhoneNumber.Text, subject: edtPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
+            
             // PayloadType Geolocation
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
@@ -735,6 +748,7 @@ namespace BarcodeGenerator
                 {
                     entPayloadTypePhoneNumber.Text = string.Empty;
                 }
+                
                 else if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
                 {
                     return string.Empty;
@@ -745,6 +759,7 @@ namespace BarcodeGenerator
                 {
                     entPayloadTypeMail.Text = string.Empty;
                 }
+                
                 else if (!await IsValidEmail(entPayloadTypeMail.Text))
                 {
                     return string.Empty;
@@ -844,6 +859,7 @@ END:VCALENDAR";
                     cRemittance = entPayloadTypeSctRemittanceInfoUnstructured.Text;
                     typeOfRemittance = TypeOfRemittance.Unstructured;
                 }
+                
                 else
                 {
                     cRemittance = entPayloadTypeSctRemittanceInfoStructured.Text;
@@ -1133,6 +1149,7 @@ END:VCALENDAR";
                 {
                     numericIban += (character - 55).ToString();
                 }
+                
                 else
                 {
                     numericIban += character;
@@ -1218,10 +1235,12 @@ END:VCALENDAR";
                 {
                     numericString += (c - 'A' + 10).ToString();
                 }
+                
                 else if (char.IsDigit(c))
                 {
                     numericString += c;
                 }
+                
                 else
                 {
                     return false; // Invalid character

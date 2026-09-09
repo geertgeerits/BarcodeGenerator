@@ -1012,9 +1012,6 @@ Wählen Sie eine Option.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Bildrandgröße: {0} Pixel</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Größe der Ruhezone: {0} Module</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Künstlerischer Mikro-QR-Code</value>
   </data>
@@ -1036,5 +1033,11 @@ Die unterstützten Sprachen sind: Arabisch, Bengali, Chinesisch (vereinfacht), C
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Bildbasiertes Scannen wird nur für QR-Codes, Micro-QR-Codes und rechteckige Micro-QR-Codes unterstützt. Pro Codetyp wird nur ein Code gescannt.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Größe der Ruhezone bei Micro- und rechteckigen QR-Codes: {0} Module</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Größe der Ruhezone (QR-Code): {0} Module</value>
   </data>
 </root>

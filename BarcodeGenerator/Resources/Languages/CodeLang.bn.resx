@@ -1011,9 +1011,6 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>ছবির বর্ডারের আকার: {0} পিক্সেল</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>শান্ত অঞ্চলের আকার: {0} মডিউল</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>শৈল্পিক মাইক্রো কিউআর কোড</value>
   </data>
@@ -1035,5 +1032,11 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>ইমেজ-ভিত্তিক স্ক্যানিং শুধুমাত্র কিউআর কোড, মাইক্রো কিউআর কোড এবং আয়তাকার মাইক্রো কিউআর কোডের জন্য সমর্থিত। প্রতি প্রকার কোড থেকে কেবল একটি কোড স্ক্যান করা হয়।</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>কোয়াইট জোনের আকার (মাইক্রো এবং আয়তাকার কিউআর কোড): {0} মডিউল</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>কোয়াইট জোনের আকার QR কোড: {0} মডিউল</value>
   </data>
 </root>

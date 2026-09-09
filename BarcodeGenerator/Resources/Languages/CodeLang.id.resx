@@ -1013,9 +1013,6 @@ Tidak semua jenis muatan didukung di setiap perangkat.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Μέγεθος περιγράμματος εικόνας: {0} pixel</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Ukuran zona tenang: {0} modul</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Kode QR Mikro Artistik</value>
   </data>
@@ -1037,5 +1034,11 @@ Bahasa yang didukung adalah: Arab, Bengali, Tionghoa Sederhana, Tionghoa Tradisi
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Pemindaian berbasis gambar hanya didukung untuk Kode QR, Kode QR Mikro, dan Kode QR Mikro Persegi Panjang. Hanya satu kode yang dipindai per jenis kode.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Ukuran zona senyap QR Code Mikro dan Persegi Panjang: {0} modul</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Ukuran zona senyap Kode QR: {0} modul</value>
   </data>
 </root>

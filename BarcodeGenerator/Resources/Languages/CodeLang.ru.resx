@@ -1013,9 +1013,6 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Размер границы изображения: {0} пикселей</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Размер тихой зоны: {0} модулей</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Художественный микро QR-код</value>
   </data>
@@ -1037,5 +1034,11 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Сканирование изображений поддерживается только для QR-кодов, микро-QR-кодов и прямоугольных микро-QR-кодов. Для каждого типа кода сканируется только один код.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Размер защитной зоны для Micro QR-кода и прямоугольного QR-кода: {0} модулей</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Размер защитной зоны QR-кода: {0} модулей</value>
   </data>
 </root>

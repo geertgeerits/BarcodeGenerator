@@ -1013,9 +1013,6 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Kuvan reunuksen koko: {0} pikseliä</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Hiljaisen alueen koko: {0} moduulia</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Taiteellinen mikro-QR-koodi</value>
   </data>
@@ -1037,5 +1034,11 @@ Tuetut kielet ovat: arabia, bengali, kiina (yksinkertaistettu), kiina (perintein
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Kuvapohjaista skannausta tuetaan vain QR-koodeille, mikro-QR-koodeille ja suorakulmaisille mikro-QR-koodeille. Vain yksi koodi skannataan koodityyppiä kohden.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Hiljaisen alueen koko Mikro- ja suorakulmainen QR-koodi: {0} moduulia</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Hiljaisen alueen koko QR-koodi: {0} moduulia</value>
   </data>
 </root>

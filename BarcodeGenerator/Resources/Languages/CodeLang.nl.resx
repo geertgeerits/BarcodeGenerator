@@ -1013,9 +1013,6 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Randgrootte van de afbeelding: {0} pixels</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Grootte van de stille zone: {0} modules</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Artistieke micro-QR-code</value>
   </data>
@@ -1037,5 +1034,11 @@ De ondersteunde talen zijn: Arabisch, Bengaals, Vereenvoudigd Chinees, Tradition
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Scannen op basis van afbeeldingen wordt alleen ondersteund voor QR-codes, micro-QR-codes en rechthoekige micro-QR-codes. Er wordt slechts één code per codetype gescand.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Grootte rustzone Micro- en rechthoekige QR-codes: {0} modules</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Grootte rustzone QR-code: {0} modules</value>
   </data>
 </root>

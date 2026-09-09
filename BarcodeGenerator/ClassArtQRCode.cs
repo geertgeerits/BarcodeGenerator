@@ -1,4 +1,6 @@
-﻿// https://www.nuget.org/packages/SkiaSharp.QrCode/1.2.0#show-readme-container
+﻿// https://github.com/guitarrapc/FeatherQR
+// https://github.com/guitarrapc/FeatherQR/blob/main/docs/migration.md
+// https://www.nuget.org/packages/SkiaSharp.QrCode/1.2.0#show-readme-container
 
 using CommunityToolkit.Maui.Extensions;
 using SkiaSharp;
@@ -137,14 +139,13 @@ namespace BarcodeGenerator
             if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_RMQR_CODE)
             {
                 rmqrData = new RmQRCodeImageBuilder(text)
-                    .WithSegmentation(RmQRSegmentation.Optimal)
                     .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
                     .WithErrorCorrection(RmQREccLevel.H)
                     .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
                                 backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
                     .WithGradient(gradient)
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2);
 
                 // Apply module shape if a non-default shape is selected
                 rmqrData = ClassBarcodes.cQRCodeModuleShape switch
@@ -165,7 +166,7 @@ namespace BarcodeGenerator
                                 backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
                     .WithGradient(gradient)
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2);
 
                 // Apply module shape if a non-default shape is selected
                 microQrData = ClassBarcodes.cQRCodeModuleShape switch

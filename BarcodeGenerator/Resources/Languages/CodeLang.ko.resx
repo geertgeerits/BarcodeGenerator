@@ -1014,9 +1014,6 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>이미지 테두리 크기: {0} 픽셀</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>무음 영역 크기: {0} 모듈</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>예술적인 마이크로 QR 코드</value>
   </data>
@@ -1038,5 +1035,11 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>이미지 기반 스캔은 QR 코드, 마이크로 QR 코드 및 직사각형 마이크로 QR 코드에서만 지원됩니다. 코드 유형별로 하나의 코드만 스캔할 수 있습니다.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>마이크로 및 직사각형 QR 코드의 여백(Quiet zone) 크기: {0} 모듈</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>콰이어트 존 크기 QR 코드: {0} 모듈</value>
   </data>
 </root>

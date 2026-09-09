@@ -1013,9 +1013,6 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>图片边框大小：{0} 像素</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>静音区大小：{0} 个模块</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>艺术微型二维码</value>
   </data>
@@ -1037,5 +1034,11 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>图像扫描仅支持二维码、微型二维码和矩形微型二维码。每种类型的二维码只能扫描一个。</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>微型及矩形 QR 码静区尺寸：{0} 个模块</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>静区尺寸 QR 码：{0} 个模块</value>
   </data>
 </root>

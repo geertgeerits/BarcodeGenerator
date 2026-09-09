@@ -1013,9 +1013,6 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Dimensiunea marginii imaginii: {0} pixeli</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Dimensiunea zonei liniștite: {0} module</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Cod QR micro artistic</value>
   </data>
@@ -1037,5 +1034,11 @@ Limbile acceptate sunt: ​​arabă, bengaleză, chineză simplificată, chinez
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Scanarea bazată pe imagini este acceptată numai pentru coduri QR, microcoduri QR și microcoduri QR dreptunghiulare. Se scanează un singur cod per tip de cod.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Dimensiunea zonei liniștite Cod QR micro și dreptunghiular: {0} module</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Dimensiunea zonei liniștite Cod QR: {0} module</value>
   </data>
 </root>

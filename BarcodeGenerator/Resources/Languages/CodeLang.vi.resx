@@ -1016,9 +1016,6 @@ Không phải tất cả các loại dữ liệu đều được hỗ trợ trê
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Kích thước viền ảnh: {0} pixel</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Kích thước vùng yên tĩnh: {0} mô-đun</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Mã QR siêu nhỏ nghệ thuật</value>
   </data>
@@ -1040,5 +1037,11 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Tính năng quét dựa trên hình ảnh chỉ được hỗ trợ cho Mã QR, Mã Micro QR và Mã Micro QR hình chữ nhật. Chỉ một mã được quét cho mỗi loại mã.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Kích thước vùng đệm (quiet zone) của mã QR dạng Micro và hình chữ nhật: {0} mô-đun</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Kích thước vùng đệm mã QR: {0} mô-đun</value>
   </data>
 </root>

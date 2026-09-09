@@ -1,5 +1,10 @@
-﻿using SkiaSharp.QrCode;
+﻿// https://github.com/guitarrapc/FeatherQR
+
+using SkiaSharp;
+using SkiaSharp.QrCode;
 using SkiaSharp.QrCode.Image;
+//using FeatherQR;
+//using FeatherQR.SkiaSharp;
 
 namespace BarcodeGenerator
 {
@@ -29,7 +34,7 @@ namespace BarcodeGenerator
                 byte[] pngBytes = new QRCodeImageBuilder(text)
                     .WithModulePixelSize(12)
                     .WithErrorCorrection(ECCLevel.M)
-                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg))
+                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
                     .ToByteArray();
 
@@ -40,7 +45,7 @@ namespace BarcodeGenerator
                 string qrCodeAsSvg = new QRCodeImageBuilder(text)
                     .WithModulePixelSize(12)
                     .WithErrorCorrection(ECCLevel.M)
-                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg))
+                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
                     .ToSvgString();
 
@@ -82,8 +87,8 @@ namespace BarcodeGenerator
                 byte[] pngBytes = new MicroQRCodeImageBuilder(text)
                     .WithModulePixelSize(12)
                     .WithErrorCorrection(MicroQREccLevel.M)
-                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg))
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
+                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2)
                     .ToByteArray();
 
                 // Save the byte array 'qrCodeImage' as a PNG file
@@ -93,8 +98,8 @@ namespace BarcodeGenerator
                 string qrCodeAsSvg = new MicroQRCodeImageBuilder(text)
                     .WithModulePixelSize(12)
                     .WithErrorCorrection(MicroQREccLevel.M)
-                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg))
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
+                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2)
                     .ToSvgString();
 
                 // Save the string 'qrCodeAsSvg' as a SVG file
@@ -136,8 +141,8 @@ namespace BarcodeGenerator
                     .WithModulePixelSize(12)
                     .WithHeight(RmQRHeight.H9)
                     .WithErrorCorrection(RmQREccLevel.M)
-                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg))
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
+                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2)
                     .ToByteArray();
 
                 // Save the byte array 'qrCodeImage' as a PNG file
@@ -148,8 +153,8 @@ namespace BarcodeGenerator
                     .WithModulePixelSize(12)
                     .WithHeight(RmQRHeight.H9)
                     .WithErrorCorrection(RmQREccLevel.M)
-                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg))
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
+                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2)
                     .ToSvgString();
 
                 // Save the string 'qrCodeAsSvg' as a SVG file

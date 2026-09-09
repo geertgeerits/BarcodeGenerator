@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-08 (YYYY-MM-DD)
+ * Date ........: 2026-09-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -15,7 +15,7 @@
  *                NuGet Package: ZXingCpp by Axxel - https://github.com/zxing-cpp/zxing-cpp ; https://www.nuget.org/packages/ZXingCpp#readme-body-tab ;https://www.nuget.org/packages/ZXingCpp
  *                NuGet Package: QRCoder by Raffael Herrmann, Shane Krueger - https://github.com/Shane32/QRCoder - https://github.com/Shane32/QRCoder/wiki
  *                NuGet Package: SkiaSharp by Microsoft - https://github.com/mono/SkiaSharp
- *                NuGet Package: SkiaSharp.QrCode by Ikiru Yoshizaki - https://github.com/guitarrapc/SkiaSharp.QrCode
+ *                NuGet Package: SkiaSharp.QrCode by Ikiru Yoshizaki - https://github.com/guitarrapc/FeatherQR
  *                NuGet Package: BarcodeScanner.Native.Maui by Alen Friščić - https://github.com/afriscic/BarcodeScanning.Native.Maui
  *                NuGet Package: Sentry.Maui - https://sentry.io ; https://geerits.sentry.io/issues/ ; https://www.youtube.com/watch?v=9-50zH8fqYA
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun, Raffael Herrmann, Shane Krueger, Ikiru Yoshizaki, Copilot */
@@ -101,7 +101,8 @@ namespace BarcodeGenerator
             ClassBarcodes.nQRCodeImageSizeBorder = Preferences.Default.Get("SettingQRCodeImageSizeBorder", 6);
             ClassBarcodes.cQRCodeFinderPatternShape = Preferences.Default.Get("SettingQRCodeFinderPatternShape", "Square");  // Square, Rounded, Circle
             ClassBarcodes.cQRCodeModuleShape = Preferences.Default.Get("SettingQRCodeModuleShape", "Square");  // Square, Rounded, Circle
-            ClassBarcodes.nQRCodeQuietZoneSize = Preferences.Default.Get("SettingQRCodeQuietZoneSize", 3);  // Size of the QR code quiet zone in modules
+            ClassBarcodes.nQRCodeQuietZoneSize = Preferences.Default.Get("SettingQRCodeQuietZoneSize", 4);  // Size of the QR code quiet zone in modules
+            ClassBarcodes.nQRCodeQuietZoneSize2 = Preferences.Default.Get("SettingQRCodeQuietZoneSize2", 2);  // Size of the Micro QR code and rMQR code quiet zone in modules
             ClassBarcodes.nQRCodeModuleSizePercent = Preferences.Default.Get("SettingQRCodeModuleSizePercent", 100);  // Size of the QR code modules as a percentage
             ClassBarcodes.cCodeColorFg = Preferences.Default.Get("SettingCodeColorFg", "FF000000");
             ClassBarcodes.cCodeColorBg = Preferences.Default.Get("SettingCodeColorBg", "FFFFFFFF");

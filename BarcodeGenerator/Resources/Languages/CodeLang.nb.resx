@@ -1013,9 +1013,6 @@ Ikke alle nyttelasttyper støttes på alle enheter.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Størrelse på bildekant: {0} piksler</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Størrelse på stillesonen: {0} moduler</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Kunstnerisk mikro-QR-kode</value>
   </data>
@@ -1037,5 +1034,11 @@ Støttede språk er: arabisk, bengali, forenklet kinesisk, tradisjonell kinesisk
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Bildebasert skanning støttes bare for QR-koder, mikro-QR-koder og rektangulære mikro-QR-koder. Bare én kode skannes per kodetype.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Mikro- og rektangulær QR-kode for stillesone: {0} moduler</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>QR-kode for størrelse på stillesonen: {0} moduler</value>
   </data>
 </root>

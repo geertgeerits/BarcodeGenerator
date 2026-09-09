@@ -1013,9 +1013,6 @@ Her cihazda tüm veri türleri desteklenmez.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Görüntü kenar boyutu: {0} piksel</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Sessiz bölge boyutu: {0} modül</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Sanatsal Mikro QR Kodu</value>
   </data>
@@ -1037,5 +1034,11 @@ Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Ge
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Görüntü tabanlı tarama yalnızca QR Kodları, Mikro QR Kodları ve Dikdörtgen Mikro QR Kodları için desteklenmektedir. Her kod türü için yalnızca bir kod taranır.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Mikro ve Dikdörtgen QR Kod sessiz bölge boyutu: {0} modül</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Sessiz bölge boyutu QR Kodu: {0} modül</value>
   </data>
 </root>

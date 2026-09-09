@@ -37,7 +37,7 @@
                 x:Name="grdSettings"
                 Style="{StaticResource gridStyleSettings}"
                 RowSpacing="4"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, 70">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, 70">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -347,7 +347,7 @@
                 <Border
                     Grid.Row="13"
                     Grid.Column="0"
-                    Grid.RowSpan="7"
+                    Grid.RowSpan="8"
                     Grid.ColumnSpan="2"
                     Margin="{OnPlatform Default='2,0,2,0', iOS='5,0,5,0', WinUI='9,0,9,0'}">
                 </Border>
@@ -418,8 +418,8 @@
                         Style="{StaticResource sliderStyleColor}"
                         VerticalOptions="Center"
                         Margin="{OnPlatform Default='0,0,0,0', iOS='8,3,8,0', WinUI='10,2,10,0'}"
-                        ThumbColor="Orange"
-                        MinimumTrackColor="Orange"
+                        ThumbColor="YellowGreen"
+                        MinimumTrackColor="YellowGreen"
                         Minimum="0"
                         Maximum="10"
                         ValueChanged="OnSliderQRCodeQuietZoneSize_ValueChanged">
@@ -427,9 +427,38 @@
                 </Border>
 
                 <Label
-                    x:Name="lblQRCodeImageSize"
+                    x:Name="lblQRCodeQuietZoneSize2"
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="16"
+                    Grid.Column="0"
+                    VerticalTextAlignment="Start"
+                    Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
+                    Text="{Translate QRCodeQuietZoneSize_Text}">
+                </Label>
+
+                <Border
+                    Style="{StaticResource borderStyleGroup}"
+                    Grid.Row="16"
+                    Grid.Column="2"
+                    Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
+
+                    <Slider
+                        x:Name="sldQRCodeQuietZoneSize2"
+                        Style="{StaticResource sliderStyleColor}"
+                        VerticalOptions="Center"
+                        Margin="{OnPlatform Default='0,0,0,0', iOS='8,3,8,0', WinUI='10,2,10,0'}"
+                        ThumbColor="YellowGreen"
+                        MinimumTrackColor="YellowGreen"
+                        Minimum="0"
+                        Maximum="10"
+                        ValueChanged="OnSliderQRCodeQuietZoneSize2_ValueChanged">
+                    </Slider>
+                </Border>
+
+                <Label
+                    x:Name="lblQRCodeImageSize"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="17"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -438,7 +467,7 @@
                 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="16"
+                    Grid.Row="17"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
                 
@@ -447,8 +476,8 @@
                         Style="{StaticResource sliderStyleColor}"
                         VerticalOptions="Center"
                         Margin="{OnPlatform Default='0,0,0,0', iOS='8,3,8,0', WinUI='10,2,10,0'}"
-                        ThumbColor="Orange"
-                        MinimumTrackColor="Orange"
+                        ThumbColor="DarkOrange"
+                        MinimumTrackColor="DarkOrange"
                         Minimum="5"
                         Maximum="35"
                         ValueChanged="OnSliderQRCodeImageSize_ValueChanged">
@@ -458,7 +487,7 @@
                 <Label
                     x:Name="lblQRCodeImageSizeBorder"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="17"
+                    Grid.Row="18"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -467,7 +496,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="17"
+                    Grid.Row="18"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -476,8 +505,8 @@
                         Style="{StaticResource sliderStyleColor}"
                         VerticalOptions="Center"
                         Margin="{OnPlatform Default='0,0,0,0', iOS='8,3,8,0', WinUI='10,2,10,0'}"
-                        ThumbColor="Orange"
-                        MinimumTrackColor="Orange"
+                        ThumbColor="DarkOrange"
+                        MinimumTrackColor="DarkOrange"
                         Minimum="0"
                         Maximum="25"
                         ValueChanged="OnSliderQRCodeImageSizeBorder_ValueChanged">
@@ -486,7 +515,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="18"
+                    Grid.Row="19"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -495,7 +524,7 @@
 
                 <Switch
                     x:Name="swtCompressionEnabled"
-                    Grid.Row="18"
+                    Grid.Row="19"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,0,0,0', WinUI='0,0,0,0'}"
                     Toggled="SwtCompressionEnabled_Toggled">
@@ -503,7 +532,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="19"
+                    Grid.Row="20"
                     Grid.Column="0"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
                     Text="{Translate PayloadType_Text}">
@@ -511,7 +540,7 @@
                 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="19"
+                    Grid.Row="20"
                     Grid.Column="1"
                     Margin="{OnPlatform Default='0,0,11,10', iOS='0,0,16,10', WinUI='0,0,16,10'}">
 

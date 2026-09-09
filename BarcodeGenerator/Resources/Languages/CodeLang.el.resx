@@ -1013,9 +1013,6 @@
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Μέγεθος περιγράμματος εικόνας: {0} pixel</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Μέγεθος ζώνης ηρεμίας: {0} ενότητες</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Καλλιτεχνικός Μικροκωδικός QR</value>
   </data>
@@ -1037,5 +1034,11 @@
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Η σάρωση βάσει εικόνας υποστηρίζεται μόνο για QR Codes, Micro QR Codes και Rectangular Micro QR Codes. Σαρώνεται μόνο ένας κωδικός ανά τύπο κωδικού.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Μέγεθος ζώνης ηρεμίας Μικρο και ορθογώνιος κωδικός QR: {0} ενότητες</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>Κωδικός QR μεγέθους ζώνης ηρεμίας: {0} ενότητες</value>
   </data>
 </root>

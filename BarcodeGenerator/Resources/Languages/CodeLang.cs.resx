@@ -1013,9 +1013,6 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Velikost okraje obrázku: {0} pixelů</value>
   </data>
-  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
-    <value>Velikost klidové zóny: {0} modulů</value>
-  </data>
   <data name="Barcode_ART_MICRO_QR_CODE_Text" xml:space="preserve">
     <value>Umělecký mikro QR kód</value>
   </data>
@@ -1037,5 +1034,11 @@ Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština,
   </data>
   <data name="ImageScanning_Text" xml:space="preserve">
     <value>Skenování na základě obrázků je podporováno pouze pro QR kódy, mikro QR kódy a obdélníkové mikro QR kódy. Pro každý typ kódu se skenuje pouze jeden kód.</value>
+  </data>
+  <data name="QRCodeQuietZoneSize2_Text" xml:space="preserve">
+    <value>Velikost klidové zóny Mikro a obdélníkový QR kód: {0} modulů</value>
+  </data>
+  <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
+    <value>QR kód pro velikost klidové zóny: {0} modulů</value>
   </data>
 </root>
