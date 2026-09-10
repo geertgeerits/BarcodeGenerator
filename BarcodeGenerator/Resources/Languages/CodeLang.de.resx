@@ -1040,4 +1040,7 @@ Die unterstützten Sprachen sind: Arabisch, Bengali, Chinesisch (vereinfacht), C
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Ruhezonen QR-Code: {0} Module</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>Höhe des rechteckigen Micro-QR-Codes: {0} Module</value>
+  </data>
 </root>

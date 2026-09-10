@@ -2297,7 +2297,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rectangular Micro QR Code height: {0} modules:.
+        ///   Looks up a localized string similar to Rectangular Micro QR Code height: {0} modules.
         /// </summary>
         internal static string QRCodeSizeModulesHeight_Text {
             get {

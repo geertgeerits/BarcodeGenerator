@@ -1041,4 +1041,7 @@ Tuetut kielet ovat: arabia, bengali, kiina (yksinkertaistettu), kiina (perintein
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Hiljaisen alueen QR-koodi: {0} moduulia</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>Suorakulmaisen mikro-QR-koodin korkeus: {0} moduulia</value>
+  </data>
 </root>

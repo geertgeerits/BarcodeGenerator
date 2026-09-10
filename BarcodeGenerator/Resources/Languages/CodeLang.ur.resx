@@ -1041,4 +1041,7 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>خاموش زون QR کوڈ: {0} ماڈیولز</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>مستطیل مائکرو QR کوڈ کی اونچائی: {0} ماڈیولز</value>
+  </data>
 </root>

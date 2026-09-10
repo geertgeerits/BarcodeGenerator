@@ -1038,4 +1038,7 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>क्वाइट ज़ोन QR कोड: {0} मॉड्यूल</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>आयताकार माइक्रो QR कोड की ऊंचाई: {0} मॉड्यूल</value>
+  </data>
 </root>

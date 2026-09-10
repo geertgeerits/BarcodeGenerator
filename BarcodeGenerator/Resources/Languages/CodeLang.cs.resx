@@ -1041,4 +1041,7 @@ Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština,
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Klidové zóny QR kód: {0} modulů</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>Výška obdélníkového mikro QR kódu: {0} modulů</value>
+  </data>
 </root>

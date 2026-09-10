@@ -1041,4 +1041,7 @@ Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Ge
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Sessiz bölge QR Kodu: {0} modül</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>Dikdörtgen Mikro QR Kodu yüksekliği: {0} modül</value>
+  </data>
 </root>
