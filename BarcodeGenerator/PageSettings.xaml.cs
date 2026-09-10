@@ -684,8 +684,13 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnSettingsSaveClicked(object sender, EventArgs e)
         {
-            // Validate the QR code image size entry before saving the settings
+            // Validate the QR code size entry before saving the settings
             if (!ValidateQRCodeSizePixels(entQRCodeSizePixels))
+            {
+                return;
+            }
+
+            if (!ValidateQRCodeSizeModulesHeight(entQRCodeSizeModulesHeight))
             {
                 return;
             }
