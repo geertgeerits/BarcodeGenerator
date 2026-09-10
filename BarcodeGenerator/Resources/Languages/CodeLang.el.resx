@@ -1041,4 +1041,7 @@
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Κωδικός QR για ήσυχη ζώνη: {0} ενότητες</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>Ύψος ορθογώνιου μικροκωδικού QR σε ενότητες:</value>
+  </data>
 </root>

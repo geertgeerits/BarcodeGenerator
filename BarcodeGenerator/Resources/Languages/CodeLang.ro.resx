@@ -1041,4 +1041,7 @@ Limbile acceptate sunt: ​​arabă, bengaleză, chineză simplificată, chinez
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Cod QR pentru zonă liniștită: {0} module</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>Înălțimea codului QR dreptunghiular Micro în module:</value>
+  </data>
 </root>

@@ -1041,4 +1041,7 @@ A támogatott nyelvek: arab, bengáli, kínai (egyszerűsített), kínai (hagyom
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Csendes zóna QR-kódja: {0} modul</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>Téglalap alakú mikro QR-kód magassága modulokban:</value>
+  </data>
 </root>

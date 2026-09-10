@@ -1041,4 +1041,7 @@ Bahasa yang didukung adalah: Arab, Bengali, Tionghoa Sederhana, Tionghoa Tradisi
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Zona senyap Kode QR: {0} modul</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>Tinggi Micro QR Code persegi panjang dalam satuan modul:</value>
+  </data>
 </root>

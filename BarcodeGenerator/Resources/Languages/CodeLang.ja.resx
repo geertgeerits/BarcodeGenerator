@@ -1055,4 +1055,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>クワイエットゾーン QRコード: {0} モジュール</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>長方形マイクロQRコードの高さ（モジュール数）：</value>
+  </data>
 </root>

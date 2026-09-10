@@ -1039,4 +1039,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>QR-код тихої зони: {0} модулів</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>Висота прямокутного мікро QR-коду в модулях:</value>
+  </data>
 </root>

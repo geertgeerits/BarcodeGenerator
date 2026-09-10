@@ -1044,4 +1044,7 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Mã QR vùng tĩnh: {0} mô-đun</value>
   </data>
+  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
+    <value>Chiều cao của mã Micro QR hình chữ nhật tính theo đơn vị module:</value>
+  </data>
 </root>
