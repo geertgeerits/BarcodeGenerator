@@ -97,6 +97,7 @@ namespace BarcodeGenerator
             // Set the QR code image size to update the switch and entry
             swtQRCodeSizeVariable.IsToggled = ClassBarcodes.bQRCodeSizeVariable;
             entQRCodeSizePixels.Text = ClassBarcodes.nQRCodeSizePixels.ToString();
+            entQRCodeSizeModulesHeight.Text = ClassBarcodes.nQRCodeSizeModulesHeight.ToString();
 
             // Set the barcode with caption variable to update the switch
             swtBarcodeWithCaption.IsToggled = ClassBarcodes.bBarcodeWithCaption;
@@ -430,6 +431,41 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Handles the Focused event for the QR code image size entry, ensuring that the entry is scrolled into view when focused,
+        /// particularly on iOS where keyboard behavior can affect visibility.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void EntQRCodeSizePixels_Focused(object sender, FocusEventArgs e)
+        {
+            // !!!BUGG!!! in iOS - When the page is partially covered by the keyboard, the ScrollView is not working.
+#if IOS
+            await scrollViewSettings.ScrollToAsync(entQRCodeSizePixels, ScrollToPosition.Start, true);
+#endif
+        }
+
+        /// <summary>
+        /// Handles the TextChanged event for the QR code image size entry, ensuring that only valid decimal values are
+        /// accepted.
+        /// </summary>
+        /// <remarks>If the new text value is not a valid decimal, the text is reverted to the previous
+        /// value to prevent invalid input.</remarks>
+        /// <param name="sender">The source of the event, typically the Entry control that triggered the TextChanged event.</param>
+        /// <param name="e">The event data containing information about the text change, including the new and old text values.</param>
+        private void EntQRCodeSizePixels_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!IsDecimal(e.NewTextValue))
+            {
+                ((Entry)sender).Text = e.OldTextValue;
+            }
+
+            else
+            {
+                _ = ValidateQRCodeSizePixels(entQRCodeSizePixels);
+            }
+        }
+
+        /// <summary>
         /// Handles the Completed event for the QR code image size entry, ensuring that the entered value is within the valid range.
         /// </summary>
         /// <param name="sender">The source of the event, typically the Entry control that triggered the Completed event.</param>
@@ -464,24 +500,67 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Handles the TextChanged event for the QR code image size entry, ensuring that only valid decimal values are
-        /// accepted.
+        /// Handles the Focused event for the QR code module size entry, ensuring that the entry is scrolled into view when focused,
         /// </summary>
-        /// <remarks>If the new text value is not a valid decimal, the text is reverted to the previous
-        /// value to prevent invalid input.</remarks>
-        /// <param name="sender">The source of the event, typically the Entry control that triggered the TextChanged event.</param>
-        /// <param name="e">The event data containing information about the text change, including the new and old text values.</param>
-        private void EntQRCodeSizePixels_TextChanged(object sender, TextChangedEventArgs e)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void EntQRCodeSizeModulesHeight_Focused(object sender, FocusEventArgs e)
+        {
+            // !!!BUGG!!! in iOS - When the page is partially covered by the keyboard, the ScrollView is not working.
+#if IOS
+            await scrollViewSettings.ScrollToAsync(entQRCodeSizeModulesHeight, ScrollToPosition.Start, true);
+#endif
+        }
+
+        /// <summary>
+        /// Handles the TextChanged event for the QR code module size entry, ensuring that only valid decimal values are accepted.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EntQRCodeSizeModulesHeight_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (!IsDecimal(e.NewTextValue))
             {
                 ((Entry)sender).Text = e.OldTextValue;
             }
-            
+
             else
             {
-                _ = ValidateQRCodeSizePixels(entQRCodeSizePixels);
+                _ = ValidateQRCodeSizeModulesHeight(entQRCodeSizeModulesHeight);
             }
+        }
+
+        /// <summary>
+        /// Handles the Completed event for the QR code module size entry, validating the entered value to ensure it is a valid integer within the acceptable range.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EntQRCodeSizeModulesHeight_Completed(object sender, EventArgs e)
+        {
+            _ = ValidateQRCodeSizeModulesHeight(entQRCodeSizeModulesHeight);
+        }
+
+        /// <summary>
+        /// Validates the QR code image size entered in the specified Entry control, ensuring that it is a valid integer within the range of 500 to 5000 pixels.
+        /// If the value is invalid, the focus is set back to the Entry control for correction.
+        /// </summary>
+        /// <param name="entry"></param>
+        private static bool ValidateQRCodeSizeModulesHeight(Entry entry)
+        {
+            if (!int.TryParse(entry.Text, out int nValue))
+            {
+                entry.Focus();
+                return false;
+            }
+
+            if (nValue is not (7 or 9 or 11 or 13 or 15 or 17))
+            {
+                entry.Focus();
+                return false;
+            }
+
+            ClassBarcodes.nQRCodeSizeModulesHeight = nValue;
+            return true;
         }
 
         /// <summary>
@@ -616,6 +695,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingBarcodeScannerName", ClassBarcodes.cBarcodeScannerName);
             Preferences.Default.Set("SettingQRCodeSizeVariable", ClassBarcodes.bQRCodeSizeVariable);
             Preferences.Default.Set("SettingQRCodeSizePixels", ClassBarcodes.nQRCodeSizePixels);
+            Preferences.Default.Set("SettingQRCodeSizeModulesHeight", ClassBarcodes.nQRCodeSizeModulesHeight);
             Preferences.Default.Set("SettingQRCodeImageSizePercent", ClassBarcodes.nQRCodeImageSizePercent);
             Preferences.Default.Set("SettingQRCodeImageSizeBorder", ClassBarcodes.nQRCodeImageSizeBorder);
             Preferences.Default.Set("SettingQRCodeFinderPatternShape", ClassBarcodes.cQRCodeFinderPatternShape);
@@ -671,6 +751,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingBarcodeScannerName");
                 Preferences.Default.Remove("SettingQRCodeSizeVariable");
                 Preferences.Default.Remove("SettingQRCodeSizePixels");
+                Preferences.Default.Remove("SettingQRCodeSizeModulesHeight");
                 Preferences.Default.Remove("SettingQRCodeImageSizePercent");
                 Preferences.Default.Remove("SettingQRCodeImageSizeBorder");
                 Preferences.Default.Remove("SettingQRCodeFinderPatternShape");
@@ -707,20 +788,6 @@ namespace BarcodeGenerator
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
-        }
-
-        /// <summary>
-        /// Handles the Focused event for the QR code image size entry, ensuring that the entry is scrolled into view when focused,
-        /// particularly on iOS where keyboard behavior can affect visibility.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void EntQRCodeSizePixels_Focused(object sender, FocusEventArgs e)
-        {
-            // !!!BUGG!!! in iOS - When the page is partially covered by the keyboard, the ScrollView is not working.
-#if IOS
-            await scrollViewSettings.ScrollToAsync(entQRCodeSizePixels, ScrollToPosition.Start, true);
-#endif
         }
     }
 }

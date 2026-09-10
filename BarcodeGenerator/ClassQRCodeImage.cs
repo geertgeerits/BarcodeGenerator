@@ -34,16 +34,23 @@ namespace BarcodeGenerator
                 return null;
             }
 
+            QRCodeImageBuilder? standardQrData = null;
             byte[] pngBytes;
 
             try
             {
-                pngBytes = new QRCodeImageBuilder(text)
-                    .WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels)
+                standardQrData = new QRCodeImageBuilder(text)
                     .WithErrorCorrection(ECCLevel.H)
                     .WithColors(codeColor: ClassQRCodes.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassQRCodes.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
-                    .ToByteArray();
+                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
+
+                // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
+                if (!ClassBarcodes.bQRCodeSizeVariable)
+                {
+                    standardQrData = standardQrData.WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels);
+                }
+
+                pngBytes = standardQrData.ToByteArray();
             }
             catch (Exception ex)
             {

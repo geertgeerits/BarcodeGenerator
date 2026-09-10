@@ -94,6 +94,7 @@ namespace BarcodeGenerator
         public static string cQRCodeType = string.Empty;                // QR code type: QR Code Model 1, QR Code Model 2, Frame QR Code, Micro QR Code, RMQR, SQRC, QR Code with image in the center or Artistic QR Code
         public static bool bQRCodeSizeVariable;                         // Control whether the size of the QR code is variable or fixed
         public static int nQRCodeSizePixels;                            // Size of the QR code in pixels (if the size is fixed)
+        public static int nQRCodeSizeModulesHeight;                     // Height of the rMQR code in modules (if the size is fixed)
         public static float nQRCodeImageSizePercent;                    // Size of the QR code image as a percentage
         public static int nQRCodeImageSizeBorder;                       // Size of the QR code image border in pixels
         public static string cQRCodeFinderPatternShape = string.Empty;  // Shape of the QR code finder pattern shapes
@@ -846,5 +847,30 @@ namespace BarcodeGenerator
    https://www.qrcode.com/en/about/version.html
    https://camcode.com/blog/guide-to-barcode-types-standards/
    https://www.bartendersoftware.com/
-   https://en.wikipedia.org/wiki/Rectangular_Micro_QR_Code
    _____________________________________________________________________________________________________________ */
+
+/*RmQRHeight is an enum from the SkiaSharp.QrCode library that selects a fixed Rectangular Micro QR (rMQR) symbol height in modules. RmQRHeight.H9 means "9 modules high" — the generator fixes the height to 9 modules and automatically chooses a compatible width (within the allowed widths for that height).
+Other enum members (from the library) are:
+
+•	H7 = 7
+•	H9 = 9
+•	H11 = 11
+•	H13 = 13
+•	H15 = 15
+•	H17 = 17
+
+So .WithHeight(RmQRHeight.H9) sets a 9-module-high rMQR and lets the builder pick a matching width.
+
+https://en.wikipedia.org/wiki/Rectangular_Micro_QR_Code
+_____________________________________________________________________________________________________________ */
+
+/*
+The ECC (Error Correction Code) levels for QR codes are as follows:
+
+- Level L (Low): Corrects up to 7% of data damage.
+- Level M (Medium): Corrects up to 15% of data damage.
+- Level Q (Quartile): Corrects up to 25% of data damage.
+- Level H (High): Corrects up to 30% of data damage.
+
+The higher the ECC level, the more data can be recovered, but it also increases the size of the QR code.
+_____________________________________________________________________________________________________________ */
