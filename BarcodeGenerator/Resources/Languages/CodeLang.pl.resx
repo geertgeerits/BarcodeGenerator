@@ -1041,7 +1041,4 @@ Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradyc
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Kod QR strefy ciszy: {0} modułów</value>
   </data>
-  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
-    <value>Wysokość prostokątnego kodu Micro QR w modułach:</value>
-  </data>
 </root>

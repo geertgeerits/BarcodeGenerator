@@ -1041,7 +1041,4 @@ De språk som stöds är: arabiska, bengali, förenklad kinesiska, traditionell 
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>QR-kod för tyst zon: {0} moduler</value>
   </data>
-  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
-    <value>Rektangulär mikro-QR-kods höjd i moduler:</value>
-  </data>
 </root>

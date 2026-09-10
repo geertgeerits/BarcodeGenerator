@@ -398,6 +398,7 @@
                 </Border>
 
                 <Label
+                    x:Name="lblQRCodeSizeModulesHeight"
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="15"
                     Grid.Column="0"
@@ -406,24 +407,16 @@
                     Text="{Translate QRCodeSizeModulesHeight_Text}">
                 </Label>
 
-                <Border
-                    Style="{StaticResource borderStyleDefault}"
+                <Stepper
+                    x:Name="stpQRCodeSizeModulesHeight"
                     Grid.Row="15"
                     Grid.Column="1"
-                    Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
-
-                    <Entry
-                        x:Name="entQRCodeSizeModulesHeight"
-                        ClearButtonVisibility="WhileEditing"
-                        MaxLength="5"
-                        Placeholder="7, 9, 11, 13, 15, 17"
-                        Keyboard="Numeric"
-                        ReturnType="Done"
-                        Focused="EntQRCodeSizeModulesHeight_Focused"
-                        TextChanged="EntQRCodeSizeModulesHeight_TextChanged"
-                        Completed="EntQRCodeSizeModulesHeight_Completed">
-                    </Entry>
-                </Border>
+                    Margin="{OnPlatform Default='0,10,0,0', iOS='0,12,0,0', WinUI='0,0,0,0'}"
+                    Minimum="7"
+                    Maximum="17"
+                    Increment="2"
+                    ValueChanged="StpQRCodeSizeModulesHeight_ValueChanged">
+                </Stepper>
 
                 <Label
                     x:Name="lblQRCodeQuietZoneSize"

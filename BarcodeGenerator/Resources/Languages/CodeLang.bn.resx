@@ -1039,7 +1039,4 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>কোয়াইট জোন কিউআর কোড: {0} টি মডিউল</value>
   </data>
-  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
-    <value>মডিউল হিসেবে আয়তাকার মাইক্রো কিউআর (QR) কোডের উচ্চতা:</value>
-  </data>
 </root>

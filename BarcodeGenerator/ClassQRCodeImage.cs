@@ -17,12 +17,6 @@ namespace BarcodeGenerator
         /// If an image is provided, it is scaled from 10% to 35% (value set in the settings of the app)
         /// of the QR code's size and centered, with a border for improved visibility.
         /// The returned ImageSource is suitable for use in UI frameworks that support image sources.
-        /// The ECC (Error Correction Code) levels for QR codes are as follows:
-        /// Level L (Low): Corrects up to 7% of data damage.
-        /// Level M (Medium): Corrects up to 15% of data damage.
-        /// Level Q (Quartile): Corrects up to 25% of data damage.
-        /// Level H (High): Corrects up to 30% of data damage.
-        /// The higher the ECC level, the more data can be recovered, but it also increases the size of the QR code.
         /// </remarks>
         /// <param name="text">The text to encode within the generated QR code.
         /// without a logo. The stream must be positioned at the beginning.</param>
@@ -136,6 +130,7 @@ namespace BarcodeGenerator
                         logoBitmap = oriented;
                     }
                 }
+                
                 else
                 {
                     logoStream.Position = 0;

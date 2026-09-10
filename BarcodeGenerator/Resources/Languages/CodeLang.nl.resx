@@ -1041,7 +1041,4 @@ De ondersteunde talen zijn: Arabisch, Bengaals, Vereenvoudigd Chinees, Tradition
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Stille zone QR-code: {0} modules</value>
   </data>
-  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
-    <value>Hoogte rechthoekige Micro QR-code in modules:</value>
-  </data>
 </root>

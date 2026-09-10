@@ -1041,7 +1041,4 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>静区二维码：{0} 个模块</value>
   </data>
-  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
-    <value>矩形微型 QR 码的高度（以模块为单位）：</value>
-  </data>
 </root>

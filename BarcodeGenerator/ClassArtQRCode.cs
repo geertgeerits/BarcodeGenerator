@@ -147,19 +147,16 @@ namespace BarcodeGenerator
                     .WithGradient(gradient)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2);
 
-                // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
-                if (!ClassBarcodes.bQRCodeSizeVariable)
+                // Apply symbol height, the width is selected automatically
+                rmqrData = ClassBarcodes.nQRCodeSizeModulesHeight switch
                 {
-                    rmqrData = ClassBarcodes.nQRCodeSizeModulesHeight switch
-                    {
-                        7 => rmqrData.WithHeight(RmQRHeight.H7),
-                        11 => rmqrData.WithHeight(RmQRHeight.H11),
-                        13 => rmqrData.WithHeight(RmQRHeight.H13),
-                        15 => rmqrData.WithHeight(RmQRHeight.H15),
-                        17 => rmqrData.WithHeight(RmQRHeight.H17),
-                        _ => rmqrData.WithHeight(RmQRHeight.H9),
-                    };
-                }
+                    7 => rmqrData.WithHeight(RmQRHeight.H7),
+                    11 => rmqrData.WithHeight(RmQRHeight.H11),
+                    13 => rmqrData.WithHeight(RmQRHeight.H13),
+                    15 => rmqrData.WithHeight(RmQRHeight.H15),
+                    17 => rmqrData.WithHeight(RmQRHeight.H17),
+                    _ => rmqrData.WithHeight(RmQRHeight.H9),
+                };
 
                 // Apply module shape if a non-default shape is selected
                 rmqrData = ClassBarcodes.cQRCodeModuleShape switch
@@ -280,10 +277,12 @@ namespace BarcodeGenerator
                     {
                         svgString = await Task.Run(() => rmqrData.ToSvgString());
                     }
+                    
                     else if (microQrData != null)
                     {
                         svgString = await Task.Run(() => microQrData.ToSvgString());
                     }
+                    
                     else
                     {
                         svgString = await Task.Run(() => standardQrData!.ToSvgString());
@@ -365,6 +364,7 @@ namespace BarcodeGenerator
                                     SKRect dstRect = new(0, 0, targetWidth, targetHeight);
                                     bgCanvas.DrawBitmap(bgBitmap, srcRect, dstRect, new SKSamplingOptions(SKFilterMode.Linear), paint);
                                 }
+                                
                                 else
                                 {
                                     // Draw bgBitmap scaled to fit within the target size while preserving aspect ratio, centered on the canvas
@@ -461,6 +461,7 @@ namespace BarcodeGenerator
             {
                 using SKMemoryStream codecStream = new(bytes);
                 using SKCodec codec = SKCodec.Create(codecStream);
+                
                 if (codec != null)
                 {
                     origin = codec.EncodedOrigin;
@@ -473,6 +474,7 @@ namespace BarcodeGenerator
 
             // Decode original bitmap
             SKBitmap? srcBitmap = SKBitmap.Decode(bytes);
+            
             if (srcBitmap == null)
             {
                 return null;

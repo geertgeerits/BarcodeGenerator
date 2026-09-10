@@ -131,25 +131,21 @@ namespace BarcodeGenerator
             try
             {
                 // Generate the rMQR code as a PNG byte array
-                // Fix the symbol height; the width is selected automatically
                 RmQRCodeImageBuilder QrData = new RmQRCodeImageBuilder(text)
                     .WithErrorCorrection(RmQREccLevel.M)
                     .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2);
 
-                // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
-                if (!ClassBarcodes.bQRCodeSizeVariable)
+                // Apply symbol height, the width is selected automatically
+                QrData = ClassBarcodes.nQRCodeSizeModulesHeight switch
                 {
-                    QrData = ClassBarcodes.nQRCodeSizeModulesHeight switch
-                    {
-                        7 => QrData.WithHeight(RmQRHeight.H7),
-                        11 => QrData.WithHeight(RmQRHeight.H11),
-                        13 => QrData.WithHeight(RmQRHeight.H13),
-                        15 => QrData.WithHeight(RmQRHeight.H15),
-                        17 => QrData.WithHeight(RmQRHeight.H17),
-                        _ => QrData.WithHeight(RmQRHeight.H9),
-                    };
-                }
+                    7 => QrData.WithHeight(RmQRHeight.H7),
+                    11 => QrData.WithHeight(RmQRHeight.H11),
+                    13 => QrData.WithHeight(RmQRHeight.H13),
+                    15 => QrData.WithHeight(RmQRHeight.H15),
+                    17 => QrData.WithHeight(RmQRHeight.H17),
+                    _ => QrData.WithHeight(RmQRHeight.H9),
+                };
 
                 // Generate the QR code as a PNG byte array and SVG string
                 byte[] pngBytes = QrData.ToByteArray();

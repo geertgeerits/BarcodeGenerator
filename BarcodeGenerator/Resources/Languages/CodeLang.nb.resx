@@ -1041,7 +1041,4 @@ Støttede språk er: arabisk, bengali, forenklet kinesisk, tradisjonell kinesisk
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Stille sone QR-kode: {0} moduler</value>
   </data>
-  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
-    <value>Høyde på rektangulær mikro-QR-kode i moduler:</value>
-  </data>
 </root>

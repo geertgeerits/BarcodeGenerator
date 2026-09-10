@@ -97,7 +97,7 @@ namespace BarcodeGenerator
             // Set the QR code image size to update the switch and entry
             swtQRCodeSizeVariable.IsToggled = ClassBarcodes.bQRCodeSizeVariable;
             entQRCodeSizePixels.Text = ClassBarcodes.nQRCodeSizePixels.ToString();
-            entQRCodeSizeModulesHeight.Text = ClassBarcodes.nQRCodeSizeModulesHeight.ToString();
+            stpQRCodeSizeModulesHeight.Value = ClassBarcodes.nQRCodeSizeModulesHeight;
 
             // Set the barcode with caption variable to update the switch
             swtBarcodeWithCaption.IsToggled = ClassBarcodes.bBarcodeWithCaption;
@@ -256,6 +256,7 @@ namespace BarcodeGenerator
             ClassPayloadTypes.SelectPayloadTypeIndex(pckPayloadType);
 
             // Set the QR code quiet zone size, image size and image size border to update the labels
+            lblQRCodeSizeModulesHeight.Text = string.Format(CodeLang.QRCodeSizeModulesHeight_Text, ClassBarcodes.nQRCodeSizeModulesHeight);
             lblQRCodeQuietZoneSize.Text = string.Format(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
             lblQRCodeQuietZoneSize2.Text = string.Format(CodeLang.QRCodeQuietZoneSize2_Text, ClassBarcodes.nQRCodeQuietZoneSize2);
             lblQRCodeImageSize.Text = string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent.ToString("F1"));
@@ -500,67 +501,15 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Handles the Focused event for the QR code module size entry, ensuring that the entry is scrolled into view when focused,
+        /// Handles the ValueChanged event for the QR code size modules height stepper, updating the label to reflect the new value.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void EntQRCodeSizeModulesHeight_Focused(object sender, FocusEventArgs e)
+        private void StpQRCodeSizeModulesHeight_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            // !!!BUGG!!! in iOS - When the page is partially covered by the keyboard, the ScrollView is not working.
-#if IOS
-            await scrollViewSettings.ScrollToAsync(entQRCodeSizeModulesHeight, ScrollToPosition.Start, true);
-#endif
-        }
-
-        /// <summary>
-        /// Handles the TextChanged event for the QR code module size entry, ensuring that only valid decimal values are accepted.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void EntQRCodeSizeModulesHeight_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (!IsDecimal(e.NewTextValue))
-            {
-                ((Entry)sender).Text = e.OldTextValue;
-            }
-
-            else
-            {
-                _ = ValidateQRCodeSizeModulesHeight(entQRCodeSizeModulesHeight);
-            }
-        }
-
-        /// <summary>
-        /// Handles the Completed event for the QR code module size entry, validating the entered value to ensure it is a valid integer within the acceptable range.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void EntQRCodeSizeModulesHeight_Completed(object sender, EventArgs e)
-        {
-            _ = ValidateQRCodeSizeModulesHeight(entQRCodeSizeModulesHeight);
-        }
-
-        /// <summary>
-        /// Validates the QR code image size entered in the specified Entry control, ensuring that it is a valid integer within the range of 500 to 5000 pixels.
-        /// If the value is invalid, the focus is set back to the Entry control for correction.
-        /// </summary>
-        /// <param name="entry"></param>
-        private static bool ValidateQRCodeSizeModulesHeight(Entry entry)
-        {
-            if (!int.TryParse(entry.Text, out int nValue))
-            {
-                entry.Focus();
-                return false;
-            }
-
-            if (nValue is not (7 or 9 or 11 or 13 or 15 or 17))
-            {
-                entry.Focus();
-                return false;
-            }
-
-            ClassBarcodes.nQRCodeSizeModulesHeight = nValue;
-            return true;
+            double value = e.NewValue;
+            lblQRCodeSizeModulesHeight.Text = string.Format(CodeLang.QRCodeSizeModulesHeight_Text, value);
+            ClassBarcodes.nQRCodeSizeModulesHeight = (int)value;
         }
 
         /// <summary>
@@ -686,11 +635,6 @@ namespace BarcodeGenerator
         {
             // Validate the QR code size entry before saving the settings
             if (!ValidateQRCodeSizePixels(entQRCodeSizePixels))
-            {
-                return;
-            }
-
-            if (!ValidateQRCodeSizeModulesHeight(entQRCodeSizeModulesHeight))
             {
                 return;
             }

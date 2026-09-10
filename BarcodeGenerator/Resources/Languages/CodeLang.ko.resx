@@ -1042,7 +1042,4 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>콰이어트 존 QR 코드: {0} 모듈</value>
   </data>
-  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
-    <value>직사각형 마이크로 QR 코드의 높이(모듈 단위):</value>
-  </data>
 </root>

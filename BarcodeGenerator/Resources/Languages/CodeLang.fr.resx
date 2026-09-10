@@ -1041,7 +1041,4 @@ Les langues prises en charge sont : l'arabe, le bengali, le chinois simplifié,
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>Zone de silence Code QR: {0} modules</value>
   </data>
-  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
-    <value>Hauteur du Micro QR Code rectangulaire en modules:</value>
-  </data>
 </root>

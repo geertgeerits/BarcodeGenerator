@@ -1042,7 +1042,4 @@
   <data name="QRCodeQuietZoneSize_Text" xml:space="preserve">
     <value>رمز الاستجابة السريعة (QR Code) للمنطقة الهادئة: {0} وحدة</value>
   </data>
-  <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
-    <value>ارتفاع رمز الاستجابة السريعة الدقيق (Micro QR Code) المستطيل بوحدة "الموديول":</value>
-  </data>
 </root>
