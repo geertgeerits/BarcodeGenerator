@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Maui.Extensions;
+﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Extensions;
 
 namespace BarcodeGenerator
 {
@@ -28,6 +29,20 @@ namespace BarcodeGenerator
 #endif
                 return;
             }
+
+            // Respond to the theme change 
+            Application.Current?.RequestedThemeChanged += (s, a) =>
+            {
+                // Respond to the theme change
+                lblFontSize.FormattedText = FormatWithColoredNumber(CodeLang.FontSize_Text, Globals.nFontSize);
+                lblQRCodeSizeModulesHeight.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeSizeModulesHeight_Text, ClassBarcodes.nQRCodeSizeModulesHeight);
+                lblQRCodeQuietZoneSize.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
+                lblQRCodeQuietZoneSize2.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSize2_Text, ClassBarcodes.nQRCodeQuietZoneSize2);
+                lblQRCodeImageSize.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent);
+                lblQRCodeImageSizeBorder.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder);
+
+                //lblQRCodeImageSize.Text = string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent.ToString("F1"));
+            };
 
 #if ANDROID
             // Android !!!BUG!!! SafeAreaEdges not behaving as expected #33922 - https://github.com/dotnet/maui/issues/33922
@@ -198,7 +213,7 @@ namespace BarcodeGenerator
         private void SetLanguage()
         {
             // Set the font size label text
-            lblFontSize.Text = $"{CodeLang.FontSize_Text} {Globals.nFontSize:F0}";
+            //lblFontSize.Text = $"{CodeLang.FontSize_Text} {Globals.nFontSize:F0}";
 
             // Set the global font size
             Globals.SetGlobalFontSize();
@@ -256,11 +271,11 @@ namespace BarcodeGenerator
             ClassPayloadTypes.SelectPayloadTypeIndex(pckPayloadType);
 
             // Set the QR code quiet zone size, image size and image size border to update the labels
-            lblQRCodeSizeModulesHeight.Text = string.Format(CodeLang.QRCodeSizeModulesHeight_Text, ClassBarcodes.nQRCodeSizeModulesHeight);
-            lblQRCodeQuietZoneSize.Text = string.Format(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
-            lblQRCodeQuietZoneSize2.Text = string.Format(CodeLang.QRCodeQuietZoneSize2_Text, ClassBarcodes.nQRCodeQuietZoneSize2);
-            lblQRCodeImageSize.Text = string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent.ToString("F1"));
-            lblQRCodeImageSizeBorder.Text = $"{string.Format(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder)}";
+            //lblQRCodeSizeModulesHeight.Text = string.Format(CodeLang.QRCodeSizeModulesHeight_Text, ClassBarcodes.nQRCodeSizeModulesHeight);
+            //lblQRCodeQuietZoneSize.Text = string.Format(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
+            //lblQRCodeQuietZoneSize2.Text = string.Format(CodeLang.QRCodeQuietZoneSize2_Text, ClassBarcodes.nQRCodeQuietZoneSize2);
+            //lblQRCodeImageSize.Text = string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent.ToString("F1"));
+            //lblQRCodeImageSizeBorder.Text = $"{string.Format(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder)}";
 
             // Set the QR code module size percent in the label. Calls the method 'SetLanguage()' in the class
             // 'ClassArtQRCodeSettings' (ClassArtQRCodeSettings.xaml.cs) to set the text in the chosen language in the controls
@@ -313,7 +328,8 @@ namespace BarcodeGenerator
             Globals.nFontSize = e.NewValue;
             Globals.SetGlobalFontSize();
 
-            lblFontSize.Text = $"{CodeLang.FontSize_Text} {Globals.nFontSize:F0}";
+            //lblFontSize.Text = $"{CodeLang.FontSize_Text} {Globals.nFontSize:F0}";
+            lblFontSize.FormattedText = FormatWithColoredNumber(CodeLang.FontSize_Text, Globals.nFontSize);
         }
 
         /// <summary>
@@ -508,8 +524,8 @@ namespace BarcodeGenerator
         private void StpQRCodeSizeModulesHeight_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             double value = e.NewValue;
-            lblQRCodeSizeModulesHeight.Text = string.Format(CodeLang.QRCodeSizeModulesHeight_Text, value);
             ClassBarcodes.nQRCodeSizeModulesHeight = (int)value;
+            lblQRCodeSizeModulesHeight.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeSizeModulesHeight_Text, ClassBarcodes.nQRCodeSizeModulesHeight);
         }
 
         /// <summary>
@@ -543,7 +559,7 @@ namespace BarcodeGenerator
         {
             ClassBarcodes.nQRCodeQuietZoneSize = (int)Math.Round(e.NewValue, 0);
             sldQRCodeQuietZoneSize.Value = ClassBarcodes.nQRCodeQuietZoneSize;
-            lblQRCodeQuietZoneSize.Text = string.Format(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
+            lblQRCodeQuietZoneSize.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
         }
 
         /// <summary>
@@ -556,7 +572,7 @@ namespace BarcodeGenerator
         {
             ClassBarcodes.nQRCodeQuietZoneSize2 = (int)Math.Round(e.NewValue, 0);
             sldQRCodeQuietZoneSize2.Value = ClassBarcodes.nQRCodeQuietZoneSize2;
-            lblQRCodeQuietZoneSize2.Text = string.Format(CodeLang.QRCodeQuietZoneSize2_Text, ClassBarcodes.nQRCodeQuietZoneSize2);
+            lblQRCodeQuietZoneSize2.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSize2_Text, ClassBarcodes.nQRCodeQuietZoneSize2);
         }
 
         /// <summary>
@@ -570,7 +586,7 @@ namespace BarcodeGenerator
         {
             ClassBarcodes.nQRCodeImageSizePercent = (float)Math.Round(e.NewValue, 1);
             sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
-            lblQRCodeImageSize.Text = string.Format(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent.ToString("F1"));
+            lblQRCodeImageSize.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent);
         }
 
         /// <summary>
@@ -583,7 +599,7 @@ namespace BarcodeGenerator
         {
             ClassBarcodes.nQRCodeImageSizeBorder = (int)Math.Round(e.NewValue, 0);
             sldQRCodeImageSizeBorder.Value = ClassBarcodes.nQRCodeImageSizeBorder;
-            lblQRCodeImageSizeBorder.Text = string.Format(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder);
+            lblQRCodeImageSizeBorder.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeImageSizeBorder_Text, ClassBarcodes.nQRCodeImageSizeBorder);
         }
 
         /// <summary>
@@ -737,6 +753,38 @@ namespace BarcodeGenerator
 
             // Restart the application
             Application.Current!.Windows[0].Page = new AppShell();
+        }
+
+        /// <summary>
+        /// Sets the text of a Label control with a formatted string that includes a value in a specified color.
+        /// </summary>
+        /// <param name="template"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private static FormattedString FormatWithColoredNumber(string template, double value)
+        {
+            string[] parts = template.Split("{0}");
+
+            FormattedString formatted = new FormattedString();
+
+            formatted.Spans.Add(new Span { Text = parts[0] });
+
+            AppTheme currentTheme = Application.Current!.RequestedTheme;
+            if (currentTheme == AppTheme.Light)
+            {
+                formatted.Spans.Add(new Span { Text = value.ToString(), TextColor = Colors.Blue });
+            }
+            else if (currentTheme == AppTheme.Dark)
+            {
+                formatted.Spans.Add(new Span { Text = value.ToString(), TextColor = Colors.LightBlue });
+            }
+
+            if (parts.Length > 1)
+            {
+                formatted.Spans.Add(new Span { Text = parts[1] });
+            }
+
+            return formatted;
         }
     }
 }
