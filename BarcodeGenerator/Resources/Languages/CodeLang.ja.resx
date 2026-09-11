@@ -482,7 +482,7 @@ MITライセンス：
     <value>個人情報およびその他のデータは、私自身または他者に保存または提供されることはありません。</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>画像サイズ：{0}%</value>
+    <value>画像サイズ：{0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>選択されたファイルはサポートされていません。</value>
@@ -1034,7 +1034,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
     <value>コードは、チェックサム桁を除いて {0} 桁または {1} 桁である必要があります。</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>フォントサイズ:</value>
+    <value>フォントサイズ: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>テキスト読み上げ：アプリケーション設定に記載されているすべての言語がサポートされているわけではありません。利用できる言語は、お使いのデバイスとインストールされている言語によって異なります。一部の音声翻訳にはインターネット接続が必要な場合があり、その処理は各サービスによって行われます。</value>

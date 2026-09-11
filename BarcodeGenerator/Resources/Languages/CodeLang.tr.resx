@@ -471,7 +471,7 @@ Bu hataya ait log dosyası gönderilebilir mi?
     <value>Hiçbir kişisel ve diğer veri saklanmaz veya bana ve başkalarına aktarılmaz.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Görüntü boyutu: {0}%</value>
+    <value>Görüntü boyutu: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Seçilen dosya desteklenmiyor.</value>
@@ -1020,7 +1020,7 @@ Her cihazda tüm veri türleri desteklenmez.</value>
     <value>Kod, (sağlama toplamı rakamı hariç) {0} basamak uzunluğunda veya {1} basamak uzunluğunda olmalıdır.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Yazı tipi boyutu:</value>
+    <value>Yazı tipi boyutu: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Metinden sese dönüştürme: Uygulama ayarlarında listelenen tüm diller desteklenmemektedir. Kullanılabilirlik, cihazınıza ve yüklü dillere bağlıdır. Bazı ses çevirileri, ilgili hizmetler tarafından sağlanan internet bağlantısı gerektirebilir.</value>

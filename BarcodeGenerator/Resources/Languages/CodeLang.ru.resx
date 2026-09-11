@@ -471,7 +471,7 @@
     <value>Никакие личные и иные данные не хранятся и не передаются мне или другим лицам.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Размер изображения: {0}%</value>
+    <value>Размер изображения: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Выбранный файл не поддерживается.</value>
@@ -1020,7 +1020,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
     <value>Код должен состоять из {0} цифр (исключая контрольную сумму) или из {1} цифр.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Размер шрифта:</value>
+    <value>Размер шрифта: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Преобразование текста в речь: Поддерживаются не все языки, указанные в настройках приложения. Доступность зависит от вашего устройства и установленных языков. Для некоторых операций преобразования текста в речь может потребоваться подключение к интернету, которое обеспечивается соответствующими сервисами.</value>

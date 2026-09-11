@@ -1178,7 +1178,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Font size:.
+        ///   Looks up a localized string similar to Font size: {0}.
         /// </summary>
         internal static string FontSize_Text {
             get {
@@ -2207,7 +2207,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image size: {0}%.
+        ///   Looks up a localized string similar to Image size: {0} %.
         /// </summary>
         internal static string QRCodeImageSize_Text {
             get {

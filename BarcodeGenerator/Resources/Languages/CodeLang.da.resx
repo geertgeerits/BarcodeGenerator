@@ -471,7 +471,7 @@ Tak på forhånd.</value>
     <value>Ingen personlige og andre data gemmes eller videregives til mig selv og andre.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Billedstørrelse: {0}%</value>
+    <value>Billedstørrelse: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Den valgte fil understøttes ikke.</value>
@@ -1020,7 +1020,7 @@ Ikke alle datatyper understøttes på alle enheder.</value>
     <value>Koden skal være {0} cifre lang (eksklusive checksumcifferet) eller {1} cifre lang.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Skriftstørrelse:</value>
+    <value>Skriftstørrelse: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Tekst-til-tale: Ikke alle sprog, der er angivet i programindstillingerne, understøttes. Tilgængeligheden afhænger af din enhed og de installerede sprog. Nogle oversættelser til tale kræver muligvis en internetforbindelse, som håndteres af de respektive tjenester.</value>

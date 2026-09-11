@@ -1020,7 +1020,7 @@ Ikke alle nyttelasttyper støttes på alle enheter.</value>
     <value>Koden skal være {0} sifre lang (unntatt kontrollsumsifferet) eller {1} sifre lang.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Skriftstørrelse:</value>
+    <value>Skriftstørrelse: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Tekst-til-tale: Ikke alle språkene som er oppført i appinnstillingene støttes. Tilgjengeligheten avhenger av enheten din og de installerte språkene. Noen oversettelser til tale kan kreve en internettforbindelse, som håndteres av de respektive tjenestene.</value>

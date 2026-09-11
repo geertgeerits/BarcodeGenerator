@@ -471,7 +471,7 @@ Alvast bedankt.</value>
     <value>Er worden geen persoonlijke en andere gegevens opgeslagen of doorgegeven aan mezelf en anderen.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Afbeeldingsgrootte: {0}%</value>
+    <value>Afbeeldingsgrootte: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Het geselecteerde bestand wordt niet ondersteund.</value>
@@ -1020,7 +1020,7 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
     <value>De code moet {0} cijfers lang zijn (exclusief het controlecijfer) of {1} cijfers lang.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Lettergrootte:</value>
+    <value>Lettergrootte: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Tekst-naar-spraak: Niet alle talen die in de applicatie-instellingen worden vermeld, worden ondersteund. De beschikbaarheid is afhankelijk van uw apparaat en de geïnstalleerde talen. Voor sommige spraakvertalingen is mogelijk een internetverbinding vereist, die door de betreffende services wordt verzorgd.</value>

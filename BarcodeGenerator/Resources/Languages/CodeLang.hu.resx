@@ -471,7 +471,7 @@ Előre is köszönöm.</value>
     <value>Személyes és egyéb adatokat nem tárolunk, illetve nem adunk át magamnak és másoknak.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Képméret: {0}%</value>
+    <value>Képméret: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>A kiválasztott fájl nem támogatott.</value>
@@ -1020,7 +1020,7 @@ Nem minden hasznos adattípus támogatott minden eszközön.</value>
     <value>A kódnak {0} számjegyből (az ellenőrzőösszeg-számjegyet nem számítva) vagy {1} számjegyből kell állnia.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Betűméret:</value>
+    <value>Betűméret: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Szövegfelolvasó: Nem minden, az alkalmazás beállításaiban felsorolt ​​nyelv támogatott. Az elérhetőség az eszköztől és a telepített nyelvektől függ. Egyes beszédfelolvasó fordításokhoz internetkapcsolat szükséges, amelyet a megfelelő szolgáltatások kezelnek.</value>

@@ -471,7 +471,7 @@
     <value>لا يتم تخزين أي بيانات شخصية أو غيرها، ولا يتم مشاركتها معي أو مع أي شخص آخر.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>حجم الصورة: {0}%</value>
+    <value>حجم الصورة: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>الملف المحدد غير مدعوم.</value>
@@ -1020,7 +1020,7 @@
     <value>يجب أن يتكون الرمز من {0} خانة (باستثناء خانة التحقق) أو {1} خانة.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>حجم الخط:</value>
+    <value>حجم الخط: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>تحويل النص إلى كلام: لا تدعم جميع اللغات المدرجة في إعدادات التطبيق. يعتمد التوفر على جهازك واللغات المثبتة. قد تتطلب بعض عمليات تحويل النص إلى كلام اتصالاً بالإنترنت، وتتولى الخدمات المعنية هذه المهمة.</value>

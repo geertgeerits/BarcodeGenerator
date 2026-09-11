@@ -471,7 +471,7 @@ Vă mulțumesc anticipat.</value>
     <value>Nicio dată cu caracter personal sau de altă natură nu este stocată sau transmisă mie și altora.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Dimensiunea imaginii: {0}%</value>
+    <value>Dimensiunea imaginii: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Fișierul selectat nu este acceptat.</value>
@@ -1020,7 +1020,7 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
     <value>Codul trebuie să aibă o lungime de {0} cifre (excluzând cifra sumei de control) sau {1} cifre.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Dimensiunea fontului:</value>
+    <value>Dimensiunea fontului: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Text-vorbire: Nu toate limbile listate în setările aplicației sunt acceptate. Disponibilitatea depinde de dispozitiv și de limbile instalate. Unele traduceri în vorbire pot necesita o conexiune la internet, gestionată de serviciile respective.</value>

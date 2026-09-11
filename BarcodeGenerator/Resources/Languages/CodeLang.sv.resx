@@ -471,7 +471,7 @@ Tack på förhand.</value>
     <value>Inga personliga och andra uppgifter lagras eller vidarebefordras till mig själv och andra.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Bildstorlek: {0}%</value>
+    <value>Bildstorlek: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Den valda filen stöds inte.</value>
@@ -1020,7 +1020,7 @@ Alla nyttolasttyper stöds inte på alla enheter.</value>
     <value>Koden ska vara {0} siffror lång (exklusive kontrollsumman) eller {1} siffror lång.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Fontstorlek:</value>
+    <value>Fontstorlek: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Text-till-tal: Inte alla språk som listas i appinställningarna stöds. Tillgängligheten beror på din enhet och de installerade språken. Vissa översättningar till tal kan kräva en internetanslutning, vilket hanteras av respektive tjänst.</value>

@@ -471,7 +471,7 @@ MIT 許可證：
     <value>不會儲存任何個人資料或其他數據，也不會將其傳遞給自己或其他人。</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>圖片大小：{0}%</value>
+    <value>圖片大小：{0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>所選文件不受支援。</value>
@@ -1020,7 +1020,7 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
     <value>代碼長度應為 {0} 位元（不包括校驗和位元）或 {1} 位元。</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>字體大小：</value>
+    <value>字型大小：{0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>文字轉語音：並非應用程式設定中列出的所有語言都支援。可用性取決於您的裝置和已安裝的語言。某些翻譯轉語音功能可能需要網路連接，具體由相應的服務供應商處理。</value>

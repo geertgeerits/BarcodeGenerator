@@ -471,7 +471,7 @@ Kiitos jo etukäteen.</value>
     <value>Mitään henkilö- tai muita tietoja ei tallenneta tai luovuteta minulle tai muille.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Kuvan koko: {0}%</value>
+    <value>Kuvan koko: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Valittua tiedostoa ei tueta.</value>
@@ -1020,7 +1020,7 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
     <value>Koodin tulee olla {0} numeroa pitkä (tarkistussummanumeroa lukuun ottamatta) tai {1} numeroa pitkä.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Fonttikoko:</value>
+    <value>Fonttikoko: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Tekstistä puheeksi: Kaikkia sovelluksen asetuksissa lueteltuja kieliä ei tueta. Saatavuus riippuu laitteestasi ja asennetuista kielistä. Jotkin puheeksi käännökset saattavat vaatia internetyhteyden, jonka käsittelevät kyseiset palvelut.</value>

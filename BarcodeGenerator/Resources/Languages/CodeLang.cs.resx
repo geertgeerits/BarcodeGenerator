@@ -1020,7 +1020,7 @@ Ne všechny typy dat jsou podporovány na každém zařízení.</value>
     <value>Kód by měl mít {0} číslic (bez kontrolního součtu) nebo {1} číslic.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Velikost písma:</value>
+    <value>Velikost písma: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Převod textu na řeč: Ne všechny jazyky uvedené v nastavení aplikace jsou podporovány. Dostupnost závisí na vašem zařízení a nainstalovaných jazycích. Některé překlady na řeč mohou vyžadovat připojení k internetu, které zajišťují příslušné služby.</value>

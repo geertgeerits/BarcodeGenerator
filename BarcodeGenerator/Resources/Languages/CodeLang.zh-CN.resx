@@ -471,7 +471,7 @@ MIT 许可证：
     <value>不会存储任何个人数据或其他数据，也不会将其传递给自己或其他人。</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>图片大小：{0}%</value>
+    <value>图像大小：{0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>所选文件不受支持。</value>
@@ -1020,7 +1020,7 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
     <value>代码长度应为 {0} 位（不包括校验和位）或 {1} 位。</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>字体大小：</value>
+    <value>字体大小：{0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>文本转语音：并非应用设置中列出的所有语言都受支持。可用性取决于您的设备和已安装的语言。某些翻译转语音功能可能需要互联网连接，具体由相应的服务提供商处理。</value>

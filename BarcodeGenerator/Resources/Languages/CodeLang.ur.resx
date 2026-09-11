@@ -471,7 +471,7 @@ MIT لائسنس:
     <value>کوئی ذاتی اور دیگر ڈیٹا میرے اور دوسروں کو محفوظ یا منتقل نہیں کیا جاتا ہے۔</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>تصویر کا سائز: {0}%</value>
+    <value>تصویر کا سائز: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>منتخب کردہ فائل تعاون یافتہ نہیں ہے۔</value>
@@ -1020,7 +1020,7 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
     <value>کوڈ {0} ہندسے لمبا ہونا چاہئے (چیکسم ہندسوں کو چھوڑ کر) یا {1} ہندسوں کا لمبا ہونا چاہئے۔</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>فونٹ سائز:</value>
+    <value>فونٹ کا سائز: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>ٹیکسٹ ٹو اسپیچ: ایپلیکیشن سیٹنگز میں درج تمام زبانیں تعاون یافتہ نہیں ہیں۔ دستیابی کا انحصار آپ کے آلے اور انسٹال کردہ زبانوں پر ہے۔ تقریر کے کچھ ترجمے کے لیے انٹرنیٹ کنکشن کی ضرورت ہو سکتی ہے، جو متعلقہ سروسز کے ذریعے سنبھالا جاتا ہے۔</value>

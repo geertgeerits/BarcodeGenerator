@@ -471,7 +471,7 @@ Thank you in advance.</value>
     <value>No personal and other data is stored or passed on to myself and others.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Image size: {0}%</value>
+    <value>Image size: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>The selected file is not supported.</value>
@@ -1020,7 +1020,7 @@ Not all payload types are supported on every device.</value>
     <value>The code should be {0} digits long (excluding the checksum digit) or {1} digits long.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Font size:</value>
+    <value>Font size: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Text-to-speech: Not all languages listed in the application settings are supported. Availability depends on your device and the installed languages. Some translations to speech may require an internet connection, handled by the respective services.</value>

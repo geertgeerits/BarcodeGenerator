@@ -471,7 +471,7 @@ Vielen Dank im Voraus.</value>
     <value>Es werden keine personenbezogenen und sonstigen Daten gespeichert oder an mich und andere weitergegeben.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Bildgröße: {0}%</value>
+    <value>Bildgröße: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Die ausgewählte Datei wird nicht unterstützt.</value>
@@ -1019,7 +1019,7 @@ Wählen Sie eine Option.</value>
     <value>Der Code sollte {0} Ziffern lang sein (ohne die Prüfziffer) oder {1} Ziffern lang.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Schriftgröße:</value>
+    <value>Schriftgröße: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Text-to-Speech: Nicht alle in den Anwendungseinstellungen aufgeführten Sprachen werden unterstützt. Die Verfügbarkeit hängt von Ihrem Gerät und den installierten Sprachen ab. Für einige Übersetzungen in Sprache ist möglicherweise eine Internetverbindung erforderlich, die von den jeweiligen Diensten bereitgestellt wird.</value>

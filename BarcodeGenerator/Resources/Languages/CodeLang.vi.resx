@@ -474,7 +474,7 @@ Cảm ơn trước.</value>
     <value>Tôi không lưu trữ hay chuyển giao bất kỳ dữ liệu cá nhân hoặc dữ liệu nào khác cho bản thân và người khác.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Kích thước ảnh: {0}%</value>
+    <value>Kích thước ảnh: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Tệp đã chọn không được hỗ trợ.</value>
@@ -1023,7 +1023,7 @@ Không phải tất cả các loại dữ liệu đều được hỗ trợ trê
     <value>Mã phải có độ dài {0} chữ số (không bao gồm chữ số kiểm tra) hoặc {1} chữ số.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Cỡ chữ:</value>
+    <value>Cỡ chữ: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Chuyển văn bản thành giọng nói: Không phải tất cả các ngôn ngữ được liệt kê trong cài đặt ứng dụng đều được hỗ trợ. Tính khả dụng phụ thuộc vào thiết bị của bạn và các ngôn ngữ đã được cài đặt. Một số bản dịch thành giọng nói có thể yêu cầu kết nối internet, được xử lý bởi các dịch vụ tương ứng.</value>

@@ -471,7 +471,7 @@ Agradeço antecipadamente.</value>
     <value>Nenhum dado pessoal e outros são armazenados ou transmitidos para mim e para outros.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Tamanho da imagem: {0}%</value>
+    <value>Tamanho da imagem: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>O arquivo selecionado não é compatível.</value>
@@ -1020,7 +1020,7 @@ Nem todos os tipos de carga útil são compatíveis com todos os dispositivos.</
     <value>O código deve ter {0} dígitos (excluindo o dígito de verificação) ou {1} dígitos.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Tamanho da fonte:</value>
+    <value>Tamanho da fonte: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Conversão de texto em voz: Nem todos os idiomas listados nas configurações do aplicativo são compatíveis. A disponibilidade depende do seu dispositivo e dos idiomas instalados. Algumas conversões em voz podem exigir uma conexão com a internet, gerenciada pelos respectivos serviços.</value>

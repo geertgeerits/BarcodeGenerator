@@ -469,7 +469,7 @@ Sentry দ্বারা সংগৃহীত দুর্ঘটনার প�
     <value>কোনো ব্যক্তিগত ও অন্যান্য তথ্য আমার এবং অন্যদের কাছে সংরক্ষণ বা হস্তান্তর করা হয় না।</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>ছবির আকার: {0}%</value>
+    <value>ছবির আকার: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>নির্বাচিত ফাইলটি সমর্থিত নয়।</value>
@@ -1018,7 +1018,7 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
     <value>কোডটি (চেকসাম ডিজিট বাদে) {0} ডিজিট অথবা {1} ডিজিটের হতে হবে।</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>ফন্ট সাইজ:</value>
+    <value>ফন্টের আকার: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>টেক্সট-টু-স্পিচ: অ্যাপ্লিকেশন সেটিংসে তালিকাভুক্ত সব ভাষা সমর্থিত নয়। এর প্রাপ্যতা আপনার ডিভাইস এবং ইনস্টল করা ভাষার উপর নির্ভর করে। কিছু ক্ষেত্রে স্পিচে অনুবাদের জন্য ইন্টারনেট সংযোগের প্রয়োজন হতে পারে, যা সংশ্লিষ্ট পরিষেবাগুলো দ্বারা পরিচালিত হয়।</value>

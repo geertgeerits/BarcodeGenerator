@@ -1020,7 +1020,7 @@ Tous les types de données ne sont pas compatibles avec tous les appareils.</val
     <value>Le code doit comporter {0} chiffres (à l'exclusion du chiffre de contrôle) ou {1} chiffres.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Taille de la police:</value>
+    <value>Taille de la police: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Synthèse vocale : toutes les langues listées dans les paramètres de l’application ne sont pas prises en charge. La disponibilité dépend de votre appareil et des langues installées. Certaines traductions vocales peuvent nécessiter une connexion Internet, gérée par les services concernés.</value>

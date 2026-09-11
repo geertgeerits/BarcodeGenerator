@@ -471,7 +471,7 @@ Terima kasih sebelumnya.</value>
     <value>Tidak ada data pribadi atau data lainnya yang disimpan atau diteruskan kepada saya dan orang lain.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Ukuran gambar: {0}%</value>
+    <value>Ukuran gambar: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Berkas yang dipilih tidak didukung.</value>
@@ -1020,7 +1020,7 @@ Tidak semua jenis muatan didukung di setiap perangkat.</value>
     <value>Kode tersebut harus memiliki panjang {0} digit (tidak termasuk digit checksum) atau {1} digit.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Ukuran font:</value>
+    <value>Ukuran font: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Konversi teks ke suara: Tidak semua bahasa yang tercantum dalam pengaturan aplikasi didukung. Ketersediaan bergantung pada perangkat Anda dan bahasa yang terpasang. Beberapa terjemahan ke suara mungkin memerlukan koneksi internet, yang ditangani oleh layanan masing-masing.</value>

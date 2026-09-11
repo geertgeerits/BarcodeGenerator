@@ -468,7 +468,7 @@ MIT लाइसेंस:
     <value>कोई भी पर्सनल और दूसरा डेटा स्टोर नहीं किया जाता है या मुझे या दूसरों को नहीं दिया जाता है।</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>छवि का आकार: {0}%</value>
+    <value>छवि का आकार: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>चुनी गई फ़ाइल सपोर्टेड नहीं है।</value>
@@ -1017,7 +1017,7 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
     <value>कोड {0} डिजिट लंबा (चेकसम डिजिट को छोड़कर) या {1} डिजिट लंबा होना चाहिए।</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>फ़ॉन्ट साइज़:</value>
+    <value>फ़ॉन्ट साइज़: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>टेक्स्ट-टू-स्पीच: एप्लिकेशन सेटिंग्स में दी गई सभी भाषाएँ सपोर्टेड नहीं हैं। उपलब्धता आपके डिवाइस और इंस्टॉल की गई भाषाओं पर निर्भर करती है। कुछ ट्रांसलेशन टू स्पीच के लिए इंटरनेट कनेक्शन की ज़रूरत हो सकती है, जिसे संबंधित सर्विस हैंडल करती हैं।</value>

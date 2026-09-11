@@ -471,7 +471,7 @@ Z góry dziękuję.</value>
     <value>Żadne dane osobowe i inne nie są przechowywane ani przekazywane mnie i innym osobom.</value>
   </data>
   <data name="QRCodeImageSize_Text" xml:space="preserve">
-    <value>Rozmiar obrazu: {0}%</value>
+    <value>Rozmiar obrazu: {0} %</value>
   </data>
   <data name="ErrorInvalidImageType_Text" xml:space="preserve">
     <value>Wybrany plik nie jest obsługiwany.</value>
@@ -1020,7 +1020,7 @@ Nie wszystkie typy danych są obsługiwane na każdym urządzeniu.</value>
     <value>Kod powinien mieć {0} cyfr (bez cyfry kontrolnej) lub {1} cyfr.</value>
   </data>
   <data name="FontSize_Text" xml:space="preserve">
-    <value>Rozmiar czcionki:</value>
+    <value>Rozmiar czcionki: {0}</value>
   </data>
   <data name="InfoTextToSpeech_Text" xml:space="preserve">
     <value>Tekst na mowę: Nie wszystkie języki wymienione w ustawieniach aplikacji są obsługiwane. Dostępność zależy od urządzenia i zainstalowanych języków. Niektóre tłumaczenia na mowę mogą wymagać połączenia internetowego, obsługiwanego przez odpowiednie usługi.</value>
