@@ -285,7 +285,7 @@ namespace BarcodeGenerator
         /// platform.
         /// </summary>
         /// <remarks>Cancels any ongoing text-to-speech operation before navigating. On Windows platforms,
-        /// navigates to a ZX scanning page due to a known issue with the native scanner.</remarks>
+        /// navigates to a ZX scanning page due to a known issue with the native Windows scanner.</remarks>
         /// <param name="sender">The source of the event, typically the button that was clicked.</param>
         /// <param name="e">An object that contains the event data.</param>
         private async void OnPageScanClickedNT(object sender, EventArgs e)
@@ -739,6 +739,8 @@ namespace BarcodeGenerator
             btnShare.IsEnabled = false;
             bgvBarcode.Value = string.Empty;
             cBarcodeCaption = string.Empty;
+            imgQrCodeImage.Source = null;
+            imgQrCodeImage.IsVisible = true;
 
             // Validate the input
             if (string.IsNullOrEmpty(edtTextToCode.Text))
@@ -1033,6 +1035,14 @@ namespace BarcodeGenerator
                     if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                     {
                         string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
+
+                        // Set the image source to the saved file to display it in the Image control
+                        if (!string.IsNullOrEmpty(cFile))
+                        {
+                            bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
+                            imgQrCodeImage.Source = cFile;      // Set the Image control source to the saved file
+                            imgQrCodeImage.IsVisible = true;
+                        }
 
                         // Open the share interface to share the file
                         await ClassFileUtilities.OpenShareInterfaceAsync(cFile);
