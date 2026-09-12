@@ -740,7 +740,6 @@ namespace BarcodeGenerator
             bgvBarcode.Value = string.Empty;
             cBarcodeCaption = string.Empty;
             imgQrCodeImage.Source = null;
-            imgQrCodeImage.IsVisible = true;
 
             // Validate the input
             if (string.IsNullOrEmpty(edtTextToCode.Text))
@@ -829,7 +828,7 @@ namespace BarcodeGenerator
                 if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE || selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE || selectedName == ClassBarcodes.cBarcode_ART_RMQR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
-                    
+
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
                 }
@@ -1034,15 +1033,21 @@ namespace BarcodeGenerator
                     // Barcode with caption
                     if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                     {
+                        //ClassFileUtilities.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
+                        //ClassFileUtilities.DeleteFileInCache(ClassBarcodes.cFileBarcodePng);
+                        //await Task.Delay(200);
+
                         string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
 
-                        // Set the image source to the saved file to display it in the Image control
-                        if (!string.IsNullOrEmpty(cFile))
-                        {
-                            bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
-                            imgQrCodeImage.Source = cFile;      // Set the Image control source to the saved file
-                            imgQrCodeImage.IsVisible = true;
-                        }
+                        //// Set the image source to the saved file to display it in the Image control
+                        //if (!string.IsNullOrEmpty(cFile))
+                        //{
+                        //    bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
+                        //    imgQrCodeImage.IsVisible = true;
+                        //    imgQrCodeImage.Source = null;       // Clear the Image control source to avoid displaying the previous image
+                        //    await Task.Delay(200);
+                        //    imgQrCodeImage.Source = cFile;      // Set the Image control source to the saved file
+                        //}
 
                         // Open the share interface to share the file
                         await ClassFileUtilities.OpenShareInterfaceAsync(cFile);

@@ -372,5 +372,93 @@ namespace BarcodeGenerator
             bitmap.Dispose();
             return output;
         }
+
+
+        // (Only the new/changed methods are shown — add into ClassFileUtilities)
+        public static async Task<string?> SaveFileResultToCacheAsync(FileResult? file)
+        {
+            if (file == null)
+                return null;
+
+            try
+            {
+                string name = Path.GetFileName(file.FileName) ?? $"tmp_{Guid.NewGuid():N}";
+                string dest = Path.Combine(FileSystem.Current.CacheDirectory, name);
+
+                using Stream src = await file.OpenReadAsync();
+                using FileStream dst = File.Create(dest);
+                await src.CopyToAsync(dst);
+
+                Debug.WriteLine($"Saved file to cache: {dest}");
+                return dest;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"SaveFileResultToCacheAsync: {ex.Message}");
+                return null;
+            }
+        }
+
+        public static void DeleteFileInCacheNEW(string filePath)
+        {
+            Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Attempting to delete file in cache at: {filePath}");
+
+            try
+            {
+                if (string.IsNullOrEmpty(filePath))
+                    return;
+
+#if ANDROID
+                // Android may provide a content:// URI — try deleting via ContentResolver
+                if (filePath.StartsWith("content://", StringComparison.OrdinalIgnoreCase))
+                {
+                    try
+                    {
+                        var uri = Android.Net.Uri.Parse(filePath);
+                        var resolver = Android.App.Application.Context.ContentResolver;
+                        int deleted = resolver.Delete(uri, null, null); // returns number of rows deleted or 0
+                        Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted content URI {filePath}, result: {deleted}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Failed to delete content URI {filePath}: {ex.Message}");
+                    }
+
+                    return;
+                }
+#endif
+
+                // Normal file path under app cache
+                if (filePath.StartsWith(FileSystem.Current.CacheDirectory, StringComparison.OrdinalIgnoreCase) && File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                    Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted existing cache file at: {filePath}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Failed to delete file at {filePath}: {ex.Message}", ex);
+            }
+        }
     }
 }
+
+/*
+ •	On Android a picked file path is often a content URI (e.g. "content://...") or not inside your app cache,
+    so File.Exists(...) returns false and File.Delete(...) does nothing.
+    Your existing DeleteFileInCache only deletes files under FileSystem.Current.CacheDirectory, so it will appear deleted
+    on Windows but not on Android.
+
+Two safe fixes
+1.	Copy the picked file into your app cache and work with that copy (then File.Delete works reliably). This is recommended.
+2.	If you must remove the original content URI on Android, use Android's ContentResolver to delete the content URI.
+
+Patch (add both helpers)
+•	Update ClassFileUtilities to (a) handle Android content URIs and (b) add a helper that copies a picked FileResult
+    into your cache so you can always delete it reliably.
+
+•	After MediaPicker.Default.PickPhotosAsync(...) get the FileResult and call SaveFileResultToCacheAsync(selected)
+    to obtain a local cache path. Use that path for processing/sharing and later call DeleteFileInCache(cachedPath).
+•	If you rely on the original FullPath and it is a content URI, the updated DeleteFileInCache will attempt to remove
+    it on Android via the content resolver (may require proper permissions depending on provider).
+*/
