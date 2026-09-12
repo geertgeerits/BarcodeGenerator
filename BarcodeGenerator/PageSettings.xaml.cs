@@ -650,31 +650,39 @@ namespace BarcodeGenerator
         /// <summary>
         /// Sets the text to a formatted string that includes a value in a specified color
         /// </summary>
-        /// <param name="template"></param>
-        /// <param name="value"></param>
+        /// <param name="cText"></param>
+        /// <param name="nValue"></param>
+        /// <param name="cFormat"></param>
         /// <returns></returns>
-        private static FormattedString FormatWithColoredNumber(string template, double value, string cformat = "F0")
+        private static FormattedString FormatWithColoredNumber(string cText, double nValue, string cFormat = "F0")
         {
             try
             {
-                string[] parts = template.Split("{0}");
-
+                // Split the template into parts based on the placeholder {0}
+                string[] parts = cText.Split("{0}");
+                
                 FormattedString formatted = new();
 
+                // First part of the template before the placeholder {0}
                 formatted.Spans.Add(new Span { Text = parts[0] });
 
+                // Second part of the template is the placeholder {0} if any
                 AppTheme currentTheme = Application.Current!.RequestedTheme;
-                if (currentTheme == AppTheme.Light)
+
+                // AppTheme = Dark
+                if (currentTheme == AppTheme.Dark)
                 {
-                    formatted.Spans.Add(new Span { Text = value.ToString(format: cformat), TextColor = Colors.Blue });
+                    formatted.Spans.Add(new Span { Text = nValue.ToString(format: cFormat), TextColor = Colors.DeepSkyBlue });
                 }
 
-                else if (currentTheme == AppTheme.Dark)
+                // AppTheme = Light
+                else
                 {
-                    formatted.Spans.Add(new Span { Text = value.ToString(format: cformat), TextColor = Colors.DeepSkyBlue });
+                    formatted.Spans.Add(new Span { Text = nValue.ToString(format: cFormat), TextColor = Colors.Blue });
                 }
 
-                if (parts.Length > 1)
+                // Third part of the template after the placeholder {0} if any
+                if (!string.IsNullOrEmpty(parts[1]))
                 {
                     formatted.Spans.Add(new Span { Text = parts[1] });
                 }
