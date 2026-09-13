@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-12 (YYYY-MM-DD)
+ * Date ........: 2026-09-13 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -22,6 +22,7 @@
 
 using CommunityToolkit.Maui.Extensions;
 using System.Collections;
+using System.IO;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator
@@ -61,7 +62,7 @@ namespace BarcodeGenerator
             {
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                DisplayAlertAsync("InitializeComponent: MainPage", ex.Message, "OK");
+                DisplayAlertAsync("InitializeComponent: MainPage", $"{ex.Message}\n\n{ex.StackTrace}", "OK");
 #endif
                 return;
             }
@@ -172,7 +173,7 @@ namespace BarcodeGenerator
 
             // Initialize text to speech and get and set the speech language
             InitializeTextToSpeechAsync();
-            
+
             // Path and file name of the saved barcode image
             ClassBarcodes.cFileBarcodePng = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.png");
             ClassBarcodes.cFileBarcodeSvg = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator.svg");
@@ -223,7 +224,7 @@ namespace BarcodeGenerator
                 // Save the speech language
                 Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
             }
-            
+
             Debug.WriteLine("MainPage - Globals.bTextToSpeechAvailable: " + Globals.bTextToSpeechAvailable);
             Debug.WriteLine("MainPage - Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
         }
@@ -369,7 +370,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Codabar;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
                 {
                     edtTextToCode.TextTransform = TextTransform.Uppercase;
@@ -378,7 +379,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Code39;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_93)
                 {
                     edtTextToCode.TextTransform = TextTransform.Uppercase;
@@ -387,7 +388,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Code93;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_128)
                 {
                     edtTextToCode.MaxLength = 48;
@@ -395,7 +396,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 20;
                     bgvBarcode.Format = BarcodeFormat.Code128;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
                 {
                     edtTextToCode.MaxLength = 8;
@@ -403,7 +404,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Ean8;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
                 {
                     edtTextToCode.MaxLength = 13;
@@ -411,7 +412,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Ean13;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_ITF)
                 {
                     edtTextToCode.MaxLength = 14;
@@ -419,7 +420,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 8;
                     bgvBarcode.Format = BarcodeFormat.Itf;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_MSI)
                 {
                     edtTextToCode.MaxLength = 255;
@@ -427,7 +428,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 10;
                     bgvBarcode.Format = BarcodeFormat.Msi;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
                 {
                     edtTextToCode.TextTransform = TextTransform.Uppercase;
@@ -436,7 +437,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Plessey;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
                 {
                     edtTextToCode.MaxLength = 12;
@@ -444,7 +445,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 0;
                     bgvBarcode.Format = BarcodeFormat.UpcA;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
                 {
                     edtTextToCode.MaxLength = 8;
@@ -463,7 +464,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 2;
                     bgvBarcode.Format = BarcodeFormat.Aztec;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
                 {
                     edtTextToCode.MaxLength = 1500;
@@ -473,7 +474,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 2;
                     bgvBarcode.Format = BarcodeFormat.DataMatrix;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
                 {
                     edtTextToCode.MaxLength = 1100;
@@ -486,7 +487,7 @@ namespace BarcodeGenerator
 #endif
                     bgvBarcode.Format = BarcodeFormat.Pdf417;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)        // Model 2 - ECCLevel.Quartile
                 {
                     edtTextToCode.MaxLength = 3993;
@@ -498,7 +499,7 @@ namespace BarcodeGenerator
                     bCompressionAllowed = true;
                     bPayloadTypeAllowed = true;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)  // Model 2 - ECCLevel.High
                 {
                     edtTextToCode.MaxLength = 3057;
@@ -510,7 +511,7 @@ namespace BarcodeGenerator
                     bCompressionAllowed = true;
                     bPayloadTypeAllowed = true;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)  // Model 2 - ECCLevel.High
                 {
                     edtTextToCode.MaxLength = 3057;
@@ -522,7 +523,7 @@ namespace BarcodeGenerator
                     bCompressionAllowed = true;
                     bPayloadTypeAllowed = true;
                 }
-                
+
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
                 {
                     edtTextToCode.MaxLength = 35;
@@ -601,114 +602,114 @@ namespace BarcodeGenerator
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 20\n{CodeLang.AllowedChar_Text} {cAllowedCharactersCodabar}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 43\n{CodeLang.AllowedChar_Text} {cAllowedCharactersCode39_93}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_CODE_93)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 48\n{CodeLang.AllowedChar_Text} {cAllowedCharactersCode39_93}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_CODE_128)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 48";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 13";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_ITF)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 2-14";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_MSI)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 1-255";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} 16\n{CodeLang.AllowedChar_Text} {cAllowedCharactersHex}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 12";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.NumberOfDigits_Text} 8";
             }
-            
+
             // Placeholder text for 2D barcodes
             else if (selectedName == ClassBarcodes.cBarcode_AZTEC)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1900.ToString("N0", CultureInfo.CurrentCulture)}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1500.ToString("N0", CultureInfo.CurrentCulture)}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {1100.ToString("N0", CultureInfo.CurrentCulture)}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)        // Model 2 - ECCLevel.Quartile
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
                     3993.ToString("N0", CultureInfo.CurrentCulture), 2420.ToString("N0", CultureInfo.CurrentCulture),
                     1663.ToString("N0", CultureInfo.CurrentCulture), 1024.ToString("N0", CultureInfo.CurrentCulture))}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)  // Model 2 - ECCLevel.High
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
                     3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
                     1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)    // Model 2 - ECCLevel.High
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
                     3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
                     1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 35, 21, 15, 9)}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M3/M4 ? - ECCLevel.Medium
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 30, 18, 13, 8)}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)  // Version 31 - ECCLevel.Medium
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 361, 219, 150, 92)}";
             }
-            
+
             else if (selectedName == ClassBarcodes.cBarcode_ART_RMQR_CODE)  // Version 31 - ECCLevel.High
             {
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 178, 108, 74, 46)}";
             }
-            
+
             else
             {
                 edtTextToCode.Placeholder = string.Empty;
@@ -730,6 +731,8 @@ namespace BarcodeGenerator
             // Ensure any existing barcode files are deleted before generating new ones to avoid confusion and manage storage
             ClassFileUtilities.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
             ClassFileUtilities.DeleteFileIfExists(ClassBarcodes.cFileBarcodeSvg);
+            ClassFileUtilities.DeleteFileInCache(ClassBarcodes.cFileBarcodePng);
+            ClassFileUtilities.DeleteFileInCache(ClassBarcodes.cFileBarcodeSvg);
 
             // Set the barcode colors
             bgvBarcode.ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg);
@@ -750,7 +753,7 @@ namespace BarcodeGenerator
 
             string cTextToCode = edtTextToCode.Text.Trim();
             int nLenTextToCode = cTextToCode.Length;
-        
+
             if (nLenTextToCode == 0)
             {
                 return;
@@ -792,7 +795,7 @@ namespace BarcodeGenerator
             }
 
             // Generate the barcode
-            _ = GenerateBarcode(selectedName!, cTextToCode);
+            await GenerateBarcode(selectedName!, cTextToCode);
         }
 
         /// <summary>
@@ -873,6 +876,60 @@ namespace BarcodeGenerator
                 else
                 {
                     bgvBarcode.Value = cTextToCode;
+
+                    // Wait a short time to ensure the barcode is generated and displayed before saving it to a file
+                    await Task.Delay(500);
+
+                    //// Generate the barcode using the ZXing.Net.MAUI library and save it to a file
+                    //await GenerateBarcodesToFileZXingAsync(selectedName, cTextToCode);
+
+                    //// Save the barcode with caption to a PNG file
+                    //if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption) && File.Exists(ClassBarcodes.cFileBarcodePng))
+                    //{
+                    //    string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
+
+                    //    // Set the image source to the saved file to display it in the Image control
+                    //    //if (!string.IsNullOrEmpty(cFile))
+                    //    //{
+                    //    //    bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
+                    //    //    imgQrCodeImage.IsVisible = true;
+                    //    //    imgQrCodeImage.Source = null;       // Clear the Image control source to avoid displaying the previous image
+                    //    //    await Task.Delay(200);
+                    //    //    imgQrCodeImage.Source = cFile;      // Set the Image control source to the saved file
+                    //    //}
+                    //}
+
+                    // Save the barcode as a file by capturing the barcode view using the ZXing.Net.MAUI library
+                    if (Screenshot.Default.IsCaptureSupported)
+                    {
+                        // Capture the barcode view as a screenshot
+                        IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
+
+                        // Barcode with caption
+                        if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
+                        {
+                            ClassBarcodes.cFileBarcodePng = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
+
+                            //// Set the image source to the saved file to display it in the Image control
+                            //if (!string.IsNullOrEmpty(ClassBarcodes.cFileBarcodePng))
+                            //{
+                            //    bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
+                            //    imgQrCodeImage.IsVisible = true;
+                            //    imgQrCodeImage.Source = null;       // Clear the Image control source to avoid displaying the previous image
+                            //    await Task.Delay(200);
+                            //    imgQrCodeImage.Source = ClassBarcodes.cFileBarcodePng;  // Set the Image control source to the saved file
+                            //}
+                        }
+
+                        // Barcode without caption
+                        else
+                        {
+                            Stream stream = await screen!.OpenReadAsync();
+
+                            // Save the barcode as a file
+                            ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
+                        }
+                    }
                 }
 
                 btnShare.IsEnabled = true;
@@ -882,8 +939,11 @@ namespace BarcodeGenerator
                 _ = SentrySdk.CaptureException(ex);
 
                 bgvBarcode.Value = string.Empty;
-
-                RestartApplication(ex.Message);
+#if DEBUG
+                await RestartApplicationAsync($"{ex.Message}\n\n{ex.StackTrace}");
+#else
+                await RestartApplicationAsync(ex.Message);
+#endif
             }
 
             // Stop the activity indicator
@@ -924,7 +984,7 @@ namespace BarcodeGenerator
         /// Display an error message and restart the application
         /// </summary>
         /// <param name="cErrorMessage"></param>
-        private async void RestartApplication(string cErrorMessage)
+        private async Task RestartApplicationAsync(string cErrorMessage)
         {
             await DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
 
@@ -1017,53 +1077,11 @@ namespace BarcodeGenerator
                 {
                     await ClassFileUtilities.ShareMultipleFilesAsync(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cFileBarcodeSvg);
                 }
-                
+
                 // Share the barcode as an image file - 1 PNG file
                 else if (File.Exists(ClassBarcodes.cFileBarcodePng))
                 {
                     await ClassFileUtilities.OpenShareInterfaceAsync(ClassBarcodes.cFileBarcodePng);
-                }
-                
-                // Share the barcode by capturing the barcode view and saving it as a file using the Share API
-                else if (Screenshot.Default.IsCaptureSupported)
-                {
-                    // Capture the barcode view as a screenshot
-                    IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
-
-                    // Barcode with caption
-                    if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
-                    {
-                        //ClassFileUtilities.DeleteFileIfExists(ClassBarcodes.cFileBarcodePng);
-                        //ClassFileUtilities.DeleteFileInCache(ClassBarcodes.cFileBarcodePng);
-                        //await Task.Delay(200);
-
-                        string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
-
-                        //// Set the image source to the saved file to display it in the Image control
-                        //if (!string.IsNullOrEmpty(cFile))
-                        //{
-                        //    bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
-                        //    imgQrCodeImage.IsVisible = true;
-                        //    imgQrCodeImage.Source = null;       // Clear the Image control source to avoid displaying the previous image
-                        //    await Task.Delay(200);
-                        //    imgQrCodeImage.Source = cFile;      // Set the Image control source to the saved file
-                        //}
-
-                        // Open the share interface to share the file
-                        await ClassFileUtilities.OpenShareInterfaceAsync(cFile);
-                    }
-                    
-                    // Barcode without caption
-                    else
-                    {
-                        Stream stream = await screen!.OpenReadAsync();
-
-                        // Save the barcode as a file
-                        ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
-
-                        // Open the share interface to share the file
-                        await ClassFileUtilities.OpenShareInterfaceAsync(ClassBarcodes.cFileBarcodePng);
-                    }
                 }
             }
             catch (Exception ex)
@@ -1072,7 +1090,7 @@ namespace BarcodeGenerator
                 // System.InvalidCastException: Unable to cast object of type 'Foundation.NSString' to type 'Foundation.NSExtensionItem'.
                 SentrySdk.CaptureException(ex);
 #if DEBUG
-                _ = DisplayAlertAsync("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
+                await DisplayAlertAsync("OnShareClicked", ex.Message, CodeLang.ButtonClose_Text);
 #endif
             }
         }
@@ -1104,7 +1122,7 @@ namespace BarcodeGenerator
             ClassBarcodes.SelectBarcodeGeneratorNameIndex(pckFormatCodeGenerator);
 
             cLicense = $"{CodeLang.License_Text}\n\n{CodeLang.LicenseMit2_Text}";
-            
+
             if (pckFormatCodeGenerator.SelectedIndex >= 0)
             {
                 // Set the placeholder text for the editor based on the selected format code after the language has been changed
@@ -1142,6 +1160,205 @@ namespace BarcodeGenerator
         private async void OnPasteFromClipboardClicked(object sender, EventArgs e)
         {
             await Globals.PasteFromClipboardAsync(edtTextToCode);
+        }
+
+        /// <summary>
+        /// Generate the barcode to a file using the ZXing.Net.MAUI library
+        /// </summary>
+        /// <param name="selectedName"></param>
+        /// <param name="cTextToCode"></param>
+        private static async Task GenerateBarcodesToFileZXingAsync(string selectedName, string cTextToCode)
+        {
+            string filePath = ClassBarcodes.cFileBarcodePng;
+
+            await MainThread.InvokeOnMainThreadAsync(async () =>
+            {
+                // Properties 1D barcodes
+                if (selectedName == ClassBarcodes.cBarcode_CODABAR)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Codabar,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Code39,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_CODE_93)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Code93,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_CODE_128)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Code128,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_EAN_8)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Ean8,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_EAN_13)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Ean13,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                    });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_ITF)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Itf,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_MSI)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Msi,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_PLESSEY)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Plessey,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_UPC_A)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.UpcA,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_UPC_E)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.UpcE,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                // Properties 2D barcodes
+                else if (selectedName == ClassBarcodes.cBarcode_AZTEC)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Aztec,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Height = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.DataMatrix,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Height = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
+                {
+                    await global::ZXing.Net.Maui.BarcodeGenerator.WriteToFileAsync(cTextToCode, filePath,
+                        new BarcodeGeneratorOptions
+                        {
+                            Format = BarcodeFormat.Pdf417,
+                            Width = ClassBarcodes.nQRCodeSizePixels,
+                            Margin = 4,
+                            ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
+                            BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
+                        });
+                }
+            });
         }
     }
 }

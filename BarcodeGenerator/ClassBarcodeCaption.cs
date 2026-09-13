@@ -23,6 +23,11 @@ namespace BarcodeGenerator
         /// <summary>
         /// Convenience helper to get a screenshot's stream and call SaveBarcodeWithCaptionAsync
         /// </summary>
+        /// <param name="screen">The screenshot result</param>
+        /// <param name="caption">Text to draw under the barcode (usually the numeric string)</param>
+        /// <param name="fileName">Name of the output file</param>
+        /// <param name="padding">Padding in pixels between barcode and caption and edges</param>
+        /// <returns>Full path to the saved PNG file</returns>
         public static async Task<string> SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = "barcode_generator.png", int padding = 12)
         {
             if (screen is null)
@@ -33,6 +38,26 @@ namespace BarcodeGenerator
 
             await using Stream stream = await screen.OpenReadAsync();
             return await SaveBarcodeWithCaptionAsync(stream, caption, fileName, padding);
+        }
+
+        /// <summary>
+        /// Convenience helper to get a file stream and call SaveBarcodeWithCaptionAsync
+        /// </summary>
+        /// <param name="filePathIn">Path to the input file containing the barcode image</param>
+        /// <param name="caption">Text to draw under the barcode (usually the numeric string)</param>
+        /// <param name="filePathOut">Optional output file name. Defaults to "barcode_generator.png"</param>
+        /// <param name="padding">Padding in pixels between barcode and caption and edges</param>
+        /// <returns>Full path to the saved PNG file</returns>
+        public static async Task<string> SaveBarcodeWithCaptionFromFileAsync(string filePathIn, string caption, string filePathOut = "barcode_generator.png", int padding = 12)
+        {
+            if (filePathIn is null)
+            {
+                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromFileAsync: filePath is null.");
+                return string.Empty;    // Return empty string on failure instead of throwing, to avoid crashing the app
+            }
+
+            FileStream fileStream = new(filePathIn, FileMode.Open, FileAccess.Read, FileShare.Read);
+            return await SaveBarcodeWithCaptionAsync(fileStream, caption, filePathOut, padding);
         }
 
         /// <summary>
