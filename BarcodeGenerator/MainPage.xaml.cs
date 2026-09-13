@@ -323,10 +323,6 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private void OnPickerFormatCodeChanged(object sender, EventArgs e)
         {
-            const int nHeightBarcode1D = 160;
-            const int nHeightBarcode2D = 280;
-            const int nWidthBarcode2D = 280;
-
             Picker picker = (Picker)sender;
             int selectedIndex = picker.SelectedIndex;
 
@@ -346,9 +342,9 @@ namespace BarcodeGenerator
 
                 imgQrCodeImage.Source = null;
                 bgvBarcode.Value = string.Empty;
-                bgvBarcode.HeightRequest = nHeightBarcode1D;
+                bgvBarcode.HeightRequest = 160;
                 bgvBarcode.WidthRequest = -1;
-                bgvBarcode.MaximumHeightRequest = nHeightBarcode2D;
+                bgvBarcode.MaximumHeightRequest = 280;
                 bgvBarcode.MaximumWidthRequest = 600;
                 bgvBarcode.HorizontalOptions = LayoutOptions.Fill;
                 edtTextToCode.Placeholder = string.Empty;
@@ -459,8 +455,8 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 1900;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.HeightRequest = nHeightBarcode2D;
-                    bgvBarcode.WidthRequest = nWidthBarcode2D;
+                    bgvBarcode.HeightRequest = 280;
+                    bgvBarcode.WidthRequest = 280;
                     bgvBarcode.BarcodeMargin = 2;
                     bgvBarcode.Format = BarcodeFormat.Aztec;
                 }
@@ -469,8 +465,8 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 1500;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.HeightRequest = nHeightBarcode2D;
-                    bgvBarcode.WidthRequest = nWidthBarcode2D;
+                    bgvBarcode.HeightRequest = 280;
+                    bgvBarcode.WidthRequest = 280;
                     bgvBarcode.BarcodeMargin = 2;
                     bgvBarcode.Format = BarcodeFormat.DataMatrix;
                 }
@@ -479,7 +475,6 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 1100;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.HeightRequest = nHeightBarcode2D;
 #if WINDOWS
                     bgvBarcode.BarcodeMargin = 25;
 #else
@@ -492,8 +487,6 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 3993;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
-                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
@@ -504,8 +497,6 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 3057;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
-                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
@@ -516,8 +507,6 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 3057;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
-                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
@@ -528,8 +517,6 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 35;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
-                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                 }
@@ -538,8 +525,6 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 30;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
-                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                 }
@@ -548,8 +533,6 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 361;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
-                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                 }
@@ -558,8 +541,6 @@ namespace BarcodeGenerator
                 {
                     edtTextToCode.MaxLength = 178;
                     edtTextToCode.Keyboard = Keyboard.Default;
-                    imgQrCodeImage.HeightRequest = nHeightBarcode2D;
-                    imgQrCodeImage.WidthRequest = nWidthBarcode2D;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
                 }
@@ -836,7 +817,7 @@ namespace BarcodeGenerator
                     imgQrCodeImage.Source = qrImage;
                 }
 
-                // Generate the QR code with an image using the QRCoder library
+                // Generate the QR code with an image using the SkiaSharp.QrCode library
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
@@ -881,6 +862,10 @@ namespace BarcodeGenerator
                     await Task.Delay(500);
 
                     //// Generate the barcode using the ZXing.Net.MAUI library and save it to a file
+                    //   !!! BUG!!! The ZXing.Net.MAUI library gives an unresolved error when creating 1 to 10 barcodes after
+                    //   each other, so the app has to be restarted when using the GenerateBarcodesToFileZXingAsync method,
+                    //   so we use the BarcodeView CaptureAsync method to generate the barcode and save it to a file instead.
+
                     //await GenerateBarcodesToFileZXingAsync(selectedName, cTextToCode);
 
                     //// Save the barcode with caption to a PNG file

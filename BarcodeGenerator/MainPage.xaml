@@ -240,7 +240,6 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HeightRequest="280"
                     Margin="5">
                 </zxing:BarcodeGeneratorView>
 
@@ -250,8 +249,6 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HeightRequest="280"
-                    WidthRequest="280"
                     Margin="5"
                     IsVisible="False">
                 </Image>
