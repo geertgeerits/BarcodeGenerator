@@ -893,19 +893,26 @@ namespace BarcodeGenerator
                         if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                         {
                             ClassBarcodes.cFileBarcodePng = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
-#if WINDOWS
+
                             // Set the image source to the saved file to display it in the Image control
-                            // !!!BUG!!! on Android: returns always the first generated barcode, even when a new barcode is
-                            // generated and saved to the same file name. This does not happen on Windows and iOS.
                             if (!string.IsNullOrEmpty(ClassBarcodes.cFileBarcodePng))
                             {
+                                // !!!BUG!!! on Android: returns always the first generated barcode, even when a new barcode is
+                                // generated and saved to the same file name. This does not happen on Windows and iOS.
+                                // Create a unique file name for the copied barcode PNG file to avoid caching issues on Android
+                                string cFileBarcodePngUnique = Path.Combine(FileSystem.Current.CacheDirectory, $@"{DateTime.Now.Ticks}.png");
+                                File.Copy(ClassBarcodes.cFileBarcodePng, cFileBarcodePngUnique);
+
                                 bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
                                 imgQrCodeImage.IsVisible = true;
                                 imgQrCodeImage.Source = null;       // Clear the Image control source to avoid displaying the previous image
                                 await Task.Delay(200);
-                                imgQrCodeImage.Source = ImageSource.FromFile(ClassBarcodes.cFileBarcodePng);  // Set the Image control source to the saved file
+                                imgQrCodeImage.Source = ImageSource.FromFile(cFileBarcodePngUnique);  // Set the Image control source to the saved file
+
+                                // Delete the unique file after a short delay to ensure it is not cached and displayed again on Android
+                                await Task.Delay(500);
+                                ClassFileUtilities.DeleteFileInCache(cFileBarcodePngUnique);
                             }
-#endif
                         }
 
                         // Barcode without caption
