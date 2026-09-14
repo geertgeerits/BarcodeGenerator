@@ -275,22 +275,45 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Deletes the specified file if it exists in the app cache directory
+        /// Deletes the specified file if it exists in the app cache directory or if it is a content URI on Android.
         /// </summary>
-        /// <param name="filePath">The path of the file to delete</param>
+        /// <param name="filePath"></param>
         public static void DeleteFileInCache(string filePath)
         {
             Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Attempting to delete file in cache at: {filePath}");
 
             try
             {
-                if (!string.IsNullOrEmpty(filePath))
+                if (string.IsNullOrEmpty(filePath))
                 {
-                    if (filePath.StartsWith(FileSystem.Current.CacheDirectory, StringComparison.OrdinalIgnoreCase) && File.Exists(filePath))
+                    return;
+                }
+
+#if ANDROID
+                // Android may provide a content:// URI — try deleting via ContentResolver
+                if (filePath.StartsWith("content://", StringComparison.OrdinalIgnoreCase))
+                {
+                    try
                     {
-                        File.Delete(filePath);
-                        Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted existing cache file at: {filePath}");
+                        var uri = Android.Net.Uri.Parse(filePath);
+                        var resolver = Android.App.Application.Context.ContentResolver;
+                        int deleted = resolver.Delete(uri, null, null); // returns number of rows deleted or 0
+                        Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted content URI {filePath}, result: {deleted}");
                     }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Failed to delete content URI {filePath}: {ex.Message}");
+                    }
+
+                    return;
+                }
+#endif
+
+                // Normal file path under app cache
+                if (filePath.StartsWith(FileSystem.Current.CacheDirectory, StringComparison.OrdinalIgnoreCase) && File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                    Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted existing cache file at: {filePath}");
                 }
             }
             catch (Exception ex)
@@ -373,12 +396,17 @@ namespace BarcodeGenerator
             return output;
         }
 
-
-        // (Only the new/changed methods are shown — add into ClassFileUtilities)
+        /// <summary>
+        /// Saves the specified FileResult to the app's cache directory and returns the path to the cached file.
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
         public static async Task<string?> SaveFileResultToCacheAsync(FileResult? file)
         {
             if (file == null)
+            {
                 return null;
+            }
 
             try
             {
@@ -396,48 +424,6 @@ namespace BarcodeGenerator
             {
                 Debug.WriteLine($"SaveFileResultToCacheAsync: {ex.Message}");
                 return null;
-            }
-        }
-
-        public static void DeleteFileInCacheNEW(string filePath)
-        {
-            Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Attempting to delete file in cache at: {filePath}");
-
-            try
-            {
-                if (string.IsNullOrEmpty(filePath))
-                    return;
-
-#if ANDROID
-                // Android may provide a content:// URI — try deleting via ContentResolver
-                if (filePath.StartsWith("content://", StringComparison.OrdinalIgnoreCase))
-                {
-                    try
-                    {
-                        var uri = Android.Net.Uri.Parse(filePath);
-                        var resolver = Android.App.Application.Context.ContentResolver;
-                        int deleted = resolver.Delete(uri, null, null); // returns number of rows deleted or 0
-                        Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted content URI {filePath}, result: {deleted}");
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Failed to delete content URI {filePath}: {ex.Message}");
-                    }
-
-                    return;
-                }
-#endif
-
-                // Normal file path under app cache
-                if (filePath.StartsWith(FileSystem.Current.CacheDirectory, StringComparison.OrdinalIgnoreCase) && File.Exists(filePath))
-                {
-                    File.Delete(filePath);
-                    Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Deleted existing cache file at: {filePath}");
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"ClassFileOperations.DeleteFileInCache: Failed to delete file at {filePath}: {ex.Message}", ex);
             }
         }
     }

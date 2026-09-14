@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-13 (YYYY-MM-DD)
+ * Date ........: 2026-09-14 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -22,7 +22,6 @@
 
 using CommunityToolkit.Maui.Extensions;
 using System.Collections;
-using System.IO;
 using ZXing.Net.Maui;
 
 namespace BarcodeGenerator
@@ -894,23 +893,26 @@ namespace BarcodeGenerator
                         if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                         {
                             ClassBarcodes.cFileBarcodePng = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
-
-                            //// Set the image source to the saved file to display it in the Image control
-                            //if (!string.IsNullOrEmpty(ClassBarcodes.cFileBarcodePng))
-                            //{
-                            //    bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
-                            //    imgQrCodeImage.IsVisible = true;
-                            //    imgQrCodeImage.Source = null;       // Clear the Image control source to avoid displaying the previous image
-                            //    await Task.Delay(200);
-                            //    imgQrCodeImage.Source = ClassBarcodes.cFileBarcodePng;  // Set the Image control source to the saved file
-                            //}
+#if WINDOWS
+                            // Set the image source to the saved file to display it in the Image control
+                            // !!!BUG!!! on Android: returns always the first generated barcode, even when a new barcode is
+                            // generated and saved to the same file name. This does not happen on Windows and iOS.
+                            if (!string.IsNullOrEmpty(ClassBarcodes.cFileBarcodePng))
+                            {
+                                bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
+                                imgQrCodeImage.IsVisible = true;
+                                imgQrCodeImage.Source = null;       // Clear the Image control source to avoid displaying the previous image
+                                await Task.Delay(200);
+                                imgQrCodeImage.Source = ImageSource.FromFile(ClassBarcodes.cFileBarcodePng);  // Set the Image control source to the saved file
+                            }
+#endif
                         }
 
                         // Barcode without caption
                         else
                         {
                             Stream stream = await screen!.OpenReadAsync();
-
+                            
                             // Save the barcode as a file
                             ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
                         }
