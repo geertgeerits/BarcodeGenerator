@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-14 (YYYY-MM-DD)
+ * Date ........: 2026-09-15 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -892,26 +892,33 @@ namespace BarcodeGenerator
                         // Barcode with caption
                         if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
                         {
-                            ClassBarcodes.cFileBarcodePng = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
+                            string cFileBarcodeCaptionPng = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
 
                             // Set the image source to the saved file to display it in the Image control
-                            if (!string.IsNullOrEmpty(ClassBarcodes.cFileBarcodePng))
+                            if (!string.IsNullOrEmpty(cFileBarcodeCaptionPng))
                             {
-                                // !!!BUG!!! on Android: returns always the first generated barcode, even when a new barcode is
+#if ANDROID
+                                // !!!BUG!!! in Android: returns always the first generated barcode, even when a new barcode is
                                 // generated and saved to the same file name. This does not happen on Windows and iOS.
                                 // Create a unique file name for the copied barcode PNG file to avoid caching issues on Android
-                                string cFileBarcodePngUnique = Path.Combine(FileSystem.Current.CacheDirectory, $@"{DateTime.Now.Ticks}.png");
-                                File.Copy(ClassBarcodes.cFileBarcodePng, cFileBarcodePngUnique);
-
+                                string cFileBarcodeCaptionPngUnique = Path.Combine(FileSystem.Current.CacheDirectory, $@"{DateTime.Now.Ticks}.png");
+                                File.Copy(cFileBarcodeCaptionPng, cFileBarcodeCaptionPngUnique);
+#endif
                                 bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
                                 imgQrCodeImage.IsVisible = true;
                                 imgQrCodeImage.Source = null;       // Clear the Image control source to avoid displaying the previous image
                                 await Task.Delay(200);
-                                imgQrCodeImage.Source = ImageSource.FromFile(cFileBarcodePngUnique);  // Set the Image control source to the saved file
-
-                                // Delete the unique file after a short delay to ensure it is not cached and displayed again on Android
+#if ANDROID
+                                // Set the Image control source to the saved file
+                                imgQrCodeImage.Source = ImageSource.FromFile(cFileBarcodeCaptionPngUnique);
+                                
+                                // Delete the unique file with caption after a short delay to ensure it is not cached and displayed again on Android
                                 await Task.Delay(500);
-                                ClassFileUtilities.DeleteFileInCache(cFileBarcodePngUnique);
+                                ClassFileUtilities.DeleteFileInCache(cFileBarcodeCaptionPngUnique);
+#else
+                                // Set the Image control source to the saved file
+                                imgQrCodeImage.Source = ImageSource.FromFile(cFileBarcodeCaptionPng);
+#endif
                             }
                         }
 
