@@ -858,7 +858,7 @@ namespace BarcodeGenerator
                     bgvBarcode.Value = cTextToCode;
 
                     // Wait a short time to ensure the barcode is generated and displayed before saving it to a file
-                    await Task.Delay(500);
+                    await Task.Delay(400);
 
                     //// Generate the barcode using the ZXing.Net.MAUI library and save it to a file
                     //   !!! BUG!!! The ZXing.Net.MAUI library gives an unresolved error when creating 1 to 10 barcodes after
@@ -906,14 +906,12 @@ namespace BarcodeGenerator
 #endif
                                 bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
                                 imgQrCodeImage.IsVisible = true;
-                                imgQrCodeImage.Source = null;       // Clear the Image control source to avoid displaying the previous image
-                                await Task.Delay(200);
 #if ANDROID
                                 // Set the Image control source to the saved file
                                 imgQrCodeImage.Source = ImageSource.FromFile(cFileBarcodeCaptionPngUnique);
                                 
                                 // Delete the unique file with caption after a short delay to ensure it is not cached and displayed again on Android
-                                await Task.Delay(500);
+                                await Task.Delay(400);
                                 ClassFileUtilities.DeleteFileInCache(cFileBarcodeCaptionPngUnique);
 #else
                                 // Set the Image control source to the saved file
