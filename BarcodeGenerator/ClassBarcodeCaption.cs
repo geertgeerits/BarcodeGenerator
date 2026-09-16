@@ -15,11 +15,88 @@
 // 11. Handle nulls and throw meaningful exceptions; ensure stream is seeked before decode.
 
 using SkiaSharp;
+using ZXing.Net.Maui.Controls;
 
 namespace BarcodeGenerator
 {
     public static class ClassBarcodeCaption
     {
+        /// <summary>
+        /// If ClassBarcodes.bBarcodeWithCaption is true, prompt the user for a caption and save the barcode with caption to a file.
+        /// </summary>
+        /// <returns></returns>
+        public static async Task AddBarcodeCaptionFileAsync(BarcodeGeneratorView bgvBarcode, Image image, string fileBarcodeCaptionPng, string caption, string barcodeType)
+        {
+            if (ClassBarcodes.bBarcodeWithCaption)
+            {
+                string cBarcodeCaption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
+                _ = await SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, cBarcodeCaption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
+
+                await AddBarcodeCaptionAsync(bgvBarcode, image, fileBarcodeCaptionPng, caption, barcodeType);
+            }
+        }
+
+        /// <summary>
+        /// If ClassBarcodes.bBarcodeWithCaption is true, prompt the user for a caption and save the barcode with caption to a file.
+        /// </summary>
+        /// <param name="bgvBarcode"></param>
+        /// <param name="image"></param>
+        /// <param name="caption"></param>
+        /// <param name="barcodeType"></param>
+        /// <returns></returns>
+        public static async Task AddBarcodeCaptionScreenAsync(BarcodeGeneratorView bgvBarcode, Image image, string caption, string barcodeType)
+        {
+            // Wait a short time to ensure the barcode is generated and displayed before saving it to a file
+            await Task.Delay(400);
+
+            // Save the barcode as a file by capturing the barcode view using the ZXing.Net.MAUI library
+            if (Screenshot.Default.IsCaptureSupported)
+            {
+                // Capture the barcode view as a screenshot
+                IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
+
+                // Barcode without caption
+                if (!ClassBarcodes.bBarcodeWithCaption)
+                {
+                    Stream stream = await screen!.OpenReadAsync();
+
+                    // Save the barcode as a file
+                    ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
+
+                    return;     // Exit early if no caption is needed
+                }
+
+                // Barcode with caption
+                string cFileBarcodeCaptionPng = await SaveBarcodeWithCaptionFromScreenshotAsync(screen!, caption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
+                await AddBarcodeCaptionAsync(bgvBarcode, image, cFileBarcodeCaptionPng, caption, barcodeType);
+            }
+        }
+
+        public static async Task AddBarcodeCaptionAsync(BarcodeGeneratorView bgvBarcode, Image image, string fileBarcodeCaptionPng, string caption, string barcodeType)
+        {
+            // Set the image source to the saved file to display it in the Image control
+#if ANDROID
+            // !!!BUG!!! in Android: returns always the first generated barcode, even when a new barcode is
+            // generated and saved to the same file name. This does not happen on Windows and iOS.
+            // Create a unique file name for the copied barcode PNG file to avoid caching issues on Android
+            string cFileBarcodeCaptionPngUnique = Path.Combine(FileSystem.Current.CacheDirectory, $@"{DateTime.Now.Ticks}.png");
+            File.Copy(fileBarcodeCaptionPng, cFileBarcodeCaptionPngUnique);
+#endif
+            bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
+            image.IsVisible = true;
+#if ANDROID
+            // Set the Image control source to the saved file
+            image.Source = ImageSource.FromFile(cFileBarcodeCaptionPngUnique);
+
+            // Delete the unique file with caption after a short delay to ensure it is not cached and displayed again on Android
+            await Task.Delay(400);
+            ClassFileUtilities.DeleteFileInCache(cFileBarcodeCaptionPngUnique);
+#else
+            // Set the Image control source to the saved file
+            image.Source = ImageSource.FromFile(fileBarcodeCaptionPng);
+#endif
+        }
+
         /// <summary>
         /// Convenience helper to get a screenshot's stream and call SaveBarcodeWithCaptionAsync
         /// </summary>
@@ -30,10 +107,16 @@ namespace BarcodeGenerator
         /// <returns>Full path to the saved PNG file</returns>
         public static async Task<string> SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = "barcode_generator.png", int padding = 12, string barcodeType = "Normal")
         {
-            if (screen is null || string.IsNullOrWhiteSpace(caption))
+            if (screen is null)
             {
-                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync: screen or caption is null.");
+                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync: screen is null.");
                 return string.Empty;
+            }
+
+            // Prompt the user for a caption if it is null or whitespace
+            if (string.IsNullOrWhiteSpace(caption))
+            {
+                caption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
             }
 
             await using Stream stream = await screen.OpenReadAsync();
@@ -120,7 +203,16 @@ namespace BarcodeGenerator
                         fontFamily1 = "OpenSansRegular";
                         fontFamily2 = "serif";
                     }
-                    
+
+                    else if (barcodeType == "QRcode")
+                    {
+                        // Set specific colors and font families for standard QR codes
+                        fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
+                        bgColor = TryParseSkColor(ClassBarcodes.cCodeColorBg, SKColors.White);
+                        fontFamily1 = "OpenSansRegular";
+                        fontFamily2 = "serif";
+                    }
+
                     else
                     {
                         // Set default colors and font families for normal barcodes

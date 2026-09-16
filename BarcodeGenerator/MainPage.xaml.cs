@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-15 (YYYY-MM-DD)
+ * Date ........: 2026-09-16 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -34,6 +34,7 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
         private const string cAllowedCharactersCodabar = "0123456789-$:/.+ABCD";
         private static string cBarcodeCaption = string.Empty;   // Caption text for the barcode - used for sharing the barcode with the caption in the text and for the option to include the caption in the generated barcode image
+        private static string cBarcodeType = string.Empty;      // Type of the barcode - used for the generating the barcode with caption
         private static bool bCompressionAllowed;                // Flag to indicate if compression is allowed for the input text based on the selected barcode format
         private static bool bPayloadTypeAllowed;                // Flag to indicate if a specific payload type is allowed for the selected barcode format
 
@@ -116,7 +117,7 @@ namespace BarcodeGenerator
             ClassBarcodes.cQRCodeGradientDirection = Preferences.Default.Get("SettingQRCodeGradientDirection", "BottomLeftToTopRight");  // None, BottomToTop, BottomLeftToTopRight, LeftToRight, TopLeftToBottomRight, TopToBottom, TopRightToBottomLeft, RightToLeft, BottomRightToTopLeft
             ClassBarcodes.bQRCodeForegroundImage = Preferences.Default.Get("SettingQRCodeForegroundImage", false);
             ClassBarcodes.bQRCodeBackgroundImage = Preferences.Default.Get("SettingQRCodeBackgroundImage", false);
-            ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", true);
+            ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", false);
             ClassBarcodes.bCompressionEnabled = Preferences.Default.Get("SettingCompressionEnabled", false);
             ClassPayloadTypes.cPayloadType = Preferences.Default.Get("SettingPayloadType", ClassPayloadTypes.cPayloadTypeDefault);
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
@@ -355,6 +356,7 @@ namespace BarcodeGenerator
 
                 bCompressionAllowed = false;
                 bPayloadTypeAllowed = false;
+                cBarcodeType = "Normal";
 
                 // Properties 1D barcodes
                 if (selectedName == ClassBarcodes.cBarcode_CODABAR)
@@ -490,6 +492,7 @@ namespace BarcodeGenerator
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
                     bPayloadTypeAllowed = true;
+                    cBarcodeType = "QRcode";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE_IMAGE)  // Model 2 - ECCLevel.High
@@ -500,6 +503,7 @@ namespace BarcodeGenerator
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
                     bPayloadTypeAllowed = true;
+                    cBarcodeType = "QRcode";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_ART_QR_CODE)  // Model 2 - ECCLevel.High
@@ -510,6 +514,7 @@ namespace BarcodeGenerator
                     imgQrCodeImage.IsVisible = true;
                     bCompressionAllowed = true;
                     bPayloadTypeAllowed = true;
+                    cBarcodeType = "ArtQRcode";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)  // Version M4 - ECCLevel.Low
@@ -518,6 +523,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
+                    cBarcodeType = "QRcode";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M3/M4 ? - ECCLevel.Medium
@@ -526,6 +532,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
+                    cBarcodeType = "ArtQRcode";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)  // 
@@ -534,6 +541,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
+                    cBarcodeType = "QRcode";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_ART_RMQR_CODE)  // 
@@ -542,6 +550,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
+                    cBarcodeType = "ArtQRcode";
                 }
 
                 // Set the payload type button enabled if a specific payload type is allowed for the selected barcode format
@@ -815,11 +824,8 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
 
-                    if (ClassBarcodes.bBarcodeWithCaption)
-                    {
-                        cBarcodeCaption = await DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
-                        string cFileBarcodeCaptionPng = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, cBarcodeCaption, ClassBarcodes.cFileBarcodePng, 12, "ArtQRcode");
-                    }
+                    // Save the barcode with caption to a PNG file
+                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                 }
 
                 // Generate the QR code with an image using the SkiaSharp.QrCode library
@@ -829,6 +835,9 @@ namespace BarcodeGenerator
 
                     ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeImageAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+
+                    // Save the barcode with caption to a PNG file
+                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                 }
 
                 // Generate the QR code using the SkiaSharp.QrCode library
@@ -838,6 +847,9 @@ namespace BarcodeGenerator
 
                     ImageSource? qrImage = await ClassQRCodes.GenerateQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+
+                    // Save the barcode with caption to a PNG file
+                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                 }
 
                 // Generate the Micro QR code using the SkiaSharp.QrCode library
@@ -847,6 +859,9 @@ namespace BarcodeGenerator
 
                     ImageSource? qrImage = await ClassQRCodes.GenerateMicroQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+
+                    // Save the barcode with caption to a PNG file
+                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                 }
 
                 // Generate the rMQR code using the SkiaSharp.QrCode library
@@ -856,83 +871,19 @@ namespace BarcodeGenerator
 
                     ImageSource? qrImage = await ClassQRCodes.GenerateRMQRCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+
+                    // Save the barcode with caption to a PNG file
+                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                 }
 
                 // Generate the other barcodes using the BarcodeView control from the ZXing.Net.MAUI library
                 else
                 {
+                    // Set the value of the BarcodeView control to generate the barcode
                     bgvBarcode.Value = cTextToCode;
 
-                    // Wait a short time to ensure the barcode is generated and displayed before saving it to a file
-                    await Task.Delay(400);
-
-                    //// Generate the barcode using the ZXing.Net.MAUI library and save it to a file
-                    //   !!! BUG!!! The ZXing.Net.MAUI library gives an unresolved error when creating 1 to 10 barcodes after
-                    //   each other, so the app has to be restarted when using the GenerateBarcodesToFileZXingAsync method,
-                    //   so we use the BarcodeView CaptureAsync method to generate the barcode and save it to a file instead.
-
-                    //await GenerateBarcodesToFileZXingAsync(selectedName, cTextToCode);
-
-                    //// Save the barcode with caption to a PNG file
-                    //if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption) && File.Exists(ClassBarcodes.cFileBarcodePng))
-                    //{
-                    //    string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
-
-                    //    // Set the image source to the saved file to display it in the Image control
-                    //    //if (!string.IsNullOrEmpty(cFile))
-                    //    //{
-                    //    //    bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
-                    //    //    imgQrCodeImage.IsVisible = true;
-                    //    //    imgQrCodeImage.Source = cFile;      // Set the Image control source to the saved file
-                    //    //}
-                    //}
-
-                    // Save the barcode as a file by capturing the barcode view using the ZXing.Net.MAUI library
-                    if (Screenshot.Default.IsCaptureSupported)
-                    {
-                        // Capture the barcode view as a screenshot
-                        IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
-
-                        // Barcode with caption
-                        if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption))
-                        {
-                            string cFileBarcodeCaptionPng = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync(screen!, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
-
-                            // Set the image source to the saved file to display it in the Image control
-                            if (!string.IsNullOrEmpty(cFileBarcodeCaptionPng))
-                            {
-#if ANDROID
-                                // !!!BUG!!! in Android: returns always the first generated barcode, even when a new barcode is
-                                // generated and saved to the same file name. This does not happen on Windows and iOS.
-                                // Create a unique file name for the copied barcode PNG file to avoid caching issues on Android
-                                string cFileBarcodeCaptionPngUnique = Path.Combine(FileSystem.Current.CacheDirectory, $@"{DateTime.Now.Ticks}.png");
-                                File.Copy(cFileBarcodeCaptionPng, cFileBarcodeCaptionPngUnique);
-#endif
-                                bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
-                                imgQrCodeImage.IsVisible = true;
-#if ANDROID
-                                // Set the Image control source to the saved file
-                                imgQrCodeImage.Source = ImageSource.FromFile(cFileBarcodeCaptionPngUnique);
-                                
-                                // Delete the unique file with caption after a short delay to ensure it is not cached and displayed again on Android
-                                await Task.Delay(400);
-                                ClassFileUtilities.DeleteFileInCache(cFileBarcodeCaptionPngUnique);
-#else
-                                // Set the Image control source to the saved file
-                                imgQrCodeImage.Source = ImageSource.FromFile(cFileBarcodeCaptionPng);
-#endif
-                            }
-                        }
-
-                        // Barcode without caption
-                        else
-                        {
-                            Stream stream = await screen!.OpenReadAsync();
-                            
-                            // Save the barcode as a file
-                            ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
-                        }
-                    }
+                    // Save the barcode with caption to a PNG file
+                    await ClassBarcodeCaption.AddBarcodeCaptionScreenAsync(bgvBarcode, imgQrCodeImage, cBarcodeCaption, cBarcodeType);
                 }
 
                 btnShare.IsEnabled = true;
@@ -1168,6 +1119,7 @@ namespace BarcodeGenerator
             await Globals.PasteFromClipboardAsync(edtTextToCode);
         }
 
+/*
         /// <summary>
         /// Generate the barcode to a file using the ZXing.Net.MAUI library
         /// </summary>
@@ -1366,5 +1318,29 @@ namespace BarcodeGenerator
                 }
             });
         }
+        */
     }
 }
+
+/*
+    // Generate the barcode using the ZXing.Net.MAUI library and save it to a file
+    // !!! BUG!!! The ZXing.Net.MAUI library gives an unresolved error when creating 1 to 10 barcodes after
+    // each other, so the app has to be restarted when using the GenerateBarcodesToFileZXingAsync method,
+    // so we use the BarcodeView CaptureAsync method to generate the barcode and save it to a file instead.
+
+    await GenerateBarcodesToFileZXingAsync(selectedName, cTextToCode);
+
+    // Save the barcode with caption to a PNG file
+    if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption) && File.Exists(ClassBarcodes.cFileBarcodePng))
+    {
+        string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
+
+        // Set the image source to the saved file to display it in the Image control
+        if (!string.IsNullOrEmpty(cFile))
+        {
+            bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
+            imgQrCodeImage.IsVisible = true;
+            imgQrCodeImage.Source = cFile;      // Set the Image control source to the saved file
+        }
+    }
+*/
