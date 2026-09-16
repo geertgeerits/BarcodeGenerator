@@ -28,16 +28,16 @@ namespace BarcodeGenerator
         /// <param name="fileName">Name of the output file</param>
         /// <param name="padding">Padding in pixels between barcode and caption and edges</param>
         /// <returns>Full path to the saved PNG file</returns>
-        public static async Task<string> SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = "barcode_generator.png", int padding = 12)
+        public static async Task<string> SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = "barcode_generator.png", int padding = 12, string barcodeType = "Normal")
         {
-            if (screen is null)
+            if (screen is null || string.IsNullOrWhiteSpace(caption))
             {
-                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync: screen is null.");
-                return string.Empty;    // Return empty string on failure instead of throwing, to avoid crashing the app
+                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync: screen or caption is null.");
+                return string.Empty;
             }
 
             await using Stream stream = await screen.OpenReadAsync();
-            return await SaveBarcodeWithCaptionAsync(stream, caption, fileName, padding);
+            return await SaveBarcodeWithCaptionAsync(stream, caption, fileName, padding, barcodeType);
         }
 
         /// <summary>
@@ -48,16 +48,16 @@ namespace BarcodeGenerator
         /// <param name="filePathOut">Optional output file name. Defaults to "barcode_generator.png"</param>
         /// <param name="padding">Padding in pixels between barcode and caption and edges</param>
         /// <returns>Full path to the saved PNG file</returns>
-        public static async Task<string> SaveBarcodeWithCaptionFromFileAsync(string filePathIn, string caption, string filePathOut = "barcode_generator.png", int padding = 12)
+        public static async Task<string> SaveBarcodeWithCaptionFromFileAsync(string filePathIn, string caption, string filePathOut = "barcode_generator.png", int padding = 12, string barcodeType = "Normal")
         {
-            if (filePathIn is null)
+            if (filePathIn is null || string.IsNullOrWhiteSpace(caption))
             {
-                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromFileAsync: filePath is null.");
-                return string.Empty;    // Return empty string on failure instead of throwing, to avoid crashing the app
+                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromFileAsync: filePath or caption is null.");
+                return string.Empty;
             }
 
             FileStream fileStream = new(filePathIn, FileMode.Open, FileAccess.Read, FileShare.Read);
-            return await SaveBarcodeWithCaptionAsync(fileStream, caption, filePathOut, padding);
+            return await SaveBarcodeWithCaptionAsync(fileStream, caption, filePathOut, padding, barcodeType);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace BarcodeGenerator
         /// <param name="fileName">Optional output file name. Defaults to "barcode_generator.png"</param>
         /// <param name="padding">Padding in pixels between barcode and caption and edges</param>
         /// <returns>Full path to the saved PNG file</returns>
-        private static async Task<string> SaveBarcodeWithCaptionAsync(Stream barcodeStream, string caption, string fileName = "barcode_generator.png", int padding = 12)
+        private static async Task<string> SaveBarcodeWithCaptionAsync(Stream barcodeStream, string caption, string fileName = "barcode_generator.png", int padding = 12, string barcodeType = "Normal")
         {
             if (barcodeStream is null)
             {
@@ -107,15 +107,35 @@ namespace BarcodeGenerator
                     int srcHeight = skBitmap.Height;
 
                     // Determine colors (Globals stores as "AARRGGBB" without '#')
-                    SKColor fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
-                    SKColor bgColor = TryParseSkColor(ClassBarcodes.cCodeColorBg, SKColors.White);
+                    SKColor fgColor;
+                    SKColor bgColor;
+                    string fontFamily1;      // Default font family
+                    string fontFamily2;      // Fallback font family
+
+                    if (barcodeType == "ArtQRcode")
+                    {
+                        // Set specific colors and font families for Art QR codes
+                        fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFgArtQRCode, SKColors.Black);
+                        bgColor = TryParseSkColor(ClassBarcodes.cCodeColorBgArtQRCode, SKColors.White);
+                        fontFamily1 = "OpenSansRegular";
+                        fontFamily2 = "serif";
+                    }
+                    
+                    else
+                    {
+                        // Set default colors and font families for normal barcodes
+                        fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
+                        bgColor = TryParseSkColor(ClassBarcodes.cCodeColorBg, SKColors.White);
+                        fontFamily1 = "Courier New";
+                        fontFamily2 = "monospace";
+                    }
 
                     // Determine font size relative to image width if not provided
                     float fontSize = Math.Max(14f, srcWidth / 16f);
 
                     // Select a font Typeface - Try a common Windows name, a generic monospace, then default
-                    using SKTypeface typeface = SKTypeface.FromFamilyName("Courier New", SKFontStyle.Normal)
-                                     ?? SKTypeface.FromFamilyName("monospace", SKFontStyle.Normal)
+                    using SKTypeface typeface = SKTypeface.FromFamilyName(fontFamily1, SKFontStyle.Normal)
+                                     ?? SKTypeface.FromFamilyName(fontFamily2, SKFontStyle.Normal)
                                      ?? SKTypeface.Default;
                     using SKFont font = new(typeface, fontSize);
 

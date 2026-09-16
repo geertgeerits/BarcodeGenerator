@@ -775,7 +775,7 @@ namespace BarcodeGenerator
             }
 
             // Generate the barcode
-            await GenerateBarcode(selectedName!, cTextToCode);
+            await GenerateBarcodeAsync(selectedName!, cTextToCode);
         }
 
         /// <summary>
@@ -784,7 +784,7 @@ namespace BarcodeGenerator
         /// <param name="selectedName">The name of the selected barcode format.</param>
         /// <param name="cTextToCode">The text to encode into the barcode.</param>
         /// <returns>A task representing the asynchronous operation.</returns>
-        private async Task GenerateBarcode(string selectedName, string cTextToCode)
+        private async Task GenerateBarcodeAsync(string selectedName, string cTextToCode)
         {
             // Start the activity indicator
             activityIndicator.IsVisible = true;
@@ -814,6 +814,12 @@ namespace BarcodeGenerator
 
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+
+                    if (ClassBarcodes.bBarcodeWithCaption)
+                    {
+                        cBarcodeCaption = await DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
+                        string cFileBarcodeCaptionPng = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, cBarcodeCaption, ClassBarcodes.cFileBarcodePng, 12, "ArtQRcode");
+                    }
                 }
 
                 // Generate the QR code with an image using the SkiaSharp.QrCode library
@@ -877,8 +883,6 @@ namespace BarcodeGenerator
                     //    //{
                     //    //    bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
                     //    //    imgQrCodeImage.IsVisible = true;
-                    //    //    imgQrCodeImage.Source = null;       // Clear the Image control source to avoid displaying the previous image
-                    //    //    await Task.Delay(200);
                     //    //    imgQrCodeImage.Source = cFile;      // Set the Image control source to the saved file
                     //    //}
                     //}
@@ -946,8 +950,11 @@ namespace BarcodeGenerator
             }
 
             // Stop the activity indicator
+            // !!!BUG!!! iOS: sometimes the activity indicator keeps visible after generating a code,
+            // even after setting IsRunning to false. Setting IsVisible to false as well seems to fix this issue.
+            // This does not happen on Android and Windows.
             activityIndicator.IsRunning = false;
-            activityIndicator.IsVisible = false;    // !!!BUG!!! iOS: sometimes the activity indicator keeps visible after generating a code, even after setting IsRunning to false. Setting IsVisible to false as well seems to fix this issue. This does not happen on Android and Windows. It might be related to the way the SkiaSharp bitmaps are generated and displayed in the Image control for the QR codes, but this is not yet confirmed.
+            activityIndicator.IsVisible = false;
         }
 
         /// <summary>
