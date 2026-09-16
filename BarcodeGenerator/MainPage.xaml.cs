@@ -366,7 +366,6 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Codabar;
-                    cBarcodeType = "2D";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
