@@ -366,6 +366,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.BarcodeMargin = 4;
                     bgvBarcode.Format = BarcodeFormat.Codabar;
+                    cBarcodeType = "2D";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_CODE_39)
@@ -460,6 +461,7 @@ namespace BarcodeGenerator
                     bgvBarcode.WidthRequest = 280;
                     bgvBarcode.BarcodeMargin = 2;
                     bgvBarcode.Format = BarcodeFormat.Aztec;
+                    cBarcodeType = "2D";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_DATA_MATRIX)
@@ -470,6 +472,7 @@ namespace BarcodeGenerator
                     bgvBarcode.WidthRequest = 280;
                     bgvBarcode.BarcodeMargin = 2;
                     bgvBarcode.Format = BarcodeFormat.DataMatrix;
+                    cBarcodeType = "2D";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_PDF_417)
@@ -482,6 +485,7 @@ namespace BarcodeGenerator
                     bgvBarcode.BarcodeMargin = 10;
 #endif
                     bgvBarcode.Format = BarcodeFormat.Pdf417;
+                    cBarcodeType = "2D";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)        // Model 2 - ECCLevel.Quartile

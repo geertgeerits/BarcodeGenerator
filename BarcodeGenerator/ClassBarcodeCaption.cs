@@ -24,6 +24,11 @@ namespace BarcodeGenerator
         /// <summary>
         /// If ClassBarcodes.bBarcodeWithCaption is true, prompt the user for a caption and save the barcode with caption to a file.
         /// </summary>
+        /// <param name="bgvBarcode">The barcode generator view.</param>
+        /// <param name="image">The image to which the caption will be added.</param>
+        /// <param name="fileBarcodeCaptionPng">The file path to save the barcode with caption.</param>
+        /// <param name="caption">The caption text.</param>
+        /// <param name="barcodeType">The type of the barcode.</param>
         /// <returns></returns>
         public static async Task AddBarcodeCaptionFileAsync(BarcodeGeneratorView bgvBarcode, Image image, string fileBarcodeCaptionPng, string caption, string barcodeType)
         {
@@ -204,9 +209,9 @@ namespace BarcodeGenerator
                         fontFamily2 = "serif";
                     }
 
-                    else if (barcodeType == "QRcode")
+                    else if (barcodeType == "QRcode" || barcodeType == "2D")
                     {
-                        // Set specific colors and font families for standard QR codes
+                        // Set specific colors and font families for QR codes and other 2D barcodes
                         fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
                         bgColor = TryParseSkColor(ClassBarcodes.cCodeColorBg, SKColors.White);
                         fontFamily1 = "OpenSansRegular";
