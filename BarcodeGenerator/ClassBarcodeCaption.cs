@@ -36,10 +36,11 @@ namespace BarcodeGenerator
             if (ClassBarcodes.bBarcodeWithCaption)
             {
                 //string cBarcodeCaption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
-                string cBarcodeCaption = await OpenPopupCaptionAsync();
 
+                PopupEntry popup = await OpenPopupCaptionAsync(); // Returns the instance
+                caption = popup.entCaption?.Text ?? string.Empty;
 
-                _ = await SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, cBarcodeCaption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
+                _ = await SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, caption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
                 await AddBarcodeCaptionAsync(bgvBarcode, image, fileBarcodeCaptionPng, caption, barcodeType);
             }
         }
@@ -133,7 +134,10 @@ namespace BarcodeGenerator
             // Prompt the user for a caption if it is null or whitespace
             if (string.IsNullOrWhiteSpace(caption))
             {
-                caption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
+                //caption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
+
+                PopupEntry popup = await OpenPopupCaptionAsync(); // Returns the instance
+                caption = popup.entCaption?.Text ?? string.Empty;
             }
 
             await using Stream stream = await screen.OpenReadAsync();
@@ -323,12 +327,12 @@ namespace BarcodeGenerator
                     // Special handling for Art QR codes and QR codes with quiet zone size > 2
                     if ((barcodeType == "ArtQRcode" || barcodeType == "QRcode") && ClassBarcodes.nQRCodeQuietZoneSize > 2)
                     {
-                        textY = textY - captionHeight;
+                        textY -= captionHeight;
                     }
 
                     else if ((barcodeType == "ArtQRcode2" || barcodeType == "QRcode2") && ClassBarcodes.nQRCodeQuietZoneSize2 > 2)
                     {
-                        textY = textY - captionHeight;
+                        textY -= captionHeight;
                     }
 
                     canvas.DrawText(caption, textX, textY, SKTextAlign.Center, font, textPaint);
@@ -387,89 +391,23 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Prompt the user for a caption using a popup dialog. If the user cancels, set Globals.bPopupCanceled to true.
+        /// Show a modal popup to inform the user about the recommended image size before opening the file picker
         /// </summary>
         /// <returns></returns>
-        private static async Task<string> OpenPopupCaptionAsync()
+        private static async Task<PopupEntry> OpenPopupCaptionAsync()
         {
-            var tcs = new TaskCompletionSource<string>();
-            PopupEntry popup = null!;
+            Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
 
-            var entry = new Entry
+            if (currentPage != null)
             {
-                Text = "" ?? string.Empty,
-                Placeholder = CodeLang.ButtonCaption_Text,
-                HorizontalOptions = LayoutOptions.Fill
-            };
+                // Create/show the PopupEntry and await user input, then return the instance
+                var popup = new PopupEntry();
+                await currentPage.ShowPopupAsync(popup);
 
-            var cancelButton = new Button
-            {
-                Text = CodeLang.ButtonCancel_Text,
-                HorizontalOptions = LayoutOptions.Start
-            };
-
-            //var cancelImageButton = new ImageButton
-            //{
-            //    HorizontalOptions = LayoutOptions.Start,
-            //    Source = "cancel_icon.png" // Replace with your actual cancel icon file name
-            //};
-
-            //// Set the semantic description via the static setter method
-            //SemanticProperties.SetDescription(cancelImageButton, CodeLang.ButtonCancel_Text);
-
-            var okButton = new Button
-            {
-                Text = CodeLang.ButtonNext_Text,
-                HorizontalOptions = LayoutOptions.End
-            };
-
-            cancelButton.Clicked += (_, __) =>
-            {
-                if (!tcs.Task.IsCompleted)
-                {
-                    tcs.TrySetResult(string.Empty);
-                }
-
-                popup?.CloseAsync();
-            };
-
-            okButton.Clicked += (_, __) =>
-            {
-                if (!tcs.Task.IsCompleted)
-                {
-                    tcs.TrySetResult(entry.Text ?? string.Empty);
-                }
-
-                popup?.CloseAsync();
-            };
-
-            var buttonsLayout = new HorizontalStackLayout
-            {
-                Spacing = 8,
-                Children = { cancelButton, okButton  }
-            };
-
-            var content = new VerticalStackLayout
-            {
-                Padding = new Thickness(12),
-                Children = { entry, buttonsLayout }
-            };
-
-            popup = new PopupEntry
-            {
-                Size = new Size(360, 360),
-                Content = content
-            };
-
-            Application.Current?.MainPage?.ShowPopup(popup);
-
-            return await tcs.Task.ConfigureAwait(true);
+                return popup;
+            }
+            
+            return null!;
         }
-        
-        //// Minor helper to obtain SKPixmap from SKBitmap (unused but kept for future adjustments)
-        //private static SKPixmap SKBitmapToPixmap(SKBitmap bmp)
-        //{
-        //    return new SKPixmap(new SKImageInfo(bmp.Width, bmp.Height, bmp.ColorType, bmp.AlphaType), bmp.GetPixels());
-        //}
     }
 }

@@ -5,88 +5,102 @@
     xmlns:barcodegenerator="clr-namespace:BarcodeGenerator"
     x:Class="BarcodeGenerator.PopupEntry"
     SafeAreaEdges="All"
-    HeightRequest="160"
-    WidthRequest="360"
-    BackgroundColor="DeepSkyBlue"
+    BackgroundColor="DimGray"
+    VerticalOptions="{OnIdiom Default=Center, Phone=Start}"
     CanBeDismissedByTappingOutsideOfPopup="False"
     Loaded="Popup_Loaded">
-    
-    <Grid
-        RowDefinitions="Auto, Auto, Auto"
-        ColumnDefinitions="Auto, Auto"
-        RowSpacing="5"
-        HorizontalOptions="Center"
-        VerticalOptions="Center"
-        WidthRequest="300">
 
-        <BoxView
-            Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="2"
-            HorizontalOptions="Fill"
-            VerticalOptions="Fill"
-            CornerRadius="10">
-        </BoxView>
+    <ScrollView
+        MaximumHeightRequest="380"
+        WidthRequest="340"
+        Orientation="Vertical">
 
-        <Label
-            x:Name="lblPopupTitle"
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            HorizontalOptions="Fill"
-            VerticalOptions="Fill"
-            WidthRequest="280"
-            BackgroundColor="Transparent"
-            Margin="10,5,10,5"
-            Padding="5"
-            HorizontalTextAlignment="Center"
-            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
-        </Label>
+        <Grid
+            RowDefinitions="Auto, Auto, Auto, Auto"
+            ColumnDefinitions="*,*"
+            RowSpacing="10"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="340"
+            Padding="0">
 
-        <Entry
-            x:Name="entCaption"
-            Grid.Row="1"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            HorizontalOptions="Fill"
-            VerticalOptions="Fill"
-            WidthRequest="280"
-            BackgroundColor="Transparent"
-            Margin="10,5,10,5"
-            HorizontalTextAlignment="Center"
-            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
-            Text="">
-        </Entry>
+            <BoxView
+                Color="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                Grid.RowSpan="4"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                CornerRadius="10"
+                Margin="0">
+            </BoxView>
 
-        <Button
-            x:Name="btnButtonCancel"
-            Grid.Row="2"
-            Grid.Column="0"
-            HorizontalOptions="Start"
-            VerticalOptions="End"
-            WidthRequest="130"
-            BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
-            Margin="0,5,0,0"
-            Padding="5"
-            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
-            Text="{Translate ButtonCancel_Text}"
-            Clicked="OnButtonCancel_Clicked">
-        </Button>
+            <Label
+                x:Name="lblPopupTitle"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                BackgroundColor="Transparent"
+                Margin="10,5,10,1"
+                Padding="0"
+                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                HorizontalTextAlignment="Center"
+                Text="{Translate ButtonCaption_Text}">
+            </Label>
 
-        <Button
-            x:Name="btnButtonClose"
-            Grid.Row="2"
-            Grid.Column="1"
-            HorizontalOptions="End"
-            VerticalOptions="End"
-            WidthRequest="130"
-            BackgroundColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
-            Margin="0,5,0,0"
-            Padding="5"
-            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
-            Text="{Translate ButtonNext_Text}"
-            Clicked="OnButtonClose_Clicked">
-        </Button>
+            <Border
+                Style="{StaticResource borderStyleDefault}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Fill"
+                Margin="4,0,4,0">
 
-    </Grid>
+                <Entry
+                    x:Name="entCaption"
+                    x:FieldModifier="public"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Fill"
+                    Margin="4,0,4,0"
+                    ClearButtonVisibility="WhileEditing"
+                    Placeholder ="{Translate ButtonCaption_Text}"
+                    Keyboard="Text"
+                    ReturnType="Done"
+                    MaxLength="100">
+                </Entry>
+            </Border>
+
+            <ImageButton
+                x:Name="btnButtonCancel"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="3"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                WidthRequest="120"
+                Margin="4,5,0,5"
+                ToolTipProperties.Text="{Translate ButtonCancel_Text}"
+                Source="ic_action_cancel_red.png"
+                Clicked="OnButtonCancel_Clicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="btnButtonClose"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                WidthRequest="120"
+                Margin="0,5,4,5"
+                ToolTipProperties.Text="{Translate ButtonNext_Text}"
+                Source="ic_action_tick_green.png"
+                Clicked="OnButtonClose_Clicked">
+            </ImageButton>
+
+        </Grid>
+    </ScrollView>
 </toolkit:Popup>
