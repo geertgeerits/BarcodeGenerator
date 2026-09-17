@@ -321,7 +321,7 @@ namespace BarcodeGenerator
                 // https://github.com/redth/ZXing.Net.Maui    
                 // 1D barcode formats
                 //CodeLang.Barcode_CODE_93_Text,
-                //CodeLang.Barcode_UPC_E_Text,
+                CodeLang.Barcode_UPC_E_Text,
                 // 2D barcode formats
                 CodeLang.Barcode_AZTEC_Text,
                 CodeLang.Barcode_DATA_MATRIX_Text,

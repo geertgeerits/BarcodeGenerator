@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-16 (YYYY-MM-DD)
+ * Date ........: 2026-09-17 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -356,7 +356,7 @@ namespace BarcodeGenerator
 
                 bCompressionAllowed = false;
                 bPayloadTypeAllowed = false;
-                cBarcodeType = "Normal";
+                cBarcodeType = "1D";
 
                 // Properties 1D barcodes
                 if (selectedName == ClassBarcodes.cBarcode_CODABAR)
@@ -526,7 +526,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
-                    cBarcodeType = "QRcode";
+                    cBarcodeType = "QRcode2";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE)  // Version M3/M4 ? - ECCLevel.Medium
@@ -535,7 +535,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
-                    cBarcodeType = "ArtQRcode";
+                    cBarcodeType = "ArtQRcode2";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)  // 
@@ -544,7 +544,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
-                    cBarcodeType = "QRcode";
+                    cBarcodeType = "QRcode2";
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_ART_RMQR_CODE)  // 
@@ -553,7 +553,7 @@ namespace BarcodeGenerator
                     edtTextToCode.Keyboard = Keyboard.Default;
                     bgvBarcode.IsVisible = false;
                     imgQrCodeImage.IsVisible = true;
-                    cBarcodeType = "ArtQRcode";
+                    cBarcodeType = "ArtQRcode2";
                 }
 
                 // Set the payload type button enabled if a specific payload type is allowed for the selected barcode format

@@ -14,6 +14,7 @@
 // 10. Make methods asynchronous and perform CPU-heavy work on a background thread using Task.Run.
 // 11. Handle nulls and throw meaningful exceptions; ensure stream is seeked before decode.
 
+using CommunityToolkit.Maui.Extensions;
 using SkiaSharp;
 using ZXing.Net.Maui.Controls;
 
@@ -22,7 +23,7 @@ namespace BarcodeGenerator
     public static class ClassBarcodeCaption
     {
         /// <summary>
-        /// If ClassBarcodes.bBarcodeWithCaption is true, prompt the user for a caption and save the barcode with caption to a file.
+        /// Prompt the user for a caption and save the barcode with caption to a file.
         /// </summary>
         /// <param name="bgvBarcode">The barcode generator view.</param>
         /// <param name="image">The image to which the caption will be added.</param>
@@ -34,15 +35,17 @@ namespace BarcodeGenerator
         {
             if (ClassBarcodes.bBarcodeWithCaption)
             {
-                string cBarcodeCaption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
-                _ = await SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, cBarcodeCaption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
+                //string cBarcodeCaption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
+                string cBarcodeCaption = await OpenPopupCaptionAsync();
 
+
+                _ = await SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, cBarcodeCaption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
                 await AddBarcodeCaptionAsync(bgvBarcode, image, fileBarcodeCaptionPng, caption, barcodeType);
             }
         }
 
         /// <summary>
-        /// If ClassBarcodes.bBarcodeWithCaption is true, prompt the user for a caption and save the barcode with caption to a file.
+        /// Capture the barcode as a screenshot and save the barcode with caption to a file.
         /// </summary>
         /// <param name="bgvBarcode"></param>
         /// <param name="image"></param>
@@ -77,6 +80,15 @@ namespace BarcodeGenerator
             }
         }
 
+        /// <summary>
+        /// Capture the barcode as a screenshot and save the barcode with caption to a file.
+        /// </summary>
+        /// <param name="bgvBarcode"></param>
+        /// <param name="image"></param>
+        /// <param name="fileBarcodeCaptionPng"></param>
+        /// <param name="caption"></param>
+        /// <param name="barcodeType"></param>
+        /// <returns></returns>
         public static async Task AddBarcodeCaptionAsync(BarcodeGeneratorView bgvBarcode, Image image, string fileBarcodeCaptionPng, string caption, string barcodeType)
         {
             // Set the image source to the saved file to display it in the Image control
@@ -103,14 +115,14 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Convenience helper to get a screenshot's stream and call SaveBarcodeWithCaptionAsync
+        /// Prompt the user for a caption and save the barcode with caption to a file.
         /// </summary>
         /// <param name="screen">The screenshot result</param>
         /// <param name="caption">Text to draw under the barcode (usually the numeric string)</param>
         /// <param name="fileName">Name of the output file</param>
         /// <param name="padding">Padding in pixels between barcode and caption and edges</param>
         /// <returns>Full path to the saved PNG file</returns>
-        public static async Task<string> SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = "barcode_generator.png", int padding = 12, string barcodeType = "Normal")
+        public static async Task<string> SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = "barcode_generator.png", int padding = 12, string barcodeType = "1D")
         {
             if (screen is null)
             {
@@ -200,7 +212,7 @@ namespace BarcodeGenerator
                     string fontFamily1;      // Default font family
                     string fontFamily2;      // Fallback font family
 
-                    if (barcodeType == "ArtQRcode")
+                    if (barcodeType == "ArtQRcode" || barcodeType == "ArtQRcode2")
                     {
                         // Set specific colors and font families for Art QR codes
                         fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFgArtQRCode, SKColors.Black);
@@ -209,7 +221,7 @@ namespace BarcodeGenerator
                         fontFamily2 = "serif";
                     }
 
-                    else if (barcodeType == "QRcode" || barcodeType == "2D")
+                    else if (barcodeType == "QRcode" || barcodeType == "QRcode2" || barcodeType == "2D")
                     {
                         // Set specific colors and font families for QR codes and other 2D barcodes
                         fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
@@ -220,7 +232,7 @@ namespace BarcodeGenerator
 
                     else
                     {
-                        // Set default colors and font families for normal barcodes
+                        // Set default colors and font families for the other barcodes like 1D barcodes
                         fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
                         bgColor = TryParseSkColor(ClassBarcodes.cCodeColorBg, SKColors.White);
                         fontFamily1 = "Courier New";
@@ -267,6 +279,17 @@ namespace BarcodeGenerator
                     float textHeight = metrics.Descent - metrics.Ascent;
                     int captionHeight = (int)Math.Ceiling(textHeight) + padding * 2;
 
+                    // Special handling for Art QR codes and QR codes with quiet zone size > 2
+                    if ((barcodeType == "ArtQRcode" || barcodeType == "QRcode") && ClassBarcodes.nQRCodeQuietZoneSize > 2)
+                    {
+                        captionHeight = (int)(captionHeight / 2);
+                    }
+                    
+                    else if ((barcodeType == "ArtQRcode2" || barcodeType == "QRcode2") && ClassBarcodes.nQRCodeQuietZoneSize2 > 2)
+                    {
+                        captionHeight = (int)(captionHeight / 2);
+                    }
+
                     // Create new bitmap with extra space for caption
                     int outWidth = srcWidth;
                     int outHeight = srcHeight + captionHeight;
@@ -293,9 +316,21 @@ namespace BarcodeGenerator
 
                     // Draw caption centered horizontally below the image
                     float textX = outWidth / 2f;
-                    
+
                     // baseline Y: top of caption area + padding + absolute ascent
                     float textY = srcHeight + padding - metrics.Ascent; // ascent is negative
+
+                    // Special handling for Art QR codes and QR codes with quiet zone size > 2
+                    if ((barcodeType == "ArtQRcode" || barcodeType == "QRcode") && ClassBarcodes.nQRCodeQuietZoneSize > 2)
+                    {
+                        textY = textY - captionHeight;
+                    }
+
+                    else if ((barcodeType == "ArtQRcode2" || barcodeType == "QRcode2") && ClassBarcodes.nQRCodeQuietZoneSize2 > 2)
+                    {
+                        textY = textY - captionHeight;
+                    }
+
                     canvas.DrawText(caption, textX, textY, SKTextAlign.Center, font, textPaint);
 
                     // Encode to PNG
@@ -351,6 +386,86 @@ namespace BarcodeGenerator
             }
         }
 
+        /// <summary>
+        /// Prompt the user for a caption using a popup dialog. If the user cancels, set Globals.bPopupCanceled to true.
+        /// </summary>
+        /// <returns></returns>
+        private static async Task<string> OpenPopupCaptionAsync()
+        {
+            var tcs = new TaskCompletionSource<string>();
+            PopupEntry popup = null!;
+
+            var entry = new Entry
+            {
+                Text = "" ?? string.Empty,
+                Placeholder = CodeLang.ButtonCaption_Text,
+                HorizontalOptions = LayoutOptions.Fill
+            };
+
+            var cancelButton = new Button
+            {
+                Text = CodeLang.ButtonCancel_Text,
+                HorizontalOptions = LayoutOptions.Start
+            };
+
+            //var cancelImageButton = new ImageButton
+            //{
+            //    HorizontalOptions = LayoutOptions.Start,
+            //    Source = "cancel_icon.png" // Replace with your actual cancel icon file name
+            //};
+
+            //// Set the semantic description via the static setter method
+            //SemanticProperties.SetDescription(cancelImageButton, CodeLang.ButtonCancel_Text);
+
+            var okButton = new Button
+            {
+                Text = CodeLang.ButtonNext_Text,
+                HorizontalOptions = LayoutOptions.End
+            };
+
+            cancelButton.Clicked += (_, __) =>
+            {
+                if (!tcs.Task.IsCompleted)
+                {
+                    tcs.TrySetResult(string.Empty);
+                }
+
+                popup?.CloseAsync();
+            };
+
+            okButton.Clicked += (_, __) =>
+            {
+                if (!tcs.Task.IsCompleted)
+                {
+                    tcs.TrySetResult(entry.Text ?? string.Empty);
+                }
+
+                popup?.CloseAsync();
+            };
+
+            var buttonsLayout = new HorizontalStackLayout
+            {
+                Spacing = 8,
+                Children = { cancelButton, okButton  }
+            };
+
+            var content = new VerticalStackLayout
+            {
+                Padding = new Thickness(12),
+                Children = { entry, buttonsLayout }
+            };
+
+            popup = new PopupEntry
+            {
+                Size = new Size(360, 360),
+                Content = content
+            };
+
+            Application.Current?.MainPage?.ShowPopup(popup);
+
+            return await tcs.Task.ConfigureAwait(true);
+        }
+        
         //// Minor helper to obtain SKPixmap from SKBitmap (unused but kept for future adjustments)
         //private static SKPixmap SKBitmapToPixmap(SKBitmap bmp)
         //{
