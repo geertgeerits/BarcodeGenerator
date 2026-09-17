@@ -1042,4 +1042,7 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>আয়তাকার মাইক্রো কিউআর (QR) কোডের উচ্চতা: {0} মডিউল</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>ক্যাপশন</value>
+  </data>
 </root>

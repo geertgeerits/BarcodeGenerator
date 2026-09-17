@@ -837,6 +837,15 @@ namespace BarcodeGenerator
                     ClassBarcodes.cQRCodeType = selectedName;
 
                     ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeImageAsync(cTextToCode);
+
+                    if (qrImage is null)
+                    {
+                        activityIndicator.IsRunning = false;
+                        activityIndicator.IsVisible = false;
+
+                        return;
+                    }
+
                     imgQrCodeImage.Source = qrImage;
 
                     // Save the barcode with caption to a PNG file
@@ -888,8 +897,6 @@ namespace BarcodeGenerator
                     // Save the barcode with caption to a PNG file
                     await ClassBarcodeCaption.AddBarcodeCaptionScreenAsync(bgvBarcode, imgQrCodeImage, cBarcodeCaption, cBarcodeType);
                 }
-
-                btnShare.IsEnabled = true;
             }
             catch (Exception ex)
             {
@@ -902,6 +909,8 @@ namespace BarcodeGenerator
                 await RestartApplicationAsync(ex.Message);
 #endif
             }
+
+            btnShare.IsEnabled = true;
 
             // Stop the activity indicator
             // !!!BUG!!! iOS: sometimes the activity indicator keeps visible after generating a code,

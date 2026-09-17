@@ -1044,4 +1044,7 @@ De understøttede sprog er: arabisk, bengali, forenklet kinesisk, traditionelt k
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Rektangulær mikro-QR-kodehøjde: {0} moduler</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Billedtekst</value>
+  </data>
 </root>

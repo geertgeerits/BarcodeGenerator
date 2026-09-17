@@ -1044,4 +1044,7 @@ Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Ge
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Dikdörtgen Mikro QR Kodu yüksekliği: {0} modül</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Altyazı</value>
+  </data>
 </root>

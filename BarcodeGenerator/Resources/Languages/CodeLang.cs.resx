@@ -1044,4 +1044,7 @@ Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština,
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Výška obdélníkového mikro QR kódu: {0} modulů</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Titulek</value>
+  </data>
 </root>

@@ -1044,4 +1044,7 @@ Limbile acceptate sunt: ​​arabă, bengaleză, chineză simplificată, chinez
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Înălțimea codului QR dreptunghiular Micro: {0} module</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Subtitlu</value>
+  </data>
 </root>

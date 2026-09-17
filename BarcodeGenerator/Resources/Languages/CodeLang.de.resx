@@ -1043,4 +1043,7 @@ Die unterstützten Sprachen sind: Arabisch, Bengali, Chinesisch (vereinfacht), C
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Höhe des rechteckigen Micro-QR-Codes: {0} Module</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Untertitel</value>
+  </data>
 </root>

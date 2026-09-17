@@ -1044,4 +1044,7 @@ Los idiomas compatibles son: árabe, bengalí, chino simplificado, chino tradici
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Altura del Microcódigo QR rectangular: {0} módulos</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Subtítulo</value>
+  </data>
 </root>

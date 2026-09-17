@@ -107,7 +107,7 @@ namespace BarcodeGenerator
             SKPaint paint = new() { Style = SKPaintStyle.Fill, Color = SKColor.Parse(ClassBarcodes.cCodeColorFg), IsAntialias = false };
 
             // Draw the generated QR bitmap into the canvas. Use nearest filtering to keep modules crisp when scaling.
-            SKRect destRect = new SKRect(0, 0, size, size);
+            SKRect destRect = new(0, 0, size, size);
             canvas.DrawBitmap(sourceQrBitmap, destRect, new SKSamplingOptions(SKFilterMode.Nearest, SKMipmapMode.None));
 
             // Draw logo if provided (rest of your existing logic unchanged)...

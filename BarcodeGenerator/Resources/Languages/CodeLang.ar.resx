@@ -1045,4 +1045,7 @@
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>ارتفاع رمز الاستجابة السريعة (QR Code) الدقيق المستطيل: {0} وحدة</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>التسمية التوضيحية</value>
+  </data>
 </root>

@@ -1044,4 +1044,7 @@ Bahasa yang didukung adalah: Arab, Bengali, Tionghoa Sederhana, Tionghoa Tradisi
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Tinggi Micro QR Code persegi panjang: {0} modul</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Keterangan</value>
+  </data>
 </root>

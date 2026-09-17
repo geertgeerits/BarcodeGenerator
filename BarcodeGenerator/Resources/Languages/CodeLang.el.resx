@@ -1044,4 +1044,7 @@
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Ύψος ορθογώνιου μικροκωδικού QR: {0} ενότητες</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Λεζάντα</value>
+  </data>
 </root>

@@ -1058,4 +1058,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>長方形マイクロQRコードの高さ: {0} モジュール</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>キャプション</value>
+  </data>
 </root>

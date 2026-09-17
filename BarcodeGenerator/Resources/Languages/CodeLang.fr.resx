@@ -1044,4 +1044,7 @@ Les langues prises en charge sont : l'arabe, le bengali, le chinois simplifié,
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Hauteur du Micro QR Code rectangulaire: {0} modules</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Sous-titre</value>
+  </data>
 </root>

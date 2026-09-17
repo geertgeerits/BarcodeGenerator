@@ -1044,4 +1044,7 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>مستطیل مائکرو QR کوڈ کی اونچائی: {0} ماڈیولز</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>کیپشن</value>
+  </data>
 </root>

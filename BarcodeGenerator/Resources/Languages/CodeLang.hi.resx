@@ -1041,4 +1041,7 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>आयताकार माइक्रो QR कोड की ऊंचाई: {0} मॉड्यूल</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>कैप्शन</value>
+  </data>
 </root>

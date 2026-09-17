@@ -1044,4 +1044,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Высота прямоугольного Micro QR-кода: {0} модулей</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Подпись</value>
+  </data>
 </root>

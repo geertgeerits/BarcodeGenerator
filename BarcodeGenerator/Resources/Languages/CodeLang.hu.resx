@@ -1044,4 +1044,7 @@ A támogatott nyelvek: arab, bengáli, kínai (egyszerűsített), kínai (hagyom
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Téglalap alakú mikro QR-kód magassága: {0} modul</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Felirat</value>
+  </data>
 </root>

@@ -1044,4 +1044,7 @@ Le lingue supportate sono: arabo, bengalese, cinese semplificato, cinese tradizi
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Altezza del Micro QR Code rettangolare: {0} moduli</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Didascalia</value>
+  </data>
 </root>

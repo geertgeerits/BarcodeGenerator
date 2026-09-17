@@ -1044,4 +1044,7 @@ Tuetut kielet ovat: arabia, bengali, kiina (yksinkertaistettu), kiina (perintein
   <data name="QRCodeSizeModulesHeight_Text" xml:space="preserve">
     <value>Suorakulmaisen mikro-QR-koodin korkeus: {0} moduulia</value>
   </data>
+  <data name="ButtonCaption_Text" xml:space="preserve">
+    <value>Kuvateksti</value>
+  </data>
 </root>
