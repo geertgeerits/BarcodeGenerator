@@ -14,6 +14,9 @@ namespace BarcodeGenerator
             // Set the flow direction of the text elements
             Globals.SetFlowDirection(this);
 
+            // Reset the popup canceled flag to false when the popup is opened
+            Globals.bPopupCanceled = false;
+
             // Disable certain options for Artistic Micro QR Codes and Artistic Rectangular Micro QR Codes
             if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_MICRO_QR_CODE || ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_RMQR_CODE)
             {

@@ -11,7 +11,7 @@
     Loaded="Popup_Loaded">
 
     <ScrollView
-        MaximumHeightRequest="380"
+        MaximumHeightRequest="200"
         WidthRequest="340"
         Orientation="Vertical">
 

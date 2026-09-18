@@ -35,13 +35,28 @@ namespace BarcodeGenerator
         {
             if (ClassBarcodes.bBarcodeWithCaption)
             {
-                //string cBarcodeCaption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
+                // Check if the popup 'PopupSettingsArtQRCode' was canceled before proceeding
+                if (Globals.bPopupCanceled)
+                {
+                    Debug.WriteLine("ClassBarcodeCaption.AddBarcodeCaptionFileAsync: Popup canceled.");
+                    return;
+                }
 
-                PopupEntry popup = await OpenPopupCaptionAsync(); // Returns the instance
-                caption = popup.entCaption?.Text ?? string.Empty;
+                // Prompt the user for a caption
+                caption = await PromptForCaptionAsync(caption);
 
+                // Exit if caption is null or whitespace
+                if (string.IsNullOrWhiteSpace(caption))
+                {
+                    Debug.WriteLine("ClassBarcodeCaption.AddBarcodeCaptionFileAsync: Caption is null or whitespace.");
+                    return;
+                }
+
+                // Save the barcode with caption to a file
                 _ = await SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, caption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
-                await AddBarcodeCaptionAsync(bgvBarcode, image, fileBarcodeCaptionPng, caption, barcodeType);
+
+                // Set the image source to the saved file to display it in the Image control
+                await SetImageSourceAsync(bgvBarcode, image, fileBarcodeCaptionPng);
             }
         }
 
@@ -63,34 +78,69 @@ namespace BarcodeGenerator
             {
                 // Capture the barcode view as a screenshot
                 IScreenshotResult? screen = await bgvBarcode.CaptureAsync();
-
-                // Barcode without caption
-                if (!ClassBarcodes.bBarcodeWithCaption)
-                {
-                    Stream stream = await screen!.OpenReadAsync();
-
-                    // Save the barcode as a file
-                    ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
-
-                    return;     // Exit early if no caption is needed
-                }
+                await using Stream stream = await screen!.OpenReadAsync();
 
                 // Barcode with caption
-                string cFileBarcodeCaptionPng = await SaveBarcodeWithCaptionFromScreenshotAsync(screen!, caption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
-                await AddBarcodeCaptionAsync(bgvBarcode, image, cFileBarcodeCaptionPng, caption, barcodeType);
+                if (ClassBarcodes.bBarcodeWithCaption)
+                {
+                    // Prompt the user for a caption
+                    caption = await PromptForCaptionAsync(caption);
+
+                    if (string.IsNullOrWhiteSpace(caption))
+                    {
+                        Debug.WriteLine("ClassBarcodeCaption.AddBarcodeCaptionScreenAsync: Caption is null or whitespace.");
+
+                        ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
+
+                        return;     // Exit if caption is null or whitespace
+                    }
+
+                    // Save the barcode with caption to a file
+                    await SaveBarcodeWithCaptionAsync(stream, caption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
+
+                    // Set the image source to the saved file to display it in the Image control
+                    await SetImageSourceAsync(bgvBarcode, image, ClassBarcodes.cFileBarcodePng);
+                }
+
+                // Barcode without caption
+                else
+                {
+                    ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
+                }
             }
         }
 
         /// <summary>
-        /// Capture the barcode as a screenshot and save the barcode with caption to a file.
+        /// Prompt the user for a caption if it is null or whitespace, and return the entered caption.
+        /// </summary>
+        /// <param name="caption">Text to draw under the barcode (usually the numeric string)</param>
+        /// <returns>The entered caption or the original caption if it was not null or whitespace</returns>
+        private static async Task<string> PromptForCaptionAsync(string caption)
+        {
+            // Prompt the user for a caption if it is null or whitespace
+            if (string.IsNullOrWhiteSpace(caption))
+            {
+                //caption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
+
+                PopupEntry popup = await OpenPopupCaptionAsync();   // Returns the instance
+                return popup.entCaption?.Text ?? string.Empty;
+            }
+
+            // Return the original caption if it was not null or whitespace
+            else
+            {
+                return caption;
+            }
+        }
+
+        /// <summary>
+        /// Set the image source to the saved file to display it in the Image control
         /// </summary>
         /// <param name="bgvBarcode"></param>
         /// <param name="image"></param>
         /// <param name="fileBarcodeCaptionPng"></param>
-        /// <param name="caption"></param>
-        /// <param name="barcodeType"></param>
         /// <returns></returns>
-        public static async Task AddBarcodeCaptionAsync(BarcodeGeneratorView bgvBarcode, Image image, string fileBarcodeCaptionPng, string caption, string barcodeType)
+        private static async Task SetImageSourceAsync(BarcodeGeneratorView bgvBarcode, Image image, string fileBarcodeCaptionPng)
         {
             // Set the image source to the saved file to display it in the Image control
 #if ANDROID
@@ -113,35 +163,6 @@ namespace BarcodeGenerator
             // Set the Image control source to the saved file
             image.Source = ImageSource.FromFile(fileBarcodeCaptionPng);
 #endif
-        }
-
-        /// <summary>
-        /// Prompt the user for a caption and save the barcode with caption to a file.
-        /// </summary>
-        /// <param name="screen">The screenshot result</param>
-        /// <param name="caption">Text to draw under the barcode (usually the numeric string)</param>
-        /// <param name="fileName">Name of the output file</param>
-        /// <param name="padding">Padding in pixels between barcode and caption and edges</param>
-        /// <returns>Full path to the saved PNG file</returns>
-        public static async Task<string> SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = "barcode_generator.png", int padding = 12, string barcodeType = "1D")
-        {
-            if (screen is null)
-            {
-                Debug.WriteLine("ClassBarcodeCaption.SaveBarcodeWithCaptionFromScreenshotAsync: screen is null.");
-                return string.Empty;
-            }
-
-            // Prompt the user for a caption if it is null or whitespace
-            if (string.IsNullOrWhiteSpace(caption))
-            {
-                //caption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
-
-                PopupEntry popup = await OpenPopupCaptionAsync(); // Returns the instance
-                caption = popup.entCaption?.Text ?? string.Empty;
-            }
-
-            await using Stream stream = await screen.OpenReadAsync();
-            return await SaveBarcodeWithCaptionAsync(stream, caption, fileName, padding, barcodeType);
         }
 
         /// <summary>
@@ -286,12 +307,12 @@ namespace BarcodeGenerator
                     // Special handling for Art QR codes and QR codes with quiet zone size > 2
                     if ((barcodeType == "ArtQRcode" || barcodeType == "QRcode") && ClassBarcodes.nQRCodeQuietZoneSize > 2)
                     {
-                        captionHeight = (int)(captionHeight / 2);
+                        captionHeight /= 2;
                     }
                     
                     else if ((barcodeType == "ArtQRcode2" || barcodeType == "QRcode2") && ClassBarcodes.nQRCodeQuietZoneSize2 > 2)
                     {
-                        captionHeight = (int)(captionHeight / 2);
+                        captionHeight /= 2;
                     }
 
                     // Create new bitmap with extra space for caption

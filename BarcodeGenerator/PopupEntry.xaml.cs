@@ -11,6 +11,7 @@ namespace BarcodeGenerator
             // Set the flow direction of the text elements
             Globals.SetFlowDirection(this);
 
+            // Reset the popup canceled flag to false when the popup is opened
             Globals.bPopupCanceled = false;
         }
 
@@ -19,9 +20,10 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender">The source of the event, typically the popup that was loaded.</param>
         /// <param name="e">An EventArgs object that contains the event data.</param>
-        private void Popup_Loaded(object sender, EventArgs e)
+        private async void Popup_Loaded(object sender, EventArgs e)
         {
             entCaption.Focus();
+            await entCaption.ShowSoftInputAsync(System.Threading.CancellationToken.None);
         }
 
         /// <summary>
