@@ -481,7 +481,7 @@ namespace BarcodeGenerator
 #if WINDOWS
                     bgvBarcode.BarcodeMargin = 25;
 #else
-                    bgvBarcode.BarcodeMargin = 10;
+                    bgvBarcode.BarcodeMargin = 14;
 #endif
                     bgvBarcode.Format = BarcodeFormat.Pdf417;
                     cBarcodeType = "2D";

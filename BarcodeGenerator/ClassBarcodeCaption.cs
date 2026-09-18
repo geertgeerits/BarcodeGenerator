@@ -1,18 +1,18 @@
-﻿// Detailed plan / pseudocode:
-// 1. Create a static helper class `ClassBarcodeCaption` that can take an image stream (barcode) and a caption (the number).
-// 2. Decode the incoming stream into a SkiaSharp bitmap (SKBitmap).
-// 3. Measure the caption with an SKPaint to compute required caption height. If the caption is wider than the image,
-//    reduce the font size iteratively until it fits (with a reasonable minimum).
-// 4. Create a new SKBitmap whose height is original image height + captionHeight + padding.
-// 5. Draw background color (from ClassBarcodes.cCodeColorBg) onto the canvas.
-// 6. Draw the barcode bitmap on top area (keeping its width; scale if needed to fit width).
-// 7. Draw the caption centered horizontally below the barcode with foreground color (ClassBarcodes.cCodeColorFg).
-// 8. Encode the composed image as PNG and save to FileSystem.Current.CacheDirectory (or return a stream/path).
-// 9. Provide two public helpers:
-//    - `SaveBarcodeWithCaptionAsync(Stream barcodeStream, string caption, string fileName = ...)`
-//    - `SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = ...)`
-// 10. Make methods asynchronous and perform CPU-heavy work on a background thread using Task.Run.
-// 11. Handle nulls and throw meaningful exceptions; ensure stream is seeked before decode.
+﻿/* Detailed plan / pseudocode:
+   1. Create a static helper class `ClassBarcodeCaption` that can take an image stream (barcode) and a caption (the number).
+   2. Decode the incoming stream into a SkiaSharp bitmap (SKBitmap).
+   3. Measure the caption with an SKPaint to compute required caption height. If the caption is wider than the image,
+      reduce the font size iteratively until it fits (with a reasonable minimum).
+   4. Create a new SKBitmap whose height is original image height + captionHeight + padding.
+   5. Draw background color (from ClassBarcodes.cCodeColorBg) onto the canvas.
+   6. Draw the barcode bitmap on top area (keeping its width; scale if needed to fit width).
+   7. Draw the caption centered horizontally below the barcode with foreground color (ClassBarcodes.cCodeColorFg).
+   8. Encode the composed image as PNG and save to FileSystem.Current.CacheDirectory (or return a stream/path).
+   9. Provide two public helpers:
+      - `SaveBarcodeWithCaptionAsync(Stream barcodeStream, string caption, string fileName = ...)`
+      - `SaveBarcodeWithCaptionFromScreenshotAsync(IScreenshotResult screen, string caption, string fileName = ...)`
+  10. Make methods asynchronous and perform CPU-heavy work on a background thread using Task.Run.
+  11. Handle nulls and throw meaningful exceptions; ensure stream is seeked before decode.*/
 
 using CommunityToolkit.Maui.Extensions;
 using SkiaSharp;
@@ -86,13 +86,15 @@ namespace BarcodeGenerator
                     // Prompt the user for a caption
                     caption = await PromptForCaptionAsync(caption);
 
+                    // Exit if caption is null or whitespace
                     if (string.IsNullOrWhiteSpace(caption))
                     {
                         Debug.WriteLine("ClassBarcodeCaption.AddBarcodeCaptionScreenAsync: Caption is null or whitespace.");
 
+                        // Save the barcode without caption to a file
                         ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
-
-                        return;     // Exit if caption is null or whitespace
+                        
+                        return;
                     }
 
                     // Save the barcode with caption to a file
@@ -105,6 +107,7 @@ namespace BarcodeGenerator
                 // Barcode without caption
                 else
                 {
+                    // Save the barcode without caption to a file
                     ClassFileUtilities.SaveStreamAsFilePng(stream, ClassBarcodes.cFileBarcodePng);
                 }
             }
@@ -120,10 +123,14 @@ namespace BarcodeGenerator
             // Prompt the user for a caption if it is null or whitespace
             if (string.IsNullOrWhiteSpace(caption))
             {
-                //caption = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
+                return _ = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(CodeLang.ButtonCaption_Text, "");
 
-                PopupEntry popup = await OpenPopupCaptionAsync();   // Returns the instance
-                return popup.entCaption?.Text ?? string.Empty;
+                // When using the PopupEntry, we get the entered caption from the entCaption Entry control after the popup is closed.
+                // !!!BUG!!!? The selected barcode is changed to the default barcode in the format picker after the 'PopupEntry' is closed.
+                // This does not happen when using the DisplayPromptAsync method, which is why we are using it instead of the popup for now.
+                // This may be due to the way the popup is implemented or how the barcode generator view is updated after the popup is closed.
+                //PopupEntry popup = await OpenPopupCaptionAsync();   // Returns the instance
+                //return popup.entCaption?.Text ?? string.Empty;
             }
 
             // Return the original caption if it was not null or whitespace
@@ -181,7 +188,10 @@ namespace BarcodeGenerator
                 return string.Empty;
             }
 
+            // Open the input file stream for reading
             FileStream fileStream = new(filePathIn, FileMode.Open, FileAccess.Read, FileShare.Read);
+
+            // Call the main method to save the barcode with caption
             return await SaveBarcodeWithCaptionAsync(fileStream, caption, filePathOut, padding, barcodeType);
         }
 
