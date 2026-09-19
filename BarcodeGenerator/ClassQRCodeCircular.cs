@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using SkiaSharp;
+﻿using SkiaSharp;
 using QRCoder;
-using System.Text;
 
 namespace BarcodeGenerator
 {
@@ -12,63 +7,73 @@ namespace BarcodeGenerator
     {
         public static void GenerateCircularQRCode()
         {
-            // Implementation for generating a circular QR code
-            // This is a placeholder for the actual QR code generation logic
-            Debug.WriteLine($"Generating circular QR code");
-            
+            Debug.WriteLine("Generating circular QR code");
+
             string payloadData = "https://www.example.com";
             string outputPath = Path.Combine(FileSystem.Current.CacheDirectory, "circular_footprint_qr.png");
 
-            //ClassBarcodes.cFileBarcodePng = outputPath;
-
-            // 1. Generate the standard QR data using ECC Level H.
-            // Level H lets the reader recover up to 30% of data—essential since we are shaving off the corners.
+            // 1. Generate QR data with ECC Level H
             using QRCodeGenerator qrGenerator = new();
             using QRCodeData qrCodeData = qrGenerator.CreateQrCode(payloadData, QRCodeGenerator.ECCLevel.H);
-            
-            // 2. Generate a standard square QR image
-            using QRCode qrCode = new(qrCodeData);
 
-            // Parameters: pixelsPerModule (adjust 20 for resolution)
-            using Bitmap standardSquareQr = qrCode.GetGraphic(20);
+            // 2. Render PNG bytes directly (avoids System.Drawing)
+            var pngQr = new PngByteQRCode(qrCodeData);
+            byte[] pngBytes = pngQr.GetGraphic(20);
 
-            // 3. Cut the square into a strict circular layout
-            using Bitmap finalCircularQr = CropToCircle(standardSquareQr);
-            finalCircularQr.Save(outputPath, System.Drawing.Imaging.ImageFormat.Png);
+            // 3. Decode into a Skia bitmap
+            SKBitmap standardBitmap;
+            using (var ms = new MemoryStream(pngBytes))
+            {
+                standardBitmap = SKBitmap.Decode(ms);
+            }
+
+            // 4. Crop to circular footprint using SkiaSharp
+            using SKBitmap finalCircular = CropToCircle(standardBitmap);
+
+            // 5. Encode and save PNG
+            using SKImage image = SKImage.FromBitmap(finalCircular);
+            using SKData encoded = image.Encode(SKEncodedImageFormat.Png, 100);
+            using var outStream = File.OpenWrite(outputPath);
+            encoded.SaveTo(outStream);
+
             Debug.WriteLine($"Circular QR Code footprint saved to {outputPath}");
         }
 
         /// <summary>
-        /// Crops a square bitmap image into a circular shape by applying a circular mask.
+        /// Crops a square/rectangular SKBitmap into a circular SKBitmap by applying a circular clip and scaling the source to fit.
         /// </summary>
-        /// <param name="srcImage">The source square bitmap image to be cropped.</param>
-        /// <returns>A new bitmap image cropped into a circular shape.</returns>
-        private static Bitmap CropToCircle(Bitmap srcImage)
+        private static SKBitmap CropToCircle(SKBitmap src)
         {
-            // Find the smallest dimension to ensure a perfect 1:1 circular ratio
-            int diameter = Math.Min(srcImage.Width, srcImage.Height);
-            Bitmap dstImage = new(diameter, diameter);
+            int diameter = Math.Min(src.Width, src.Height);
+            var dst = new SKBitmap(diameter, diameter, SKColorType.Rgba8888, SKAlphaType.Premul);
 
-            using (Graphics g = Graphics.FromImage(dstImage))
-            {
-                // Smooth out the clipped edges so they don't look pixelated
-                g.SmoothingMode = SmoothingMode.AntiAlias;
+            using var canvas = new SKCanvas(dst);
+            canvas.Clear(SKColors.Transparent);
 
-                // Fill background with transparent (or Color.White if preferred)
-                g.Clear(System.Drawing.Color.Transparent);
+            using var path = new SKPath();
+            float r = diameter / 2f;
+            path.AddCircle(r, r, r); // Use AddCircle to create a circular path
 
-                // Create a perfect circular mask path
-                using GraphicsPath path = new();
-                path.AddEllipse(0, 0, diameter, diameter);
+            // Use clip to restrict drawing to circle and enable antialias
+            canvas.ClipPath(path, SKClipOperation.Intersect, true);
 
-                // Set the canvas to only allow drawing within this circle
-                g.SetClip(path);
+            // Use ClipOval (non-obsolete) instead of the obsolete SKPath.AddCircle
+            //var oval = SKRect.Create(0, 0, diameter, diameter);
+            //canvas.ClipOval(oval, SKClipOperation.Intersect, true);
 
-                // Draw the square QR code over it—the corners falling outside the circle are discarded
-                g.DrawImage(srcImage, 0, 0, diameter, diameter);
-            }
-            
-            return dstImage;
+            // Draw the source bitmap scaled to the destination diameter (centers and fits)
+            var srcRect = new SKRect(0, 0, src.Width, src.Height);
+            var destRect = new SKRect(0, 0, diameter, diameter);
+
+            // Create a paint object with antialiasing enabled
+            var paint = new SKPaint { IsAntialias = true };
+
+            // Draw the source image onto the canvas, scaling it to fit the circular area
+            using var srcImage = SKImage.FromBitmap(src);
+            canvas.DrawImage(srcImage, srcRect, destRect, SKSamplingOptions.Default, paint);
+
+            canvas.Flush();
+            return dst;
         }
     }
 }
