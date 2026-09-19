@@ -42,37 +42,43 @@ namespace BarcodeGenerator
         /// <summary>
         /// Crops a square/rectangular SKBitmap into a circular SKBitmap by applying a circular clip and scaling the source to fit.
         /// </summary>
-        private static SKBitmap CropToCircle(SKBitmap src)
+        /// <param name="src">The source SKBitmap to be cropped.</param>
+        /// <returns>A new SKBitmap cropped to a circular shape.</returns>
+        public static SKBitmap CropToCircle(SKBitmap src)
         {
+            // Determine the diameter of the circle based on the smaller dimension of the source bitmap
             int diameter = Math.Min(src.Width, src.Height);
-            var dst = new SKBitmap(diameter, diameter, SKColorType.Rgba8888, SKAlphaType.Premul);
+            SKBitmap dst = new(diameter, diameter, SKColorType.Rgba8888, SKAlphaType.Premul);
 
+            // Create a new canvas to draw on the destination bitmap
             using var canvas = new SKCanvas(dst);
             canvas.Clear(SKColors.Transparent);
 
-            using var path = new SKPath();
+            // Calculate the radius for the circular clipping path
             float r = diameter / 2f;
-            path.AddCircle(r, r, r); // Use AddCircle to create a circular path
+            using var builder = new SKPathBuilder();
+            builder.AddCircle(r, r, r);
+
+            // Detach() builds and returns the final immutable SKPath object
+            using var path = builder.Detach();
 
             // Use clip to restrict drawing to circle and enable antialias
-            canvas.ClipPath(path, SKClipOperation.Intersect, true);
-
-            // Use ClipOval (non-obsolete) instead of the obsolete SKPath.AddCircle
-            //var oval = SKRect.Create(0, 0, diameter, diameter);
-            //canvas.ClipOval(oval, SKClipOperation.Intersect, true);
+            canvas.ClipPath(path, SKClipOperation.Intersect, antialias: true);
 
             // Draw the source bitmap scaled to the destination diameter (centers and fits)
-            var srcRect = new SKRect(0, 0, src.Width, src.Height);
-            var destRect = new SKRect(0, 0, diameter, diameter);
+            SKRect srcRect = new(0, 0, src.Width, src.Height);
+            SKRect destRect = new(0, 0, diameter, diameter);
 
             // Create a paint object with antialiasing enabled
-            var paint = new SKPaint { IsAntialias = true };
+            SKPaint paint = new() { IsAntialias = true };
 
             // Draw the source image onto the canvas, scaling it to fit the circular area
             using var srcImage = SKImage.FromBitmap(src);
             canvas.DrawImage(srcImage, srcRect, destRect, SKSamplingOptions.Default, paint);
 
+            // Flush the canvas to ensure all drawing operations are completed
             canvas.Flush();
+
             return dst;
         }
     }
