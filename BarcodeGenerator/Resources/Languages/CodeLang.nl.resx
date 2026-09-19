@@ -1047,4 +1047,10 @@ De ondersteunde talen zijn: Arabisch, Bengaals, Vereenvoudigd Chinees, Tradition
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Ondertiteling</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Ronde QR-code</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Artistieke ronde QR-code</value>
+  </data>
 </root>

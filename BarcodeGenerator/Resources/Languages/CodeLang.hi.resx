@@ -1044,4 +1044,10 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>कैप्शन</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>गोलाकार QR कोड</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>कलात्मक गोलाकार QR कोड</value>
+  </data>
 </root>

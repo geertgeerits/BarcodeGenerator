@@ -1047,4 +1047,10 @@ Le lingue supportate sono: arabo, bengalese, cinese semplificato, cinese tradizi
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Didascalia</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Codice QR circolare</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Codice QR circolare artistico</value>
+  </data>
 </root>

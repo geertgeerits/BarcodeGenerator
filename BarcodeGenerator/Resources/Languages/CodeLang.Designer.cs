@@ -124,6 +124,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Artistic Circular QR Code.
+        /// </summary>
+        internal static string Barcode_ART_CIRCULAR_QR_CODE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_ART_CIRCULAR_QR_CODE_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Artistic Micro QR Code.
         /// </summary>
         internal static string Barcode_ART_MICRO_QR_CODE_Text {
@@ -174,6 +183,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string Barcode_AZTEC_Text {
             get {
                 return ResourceManager.GetString("Barcode_AZTEC_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Circular QR Code.
+        /// </summary>
+        internal static string Barcode_CIRCULAR_QR_CODE_Text {
+            get {
+                return ResourceManager.GetString("Barcode_CIRCULAR_QR_CODE_Text", resourceCulture);
             }
         }
         

@@ -1045,4 +1045,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Підпис</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Круглий QR-код</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Художній круглий QR-код</value>
+  </data>
 </root>

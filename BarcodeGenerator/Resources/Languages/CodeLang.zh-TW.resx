@@ -1047,4 +1047,10 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>标题</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>圓形二維碼</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>藝術圓二維碼</value>
+  </data>
 </root>

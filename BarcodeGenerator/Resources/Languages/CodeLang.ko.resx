@@ -1048,4 +1048,10 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>표제</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>원형 QR 코드</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>예술적 원형 QR 코드</value>
+  </data>
 </root>

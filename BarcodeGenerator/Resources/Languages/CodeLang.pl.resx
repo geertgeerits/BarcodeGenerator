@@ -1047,4 +1047,10 @@ Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradyc
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Podpis</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Okrągły kod QR</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Artystyczny okrągły kod QR</value>
+  </data>
 </root>

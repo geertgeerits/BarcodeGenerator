@@ -1046,4 +1046,10 @@ Die unterstützten Sprachen sind: Arabisch, Bengali, Chinesisch (vereinfacht), C
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Untertitel</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Kreisförmiger QR-Code</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Künstlerischer kreisförmiger QR-Code</value>
+  </data>
 </root>

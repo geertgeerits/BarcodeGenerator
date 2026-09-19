@@ -1047,4 +1047,10 @@ Bahasa yang didukung adalah: Arab, Bengali, Tionghoa Sederhana, Tionghoa Tradisi
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Keterangan</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Kode QR Melingkar</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Kode QR Melingkar yang Artistik</value>
+  </data>
 </root>

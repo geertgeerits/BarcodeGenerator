@@ -1047,4 +1047,10 @@ Les langues prises en charge sont : l'arabe, le bengali, le chinois simplifié,
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Sous-titre</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Code QR circulaire</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Code QR circulaire artistique</value>
+  </data>
 </root>

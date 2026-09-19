@@ -1047,4 +1047,10 @@ A támogatott nyelvek: arab, bengáli, kínai (egyszerűsített), kínai (hagyom
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Felirat</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Kör alakú QR-kód</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Művészi kör alakú QR-kód</value>
+  </data>
 </root>

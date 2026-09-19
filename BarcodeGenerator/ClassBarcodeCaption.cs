@@ -14,7 +14,7 @@
   10. Make methods asynchronous and perform CPU-heavy work on a background thread using Task.Run.
   11. Handle nulls and throw meaningful exceptions; ensure stream is seeked before decode.*/
 
-using CommunityToolkit.Maui.Extensions;
+//using CommunityToolkit.Maui.Extensions;
 using SkiaSharp;
 using ZXing.Net.Maui.Controls;
 
@@ -133,13 +133,13 @@ namespace BarcodeGenerator
                                 default,                        // Keyboard
                                 "");                            // Initial value
 
-        // When using the PopupEntry, we get the entered caption from the entCaption Entry control after the popup is closed.
-        // !!!BUG!!!? The selected barcode is changed to the default barcode in the format picker after the 'PopupEntry' is closed.
-        // This does not happen when using the 'DisplayPromptAsync' method, which is why we are using it instead of the popup for now.
-        // This may be due to the way the popup is implemented or how the barcode generator view is updated after the popup is closed.
-        //PopupEntry popup = await OpenPopupCaptionAsync();   // Returns the instance
-        //return popup.entCaption?.Text ?? string.Empty;
-    }
+                // When using the PopupEntry, we get the entered caption from the entCaption Entry control after the popup is closed.
+                // !!!BUG!!!? The selected barcode is changed to the default barcode in the format picker after the 'PopupEntry' is closed.
+                // This does not happen when using the 'DisplayPromptAsync' method, which is why we are using it instead of the popup for now.
+                // This may be due to the way the popup is implemented or how the barcode generator view is updated after the popup is closed.
+                //PopupEntry popup = await OpenPopupCaptionAsync();   // Returns the instance
+                //return popup.entCaption?.Text ?? string.Empty;
+            }
 
             // Return the original caption if it was not null or whitespace
             else
@@ -323,15 +323,15 @@ namespace BarcodeGenerator
                     int captionHeight = (int)Math.Ceiling(textHeight) + padding * 2;
 
                     // Special handling for Art QR codes and QR codes with quiet zone size > 2
-                    if ((barcodeType == "ArtQRcode" || barcodeType == "QRcode") && ClassBarcodes.nQRCodeQuietZoneSize > 2)
-                    {
-                        captionHeight /= 2;
-                    }
-                    
-                    else if ((barcodeType == "ArtQRcode2" || barcodeType == "QRcode2") && ClassBarcodes.nQRCodeQuietZoneSize2 > 2)
-                    {
-                        captionHeight /= 2;
-                    }
+                    //if ((barcodeType == "ArtQRcode" || barcodeType == "QRcode") && ClassBarcodes.nQRCodeQuietZoneSize > 2)
+                    //{
+                    //    srcHeight -= captionHeight;  // Reduce source height to account for caption area
+                    //}
+
+                    //else if ((barcodeType == "ArtQRcode2" || barcodeType == "QRcode2") && ClassBarcodes.nQRCodeQuietZoneSize2 > 2)
+                    //{
+                    //    srcHeight -= captionHeight;  // Reduce source height to account for caption area
+                    //}
 
                     // Create new bitmap with extra space for caption
                     int outWidth = srcWidth;
@@ -364,15 +364,15 @@ namespace BarcodeGenerator
                     float textY = srcHeight + padding - metrics.Ascent; // ascent is negative
 
                     // Special handling for Art QR codes and QR codes with quiet zone size > 2
-                    if ((barcodeType == "ArtQRcode" || barcodeType == "QRcode") && ClassBarcodes.nQRCodeQuietZoneSize > 2)
-                    {
-                        textY -= captionHeight;
-                    }
+                    //if ((barcodeType == "ArtQRcode" || barcodeType == "QRcode") && ClassBarcodes.nQRCodeQuietZoneSize > 2)
+                    //{
+                    //    textY -= captionHeight;
+                    //}
 
-                    else if ((barcodeType == "ArtQRcode2" || barcodeType == "QRcode2") && ClassBarcodes.nQRCodeQuietZoneSize2 > 2)
-                    {
-                        textY -= captionHeight;
-                    }
+                    //else if ((barcodeType == "ArtQRcode2" || barcodeType == "QRcode2") && ClassBarcodes.nQRCodeQuietZoneSize2 > 2)
+                    //{
+                    //    textY -= captionHeight;
+                    //}
 
                     canvas.DrawText(caption, textX, textY, SKTextAlign.Center, font, textPaint);
 
@@ -429,24 +429,24 @@ namespace BarcodeGenerator
             }
         }
 
-        /// <summary>
-        /// Show a modal popup to inform the user about the recommended image size before opening the file picker
-        /// </summary>
-        /// <returns></returns>
-        private static async Task<PopupEntry> OpenPopupCaptionAsync()
-        {
-            Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
+        ///// <summary>
+        ///// Show a modal popup to inform the user about the recommended image size before opening the file picker
+        ///// </summary>
+        ///// <returns></returns>
+        //private static async Task<PopupEntry> OpenPopupCaptionAsync()
+        //{
+        //    Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
 
-            if (currentPage != null)
-            {
-                // Create/show the PopupEntry and await user input, then return the instance
-                var popup = new PopupEntry();
-                await currentPage.ShowPopupAsync(popup);
+        //    if (currentPage != null)
+        //    {
+        //        // Create/show the PopupEntry and await user input, then return the instance
+        //        var popup = new PopupEntry();
+        //        await currentPage.ShowPopupAsync(popup);
 
-                return popup;
-            }
+        //        return popup;
+        //    }
             
-            return null!;
-        }
+        //    return null!;
+        //}
     }
 }

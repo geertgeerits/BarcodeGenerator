@@ -1047,4 +1047,10 @@ De språk som stöds är: arabiska, bengali, förenklad kinesiska, traditionell 
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>bildtext</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Cirkulär QR-kod</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Konstnärlig cirkulär QR-kod</value>
+  </data>
 </root>

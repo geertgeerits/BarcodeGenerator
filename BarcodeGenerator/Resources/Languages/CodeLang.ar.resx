@@ -1048,4 +1048,10 @@
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>التسمية التوضيحية</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>رمز الاستجابة السريعة الدائري</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>رمز الاستجابة السريعة الدائري الفني</value>
+  </data>
 </root>

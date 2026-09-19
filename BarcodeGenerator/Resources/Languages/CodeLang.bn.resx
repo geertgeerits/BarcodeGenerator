@@ -1045,4 +1045,10 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>ক্যাপশন</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>বৃত্তাকার কিউআর কোড</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>শৈল্পিক বৃত্তাকার কিউআর কোড</value>
+  </data>
 </root>

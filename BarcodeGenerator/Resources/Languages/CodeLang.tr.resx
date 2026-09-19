@@ -1047,4 +1047,10 @@ Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Ge
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Altyazı</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Dairesel QR Kod</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Sanatsal Dairesel QR Kod</value>
+  </data>
 </root>

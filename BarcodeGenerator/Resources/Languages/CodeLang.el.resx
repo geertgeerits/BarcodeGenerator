@@ -1047,4 +1047,10 @@
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Λεζάντα</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Κυκλικός Κωδικός QR</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Καλλιτεχνικός Κυκλικός Κωδικός QR</value>
+  </data>
 </root>

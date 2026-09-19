@@ -1050,4 +1050,10 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Đầu đề</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Mã QR hình tròn</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Mã QR hình tròn mang tính nghệ thuật</value>
+  </data>
 </root>

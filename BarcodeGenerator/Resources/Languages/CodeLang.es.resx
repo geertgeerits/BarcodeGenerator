@@ -1047,4 +1047,10 @@ Los idiomas compatibles son: árabe, bengalí, chino simplificado, chino tradici
   <data name="ButtonCaption_Text" xml:space="preserve">
     <value>Subtítulo</value>
   </data>
+  <data name="Barcode_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Código QR circular</value>
+  </data>
+  <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
+    <value>Código QR circular artístico</value>
+  </data>
 </root>
