@@ -48,11 +48,14 @@ namespace BarcodeGenerator
         {
             // Determine the diameter of the circle based on the smaller dimension of the source bitmap
             int diameter = Math.Min(src.Width, src.Height);
+            //int diameter = (int)(src.Width * Math.Sqrt(2));
             SKBitmap dst = new(diameter, diameter, SKColorType.Rgba8888, SKAlphaType.Premul);
+            //int diameterQR = src.Width;
 
             // Create a new canvas to draw on the destination bitmap
             using var canvas = new SKCanvas(dst);
             canvas.Clear(SKColors.Transparent);
+            //canvas.Clear(SKColors.Red);
 
             // Calculate the radius for the circular clipping path
             float r = diameter / 2f;
