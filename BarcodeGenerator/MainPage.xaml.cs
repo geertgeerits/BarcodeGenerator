@@ -184,6 +184,9 @@ namespace BarcodeGenerator
             // Set focus to the editor
             edtTextToCode.Focus();
 
+            ClassQRCodeCircular qrCodeCircular = new();
+            ClassQRCodeCircular.GenerateCircularQRCode();
+
             // Test for crashes Sentry
             //SentrySdk.CaptureMessage("Hello Sentry");
             //throw new Exception("This is a test exception");
