@@ -5,6 +5,10 @@ namespace BarcodeGenerator
 {
     internal class ClassQRCodeCircular
     {
+        /// <summary>
+        /// Generates a circular QR code from a payload string and saves it as a PNG in the cache directory.
+        /// </summary>
+        /// <remarks>For testing</remarks>
         public static void GenerateCircularQRCode()
         {
             Debug.WriteLine("Generating circular QR code");
@@ -45,7 +49,7 @@ namespace BarcodeGenerator
         /// <param name="filePath">The path to the existing image file.</param>
         public static void GenerateCircularCodeFromFile(string filePath)
         {
-            string outputPath = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator_circular.png");
+            string outputPath = filePath;
 
             // Crop to circular footprint using SkiaSharp
             using SKBitmap finalCircular = CropToCircle(SKBitmap.Decode(filePath));
