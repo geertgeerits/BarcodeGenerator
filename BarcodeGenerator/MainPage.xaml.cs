@@ -557,6 +557,28 @@ namespace BarcodeGenerator
                     cBarcodeType = "ArtQRcode2";
                 }
 
+                else if (selectedName == ClassBarcodes.cBarcode_CIRCULAR_QR_CODE)        // Model 2 - ECCLevel.Quartile
+                {
+                    edtTextToCode.MaxLength = 3993;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    bgvBarcode.IsVisible = false;
+                    imgQrCodeImage.IsVisible = true;
+                    bCompressionAllowed = true;
+                    bPayloadTypeAllowed = true;
+                    cBarcodeType = "QRcode";
+                }
+
+                else if (selectedName == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)  // Model 2 - ECCLevel.High
+                {
+                    edtTextToCode.MaxLength = 3057;
+                    edtTextToCode.Keyboard = Keyboard.Default;
+                    bgvBarcode.IsVisible = false;
+                    imgQrCodeImage.IsVisible = true;
+                    bCompressionAllowed = true;
+                    bPayloadTypeAllowed = true;
+                    cBarcodeType = "ArtQRcode";
+                }
+
                 // Set the payload type button enabled if a specific payload type is allowed for the selected barcode format
                 imgbtnPayloadType.IsEnabled = bPayloadTypeAllowed;
 
@@ -703,6 +725,20 @@ namespace BarcodeGenerator
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 178, 108, 74, 46)}";
             }
 
+            else if (selectedName == ClassBarcodes.cBarcode_CIRCULAR_QR_CODE)        // Model 2 - ECCLevel.Quartile
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
+                    3993.ToString("N0", CultureInfo.CurrentCulture), 2420.ToString("N0", CultureInfo.CurrentCulture),
+                    1663.ToString("N0", CultureInfo.CurrentCulture), 1024.ToString("N0", CultureInfo.CurrentCulture))}";
+            }
+
+            else if (selectedName == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)    // Model 2 - ECCLevel.High
+            {
+                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
+                    3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
+                    1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
+            }
+
             else
             {
                 edtTextToCode.Placeholder = string.Empty;
@@ -829,11 +865,20 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
 
-                    // Generate a circular QR code using the ClassQRCodeCircular class, which uses the SkiaSharp.QrCode library
-                    ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);
-
                     // Save the barcode with caption to a PNG file
                     await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
+                }
+
+                // Generate the Circular Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
+                else if (selectedName == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)
+                {
+                    ClassBarcodes.cQRCodeType = selectedName;
+
+                    ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
+                    imgQrCodeImage.Source = qrImage;
+
+                    // Generate a circular QR code using the ClassQRCodeCircular class, which uses the SkiaSharp.QrCode library
+                    ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);
                 }
 
                 // Generate the QR code with an image using the SkiaSharp.QrCode library

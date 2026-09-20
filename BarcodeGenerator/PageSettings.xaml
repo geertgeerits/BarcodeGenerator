@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:BarcodeGenerator"
     x:DataType="local:LocalizationResourceManager"
     x:Class="BarcodeGenerator.PageSettings"
+    x:Name="PageSettingsMain"
     SafeAreaEdges="All">
 
     <Shell.TitleView>
@@ -298,6 +299,7 @@
 
                 <Switch
                     x:Name="swtBarcodeWithCaption"
+                    x:FieldModifier="public"
                     Grid.Row="9"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,8,0,0'}"

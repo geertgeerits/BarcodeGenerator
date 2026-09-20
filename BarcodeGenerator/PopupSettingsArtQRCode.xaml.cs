@@ -1,4 +1,7 @@
 using CommunityToolkit.Maui.Views;
+//using Microsoft.Maui.Controls;
+//using BarcodeGenerator.Pages; // <-- add the namespace where PageSettingsMain is defined
+//using System.Reflection;
 
 namespace BarcodeGenerator
 {
@@ -29,6 +32,47 @@ namespace BarcodeGenerator
                 artQRCodeSettings.rbtQRCodeFinderPatternShapeRounded.IsEnabled = false;
                 artQRCodeSettings.rbtQRCodeFinderPatternShapeCircle.IsEnabled = false;
             }
+
+            //else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)
+            //{
+            //    //// Try to find the running PageSettingsMain instance and disable its caption toggle.
+            //    //if (Application.Current?.MainPage is PageSettingsMain settingsPage)
+            //    //{
+            //    //    settingsPage.swtBarcodeWithCaption.IsToggled = false;
+            //    //    settingsPage.swtBarcodeWithCaption.IsEnabled = false;
+            //    //}
+            //    //else if (Application.Current?.MainPage is NavigationPage nav && nav.CurrentPage is PageSettingsMain navSettingsPage)
+            //    //{
+            //    //    navSettingsPage.swtBarcodeWithCaption.IsToggled = false;
+            //    //    navSettingsPage.swtBarcodeWithCaption.IsEnabled = false;
+            //    //}
+
+            //    var mainPage = Application.Current?.MainPage;
+            //    void DisableCaption(object page)
+            //    {
+            //        if (page == null) return;
+            //        // try property first
+            //        var field = page.GetType().GetProperty("swtBarcodeWithCaption", BindingFlags.Public | BindingFlags.Instance);
+            //        if (field != null)
+            //        {
+            //            var control = field.GetValue(page);
+            //            if (control != null)
+            //            {
+            //                var isToggled = control.GetType().GetProperty("IsToggled");
+            //                var isEnabled = control.GetType().GetProperty("IsEnabled");
+            //                isToggled?.SetValue(control, false);
+            //                isEnabled?.SetValue(control, false);
+            //            }
+            //        }
+            //    }
+
+            //    DisableCaption(mainPage);
+
+            //    if (mainPage is NavigationPage nav)
+            //    {
+            //        DisableCaption(nav.CurrentPage);
+            //    }
+            //}
 
             // Indicate that the popup has been opened, which can be used to prevent certain actions in the MainPage OnAppearing event
             Globals.bPopupOpened = true;
