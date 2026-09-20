@@ -873,17 +873,9 @@ namespace BarcodeGenerator
                 {
                     // Save the original values of nQRCodeQuietZoneSize and bQRCodeSizeVariable
                     int nQRCodeQuietZoneSizeTemp = ClassBarcodes.nQRCodeQuietZoneSize;
-                    bool bQRCodeSizeVariableTemp = ClassBarcodes.bQRCodeSizeVariable;
 
-                    // Increase the quiet zone size for circular QR codes so that the QR code is not cut off when generating the circular QR code
-                    // The maximum quiet zone size is 10 (7 + 3)
-                    //if (ClassBarcodes.nQRCodeQuietZoneSize < 8)
-                    //{
-                    //    ClassBarcodes.nQRCodeQuietZoneSize += 3;
-                    //}
-
-                    // Set bQRCodeSizeVariable to false to ensure the QR code size is fixed for circular QR codes
-                    ClassBarcodes.bQRCodeSizeVariable = false;
+                    // Set the nQRCodeQuietZoneSize to 0 to remove the quiet zone for circular QR codes
+                    ClassBarcodes.nQRCodeQuietZoneSize = 0;
 
                     // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
                     ClassBarcodes.cQRCodeType = selectedName;
@@ -897,9 +889,8 @@ namespace BarcodeGenerator
                     Task.Delay(200).Wait(); // Wait for the circular QR code to be generated
                     imgQrCodeImage.Source = ImageSource.FromFile(ClassBarcodes.cFileBarcodePng);
 
-                    // Restore the original values of nQRCodeQuietZoneSize and bQRCodeSizeVariable
+                    // Restore the original value of nQRCodeQuietZoneSize
                     ClassBarcodes.nQRCodeQuietZoneSize = nQRCodeQuietZoneSizeTemp;
-                    ClassBarcodes.bQRCodeSizeVariable = bQRCodeSizeVariableTemp;
                 }
 
                 // Generate the QR code with an image using the SkiaSharp.QrCode library

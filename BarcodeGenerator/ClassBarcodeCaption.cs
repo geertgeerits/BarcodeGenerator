@@ -258,8 +258,8 @@ namespace BarcodeGenerator
                     if (barcodeType == "ArtQRcode" || barcodeType == "ArtQRcode2")
                     {
                         // Set specific colors and font families for Art QR codes
-                        fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFgArtQRCode, SKColors.Black);
-                        bgColor = TryParseSkColor(ClassBarcodes.cCodeColorBgArtQRCode, SKColors.White);
+                        fgColor = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorFgArtQRCode, SKColors.Black);
+                        bgColor = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorBgArtQRCode, SKColors.White);
                         fontFamily1 = "OpenSansRegular";
                         fontFamily2 = "serif";
                     }
@@ -267,8 +267,8 @@ namespace BarcodeGenerator
                     else if (barcodeType == "QRcode" || barcodeType == "QRcode2" || barcodeType == "2D")
                     {
                         // Set specific colors and font families for QR codes and other 2D barcodes
-                        fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
-                        bgColor = TryParseSkColor(ClassBarcodes.cCodeColorBg, SKColors.White);
+                        fgColor = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
+                        bgColor = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorBg, SKColors.White);
                         fontFamily1 = "OpenSansRegular";
                         fontFamily2 = "serif";
                     }
@@ -276,8 +276,8 @@ namespace BarcodeGenerator
                     else
                     {
                         // Set default colors and font families for the other barcodes like 1D barcodes
-                        fgColor = TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
-                        bgColor = TryParseSkColor(ClassBarcodes.cCodeColorBg, SKColors.White);
+                        fgColor = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorFg, SKColors.Black);
+                        bgColor = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorBg, SKColors.White);
                         fontFamily1 = "Courier New";
                         fontFamily2 = "monospace";
                     }
@@ -322,17 +322,6 @@ namespace BarcodeGenerator
                     float textHeight = metrics.Descent - metrics.Ascent;
                     int captionHeight = (int)Math.Ceiling(textHeight) + padding * 2;
 
-                    // Special handling for Art QR codes and QR codes with quiet zone size > 2
-                    //if ((barcodeType == "ArtQRcode" || barcodeType == "QRcode") && ClassBarcodes.nQRCodeQuietZoneSize > 2)
-                    //{
-                    //    srcHeight -= captionHeight;  // Reduce source height to account for caption area
-                    //}
-
-                    //else if ((barcodeType == "ArtQRcode2" || barcodeType == "QRcode2") && ClassBarcodes.nQRCodeQuietZoneSize2 > 2)
-                    //{
-                    //    srcHeight -= captionHeight;  // Reduce source height to account for caption area
-                    //}
-
                     // Create new bitmap with extra space for caption
                     int outWidth = srcWidth;
                     int outHeight = srcHeight + captionHeight;
@@ -362,17 +351,6 @@ namespace BarcodeGenerator
 
                     // baseline Y: top of caption area + padding + absolute ascent
                     float textY = srcHeight + padding - metrics.Ascent; // ascent is negative
-
-                    // Special handling for Art QR codes and QR codes with quiet zone size > 2
-                    //if ((barcodeType == "ArtQRcode" || barcodeType == "QRcode") && ClassBarcodes.nQRCodeQuietZoneSize > 2)
-                    //{
-                    //    textY -= captionHeight;
-                    //}
-
-                    //else if ((barcodeType == "ArtQRcode2" || barcodeType == "QRcode2") && ClassBarcodes.nQRCodeQuietZoneSize2 > 2)
-                    //{
-                    //    textY -= captionHeight;
-                    //}
 
                     canvas.DrawText(caption, textX, textY, SKTextAlign.Center, font, textPaint);
 
@@ -404,49 +382,5 @@ namespace BarcodeGenerator
             ms.Seek(0, SeekOrigin.Begin);
             return ms;
         }
-
-        // Helper: parse "AARRGGBB" or "#AARRGGBB" or "RRGGBB" into SKColor, fallback to defaultColor on failure
-        private static SKColor TryParseSkColor(string? colorString, SKColor defaultColor)
-        {
-            try
-            {
-                if (string.IsNullOrWhiteSpace(colorString))
-                {
-                    return defaultColor;
-                }
-
-                string s = colorString.Trim();
-                if (!s.StartsWith('#'))
-                {
-                    s = "#" + s;
-                }
-
-                return SKColor.Parse(s);
-            }
-            catch
-            {
-                return defaultColor;
-            }
-        }
-
-        ///// <summary>
-        ///// Show a modal popup to inform the user about the recommended image size before opening the file picker
-        ///// </summary>
-        ///// <returns></returns>
-        //private static async Task<PopupEntry> OpenPopupCaptionAsync()
-        //{
-        //    Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
-
-        //    if (currentPage != null)
-        //    {
-        //        // Create/show the PopupEntry and await user input, then return the instance
-        //        var popup = new PopupEntry();
-        //        await currentPage.ShowPopupAsync(popup);
-
-        //        return popup;
-        //    }
-            
-        //    return null!;
-        //}
     }
 }

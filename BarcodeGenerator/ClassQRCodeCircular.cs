@@ -1,5 +1,8 @@
-﻿using SkiaSharp;
-using QRCoder;
+﻿using QRCoder;
+using SkiaSharp;
+using System.Diagnostics;
+using System.IO;
+using Microsoft.Maui.Storage;
 
 namespace BarcodeGenerator
 {
@@ -142,8 +145,10 @@ namespace BarcodeGenerator
 
         public static SKBitmap CropToCircle(SKBitmap source)
         {
-            SKColor fill = ToSKColor(Microsoft.Maui.Graphics.Colors.Red);
-            SKColor stroke = ToSKColor(Microsoft.Maui.Graphics.Colors.White);
+            //SKColor fill = ToSKColor(Microsoft.Maui.Graphics.Colors.Red);
+            SKColor fill = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorBgArtQRCode, SKColors.White);
+            SKColor stroke = ClassColors.ToSKColor(Microsoft.Maui.Graphics.Colors.White);
+
             return DrawOuterCircleAroundBitmapWithFill(source, fill, stroke, 2);
         }
 
@@ -186,7 +191,7 @@ namespace BarcodeGenerator
                 float left = (diameter - srcW) / 2f;
                 float top = (diameter - srcH) / 2f;
 
-                canvas.DrawBitmap(source, left, top);
+                canvas.DrawBitmap(source, left, top, new SKSamplingOptions(SKFilterMode.Linear), null);
 
                 // 3️⃣ Draw circle outline
                 using (var strokePaint = new SKPaint
@@ -203,6 +208,7 @@ namespace BarcodeGenerator
 
             return output;
         }
+        
         //public static SKBitmap CropToCircle(SKBitmap source)
         //{
         //    // Convert MAUI Colors to Skia SKColor and pass into the SK-based drawing method
@@ -210,14 +216,5 @@ namespace BarcodeGenerator
         //    SKColor stroke = ToSKColor(Microsoft.Maui.Graphics.Colors.White);
         //    return DrawOuterCircleAroundBitmapWithFill(source, fill, stroke, 2);
         //}
-
-        private static SKColor ToSKColor(Microsoft.Maui.Graphics.Color c)
-        {
-            return new SKColor(
-                (byte)Math.Round(c.Red * 255.0),
-                (byte)Math.Round(c.Green * 255.0),
-                (byte)Math.Round(c.Blue * 255.0),
-                (byte)Math.Round(c.Alpha * 255.0));
-        }
     }
 }
