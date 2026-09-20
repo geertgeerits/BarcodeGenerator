@@ -21,7 +21,6 @@
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun, Raffael Herrmann, Shane Krueger, Ikiru Yoshizaki, Copilot */
 
 using CommunityToolkit.Maui.Extensions;
-using SkiaSharp;
 using System.Collections;
 using ZXing.Net.Maui;
 
@@ -876,11 +875,12 @@ namespace BarcodeGenerator
                     int nQRCodeQuietZoneSizeTemp = ClassBarcodes.nQRCodeQuietZoneSize;
                     bool bQRCodeSizeVariableTemp = ClassBarcodes.bQRCodeSizeVariable;
 
-                    // Increase the quiet zone size for circular QR codes to ensure proper scanning
-                    if (ClassBarcodes.nQRCodeQuietZoneSize < 5)
-                    {
-                        ClassBarcodes.nQRCodeQuietZoneSize += 3;
-                    }
+                    // Increase the quiet zone size for circular QR codes so that the QR code is not cut off when generating the circular QR code
+                    // The maximum quiet zone size is 10 (7 + 3)
+                    //if (ClassBarcodes.nQRCodeQuietZoneSize < 8)
+                    //{
+                    //    ClassBarcodes.nQRCodeQuietZoneSize += 3;
+                    //}
 
                     // Set bQRCodeSizeVariable to false to ensure the QR code size is fixed for circular QR codes
                     ClassBarcodes.bQRCodeSizeVariable = false;

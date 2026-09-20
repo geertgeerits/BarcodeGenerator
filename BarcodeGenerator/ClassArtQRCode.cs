@@ -226,6 +226,10 @@ namespace BarcodeGenerator
                     "Circle" => standardQrData.WithFinderPatternShape(CircleFinderPatternShape.Default),
                     _ => standardQrData.WithFinderPatternShape(RectangleFinderPatternShape.Default),
                 };
+
+                // Apply a version if the user has selected a specific version (to avoid overriding the variable version setting)
+                //int nQRCodeVersion = -1;    // Default to -1 (automatic version selection) else 1 to 40 (specific version)
+                //standardQrData = standardQrData.WithVersion(nQRCodeVersion);
             }
 
             // Add a null check before using qrData

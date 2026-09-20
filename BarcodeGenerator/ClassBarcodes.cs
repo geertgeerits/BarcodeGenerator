@@ -857,6 +857,8 @@ namespace BarcodeGenerator
    https://www.qrcode.com/en/about/version.html
    https://camcode.com/blog/guide-to-barcode-types-standards/
    https://www.bartendersoftware.com/
+   https://scankit.app/en/blog/qr-code-quiet-zone
+   https://www.bing.com/search?q=list+of+qr+code+versions&form=ANNTH1&refig=2576c2e7f9064eadf2fc0e43b8c0e8d6&pc=U531&adppc=EDGEESS
    _____________________________________________________________________________________________________________ */
 
 /*RmQRHeight is an enum from the SkiaSharp.QrCode library that selects a fixed Rectangular Micro QR (rMQR) symbol height in modules. RmQRHeight.H9 means "9 modules high" — the generator fixes the height to 9 modules and automatically chooses a compatible width (within the allowed widths for that height).
