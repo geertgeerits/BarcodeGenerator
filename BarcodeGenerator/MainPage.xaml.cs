@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-19 (YYYY-MM-DD)
+ * Date ........: 2026-09-20 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -21,6 +21,7 @@
  * Thanks to ...: Gerald Versluis, Alen Friščić, Redth, Jimmy Pun, Raffael Herrmann, Shane Krueger, Ikiru Yoshizaki, Copilot */
 
 using CommunityToolkit.Maui.Extensions;
+using SkiaSharp;
 using System.Collections;
 using ZXing.Net.Maui;
 
@@ -183,9 +184,6 @@ namespace BarcodeGenerator
 
             // Set focus to the editor
             edtTextToCode.Focus();
-
-            // Generate a circular QR code for testing purposes
-            ClassQRCodeCircular.GenerateCircularQRCode();
 
             // Test for crashes Sentry
             //SentrySdk.CaptureMessage("Hello Sentry");
@@ -831,6 +829,9 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
 
+                    // Generate a circular QR code using the ClassQRCodeCircular class, which uses the SkiaSharp.QrCode library
+                    ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);
+
                     // Save the barcode with caption to a PNG file
                     await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                 }
@@ -1135,7 +1136,7 @@ namespace BarcodeGenerator
             await Globals.PasteFromClipboardAsync(edtTextToCode);
         }
 
-/*
+        /*
         /// <summary>
         /// Generate the barcode to a file using the ZXing.Net.MAUI library
         /// </summary>
@@ -1223,7 +1224,7 @@ namespace BarcodeGenerator
                             Margin = 4,
                             ForegroundColor = Color.FromArgb(ClassBarcodes.cCodeColorFg),
                             BackgroundColor = Color.FromArgb(ClassBarcodes.cCodeColorBg)
-                    });
+                        });
                 }
 
                 else if (selectedName == ClassBarcodes.cBarcode_ITF)
@@ -1333,8 +1334,7 @@ namespace BarcodeGenerator
                         });
                 }
             });
-        }
-        */
+        }*/
     }
 }
 

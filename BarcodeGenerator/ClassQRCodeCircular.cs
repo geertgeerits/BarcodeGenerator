@@ -40,22 +40,66 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Generates a circular QR code from an existing image file and saves it as a PNG in the cache directory.
+        /// </summary>
+        /// <param name="filePath">The path to the existing image file.</param>
+        public static void GenerateCircularCodeFromFile(string filePath)
+        {
+            string outputPath = Path.Combine(FileSystem.Current.CacheDirectory, "barcode_generator_circular.png");
+
+            // Crop to circular footprint using SkiaSharp
+            using SKBitmap finalCircular = CropToCircle(SKBitmap.Decode(filePath));
+
+            // Encode and save PNG file
+            using SKImage image = SKImage.FromBitmap(finalCircular);
+            using SKData encoded = image.Encode(SKEncodedImageFormat.Png, 100);
+            using var outStream = File.OpenWrite(outputPath);
+            encoded.SaveTo(outStream);
+        }
+
+        /// <summary>
+        /// load PNG from the cached file path into an SKBitmap and call CropToCircle to crop it into a circular shape.
+        /// </summary>
+        public static void LoadAndCropPngToCircle()
+        {
+            var path = ClassBarcodes.cFileBarcodePng;
+            if (!File.Exists(path))
+            {
+                return;
+            }
+
+            SKBitmap? bmp;
+            using (var fs = File.OpenRead(path))
+            {
+                bmp = SKBitmap.Decode(fs);
+            }
+
+            if (bmp is null)
+            {
+                return;
+            }
+
+            // If CropToCircle accepts SKBitmap:
+            SKBitmap circBitmap = CropToCircle(bmp);
+
+            // If CropToCircle expects SKImage, convert:
+            //SKBitmap circImage = CropToCircle(SKImage.FromBitmap(bmp));
+        }
+
+        /// <summary>
         /// Crops a square/rectangular SKBitmap into a circular SKBitmap by applying a circular clip and scaling the source to fit.
         /// </summary>
         /// <param name="src">The source SKBitmap to be cropped.</param>
         /// <returns>A new SKBitmap cropped to a circular shape.</returns>
-        public static SKBitmap CropToCircle(SKBitmap src)
+        private static SKBitmap CropToCircle(SKBitmap src)
         {
             // Determine the diameter of the circle based on the smaller dimension of the source bitmap
-            int diameter = Math.Min(src.Width, src.Height);
-            //int diameter = (int)(src.Width * Math.Sqrt(2));
+            int diameter = (int)(src.Width * Math.Sqrt(2));
             SKBitmap dst = new(diameter, diameter, SKColorType.Rgba8888, SKAlphaType.Premul);
-            //int diameterQR = src.Width;
 
             // Create a new canvas to draw on the destination bitmap
             using var canvas = new SKCanvas(dst);
             canvas.Clear(SKColors.Transparent);
-            //canvas.Clear(SKColors.Red);
 
             // Calculate the radius for the circular clipping path
             float r = diameter / 2f;
@@ -76,7 +120,7 @@ namespace BarcodeGenerator
             SKPaint paint = new() { IsAntialias = true };
 
             // Draw the source image onto the canvas, scaling it to fit the circular area
-            using var srcImage = SKImage.FromBitmap(src);
+            using SKImage srcImage = SKImage.FromBitmap(src);
             canvas.DrawImage(srcImage, srcRect, destRect, SKSamplingOptions.Default, paint);
 
             // Flush the canvas to ensure all drawing operations are completed

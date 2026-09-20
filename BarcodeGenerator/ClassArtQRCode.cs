@@ -428,7 +428,7 @@ namespace BarcodeGenerator
                     Debug.WriteLine($"Error processing background image: {e.Message}");
                 }
             }
-
+            
             // Save PNG to file
             try
             {
