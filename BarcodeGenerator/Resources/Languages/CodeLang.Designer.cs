@@ -1408,6 +1408,24 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add captions to some barcodes when creating them (enable this option in Settings)..
+        /// </summary>
+        internal static string InfoCaptions_Text {
+            get {
+                return ResourceManager.GetString("InfoCaptions_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To change the size of the QR code within the circle, adjust the quiet zone in the settings..
+        /// </summary>
+        internal static string InfoCircularBarcodes_Text {
+            get {
+                return ResourceManager.GetString("InfoCircularBarcodes_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The text in the QR code can be compressed (see the settings to enable this). To make the text readable again, it must be decompressed by a scanner that supports GZip compression, such as the scanner in this app..
         /// </summary>
         internal static string InfoCompression_Text {

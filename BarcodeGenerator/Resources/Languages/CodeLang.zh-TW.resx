@@ -1053,4 +1053,10 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
     <value>藝術圓二維碼</value>
   </data>
+  <data name="InfoCaptions_Text" xml:space="preserve">
+    <value>建立條碼時，可以為其新增標題（在「設定」中啟用此選項）。</value>
+  </data>
+  <data name="InfoCircularBarcodes_Text" xml:space="preserve">
+    <value>若要變更圓圈內二維碼的大小，請在設定中調整靜默區。</value>
+  </data>
 </root>

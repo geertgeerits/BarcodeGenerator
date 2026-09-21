@@ -1053,4 +1053,10 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
     <value>艺术圆形二维码</value>
   </data>
+  <data name="InfoCaptions_Text" xml:space="preserve">
+    <value>在创建条形码时为其添加说明文字（请在“设置”中启用此选项）。</value>
+  </data>
+  <data name="InfoCircularBarcodes_Text" xml:space="preserve">
+    <value>若要更改圆圈内二维码的大小，请在设置中调整静区。</value>
+  </data>
 </root>
