@@ -1060,6 +1060,6 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
     <value>Thêm chú thích vào một số mã vạch khi tạo chúng (bật tùy chọn này trong phần Cài đặt).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Để thay đổi kích thước mã QR nằm trong hình tròn, hãy điều chỉnh vùng đệm (quiet zone) trong phần cài đặt.</value>
+    <value>Để thay đổi kích thước của mã QR (có dạng gần như hình tròn) nằm trong hình tròn, hãy điều chỉnh vùng đệm (quiet zone) trong phần cài đặt.</value>
   </data>
 </root>

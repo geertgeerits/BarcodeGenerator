@@ -1057,6 +1057,6 @@ Os idiomas suportados são: árabe, bengali, chinês simplificado, chinês tradi
     <value>Adicione legendas a alguns códigos de barras ao criá-los (ative essa opção em Configurações).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Para alterar o tamanho do código QR dentro do círculo, ajuste a zona de silêncio nas configurações.</value>
+    <value>Para alterar o tamanho do código QR (pseudo)circular dentro do círculo, ajuste a zona de silêncio nas configurações.</value>
   </data>
 </root>

@@ -1057,6 +1057,6 @@ De språk som stöds är: arabiska, bengali, förenklad kinesiska, traditionell 
     <value>Lägg till text under vissa streckkoder när du skapar dem (aktivera detta alternativ i inställningarna).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>För att ändra storleken på QR-koden inuti cirkeln justerar du tystzonen i inställningarna.</value>
+    <value>För att ändra storleken på den (pseudo-)cirkulära QR-koden inuti cirkeln justerar du frizonen i inställningarna.</value>
   </data>
 </root>

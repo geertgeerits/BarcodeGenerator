@@ -1057,6 +1057,6 @@ The supporting languages are: Arabic, Bengali, Chinese simplified, Chinese tradi
     <value>Add captions to some barcodes when creating them (enable this option in Settings).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>To change the size of the QR code within the circle, adjust the quiet zone in the settings.</value>
+    <value>To change the size of the (pseudo-)circular QR code within the circle, adjust the quiet zone in the settings.</value>
   </data>
 </root>

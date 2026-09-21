@@ -1417,7 +1417,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To change the size of the QR code within the circle, adjust the quiet zone in the settings..
+        ///   Looks up a localized string similar to To change the size of the (pseudo-)circular QR code within the circle, adjust the quiet zone in the settings..
         /// </summary>
         internal static string InfoCircularCodes_Text {
             get {

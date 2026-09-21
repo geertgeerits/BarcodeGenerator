@@ -1071,6 +1071,6 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
     <value>バーコードを作成する際、一部のバーコードにキャプションを追加します（設定でこのオプションを有効にしてください）。</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>円内のQRコードのサイズを変更するには、設定でクワイエットゾーンを調整してください。</value>
+    <value>円内の（擬似）円形QRコードのサイズを変更するには、設定でクワイエットゾーンを調整してください。</value>
   </data>
 </root>

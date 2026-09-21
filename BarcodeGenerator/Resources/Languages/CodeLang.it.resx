@@ -1057,6 +1057,6 @@ Le lingue supportate sono: arabo, bengalese, cinese semplificato, cinese tradizi
     <value>Aggiungi didascalie ad alcuni codici a barre durante la loro creazione (abilita questa opzione nelle Impostazioni).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Per modificare le dimensioni del codice QR all'interno del cerchio, regola la zona di rispetto nelle impostazioni.</value>
+    <value>Per modificare le dimensioni del codice QR (pseudo-)circolare all'interno del cerchio, regola la zona di rispetto nelle impostazioni.</value>
   </data>
 </root>

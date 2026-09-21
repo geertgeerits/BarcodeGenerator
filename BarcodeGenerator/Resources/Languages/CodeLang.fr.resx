@@ -1057,6 +1057,6 @@ Les langues prises en charge sont : l'arabe, le bengali, le chinois simplifié,
     <value>Ajoutez des légendes à certains codes-barres lors de leur création (activez cette option dans les paramètres).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Pour modifier la taille du code QR à l'intérieur du cercle, ajustez la zone de silence dans les paramètres.</value>
+    <value>Pour modifier la taille du code QR (pseudo-)circulaire à l'intérieur du cercle, ajustez la zone de silence dans les paramètres.</value>
   </data>
 </root>

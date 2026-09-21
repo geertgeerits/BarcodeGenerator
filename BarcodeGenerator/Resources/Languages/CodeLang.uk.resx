@@ -1055,6 +1055,6 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
     <value>Додавайте підписи до деяких штрихкодів під час їх створення (увімкніть цю опцію в налаштуваннях).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Щоб змінити розмір QR-коду всередині кола, налаштуйте «тиху зону» в параметрах.</value>
+    <value>Щоб змінити розмір (псевдо)круглого QR-коду всередині кола, налаштуйте розмір вільної зони в параметрах.</value>
   </data>
 </root>

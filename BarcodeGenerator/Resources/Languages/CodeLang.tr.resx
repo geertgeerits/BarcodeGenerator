@@ -1057,6 +1057,6 @@ Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Ge
     <value>Barkodları oluştururken bazılarına açıklama metni ekleyin (bu seçeneği Ayarlar'dan etkinleştirin).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan sessiz bölgeyi (quiet zone) düzenleyin.</value>
+    <value>Daire içindeki (yarı) dairesel QR kodunun boyutunu değiştirmek için ayarlardan boşluk alanını (quiet zone) düzenleyin.</value>
   </data>
 </root>

@@ -1057,6 +1057,6 @@ Støttede språk er: arabisk, bengali, forenklet kinesisk, tradisjonell kinesisk
     <value>Legg til tekst under enkelte strekkoder når du oppretter dem (aktiver dette alternativet i Innstillinger).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>For å endre størrelsen på QR-koden inne i sirkelen, justerer du hvilesonen i innstillingene.</value>
+    <value>For å endre størrelsen på den (pseudo-)sirkulære QR-koden inne i sirkelen, justerer du hvilesonen i innstillingene.</value>
   </data>
 </root>

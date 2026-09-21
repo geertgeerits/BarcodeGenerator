@@ -1057,6 +1057,6 @@ Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradyc
     <value>Dodawaj podpisy do niektórych kodów kreskowych podczas ich tworzenia (włącz tę opcję w ustawieniach).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ochronną w ustawieniach.</value>
+    <value>Aby zmienić rozmiar (pseudo)kolistego kodu QR wewnątrz okręgu, należy dostosować strefę ciszy w ustawieniach.</value>
   </data>
 </root>

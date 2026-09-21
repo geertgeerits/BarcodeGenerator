@@ -1057,6 +1057,6 @@ Bahasa yang didukung adalah: Arab, Bengali, Tionghoa Sederhana, Tionghoa Tradisi
     <value>Tambahkan keterangan pada beberapa kode batang saat membuatnya (aktifkan opsi ini di Pengaturan).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona kosong (*quiet zone*) pada pengaturan.</value>
+    <value>Untuk mengubah ukuran kode QR yang (seolah-olah) berbentuk lingkaran di dalam lingkaran tersebut, sesuaikan zona kosong (*quiet zone*) pada pengaturan.</value>
   </data>
 </root>

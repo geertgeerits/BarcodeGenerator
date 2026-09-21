@@ -1057,6 +1057,6 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
     <value>建立條碼時，可以為其新增標題（在「設定」中啟用此選項）。</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>若要變更圓圈內二維碼的大小，請在設定中調整靜默區。</value>
+    <value>若要改變圓圈內（偽）圓形二維碼的大小，請在設定中調整靜默區。</value>
   </data>
 </root>

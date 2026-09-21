@@ -1057,6 +1057,6 @@ De ondersteunde talen zijn: Arabisch, Bengaals, Vereenvoudigd Chinees, Tradition
     <value>Voeg bijschriften toe aan sommige barcodes wanneer je ze aanmaakt (schakel deze optie in bij de instellingen).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Om de grootte van de QR-code binnen de cirkel te wijzigen, past u de rustzone aan in de instellingen.</value>
+    <value>Om de grootte van de (pseudo-)cirkelvormige QR-code binnen de cirkel te wijzigen, past u de rustzone in de instellingen aan.</value>
   </data>
 </root>

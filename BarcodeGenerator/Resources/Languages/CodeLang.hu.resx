@@ -1057,6 +1057,6 @@ A támogatott nyelvek: arab, bengáli, kínai (egyszerűsített), kínai (hagyom
     <value>A vonalkódok létrehozásakor adjon hozzájuk feliratot (ezt a lehetőséget a Beállításokban kapcsolhatja be).</value>
   </data>
   <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>A körön belüli QR-kód méretének módosításához állítsa be a biztonsági zónát a beállításokban.</value>
+    <value>A körön belüli (ál)kör alakú QR-kód méretének módosításához állítsa be a biztonsági zónát a beállításokban.</value>
   </data>
 </root>
