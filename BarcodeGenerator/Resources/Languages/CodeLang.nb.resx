@@ -1053,10 +1053,10 @@ Støttede språk er: arabisk, bengali, forenklet kinesisk, tradisjonell kinesisk
   <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
     <value>Kunstnerisk sirkulær QR-kode</value>
   </data>
-  <data name="InfoCaptions_Text" xml:space="preserve">
+  <data name="InfoCaption_Text" xml:space="preserve">
     <value>Legg til tekst under enkelte strekkoder når du oppretter dem (aktiver dette alternativet i Innstillinger).</value>
   </data>
-  <data name="InfoCircularBarcodes_Text" xml:space="preserve">
+  <data name="InfoCircularCodes_Text" xml:space="preserve">
     <value>For å endre størrelsen på QR-koden inne i sirkelen, justerer du hvilesonen i innstillingene.</value>
   </data>
 </root>

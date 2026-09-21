@@ -1054,10 +1054,10 @@
   <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
     <value>رمز الاستجابة السريعة الدائري الفني</value>
   </data>
-  <data name="InfoCaptions_Text" xml:space="preserve">
+  <data name="InfoCaption_Text" xml:space="preserve">
     <value>أضف تسميات توضيحية إلى بعض الرموز الشريطية عند إنشائها (فعّل هذا الخيار في الإعدادات).</value>
   </data>
-  <data name="InfoCircularBarcodes_Text" xml:space="preserve">
+  <data name="InfoCircularCodes_Text" xml:space="preserve">
     <value>لتغيير حجم رمز الاستجابة السريعة (QR code) داخل الدائرة، قم بضبط "المنطقة الهادئة" (quiet zone) في الإعدادات.</value>
   </data>
 </root>

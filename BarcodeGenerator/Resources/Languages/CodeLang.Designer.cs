@@ -1410,18 +1410,18 @@ namespace BarcodeGenerator.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Add captions to some barcodes when creating them (enable this option in Settings)..
         /// </summary>
-        internal static string InfoCaptions_Text {
+        internal static string InfoCaption_Text {
             get {
-                return ResourceManager.GetString("InfoCaptions_Text", resourceCulture);
+                return ResourceManager.GetString("InfoCaption_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to To change the size of the QR code within the circle, adjust the quiet zone in the settings..
         /// </summary>
-        internal static string InfoCircularBarcodes_Text {
+        internal static string InfoCircularCodes_Text {
             get {
-                return ResourceManager.GetString("InfoCircularBarcodes_Text", resourceCulture);
+                return ResourceManager.GetString("InfoCircularCodes_Text", resourceCulture);
             }
         }
         

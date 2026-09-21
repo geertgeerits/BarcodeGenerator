@@ -118,6 +118,16 @@
                     </Label>
 
                     <Label
+                        x:Name="lblCaption"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
+
+                    <Label
+                        x:Name="lblCircularCodes"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
+
+                    <Label
                         x:Name="lblPayloadTypes"
                         Style="{StaticResource labelStyleInfo}">
                     </Label>

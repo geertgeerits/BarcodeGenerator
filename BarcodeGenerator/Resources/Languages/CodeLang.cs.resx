@@ -1053,10 +1053,10 @@ Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština,
   <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
     <value>Umělecký kruhový QR kód</value>
   </data>
-  <data name="InfoCaptions_Text" xml:space="preserve">
+  <data name="InfoCaption_Text" xml:space="preserve">
     <value>Při vytváření některých čárových kódů k nim přidejte popisky (tuto možnost povolte v nastavení).</value>
   </data>
-  <data name="InfoCircularBarcodes_Text" xml:space="preserve">
+  <data name="InfoCircularCodes_Text" xml:space="preserve">
     <value>Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení ochrannou zónu.</value>
   </data>
 </root>

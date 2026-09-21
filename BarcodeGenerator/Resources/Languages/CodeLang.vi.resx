@@ -1056,10 +1056,10 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
     <value>Mã QR hình tròn mang tính nghệ thuật</value>
   </data>
-  <data name="InfoCaptions_Text" xml:space="preserve">
+  <data name="InfoCaption_Text" xml:space="preserve">
     <value>Thêm chú thích vào một số mã vạch khi tạo chúng (bật tùy chọn này trong phần Cài đặt).</value>
   </data>
-  <data name="InfoCircularBarcodes_Text" xml:space="preserve">
+  <data name="InfoCircularCodes_Text" xml:space="preserve">
     <value>Để thay đổi kích thước mã QR nằm trong hình tròn, hãy điều chỉnh vùng đệm (quiet zone) trong phần cài đặt.</value>
   </data>
 </root>

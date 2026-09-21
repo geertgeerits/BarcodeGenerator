@@ -1053,10 +1053,10 @@ Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradyc
   <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
     <value>Artystyczny okrągły kod QR</value>
   </data>
-  <data name="InfoCaptions_Text" xml:space="preserve">
+  <data name="InfoCaption_Text" xml:space="preserve">
     <value>Dodawaj podpisy do niektórych kodów kreskowych podczas ich tworzenia (włącz tę opcję w ustawieniach).</value>
   </data>
-  <data name="InfoCircularBarcodes_Text" xml:space="preserve">
+  <data name="InfoCircularCodes_Text" xml:space="preserve">
     <value>Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ochronną w ustawieniach.</value>
   </data>
 </root>

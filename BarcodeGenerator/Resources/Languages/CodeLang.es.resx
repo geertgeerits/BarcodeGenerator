@@ -1053,10 +1053,10 @@ Los idiomas compatibles son: árabe, bengalí, chino simplificado, chino tradici
   <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
     <value>Código QR circular artístico</value>
   </data>
-  <data name="InfoCaptions_Text" xml:space="preserve">
+  <data name="InfoCaption_Text" xml:space="preserve">
     <value>Añada leyendas a algunos códigos de barras al crearlos (active esta opción en Configuración).</value>
   </data>
-  <data name="InfoCircularBarcodes_Text" xml:space="preserve">
+  <data name="InfoCircularCodes_Text" xml:space="preserve">
     <value>Para cambiar el tamaño del código QR dentro del círculo, ajusta la zona de silencio en la configuración.</value>
   </data>
 </root>

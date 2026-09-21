@@ -1053,10 +1053,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
     <value>Художественный круглый QR-код</value>
   </data>
-  <data name="InfoCaptions_Text" xml:space="preserve">
+  <data name="InfoCaption_Text" xml:space="preserve">
     <value>Добавляйте подписи к некоторым штрихкодам при их создании (включите эту опцию в настройках).</value>
   </data>
-  <data name="InfoCircularBarcodes_Text" xml:space="preserve">
+  <data name="InfoCircularCodes_Text" xml:space="preserve">
     <value>Чтобы изменить размер QR-кода внутри круга, отрегулируйте размер защитной зоны в настройках.</value>
   </data>
 </root>

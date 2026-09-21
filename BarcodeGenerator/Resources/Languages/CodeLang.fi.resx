@@ -1053,10 +1053,10 @@ Tuetut kielet ovat: arabia, bengali, kiina (yksinkertaistettu), kiina (perintein
   <data name="Barcode_ART_CIRCULAR_QR_CODE_Text" xml:space="preserve">
     <value>Taiteellinen pyöreä QR-koodi</value>
   </data>
-  <data name="InfoCaptions_Text" xml:space="preserve">
+  <data name="InfoCaption_Text" xml:space="preserve">
     <value>Lisää tekstiä joihinkin viivakoodeihin niitä luotaessa (ota tämä vaihtoehto käyttöön asetuksissa).</value>
   </data>
-  <data name="InfoCircularBarcodes_Text" xml:space="preserve">
+  <data name="InfoCircularCodes_Text" xml:space="preserve">
     <value>Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten suoja-aluetta.</value>
   </data>
 </root>
