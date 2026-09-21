@@ -33,7 +33,7 @@ namespace BarcodeGenerator
                 // Generate the QR code
                 QRCodeImageBuilder QrData = new QRCodeImageBuilder(text)
                     .WithErrorCorrection(ECCLevel.M)
-                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
+                    .WithColors(codeColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
 
                 // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
@@ -83,7 +83,7 @@ namespace BarcodeGenerator
                 // Generate the Micro QR code
                 MicroQRCodeImageBuilder QrData = new MicroQRCodeImageBuilder(text)
                     .WithErrorCorrection(MicroQREccLevel.M)
-                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
+                    .WithColors(codeColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2);
 
                 // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
@@ -133,7 +133,7 @@ namespace BarcodeGenerator
                 // Generate the rMQR code as a PNG byte array
                 RmQRCodeImageBuilder QrData = new RmQRCodeImageBuilder(text)
                     .WithErrorCorrection(RmQREccLevel.M)
-                    .WithColors(codeColor: SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
+                    .WithColors(codeColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2);
 
                 // Apply symbol height, the width is selected automatically
@@ -165,25 +165,6 @@ namespace BarcodeGenerator
 #endif
                 return null;
             }
-        }
-
-        // Convert stored hex color strings (ARGB or RRGGBB) to SKColor
-        public static SkiaSharp.SKColor SkColorFromHex(string hex)
-        {
-            // Allow hex with or without leading '#'
-            if (hex.StartsWith('#')) hex = hex[1..];
-            
-            // If only RRGGBB provided, assume opaque alpha = 0xFF
-            if (hex.Length == 6) hex = "FF" + hex;
-            
-            int argb = Convert.ToInt32(hex, 16);
-            
-            byte a = (byte)((argb >> 24) & 0xFF);
-            byte r = (byte)((argb >> 16) & 0xFF);
-            byte g = (byte)((argb >> 8) & 0xFF);
-            byte b = (byte)(argb & 0xFF);
-            
-            return new SkiaSharp.SKColor(r, g, b, a);
         }
     }
 }

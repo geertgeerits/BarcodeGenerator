@@ -47,5 +47,28 @@ namespace BarcodeGenerator
                 return defaultColor;
             }
         }
+
+        /// <summary>
+        /// Converts a hexadecimal color string to a SkiaSharp.SKColor.
+        /// </summary>
+        /// <param name="hex">The hexadecimal color string (ARGB or RRGGBB) to convert.</param>
+        /// <returns>The equivalent SkiaSharp.SKColor.</returns>
+        public static SkiaSharp.SKColor SkColorFromHex(string hex)
+        {
+            // Allow hex with or without leading '#'
+            if (hex.StartsWith('#')) hex = hex[1..];
+
+            // If only RRGGBB provided, assume opaque alpha = 0xFF
+            if (hex.Length == 6) hex = "FF" + hex;
+
+            int argb = Convert.ToInt32(hex, 16);
+
+            byte a = (byte)((argb >> 24) & 0xFF);
+            byte r = (byte)((argb >> 16) & 0xFF);
+            byte g = (byte)((argb >> 8) & 0xFF);
+            byte b = (byte)(argb & 0xFF);
+
+            return new SkiaSharp.SKColor(r, g, b, a);
+        }
     }
 }

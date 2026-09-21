@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-20 (YYYY-MM-DD)
+ * Date ........: 2026-09-21 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -871,12 +871,6 @@ namespace BarcodeGenerator
                 // Generate the Circular Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
                 else if (selectedName == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)
                 {
-                    // Save the original values of nQRCodeQuietZoneSize and bQRCodeSizeVariable
-                    int nQRCodeQuietZoneSizeTemp = ClassBarcodes.nQRCodeQuietZoneSize;
-
-                    // Set the nQRCodeQuietZoneSize to 0 to remove the quiet zone for circular QR codes
-                    ClassBarcodes.nQRCodeQuietZoneSize = 0;
-
                     // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
                     ClassBarcodes.cQRCodeType = selectedName;
 
@@ -886,11 +880,8 @@ namespace BarcodeGenerator
                     // Generate a circular QR code using the ClassQRCodeCircular class, which uses the SkiaSharp.QrCode library
                     ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);
 
-                    Task.Delay(200).Wait(); // Wait for the circular QR code to be generated
-                    imgQrCodeImage.Source = ImageSource.FromFile(ClassBarcodes.cFileBarcodePng);
-
-                    // Restore the original value of nQRCodeQuietZoneSize
-                    ClassBarcodes.nQRCodeQuietZoneSize = nQRCodeQuietZoneSizeTemp;
+                    // Set the image source to the saved file to display it in the Image control
+                    await ClassBarcodeCaption.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
                 }
 
                 // Generate the QR code with an image using the SkiaSharp.QrCode library
@@ -937,8 +928,8 @@ namespace BarcodeGenerator
                     // Generate a circular QR code using the ClassQRCodeCircular class, which uses the SkiaSharp.QrCode library
                     ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);
 
-                    Task.Delay(200).Wait(); // Wait for the circular QR code to be generated
-                    imgQrCodeImage.Source = ImageSource.FromFile(ClassBarcodes.cFileBarcodePng);
+                    // Set the image source to the saved file to display it in the Image control
+                    await ClassBarcodeCaption.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
                 }
 
                 // Generate the Micro QR code using the SkiaSharp.QrCode library

@@ -35,7 +35,7 @@ namespace BarcodeGenerator
             {
                 standardQrData = new QRCodeImageBuilder(text)
                     .WithErrorCorrection(ECCLevel.H)
-                    .WithColors(codeColor: ClassQRCodes.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassQRCodes.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
+                    .WithColors(codeColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
                     .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
 
                 // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)

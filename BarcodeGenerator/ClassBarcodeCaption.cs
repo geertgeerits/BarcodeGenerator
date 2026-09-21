@@ -153,30 +153,30 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="bgvBarcode"></param>
         /// <param name="image"></param>
-        /// <param name="fileBarcodeCaptionPng"></param>
+        /// <param name="fileBarcodePng"></param>
         /// <returns></returns>
-        private static async Task SetImageSourceAsync(BarcodeGeneratorView bgvBarcode, Image image, string fileBarcodeCaptionPng)
+        public static async Task SetImageSourceAsync(BarcodeGeneratorView bgvBarcode, Image image, string fileBarcodePng)
         {
             // Set the image source to the saved file to display it in the Image control
 #if ANDROID
             // !!!BUG!!! in Android: returns always the first generated barcode, even when a new barcode is
             // generated and saved to the same file name. This does not happen on Windows and iOS.
             // Create a unique file name for the copied barcode PNG file to avoid caching issues on Android
-            string cFileBarcodeCaptionPngUnique = Path.Combine(FileSystem.Current.CacheDirectory, $@"{DateTime.Now.Ticks}.png");
-            File.Copy(fileBarcodeCaptionPng, cFileBarcodeCaptionPngUnique);
+            string cFileBarcodePngUnique = Path.Combine(FileSystem.Current.CacheDirectory, $@"{DateTime.Now.Ticks}.png");
+            File.Copy(fileBarcodePng, cFileBarcodePngUnique);
 #endif
             bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
             image.IsVisible = true;
 #if ANDROID
             // Set the Image control source to the saved file
-            image.Source = ImageSource.FromFile(cFileBarcodeCaptionPngUnique);
+            image.Source = ImageSource.FromFile(cFileBarcodePngUnique);
 
             // Delete the unique file with caption after a short delay to ensure it is not cached and displayed again on Android
             await Task.Delay(400);
-            ClassFileUtilities.DeleteFileInCache(cFileBarcodeCaptionPngUnique);
+            ClassFileUtilities.DeleteFileInCache(cFileBarcodePngUnique);
 #else
             // Set the Image control source to the saved file
-            image.Source = ImageSource.FromFile(fileBarcodeCaptionPng);
+            image.Source = ImageSource.FromFile(fileBarcodePng);
 #endif
         }
 
