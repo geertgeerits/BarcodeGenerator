@@ -281,7 +281,7 @@
             // Fallback: use existing generic share method
             else
             {
-                _ = Globals.ShareBarcodeResultAsync(text);
+                _ = ClassUtilities.ShareBarcodeResultAsync(text);
             }
         }
     }

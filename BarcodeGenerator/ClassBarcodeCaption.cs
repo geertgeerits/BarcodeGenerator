@@ -56,7 +56,7 @@ namespace BarcodeGenerator
                 _ = await SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, caption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
 
                 // Set the image source to the saved file to display it in the Image control
-                await SetImageSourceAsync(bgvBarcode, image, fileBarcodeCaptionPng);
+                await ClassUtilities.SetImageSourceAsync(bgvBarcode, image, fileBarcodeCaptionPng);
             }
         }
 
@@ -101,7 +101,7 @@ namespace BarcodeGenerator
                     await SaveBarcodeWithCaptionAsync(stream, caption, ClassBarcodes.cFileBarcodePng, 12, barcodeType);
 
                     // Set the image source to the saved file to display it in the Image control
-                    await SetImageSourceAsync(bgvBarcode, image, ClassBarcodes.cFileBarcodePng);
+                    await ClassUtilities.SetImageSourceAsync(bgvBarcode, image, ClassBarcodes.cFileBarcodePng);
                 }
 
                 // Barcode without caption
@@ -133,10 +133,11 @@ namespace BarcodeGenerator
                                 default,                        // Keyboard
                                 "");                            // Initial value
 
-                // When using the PopupEntry, we get the entered caption from the entCaption Entry control after the popup is closed.
                 // !!!BUG!!!? The selected barcode is changed to the default barcode in the format picker after the 'PopupEntry' is closed.
                 // This does not happen when using the 'DisplayPromptAsync' method, which is why we are using it instead of the popup for now.
                 // This may be due to the way the popup is implemented or how the barcode generator view is updated after the popup is closed.
+
+                // When using the PopupEntry, we get the entered caption from the entCaption Entry control after the popup is closed.
                 //PopupEntry popup = await OpenPopupCaptionAsync();   // Returns the instance
                 //return popup.entCaption?.Text ?? string.Empty;
             }
@@ -146,38 +147,6 @@ namespace BarcodeGenerator
             {
                 return caption;
             }
-        }
-
-        /// <summary>
-        /// Set the image source to the saved file to display it in the Image control
-        /// </summary>
-        /// <param name="bgvBarcode"></param>
-        /// <param name="image"></param>
-        /// <param name="fileBarcodePng"></param>
-        /// <returns></returns>
-        public static async Task SetImageSourceAsync(BarcodeGeneratorView bgvBarcode, Image image, string fileBarcodePng)
-        {
-            // Set the image source to the saved file to display it in the Image control
-#if ANDROID
-            // !!!BUG!!! in Android: returns always the first generated barcode, even when a new barcode is
-            // generated and saved to the same file name. This does not happen on Windows and iOS.
-            // Create a unique file name for the copied barcode PNG file to avoid caching issues on Android
-            string cFileBarcodePngUnique = Path.Combine(FileSystem.Current.CacheDirectory, $@"{DateTime.Now.Ticks}.png");
-            File.Copy(fileBarcodePng, cFileBarcodePngUnique);
-#endif
-            bgvBarcode.Value = string.Empty;    // Clear the BarcodeView value to avoid displaying the barcode twice
-            image.IsVisible = true;
-#if ANDROID
-            // Set the Image control source to the saved file
-            image.Source = ImageSource.FromFile(cFileBarcodePngUnique);
-
-            // Delete the unique file with caption after a short delay to ensure it is not cached and displayed again on Android
-            await Task.Delay(400);
-            ClassFileUtilities.DeleteFileInCache(cFileBarcodePngUnique);
-#else
-            // Set the Image control source to the saved file
-            image.Source = ImageSource.FromFile(fileBarcodePng);
-#endif
         }
 
         /// <summary>

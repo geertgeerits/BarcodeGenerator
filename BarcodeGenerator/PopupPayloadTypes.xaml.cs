@@ -316,7 +316,7 @@ namespace BarcodeGenerator
         /// <param name="e">The event data associated with the click event.</param>
         private async void OnPasteFromClipboard_Clicked(object sender, EventArgs e)
         {
-            await Globals.PasteFromClipboardAsync(edtPayloadTypeMessage);
+            await ClassUtilities.PasteFromClipboardAsync(edtPayloadTypeMessage);
         }
 
         /// <summary>

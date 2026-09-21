@@ -884,7 +884,7 @@ namespace BarcodeGenerator
                     ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);
 
                     // Set the image source to the saved file to display it in the Image control
-                    await ClassBarcodeCaption.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
+                    await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
                 }
 
                 // Generate the QR code with an image using the SkiaSharp.QrCode library
@@ -935,7 +935,7 @@ namespace BarcodeGenerator
                     ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);
 
                     // Set the image source to the saved file to display it in the Image control
-                    await ClassBarcodeCaption.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
+                    await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
                 }
 
                 // Generate the Micro QR code using the SkiaSharp.QrCode library
@@ -1202,7 +1202,7 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnPasteFromClipboardClicked(object sender, EventArgs e)
         {
-            await Globals.PasteFromClipboardAsync(edtTextToCode);
+            await ClassUtilities.PasteFromClipboardAsync(edtTextToCode);
         }
 
         /*
