@@ -25,7 +25,7 @@ namespace BarcodeGenerator
         private static SKBitmap CropToCircle(SKBitmap source)
         {
             SKColor fill = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorBgArtQRCode, SKColors.White);
-            SKColor stroke = ClassColors.ToSKColor(Microsoft.Maui.Graphics.Colors.White);
+            SKColor stroke = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorBgArtQRCode, SKColors.White);
 
             return DrawOuterCircleAroundBitmapWithFill(source, fill, stroke, 1);
         }
@@ -72,16 +72,14 @@ namespace BarcodeGenerator
                 canvas.DrawBitmap(source, left, top, new SKSamplingOptions(SKFilterMode.Linear), null);
 
                 // 3️⃣ Draw circle outline
-                using (var strokePaint = new SKPaint
+                using var strokePaint = new SKPaint
                 {
                     Color = strokeColor,
                     StrokeWidth = strokeWidth,
                     IsAntialias = true,
                     Style = SKPaintStyle.Stroke
-                })
-                {
-                    canvas.DrawCircle(cx, cy, radius, strokePaint);
-                }
+                };
+                canvas.DrawCircle(cx, cy, radius, strokePaint);
             }
 
             return output;

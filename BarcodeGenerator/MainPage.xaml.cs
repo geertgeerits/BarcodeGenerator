@@ -877,6 +877,9 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
 
+                    // Save the barcode with caption to a PNG file
+                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
+
                     // Generate a circular QR code using the ClassQRCodeCircular class, which uses the SkiaSharp.QrCode library
                     ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);
 
@@ -924,6 +927,9 @@ namespace BarcodeGenerator
 
                     ImageSource? qrImage = await ClassQRCodes.GenerateQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+
+                    // Save the barcode with caption to a PNG file
+                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
 
                     // Generate a circular QR code using the ClassQRCodeCircular class, which uses the SkiaSharp.QrCode library
                     ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);

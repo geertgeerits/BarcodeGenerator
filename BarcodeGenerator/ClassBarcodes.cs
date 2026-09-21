@@ -838,6 +838,8 @@ namespace BarcodeGenerator
    QR Code Model 2                        3057       1852       1273       784             40       H (high)
    
    QR Code with Image          3057       3057       1852       1273       784             40       H (high)
+   Circular QR Code            3993       3993       2420       1663      1024             40       Q (quartile)
+   Art Circular QR Code        3057       3057       1852       1273       784             40       H (high)
    Art QR Code                 3057       3057       1852       1273       784             40       H (high)
    
    Frame QR
