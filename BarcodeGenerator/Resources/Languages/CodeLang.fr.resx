@@ -1054,9 +1054,13 @@ Les langues prises en charge sont : l'arabe, le bengali, le chinois simplifié,
     <value>Code QR circulaire artistique</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Ajoutez des légendes à certains codes-barres lors de leur création (activez cette option dans les paramètres).</value>
+    <value>Ajoutez des légendes aux codes-barres (activez cette option dans les paramètres).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Pour modifier la taille du code QR (pseudo-)circulaire à l'intérieur du cercle, ajustez la zone de silence dans les paramètres.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Ajoutez un cercle autour de certains codes QR (activez cette option dans les paramètres).
+Pour modifier la taille du code QR à l'intérieur du cercle, ajustez la zone de silence dans les paramètres.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Code-barres dans un cercle:</value>
   </data>
 </root>

@@ -1052,9 +1052,13 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
     <value>শৈল্পিক বৃত্তাকার কিউআর কোড</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>বারকোড তৈরি করার সময় সেগুলোতে ক্যাপশন যোগ করুন (সেটিংস-এ এই বিকল্পটি চালু করুন)।</value>
+    <value>বারকোডে ক্যাপশন যোগ করুন (সেটিংসে এই বিকল্পটি চালু করুন)।</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>বৃত্তের ভেতরের কিউআর (QR) কোডের আকার পরিবর্তন করতে, সেটিংস-এ 'কোয়াইট জোন' (quiet zone) সমন্বয় করুন।</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>কিছু কিউআর (QR) কোডের চারপাশে একটি বৃত্ত যোগ করুন (সেটিংস-এ এই বিকল্পটি চালু করুন)।
+বৃত্তের ভেতরের কিউআর কোডের আকার পরিবর্তন করতে, সেটিংস-এ 'কোয়াইট জোন' (quiet zone) বা ফাঁকা জায়গাটি সমন্বয় করুন।</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>বৃত্তের মধ্যে বারকোড:</value>
   </data>
 </root>

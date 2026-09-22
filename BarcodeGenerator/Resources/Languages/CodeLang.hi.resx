@@ -1051,9 +1051,13 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
     <value>कलात्मक गोलाकार QR कोड</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>कुछ बारकोड बनाते समय उनमें कैप्शन जोड़ें (सेटिंग्स में यह विकल्प चालू करें)।</value>
+    <value>बारकोड में कैप्शन जोड़ें (सेटिंग्स में यह विकल्प चालू करें)।</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>सर्कल के अंदर (स्यूडो-)सर्कुलर QR कोड का साइज़ बदलने के लिए, सेटिंग्स में 'क्वाइट ज़ोन' को एडजस्ट करें।</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>कुछ QR कोड के चारों ओर एक घेरा जोड़ें (सेटिंग्स में यह विकल्प चालू करें)।
+घेरे के अंदर QR कोड का साइज़ बदलने के लिए, सेटिंग्स में 'क्वाइट ज़ोन' को एडजस्ट करें।</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>घेरे में बारकोड:</value>
   </data>
 </root>

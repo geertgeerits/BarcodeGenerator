@@ -1054,9 +1054,13 @@ De ondersteunde talen zijn: Arabisch, Bengaals, Vereenvoudigd Chinees, Tradition
     <value>Artistieke ronde QR-code</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Voeg bijschriften toe aan sommige barcodes wanneer je ze aanmaakt (schakel deze optie in bij de instellingen).</value>
+    <value>Voeg bijschriften toe aan barcodes (schakel deze optie in bij Instellingen).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Om de grootte van de (pseudo-)cirkelvormige QR-code binnen de cirkel te wijzigen, past u de rustzone in de instellingen aan.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Plaats een cirkel rond bepaalde QR-codes (schakel deze optie in bij de instellingen).
+Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de QR-code binnen de cirkel te wijzigen.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Barcode in cirkel:</value>
   </data>
 </root>

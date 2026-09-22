@@ -1054,9 +1054,13 @@ Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština,
     <value>Umělecký kruhový QR kód</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Při vytváření některých čárových kódů k nim přidejte popisky (tuto možnost povolte v nastavení).</value>
+    <value>Přidejte k čárovým kódům popisky (tuto možnost povolte v nastavení).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Chcete-li změnit velikost (pseudo)kruhového QR kódu uvnitř kruhu, upravte v nastavení ochrannou zónu.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Přidejte kolem některých QR kódů kruh (tuto možnost povolte v nastavení).
+Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tichou zónu (quiet zone).</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Čárový kód v kruhu:</value>
   </data>
 </root>

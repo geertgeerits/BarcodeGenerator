@@ -1054,9 +1054,13 @@ Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradyc
     <value>Artystyczny okrągły kod QR</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Dodawaj podpisy do niektórych kodów kreskowych podczas ich tworzenia (włącz tę opcję w ustawieniach).</value>
+    <value>Dodaj podpisy do kodów kreskowych (włącz tę opcję w ustawieniach).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Aby zmienić rozmiar (pseudo)kolistego kodu QR wewnątrz okręgu, należy dostosować strefę ciszy w ustawieniach.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Dodaj okrąg wokół niektórych kodów QR (włącz tę opcję w ustawieniach).
+Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawieniach.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Kod kreskowy w okręgu:</value>
   </data>
 </root>

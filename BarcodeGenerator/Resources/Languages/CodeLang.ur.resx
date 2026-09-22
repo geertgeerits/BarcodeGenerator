@@ -1054,9 +1054,13 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
     <value>فنکارانہ گول کیو آر کوڈ</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>بار کوڈز بناتے وقت کچھ بار کوڈز میں کیپشنز (وضاحتی تحریر) شامل کریں (اس آپشن کو 'سیٹنگز' میں فعال کریں)۔</value>
+    <value>بار کوڈز کے ساتھ کیپشنز شامل کریں (اس آپشن کو سیٹنگز میں فعال کریں)۔</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>دائرے کے اندر موجود (نیم) دائروی QR کوڈ کا سائز تبدیل کرنے کے لیے، سیٹنگز میں 'کوائٹ زون' (quiet zone) کو ایڈجسٹ کریں۔</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>کچھ QR کوڈز کے گرد دائرہ شامل کریں (اس آپشن کو 'سیٹنگز' میں فعال کریں)۔
+دائرے کے اندر QR کوڈ کا سائز تبدیل کرنے کے لیے، سیٹنگز میں 'کوائٹ زون' (quiet zone) کو ایڈجسٹ کریں۔</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>دائرے میں بار کوڈ:</value>
   </data>
 </root>

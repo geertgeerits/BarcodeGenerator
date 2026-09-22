@@ -1054,9 +1054,13 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
     <value>Художественный круглый QR-код</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Добавляйте подписи к некоторым штрихкодам при их создании (включите эту опцию в настройках).</value>
+    <value>Добавьте подписи к штрихкодам (включите эту опцию в настройках).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Чтобы изменить размер (псевдо)круглого QR-кода внутри круга, отрегулируйте размер защитной зоны в настройках.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Добавьте окружность вокруг некоторых QR-кодов (включите эту опцию в настройках).
+Чтобы изменить размер QR-кода внутри окружности, отрегулируйте размер «охранной зоны» (quiet zone) в настройках.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Штрихкод в круге:</value>
   </data>
 </root>

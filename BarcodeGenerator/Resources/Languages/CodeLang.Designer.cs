@@ -673,6 +673,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Barcode in circle:.
+        /// </summary>
+        internal static string BarcodeWithCircle_Text {
+            get {
+                return ResourceManager.GetString("BarcodeWithCircle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string ButtonCancel_Text {
@@ -1408,7 +1417,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add captions to some barcodes when creating them (enable this option in Settings)..
+        ///   Looks up a localized string similar to Add captions to barcodes (enable this option in Settings)..
         /// </summary>
         internal static string InfoCaption_Text {
             get {
@@ -1417,11 +1426,12 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To change the size of the (pseudo-)circular QR code within the circle, adjust the quiet zone in the settings..
+        ///   Looks up a localized string similar to Add a circle around some QR codes (enable this option in Settings).
+        ///To change the size of the QR code within the circle, adjust the quiet zone in the settings..
         /// </summary>
-        internal static string InfoCircularCodes_Text {
+        internal static string InfoCircle_Text {
             get {
-                return ResourceManager.GetString("InfoCircularCodes_Text", resourceCulture);
+                return ResourceManager.GetString("InfoCircle_Text", resourceCulture);
             }
         }
         

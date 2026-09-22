@@ -1054,9 +1054,13 @@ Tuetut kielet ovat: arabia, bengali, kiina (yksinkertaistettu), kiina (perintein
     <value>Taiteellinen pyöreä QR-koodi</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Lisää tekstiä joihinkin viivakoodeihin niitä luotaessa (ota tämä vaihtoehto käyttöön asetuksissa).</value>
+    <value>Lisää viivakoodeihin selitteet (ota tämä vaihtoehto käyttöön asetuksissa).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Voit muuttaa ympyrän sisällä olevan (näennäisesti) pyöreän QR-koodin kokoa säätämällä asetusten suoja-aluetta.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Lisää ympyrä joidenkin QR-koodien ympärille (ota tämä toiminto käyttöön asetuksissa).
+Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten suoja-aluetta (quiet zone).</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Viivakoodi ympyrässä:</value>
   </data>
 </root>

@@ -1054,9 +1054,13 @@ Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Ge
     <value>Sanatsal Dairesel QR Kod</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Barkodları oluştururken bazılarına açıklama metni ekleyin (bu seçeneği Ayarlar'dan etkinleştirin).</value>
+    <value>Barkodlara açıklama metni ekleyin (bu seçeneği Ayarlar'da etkinleştirin).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Daire içindeki (yarı) dairesel QR kodunun boyutunu değiştirmek için ayarlardan boşluk alanını (quiet zone) düzenleyin.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Bazı QR kodlarının etrafına bir daire ekleyin (bu seçeneği Ayarlar'dan etkinleştirin).
+Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölge"yi (quiet zone) düzenleyin.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Daire içinde barkod:</value>
   </data>
 </root>

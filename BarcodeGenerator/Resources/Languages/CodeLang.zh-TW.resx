@@ -1054,9 +1054,14 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
     <value>藝術圓二維碼</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>建立條碼時，可以為其新增標題（在「設定」中啟用此選項）。</value>
+    <value>為條碼新增說明文字（在設定中啟用此選項）。</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>若要改變圓圈內（偽）圓形二維碼的大小，請在設定中調整靜默區。</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>在某些二維碼周圍新增圓圈（在「設定」中啟用此選項）。
+
+若要變更圓圈內二維碼的大小，請在「設定」中調整「靜默區」大小。</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>圓形條碼：</value>
   </data>
 </root>

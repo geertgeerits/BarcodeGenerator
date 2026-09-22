@@ -1054,9 +1054,13 @@ A támogatott nyelvek: arab, bengáli, kínai (egyszerűsített), kínai (hagyom
     <value>Művészi kör alakú QR-kód</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>A vonalkódok létrehozásakor adjon hozzájuk feliratot (ezt a lehetőséget a Beállításokban kapcsolhatja be).</value>
+    <value>Adjon feliratot a vonalkódokhoz (engedélyezze ezt a lehetőséget a Beállításokban).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>A körön belüli (ál)kör alakú QR-kód méretének módosításához állítsa be a biztonsági zónát a beállításokban.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Helyezzen kört bizonyos QR-kódok köré (ezt a lehetőséget a Beállításokban aktiválhatja).
+A körön belüli QR-kód méretének módosításához állítsa be a „csendes zónát” (quiet zone) a beállításokban.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Körbe foglalt vonalkód:</value>
   </data>
 </root>

@@ -123,7 +123,7 @@
                     </Label>
 
                     <Label
-                        x:Name="lblCircularCodes"
+                        x:Name="lblCircle"
                         Style="{StaticResource labelStyleInfo}">
                     </Label>
 

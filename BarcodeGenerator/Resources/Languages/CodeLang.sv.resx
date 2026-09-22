@@ -1054,9 +1054,13 @@ De språk som stöds är: arabiska, bengali, förenklad kinesiska, traditionell 
     <value>Konstnärlig cirkulär QR-kod</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Lägg till text under vissa streckkoder när du skapar dem (aktivera detta alternativ i inställningarna).</value>
+    <value>Lägg till text under streckkoder (aktivera detta alternativ i inställningarna).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>För att ändra storleken på den (pseudo-)cirkulära QR-koden inuti cirkeln justerar du frizonen i inställningarna.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Lägg till en cirkel runt vissa QR-koder (aktivera detta alternativ i inställningarna).
+För att ändra storleken på QR-koden inuti cirkeln justerar du tyst zon i inställningarna.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Streckkod i cirkel:</value>
   </data>
 </root>

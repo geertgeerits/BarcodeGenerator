@@ -1054,9 +1054,13 @@ Limbile acceptate sunt: ​​arabă, bengaleză, chineză simplificată, chinez
     <value>Cod QR circular artistic</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Adaugă etichete text anumitor coduri de bare în momentul creării acestora (activează această opțiune în Setări).</value>
+    <value>Adaugă etichete text codurilor de bare (activează această opțiune în Setări).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Pentru a modifica dimensiunea codului QR (pseudo-)circular din interiorul cercului, ajustați zona de liniște din setări.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Adaugă un cerc în jurul anumitor coduri QR (activează această opțiune în Setări).
+Pentru a modifica dimensiunea codului QR din interiorul cercului, ajustează zona de liniște (quiet zone) din setări.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Cod de bare într-un cerc:</value>
   </data>
 </root>

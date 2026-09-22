@@ -1053,9 +1053,13 @@ Die unterstützten Sprachen sind: Arabisch, Bengali, Chinesisch (vereinfacht), C
     <value>Künstlerischer kreisförmiger QR-Code</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Fügen Sie beim Erstellen einiger Barcodes Beschriftungen hinzu (aktivieren Sie diese Option in den Einstellungen).</value>
+    <value>Fügen Sie Barcodes Beschriftungen hinzu (aktivieren Sie diese Option in den Einstellungen).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Um die Größe des (pseudo-)kreisförmigen QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruhezone in den Einstellungen an.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Fügen Sie einen Kreis um bestimmte QR-Codes hinzu (aktivieren Sie diese Option in den Einstellungen).
+Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruhezone in den Einstellungen an.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Barcode im Kreis:</value>
   </data>
 </root>

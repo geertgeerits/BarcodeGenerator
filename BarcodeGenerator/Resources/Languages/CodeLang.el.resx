@@ -1054,9 +1054,13 @@
     <value>Καλλιτεχνικός Κυκλικός Κωδικός QR</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Προσθέστε λεζάντες σε ορισμένους γραμμωτούς κώδικες κατά τη δημιουργία τους (ενεργοποιήστε αυτή την επιλογή στις Ρυθμίσεις).</value>
+    <value>Προσθέστε λεζάντες στους γραμμωτούς κώδικες (ενεργοποιήστε αυτήν την επιλογή στις Ρυθμίσεις).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Για να αλλάξετε το μέγεθος του (ψευδο-)κυκλικού κωδικού QR εντός του κύκλου, ρυθμίστε την «ήσυχη ζώνη» (quiet zone) στις ρυθμίσεις.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Προσθέστε έναν κύκλο γύρω από ορισμένους κωδικούς QR (ενεργοποιήστε αυτή την επιλογή στις Ρυθμίσεις).
+Για να αλλάξετε το μέγεθος του κωδικού QR μέσα στον κύκλο, προσαρμόστε την «ήσυχη ζώνη» (quiet zone) στις ρυθμίσεις.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Barcode σε κύκλο:</value>
   </data>
 </root>

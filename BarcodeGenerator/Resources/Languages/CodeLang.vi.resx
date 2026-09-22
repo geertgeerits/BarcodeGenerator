@@ -1057,9 +1057,13 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
     <value>Mã QR hình tròn mang tính nghệ thuật</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Thêm chú thích vào một số mã vạch khi tạo chúng (bật tùy chọn này trong phần Cài đặt).</value>
+    <value>Thêm chú thích vào mã vạch (bật tùy chọn này trong phần Cài đặt).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Để thay đổi kích thước của mã QR (có dạng gần như hình tròn) nằm trong hình tròn, hãy điều chỉnh vùng đệm (quiet zone) trong phần cài đặt.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Thêm hình tròn bao quanh một số mã QR (hãy bật tùy chọn này trong phần Cài đặt).
+Để thay đổi kích thước mã QR nằm trong hình tròn, hãy điều chỉnh vùng đệm (quiet zone) trong phần cài đặt.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Mã vạch trong vòng tròn:</value>
   </data>
 </root>

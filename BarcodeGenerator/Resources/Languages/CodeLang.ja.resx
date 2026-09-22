@@ -1068,9 +1068,13 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
     <value>芸術的な円形QRコード</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>バーコードを作成する際、一部のバーコードにキャプションを追加します（設定でこのオプションを有効にしてください）。</value>
+    <value>バーコードにキャプションを追加します（設定でこのオプションを有効にしてください）。</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>円内の（擬似）円形QRコードのサイズを変更するには、設定でクワイエットゾーンを調整してください。</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>QRコードの周囲に円を表示します（設定でこのオプションを有効にしてください）。
+円内のQRコードのサイズを変更するには、設定でクワイエットゾーンを調整してください。</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>円内のバーコード：</value>
   </data>
 </root>

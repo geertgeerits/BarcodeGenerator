@@ -1054,9 +1054,13 @@ Bahasa yang didukung adalah: Arab, Bengali, Tionghoa Sederhana, Tionghoa Tradisi
     <value>Kode QR Melingkar yang Artistik</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Tambahkan keterangan pada beberapa kode batang saat membuatnya (aktifkan opsi ini di Pengaturan).</value>
+    <value>Tambahkan keterangan pada kode batang (aktifkan opsi ini di Pengaturan).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Untuk mengubah ukuran kode QR yang (seolah-olah) berbentuk lingkaran di dalam lingkaran tersebut, sesuaikan zona kosong (*quiet zone*) pada pengaturan.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Tambahkan lingkaran di sekeliling kode QR tertentu (aktifkan opsi ini di Pengaturan).
+Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet zone*) pada pengaturan.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Kode batang dalam lingkaran:</value>
   </data>
 </root>

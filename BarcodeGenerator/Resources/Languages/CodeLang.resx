@@ -1054,9 +1054,13 @@ The supporting languages are: Arabic, Bengali, Chinese simplified, Chinese tradi
     <value>Artistic Circular QR Code</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Add captions to some barcodes when creating them (enable this option in Settings).</value>
+    <value>Add captions to barcodes (enable this option in Settings).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>To change the size of the (pseudo-)circular QR code within the circle, adjust the quiet zone in the settings.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Add a circle around some QR codes (enable this option in Settings).
+To change the size of the QR code within the circle, adjust the quiet zone in the settings.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Barcode in circle:</value>
   </data>
 </root>

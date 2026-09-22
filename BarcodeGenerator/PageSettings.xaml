@@ -312,7 +312,7 @@
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
-                    Text="{Translate BarcodeWithCaption_Text}">
+                    Text="{Translate BarcodeWithCircle_Text}">
                 </Label>
 
                 <Switch

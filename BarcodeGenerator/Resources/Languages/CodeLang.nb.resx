@@ -1054,9 +1054,13 @@ Støttede språk er: arabisk, bengali, forenklet kinesisk, tradisjonell kinesisk
     <value>Kunstnerisk sirkulær QR-kode</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Legg til tekst under enkelte strekkoder når du oppretter dem (aktiver dette alternativet i Innstillinger).</value>
+    <value>Legg til tekst under strekkoder (aktiver dette alternativet i Innstillinger).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>For å endre størrelsen på den (pseudo-)sirkulære QR-koden inne i sirkelen, justerer du hvilesonen i innstillingene.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Legg til en sirkel rundt enkelte QR-koder (aktiver dette valget i innstillingene).
+For å endre størrelsen på QR-koden inne i sirkelen, justerer du «quiet zone» (sikkerhetssonen) i innstillingene.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Strekkode i sirkel:</value>
   </data>
 </root>

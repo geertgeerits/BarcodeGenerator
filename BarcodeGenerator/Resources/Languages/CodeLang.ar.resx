@@ -1055,9 +1055,13 @@
     <value>رمز الاستجابة السريعة الدائري الفني</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>أضف تسميات توضيحية إلى بعض الرموز الشريطية عند إنشائها (فعّل هذا الخيار في الإعدادات).</value>
+    <value>أضف تسميات توضيحية إلى الرموز الشريطية (فعّل هذا الخيار في الإعدادات).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>لتغيير حجم رمز الاستجابة السريعة (QR code) شبه الدائري داخل الدائرة، قم بضبط "المنطقة الهادئة" (quiet zone) في الإعدادات.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>أضف دائرة حول بعض رموز الاستجابة السريعة (QR codes) - (فعّل هذا الخيار في الإعدادات).
+لتغيير حجم رمز الاستجابة السريعة داخل الدائرة، قم بضبط "المنطقة الهادئة" (quiet zone) في الإعدادات.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>رمز شريطي داخل دائرة:</value>
   </data>
 </root>

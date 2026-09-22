@@ -1054,9 +1054,13 @@ Los idiomas compatibles son: árabe, bengalí, chino simplificado, chino tradici
     <value>Código QR circular artístico</value>
   </data>
   <data name="InfoCaption_Text" xml:space="preserve">
-    <value>Añada leyendas a algunos códigos de barras al crearlos (active esta opción en Configuración).</value>
+    <value>Añade etiquetas a los códigos de barras (activa esta opción en la configuración).</value>
   </data>
-  <data name="InfoCircularCodes_Text" xml:space="preserve">
-    <value>Para cambiar el tamaño del código QR (pseudo) circular dentro del círculo, ajuste la zona de silencio en la configuración.</value>
+  <data name="InfoCircle_Text" xml:space="preserve">
+    <value>Añada un círculo alrededor de algunos códigos QR (active esta opción en la configuración).
+Para cambiar el tamaño del código QR dentro del círculo, ajuste la zona de silencio en la configuración.</value>
+  </data>
+  <data name="BarcodeWithCircle_Text" xml:space="preserve">
+    <value>Código de barras en un círculo:</value>
   </data>
 </root>
