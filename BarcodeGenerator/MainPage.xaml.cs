@@ -862,14 +862,25 @@ namespace BarcodeGenerator
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
 
+                    // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+
+                    if (qrImage is null)
+                    {
+                        activityIndicator.IsRunning = false;
+                        activityIndicator.IsVisible = false;
+                        return;
+                    }
 
                     // Add a caption and save the barcode to a PNG file
                     await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
 
                     // Add a circle around the QR code using the ClassBarcodeCircle class
-                    ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng);
+                    if (selectedName != ClassBarcodes.cBarcode_ART_RMQR_CODE)
+                    {
+                        ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng);
+                    }
 
                     // Set the image source to the saved file to display it in the Image control
                     await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
@@ -881,28 +892,33 @@ namespace BarcodeGenerator
                     ClassBarcodes.cQRCodeType = selectedName;
 
                     ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeImageAsync(cTextToCode);
+                    imgQrCodeImage.Source = qrImage;
 
                     if (qrImage is null)
                     {
                         activityIndicator.IsRunning = false;
                         activityIndicator.IsVisible = false;
-
                         return;
                     }
-
-                    imgQrCodeImage.Source = qrImage;
 
                     // Save the barcode with caption to a PNG file
                     await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                 }
 
                 // Generate the QR code using the SkiaSharp.QrCode library
-                else if (selectedName == ClassBarcodes.cBarcode_QR_CODE)
+                else if (selectedName == ClassBarcodes.cBarcode_QR_CODE || selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
                 {
                     ClassBarcodes.cQRCodeType = selectedName;
 
                     ImageSource? qrImage = await ClassQRCodes.GenerateQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+
+                    if (qrImage is null)
+                    {
+                        activityIndicator.IsRunning = false;
+                        activityIndicator.IsVisible = false;
+                        return;
+                    }
 
                     // Add a caption and save the barcode to a PNG file
                     await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
@@ -914,18 +930,6 @@ namespace BarcodeGenerator
                     await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
                 }
 
-                // Generate the Micro QR code using the SkiaSharp.QrCode library
-                else if (selectedName == ClassBarcodes.cBarcode_MICRO_QR_CODE)
-                {
-                    ClassBarcodes.cQRCodeType = selectedName;
-
-                    ImageSource? qrImage = await ClassQRCodes.GenerateMicroQrCodeAsync(cTextToCode);
-                    imgQrCodeImage.Source = qrImage;
-
-                    // Save the barcode with caption to a PNG file
-                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
-                }
-
                 // Generate the rMQR code using the SkiaSharp.QrCode library
                 else if (selectedName == ClassBarcodes.cBarcode_RMQR_CODE)
                 {
@@ -933,6 +937,13 @@ namespace BarcodeGenerator
 
                     ImageSource? qrImage = await ClassQRCodes.GenerateRMQRCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
+
+                    if (qrImage is null)
+                    {
+                        activityIndicator.IsRunning = false;
+                        activityIndicator.IsVisible = false;
+                        return;
+                    }
 
                     // Save the barcode with caption to a PNG file
                     await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
