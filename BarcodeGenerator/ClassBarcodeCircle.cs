@@ -5,7 +5,7 @@ namespace BarcodeGenerator
     internal class ClassBarcodeCircle
     {
         /// <summary>
-        /// Generates a circular QR code from an existing image file and saves it as a PNG in the cache directory.
+        /// Add a circle to a QR code from an existing image file and saves it as a PNG in the cache directory.
         /// </summary>
         /// <param name="filePath">The path to the existing image file.</param>
         public static void DrawOuterCircleFromFile(string filePath)
