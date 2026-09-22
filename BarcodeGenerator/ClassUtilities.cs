@@ -14,6 +14,12 @@ namespace BarcodeGenerator
         /// <returns></returns>
         public static async Task SetImageSourceAsync(BarcodeGeneratorView bgvBarcode, Image image, string fileBarcodePng)
         {
+            //Check if the barcode with caption or circle is enabled, otherwise return
+            if (!ClassBarcodes.bBarcodeWithCaption && !ClassBarcodes.bBarcodeWithCircle)
+            {
+                return;
+            }
+
             // Wait for a short delay to ensure the file is fully written before setting the image source
             await Task.Delay(400);
 

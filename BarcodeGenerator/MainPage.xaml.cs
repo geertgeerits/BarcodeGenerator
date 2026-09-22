@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-21 (YYYY-MM-DD)
+ * Date ........: 2026-09-22 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -118,6 +118,7 @@ namespace BarcodeGenerator
             ClassBarcodes.bQRCodeForegroundImage = Preferences.Default.Get("SettingQRCodeForegroundImage", false);
             ClassBarcodes.bQRCodeBackgroundImage = Preferences.Default.Get("SettingQRCodeBackgroundImage", false);
             ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", false);
+            ClassBarcodes.bBarcodeWithCircle = Preferences.Default.Get("SettingBarcodeWithCircle", false);
             ClassBarcodes.bCompressionEnabled = Preferences.Default.Get("SettingCompressionEnabled", false);
             ClassPayloadTypes.cPayloadType = Preferences.Default.Get("SettingPayloadType", ClassPayloadTypes.cPayloadTypeDefault);
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
@@ -556,27 +557,27 @@ namespace BarcodeGenerator
                     cBarcodeType = "ArtQRcode2";
                 }
 
-                else if (selectedName == ClassBarcodes.cBarcode_CIRCULAR_QR_CODE)        // Model 2 - ECCLevel.Quartile
-                {
-                    edtTextToCode.MaxLength = 3993;
-                    edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.IsVisible = false;
-                    imgQrCodeImage.IsVisible = true;
-                    bCompressionAllowed = true;
-                    bPayloadTypeAllowed = true;
-                    cBarcodeType = "QRcode";
-                }
+                //else if (selectedName == ClassBarcodes.cBarcode_CIRCULAR_QR_CODE)        // Model 2 - ECCLevel.Quartile
+                //{
+                //    edtTextToCode.MaxLength = 3993;
+                //    edtTextToCode.Keyboard = Keyboard.Default;
+                //    bgvBarcode.IsVisible = false;
+                //    imgQrCodeImage.IsVisible = true;
+                //    bCompressionAllowed = true;
+                //    bPayloadTypeAllowed = true;
+                //    cBarcodeType = "QRcode";
+                //}
 
-                else if (selectedName == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)  // Model 2 - ECCLevel.High
-                {
-                    edtTextToCode.MaxLength = 3057;
-                    edtTextToCode.Keyboard = Keyboard.Default;
-                    bgvBarcode.IsVisible = false;
-                    imgQrCodeImage.IsVisible = true;
-                    bCompressionAllowed = true;
-                    bPayloadTypeAllowed = true;
-                    cBarcodeType = "ArtQRcode";
-                }
+                //else if (selectedName == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)  // Model 2 - ECCLevel.High
+                //{
+                //    edtTextToCode.MaxLength = 3057;
+                //    edtTextToCode.Keyboard = Keyboard.Default;
+                //    bgvBarcode.IsVisible = false;
+                //    imgQrCodeImage.IsVisible = true;
+                //    bCompressionAllowed = true;
+                //    bPayloadTypeAllowed = true;
+                //    cBarcodeType = "ArtQRcode";
+                //}
 
                 // Set the payload type button enabled if a specific payload type is allowed for the selected barcode format
                 imgbtnPayloadType.IsEnabled = bPayloadTypeAllowed;
@@ -724,19 +725,19 @@ namespace BarcodeGenerator
                 edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text, 178, 108, 74, 46)}";
             }
 
-            else if (selectedName == ClassBarcodes.cBarcode_CIRCULAR_QR_CODE)        // Model 2 - ECCLevel.Quartile
-            {
-                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
-                    3993.ToString("N0", CultureInfo.CurrentCulture), 2420.ToString("N0", CultureInfo.CurrentCulture),
-                    1663.ToString("N0", CultureInfo.CurrentCulture), 1024.ToString("N0", CultureInfo.CurrentCulture))}";
-            }
+            //else if (selectedName == ClassBarcodes.cBarcode_CIRCULAR_QR_CODE)        // Model 2 - ECCLevel.Quartile
+            //{
+            //    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
+            //        3993.ToString("N0", CultureInfo.CurrentCulture), 2420.ToString("N0", CultureInfo.CurrentCulture),
+            //        1663.ToString("N0", CultureInfo.CurrentCulture), 1024.ToString("N0", CultureInfo.CurrentCulture))}";
+            //}
 
-            else if (selectedName == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)    // Model 2 - ECCLevel.High
-            {
-                edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
-                    3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
-                    1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
-            }
+            //else if (selectedName == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)    // Model 2 - ECCLevel.High
+            //{
+            //    edtTextToCode.Placeholder = $"{CodeLang.MaximumCharacters_Text} {string.Format(CodeLang.MaximumCharactersNABK_Text,
+            //        3057.ToString("N0", CultureInfo.CurrentCulture), 1852.ToString("N0", CultureInfo.CurrentCulture),
+            //        1273.ToString("N0", CultureInfo.CurrentCulture), 784.ToString("N0", CultureInfo.CurrentCulture))}";
+            //}
 
             else
             {
@@ -864,24 +865,11 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
 
-                    // Save the barcode with caption to a PNG file
-                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
-                }
-
-                // Generate the Circular Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
-                else if (selectedName == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)
-                {
-                    // Generate the Art QR code using the ClassArtQRCode class, which uses the SkiaSharp.QrCode library
-                    ClassBarcodes.cQRCodeType = selectedName;
-
-                    ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
-                    imgQrCodeImage.Source = qrImage;
-
-                    // Save the barcode with caption to a PNG file
+                    // Add a caption and save the barcode to a PNG file
                     await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
 
-                    // Generate a circular QR code using the ClassQRCodeCircular class, which uses the SkiaSharp.QrCode library
-                    ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);
+                    // Add a circle around the QR code using the ClassBarcodeCircle class
+                    ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng);
 
                     // Set the image source to the saved file to display it in the Image control
                     await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
@@ -916,23 +904,11 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassQRCodes.GenerateQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
 
-                    // Save the barcode with caption to a PNG file
-                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
-                }
-
-                // Generate the Circular QR code using the SkiaSharp.QrCode library
-                else if (selectedName == ClassBarcodes.cBarcode_CIRCULAR_QR_CODE)
-                {
-                    ClassBarcodes.cQRCodeType = selectedName;
-
-                    ImageSource? qrImage = await ClassQRCodes.GenerateQrCodeAsync(cTextToCode);
-                    imgQrCodeImage.Source = qrImage;
-
-                    // Save the barcode with caption to a PNG file
+                    // Add a caption and save the barcode to a PNG file
                     await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
 
-                    // Generate a circular QR code using the ClassQRCodeCircular class, which uses the SkiaSharp.QrCode library
-                    ClassQRCodeCircular.GenerateCircularCodeFromFile(ClassBarcodes.cFileBarcodePng);
+                    // Add a circle around the QR code using the ClassBarcodeCircle class
+                    ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng);
 
                     // Set the image source to the saved file to display it in the Image control
                     await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);

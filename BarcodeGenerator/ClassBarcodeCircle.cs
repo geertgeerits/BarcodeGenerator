@@ -2,14 +2,20 @@
 
 namespace BarcodeGenerator
 {
-    internal class ClassQRCodeCircular
+    internal class ClassBarcodeCircle
     {
         /// <summary>
         /// Generates a circular QR code from an existing image file and saves it as a PNG in the cache directory.
         /// </summary>
         /// <param name="filePath">The path to the existing image file.</param>
-        public static void GenerateCircularCodeFromFile(string filePath)
+        public static void DrawOuterCircleFromFile(string filePath)
         {
+            // Check if the barcode with circle is enabled, otherwise return
+            if (!ClassBarcodes.bBarcodeWithCircle)
+            {
+                return;
+            }
+
             string outputPath = filePath;
 
             // Draw outer circle around the QR code image

@@ -108,6 +108,7 @@ namespace BarcodeGenerator
 
             // Set the barcode with caption variable to update the switch
             swtBarcodeWithCaption.IsToggled = ClassBarcodes.bBarcodeWithCaption;
+            swtBarcodeWithCircle.IsToggled = ClassBarcodes.bBarcodeWithCircle;
 
             // Set the text compression variable to update the switch
             swtCompressionEnabled.IsToggled = ClassBarcodes.bCompressionEnabled;
@@ -596,6 +597,16 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Switch barcode with circle toggled event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SwtBarcodeWithCircle_Toggled(object sender, ToggledEventArgs e)
+        {
+            ClassBarcodes.bBarcodeWithCircle = e.Value;
+        }
+
+        /// <summary>
         /// Switch text compression toggled event
         /// </summary>
         /// <param name="sender"></param>
@@ -738,6 +749,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeForegroundImage", ClassBarcodes.bQRCodeForegroundImage);
             Preferences.Default.Set("SettingQRCodeBackgroundImage", ClassBarcodes.bQRCodeBackgroundImage);
             Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
+            Preferences.Default.Set("SettingBarcodeWithCircle", ClassBarcodes.bBarcodeWithCircle);
             Preferences.Default.Set("SettingCompressionEnabled", ClassBarcodes.bCompressionEnabled);
             Preferences.Default.Set("SettingPayloadType", ClassPayloadTypes.cPayloadType);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
@@ -794,6 +806,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeForegroundImage");
                 Preferences.Default.Remove("SettingQRCodeBackgroundImage");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
+                Preferences.Default.Remove("SettingBarcodeWithCircle");
                 Preferences.Default.Remove("SettingCompressionEnabled");
                 Preferences.Default.Remove("SettingPayloadType");
                 Preferences.Default.Remove("SettingWiFiAuthentication");
