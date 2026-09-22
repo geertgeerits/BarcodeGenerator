@@ -70,12 +70,6 @@ namespace BarcodeGenerator
         /// <returns></returns>
         public static async Task AddBarcodeCaptionScreenAsync(BarcodeGeneratorView bgvBarcode, Image image, string caption, string barcodeType)
         {
-            // Check if the barcode with caption is enabled, otherwise return
-            if (!ClassBarcodes.bBarcodeWithCaption)
-            {
-                return;
-            }
-
             // Wait a short time to ensure the barcode is generated and displayed before saving it to a file
             await Task.Delay(400);
 
