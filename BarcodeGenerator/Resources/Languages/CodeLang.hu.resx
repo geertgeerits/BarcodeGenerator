@@ -1061,6 +1061,6 @@ A támogatott nyelvek: arab, bengáli, kínai (egyszerűsített), kínai (hagyom
 A körön belüli QR-kód méretének módosításához állítsa be a „csendes zónát” (quiet zone) a beállításokban.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Körbe foglalt vonalkód:</value>
+    <value>Körrel körülvéve:</value>
   </data>
 </root>

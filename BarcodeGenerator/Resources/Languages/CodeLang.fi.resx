@@ -1061,6 +1061,6 @@ Tuetut kielet ovat: arabia, bengali, kiina (yksinkertaistettu), kiina (perintein
 Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten suoja-aluetta (quiet zone).</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Viivakoodi ympyrässä:</value>
+    <value>Ympyrä sen ympärillä:</value>
   </data>
 </root>

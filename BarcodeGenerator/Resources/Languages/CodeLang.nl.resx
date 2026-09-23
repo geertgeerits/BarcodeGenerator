@@ -1061,6 +1061,6 @@ De ondersteunde talen zijn: Arabisch, Bengaals, Vereenvoudigd Chinees, Tradition
 Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de QR-code binnen de cirkel te wijzigen.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Barcode in cirkel:</value>
+    <value>Met een cirkel eromheen:</value>
   </data>
 </root>

@@ -305,32 +305,13 @@
                     Toggled="SwtBarcodeWithCaption_Toggled">
                 </Switch>
 
-                <!--This is an option to make a circle around the barcode. The circle is drawn around the barcode and the caption.-->
-                <Label
-                    Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="10"
-                    Grid.Column="0"
-                    VerticalTextAlignment="Start"
-                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
-                    Text="{Translate BarcodeWithCircle_Text}">
-                </Label>
-
-                <Switch
-                    x:Name="swtBarcodeWithCircle"
-                    x:FieldModifier="public"
-                    Grid.Row="10"
-                    Grid.Column="2"
-                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,8,0,0'}"
-                    Toggled="SwtBarcodeWithCircle_Toggled">
-                </Switch>
-
                 <!--Art QR Code settings are separated from the other settings with a border and a label to make it more clear
                 for users that these settings are related to Art QR Code and not to standard QR Code.
                 'ClassArtQRCodeSettings.xaml' is included here that is also used in 'PopupSettingsArtQRCode.xaml' -->
                 <Label
                     x:Name="lblArtQRCode"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="11"
+                    Grid.Row="10"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Center"
@@ -341,7 +322,7 @@
 
                 <local:ClassArtQRCodeSettings
                     x:Name="artQRCodeSettings"
-                    Grid.Row="12"
+                    Grid.Row="11"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalOptions="Start">
@@ -355,7 +336,7 @@
                 <Label
                     x:Name="lblQRCode"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="13"
+                    Grid.Row="12"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Center"
@@ -365,16 +346,16 @@
                 </Label>
                 
                 <Border
-                    Grid.Row="14"
+                    Grid.Row="13"
                     Grid.Column="0"
-                    Grid.RowSpan="9"
+                    Grid.RowSpan="10"
                     Grid.ColumnSpan="2"
                     Margin="{OnPlatform Default='2,0,2,0', iOS='5,0,5,0', WinUI='9,0,9,0'}">
                 </Border>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="14"
+                    Grid.Row="13"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,5,0,0', iOS='14,5,0,0', WinUI='16,5,0,0'}"
@@ -383,7 +364,7 @@
 
                 <Switch
                     x:Name="swtQRCodeSizeVariable"
-                    Grid.Row="14"
+                    Grid.Row="13"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0', WinUI='0,6,0,0'}"
                     Toggled="SwtQRCodeSizeVariable_Toggled">
@@ -391,7 +372,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="15"
+                    Grid.Row="14"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -400,7 +381,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="15"
+                    Grid.Row="14"
                     Grid.Column="1"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -418,32 +399,27 @@
                 </Border>
 
                 <Label
-                    x:Name="lblQRCodeSizeModulesHeight"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="16"
+                    Grid.Row="15"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
-                    Text="{Translate QRCodeSizeModulesHeight_Text}">
+                    Text="{Translate BarcodeWithCircle_Text}">
                 </Label>
 
-                <Stepper
-                    x:Name="stpQRCodeSizeModulesHeight"
-                    Grid.Row="16"
-                    Grid.Column="1"
-                    HorizontalOptions="Start"
-                    Margin="{OnPlatform Default='0,10,0,0', iOS='0,12,0,0', WinUI='0,0,0,0'}"
-                    Background="Transparent"
-                    Minimum="7"
-                    Maximum="17"
-                    Increment="2"
-                    ValueChanged="StpQRCodeSizeModulesHeight_ValueChanged">
-                </Stepper>
+                <Switch
+                    x:Name="swtBarcodeWithCircle"
+                    x:FieldModifier="public"
+                    Grid.Row="15"
+                    Grid.Column="2"
+                    Margin="{OnPlatform Default='0,0,0,0', iOS='0,8,0,0'}"
+                    Toggled="SwtBarcodeWithCircle_Toggled">
+                </Switch>
 
                 <Label
                     x:Name="lblQRCodeQuietZoneSize"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="17"
+                    Grid.Row="16"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -452,7 +428,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="17"
+                    Grid.Row="16"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -472,7 +448,7 @@
                 <Label
                     x:Name="lblQRCodeQuietZoneSize2"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="18"
+                    Grid.Row="17"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -481,7 +457,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="18"
+                    Grid.Row="17"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -497,6 +473,29 @@
                         ValueChanged="OnSliderQRCodeQuietZoneSize2_ValueChanged">
                     </Slider>
                 </Border>
+
+                <Label
+                    x:Name="lblQRCodeSizeModulesHeight"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="18"
+                    Grid.Column="0"
+                    VerticalTextAlignment="Start"
+                    Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
+                    Text="{Translate QRCodeSizeModulesHeight_Text}">
+                </Label>
+
+                <Stepper
+                    x:Name="stpQRCodeSizeModulesHeight"
+                    Grid.Row="18"
+                    Grid.Column="1"
+                    HorizontalOptions="Start"
+                    Margin="{OnPlatform Default='0,10,0,0', iOS='0,12,0,0', WinUI='0,0,0,0'}"
+                    Background="Transparent"
+                    Minimum="7"
+                    Maximum="17"
+                    Increment="2"
+                    ValueChanged="StpQRCodeSizeModulesHeight_ValueChanged">
+                </Stepper>
 
                 <Label
                     x:Name="lblQRCodeImageSize"

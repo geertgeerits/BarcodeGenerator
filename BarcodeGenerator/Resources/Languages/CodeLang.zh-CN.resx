@@ -1061,6 +1061,6 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
 若要调整圆圈内二维码的大小，请在“设置”中调整静区（quiet zone）参数。</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>圆形条形码：</value>
+    <value>周围画了一个圆圈：</value>
   </data>
 </root>

@@ -1058,6 +1058,6 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
 घेरे के अंदर QR कोड का साइज़ बदलने के लिए, सेटिंग्स में 'क्वाइट ज़ोन' को एडजस्ट करें।</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>घेरे में बारकोड:</value>
+    <value>इसके चारों ओर एक घेरे के साथ:</value>
   </data>
 </root>

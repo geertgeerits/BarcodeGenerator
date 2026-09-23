@@ -1061,6 +1061,6 @@ Podporované jazyky jsou: arabština, bengálština, zjednodušená čínština,
 Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tichou zónu (quiet zone).</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Čárový kód v kruhu:</value>
+    <value>S kroužkem kolem:</value>
   </data>
 </root>

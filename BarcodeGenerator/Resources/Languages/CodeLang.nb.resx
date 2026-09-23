@@ -1061,6 +1061,6 @@ Støttede språk er: arabisk, bengali, forenklet kinesisk, tradisjonell kinesisk
 For å endre størrelsen på QR-koden inne i sirkelen, justerer du «quiet zone» (sikkerhetssonen) i innstillingene.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Strekkode i sirkel:</value>
+    <value>Med en sirkel rundt:</value>
   </data>
 </root>

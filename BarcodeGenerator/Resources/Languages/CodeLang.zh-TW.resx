@@ -1062,6 +1062,6 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
 若要變更圓圈內二維碼的大小，請在「設定」中調整「靜默區」大小。</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>圓形條碼：</value>
+    <value>用圓圈圈起來：</value>
   </data>
 </root>

@@ -1062,6 +1062,6 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
 원 안의 QR 코드 크기를 변경하려면 설정에서 '콰이어트 존(quiet zone)'을 조절하세요.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>원 안의 바코드:</value>
+    <value>주위에 원을 두르고:</value>
   </data>
 </root>

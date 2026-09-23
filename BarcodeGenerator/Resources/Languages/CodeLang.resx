@@ -1061,6 +1061,6 @@ The supporting languages are: Arabic, Bengali, Chinese simplified, Chinese tradi
 To change the size of the QR code within the circle, adjust the quiet zone in the settings.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Barcode in circle:</value>
+    <value>With a circle around it:</value>
   </data>
 </root>

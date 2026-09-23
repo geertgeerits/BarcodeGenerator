@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-22 (YYYY-MM-DD)
+ * Date ........: 2026-09-23 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -866,24 +866,20 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassArtQRCode.GenerateArtQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
 
-                    if (qrImage is null)
+                    if (qrImage is not null)
                     {
-                        activityIndicator.IsRunning = false;
-                        activityIndicator.IsVisible = false;
-                        return;
+                        // Add a caption and save the barcode to a PNG file
+                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
+
+                        // Add a circle around the QR code using the ClassBarcodeCircle class
+                        if (selectedName != ClassBarcodes.cBarcode_ART_RMQR_CODE)
+                        {
+                            ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng);
+                        }
+
+                        // Set the image source to the saved file to display it in the Image control
+                        await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
                     }
-
-                    // Add a caption and save the barcode to a PNG file
-                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
-
-                    // Add a circle around the QR code using the ClassBarcodeCircle class
-                    if (selectedName != ClassBarcodes.cBarcode_ART_RMQR_CODE)
-                    {
-                        ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng);
-                    }
-
-                    // Set the image source to the saved file to display it in the Image control
-                    await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
                 }
 
                 // Generate the QR code with an image using the SkiaSharp.QrCode library
@@ -894,15 +890,11 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassQRCodeImage.GenerateQrCodeImageAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
 
-                    if (qrImage is null)
+                    if (qrImage is not null)
                     {
-                        activityIndicator.IsRunning = false;
-                        activityIndicator.IsVisible = false;
-                        return;
+                        // Save the barcode with caption to a PNG file
+                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                     }
-
-                    // Save the barcode with caption to a PNG file
-                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                 }
 
                 // Generate the QR code using the SkiaSharp.QrCode library
@@ -913,21 +905,17 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassQRCodes.GenerateQrCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
 
-                    if (qrImage is null)
+                    if (qrImage is not null)
                     {
-                        activityIndicator.IsRunning = false;
-                        activityIndicator.IsVisible = false;
-                        return;
+                        // Add a caption and save the barcode to a PNG file
+                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
+
+                        // Add a circle around the QR code using the ClassBarcodeCircle class
+                        ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng);
+
+                        // Set the image source to the saved file to display it in the Image control
+                        await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
                     }
-
-                    // Add a caption and save the barcode to a PNG file
-                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
-
-                    // Add a circle around the QR code using the ClassBarcodeCircle class
-                    ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng);
-
-                    // Set the image source to the saved file to display it in the Image control
-                    await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
                 }
 
                 // Generate the rMQR code using the SkiaSharp.QrCode library
@@ -938,15 +926,11 @@ namespace BarcodeGenerator
                     ImageSource? qrImage = await ClassQRCodes.GenerateRMQRCodeAsync(cTextToCode);
                     imgQrCodeImage.Source = qrImage;
 
-                    if (qrImage is null)
+                    if (qrImage is not null)
                     {
-                        activityIndicator.IsRunning = false;
-                        activityIndicator.IsVisible = false;
-                        return;
+                        // Save the barcode with caption to a PNG file
+                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                     }
-
-                    // Save the barcode with caption to a PNG file
-                    await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
                 }
 
                 // Generate the other barcodes using the BarcodeView control from the ZXing.Net.MAUI library

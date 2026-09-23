@@ -673,7 +673,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barcode in circle:.
+        ///   Looks up a localized string similar to With a circle around it:.
         /// </summary>
         internal static string BarcodeWithCircle_Text {
             get {

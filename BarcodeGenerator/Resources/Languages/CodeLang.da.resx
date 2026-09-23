@@ -1061,6 +1061,6 @@ De understøttede sprog er: arabisk, bengali, forenklet kinesisk, traditionelt k
 For at ændre størrelsen på QR-koden inde i cirklen skal du justere frizonen i indstillingerne.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Stregkode i cirkel:</value>
+    <value>Med en cirkel omkring:</value>
   </data>
 </root>

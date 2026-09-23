@@ -1061,6 +1061,6 @@
 Για να αλλάξετε το μέγεθος του κωδικού QR μέσα στον κύκλο, προσαρμόστε την «ήσυχη ζώνη» (quiet zone) στις ρυθμίσεις.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Barcode σε κύκλο:</value>
+    <value>Με έναν κύκλο γύρω του:</value>
   </data>
 </root>

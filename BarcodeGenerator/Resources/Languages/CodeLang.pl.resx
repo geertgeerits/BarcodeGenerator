@@ -1061,6 +1061,6 @@ Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradyc
 Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawieniach.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Kod kreskowy w okręgu:</value>
+    <value>Z okręgiem wokół niego:</value>
   </data>
 </root>

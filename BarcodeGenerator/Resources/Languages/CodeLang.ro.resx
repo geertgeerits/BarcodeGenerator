@@ -1061,6 +1061,6 @@ Limbile acceptate sunt: ​​arabă, bengaleză, chineză simplificată, chinez
 Pentru a modifica dimensiunea codului QR din interiorul cercului, ajustează zona de liniște (quiet zone) din setări.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Cod de bare într-un cerc:</value>
+    <value>Cu un cerc în jurul său:</value>
   </data>
 </root>
