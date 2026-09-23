@@ -282,9 +282,6 @@
 	<ItemGroup>
 	  <None Remove="KeyboardAwareBehavior.cs" />
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Classes\" />
-	</ItemGroup>
 	
 	<!--<ItemGroup>
 	  <Folder Include="Platforms\Android\Resources\xml\" />
