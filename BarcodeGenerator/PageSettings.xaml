@@ -305,29 +305,6 @@
                     Toggled="SwtBarcodeWithCaption_Toggled">
                 </Switch>
 
-                <!--Art QR Code settings are separated from the other settings with a border and a label to make it more clear
-                for users that these settings are related to Art QR Code and not to standard QR Code.
-                'ClassArtQRCodeSettings.xaml' is included here that is also used in 'PopupSettingsArtQRCode.xaml' -->
-                <Label
-                    x:Name="lblArtQRCode"
-                    Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="10"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    HorizontalOptions="Center"
-                    Padding="0,10,0,0"
-                    TextDecorations="Underline"
-                    Text="{Translate Barcode_ART_QR_CODE_Text}">
-                </Label>
-
-                <local:ClassArtQRCodeSettings
-                    x:Name="artQRCodeSettings"
-                    Grid.Row="11"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    VerticalOptions="Start">
-                </local:ClassArtQRCodeSettings>
-
                 <!--For all QR codes, the size can be set by user. Therefore, there is a switch to enable or disable
                 the option to set the size and an entry where users can input the size in pixels.
                 For Art QR Code, the size is determined by the slider which sets the size of individual modules
@@ -336,7 +313,7 @@
                 <Label
                     x:Name="lblQRCode"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="12"
+                    Grid.Row="10"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Center"
@@ -346,7 +323,7 @@
                 </Label>
                 
                 <Border
-                    Grid.Row="13"
+                    Grid.Row="11"
                     Grid.Column="0"
                     Grid.RowSpan="10"
                     Grid.ColumnSpan="2"
@@ -355,7 +332,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="13"
+                    Grid.Row="11"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,5,0,0', iOS='14,5,0,0', WinUI='16,5,0,0'}"
@@ -364,7 +341,7 @@
 
                 <Switch
                     x:Name="swtQRCodeSizeVariable"
-                    Grid.Row="13"
+                    Grid.Row="11"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0', WinUI='0,6,0,0'}"
                     Toggled="SwtQRCodeSizeVariable_Toggled">
@@ -372,7 +349,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="14"
+                    Grid.Row="12"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -381,7 +358,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="14"
+                    Grid.Row="12"
                     Grid.Column="1"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -400,7 +377,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="15"
+                    Grid.Row="13"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -410,7 +387,7 @@
                 <Switch
                     x:Name="swtBarcodeWithCircle"
                     x:FieldModifier="public"
-                    Grid.Row="15"
+                    Grid.Row="13"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,8,0,0'}"
                     Toggled="SwtBarcodeWithCircle_Toggled">
@@ -419,7 +396,7 @@
                 <Label
                     x:Name="lblQRCodeQuietZoneSize"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="16"
+                    Grid.Row="14"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -428,7 +405,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="16"
+                    Grid.Row="14"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -448,7 +425,7 @@
                 <Label
                     x:Name="lblQRCodeQuietZoneSize2"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="17"
+                    Grid.Row="15"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -457,7 +434,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="17"
+                    Grid.Row="15"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -477,7 +454,7 @@
                 <Label
                     x:Name="lblQRCodeSizeModulesHeight"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="18"
+                    Grid.Row="16"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -486,7 +463,7 @@
 
                 <Stepper
                     x:Name="stpQRCodeSizeModulesHeight"
-                    Grid.Row="18"
+                    Grid.Row="16"
                     Grid.Column="1"
                     HorizontalOptions="Start"
                     Margin="{OnPlatform Default='0,10,0,0', iOS='0,12,0,0', WinUI='0,0,0,0'}"
@@ -500,7 +477,7 @@
                 <Label
                     x:Name="lblQRCodeImageSize"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="19"
+                    Grid.Row="17"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -509,7 +486,7 @@
                 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="19"
+                    Grid.Row="17"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
                 
@@ -529,7 +506,7 @@
                 <Label
                     x:Name="lblQRCodeImageSizeBorder"
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="20"
+                    Grid.Row="18"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -538,7 +515,7 @@
 
                 <Border
                     Style="{StaticResource borderStyleGroup}"
-                    Grid.Row="20"
+                    Grid.Row="18"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,16,0', WinUI='0,0,16,0'}">
 
@@ -557,7 +534,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="21"
+                    Grid.Row="19"
                     Grid.Column="0"
                     VerticalTextAlignment="Start"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
@@ -566,7 +543,7 @@
 
                 <Switch
                     x:Name="swtCompressionEnabled"
-                    Grid.Row="21"
+                    Grid.Row="19"
                     Grid.Column="2"
                     Margin="{OnPlatform Default='0,0,0,0', iOS='0,0,0,0', WinUI='0,0,0,0'}"
                     Toggled="SwtCompressionEnabled_Toggled">
@@ -574,7 +551,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="22"
+                    Grid.Row="20"
                     Grid.Column="0"
                     Margin="{OnPlatform Default='10,0,0,0', iOS='14,0,0,0', WinUI='16,0,0,0'}"
                     Text="{Translate PayloadType_Text}">
@@ -582,7 +559,7 @@
                 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="22"
+                    Grid.Row="20"
                     Grid.Column="1"
                     Margin="{OnPlatform Default='0,0,11,10', iOS='0,0,16,10', WinUI='0,0,16,10'}">
 
@@ -592,6 +569,29 @@
                         SelectedIndexChanged="OnPickerPayloadTypeChanged">
                     </Picker>
                 </Border>
+
+                <!--Art QR Code settings are separated from the other settings with a border and a label to make it more clear
+                for users that these settings are related to Art QR Code and not to standard QR Code.
+                'ClassArtQRCodeSettings.xaml' is included here that is also used in 'PopupSettingsArtQRCode.xaml' -->
+                <Label
+                    x:Name="lblArtQRCode"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="21"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center"
+                    Padding="0,10,0,0"
+                    TextDecorations="Underline"
+                    Text="{Translate Barcode_ART_QR_CODE_Text}">
+                </Label>
+
+                <local:ClassArtQRCodeSettings
+                    x:Name="artQRCodeSettings"
+                    Grid.Row="22"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    VerticalOptions="Start">
+                </local:ClassArtQRCodeSettings>
 
             </Grid>
         </ScrollView>
