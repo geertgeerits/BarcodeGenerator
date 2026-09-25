@@ -2343,6 +2343,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quiet zone QR Code in circle: {0} pixels.
+        /// </summary>
+        internal static string QRCodeQuietZoneSizeCircle_Text {
+            get {
+                return ResourceManager.GetString("QRCodeQuietZoneSizeCircle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recommended image size.
         /// </summary>
         internal static string QRCodeRecommendedImageSize_Text {

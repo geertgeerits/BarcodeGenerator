@@ -28,6 +28,14 @@ namespace BarcodeGenerator
                 return null;
             }
 
+            // Temporarily store the original quiet zone size and set it to 0 to avoid extra padding
+            int nQRCodeQuietZoneSizeTemp = 0;
+            if (ClassBarcodes.bBarcodeWithCircle)
+            {
+                nQRCodeQuietZoneSizeTemp = ClassBarcodes.nQRCodeQuietZoneSize;
+                ClassBarcodes.nQRCodeQuietZoneSize = 0; // Temporarily set to 0 to avoid extra padding
+            }
+
             // Show a modal popup with information about the Art QR code features before opening the file pickers
             Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
@@ -442,6 +450,12 @@ namespace BarcodeGenerator
             {
                 Debug.WriteLine($"Error saving PNG file: {ex.Message}");
                 return null;
+            }
+            
+            // Restore the original quiet zone size after drawing the circle
+            if (ClassBarcodes.bBarcodeWithCircle)
+            {
+                ClassBarcodes.nQRCodeQuietZoneSize = nQRCodeQuietZoneSizeTemp;
             }
 
             // Return ImageSource for the generated PNG file

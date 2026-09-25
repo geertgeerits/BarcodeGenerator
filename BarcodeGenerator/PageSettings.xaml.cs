@@ -114,6 +114,7 @@ namespace BarcodeGenerator
             swtCompressionEnabled.IsToggled = ClassBarcodes.bCompressionEnabled;
 
             // Set the QR code quiet zone size, image size and image size border to update the sliders
+            sldQRCodeQuietZoneSizeCircle.Value = ClassBarcodes.nQRCodeQuietZoneSizeCircle;
             sldQRCodeQuietZoneSize.Value = ClassBarcodes.nQRCodeQuietZoneSize;
             sldQRCodeQuietZoneSize2.Value = ClassBarcodes.nQRCodeQuietZoneSize2;
             sldQRCodeImageSize.Value = ClassBarcodes.nQRCodeImageSizePercent;
@@ -534,6 +535,19 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Handles the ValueChanged event for the QR code quiet zone size circle slider, updating the quiet zone size for circular QR codes
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
+        /// <param name="e">An object that contains the event data, including the new value of the slider representing the desired QR
+        /// code quiet zone size for circular QR codes.</param>
+        private void OnSliderQRCodeQuietZoneSizeCircle_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            ClassBarcodes.nQRCodeQuietZoneSizeCircle = (int)Math.Round(e.NewValue, 0);
+            sldQRCodeQuietZoneSizeCircle.Value = ClassBarcodes.nQRCodeQuietZoneSizeCircle;
+            lblQRCodeQuietZoneSizeCircle.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSizeCircle_Text, ClassBarcodes.nQRCodeQuietZoneSizeCircle);
+        }
+
+        /// <summary>
         /// Handles the ValueChanged event for the QR code quiet zone size slider, updating the quiet zone size
         /// </summary>
         /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
@@ -644,6 +658,7 @@ namespace BarcodeGenerator
             // Clear the existing formatted text to avoid duplication
             lblFontSize.FormattedText = null;
             lblQRCodeSizeModulesHeight.FormattedText = null;
+            lblQRCodeQuietZoneSizeCircle.FormattedText = null;
             lblQRCodeQuietZoneSize.FormattedText = null;
             lblQRCodeQuietZoneSize2.FormattedText = null;
             lblQRCodeImageSize.FormattedText = null;
@@ -652,6 +667,7 @@ namespace BarcodeGenerator
             // Format the text with the current values and colors based on the theme and language
             lblFontSize.FormattedText = FormatWithColoredNumber(CodeLang.FontSize_Text, Globals.nFontSize, "F0");
             lblQRCodeSizeModulesHeight.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeSizeModulesHeight_Text, ClassBarcodes.nQRCodeSizeModulesHeight);
+            lblQRCodeQuietZoneSizeCircle.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSizeCircle_Text, ClassBarcodes.nQRCodeQuietZoneSizeCircle);
             lblQRCodeQuietZoneSize.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
             lblQRCodeQuietZoneSize2.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSize2_Text, ClassBarcodes.nQRCodeQuietZoneSize2);
             lblQRCodeImageSize.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeImageSize_Text, ClassBarcodes.nQRCodeImageSizePercent, "F1");
@@ -734,6 +750,7 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeImageSizeBorder", ClassBarcodes.nQRCodeImageSizeBorder);
             Preferences.Default.Set("SettingQRCodeFinderPatternShape", ClassBarcodes.cQRCodeFinderPatternShape);
             Preferences.Default.Set("SettingQRCodeModuleShape", ClassBarcodes.cQRCodeModuleShape);
+            Preferences.Default.Set("SettingQRCodeQuietZoneSizeCircle", ClassBarcodes.nQRCodeQuietZoneSizeCircle);
             Preferences.Default.Set("SettingQRCodeQuietZoneSize", ClassBarcodes.nQRCodeQuietZoneSize);
             Preferences.Default.Set("SettingQRCodeQuietZoneSize2", ClassBarcodes.nQRCodeQuietZoneSize2);
             Preferences.Default.Set("SettingQRCodeModuleSizePercent", ClassBarcodes.nQRCodeModuleSizePercent);
@@ -791,6 +808,7 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeImageSizeBorder");
                 Preferences.Default.Remove("SettingQRCodeFinderPatternShape");
                 Preferences.Default.Remove("SettingQRCodeModuleShape");
+                Preferences.Default.Remove("SettingQRCodeQuietZoneSizeCircle");
                 Preferences.Default.Remove("SettingQRCodeQuietZoneSize");
                 Preferences.Default.Remove("SettingQRCodeQuietZoneSize2");
                 Preferences.Default.Remove("SettingQRCodeModuleSizePercent");

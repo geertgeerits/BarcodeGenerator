@@ -49,7 +49,7 @@ namespace BarcodeGenerator
         /// <param name="strokeColor"></param>
         /// <param name="strokeWidth"></param>
         /// <returns></returns>
-        private static SKBitmap DrawOuterCircleAroundBitmapWithFill(SKBitmap source, SKColor fillColor, SKColor strokeColor, float strokeWidth)
+        private static SKBitmap DrawOuterCircleAroundBitmapWithFillOLD(SKBitmap source, SKColor fillColor, SKColor strokeColor, float strokeWidth)
         {
             try
             {
@@ -100,6 +100,77 @@ namespace BarcodeGenerator
                 }
 
                 return output;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in ClassQRCodeCircular.DrawOuterCircleAroundBitmapWithFill: {ex.Message}");
+                return null!;
+            }
+        }
+
+        private static SKBitmap DrawOuterCircleAroundBitmapWithFill(SKBitmap source, SKColor fillColor, SKColor strokeColor, float strokeWidth)
+        {
+            try
+            {
+                int originalWidth = source.Width;
+                int originalHeight = source.Height;
+
+                // 1. Define the circle radius and diameter
+                float radius = ((float)Math.Sqrt((originalWidth * originalWidth) + (originalHeight * originalHeight)) / 2f) + ClassBarcodes.nQRCodeQuietZoneSizeCircle;
+                int circleDiameter = (int)Math.Ceiling(radius * 2f);
+
+                // 2. Setup the canvas matching the circle size
+                var info = new SKImageInfo(circleDiameter, circleDiameter);
+                using (var surface = SKSurface.Create(info))
+                {
+                    var canvas = surface.Canvas;
+                    canvas.Clear(SKColors.Transparent); // Keep background outside the circle clear
+
+                    // 3. Create the circular clip path
+                    using (var clipPath = new SKPath())
+                    {
+                        clipPath.AddCircle(radius, radius, radius);
+                        canvas.ClipPath(clipPath, antialias: true);
+                    }
+
+                    // 4. Fill the circle background color
+                    using (var paint = new SKPaint { Color = fillColor, IsAntialias = true })
+                    {
+                        canvas.DrawCircle(radius, radius, radius, paint);
+                    }
+
+                    // 5. Calculate source and destination rectangles to center the image WITHOUT scaling
+                    // We find the center points of both the canvas and the image
+                    float canvasCenter = radius;
+                    float imageCenterWidth = originalWidth / 2f;
+                    float imageCenterHeight = originalHeight / 2f;
+
+                    // Define the bounding box on the canvas where the image will sit
+                    float destLeft = canvasCenter - imageCenterWidth;
+                    float destTop = canvasCenter - imageCenterHeight;
+
+                    SKRect destRect = new SKRect(
+                        destLeft,
+                        destTop,
+                        destLeft + originalWidth,
+                        destTop + originalHeight
+                    );
+
+                    // Grab the full original image dimensions 
+                    SKRect sourceRect = new SKRect(0, 0, originalWidth, originalHeight);
+
+                    // 6. Draw the bitmap. Because sourceRect and destRect dimensions match perfectly, 
+                    // SkiaSharp will draw the pixels 1:1 with zero scaling.
+                    canvas.DrawBitmap(source, sourceRect, destRect);
+
+                    SKBitmap output = new SKBitmap(circleDiameter, circleDiameter);
+                    using (var snapshot = surface.Snapshot())
+                    {
+                        snapshot.ReadPixels(output.Info, output.GetPixels(), output.RowBytes, 0, 0);
+                    }
+
+                    return output;
+                }
             }
             catch (Exception ex)
             {
