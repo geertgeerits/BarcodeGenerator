@@ -1064,6 +1064,6 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
     <value>With a circle around it:</value>
   </data>
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
-    <value>Quiet zone QR Code in circle: {0} pixels</value>
+    <value>Quiet zone QR Code in circle: {0} modules</value>
   </data>
 </root>

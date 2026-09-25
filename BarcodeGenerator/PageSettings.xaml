@@ -417,7 +417,7 @@
                         ThumbColor="YellowGreen"
                         MinimumTrackColor="YellowGreen"
                         Minimum="0"
-                        Maximum="100"
+                        Maximum="10"
                         ValueChanged="OnSliderQRCodeQuietZoneSizeCircle_ValueChanged">
                     </Slider>
                 </Border>

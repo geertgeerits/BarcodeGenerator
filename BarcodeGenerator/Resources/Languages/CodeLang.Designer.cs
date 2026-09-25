@@ -2343,7 +2343,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quiet zone QR Code in circle: {0} pixels.
+        ///   Looks up a localized string similar to Quiet zone QR Code in circle: {0} modules.
         /// </summary>
         internal static string QRCodeQuietZoneSizeCircle_Text {
             get {

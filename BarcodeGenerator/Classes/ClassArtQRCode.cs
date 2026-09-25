@@ -28,14 +28,6 @@ namespace BarcodeGenerator
                 return null;
             }
 
-            // Temporarily store the original quiet zone size and set it to 0 to avoid extra padding
-            int nQRCodeQuietZoneSizeTemp = 0;
-            if (ClassBarcodes.bBarcodeWithCircle)
-            {
-                nQRCodeQuietZoneSizeTemp = ClassBarcodes.nQRCodeQuietZoneSize;
-                ClassBarcodes.nQRCodeQuietZoneSize = 0; // Temporarily set to 0 to avoid extra padding
-            }
-
             // Show a modal popup with information about the Art QR code features before opening the file pickers
             Page? currentPage = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0]?.Page : null;
             if (currentPage != null)
@@ -183,8 +175,7 @@ namespace BarcodeGenerator
                     .WithColors(codeColor: SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode),
                                 backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
-                    .WithGradient(gradient)
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2);
+                    .WithGradient(gradient);
 
                 // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
                 if (!ClassBarcodes.bQRCodeSizeVariable)
@@ -199,6 +190,16 @@ namespace BarcodeGenerator
                     "Circle" => microQrData.WithModuleShape(CircleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
                     _ => microQrData.WithModuleShape(RectangleModuleShape.Default, sizePercent: ClassBarcodes.nQRCodeModuleSizePercent / 100.0f),
                 };
+
+                // Apply quiet zone size based on whether the QR code is drawn with a circle or not
+                if (ClassBarcodes.bBarcodeWithCircle)
+                {
+                    microQrData = microQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSizeCircle);
+                }
+                else
+                {
+                    microQrData = microQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
+                };
             }
 
             // Create a standard QR code with custom styling
@@ -210,7 +211,6 @@ namespace BarcodeGenerator
                                 backgroundColor: SKColor.Parse(ClassBarcodes.cCodeColorBgArtQRCode),
                                 clearColor: SKColors.Transparent)
                     .WithGradient(gradient)
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize)
                     .WithIcon(icon);
 
                 // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
@@ -233,6 +233,16 @@ namespace BarcodeGenerator
                     "Rounded" => standardQrData.WithFinderPatternShape(RoundedRectangleFinderPatternShape.Default),
                     "Circle" => standardQrData.WithFinderPatternShape(CircleFinderPatternShape.Default),
                     _ => standardQrData.WithFinderPatternShape(RectangleFinderPatternShape.Default),
+                };
+
+                // Apply quiet zone size based on whether the QR code is drawn with a circle or not
+                if (ClassBarcodes.bBarcodeWithCircle)
+                {
+                    standardQrData = standardQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSizeCircle);
+                }
+                else
+                {
+                    standardQrData = standardQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
                 };
 
                 // Apply a version if the user has selected a specific version (to avoid overriding the variable version setting)
@@ -452,12 +462,6 @@ namespace BarcodeGenerator
                 return null;
             }
             
-            // Restore the original quiet zone size after drawing the circle
-            if (ClassBarcodes.bBarcodeWithCircle)
-            {
-                ClassBarcodes.nQRCodeQuietZoneSize = nQRCodeQuietZoneSizeTemp;
-            }
-
             // Return ImageSource for the generated PNG file
             return ImageSource.FromStream(() => new MemoryStream(pngBytes, writable: false));
         }

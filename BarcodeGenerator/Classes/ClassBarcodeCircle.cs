@@ -49,7 +49,7 @@ namespace BarcodeGenerator
         /// <param name="strokeColor"></param>
         /// <param name="strokeWidth"></param>
         /// <returns></returns>
-        private static SKBitmap DrawOuterCircleAroundBitmapWithFillOLD(SKBitmap source, SKColor fillColor, SKColor strokeColor, float strokeWidth)
+        private static SKBitmap DrawOuterCircleAroundBitmapWithFill(SKBitmap source, SKColor fillColor, SKColor strokeColor, float strokeWidth)
         {
             try
             {
@@ -108,7 +108,16 @@ namespace BarcodeGenerator
             }
         }
 
-        private static SKBitmap DrawOuterCircleAroundBitmapWithFill(SKBitmap source, SKColor fillColor, SKColor strokeColor, float strokeWidth)
+        /// <summary>
+        /// Draws an outer circle around the given bitmap with specified fill and stroke colors, ensuring the image is centered without scaling.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="fillColor"></param>
+        /// <param name="strokeColor"></param>
+        /// <param name="strokeWidth"></param>
+        /// <returns></returns>
+        [Obsolete]
+        private static SKBitmap DrawOuterCircleAroundBitmapWithFill_B(SKBitmap source, SKColor fillColor, SKColor strokeColor, float strokeWidth)
         {
             try
             {
