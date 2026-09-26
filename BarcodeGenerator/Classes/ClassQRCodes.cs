@@ -98,7 +98,7 @@ namespace BarcodeGenerator
                 // Apply quiet zone size based on whether the QR code is drawn with a circle or not
                 QrData = ClassBarcodes.bBarcodeWithCircle
                     ? QrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSizeCircle)
-                    : QrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
+                    : QrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2);
 
                 // Generate the QR code as a PNG byte array and SVG string
                 byte[] pngBytes = QrData.ToByteArray();
