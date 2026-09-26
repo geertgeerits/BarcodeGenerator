@@ -194,7 +194,7 @@ namespace BarcodeGenerator
                 // Apply quiet zone size based on whether the QR code is drawn with a circle or not
                 microQrData = ClassBarcodes.bBarcodeWithCircle
                     ? microQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSizeCircle)
-                    : microQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize); ;
+                    : microQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2); ;
             }
 
             // Create a standard QR code with custom styling
