@@ -8,7 +8,9 @@ namespace BarcodeGenerator
         /// Add a circle to a QR code from an existing image file and saves it as a PNG in the cache directory.
         /// </summary>
         /// <param name="filePath">The path to the existing image file.</param>
-        public static void DrawOuterCircleFromFile(string filePath)
+        /// <param name="cColorForeground">The foreground color for the circle.</param>
+        /// <param name="cColorBackground">The background color for the circle.</param>
+        public static void DrawOuterCircleFromFile(string filePath, string cColorForeground, string cColorBackground)
         {
             // Check if the barcode with circle is enabled, otherwise return
             if (!ClassBarcodes.bBarcodeWithCircle)
@@ -19,7 +21,7 @@ namespace BarcodeGenerator
             string outputPath = filePath;
 
             // Draw outer circle around the QR code image
-            using SKBitmap finalCircular = DrawOuterCircle(SKBitmap.Decode(filePath));
+            using SKBitmap finalCircular = DrawOuterCircle(SKBitmap.Decode(filePath), cColorForeground, cColorBackground);
 
             // Encode and save PNG file
             using SKImage image = SKImage.FromBitmap(finalCircular);
@@ -32,11 +34,12 @@ namespace BarcodeGenerator
         /// Draws an outer circle around the given bitmap with specified fill and stroke colors.
         /// </summary>
         /// <param name="source"></param>
+        /// <param name="cColorBackground"></param>
         /// <returns></returns>
-        private static SKBitmap DrawOuterCircle(SKBitmap source)
+        private static SKBitmap DrawOuterCircle(SKBitmap source, string cColorForeground, string cColorBackground)
         {
-            SKColor fill = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorBgArtQRCode, SKColors.White);
-            SKColor stroke = ClassColors.TryParseSkColor(ClassBarcodes.cCodeColorFgArtQRCode, SKColors.Black);
+            SKColor fill = ClassColors.TryParseSkColor(cColorBackground, SKColors.White);
+            SKColor stroke = ClassColors.TryParseSkColor(cColorForeground, SKColors.Black);
 
             return DrawOuterCircleAroundBitmapWithFill(source, fill, stroke, 2);
         }

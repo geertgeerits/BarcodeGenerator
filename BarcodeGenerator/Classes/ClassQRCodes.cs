@@ -33,14 +33,18 @@ namespace BarcodeGenerator
                 // Generate the QR code
                 QRCodeImageBuilder QrData = new QRCodeImageBuilder(text)
                     .WithErrorCorrection(ECCLevel.M)
-                    .WithColors(codeColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
+                    .WithColors(codeColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent);
 
                 // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
                 if (!ClassBarcodes.bQRCodeSizeVariable)
                 {
                     QrData = QrData.WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels);
                 }
+
+                // Apply quiet zone size based on whether the QR code is drawn with a circle or not
+                QrData = ClassBarcodes.bBarcodeWithCircle
+                    ? QrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSizeCircle)
+                    : QrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
 
                 // Generate the QR code as a PNG byte array and SVG string
                 byte[] pngBytes = QrData.ToByteArray();
@@ -83,14 +87,18 @@ namespace BarcodeGenerator
                 // Generate the Micro QR code
                 MicroQRCodeImageBuilder QrData = new MicroQRCodeImageBuilder(text)
                     .WithErrorCorrection(MicroQREccLevel.M)
-                    .WithColors(codeColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent)
-                    .WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize2);
+                    .WithColors(codeColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorFg), backgroundColor: ClassColors.SkColorFromHex(ClassBarcodes.cCodeColorBg), clearColor: SKColors.Transparent);
 
                 // Only apply size if the user has not selected a variable size (to avoid overriding the variable size setting)
                 if (!ClassBarcodes.bQRCodeSizeVariable)
                 {
                     QrData = QrData.WithSize(ClassBarcodes.nQRCodeSizePixels, ClassBarcodes.nQRCodeSizePixels);
                 }
+
+                // Apply quiet zone size based on whether the QR code is drawn with a circle or not
+                QrData = ClassBarcodes.bBarcodeWithCircle
+                    ? QrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSizeCircle)
+                    : QrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
 
                 // Generate the QR code as a PNG byte array and SVG string
                 byte[] pngBytes = QrData.ToByteArray();

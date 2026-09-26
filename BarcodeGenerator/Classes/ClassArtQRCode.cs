@@ -192,14 +192,9 @@ namespace BarcodeGenerator
                 };
 
                 // Apply quiet zone size based on whether the QR code is drawn with a circle or not
-                if (ClassBarcodes.bBarcodeWithCircle)
-                {
-                    microQrData = microQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSizeCircle);
-                }
-                else
-                {
-                    microQrData = microQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
-                };
+                microQrData = ClassBarcodes.bBarcodeWithCircle
+                    ? microQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSizeCircle)
+                    : microQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize); ;
             }
 
             // Create a standard QR code with custom styling
@@ -236,14 +231,9 @@ namespace BarcodeGenerator
                 };
 
                 // Apply quiet zone size based on whether the QR code is drawn with a circle or not
-                if (ClassBarcodes.bBarcodeWithCircle)
-                {
-                    standardQrData = standardQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSizeCircle);
-                }
-                else
-                {
-                    standardQrData = standardQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize);
-                };
+                standardQrData = ClassBarcodes.bBarcodeWithCircle
+                    ? standardQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSizeCircle)
+                    : standardQrData.WithQuietZone(ClassBarcodes.nQRCodeQuietZoneSize); ;
 
                 // Apply a version if the user has selected a specific version (to avoid overriding the variable version setting)
                 //int nQRCodeVersion = -1;    // Default to -1 (automatic version selection) else 1 to 40 (specific version)
