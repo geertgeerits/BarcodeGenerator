@@ -1061,6 +1061,9 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
 Чтобы изменить размер QR-кода внутри окружности, отрегулируйте размер «охранной зоны» (quiet zone) в настройках.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Обведенное кругом:</value>
+    <value>По кругу:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>Зона тишины по окружности: {0} модулей</value>
   </data>
 </root>

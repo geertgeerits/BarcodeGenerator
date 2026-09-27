@@ -1061,6 +1061,9 @@ Bahasa yang didukung adalah: Arab, Bengali, Tionghoa Sederhana, Tionghoa Tradisi
 Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet zone*) pada pengaturan.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Dengan lingkaran di sekelilingnya:</value>
+    <value>Dalam lingkaran:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>Zona senyap dalam lingkaran: {0} modul</value>
   </data>
 </root>

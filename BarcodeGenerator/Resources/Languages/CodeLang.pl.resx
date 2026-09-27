@@ -1061,6 +1061,9 @@ Języki pomocnicze to: arabski, bengalski, chiński uproszczony, chiński tradyc
 Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawieniach.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Z okręgiem wokół niego:</value>
+    <value>W kręgu:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>Strefa ciszy w okręgu: {0} modułów</value>
   </data>
 </root>

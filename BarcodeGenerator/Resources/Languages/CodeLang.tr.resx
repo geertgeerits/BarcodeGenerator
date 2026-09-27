@@ -1061,6 +1061,9 @@ Desteklenen diller şunlardır: Arapça, Bengalce, Basitleştirilmiş Çince, Ge
 Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölge"yi (quiet zone) düzenleyin.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Etrafında bir daire ile:</value>
+    <value>Bir daire içinde:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>Daire içindeki sessiz bölge: {0} modül</value>
   </data>
 </root>

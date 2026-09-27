@@ -1059,6 +1059,9 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
 বৃত্তের ভেতরের কিউআর কোডের আকার পরিবর্তন করতে, সেটিংস-এ 'কোয়াইট জোন' (quiet zone) বা ফাঁকা জায়গাটি সমন্বয় করুন।</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>এর চারপাশে একটি বৃত্তসহ:</value>
+    <value>একটি বৃত্তে:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>বৃত্তের মধ্যে শান্ত অঞ্চল: {0} মডিউল</value>
   </data>
 </root>

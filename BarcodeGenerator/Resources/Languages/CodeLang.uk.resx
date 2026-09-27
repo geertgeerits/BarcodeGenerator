@@ -1059,6 +1059,9 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
 Щоб змінити розмір QR-коду всередині кола, відрегулюйте розмір «вільної зони» (quiet zone) у налаштуваннях.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Обведене колом:</value>
+    <value>По колу:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>Зона тиші по колу: {0} модулів</value>
   </data>
 </root>

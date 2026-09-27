@@ -1075,6 +1075,9 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
 円内のQRコードのサイズを変更するには、設定でクワイエットゾーンを調整してください。</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>周囲を円で囲んで：</value>
+    <value>円になって：</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>円内のクワイエットゾーン: {0} モジュール</value>
   </data>
 </root>

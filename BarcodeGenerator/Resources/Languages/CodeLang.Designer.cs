@@ -673,7 +673,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to With a circle around it:.
+        ///   Looks up a localized string similar to In a circle:.
         /// </summary>
         internal static string BarcodeWithCircle_Text {
             get {
@@ -2343,7 +2343,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quiet zone QR Code in circle: {0} modules.
+        ///   Looks up a localized string similar to Quiet zone in circle: {0} modules.
         /// </summary>
         internal static string QRCodeQuietZoneSizeCircle_Text {
             get {

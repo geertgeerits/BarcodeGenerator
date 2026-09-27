@@ -1060,6 +1060,9 @@ Die unterstützten Sprachen sind: Arabisch, Bengali, Chinesisch (vereinfacht), C
 Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruhezone in den Einstellungen an.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Mit einem Kreis darum:</value>
+    <value>Im Kreis:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>Ruhezone im Kreis: {0} Module</value>
   </data>
 </root>

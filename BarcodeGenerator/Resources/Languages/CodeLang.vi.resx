@@ -1064,6 +1064,9 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
 Để thay đổi kích thước mã QR nằm trong hình tròn, hãy điều chỉnh vùng đệm (quiet zone) trong phần cài đặt.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Với một vòng tròn bao quanh:</value>
+    <value>Theo vòng tròn:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>Vùng tĩnh trong vòng tròn: {0} mô-đun</value>
   </data>
 </root>

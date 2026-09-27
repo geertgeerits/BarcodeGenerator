@@ -1062,6 +1062,9 @@
 لتغيير حجم رمز الاستجابة السريعة داخل الدائرة، قم بضبط "المنطقة الهادئة" (quiet zone) في الإعدادات.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>مع دائرة حوله:</value>
+    <value>في دائرة:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>منطقة الهدوء في الدائرة: {0} وحدة</value>
   </data>
 </root>

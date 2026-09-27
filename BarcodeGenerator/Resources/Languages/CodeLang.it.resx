@@ -1061,6 +1061,9 @@ Le lingue supportate sono: arabo, bengalese, cinese semplificato, cinese tradizi
 Per modificare le dimensioni del codice QR all'interno del cerchio, regola la zona di rispetto nelle impostazioni.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Con un cerchio attorno:</value>
+    <value>In cerchio:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>Zona di quiete nel cerchio: {0} moduli</value>
   </data>
 </root>

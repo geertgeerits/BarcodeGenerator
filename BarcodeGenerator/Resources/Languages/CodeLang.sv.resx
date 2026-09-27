@@ -1061,6 +1061,9 @@ De språk som stöds är: arabiska, bengali, förenklad kinesiska, traditionell 
 För att ändra storleken på QR-koden inuti cirkeln justerar du tyst zon i inställningarna.</value>
   </data>
   <data name="BarcodeWithCircle_Text" xml:space="preserve">
-    <value>Med en cirkel runt:</value>
+    <value>I en cirkel:</value>
+  </data>
+  <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
+    <value>Lugn zon i cirkel: {0} moduler</value>
   </data>
 </root>
