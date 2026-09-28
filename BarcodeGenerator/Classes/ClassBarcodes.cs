@@ -316,9 +316,7 @@ namespace BarcodeGenerator
                 CodeLang.Barcode_MICRO_QR_CODE_Text,
                 CodeLang.Barcode_ART_MICRO_QR_CODE_Text,
                 CodeLang.Barcode_RMQR_CODE_Text,
-                CodeLang.Barcode_ART_RMQR_CODE_Text,
-                //CodeLang.Barcode_CIRCULAR_QR_CODE_Text,
-                //CodeLang.Barcode_ART_CIRCULAR_QR_CODE_Text
+                CodeLang.Barcode_ART_RMQR_CODE_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
@@ -342,9 +340,7 @@ namespace BarcodeGenerator
                 CodeLang.Barcode_MICRO_QR_CODE_Text,
                 CodeLang.Barcode_ART_MICRO_QR_CODE_Text,
                 CodeLang.Barcode_RMQR_CODE_Text,
-                CodeLang.Barcode_ART_RMQR_CODE_Text,
-                //CodeLang.Barcode_CIRCULAR_QR_CODE_Text,
-                //CodeLang.Barcode_ART_CIRCULAR_QR_CODE_Text
+                CodeLang.Barcode_ART_RMQR_CODE_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
