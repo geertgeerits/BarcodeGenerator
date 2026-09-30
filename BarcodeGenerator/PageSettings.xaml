@@ -423,7 +423,7 @@
                         Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
                         StrokeThickness="1"
                         StrokeShape="RoundRectangle 5,5,5,5"
-                        Margin="{OnPlatform Default='0,0,0,0', iOS='0,0,0,0', WinUI='0,0,12,0'}">
+                        Margin="{OnPlatform Default='0,0,11,0', iOS='0,0,15,0', WinUI='0,0,15,0'}">
 
                         <BoxView
                             x:Name="bxvBorderColor">
