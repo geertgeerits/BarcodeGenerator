@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-09-29 (YYYY-MM-DD)
+ * Date ........: 2026-09-30 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -120,6 +120,8 @@ namespace BarcodeGenerator
             ClassBarcodes.bQRCodeBackgroundImage = Preferences.Default.Get("SettingQRCodeBackgroundImage", false);
             ClassBarcodes.bBarcodeWithCaption = Preferences.Default.Get("SettingBarcodeWithCaption", false);
             ClassBarcodes.bBarcodeWithCircle = Preferences.Default.Get("SettingBarcodeWithCircle", false);
+            ClassBarcodes.cBorderColor = Preferences.Default.Get("SettingBorderColor", "FF000000");
+            ClassBarcodes.nBorderWidth = Preferences.Default.Get("SettingBorderWidth", 0);
             ClassBarcodes.bCompressionEnabled = Preferences.Default.Get("SettingCompressionEnabled", false);
             ClassPayloadTypes.cPayloadType = Preferences.Default.Get("SettingPayloadType", ClassPayloadTypes.cPayloadTypeDefault);
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
@@ -875,7 +877,7 @@ namespace BarcodeGenerator
                         // Add a circle around the QR code using the ClassBarcodeCircle class
                         if (selectedName != ClassBarcodes.cBarcode_ART_RMQR_CODE)
                         {
-                            ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cCodeColorFgArtQRCode, ClassBarcodes.cCodeColorBgArtQRCode);
+                            ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cCodeColorBgArtQRCode, ClassBarcodes.cBorderColor, ClassBarcodes.nBorderWidth);
                         }
 
                         // Set the image source to the saved file to display it in the Image control
@@ -912,7 +914,7 @@ namespace BarcodeGenerator
                         await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
 
                         // Add a circle around the QR code using the ClassBarcodeCircle class
-                        ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cCodeColorFg, ClassBarcodes.cCodeColorBg);
+                        ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cCodeColorBg, ClassBarcodes.cBorderColor, ClassBarcodes.nBorderWidth);
 
                         // Set the image source to the saved file to display it in the Image control
                         await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);
@@ -933,7 +935,7 @@ namespace BarcodeGenerator
                         await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
 
                         // Add a circle around the QR code using the ClassBarcodeCircle class
-                        ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cCodeColorFg, ClassBarcodes.cCodeColorBg);
+                        ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cCodeColorBg, ClassBarcodes.cBorderColor, ClassBarcodes.nBorderWidth);
 
                         // Set the image source to the saved file to display it in the Image control
                         await ClassUtilities.SetImageSourceAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng);

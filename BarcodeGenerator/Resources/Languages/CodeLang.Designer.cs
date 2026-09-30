@@ -682,6 +682,24 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Color of the border:.
+        /// </summary>
+        internal static string BorderColor_Text {
+            get {
+                return ResourceManager.GetString("BorderColor_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width of the border line: {0} pixels.
+        /// </summary>
+        internal static string BorderWidth_Text {
+            get {
+                return ResourceManager.GetString("BorderWidth_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string ButtonCancel_Text {

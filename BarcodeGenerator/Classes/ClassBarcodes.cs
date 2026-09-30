@@ -119,6 +119,8 @@ namespace BarcodeGenerator
         public static bool bQRCodeForegroundImage;                      // Flag to indicate if the QR code has a foreground image
         public static bool bBarcodeWithCaption;                         // Control whether the barcode image should include a caption
         public static bool bBarcodeWithCircle;                          // Control whether the barcode image should include a circle around the barcode
+        public static string cBorderColor = string.Empty;               // Color of the border around the circle of the barcode
+        public static int nBorderWidth;                                 // Width of the border around the circle of the barcode
         public static bool bCompressionEnabled;                         // Control whether the barcode text should be compressed before encoding it in the barcode and decompressed after decoding it from the barcode
         public static string cFileBarcodePng = string.Empty;            // Path and file name of the saved barcode image
         public static string cFileBarcodeSvg = string.Empty;            // Path and file name of the saved barcode image

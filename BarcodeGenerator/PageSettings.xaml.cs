@@ -97,9 +97,10 @@ namespace BarcodeGenerator
             // Initialize the barcode formats in the ClassBarcodes class to update the format names in the selected language
             ClassBarcodes.InitializeBarcodeSearchFormats();
 
-            // Set the current color in the box view
+            // Set the current colors in the box view
             bxvColorFg.Color = Color.FromArgb(ClassBarcodes.cCodeColorFg);
             bxvColorBg.Color = Color.FromArgb(ClassBarcodes.cCodeColorBg);
+            bxvBorderColor.Color = Color.FromArgb(ClassBarcodes.cBorderColor);
 
             // Set the QR code image size to update the switch and entry
             swtQRCodeSizeVariable.IsToggled = ClassBarcodes.bQRCodeSizeVariable;
@@ -114,6 +115,7 @@ namespace BarcodeGenerator
             swtCompressionEnabled.IsToggled = ClassBarcodes.bCompressionEnabled;
 
             // Set the QR code quiet zone size, image size and image size border to update the sliders
+            sldBorderWidth.Value = ClassBarcodes.nBorderWidth;
             sldQRCodeQuietZoneSizeCircle.Value = ClassBarcodes.nQRCodeQuietZoneSizeCircle;
             sldQRCodeQuietZoneSize.Value = ClassBarcodes.nQRCodeQuietZoneSize;
             sldQRCodeQuietZoneSize2.Value = ClassBarcodes.nQRCodeQuietZoneSize2;
@@ -403,6 +405,23 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// On button border color clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonBorderColor_Clicked(object sender, EventArgs e)
+        {
+            ClassBarcodes.cCodeColor = ClassBarcodes.cBorderColor;
+            await OpenPopupColorPickerAsync(CodeLang.BorderColor_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                ClassBarcodes.cBorderColor = ClassBarcodes.cCodeColor;
+                bxvBorderColor.Color = Color.FromArgb(ClassBarcodes.cBorderColor);
+            }
+        }
+
+        /// <summary>
         /// Switch QR code foreground image toggled event
         /// </summary>
         /// <param name="sender"></param>
@@ -535,6 +554,18 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Handles the ValueChanged event for the border width slider, updating the border width for the circle
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
+        /// <param name="e">An object that contains the event data, including the new value of the slider representing the desired border width.</param>
+        private void OnSliderBorderWidth_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            ClassBarcodes.nBorderWidth = (int)e.NewValue;
+            sldBorderWidth.Value = ClassBarcodes.nBorderWidth;
+            lblBorderWidth.FormattedText = FormatWithColoredNumber(CodeLang.BorderWidth_Text, ClassBarcodes.nBorderWidth);
+        }
+
+        /// <summary>
         /// Handles the ValueChanged event for the QR code quiet zone size circle slider, updating the quiet zone size for circular QR codes
         /// </summary>
         /// <param name="sender">The source of the event, typically the slider control whose value has changed.</param>
@@ -658,6 +689,7 @@ namespace BarcodeGenerator
             // Clear the existing formatted text to avoid duplication
             lblFontSize.FormattedText = null;
             lblQRCodeSizeModulesHeight.FormattedText = null;
+            lblBorderWidth.FormattedText = null;
             lblQRCodeQuietZoneSizeCircle.FormattedText = null;
             lblQRCodeQuietZoneSize.FormattedText = null;
             lblQRCodeQuietZoneSize2.FormattedText = null;
@@ -667,6 +699,7 @@ namespace BarcodeGenerator
             // Format the text with the current values and colors based on the theme and language
             lblFontSize.FormattedText = FormatWithColoredNumber(CodeLang.FontSize_Text, Globals.nFontSize, "F0");
             lblQRCodeSizeModulesHeight.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeSizeModulesHeight_Text, ClassBarcodes.nQRCodeSizeModulesHeight);
+            lblBorderWidth.FormattedText = FormatWithColoredNumber(CodeLang.BorderWidth_Text, ClassBarcodes.nBorderWidth);
             lblQRCodeQuietZoneSizeCircle.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSizeCircle_Text, ClassBarcodes.nQRCodeQuietZoneSizeCircle);
             lblQRCodeQuietZoneSize.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSize_Text, ClassBarcodes.nQRCodeQuietZoneSize);
             lblQRCodeQuietZoneSize2.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSize2_Text, ClassBarcodes.nQRCodeQuietZoneSize2);
@@ -767,6 +800,8 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeBackgroundImage", ClassBarcodes.bQRCodeBackgroundImage);
             Preferences.Default.Set("SettingBarcodeWithCaption", ClassBarcodes.bBarcodeWithCaption);
             Preferences.Default.Set("SettingBarcodeWithCircle", ClassBarcodes.bBarcodeWithCircle);
+            Preferences.Default.Set("SettingBorderColor", ClassBarcodes.cBorderColor);
+            Preferences.Default.Set("SettingBorderWidth", ClassBarcodes.nBorderWidth);
             Preferences.Default.Set("SettingCompressionEnabled", ClassBarcodes.bCompressionEnabled);
             Preferences.Default.Set("SettingPayloadType", ClassPayloadTypes.cPayloadType);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
@@ -825,6 +860,8 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeBackgroundImage");
                 Preferences.Default.Remove("SettingBarcodeWithCaption");
                 Preferences.Default.Remove("SettingBarcodeWithCircle");
+                Preferences.Default.Remove("SettingBorderColor");
+                Preferences.Default.Remove("SettingBorderWidth");
                 Preferences.Default.Remove("SettingCompressionEnabled");
                 Preferences.Default.Remove("SettingPayloadType");
                 Preferences.Default.Remove("SettingWiFiAuthentication");

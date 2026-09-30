@@ -8,9 +8,10 @@ namespace BarcodeGenerator
         /// Add a circle to a QR code from an existing image file and saves it as a PNG in the cache directory.
         /// </summary>
         /// <param name="filePath">The path to the existing image file.</param>
-        /// <param name="cColorForeground">The foreground color for the circle.</param>
         /// <param name="cColorBackground">The background color for the circle.</param>
-        public static void DrawOuterCircleFromFile(string filePath, string cColorForeground, string cColorBackground)
+        /// <param name="cBorderColor">The border color for the circle.</param>
+        /// <param name="nBorderWidth">The border width for the circle.</param>
+        public static void DrawOuterCircleFromFile(string filePath, string cColorBackground, string cBorderColor, int nBorderWidth)
         {
             // Check if the barcode with circle is enabled, otherwise return
             if (!ClassBarcodes.bBarcodeWithCircle)
@@ -21,7 +22,7 @@ namespace BarcodeGenerator
             string outputPath = filePath;
 
             // Draw outer circle around the QR code image
-            using SKBitmap finalCircular = DrawOuterCircle(SKBitmap.Decode(filePath), cColorForeground, cColorBackground);
+            using SKBitmap finalCircular = DrawOuterCircle(SKBitmap.Decode(filePath), cColorBackground, cBorderColor, nBorderWidth);
 
             // Encode and save PNG file
             using SKImage image = SKImage.FromBitmap(finalCircular);
@@ -35,13 +36,15 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="source"></param>
         /// <param name="cColorBackground"></param>
+        /// <param name="cBorderColor"></param>
+        /// <param name="nBorderWidth"></param>
         /// <returns></returns>
-        private static SKBitmap DrawOuterCircle(SKBitmap source, string cColorForeground, string cColorBackground)
+        private static SKBitmap DrawOuterCircle(SKBitmap source, string cColorBackground, string cBorderColor, int nBorderWidth)
         {
             SKColor fill = ClassColors.TryParseSkColor(cColorBackground, SKColors.White);
-            SKColor stroke = ClassColors.TryParseSkColor(cColorForeground, SKColors.Black);
+            SKColor stroke = ClassColors.TryParseSkColor(cBorderColor, SKColors.Black);
 
-            return DrawOuterCircleAroundBitmapWithFill(source, fill, stroke, 2);
+            return DrawOuterCircleAroundBitmapWithFill(source, fill, stroke, nBorderWidth);
         }
 
         /// <summary>
@@ -62,8 +65,8 @@ namespace BarcodeGenerator
                 // Circle radius = half the diagonal of the bitmap
                 float radius = (float)Math.Sqrt((srcW * srcW) + (srcH * srcH)) / 2f;
 
-                // Output bitmap must be large enough to contain the circle
-                int diameter = (int)Math.Ceiling(radius * 2f);
+                // Output bitmap must be large enough to contain the circle and the stroke width
+                int diameter = (int)Math.Ceiling(radius * 2f) + (int)strokeWidth;
 
                 SKBitmap output = new(diameter, diameter);
 
@@ -91,15 +94,18 @@ namespace BarcodeGenerator
 
                     canvas.DrawBitmap(source, left, top, new SKSamplingOptions(SKFilterMode.Linear), null);
 
-                    // Draw circle outline - commented out for now, as it may not be needed
-                    //using SKPaint strokePaint = new()
-                    //{
-                    //    Color = strokeColor,
-                    //    StrokeWidth = strokeWidth,
-                    //    IsAntialias = true,
-                    //    Style = SKPaintStyle.Stroke
-                    //};
-                    //canvas.DrawCircle(cx, cy, radius, strokePaint);
+                    // Draw circle outline
+                    if (strokeWidth > 0)
+                    {
+                        using SKPaint strokePaint = new()
+                        {
+                            Color = strokeColor,
+                            StrokeWidth = strokeWidth,
+                            IsAntialias = true,
+                            Style = SKPaintStyle.Stroke
+                        };
+                        canvas.DrawCircle(cx, cy, radius, strokePaint);
+                    }
                 }
 
                 return output;
