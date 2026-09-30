@@ -455,7 +455,7 @@
                         ThumbColor="LightGreen"
                         MinimumTrackColor="LightGreen"
                         Minimum="0"
-                        Maximum="10"
+                        Maximum="100"
                         ValueChanged="OnSliderBorderWidth_ValueChanged">
                     </Slider>
                 </Border>
