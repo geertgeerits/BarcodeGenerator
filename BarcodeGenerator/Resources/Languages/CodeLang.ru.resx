@@ -1008,7 +1008,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
     <value>Суммарная длина всех полей слишком велика. Общий размер полезной нагрузки ограничен 331 байтом.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Размер модуля: {0}%</value>
+    <value>Размер модуля: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Размер границы изображения: {0} пикселей</value>

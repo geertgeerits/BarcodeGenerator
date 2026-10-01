@@ -1007,7 +1007,7 @@ Wählen Sie eine Option.</value>
     <value>Die Gesamtlänge aller Felder ist zu lang. Die gesamte Nutzlastgröße ist auf 331 Byte begrenzt.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Modulgröße: {0}%</value>
+    <value>Modulgröße: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Bildrandgröße: {0} Pixel</value>

@@ -1005,7 +1005,7 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
     <value>सभी फ़ील्ड की कुल लंबाई बहुत ज़्यादा है. कुल पेलोड साइज़ 331 बाइट्स तक सीमित है.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>मॉड्यूल का आकार: {0}%</value>
+    <value>मॉड्यूल का आकार: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>छवि बॉर्डर का आकार: {0} पिक्सेल</value>

@@ -1008,7 +1008,7 @@
     <value>Το συνολικό μήκος όλων των πεδίων είναι πολύ μεγάλο. Το συνολικό μέγεθος ωφέλιμου φορτίου περιορίζεται σε 331 byte.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Μέγεθος ενότητας: {0}%</value>
+    <value>Μέγεθος ενότητας: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Μέγεθος περιγράμματος εικόνας: {0} pixel</value>

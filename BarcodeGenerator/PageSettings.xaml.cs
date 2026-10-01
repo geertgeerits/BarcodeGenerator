@@ -697,7 +697,7 @@ namespace BarcodeGenerator
             lblQRCodeImageSizeBorder.FormattedText = null;
 
             // Format the text with the current values and colors based on the theme and language
-            lblFontSize.FormattedText = FormatWithColoredNumber(CodeLang.FontSize_Text, Globals.nFontSize, "F0");
+            lblFontSize.FormattedText = FormatWithColoredNumber(CodeLang.FontSize_Text, Globals.nFontSize);
             lblQRCodeSizeModulesHeight.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeSizeModulesHeight_Text, ClassBarcodes.nQRCodeSizeModulesHeight);
             lblBorderWidth.FormattedText = FormatWithColoredNumber(CodeLang.BorderWidth_Text, ClassBarcodes.nBorderWidth);
             lblQRCodeQuietZoneSizeCircle.FormattedText = FormatWithColoredNumber(CodeLang.QRCodeQuietZoneSizeCircle_Text, ClassBarcodes.nQRCodeQuietZoneSizeCircle);
@@ -714,7 +714,7 @@ namespace BarcodeGenerator
         /// <param name="nValue"></param>
         /// <param name="cFormat"></param>
         /// <returns></returns>
-        private static FormattedString FormatWithColoredNumber(string cText, double nValue, string cFormat = "F0")
+        public static FormattedString FormatWithColoredNumber(string cText, double nValue, string cFormat = "F0")
         {
             try
             {

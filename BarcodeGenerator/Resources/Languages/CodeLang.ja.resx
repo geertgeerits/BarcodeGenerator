@@ -1022,7 +1022,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
     <value>すべての項目の合計長が長すぎます。ペイロードの合計サイズは331バイトに制限されています。</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>モジュールのサイズ：{0}%</value>
+    <value>モジュールのサイズ：{0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>画像の境界線サイズ：{0} ピクセル</value>

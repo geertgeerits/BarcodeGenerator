@@ -2334,7 +2334,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Module size: {0}%.
+        ///   Looks up a localized string similar to Module size: {0} %.
         /// </summary>
         internal static string QRCodeModuleSize_Text {
             get {

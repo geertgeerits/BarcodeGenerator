@@ -1008,7 +1008,7 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
     <value>تمام فیلڈز کی مشترکہ لمبائی بہت لمبی ہے۔ کل پے لوڈ سائز 331 بائٹس تک محدود ہے۔</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>ماڈیول کا سائز: {0}%</value>
+    <value>ماڈیول کا سائز: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>تصویر کے بارڈر کا سائز: {0} پکسلز</value>

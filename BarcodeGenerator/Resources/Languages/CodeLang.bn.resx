@@ -1006,7 +1006,7 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
     <value>সমস্ত ফিল্ডের সম্মিলিত দৈর্ঘ্য অনেক বেশি। মোট পেলোড সাইজ ৩৩১ বাইটে সীমাবদ্ধ।</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>মডিউলের আকার: {0}%</value>
+    <value>মডিউলের আকার: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>ছবির বর্ডারের আকার: {0} পিক্সেল</value>

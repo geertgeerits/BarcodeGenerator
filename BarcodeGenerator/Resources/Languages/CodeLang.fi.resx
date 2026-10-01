@@ -1008,7 +1008,7 @@ Kaikkia hyötykuormatyyppejä ei tueta kaikissa laitteissa.</value>
     <value>Kaikkien kenttien yhteenlaskettu pituus on liian pitkä. Kokonaishyötykuorman koko on rajoitettu 331 tavuun.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Moduulin koko: {0}%</value>
+    <value>Moduulin koko: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Kuvan reunuksen koko: {0} pikseliä</value>

@@ -1008,7 +1008,7 @@ Nu toate tipurile de sarcini utile sunt acceptate pe fiecare dispozitiv.</value>
     <value>Lungimea combinată a tuturor câmpurilor este prea mare. Dimensiunea totală a sarcinii utile este limitată la 331 de octeți.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Dimensiunea modulului: {0}%</value>
+    <value>Dimensiune modul: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Dimensiunea marginii imaginii: {0} pixeli</value>

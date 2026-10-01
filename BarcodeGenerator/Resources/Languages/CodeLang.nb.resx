@@ -1008,7 +1008,7 @@ Ikke alle nyttelasttyper støttes på alle enheter.</value>
     <value>Den samlede lengden på alle feltene er for lang. Den totale nyttelaststørrelsen er begrenset til 331 byte.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Modulstørrelse: {0}%</value>
+    <value>Modulstørrelse: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Størrelse på bildekant: {0} piksler</value>

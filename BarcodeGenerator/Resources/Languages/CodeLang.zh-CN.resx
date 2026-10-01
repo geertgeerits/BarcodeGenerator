@@ -1008,7 +1008,7 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
     <value>所有字段的总长度过长。有效载荷总大小限制为 331 字节。</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>模块大小：{0}%</value>
+    <value>模块大小：{0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>图片边框大小：{0} 像素</value>

@@ -1008,7 +1008,7 @@ Niet alle gegevenstypen worden op elk apparaat ondersteund.</value>
     <value>De gecombineerde lengte van alle velden is te groot. De totale payloadgrootte is beperkt tot 331 bytes.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Modulegrootte: {0}%</value>
+    <value>Modulegrootte: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Randgrootte afbeelding: {0} pixels</value>

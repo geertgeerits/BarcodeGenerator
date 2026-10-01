@@ -1008,7 +1008,7 @@ Not all payload types are supported on every device.</value>
     <value>The combined length of all fields is too long. The total payload size is limited to 331 bytes.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Module size: {0}%</value>
+    <value>Module size: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Image border size: {0} pixels</value>

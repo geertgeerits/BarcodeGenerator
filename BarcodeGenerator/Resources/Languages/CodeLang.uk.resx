@@ -1006,7 +1006,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
     <value>Сумарна довжина всіх полів занадто велика. Загальний розмір корисного навантаження обмежено 331 байтом.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Розмір модуля: {0}%</value>
+    <value>Розмір модуля: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Розмір рамки зображення: {0} пікселів</value>

@@ -1008,7 +1008,7 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
     <value>所有欄位的總長度過長。有效載荷總大小限制為 331 位元組。</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>模組大小：{0}%</value>
+    <value>模組大小：{0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>圖片邊框大小：{0} 像素</value>

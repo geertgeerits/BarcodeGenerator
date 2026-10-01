@@ -1008,7 +1008,7 @@ Tidak semua jenis muatan didukung di setiap perangkat.</value>
     <value>Panjang gabungan semua kolom terlalu panjang. Ukuran muatan total dibatasi hingga 331 byte.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Ukuran modul: {0}%</value>
+    <value>Ukuran modul: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Μέγεθος περιγράμματος εικόνας: {0} pixel</value>

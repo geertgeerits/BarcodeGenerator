@@ -1008,7 +1008,7 @@ Tous les types de données ne sont pas compatibles avec tous les appareils.</val
     <value>La longueur cumulée de tous les champs est trop importante. La taille totale de la charge utile est limitée à 331 octets.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Taille du module: {0}%</value>
+    <value>Taille du module: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Taille de la bordure de l'image: {0} pixels</value>

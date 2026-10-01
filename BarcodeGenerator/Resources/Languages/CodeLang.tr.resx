@@ -1008,7 +1008,7 @@ Her cihazda tüm veri türleri desteklenmez.</value>
     <value>Tüm alanların toplam uzunluğu çok uzun. Toplam veri boyutu 331 bayt ile sınırlıdır.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Modül boyutu: {0}%</value>
+    <value>Modül boyutu: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Görüntü kenar boyutu: {0} piksel</value>

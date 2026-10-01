@@ -1011,7 +1011,7 @@ Không phải tất cả các loại dữ liệu đều được hỗ trợ trê
     <value>Tổng chiều dài của tất cả các trường quá lớn. Kích thước dữ liệu tối đa bị giới hạn ở 331 byte.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>Kích thước mô-đun: {0}%</value>
+    <value>Kích thước mô-đun: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>Kích thước viền ảnh: {0} pixel</value>

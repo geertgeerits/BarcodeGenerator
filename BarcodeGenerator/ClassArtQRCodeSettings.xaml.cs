@@ -8,8 +8,15 @@ namespace BarcodeGenerator
         private readonly string cGradientDirectionBackgroundColor = "000099";  // 000099 navy blue
 
         public ClassArtQRCodeSettings()
-    	{
-    		InitializeComponent();
+        {
+            InitializeComponent();
+
+            // Respond to the theme change 
+            Application.Current?.RequestedThemeChanged += (s, a) =>
+            {
+                // Format the text with the current values and colors based on the theme and language
+                FormatText();
+            };
 
             // Get the current display information
             DisplayInfo displayInfo = DeviceDisplay.MainDisplayInfo;
@@ -288,7 +295,7 @@ namespace BarcodeGenerator
         {
             ClassBarcodes.nQRCodeModuleSizePercent = (int)MathF.Round((float)e.NewValue, 0);
             sldQRCodeModuleSize.Value = ClassBarcodes.nQRCodeModuleSizePercent;
-            lblQRCodeModuleSize.Text = $"{string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent)}";
+            lblQRCodeModuleSize.FormattedText = PageSettings.FormatWithColoredNumber(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent);
         }
 
         /// <summary>
@@ -436,7 +443,8 @@ namespace BarcodeGenerator
         /// <remarks>This method is called from the class PageSettings (PageSettings.xaml.cs) when the language is changed.</remarks>
         public void SetLanguage()
         {
-            lblQRCodeModuleSize.Text = string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent);
+            // Format the text with the current values and colors based on the theme and language
+            FormatText();
         }
 
         /// <summary>
@@ -468,6 +476,18 @@ namespace BarcodeGenerator
         {
             DeviceDisplay.MainDisplayInfoChanged -= OnMainDisplayInfoChanged;
             this.Unloaded -= OnUnloaded;
+        }
+
+        /// <summary>
+        /// Format the text with the current values and colors based on the theme and language
+        /// </summary>
+        private void FormatText()
+        {
+            // Clear the existing formatted text to avoid duplication
+            lblQRCodeModuleSize.FormattedText = null;
+
+            // Format the text with the current values and colors based on the theme and language
+            lblQRCodeModuleSize.FormattedText = PageSettings.FormatWithColoredNumber(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent);
         }
     }
 }

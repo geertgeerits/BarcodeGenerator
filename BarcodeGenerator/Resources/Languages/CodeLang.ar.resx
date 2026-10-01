@@ -1008,7 +1008,7 @@
     <value>يبلغ الطول الإجمالي لجميع الحقول أكثر من اللازم. حجم البيانات الإجمالي محدود بـ 331 بايت.</value>
   </data>
   <data name="QRCodeModuleSize_Text" xml:space="preserve">
-    <value>حجم الوحدة: {0}%</value>
+    <value>حجم الوحدة: {0} %</value>
   </data>
   <data name="QRCodeImageSizeBorder_Text" xml:space="preserve">
     <value>حجم حدود الصورة: {0} بكسل</value>
