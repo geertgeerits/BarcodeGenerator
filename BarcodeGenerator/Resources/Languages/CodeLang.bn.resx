@@ -1064,4 +1064,10 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>বৃত্তের মধ্যে শান্ত অঞ্চল: {0} মডিউল</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>বর্ডারের রঙ:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>বর্ডারের রেখার প্রস্থ: {0} পিক্সেল</value>
+  </data>
 </root>

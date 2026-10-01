@@ -682,7 +682,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Color of the border:.
+        ///   Looks up a localized string similar to Border color:.
         /// </summary>
         internal static string BorderColor_Text {
             get {
@@ -691,7 +691,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Width of the border line: {0} pixels.
+        ///   Looks up a localized string similar to Border line width: {0} pixels.
         /// </summary>
         internal static string BorderWidth_Text {
             get {

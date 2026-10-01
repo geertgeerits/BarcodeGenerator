@@ -1066,4 +1066,10 @@ For at ændre størrelsen på QR-koden inde i cirklen skal du justere frizonen i
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Frizone i cirkel: {0} moduler</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Kantfarve:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Kantlinjebredde: {0} pixels</value>
+  </data>
 </root>

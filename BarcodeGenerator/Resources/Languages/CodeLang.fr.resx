@@ -1066,4 +1066,10 @@ Pour modifier la taille du code QR à l'intérieur du cercle, ajustez la zone de
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Zone de silence dans le cercle: {0} modules</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Couleur de la bordure:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Épaisseur de la bordure: {0} pixels</value>
+  </data>
 </root>

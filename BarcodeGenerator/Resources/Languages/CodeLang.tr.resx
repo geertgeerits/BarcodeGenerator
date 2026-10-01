@@ -1066,4 +1066,10 @@ Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölg
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Daire içindeki sessiz bölge: {0} modül</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Kenarlık rengi:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Kenarlık çizgisi kalınlığı: {0} piksel</value>
+  </data>
 </root>

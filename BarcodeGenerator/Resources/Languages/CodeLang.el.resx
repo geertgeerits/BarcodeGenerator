@@ -1066,4 +1066,10 @@
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Ζώνη ηρεμίας στον κύκλο: {0} ενότητες</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Χρώμα περιγράμματος:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Πλάτος γραμμής περιγράμματος: {0} pixel</value>
+  </data>
 </root>

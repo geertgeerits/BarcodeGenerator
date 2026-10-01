@@ -1066,4 +1066,10 @@ For å endre størrelsen på QR-koden inne i sirkelen, justerer du «quiet zone�
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Stillesone i sirkel: {0} moduler</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Kantfarge:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Kantlinjebredde: {0} piksler</value>
+  </data>
 </root>

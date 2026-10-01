@@ -1066,4 +1066,10 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>圆环内的静区：{0} 个模块</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>边框颜色：</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>边框线宽：{0} 像素</value>
+  </data>
 </root>

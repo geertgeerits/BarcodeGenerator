@@ -1066,4 +1066,10 @@ Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de Q
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Stille zone in cirkel: {0} modules</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Randkleur:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Breedte van de randlijn: {0} pixels</value>
+  </data>
 </root>

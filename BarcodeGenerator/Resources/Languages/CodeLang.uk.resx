@@ -1064,4 +1064,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Зона тиші по колу: {0} модулів</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Колір межі:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Ширина лінії межі: {0} пікселів</value>
+  </data>
 </root>

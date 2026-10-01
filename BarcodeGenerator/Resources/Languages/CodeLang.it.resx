@@ -1066,4 +1066,10 @@ Per modificare le dimensioni del codice QR all'interno del cerchio, regola la zo
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Zona di quiete nel cerchio: {0} moduli</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Colore del bordo:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Spessore del bordo: {0} pixel</value>
+  </data>
 </root>

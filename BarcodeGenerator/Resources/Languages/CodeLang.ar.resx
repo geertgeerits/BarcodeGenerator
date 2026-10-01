@@ -1067,4 +1067,10 @@
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>منطقة الهدوء في الدائرة: {0} وحدة</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>لون الحدود:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>عرض خط الحدود: {0} بكسل</value>
+  </data>
 </root>

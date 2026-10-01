@@ -1066,4 +1066,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Зона тишины по окружности: {0} модулей</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Цвет границы:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Ширина границы: {0} пикселей</value>
+  </data>
 </root>

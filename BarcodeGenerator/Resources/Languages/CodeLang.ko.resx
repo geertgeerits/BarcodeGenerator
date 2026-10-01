@@ -1067,4 +1067,10 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>원형 콰이어트 존: {0} 모듈</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>테두리 색상:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>테두리 선 두께: {0}픽셀</value>
+  </data>
 </root>

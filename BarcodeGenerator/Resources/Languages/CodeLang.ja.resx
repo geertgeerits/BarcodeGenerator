@@ -1080,4 +1080,10 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>円内のクワイエットゾーン: {0} モジュール</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>枠線の色:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>境界線の幅: {0} ピクセル</value>
+  </data>
 </root>

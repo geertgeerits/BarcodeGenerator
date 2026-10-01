@@ -1065,4 +1065,10 @@ Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruh
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Ruhezone im Kreis: {0} Module</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Rahmenfarbe:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Rahmenlinienbreite: {0} Pixel</value>
+  </data>
 </root>

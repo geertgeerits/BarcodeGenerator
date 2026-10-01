@@ -1063,4 +1063,10 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>सर्कल में शांत क्षेत्र: {0} मॉड्यूल</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>सीमा रंग:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>बॉर्डर लाइन की चौड़ाई: {0} पिक्सल</value>
+  </data>
 </root>

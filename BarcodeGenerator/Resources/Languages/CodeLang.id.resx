@@ -1066,4 +1066,10 @@ Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet 
   <data name="QRCodeQuietZoneSizeCircle_Text" xml:space="preserve">
     <value>Zona senyap dalam lingkaran: {0} modul</value>
   </data>
+  <data name="BorderColor_Text" xml:space="preserve">
+    <value>Warna batas:</value>
+  </data>
+  <data name="BorderWidth_Text" xml:space="preserve">
+    <value>Lebar garis batas: {0} piksel</value>
+  </data>
 </root>
