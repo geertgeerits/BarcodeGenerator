@@ -114,6 +114,13 @@ namespace BarcodeGenerator
         public static string cQRCodeGradientColor1 = string.Empty;      // First color of the QR code gradient
         public static string cQRCodeGradientColor2 = string.Empty;      // Second color of the QR code gradient
         public static string cQRCodeGradientColor3 = string.Empty;      // Third color of the QR code gradient
+        public static string cQRCodeGradientColor4 = string.Empty;      // Fourth color of the QR code gradient
+        public static string cQRCodeGradientColor5 = string.Empty;      // Fifth color of the QR code gradient
+        public static bool bQRCodeGradientColor1Selected;               // Flag to indicate if the QR code has a gradient color 1
+        public static bool bQRCodeGradientColor2Selected;               // Flag to indicate if the QR code has a gradient color 2
+        public static bool bQRCodeGradientColor3Selected;               // Flag to indicate if the QR code has a gradient color 3
+        public static bool bQRCodeGradientColor4Selected;               // Flag to indicate if the QR code has a gradient color 4
+        public static bool bQRCodeGradientColor5Selected;               // Flag to indicate if the QR code has a gradient color 5
         public static string cQRCodeGradientDirection = string.Empty;   // Direction of the QR code gradient 
         public static bool bQRCodeBackgroundImage;                      // Flag to indicate if the QR code has a background image
         public static bool bQRCodeForegroundImage;                      // Flag to indicate if the QR code has a foreground image

@@ -53,6 +53,15 @@ namespace BarcodeGenerator
             bxvGradientColor1.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor1);
             bxvGradientColor2.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor2);
             bxvGradientColor3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
+            bxvGradientColor4.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor4);
+            bxvGradientColor5.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor5);
+
+            // Set the initial states of the checkboxes based on the current settings
+            ckbQRCodeGradientColor1.IsChecked = ClassBarcodes.bQRCodeGradientColor1Selected;
+            ckbQRCodeGradientColor2.IsChecked = ClassBarcodes.bQRCodeGradientColor2Selected;
+            ckbQRCodeGradientColor3.IsChecked = ClassBarcodes.bQRCodeGradientColor3Selected;
+            ckbQRCodeGradientColor4.IsChecked = ClassBarcodes.bQRCodeGradientColor4Selected;
+            ckbQRCodeGradientColor5.IsChecked = ClassBarcodes.bQRCodeGradientColor5Selected;   
 
             // Set the QR code gradient direction to update the button background color
             switch (ClassBarcodes.cQRCodeGradientDirection)
@@ -359,6 +368,90 @@ namespace BarcodeGenerator
             }
         }
 
+        /// <summary>
+        /// On button color gradient 4 clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonGradientColor4Clicked(object sender, EventArgs e)
+        {
+            ClassBarcodes.cCodeColor = ClassBarcodes.cQRCodeGradientColor4;
+            await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor4_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                ClassBarcodes.cQRCodeGradientColor4 = ClassBarcodes.cCodeColor;
+                bxvGradientColor4.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor4);
+            }
+        }
+
+        /// <summary>
+        /// On button color gradient 5 clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonGradientColor5Clicked(object sender, EventArgs e)
+        {
+            ClassBarcodes.cCodeColor = ClassBarcodes.cQRCodeGradientColor5;
+            await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor5_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                ClassBarcodes.cQRCodeGradientColor5 = ClassBarcodes.cCodeColor;
+                bxvGradientColor5.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor5);
+            }
+        }
+
+        /// <summary>
+        /// Checkbox QR code gradient color 1 checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CkbQRCodeGradientColor1_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            ClassBarcodes.bQRCodeGradientColor1Selected = e.Value;
+        }
+
+        /// <summary>
+        /// Checkbox QR code gradient color 2 checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CkbQRCodeGradientColor2_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            ClassBarcodes.bQRCodeGradientColor2Selected = e.Value;
+        }
+
+        /// <summary>
+        /// Checkbox QR code gradient color 3 checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CkbQRCodeGradientColor3_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            ClassBarcodes.bQRCodeGradientColor3Selected = e.Value;
+        }
+
+        /// <summary>
+        /// Checkbox QR code gradient color 4 checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CkbQRCodeGradientColor4_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            ClassBarcodes.bQRCodeGradientColor4Selected = e.Value;
+        }
+
+        /// <summary>
+        /// Checkbox QR code gradient color 5 checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CkbQRCodeGradientColor5_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            ClassBarcodes.bQRCodeGradientColor5Selected = e.Value;
+        }
+        
         /// <summary>
         /// On button QR code gradient direction clicked event
         /// </summary>

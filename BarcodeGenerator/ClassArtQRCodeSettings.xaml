@@ -3,12 +3,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:barcodegenerator="clr-namespace:BarcodeGenerator"
-    x:DataType="barcodegenerator:HyperlinkSpan"
     x:Class="BarcodeGenerator.ClassArtQRCodeSettings">
 
     <Grid
         x:Name="grdSettingsArtQRCode"
-        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
         RowSpacing="5"
         HorizontalOptions="Center"
         VerticalOptions="Start">
@@ -17,7 +16,7 @@
             Style="{StaticResource borderStyleGroup}"
             Grid.Row="0"
             Grid.Column="0"
-            Grid.RowSpan="11"
+            Grid.RowSpan="13"
             Grid.ColumnSpan="2">
         </Border>
 
@@ -321,11 +320,12 @@
         </Label>
 
         <Grid
-            Grid.Row="7"
-            Grid.Column="2"
+            Grid.Row="{OnPlatform Default=8, WinUI=7}"
+            Grid.Column="{OnPlatform Default=0, WinUI=1}"
+            Grid.ColumnSpan="{OnPlatform Default=2, WinUI=1}"
             RowDefinitions="Auto"
-            ColumnDefinitions="Auto, Auto, Auto"
-            ColumnSpacing="12">
+            ColumnDefinitions="52, 52, 52, 52, 52"
+            ColumnSpacing="{OnPlatform Default=10, WinUI=6}">
 
             <Border
                 Grid.Column="0"
@@ -410,11 +410,122 @@
                 ToolTipProperties.Text="{Translate ColorPicker_Text}"
                 Clicked="OnButtonGradientColor3Clicked">
             </ImageButton>
+
+            <Border
+                Grid.Column="3"
+                Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 5,5,5,5">
+
+                <BoxView
+                    x:Name="bxvGradientColor4"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    HorizontalOptions="Start"
+                    SemanticProperties.Description="{Translate QRCodeGradientColor4_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientColor4_Text}">
+                </BoxView>
+            </Border>
+
+            <ImageButton
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Column="3"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                Source="ic_action_settings.png"
+                SemanticProperties.Description="{Translate ColorPicker_Text}"
+                ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                Clicked="OnButtonGradientColor4Clicked">
+            </ImageButton>
+
+            <Border
+                Grid.Column="4"
+                Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 5,5,5,5">
+
+                <BoxView
+                    x:Name="bxvGradientColor5"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    HorizontalOptions="Start"
+                    SemanticProperties.Description="{Translate QRCodeGradientColor5_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientColor5_Text}">
+                </BoxView>
+            </Border>
+
+            <ImageButton
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Column="4"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                Source="ic_action_settings.png"
+                SemanticProperties.Description="{Translate ColorPicker_Text}"
+                ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                Clicked="OnButtonGradientColor5Clicked">
+            </ImageButton>
         </Grid>
 
+        <Grid
+            Grid.Row="{OnPlatform Default=9, WinUI=8}"
+            Grid.Column="{OnPlatform Default=0, WinUI=1}"
+            Grid.ColumnSpan="{OnPlatform Default=2, WinUI=1}"
+            RowDefinitions="Auto"
+            ColumnDefinitions="52, 52, 52, 52, 52"
+            ColumnSpacing="{OnPlatform Default=10, WinUI=6}"
+            Margin="{OnPlatform Default=0, WinUI='8,0,0,0'}">
+
+            <CheckBox
+                x:Name="ckbQRCodeGradientColor1"
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="{Translate QRCodeGradientColor1_Text}"
+                ToolTipProperties.Text="{Translate QRCodeGradientColor1_Text}"
+                CheckedChanged="CkbQRCodeGradientColor1_CheckedChanged">
+            </CheckBox>
+
+            <CheckBox
+                x:Name="ckbQRCodeGradientColor2"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="{Translate QRCodeGradientColor2_Text}"
+                ToolTipProperties.Text="{Translate QRCodeGradientColor2_Text}"
+                CheckedChanged="CkbQRCodeGradientColor2_CheckedChanged">
+            </CheckBox>
+
+            <CheckBox
+                x:Name="ckbQRCodeGradientColor3"
+                Grid.Column="2"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="{Translate QRCodeGradientColor3_Text}"
+                ToolTipProperties.Text="{Translate QRCodeGradientColor3_Text}"
+                CheckedChanged="CkbQRCodeGradientColor3_CheckedChanged">
+            </CheckBox>
+
+            <CheckBox
+                x:Name="ckbQRCodeGradientColor4"
+                Grid.Column="3"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="{Translate QRCodeGradientColor4_Text}"
+                ToolTipProperties.Text="{Translate QRCodeGradientColor4_Text}"
+                CheckedChanged="CkbQRCodeGradientColor4_CheckedChanged">
+            </CheckBox>
+
+            <CheckBox
+                x:Name="ckbQRCodeGradientColor5"
+                Grid.Column="4"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="{Translate QRCodeGradientColor5_Text}"
+                ToolTipProperties.Text="{Translate QRCodeGradientColor5_Text}"
+                CheckedChanged="CkbQRCodeGradientColor5_CheckedChanged">
+            </CheckBox>
+        </Grid>
+        
         <Label
             Style="{StaticResource labelStyleDefault}"
-            Grid.Row="8"
+            Grid.Row="10"
             Grid.Column="0"
             Padding="8,0,0,0"
             VerticalOptions="Start"
@@ -422,7 +533,7 @@
         </Label>
 
         <Grid
-            Grid.Row="8"
+            Grid.Row="10"
             Grid.Column="2"
             RowDefinitions="Auto, Auto"
             ColumnDefinitions="Auto, Auto, Auto, Auto"
@@ -521,7 +632,7 @@
 
         <Label
             Style="{StaticResource labelStyleDefault}"
-            Grid.Row="9"
+            Grid.Row="11"
             Grid.Column="0"
             Padding="8,0,0,0"
             VerticalTextAlignment="Start"
@@ -532,7 +643,7 @@
         <Switch
             x:Name="swtForegroundImage"
             x:FieldModifier="public"
-            Grid.Row="9"
+            Grid.Row="11"
             Grid.Column="2"
             Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"
             Toggled="SwtForegroundImage_Toggled">
@@ -540,7 +651,7 @@
 
         <Label
             Style="{StaticResource labelStyleDefault}"
-            Grid.Row="10"
+            Grid.Row="12"
             Grid.Column="0"
             Padding="8,0,0,8"
             VerticalTextAlignment="Start"
@@ -551,7 +662,7 @@
         <Switch
             x:Name="swtBackgroundImage"
             x:FieldModifier="public"
-            Grid.Row="10"
+            Grid.Row="12"
             Grid.Column="2"
             HorizontalOptions="Start"
             Margin="{OnPlatform Default='0,0,0,0', iOS='0,6,0,0'}"

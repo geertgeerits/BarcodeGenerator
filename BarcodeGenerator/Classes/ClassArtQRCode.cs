@@ -41,14 +41,57 @@ namespace BarcodeGenerator
                 }
             }
 
-            // Create a gradient for the QR code if enabled in settings
+            // Create a gradient for the QR code if enabled in settings - Requires at least two colors to create a gradient, otherwise fallback to a single color
             GradientOptions? gradient = null;
 
             if (ClassBarcodes.bQRCodeGradientColor)
             {
-                gradient = new([SKColor.Parse(ClassBarcodes.cQRCodeGradientColor1), SKColor.Parse(ClassBarcodes.cQRCodeGradientColor2), SKColor.Parse(ClassBarcodes.cQRCodeGradientColor3)],
-                    Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
-                    [0f, 0.5f, 1f]);
+                //gradient = new([SKColor.Parse(ClassBarcodes.cQRCodeGradientColor1), SKColor.Parse(ClassBarcodes.cQRCodeGradientColor2), SKColor.Parse(ClassBarcodes.cQRCodeGradientColor3)],
+                //    Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
+                //    [0f, 0.5f, 1f]);
+
+                List<SKColor> colors = new List<SKColor>();
+                if (ClassBarcodes.bQRCodeGradientColor1Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor1));
+                if (ClassBarcodes.bQRCodeGradientColor2Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor2));
+                if (ClassBarcodes.bQRCodeGradientColor3Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor3));
+                if (ClassBarcodes.bQRCodeGradientColor4Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor4));
+                if (ClassBarcodes.bQRCodeGradientColor5Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor5));
+
+                switch (colors.Count)
+                {
+                    case < 2:
+                        // Fallback color to avoid empty array
+                        colors.Add(SKColors.Black);
+                        break;
+                    case 2:
+                        // adjust the positions for a two-color gradient
+                        gradient = new GradientOptions(
+                            colors.ToArray(),
+                            Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
+                            [0f, 1f]);
+                        break;
+                    case 3:
+                        // adjust the positions for a three-color gradient
+                        gradient = new GradientOptions(
+                            colors.ToArray(),
+                            Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
+                            [0f, 0.5f, 1f]);
+                        break;
+                    case 4:
+                        // Adjust the positions for a four-color gradient
+                        gradient = new GradientOptions(
+                            colors.ToArray(),
+                            Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
+                            [0f, 0.33f, 0.66f, 1f]);
+                        break;
+                    case 5:
+                        // Adjust the positions for a five-color gradient
+                        gradient = new GradientOptions(
+                            colors.ToArray(),
+                            Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
+                            [0f, 0.25f, 0.5f, 0.75f, 1f]);
+                        break;
+                }
             }
 
             // Show a modal popup to inform the user about the recommended foreground image size before opening the file picker
