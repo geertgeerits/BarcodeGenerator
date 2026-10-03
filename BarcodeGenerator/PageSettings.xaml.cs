@@ -797,11 +797,13 @@ namespace BarcodeGenerator
             Preferences.Default.Set("SettingQRCodeGradientColor3", ClassBarcodes.cQRCodeGradientColor3);
             Preferences.Default.Set("SettingQRCodeGradientColor4", ClassBarcodes.cQRCodeGradientColor4);
             Preferences.Default.Set("SettingQRCodeGradientColor5", ClassBarcodes.cQRCodeGradientColor5);
+            Preferences.Default.Set("SettingQRCodeGradientColor6", ClassBarcodes.cQRCodeGradientColor6);
             Preferences.Default.Set("SettingQRCodeGradientColor1Selected", ClassBarcodes.bQRCodeGradientColor1Selected);
             Preferences.Default.Set("SettingQRCodeGradientColor2Selected", ClassBarcodes.bQRCodeGradientColor2Selected);
             Preferences.Default.Set("SettingQRCodeGradientColor3Selected", ClassBarcodes.bQRCodeGradientColor3Selected);
             Preferences.Default.Set("SettingQRCodeGradientColor4Selected", ClassBarcodes.bQRCodeGradientColor4Selected);
             Preferences.Default.Set("SettingQRCodeGradientColor5Selected", ClassBarcodes.bQRCodeGradientColor5Selected);
+            Preferences.Default.Set("SettingQRCodeGradientColor6Selected", ClassBarcodes.bQRCodeGradientColor6Selected);
             Preferences.Default.Set("SettingQRCodeGradientDirection", ClassBarcodes.cQRCodeGradientDirection);
             Preferences.Default.Set("SettingQRCodeForegroundImage", ClassBarcodes.bQRCodeForegroundImage);
             Preferences.Default.Set("SettingQRCodeBackgroundImage", ClassBarcodes.bQRCodeBackgroundImage);
@@ -864,11 +866,13 @@ namespace BarcodeGenerator
                 Preferences.Default.Remove("SettingQRCodeGradientColor3");
                 Preferences.Default.Remove("SettingQRCodeGradientColor4");
                 Preferences.Default.Remove("SettingQRCodeGradientColor5");
+                Preferences.Default.Remove("SettingQRCodeGradientColor6");
                 Preferences.Default.Remove("SettingQRCodeGradientColor1Selected");
                 Preferences.Default.Remove("SettingQRCodeGradientColor2Selected");
                 Preferences.Default.Remove("SettingQRCodeGradientColor3Selected");
                 Preferences.Default.Remove("SettingQRCodeGradientColor4Selected");
                 Preferences.Default.Remove("SettingQRCodeGradientColor5Selected");
+                Preferences.Default.Remove("SettingQRCodeGradientColor6Selected");
                 Preferences.Default.Remove("SettingQRCodeGradientDirection");
                 Preferences.Default.Remove("SettingQRCodeForegroundImage");
                 Preferences.Default.Remove("SettingQRCodeBackgroundImage");

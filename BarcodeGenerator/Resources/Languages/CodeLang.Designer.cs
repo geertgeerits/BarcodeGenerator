@@ -2181,6 +2181,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gradient color 6.
+        /// </summary>
+        internal static string QRCodeGradientColor6_Text {
+            get {
+                return ResourceManager.GetString("QRCodeGradientColor6_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gradient colors:.
         /// </summary>
         internal static string QRCodeGradientColors_Text {

@@ -55,13 +55,15 @@ namespace BarcodeGenerator
             bxvGradientColor3.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor3);
             bxvGradientColor4.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor4);
             bxvGradientColor5.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor5);
+            bxvGradientColor6.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor6);
 
             // Set the initial states of the checkboxes based on the current settings
             ckbQRCodeGradientColor1.IsChecked = ClassBarcodes.bQRCodeGradientColor1Selected;
             ckbQRCodeGradientColor2.IsChecked = ClassBarcodes.bQRCodeGradientColor2Selected;
             ckbQRCodeGradientColor3.IsChecked = ClassBarcodes.bQRCodeGradientColor3Selected;
             ckbQRCodeGradientColor4.IsChecked = ClassBarcodes.bQRCodeGradientColor4Selected;
-            ckbQRCodeGradientColor5.IsChecked = ClassBarcodes.bQRCodeGradientColor5Selected;   
+            ckbQRCodeGradientColor5.IsChecked = ClassBarcodes.bQRCodeGradientColor5Selected;
+            ckbQRCodeGradientColor6.IsChecked = ClassBarcodes.bQRCodeGradientColor6Selected;
 
             // Set the QR code gradient direction to update the button background color
             switch (ClassBarcodes.cQRCodeGradientDirection)
@@ -206,11 +208,11 @@ namespace BarcodeGenerator
                         {
                             case DisplayOrientation.Portrait:
                                 grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(350) });
                                 break;
                             default:
                                 grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
-                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(290) });
+                                grdSettingsArtQRCode.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(350) });
                                 break;
                         }
                     }
@@ -403,6 +405,23 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// On button color gradient 5 clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonGradientColor6Clicked(object sender, EventArgs e)
+        {
+            ClassBarcodes.cCodeColor = ClassBarcodes.cQRCodeGradientColor6;
+            await OpenPopupColorPickerAsync(CodeLang.QRCodeGradientColor6_Text);
+
+            if (!Globals.bPopupCanceled)
+            {
+                ClassBarcodes.cQRCodeGradientColor6 = ClassBarcodes.cCodeColor;
+                bxvGradientColor6.Color = Color.FromArgb(ClassBarcodes.cQRCodeGradientColor6);
+            }
+        }
+
+        /// <summary>
         /// Checkbox QR code gradient color 1 checked changed event
         /// </summary>
         /// <param name="sender"></param>
@@ -451,7 +470,17 @@ namespace BarcodeGenerator
         {
             ClassBarcodes.bQRCodeGradientColor5Selected = e.Value;
         }
-        
+
+        /// <summary>
+        /// Checkbox QR code gradient color 6 checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CkbQRCodeGradientColor6_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            ClassBarcodes.bQRCodeGradientColor6Selected = e.Value;
+        }
+
         /// <summary>
         /// On button QR code gradient direction clicked event
         /// </summary>

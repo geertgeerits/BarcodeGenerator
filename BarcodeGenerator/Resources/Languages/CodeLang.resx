@@ -1078,4 +1078,7 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>Gradient color 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Gradient color 6</value>
+  </data>
 </root>

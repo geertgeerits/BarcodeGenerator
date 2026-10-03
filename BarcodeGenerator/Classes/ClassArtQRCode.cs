@@ -56,6 +56,7 @@ namespace BarcodeGenerator
                 if (ClassBarcodes.bQRCodeGradientColor3Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor3));
                 if (ClassBarcodes.bQRCodeGradientColor4Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor4));
                 if (ClassBarcodes.bQRCodeGradientColor5Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor5));
+                if (ClassBarcodes.bQRCodeGradientColor6Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor6));
 
                 switch (colors.Count)
                 {
@@ -90,6 +91,13 @@ namespace BarcodeGenerator
                             colors.ToArray(),
                             Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
                             [0f, 0.25f, 0.5f, 0.75f, 1f]);
+                        break;
+                    case 6:
+                        // Adjust the positions for a six-color gradient
+                        gradient = new GradientOptions(
+                            colors.ToArray(),
+                            Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
+                            [0f, 0.2f, 0.4f, 0.6f, 0.8f, 1f]);
                         break;
                 }
             }

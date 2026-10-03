@@ -324,7 +324,7 @@
             Grid.Column="{OnIdiom Default=1, Phone=0}"
             Grid.ColumnSpan="{OnIdiom Default=1, Phone=2}"
             RowDefinitions="Auto"
-            ColumnDefinitions="{OnIdiom Default='0,52,52,52,52,52', Phone='*,52,52,52,52,52'}"
+            ColumnDefinitions="{OnIdiom Default='0,52,52,52,52,52,52', Phone='*,52,52,52,52,52,52'}"
             ColumnSpacing="{OnIdiom Default=4, Phone=10}"
             Margin="{OnIdiom Default='0,0,0,0', Phone='0,0,8,0'}">
 
@@ -467,6 +467,34 @@
                 ToolTipProperties.Text="{Translate ColorPicker_Text}"
                 Clicked="OnButtonGradientColor5Clicked">
             </ImageButton>
+
+            <Border
+                Grid.Column="6"
+                Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 5,5,5,5">
+
+                <BoxView
+                    x:Name="bxvGradientColor6"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    HorizontalOptions="Start"
+                    SemanticProperties.Description="{Translate QRCodeGradientColor6_Text}"
+                    ToolTipProperties.Text="{Translate QRCodeGradientColor6_Text}">
+                </BoxView>
+            </Border>
+
+            <ImageButton
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Column="6"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                Source="ic_action_settings.png"
+                SemanticProperties.Description="{Translate ColorPicker_Text}"
+                ToolTipProperties.Text="{Translate ColorPicker_Text}"
+                Clicked="OnButtonGradientColor6Clicked">
+            </ImageButton>
         </Grid>
 
         <Grid
@@ -474,7 +502,7 @@
             Grid.Column="{OnIdiom Default=1, Phone=0}"
             Grid.ColumnSpan="{OnIdiom Default=1, Phone=2}"
             RowDefinitions="Auto"
-            ColumnDefinitions="{OnIdiom Default='0,52,52,52,52,52', Phone='*,52,52,52,52,52'}"
+            ColumnDefinitions="{OnIdiom Default='0,52,52,52,52,52,52', Phone='*,52,52,52,52,52,52'}"
             ColumnSpacing="{OnIdiom Default=4, Phone=10}"
             Margin="{OnIdiom Default='0,0,0,0', Phone='0,0,8,0', Desktop='7,0,0,0'}">
 
@@ -521,6 +549,15 @@
                 SemanticProperties.Description="{Translate QRCodeGradientColor5_Text}"
                 ToolTipProperties.Text="{Translate QRCodeGradientColor5_Text}"
                 CheckedChanged="CkbQRCodeGradientColor5_CheckedChanged">
+            </CheckBox>
+
+            <CheckBox
+                x:Name="ckbQRCodeGradientColor6"
+                Grid.Column="6"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="{Translate QRCodeGradientColor6_Text}"
+                ToolTipProperties.Text="{Translate QRCodeGradientColor6_Text}"
+                CheckedChanged="CkbQRCodeGradientColor6_CheckedChanged">
             </CheckBox>
         </Grid>
         
