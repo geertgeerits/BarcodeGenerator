@@ -325,8 +325,8 @@
             Grid.ColumnSpan="{OnIdiom Default=1, Phone=2}"
             RowDefinitions="Auto"
             ColumnDefinitions="{OnIdiom Default='0,52,52,52,52,52,52', Phone='*,52,52,52,52,52,52'}"
-            ColumnSpacing="{OnIdiom Default=4, Phone=10}"
-            Margin="{OnIdiom Default='0,0,0,0', Phone='0,0,8,0'}">
+            ColumnSpacing="{OnIdiom Default=4, Phone=2}"
+            Margin="{OnIdiom Default='0,0,0,0', Phone='0,0,8,0', Desktop='0,0,0,0'}">
 
             <Border
                 Grid.Column="1"
@@ -503,8 +503,8 @@
             Grid.ColumnSpan="{OnIdiom Default=1, Phone=2}"
             RowDefinitions="Auto"
             ColumnDefinitions="{OnIdiom Default='0,52,52,52,52,52,52', Phone='*,52,52,52,52,52,52'}"
-            ColumnSpacing="{OnIdiom Default=4, Phone=10}"
-            Margin="{OnIdiom Default='0,0,0,0', Phone='0,0,8,0', Desktop='7,0,0,0'}">
+            ColumnSpacing="{OnIdiom Default=4, Phone=2}"
+            Margin="{OnIdiom Default='0,0,0,0', Phone='0,0,8,0', Desktop='8,0,0,0'}">
 
             <CheckBox
                 x:Name="ckbQRCodeGradientColor1"
