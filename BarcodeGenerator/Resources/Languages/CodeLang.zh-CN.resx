@@ -1072,4 +1072,10 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>边框线宽：{0} 像素</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>渐变色 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>渐变色 5</value>
+  </data>
 </root>

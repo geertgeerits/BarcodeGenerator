@@ -1072,4 +1072,10 @@ Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawie
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Szerokość linii obramowania: {0} pikseli</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Kolor gradientowy 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Kolor gradientowy 5</value>
+  </data>
 </root>

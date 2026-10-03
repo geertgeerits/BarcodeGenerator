@@ -1072,4 +1072,10 @@ For at ændre størrelsen på QR-koden inde i cirklen skal du justere frizonen i
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Kantlinjebredde: {0} pixels</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Gradientfarve 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Gradientfarve 5</value>
+  </data>
 </root>

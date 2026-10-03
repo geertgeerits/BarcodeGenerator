@@ -1072,4 +1072,10 @@ För att ändra storleken på QR-koden inuti cirkeln justerar du tyst zon i inst
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Kantlinjens bredd: {0} pixlar</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Gradientfärg 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Gradientfärg 5</value>
+  </data>
 </root>

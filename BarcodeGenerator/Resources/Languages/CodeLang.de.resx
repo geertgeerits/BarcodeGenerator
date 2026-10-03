@@ -1071,4 +1071,10 @@ Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruh
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Rahmenlinienbreite: {0} Pixel</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Farbverlauf 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Farbverlauf 5</value>
+  </data>
 </root>

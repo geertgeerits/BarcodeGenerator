@@ -1072,4 +1072,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Ширина границы: {0} пикселей</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Цвет градиента 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Цвет градиента 5</value>
+  </data>
 </root>

@@ -1072,4 +1072,10 @@ Para cambiar el tamaño del código QR dentro del círculo, ajuste la zona de si
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Ancho del borde: {0} píxeles</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Color degradado 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Color degradado 5</value>
+  </data>
 </root>

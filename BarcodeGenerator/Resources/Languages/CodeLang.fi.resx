@@ -1072,4 +1072,10 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Reunaviivan leveys: {0} pikseliä</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Liukuväri 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Liukuväri 5</value>
+  </data>
 </root>

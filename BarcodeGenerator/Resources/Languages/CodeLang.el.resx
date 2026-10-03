@@ -1072,4 +1072,10 @@
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Πλάτος γραμμής περιγράμματος: {0} pixel</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Χρώμα διαβάθμισης 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Χρώμα διαβάθμισης 5</value>
+  </data>
 </root>

@@ -1070,4 +1070,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Ширина лінії межі: {0} пікселів</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Колір градієнта 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Колір градієнта 5</value>
+  </data>
 </root>

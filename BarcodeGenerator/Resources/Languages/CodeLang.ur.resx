@@ -1072,4 +1072,10 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>بارڈر لائن کی چوڑائی: {0} پکسلز</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>گریڈینٹ رنگ 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>گریڈینٹ رنگ 5</value>
+  </data>
 </root>

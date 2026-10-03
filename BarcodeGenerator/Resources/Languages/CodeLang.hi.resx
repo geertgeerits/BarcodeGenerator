@@ -1069,4 +1069,10 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>बॉर्डर लाइन की चौड़ाई: {0} पिक्सल</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>ग्रेडिएंट कलर 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>ग्रेडिएंट कलर 5</value>
+  </data>
 </root>

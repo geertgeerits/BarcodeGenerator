@@ -1072,4 +1072,10 @@ Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölg
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Kenarlık çizgisi kalınlığı: {0} piksel</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Gradyan renk 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Gradyan renk 5</value>
+  </data>
 </root>

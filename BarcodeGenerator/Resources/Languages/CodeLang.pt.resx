@@ -1072,4 +1072,10 @@ Para alterar o tamanho do código QR dentro do círculo, ajuste a zona de silên
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Largura da linha da borda: {0} pixels</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Cor gradiente 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Cor gradiente 5</value>
+  </data>
 </root>

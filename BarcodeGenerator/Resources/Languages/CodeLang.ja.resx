@@ -756,13 +756,13 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
     <value>右下から左上へ</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
-    <value>グラデーションカラー1</value>
+    <value>グラデーションカラー 1</value>
   </data>
   <data name="QRCodeGradientColor2_Text" xml:space="preserve">
-    <value>グラデーションカラー2</value>
+    <value>グラデーションカラー 2</value>
   </data>
   <data name="QRCodeGradientColor3_Text" xml:space="preserve">
-    <value>グラデーションカラー3</value>
+    <value>グラデーションカラー 3</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>モジュールの形状：</value>
@@ -1085,5 +1085,11 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   </data>
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>境界線の幅: {0} ピクセル</value>
+  </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>グラデーションカラー 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>グラデーションカラー 5</value>
   </data>
 </root>

@@ -1072,4 +1072,10 @@ Per modificare le dimensioni del codice QR all'interno del cerchio, regola la zo
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Spessore del bordo: {0} pixel</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Sfumatura di colore 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Sfumatura di colore 5</value>
+  </data>
 </root>

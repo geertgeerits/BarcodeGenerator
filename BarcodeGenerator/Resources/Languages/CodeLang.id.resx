@@ -1072,4 +1072,10 @@ Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet 
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Lebar garis batas: {0} piksel</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Warna gradien 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Warna gradien 5</value>
+  </data>
 </root>

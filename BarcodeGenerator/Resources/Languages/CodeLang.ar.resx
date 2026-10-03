@@ -1073,4 +1073,10 @@
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>عرض خط الحدود: {0} بكسل</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>لون متدرج 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>لون متدرج 5</value>
+  </data>
 </root>

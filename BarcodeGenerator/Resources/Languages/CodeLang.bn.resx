@@ -1070,4 +1070,10 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>বর্ডারের রেখার প্রস্থ: {0} পিক্সেল</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>গ্রেডিয়েন্ট রঙ ৪</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>গ্রেডিয়েন্ট রঙ ৫</value>
+  </data>
 </root>

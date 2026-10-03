@@ -1072,4 +1072,10 @@ Pentru a modifica dimensiunea codului QR din interiorul cercului, ajustează zon
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Grosimea liniei de contur: {0} pixeli</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Culoare gradient 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Culoare gradient 5</value>
+  </data>
 </root>

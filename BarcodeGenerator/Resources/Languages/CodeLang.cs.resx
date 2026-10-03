@@ -1072,4 +1072,10 @@ Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tic
   <data name="BorderWidth_Text" xml:space="preserve">
     <value>Šířka čáry okraje: {0} pixelů</value>
   </data>
+  <data name="QRCodeGradientColor4_Text" xml:space="preserve">
+    <value>Barva přechodu 4</value>
+  </data>
+  <data name="QRCodeGradientColor5_Text" xml:space="preserve">
+    <value>Barva přechodu 5</value>
+  </data>
 </root>
