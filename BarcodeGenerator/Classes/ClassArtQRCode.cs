@@ -50,7 +50,7 @@ namespace BarcodeGenerator
                 //    Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
                 //    [0f, 0.5f, 1f]);
 
-                List<SKColor> colors = new List<SKColor>();
+                List<SKColor> colors = [];
                 if (ClassBarcodes.bQRCodeGradientColor1Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor1));
                 if (ClassBarcodes.bQRCodeGradientColor2Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor2));
                 if (ClassBarcodes.bQRCodeGradientColor3Selected) colors.Add(SKColor.Parse(ClassBarcodes.cQRCodeGradientColor3));
@@ -64,14 +64,14 @@ namespace BarcodeGenerator
                         colors.Add(SKColors.Black);
                         break;
                     case 2:
-                        // adjust the positions for a two-color gradient
+                        // Adjust the positions for a two-color gradient
                         gradient = new GradientOptions(
                             colors.ToArray(),
                             Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
                             [0f, 1f]);
                         break;
                     case 3:
-                        // adjust the positions for a three-color gradient
+                        // Adjust the positions for a three-color gradient
                         gradient = new GradientOptions(
                             colors.ToArray(),
                             Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),

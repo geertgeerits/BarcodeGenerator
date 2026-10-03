@@ -320,15 +320,16 @@
         </Label>
 
         <Grid
-            Grid.Row="{OnPlatform Default=8, WinUI=7}"
-            Grid.Column="{OnPlatform Default=0, WinUI=1}"
-            Grid.ColumnSpan="{OnPlatform Default=2, WinUI=1}"
+            Grid.Row="{OnIdiom Default=7, Phone=8}"
+            Grid.Column="{OnIdiom Default=1, Phone=0}"
+            Grid.ColumnSpan="{OnIdiom Default=1, Phone=2}"
             RowDefinitions="Auto"
-            ColumnDefinitions="52, 52, 52, 52, 52"
-            ColumnSpacing="{OnPlatform Default=10, WinUI=6}">
+            ColumnDefinitions="{OnIdiom Default='0,52,52,52,52,52', Phone='*,52,52,52,52,52'}"
+            ColumnSpacing="{OnIdiom Default=6, Phone=10}"
+            Margin="{OnIdiom Default='0,0,0,0', Phone='0,0,8,0'}">
 
             <Border
-                Grid.Column="0"
+                Grid.Column="1"
                 Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
                 StrokeThickness="1"
                 StrokeShape="RoundRectangle 5,5,5,5">
@@ -345,7 +346,7 @@
 
             <ImageButton
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Column="0"
+                Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
@@ -356,7 +357,7 @@
             </ImageButton>
 
             <Border
-                Grid.Column="1"
+                Grid.Column="2"
                 Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
                 StrokeThickness="1"
                 StrokeShape="RoundRectangle 5,5,5,5">
@@ -373,7 +374,7 @@
 
             <ImageButton
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Column="1"
+                Grid.Column="2"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
@@ -384,7 +385,7 @@
             </ImageButton>
 
             <Border
-                Grid.Column="2"
+                Grid.Column="3"
                 Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
                 StrokeThickness="1"
                 StrokeShape="RoundRectangle 5,5,5,5">
@@ -401,7 +402,7 @@
 
             <ImageButton
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Column="2"
+                Grid.Column="3"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
@@ -412,7 +413,7 @@
             </ImageButton>
 
             <Border
-                Grid.Column="3"
+                Grid.Column="4"
                 Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
                 StrokeThickness="1"
                 StrokeShape="RoundRectangle 5,5,5,5">
@@ -429,7 +430,7 @@
 
             <ImageButton
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Column="3"
+                Grid.Column="4"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
@@ -440,7 +441,7 @@
             </ImageButton>
 
             <Border
-                Grid.Column="4"
+                Grid.Column="5"
                 Stroke="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}"
                 StrokeThickness="1"
                 StrokeShape="RoundRectangle 5,5,5,5">
@@ -457,7 +458,7 @@
 
             <ImageButton
                 Style="{StaticResource imageButtonStyleColorPicker}"
-                Grid.Column="4"
+                Grid.Column="5"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor ="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
@@ -469,17 +470,17 @@
         </Grid>
 
         <Grid
-            Grid.Row="{OnPlatform Default=9, WinUI=8}"
-            Grid.Column="{OnPlatform Default=0, WinUI=1}"
-            Grid.ColumnSpan="{OnPlatform Default=2, WinUI=1}"
+            Grid.Row="{OnIdiom Default=8, Phone=9}"
+            Grid.Column="{OnIdiom Default=1, Phone=0}"
+            Grid.ColumnSpan="{OnIdiom Default=1, Phone=2}"
             RowDefinitions="Auto"
-            ColumnDefinitions="52, 52, 52, 52, 52"
-            ColumnSpacing="{OnPlatform Default=10, WinUI=6}"
-            Margin="{OnPlatform Default=0, WinUI='8,0,0,0'}">
+            ColumnDefinitions="{OnIdiom Default='0,52,52,52,52,52', Phone='*,52,52,52,52,52'}"
+            ColumnSpacing="{OnIdiom Default=6, Phone=10}"
+            Margin="{OnIdiom Default='8,0,0,0', Phone='0,0,8,0'}">
 
             <CheckBox
                 x:Name="ckbQRCodeGradientColor1"
-                Grid.Column="0"
+                Grid.Column="1"
                 HorizontalOptions="Center"
                 SemanticProperties.Description="{Translate QRCodeGradientColor1_Text}"
                 ToolTipProperties.Text="{Translate QRCodeGradientColor1_Text}"
@@ -488,7 +489,7 @@
 
             <CheckBox
                 x:Name="ckbQRCodeGradientColor2"
-                Grid.Column="1"
+                Grid.Column="2"
                 HorizontalOptions="Center"
                 SemanticProperties.Description="{Translate QRCodeGradientColor2_Text}"
                 ToolTipProperties.Text="{Translate QRCodeGradientColor2_Text}"
@@ -497,7 +498,7 @@
 
             <CheckBox
                 x:Name="ckbQRCodeGradientColor3"
-                Grid.Column="2"
+                Grid.Column="3"
                 HorizontalOptions="Center"
                 SemanticProperties.Description="{Translate QRCodeGradientColor3_Text}"
                 ToolTipProperties.Text="{Translate QRCodeGradientColor3_Text}"
@@ -506,7 +507,7 @@
 
             <CheckBox
                 x:Name="ckbQRCodeGradientColor4"
-                Grid.Column="3"
+                Grid.Column="4"
                 HorizontalOptions="Center"
                 SemanticProperties.Description="{Translate QRCodeGradientColor4_Text}"
                 ToolTipProperties.Text="{Translate QRCodeGradientColor4_Text}"
@@ -515,7 +516,7 @@
 
             <CheckBox
                 x:Name="ckbQRCodeGradientColor5"
-                Grid.Column="4"
+                Grid.Column="5"
                 HorizontalOptions="Center"
                 SemanticProperties.Description="{Translate QRCodeGradientColor5_Text}"
                 ToolTipProperties.Text="{Translate QRCodeGradientColor5_Text}"
