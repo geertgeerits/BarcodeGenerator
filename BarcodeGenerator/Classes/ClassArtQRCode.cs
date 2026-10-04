@@ -62,7 +62,7 @@ namespace BarcodeGenerator
                 {
                     case < 2:
                         // Fallback color to avoid empty array
-                        colors.Add(SKColors.Black);
+                        colors.Add(SKColor.Parse(ClassBarcodes.cCodeColorFgArtQRCode));
                         break;
                     case 2:
                         // Adjust the positions for a two-color gradient
