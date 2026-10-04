@@ -745,13 +745,13 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
     <value>Снизу справа наверх слева</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
-    <value>Цвет градиента 1</value>
+    <value>Градиентный цвет 1</value>
   </data>
   <data name="QRCodeGradientColor2_Text" xml:space="preserve">
-    <value>Цвет градиента 2</value>
+    <value>Градиентный цвет 2</value>
   </data>
   <data name="QRCodeGradientColor3_Text" xml:space="preserve">
-    <value>Цвет градиента 3</value>
+    <value>Градиентный цвет 3</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>Форма модуля:</value>
@@ -1073,9 +1073,12 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
     <value>Ширина границы: {0} пикселей</value>
   </data>
   <data name="QRCodeGradientColor4_Text" xml:space="preserve">
-    <value>Цвет градиента 4</value>
+    <value>Градиентный цвет 4</value>
   </data>
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
-    <value>Цвет градиента 5</value>
+    <value>Градиентный цвет 5</value>
+  </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Градиентный цвет 6</value>
   </data>
 </root>

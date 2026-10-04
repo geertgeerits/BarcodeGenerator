@@ -1078,4 +1078,7 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>Liukuväri 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Liukuväri 6</value>
+  </data>
 </root>

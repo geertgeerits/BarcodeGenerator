@@ -1078,4 +1078,7 @@ For å endre størrelsen på QR-koden inne i sirkelen, justerer du «quiet zone�
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>Gradientfarge 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Gradientfarge 6</value>
+  </data>
 </root>

@@ -1081,4 +1081,7 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>Màu chuyển sắc 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Màu chuyển sắc 6</value>
+  </data>
 </root>

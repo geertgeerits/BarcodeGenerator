@@ -1076,4 +1076,7 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>গ্রেডিয়েন্ট রঙ ৫</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>গ্রেডিয়েন্ট রঙ ৬</value>
+  </data>
 </root>

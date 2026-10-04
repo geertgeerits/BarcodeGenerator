@@ -1079,4 +1079,7 @@
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>لون متدرج 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>لون متدرج 6</value>
+  </data>
 </root>

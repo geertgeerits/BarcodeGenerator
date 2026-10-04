@@ -1077,4 +1077,7 @@ Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruh
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>Farbverlauf 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Farbverlauf 6</value>
+  </data>
 </root>

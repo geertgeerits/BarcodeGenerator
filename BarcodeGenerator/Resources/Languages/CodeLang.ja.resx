@@ -1092,4 +1092,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>グラデーションカラー 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>グラデーションカラー 6</value>
+  </data>
 </root>

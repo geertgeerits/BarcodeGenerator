@@ -1078,4 +1078,7 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>Színátmenet színe 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Színátmenet színe 6</value>
+  </data>
 </root>

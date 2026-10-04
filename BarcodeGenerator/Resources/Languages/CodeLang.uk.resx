@@ -744,13 +744,13 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
     <value>Знизу праворуч нагору ліворуч</value>
   </data>
   <data name="QRCodeGradientColor1_Text" xml:space="preserve">
-    <value>Колір градієнта 1</value>
+    <value>Градієнтний колір 1</value>
   </data>
   <data name="QRCodeGradientColor2_Text" xml:space="preserve">
-    <value>Колір градієнта 2</value>
+    <value>Градієнтний колір 2</value>
   </data>
   <data name="QRCodeGradientColor3_Text" xml:space="preserve">
-    <value>Колір градієнта 3</value>
+    <value>Градієнтний колір 3</value>
   </data>
   <data name="QRCodeModuleShape_Text" xml:space="preserve">
     <value>Форма модуля:</value>
@@ -1071,9 +1071,12 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
     <value>Ширина лінії межі: {0} пікселів</value>
   </data>
   <data name="QRCodeGradientColor4_Text" xml:space="preserve">
-    <value>Колір градієнта 4</value>
+    <value>Градієнтний колір 4</value>
   </data>
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
-    <value>Колір градієнта 5</value>
+    <value>Градієнтний колір 5</value>
+  </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Градієнтний колір 6</value>
   </data>
 </root>

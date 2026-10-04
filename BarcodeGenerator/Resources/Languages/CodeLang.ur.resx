@@ -1078,4 +1078,7 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>گریڈینٹ رنگ 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>گریڈینٹ رنگ 6</value>
+  </data>
 </root>

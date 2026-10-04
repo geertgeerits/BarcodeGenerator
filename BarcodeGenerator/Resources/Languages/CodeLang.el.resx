@@ -1078,4 +1078,7 @@
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>Χρώμα διαβάθμισης 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Χρώμα διαβάθμισης 6</value>
+  </data>
 </root>

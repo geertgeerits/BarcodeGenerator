@@ -1079,4 +1079,7 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>漸層色 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>漸層色 6</value>
+  </data>
 </root>

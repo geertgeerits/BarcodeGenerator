@@ -1079,4 +1079,7 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>그라데이션 색상 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>그라데이션 색상 6</value>
+  </data>
 </root>

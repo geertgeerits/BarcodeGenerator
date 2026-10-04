@@ -1078,4 +1078,7 @@ Pour modifier la taille du code QR à l'intérieur du cercle, ajustez la zone de
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>Couleur dégradée 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Couleur dégradée 6</value>
+  </data>
 </root>

@@ -1078,4 +1078,7 @@ Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de Q
   <data name="QRCodeGradientColor5_Text" xml:space="preserve">
     <value>Gradiëntkleur 5</value>
   </data>
+  <data name="QRCodeGradientColor6_Text" xml:space="preserve">
+    <value>Gradiëntkleur 6</value>
+  </data>
 </root>
