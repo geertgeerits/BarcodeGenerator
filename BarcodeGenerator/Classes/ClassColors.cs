@@ -5,20 +5,6 @@ namespace BarcodeGenerator
     internal class ClassColors
     {
         /// <summary>
-        /// Converts a Microsoft.Maui.Graphics.Color to a SkiaSharp.SKColor.
-        /// </summary>
-        /// <param name="c">The Microsoft.Maui.Graphics.Color to convert.</param>
-        /// <returns>The equivalent SkiaSharp.SKColor.</returns>
-        public static SKColor ToSKColor(Microsoft.Maui.Graphics.Color c)
-        {
-            return new SKColor(
-                (byte)Math.Round(c.Red * 255.0),
-                (byte)Math.Round(c.Green * 255.0),
-                (byte)Math.Round(c.Blue * 255.0),
-                (byte)Math.Round(c.Alpha * 255.0));
-        }
-
-        /// <summary>
         /// Attempts to parse a color string into an SKColor. If parsing fails, returns the provided default color.
         /// Helper: parse "AARRGGBB" or "#AARRGGBB" or "RRGGBB" into SKColor, fallback to defaultColor on failure
         /// </summary>
@@ -69,6 +55,20 @@ namespace BarcodeGenerator
             byte b = (byte)(argb & 0xFF);
 
             return new SkiaSharp.SKColor(r, g, b, a);
+        }
+
+        /// <summary>
+        /// Converts a Microsoft.Maui.Graphics.Color to a SkiaSharp.SKColor.
+        /// </summary>
+        /// <param name="c">The Microsoft.Maui.Graphics.Color to convert.</param>
+        /// <returns>The equivalent SkiaSharp.SKColor.</returns>
+        public static SKColor ToSKColor(Microsoft.Maui.Graphics.Color c)
+        {
+            return new SKColor(
+                (byte)Math.Round(c.Red * 255.0),
+                (byte)Math.Round(c.Green * 255.0),
+                (byte)Math.Round(c.Blue * 255.0),
+                (byte)Math.Round(c.Alpha * 255.0));
         }
     }
 }
