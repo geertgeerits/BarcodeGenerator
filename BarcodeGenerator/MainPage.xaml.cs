@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-10-04 (YYYY-MM-DD)
+ * Date ........: 2026-10-05 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -119,11 +119,11 @@ namespace BarcodeGenerator
             ClassBarcodes.cQRCodeGradientColor5 = Preferences.Default.Get("SettingQRCodeGradientColor5", "FF0000FF");  // Blue
             ClassBarcodes.cQRCodeGradientColor6 = Preferences.Default.Get("SettingQRCodeGradientColor6", "FFFF00FF");  // Magenta
             ClassBarcodes.bQRCodeGradientColor1Selected = Preferences.Default.Get("SettingQRCodeGradientColor1Selected", true);
-            ClassBarcodes.bQRCodeGradientColor2Selected = Preferences.Default.Get("SettingQRCodeGradientColor2Selected", true);
+            ClassBarcodes.bQRCodeGradientColor2Selected = Preferences.Default.Get("SettingQRCodeGradientColor2Selected", false);
             ClassBarcodes.bQRCodeGradientColor3Selected = Preferences.Default.Get("SettingQRCodeGradientColor3Selected", true);
-            ClassBarcodes.bQRCodeGradientColor4Selected = Preferences.Default.Get("SettingQRCodeGradientColor4Selected", true);
+            ClassBarcodes.bQRCodeGradientColor4Selected = Preferences.Default.Get("SettingQRCodeGradientColor4Selected", false);
             ClassBarcodes.bQRCodeGradientColor5Selected = Preferences.Default.Get("SettingQRCodeGradientColor5Selected", true);
-            ClassBarcodes.bQRCodeGradientColor6Selected = Preferences.Default.Get("SettingQRCodeGradientColor6Selected", true);
+            ClassBarcodes.bQRCodeGradientColor6Selected = Preferences.Default.Get("SettingQRCodeGradientColor6Selected", false);
             ClassBarcodes.cQRCodeGradientDirection = Preferences.Default.Get("SettingQRCodeGradientDirection", "BottomLeftToTopRight");  // None, BottomToTop, BottomLeftToTopRight, LeftToRight, TopLeftToBottomRight, TopToBottom, TopRightToBottomLeft, RightToLeft, BottomRightToTopLeft
             ClassBarcodes.bQRCodeForegroundImage = Preferences.Default.Get("SettingQRCodeForegroundImage", false);
             ClassBarcodes.bQRCodeBackgroundImage = Preferences.Default.Get("SettingQRCodeBackgroundImage", false);
