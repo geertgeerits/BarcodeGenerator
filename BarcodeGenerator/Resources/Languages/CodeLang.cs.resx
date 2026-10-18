@@ -1081,4 +1081,10 @@ Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tic
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Barva přechodu 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>Identifikátor GS1</value>
+  </data>
 </root>

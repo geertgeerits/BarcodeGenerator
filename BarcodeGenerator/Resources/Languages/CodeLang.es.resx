@@ -1081,4 +1081,10 @@ Para cambiar el tamaño del código QR dentro del círculo, ajuste la zona de si
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Color degradado 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>Identificador GS1</value>
+  </data>
 </root>

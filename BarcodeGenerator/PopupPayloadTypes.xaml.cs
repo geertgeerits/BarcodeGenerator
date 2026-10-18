@@ -207,6 +207,14 @@ namespace BarcodeGenerator
 #endif
                 _ = entPayloadTypeSctBic.Focus();
             }
+
+            else if (selectedName == ClassPayloadTypes.cPayloadType_GS1)
+            {
+                brdPayloadTypeURL.IsVisible = true;
+                btnButtonURL.IsVisible = true;
+                brdPayloadTypeGS1Identifier.IsVisible = true;
+                _ = entPayloadTypeURL.Focus();
+            }
         }
 
         /// <summary>
@@ -290,6 +298,7 @@ namespace BarcodeGenerator
             brdPayloadTypeSctRemittanceInfoStructured.IsVisible = false;
             brdPayloadTypeSctRemittanceInfoUnstructured.IsVisible = false;
             brdPayloadTypeSctInformation.IsVisible = false;
+            brdPayloadTypeGS1Identifier.IsVisible = false;
 
             btnButtonGeoLocation.IsVisible = false;
             btnButtonGeoMap.IsVisible = false;
@@ -361,7 +370,7 @@ namespace BarcodeGenerator
         {
             if (entPayloadTypeURL.Text == string.Empty)
             {
-                entPayloadTypeURL.Text = "http://";
+                entPayloadTypeURL.Text = "https://";
                 entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text.Length; // Move cursor to the end of the text
             }
         }
@@ -679,7 +688,7 @@ namespace BarcodeGenerator
             else if (selectedName == ClassPayloadTypes.cPayloadType_SMS)
             {
                 entPayloadTypePhoneNumber.Text = entPayloadTypePhoneNumber.Text.Trim();
-                if (! await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
+                if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
                 {
                     return string.Empty;
                 }
@@ -700,7 +709,7 @@ namespace BarcodeGenerator
                 MMS generator = new(number: entPayloadTypePhoneNumber.Text, subject: edtPayloadTypeMessage.Text.Trim());
                 payload = generator.ToString();
             }
-            
+
             // PayloadType Geolocation
             else if (selectedName == ClassPayloadTypes.cPayloadType_GEOLOCATION)
             {
@@ -748,7 +757,7 @@ namespace BarcodeGenerator
                 {
                     entPayloadTypePhoneNumber.Text = string.Empty;
                 }
-                
+
                 else if (!await IsValidPhoneNumber(entPayloadTypePhoneNumber.Text))
                 {
                     return string.Empty;
@@ -759,7 +768,7 @@ namespace BarcodeGenerator
                 {
                     entPayloadTypeMail.Text = string.Empty;
                 }
-                
+
                 else if (!await IsValidEmail(entPayloadTypeMail.Text))
                 {
                     return string.Empty;
@@ -859,7 +868,7 @@ END:VCALENDAR";
                     cRemittance = entPayloadTypeSctRemittanceInfoUnstructured.Text;
                     typeOfRemittance = TypeOfRemittance.Unstructured;
                 }
-                
+
                 else
                 {
                     cRemittance = entPayloadTypeSctRemittanceInfoStructured.Text;
@@ -900,7 +909,7 @@ END:VCALENDAR";
                     // Generate the QR code as an SVG string and save it to disk for sharing or other purposes
                     SvgQRCode qrCodeSvg = new(qrCodeData);
                     string qrCodeAsSvg = qrCodeSvg.GetGraphic(20, System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorFg, 16)), System.Drawing.Color.FromArgb(Convert.ToInt32(ClassBarcodes.cCodeColorBg, 16)));
-                    
+
                     await File.WriteAllTextAsync(ClassBarcodes.cFileBarcodeSvg, qrCodeAsSvg);
 
                     bPayloadSepaCreditTransfer = true;
@@ -911,6 +920,40 @@ END:VCALENDAR";
                     await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, ex.Message, CodeLang.ButtonClose_Text);
 #endif
                     return string.Empty;
+                }
+            }
+
+            // PayloadType GS1 data
+            else if (selectedName == ClassPayloadTypes.cPayloadType_GS1)
+            {
+                try
+                {
+                    entPayloadTypeURL.Text = entPayloadTypeURL.Text.Trim();
+                    if (!await IsValidUrl(entPayloadTypeURL.Text))
+                    {
+                        return string.Empty;
+                    }
+
+                    // If the last character of the URL is not a forward slash, append one to ensure proper formatting for the GS1 payload
+                    if (!entPayloadTypeURL.Text.EndsWith("/"))
+                    {
+                        entPayloadTypeURL.Text += "/";
+                    }
+
+                    Url generator = new(url: entPayloadTypeURL.Text);
+
+                    // If the GS1 identifier does not start with 01/, prepend it to ensure the payload is correctly formatted according to GS1 standards
+                    if (!entPayloadTypeGS1Identifier.Text.StartsWith("01/"))
+                    {
+                        entPayloadTypeGS1Identifier.Text = "01/" + entPayloadTypeGS1Identifier.Text;
+                    }
+
+                    // Concatenate the URL payload with the GS1 identifier to form the complete payload string
+                    payload = generator.ToString() + entPayloadTypeGS1Identifier.Text;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error in BuildPayload (URL): {ex.Message}");
                 }
             }
 

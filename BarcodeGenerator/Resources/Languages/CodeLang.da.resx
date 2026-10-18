@@ -1081,4 +1081,10 @@ For at ændre størrelsen på QR-koden inde i cirklen skal du justere frizonen i
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Gradientfarve 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>GS1-identifikator</value>
+  </data>
 </root>

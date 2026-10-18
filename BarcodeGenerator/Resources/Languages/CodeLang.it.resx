@@ -1081,4 +1081,10 @@ Per modificare le dimensioni del codice QR all'interno del cerchio, regola la zo
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Sfumatura di colore 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>Identificativo GS1</value>
+  </data>
 </root>

@@ -1079,4 +1079,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Градієнтний колір 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>Ідентифікатор GS1</value>
+  </data>
 </root>

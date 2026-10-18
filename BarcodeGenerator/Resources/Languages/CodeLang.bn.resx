@@ -1079,4 +1079,10 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>গ্রেডিয়েন্ট রঙ ৬</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>GS1 শনাক্তকারী</value>
+  </data>
 </root>

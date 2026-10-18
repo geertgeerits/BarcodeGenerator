@@ -1081,4 +1081,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Градиентный цвет 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>Идентификатор GS1</value>
+  </data>
 </root>

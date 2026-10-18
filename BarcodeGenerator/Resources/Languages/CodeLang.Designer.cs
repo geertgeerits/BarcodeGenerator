@@ -1758,6 +1758,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GS1.
+        /// </summary>
+        internal static string PayloadType_GS1_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_GS1_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to E-mail.
         /// </summary>
         internal static string PayloadType_MAIL_Text {
@@ -1871,6 +1880,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string PayloadTypeFirstname_Text {
             get {
                 return ResourceManager.GetString("PayloadTypeFirstname_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 identifier.
+        /// </summary>
+        internal static string PayloadTypeGS1Identifier_Text {
+            get {
+                return ResourceManager.GetString("PayloadTypeGS1Identifier_Text", resourceCulture);
             }
         }
         

@@ -1081,4 +1081,10 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>گریڈینٹ رنگ 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>GS1 شناخت کنندہ</value>
+  </data>
 </root>

@@ -1081,4 +1081,10 @@ Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawie
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Kolor gradientowy 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>Identyfikator GS1</value>
+  </data>
 </root>

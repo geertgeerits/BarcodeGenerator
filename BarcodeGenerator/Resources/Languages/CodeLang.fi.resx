@@ -1081,4 +1081,10 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Liukuväri 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>GS1-tunniste</value>
+  </data>
 </root>

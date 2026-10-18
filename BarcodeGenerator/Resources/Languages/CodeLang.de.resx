@@ -1080,4 +1080,10 @@ Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruh
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Farbverlauf 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>GS1-Identifikator</value>
+  </data>
 </root>

@@ -1081,4 +1081,10 @@ Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet 
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Warna gradien 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>Pengidentifikasi GS1</value>
+  </data>
 </root>

@@ -1081,4 +1081,10 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Színátmenet színe 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>GS1-azonosító</value>
+  </data>
 </root>

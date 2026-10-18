@@ -1084,4 +1084,10 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Màu chuyển sắc 6</value>
   </data>
+  <data name="PayloadType_GS1_Text" xml:space="preserve">
+    <value>GS1</value>
+  </data>
+  <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
+    <value>Mã định danh GS1</value>
+  </data>
 </root>

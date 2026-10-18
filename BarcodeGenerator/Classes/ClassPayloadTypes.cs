@@ -17,6 +17,7 @@
         public static string cPayloadType_CONTACTDATA = string.Empty;
         public static string cPayloadType_CALENDAREVENT = string.Empty;
         public static string cPayloadType_SEPACREDITTRANSFER = string.Empty;
+        public static string cPayloadType_GS1 = string.Empty;
 
         // Global variables
         public static int nPayloadTypeIndex;
@@ -47,6 +48,7 @@
             cPayloadType_CONTACTDATA = CodeLang.PayloadType_CONTACTDATA_Text;
             cPayloadType_CALENDAREVENT = CodeLang.PayloadType_CALENDAREVENT_Text;
             cPayloadType_SEPACREDITTRANSFER = CodeLang.PayloadType_SEPACREDITTRANSFER_Text;
+            cPayloadType_GS1 = CodeLang.PayloadType_GS1_Text;
 
             // Default values for the payload type
             cPayloadTypeDefault = CodeLang.PayloadType_GEOLOCATION_Text;
@@ -76,6 +78,7 @@
             payloadSearch.Add("CONTACTDATA", CodeLang.PayloadType_CONTACTDATA_Text);
             payloadSearch.Add("CALENDAREVENT", CodeLang.PayloadType_CALENDAREVENT_Text);
             payloadSearch.Add("SEPACREDITTRANSFER", CodeLang.PayloadType_SEPACREDITTRANSFER_Text);
+            payloadSearch.Add("GS1", CodeLang.PayloadType_GS1_Text);
         }
 
         /// <summary>
@@ -101,7 +104,8 @@
                 CodeLang.PayloadType_WHATSAPPMESSAGE_Text,
                 CodeLang.PayloadType_CONTACTDATA_Text,
                 CodeLang.PayloadType_CALENDAREVENT_Text,
-                CodeLang.PayloadType_SEPACREDITTRANSFER_Text
+                CodeLang.PayloadType_SEPACREDITTRANSFER_Text,
+                CodeLang.PayloadType_GS1_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 
