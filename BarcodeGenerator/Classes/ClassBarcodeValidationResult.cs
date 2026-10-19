@@ -129,7 +129,9 @@ namespace BarcodeGenerator
                     }
 
                     if (nLenTextToCode == 13)
+                    {
                         cChecksum = cTextToCode.Substring(12, 1);
+                    }
 
                     cTextToCode = cTextToCode[..12];
                     cTextToCode += CalculateChecksumEanUpcA(ReverseString(cTextToCode));

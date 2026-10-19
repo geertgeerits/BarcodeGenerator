@@ -371,7 +371,25 @@ namespace BarcodeGenerator
             if (entPayloadTypeURL.Text == string.Empty)
             {
                 entPayloadTypeURL.Text = "https://";
-                entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text.Length; // Move cursor to the end of the text
+
+                // Move cursor to the end of the text
+                entPayloadTypeURL.CursorPosition = entPayloadTypeURL.Text.Length;
+            }
+        }
+
+        /// <summary>
+        /// Handles the focus event for the payload type GS1 identifier entry field, initializing it with a default value if it is empty.
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the entry field that received focus.</param>
+        /// <param name="e">The event data associated with the focus event.</param>
+        private void EntPayloadTypeGS1Identifier_Focused(object sender, FocusEventArgs e)
+        {
+            if (entPayloadTypeGS1Identifier.Text == string.Empty)
+            {
+                entPayloadTypeGS1Identifier.Text = "01/";
+
+                // Move cursor to the end of the text
+                entPayloadTypeGS1Identifier.CursorPosition = entPayloadTypeGS1Identifier.Text.Length;
             }
         }
 
@@ -947,6 +965,9 @@ END:VCALENDAR";
                     {
                         entPayloadTypeGS1Identifier.Text = "01/" + entPayloadTypeGS1Identifier.Text;
                     }
+
+                    // Set the barcode caption to the GS1 identifier for display purposes
+                    ClassBarcodes.cBarcodeCaption = entPayloadTypeGS1Identifier.Text;
 
                     // Concatenate the URL payload with the GS1 identifier to form the complete payload string
                     payload = generator.ToString() + entPayloadTypeGS1Identifier.Text;

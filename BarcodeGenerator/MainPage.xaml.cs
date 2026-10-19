@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
- * Date ........: 2026-10-18 (YYYY-MM-DD)
+ * Date ........: 2026-10-19 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
@@ -33,7 +33,6 @@ namespace BarcodeGenerator
         private const string cAllowedCharactersHex = "0123456789ABCDEF";
         private const string cAllowedCharactersCode39_93 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -.$/+%*";
         private const string cAllowedCharactersCodabar = "0123456789-$:/.+ABCD";
-        private static string cBarcodeCaption = string.Empty;   // Caption text for the barcode - used for sharing the barcode with the caption in the text and for the option to include the caption in the generated barcode image
         private static string cBarcodeType = string.Empty;      // Type of the barcode - used for the generating the barcode with caption
         private static bool bCompressionAllowed;                // Flag to indicate if compression is allowed for the input text based on the selected barcode format
         private static bool bPayloadTypeAllowed;                // Flag to indicate if a specific payload type is allowed for the selected barcode format
@@ -782,7 +781,7 @@ namespace BarcodeGenerator
             // Miscellaneous
             btnShare.IsEnabled = false;
             bgvBarcode.Value = string.Empty;
-            cBarcodeCaption = string.Empty;
+            ClassBarcodes.cBarcodeCaption = string.Empty;
             imgQrCodeImage.Source = null;
             Globals.bPopupCanceled = false;
 
@@ -811,7 +810,7 @@ namespace BarcodeGenerator
                 ? pckFormatCodeGenerator.ItemsSource[selectedIndex] as string : string.Empty;
 
             // Validate the text input and set the format
-            // the maximum number of characters due to the different encoding modes and error correction levels
+            // The maximum number of characters due to the different encoding modes and error correction levels
             // Validate the text input and set the format
             if (selectedIndex != -1)
             {
@@ -833,7 +832,7 @@ namespace BarcodeGenerator
                 // Use validated/possibly modified text and caption
                 cTextToCode = validation.Text;
                 edtTextToCode.Text = cTextToCode;
-                cBarcodeCaption = validation.Caption;
+                ClassBarcodes.cBarcodeCaption = validation.Caption;
             }
 
             // Generate the barcode
@@ -881,7 +880,7 @@ namespace BarcodeGenerator
                     if (qrImage is not null)
                     {
                         // Add a caption and save the barcode to a PNG file
-                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
+                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, ClassBarcodes.cBarcodeCaption, cBarcodeType);
 
                         // Add a circle around the QR code using the ClassBarcodeCircle class
                         if (selectedName != ClassBarcodes.cBarcode_ART_RMQR_CODE)
@@ -905,7 +904,7 @@ namespace BarcodeGenerator
                     if (qrImage is not null)
                     {
                         // Save the barcode with caption to a PNG file
-                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
+                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, ClassBarcodes.cBarcodeCaption, cBarcodeType);
                     }
                 }
 
@@ -920,7 +919,7 @@ namespace BarcodeGenerator
                     if (qrImage is not null)
                     {
                         // Add a caption and save the barcode to a PNG file
-                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
+                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, ClassBarcodes.cBarcodeCaption, cBarcodeType);
 
                         // Add a circle around the QR code using the ClassBarcodeCircle class
                         ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cCodeColorBg, ClassBarcodes.cBorderColor, ClassBarcodes.nBorderWidth);
@@ -941,7 +940,7 @@ namespace BarcodeGenerator
                     if (qrImage is not null)
                     {
                         // Add a caption and save the barcode to a PNG file
-                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
+                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, ClassBarcodes.cBarcodeCaption, cBarcodeType);
 
                         // Add a circle around the QR code using the ClassBarcodeCircle class
                         ClassBarcodeCircle.DrawOuterCircleFromFile(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cCodeColorBg, ClassBarcodes.cBorderColor, ClassBarcodes.nBorderWidth);
@@ -962,7 +961,7 @@ namespace BarcodeGenerator
                     if (qrImage is not null)
                     {
                         // Save the barcode with caption to a PNG file
-                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, cBarcodeCaption, cBarcodeType);
+                        await ClassBarcodeCaption.AddBarcodeCaptionFileAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cFileBarcodePng, ClassBarcodes.cBarcodeCaption, cBarcodeType);
                     }
                 }
 
@@ -973,7 +972,7 @@ namespace BarcodeGenerator
                     bgvBarcode.Value = cTextToCode;
 
                     // Save the barcode with caption to a PNG file
-                    await ClassBarcodeCaption.AddBarcodeCaptionScreenAsync(bgvBarcode, imgQrCodeImage, cBarcodeCaption, cBarcodeType);
+                    await ClassBarcodeCaption.AddBarcodeCaptionScreenAsync(bgvBarcode, imgQrCodeImage, ClassBarcodes.cBarcodeCaption, cBarcodeType);
                 }
             }
             catch (Exception ex)
@@ -1019,7 +1018,7 @@ namespace BarcodeGenerator
         /// <summary>
         /// Display an error message
         /// </summary>
-        /// <param name="cMessage"></param>
+        /// <param name="cMessage">The error message to display.</param>
         private void DisplayErrorMessage(string cMessage)
         {
             _ = DisplayAlertAsync(CodeLang.ErrorTitle_Text, cMessage, CodeLang.ButtonClose_Text);
@@ -1030,7 +1029,7 @@ namespace BarcodeGenerator
         /// <summary>
         /// Display an error message and restart the application
         /// </summary>
-        /// <param name="cErrorMessage"></param>
+        /// <param name="cErrorMessage">The error message to display before restarting the application.</param>
         private async Task RestartApplicationAsync(string cErrorMessage)
         {
             await DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{cErrorMessage}\n{CodeLang.RestartApp_Text}", CodeLang.ButtonClose_Text);
@@ -1420,9 +1419,9 @@ namespace BarcodeGenerator
     await GenerateBarcodesToFileZXingAsync(selectedName, cTextToCode);
 
     // Save the barcode with caption to a PNG file
-    if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(cBarcodeCaption) && File.Exists(ClassBarcodes.cFileBarcodePng))
+    if (ClassBarcodes.bBarcodeWithCaption && !string.IsNullOrEmpty(ClassBarcodes.cBarcodeCaption) && File.Exists(ClassBarcodes.cFileBarcodePng))
     {
-        string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
+        string cFile = await ClassBarcodeCaption.SaveBarcodeWithCaptionFromFileAsync(ClassBarcodes.cFileBarcodePng, ClassBarcodes.cBarcodeCaption, ClassBarcodes.cFileBarcodePng);
 
         // Set the image source to the saved file to display it in the Image control
         if (!string.IsNullOrEmpty(cFile))

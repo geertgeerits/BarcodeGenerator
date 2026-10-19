@@ -725,7 +725,8 @@
                     Keyboard="Text"
                     ReturnType="Done"
                     MaxLength="500"
-                    Text="01/">
+                    Text=""
+                    Focused="EntPayloadTypeGS1Identifier_Focused">
                 </Entry>
             </Border>
 
