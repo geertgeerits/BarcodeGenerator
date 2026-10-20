@@ -946,19 +946,32 @@ END:VCALENDAR";
             {
                 try
                 {
+                    // Trim the URL input values to remove leading and trailing whitespace
                     entPayloadTypeURL.Text = entPayloadTypeURL.Text.Trim();
+
+                    // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload
+                    if (entPayloadTypeURL.Text.EndsWith('/'))
+                    {
+                        entPayloadTypeURL.Text = entPayloadTypeURL.Text.TrimEnd('/');
+                    }
+
+                    // Validate the URL to ensure it is properly formatted
                     if (!await IsValidUrl(entPayloadTypeURL.Text))
                     {
                         return string.Empty;
                     }
 
-                    // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload
-                    if (entPayloadTypeURL.Text.EndsWith("/"))
-                    {
-                        entPayloadTypeURL.Text = entPayloadTypeURL.Text.TrimEnd('/');
-                    }
-
+                    // Create a new instance of the Url payload generator with the specified URL
                     Url generator = new(url: entPayloadTypeURL.Text);
+
+                    // Trim the GS1 identifier input values to remove leading and trailing whitespace
+                    entPayloadTypeGS1Identifier.Text = entPayloadTypeGS1Identifier.Text.Trim();
+
+                    // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload
+                    if (entPayloadTypeGS1Identifier.Text.EndsWith('/'))
+                    {
+                        entPayloadTypeGS1Identifier.Text = entPayloadTypeGS1Identifier.Text.TrimEnd('/');
+                    }
 
                     // If the GS1 identifier does not start with /01/, prepend it to ensure the payload is correctly formatted according to GS1 standards
                     if (!entPayloadTypeGS1Identifier.Text.StartsWith("/01/"))
@@ -1109,32 +1122,113 @@ END:VCALENDAR";
                 bIsValid = false;
             }
 
-            // If the GS1 identifier does not start with /01/, return false, 01 stands for the Global Trade Item Number (GTIN) and is a required prefix for GS1 identifiers
-            if (!entPayloadTypeGS1Identifier.Text.StartsWith("/01/"))
+            // Primary identification keys
+            // gtin-code 01 - Global Trade Item Number (GTIN) = 14DIGIT ; GTIN-8, GTIN-12 and GTIN-13 SHALL be expressed as 14 digits, with leading zeroes serving as filler digits
+            if (gs1Identifier.Contains("/01/"))
             {
-                bIsValid = false;
-            }
-
-            // If the GS1 identifier does not have a minimum length of 18 characters (including the /01/ prefix), return false
-            if (entPayloadTypeGS1Identifier.Text.Length < 18)
-            {
-                bIsValid = false;
-            }
-
-            // If the GS1 identifier has a length greater than 18 characters, the the 19th character must be a forward slash (/) to separate the GTIN from the additional data
-            if (entPayloadTypeGS1Identifier.Text.Length > 18 && entPayloadTypeGS1Identifier.Text[18] != '/')
-            {
-                bIsValid = false;
-            }
-
-            // The characters from the 5th to the 18th position (inclusive) of the GS1 identifier must be numeric, as they represent the GTIN
-            for (int i = 4; i < 18; i++)
-            {
-                if (!char.IsDigit(entPayloadTypeGS1Identifier.Text[i]))
+                // If the GS1 identifier does not start with /01/, return false, 01 stands for the Global Trade Item Number (GTIN) and is a required prefix for GS1 identifiers
+                if (!entPayloadTypeGS1Identifier.Text.StartsWith("/01/"))
                 {
                     bIsValid = false;
-                    break;
                 }
+
+                // If the GS1 identifier does not have a minimum length of 18 characters (including the /01/ prefix), return false
+                if (entPayloadTypeGS1Identifier.Text.Length < 18)
+                {
+                    bIsValid = false;
+                }
+
+                // If the GS1 identifier has a length greater than 18 characters, the the 19th character must be a forward slash (/) to separate the GTIN from the additional data
+                if (entPayloadTypeGS1Identifier.Text.Length > 18 && entPayloadTypeGS1Identifier.Text[18] != '/')
+                {
+                    bIsValid = false;
+                }
+
+                // The characters from the 5th to the 18th position (inclusive) of the GS1 identifier must be numeric, as they represent the GTIN
+                for (int i = 4; i < 18; i++)
+                {
+                    if (!char.IsDigit(entPayloadTypeGS1Identifier.Text[i]))
+                    {
+                        bIsValid = false;
+                        break;
+                    }
+                }
+            }
+
+            // itip-code 8006 - International Ticketing Information Protocol (ITIP) = 14DIGIT 2DIGIT 2DIGIT ; 14 digits then 2 digits then 2 digits
+            else if (gs1Identifier.Contains("/8006/"))
+            {
+            }
+
+            // gmn-code 8013 - Global Model Number (GMN) = 1*25XCHAR ; 1-25 characters from 82-character subset
+            else if (gs1Identifier.Contains("/8013/"))
+            {
+            }
+
+            // cpid-code 8010 - Component / Part Identifier (CPID) = 1*30YCHAR ; 1-30 characters from 39-character subset
+            else if (gs1Identifier.Contains("/8010/"))
+            {
+            }
+
+            // gln-code 414 - Physical / Global Location Number (GLN) = 13DIGIT ; exactly 13 digits
+            else if (gs1Identifier.Contains("/414/"))
+            {
+            }
+
+            // payTo-code 415 - GLN of invoicing party = 13DIGIT ; exactly 13 digits
+            else if (gs1Identifier.Contains("/415/"))
+            {
+            }
+
+            // partyGln-code 417 - Party GLN = 13DIGIT ; exactly 13 digits
+            else if (gs1Identifier.Contains("/417/"))
+            {
+            }
+
+            // gsrnp-code 8017 -  GSRN of the Provider = 18DIGIT ; exactly 18 digits
+            else if (gs1Identifier.Contains("/8017/"))
+            {
+            }
+
+            // gsrn-code 8018 - GSRN of the Recipient = 18DIGIT ; exactly 18 digits
+            else if (gs1Identifier.Contains("/8018/"))
+            {
+            }
+
+            // gcn-code 255 - Global Coupon Number (GCN) =  13DIGIT [1*12DIGIT] ; 13 digits then optional 1 - 12 digits
+
+            else if (gs1Identifier.Contains("/255/"))
+            {
+            }
+
+            // sscc-code 00 - Serial Shipping Container Code (SSCC) = 18DIGIT ; exactly 18 digits 
+            else if (gs1Identifier.Contains("/00/"))
+            {
+            }
+
+            // gdti-code 253 - Global Document Type Identifier (GDTI) = 13DIGIT [1*17XCHAR] ; 13 digits then optional 1 - 17 characters ; from the 82-character subset
+            else if (gs1Identifier.Contains("/253/"))
+            {
+            }
+
+            // ginc-code 401 - Global Identification Number for Consignment (GINC) = 1*30XCHAR ; 1 - 30 characters from the 82-character subset
+            else if (gs1Identifier.Contains("/401/"))
+            {
+            }
+
+            // gsin-code 402 - Global Shipment Identification Number (GSIN) = 17DIGIT ; exactly 17 digits
+            else if (gs1Identifier.Contains("/402/"))
+            {
+            }
+
+            // grai-code 8003 - Global Returnable Asset Identifier (GRAI) = 13DIGIT [1*16XCHAR] ; 13 digits then optional 1 - 16 characters ; from the 82-character subset of ISO / IEC 646
+            else if (gs1Identifier.Contains("/8003/"))
+            {
+            }
+
+            // giai-code 8004 - Global Individual Asset Identifier (GIAI) = 1*30XCHAR  ; 1-30 characters from 82-character subset
+            else if (gs1Identifier.Contains("/8004/"))
+            {
             }
 
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
@@ -1143,6 +1237,11 @@ END:VCALENDAR";
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorGS1IdentifierInvalid_Text, CodeLang.ButtonClose_Text);
                 _ = entPayloadTypeGS1Identifier.Focus();
                 return false;
+            }
+
+            // giai-code 8004 - Global Individual Asset Identifier (GIAI)
+            else if (gs1Identifier.Contains("/8004/"))
+            {
             }
 
             return bIsValid;
