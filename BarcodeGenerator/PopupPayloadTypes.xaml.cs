@@ -1241,11 +1241,6 @@ END:VCALENDAR";
                 return false;
             }
 
-            // giai-code 8004 - Global Individual Asset Identifier (GIAI)
-            else if (gs1Identifier.Contains("/8004/"))
-            {
-            }
-
             return bIsValid;
         }
 

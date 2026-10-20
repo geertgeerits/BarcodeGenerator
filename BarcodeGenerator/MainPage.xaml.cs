@@ -782,7 +782,7 @@ namespace BarcodeGenerator
             // Miscellaneous
             btnShare.IsEnabled = false;
             bgvBarcode.Value = string.Empty;
-            //ClassBarcodes.cBarcodeCaption = string.Empty;
+            cBarcodeCaption = string.Empty;
             imgQrCodeImage.Source = null;
             Globals.bPopupCanceled = false;
 
@@ -850,7 +850,7 @@ namespace BarcodeGenerator
 
             // Reset the barcode caption to an empty string after generating the barcode to avoid retaining any previous caption for subsequent barcode generations
             cBarcodeCaption = string.Empty;
-            //ClassPayloadTypes.cPayloadCaption = string.Empty;
+            ClassPayloadTypes.cPayloadCaption = string.Empty;
         }
 
         /// <summary>
