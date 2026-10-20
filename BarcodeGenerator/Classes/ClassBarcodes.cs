@@ -127,7 +127,6 @@ namespace BarcodeGenerator
         public static bool bQRCodeBackgroundImage;                      // Flag to indicate if the QR code has a background image
         public static bool bQRCodeForegroundImage;                      // Flag to indicate if the QR code has a foreground image
         public static bool bBarcodeWithCaption;                         // Control whether the barcode image should include a caption
-        public static string cBarcodeCaption = string.Empty;           // Caption text for the barcode - used for sharing the barcode with the caption in the text and for the option to include the caption in the generated barcode image
         public static bool bBarcodeWithCircle;                          // Control whether the barcode image should include a circle around the barcode
         public static string cBorderColor = string.Empty;               // Color of the border around the circle of the barcode
         public static int nBorderWidth;                                 // Width of the border around the circle of the barcode

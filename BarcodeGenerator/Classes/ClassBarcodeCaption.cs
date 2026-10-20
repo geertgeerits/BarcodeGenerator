@@ -43,7 +43,10 @@ namespace BarcodeGenerator
                 }
 
                 // Prompt the user for a caption
-                caption = await PromptForCaptionAsync(caption);
+                if (barcodeType != "1D")
+                {
+                    caption = await PromptForCaptionAsync(caption);
+                }
 
                 // Exit if caption is null or whitespace
                 if (string.IsNullOrWhiteSpace(caption))
@@ -84,7 +87,10 @@ namespace BarcodeGenerator
                 if (ClassBarcodes.bBarcodeWithCaption)
                 {
                     // Prompt the user for a caption
-                    caption = await PromptForCaptionAsync(caption);
+                    if (barcodeType != "1D")
+                    {
+                        caption = await PromptForCaptionAsync(caption);
+                    }
 
                     // Exit if caption is null or whitespace
                     if (string.IsNullOrWhiteSpace(caption))
@@ -121,32 +127,23 @@ namespace BarcodeGenerator
         private static async Task<string> PromptForCaptionAsync(string caption)
         {
             // Prompt the user for a caption if it is null or whitespace
-            if (string.IsNullOrWhiteSpace(caption))
-            {
-                return _ = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(
-                                CodeLang.ButtonCaption_Text,    // Title
-                                "",                             // Message
-                                CodeLang.ButtonNext_Text,       // Accept button text
-                                CodeLang.ButtonCancel_Text,     // Cancel button text
-                                CodeLang.ButtonCaption_Text,    // Placeholder
-                                100,                            // Max length
-                                default,                        // Keyboard
-                                caption);                       // Initial value
+            return _ = await Application.Current!.Windows[0].Page!.DisplayPromptAsync(
+                        CodeLang.ButtonCaption_Text,    // Title
+                        "",                             // Message
+                        CodeLang.ButtonNext_Text,       // Accept button text
+                        CodeLang.ButtonCancel_Text,     // Cancel button text
+                        CodeLang.ButtonCaption_Text,    // Placeholder
+                        100,                            // Max length
+                        default,                        // Keyboard
+                        caption);                       // Initial value
 
-                // !!!BUG!!!? The selected barcode is changed to the default barcode in the format picker after the 'PopupEntry' is closed.
-                // This does not happen when using the 'DisplayPromptAsync' method, which is why we are using it instead of the popup for now.
-                // This may be due to the way the popup is implemented or how the barcode generator view is updated after the popup is closed.
+            // !!!BUG!!!? The selected barcode is changed to the default barcode in the format picker after the 'PopupEntry' is closed.
+            // This does not happen when using the 'DisplayPromptAsync' method, which is why we are using it instead of the popup for now.
+            // This may be due to the way the popup is implemented or how the barcode generator view is updated after the popup is closed.
 
-                // When using the PopupEntry, we get the entered caption from the entCaption Entry control after the popup is closed.
-                //PopupEntry popup = await OpenPopupCaptionAsync();   // Returns the instance
-                //return popup.entCaption?.Text ?? string.Empty;
-            }
-
-            // Return the original caption if it was not null or whitespace
-            else
-            {
-                return caption;
-            }
+            // When using the PopupEntry, we get the entered caption from the entCaption Entry control after the popup is closed.
+            //PopupEntry popup = await OpenPopupCaptionAsync();   // Returns the instance
+            //return popup.entCaption?.Text ?? string.Empty;
         }
 
         /// <summary>

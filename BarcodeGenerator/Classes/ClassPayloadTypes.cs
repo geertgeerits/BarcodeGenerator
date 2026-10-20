@@ -20,10 +20,11 @@
         public static string cPayloadType_GS1 = string.Empty;
 
         // Global variables
-        public static int nPayloadTypeIndex;
-        public static string cPayloadType = string.Empty;
-        public static string cPayloadTypeDefault = string.Empty;
-        public static string cPayloadResult = string.Empty;
+        public static int nPayloadTypeIndex;                        // Index of the payload type in the list of payload types
+        public static string cPayloadType = string.Empty;           // Name of the payload type - used for sharing the payload with the name in the text
+        public static string cPayloadCaption = string.Empty;        // Caption text for the payload - used for sharing the payload with the caption in the text
+        public static string cPayloadTypeDefault = string.Empty;    // Default payload type name - used for sharing the payload with the default name in the text
+        public static string cPayloadResult = string.Empty;         // Result of the payload type - used for sharing the payload with the result in the text
 
         // Creating a public dictionaries to store the payload types for search operations
         public static Dictionary<string, string> payloadSearch = [];

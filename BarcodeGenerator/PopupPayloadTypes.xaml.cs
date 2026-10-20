@@ -391,6 +391,8 @@ namespace BarcodeGenerator
                 // Move cursor to the end of the text
                 entPayloadTypeGS1Identifier.CursorPosition = entPayloadTypeGS1Identifier.Text.Length;
             }
+
+            ClassPayloadTypes.cPayloadCaption = string.Empty;
         }
 
         /// <summary>
@@ -986,7 +988,7 @@ END:VCALENDAR";
                     }
 
                     // Set the barcode caption to the GS1 identifier for display purposes using the first 18 characters of the identifier
-                    ClassBarcodes.cBarcodeCaption = entPayloadTypeGS1Identifier.Text.Length > 18 ? entPayloadTypeGS1Identifier.Text.Substring(0, 18) : entPayloadTypeGS1Identifier.Text;
+                    ClassPayloadTypes.cPayloadCaption = entPayloadTypeGS1Identifier.Text.Length > 18 ? entPayloadTypeGS1Identifier.Text[..18] : entPayloadTypeGS1Identifier.Text;
 
                     // Concatenate the URL payload with the GS1 identifier to form the complete payload string
                     payload = generator.ToString() + entPayloadTypeGS1Identifier.Text;
