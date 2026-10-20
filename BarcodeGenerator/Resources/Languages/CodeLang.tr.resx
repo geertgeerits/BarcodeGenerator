@@ -1087,4 +1087,7 @@ Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölg
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1 tanımlayıcısı</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>GS1 tanımlayıcısı geçerli değil.</value>
+  </data>
 </root>

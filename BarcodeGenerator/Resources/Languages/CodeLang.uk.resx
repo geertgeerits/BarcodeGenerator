@@ -1085,4 +1085,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>Ідентифікатор GS1</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>Ідентифікатор GS1 недійсний.</value>
+  </data>
 </root>

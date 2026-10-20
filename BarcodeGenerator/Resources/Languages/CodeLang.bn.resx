@@ -1085,4 +1085,7 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1 শনাক্তকারী</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>GS1 শনাক্তকারীটি বৈধ নয়।</value>
+  </data>
 </root>

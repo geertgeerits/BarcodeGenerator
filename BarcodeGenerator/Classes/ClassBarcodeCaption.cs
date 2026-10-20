@@ -131,7 +131,7 @@ namespace BarcodeGenerator
                                 CodeLang.ButtonCaption_Text,    // Placeholder
                                 100,                            // Max length
                                 default,                        // Keyboard
-                                "");                            // Initial value
+                                caption);                       // Initial value
 
                 // !!!BUG!!!? The selected barcode is changed to the default barcode in the format picker after the 'PopupEntry' is closed.
                 // This does not happen when using the 'DisplayPromptAsync' method, which is why we are using it instead of the popup for now.

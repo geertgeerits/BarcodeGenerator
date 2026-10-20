@@ -386,7 +386,7 @@ namespace BarcodeGenerator
         {
             if (entPayloadTypeGS1Identifier.Text == string.Empty)
             {
-                entPayloadTypeGS1Identifier.Text = "01/";
+                entPayloadTypeGS1Identifier.Text = "/01/";
 
                 // Move cursor to the end of the text
                 entPayloadTypeGS1Identifier.CursorPosition = entPayloadTypeGS1Identifier.Text.Length;
@@ -952,22 +952,28 @@ END:VCALENDAR";
                         return string.Empty;
                     }
 
-                    // If the last character of the URL is not a forward slash, append one to ensure proper formatting for the GS1 payload
-                    if (!entPayloadTypeURL.Text.EndsWith("/"))
+                    // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload
+                    if (entPayloadTypeURL.Text.EndsWith("/"))
                     {
-                        entPayloadTypeURL.Text += "/";
+                        entPayloadTypeURL.Text = entPayloadTypeURL.Text.TrimEnd('/');
                     }
 
                     Url generator = new(url: entPayloadTypeURL.Text);
 
-                    // If the GS1 identifier does not start with 01/, prepend it to ensure the payload is correctly formatted according to GS1 standards
-                    if (!entPayloadTypeGS1Identifier.Text.StartsWith("01/"))
+                    // If the GS1 identifier does not start with /01/, prepend it to ensure the payload is correctly formatted according to GS1 standards
+                    if (!entPayloadTypeGS1Identifier.Text.StartsWith("/01/"))
                     {
-                        entPayloadTypeGS1Identifier.Text = "01/" + entPayloadTypeGS1Identifier.Text;
+                        entPayloadTypeGS1Identifier.Text = "/01/" + entPayloadTypeGS1Identifier.Text;
                     }
 
-                    // Set the barcode caption to the GS1 identifier for display purposes
-                    ClassBarcodes.cBarcodeCaption = entPayloadTypeGS1Identifier.Text;
+                    // Validate the GS1 identifier to ensure it meets the required format and standards for GS1 payloads
+                    if (!await IsValidGS1Identifier(entPayloadTypeGS1Identifier.Text))
+                    {
+                        return string.Empty;
+                    }
+
+                    // Set the barcode caption to the GS1 identifier for display purposes using the first 18 characters of the identifier
+                    ClassBarcodes.cBarcodeCaption = entPayloadTypeGS1Identifier.Text.Length > 18 ? entPayloadTypeGS1Identifier.Text.Substring(0, 18) : entPayloadTypeGS1Identifier.Text;
 
                     // Concatenate the URL payload with the GS1 identifier to form the complete payload string
                     payload = generator.ToString() + entPayloadTypeGS1Identifier.Text;
@@ -1086,6 +1092,60 @@ END:VCALENDAR";
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Determines whether the specified string is a valid GS1 identifier
+        /// </summary>
+        /// <param name="gs1Identifier">The GS1 identifier string to validate. Cannot be null, empty, or consist only of white-space characters.</param>
+        /// <returns>true if the specified string is a valid GS1 identifier; otherwise, false.</returns>
+        private async Task<bool> IsValidGS1Identifier(string gs1Identifier)
+        {
+            bool bIsValid = true;
+
+            // Add a null check for the GS1 identifier to ensure that it is not null, empty, or consists only of white-space characters
+            if (string.IsNullOrWhiteSpace(gs1Identifier))
+            {
+                bIsValid = false;
+            }
+
+            // If the GS1 identifier does not start with /01/, return false, 01 stands for the Global Trade Item Number (GTIN) and is a required prefix for GS1 identifiers
+            if (!entPayloadTypeGS1Identifier.Text.StartsWith("/01/"))
+            {
+                bIsValid = false;
+            }
+
+            // If the GS1 identifier does not have a minimum length of 18 characters (including the /01/ prefix), return false
+            if (entPayloadTypeGS1Identifier.Text.Length < 18)
+            {
+                bIsValid = false;
+            }
+
+            // If the GS1 identifier has a length greater than 18 characters, the the 19th character must be a forward slash (/) to separate the GTIN from the additional data
+            if (entPayloadTypeGS1Identifier.Text.Length > 18 && entPayloadTypeGS1Identifier.Text[18] != '/')
+            {
+                bIsValid = false;
+            }
+
+            // The characters from the 5th to the 18th position (inclusive) of the GS1 identifier must be numeric, as they represent the GTIN
+            for (int i = 4; i < 18; i++)
+            {
+                if (!char.IsDigit(entPayloadTypeGS1Identifier.Text[i]))
+                {
+                    bIsValid = false;
+                    break;
+                }
+            }
+
+            // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
+            if (!bIsValid)
+            {
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorGS1IdentifierInvalid_Text, CodeLang.ButtonClose_Text);
+                _ = entPayloadTypeGS1Identifier.Focus();
+                return false;
+            }
+
+            return bIsValid;
         }
 
         /// <summary>

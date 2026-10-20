@@ -1087,4 +1087,7 @@
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>Αναγνωριστικό GS1</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>Το αναγνωριστικό GS1 δεν είναι έγκυρο.</value>
+  </data>
 </root>

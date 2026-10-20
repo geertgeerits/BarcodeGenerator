@@ -1087,4 +1087,7 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1 شناخت کنندہ</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>GS1 شناخت کنندہ درست نہیں ہے۔</value>
+  </data>
 </root>

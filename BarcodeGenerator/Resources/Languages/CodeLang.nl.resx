@@ -1087,4 +1087,7 @@ Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de Q
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1-identificatie</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>GS1-identificatie is niet geldig.</value>
+  </data>
 </root>

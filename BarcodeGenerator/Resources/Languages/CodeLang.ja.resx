@@ -1101,4 +1101,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1識別子</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>GS1識別子が有効ではありません。</value>
+  </data>
 </root>

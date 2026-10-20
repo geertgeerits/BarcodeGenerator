@@ -1086,4 +1086,7 @@ Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruh
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1-Identifikator</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>Der GS1-Identifikator ist ungültig.</value>
+  </data>
 </root>

@@ -1088,4 +1088,7 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1 식별자</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>GS1 식별자가 유효하지 않습니다.</value>
+  </data>
 </root>

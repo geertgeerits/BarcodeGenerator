@@ -1087,4 +1087,7 @@ Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawie
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>Identyfikator GS1</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>Identyfikator GS1 jest nieprawidłowy.</value>
+  </data>
 </root>

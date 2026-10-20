@@ -1087,4 +1087,7 @@ För att ändra storleken på QR-koden inuti cirkeln justerar du tyst zon i inst
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1-identifierare</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>GS1-identifieraren är inte giltig.</value>
+  </data>
 </root>

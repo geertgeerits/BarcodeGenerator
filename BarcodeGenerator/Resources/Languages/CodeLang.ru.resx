@@ -1087,4 +1087,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>Идентификатор GS1</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>Идентификатор GS1 недействителен.</value>
+  </data>
 </root>

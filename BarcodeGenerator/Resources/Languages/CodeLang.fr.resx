@@ -1087,4 +1087,7 @@ Pour modifier la taille du code QR à l'intérieur du cercle, ajustez la zone de
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>Identifiant GS1</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>L'identifiant GS1 n'est pas valide.</value>
+  </data>
 </root>

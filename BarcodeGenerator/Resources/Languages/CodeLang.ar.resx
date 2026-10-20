@@ -1088,4 +1088,7 @@
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>مُعرِّف GS1</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>معرِّف GS1 غير صالح.</value>
+  </data>
 </root>

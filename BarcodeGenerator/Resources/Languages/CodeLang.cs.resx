@@ -1087,4 +1087,7 @@ Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tic
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>Identifikátor GS1</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>Identifikátor GS1 není platný.</value>
+  </data>
 </root>

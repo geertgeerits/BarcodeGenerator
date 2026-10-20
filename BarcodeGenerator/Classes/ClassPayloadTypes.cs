@@ -290,3 +290,64 @@
         }
     }
 }
+/*
+GS1 - Global Standards One
+https://www.gs1.org/standards/gs1-digital-link
+https://ref.gs1.org/standards/digital-link/uri-syntax/
+
+Primary identification keys
+The following rules indicate which GS1 Application Identifiers (GS1 AI) for simple GS1 identifiers are considered as primary identification keys for GS1 Digital Link URI.
+
+gtin-code	=	"01"	; GTIN
+itip-code	=	"8006"	; ITIP
+gmn-code	=	"8013"	; Global Model Number
+cpid-code	=	"8010"	; CPID
+gln-code	=	"414"	; Physical Location GLN
+payTo-code	=	"415"	; GLN of invoicing party
+partyGln-code	=	"417"	; Party GLN
+gsrnp-code	=	"8017"	; GSRN of the Provider
+gsrn-code	=	"8018"	; GSRN of the Recipient
+gcn-code	=	"255"	; GCN
+sscc-code	=	"00"	; SSCC
+gdti-code	=	"253"	; GDTI
+ginc-code	=	"401"	; GINC
+gsin-code	=	"402"	; GSIN
+grai-code	=	"8003"	; GRAI
+giai-code	=	"8004"	; GIAI
+
+Key qualifiers
+The following rules indicate which GS1 Application Identifiers (GS1 AI) for GS1 identifier extensions are considered as key qualifiers for a GS1 Digital Link URI. The combination of a primary identification key and key qualifier forms a compound GS1 identifier.
+
+cpv-code	=	"22"	; Consumer Product Variant
+lot-code	=	"10"	; Batch/Lot identifier
+ser-code	=	"21"	; GTIN Serial Number
+cpsn-code	=	"8011"	; CPID Serial Number
+glnx-code	=	"254"	; GLN extension
+refno-code	=	"8020"	; Payment Reference Number
+srin-code	=	"8019"	; Service Relation Instance Number
+tpx-code	=	"235"	; third-party controlled serialised extension to GTIN
+uic-ext-code	=	"7040"	; GS1 UIC with Extension 1 and Importer Index
+
+Primary identification key formats
+The following rules express the format of the values of the primary identification keys.
+
+Note : the GS1 General Specifications [GENSPECS] define further restrictions on some of these values, particularly for those which include a GS1 check digit, GS1 check character pair, indicator digit or extension digit. Please refer to the GS1 General Specifications [GENSPECS] for further details.
+
+gtin-value	=	14DIGIT	; GTIN-8, GTIN-12 and GTIN-13 SHALL be expressed as 14 digits, with leading zeroes serving as filler digits
+itip-value	=	14DIGIT 2DIGIT 2DIGIT	; 14 digits then 2 digits then 2 digits
+gmn-value	=	1*25 XCHAR	; 1-25 characters from 82-chr subset
+cpid-value	=	1*30 YCHAR	; 1-30 characters from 39-chr subset
+gln-value	=	13DIGIT	; exactly 13 digits
+payTo-value	=	13DIGIT	; exactly 13 digits
+partyGln-value	=	13DIGIT	; exactly 13 digits
+gsrnp-value	=	18DIGIT	; exactly 18 digits
+gsrn-value	=	18DIGIT	; exactly 18 digits
+gcn-value	=	13DIGIT [1*12DIGIT]	; 13 digits then optional 1-12 digits
+sscc-value	=	18DIGIT	; exactly 18 digits
+gdti-value	=	13DIGIT [1*17XCHAR]	; 13 digits then optional 1-17 characters from the 82-character subset
+ginc-value	=	1*30XCHAR	; 1-30 characters from the 82-character subset
+gsin-value	=	17DIGIT	; exactly 17 digits
+grai-value	=	13DIGIT [1*16XCHAR]	; 13 digits then optional 1-16 characters from the 82-character subset of ISO/IEC 646
+giai-value	=	1*30 XCHAR	; 1-30 characters from 82-chr subset
+ 
+ */

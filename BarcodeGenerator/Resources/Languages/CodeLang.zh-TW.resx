@@ -1088,4 +1088,7 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1標識符</value>
   </data>
+  <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
+    <value>GS1標識符無效。</value>
+  </data>
 </root>
