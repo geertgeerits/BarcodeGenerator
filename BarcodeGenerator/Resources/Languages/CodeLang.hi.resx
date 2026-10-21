@@ -1090,4 +1090,7 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>इनपुट का पूर्ण सत्यापन नहीं है।</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>QR कोड फाइंडर पैटर्न का आकार: गोलाकार कोनों वाला वृत्त</value>
+  </data>
 </root>

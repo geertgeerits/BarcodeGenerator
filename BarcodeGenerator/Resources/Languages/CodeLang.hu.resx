@@ -1093,4 +1093,7 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>A bemenet nem esik át teljes körű ellenőrzésen.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>QR-kód keresőminta alakja: lekerekített, körrel</value>
+  </data>
 </root>

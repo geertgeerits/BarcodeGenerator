@@ -1093,4 +1093,7 @@ För att ändra storleken på QR-koden inuti cirkeln justerar du tyst zon i inst
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>Det sker ingen fullständig validering av indatan.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>Form för QR-kodens sökmarkör: rundad med cirkel</value>
+  </data>
 </root>

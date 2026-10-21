@@ -1093,4 +1093,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>Полная проверка входных данных отсутствует.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>Форма поискового узора QR-кода: закругленная, с кругом</value>
+  </data>
 </root>

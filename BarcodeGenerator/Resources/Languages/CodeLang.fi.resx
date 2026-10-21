@@ -1093,4 +1093,7 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>Syötettä ei validoida täysin.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>QR-koodin etsintäkuvion muoto: pyöristetty, sisältää ympyrän</value>
+  </data>
 </root>

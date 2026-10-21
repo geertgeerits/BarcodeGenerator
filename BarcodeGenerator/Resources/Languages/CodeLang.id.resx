@@ -1093,4 +1093,7 @@ Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet 
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>Tidak ada validasi penuh terhadap input tersebut.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>Bentuk pola penemu (finder pattern) kode QR: membulat dengan lingkaran</value>
+  </data>
 </root>

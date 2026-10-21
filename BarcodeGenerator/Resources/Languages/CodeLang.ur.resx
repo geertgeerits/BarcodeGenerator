@@ -1093,4 +1093,7 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>ان پٹ کی مکمل تصدیق نہیں ہوتی۔</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>QR کوڈ فائنڈر پیٹرن کی شکل: گول، دائرے کے ساتھ</value>
+  </data>
 </root>

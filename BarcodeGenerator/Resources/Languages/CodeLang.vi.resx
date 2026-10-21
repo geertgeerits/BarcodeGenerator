@@ -1096,4 +1096,7 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>Không có sự kiểm chứng đầy đủ đối với dữ liệu đầu vào.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>Hình dạng mẫu định vị mã QR: bo tròn với hình tròn bên trong</value>
+  </data>
 </root>

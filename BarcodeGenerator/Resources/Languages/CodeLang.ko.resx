@@ -1094,4 +1094,7 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>입력값에 대한 완전한 검증은 이루어지지 않습니다.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>QR 코드 파인더 패턴 모양: 원형이 포함된 둥근 형태</value>
+  </data>
 </root>

@@ -1093,4 +1093,7 @@ Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölg
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>Girdi için tam bir doğrulama bulunmuyor.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>QR Kodu bulucu desen şekli: daire içeren yuvarlatılmış biçim</value>
+  </data>
 </root>

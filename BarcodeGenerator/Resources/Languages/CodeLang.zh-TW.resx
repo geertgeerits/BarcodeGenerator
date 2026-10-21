@@ -1094,4 +1094,7 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>輸入內容未經全面驗證。</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>二維碼查找器圖案形狀：圓形</value>
+  </data>
 </root>

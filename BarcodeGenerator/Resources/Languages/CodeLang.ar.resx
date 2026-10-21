@@ -1094,4 +1094,7 @@
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>لا يوجد تحقق كامل من المدخلات.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>شكل نمط التحديد في رمز الاستجابة السريعة (QR Code): مستدير مع دائرة</value>
+  </data>
 </root>

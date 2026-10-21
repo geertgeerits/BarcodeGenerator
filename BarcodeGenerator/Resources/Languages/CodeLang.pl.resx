@@ -1093,4 +1093,7 @@ Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawie
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>Brak pełnej walidacji danych wejściowych.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>Kształt wzorców lokalizacyjnych kodu QR: zaokrąglony, z kołem</value>
+  </data>
 </root>

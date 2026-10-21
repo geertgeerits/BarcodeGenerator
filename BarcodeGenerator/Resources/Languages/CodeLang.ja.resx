@@ -1107,4 +1107,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>入力に対する完全な検証は行われていない。</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>QRコードのファインダーパターンの形状：円形を伴う角丸型</value>
+  </data>
 </root>

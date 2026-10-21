@@ -1093,4 +1093,7 @@ Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tic
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>Vstup není kompletně validován.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>Tvar vyhledávacího vzoru QR kódu: zaoblený s kruhem</value>
+  </data>
 </root>

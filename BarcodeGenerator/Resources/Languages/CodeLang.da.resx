@@ -1093,4 +1093,7 @@ For at ændre størrelsen på QR-koden inde i cirklen skal du justere frizonen i
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>Der er ingen fuldstændig validering af inputtet.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>Form på QR-kodens søgemønster: afrundet med cirkel</value>
+  </data>
 </root>

@@ -1093,4 +1093,7 @@ Para alterar o tamanho do código QR dentro do círculo, ajuste a zona de silên
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>Não há uma validação completa dos dados de entrada.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>Formato do padrão de localização do QR Code: arredondado com um círculo</value>
+  </data>
 </root>

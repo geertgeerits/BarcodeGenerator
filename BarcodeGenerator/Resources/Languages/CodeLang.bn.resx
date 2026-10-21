@@ -1091,4 +1091,7 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>ইনপুটটির কোনো পূর্ণাঙ্গ যাচাইকরণ নেই।</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>QR কোড ফাইন্ডার প্যাটার্নের আকৃতি: বৃত্তসহ গোলাকার</value>
+  </data>
 </root>
