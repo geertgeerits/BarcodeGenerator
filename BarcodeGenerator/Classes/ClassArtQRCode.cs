@@ -278,6 +278,7 @@ namespace BarcodeGenerator
                 {
                     "Rounded" => standardQrData.WithFinderPatternShape(RoundedRectangleFinderPatternShape.Default),
                     "Circle" => standardQrData.WithFinderPatternShape(CircleFinderPatternShape.Default),
+                    "RoundedCircleCenter" => standardQrData.WithFinderPatternShape(RoundedRectangleCircleFinderPatternShape.Default),
                     _ => standardQrData.WithFinderPatternShape(RectangleFinderPatternShape.Default),
                 };
 
