@@ -28,15 +28,36 @@ namespace BarcodeGenerator
             DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
             this.Unloaded += OnUnloaded;
 
-            // Set the initial states of the radio buttons based on the current QR Code finder pattern shape
-            rbtQRCodeFinderPatternShapeSquare.IsChecked = ClassBarcodes.cQRCodeFinderPatternShape == "Square";
-            rbtQRCodeFinderPatternShapeRounded.IsChecked = ClassBarcodes.cQRCodeFinderPatternShape == "Rounded";
-            rbtQRCodeFinderPatternShapeCircle.IsChecked = ClassBarcodes.cQRCodeFinderPatternShape == "Circle";
+            // Set the initial states of the image buttons based on the current QR Code finder pattern shape
+            switch (ClassBarcodes.cQRCodeFinderPatternShape)
+            {
+                case "Square":
+                    btnQRCodeFinderPatternShapeSquare.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "Rounded":
+                    btnQRCodeFinderPatternShapeRounded.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "Circle":
+                    btnQRCodeFinderPatternShapeCircle.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "RoundedCircle":
+                    btnQRCodeFinderPatternShapeRoundedCircle.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+            }
 
-            // Set the initial states of the radio buttons based on the current QR Code module shape
-            rbtQRCodeModuleShapeSquare.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Square";
-            rbtQRCodeModuleShapeRounded.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Rounded";
-            rbtQRCodeModuleShapeCircle.IsChecked = ClassBarcodes.cQRCodeModuleShape == "Circle";
+            // Set the initial states of the image buttons based on the current QR Code module shape
+            switch (ClassBarcodes.cQRCodeModuleShape)
+            {
+                case "Square":
+                    btnQRCodeModuleShapeSquare.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "Rounded":
+                    btnQRCodeModuleShapeRounded.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+                case "Circle":
+                    btnQRCodeModuleShapeCircle.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+                    break;
+            }
 
             // Set the QR code module size percent in the label
             lblQRCodeModuleSize.Text = string.Format(CodeLang.QRCodeModuleSize_Text, ClassBarcodes.nQRCodeModuleSizePercent);
@@ -255,45 +276,65 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Radio button QR code FinderPattern shape checked changed event
+        /// On button QR code finder pattern shape clicked event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RbtQRCodeFinderPatternShape_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        private void BtnQRCodeFinderPatternShape_Clicked(object sender, EventArgs e)
         {
-            // Update the QR code finder pattern shape based on the selected radio button
-            if (rbtQRCodeFinderPatternShapeSquare.IsChecked)
+            btnQRCodeFinderPatternShapeSquare.BackgroundColor = Colors.Transparent;
+            btnQRCodeFinderPatternShapeRounded.BackgroundColor = Colors.Transparent;
+            btnQRCodeFinderPatternShapeCircle.BackgroundColor = Colors.Transparent;
+            btnQRCodeFinderPatternShapeRoundedCircle.BackgroundColor = Colors.Transparent;
+
+            if (sender == btnQRCodeFinderPatternShapeSquare)
             {
                 ClassBarcodes.cQRCodeFinderPatternShape = "Square";
+                btnQRCodeFinderPatternShapeSquare.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
             }
-            else if (rbtQRCodeFinderPatternShapeRounded.IsChecked)
+            else if (sender == btnQRCodeFinderPatternShapeRounded)
             {
                 ClassBarcodes.cQRCodeFinderPatternShape = "Rounded";
+                btnQRCodeFinderPatternShapeRounded.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
             }
-            else if (rbtQRCodeFinderPatternShapeCircle.IsChecked)
+            else if (sender == btnQRCodeFinderPatternShapeCircle)
             {
                 ClassBarcodes.cQRCodeFinderPatternShape = "Circle";
+                btnQRCodeFinderPatternShapeCircle.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
+            }
+            else if (sender == btnQRCodeFinderPatternShapeRoundedCircle)
+            {
+                ClassBarcodes.cQRCodeFinderPatternShape = "RoundedCircle";
+                btnQRCodeFinderPatternShapeRoundedCircle.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
             }
         }
 
         /// <summary>
-        /// Radio button QR code module shape checked changed event
+        /// On button QR code module shape clicked event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RbtQRCodeModuleShape_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        private void BtnQRCodeModuleShape_Clicked(object sender, EventArgs e)
         {
-            if (rbtQRCodeModuleShapeSquare.IsChecked)
+            btnQRCodeModuleShapeSquare.BackgroundColor = Colors.Transparent;
+            btnQRCodeModuleShapeRounded.BackgroundColor = Colors.Transparent;
+            btnQRCodeModuleShapeCircle.BackgroundColor = Colors.Transparent;
+
+
+            if (sender == btnQRCodeModuleShapeSquare)
             {
                 ClassBarcodes.cQRCodeModuleShape = "Square";
+                btnQRCodeModuleShapeSquare.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
             }
-            else if (rbtQRCodeModuleShapeRounded.IsChecked)
+            else if (sender == btnQRCodeModuleShapeRounded)
             {
                 ClassBarcodes.cQRCodeModuleShape = "Rounded";
+                btnQRCodeModuleShapeRounded.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
             }
-            else if (rbtQRCodeModuleShapeCircle.IsChecked)
+            else if (sender == btnQRCodeModuleShapeCircle)
             {
                 ClassBarcodes.cQRCodeModuleShape = "Circle";
+                btnQRCodeModuleShapeCircle.BackgroundColor = Color.FromArgb(cGradientDirectionBackgroundColor);
             }
         }
 

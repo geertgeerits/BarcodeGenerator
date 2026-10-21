@@ -1093,4 +1093,7 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
   <data name="ValidationInput_Text" xml:space="preserve">
     <value>There is no full validation of the input.</value>
   </data>
+  <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
+    <value>QR Code finder pattern shape: rounded with circle</value>
+  </data>
 </root>

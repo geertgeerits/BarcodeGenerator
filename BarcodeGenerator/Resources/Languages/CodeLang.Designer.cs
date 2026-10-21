@@ -2154,6 +2154,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to QR Code finder pattern shape: rounded with circle.
+        /// </summary>
+        internal static string QRCodeFinderPatternShapeRoundedCircle_Text {
+            get {
+                return ResourceManager.GetString("QRCodeFinderPatternShapeRoundedCircle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to QR Code finder pattern shape: square.
         /// </summary>
         internal static string QRCodeFinderPatternShapeSquare_Text {

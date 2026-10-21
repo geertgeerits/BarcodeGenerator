@@ -28,9 +28,10 @@ namespace BarcodeGenerator
                 artQRCodeSettings.swtForegroundImage.IsEnabled = false;
                 artQRCodeSettings.swtBackgroundImage.IsEnabled = false;
 
-                artQRCodeSettings.rbtQRCodeFinderPatternShapeSquare.IsEnabled = false;
-                artQRCodeSettings.rbtQRCodeFinderPatternShapeRounded.IsEnabled = false;
-                artQRCodeSettings.rbtQRCodeFinderPatternShapeCircle.IsEnabled = false;
+                artQRCodeSettings.btnQRCodeFinderPatternShapeSquare.IsEnabled = false;
+                artQRCodeSettings.btnQRCodeFinderPatternShapeRounded.IsEnabled = false;
+                artQRCodeSettings.btnQRCodeFinderPatternShapeCircle.IsEnabled = false;
+                artQRCodeSettings.btnQRCodeFinderPatternShapeRoundedCircle.IsEnabled = false;
             }
 
             //else if (ClassBarcodes.cQRCodeType == ClassBarcodes.cBarcode_ART_CIRCULAR_QR_CODE)

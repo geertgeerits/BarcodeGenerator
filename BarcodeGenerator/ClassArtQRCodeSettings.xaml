@@ -110,76 +110,52 @@
             Grid.Row="3"
             Grid.Column="2"
             RowDefinitions="Auto"
-            ColumnDefinitions="30, 32, 30, 32, 30, 30" >
+            ColumnDefinitions="46, 46, 46, 46" >
 
-            <RadioButton
-                x:Name="rbtQRCodeFinderPatternShapeSquare"
+            <ImageButton
+                x:Name="btnQRCodeFinderPatternShapeSquare"
                 x:FieldModifier="public"
-                GroupName="FinderPatternShape"
+                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
                 Grid.Column="0"
-                HorizontalOptions="Start"
-                Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
-                ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeSquare_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}"
-                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
-            </RadioButton>
-
-            <BoxView
-                Grid.Column="1"
-                HeightRequest="27"
-                WidthRequest="27"
                 CornerRadius="0"
-                HorizontalOptions="Start"
-                Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeSquare_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}">
-            </BoxView>
+                Clicked="BtnQRCodeFinderPatternShape_Clicked">
+            </ImageButton>
 
-            <RadioButton
-                x:Name="rbtQRCodeFinderPatternShapeRounded"
+            <ImageButton
+                x:Name="btnQRCodeFinderPatternShapeRounded"
                 x:FieldModifier="public"
-                GroupName="FinderPatternShape"
-                Grid.Column="2"
-                HorizontalOptions="Start"
-                Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
-                ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeRounded_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRounded_Text}"
-                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
-            </RadioButton>
-
-            <BoxView
-                Grid.Column="3"
-                HeightRequest="28"
-                WidthRequest="28"
+                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Grid.Column="1"
                 CornerRadius="10"
-                HorizontalOptions="Start"
-                Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRounded_Text}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeRounded_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRounded_Text}">
-            </BoxView>
+                Clicked="BtnQRCodeFinderPatternShape_Clicked">
+            </ImageButton>
 
-            <RadioButton
-                x:Name="rbtQRCodeFinderPatternShapeCircle"
+            <ImageButton
+                x:Name="btnQRCodeFinderPatternShapeCircle"
                 x:FieldModifier="public"
-                GroupName="FinderPatternShape"
-                Grid.Column="4"
-                HorizontalOptions="Start"
-                Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
-                ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeCircle_Text}"
+                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Grid.Column="2"
+                CornerRadius="20"
                 SemanticProperties.Description="{Translate QRCodeFinderPatternShapeCircle_Text}"
-                CheckedChanged="RbtQRCodeFinderPatternShape_CheckedChanged">
-            </RadioButton>
-
-            <BoxView
-                Grid.Column="5"
-                HeightRequest="29"
-                WidthRequest="29"
-                CornerRadius="25"
-                HorizontalOptions="Start"
-                Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
                 ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeCircle_Text}"
-                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeCircle_Text}">
-            </BoxView>
+                Clicked="BtnQRCodeFinderPatternShape_Clicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="btnQRCodeFinderPatternShapeRoundedCircle"
+                x:FieldModifier="public"
+                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Grid.Column="3"
+                CornerRadius="10"
+                SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRoundedCircle_Text}"
+                ToolTipProperties.Text="{Translate QRCodeFinderPatternShapeRoundedCircle_Text}"
+                Source="ic_action_circle.png"
+                Clicked="BtnQRCodeFinderPatternShape_Clicked">
+            </ImageButton>
         </Grid>
 
         <Label
@@ -194,73 +170,37 @@
             Grid.Row="4"
             Grid.Column="2"
             RowDefinitions="Auto"
-            ColumnDefinitions="30, 32, 30, 32, 30, 30" >
+            ColumnDefinitions="46, 46, 46" >
 
-            <RadioButton
-                x:Name="rbtQRCodeModuleShapeSquare"
-                GroupName="ModuleShape"
+            <ImageButton
+                x:Name="btnQRCodeModuleShapeSquare"
+                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
                 Grid.Column="0"
-                HorizontalOptions="Start"
-                Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
-                ToolTipProperties.Text="{Translate QRCodeModuleShapeSquare_Text}"
-                SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}"
-                CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
-            </RadioButton>
-
-            <BoxView
-                Grid.Column="1"
-                HeightRequest="27"
-                WidthRequest="27"
                 CornerRadius="0"
-                HorizontalOptions="Start"
-                Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}"
                 ToolTipProperties.Text="{Translate QRCodeModuleShapeSquare_Text}"
-                SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}">
-            </BoxView>
+                Clicked="BtnQRCodeModuleShape_Clicked">
+            </ImageButton>
 
-            <RadioButton
-                x:Name="rbtQRCodeModuleShapeRounded"
-                GroupName="ModuleShape"
-                Grid.Column="2"
-                HorizontalOptions="Start"
-                Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
-                ToolTipProperties.Text="{Translate QRCodeModuleShapeRounded_Text}"
-                SemanticProperties.Description="{Translate QRCodeModuleShapeRounded_Text}"
-                CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
-            </RadioButton>
-
-            <BoxView
-                Grid.Column="3"
-                HeightRequest="28"
-                WidthRequest="28"
+            <ImageButton
+                x:Name="btnQRCodeModuleShapeRounded"
+                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Grid.Column="1"
                 CornerRadius="10"
-                HorizontalOptions="Start"
-                Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
+                SemanticProperties.Description="{Translate QRCodeModuleShapeRounded_Text}"
                 ToolTipProperties.Text="{Translate QRCodeModuleShapeRounded_Text}"
-                SemanticProperties.Description="{Translate QRCodeModuleShapeRounded_Text}">
-            </BoxView>
+                Clicked="BtnQRCodeModuleShape_Clicked">
+            </ImageButton>
 
-            <RadioButton
-                x:Name="rbtQRCodeModuleShapeCircle"
-                GroupName="ModuleShape"
-                Grid.Column="4"
-                HorizontalOptions="Start"
-                Margin="{OnPlatform Default='0,0,0,0', WinUI='5,5,0,0'}"
-                ToolTipProperties.Text="{Translate QRCodeModuleShapeCircle_Text}"
+            <ImageButton
+                x:Name="btnQRCodeModuleShapeCircle"
+                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Grid.Column="2"
+                CornerRadius="20"
                 SemanticProperties.Description="{Translate QRCodeModuleShapeCircle_Text}"
-                CheckedChanged="RbtQRCodeModuleShape_CheckedChanged">
-            </RadioButton>
-
-            <BoxView
-                Grid.Column="5"
-                HeightRequest="29"
-                WidthRequest="29"
-                CornerRadius="25"
-                HorizontalOptions="Start"
-                Color="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource LightGray}}"
                 ToolTipProperties.Text="{Translate QRCodeModuleShapeCircle_Text}"
-                SemanticProperties.Description="{Translate QRCodeModuleShapeCircle_Text}">
-            </BoxView>
+                Clicked="BtnQRCodeModuleShape_Clicked">
+            </ImageButton>
         </Grid>
 
         <Label
