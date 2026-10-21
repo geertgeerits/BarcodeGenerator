@@ -730,6 +730,15 @@
                 </Entry>
             </Border>
 
+            <Label
+                Style="{StaticResource labelStyleDefault}"
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                SemanticProperties.Description="{Translate ValidationInput_Text}"
+                Text="{Translate ValidationInput_Text}">
+            </Label>
+            
             <ImageButton
                 x:Name="btnButtonURL"
                 Style="{StaticResource imageButtonStyleColorPicker}"

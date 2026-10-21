@@ -1104,4 +1104,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>GS1識別子が有効ではありません。</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>入力に対する完全な検証は行われていない。</value>
+  </data>
 </root>

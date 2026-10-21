@@ -1090,4 +1090,7 @@ Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet 
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>Pengidentifikasi GS1 tidak valid.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>Tidak ada validasi penuh terhadap input tersebut.</value>
+  </data>
 </root>

@@ -1090,4 +1090,7 @@ Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tic
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>Identifikátor GS1 není platný.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>Vstup není kompletně validován.</value>
+  </data>
 </root>

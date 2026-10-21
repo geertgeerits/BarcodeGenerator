@@ -1093,4 +1093,7 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>Mã định danh GS1 không hợp lệ.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>Không có sự kiểm chứng đầy đủ đối với dữ liệu đầu vào.</value>
+  </data>
 </root>

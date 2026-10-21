@@ -1090,4 +1090,7 @@
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>Το αναγνωριστικό GS1 δεν είναι έγκυρο.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>Δεν υπάρχει πλήρης επικύρωση της εισόδου.</value>
+  </data>
 </root>

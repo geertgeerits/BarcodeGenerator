@@ -1090,4 +1090,7 @@ Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de Q
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>GS1-identificatie is niet geldig.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>Er is geen volledige validatie van de invoer.</value>
+  </data>
 </root>

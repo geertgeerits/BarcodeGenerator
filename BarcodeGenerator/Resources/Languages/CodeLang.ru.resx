@@ -1090,4 +1090,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>Идентификатор GS1 недействителен.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>Полная проверка входных данных отсутствует.</value>
+  </data>
 </root>

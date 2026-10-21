@@ -1090,4 +1090,7 @@ For at ændre størrelsen på QR-koden inde i cirklen skal du justere frizonen i
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>GS1-identifikatoren er ikke gyldig.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>Der er ingen fuldstændig validering af inputtet.</value>
+  </data>
 </root>

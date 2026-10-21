@@ -2788,6 +2788,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is no full validation of the input..
+        /// </summary>
+        internal static string ValidationInput_Text {
+            get {
+                return ResourceManager.GetString("ValidationInput_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version:.
         /// </summary>
         internal static string Version_Text {

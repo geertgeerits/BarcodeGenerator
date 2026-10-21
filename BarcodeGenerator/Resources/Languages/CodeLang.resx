@@ -1090,4 +1090,7 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>GS1 identifier is not valid.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>There is no full validation of the input.</value>
+  </data>
 </root>

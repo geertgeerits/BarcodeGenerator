@@ -1090,4 +1090,7 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>GS1 标识符无效。</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>输入未经过全面验证。</value>
+  </data>
 </root>

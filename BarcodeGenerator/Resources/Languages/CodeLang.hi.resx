@@ -1087,4 +1087,7 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>GS1 पहचानकर्ता मान्य नहीं है।</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>इनपुट का पूर्ण सत्यापन नहीं है।</value>
+  </data>
 </root>

@@ -1135,24 +1135,27 @@ END:VCALENDAR";
                 }
 
                 // If the GS1 identifier does not have a minimum length of 18 characters (including the /01/ prefix), return false
-                if (entPayloadTypeGS1Identifier.Text.Length < 18)
+                else if (entPayloadTypeGS1Identifier.Text.Length < 18)
                 {
                     bIsValid = false;
                 }
 
                 // If the GS1 identifier has a length greater than 18 characters, the the 19th character must be a forward slash (/) to separate the GTIN from the additional data
-                if (entPayloadTypeGS1Identifier.Text.Length > 18 && entPayloadTypeGS1Identifier.Text[18] != '/')
+                else if (entPayloadTypeGS1Identifier.Text.Length > 18 && entPayloadTypeGS1Identifier.Text[18] != '/')
                 {
                     bIsValid = false;
                 }
 
                 // The characters from the 5th to the 18th position (inclusive) of the GS1 identifier must be numeric, as they represent the GTIN
-                for (int i = 4; i < 18; i++)
+                else if (bIsValid)
                 {
-                    if (!char.IsDigit(entPayloadTypeGS1Identifier.Text[i]))
+                    for (int i = 4; i < 18; i++)
                     {
-                        bIsValid = false;
-                        break;
+                        if (!char.IsDigit(entPayloadTypeGS1Identifier.Text[i]))
+                        {
+                            bIsValid = false;
+                            break;
+                        }
                     }
                 }
             }

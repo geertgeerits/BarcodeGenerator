@@ -1090,4 +1090,7 @@ Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölg
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>GS1 tanımlayıcısı geçerli değil.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>Girdi için tam bir doğrulama bulunmuyor.</value>
+  </data>
 </root>

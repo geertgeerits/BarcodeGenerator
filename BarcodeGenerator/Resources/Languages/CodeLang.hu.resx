@@ -1090,4 +1090,7 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>A GS1-azonosító érvénytelen.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>A bemenet nem esik át teljes körű ellenőrzésen.</value>
+  </data>
 </root>

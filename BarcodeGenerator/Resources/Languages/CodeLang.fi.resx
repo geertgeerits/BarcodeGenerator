@@ -1090,4 +1090,7 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="ErrorGS1IdentifierInvalid_Text" xml:space="preserve">
     <value>GS1-tunniste ei ole kelvollinen.</value>
   </data>
+  <data name="ValidationInput_Text" xml:space="preserve">
+    <value>Syötettä ei validoida täysin.</value>
+  </data>
 </root>
