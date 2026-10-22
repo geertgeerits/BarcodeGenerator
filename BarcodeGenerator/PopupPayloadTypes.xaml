@@ -9,11 +9,11 @@
     SafeAreaEdges="All"
     BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
     VerticalOptions="Start"
-    Margin="{OnPlatform Default='0,0,0,0', Android='5,0,10,0'}"
     MaximumHeightRequest="600"
     CanBeDismissedByTappingOutsideOfPopup="False">
 
     <!--!!!BUG!!! Android since update to Microsoft.Maui.Controls Version 10.0.120 - Popup is not centered anymore, need to set the margin of the Popup for Android-->
+    <!--Margin="{OnPlatform Default='0,0,0,0', Android='5,0,10,0'}"-->
     
     <!--Set the Text property of the Entry controls to "" for text values to eliminate null values if nothing has been entered.
     This is necessary to prevent null reference exceptions when the Text properties are accessed in the code-behind.-->
