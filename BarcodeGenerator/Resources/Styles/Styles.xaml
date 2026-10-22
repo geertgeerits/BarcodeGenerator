@@ -545,7 +545,7 @@
         <Setter Property="Aspect" Value="AspectFit" />
     </Style>
 
-    <Style x:Key="imageButtonStyleGradientDirectionPicker" TargetType="ImageButton">
+    <Style x:Key="imageButtonStyleArtSettings" TargetType="ImageButton">
         <Setter Property="HeightRequest" Value="39" />
         <Setter Property="WidthRequest" Value="39" />
         <Setter Property="BorderWidth" Value="1" />

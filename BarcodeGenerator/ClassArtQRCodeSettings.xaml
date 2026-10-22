@@ -115,7 +115,7 @@
             <ImageButton
                 x:Name="btnQRCodeFinderPatternShapeSquare"
                 x:FieldModifier="public"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="0"
                 CornerRadius="0"
                 SemanticProperties.Description="{Translate QRCodeFinderPatternShapeSquare_Text}"
@@ -126,7 +126,7 @@
             <ImageButton
                 x:Name="btnQRCodeFinderPatternShapeRounded"
                 x:FieldModifier="public"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="1"
                 CornerRadius="10"
                 SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRounded_Text}"
@@ -137,7 +137,7 @@
             <ImageButton
                 x:Name="btnQRCodeFinderPatternShapeCircle"
                 x:FieldModifier="public"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="2"
                 CornerRadius="20"
                 SemanticProperties.Description="{Translate QRCodeFinderPatternShapeCircle_Text}"
@@ -148,7 +148,7 @@
             <ImageButton
                 x:Name="btnQRCodeFinderPatternShapeRoundedCircle"
                 x:FieldModifier="public"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="3"
                 CornerRadius="10"
                 SemanticProperties.Description="{Translate QRCodeFinderPatternShapeRoundedCircle_Text}"
@@ -174,7 +174,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeModuleShapeSquare"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="0"
                 CornerRadius="0"
                 SemanticProperties.Description="{Translate QRCodeModuleShapeSquare_Text}"
@@ -184,7 +184,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeModuleShapeRounded"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="1"
                 CornerRadius="10"
                 SemanticProperties.Description="{Translate QRCodeModuleShapeRounded_Text}"
@@ -194,7 +194,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeModuleShapeCircle"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="2"
                 CornerRadius="20"
                 SemanticProperties.Description="{Translate QRCodeModuleShapeCircle_Text}"
@@ -521,7 +521,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeGradientDirection1"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="0"
                 Source="ic_action_arrow_top.png"
                 SemanticProperties.Description="{Translate QRCodeGradientDirection1_Text}"
@@ -531,7 +531,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeGradientDirection2"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="1"
                 Source="ic_action_arrow_right_top.png"
                 SemanticProperties.Description="{Translate QRCodeGradientDirection2_Text}"
@@ -541,7 +541,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeGradientDirection3"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="2"
                 Source="ic_action_arrow_right.png"
                 SemanticProperties.Description="{Translate QRCodeGradientDirection3_Text}"
@@ -551,7 +551,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeGradientDirection4"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Column="3"
                 Source="ic_action_arrow_right_bottom.png"
                 SemanticProperties.Description="{Translate QRCodeGradientDirection4_Text}"
@@ -561,7 +561,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeGradientDirection5"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="0,0,0,8"
@@ -573,7 +573,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeGradientDirection6"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="0,0,0,8"
@@ -585,7 +585,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeGradientDirection7"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Row="1"
                 Grid.Column="2"
                 Margin="0,0,0,8"
@@ -597,7 +597,7 @@
 
             <ImageButton
                 x:Name="btnQRCodeGradientDirection8"
-                Style="{StaticResource imageButtonStyleGradientDirectionPicker}"
+                Style="{StaticResource imageButtonStyleArtSettings}"
                 Grid.Row="1"
                 Grid.Column="3"
                 Margin="0,0,0,8"
