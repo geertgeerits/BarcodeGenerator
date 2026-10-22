@@ -1120,6 +1120,8 @@ END:VCALENDAR";
             string cValue;
             string cKey = string.Empty;
 
+            // Primary identification key formats
+
             // Add a null check for the GS1 identifier to ensure that it is not null, empty, or consists only of white-space characters
             if (string.IsNullOrWhiteSpace(gs1Identifier))
             {
@@ -1428,6 +1430,24 @@ END:VCALENDAR";
                     bIsValid = false;
                 }
             }
+
+            // Key qualifier formats
+
+            // cpv-code 22 - Consumer Product Variant (CPV) = 1*20XCHAR ; 1-20 characters from 82-chr subset
+            if (gs1Identifier.Contains("/22/"))
+            {
+                // Get the value of the GS1 identifier following the key
+                cKey = "/22/";
+                cValue = GetKeyValue(cKey, gs1Identifier);
+
+                // If the GS1 identifier does not have a length of 1-20 characters, return false
+                if (cValue.Length is < 1 or > 20)
+                {
+                    bIsValid = false;
+                }
+            }
+
+
 
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
