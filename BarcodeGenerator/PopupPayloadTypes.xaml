@@ -734,6 +734,7 @@
             </Border>
 
             <Label
+                x:Name="lblValidationInput"
                 Style="{StaticResource labelStyleDefault}"
                 Grid.Row="6"
                 Grid.Column="0"
