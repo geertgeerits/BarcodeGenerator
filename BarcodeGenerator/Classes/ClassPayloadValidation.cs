@@ -269,6 +269,7 @@ namespace BarcodeGenerator
             if (!bIsValid)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, CodeLang.ErrorUrlInvalid_Text, CodeLang.ButtonClose_Text);
+
                 _ = entry.Focus();
                 return false;
             }
@@ -288,8 +289,6 @@ namespace BarcodeGenerator
             string cValue;
             string cKey = string.Empty;
 
-            // Primary identification key formats
-
             // Add a null check for the GS1 identifier to ensure that it is not null, empty, or consists only of white-space characters
             if (string.IsNullOrWhiteSpace(gs1Identifier))
             {
@@ -302,7 +301,8 @@ namespace BarcodeGenerator
                 bIsValid = false;
             }
 
-            // Primary identification keys
+            // Primary identification key formats (x 16)
+
             // gtin-code 01 - Global Trade Item Number (GTIN) = 14DIGIT ; GTIN-8, GTIN-12 and GTIN-13 SHALL be expressed as 14 digits, with leading zeroes serving as filler digits
             if (gs1Identifier.Contains("/01/"))
             {
@@ -524,7 +524,7 @@ namespace BarcodeGenerator
                     bIsValid = false;
                 }
 
-                // The first 13 characters of the GDTI must be numeric
+                // The first 13characters of the GS1 identifier must be numeric
                 else if (bIsValid)
                 {
                     bIsValid = ValueIsDigit(cValue[..13]);
@@ -578,7 +578,7 @@ namespace BarcodeGenerator
                     bIsValid = false;
                 }
 
-                // The first 13 characters of the GDTI must be numeric
+                // The first 13 characters of the GS1 identifier must be numeric
                 else if (bIsValid)
                 {
                     bIsValid = ValueIsDigit(cValue[..13]);
@@ -599,7 +599,7 @@ namespace BarcodeGenerator
                 }
             }
 
-            // Key qualifier formats
+            // Key qualifier formats ( x 9)
 
             // cpv-code 22 - Consumer Product Variant (CPV) = 1*20XCHAR ; 1-20 characters from 82-chr subset
             if (gs1Identifier.Contains("/22/"))
@@ -615,7 +615,135 @@ namespace BarcodeGenerator
                 }
             }
 
+            // lot-code 10 - Batch/Lot identifier = 1*20XCHAR ; 1-20 characters from 82-chr subset
+            if (gs1Identifier.Contains("/10/"))
+            {
+                // Get the value of the GS1 identifier following the key
+                cKey = "/10/";
+                cValue = GetKeyValue(cKey, gs1Identifier);
 
+                // If the GS1 identifier does not have a length of 1-20 characters, return false
+                if (cValue.Length is < 1 or > 20)
+                {
+                    bIsValid = false;
+                }
+            }
+
+            // ser-code 21 - GTIN Serial Number = 1*20XCHAR ; 1-20 characters from 82-chr subset
+            if (gs1Identifier.Contains("/21/"))
+            {
+                // Get the value of the GS1 identifier following the key
+                cKey = "/21/";
+                cValue = GetKeyValue(cKey, gs1Identifier);
+
+                // If the GS1 identifier does not have a length of 1-20 characters, return false
+                if (cValue.Length is < 1 or > 20)
+                {
+                    bIsValid = false;
+                }
+            }
+
+            // cpsn-code 8011 - CPID Serial Number = 1*12DIGIT ; 1-12 digits
+            if (gs1Identifier.Contains("/8011/"))
+            {
+                // Get the value of the GS1 identifier following the key
+                cKey = "/8011/";
+                cValue = GetKeyValue(cKey, gs1Identifier);
+
+                // If the GS1 identifier does not have a length of 1-12 digits, return false
+                if (cValue.Length is < 1 or > 12)
+                {
+                    bIsValid = false;
+                }
+
+                // The characters of the GS1 identifier must be numeric
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIsDigit(cValue);
+                }
+            }
+
+            // glnx-code 254 - GLN extension = 1*20XCHAR ; 1-20 characters from 82-chr subset
+            if (gs1Identifier.Contains("/254/"))
+            {
+                // Get the value of the GS1 identifier following the key
+                cKey = "/254/";
+                cValue = GetKeyValue(cKey, gs1Identifier);
+
+                // If the GS1 identifier does not have a length of 1-20 characters, return false
+                if (cValue.Length is < 1 or > 20)
+                {
+                    bIsValid = false;
+                }
+            }
+
+            // refno-code 8020 - Payment Reference Number = 1*25XCHAR ; 1-25 characters from 82-chr subset
+            if (gs1Identifier.Contains("/8020/"))
+            {
+                // Get the value of the GS1 identifier following the key
+                cKey = "/8020/";
+                cValue = GetKeyValue(cKey, gs1Identifier);
+
+                // If the GS1 identifier does not have a length of 1-25 characters, return false
+                if (cValue.Length is < 1 or > 25)
+                {
+                    bIsValid = false;
+                }
+            }
+
+            // srin-code 8019 - Service Relation Instance Number = 1*10DIGIT ; 1-10 digits
+            if (gs1Identifier.Contains("/8019/"))
+            {
+                // Get the value of the GS1 identifier following the key
+                cKey = "/8019/";
+                cValue = GetKeyValue(cKey, gs1Identifier);
+
+                // If the GS1 identifier does not have a length of 1-10 digits, return false
+                if (cValue.Length is < 1 or > 10)
+                {
+                    bIsValid = false;
+                }
+
+                // The characters of the GS1 identifier must be numeric
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIsDigit(cValue);
+                }
+            }
+
+            // tpx-code 235 - third-party controlled serialised extension to GTIN = 1*28XCHAR ; 1-28 characters from 82-chr subset
+            if (gs1Identifier.Contains("/235/"))
+            {
+                // Get the value of the GS1 identifier following the key
+                cKey = "/235/";
+                cValue = GetKeyValue(cKey, gs1Identifier);
+
+                // If the GS1 identifier does not have a length of 1-28 characters, return false
+                if (cValue.Length is < 1 or > 28)
+                {
+                    bIsValid = false;
+                }
+            }
+
+            // uic-ext-code 7040 - GS1 UIC with Extension 1 and Importer Index = 1DIGIT 3XCHAR ; 1 digit then 3 characters from 82-chr subset
+            if (gs1Identifier.Contains("/7040/"))
+            {
+                // Get the value of the GS1 identifier following the key
+                cKey = "/7040/";
+                cValue = GetKeyValue(cKey, gs1Identifier);
+
+                // If the GS1 identifier does not have a length of 4 characters, return false
+                if (cValue.Length != 4)
+                {
+                    bIsValid = false;
+                }
+
+                // The first character of the GS1 identifier must be numeric
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIsDigit(cValue[..1]);
+                }
+            }
 
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)

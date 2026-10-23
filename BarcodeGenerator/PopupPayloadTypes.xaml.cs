@@ -951,7 +951,7 @@ END:VCALENDAR";
                     entPayloadTypeURL.Text = entPayloadTypeURL.Text.Trim();
 
                     // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload
-                    if (entPayloadTypeURL.Text.EndsWith('/'))
+                    if (entPayloadTypeURL.Text.EndsWith('/') && !entPayloadTypeURL.Text.EndsWith("//"))
                     {
                         entPayloadTypeURL.Text = entPayloadTypeURL.Text.TrimEnd('/');
                     }
@@ -968,16 +968,16 @@ END:VCALENDAR";
                     // Trim the GS1 identifier input values to remove leading and trailing whitespace
                     entPayloadTypeGS1Identifier.Text = entPayloadTypeGS1Identifier.Text.Trim();
 
-                    // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload
-                    if (entPayloadTypeGS1Identifier.Text.EndsWith('/'))
-                    {
-                        entPayloadTypeGS1Identifier.Text = entPayloadTypeGS1Identifier.Text.TrimEnd('/');
-                    }
-
                     // If the GS1 identifier does not start with /01/, prepend it to ensure the payload is correctly formatted according to GS1 standards
                     if (!entPayloadTypeGS1Identifier.Text.StartsWith("/01/"))
                     {
                         entPayloadTypeGS1Identifier.Text = "/01/" + entPayloadTypeGS1Identifier.Text;
+                    }
+
+                    // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload
+                    if (entPayloadTypeGS1Identifier.Text.EndsWith('/') && !entPayloadTypeGS1Identifier.Text.Length.Equals(4))   // 4 = /01/ (minimum length of a valid GS1 identifier)
+                    {
+                        entPayloadTypeGS1Identifier.Text = entPayloadTypeGS1Identifier.Text.TrimEnd('/');
                     }
 
                     // Validate the GS1 identifier to ensure it meets the required format and standards for GS1 payloads
