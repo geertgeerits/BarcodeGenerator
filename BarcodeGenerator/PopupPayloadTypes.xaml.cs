@@ -968,10 +968,10 @@ END:VCALENDAR";
                     // Trim the GS1 identifier input values to remove leading and trailing whitespace
                     entPayloadTypeGS1Identifier.Text = entPayloadTypeGS1Identifier.Text.Trim();
 
-                    // If the GS1 identifier does not start with /01/, prepend it to ensure the payload is correctly formatted according to GS1 standards
-                    if (!entPayloadTypeGS1Identifier.Text.StartsWith("/01/"))
+                    // If the GS1 identifier does not start with /, prepend it to ensure the payload is correctly formatted according to GS1 standards
+                    if (!entPayloadTypeGS1Identifier.Text.StartsWith('/'))
                     {
-                        entPayloadTypeGS1Identifier.Text = "/01/" + entPayloadTypeGS1Identifier.Text;
+                        entPayloadTypeGS1Identifier.Text = '/' + entPayloadTypeGS1Identifier.Text;
                     }
 
                     // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload

@@ -295,8 +295,8 @@ namespace BarcodeGenerator
                 bIsValid = false;
             }
 
-            // If the GS1 identifier does not start with /01/, return false, 01 stands for the Global Trade Item Number (GTIN) and is a required prefix for GS1 identifiers
-            if (!gs1Identifier.StartsWith("/01/"))
+            // If the GS1 identifier does not start with /, return false
+            if (!gs1Identifier.StartsWith('/'))
             {
                 bIsValid = false;
             }
@@ -601,7 +601,7 @@ namespace BarcodeGenerator
 
             // Key qualifier formats ( x 9)
 
-            // cpv-code 22 - Consumer Product Variant (CPV) = 1*20XCHAR ; 1-20 characters from 82-chr subset
+            // cpv-code 22 - Consumer Product Variant (CPV) = 1*20XCHAR ; 1-20 characters from 82-character subset
             if (gs1Identifier.Contains("/22/"))
             {
                 // Get the value of the GS1 identifier following the key
@@ -615,7 +615,7 @@ namespace BarcodeGenerator
                 }
             }
 
-            // lot-code 10 - Batch/Lot identifier = 1*20XCHAR ; 1-20 characters from 82-chr subset
+            // lot-code 10 - Batch/Lot identifier = 1*20XCHAR ; 1-20 characters from 82-character subset
             if (gs1Identifier.Contains("/10/"))
             {
                 // Get the value of the GS1 identifier following the key
@@ -629,7 +629,7 @@ namespace BarcodeGenerator
                 }
             }
 
-            // ser-code 21 - GTIN Serial Number = 1*20XCHAR ; 1-20 characters from 82-chr subset
+            // ser-code 21 - GTIN Serial Number = 1*20XCHAR ; 1-20 characters from 82-character subset
             if (gs1Identifier.Contains("/21/"))
             {
                 // Get the value of the GS1 identifier following the key
@@ -663,7 +663,7 @@ namespace BarcodeGenerator
                 }
             }
 
-            // glnx-code 254 - GLN extension = 1*20XCHAR ; 1-20 characters from 82-chr subset
+            // glnx-code 254 - GLN extension = 1*20XCHAR ; 1-20 characters from 82-character subset
             if (gs1Identifier.Contains("/254/"))
             {
                 // Get the value of the GS1 identifier following the key
@@ -677,7 +677,7 @@ namespace BarcodeGenerator
                 }
             }
 
-            // refno-code 8020 - Payment Reference Number = 1*25XCHAR ; 1-25 characters from 82-chr subset
+            // refno-code 8020 - Payment Reference Number = 1*25XCHAR ; 1-25 characters from 82-character subset
             if (gs1Identifier.Contains("/8020/"))
             {
                 // Get the value of the GS1 identifier following the key
@@ -711,7 +711,7 @@ namespace BarcodeGenerator
                 }
             }
 
-            // tpx-code 235 - third-party controlled serialised extension to GTIN = 1*28XCHAR ; 1-28 characters from 82-chr subset
+            // tpx-code 235 - third-party controlled serialised extension to GTIN = 1*28XCHAR ; 1-28 characters from 82-character subset
             if (gs1Identifier.Contains("/235/"))
             {
                 // Get the value of the GS1 identifier following the key
@@ -725,7 +725,7 @@ namespace BarcodeGenerator
                 }
             }
 
-            // uic-ext-code 7040 - GS1 UIC with Extension 1 and Importer Index = 1DIGIT 3XCHAR ; 1 digit then 3 characters from 82-chr subset
+            // uic-ext-code 7040 - GS1 UIC with Extension 1 and Importer Index = 1DIGIT 3XCHAR ; 1 digit then 3 characters from 82-character subset
             if (gs1Identifier.Contains("/7040/"))
             {
                 // Get the value of the GS1 identifier following the key
@@ -771,10 +771,10 @@ namespace BarcodeGenerator
                 // Find the start position of the value after the key
                 int nStartPosition = index + cKey.Length;
 
-                // Find the end position of the value, which is either the next forward slash or the end of the string
-                int nEndPosition = cGs1Identifier.IndexOf('/', nStartPosition);
+                // Find the end position of the value, which is either the next forward slash or question mark or the end of the string
+                int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?'], nStartPosition);
 
-                // If no forward slash is found, set the end position to the end of the string
+                // If no forward slash or question mark is found, set the end position to the end of the string
                 if (nEndPosition == -1)
                 {
                     nEndPosition = cGs1Identifier.Length;
