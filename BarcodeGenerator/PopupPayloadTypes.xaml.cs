@@ -975,7 +975,7 @@ END:VCALENDAR";
                     }
 
                     // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload
-                    if (entPayloadTypeGS1Identifier.Text.EndsWith('/') && !entPayloadTypeGS1Identifier.Text.Length.Equals(4))   // 4 = /01/ (minimum length of a valid GS1 identifier)
+                    if (entPayloadTypeGS1Identifier.Text.EndsWith('/') && !(entPayloadTypeGS1Identifier.Text.Length.Equals(4) || entPayloadTypeGS1Identifier.Text.Length.Equals(5) || entPayloadTypeGS1Identifier.Text.Length.Equals(6)))   // 4 or 5 or 6 = /nn/ /nnn/ /nnnn/ (length of a valid GS1 identifier)
                     {
                         entPayloadTypeGS1Identifier.Text = entPayloadTypeGS1Identifier.Text.TrimEnd('/');
                     }

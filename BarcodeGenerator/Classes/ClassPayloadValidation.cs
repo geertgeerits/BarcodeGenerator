@@ -6,6 +6,39 @@ namespace BarcodeGenerator
 {
     internal partial class ClassPayloadValidation
     {
+        // Add once in the class (central place for all supported GS1 keys)
+        private static readonly string[] _knownGs1Keys =
+        [
+            // Primary identification key formats (x 16)
+            "/01/",     // gtin-code
+            "/8006/",   // itip-code
+            "/8013/",   // gmn-code
+            "/8010/",   // cpid-code
+            "/414/",    // gln-code
+            "/415/",    // payTo-code
+            "/417/",    // partyGln-code
+            "/8017/",   // gsrnp-code
+            "/8018/",   // gsrn-code
+            "/255/",    // gcn-code
+            "/00/",     // sscc-code
+            "/253/",    // gdti-code
+            "/401/",    // ginc-code
+            "/402/",    // gsin-code
+            "/8003/",   // grai-code
+            "/8004/",   // giai-code
+            
+            // Key qualifier formats ( x 9)
+            "/22/",     // cpv-code
+            "/10/",     // lot-code
+            "/21/",     // ser-code
+            "/8011/",   // cpsn-code
+            "/254/",    // glnx-code
+            "/8020/",   // refno-code
+            "/8019/",   // srin-code
+            "/235/",    // tpx-code
+            "/7040/"    // uic-ext-code
+        ];
+
         /// <summary>
         /// Determines whether the specified string is a valid phone number format based on a regular expression pattern that allows for international and local formats, including optional country code, spaces, dashes, and parentheses.
         /// </summary>
@@ -745,6 +778,12 @@ namespace BarcodeGenerator
                 }
             }
 
+            // If the GS1 identifier does not contain any of the known keys, return false
+            if (!ContainsKnownGs1Key(gs1Identifier))
+            {
+                bIsValid = false;
+            }
+
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
             {
@@ -754,6 +793,24 @@ namespace BarcodeGenerator
             }
 
             return bIsValid;
+        }
+
+        /// <summary>
+        /// Determines whether the specified GS1 identifier contains a known GS1 key.
+        /// </summary>
+        /// <param name="gs1Identifier">The GS1 identifier to check.</param>
+        /// <returns><see langword="true"/> if the GS1 identifier contains a known GS1 key; otherwise, <see langword="false"/>.</returns>
+        private static bool ContainsKnownGs1Key(string gs1Identifier)
+        {
+            foreach (string key in _knownGs1Keys)
+            {
+                if (gs1Identifier.Contains(key, StringComparison.Ordinal))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         /// <summary>
