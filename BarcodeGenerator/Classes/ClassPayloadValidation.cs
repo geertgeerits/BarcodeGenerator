@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Numerics;
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace BarcodeGenerator
@@ -39,6 +38,12 @@ namespace BarcodeGenerator
             "/235/",    // tpx-code
             "/7040/"    // uic-ext-code
         ];
+
+        //  82-character subset of ISO/IEC 646 (for GS1 identifiers)
+        private static readonly string _82CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"-._!%&+,/*[]';:<>=?";
+
+        // 39-character subset of ISO/IEC 646 (for GS1 identifiers)
+        private static readonly string _39CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-#/";
 
         /// <summary>
         /// Determines whether the specified string is a valid phone number format based on a regular expression pattern that allows for international and local formats, including optional country code, spaces, dashes, and parentheses.
@@ -344,20 +349,8 @@ namespace BarcodeGenerator
                 cKey = "/01/";
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
-                // If the GS1 identifier does not have a length of 14 characters, return false
-                if (cValue.Length != 14)
-                {
-                    bIsValid = false;
-                }
-
-                // The characters of the GS1 identifier must be numeric
-                else if (bIsValid)
-                {
-                    bIsValid = ValueIsDigit(cValue);
-                }
-
                 // The GTIN must have a valid check digit (/01/09520123456788 is valid, /01/09520123456789 is invalid)
-                if (bIsValid && !CalculateGtinCheckDigit(cValue))
+                if (bIsValid && !ValidateValueCheckDigit(cValue))
                 {
                     bIsValid = false;
                 }
@@ -395,6 +388,12 @@ namespace BarcodeGenerator
                 {
                     bIsValid = false;
                 }
+
+                // The characters of the GS1 identifier must be from the 82-character subset
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue);
+                }
             }
 
             // cpid-code 8010 - Component / Part Identifier (CPID) = 1*30YCHAR ; 1-30 characters from 39-character subset
@@ -408,6 +407,12 @@ namespace BarcodeGenerator
                 if (cValue.Length is < 1 or > 30)
                 {
                     bIsValid = false;
+                }
+
+                // The characters of the GS1 identifier must be from the 39-character subset
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIs39CharacterSubset(cValue);
                 }
             }
 
@@ -569,6 +574,12 @@ namespace BarcodeGenerator
                 {
                     bIsValid = ValueIsDigit(cValue[..13]);
                 }
+
+                // The characters of the GS1 identifier must be from the 82-character subset (from character 14 to the end)
+                else if (bIsValid && cValue.Length > 13)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue[13..]);
+                }
             }
 
             // ginc-code 401 - Global Identification Number for Consignment (GINC) = 1*30XCHAR ; 1 - 30 characters from the 82-character subset
@@ -582,6 +593,12 @@ namespace BarcodeGenerator
                 if (cValue.Length is < 1 or > 30)
                 {
                     bIsValid = false;
+                }
+
+                // The characters of the GS1 identifier must be from the 82-character subset
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue);
                 }
             }
 
@@ -623,6 +640,12 @@ namespace BarcodeGenerator
                 {
                     bIsValid = ValueIsDigit(cValue[..13]);
                 }
+
+                // The characters of the GS1 identifier must be from the 82-character subset (from character 14 to the end)
+                else if (bIsValid && cValue.Length > 13)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue[13..]);
+                }
             }
 
             // giai-code 8004 - Global Individual Asset Identifier (GIAI) = 1*30XCHAR  ; 1-30 characters from 82-character subset
@@ -636,6 +659,12 @@ namespace BarcodeGenerator
                 if (cValue.Length is < 1 or > 30)
                 {
                     bIsValid = false;
+                }
+
+                // The characters of the GS1 identifier must be from the 82-character subset
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue);
                 }
             }
 
@@ -653,6 +682,12 @@ namespace BarcodeGenerator
                 {
                     bIsValid = false;
                 }
+
+                // The characters of the GS1 identifier must be from the 82-character subset
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue);
+                }
             }
 
             // lot-code 10 - Batch/Lot identifier = 1*20XCHAR ; 1-20 characters from 82-character subset
@@ -667,6 +702,12 @@ namespace BarcodeGenerator
                 {
                     bIsValid = false;
                 }
+
+                // The characters of the GS1 identifier must be from the 82-character subset
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue);
+                }
             }
 
             // ser-code 21 - GTIN Serial Number = 1*20XCHAR ; 1-20 characters from 82-character subset
@@ -680,6 +721,12 @@ namespace BarcodeGenerator
                 if (cValue.Length is < 1 or > 20)
                 {
                     bIsValid = false;
+                }
+
+                // The characters of the GS1 identifier must be from the 82-character subset
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue);
                 }
             }
 
@@ -715,6 +762,12 @@ namespace BarcodeGenerator
                 {
                     bIsValid = false;
                 }
+
+                // The characters of the GS1 identifier must be from the 82-character subset
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue);
+                }
             }
 
             // refno-code 8020 - Payment Reference Number = 1*25XCHAR ; 1-25 characters from 82-character subset
@@ -728,6 +781,12 @@ namespace BarcodeGenerator
                 if (cValue.Length is < 1 or > 25)
                 {
                     bIsValid = false;
+                }
+                
+                // The characters of the GS1 identifier must be from the 82-character subset
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue);
                 }
             }
 
@@ -763,6 +822,12 @@ namespace BarcodeGenerator
                 {
                     bIsValid = false;
                 }
+
+                // The characters of the GS1 identifier must be from the 82-character subset
+                else if (bIsValid)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue);
+                }
             }
 
             // uic-ext-code 7040 - GS1 UIC with Extension 1 and Importer Index = 1DIGIT 3XCHAR ; 1 digit then 3 characters from 82-character subset
@@ -782,6 +847,12 @@ namespace BarcodeGenerator
                 else if (bIsValid)
                 {
                     bIsValid = ValueIsDigit(cValue[..1]);
+                }
+
+                // The characters of the GS1 identifier must be from the 82-character subset (from character 2 to the end)
+                else if (bIsValid && cValue.Length > 1)
+                {
+                    bIsValid = ValueIs82CharacterSubset(cValue[1..]);
                 }
             }
 
@@ -873,46 +944,78 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Check if all characters in the input are in the allowed 39-character subset
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool ValueIs39CharacterSubset(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return false;
+            }
+
+            // Check if all characters in the input are in the allowed set
+            return value.All(c => _39CharacterSubset.Contains(c));
+        }
+
+        /// <summary>
+        /// Check if all characters in the input are in the allowed 82-character subset
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool ValueIs82CharacterSubset(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return false;
+            }
+
+            // Check if all characters in the input are in the allowed set
+            return value.All(c => _82CharacterSubset.Contains(c));
+        }
+
+        /// <summary>
         /// Calculate the gtin check digit
         /// </summary>
-        /// <param name="gtin"></param>
+        /// <param name="value"></param>
         /// <returns></returns>
-        public static bool CalculateGtinCheckDigit(string gtin)
+        public static bool ValidateValueCheckDigit(string value)
         {
-            // Validate input: GTIN must be a non-empty string containing only digits
-            if (string.IsNullOrWhiteSpace(gtin) || !gtin.All(char.IsDigit))
+            // Validate input: the value must be a non-empty string containing only digits
+            if (string.IsNullOrWhiteSpace(value) || !value.All(char.IsDigit))
             {
                 return false;
             }
 
-            string gtinOriginal = gtin;
+            // Store the original value for later comparison
+            string valueOriginal = value;
 
-            // If the GTIN is already 14 digits, we assume the last digit is the check digit and remove it for calculation
-            if (gtin.Length == 14)
-            {
-                gtin = gtin[..^1];
-            }
-
-            // Accept the GTIN body, excluding the check digit
-            if (gtin.Length is not (7 or 11 or 12 or 13))
+            //If the value is less than 14 digits return false
+            if (value.Length != 14)
             {
                 return false;
+            }
+            // If the value is already 14 digits, we assume the last digit is the check digit and remove it for calculation
+            else
+            {
+                value = value[..^1];
             }
 
             int sum = 0;
             int weight = 3;
 
             // Starting from the right, multiply digits by alternating weights of 3 and 1
-            for (int i = gtin.Length - 1; i >= 0; i--)
+            for (int i = value.Length - 1; i >= 0; i--)
             {
-                sum += (gtin[i] - '0') * weight;
+                sum += (value[i] - '0') * weight;
                 weight = weight == 3 ? 1 : 3;
             }
 
-            int nCheckDigit = (10 - (sum % 10)) % 10;
+            int checkDigit = (10 - (sum % 10)) % 10;
 
-            // If the last digit of the gtinOriginal is equal to the calculated check digit, the GTIN is valid
-            return gtinOriginal.Length == 14 && gtinOriginal[^1] == nCheckDigit.ToString()[0];
+            // If the last digit of the valueOriginal is equal to the calculated check digit, the value is valid
+            return valueOriginal[^1] == checkDigit.ToString()[0];
         }
     }
 }
