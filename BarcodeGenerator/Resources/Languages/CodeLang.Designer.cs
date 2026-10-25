@@ -1767,11 +1767,20 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GS1.
+        ///   Looks up a localized string similar to GS1 Digital Link.
         /// </summary>
-        internal static string PayloadType_GS1_Text {
+        internal static string PayloadType_GS1DIGITALLINK_Text {
             get {
-                return ResourceManager.GetString("PayloadType_GS1_Text", resourceCulture);
+                return ResourceManager.GetString("PayloadType_GS1DIGITALLINK_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 QR Code.
+        /// </summary>
+        internal static string PayloadType_GS1QRCODE_Text {
+            get {
+                return ResourceManager.GetString("PayloadType_GS1QRCODE_Text", resourceCulture);
             }
         }
         

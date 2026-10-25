@@ -721,16 +721,22 @@
                 Grid.ColumnSpan="2"
                 Margin="0,6,6,0">
 
-                <Entry
-                    x:Name="entPayloadTypeGS1Identifier"
-                    Placeholder="{Translate PayloadTypeGS1Identifier_Text}"                    
-                    ClearButtonVisibility="WhileEditing"
-                    Keyboard="Text"
-                    ReturnType="Done"
-                    MaxLength="500"
-                    Text=""
-                    Focused="EntPayloadTypeGS1Identifier_Focused">
-                </Entry>
+                <ScrollView
+                    VerticalScrollBarVisibility="Always">
+
+                    <Editor
+                        x:Name="edtPayloadTypeGS1Identifier"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        AutoSize="TextChanges"
+                        MinimumHeightRequest="100"
+                        Placeholder="{Translate PayloadTypeGS1Identifier_Text}"
+                        MaxLength="2000"
+                        Keyboard="Text"
+                        Text=""
+                        Focused="edtPayloadTypeGS1Identifier_Focused">
+                    </Editor>
+                </ScrollView>
             </Border>
 
             <Label

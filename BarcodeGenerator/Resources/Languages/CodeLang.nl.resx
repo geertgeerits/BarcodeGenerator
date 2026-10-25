@@ -1081,9 +1081,6 @@ Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de Q
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Gradiëntkleur 6</value>
   </data>
-  <data name="PayloadType_GS1_Text" xml:space="preserve">
-    <value>GS1</value>
-  </data>
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1-identificatie</value>
   </data>

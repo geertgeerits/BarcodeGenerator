@@ -313,11 +313,11 @@ namespace BarcodeGenerator
         /// <summary>
         /// Determines whether the specified string is a valid GS1 identifier
         /// </summary>
-        /// <param name="entry">The Entry containing the GS1 identifier string to validate.</param>
+        /// <param name="editor">The Editor containing the GS1 identifier string to validate.</param>
         /// <returns>true if the specified string is a valid GS1 identifier; otherwise, false.</returns>
-        public static async Task<bool> IsValidGS1Identifier(Entry entry)
+        public static async Task<bool> IsValidGS1Identifier(Editor editor)
         {
-            string gs1Identifier = entry.Text;
+            string gs1Identifier = editor.Text;
             bool bIsValid = true;
             string cValue;
             string cKey = string.Empty;
@@ -788,7 +788,7 @@ namespace BarcodeGenerator
             if (!bIsValid)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.ErrorGS1IdentifierInvalid_Text} ({cKey})", CodeLang.ButtonClose_Text);
-                _ = entry.Focus();
+                _ = editor.Focus();
                 return false;
             }
 

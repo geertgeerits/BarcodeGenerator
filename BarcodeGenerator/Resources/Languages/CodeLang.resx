@@ -1081,9 +1081,6 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>Gradient color 6</value>
   </data>
-  <data name="PayloadType_GS1_Text" xml:space="preserve">
-    <value>GS1</value>
-  </data>
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1 identifier</value>
   </data>
@@ -1095,5 +1092,11 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
   </data>
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>QR Code finder pattern shape: rounded with circle</value>
+  </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR Code</value>
   </data>
 </root>

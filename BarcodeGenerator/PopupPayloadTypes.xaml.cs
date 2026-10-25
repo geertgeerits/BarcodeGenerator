@@ -205,7 +205,7 @@ namespace BarcodeGenerator
                 _ = entPayloadTypeSctBic.Focus();
             }
 
-            else if (selectedName == ClassPayloadTypes.cPayloadType_GS1)
+            else if (selectedName == ClassPayloadTypes.cPayloadType_GS1DIGITALLINK)
             {
                 brdPayloadTypeURL.IsVisible = true;
                 btnButtonURL.IsVisible = true;
@@ -381,14 +381,14 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender">The source of the event, typically the entry field that received focus.</param>
         /// <param name="e">The event data associated with the focus event.</param>
-        private void EntPayloadTypeGS1Identifier_Focused(object sender, FocusEventArgs e)
+        private void edtPayloadTypeGS1Identifier_Focused(object sender, FocusEventArgs e)
         {
-            if (entPayloadTypeGS1Identifier.Text == string.Empty)
+            if (edtPayloadTypeGS1Identifier.Text == string.Empty)
             {
-                entPayloadTypeGS1Identifier.Text = "/01/";
+                edtPayloadTypeGS1Identifier.Text = "/01/";
 
                 // Move cursor to the end of the text
-                entPayloadTypeGS1Identifier.CursorPosition = entPayloadTypeGS1Identifier.Text.Length;
+                edtPayloadTypeGS1Identifier.CursorPosition = edtPayloadTypeGS1Identifier.Text.Length;
             }
 
             ClassPayloadTypes.cPayloadCaption = string.Empty;
@@ -943,7 +943,7 @@ END:VCALENDAR";
             }
 
             // PayloadType GS1 data
-            else if (selectedName == ClassPayloadTypes.cPayloadType_GS1)
+            else if (selectedName == ClassPayloadTypes.cPayloadType_GS1DIGITALLINK)
             {
                 try
                 {
@@ -966,31 +966,31 @@ END:VCALENDAR";
                     Url generator = new(url: entPayloadTypeURL.Text);
 
                     // Trim the GS1 identifier input values to remove leading and trailing whitespace
-                    entPayloadTypeGS1Identifier.Text = entPayloadTypeGS1Identifier.Text.Trim();
+                    edtPayloadTypeGS1Identifier.Text = edtPayloadTypeGS1Identifier.Text.Trim();
 
                     // If the GS1 identifier does not start with /, prepend it to ensure the payload is correctly formatted according to GS1 standards
-                    if (!entPayloadTypeGS1Identifier.Text.StartsWith('/'))
+                    if (!edtPayloadTypeGS1Identifier.Text.StartsWith('/'))
                     {
-                        entPayloadTypeGS1Identifier.Text = '/' + entPayloadTypeGS1Identifier.Text;
+                        edtPayloadTypeGS1Identifier.Text = '/' + edtPayloadTypeGS1Identifier.Text;
                     }
 
                     // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload
-                    if (entPayloadTypeGS1Identifier.Text.EndsWith('/') && !(entPayloadTypeGS1Identifier.Text.Length.Equals(4) || entPayloadTypeGS1Identifier.Text.Length.Equals(5) || entPayloadTypeGS1Identifier.Text.Length.Equals(6)))   // 4 or 5 or 6 = /nn/ /nnn/ /nnnn/ (length of a valid GS1 identifier)
+                    if (edtPayloadTypeGS1Identifier.Text.EndsWith('/') && !(edtPayloadTypeGS1Identifier.Text.Length.Equals(4) || edtPayloadTypeGS1Identifier.Text.Length.Equals(5) || edtPayloadTypeGS1Identifier.Text.Length.Equals(6)))   // 4 or 5 or 6 = /nn/ /nnn/ /nnnn/ (length of a valid GS1 identifier)
                     {
-                        entPayloadTypeGS1Identifier.Text = entPayloadTypeGS1Identifier.Text.TrimEnd('/');
+                        edtPayloadTypeGS1Identifier.Text = edtPayloadTypeGS1Identifier.Text.TrimEnd('/');
                     }
 
                     // Validate the GS1 identifier to ensure it meets the required format and standards for GS1 payloads
-                    if (!await ClassPayloadValidation.IsValidGS1Identifier(entPayloadTypeGS1Identifier))
+                    if (!await ClassPayloadValidation.IsValidGS1Identifier(edtPayloadTypeGS1Identifier))
                     {
                         return string.Empty;
                     }
 
                     // Set the barcode caption to the GS1 identifier for display purposes using the first 18 characters of the identifier
-                    ClassPayloadTypes.cPayloadCaption = entPayloadTypeGS1Identifier.Text.Length > 18 ? entPayloadTypeGS1Identifier.Text[..18] : entPayloadTypeGS1Identifier.Text;
+                    ClassPayloadTypes.cPayloadCaption = edtPayloadTypeGS1Identifier.Text.Length > 18 ? edtPayloadTypeGS1Identifier.Text[..18] : edtPayloadTypeGS1Identifier.Text;
 
                     // Concatenate the URL payload with the GS1 identifier to form the complete payload string
-                    payload = generator.ToString() + entPayloadTypeGS1Identifier.Text;
+                    payload = generator.ToString() + edtPayloadTypeGS1Identifier.Text;
                 }
                 catch (Exception ex)
                 {

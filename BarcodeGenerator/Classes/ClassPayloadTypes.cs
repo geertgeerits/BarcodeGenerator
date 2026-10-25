@@ -17,7 +17,8 @@
         public static string cPayloadType_CONTACTDATA = string.Empty;
         public static string cPayloadType_CALENDAREVENT = string.Empty;
         public static string cPayloadType_SEPACREDITTRANSFER = string.Empty;
-        public static string cPayloadType_GS1 = string.Empty;
+        public static string cPayloadType_GS1DIGITALLINK = string.Empty;
+        public static string cPayloadType_GS1QRCODE = string.Empty;
 
         // Global variables
         public static int nPayloadTypeIndex;                        // Index of the payload type in the list of payload types
@@ -49,7 +50,8 @@
             cPayloadType_CONTACTDATA = CodeLang.PayloadType_CONTACTDATA_Text;
             cPayloadType_CALENDAREVENT = CodeLang.PayloadType_CALENDAREVENT_Text;
             cPayloadType_SEPACREDITTRANSFER = CodeLang.PayloadType_SEPACREDITTRANSFER_Text;
-            cPayloadType_GS1 = CodeLang.PayloadType_GS1_Text;
+            cPayloadType_GS1DIGITALLINK = CodeLang.PayloadType_GS1DIGITALLINK_Text;
+            cPayloadType_GS1QRCODE = CodeLang.PayloadType_GS1QRCODE_Text;
 
             // Default values for the payload type
             cPayloadTypeDefault = CodeLang.PayloadType_GEOLOCATION_Text;
@@ -79,7 +81,8 @@
             payloadSearch.Add("CONTACTDATA", CodeLang.PayloadType_CONTACTDATA_Text);
             payloadSearch.Add("CALENDAREVENT", CodeLang.PayloadType_CALENDAREVENT_Text);
             payloadSearch.Add("SEPACREDITTRANSFER", CodeLang.PayloadType_SEPACREDITTRANSFER_Text);
-            payloadSearch.Add("GS1", CodeLang.PayloadType_GS1_Text);
+            payloadSearch.Add("GS1DIGITALLINK", CodeLang.PayloadType_GS1DIGITALLINK_Text);
+            payloadSearch.Add("GS1QRCODE", CodeLang.PayloadType_GS1QRCODE_Text);
         }
 
         /// <summary>
@@ -106,7 +109,7 @@
                 CodeLang.PayloadType_CONTACTDATA_Text,
                 CodeLang.PayloadType_CALENDAREVENT_Text,
                 CodeLang.PayloadType_SEPACREDITTRANSFER_Text,
-                CodeLang.PayloadType_GS1_Text
+                CodeLang.PayloadType_GS1DIGITALLINK_Text
             }
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
 

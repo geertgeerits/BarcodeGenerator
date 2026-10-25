@@ -1082,9 +1082,6 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>그라데이션 색상 6</value>
   </data>
-  <data name="PayloadType_GS1_Text" xml:space="preserve">
-    <value>GS1</value>
-  </data>
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1 식별자</value>
   </data>

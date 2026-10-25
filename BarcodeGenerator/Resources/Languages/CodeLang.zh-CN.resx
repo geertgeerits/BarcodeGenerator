@@ -1081,9 +1081,6 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   <data name="QRCodeGradientColor6_Text" xml:space="preserve">
     <value>渐变色 6</value>
   </data>
-  <data name="PayloadType_GS1_Text" xml:space="preserve">
-    <value>GS1</value>
-  </data>
   <data name="PayloadTypeGS1Identifier_Text" xml:space="preserve">
     <value>GS1 标识符</value>
   </data>
