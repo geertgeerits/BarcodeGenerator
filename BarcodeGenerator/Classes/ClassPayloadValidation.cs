@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace BarcodeGenerator
@@ -353,6 +354,12 @@ namespace BarcodeGenerator
                 else if (bIsValid)
                 {
                     bIsValid = ValueIsDigit(cValue);
+                }
+
+                // The GTIN must have a valid check digit (/01/09520123456788 is valid, /01/09520123456789 is invalid)
+                if (bIsValid && !CalculateGtinCheckDigit(cValue))
+                {
+                    bIsValid = false;
                 }
             }
 
@@ -863,6 +870,49 @@ namespace BarcodeGenerator
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Calculate the gtin check digit
+        /// </summary>
+        /// <param name="gtin"></param>
+        /// <returns></returns>
+        public static bool CalculateGtinCheckDigit(string gtin)
+        {
+            // Validate input: GTIN must be a non-empty string containing only digits
+            if (string.IsNullOrWhiteSpace(gtin) || !gtin.All(char.IsDigit))
+            {
+                return false;
+            }
+
+            string gtinOriginal = gtin;
+
+            // If the GTIN is already 14 digits, we assume the last digit is the check digit and remove it for calculation
+            if (gtin.Length == 14)
+            {
+                gtin = gtin[..^1];
+            }
+
+            // Accept the GTIN body, excluding the check digit
+            if (gtin.Length is not (7 or 11 or 12 or 13))
+            {
+                return false;
+            }
+
+            int sum = 0;
+            int weight = 3;
+
+            // Starting from the right, multiply digits by alternating weights of 3 and 1
+            for (int i = gtin.Length - 1; i >= 0; i--)
+            {
+                sum += (gtin[i] - '0') * weight;
+                weight = weight == 3 ? 1 : 3;
+            }
+
+            int nCheckDigit = (10 - (sum % 10)) % 10;
+
+            // If the last digit of the gtinOriginal is equal to the calculated check digit, the GTIN is valid
+            return gtinOriginal.Length == 14 && gtinOriginal[^1] == nCheckDigit.ToString()[0];
         }
     }
 }
