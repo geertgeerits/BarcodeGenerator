@@ -334,8 +334,8 @@ namespace BarcodeGenerator
                 bIsValid = false;
             }
 
-            // If the GS1 identifier does not start with /, return false
-            if (!gs1Identifier.StartsWith('/'))
+            // If the GS1 identifier does not start with /01/, return false
+            if (!gs1Identifier.StartsWith("/01/"))
             {
                 bIsValid = false;
             }
@@ -348,6 +348,14 @@ namespace BarcodeGenerator
                 // Get the value of the GS1 identifier following the key
                 cKey = "/01/";
                 cValue = GetKeyValue(cKey, gs1Identifier);
+
+                // If the GS1 identifier length is less than 14 characters, add zeroes to the left to make it 14 characters
+                // and replace the original value with the new value in the editor
+                if (cValue.Length < 14)
+                {
+                    cValue = cValue.PadLeft(14, '0');
+                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                }
 
                 // The GTIN must have a valid check digit (/01/09520123456788 is valid, /01/09520123456789 is invalid)
                 if (bIsValid && !ValidateValueCheckDigit(cValue))
@@ -991,7 +999,7 @@ namespace BarcodeGenerator
             // Store the original value for later comparison
             string valueOriginal = value;
 
-            //If the value is less than 14 digits return false
+            // If the value is less than 14 digits return false
             if (value.Length != 14)
             {
                 return false;
