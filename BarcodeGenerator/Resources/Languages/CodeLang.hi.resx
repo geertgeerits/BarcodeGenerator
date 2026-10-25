@@ -1090,4 +1090,10 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>QR कोड फाइंडर पैटर्न का आकार: गोलाकार कोनों वाला वृत्त</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 डिजिटल लिंक</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR कोड</value>
+  </data>
 </root>

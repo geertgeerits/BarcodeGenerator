@@ -1093,4 +1093,10 @@ Pour modifier la taille du code QR à l'intérieur du cercle, ajustez la zone de
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>Forme du motif de repérage d’un code QR : arrondie avec un cercle</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>Code QR GS1</value>
+  </data>
 </root>

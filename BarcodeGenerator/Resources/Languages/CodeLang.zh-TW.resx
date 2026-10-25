@@ -1094,4 +1094,10 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>二維碼查找器圖案形狀：圓形</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 數位鏈接</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR 碼</value>
+  </data>
 </root>

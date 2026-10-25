@@ -1093,4 +1093,10 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>二维码定位图案形状：带圆形的圆角样式</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 二维码</value>
+  </data>
 </root>

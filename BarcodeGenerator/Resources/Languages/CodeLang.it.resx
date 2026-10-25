@@ -1093,4 +1093,10 @@ Per modificare le dimensioni del codice QR all'interno del cerchio, regola la zo
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>Forma del pattern di individuazione del codice QR: arrotondata con cerchio</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>Codice QR GS1</value>
+  </data>
 </root>

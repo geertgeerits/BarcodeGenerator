@@ -1093,4 +1093,10 @@ For at ændre størrelsen på QR-koden inde i cirklen skal du justere frizonen i
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>Form på QR-kodens søgemønster: afrundet med cirkel</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR-kode</value>
+  </data>
 </root>

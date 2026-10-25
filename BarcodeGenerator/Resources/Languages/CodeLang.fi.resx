@@ -1093,4 +1093,10 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>QR-koodin etsintäkuvion muoto: pyöristetty, sisältää ympyrän</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR-koodi</value>
+  </data>
 </root>

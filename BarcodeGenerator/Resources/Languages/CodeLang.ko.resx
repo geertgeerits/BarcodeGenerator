@@ -1094,4 +1094,10 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>QR 코드 파인더 패턴 모양: 원형이 포함된 둥근 형태</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 디지털 링크</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR 코드</value>
+  </data>
 </root>

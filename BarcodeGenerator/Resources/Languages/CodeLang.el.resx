@@ -1093,4 +1093,10 @@
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>Σχήμα μοτίβου εντοπισμού κωδικού QR: στρογγυλεμένο με κύκλο</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>Κωδικός QR GS1</value>
+  </data>
 </root>

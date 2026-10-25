@@ -1093,4 +1093,10 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>QR-kód keresőminta alakja: lekerekített, körrel</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR-kód</value>
+  </data>
 </root>

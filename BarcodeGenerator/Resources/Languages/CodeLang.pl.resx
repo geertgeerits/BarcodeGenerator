@@ -1093,4 +1093,10 @@ Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawie
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>Kształt wzorców lokalizacyjnych kodu QR: zaokrąglony, z kołem</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>Kod QR GS1</value>
+  </data>
 </root>

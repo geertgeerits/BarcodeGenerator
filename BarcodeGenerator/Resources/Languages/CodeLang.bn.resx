@@ -1091,4 +1091,10 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>QR কোড ফাইন্ডার প্যাটার্নের আকৃতি: বৃত্তসহ গোলাকার</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 ডিজিটাল লিঙ্ক</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR কোড</value>
+  </data>
 </root>

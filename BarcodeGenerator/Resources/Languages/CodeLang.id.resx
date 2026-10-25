@@ -1093,4 +1093,10 @@ Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet 
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>Bentuk pola penemu (finder pattern) kode QR: membulat dengan lingkaran</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>Kode QR GS1</value>
+  </data>
 </root>

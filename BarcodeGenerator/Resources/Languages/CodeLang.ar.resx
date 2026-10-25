@@ -1094,4 +1094,10 @@
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>شكل نمط التحديد في رمز الاستجابة السريعة (QR Code): مستدير مع دائرة</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>رابط GS1 الرقمي</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>رمز الاستجابة السريعة GS1</value>
+  </data>
 </root>

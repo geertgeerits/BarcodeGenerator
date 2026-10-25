@@ -1093,4 +1093,10 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>QR کوڈ فائنڈر پیٹرن کی شکل: گول، دائرے کے ساتھ</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 ڈیجیٹل لنک</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR کوڈ</value>
+  </data>
 </root>

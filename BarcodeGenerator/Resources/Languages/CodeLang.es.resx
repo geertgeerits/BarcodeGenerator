@@ -1093,4 +1093,10 @@ Para cambiar el tamaño del código QR dentro del círculo, ajuste la zona de si
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>Forma del patrón de detección de códigos QR: redondeada con un círculo</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>Código QR GS1</value>
+  </data>
 </root>

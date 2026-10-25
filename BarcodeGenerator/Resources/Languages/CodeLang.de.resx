@@ -1092,4 +1092,10 @@ Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruh
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>Form des QR-Code-Suchmusters: abgerundet mit Kreis</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR-Code</value>
+  </data>
 </root>

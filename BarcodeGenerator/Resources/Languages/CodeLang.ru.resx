@@ -1093,4 +1093,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>Форма поискового узора QR-кода: закругленная, с кругом</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Digital Link</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>QR-код GS1</value>
+  </data>
 </root>

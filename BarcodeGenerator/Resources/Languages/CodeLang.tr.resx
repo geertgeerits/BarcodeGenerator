@@ -1093,4 +1093,10 @@ Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölg
   <data name="QRCodeFinderPatternShapeRoundedCircle_Text" xml:space="preserve">
     <value>QR Kodu bulucu desen şekli: daire içeren yuvarlatılmış biçim</value>
   </data>
+  <data name="PayloadType_GS1DIGITALLINK_Text" xml:space="preserve">
+    <value>GS1 Dijital Bağlantı (GS1 Digital Link)</value>
+  </data>
+  <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
+    <value>GS1 QR Kodu</value>
+  </data>
 </root>
