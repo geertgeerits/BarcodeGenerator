@@ -298,60 +298,188 @@
 GS1 - Global Standards One
 https://www.gs1.org/standards/gs1-digital-link
 https://ref.gs1.org/standards/digital-link/uri-syntax/
+https://ref.gs1.org/test-suites/resolver/
 
-Primary identification keys
+GS1 AI stands for GS1 Application Identifier, a numeric prefix that defines the meaning and format of data in barcodes and RFID tags.
+
+Overview
+A GS1 Application Identifier (AI) is a two- to four-digit number used in the GS1 system to indicate the type and format of
+the data that follows in a barcode or RFID tags.
+It allows scanners and software to correctly interpret the encoded information, which can include product identifiers,
+batch numbers, serial numbers, expiration dates, and other attributes.
+
+Structure and Function
+Prefix: The AI itself is the numeric prefix that signals the type of data.
+Data Field: The information following the AI can be fixed-length (e.g., GTIN, dates) or variable-length (e.g., batch
+or serial numbers). Variable-length fields often require a FNC1 separator to indicate the end of the field.
+Encoding: AIs are used in various GS1 barcode types, including GS1-128, GS1 DataMatrix, GS1 DataBar, and GS1 QR Codes.
+
+Purpose and Advantages
+Standardization: Provides a globally recognized method to encode additional product or logistical information.
+Traceability: Enables tracking of products through the supply chain by encoding batch, lot, or serial numbers.
+Data Clarity: Ensures that scanning systems can accurately interpret multiple data elements within a single barcode.
+
+Examples of Common AIs
+(01): GTIN (Global Trade Item Number)
+(10): Batch or lot number
+(17): Expiration date
+(21): Serial number
+
+Each AI has a specific format and length, ensuring consistent interpretation across industries and countries.
+
+In summary, GS1 AIs are essential for encoding structured, meaningful data in barcodes, enabling efficient product
+identification, traceability, and supply chain management.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+GS1 Digital Link Standard: URI Syntax
+-------------------------------------
+4.3 Primary identification keys
 The following rules indicate which GS1 Application Identifiers (GS1 AI) for simple GS1 identifiers are considered as primary identification keys for GS1 Digital Link URI.
 
-gtin-code	=	"01"	; GTIN
-itip-code	=	"8006"	; ITIP
-gmn-code	=	"8013"	; Global Model Number
-cpid-code	=	"8010"	; CPID
-gln-code	=	"414"	; Physical Location GLN
-payTo-code	=	"415"	; GLN of invoicing party
-partyGln-code	=	"417"	; Party GLN
-gsrnp-code	=	"8017"	; GSRN of the Provider
-gsrn-code	=	"8018"	; GSRN of the Recipient
-gcn-code	=	"255"	; GCN
-sscc-code	=	"00"	; SSCC
-gdti-code	=	"253"	; GDTI
-ginc-code	=	"401"	; GINC
-gsin-code	=	"402"	; GSIN
-grai-code	=	"8003"	; GRAI
-giai-code	=	"8004"	; GIAI
+gtin-code	    =	"01"	; GTIN
+itip-code	    =	"8006"	; ITIP
+gmn-code	    =	"8013"	; Global Model Number
+cpid-code	    =	"8010"	; CPID
+gln-code	    =	"414"	; Physical Location GLN
+payTo-code	    =	"415"	; GLN of invoicing party
+partyGln-code   =	"417"	; Party GLN
+gsrnp-code	    =	"8017"	; GSRN of the Provider
+gsrn-code	    =	"8018"	; GSRN of the Recipient
+gcn-code	    =	"255"	; GCN
+sscc-code	    =	"00"	; SSCC
+gdti-code	    =	"253"	; GDTI
+ginc-code	    =	"401"	; GINC
+gsin-code	    =	"402"	; GSIN
+grai-code	    =	"8003"	; GRAI
+giai-code	    =	"8004"	; GIAI
 
-Key qualifiers
+4.4 Key qualifiers
 The following rules indicate which GS1 Application Identifiers (GS1 AI) for GS1 identifier extensions are considered as key qualifiers for a GS1 Digital Link URI. The combination of a primary identification key and key qualifier forms a compound GS1 identifier.
 
-cpv-code	=	"22"	; Consumer Product Variant
-lot-code	=	"10"	; Batch/Lot identifier
-ser-code	=	"21"	; GTIN Serial Number
-cpsn-code	=	"8011"	; CPID Serial Number
-glnx-code	=	"254"	; GLN extension
-refno-code	=	"8020"	; Payment Reference Number
-srin-code	=	"8019"	; Service Relation Instance Number
-tpx-code	=	"235"	; third-party controlled serialised extension to GTIN
+cpv-code	    =	"22"	; Consumer Product Variant
+lot-code	    =	"10"	; Batch/Lot identifier
+ser-code	    =	"21"	; GTIN Serial Number
+cpsn-code	    =	"8011"	; CPID Serial Number
+glnx-code	    =	"254"	; GLN extension
+refno-code	    =	"8020"	; Payment Reference Number
+srin-code	    =	"8019"	; Service Relation Instance Number
+tpx-code	    =	"235"	; third-party controlled serialised extension to GTIN
 uic-ext-code	=	"7040"	; GS1 UIC with Extension 1 and Importer Index
 
-Primary identification key formats
+4.5 Primary identification key formats
 The following rules express the format of the values of the primary identification keys.
-
 Note : the GS1 General Specifications [GENSPECS] define further restrictions on some of these values, particularly for those which include a GS1 check digit, GS1 check character pair, indicator digit or extension digit. Please refer to the GS1 General Specifications [GENSPECS] for further details.
 
-gtin-value	=	14DIGIT	; GTIN-8, GTIN-12 and GTIN-13 SHALL be expressed as 14 digits, with leading zeroes serving as filler digits
-itip-value	=	14DIGIT 2DIGIT 2DIGIT	; 14 digits then 2 digits then 2 digits
-gmn-value	=	1*25 XCHAR	; 1-25 characters from 82-chr subset
-cpid-value	=	1*30 YCHAR	; 1-30 characters from 39-chr subset
-gln-value	=	13DIGIT	; exactly 13 digits
-payTo-value	=	13DIGIT	; exactly 13 digits
+gtin-value	    =	14DIGIT	; GTIN-8, GTIN-12 and GTIN-13 SHALL be expressed as 14 digits, with leading zeroes serving as filler digits
+itip-value	    =	14DIGIT 2DIGIT 2DIGIT ; 14 digits then 2 digits then 2 digits
+gmn-value	    =	1*25 XCHAR ; 1-25 characters from 82-chr subset
+cpid-value	    =	1*30 YCHAR ; 1-30 characters from 39-chr subset
+gln-value	    =	13DIGIT	; exactly 13 digits
+payTo-value	    =	13DIGIT	; exactly 13 digits
 partyGln-value	=	13DIGIT	; exactly 13 digits
-gsrnp-value	=	18DIGIT	; exactly 18 digits
-gsrn-value	=	18DIGIT	; exactly 18 digits
-gcn-value	=	13DIGIT [1*12DIGIT]	; 13 digits then optional 1-12 digits
-sscc-value	=	18DIGIT	; exactly 18 digits
-gdti-value	=	13DIGIT [1*17XCHAR]	; 13 digits then optional 1-17 characters from the 82-character subset
-ginc-value	=	1*30XCHAR	; 1-30 characters from the 82-character subset
-gsin-value	=	17DIGIT	; exactly 17 digits
-grai-value	=	13DIGIT [1*16XCHAR]	; 13 digits then optional 1-16 characters from the 82-character subset of ISO/IEC 646
-giai-value	=	1*30 XCHAR	; 1-30 characters from 82-chr subset
- 
+gsrnp-value	    =	18DIGIT	; exactly 18 digits
+gsrn-value	    =	18DIGIT	; exactly 18 digits
+gcn-value	    =	13DIGIT [1*12DIGIT]	; 13 digits then optional 1-12 digits
+sscc-value	    =	18DIGIT	; exactly 18 digits
+gdti-value	    =	13DIGIT [1*17XCHAR]	; 13 digits then optional 1-17 characters from the 82-character subset
+ginc-value	    =	1*30XCHAR ; 1-30 characters from the 82-character subset
+gsin-value	    =	17DIGIT	; exactly 17 digits
+grai-value	    =	13DIGIT [1*16XCHAR]	; 13 digits then optional 1-16 characters from the 82-character subset of ISO/IEC 646
+giai-value	    =	1*30 XCHAR ; 1-30 characters from 82-chr subset
+
+4.6 Key qualifier formats 
+The following rules express the format of the values of the key qualifiers of primary identification keys: 
+cpv-value       = 1*20XCHAR ; 1-20 characters from 82-chr subset 
+lot-value       = 1*20XCHAR ; 1-20 characters from 82-chr subset 
+ser-value       = 1*20XCHAR ; 1-20 characters from 82-chr subset 
+cpsn-value      = 1*12DIGIT ; 1-12 digits 
+glnx-value      = 1*20XCHAR ; 1-20 characters from 82-chr subset 
+refno-value     = 1*25XCHAR ; 1-25 characters from 82-chr subset 
+srin-value      = 1*10DIGIT ; 1-10 digits 
+tpx-value       = 1*28XCHAR ; 1-28 characters from 82-chr subset 
+uic-ext-value   = 1DIGIT 3XCHAR ; 1 digit then 3 characters from 82-chr subset
+
+4.7 Primary identification key concatenation
+The following rules express how each primary identification key code and its value should be 
+concatenated (for use within the URI path information): 
+gtin-comp       = "/" gtin-code "/" gtin-value 
+itip-comp       = "/" itip-code "/" itip-value 
+gmn-comp        = "/" gmn-code "/" gmn-value 
+cpid-comp       = "/" cpid-code "/" cpid-value 
+gln-comp        = "/" gln-code "/" gln-value 
+payTo-comp      = "/" payTo-code "/" payTo-value 
+partyGln-comp   = "/" partyGln-code "/" partyGln-value 
+gsrnp-comp      = "/" gsrnp-code "/" gsrnp-value 
+gsrn-comp       = "/" gsrn-code "/" gsrn-value 
+gcn-comp        = "/" gcn-code "/" gcn-value 
+sscc-comp       = "/" sscc-code "/" sscc-value 
+gdti-comp       = "/" gdti-code "/" gdti-value 
+ginc-comp       = "/" ginc-code "/" ginc-value 
+gsin-comp       = "/" gsin-code "/" gsin-value 
+grai-comp       = "/" grai-code "/" "0" grai-value 
+giai-comp       = "/" giai-code "/" giai-value 
+
+4.8 Key qualifier concatenation
+The following rules express how each key qualifier and its value should be concatenated (for use 
+within the URI path information): 
+cpv-comp        = "/" cpv-code "/" cpv-value
+lot-comp        = "/" lot-code "/" lot-value
+ser-comp        = "/" ser-code "/" ser-value
+cpsn-comp       = "/" cpsn-code "/" cpsn-value
+glnx-comp       = "/" glnx-code "/" glnx-value
+refno-comp      = "/" refno-code "/" refno-value
+srin-comp       = "/" srin-code "/" srin-value
+tpx-comp        = "/" tpx-code "/" tpx-value
+uic-ext-comp    = "/" uic-ext-code "/" uic-ext-value
+
+4.9 Path element order 
+The following rules express how the URI path information should be structured for each primary 
+identification key. Note that some primary identification keys such as SSCC do not have any 
+associated key qualifier. Other primary identification keys such as GTIN, may have multiple key 
+qualifiers. The square bracket notation indicates that the enclosed key qualifier component may be 
+omitted but the sequence in which they appear is important and must be preserved. For example, 
+the rule for gtin-path would permit any of these: 
+
+/01/09520123456788/22/2A/10/ABC123/21/12345XYZ 
+/01/09520123456788/10/ABC123/ 
+/01/09520123456788/10/ABC123/21/12345XYZ 
+/01/09520123456788/21/12345XYZ 
+
+but does not permit strings such as: 
+/01/09520123456788/21/12345XYZ/10/ABC123 
+
+in which the sequential ordering of the key qualifier components is not preserved. 
+
+gtin-path       = gtin-comp  [cpv-comp] [lot-comp] [ser-comp] 
+itip-path       = itip-comp  [cpv-comp] [lot-comp] [ser-comp] 
+gmn-path        = gmn-comp
+cpid-path       = cpid-comp  [cpsn-comp]
+gln-path        = gln-comp   [glnx-comp]
+payTo-path      = payTo-comp refNo-comp
+partyGln-path   = partyGln-comp
+gsrnp-path      = gsrnp-comp [srin-comp]
+gsrn-path       = gsrn-comp  [srin-comp]
+gcn-path        = gcn-comp
+sscc-path       = sscc-comp
+gdti-path       = gdti-comp
+ginc-path       = ginc-comp
+gsin-path       = gsin-comp
+grai-path       = grai-comp
+giai-path       = giai-comp
+
+upui-path       = upui-comp
+eoid-path       = eoid-comp
+fid-path        = fid-comp
+mid-path        = mid-comp
+
+The following rule simply states that any of the above is considered as a gs1path (which will be referenced in a later rule). 
+gs1path =   gtin-path / itip-path / gmn-path / cpid-path / gln-path /  
+            payTo-path / partyGln-path / gsrnp-path / gsrn-path /  
+            gcn-path / sscc-path / gdti-path / ginc-path / gsin-path / 
+            grai-path / giai-path / 
+            upui-path / eoid-path / fid-path / mid-path
+
+        =   01 / 8006 / 8013 / 8010 / 414 / 415 / 417 / 8017 / 8018 / 255 / 00 / 253 / 401 / 402 / 8003 / 8004
+
  */

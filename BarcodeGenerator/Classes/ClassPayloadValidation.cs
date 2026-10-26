@@ -323,6 +323,10 @@ namespace BarcodeGenerator
         /// <returns>true if the specified string is a valid GS1 identifier; otherwise, false.</returns>
         public static async Task<bool> IsValidGS1Identifier(Editor editor)
         {
+            // GS1 Digital Link Test Suite: https://ref.gs1.org/test-suites/resolver/
+            // GS1 Digital Link Validator: https://qrbolt.com/en/validate-gs1
+            // FeatherQR Playground: https://guitarrapc.github.io/FeatherQR/
+
             string gs1Identifier = editor.Text;
             bool bIsValid = true;
             string cValue;
