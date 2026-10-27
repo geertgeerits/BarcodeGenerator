@@ -359,12 +359,57 @@ namespace BarcodeGenerator
                 {
                     cValue = cValue.PadLeft(14, '0');
                     editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    gs1Identifier = editor.Text;
                 }
 
                 // The GTIN must have a valid check digit (/01/09520123456788 is valid, /01/09520123456789 is invalid)
                 if (bIsValid && !ValidateValueCheckDigit(cValue))
                 {
                     bIsValid = false;
+                }
+
+                // Check the path element order for /22/, /10/, and /21/ if they exist in the GS1 identifier
+                if (bIsValid)
+                {
+                    (int nStartPos22, int nEndPos22) = GetKeyPosition("/22/", gs1Identifier);
+                    Debug.WriteLine($"Start Position: {nStartPos22}, End Position: {nEndPos22}");
+                    (int nStartPos10, int nEndPos10) = GetKeyPosition("/10/", gs1Identifier);
+                    Debug.WriteLine($"Start Position: {nStartPos10}, End Position: {nEndPos10}");
+                    (int nStartPos21, int nEndPos21) = GetKeyPosition("/21/", gs1Identifier);
+                    Debug.WriteLine($"Start Position: {nStartPos21}, End Position: {nEndPos21}");
+
+                    // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21
+                    if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 != -1)
+                    {
+                        if (!(nStartPos22 < nStartPos10 && nStartPos10 < nStartPos21))
+                        {
+                            bIsValid = false;
+                        }
+                    }
+
+                    else if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 == -1)
+                    {
+                        if (!(nStartPos22 < nStartPos10))
+                        {
+                            bIsValid = false;
+                        }
+                    }
+
+                    else if (nStartPos22 != -1 && nStartPos10 == -1 && nStartPos21 != -1)
+                    {
+                        if (!(nStartPos22 < nStartPos21))
+                        {
+                            bIsValid = false;
+                        }
+                    }
+                    
+                    else if (nStartPos22 == -1 && nStartPos10 != -1 && nStartPos21 != -1)
+                    {
+                        if (!(nStartPos10 < nStartPos21))
+                        {
+                            bIsValid = false;
+                        }
+                    }
                 }
             }
 
@@ -934,6 +979,39 @@ namespace BarcodeGenerator
 
             // If no forward slash is found, return an empty string
             return string.Empty;
+        }
+
+        /// <summary>
+        /// Finds the start and end indexes of a key segment within a GS1 identifier string.
+        /// </summary>
+        /// <param name="cKey">Key segment to locate.</param>
+        /// <param name="cGs1Identifier">GS1 identifier string to search.</param>
+        /// <returns>A tuple containing the zero-based start index and end index of the located key segment; returns (-1, -1)
+        /// when the key segment is not found. The end index is the position of the next '/' or '?' delimiter after the
+        /// start index, or the string length when no such delimiter exists.</returns>
+        private static (int start, int end) GetKeyPosition(string cKey, string cGs1Identifier)
+        {
+            int index = cGs1Identifier.IndexOf(cKey);
+            
+            if (index >= 0)
+            {
+                // Find the start position of the key
+                int nStartPosition = index;
+                
+                // Find the end position of the key, which is either the next forward slash or question mark or the end of the string
+                int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?'], nStartPosition + 1);
+                
+                // If no forward slash or question mark is found, set the end position to the end of the string
+                if (nEndPosition == -1)
+                {
+                    nEndPosition = cGs1Identifier.Length;
+                }
+                
+                return (nStartPosition, nEndPosition);
+            }
+            
+            // If no forward slash is found, return -1 for both start and end positions
+            return (-1, -1);
         }
 
         /// <summary>

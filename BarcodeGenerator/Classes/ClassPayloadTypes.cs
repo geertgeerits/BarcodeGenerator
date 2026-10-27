@@ -355,7 +355,9 @@ grai-code	    =	"8003"	; GRAI
 giai-code	    =	"8004"	; GIAI
 
 4.4 Key qualifiers
-The following rules indicate which GS1 Application Identifiers (GS1 AI) for GS1 identifier extensions are considered as key qualifiers for a GS1 Digital Link URI. The combination of a primary identification key and key qualifier forms a compound GS1 identifier.
+The following rules indicate which GS1 Application Identifiers (GS1 AI) for GS1 identifier extensions are considered as
+key qualifiers for a GS1 Digital Link URI.
+The combination of a primary identification key and key qualifier forms a compound GS1 identifier.
 
 cpv-code	    =	"22"	; Consumer Product Variant
 lot-code	    =	"10"	; Batch/Lot identifier
@@ -369,12 +371,14 @@ uic-ext-code	=	"7040"	; GS1 UIC with Extension 1 and Importer Index
 
 4.5 Primary identification key formats
 The following rules express the format of the values of the primary identification keys.
-Note : the GS1 General Specifications [GENSPECS] define further restrictions on some of these values, particularly for those which include a GS1 check digit, GS1 check character pair, indicator digit or extension digit. Please refer to the GS1 General Specifications [GENSPECS] for further details.
+Note : the GS1 General Specifications [GENSPECS] define further restrictions on some of these values, particularly for those
+which include a GS1 check digit, GS1 check character pair, indicator digit or extension digit.
+Please refer to the GS1 General Specifications [GENSPECS] for further details.
 
 gtin-value	    =	14DIGIT	; GTIN-8, GTIN-12 and GTIN-13 SHALL be expressed as 14 digits, with leading zeroes serving as filler digits
 itip-value	    =	14DIGIT 2DIGIT 2DIGIT ; 14 digits then 2 digits then 2 digits
-gmn-value	    =	1*25 XCHAR ; 1-25 characters from 82-chr subset
-cpid-value	    =	1*30 YCHAR ; 1-30 characters from 39-chr subset
+gmn-value	    =	1*25XCHAR ; 1-25 characters from 82-chr subset
+cpid-value	    =	1*30YCHAR ; 1-30 characters from 39-chr subset
 gln-value	    =	13DIGIT	; exactly 13 digits
 payTo-value	    =	13DIGIT	; exactly 13 digits
 partyGln-value	=	13DIGIT	; exactly 13 digits
@@ -386,7 +390,7 @@ gdti-value	    =	13DIGIT [1*17XCHAR]	; 13 digits then optional 1-17 characters f
 ginc-value	    =	1*30XCHAR ; 1-30 characters from the 82-character subset
 gsin-value	    =	17DIGIT	; exactly 17 digits
 grai-value	    =	13DIGIT [1*16XCHAR]	; 13 digits then optional 1-16 characters from the 82-character subset of ISO/IEC 646
-giai-value	    =	1*30 XCHAR ; 1-30 characters from 82-chr subset
+giai-value	    =	1*30XCHAR ; 1-30 characters from 82-chr subset
 
 4.6 Key qualifier formats 
 The following rules express the format of the values of the key qualifiers of primary identification keys: 
@@ -451,22 +455,22 @@ but does not permit strings such as:
 
 in which the sequential ordering of the key qualifier components is not preserved. 
 
-gtin-path       = gtin-comp  [cpv-comp] [lot-comp] [ser-comp] 
-itip-path       = itip-comp  [cpv-comp] [lot-comp] [ser-comp] 
-gmn-path        = gmn-comp
-cpid-path       = cpid-comp  [cpsn-comp]
-gln-path        = gln-comp   [glnx-comp]
-payTo-path      = payTo-comp refNo-comp
-partyGln-path   = partyGln-comp
-gsrnp-path      = gsrnp-comp [srin-comp]
-gsrn-path       = gsrn-comp  [srin-comp]
-gcn-path        = gcn-comp
-sscc-path       = sscc-comp
-gdti-path       = gdti-comp
-ginc-path       = ginc-comp
-gsin-path       = gsin-comp
-grai-path       = grai-comp
-giai-path       = giai-comp
+gtin-path       = gtin-comp  [cpv-comp] [lot-comp] [ser-comp]   = /01/14DIGIT [/22/1*20XCHAR] [/10/1*20XCHAR] [/21/1*20XCHAR]
+itip-path       = itip-comp  [cpv-comp] [lot-comp] [ser-comp]   = /8006/14DIGIT 2DIGIT 2DIGIT [/22/1*20XCHAR] [/10/1*20XCHAR] [/21/1*20XCHAR]
+gmn-path        = gmn-comp                                      = /8013/1*25XCHAR
+cpid-path       = cpid-comp  [cpsn-comp]                        = /8010/1*30YCHAR [/8011/1*30YCHAR]
+gln-path        = gln-comp   [glnx-comp]                        = /414/13DIGIT [/254/1*20XCHAR]
+payTo-path      = payTo-comp refNo-comp                         = /415/13DIGIT /8020/1*25XCHAR
+partyGln-path   = partyGln-comp                                 = /417/13DIGIT
+gsrnp-path      = gsrnp-comp [srin-comp]                        = /8017/18DIGIT [/8019/1*10DIGIT]
+gsrn-path       = gsrn-comp  [srin-comp]                        = /8018/18DIGIT [/8019/1*10DIGIT]
+gcn-path        = gcn-comp                                      = /255/13DIGIT [1*12DIGIT]
+sscc-path       = sscc-comp                                     = /00/18DIGIT
+gdti-path       = gdti-comp                                     = /253/13DIGIT [1*17XCHAR]
+ginc-path       = ginc-comp                                     = /401/1*30XCHAR
+gsin-path       = gsin-comp                                     = /402/17DIGIT
+grai-path       = grai-comp                                     = /8003/13DIGIT [1*16XCHAR]
+giai-path       = giai-comp                                     = /8004/1*30XCHAR
 
 upui-path       = upui-comp
 eoid-path       = eoid-comp
