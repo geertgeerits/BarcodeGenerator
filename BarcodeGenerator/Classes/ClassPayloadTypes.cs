@@ -486,4 +486,60 @@ gs1path =   gtin-path / itip-path / gmn-path / cpid-path / gln-path /
 
         =   01 / 8006 / 8013 / 8010 / 414 / 415 / 417 / 8017 / 8018 / 255 / 00 / 253 / 401 / 402 / 8003 / 8004
 
+ 
+ 
+GS1 Identification Keys with a Check Digit
+
+• GTIN    /01/ (Global Trade Item Number): Has a check digit at the last (14th) position.
+• ITIP  /8006/ (Individual Trade Item Piece): Has a check digit at the 14th position.
+• GMN   /8013/ (Global Model Number): Includes a pair of check characters rather than a single check digit.
+• GLN    /414/ (Global Location Number): Has a check digit at the last (13th) position.
+• GSRN  /8018/ (Global Service Relation Number): Includes a check digit.
+• GCN    /255/ (Global Coupon Number): Includes a check digit.
+• SSCC    /00/ (Serial Shipping Container Code): Has a check digit at the last (18th) position.
+• GDTI   /253/ (Global Document Type Identifier): Includes a check digit.
+• GINC   /401/ (Global Identification Number for Consignment): Includes a check digit. ???
+• GSIN   /402/ (Global Shipment Identification Number): Includes a check digit.
+• GRAI  /8003/ (Global Returnable Asset Identifier): Includes a check digit.
+
+GS1 Identification Keys WITHOUT a Check Digit
+
+• CPID  /8010/ (Component/Part Identifier): Does not have a check digit.
+• GIAI  /8004/ (Global Individual Asset Identifier): Does not have a check digit.
+
+The ITIP (Individual Trade Item Piece) identifier does contain a check digit.
+Because an ITIP code is embedded directly within a GS1 Application Identifier (AI 8006 or AI 8026), its internal structure relies on standard GTIN formatting.
+
+How the Check Digit Works in an ITIP
+
+The complete ITIP /8006/ value is 18 digits long and is broken down as follows:
+• Digits 1–14: The GTIN of the trade item piece. The 14th digit is the standard Modulo-10 check digit calculated specifically for this 14-digit sequence.
+• Digits 15–16: The Piece Index (the specific number of this piece).
+• Digits 17–18: The Total Pieces (the total number of pieces that make up the trade item).
+So, while the check digit does not sit at the very end of the entire 18-digit ITIP string, it is present at the 14th digit position to validate the core GTIN component of the piece.
+
+
+Is that check digit for all keys calculated the same way? 
+Yes, almost all numeric GS1 identification keys use the same Modulo-10 algorithm, though exceptions like the
+Global Model Number (GMN) use a different check character format.
+
+The Standard Modulo-10 Calculation Steps
+
+For standard keys like the GTIN, GLN, SSCC, and GSIN, the check digit is computed using a consistent step-by-step
+math formula starting from the rightmost digit of the key body:
+1. Align from the right: Start at the last digit of the key body and move left.
+2. Apply alternating weights: Multiply the value of each position sequentially by alternating weights
+   of 3 and 1 (starting with multiplying the first digit on the right by 3).
+3. Sum the products: Add all the multiplication results together to get a total sum.
+4. Find the next multiple of 10: Subtract the sum from the nearest equal or higher multiple of 10.
+5. Determine the check digit: The resulting difference is your check digit (if the sum already ends in zero, the check digit is 0).
+
+Key Exceptions
+
+• Global Model Number (GMN): Uses a pair of check characters (alphanumeric check characters) instead of
+  a single Modulo-10 numeric digit.
+• GIAI and CPID: These keys do not have a check digit at all.
+
+ 
+ 
  */
