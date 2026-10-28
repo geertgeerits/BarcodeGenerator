@@ -338,11 +338,11 @@ namespace BarcodeGenerator
                 bIsValid = false;
             }
 
-            // If the GS1 identifier does not start with /01/, return false
-            if (!gs1Identifier.StartsWith("/01/"))
-            {
-                bIsValid = false;
-            }
+            //// If the GS1 identifier does not start with /01/, return false
+            //if (!gs1Identifier.StartsWith("/01/"))
+            //{
+            //    bIsValid = false;
+            //}
 
             // Primary identification key formats (x 16)
 
@@ -363,7 +363,7 @@ namespace BarcodeGenerator
                 }
 
                 // The GTIN must have a valid check digit (/01/09520123456788 is valid, /01/09520123456789 is invalid)
-                if (bIsValid && !ValidateValueCheckDigit(cValue))
+                if (bIsValid && !ValidateValueCheckDigit(cValue, 14))
                 {
                     bIsValid = false;
                 }
@@ -371,14 +371,14 @@ namespace BarcodeGenerator
                 // Check the path element order for /22/, /10/, and /21/ if they exist in the GS1 identifier
                 if (bIsValid)
                 {
-                    (int nStartPos22, int nEndPos22) = GetKeyPosition("/22/", gs1Identifier);
-                    Debug.WriteLine($"Start Position: {nStartPos22}, End Position: {nEndPos22}");
-                    (int nStartPos10, int nEndPos10) = GetKeyPosition("/10/", gs1Identifier);
-                    Debug.WriteLine($"Start Position: {nStartPos10}, End Position: {nEndPos10}");
-                    (int nStartPos21, int nEndPos21) = GetKeyPosition("/21/", gs1Identifier);
-                    Debug.WriteLine($"Start Position: {nStartPos21}, End Position: {nEndPos21}");
+                    int nStartPos22 = GetKeyStartPosition("/22/", gs1Identifier);
+                    int nStartPos10 = GetKeyStartPosition("/10/", gs1Identifier);
+                    int nStartPos21 = GetKeyStartPosition("/21/", gs1Identifier);
+                    Debug.WriteLine($"Start Position 22: {nStartPos22}");
+                    Debug.WriteLine($"Start Position 10: {nStartPos10}");
+                    Debug.WriteLine($"Start Position 21: {nStartPos21}");
 
-                    // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21
+                    // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21 - /22/, /10/, and /21/
                     if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 != -1)
                     {
                         if (!(nStartPos22 < nStartPos10 && nStartPos10 < nStartPos21))
@@ -387,6 +387,7 @@ namespace BarcodeGenerator
                         }
                     }
 
+                    // If only two of the three keys exist, check their order - /22/ and /10/
                     else if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 == -1)
                     {
                         if (!(nStartPos22 < nStartPos10))
@@ -395,6 +396,7 @@ namespace BarcodeGenerator
                         }
                     }
 
+                    // If only two of the three keys exist, check their order - /22/ and /21/
                     else if (nStartPos22 != -1 && nStartPos10 == -1 && nStartPos21 != -1)
                     {
                         if (!(nStartPos22 < nStartPos21))
@@ -402,7 +404,8 @@ namespace BarcodeGenerator
                             bIsValid = false;
                         }
                     }
-                    
+
+                    // If only two of the three keys exist, check their order - /10/ and /21/
                     else if (nStartPos22 == -1 && nStartPos10 != -1 && nStartPos21 != -1)
                     {
                         if (!(nStartPos10 < nStartPos21))
@@ -410,6 +413,8 @@ namespace BarcodeGenerator
                             bIsValid = false;
                         }
                     }
+
+                    // If only one of the three keys exist, no order check is needed
                 }
             }
 
@@ -430,6 +435,52 @@ namespace BarcodeGenerator
                 else if (bIsValid)
                 {
                     bIsValid = ValueIsDigit(cValue);
+                }
+
+                // Check the path element order for /22/, /10/, and /21/ if they exist in the GS1 identifier
+                if (bIsValid)
+                {
+                    int nStartPos22 = GetKeyStartPosition("/22/", gs1Identifier);
+                    int nStartPos10 = GetKeyStartPosition("/10/", gs1Identifier);
+                    int nStartPos21 = GetKeyStartPosition("/21/", gs1Identifier);
+
+                    // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21 - /22/, /10/, and /21/
+                    if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 != -1)
+                    {
+                        if (!(nStartPos22 < nStartPos10 && nStartPos10 < nStartPos21))
+                        {
+                            bIsValid = false;
+                        }
+                    }
+
+                    // If only two of the three keys exist, check their order - /22/ and /10/
+                    else if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 == -1)
+                    {
+                        if (!(nStartPos22 < nStartPos10))
+                        {
+                            bIsValid = false;
+                        }
+                    }
+
+                    // If only two of the three keys exist, check their order - /22/ and /21/
+                    else if (nStartPos22 != -1 && nStartPos10 == -1 && nStartPos21 != -1)
+                    {
+                        if (!(nStartPos22 < nStartPos21))
+                        {
+                            bIsValid = false;
+                        }
+                    }
+
+                    // If only two of the three keys exist, check their order - /10/ and /21/
+                    else if (nStartPos22 == -1 && nStartPos10 != -1 && nStartPos21 != -1)
+                    {
+                        if (!(nStartPos10 < nStartPos21))
+                        {
+                            bIsValid = false;
+                        }
+                    }
+
+                    // If only one of the three keys exist, no order check is needed
                 }
             }
 
@@ -480,16 +531,19 @@ namespace BarcodeGenerator
                 cKey = "/414/";
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
-                // If the GS1 identifier does not have a length of 13 characters, return false
-                if (cValue.Length != 13)
+                // If the GS1 identifier length is less than 13 characters, add zeroes to the left to make it 13 characters
+                // and replace the original value with the new value in the editor
+                if (cValue.Length < 13)
                 {
-                    bIsValid = false;
+                    cValue = cValue.PadLeft(13, '0');
+                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    gs1Identifier = editor.Text;
                 }
 
-                // The characters of the GS1 identifier must be numeric
-                else if (bIsValid)
+                // The GTIN must have a valid check digit (/414/9520123456788 is valid, /414/9520123456780 is invalid)
+                if (bIsValid && !ValidateValueCheckDigit(cValue, 13))
                 {
-                    bIsValid = ValueIsDigit(cValue);
+                    bIsValid = false;
                 }
             }
 
@@ -600,16 +654,19 @@ namespace BarcodeGenerator
                 cKey = "/00/";
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
-                // If the GS1 identifier does not have a length of 18 characters, return false
-                if (cValue.Length != 18)
+                // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
+                // and replace the original value with the new value in the editor
+                if (cValue.Length < 18)
                 {
-                    bIsValid = false;
+                    cValue = cValue.PadLeft(18, '0');
+                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    gs1Identifier = editor.Text;
                 }
 
-                // The characters of the GS1 identifier must be numeric
-                else if (bIsValid)
+                // The GTIN must have a valid check digit (/00/195201234567891232 is valid, /00/195201234567891230 is invalid)
+                if (bIsValid && !ValidateValueCheckDigit(cValue, 18))
                 {
-                    bIsValid = ValueIsDigit(cValue);
+                    bIsValid = false;
                 }
             }
 
@@ -982,37 +1039,56 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Finds the start and end indexes of a key segment within a GS1 identifier string.
+        /// Finds the start index of a key segment within a GS1 identifier string
         /// </summary>
-        /// <param name="cKey">Key segment to locate.</param>
-        /// <param name="cGs1Identifier">GS1 identifier string to search.</param>
-        /// <returns>A tuple containing the zero-based start index and end index of the located key segment; returns (-1, -1)
-        /// when the key segment is not found. The end index is the position of the next '/' or '?' delimiter after the
-        /// start index, or the string length when no such delimiter exists.</returns>
-        private static (int start, int end) GetKeyPosition(string cKey, string cGs1Identifier)
+        /// <param name="cKey"></param>
+        /// <param name="cGs1Identifier"></param>
+        /// <returns></returns>
+        private static int GetKeyStartPosition(string cKey, string cGs1Identifier)
         {
             int index = cGs1Identifier.IndexOf(cKey);
-            
             if (index >= 0)
             {
                 // Find the start position of the key
-                int nStartPosition = index;
-                
-                // Find the end position of the key, which is either the next forward slash or question mark or the end of the string
-                int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?'], nStartPosition + 1);
-                
-                // If no forward slash or question mark is found, set the end position to the end of the string
-                if (nEndPosition == -1)
-                {
-                    nEndPosition = cGs1Identifier.Length;
-                }
-                
-                return (nStartPosition, nEndPosition);
+                return index;
             }
-            
-            // If no forward slash is found, return -1 for both start and end positions
-            return (-1, -1);
+            // If no forward slash is found, return -1
+            return -1;
         }
+
+        ///// <summary>
+        ///// Finds the start and end indexes of a key segment within a GS1 identifier string.
+        ///// </summary>
+        ///// <param name="cKey">Key segment to locate.</param>
+        ///// <param name="cGs1Identifier">GS1 identifier string to search.</param>
+        ///// <returns>A tuple containing the zero-based start index and end index of the located key segment; returns (-1, -1)
+        ///// when the key segment is not found. The end index is the position of the next '/' or '?' delimiter after the
+        ///// start index, or the string length when no such delimiter exists.</returns>
+        ///// <remarks>Use: (int nStartPos22, int nEndPos22) = GetKeyPosition("/22/", gs1Identifier);</remarks>
+        //private static (int start, int end) GetKeyPosition(string cKey, string cGs1Identifier)
+        //{
+        //    int index = cGs1Identifier.IndexOf(cKey);
+            
+        //    if (index >= 0)
+        //    {
+        //        // Find the start position of the key
+        //        int nStartPosition = index;
+                
+        //        // Find the end position of the key, which is either the next forward slash or question mark or the end of the string
+        //        int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?'], nStartPosition + 1);
+                
+        //        // If no forward slash or question mark is found, set the end position to the end of the string
+        //        if (nEndPosition == -1)
+        //        {
+        //            nEndPosition = cGs1Identifier.Length;
+        //        }
+                
+        //        return (nStartPosition, nEndPosition);
+        //    }
+            
+        //    // If no forward slash is found, return -1 for both start and end positions
+        //    return (-1, -1);
+        //}
 
         /// <summary>
         /// Determines whether a string consists only of digit characters.
@@ -1069,8 +1145,9 @@ namespace BarcodeGenerator
         /// Calculate the gtin check digit
         /// </summary>
         /// <param name="value"></param>
+        /// <param name="length"></param>
         /// <returns></returns>
-        public static bool ValidateValueCheckDigit(string value)
+        public static bool ValidateValueCheckDigit(string value, int length)
         {
             // Validate input: the value must be a non-empty string containing only digits
             if (string.IsNullOrWhiteSpace(value) || !value.All(char.IsDigit))
@@ -1081,12 +1158,13 @@ namespace BarcodeGenerator
             // Store the original value for later comparison
             string valueOriginal = value;
 
-            // If the value is less than 14 digits return false
-            if (value.Length != 14)
+            // If the value is less than length digits return false
+            if (value.Length != length)
             {
                 return false;
             }
-            // If the value is already 14 digits, we assume the last digit is the check digit and remove it for calculation
+            
+            // If the value is already length digits, we assume the last digit is the check digit and remove it for calculation
             else
             {
                 value = value[..^1];
