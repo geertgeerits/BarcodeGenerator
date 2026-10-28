@@ -349,16 +349,8 @@ namespace BarcodeGenerator
             // gtin-code 01 - Global Trade Item Number (GTIN) = 14DIGIT ; GTIN-8, GTIN-12 and GTIN-13 SHALL be expressed as 14 digits, with leading zeroes serving as filler digits
             if (gs1Identifier.Contains("/01/") || gs1Identifier.Contains("?01="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/01/"))
-                {
-                    cKey = "/01/";
-                }
-                else if (gs1Identifier.Contains("?01="))
-                {
-                    cKey = "?01=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("01", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 14 characters, add zeroes to the left to make it 14 characters
@@ -429,16 +421,8 @@ namespace BarcodeGenerator
             // itip-code 8006 - International Ticketing Information Protocol (ITIP) = 14DIGIT 2DIGIT 2DIGIT ; 14 digits then 2 digits then 2 digits
             if (gs1Identifier.Contains("/8006/") || gs1Identifier.Contains("?8006="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/8006/"))
-                {
-                    cKey = "/8006/";
-                }
-                else if (gs1Identifier.Contains("?8006="))
-                {
-                    cKey = "?8006=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("8006", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
@@ -506,16 +490,8 @@ namespace BarcodeGenerator
             // gmn-code 8013 - Global Model Number (GMN) = 1*25XCHAR ; 1-25 characters from 82-character subset
             if (gs1Identifier.Contains("/8013/") || gs1Identifier.Contains("?8013="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/8013/"))
-                {
-                    cKey = "/8013/";
-                }
-                else if (gs1Identifier.Contains("?8013="))
-                {
-                    cKey = "?8013=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("8013", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-25 characters, return false
@@ -534,16 +510,8 @@ namespace BarcodeGenerator
             // cpid-code 8010 - Component / Part Identifier (CPID) = 1*30YCHAR ; 1-30 characters from 39-character subset
             if (gs1Identifier.Contains("/8010/") || gs1Identifier.Contains("?8010="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/8010/"))
-                {
-                    cKey = "/8010/";
-                }
-                else if (gs1Identifier.Contains("?8010="))
-                {
-                    cKey = "?8010=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("8010", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
@@ -562,16 +530,8 @@ namespace BarcodeGenerator
             // gln-code 414 - Physical / Global Location Number (GLN) = 13DIGIT ; exactly 13 digits
             if (gs1Identifier.Contains("/414/") || gs1Identifier.Contains("?414="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/414/"))
-                {
-                    cKey = "/414/";
-                }
-                else if (gs1Identifier.Contains("?414="))
-                {
-                    cKey = "?414=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("414", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 13 characters, add zeroes to the left to make it 13 characters
@@ -593,16 +553,8 @@ namespace BarcodeGenerator
             // payTo-code 415 - GLN of invoicing party = 13DIGIT ; exactly 13 digits
             if (gs1Identifier.Contains("/415/") || gs1Identifier.Contains("?415="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/415/"))
-                {
-                    cKey = "/415/";
-                }
-                else if (gs1Identifier.Contains("?415="))
-                {
-                    cKey = "?415=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("415", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 13 characters, return false
@@ -621,16 +573,8 @@ namespace BarcodeGenerator
             // partyGln-code 417 - Party GLN = 13DIGIT ; exactly 13 digits
             if (gs1Identifier.Contains("/417/") || gs1Identifier.Contains("?417="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/417/"))
-                {
-                    cKey = "/417/";
-                }
-                else if (gs1Identifier.Contains("?417="))
-                {
-                    cKey = "?417=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("417", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 13 characters, return false
@@ -649,16 +593,8 @@ namespace BarcodeGenerator
             // gsrnp-code 8017 -  GSRN of the Provider = 18DIGIT ; exactly 18 digits
             if (gs1Identifier.Contains("/8017/") || gs1Identifier.Contains("?8017="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/8017/"))
-                {
-                    cKey = "/8017/";
-                }
-                else if (gs1Identifier.Contains("?8017="))
-                {
-                    cKey = "?8017=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("8017", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 18 characters, return false
@@ -677,16 +613,8 @@ namespace BarcodeGenerator
             // gsrn-code 8018 - GSRN of the Recipient = 18DIGIT ; exactly 18 digits
             if (gs1Identifier.Contains("/8018/") || gs1Identifier.Contains("?8018="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/8018/"))
-                {
-                    cKey = "/8018/";
-                }
-                else if (gs1Identifier.Contains("?8018="))
-                {
-                    cKey = "?8018=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("8018", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
@@ -714,16 +642,8 @@ namespace BarcodeGenerator
             // gcn-code 255 - Global Coupon Number (GCN) =  13DIGIT [1*12DIGIT] ; 13 digits then optional 1 - 12 digits
             if (gs1Identifier.Contains("/255/") || gs1Identifier.Contains("?255="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/255/"))
-                {
-                    cKey = "/255/";
-                }
-                else if (gs1Identifier.Contains("?255="))
-                {
-                    cKey = "?255=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("255", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 13-25 characters, return false
@@ -757,16 +677,8 @@ namespace BarcodeGenerator
             // sscc-code 00 - Serial Shipping Container Code (SSCC) = 18DIGIT ; exactly 18 digits 
             if (gs1Identifier.Contains("/00/") || gs1Identifier.Contains("?00="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/00/"))
-                {
-                    cKey = "/00/";
-                }
-                else if (gs1Identifier.Contains("?00="))
-                {
-                    cKey = "?00=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("00", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
@@ -788,16 +700,8 @@ namespace BarcodeGenerator
             // gdti-code 253 - Global Document Type Identifier (GDTI) = 13DIGIT [1*17XCHAR] ; 13 digits then optional 1 - 17 characters ; from the 82-character subset
             if (gs1Identifier.Contains("/253/") || gs1Identifier.Contains("?253="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/253/"))
-                {
-                    cKey = "/253/";
-                }
-                else if (gs1Identifier.Contains("?253="))
-                {
-                    cKey = "?253=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("253", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 13-30 characters, return false
@@ -822,16 +726,8 @@ namespace BarcodeGenerator
             // ginc-code 401 - Global Identification Number for Consignment (GINC) = 1*30XCHAR ; 1 - 30 characters from the 82-character subset
             if (gs1Identifier.Contains("/401/") || gs1Identifier.Contains("?401="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/401/"))
-                {
-                    cKey = "/401/";
-                }
-                else if (gs1Identifier.Contains("?401="))
-                {
-                    cKey = "?401=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("401", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
@@ -850,16 +746,8 @@ namespace BarcodeGenerator
             // gsin-code 402 - Global Shipment Identification Number (GSIN) = 17DIGIT ; exactly 17 digits
             if (gs1Identifier.Contains("/402/") || gs1Identifier.Contains("?402="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/402/"))
-                {
-                    cKey = "/402/";
-                }
-                else if (gs1Identifier.Contains("?402="))
-                {
-                    cKey = "?402=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("402", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 14 characters, add zeroes to the left to make it 14 characters
@@ -887,16 +775,8 @@ namespace BarcodeGenerator
             // grai-code 8003 - Global Returnable Asset Identifier (GRAI) = 13DIGIT [1*16XCHAR] ; 13 digits then optional 1 - 16 characters ; from the 82-character subset of ISO / IEC 646
             if (gs1Identifier.Contains("/8003/") || gs1Identifier.Contains("?8003="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/8003/"))
-                {
-                    cKey = "/8003/";
-                }
-                else if (gs1Identifier.Contains("?8003="))
-                {
-                    cKey = "?8003=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("8003", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 13-29 characters, return false
@@ -930,16 +810,8 @@ namespace BarcodeGenerator
             // giai-code 8004 - Global Individual Asset Identifier (GIAI) = 1*30XCHAR  ; 1-30 characters from 82-character subset
             if (gs1Identifier.Contains("/8004/") || gs1Identifier.Contains("?8004="))
             {
-                // Get the value of the GS1 identifier following the key
-                if (gs1Identifier.Contains("/8004/"))
-                {
-                    cKey = "/8004/";
-                }
-                else if (gs1Identifier.Contains("?8004="))
-                {
-                    cKey = "?8004=";
-                }
-
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("8004", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
@@ -1176,6 +1048,26 @@ namespace BarcodeGenerator
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Get the Key of the GS1 identifier
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="cGs1Identifier"></param>
+        /// <returns></returns>
+        private static string GetKey(string key, string cGs1Identifier)
+        {
+            if (cGs1Identifier.Contains($"/{key}/"))
+            {
+                return $"/{key}/";
+            }
+            else if (cGs1Identifier.Contains($"?{key}="))
+            {
+                return $"?{key}=";
+            }
+            
+            return string.Empty;
         }
 
         /// <summary>
