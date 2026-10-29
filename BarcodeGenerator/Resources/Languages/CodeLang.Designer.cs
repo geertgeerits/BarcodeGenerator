@@ -1097,11 +1097,65 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The value or check digit is not valid..
+        /// </summary>
+        internal static string ErrorGS1CheckDigitInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1CheckDigitInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GS1 identifier is not valid..
         /// </summary>
         internal static string ErrorGS1IdentifierInvalid_Text {
             get {
                 return ResourceManager.GetString("ErrorGS1IdentifierInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 key is not valid..
+        /// </summary>
+        internal static string ErrorGS1KeyInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1KeyInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keys are not in the correct order..
+        /// </summary>
+        internal static string ErrorGS1KeyOrderInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1KeyOrderInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Must contain only digits.
+        /// </summary>
+        internal static string ErrorGS1NumberOnlyDigits_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1NumberOnlyDigits_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value contains not allowed characters..
+        /// </summary>
+        internal static string ErrorGS1ValueContainsCharacterInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1ValueContainsCharacterInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value length is not valid..
+        /// </summary>
+        internal static string ErrorGS1ValueLengthInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1ValueLengthInvalid_Text", resourceCulture);
             }
         }
         
