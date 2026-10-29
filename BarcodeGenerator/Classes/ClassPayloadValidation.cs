@@ -415,6 +415,7 @@ namespace BarcodeGenerator
 
                     // If only one of the three keys exist, no order check is needed
 
+                    // If the order of the keys is invalid, set the error message
                     if (!bIsValid)
                     {
                         cErrorMessage = CodeLang.ErrorGS1KeyOrderInvalid_Text;
@@ -489,6 +490,7 @@ namespace BarcodeGenerator
 
                     // If only one of the three keys exist, no order check is needed
 
+                    // If the order of the keys is invalid, set the error message
                     if (!bIsValid)
                     {
                         cErrorMessage = CodeLang.ErrorGS1KeyOrderInvalid_Text;
@@ -1048,7 +1050,7 @@ namespace BarcodeGenerator
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.ErrorGS1IdentifierInvalid_Text}\n({cKey})\n{cErrorMessage}", CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{cKey}\n{cErrorMessage}", CodeLang.ButtonClose_Text);
                 _ = editor.Focus();
                 return false;
             }
@@ -1223,6 +1225,7 @@ namespace BarcodeGenerator
             {
                 cErrorMessage = CodeLang.ErrorGS1ValueContainsCharacterInvalid_Text;
             }
+            
             return bIsValid;
         }
 
