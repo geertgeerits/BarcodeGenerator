@@ -1015,6 +1015,9 @@ namespace BarcodeGenerator
                 }
             }
 
+            // Check if there are keys in the GS1 identifier that are not in the list of valid keys
+            bIsValid &= !ContainsInvalidKey(gs1Identifier);
+
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
             {
@@ -1025,7 +1028,7 @@ namespace BarcodeGenerator
 
             return bIsValid;
         }
-
+        
         /// <summary>
         /// Get the Key of the GS1 identifier
         /// </summary>
@@ -1225,6 +1228,116 @@ namespace BarcodeGenerator
 
             // If the last digit of the valueOriginal is equal to the calculated check digit, the value is valid
             return valueOriginal[^1] == checkDigit.ToString()[0];
+        }
+
+        /// <summary>
+        /// Checks whether the GS1 identifier contains one or more invalid keys.
+        /// Returns true when an invalid key is found, or when no GS1 key is found.
+        /// </summary>
+        /// <param name="gs1Identifier"></param>
+        /// <returns></returns>
+        private static bool ContainsInvalidKey(string gs1Identifier)
+        {
+            if (string.IsNullOrWhiteSpace(gs1Identifier))
+            {
+                return true;
+            }
+
+            bool hasAtLeastOneKey = false;
+
+            // Split once: path + optional query
+            string[] uriParts = gs1Identifier.Split('?', 2, StringSplitOptions.None);
+            string pathPart = uriParts[0];
+
+            // Parse path keys as alternating key/value segments once GS1 path starts
+            string[] segments = pathPart.Split('/', StringSplitOptions.RemoveEmptyEntries);
+
+            bool gs1PathStarted = false;
+            int index = 0;
+
+            while (index < segments.Length)
+            {
+                if (!gs1PathStarted)
+                {
+                    if (!IsPotentialGs1KeyToken(segments[index]))
+                    {
+                        index++;
+                        continue;
+                    }
+
+                    gs1PathStarted = true;
+                }
+
+                // Expected key segment
+                string key = segments[index];
+                hasAtLeastOneKey = true;
+
+                if (!IsPotentialGs1KeyToken(key) || Array.IndexOf(_knownGs1Keys, key) < 0)
+                {
+                    return true;
+                }
+
+                // Move to value segment
+                index++;
+
+                // Key without value -> invalid structure
+                if (index >= segments.Length)
+                {
+                    return true;
+                }
+
+                // Skip value segment, next should be next key
+                index++;
+            }
+
+            // Parse query keys: ?01=...&10=...
+            if (uriParts.Length == 2 && !string.IsNullOrWhiteSpace(uriParts[1]))
+            {
+                string queryPart = uriParts[1];
+
+                foreach (string parameter in queryPart.Split('&', StringSplitOptions.RemoveEmptyEntries))
+                {
+                    string key = parameter.Split('=', 2, StringSplitOptions.None)[0];
+
+                    if (!IsPotentialGs1KeyToken(key))
+                    {
+                        continue;
+                    }
+
+                    hasAtLeastOneKey = true;
+
+                    if (Array.IndexOf(_knownGs1Keys, key) < 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            // No GS1 key found at all -> treat as invalid
+            return !hasAtLeastOneKey;
+        }
+
+        /// <summary>
+        /// Check if a key is a potential GS1 key
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        private static bool IsPotentialGs1KeyToken(string token)
+        {
+            if (string.IsNullOrEmpty(token) || token.Length is < 2 or > 4)
+            {
+                return false;
+            }
+
+            foreach (char c in token)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }
