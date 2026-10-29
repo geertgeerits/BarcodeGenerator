@@ -10,33 +10,33 @@ namespace BarcodeGenerator
         private static readonly string[] _knownGs1Keys =
         [
             // Primary identification key formats (x 16)
-            "/01/",     // gtin-code
-            "/8006/",   // itip-code
-            "/8013/",   // gmn-code
-            "/8010/",   // cpid-code
-            "/414/",    // gln-code
-            "/415/",    // payTo-code
-            "/417/",    // partyGln-code
-            "/8017/",   // gsrnp-code
-            "/8018/",   // gsrn-code
-            "/255/",    // gcn-code
-            "/00/",     // sscc-code
-            "/253/",    // gdti-code
-            "/401/",    // ginc-code
-            "/402/",    // gsin-code
-            "/8003/",   // grai-code
-            "/8004/",   // giai-code
+            "01",     // gtin-code
+            "8006",   // itip-code
+            "8013",   // gmn-code
+            "8010",   // cpid-code
+            "414",    // gln-code
+            "415",    // payTo-code
+            "417",    // partyGln-code
+            "8017",   // gsrnp-code
+            "8018",   // gsrn-code
+            "255",    // gcn-code
+            "00",     // sscc-code
+            "253",    // gdti-code
+            "401",    // ginc-code
+            "402",    // gsin-code
+            "8003",   // grai-code
+            "8004",   // giai-code
             
             // Key qualifier formats ( x 9)
-            "/22/",     // cpv-code
-            "/10/",     // lot-code
-            "/21/",     // ser-code
-            "/8011/",   // cpsn-code
-            "/254/",    // glnx-code
-            "/8020/",   // refno-code
-            "/8019/",   // srin-code
-            "/235/",    // tpx-code
-            "/7040/"    // uic-ext-code
+            "22",     // cpv-code
+            "10",     // lot-code
+            "21",     // ser-code
+            "8011",   // cpsn-code
+            "254",    // glnx-code
+            "8020",   // refno-code
+            "8019",   // srin-code
+            "235",    // tpx-code
+            "7040"    // uic-ext-code
         ];
 
         //  82-character subset of ISO/IEC 646 (for GS1 identifiers)
@@ -329,7 +329,7 @@ namespace BarcodeGenerator
 
             string gs1Identifier = editor.Text;
             bool bIsValid = true;
-            string cValue;
+            string cValue = string.Empty;
             string cKey = string.Empty;
 
             // Add a null check for the GS1 identifier to ensure that it is not null, empty, or consists only of white-space characters
@@ -830,10 +830,10 @@ namespace BarcodeGenerator
             // Key qualifier formats ( x 9)
 
             // cpv-code 22 - Consumer Product Variant (CPV) = 1*20XCHAR ; 1-20 characters from 82-character subset
-            if (gs1Identifier.Contains("/22/"))
+            if (gs1Identifier.Contains("/22/") || gs1Identifier.Contains("?22="))
             {
-                // Get the value of the GS1 identifier following the key
-                cKey = "/22/";
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("22", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
@@ -850,10 +850,10 @@ namespace BarcodeGenerator
             }
 
             // lot-code 10 - Batch/Lot identifier = 1*20XCHAR ; 1-20 characters from 82-character subset
-            if (gs1Identifier.Contains("/10/"))
+            if (gs1Identifier.Contains("/10/") || gs1Identifier.Contains("?10="))
             {
-                // Get the value of the GS1 identifier following the key
-                cKey = "/10/";
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("10", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
@@ -870,10 +870,10 @@ namespace BarcodeGenerator
             }
 
             // ser-code 21 - GTIN Serial Number = 1*20XCHAR ; 1-20 characters from 82-character subset
-            if (gs1Identifier.Contains("/21/"))
+            if (gs1Identifier.Contains("/21/") || gs1Identifier.Contains("?21="))
             {
-                // Get the value of the GS1 identifier following the key
-                cKey = "/21/";
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("21", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
@@ -890,10 +890,10 @@ namespace BarcodeGenerator
             }
 
             // cpsn-code 8011 - CPID Serial Number = 1*12DIGIT ; 1-12 digits
-            if (gs1Identifier.Contains("/8011/"))
+            if (gs1Identifier.Contains("/8011/") || gs1Identifier.Contains("?8011="))
             {
-                // Get the value of the GS1 identifier following the key
-                cKey = "/8011/";
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("8011", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-12 digits, return false
@@ -910,10 +910,10 @@ namespace BarcodeGenerator
             }
 
             // glnx-code 254 - GLN extension = 1*20XCHAR ; 1-20 characters from 82-character subset
-            if (gs1Identifier.Contains("/254/"))
+            if (gs1Identifier.Contains("/254/") || gs1Identifier.Contains("?254="))
             {
-                // Get the value of the GS1 identifier following the key
-                cKey = "/254/";
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("254", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
@@ -930,10 +930,10 @@ namespace BarcodeGenerator
             }
 
             // refno-code 8020 - Payment Reference Number = 1*25XCHAR ; 1-25 characters from 82-character subset
-            if (gs1Identifier.Contains("/8020/"))
+            if (gs1Identifier.Contains("/8020/") || gs1Identifier.Contains("?8020="))
             {
-                // Get the value of the GS1 identifier following the key
-                cKey = "/8020/";
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("8020", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-25 characters, return false
@@ -950,10 +950,10 @@ namespace BarcodeGenerator
             }
 
             // srin-code 8019 - Service Relation Instance Number = 1*10DIGIT ; 1-10 digits
-            if (gs1Identifier.Contains("/8019/"))
+            if (gs1Identifier.Contains("/8019/") || gs1Identifier.Contains("?8019="))
             {
-                // Get the value of the GS1 identifier following the key
-                cKey = "/8019/";
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("8019", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-10 digits, return false
@@ -970,10 +970,10 @@ namespace BarcodeGenerator
             }
 
             // tpx-code 235 - third-party controlled serialised extension to GTIN = 1*28XCHAR ; 1-28 characters from 82-character subset
-            if (gs1Identifier.Contains("/235/"))
+            if (gs1Identifier.Contains("/235/") || gs1Identifier.Contains("?235="))
             {
-                // Get the value of the GS1 identifier following the key
-                cKey = "/235/";
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("235", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-28 characters, return false
@@ -990,10 +990,10 @@ namespace BarcodeGenerator
             }
 
             // uic-ext-code 7040 - GS1 UIC with Extension 1 and Importer Index = 1DIGIT 3XCHAR ; 1 digit then 3 characters from 82-character subset
-            if (gs1Identifier.Contains("/7040/"))
+            if (gs1Identifier.Contains("/7040/") || gs1Identifier.Contains("?7040="))
             {
-                // Get the value of the GS1 identifier following the key
-                cKey = "/7040/";
+                // Get the key and value of the GS1 identifier following the key
+                cKey = GetKey("7040", gs1Identifier);
                 cValue = GetKeyValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 4 characters, return false
@@ -1015,12 +1015,6 @@ namespace BarcodeGenerator
                 }
             }
 
-            // If the GS1 identifier does not contain any of the known keys, return false
-            if (!ContainsKnownGs1Key(gs1Identifier))
-            {
-                bIsValid = false;
-            }
-
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
             {
@@ -1030,24 +1024,6 @@ namespace BarcodeGenerator
             }
 
             return bIsValid;
-        }
-
-        /// <summary>
-        /// Determines whether the specified GS1 identifier contains a known GS1 key.
-        /// </summary>
-        /// <param name="gs1Identifier">The GS1 identifier to check.</param>
-        /// <returns><see langword="true"/> if the GS1 identifier contains a known GS1 key; otherwise, <see langword="false"/>.</returns>
-        private static bool ContainsKnownGs1Key(string gs1Identifier)
-        {
-            foreach (string key in _knownGs1Keys)
-            {
-                if (gs1Identifier.Contains(key, StringComparison.Ordinal))
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         /// <summary>
