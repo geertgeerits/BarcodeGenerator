@@ -1099,4 +1099,22 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>GS1 QR-koodi</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>GS1-avain ei ole kelvollinen.</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>Arvo tai tarkistusnumero ei ole kelvollinen.</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>GS1-avaimet eivät ole oikeassa järjestyksessä.</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>Arvon pituus ei ole kelvollinen.</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>Arvo sisältää kiellettyjä merkkejä.</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>Arvon on sisällettävä vain numeroita.</value>
+  </data>
 </root>

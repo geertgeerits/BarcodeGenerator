@@ -1097,4 +1097,22 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>QR-код GS1</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>Ключ GS1 недійсний.</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>Значення або контрольна цифра є недійсними.</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>Ключі GS1 розташовані в неправильному порядку.</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>Довжина значення є неприпустимою.</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>Значення містить недопустимі символи.</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>Значення має містити лише цифри.</value>
+  </data>
 </root>

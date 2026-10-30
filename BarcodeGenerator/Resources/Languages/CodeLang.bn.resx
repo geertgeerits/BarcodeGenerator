@@ -1097,4 +1097,22 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>GS1 QR কোড</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>GS1 কি (key) বৈধ নয়।</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>মান বা চেক ডিজিটটি বৈধ নয়।</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>GS1 কিগুলো সঠিক ক্রমে নেই।</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>মানটির দৈর্ঘ্য বৈধ নয়।</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>মানটিতে অনুমোদিত নয় এমন অক্ষর রয়েছে।</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>মানটিতে কেবল অঙ্ক থাকতে হবে।</value>
+  </data>
 </root>

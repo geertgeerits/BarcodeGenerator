@@ -1106,7 +1106,7 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
     <value>The value or check digit is not valid.</value>
   </data>
   <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
-    <value>Keys are not in the correct order.</value>
+    <value>GS1 keys are not in the correct order.</value>
   </data>
   <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
     <value>The value length is not valid.</value>
@@ -1115,6 +1115,6 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
     <value>The value contains not allowed characters.</value>
   </data>
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
-    <value>Must contain only digits</value>
+    <value>The value must contain only digits.</value>
   </data>
 </root>

@@ -1099,4 +1099,22 @@ Per modificare le dimensioni del codice QR all'interno del cerchio, regola la zo
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>Codice QR GS1</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>La chiave GS1 non è valida.</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>Il valore o la cifra di controllo non è valido.</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>Le chiavi GS1 non sono nell'ordine corretto.</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>La lunghezza del valore non è valida.</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>Il valore contiene caratteri non consentiti.</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>Il valore deve contenere solo cifre.</value>
+  </data>
 </root>

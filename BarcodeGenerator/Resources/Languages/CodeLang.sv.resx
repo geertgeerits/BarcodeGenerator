@@ -1099,4 +1099,22 @@ För att ändra storleken på QR-koden inuti cirkeln justerar du tyst zon i inst
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>GS1 QR-kod</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>GS1-nyckeln är inte giltig.</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>Värdet eller kontrollsiffran är inte giltig.</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>GS1-nycklarna är inte i rätt ordning.</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>Värdets längd är inte giltig.</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>Värdet innehåller otillåtna tecken.</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>Värdet får endast innehålla siffror.</value>
+  </data>
 </root>

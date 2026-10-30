@@ -1100,4 +1100,22 @@
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>رمز الاستجابة السريعة GS1</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>مفتاح GS1 غير صالح.</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>القيمة أو رقم التحقق غير صالح.</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>مفاتيح GS1 ليست بالترتيب الصحيح.</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>طول القيمة غير صالح.</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>تحتوي القيمة على رموز غير مسموح بها.</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>يجب ألا تحتوي القيمة إلا على أرقام.</value>
+  </data>
 </root>

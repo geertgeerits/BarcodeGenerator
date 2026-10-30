@@ -1124,7 +1124,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Keys are not in the correct order..
+        ///   Looks up a localized string similar to GS1 keys are not in the correct order..
         /// </summary>
         internal static string ErrorGS1KeyOrderInvalid_Text {
             get {
@@ -1133,7 +1133,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Must contain only digits.
+        ///   Looks up a localized string similar to The value must contain only digits..
         /// </summary>
         internal static string ErrorGS1NumberOnlyDigits_Text {
             get {

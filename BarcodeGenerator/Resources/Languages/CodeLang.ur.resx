@@ -1099,4 +1099,22 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>GS1 QR کوڈ</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>GS1 کی (key) درست نہیں ہے۔</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>ویلیو یا چیک ڈیجٹ درست نہیں ہے۔</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>GS1 کیز درست ترتیب میں نہیں ہیں۔</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>ویلیو کی لمبائی درست نہیں ہے۔</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>ویلیو میں ایسے حروف شامل ہیں جن کی اجازت نہیں ہے۔</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>ویلیو میں صرف ہندسے ہونے چاہئیں۔</value>
+  </data>
 </root>

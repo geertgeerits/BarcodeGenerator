@@ -1102,4 +1102,22 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>Mã QR GS1</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>Khóa GS1 không hợp lệ.</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>Giá trị hoặc chữ số kiểm tra không hợp lệ.</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>Các khóa GS1 không theo đúng thứ tự.</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>Độ dài giá trị không hợp lệ.</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>Giá trị chứa các ký tự không được phép.</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>Giá trị chỉ được chứa các chữ số.</value>
+  </data>
 </root>

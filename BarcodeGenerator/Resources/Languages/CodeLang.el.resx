@@ -1099,4 +1099,22 @@
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>Κωδικός QR GS1</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>Το κλειδί GS1 δεν είναι έγκυρο.</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>Η τιμή ή το ψηφίο ελέγχου δεν είναι έγκυρο.</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>Τα κλειδιά GS1 δεν βρίσκονται στη σωστή σειρά.</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>Το μήκος της τιμής δεν είναι έγκυρο.</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>Η τιμή περιέχει μη επιτρεπόμενους χαρακτήρες.</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>Η τιμή πρέπει να περιέχει μόνο ψηφία.</value>
+  </data>
 </root>

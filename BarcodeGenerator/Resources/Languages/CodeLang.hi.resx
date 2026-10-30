@@ -1096,4 +1096,22 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>GS1 QR कोड</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>GS1 कुंजी मान्य नहीं है।</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>मान या चेक डिजिट मान्य नहीं है।</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>GS1 कुंजियाँ सही क्रम में नहीं हैं।</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>वैल्यू की लंबाई मान्य नहीं है।</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>मान में ऐसे वर्ण शामिल हैं जिनकी अनुमति नहीं है।</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>मान में केवल अंक होने चाहिए।</value>
+  </data>
 </root>

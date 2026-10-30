@@ -1099,4 +1099,22 @@ Para cambiar el tamaño del código QR dentro del círculo, ajuste la zona de si
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>Código QR GS1</value>
   </data>
+  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
+    <value>La clave GS1 no es válida.</value>
+  </data>
+  <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
+    <value>El valor o dígito de control no es válido.</value>
+  </data>
+  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
+    <value>Las claves GS1 no están en el orden correcto.</value>
+  </data>
+  <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
+    <value>La longitud del valor no es válida.</value>
+  </data>
+  <data name="ErrorGS1ValueContainsCharacterInvalid_Text" xml:space="preserve">
+    <value>El valor contiene caracteres no permitidos.</value>
+  </data>
+  <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
+    <value>El valor debe contener únicamente dígitos.</value>
+  </data>
 </root>
