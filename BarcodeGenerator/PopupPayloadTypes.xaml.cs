@@ -981,7 +981,7 @@ END:VCALENDAR";
                     }
 
                     // Validate the GS1 identifier to ensure it meets the required format and standards for GS1 payloads
-                    if (!await ClassPayloadValidation.IsValidGS1Identifier(edtPayloadTypeGS1Identifier))
+                    if (!await ClassPayloadGS1Validation.IsValidGS1Identifier(edtPayloadTypeGS1Identifier))
                     {
                         return string.Empty;
                     }
