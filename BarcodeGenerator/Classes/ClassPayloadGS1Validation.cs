@@ -1021,7 +1021,7 @@
             // Validate the GS1 identifier using the ValidateDataAttribute method, which checks the overall structure and format of the GS1 identifier
             if (bIsValid)
             {
-                //bIsValid = ValidateDataAttribute(cKey, gs1Identifier);
+                bIsValid = ValidateDataAttribute(cKey, gs1Identifier);
             }
 
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
@@ -1033,6 +1033,256 @@
             }
 
             return bIsValid;
+        }
+
+        /// <summary>
+        /// Validation method for GS1 identifier data attributes
+        /// </summary>
+        /// <param name="dataAttribute"></param>
+        /// <param name="cGs1Identifier"></param>
+        /// <returns></returns>
+        private static bool ValidateDataAttribute(string dataAttribute, string cGs1Identifier)
+        {
+            cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
+
+            string value = GetValue(dataAttribute, cGs1Identifier);
+
+            // Remove first and last character of the dataAttribute
+            dataAttribute = dataAttribute.Trim('/', '?', '&', '=');
+
+            Debug.WriteLine($"Validating data attribute: {dataAttribute} - Value: {value}");
+
+            // Characters
+
+            // 1 * 2 XCHAR
+            if (dataAttribute is "7010")
+            {
+                if (value.Length is < 1 or > 2 || !ValueIs82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 3 XCHAR
+            else if (dataAttribute is "427" or "7008")
+            {
+                if (value.Length is < 1 or > 3 || !ValueIs82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            //  1 * 4 XCHAR
+            else if (dataAttribute is "7041")
+            {
+                if (value.Length is < 1 or > 4 || !ValueIs82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 10 XCHAR
+            else if (dataAttribute is "7009")
+            {
+                if (value.Length is < 1 or > 10 || !ValueIs82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 12 XCHAR
+            else if (dataAttribute is "7005")
+            {
+                if (value.Length is < 1 or > 12 || !ValueIs82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 20 XCHAR
+            else if (dataAttribute is "243" or "420" or "710" or "711" or "712" or "713" or "714" or "715" or "716" or "717"
+                or "7020" or "7021" or "7022")
+            {
+                if (value.Length is < 1 or > 20 || !ValueIs82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 27 XCHAR
+            else if (dataAttribute is "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
+            {
+                if (value.Length is < 1 or > 27 || !ValueIs82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 30 XCHAR
+            else if (dataAttribute is "90" or "240" or "241" or "250" or "251"
+                or "400" or "403" or "7002" or "7023")
+            {
+                if (value.Length is < 1 or > 30 || !ValueIs82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 2 XCHAR 1 * 28 XCHAR
+            else if (dataAttribute is "7230" or "7231" or "7232" or "7233" or "7234" or "7235" or "7236" or "7237" or "7238" or "7239")
+            {
+                if (value.Length is < 3 or > 30 || !ValueIs82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // Digits
+
+            // 1 * 4 DIGIT
+            else if (dataAttribute is "7004")
+            {
+                if (value.Length is < 1 or > 4 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 6 DIGIT
+            else if (dataAttribute is "242")
+            {
+                if (value.Length is < 1 or > 6 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 8 DIGIT
+            else if (dataAttribute is "30" or "37")
+            {
+                if (value.Length is < 1 or > 8 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 15 DIGIT
+            else if (dataAttribute is "3900" or "3901" or "3902" or "3903" or "3904" or "3905" or "3906" or "3907" or "3908" or "3909"
+                or "3920" or "3921" or "3922" or "3923" or "3924" or "3925" or "3926" or "3927" or "3928" or "3929")
+            {
+                if (value.Length is < 1 or > 15 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 2 DIGIT
+            else if (dataAttribute is "20")
+            {
+                if (value.Length != 2 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 3 DIGIT
+            else if (dataAttribute is "422" or "424" or "426")
+            {
+                if (value.Length != 3 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 3 DIGIT 1 * 12 DIGIT
+            else if (dataAttribute is "423" or "425")
+            {
+                if (value.Length is < 4 or > 15 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 3 DIGIT 1 * 15 DIGIT
+            else if (dataAttribute is "3910" or "3911" or "3912" or "3913" or "3914" or "3915" or "3916" or "3917" or "3918" or "3919"
+                or "3930" or "3931" or "3932" or "3933" or "3934" or "3935" or "3936" or "3937" or "3938" or "3939")
+            {
+                if (value.Length is < 4 or > 18 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 4 DIGIT
+            else if (dataAttribute is "3940" or "3941" or "3942" or "3943")
+            {
+                if (value.Length != 4 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 6 DIGIT [4 DIGIT]
+            else if (dataAttribute is "7011")
+            {
+                if (value.Length != 6 || value.Length != 10 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 6 DIGIT [6 DIGIT]
+            else if (dataAttribute is "7007")
+            {
+                if (value.Length != 6 || value.Length != 12 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 13 DIGIT
+            else if (dataAttribute is "410" or "411" or "412" or "413" or "416" or "7001")
+            {
+                if (value.Length != 13 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 14 DIGIT
+            else if (dataAttribute is "02")
+            {
+                if (value.Length != 14 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // Digits and characters
+
+            // 3 DIGIT 1 * 9 XCHAR
+            else if (dataAttribute is "421")
+            {
+                if (value.Length is < 4 or > 12 || !ValueIsDigit(value[..3]))
+                {
+                    return false;
+                }
+            }
+
+            // Default 6 digits
+
+            // 6 DIGIT
+            else if (dataAttribute is not "01" and not "8006" and not "8013" and not "8010" and not "414" and not "415" and not "417"
+                and not "8017" and not "8018" and not "255" and not "00" and not "253" and not "401" and not "402" and not "8003" and not "8004"
+                and not "22" and not "10" and not "21" and not "8011" and not "254" and not "8020" and not "8019" and not "235" and not "7040")
+            {
+                if (value.Length != 6 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -1146,251 +1396,8 @@
         //    return (-1, -1);
         //}
 
-        // Validation methods for GS1 identifier data attributes
-        private static bool ValidateDataAttribute(string dataAttribute, string cGs1Identifier)
-        {
-            string value = GetValue(dataAttribute, cGs1Identifier);
-
-            // Remove first and last character of the dataAttribute
-            dataAttribute = dataAttribute.Trim('/', '?', '&', '=');
-
-            Debug.WriteLine($"Validating data attribute: {dataAttribute} - Value: {value}");
-
-            // Characters
-
-            // 1 * 2 XCHAR
-            if (dataAttribute is "7010")
-            {
-                if (value.Length is < 1 or > 2)
-                {
-                    return false;
-                }
-            }
-
-            // 1 * 3 XCHAR
-            if (dataAttribute is "427" or "7008")
-            {
-                if (value.Length is < 1 or > 3)
-                {
-                    return false;
-                }
-            }
-
-            //  1 * 4 XCHAR
-            if (dataAttribute is "7041")
-            {
-                if (value.Length is < 1 or > 4)
-                {
-                    return false;
-                }
-            }
-
-            // 1 * 10 XCHAR
-            if (dataAttribute is "7009")
-            {
-                if (value.Length is < 1 or > 10)
-                {
-                    return false;
-                }
-            }
-
-            // 1 * 12 XCHAR
-            if (dataAttribute is "7005")
-            {
-                if (value.Length is < 1 or > 12)
-                {
-                    return false;
-                }
-            }
-
-            // 1 * 20 XCHAR
-            if (dataAttribute is "243" or "420" or "710" or "711" or "712" or "713" or "714" or "715" or "716" or "717"
-                or "7020" or "7021" or "7022")
-            {
-                if (value.Length is < 1 or > 20)
-                {
-                    return false;
-                }
-            }
-
-            // 1 * 27 XCHAR
-            if (dataAttribute is "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
-            {
-                if (value.Length is < 1 or > 27)
-                {
-                    return false;
-                }
-            }
-
-            // 1 * 30 XCHAR
-            if (dataAttribute is "90" or "240" or "241" or "250" or "251"
-                or "400" or "403" or "7002" or "7023")
-            {
-                if (value.Length is < 1 or > 30)
-                {
-                    return false;
-                }
-            }
-
-            // 2 XCHAR 1 * 28 XCHAR
-            if (dataAttribute is "7230" or "7231" or "7232" or "7233" or "7234" or "7235" or "7236" or "7237" or "7238" or "7239")
-            {
-                if (value.Length is < 3 or > 30)
-                {
-                    return false;
-                }
-            }
-
-            // Digits
-            
-            // 1 * 4 DIGIT
-            if (dataAttribute is "7004")
-            {
-                if (value.Length is < 1 or > 4)
-                {
-                    return false;
-                }
-            }
-
-            // 1 * 6 DIGIT
-            if (dataAttribute is "242")
-            {
-                if (value.Length is < 1 or > 6)
-                {
-                    return false;
-                }
-            }
-
-            // 1 * 8 DIGIT
-            if (dataAttribute is "30" or "37")
-            {
-                if (value.Length is < 1 or > 8)
-                {
-                    return false;
-                }
-            }
-
-            // 1 * 15 DIGIT
-            if (dataAttribute is "3900" or "3901" or "3902" or "3903" or "3904" or "3905" or "3906" or "3907" or "3908" or "3909"
-                or "3920" or "3921" or "3922" or "3923" or "3924" or "3925" or "3926" or "3927" or "3928" or "3929")
-            {
-                if (value.Length is < 1 or > 15)
-                {
-                    return false;
-                }
-            }
-
-            // 2 DIGIT
-            if (dataAttribute is "20")
-            {
-                if (value.Length != 2)
-                {
-                    return false;
-                }
-            }
-
-            // 3 DIGIT
-            if (dataAttribute is "422" or "424" or "426")
-            {
-                if (value.Length != 3)
-                {
-                    return false;
-                }
-            }
-
-            // 3 DIGIT 1 * 12 DIGIT
-            if (dataAttribute is "423" or "425")
-            {
-                if (value.Length is < 4 or > 15)
-                {
-                    return false;
-                }
-            }
-
-            // 3 DIGIT 1 * 15 DIGIT
-            if (dataAttribute is "3910" or "3911" or "3912" or "3913" or "3914" or "3915" or "3916" or "3917" or "3918" or "3919"
-                or "3930" or "3931" or "3932" or "3933" or "3934" or "3935" or "3936" or "3937" or "3938" or "3939")
-            {
-                if (value.Length is < 4 or > 18)
-                {
-                    return false;
-                }
-            }
-
-            // 4 DIGIT
-            if (dataAttribute is "3940" or "3941" or "3942" or "3943")
-            {
-                if (value.Length != 4)
-                {
-                    return false;
-                }
-            }   
-
-            // 6 DIGIT [4 DIGIT]
-            if (dataAttribute is "7011")
-            {
-                if (value.Length != 6 || value.Length != 10)
-                {
-                    return false;
-                }
-            }
-
-            // 6 DIGIT [6 DIGIT]
-            if (dataAttribute is "7007")
-            {
-                if (value.Length != 6 || value.Length != 12)
-                {
-                    return false;
-                }
-            }
-
-            // 13 DIGIT
-            if (dataAttribute is "410" or "411" or "412" or "413" or "416" or "7001")
-            {
-                if (value.Length != 13)
-                {
-                    return false;
-                }
-            }
-
-            // 14 DIGIT
-            if (dataAttribute is "02")
-            {
-                if (value.Length != 14)
-                {
-                    return false;
-                }
-            }
-
-            // Digits and characters
-
-            // 3 DIGIT 1 * 9 XCHAR
-            if (dataAttribute is "421")
-            {
-                if (value.Length is < 4 or > 12)
-                {
-                    return false;
-                }
-            }
-
-            // Default 6 digits
-
-            // 6 DIGIT
-            //if (dataAttribute is not "01" and not "8006" and not "8013" and not "8010" and not "414" and not "415" and not "417"
-            //    and not "8017" and not "8018" and not "255" and not "00" and not "253" and not "401" and not "402" and not "8003" and not "8004"
-            //    and not "22" and not "10" and not "21" and not "8011" and not "254" and not "8020" and not "8019" and not "235" and not "7040")
-            //{
-            //    if (value.Length != 6)
-            //    {
-            //        return false;
-            //    }
-            //}
-
-            return true;
-        }
-
         /// <summary>
-        /// Determines whether a string consists only of digit characters.
+        /// Determines whether a string consists only of digit characters - DIGIT
         /// </summary>
         /// <remarks>An empty string returns <see langword="true"/>. This method expects a non-null value.</remarks>
         /// <param name="value">The string to evaluate.</param>
@@ -1410,7 +1417,7 @@
         }
 
         /// <summary>
-        /// Check if all characters in the input are in the allowed 39-character subset
+        /// Check if all characters in the input are in the allowed 39-character subset - YCHAR
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -1433,7 +1440,7 @@
         }
 
         /// <summary>
-        /// Check if all characters in the input are in the allowed 82-character subset
+        /// Check if all characters in the input are in the allowed 82-character subset - XCHAR
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
