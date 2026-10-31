@@ -1117,4 +1117,7 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>The value must contain only digits.</value>
   </data>
+  <data name="ErrorGS1DataAttributeInvalid_Text" xml:space="preserve">
+    <value>GS1 Data attribute is not valid.</value>
+  </data>
 </root>

@@ -1106,6 +1106,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GS1 Data attribute is not valid..
+        /// </summary>
+        internal static string ErrorGS1DataAttributeInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1DataAttributeInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GS1 identifier is not valid..
         /// </summary>
         internal static string ErrorGS1IdentifierInvalid_Text {

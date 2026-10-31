@@ -34,6 +34,8 @@
             "235",    // tpx-code
             "7040",    // uic-ext-code
 
+            // Data attributes
+
             // netWeightVMTICode - netWeightVMTIValue = 6DIGIT - netWeightVMTIParameter = netWeightVMTICode "=" netWeightVMTIValue 
             "3100","3101","3102","3103","3104","3105",
             "3200","3201","3202","3203","3204","3205",
@@ -319,14 +321,14 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("01", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 14 characters, add zeroes to the left to make it 14 characters
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 14)
                 {
                     cValue = cValue.PadLeft(14, '0');
-                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(cKey, gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -397,14 +399,14 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("8006", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 18)
                 {
                     cValue = cValue.PadLeft(18, '0');
-                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(cKey, gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -472,7 +474,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("8013", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-25 characters, return false
                 if (cValue.Length is < 1 or > 25)
@@ -493,7 +495,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("8010", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
                 if (cValue.Length is < 1 or > 30)
@@ -514,14 +516,14 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("414", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 13 characters, add zeroes to the left to make it 13 characters
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 13)
                 {
                     cValue = cValue.PadLeft(13, '0');
-                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(cKey, gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -537,7 +539,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("415", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 13 characters, return false
                 if (cValue.Length != 13)
@@ -558,7 +560,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("417", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 13 characters, return false
                 if (cValue.Length != 13)
@@ -579,7 +581,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("8017", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 18 characters, return false
                 if (cValue.Length != 18)
@@ -600,14 +602,14 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("8018", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 18)
                 {
                     cValue = cValue.PadLeft(18, '0');
-                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(cKey, gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -630,7 +632,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("255", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 13-25 characters, return false
                 if (cValue.Length is < 13 or > 25)
@@ -644,7 +646,7 @@
                 if (cValue.Length < 13)
                 {
                     cValue = cValue.PadLeft(13, '0');
-                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(cKey, gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -666,14 +668,14 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("00", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 18)
                 {
                     cValue = cValue.PadLeft(18, '0');
-                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(cKey, gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -689,7 +691,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("253", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 13-30 characters, return false
                 if (cValue.Length is < 13 or > 30)
@@ -716,7 +718,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("401", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
                 if (cValue.Length is < 1 or > 30)
@@ -737,14 +739,14 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("402", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier length is less than 14 characters, add zeroes to the left to make it 14 characters
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 17)
                 {
                     cValue = cValue.PadLeft(17, '0');
-                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(cKey, gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -767,7 +769,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("8003", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 13-29 characters, return false
                 if (cValue.Length is < 13 or > 29)
@@ -787,7 +789,7 @@
                 if (cValue.Length < 13)
                 {
                     cValue = cValue.PadLeft(13, '0');
-                    editor.Text = gs1Identifier.Replace(GetKeyValue(cKey, gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(cKey, gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -803,7 +805,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("8004", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
                 if (cValue.Length is < 1 or > 30)
@@ -826,7 +828,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("22", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
@@ -847,7 +849,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("10", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
@@ -868,7 +870,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("21", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
@@ -889,7 +891,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("8011", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-12 digits, return false
                 if (cValue.Length is < 1 or > 12)
@@ -910,7 +912,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("254", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
@@ -931,7 +933,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("8020", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-25 characters, return false
                 if (cValue.Length is < 1 or > 25)
@@ -952,7 +954,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("8019", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-10 digits, return false
                 if (cValue.Length is < 1 or > 10)
@@ -973,7 +975,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("235", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 1-28 characters, return false
                 if (cValue.Length is < 1 or > 28)
@@ -994,7 +996,7 @@
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("7040", gs1Identifier);
-                cValue = GetKeyValue(cKey, gs1Identifier);
+                cValue = GetValue(cKey, gs1Identifier);
 
                 // If the GS1 identifier does not have a length of 4 characters, return false
                 if (cValue.Length != 4)
@@ -1028,7 +1030,7 @@
         }
 
         /// <summary>
-        /// Get the Key of the GS1 identifier
+        /// Get the Key or data attribute of the GS1 identifier
         /// </summary>
         /// <param name="key"></param>
         /// <param name="cGs1Identifier"></param>
@@ -1043,17 +1045,22 @@
             {
                 return $"?{key}=";
             }
+            else if (cGs1Identifier.Contains($"&{key}="))
+            {
+                return $"&{key}=";
+            }
 
             return string.Empty;
         }
 
         /// <summary>
-        /// Get the value of the Gs1 identifier following a certain key
+        /// Get the value of the Gs1 identifier following a certain key or data attribute. The value is extracted from the
+        /// GS1 identifier string based on the position of the key and the next delimiter (forward slash, question mark, or ampersand) or the end of the string.
         /// </summary>
         /// <param name="cKey"></param>
         /// <param name="cGs1Identifier"></param>
         /// <returns></returns>
-        private static string GetKeyValue(string cKey, string cGs1Identifier)
+        private static string GetValue(string cKey, string cGs1Identifier)
         {
             int index = cGs1Identifier.IndexOf(cKey);
 
@@ -1062,10 +1069,10 @@
                 // Find the start position of the value after the key
                 int nStartPosition = index + cKey.Length;
 
-                // Find the end position of the value, which is either the next forward slash or question mark or the end of the string
-                int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?'], nStartPosition);
+                // Find the end position of the value, which is either the next forward slash or question mark or ampersand or the end of the string
+                int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?', '&'], nStartPosition);
 
-                // If no forward slash or question mark is found, set the end position to the end of the string
+                // If no forward slash or question mark or ampersand is found, set the end position to the end of the string
                 if (nEndPosition == -1)
                 {
                     nEndPosition = cGs1Identifier.Length;
@@ -1094,6 +1101,7 @@
                 // Find the start position of the key
                 return index;
             }
+            
             // If no forward slash is found, return -1
             return -1;
         }
@@ -1132,15 +1140,145 @@
         //    return (-1, -1);
         //}
 
+        // Validation methods for GS1 identifier data attributes
+        private static bool ValidateDataAttribute(string dataAttribute, string cGs1Identifier)
+        {
+            string value = GetValue(dataAttribute, cGs1Identifier);
+
+            // 1 * 20 XCHAR
+            if (dataAttribute is "243")
+            {
+                if (value.Length is < 1 or > 20)
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 27 XCHAR
+            if (dataAttribute is "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
+            {
+                if (value.Length is < 1 or > 27)
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 30 XCHAR
+            if (dataAttribute is "90" or "240" or "241" or "250" or "251")
+            {
+                if (value.Length is < 1 or > 30)
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 6 DIGIT
+            if (dataAttribute is "242")
+            {
+                if (value.Length is < 1 or > 6)
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 8 DIGIT
+            if (dataAttribute is "30" or "37")
+            {
+                if (value.Length is < 1 or > 8)
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 15 DIGIT
+            if (dataAttribute is "3900" or "3901" or "3902" or "3903" or "3904" or "3905" or "3906" or "3907" or "3908" or "3909"
+                or "3920" or "3921" or "3922" or "3923" or "3924" or "3925" or "3926" or "3927" or "3928" or "3929")
+            {
+                if (value.Length is < 1 or > 15)
+                {
+                    return false;
+                }
+            }
+
+            // 2 DIGIT
+            if (dataAttribute is "20")
+            {
+                if (value.Length != 2)
+                {
+                    return false;
+                }
+            }
+
+            // 3 DIGIT 1*15 DIGIT
+            if (dataAttribute is "3910" or "3911" or "3912" or "3913" or "3914" or "3915" or "3916" or "3917" or "3918" or "3919"
+                or "3930" or "3931" or "3932" or "3933" or "3934" or "3935" or "3936" or "3937" or "3938" or "3939")
+            {
+                if (value.Length is < 4 or > 18)
+                {
+                    return false;
+                }
+            }
+
+            // 4 DIGIT
+            if (dataAttribute is "3940" or "3941" or "3942" or "3943")
+            {
+                if (value.Length != 4)
+                {
+                    return false;
+                }
+            }   
+
+            // 6 DIGIT [4 DIGIT]
+            if (dataAttribute is "7011")
+            {
+                if (value.Length != 6 || value.Length != 10)
+                {
+                    return false;
+                }
+            }
+
+            // 6 DIGIT [6 DIGIT]
+            if (dataAttribute is "7007")
+            {
+                if (value.Length != 6 || value.Length != 12)
+                {
+                    return false;
+                }
+            }
+
+            // 14 DIGIT
+            if (dataAttribute is "02")
+            {
+                if (value.Length != 14)
+                {
+                    return false;
+                }
+            }
+
+
+           
+
+            // 6 DIGIT
+            else
+            {
+                if (value.Length != 6)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// Determines whether a string consists only of digit characters.
         /// </summary>
         /// <remarks>An empty string returns <see langword="true"/>. This method expects a non-null value.</remarks>
-        /// <param name="cValue">The string to evaluate.</param>
-        /// <returns><see langword="true"/> if all characters in <paramref name="cValue"/> are digits; otherwise, <see langword="false"/>.</returns>
-        private static bool ValueIsDigit(string cValue)
+        /// <param name="value">The string to evaluate.</param>
+        /// <returns><see langword="true"/> if all characters in <paramref name="value"/> are digits; otherwise, <see langword="false"/>.</returns>
+        private static bool ValueIsDigit(string value)
         {
-            foreach (char c in cValue)
+            foreach (char c in value)
             {
                 if (!char.IsDigit(c))
                 {
