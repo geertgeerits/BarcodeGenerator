@@ -1019,7 +1019,10 @@
             }
 
             // Validate the GS1 identifier using the ValidateDataAttribute method, which checks the overall structure and format of the GS1 identifier
-            //bIsValid = ValidateDataAttribute(cKey, gs1Identifier);
+            if (bIsValid)
+            {
+                //bIsValid = ValidateDataAttribute(cKey, gs1Identifier);
+            }
 
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
@@ -1373,13 +1376,15 @@
             // Default 6 digits
 
             // 6 DIGIT
-            else
-            {
-                if (value.Length != 6)
-                {
-                    return false;
-                }
-            }
+            //if (dataAttribute is not "01" and not "8006" and not "8013" and not "8010" and not "414" and not "415" and not "417"
+            //    and not "8017" and not "8018" and not "255" and not "00" and not "253" and not "401" and not "402" and not "8003" and not "8004"
+            //    and not "22" and not "10" and not "21" and not "8011" and not "254" and not "8020" and not "8019" and not "235" and not "7040")
+            //{
+            //    if (value.Length != 6)
+            //    {
+            //        return false;
+            //    }
+            //}
 
             return true;
         }
