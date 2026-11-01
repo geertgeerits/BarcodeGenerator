@@ -292,17 +292,87 @@
         private static readonly string _XCHAR_82CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"-._!%&+,/*[]';:<>=?";
 
         // Dictionary to hold GS1 keys and their corresponding values
-        Dictionary<string, string> gs1 = [];
+        private static Dictionary<string, string> gs1 = new Dictionary<string, string>();
 
         // Error message for GS1 identifier validation
         private static string cErrorMessage = string.Empty;
+
+
+        /// <summary>
+        /// Splits the GS1 identifier into key-value pairs and adds them to the dictionary
+        /// Keys are surrounded by slashes (/) or start with a question mark (?) or start with an ampersand (&)
+        /// and values are separated by equal signs (=) for keys started with question mark or ampersand.
+        /// Example: /00/195201234567891232?02=09520123456788&37=25&10=ABC123
+        ///          /01/09520123456788?8004=9520614141234567
+        /// </summary>
+        /// <param name="gs1Identifier"></param>
+        private static void SplitKeyValuePairs(string gs1Identifier)
+        {
+            gs1.Clear();
+
+            if (string.IsNullOrWhiteSpace(gs1Identifier))
+            {
+                return;
+            }
+
+            // Split into path part (/01/09520123456788/...) and query part (?10=ABC123&37=25)
+            int queryStart = gs1Identifier.IndexOf('?');
+            string pathPart = queryStart >= 0 ? gs1Identifier[..queryStart] : gs1Identifier;
+            string queryPart = queryStart >= 0 ? gs1Identifier[(queryStart + 1)..] : string.Empty;
+
+            // Parse slash-based key/value pairs: /01/09520123456788/21/ABC123
+            string[] pathSegments = pathPart.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i + 1 < pathSegments.Length; i += 2)
+            {
+                string key = pathSegments[i];
+                string value = pathSegments[i + 1];
+                gs1[key] = value;
+            }
+
+            // Parse query-based key/value pairs: 10=ABC123&37=25
+            if (!string.IsNullOrWhiteSpace(queryPart))
+            {
+                string[] queryPairs = queryPart.Split('&', StringSplitOptions.RemoveEmptyEntries);
+                foreach (string pair in queryPairs)
+                {
+                    int equalsIndex = pair.IndexOf('=');
+                    if (equalsIndex > 0)
+                    {
+                        string key = pair[..equalsIndex];
+                        string value = pair[(equalsIndex + 1)..];
+                        gs1[key] = value;
+                    }
+                }
+            }
+
+            // Delete duplicate keys in the dictionary (if any) - keep the first occurrence
+            Dictionary<string, string> dict = gs1
+                .GroupBy(x => x.Key)
+                .ToDictionary(g => g.Key, g => g.First().Value);
+
+        }
+
+        public static async Task<bool> IsValidGS1Identifier(Editor editor)
+        {
+            bool bIsValid = true;
+
+            SplitKeyValuePairs(editor.Text);
+
+            foreach (var kvp in gs1)
+            {
+                Debug.WriteLine($"Key: {kvp.Key}, Value: {kvp.Value}");
+                bIsValid &= await IsValidGS1Identifier2(editor, kvp.Key, kvp.Value);
+            }
+
+            return bIsValid;
+        }
 
         /// <summary>
         /// Determines whether the specified string is a valid GS1 identifier
         /// </summary>
         /// <param name="editor">The Editor containing the GS1 identifier string to validate.</param>
         /// <returns>true if the specified string is a valid GS1 identifier; otherwise, false.</returns>
-        public static async Task<bool> IsValidGS1Identifier(Editor editor)
+        public static async Task<bool> IsValidGS1Identifier2(Editor editor, string cKey, string cValue)
         {
             // GS1 Digital Link Test Suite: https://ref.gs1.org/test-suites/resolver/
             // GS1 Digital Link Validator: https://qrbolt.com/en/validate-gs1
@@ -312,8 +382,8 @@
 
             string gs1Identifier = editor.Text;
             bool bIsValid = true;
-            string cValue;
-            string cKey = string.Empty;
+            //string cValue;
+            //string cKey = string.Empty;
             cErrorMessage = string.Empty;
 
             // Check if there are keys in the GS1 identifier that are not in the list of valid keys
@@ -917,7 +987,8 @@
             }
 
             // glnx-code 254 - GLN extension = 1*20XCHAR ; 1-20 characters from 82-character subset
-            if (bIsValid && (gs1Identifier.Contains("/254/") || gs1Identifier.Contains("?254=")))
+            if (bIsValid && (gs1Identifier.Contains("/254/") || gs1Identifier.Contains("?254="))
+                && !((gs1Identifier.Contains("/8011/") || gs1Identifier.Contains("?8011=")) && GetValue("8011", gs1Identifier).Length <= 12))
             {
                 // Get the key and value of the GS1 identifier following the key
                 cKey = GetKey("254", gs1Identifier);
@@ -1477,7 +1548,7 @@
                 }
             }
 
-            // 10 DIGIT (= date)
+            // 10 DIGIT (= date/time)
             else if (dataAttribute is "4324" or "4325")
             {
                 if (value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
