@@ -5,7 +5,7 @@
         // Add once in the class (central place for all supported GS1 keys and data attributes)
         private static readonly string[] _knownGs1KeysData =
         [
-            // Primary identification key formats (x 16)
+            // Primary identification key formats (x 16) - index in array = 0 to 15
             "01",     // gtin-code
             "8006",   // itip-code
             "8013",   // gmn-code
@@ -23,7 +23,7 @@
             "8003",   // grai-code
             "8004",   // giai-code
             
-            // Key qualifier formats ( x 9)
+            // Key qualifier formats ( x 9) - index in array = 16 to 24
             "22",     // cpv-code
             "10",     // lot-code
             "21",     // ser-code
@@ -34,7 +34,7 @@
             "235",    // tpx-code
             "7040",    // uic-ext-code
 
-            // Data attributes
+            // Data attributes - index in array = 25 to 537
 
             // netWeightVMTICode - netWeightVMTIValue = 6DIGIT - netWeightVMTIParameter = netWeightVMTICode "=" netWeightVMTIValue 
             "3100","3101","3102","3103","3104","3105",
@@ -193,6 +193,7 @@
             // certificationRefCode - certificationRefValue = 2XCHAR 1*28XCHAR - certificationRefParameter = certificationRefCode "=" certificationRefValue
             "7230","7231","7232","7233","7234","7235","7236","7237","7238","7239",
 
+            "7240",     // protocolParameter            = "7240=" 1*20XCHAR
             "7241",     // aidcMediaTypeParameter       = "7241=" 2DIGIT
             "7242",     // vcnParameter                 = "7242=" 1*25XCHAR
             "7250",     // dobParameter                 = "7250=" 8DIGIT
@@ -279,13 +280,16 @@
 
             "17",       // expiryDateParameter  = "17=" 6DIGIT
             "7003",     // expiryTimeParameter  = "7003=" 10DIGIT
-            ];
+        ];
 
-        //  82-character subset of ISO/IEC 646 (for GS1 identifiers)
-        private static readonly string _82CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"-._!%&+,/*[]';:<>=?";
+        // 39-character subset of ISO/IEC 646 (for GS1 identifiers) - YCHAR = DIGIT / UPPERALPHA / YSYMBOL 
+        private static readonly string _YCHAR_39CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-#/";
 
-        // 39-character subset of ISO/IEC 646 (for GS1 identifiers)
-        private static readonly string _39CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-#/";
+        // 64-character subset of ISO/IEC 646 (for GS1 identifiers) - ZCHAR = DIGIT / UPPERALPHA / LOWERALPHA / ZSYMBOL
+        private static readonly string _ZCHAR_64CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_=";
+
+        // 82-character subset of ISO/IEC 646 (for GS1 identifiers) - XCHAR = DIGIT / UPPERALPHA / LOWERALPHA / XSYMBOL
+        private static readonly string _XCHAR_82CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"-._!%&+,/*[]';:<>=?";
 
         // Error message for GS1 identifier validation
         private static string cErrorMessage = string.Empty;
@@ -300,6 +304,8 @@
             // GS1 Digital Link Test Suite: https://ref.gs1.org/test-suites/resolver/
             // GS1 Digital Link Validator: https://qrbolt.com/en/validate-gs1
             // FeatherQR Playground: https://guitarrapc.github.io/FeatherQR/
+
+            Debug.WriteLine($"Length array _knownGs1KeysData: {_knownGs1KeysData.Length}");
 
             string gs1Identifier = editor.Text;
             bool bIsValid = true;
@@ -486,7 +492,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset
                 else if (bIsValid)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue);
                 }
             }
 
@@ -507,7 +513,7 @@
                 // The characters of the GS1 identifier must be from the 39-character subset
                 else if (bIsValid)
                 {
-                    bIsValid = ValueIs39CharacterSubset(cValue);
+                    bIsValid = ValueIsYCHAR39CharacterSubset(cValue);
                 }
             }
 
@@ -709,7 +715,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset (from character 14 to the end)
                 else if (bIsValid && cValue.Length > 13)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue[13..]);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue[13..]);
                 }
             }
 
@@ -730,7 +736,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset
                 else if (bIsValid)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue);
                 }
             }
 
@@ -781,7 +787,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset (from character 14 to the end)
                 else if (bIsValid && cValue.Length > 13)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue[13..]);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue[13..]);
                 }
 
                 // If the GS1 identifier length is less than 13 characters, add zeroes to the left to make it 13 characters
@@ -817,7 +823,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset
                 else if (bIsValid)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue);
                 }
             }
 
@@ -840,7 +846,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset
                 else if (bIsValid)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue);
                 }
             }
 
@@ -861,7 +867,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset
                 else if (bIsValid)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue);
                 }
             }
 
@@ -882,7 +888,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset
                 else if (bIsValid)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue);
                 }
             }
 
@@ -924,7 +930,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset
                 else if (bIsValid)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue);
                 }
             }
 
@@ -945,7 +951,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset
                 else if (bIsValid)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue);
                 }
             }
 
@@ -987,7 +993,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset
                 else if (bIsValid)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue);
                 }
             }
 
@@ -1014,7 +1020,7 @@
                 // The characters of the GS1 identifier must be from the 82-character subset (from character 2 to the end)
                 else if (bIsValid && cValue.Length > 1)
                 {
-                    bIsValid = ValueIs82CharacterSubset(cValue[1..]);
+                    bIsValid = ValueIsXCHAR82CharacterSubset(cValue[1..]);
                 }
             }
 
@@ -1052,12 +1058,23 @@
 
             Debug.WriteLine($"Validating data attribute: {dataAttribute} - Value: {value}");
 
+            // Boolean
+
+            // BOOLEAN
+            if (dataAttribute is "4321" or "4322" or "4323")
+            {
+                if (value.Length != 1 || value != "0" || value != "1")
+                {
+                    return false;
+                }
+            }
+
             // Characters
 
             // 1 * 2 XCHAR
             if (dataAttribute is "7010")
             {
-                if (value.Length is < 1 or > 2 || !ValueIs82CharacterSubset(value))
+                if (value.Length is < 1 or > 2 || !ValueIsXCHAR82CharacterSubset(value))
                 {
                     return false;
                 }
@@ -1066,7 +1083,7 @@
             // 1 * 3 XCHAR
             else if (dataAttribute is "427" or "7008")
             {
-                if (value.Length is < 1 or > 3 || !ValueIs82CharacterSubset(value))
+                if (value.Length is < 1 or > 3 || !ValueIsXCHAR82CharacterSubset(value))
                 {
                     return false;
                 }
@@ -1075,16 +1092,16 @@
             //  1 * 4 XCHAR
             else if (dataAttribute is "7041")
             {
-                if (value.Length is < 1 or > 4 || !ValueIs82CharacterSubset(value))
+                if (value.Length is < 1 or > 4 || !ValueIsXCHAR82CharacterSubset(value))
                 {
                     return false;
                 }
             }
 
             // 1 * 10 XCHAR
-            else if (dataAttribute is "7009")
+            else if (dataAttribute is "7009" or "7255")
             {
-                if (value.Length is < 1 or > 10 || !ValueIs82CharacterSubset(value))
+                if (value.Length is < 1 or > 10 || !ValueIsXCHAR82CharacterSubset(value))
                 {
                     return false;
                 }
@@ -1093,7 +1110,7 @@
             // 1 * 12 XCHAR
             else if (dataAttribute is "7005")
             {
-                if (value.Length is < 1 or > 12 || !ValueIs82CharacterSubset(value))
+                if (value.Length is < 1 or > 12 || !ValueIsXCHAR82CharacterSubset(value))
                 {
                     return false;
                 }
@@ -1101,9 +1118,18 @@
 
             // 1 * 20 XCHAR
             else if (dataAttribute is "243" or "420" or "710" or "711" or "712" or "713" or "714" or "715" or "716" or "717"
-                or "7020" or "7021" or "7022")
+                or "7020" or "7021" or "7022" or "7240" or "8002" or "8012" or "4318")
             {
-                if (value.Length is < 1 or > 20 || !ValueIs82CharacterSubset(value))
+                if (value.Length is < 1 or > 20 || !ValueIsXCHAR82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 25 XCHAR
+            else if (dataAttribute is "7242")
+            {
+                if (value.Length is < 1 or > 25 || !ValueIsXCHAR82CharacterSubset(value))
                 {
                     return false;
                 }
@@ -1112,7 +1138,7 @@
             // 1 * 27 XCHAR
             else if (dataAttribute is "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
             {
-                if (value.Length is < 1 or > 27 || !ValueIs82CharacterSubset(value))
+                if (value.Length is < 1 or > 27 || !ValueIsXCHAR82CharacterSubset(value))
                 {
                     return false;
                 }
@@ -1120,9 +1146,82 @@
 
             // 1 * 30 XCHAR
             else if (dataAttribute is "90" or "240" or "241" or "250" or "251"
-                or "400" or "403" or "7002" or "7023")
+                or "400" or "403" or "7002" or "7023" or "4308" or "4319")
             {
-                if (value.Length is < 1 or > 30 || !ValueIs82CharacterSubset(value))
+                if (value.Length is < 1 or > 30 || !ValueIsXCHAR82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 34 XCHAR
+            else if (dataAttribute is "8007")
+            {
+                if (value.Length is < 1 or > 34 || !ValueIsXCHAR82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 35 XCHAR
+            else if (dataAttribute is "4300" or "4301" or "4310" or "4311" or "4320")
+            {
+                if (value.Length is < 1 or > 35 || !ValueIsXCHAR82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 40 XCHAR
+            else if (dataAttribute is "7253" or "7254" or "7259")
+            {
+                if (value.Length is < 1 or > 40 || !ValueIsXCHAR82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 50 XCHAR
+            else if (dataAttribute is "8009")
+            {
+                if (value.Length is < 1 or > 50 || !ValueIsXCHAR82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 70 XCHAR
+            else if (dataAttribute is "7257" or "8110" or "8112" or "4302" or "4303" or "4304" or "4305" or "4306"
+                or "4312" or "4313" or "4314" or "4315" or "4316")
+            {
+                if (value.Length is < 1 or > 70 || !ValueIsXCHAR82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 90 XCHAR
+            else if (dataAttribute is "7256" or "91" or "92" or "93" or "94" or "95" or "96" or "97" or "98" or "99")
+            {
+                if (value.Length is < 1 or > 90 || !ValueIsXCHAR82CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1 * 90 ZCHAR
+            else if (dataAttribute is "8030")
+            {
+                if (value.Length is < 1 or > 90 || !ValueIsZCHAR64CharacterSubset(value))
+                {
+                    return false;
+                }
+            }
+
+            // 2 XCHAR
+            else if (dataAttribute is "4307" or "4317")
+            {
+                if (value.Length != 2 || !ValueIsXCHAR82CharacterSubset(value))
                 {
                     return false;
                 }
@@ -1131,7 +1230,7 @@
             // 2 XCHAR 1 * 28 XCHAR
             else if (dataAttribute is "7230" or "7231" or "7232" or "7233" or "7234" or "7235" or "7236" or "7237" or "7238" or "7239")
             {
-                if (value.Length is < 3 or > 30 || !ValueIs82CharacterSubset(value))
+                if (value.Length is < 3 or > 30 || !ValueIsXCHAR82CharacterSubset(value))
                 {
                     return false;
                 }
@@ -1176,8 +1275,26 @@
                 }
             }
 
+            // 1 DIGIT
+            else if (dataAttribute is "7252")
+            {
+                if (value.Length != 1 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 1DIGIT "/" 1DIGIT
+            else if (dataAttribute is "7258")
+            {
+                if (value.Length != 3 || !ValueIsDigit(value[..1]) || value[1] != '/' || !ValueIsDigit(value[2..]))
+                {
+                    return false;
+                }
+            }
+
             // 2 DIGIT
-            else if (dataAttribute is "20")
+            else if (dataAttribute is "20" or "7241")
             {
                 if (value.Length != 2 || !ValueIsDigit(value))
                 {
@@ -1214,7 +1331,7 @@
             }
 
             // 4 DIGIT
-            else if (dataAttribute is "3940" or "3941" or "3942" or "3943")
+            else if (dataAttribute is "3940" or "3941" or "3942" or "3943" or "8111")
             {
                 if (value.Length != 4 || !ValueIsDigit(value))
                 {
@@ -1240,6 +1357,51 @@
                 }
             }
 
+            // 6 DIGIT ["-"]
+            else if (dataAttribute is "4330" or "4331" or "4332" or "4333")
+            {
+                if (value.Length is < 6 or > 7 || value[6] != '-' || !ValueIsDigit(value[..6]))
+                {
+                    return false;
+                }
+            }
+
+            // 8 DIGIT
+            else if (dataAttribute is "7250")
+            {
+                if (value.Length != 8 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 8 DIGIT [2 DIGIT] [2 DIGIT]
+            else if (dataAttribute is "8008")
+            {
+                if (value.Length != 8 || value.Length != 10 || value.Length != 12 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 10 DIGIT
+            else if (dataAttribute is "4324" or "4325")
+            {
+                if (value.Length != 10 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 12 DIGIT
+            else if (dataAttribute is "7251")
+            {
+                if (value.Length != 12 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
             // 13 DIGIT
             else if (dataAttribute is "410" or "411" or "412" or "413" or "416" or "7001")
             {
@@ -1250,7 +1412,7 @@
             }
 
             // 14 DIGIT
-            else if (dataAttribute is "02")
+            else if (dataAttribute is "02" or "8001")
             {
                 if (value.Length != 14 || !ValueIsDigit(value))
                 {
@@ -1258,7 +1420,52 @@
                 }
             }
 
-            // Digits and characters
+            // 14 DIGIT 2 DIGIT 2 DIGIT
+            else if (dataAttribute is "8026")
+            {
+                if (value.Length != 18 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 15 DIGIT
+            else if (dataAttribute is "8040" or "8041")
+            {
+                if (value.Length != 15 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 18 DIGIT [1 * 2 DIGIT]
+            else if (dataAttribute is "8043")
+            {
+                if (value.Length != 18 || value.Length != 19 || value.Length != 20 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 20 DIGIT
+            else if (dataAttribute is "4309")
+            {
+                if (value.Length != 20 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 32 DIGIT
+            else if (dataAttribute is "8042")
+            {
+                if (value.Length != 32 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // Digits and characters or dates or times
 
             // 3 DIGIT 1 * 9 XCHAR
             else if (dataAttribute is "421")
@@ -1268,6 +1475,25 @@
                     return false;
                 }
             }
+
+            // 6 DIGIT (= date)
+            else if (dataAttribute is "11" or "12" or "13" or "15" or "16" or "17" or "4326" or "7006" or "7007" or "7011")
+            {
+                if (value.Length != 6 || !ValueIsDigit(value) || !IsDateYYMMDD(value))
+                {
+                    return false;
+                }
+            }
+
+            // 10 DIGIT (= time)
+            else if (dataAttribute is "7003")
+            {
+                if (value.Length != 10 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
 
             // Default 6 digits
 
@@ -1416,12 +1642,30 @@
             return true;
         }
 
+        // Function to validate if a string is a date in YYMMDD format
+        static bool IsDateYYMMDD(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return false;
+            }
+
+            // Try parsing with exact format "yyMMdd"
+            return DateTime.TryParseExact(
+                input,
+                "yyMMdd",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out _ // discard parsed DateTime
+            );
+        }
+
         /// <summary>
         /// Check if all characters in the input are in the allowed 39-character subset - YCHAR
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static bool ValueIs39CharacterSubset(string value)
+        public static bool ValueIsYCHAR39CharacterSubset(string value)
         {
             if (string.IsNullOrEmpty(value))
             {
@@ -1430,7 +1674,26 @@
             }
 
             // Check if all characters in the input are in the allowed set
-            bool bIsValid = value.All(c => _39CharacterSubset.Contains(c));
+            bool bIsValid = value.All(c => _YCHAR_39CharacterSubset.Contains(c));
+            if (!bIsValid)
+            {
+                cErrorMessage = CodeLang.ErrorGS1ValueContainsCharacterInvalid_Text;
+            }
+
+            return bIsValid;
+        }
+
+        // Check if all characters in the input are in the allowed 64-character subset - ZCHAR
+        public static bool ValueIsZCHAR64CharacterSubset(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                cErrorMessage = CodeLang.ErrorGS1ValueContainsCharacterInvalid_Text;
+                return false;
+            }
+
+            // Check if all characters in the input are in the allowed set
+            bool bIsValid = value.All(c => _ZCHAR_64CharacterSubset.Contains(c));
             if (!bIsValid)
             {
                 cErrorMessage = CodeLang.ErrorGS1ValueContainsCharacterInvalid_Text;
@@ -1444,7 +1707,7 @@
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static bool ValueIs82CharacterSubset(string value)
+        public static bool ValueIsXCHAR82CharacterSubset(string value)
         {
             if (string.IsNullOrEmpty(value))
             {
@@ -1453,7 +1716,7 @@
             }
 
             // Check if all characters in the input are in the allowed set
-            bool bIsValid = value.All(c => _82CharacterSubset.Contains(c));
+            bool bIsValid = value.All(c => _XCHAR_82CharacterSubset.Contains(c));
             if (!bIsValid)
             {
                 cErrorMessage = CodeLang.ErrorGS1ValueContainsCharacterInvalid_Text;
