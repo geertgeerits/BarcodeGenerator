@@ -118,26 +118,26 @@
             // processorCode - processorValue = 3DIGIT 1*27XCHAR - processorParameter = processorCode "=" processorValue
             "7030","7031","7032","7033","7034","7035","7036","7037","7038","7039",
 
-            "02",       // contentParameter = "02=" 14DIGIT
-            "11",       // prodDateParameter = "11=" 6DIGIT
-            "12",       // dueDateParameter = "12=" 6DIGIT
-            "13",       // packDateParameter = "13=" 6DIGIT
-            "15",       // bestBeforeDateParameter = "15=" 6DIGIT
-            "16",       // sellByDateParameter = "16=" 6DIGIT
+            "02",       // contentParameter         = "02=" 14DIGIT
+            "11",       // prodDateParameter        = "11=" 6DIGIT
+            "12",       // dueDateParameter         = "12=" 6DIGIT
+            "13",       // packDateParameter        = "13=" 6DIGIT
+            "15",       // bestBeforeDateParameter  = "15=" 6DIGIT
+            "16",       // sellByDateParameter      = "16=" 6DIGIT
             "7006",     // firstFreezeDateParameter = "7006=" 6DIGIT
-            "7007",     // harvestDateParameter = "7007=" 6DIGIT [6DIGIT]
-            "7011",     // testByDateParameter = "7011=" 6DIGIT [4DIGIT]
-            "8005",     // pricePerUnitParameter = "8005=" 6DIGIT
-            "20",       // variantParameter = "20=" 2DIGIT
-            "30",       // varCountParameter = "30=" 1*8DIGIT
-            "37",       // countParameter = "37=" 1*8DIGIT
-            "90",       // mutualParameter = "90=" 1*30XCHAR
-            "240",      // additionalIdParameter = "240=" 1*30XCHAR
-            "241",      // custPartNoParameter = "241=" 1*30XCHAR
-            "242",      // mtoVariantParameter = "242=" 1*6DIGIT
-            "243",      // pcnParameter = "243=" 1*20XCHAR
+            "7007",     // harvestDateParameter     = "7007=" 6DIGIT [6DIGIT]
+            "7011",     // testByDateParameter      = "7011=" 6DIGIT [4DIGIT]
+            "8005",     // pricePerUnitParameter    = "8005=" 6DIGIT
+            "20",       // variantParameter         = "20=" 2DIGIT
+            "30",       // varCountParameter        = "30=" 1*8DIGIT
+            "37",       // countParameter           = "37=" 1*8DIGIT
+            "90",       // mutualParameter          = "90=" 1*30XCHAR
+            "240",      // additionalIdParameter    = "240=" 1*30XCHAR
+            "241",      // custPartNoParameter      = "241=" 1*30XCHAR
+            "242",      // mtoVariantParameter      = "242=" 1*6DIGIT
+            "243",      // pcnParameter             = "243=" 1*20XCHAR
             "250",      // secondarySerialParameter = "250=" 1*30XCHAR
-            "251",      // refToSourceParameter = "251=" 1*30XCHAR
+            "251",      // refToSourceParameter     = "251=" 1*30XCHAR
 
             // amountCode - amountValue = 1*15DIGIT - amountParameter = amountCode "=" amountValue
             "3900","3901","3902","3903","3904","3905","3906","3907","3908","3909",
@@ -154,41 +154,41 @@
             // percentOffCode - percentOffValue = 4DIGIT - percentOffParameter = percentOffCode "=" percentOffValue
             "3940","3941","3942","3943",
 
-            "400",      // orderNumberParameter = "400=" 1*30XCHAR
-            "403",      // routeParameter = "403=" 1*30XCHAR
-            "410",      // shipToLocParameter = "410=" 13DIGIT
-            "411",      // billToParameter = "411=" 13DIGIT
-            "412",      // purchaseFromParameter = "412=" 13DIGIT
-            "413",      // shipForLocParameter = "413=" 13DIGIT
-            "416",      // prodServLocParameter = "416=" 13DIGIT
-            "420",      // shipToPostParameter = "420=" 1*20XCHAR
-            "421",      // shipToPostISOParameter = "421=" 3DIGIT 1*9XCHAR
-            "422",      // originParameter = "422=" 3DIGIT
-            "424",      // countryProcessParameter = "424=" 3DIGIT
-            "426",      // countryFullProcessParameter = "426=" 3DIGIT
-            "423",      // countryInitialProcessParameter = "423=" 3DIGIT 1*12DIGIT
-            "425",      // countryDisassemblyParameter = "425=" 3DIGIT 1*12DIGIT
-            "427",      // originSubdivisionParameter = "427=" 1*3XCHAR
-            "710",      // nhrnPZNParameter = "710=" 1*20XCHAR
-            "711",      // nhrnCIPParameter = "711=" 1*20XCHAR
-            "712",      // nhrnCNParameter = "712=" 1*20XCHAR
-            "713",      // nhrnDRNParameter = "713=" 1*20XCHAR
-            "714",      // nhrnAIMParameter = "714=" 1*20XCHAR
-            "715",      // nhrnUS-FDAParameter  = "715=" 1*20XCHAR
-            "716",      // nhrnAICParameter     = "716=" 1*20XCHAR
-            "717",      // nhrnSRNParameter     = "717=" 1*20XCHAR
-            "7001",     // nsnParameter = "7001=" 13DIGIT
-            "7002",     // meatCutParameter = "7002=" 1*30XCHAR
-            "7004",     // activePotencyParameter = "7004=" 1*4DIGIT
-            "7005",     // catchAreaParameter = "7005=" 1*12XCHAR
-            "7008",     // aquaticSpeciesParameter = "7008=" 1*3XCHAR
-            "7009",     // fishingGearTypeParameter = "7009=" 1*10XCHAR
-            "7010",     // prodMethodParameter = "7010=" 1*2XCHAR
-            "7020",     // refurbLotParameter = "7020=" 1*20XCHAR
-            "7021",     // funcStatParameter = "7021=" 1*20XCHAR
-            "7022",     // revStatParameter = "7022=" 1*20XCHAR
-            "7023",     // giaiAssemblyParameter = "7023=" 1*30XCHAR
-            "7041",     // ufrgtUnitTypeParameter    = "7041=" 1*4XCHAR
+            "400",      // orderNumberParameter             = "400=" 1*30XCHAR
+            "403",      // routeParameter                   = "403=" 1*30XCHAR
+            "410",      // shipToLocParameter               = "410=" 13DIGIT
+            "411",      // billToParameter                  = "411=" 13DIGIT
+            "412",      // purchaseFromParameter            = "412=" 13DIGIT
+            "413",      // shipForLocParameter              = "413=" 13DIGIT
+            "416",      // prodServLocParameter             = "416=" 13DIGIT
+            "420",      // shipToPostParameter              = "420=" 1*20XCHAR
+            "421",      // shipToPostISOParameter           = "421=" 3DIGIT 1*9XCHAR
+            "422",      // originParameter                  = "422=" 3DIGIT
+            "424",      // countryProcessParameter          = "424=" 3DIGIT
+            "426",      // countryFullProcessParameter      = "426=" 3DIGIT
+            "423",      // countryInitialProcessParameter   = "423=" 3DIGIT 1*12DIGIT
+            "425",      // countryDisassemblyParameter      = "425=" 3DIGIT 1*12DIGIT
+            "427",      // originSubdivisionParameter       = "427=" 1*3XCHAR
+            "710",      // nhrnPZNParameter                 = "710=" 1*20XCHAR
+            "711",      // nhrnCIPParameter                 = "711=" 1*20XCHAR
+            "712",      // nhrnCNParameter                  = "712=" 1*20XCHAR
+            "713",      // nhrnDRNParameter                 = "713=" 1*20XCHAR
+            "714",      // nhrnAIMParameter                 = "714=" 1*20XCHAR
+            "715",      // nhrnUS-FDAParameter              = "715=" 1*20XCHAR
+            "716",      // nhrnAICParameter                 = "716=" 1*20XCHAR
+            "717",      // nhrnSRNParameter                 = "717=" 1*20XCHAR
+            "7001",     // nsnParameter                     = "7001=" 13DIGIT
+            "7002",     // meatCutParameter                 = "7002=" 1*30XCHAR
+            "7004",     // activePotencyParameter           = "7004=" 1*4DIGIT
+            "7005",     // catchAreaParameter               = "7005=" 1*12XCHAR
+            "7008",     // aquaticSpeciesParameter          = "7008=" 1*3XCHAR
+            "7009",     // fishingGearTypeParameter         = "7009=" 1*10XCHAR
+            "7010",     // prodMethodParameter              = "7010=" 1*2XCHAR
+            "7020",     // refurbLotParameter               = "7020=" 1*20XCHAR
+            "7021",     // funcStatParameter                = "7021=" 1*20XCHAR
+            "7022",     // revStatParameter                 = "7022=" 1*20XCHAR
+            "7023",     // giaiAssemblyParameter            = "7023=" 1*30XCHAR
+            "7041",     // ufrgtUnitTypeParameter           = "7041=" 1*4XCHAR
 
             // certificationRefCode - certificationRefValue = 2XCHAR 1*28XCHAR - certificationRefParameter = certificationRefCode "=" certificationRefValue
             "7230","7231","7232","7233","7234","7235","7236","7237","7238","7239",
@@ -276,7 +276,7 @@
             // internalCode - internalValue = 1*90XCHAR - internalParameter = internalCode "=" internalValue
             "91","92","93","94","95","96","97","98","99",
             
-            // lotParameter     = lot-code "=" lot-value
+            // lotParameter         = lot-code "=" lot-value
 
             "17",       // expiryDateParameter  = "17=" 6DIGIT
             "7003",     // expiryTimeParameter  = "7003=" 10DIGIT
@@ -290,6 +290,9 @@
 
         // 82-character subset of ISO/IEC 646 (for GS1 identifiers) - XCHAR = DIGIT / UPPERALPHA / LOWERALPHA / XSYMBOL
         private static readonly string _XCHAR_82CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"-._!%&+,/*[]';:<>=?";
+
+        // Dictionary to hold GS1 keys and their corresponding values
+        Dictionary<string, string> gs1 = [];
 
         // Error message for GS1 identifier validation
         private static string cErrorMessage = string.Empty;
@@ -1135,15 +1138,6 @@
                 }
             }
 
-            // 1 * 27 XCHAR
-            else if (dataAttribute is "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
-            {
-                if (value.Length is < 1 or > 27 || !ValueIsXCHAR82CharacterSubset(value))
-                {
-                    return false;
-                }
-            }
-
             // 1 * 30 XCHAR
             else if (dataAttribute is "90" or "240" or "241" or "250" or "251"
                 or "400" or "403" or "7002" or "7023" or "4308" or "4319")
@@ -1348,19 +1342,15 @@
                 }
             }
 
-            // 6 DIGIT [6 DIGIT]
-            else if (dataAttribute is "7007")
-            {
-                if (value.Length != 6 || value.Length != 12 || !ValueIsDigit(value))
-                {
-                    return false;
-                }
-            }
-
             // 6 DIGIT ["-"]
             else if (dataAttribute is "4330" or "4331" or "4332" or "4333")
             {
-                if (value.Length is < 6 or > 7 || value[6] != '-' || !ValueIsDigit(value[..6]))
+                if (value.Length is < 6 or > 7 || !ValueIsDigit(value[..6]))
+                {
+                    return false;
+                }
+                
+                if (value.Length == 7 && !value.EndsWith('-'))
                 {
                     return false;
                 }
@@ -1370,33 +1360,6 @@
             else if (dataAttribute is "7250")
             {
                 if (value.Length != 8 || !ValueIsDigit(value))
-                {
-                    return false;
-                }
-            }
-
-            // 8 DIGIT [2 DIGIT] [2 DIGIT]
-            else if (dataAttribute is "8008")
-            {
-                if (value.Length != 8 || value.Length != 10 || value.Length != 12 || !ValueIsDigit(value))
-                {
-                    return false;
-                }
-            }
-
-            // 10 DIGIT
-            else if (dataAttribute is "4324" or "4325")
-            {
-                if (value.Length != 10 || !ValueIsDigit(value))
-                {
-                    return false;
-                }
-            }
-
-            // 12 DIGIT
-            else if (dataAttribute is "7251")
-            {
-                if (value.Length != 12 || !ValueIsDigit(value))
                 {
                     return false;
                 }
@@ -1465,7 +1428,7 @@
                 }
             }
 
-            // Digits and characters or dates or times
+            // Mixed/others: digits and characters
 
             // 3 DIGIT 1 * 9 XCHAR
             else if (dataAttribute is "421")
@@ -1476,8 +1439,19 @@
                 }
             }
 
+            // 3 DIGIT 1 * 27 XCHAR
+            else if (dataAttribute is "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
+            {
+                if (value.Length is < 4 or > 30 || !ValueIsDigit(value[..3]))
+                {
+                    return false;
+                }
+            }
+
+            // Dates
+
             // 6 DIGIT (= date)
-            else if (dataAttribute is "11" or "12" or "13" or "15" or "16" or "17" or "4326" or "7006" or "7007" or "7011")
+            else if (dataAttribute is "11" or "12" or "13" or "15" or "16" or "17" or "4326" or "7006")
             {
                 if (value.Length != 6 || !ValueIsDigit(value) || !IsDateYYMMDD(value))
                 {
@@ -1485,17 +1459,64 @@
                 }
             }
 
-            // 10 DIGIT (= time)
+            // 6 DIGIT [4 DIGIT] (= date)
+            else if (dataAttribute is "7011")
+            {
+                if (value.Length != 6 || value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
+                {
+                    return false;
+                }
+            }
+
+            // 6 DIGIT [6 DIGIT] (= date)
+            else if (dataAttribute is "7007")
+            {
+                if (value.Length != 6 || value.Length != 12 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
+                {
+                    return false;
+                }
+            }
+
+            // 10 DIGIT (= date)
+            else if (dataAttribute is "4324" or "4325")
+            {
+                if (value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
+                {
+                    return false;
+                }
+            }
+
+            // Times
+
+            // 8 DIGIT [2 DIGIT] [2 DIGIT] (= time)
+            else if (dataAttribute is "8008")
+            {
+                if (value.Length != 8 || value.Length != 10 || value.Length != 12 || !ValueIsDigit(value))
+                {
+                    return false;
+                }
+            }
+
+            // 10 DIGIT (= date/time)
             else if (dataAttribute is "7003")
             {
-                if (value.Length != 10 || !ValueIsDigit(value))
+                if (value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]) || !IsTimeHHMM(value.Substring(6, 4)))
+                {
+                    return false;
+                }
+            }
+
+            // 12 DIGIT (= time)
+            else if (dataAttribute is "7251")
+            {
+                if (value.Length != 12 || !ValueIsDigit(value))
                 {
                     return false;
                 }
             }
 
 
-            // Default 6 digits
+            // Default 6 digits - Except for the following keys, which have specific validation rules and are handled separately above.
 
             // 6 DIGIT
             else if (dataAttribute is not "01" and not "8006" and not "8013" and not "8010" and not "414" and not "415" and not "417"
@@ -1642,7 +1663,13 @@
             return true;
         }
 
-        // Function to validate if a string is a date in YYMMDD format
+        /// <summary>
+        /// Validates whether a string represents a date in the `yyMMdd` format using the invariant culture.
+        /// </summary>
+        /// <remarks>Parsing uses `DateTime.TryParseExact` with `DateTimeStyles.None`. When validation
+        /// fails, `cErrorMessage` is set to `CodeLang.ErrorGS1DateInvalid_Text`.</remarks>
+        /// <param name="input">Text to validate as a date in `yyMMdd` format.</param>
+        /// <returns>`true` if `input` is a valid date in `yyMMdd` format; otherwise, `false`.</returns>
         static bool IsDateYYMMDD(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
@@ -1651,13 +1678,49 @@
             }
 
             // Try parsing with exact format "yyMMdd"
-            return DateTime.TryParseExact(
+            bool bIsValid = DateTime.TryParseExact(
                 input,
                 "yyMMdd",
                 CultureInfo.InvariantCulture,
                 DateTimeStyles.None,
                 out _ // discard parsed DateTime
             );
+
+            if (!bIsValid)
+            {
+                cErrorMessage = CodeLang.ErrorGS1DateInvalid_Text;
+            }
+
+            return bIsValid;
+        }
+
+        /// <summary>
+        /// Validate if a string is a time in HHMM format
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        static bool IsTimeHHMM(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return false;
+            }
+
+            // Try parsing with exact format "HHmm"
+            bool bIsValid = DateTime.TryParseExact(
+                input,
+                "HHmm",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out _ // discard parsed DateTime
+            );
+
+            if (!bIsValid)
+            {
+                cErrorMessage = CodeLang.ErrorGS1TimeInvalid_Text;
+            }
+
+            return bIsValid;
         }
 
         /// <summary>
@@ -1726,11 +1789,11 @@
         }
 
         /// <summary>
-        /// Calculate the gtin check digit
+        /// Calculate the gtin check digit (Modulo10) and validate the value against the check digit
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="length"></param>
-        /// <returns></returns>
+        /// <param name="value">The GTIN value to validate.</param>
+        /// <param name="length">The expected length of the GTIN value.</param>
+        /// <returns>`true` if the GTIN value is valid; otherwise, `false`.</returns>
         public static bool ValidateValueCheckDigitModulo10(string value, int length)
         {
             // Validate input: the value must be a non-empty string containing only digits

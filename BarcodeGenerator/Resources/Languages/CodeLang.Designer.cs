@@ -1115,6 +1115,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date is not valid..
+        /// </summary>
+        internal static string ErrorGS1DateInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1DateInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GS1 identifier is not valid..
         /// </summary>
         internal static string ErrorGS1IdentifierInvalid_Text {
@@ -1147,6 +1156,15 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string ErrorGS1NumberOnlyDigits_Text {
             get {
                 return ResourceManager.GetString("ErrorGS1NumberOnlyDigits_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time is not valid..
+        /// </summary>
+        internal static string ErrorGS1TimeInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1TimeInvalid_Text", resourceCulture);
             }
         }
         
