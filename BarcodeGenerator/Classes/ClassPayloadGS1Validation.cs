@@ -386,12 +386,13 @@
             // GS1 Digital Link Validator: https://qrbolt.com/en/validate-gs1
             // FeatherQR Playground: https://guitarrapc.github.io/FeatherQR/
 
+            // Variables
             string gs1Identifier = editor.Text;
             bool bIsValid = true;
             cErrorMessage = string.Empty;
 
             // Check if the key in the GS1 identifier exists in the array of valid keys
-            bIsValid &= !ContainsInvalidKeyOrDataAttribute(gs1Identifier);
+            bIsValid &= IsKnownGs1Key(cKey);
             if (!bIsValid)
             {
                 cErrorMessage = CodeLang.ErrorGS1KeyInvalid_Text;
@@ -401,7 +402,7 @@
 
             // gtin-code 01 - Global Trade Item Number (GTIN) = 14DIGIT ; GTIN-8, GTIN-12 and GTIN-13 SHALL be expressed as 14 digits, with leading zeroes serving as filler digits
             if (bIsValid && cKey == "01")
-                {
+            {
                 // If the GS1 identifier length is less than 14 characters, add zeroes to the left to make it 14 characters
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 14)
@@ -475,7 +476,7 @@
 
             // itip-code 8006 - International Ticketing Information Protocol (ITIP) = 14DIGIT 2DIGIT 2DIGIT ; 14 digits then 2 digits then 2 digits
             else if (bIsValid && cKey == "8006")
-                {
+            {
                 // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 18)
@@ -546,7 +547,7 @@
 
             // gmn-code 8013 - Global Model Number (GMN) = 1*25XCHAR ; 1-25 characters from 82-character subset
             else if (bIsValid && cKey == "8013")
-                {
+            {
                 // If the GS1 identifier does not have a length of 1-25 characters, return false
                 if (cValue.Length is < 1 or > 25)
                 {
@@ -1318,7 +1319,7 @@
                 {
                     return false;
                 }
-                
+
                 if (value.Length == 7 && !value.EndsWith('-'))
                 {
                     return false;
@@ -1501,6 +1502,16 @@
         }
 
         /// <summary>
+        /// Check if the provided key is a known GS1 key by searching in the predefined list of known keys
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        private static bool IsKnownGs1Key(string key)
+        {
+            return Array.IndexOf(_knownGs1KeysData, key) >= 0;
+        }
+
+        /// <summary>
         /// Get the Key or data attribute of the GS1 identifier
         /// </summary>
         /// <param name="key"></param>
@@ -1572,44 +1583,10 @@
                 // Find the start position of the key
                 return index;
             }
-            
+
             // If no forward slash is found, return -1
             return -1;
         }
-
-        ///// <summary>
-        ///// Finds the start and end indexes of a key segment within a GS1 identifier string.
-        ///// </summary>
-        ///// <param name="cKey">Key segment to locate.</param>
-        ///// <param name="cGs1Identifier">GS1 identifier string to search.</param>
-        ///// <returns>A tuple containing the zero-based start index and end index of the located key segment; returns (-1, -1)
-        ///// when the key segment is not found. The end index is the position of the next '/' or '?' delimiter after the
-        ///// start index, or the string length when no such delimiter exists.</returns>
-        ///// <remarks>Use: (int nStartPos22, int nEndPos22) = GetKeyPosition("/22/", gs1Identifier);</remarks>
-        //private static (int start, int end) GetKeyPosition(string cKey, string cGs1Identifier)
-        //{
-        //    int index = cGs1Identifier.IndexOf(cKey);
-
-        //    if (index >= 0)
-        //    {
-        //        // Find the start position of the key
-        //        int nStartPosition = index;
-
-        //        // Find the end position of the key, which is either the next forward slash or question mark or the end of the string
-        //        int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?'], nStartPosition + 1);
-
-        //        // If no forward slash or question mark is found, set the end position to the end of the string
-        //        if (nEndPosition == -1)
-        //        {
-        //            nEndPosition = cGs1Identifier.Length;
-        //        }
-
-        //        return (nStartPosition, nEndPosition);
-        //    }
-
-        //    // If no forward slash is found, return -1 for both start and end positions
-        //    return (-1, -1);
-        //}
 
         /// <summary>
         /// Determines whether a string consists only of digit characters - DIGIT
@@ -1804,116 +1781,6 @@
             {
                 cErrorMessage = CodeLang.ErrorGS1CheckDigitInvalid_Text;
                 return false;
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Checks whether the GS1 identifier contains one or more invalid keys or data attributes.
-        /// Returns true when an invalid key or data attribute is found, or when no GS1 key or data attribute is found.
-        /// </summary>
-        /// <param name="gs1Identifier"></param>
-        /// <returns></returns>
-        private static bool ContainsInvalidKeyOrDataAttribute(string gs1Identifier)
-        {
-            if (string.IsNullOrWhiteSpace(gs1Identifier))
-            {
-                return true;
-            }
-
-            bool hasAtLeastOneKey = false;
-
-            // Split once: path + optional query
-            string[] uriParts = gs1Identifier.Split('?', 2, StringSplitOptions.None);
-            string pathPart = uriParts[0];
-
-            // Parse path keys as alternating key/value segments once GS1 path starts
-            string[] segments = pathPart.Split('/', StringSplitOptions.RemoveEmptyEntries);
-
-            bool gs1PathStarted = false;
-            int index = 0;
-
-            while (index < segments.Length)
-            {
-                if (!gs1PathStarted)
-                {
-                    if (!IsPotentialGs1KeyToken(segments[index]))
-                    {
-                        index++;
-                        continue;
-                    }
-
-                    gs1PathStarted = true;
-                }
-
-                // Expected key segment
-                string key = segments[index];
-                hasAtLeastOneKey = true;
-
-                if (!IsPotentialGs1KeyToken(key) || Array.IndexOf(_knownGs1KeysData, key) < 0)
-                {
-                    return true;
-                }
-
-                // Move to value segment
-                index++;
-
-                // Key without value -> invalid structure
-                if (index >= segments.Length)
-                {
-                    return true;
-                }
-
-                // Skip value segment, next should be next key
-                index++;
-            }
-
-            // Parse query keys: ?01=...&10=...
-            if (uriParts.Length == 2 && !string.IsNullOrWhiteSpace(uriParts[1]))
-            {
-                string queryPart = uriParts[1];
-
-                foreach (string parameter in queryPart.Split('&', StringSplitOptions.RemoveEmptyEntries))
-                {
-                    string key = parameter.Split('=', 2, StringSplitOptions.None)[0];
-
-                    if (!IsPotentialGs1KeyToken(key))
-                    {
-                        continue;
-                    }
-
-                    hasAtLeastOneKey = true;
-
-                    if (Array.IndexOf(_knownGs1KeysData, key) < 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            // No GS1 key found at all -> treat as invalid
-            return !hasAtLeastOneKey;
-        }
-
-        /// <summary>
-        /// Check if a key is a potential GS1 key
-        /// </summary>
-        /// <param name="token"></param>
-        /// <returns></returns>
-        private static bool IsPotentialGs1KeyToken(string token)
-        {
-            if (string.IsNullOrEmpty(token) || token.Length is < 2 or > 4)
-            {
-                return false;
-            }
-
-            foreach (char c in token)
-            {
-                if (!char.IsDigit(c))
-                {
-                    return false;
-                }
             }
 
             return true;
