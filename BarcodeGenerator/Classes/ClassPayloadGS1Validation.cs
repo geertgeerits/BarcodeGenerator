@@ -292,7 +292,7 @@
         private static readonly string _XCHAR_82CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"-._!%&+,/*[]';:<>=?";
 
         // Dictionary to hold GS1 keys and their corresponding values
-        private static Dictionary<string, string> gs1 = new Dictionary<string, string>();
+        private static readonly Dictionary<string, string> gs1 = [];
 
         // Error message for GS1 identifier validation
         private static string cErrorMessage = string.Empty;
@@ -346,21 +346,28 @@
             }
 
             // Delete duplicate keys in the dictionary (if any) - keep the first occurrence
-            Dictionary<string, string> dict = gs1
-                .GroupBy(x => x.Key)
-                .ToDictionary(g => g.Key, g => g.First().Value);
+            //Dictionary<string, string> dict = gs1
+            //    .GroupBy(x => x.Key)
+            //    .ToDictionary(g => g.Key, g => g.First().Value);
         }
 
+        /// <summary>
+        /// Determines whether the specified string is a valid GS1 identifier
+        /// </summary>
+        /// <param name="editor"></param>
+        /// <returns></returns>
         public static async Task<bool> IsValidGS1Identifier(Editor editor)
         {
             bool bIsValid = true;
 
             SplitKeyValuePairs(editor.Text);
 
+            Debug.WriteLine($"Length array _knownGs1KeysData: {_knownGs1KeysData.Length}");
+
             foreach (var kvp in gs1)
             {
-                Debug.WriteLine($"Key: {kvp.Key}, Value: {kvp.Value}");
-                bIsValid &= await IsValidGS1Identifier2(editor, kvp.Key, kvp.Value);
+                Debug.WriteLine($"Key: {kvp.Key}, Value: {kvp.Value}, Value length: {kvp.Value.Length}");
+                bIsValid &= await IsValidGS1IdentifierPart2(editor, kvp.Key, kvp.Value);
             }
 
             return bIsValid;
@@ -370,22 +377,20 @@
         /// Determines whether the specified string is a valid GS1 identifier
         /// </summary>
         /// <param name="editor">The Editor containing the GS1 identifier string to validate.</param>
+        /// <param name="cKey">The GS1 key to validate.</param>
+        /// <param name="cValue">The GS1 value to validate.</param>
         /// <returns>true if the specified string is a valid GS1 identifier; otherwise, false.</returns>
-        private static async Task<bool> IsValidGS1Identifier2(Editor editor, string cKey, string cValue)
+        private static async Task<bool> IsValidGS1IdentifierPart2(Editor editor, string cKey, string cValue)
         {
             // GS1 Digital Link Test Suite: https://ref.gs1.org/test-suites/resolver/
             // GS1 Digital Link Validator: https://qrbolt.com/en/validate-gs1
             // FeatherQR Playground: https://guitarrapc.github.io/FeatherQR/
 
-            Debug.WriteLine($"Length array _knownGs1KeysData: {_knownGs1KeysData.Length}");
-
             string gs1Identifier = editor.Text;
             bool bIsValid = true;
-            //string cValue;
-            //string cKey = string.Empty;
             cErrorMessage = string.Empty;
 
-            // Check if there are keys in the GS1 identifier that are not in the list of valid keys
+            // Check if the key in the GS1 identifier exists in the array of valid keys
             bIsValid &= !ContainsInvalidKeyOrDataAttribute(gs1Identifier);
             if (!bIsValid)
             {
@@ -469,7 +474,7 @@
             }
 
             // itip-code 8006 - International Ticketing Information Protocol (ITIP) = 14DIGIT 2DIGIT 2DIGIT ; 14 digits then 2 digits then 2 digits
-            if (bIsValid && cKey == "8006")
+            else if (bIsValid && cKey == "8006")
                 {
                 // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
                 // and replace the original value with the new value in the editor
@@ -540,7 +545,7 @@
             }
 
             // gmn-code 8013 - Global Model Number (GMN) = 1*25XCHAR ; 1-25 characters from 82-character subset
-            if (bIsValid && cKey == "8013")
+            else if (bIsValid && cKey == "8013")
                 {
                 // If the GS1 identifier does not have a length of 1-25 characters, return false
                 if (cValue.Length is < 1 or > 25)
@@ -557,7 +562,7 @@
             }
 
             // cpid-code 8010 - Component / Part Identifier (CPID) = 1*30YCHAR ; 1-30 characters from 39-character subset
-            if (bIsValid && cKey == "8010")
+            else if (bIsValid && cKey == "8010")
             {
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
                 if (cValue.Length is < 1 or > 30)
@@ -574,7 +579,7 @@
             }
 
             // gln-code 414 - Physical / Global Location Number (GLN) = 13DIGIT ; exactly 13 digits
-            if (bIsValid && cKey == "414")
+            else if (bIsValid && cKey == "414")
             {
                 // If the GS1 identifier length is less than 13 characters, add zeroes to the left to make it 13 characters
                 // and replace the original value with the new value in the editor
@@ -593,7 +598,7 @@
             }
 
             // payTo-code 415 - GLN of invoicing party = 13DIGIT ; exactly 13 digits
-            if (bIsValid && cKey == "415")
+            else if (bIsValid && cKey == "415")
             {
                 // If the GS1 identifier does not have a length of 13 characters, return false
                 if (cValue.Length != 13)
@@ -610,7 +615,7 @@
             }
 
             // partyGln-code 417 - Party GLN = 13DIGIT ; exactly 13 digits
-            if (bIsValid && cKey == "417")
+            else if (bIsValid && cKey == "417")
             {
                 // If the GS1 identifier does not have a length of 13 characters, return false
                 if (cValue.Length != 13)
@@ -627,7 +632,7 @@
             }
 
             // gsrnp-code 8017 -  GSRN of the Provider = 18DIGIT ; exactly 18 digits
-            if (bIsValid && cKey == "8017")
+            else if (bIsValid && cKey == "8017")
             {
                 // If the GS1 identifier does not have a length of 18 characters, return false
                 if (cValue.Length != 18)
@@ -644,7 +649,7 @@
             }
 
             // gsrn-code 8018 - GSRN of the Recipient = 18DIGIT ; exactly 18 digits
-            if (bIsValid && cKey == "8018")
+            else if (bIsValid && cKey == "8018")
             {
                 // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
                 // and replace the original value with the new value in the editor
@@ -670,7 +675,7 @@
             }
 
             // gcn-code 255 - Global Coupon Number (GCN) =  13DIGIT [1*12DIGIT] ; 13 digits then optional 1 - 12 digits
-            if (bIsValid && cKey == "255")
+            else if (bIsValid && cKey == "255")
             {
                 // If the GS1 identifier does not have a length of 13-25 characters, return false
                 if (cValue.Length is < 13 or > 25)
@@ -702,7 +707,7 @@
             }
 
             // sscc-code 00 - Serial Shipping Container Code (SSCC) = 18DIGIT ; exactly 18 digits 
-            if (bIsValid && cKey == "00")
+            else if (bIsValid && cKey == "00")
             {
                 // If the GS1 identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
                 // and replace the original value with the new value in the editor
@@ -721,7 +726,7 @@
             }
 
             // gdti-code 253 - Global Document Type Identifier (GDTI) = 13DIGIT [1*17XCHAR] ; 13 digits then optional 1 - 17 characters ; from the 82-character subset
-            if (bIsValid && cKey == "253")
+            else if (bIsValid && cKey == "253")
             {
                 // If the GS1 identifier does not have a length of 13-30 characters, return false
                 if (cValue.Length is < 13 or > 30)
@@ -744,7 +749,7 @@
             }
 
             // ginc-code 401 - Global Identification Number for Consignment (GINC) = 1*30XCHAR ; 1 - 30 characters from the 82-character subset
-            if (bIsValid && cKey == "401")
+            else if (bIsValid && cKey == "401")
             {
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
                 if (cValue.Length is < 1 or > 30)
@@ -761,7 +766,7 @@
             }
 
             // gsin-code 402 - Global Shipment Identification Number (GSIN) = 17DIGIT ; exactly 17 digits
-            if (bIsValid && cKey == "402")
+            else if (bIsValid && cKey == "402")
             {
                 // If the GS1 identifier length is less than 14 characters, add zeroes to the left to make it 14 characters
                 // and replace the original value with the new value in the editor
@@ -787,7 +792,7 @@
             }
 
             // grai-code 8003 - Global Returnable Asset Identifier (GRAI) = 13DIGIT [1*16XCHAR] ; 13 digits then optional 1 - 16 characters ; from the 82-character subset of ISO / IEC 646
-            if (bIsValid && cKey == "8003")
+            else if (bIsValid && cKey == "8003")
             {
                 // If the GS1 identifier does not have a length of 13-29 characters, return false
                 if (cValue.Length is < 13 or > 29)
@@ -819,7 +824,7 @@
             }
 
             // giai-code 8004 - Global Individual Asset Identifier (GIAI) = 1*30XCHAR  ; 1-30 characters from 82-character subset
-            if (bIsValid && cKey == "8004")
+            else if (bIsValid && cKey == "8004")
             {
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
                 if (cValue.Length is < 1 or > 30)
@@ -838,7 +843,7 @@
             // Key qualifier formats ( x 9)
 
             // cpv-code 22 - Consumer Product Variant (CPV) = 1*20XCHAR ; 1-20 characters from 82-character subset
-            if (bIsValid && cKey == "22")
+            else if (bIsValid && cKey == "22")
             {
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
@@ -855,7 +860,7 @@
             }
 
             // lot-code 10 - Batch/Lot identifier = 1*20XCHAR ; 1-20 characters from 82-character subset
-            if (bIsValid && cKey == "10")
+            else if (bIsValid && cKey == "10")
             {
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
@@ -872,7 +877,7 @@
             }
 
             // ser-code 21 - GTIN Serial Number = 1*20XCHAR ; 1-20 characters from 82-character subset
-            if (bIsValid && cKey == "21")
+            else if (bIsValid && cKey == "21")
             {
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
@@ -889,7 +894,7 @@
             }
 
             // cpsn-code 8011 - CPID Serial Number = 1*12DIGIT ; 1-12 digits
-            if (bIsValid && cKey == "8011")
+            else if (bIsValid && cKey == "8011")
             {
                 // If the GS1 identifier does not have a length of 1-12 digits, return false
                 if (cValue.Length is < 1 or > 12)
@@ -906,7 +911,7 @@
             }
 
             // glnx-code 254 - GLN extension = 1*20XCHAR ; 1-20 characters from 82-character subset
-            if (bIsValid && cKey == "254")
+            else if (bIsValid && cKey == "254")
             {
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
@@ -923,7 +928,7 @@
             }
 
             // refno-code 8020 - Payment Reference Number = 1*25XCHAR ; 1-25 characters from 82-character subset
-            if (bIsValid && cKey == "8020")
+            else if (bIsValid && cKey == "8020")
             {
                 // If the GS1 identifier does not have a length of 1-25 characters, return false
                 if (cValue.Length is < 1 or > 25)
@@ -940,7 +945,7 @@
             }
 
             // srin-code 8019 - Service Relation Instance Number = 1*10DIGIT ; 1-10 digits
-            if (bIsValid && cKey == "8019")
+            else if (bIsValid && cKey == "8019")
             {
                 // If the GS1 identifier does not have a length of 1-10 digits, return false
                 if (cValue.Length is < 1 or > 10)
@@ -957,7 +962,7 @@
             }
 
             // tpx-code 235 - third-party controlled serialised extension to GTIN = 1*28XCHAR ; 1-28 characters from 82-character subset
-            if (bIsValid && cKey == "235")
+            else if (bIsValid && cKey == "235")
             {
                 // If the GS1 identifier does not have a length of 1-28 characters, return false
                 if (cValue.Length is < 1 or > 28)
@@ -974,7 +979,7 @@
             }
 
             // uic-ext-code 7040 - GS1 UIC with Extension 1 and Importer Index = 1DIGIT 3XCHAR ; 1 digit then 3 characters from 82-character subset
-            if (bIsValid && cKey == "7040")
+            else if (bIsValid && cKey == "7040")
             {
                 // If the GS1 identifier does not have a length of 4 characters, return false
                 if (cValue.Length != 4)
@@ -997,9 +1002,9 @@
             }
 
             // Validate the GS1 identifier using the ValidateDataAttribute method, which checks the overall structure and format of the GS1 identifier
-            if (bIsValid)
+            else if (bIsValid)
             {
-                bIsValid = ValidateDataAttribute(cKey, gs1Identifier);
+                bIsValid = ValidateDataAttribute(cKey, cValue);
             }
 
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
@@ -1017,16 +1022,11 @@
         /// Validation method for GS1 identifier data attributes
         /// </summary>
         /// <param name="dataAttribute"></param>
-        /// <param name="cGs1Identifier"></param>
+        /// <param name="value"></param>
         /// <returns></returns>
-        private static bool ValidateDataAttribute(string dataAttribute, string cGs1Identifier)
+        private static bool ValidateDataAttribute(string dataAttribute, string value)
         {
             cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
-
-            string value = GetValue(dataAttribute, cGs1Identifier);
-
-            // Remove first and last character of the dataAttribute
-            dataAttribute = dataAttribute.Trim('/', '?', '&', '=');
 
             Debug.WriteLine($"Validating data attribute: {dataAttribute} - Value: {value}");
 
@@ -1035,7 +1035,7 @@
             // BOOLEAN
             if (dataAttribute is "4321" or "4322" or "4323")
             {
-                if (value.Length != 1 || value != "0" || value != "1")
+                if (value.Length != 1 || value != "0" || value != "1" || !ValueIsDigit(value))
                 {
                     return false;
                 }
@@ -1044,7 +1044,7 @@
             // Characters
 
             // 1 * 2 XCHAR
-            if (dataAttribute is "7010")
+            else if (dataAttribute is "7010")
             {
                 if (value.Length is < 1 or > 2 || !ValueIsXCHAR82CharacterSubset(value))
                 {
@@ -1483,7 +1483,6 @@
                     return false;
                 }
             }
-
 
             // Default 6 digits - Except for the following keys, which have specific validation rules and are handled separately above.
 
