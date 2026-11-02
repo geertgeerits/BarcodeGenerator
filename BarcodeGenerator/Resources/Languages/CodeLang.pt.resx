@@ -1117,4 +1117,13 @@ Para alterar o tamanho do código QR dentro do círculo, ajuste a zona de silên
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>O valor deve conter apenas dígitos.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>A data não é válida.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>Chave GS1</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>O horário não é válido.</value>
+  </data>
 </root>

@@ -1117,4 +1117,13 @@ For å endre størrelsen på QR-koden inne i sirkelen, justerer du «quiet zone�
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Verdien må kun inneholde sifre.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Datoen er ugyldig.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1-nøkkel</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Tiden er ikke gyldig.</value>
+  </data>
 </root>

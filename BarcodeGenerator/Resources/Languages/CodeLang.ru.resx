@@ -1117,4 +1117,13 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Значение должно содержать только цифры.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Дата недействительна.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>Ключ GS1</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Время указано неверно.</value>
+  </data>
 </root>

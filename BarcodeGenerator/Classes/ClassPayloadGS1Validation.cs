@@ -1003,7 +1003,7 @@
             }
 
             // Validate the GS1 identifier using the ValidateDataAttribute method, which checks the overall structure and format of the GS1 identifier
-            else if (bIsValid)
+            if (bIsValid)
             {
                 bIsValid = ValidateDataAttribute(cKey, cValue);
             }
@@ -1011,7 +1011,7 @@
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{cKey}\n{cErrorMessage}", CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1Key_Text} {cKey}\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
                 _ = editor.Focus();
                 return false;
             }

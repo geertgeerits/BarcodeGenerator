@@ -1117,4 +1117,13 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Arvon on sisällettävä vain numeroita.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Päivämäärä ei ole kelvollinen.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1-avain</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Aika ei ole kelvollinen.</value>
+  </data>
 </root>

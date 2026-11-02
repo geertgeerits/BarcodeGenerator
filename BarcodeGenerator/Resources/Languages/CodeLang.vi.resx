@@ -1120,4 +1120,13 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Giá trị chỉ được chứa các chữ số.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Ngày không hợp lệ.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>Khóa GS1</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Thời gian không hợp lệ.</value>
+  </data>
 </root>

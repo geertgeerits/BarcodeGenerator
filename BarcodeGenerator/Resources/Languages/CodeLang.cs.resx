@@ -1117,4 +1117,13 @@ Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tic
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Hodnota musí obsahovat pouze číslice.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Datum není platné.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>Klíč GS1</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Čas není platný.</value>
+  </data>
 </root>

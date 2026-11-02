@@ -1117,4 +1117,13 @@ Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de Q
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>De waarde mag uitsluitend cijfers bevatten.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Datum is niet geldig.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1-sleutel</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>De tijd is niet geldig.</value>
+  </data>
 </root>

@@ -1117,4 +1117,13 @@ For at ændre størrelsen på QR-koden inde i cirklen skal du justere frizonen i
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Værdien må kun indeholde cifre.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Datoen er ikke gyldig.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1-nøgle</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Tiden er ugyldig.</value>
+  </data>
 </root>

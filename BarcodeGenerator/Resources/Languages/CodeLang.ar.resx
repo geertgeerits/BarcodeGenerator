@@ -1118,4 +1118,13 @@
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>يجب ألا تحتوي القيمة إلا على أرقام.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>التاريخ غير صالح.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>مفتاح GS1</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>الوقت غير صالح.</value>
+  </data>
 </root>

@@ -1117,4 +1117,13 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Az érték kizárólag számjegyeket tartalmazhat.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>A dátum érvénytelen.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1-kulcs</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Az idő nem érvényes.</value>
+  </data>
 </root>

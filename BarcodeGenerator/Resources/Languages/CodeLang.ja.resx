@@ -1131,4 +1131,13 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>値には数字のみを含める必要があります。</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>日付が正しくありません。</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1キー</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>時刻が正しくありません。</value>
+  </data>
 </root>

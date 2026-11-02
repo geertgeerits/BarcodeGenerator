@@ -1117,4 +1117,13 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>ویلیو میں صرف ہندسے ہونے چاہئیں۔</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>تاریخ درست نہیں ہے۔</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1 کلید</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>وقت درست نہیں ہے۔</value>
+  </data>
 </root>

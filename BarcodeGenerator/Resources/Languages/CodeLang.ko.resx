@@ -1118,4 +1118,13 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>값에는 숫자만 포함되어야 합니다.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>날짜가 유효하지 않습니다.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1 키</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>시간이 유효하지 않습니다.</value>
+  </data>
 </root>

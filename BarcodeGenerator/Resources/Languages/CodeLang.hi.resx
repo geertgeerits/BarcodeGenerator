@@ -1114,4 +1114,13 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>मान में केवल अंक होने चाहिए।</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>तारीख मान्य नहीं है।</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1 कुंजी</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>समय मान्य नहीं है।</value>
+  </data>
 </root>

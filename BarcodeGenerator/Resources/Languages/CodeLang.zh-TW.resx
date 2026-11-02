@@ -1118,4 +1118,13 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>該值必須僅包含數字。</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>日期無效。</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1密鑰</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>時間無效。</value>
+  </data>
 </root>

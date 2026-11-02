@@ -1115,4 +1115,13 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Значення має містити лише цифри.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Дата недійсна.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>Ключ GS1</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Час недійсний.</value>
+  </data>
 </root>

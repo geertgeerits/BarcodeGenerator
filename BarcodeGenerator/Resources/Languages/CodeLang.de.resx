@@ -1116,4 +1116,13 @@ Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruh
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Der Wert darf ausschließlich Ziffern enthalten.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Das Datum ist ungültig.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1-Schlüssel</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Die Zeit ist ungültig.</value>
+  </data>
 </root>

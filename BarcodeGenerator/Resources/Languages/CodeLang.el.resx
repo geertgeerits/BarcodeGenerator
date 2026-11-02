@@ -1117,4 +1117,13 @@
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Η τιμή πρέπει να περιέχει μόνο ψηφία.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Η ημερομηνία δεν είναι έγκυρη.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>Κλειδί GS1</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Η ώρα δεν είναι έγκυρη.</value>
+  </data>
 </root>

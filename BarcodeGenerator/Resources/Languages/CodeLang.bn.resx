@@ -1115,4 +1115,13 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>মানটিতে কেবল অঙ্ক থাকতে হবে।</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>তারিখটি বৈধ নয়।</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>GS1 কি (key)</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>সময়টি বৈধ নয়।</value>
+  </data>
 </root>

@@ -1117,4 +1117,13 @@ Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawie
   <data name="ErrorGS1NumberOnlyDigits_Text" xml:space="preserve">
     <value>Wartość musi zawierać wyłącznie cyfry.</value>
   </data>
+  <data name="ErrorGS1DateInvalid_Text" xml:space="preserve">
+    <value>Data jest nieprawidłowa.</value>
+  </data>
+  <data name="GS1Key_Text" xml:space="preserve">
+    <value>Klucz GS1</value>
+  </data>
+  <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
+    <value>Czas jest nieprawidłowy.</value>
+  </data>
 </root>
