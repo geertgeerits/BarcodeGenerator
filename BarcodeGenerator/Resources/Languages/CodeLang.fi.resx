@@ -1126,4 +1126,7 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Aika ei ole kelvollinen.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1-sovellustunniste (AI)</value>
+  </data>
 </root>

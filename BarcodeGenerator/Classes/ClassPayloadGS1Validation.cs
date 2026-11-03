@@ -2,8 +2,8 @@
 {
     internal partial class ClassPayloadGS1Validation
     {
-        // Add once in the class (central place for all supported GS1 keys and data attributes)
-        private static readonly string[] _knownGs1KeysData =
+        // Add once in the class - central place for all supported GS1 Application Identifiers (AI) (keys and data attributes)
+        private static readonly string[] _knownGs1AppIDs =
         [
             // Primary identification key formats (x 16) - index in array = 0 to 15
             "01",     // gtin-code
@@ -344,11 +344,6 @@
                     }
                 }
             }
-
-            // Delete duplicate keys in the dictionary (if any) - keep the first occurrence
-            //Dictionary<string, string> dict = gs1
-            //    .GroupBy(x => x.Key)
-            //    .ToDictionary(g => g.Key, g => g.First().Value);
         }
 
         /// <summary>
@@ -362,7 +357,7 @@
 
             SplitKeyValuePairs(editor.Text);
 
-            Debug.WriteLine($"Length array _knownGs1KeysData: {_knownGs1KeysData.Length}");
+            Debug.WriteLine($"Length array _knownGs1AppIDs: {_knownGs1AppIDs.Length}");
 
             foreach (var kvp in gs1)
             {
@@ -392,7 +387,7 @@
             cErrorMessage = string.Empty;
 
             // Check if the key in the GS1 identifier exists in the array of valid keys
-            bIsValid &= IsKnownGs1Key(cKey);
+            bIsValid &= IsKnownGs1AppID(cKey);
             if (!bIsValid)
             {
                 cErrorMessage = CodeLang.ErrorGS1KeyInvalid_Text;
@@ -408,7 +403,7 @@
                 if (cValue.Length < 14)
                 {
                     cValue = cValue.PadLeft(14, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetKey("01", gs1Identifier), gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("01", gs1Identifier), gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -421,9 +416,9 @@
                 // Check the path element order for /22/, /10/, and /21/ if they exist in the GS1 identifier
                 if (bIsValid)
                 {
-                    int nStartPos22 = GetKeyStartPosition("/22/", gs1Identifier);
-                    int nStartPos10 = GetKeyStartPosition("/10/", gs1Identifier);
-                    int nStartPos21 = GetKeyStartPosition("/21/", gs1Identifier);
+                    int nStartPos22 = GetAppIDStartPosition("/22/", gs1Identifier);
+                    int nStartPos10 = GetAppIDStartPosition("/10/", gs1Identifier);
+                    int nStartPos21 = GetAppIDStartPosition("/21/", gs1Identifier);
                     Debug.WriteLine($"Start Position 22: {nStartPos22}");
                     Debug.WriteLine($"Start Position 10: {nStartPos10}");
                     Debug.WriteLine($"Start Position 21: {nStartPos21}");
@@ -482,7 +477,7 @@
                 if (cValue.Length < 18)
                 {
                     cValue = cValue.PadLeft(18, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetKey("8006", gs1Identifier), gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("8006", gs1Identifier), gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -495,9 +490,9 @@
                 // Check the path element order for /22/, /10/, and /21/ if they exist in the GS1 identifier
                 if (bIsValid)
                 {
-                    int nStartPos22 = GetKeyStartPosition("/22/", gs1Identifier);
-                    int nStartPos10 = GetKeyStartPosition("/10/", gs1Identifier);
-                    int nStartPos21 = GetKeyStartPosition("/21/", gs1Identifier);
+                    int nStartPos22 = GetAppIDStartPosition("/22/", gs1Identifier);
+                    int nStartPos10 = GetAppIDStartPosition("/10/", gs1Identifier);
+                    int nStartPos21 = GetAppIDStartPosition("/21/", gs1Identifier);
 
                     // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21 - /22/, /10/, and /21/
                     if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 != -1)
@@ -587,7 +582,7 @@
                 if (cValue.Length < 13)
                 {
                     cValue = cValue.PadLeft(13, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetKey("414", gs1Identifier), gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("414", gs1Identifier), gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -657,7 +652,7 @@
                 if (cValue.Length < 18)
                 {
                     cValue = cValue.PadLeft(18, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetKey("8018", gs1Identifier), gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("8018", gs1Identifier), gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -690,7 +685,7 @@
                 if (cValue.Length < 13)
                 {
                     cValue = cValue.PadLeft(13, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetKey("255", gs1Identifier), gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("255", gs1Identifier), gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -715,7 +710,7 @@
                 if (cValue.Length < 18)
                 {
                     cValue = cValue.PadLeft(18, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetKey("00", gs1Identifier), gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("00", gs1Identifier), gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -774,7 +769,7 @@
                 if (cValue.Length < 17)
                 {
                     cValue = cValue.PadLeft(17, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetKey("402", gs1Identifier), gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("402", gs1Identifier), gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -813,7 +808,7 @@
                 if (cValue.Length < 13)
                 {
                     cValue = cValue.PadLeft(13, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetKey("8003", gs1Identifier), gs1Identifier), cValue);
+                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("8003", gs1Identifier), gs1Identifier), cValue);
                     gs1Identifier = editor.Text;
                 }
 
@@ -1011,7 +1006,7 @@
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1Key_Text} {cKey}\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {cKey}\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
                 _ = editor.Focus();
                 return false;
             }
@@ -1248,7 +1243,7 @@
                 }
             }
 
-            // 1DIGIT "/" 1DIGIT
+            // 1 DIGIT "/" 1 DIGIT
             else if (dataAttribute is "7258")
             {
                 if (value.Length != 3 || !ValueIsDigit(value[..1]) || value[1] != '/' || !ValueIsDigit(value[2..]))
@@ -1502,54 +1497,54 @@
         }
 
         /// <summary>
-        /// Check if the provided key is a known GS1 key by searching in the predefined list of known keys
+        /// Check if the provided key is a known GS1 Application Identifier (AI) by searching in the predefined list of known AIs
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="cAppId"></param>
         /// <returns></returns>
-        private static bool IsKnownGs1Key(string key)
+        private static bool IsKnownGs1AppID(string cAppId)
         {
-            return Array.IndexOf(_knownGs1KeysData, key) >= 0;
+            return Array.IndexOf(_knownGs1AppIDs, cAppId) >= 0;
         }
 
         /// <summary>
-        /// Get the Key or data attribute of the GS1 identifier
+        /// Get the application identifier (AI) of the GS1 identifier
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="cAppId"></param>
         /// <param name="cGs1Identifier"></param>
         /// <returns></returns>
-        private static string GetKey(string key, string cGs1Identifier)
+        private static string GetAppID(string cAppId, string cGs1Identifier)
         {
-            if (cGs1Identifier.Contains($"/{key}/"))
+            if (cGs1Identifier.Contains($"/{cAppId}/"))
             {
-                return $"/{key}/";
+                return $"/{cAppId}/";
             }
-            else if (cGs1Identifier.Contains($"?{key}="))
+            else if (cGs1Identifier.Contains($"?{cAppId}="))
             {
-                return $"?{key}=";
+                return $"?{cAppId}=";
             }
-            else if (cGs1Identifier.Contains($"&{key}="))
+            else if (cGs1Identifier.Contains($"&{cAppId}="))
             {
-                return $"&{key}=";
+                return $"&{cAppId}=";
             }
 
             return string.Empty;
         }
 
         /// <summary>
-        /// Get the value of the Gs1 identifier following a certain key or data attribute. The value is extracted from the
-        /// GS1 identifier string based on the position of the key and the next delimiter (forward slash, question mark, or ampersand) or the end of the string.
+        /// Get the value of the Gs1 identifier following a certain application identifier (AI). The value is extracted from the
+        /// GS1 identifier string based on the position of the AI and the next delimiter (forward slash, question mark, or ampersand) or the end of the string.
         /// </summary>
-        /// <param name="cKey"></param>
+        /// <param name="cAppId"></param>
         /// <param name="cGs1Identifier"></param>
         /// <returns></returns>
-        private static string GetValue(string cKey, string cGs1Identifier)
+        private static string GetValue(string cAppId, string cGs1Identifier)
         {
-            int index = cGs1Identifier.IndexOf(cKey);
+            int index = cGs1Identifier.IndexOf(cAppId);
 
             if (index >= 0)
             {
                 // Find the start position of the value after the key
-                int nStartPosition = index + cKey.Length;
+                int nStartPosition = index + cAppId.Length;
 
                 // Find the end position of the value, which is either the next forward slash or question mark or ampersand or the end of the string
                 int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?', '&'], nStartPosition);
@@ -1570,14 +1565,14 @@
         }
 
         /// <summary>
-        /// Finds the start index of a key segment within a GS1 identifier string
+        /// Finds the start index of a GS1 Application Identifier (AI) segment within a GS1 identifier string
         /// </summary>
-        /// <param name="cKey"></param>
+        /// <param name="cAppId"></param>
         /// <param name="cGs1Identifier"></param>
         /// <returns></returns>
-        private static int GetKeyStartPosition(string cKey, string cGs1Identifier)
+        private static int GetAppIDStartPosition(string cAppId, string cGs1Identifier)
         {
-            int index = cGs1Identifier.IndexOf(cKey);
+            int index = cGs1Identifier.IndexOf(cAppId);
             if (index >= 0)
             {
                 // Find the start position of the key

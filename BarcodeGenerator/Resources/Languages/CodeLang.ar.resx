@@ -1127,4 +1127,7 @@
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>الوقت غير صالح.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>مُعرِّف التطبيق (AI) الخاص بـ GS1</value>
+  </data>
 </root>

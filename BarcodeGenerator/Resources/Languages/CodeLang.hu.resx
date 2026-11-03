@@ -1126,4 +1126,7 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Az idő nem érvényes.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1 alkalmazásazonosító (AI)</value>
+  </data>
 </root>

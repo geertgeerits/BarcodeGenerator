@@ -1126,4 +1126,7 @@ Microsoft、Microsoft Store、Microsoft Store 徽标和 Windows 是 Microsoft Co
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>时间无效。</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1 应用标识符 (AI)</value>
+  </data>
 </root>

@@ -1140,4 +1140,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>時刻が正しくありません。</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1アプリケーション識別子（AI）</value>
+  </data>
 </root>

@@ -1124,4 +1124,7 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>সময়টি বৈধ নয়।</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1 অ্যাপ্লিকেশন আইডেন্টিফায়ার (AI)</value>
+  </data>
 </root>

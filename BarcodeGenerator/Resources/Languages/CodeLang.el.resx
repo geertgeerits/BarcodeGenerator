@@ -1126,4 +1126,7 @@
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Η ώρα δεν είναι έγκυρη.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>Αναγνωριστικό Εφαρμογής (AI) GS1</value>
+  </data>
 </root>

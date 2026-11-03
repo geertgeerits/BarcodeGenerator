@@ -1129,4 +1129,7 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Thời gian không hợp lệ.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>Mã định danh ứng dụng GS1 (AI)</value>
+  </data>
 </root>

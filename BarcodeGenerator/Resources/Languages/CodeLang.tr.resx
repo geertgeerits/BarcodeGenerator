@@ -1126,4 +1126,7 @@ Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölg
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Zaman geçerli değil.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1 Uygulama Tanımlayıcı (AI)</value>
+  </data>
 </root>

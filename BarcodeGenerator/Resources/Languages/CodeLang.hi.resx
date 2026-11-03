@@ -1123,4 +1123,7 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>समय मान्य नहीं है।</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1 एप्लिकेशन आइडेंटिफायर (AI)</value>
+  </data>
 </root>

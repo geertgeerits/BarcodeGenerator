@@ -1127,4 +1127,7 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>시간이 유효하지 않습니다.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1 애플리케이션 식별자(AI)</value>
+  </data>
 </root>

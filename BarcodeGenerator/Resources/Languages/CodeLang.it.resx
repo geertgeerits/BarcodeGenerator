@@ -1126,4 +1126,7 @@ Per modificare le dimensioni del codice QR all'interno del cerchio, regola la zo
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>L'orario non è valido.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>Identificatore di applicazione (AI) GS1</value>
+  </data>
 </root>

@@ -1126,4 +1126,7 @@ Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tic
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Čas není platný.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>Aplikační identifikátor GS1 (AI)</value>
+  </data>
 </root>

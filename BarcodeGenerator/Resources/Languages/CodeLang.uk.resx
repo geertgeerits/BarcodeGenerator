@@ -1124,4 +1124,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Час недійсний.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>Ідентифікатор застосування GS1 (AI)</value>
+  </data>
 </root>

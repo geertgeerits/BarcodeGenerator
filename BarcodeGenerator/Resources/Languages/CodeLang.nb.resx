@@ -1126,4 +1126,7 @@ For å endre størrelsen på QR-koden inne i sirkelen, justerer du «quiet zone�
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Tiden er ikke gyldig.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1-applikasjonsidentifikator (AI)</value>
+  </data>
 </root>

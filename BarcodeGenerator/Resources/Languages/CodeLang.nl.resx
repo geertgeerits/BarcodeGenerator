@@ -1126,4 +1126,7 @@ Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de Q
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>De tijd is niet geldig.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1-toepassings-id (AI)</value>
+  </data>
 </root>

@@ -1126,4 +1126,7 @@ Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet 
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Waktu tidak valid.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>Pengidentifikasi Aplikasi (AI) GS1</value>
+  </data>
 </root>

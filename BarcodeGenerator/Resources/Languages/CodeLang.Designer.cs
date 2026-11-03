@@ -1439,6 +1439,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GS1 Application Identifier (AI).
+        /// </summary>
+        internal static string GS1ApplicationIdentifier_Text {
+            get {
+                return ResourceManager.GetString("GS1ApplicationIdentifier_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GS1 key.
         /// </summary>
         internal static string GS1Key_Text {

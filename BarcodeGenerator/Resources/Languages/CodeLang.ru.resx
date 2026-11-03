@@ -1126,4 +1126,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Время указано неверно.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>Идентификатор применения (AI) GS1</value>
+  </data>
 </root>

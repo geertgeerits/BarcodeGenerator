@@ -1126,4 +1126,7 @@ För att ändra storleken på QR-koden inuti cirkeln justerar du tyst zon i inst
   <data name="ErrorGS1TimeInvalid_Text" xml:space="preserve">
     <value>Tiden är ogiltig.</value>
   </data>
+  <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
+    <value>GS1-applikationsidentifierare (AI)</value>
+  </data>
 </root>
