@@ -3,284 +3,37 @@
     internal partial class ClassPayloadGS1Validation
     {
         // Add once in the class - central place for all supported GS1 Application Identifiers (AI) (keys and data attributes)
-        private static readonly string[] _knownGs1AppIDs =
-        [
-            // Primary identification key formats (x 16) - index in array = 0 to 15
-            "01",     // gtin-code
-            "8006",   // itip-code
-            "8013",   // gmn-code
-            "8010",   // cpid-code
-            "414",    // gln-code
-            "415",    // payTo-code
-            "417",    // partyGln-code
-            "8017",   // gsrnp-code
-            "8018",   // gsrn-code
-            "255",    // gcn-code
-            "00",     // sscc-code
-            "253",    // gdti-code
-            "401",    // ginc-code
-            "402",    // gsin-code
-            "8003",   // grai-code
-            "8004",   // giai-code
-            
-            // Key qualifier formats ( x 9) - index in array = 16 to 24
-            "22",     // cpv-code
-            "10",     // lot-code
-            "21",     // ser-code
-            "8011",   // cpsn-code
-            "254",    // glnx-code
-            "8020",   // refno-code
-            "8019",   // srin-code
-            "235",    // tpx-code
-            "7040",    // uic-ext-code
+        public static readonly Dictionary<string, string> _knownGs1AppIDs = [];
 
-            // Data attributes - index in array = 25 to 537
+        /// <summary>
+        /// Copy the GS1 Application Identifiers and their values from a text file to a dictionary for validation
+        /// </summary>
+        public static async Task LoadKnownGs1AppIDs()
+        {
+            // Load the GS1 Application Identifiers and their values from a text file into the dictionary
+            await using var stream = await FileSystem.OpenAppPackageFileAsync("GS1ApplicationIdentifiers.txt");
+            using var reader = new StreamReader(stream);
 
-            // netWeightVMTICode - netWeightVMTIValue = 6DIGIT - netWeightVMTIParameter = netWeightVMTICode "=" netWeightVMTIValue 
-            "3100","3101","3102","3103","3104","3105",
-            "3200","3201","3202","3203","3204","3205",
-            "3560","3561","3562","3563","3564","3565",
-            "3570","3571","3572","3573","3574","3575",
+            string? line;
+            while ((line = await reader.ReadLineAsync()) is not null)
+            {
+                if (string.IsNullOrWhiteSpace(line))
+                {
+                    continue;
+                }
 
-            // lengthVMTICode - lengthVMTIValue = 6DIGIT - lengthVMTIParameter = lengthVMTICode "=" lengthVMTIValue
-            "3110","3111","3112","3113","3114","3115",
-            "3210","3211","3212","3213","3214","3215",
-            "3220","3221","3222","3223","3224","3225",
-            "3230","3231","3232","3233","3234","3235",
+                string[] parts = line.Split(';', 2, StringSplitOptions.TrimEntries);
+                if (parts.Length != 2 || string.IsNullOrWhiteSpace(parts[0]))
+                {
+                    continue;
+                }
 
-            // widthVMTICode - widthVMTIValue = 6DIGIT - widthVMTIParameter = widthVMTICode "=" widthVMTIValue
-            "3120","3121","3122","3123","3124","3125",
-            "3240","3241","3242","3243","3244","3245",
-            "3250","3251","3252","3253","3254","3255",
-            "3260","3261","3262","3263","3264","3265",
-
-            // depthVMTICode - depthVMTIValue = 6DIGIT - depthVMTIParameter = depthVMTICode "=" depthVMTIValue
-            "3130","3131","3132","3133","3134","3135",
-            "3270","3271","3272","3273","3274","3275",
-            "3280","3281","3282","3283","3284","3285",
-            "3290","3291","3292","3293","3294","3295",
-
-            // areaVMTICode - areaVMTIValue = 6DIGIT - areaVMTIParameter = areaVMTICode "=" areaVMTIValue
-            "3140","3141","3142","3143","3144","3145",
-            "3500","3501","3502","3503","3504","3505",
-            "3510","3511","3512","3513","3514","3515",
-            "3520","3521","3522","3523","3524","3525",
-
-            // netVolumeVMTICode - netVolumeVMTIValue = 6DIGIT - netVolumeVMTIParameter = netVolumeVMTICode "=" netVolumeVMTIValue
-            "3150","3151","3152","3153","3154","3155",
-            "3160","3161","3162","3163","3164","3165",
-            "3600","3601","3602","3603","3604","3605",
-            "3610","3611","3612","3613","3614","3615",
-            "3640","3641","3642","3643","3644","3645",
-            "3650","3651","3652","3653","3654","3655",
-            "3660","3661","3662","3663","3664","3665",
-
-            // massPerUnitAreaVMTICode - massPerUnitAreaVMTIValue = 6DIGIT - massPerUnitAreaVMTIParameter = massPerUnitAreaVMTICode "=" massPerUnitAreaVMTIValue
-            "3370","3371","3372","3373","3374","3375",
-
-            // grossWeightCode - grossWeightValue = 6DIGIT - grossWeightParameter = grossWeightCode "=" grossWeightValue
-            "3300","3301","3302","3303","3304","3305",
-            "3400","3401","3402","3403","3404","3405",
-
-            // logisticLengthCode - logisticLengthValue = 6DIGIT - logisticLengthParameter = logisticLengthCode "=" logisticLengthValue
-            "3310","3311","3312","3313","3314","3315",
-            "3410","3411","3412","3413","3414","3415",
-            "3420","3421","3422","3423","3424","3425",
-            "3430","3431","3432","3433","3434","3435",
-
-            // logisticWidthCode - logisticWidthValue = 6DIGIT - logisticWidthParameter = logisticWidthCode "=" logisticWidthValue
-            "3320","3321","3322","3323","3324","3325",
-            "3440","3441","3442","3443","3444","3445",
-            "3450","3451","3452","3453","3454","3455",
-            "3460","3461","3462","3463","3464","3465",
-
-            // logisticDepthCode - logisticDepthValue = 6DIGIT - logisticDepthParameter = logisticDepthCode "=" logisticDepthValue
-            "3330","3331","3332","3333","3334","3335",
-            "3470","3471","3472","3473","3474","3475",
-            "3480","3481","3482","3483","3484","3485",
-            "3490","3491","3492","3493","3494","3495",
-
-            // logisticAreaCode - logisticAreaValue = 6DIGIT - logisticAreaParameter = logisticAreaCode "=" logisticAreaValue
-            "3340","3341","3342","3343","3344","3345",
-            "3530","3531","3532","3533","3534","3535",
-            "3540","3541","3542","3543","3544","3545",
-            "3550","3551","3552","3553","3554","3555",
-
-            // logisticVolumeCode - logisticVolumeValue = 6DIGIT - logisticVolumeParameter = logisticVolumeCode "=" logisticVolumeValue
-            "3350","3351","3352","3353","3354","3355",
-            "3360","3361","3362","3363","3364","3365",
-            "3620","3621","3622","3623","3624","3625",
-            "3630","3631","3632","3633","3634","3635",
-            "3670","3671","3672","3673","3674","3675",
-            "3680","3681","3682","3683","3684","3685",
-            "3690","3691","3692","3693","3694","3695",
-
-            // processorCode - processorValue = 3DIGIT 1*27XCHAR - processorParameter = processorCode "=" processorValue
-            "7030","7031","7032","7033","7034","7035","7036","7037","7038","7039",
-
-            "02",       // contentParameter         = "02=" 14DIGIT
-            "11",       // prodDateParameter        = "11=" 6DIGIT
-            "12",       // dueDateParameter         = "12=" 6DIGIT
-            "13",       // packDateParameter        = "13=" 6DIGIT
-            "15",       // bestBeforeDateParameter  = "15=" 6DIGIT
-            "16",       // sellByDateParameter      = "16=" 6DIGIT
-            "7006",     // firstFreezeDateParameter = "7006=" 6DIGIT
-            "7007",     // harvestDateParameter     = "7007=" 6DIGIT [6DIGIT]
-            "7011",     // testByDateParameter      = "7011=" 6DIGIT [4DIGIT]
-            "8005",     // pricePerUnitParameter    = "8005=" 6DIGIT
-            "20",       // variantParameter         = "20=" 2DIGIT
-            "30",       // varCountParameter        = "30=" 1*8DIGIT
-            "37",       // countParameter           = "37=" 1*8DIGIT
-            "90",       // mutualParameter          = "90=" 1*30XCHAR
-            "240",      // additionalIdParameter    = "240=" 1*30XCHAR
-            "241",      // custPartNoParameter      = "241=" 1*30XCHAR
-            "242",      // mtoVariantParameter      = "242=" 1*6DIGIT
-            "243",      // pcnParameter             = "243=" 1*20XCHAR
-            "250",      // secondarySerialParameter = "250=" 1*30XCHAR
-            "251",      // refToSourceParameter     = "251=" 1*30XCHAR
-
-            // amountCode - amountValue = 1*15DIGIT - amountParameter = amountCode "=" amountValue
-            "3900","3901","3902","3903","3904","3905","3906","3907","3908","3909",
-
-            // amountISOCode - 3DIGIT 1*15DIGIT - amountISOParameter = amountISOCode "=" amountISOValue
-            "3910","3911","3912","3913","3914","3915","3916","3917","3918","3919",
-
-            // priceCode - priceValue = 1*15DIGIT - priceParameter = priceCode "=" priceValue
-            "3920","3921","3922","3923","3924","3925","3926","3927","3928","3929",
-
-            // priceISOCode - 3DIGIT 1*15DIGIT - priceISOParameter = priceISOCode "=" priceISOValue
-            "3930","3931","3932","3933","3934","3935","3936","3937","3938","3939",
-
-            // percentOffCode - percentOffValue = 4DIGIT - percentOffParameter = percentOffCode "=" percentOffValue
-            "3940","3941","3942","3943",
-
-            "400",      // orderNumberParameter             = "400=" 1*30XCHAR
-            "403",      // routeParameter                   = "403=" 1*30XCHAR
-            "410",      // shipToLocParameter               = "410=" 13DIGIT
-            "411",      // billToParameter                  = "411=" 13DIGIT
-            "412",      // purchaseFromParameter            = "412=" 13DIGIT
-            "413",      // shipForLocParameter              = "413=" 13DIGIT
-            "416",      // prodServLocParameter             = "416=" 13DIGIT
-            "420",      // shipToPostParameter              = "420=" 1*20XCHAR
-            "421",      // shipToPostISOParameter           = "421=" 3DIGIT 1*9XCHAR
-            "422",      // originParameter                  = "422=" 3DIGIT
-            "424",      // countryProcessParameter          = "424=" 3DIGIT
-            "426",      // countryFullProcessParameter      = "426=" 3DIGIT
-            "423",      // countryInitialProcessParameter   = "423=" 3DIGIT 1*12DIGIT
-            "425",      // countryDisassemblyParameter      = "425=" 3DIGIT 1*12DIGIT
-            "427",      // originSubdivisionParameter       = "427=" 1*3XCHAR
-            "710",      // nhrnPZNParameter                 = "710=" 1*20XCHAR
-            "711",      // nhrnCIPParameter                 = "711=" 1*20XCHAR
-            "712",      // nhrnCNParameter                  = "712=" 1*20XCHAR
-            "713",      // nhrnDRNParameter                 = "713=" 1*20XCHAR
-            "714",      // nhrnAIMParameter                 = "714=" 1*20XCHAR
-            "715",      // nhrnUS-FDAParameter              = "715=" 1*20XCHAR
-            "716",      // nhrnAICParameter                 = "716=" 1*20XCHAR
-            "717",      // nhrnSRNParameter                 = "717=" 1*20XCHAR
-            "7001",     // nsnParameter                     = "7001=" 13DIGIT
-            "7002",     // meatCutParameter                 = "7002=" 1*30XCHAR
-            "7004",     // activePotencyParameter           = "7004=" 1*4DIGIT
-            "7005",     // catchAreaParameter               = "7005=" 1*12XCHAR
-            "7008",     // aquaticSpeciesParameter          = "7008=" 1*3XCHAR
-            "7009",     // fishingGearTypeParameter         = "7009=" 1*10XCHAR
-            "7010",     // prodMethodParameter              = "7010=" 1*2XCHAR
-            "7020",     // refurbLotParameter               = "7020=" 1*20XCHAR
-            "7021",     // funcStatParameter                = "7021=" 1*20XCHAR
-            "7022",     // revStatParameter                 = "7022=" 1*20XCHAR
-            "7023",     // giaiAssemblyParameter            = "7023=" 1*30XCHAR
-            "7041",     // ufrgtUnitTypeParameter           = "7041=" 1*4XCHAR
-
-            // certificationRefCode - certificationRefValue = 2XCHAR 1*28XCHAR - certificationRefParameter = certificationRefCode "=" certificationRefValue
-            "7230","7231","7232","7233","7234","7235","7236","7237","7238","7239",
-
-            "7240",     // protocolParameter            = "7240=" 1*20XCHAR
-            "7241",     // aidcMediaTypeParameter       = "7241=" 2DIGIT
-            "7242",     // vcnParameter                 = "7242=" 1*25XCHAR
-            "7250",     // dobParameter                 = "7250=" 8DIGIT
-            "7251",     // dobTimeParameter             = "7251=" 12DIGIT
-            "7252",     // bioSexParameter              = "7252=" 1DIGIT
-            "7253",     // familyNameParameter          = "7253=" 1*40XCHAR
-            "7254",     // givenNameParameter           = "7254=" 1*40XCHAR
-            "7255",     // suffixParameter              = "7255=" 1*10XCHAR
-            "7256",     // fullNameParameter            = "7256=" 1*90XCHAR
-            "7257",     // personAddrParameter          = "7257=" 1*70XCHAR
-            "7258",     // birthSequenceParameter       = "7258=" 1DIGIT "/" 1DIGIT
-            "7259",     // babyParameter                = "7259=" 1*40XCHAR
-            "8001",     // dimensionsParameter          = "8001=" 14DIGIT
-            "8002",     // cmtNoParameter               = "8002=" 1*20XCHAR
-            "8007",     // ibanParameter                = "8007=" 1*34XCHAR
-            "8008",     // prodTimeParameter            = "8008=" 8DIGIT [2DIGIT] [2DIGIT]
-            "8009",     // opticalSensorParameter       = "8009=" 1*50XCHAR
-            "8012",     // versionParameter             = "8012=" 1*20XCHAR
-            "8026",     // itipContentParameter         = "8026=" 14DIGIT 2DIGIT 2DIGIT
-            "8030",     // digSigParameter              = "8030=" 1*90ZCHAR
-            "8040",     // imeiParameter                = "8040=" 15DIGIT
-            "8041",     // imei2Parameter               = "8041=" 15DIGIT
-            "8042",     // eSimParameter                = "8042=" 32DIGIT
-            "8043",     // pSimParameter                = "8043=" 18DIGIT [1*2DIGIT]
-            "8110",     // couponIDNAParameter          = "8110=" 1*70XCHAR
-            "8111",     // pointsParameter              = "8111=" 4DIGIT
-            "8112",     // paperlessCouponIDNAParameter = "8112=" 1*70XCHAR
-            "4300",     // shipToCompParameter          = "4300=" 1*35XCHAR
-            "4301",     // shipToNameParameter          = "4301=" 1*35XCHAR
-            "4302",     // shipToAdd1Parameter          = "4302=" 1*70XCHAR
-            "4303",     // shipToAdd2Parameter          = "4303=" 1*70XCHAR
-            "4304",     // shipToSubParameter           = "4304=" 1*70XCHAR
-            "4305",     // shipToLocalityParameter      = "4305=" 1*70XCHAR
-            "4306",     // shipToRegParameter           = "4306=" 1*70XCHAR
-            "4307",     // shipToCountryParameter       = "4307=" 2XCHAR
-            "4308",     // shipToPhoneParameter         = "4308=" 1*30XCHAR
-            "4309",     // shipToGeoParameter           = "4309=" 20DIGIT
-            "4310",     // rtnToCompParameter           = "4310=" 1*35XCHAR
-            "4311",     // rtnToNameParameter           = "4311=" 1*35XCHAR
-            "4312",     // rtnToAdd1Parameter           = "4312=" 1*70XCHAR
-            "4313",     // rtnToAdd2Parameter           = "4313=" 1*70XCHAR
-            "4314",     // rtnToSubParameter            = "4314=" 1*70XCHAR
-            "4315",     // rtnToLocParameter            = "4315=" 1*70XCHAR
-            "4316",     // rtnToRegParameter            = "4316=" 1*70XCHAR
-            "4317",     // rtnToCountryParameter        = "4317=" 2XCHAR
-            "4318",     // rtnToPostParameter           = "4318=" 1*20XCHAR
-            "4319",     // rtnToPhoneParameter          = "4319=" 1*30XCHAR
-            "4320",     // srvDescriptionParameter      = "4320=" 1*35XCHAR
-            "4321",     // dangerousGoodsParameter      = "4321=" BOOLEAN
-            "4322",     // authToLeaveParameter         = "4322=" BOOLEAN
-            "4323",     // sigRequiredParameter         = "4323=" BOOLEAN
-            "4324",     // notBeforeDelDateParameter    = "4324=" 10DIGIT
-            "4325",     // notAfterDelDateParameter     = "4325=" 10DIGIT
-            "4326",     // releaseDateParameter         = "4326=" 6DIGIT
-            "4330",     // maxTempFParameter            = "4330=" 6DIGIT ["-"]
-            "4331",     // maxTempCParameter            = "4331=" 6DIGIT ["-"]
-            "4332",     // minTempFParameter            = "4332=" 6DIGIT ["-"]
-            "4333",     // minTempCParameter            = "4333=" 6DIGIT ["-"]
-
-            // amountPayPerUnitCode - amountPayPerUnitValue = 6DIGIT - amountPayPerUnitParameter = amountPayPerUnitCode "=" amountPayPerUnitValue
-            "3950","3951","3952","3953","3954","3955",
-
-            // gtinParameter        = gtin-code "=" gtin-value
-            // itipParameter        = itip-code "=" itip-value
-            // gmnParameter         = gmn-code "=" gmn-value
-            // cpidParameter        = cpid-code "=" cpid-value
-            // glnParameter         = gln-code "=" gln-value
-            // payToParameter       = payTo-code "=" payTo-value
-            // partyGlnParameter    = partyGln-code "=" partyGln-value
-            // gsrnpParameter       = gsrnp-code "=" gsrnp-value
-            // gsrnParameter        = gsrn-code "=" gsrn-value
-            // gcnParameter         = gcn-code "=" gcn-value
-            // ssccParameter        = sscc-code "=" sscc-value
-            // gdtiParameter        = gdti-code "=" gdti-value
-            // gincParameter        = ginc-code "=" ginc-value
-            // gsinParameter        = gsin-code "=" gsin-value
-            // graiParameter        = grai-code "=" "0" grai-value
-            // giaiParameter        = giai-code "=" giai-value
-            
-            // internalCode - internalValue = 1*90XCHAR - internalParameter = internalCode "=" internalValue
-            "91","92","93","94","95","96","97","98","99",
-            
-            // lotParameter         = lot-code "=" lot-value
-
-            "17",       // expiryDateParameter  = "17=" 6DIGIT
-            "7003",     // expiryTimeParameter  = "7003=" 10DIGIT
-        ];
+                if (_knownGs1AppIDs.TryAdd(parts[0], parts[1]))
+                {
+                    Debug.WriteLine($"Added GS1 Application Identifier: {parts[0]} = {parts[1]}");
+                }
+            }
+        }
 
         // 39-character subset of ISO/IEC 646 (for GS1 identifiers) - YCHAR = DIGIT / UPPERALPHA / YSYMBOL 
         private static readonly string _YCHAR_39CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-#/";
@@ -291,12 +44,11 @@
         // 82-character subset of ISO/IEC 646 (for GS1 identifiers) - XCHAR = DIGIT / UPPERALPHA / LOWERALPHA / XSYMBOL
         private static readonly string _XCHAR_82CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"-._!%&+,/*[]';:<>=?";
 
-        // Dictionary to hold GS1 keys and their corresponding values
+        // Dictionary to hold GS1 Application Identifiers (AI) and their corresponding values
         private static readonly Dictionary<string, string> gs1 = [];
 
         // Error message for GS1 identifier validation
         private static string cErrorMessage = string.Empty;
-
 
         /// <summary>
         /// Splits the GS1 identifier into key-value pairs and adds them to the dictionary
@@ -357,11 +109,11 @@
 
             SplitKeyValuePairs(editor.Text);
 
-            Debug.WriteLine($"Length array _knownGs1AppIDs: {_knownGs1AppIDs.Length}");
+            Debug.WriteLine($"Length dictionary _knownGs1AppIDs: {_knownGs1AppIDs.Count}");
 
             foreach (var kvp in gs1)
             {
-                Debug.WriteLine($"Key: {kvp.Key}, Value: {kvp.Value}, Value length: {kvp.Value.Length}");
+                Debug.WriteLine($"AI: {kvp.Key}, Value: {kvp.Value}, Value length: {kvp.Value.Length}");
                 bIsValid &= await IsValidGS1IdentifierPart2(editor, kvp.Key, kvp.Value);
             }
 
@@ -1503,7 +1255,7 @@
         /// <returns></returns>
         private static bool IsKnownGs1AppID(string cAppId)
         {
-            return Array.IndexOf(_knownGs1AppIDs, cAppId) >= 0;
+            return _knownGs1AppIDs.ContainsKey(cAppId);
         }
 
         /// <summary>

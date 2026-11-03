@@ -27,5 +27,14 @@
                 MaximumWidth = 900
             };
         }
+
+        /// <summary>
+        /// Copy the GS1 Application Identifiers and value to a dictionary for validation
+        /// </summary>
+        protected override async void OnStart()
+        {
+            base.OnStart();
+            await ClassPayloadGS1Validation.LoadKnownGs1AppIDs();
+        }
     }
 }
