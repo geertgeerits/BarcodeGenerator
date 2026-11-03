@@ -758,7 +758,7 @@
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {cKey}\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {GetKnownGs1AppIDValue(cKey)} {(cKey)}\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
                 _ = editor.Focus();
                 return false;
             }
@@ -1165,9 +1165,9 @@
                 }
             }
 
-            // Dates
+            // Dates / times
 
-            // 6 DIGIT (= date)
+            // 6 DIGIT (date YYMMDD)
             else if (dataAttribute is "11" or "12" or "13" or "15" or "16" or "17" or "4326" or "7006")
             {
                 if (value.Length != 6 || !ValueIsDigit(value) || !IsDateYYMMDD(value))
@@ -1176,46 +1176,51 @@
                 }
             }
 
-            // 6 DIGIT [4 DIGIT] (= date)
+            // 6 DIGIT [4 DIGIT] (date/time YYMMDD[hhmm])
             else if (dataAttribute is "7011")
             {
                 if (value.Length != 6 || value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
                 {
                     return false;
                 }
+                else if (value.Length == 10 && !IsTimeHHMM(value.Substring(6, 4)))
+                {
+                    return false;
+                }
             }
 
-            // 6 DIGIT [6 DIGIT] (= date)
+            // 6 DIGIT [6 DIGIT] (date YYMMDD[YYMMDD])
             else if (dataAttribute is "7007")
             {
                 if (value.Length != 6 || value.Length != 12 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
                 {
                     return false;
                 }
-            }
-
-            // 10 DIGIT (= date/time)
-            else if (dataAttribute is "4324" or "4325")
-            {
-                if (value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
+                else if (value.Length == 12 && !IsDateYYMMDD(value.Substring(6, 6)))
                 {
                     return false;
                 }
             }
 
-            // Times
-
-            // 8 DIGIT [2 DIGIT] [2 DIGIT] (= time)
+            // 8 DIGIT [2 DIGIT] [2 DIGIT] (date/time YYMMDDhh[mm][ss])
             else if (dataAttribute is "8008")
             {
-                if (value.Length != 8 || value.Length != 10 || value.Length != 12 || !ValueIsDigit(value))
+                if (value.Length != 8 || value.Length != 10 || value.Length != 12 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
+                {
+                    return false;
+                }
+                else if (value.Length == 10 && !IsTimeHHMM(value.Substring(6, 4)))
+                {
+                    return false;
+                }
+                else if (value.Length == 12 && !IsTimeHHMMSS(value.Substring(6, 6)))
                 {
                     return false;
                 }
             }
 
-            // 10 DIGIT (= date/time)
-            else if (dataAttribute is "7003")
+            // 10 DIGIT (date/time YYMMDDhhmm)
+            else if (dataAttribute is "4324" or "4325" or "7003")
             {
                 if (value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]) || !IsTimeHHMM(value.Substring(6, 4)))
                 {
@@ -1223,10 +1228,10 @@
                 }
             }
 
-            // 12 DIGIT (= time)
+            // 12 DIGIT (date YYMMDDYYMMDD)
             else if (dataAttribute is "7251")
             {
-                if (value.Length != 12 || !ValueIsDigit(value))
+                if (value.Length != 12 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]) || !IsDateYYMMDD(value.Substring(6, 6)))
                 {
                     return false;
                 }
@@ -1256,6 +1261,17 @@
         private static bool IsKnownGs1AppID(string cAppId)
         {
             return _knownGs1AppIDs.ContainsKey(cAppId);
+        }
+
+        /// <summary>
+        /// Get the value of the provided application identifier (AI) and return the value from the predefined list of known
+        /// GS1 Application Identifiers (AIs). If the AI is not found, return an empty string.
+        /// </summary>
+        /// <param name="cAppId"></param>
+        /// <returns></returns>
+        private static string GetKnownGs1AppIDValue(string cAppId)
+        {
+            return _knownGs1AppIDs.TryGetValue(cAppId, out string? value) ? value : string.Empty;
         }
 
         /// <summary>
@@ -1402,6 +1418,35 @@
             bool bIsValid = DateTime.TryParseExact(
                 input,
                 "HHmm",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out _ // discard parsed DateTime
+            );
+
+            if (!bIsValid)
+            {
+                cErrorMessage = CodeLang.ErrorGS1TimeInvalid_Text;
+            }
+
+            return bIsValid;
+        }
+
+        /// <summary>
+        /// Validate if a string is a time in HHMMSS format
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        static bool IsTimeHHMMSS(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return false;
+            }
+
+            // Try parsing with exact format "HHmmss"
+            bool bIsValid = DateTime.TryParseExact(
+                input,
+                "HHmmss",
                 CultureInfo.InvariantCulture,
                 DateTimeStyles.None,
                 out _ // discard parsed DateTime
