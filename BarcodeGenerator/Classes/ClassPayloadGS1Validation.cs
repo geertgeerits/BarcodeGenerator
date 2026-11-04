@@ -758,7 +758,7 @@
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {GetKnownGs1AppIDValue(cKey)} {(cKey)}\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {cKey} {GetKnownGs1AppIDValue(cKey)} \n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
                 _ = editor.Focus();
                 return false;
             }

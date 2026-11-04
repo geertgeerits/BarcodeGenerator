@@ -1,29 +1,29 @@
-﻿01;GTIN
-8006;ITIP
-8013;Global Model Number
-8010;CPID
-414;Physical Location GLN
-415;GLN of invoicing party
-417;Party GLN
-8017;GSRN of the Provider
-8018;GSRN of the Recipient
-255;GCN
-00;SSCC
-253;GDTI
-401;GINC
-402;GSIN
-8003;GRAI
-8004;GIAI
+﻿01;gtin
+8006;itip
+8013;gmn (Global Model Number)
+8010;cpid
+414;gln (Physical Location GLN)
+415;payTo (GLN of invoicing party)
+417;PartyGln
+8017;gsrnp (GSRN of the Provider)
+8018;gsrn (GSRN of the Recipient)
+255;gcn
+00;sscc
+253;gdti
+401;ginc
+402;gsin
+8003;grai
+8004;giai
 
-22;Consumer Product Variant
-10;Batch/Lot identifier
-21;GTIN Serial Number
-8011;CPID Serial Number
-254;GLN extension
-8020;Payment Reference Number
-8019;Service Relation Instance Number
-235;third-party controlled serialised extension to GTIN
-7040;GS1 UIC with Extension 1 and Importer Index
+22;cpv (Consumer Product Variant)
+10;lot (Batch/Lot identifier)
+21;ser (GTIN Serial Number)
+8011;cpsn (CPID Serial Number)
+254;glnx (GLN extension)
+8020;refno (Payment Reference Number)
+8019;srin (Service Relation Instance Number)
+235;tpx (third-party controlled serialised extension to GTIN)
+7040;uic-ext (GS1 UIC with Extension 1 and Importer Index)
 
 3100;netWeightVMTI
 3101;netWeightVMTI
@@ -492,7 +492,6 @@
 7252;bioSex
 7253;familyName
 7254;givenName
-
 7255;suffix
 7256;fullName
 7257;personAddr
@@ -523,7 +522,6 @@
 4307;shipToCountry
 4308;shipToPhone
 4309;shipToGeo
-
 4310;rtnToComp
 4311;rtnToName
 4312;rtnToAdd1
