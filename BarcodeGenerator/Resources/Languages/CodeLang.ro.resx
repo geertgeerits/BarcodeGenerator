@@ -1099,14 +1099,8 @@ Pentru a modifica dimensiunea codului QR din interiorul cercului, ajustează zon
   <data name="PayloadType_GS1QRCODE_Text" xml:space="preserve">
     <value>Cod QR GS1</value>
   </data>
-  <data name="ErrorGS1KeyInvalid_Text" xml:space="preserve">
-    <value>Cheia GS1 nu este validă.</value>
-  </data>
   <data name="ErrorGS1CheckDigitInvalid_Text" xml:space="preserve">
     <value>Valoarea sau cifra de control nu este validă.</value>
-  </data>
-  <data name="ErrorGS1KeyOrderInvalid_Text" xml:space="preserve">
-    <value>Cheile GS1 nu sunt în ordinea corectă.</value>
   </data>
   <data name="ErrorGS1ValueLengthInvalid_Text" xml:space="preserve">
     <value>Lungimea valorii nu este validă.</value>
@@ -1128,5 +1122,11 @@ Pentru a modifica dimensiunea codului QR din interiorul cercului, ajustează zon
   </data>
   <data name="GS1ApplicationIdentifier_Text" xml:space="preserve">
     <value>Identificator de aplicație (AI) GS1</value>
+  </data>
+  <data name="ErrorGS1AppIDInvalid_Text" xml:space="preserve">
+    <value>Identificatorul de aplicație GS1 nu este valid.</value>
+  </data>
+  <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
+    <value>Identificatorii de aplicație GS1 nu sunt în ordinea corectă.</value>
   </data>
 </root>

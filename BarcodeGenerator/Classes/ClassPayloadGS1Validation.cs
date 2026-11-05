@@ -35,17 +35,25 @@
             }
         }
 
+        // Character sets
+        private static readonly string _DIGIT = "0123456789";
+        private static readonly string _UPPERALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        private static readonly string _LOWERALPHA = "abcdefghijklmnopqrstuvwxyz";
+        private static readonly string _YSYMBOL = "-#/";
+        private static readonly string _ZSYMBOL = "-_=";
+        private static readonly string _XSYMBOL = "\"-._!%&+,/*[]';:<>=?";
+
         // 39-character subset of ISO/IEC 646 (for GS1 identifiers) - YCHAR = DIGIT / UPPERALPHA / YSYMBOL 
-        private static readonly string _YCHAR_39CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-#/";
+        private static readonly string _YCHAR_39CharacterSubset = _DIGIT + _UPPERALPHA + _YSYMBOL;
 
         // 64-character subset of ISO/IEC 646 (for GS1 identifiers) - ZCHAR = DIGIT / UPPERALPHA / LOWERALPHA / ZSYMBOL
-        private static readonly string _ZCHAR_64CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_=";
+        private static readonly string _ZCHAR_64CharacterSubset = _DIGIT + _UPPERALPHA + _LOWERALPHA + _ZSYMBOL;
 
         // 82-character subset of ISO/IEC 646 (for GS1 identifiers) - XCHAR = DIGIT / UPPERALPHA / LOWERALPHA / XSYMBOL
-        private static readonly string _XCHAR_82CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"-._!%&+,/*[]';:<>=?";
+        private static readonly string _XCHAR_82CharacterSubset = _DIGIT + _UPPERALPHA + _LOWERALPHA + _XSYMBOL;
 
         // Character set for IBAN (International Bank Account Number) validation - 1 * 34 XCHAR = 1-34 characters
-        private static readonly string _IBAN_CharacterSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        private static readonly string _IBAN_CharacterSet = _DIGIT + _UPPERALPHA;
 
         // Dictionary to hold GS1 Application Identifiers (AI) and their corresponding values
         private static readonly Dictionary<string, string> gs1 = [];
@@ -55,14 +63,15 @@
 
         /// <summary>
         /// Splits the GS1 identifier into key-value pairs and adds them to the dictionary
-        /// Keys are surrounded by slashes (/) or start with a question mark (?) or start with an ampersand (&)
-        /// and values are separated by equal signs (=) for keys started with question mark or ampersand.
-        /// Example: /00/195201234567891232?02=09520123456788&37=25&10=ABC123
-        ///          /01/09520123456788?8004=9520614141234567
         /// </summary>
         /// <param name="gs1Identifier"></param>
         private static void SplitKeyValuePairs(string gs1Identifier)
         {
+            // Keys are surrounded by slashes (/) or start with a question mark (?) or start with an ampersand (&)
+            // and values are separated by equal signs (=) for keys started with question mark or ampersand.
+            // Example: /00/195201234567891232?02=09520123456788&37=25&10=ABC123
+            //          /01/09520123456788?8004=9520614141234567
+
             gs1.Clear();
 
             if (string.IsNullOrWhiteSpace(gs1Identifier))
@@ -145,8 +154,7 @@
             bIsValid &= IsKnownGs1AppID(cKey);
             if (!bIsValid)
             {
-                cErrorMessage = CodeLang.ErrorGS1KeyInvalid_Text;
-            }
+                cErrorMessage = CodeLang.ErrorGS1AppIDInvalid_Text;            }
 
             // Primary identification key formats (x 16)
 
@@ -219,7 +227,7 @@
                     // If the order of the keys is invalid, set the error message
                     if (!bIsValid)
                     {
-                        cErrorMessage = CodeLang.ErrorGS1KeyOrderInvalid_Text;
+                        cErrorMessage = CodeLang.ErrorGS1AppIDOrderInvalid_Text;
                     }
                 }
             }
@@ -290,7 +298,7 @@
                     // If the order of the keys is invalid, set the error message
                     if (!bIsValid)
                     {
-                        cErrorMessage = CodeLang.ErrorGS1KeyOrderInvalid_Text;
+                        cErrorMessage = CodeLang.ErrorGS1AppIDOrderInvalid_Text;
                     }
                 }
             }
@@ -338,7 +346,6 @@
                 {
                     cValue = cValue.PadLeft(13, '0');
                     editor.Text = gs1Identifier.Replace(GetValue(GetAppID("414", gs1Identifier), gs1Identifier), cValue);
-                    gs1Identifier = editor.Text;
                 }
 
                 // The GLN must have a valid check digit (/414/9520123456788 is valid, /414/9520123456780 is invalid)
@@ -408,7 +415,6 @@
                 {
                     cValue = cValue.PadLeft(18, '0');
                     editor.Text = gs1Identifier.Replace(GetValue(GetAppID("8018", gs1Identifier), gs1Identifier), cValue);
-                    gs1Identifier = editor.Text;
                 }
 
                 // If the GS1 identifier does not have a length of 18 characters, return false
@@ -441,7 +447,6 @@
                 {
                     cValue = cValue.PadLeft(13, '0');
                     editor.Text = gs1Identifier.Replace(GetValue(GetAppID("255", gs1Identifier), gs1Identifier), cValue);
-                    gs1Identifier = editor.Text;
                 }
 
                 // The GCN must have a valid check digit (/255/0952012345678 is valid, /255/0952012345679 is invalid)
@@ -466,7 +471,6 @@
                 {
                     cValue = cValue.PadLeft(18, '0');
                     editor.Text = gs1Identifier.Replace(GetValue(GetAppID("00", gs1Identifier), gs1Identifier), cValue);
-                    gs1Identifier = editor.Text;
                 }
 
                 // The GTIN must have a valid check digit (/00/195201234567891232 is valid, /00/195201234567891230 is invalid)
@@ -525,7 +529,6 @@
                 {
                     cValue = cValue.PadLeft(17, '0');
                     editor.Text = gs1Identifier.Replace(GetValue(GetAppID("402", gs1Identifier), gs1Identifier), cValue);
-                    gs1Identifier = editor.Text;
                 }
 
                 // If the GS1 identifier does not have a length of 17 characters, return false
@@ -564,7 +567,6 @@
                 {
                     cValue = cValue.PadLeft(13, '0');
                     editor.Text = gs1Identifier.Replace(GetValue(GetAppID("8003", gs1Identifier), gs1Identifier), cValue);
-                    gs1Identifier = editor.Text;
                 }
 
                 // The GRAI must have a valid check digit (/8003/9520123456788 is valid, /8003/9520123456789 is invalid)
@@ -868,6 +870,15 @@
                     return false;
                 }
             }
+
+            // 1 * 34 XCHAR
+            //else if (dataAttribute is "8007")
+            //{
+            //    if (value.Length is < 1 or > 34 || !ValueIsXCHAR82CharacterSubset(value))
+            //    {
+            //        return false;
+            //    }
+            //}
 
             // 1 * 34 XCHAR - IBAN (International Bank Account Number)
             else if (dataAttribute is "8007")

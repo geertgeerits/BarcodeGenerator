@@ -1097,6 +1097,24 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GS1 application identifier is not valid..
+        /// </summary>
+        internal static string ErrorGS1AppIDInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1AppIDInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GS1 application identifiers are not in the correct order..
+        /// </summary>
+        internal static string ErrorGS1AppIDOrderInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1AppIDOrderInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The value or check digit is not valid..
         /// </summary>
         internal static string ErrorGS1CheckDigitInvalid_Text {
@@ -1120,24 +1138,6 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string ErrorGS1IdentifierInvalid_Text {
             get {
                 return ResourceManager.GetString("ErrorGS1IdentifierInvalid_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to GS1 key is not valid..
-        /// </summary>
-        internal static string ErrorGS1KeyInvalid_Text {
-            get {
-                return ResourceManager.GetString("ErrorGS1KeyInvalid_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to GS1 keys are not in the correct order..
-        /// </summary>
-        internal static string ErrorGS1KeyOrderInvalid_Text {
-            get {
-                return ResourceManager.GetString("ErrorGS1KeyOrderInvalid_Text", resourceCulture);
             }
         }
         
