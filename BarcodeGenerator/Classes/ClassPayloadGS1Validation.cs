@@ -44,6 +44,9 @@
         // 82-character subset of ISO/IEC 646 (for GS1 identifiers) - XCHAR = DIGIT / UPPERALPHA / LOWERALPHA / XSYMBOL
         private static readonly string _XCHAR_82CharacterSubset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"-._!%&+,/*[]';:<>=?";
 
+        // Character set for IBAN (International Bank Account Number) validation - 1 * 34 XCHAR = 1-34 characters
+        private static readonly string _IBAN_CharacterSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
         // Dictionary to hold GS1 Application Identifiers (AI) and their corresponding values
         private static readonly Dictionary<string, string> gs1 = [];
 
@@ -774,6 +777,7 @@
         /// <returns></returns>
         private static bool ValidateDataAttribute(string dataAttribute, string value)
         {
+            // Variable
             cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
 
             Debug.WriteLine($"Validating data attribute: {dataAttribute} - Value: {value}");
@@ -865,11 +869,12 @@
                 }
             }
 
-            // 1 * 34 XCHAR
+            // 1 * 34 XCHAR - IBAN (International Bank Account Number)
             else if (dataAttribute is "8007")
             {
-                if (value.Length is < 1 or > 34 || !ValueIsXCHAR82CharacterSubset(value))
+                if (value.Length is < 1 or > 34 || !ValueIsIBANCharacterSet(value) || !ClassPayloadValidation.IsValidIban(null!, value))
                 {
+                    cErrorMessage = CodeLang.ErrorIbanInvalid_Text;
                     return false;
                 }
             }
@@ -1517,6 +1522,24 @@
 
             // Check if all characters in the input are in the allowed set
             bool bIsValid = value.All(c => _XCHAR_82CharacterSubset.Contains(c));
+            if (!bIsValid)
+            {
+                cErrorMessage = CodeLang.ErrorGS1ValueContainsCharacterInvalid_Text;
+            }
+
+            return bIsValid;
+        }
+
+        private static bool ValueIsIBANCharacterSet(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                cErrorMessage = CodeLang.ErrorGS1ValueContainsCharacterInvalid_Text;
+                return false;
+            }
+
+            // Check if all characters in the input are in the allowed set
+            bool bIsValid = value.All(c => _IBAN_CharacterSet.Contains(c));
             if (!bIsValid)
             {
                 cErrorMessage = CodeLang.ErrorGS1ValueContainsCharacterInvalid_Text;

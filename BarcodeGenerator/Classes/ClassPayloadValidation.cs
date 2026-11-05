@@ -67,12 +67,23 @@ namespace BarcodeGenerator
         /// <remarks>Validates both the format and checksum using the mod-97 algorithm defined in ISO
         /// 13616. Spaces in the input are automatically removed during validation.</remarks>
         /// <param name="entry" The Entry control containing the IBAN to validate.</param>
+        /// <param name="cIban" The IBAN string to validate.</param>
         /// <returns>true if the IBAN is valid; otherwise, false.</returns>
-        public static bool IsValidIban(Entry entry)
+        public static bool IsValidIban(Entry entry, string cIban)
         {
+            string cleanIban;
+
             // Remove spaces for standardization
-            string cleanIban = entry.Text.Replace(" ", string.Empty);
-            entry.Text = cleanIban;
+            if (string.IsNullOrWhiteSpace(cIban))
+            {
+                cleanIban = entry.Text.Replace(" ", string.Empty);
+                entry.Text = cleanIban;
+            }
+            
+            else
+            {
+                cleanIban = cIban;
+            }
 
             // Basic IBAN format check: starts with 2 letters (country code), followed by 2 digits (check digits), and then up to 30 alphanumeric characters (BBAN)
             if (!RegexIban().IsMatch(cleanIban))

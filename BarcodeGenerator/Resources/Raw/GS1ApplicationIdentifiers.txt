@@ -1,12 +1,12 @@
 ﻿01;gtin
 8006;itip
-8013;gmn (Global Model Number)
+8013;gmn
 8010;cpid
-414;gln (Physical Location GLN)
-415;payTo (GLN of invoicing party)
+414;gln
+415;payTo
 417;PartyGln
-8017;gsrnp (GSRN of the Provider)
-8018;gsrn (GSRN of the Recipient)
+8017;gsrnp
+8018;gsrn
 255;gcn
 00;sscc
 253;gdti
@@ -15,15 +15,15 @@
 8003;grai
 8004;giai
 
-22;cpv (Consumer Product Variant)
-10;lot (Batch/Lot identifier)
-21;ser (GTIN Serial Number)
-8011;cpsn (CPID Serial Number)
-254;glnx (GLN extension)
-8020;refno (Payment Reference Number)
-8019;srin (Service Relation Instance Number)
-235;tpx (third-party controlled serialised extension to GTIN)
-7040;uic-ext (GS1 UIC with Extension 1 and Importer Index)
+22;cpv
+10;lot
+21;ser
+8011;cpsn
+254;glnx
+8020;refno
+8019;srin
+235;tpx
+7040;uic-ext
 
 3100;netWeightVMTI
 3101;netWeightVMTI
