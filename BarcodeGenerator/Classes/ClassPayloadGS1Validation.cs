@@ -2,6 +2,9 @@
 {
     internal partial class ClassPayloadGS1Validation
     {
+        // Dictionary to hold GS1 Application Identifiers (AI) and their corresponding values
+        public static readonly Dictionary<string, string> dicGs1 = [];
+
         // Add once in the class - central place for all supported GS1 Application Identifiers (AI) (keys and data attributes)
         public static readonly Dictionary<string, string> _knownGs1AppIDs = [];
 
@@ -55,9 +58,6 @@
         // Character set for IBAN (International Bank Account Number) validation - 1 * 34 XCHAR = 1-34 characters
         private static readonly string _IBAN_CharacterSet = _DIGIT + _UPPERALPHA;
 
-        // Dictionary to hold GS1 Application Identifiers (AI) and their corresponding values
-        private static readonly Dictionary<string, string> gs1 = [];
-
         // Error message for GS1 identifier validation
         private static string cErrorMessage = string.Empty;
 
@@ -65,14 +65,14 @@
         /// Splits the GS1 identifier into key-value pairs and adds them to the dictionary
         /// </summary>
         /// <param name="gs1Identifier"></param>
-        private static void SplitKeyValuePairs(string gs1Identifier)
+        public static void SplitKeyValuePairs(string gs1Identifier)
         {
             // Keys are surrounded by slashes (/) or start with a question mark (?) or start with an ampersand (&)
             // and values are separated by equal signs (=) for keys started with question mark or ampersand.
             // Example: /00/195201234567891232?02=09520123456788&37=25&10=ABC123
             //          /01/09520123456788?8004=9520614141234567
 
-            gs1.Clear();
+            dicGs1.Clear();
 
             if (string.IsNullOrWhiteSpace(gs1Identifier))
             {
@@ -90,7 +90,7 @@
             {
                 string key = pathSegments[i];
                 string value = pathSegments[i + 1];
-                gs1[key] = value;
+                dicGs1[key] = value;
             }
 
             // Parse query-based key/value pairs: 10=ABC123&37=25
@@ -104,7 +104,7 @@
                     {
                         string key = pair[..equalsIndex];
                         string value = pair[(equalsIndex + 1)..];
-                        gs1[key] = value;
+                        dicGs1[key] = value;
                     }
                 }
             }
@@ -123,7 +123,7 @@
 
             Debug.WriteLine($"Length dictionary _knownGs1AppIDs: {_knownGs1AppIDs.Count}");
 
-            foreach (var kvp in gs1)
+            foreach (var kvp in dicGs1)
             {
                 Debug.WriteLine($"AI: {kvp.Key}, Value: {kvp.Value}, Value length: {kvp.Value.Length}");
                 bIsValid &= await IsValidGS1IdentifierPart2(editor, kvp.Key, kvp.Value);

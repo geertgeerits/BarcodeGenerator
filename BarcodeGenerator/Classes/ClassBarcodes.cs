@@ -722,7 +722,7 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Process the list of scanned BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
+        /// Process the list of scanned BarcodeResult objects, remove duplicates and sort them
         /// </summary>
         /// <param name="list"></param>
         /// <param name="btnShare"></param>
@@ -731,17 +731,42 @@ namespace BarcodeGenerator
             // Remove duplicates and sort the list
             list = [.. list.Distinct().OrderBy(x => x)];
 
-            // If there is only one result, display the format and value in the share button text
-            // If there are multiple results, display the count in the share button text and show all results in the label
+            // If there is only one result, display the barcode format in the share button and show the barcode value in the label
             string cBarcodeResult = string.Empty;
 
             if (list.Count == 1)
             {
+                // parts[0] = barcode format, parts[1] = barcode value
                 string[] parts = list[0].Split([":\n"], StringSplitOptions.None);
                 btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
                 cBarcodeResult = parts.Length > 1 ? parts[1] : "";
+
+                // If the barcode value starts with a URL, it can be parsed for GS1 digital link key-value pairs
+                if (parts[1].StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Parse the URL for GS1 digital link key-value pairs and display them in a formatted manner
+                    ClassPayloadGS1Validation.SplitKeyValuePairs(parts[1]);
+                    
+                    if (ClassPayloadGS1Validation.dicGs1.Count > 0)
+                    {
+                        StringBuilder sb = new();
+                        sb.AppendLine();
+                        
+                        foreach (var kvp in ClassPayloadGS1Validation.dicGs1)
+                        {
+                            // Ignore the URL itself and only display the key-value pairs
+                            if (!kvp.Key.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                            {
+                                sb.AppendLine($"{kvp.Key}: {kvp.Value}");
+                            }
+                        }
+                        
+                        cBarcodeResult += sb.ToString();
+                    }
+                }
             }
 
+            // If there are multiple results, display the count in the share button and show all results in the label
             else if (list.Count > 1)
             {
                 btnShare.Text = $"{CodeLang.ButtonShare_Text} ({list.Count})";
