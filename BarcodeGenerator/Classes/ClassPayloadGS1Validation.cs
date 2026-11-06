@@ -1285,7 +1285,7 @@
         /// </summary>
         /// <param name="cAppId"></param>
         /// <returns></returns>
-        private static string GetKnownGs1AppIDValue(string cAppId)
+        public static string GetKnownGs1AppIDValue(string cAppId)
         {
             return _knownGs1AppIDs.TryGetValue(cAppId, out string? value) ? value : string.Empty;
         }

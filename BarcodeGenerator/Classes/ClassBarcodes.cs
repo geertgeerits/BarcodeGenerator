@@ -742,46 +742,63 @@ namespace BarcodeGenerator
                 cBarcodeResult = parts.Length > 1 ? parts[1] : "";
 
                 // If the barcode value starts with a URL, it can be parsed for GS1 digital link key-value pairs
-                if (parts[1].StartsWith("http", StringComparison.OrdinalIgnoreCase))
-                {
-                    // Parse the URL for GS1 digital link key-value pairs and display them in a formatted manner
-                    ClassPayloadGS1Validation.SplitKeyValuePairs(parts[1]);
-                    
-                    if (ClassPayloadGS1Validation.dicGs1.Count > 0)
-                    {
-                        StringBuilder sb = new();
-                        sb.AppendLine();
-                        
-                        foreach (var kvp in ClassPayloadGS1Validation.dicGs1)
-                        {
-                            // Ignore the URL itself and only display the key-value pairs
-                            if (!kvp.Key.StartsWith("http", StringComparison.OrdinalIgnoreCase))
-                            {
-                                sb.AppendLine($"{kvp.Key}: {kvp.Value}");
-                            }
-                        }
-                        
-                        cBarcodeResult += sb.ToString();
-                    }
-                }
+                cBarcodeResult = GetGS1DigitalLinkKeyValuePairs(parts[1], cBarcodeResult);
             }
 
             // If there are multiple results, display the count in the share button and show all results in the label
             else if (list.Count > 1)
             {
                 btnShare.Text = $"{CodeLang.ButtonShare_Text} ({list.Count})";
-                StringBuilder sb = new();
+
                 foreach (string item in list)
                 {
-                    sb.AppendLine(item).AppendLine();
-                }
+                    string[] parts = item.Split([":\n"], StringSplitOptions.None);
+                    cBarcodeResult = cBarcodeResult + (parts.Length > 1 ? parts[1] : "");
 
-                cBarcodeResult = sb.ToString();
+                    // If the barcode value starts with a URL, it can be parsed for GS1 digital link key-value pairs
+                    //cBarcodeResult = cBarcodeResult + GetGS1DigitalLinkKeyValuePairs(parts[1], cBarcodeResult);
+
+                    cBarcodeResult += "\n\n";
+                }
             }
 
             else
             {
                 cBarcodeResult = CodeLang.BarcodeNotFound_Text;
+            }
+
+            return cBarcodeResult;
+        }
+
+        /// <summary>
+        /// If the barcode value starts with a URL, it can be parsed for GS1 digital link key-value pairs
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="cBarcodeResult"></param>
+        /// <returns></returns>
+        private static string GetGS1DigitalLinkKeyValuePairs(string url, string cBarcodeResult)
+        {
+            // If the barcode value starts with a URL, it can be parsed for GS1 digital link key-value pairs
+            if (url.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+            {
+                // Parse the URL for GS1 digital link key-value pairs and display them in a formatted manner
+                ClassPayloadGS1Validation.SplitKeyValuePairs(url);
+
+                if (ClassPayloadGS1Validation.dicGs1.Count > 0)
+                {
+                    foreach (var kvp in ClassPayloadGS1Validation.dicGs1)
+                    {
+                        Debug.WriteLine($"dicGs1 kvp {kvp.Key} - {kvp.Value}");
+
+                        // Ignore the URL itself and only display the key-value pairs
+                        if (!kvp.Key.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                        {
+                            cBarcodeResult += ($"\n{kvp.Key} {ClassPayloadGS1Validation.GetKnownGs1AppIDValue(kvp.Key)}: {kvp.Value}");
+                        }
+                    }
+
+                    cBarcodeResult += "\n\n";
+                }
             }
 
             return cBarcodeResult;
