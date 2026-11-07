@@ -737,12 +737,13 @@ namespace BarcodeGenerator
             if (list.Count == 1)
             {
                 // parts[0] = barcode format, parts[1] = barcode value
+                // Split the string using both ":" and "\n" as delimiters, and remove empty entries
                 string[] parts = list[0].Split([":\n"], StringSplitOptions.None);
                 btnShare.Text = $"{CodeLang.ButtonShare_Text} {parts[0]}";
                 cBarcodeResult = parts.Length > 1 ? parts[1] : "";
 
                 // If the barcode value starts with a URL, it can be parsed for GS1 digital link key-value pairs
-                cBarcodeResult = GetGS1DigitalLinkKeyValuePairs(parts[1], cBarcodeResult);
+                GetGS1DigitalLinkKeyValuePairs(parts[1], ref cBarcodeResult);
             }
 
             // If there are multiple results, display the count in the share button and show all results in the label
@@ -753,10 +754,10 @@ namespace BarcodeGenerator
                 foreach (string item in list)
                 {
                     string[] parts = item.Split([":\n"], StringSplitOptions.None);
-                    cBarcodeResult = cBarcodeResult + (parts.Length > 1 ? parts[1] : "");
+                    cBarcodeResult += parts.Length > 1 ? parts[1] : "";
 
                     // If the barcode value starts with a URL, it can be parsed for GS1 digital link key-value pairs
-                    //cBarcodeResult = cBarcodeResult + GetGS1DigitalLinkKeyValuePairs(parts[1], cBarcodeResult);
+                    GetGS1DigitalLinkKeyValuePairs(parts[1], ref cBarcodeResult);
 
                     cBarcodeResult += "\n\n";
                 }
@@ -774,9 +775,9 @@ namespace BarcodeGenerator
         /// If the barcode value starts with a URL, it can be parsed for GS1 digital link key-value pairs
         /// </summary>
         /// <param name="url"></param>
-        /// <param name="cBarcodeResult"></param>
+        /// <param name="barcodeResult"></param>
         /// <returns></returns>
-        private static string GetGS1DigitalLinkKeyValuePairs(string url, string cBarcodeResult)
+        private static void GetGS1DigitalLinkKeyValuePairs(string url, ref string barcodeResult)
         {
             // If the barcode value starts with a URL, it can be parsed for GS1 digital link key-value pairs
             if (url.StartsWith("http", StringComparison.OrdinalIgnoreCase))
@@ -786,22 +787,20 @@ namespace BarcodeGenerator
 
                 if (ClassPayloadGS1Validation.dicGs1.Count > 0)
                 {
+                    //barcodeResult += "\n";
+
                     foreach (var kvp in ClassPayloadGS1Validation.dicGs1)
                     {
-                        Debug.WriteLine($"dicGs1 kvp {kvp.Key} - {kvp.Value}");
+                        Debug.WriteLine($"dicGs1 kvp Key and Value: {kvp.Key} - {kvp.Value}");
 
                         // Ignore the URL itself and only display the key-value pairs
                         if (!kvp.Key.StartsWith("http", StringComparison.OrdinalIgnoreCase))
                         {
-                            cBarcodeResult += ($"\n{kvp.Key} {ClassPayloadGS1Validation.GetKnownGs1AppIDValue(kvp.Key)}: {kvp.Value}");
+                            barcodeResult += $"\n- {kvp.Key} {ClassPayloadGS1Validation.GetKnownGs1AppIDValue(kvp.Key)} = {kvp.Value}";
                         }
                     }
-
-                    cBarcodeResult += "\n\n";
                 }
             }
-
-            return cBarcodeResult;
         }
     }
 }
