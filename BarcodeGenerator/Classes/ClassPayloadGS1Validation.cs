@@ -1274,7 +1274,7 @@
         /// </summary>
         /// <param name="cAppId"></param>
         /// <returns></returns>
-        private static bool IsKnownGs1AppID(string cAppId)
+        public static bool IsKnownGs1AppID(string cAppId)
         {
             return _knownGs1AppIDs.ContainsKey(cAppId);
         }

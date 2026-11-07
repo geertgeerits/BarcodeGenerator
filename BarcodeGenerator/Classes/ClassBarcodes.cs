@@ -754,6 +754,7 @@ namespace BarcodeGenerator
                 foreach (string item in list)
                 {
                     string[] parts = item.Split([":\n"], StringSplitOptions.None);
+                    cBarcodeResult += parts[0] + "\n";
                     cBarcodeResult += parts.Length > 1 ? parts[1] : "";
 
                     // If the barcode value starts with a URL, it can be parsed for GS1 digital link key-value pairs
@@ -787,14 +788,12 @@ namespace BarcodeGenerator
 
                 if (ClassPayloadGS1Validation.dicGs1.Count > 0)
                 {
-                    //barcodeResult += "\n";
-
                     foreach (var kvp in ClassPayloadGS1Validation.dicGs1)
                     {
                         Debug.WriteLine($"dicGs1 kvp Key and Value: {kvp.Key} - {kvp.Value}");
 
                         // Ignore the URL itself and only display the key-value pairs
-                        if (!kvp.Key.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                        if (!kvp.Key.StartsWith("http", StringComparison.OrdinalIgnoreCase) && ClassPayloadGS1Validation.IsKnownGs1AppID(kvp.Key))
                         {
                             barcodeResult += $"\n- {kvp.Key} {ClassPayloadGS1Validation.GetKnownGs1AppIDValue(kvp.Key)} = {kvp.Value}";
                         }
