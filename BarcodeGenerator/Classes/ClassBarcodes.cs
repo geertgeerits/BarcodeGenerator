@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace BarcodeGenerator
+﻿namespace BarcodeGenerator
 {
     internal class ClassBarcodes
     {
