@@ -786,6 +786,8 @@
 
                 if (ClassPayloadGS1Validation.dicGs1.Count > 0)
                 {
+                    barcodeResult += $"\n{CodeLang.PayloadType_GS1DIGITALLINK_Text}";
+
                     foreach (var kvp in ClassPayloadGS1Validation.dicGs1)
                     {
                         Debug.WriteLine($"dicGs1 kvp Key and Value: {kvp.Key} - {kvp.Value}");
@@ -793,7 +795,24 @@
                         // Ignore the URL itself and only display the key-value pairs
                         if (!kvp.Key.StartsWith("http", StringComparison.OrdinalIgnoreCase) && ClassPayloadGS1Validation.IsKnownGs1AppID(kvp.Key))
                         {
-                            barcodeResult += $"\n- {kvp.Key} {ClassPayloadGS1Validation.GetKnownGs1AppIDValue(kvp.Key)} = {kvp.Value}";
+                            string value = ClassPayloadGS1Validation.GetKnownGs1AppIDValue(kvp.Key);
+                            string valueDate = string.Empty;
+
+                            if (value.Contains("Date", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // If the value is a date, format it as a date
+                                if (DateTime.TryParseExact(kvp.Value, "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue))
+                                {
+                                    valueDate = dateValue.ToString("d", CultureInfo.CurrentCulture);
+                                }
+                            }
+
+                            barcodeResult += $"\n- {kvp.Key} {value} = {kvp.Value}";
+
+                            if (valueDate != string.Empty)
+                            {
+                                barcodeResult += $" ({valueDate})";
+                            }
                         }
                     }
                 }
