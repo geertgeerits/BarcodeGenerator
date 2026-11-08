@@ -797,13 +797,61 @@
                         {
                             string value = ClassPayloadGS1Validation.GetKnownGs1AppIDValue(kvp.Key);
                             string valueDate = string.Empty;
+                            string valueDate2 = string.Empty;
 
+                            // If the value is a date or date/time, format it as a date or date/time string in the current culture format
                             if (value.Contains("Date", StringComparison.OrdinalIgnoreCase))
                             {
-                                // If the value is a date, format it as a date
-                                if (DateTime.TryParseExact(kvp.Value, "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue))
+                                // 6 DIGIT (date YYMMDD)
+                                if (kvp.Value.Length >= 6)
                                 {
-                                    valueDate = dateValue.ToString("d", CultureInfo.CurrentCulture);
+                                    if (DateTime.TryParseExact(kvp.Value[..6], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue))
+                                    {
+                                        valueDate = dateValue.ToString("d", CultureInfo.CurrentCulture);
+                                    }
+                                }
+
+                                // 6 DIGIT [4 DIGIT] (date/time YYMMDD[hhmm])
+                                if (kvp.Key == "7011" && kvp.Value.Length == 10)
+                                {
+                                    valueDate += $" {kvp.Value[6..10].Insert(2, ":")}";
+                                }
+
+                                // 6 DIGIT [6 DIGIT] (date YYMMDD[YYMMDD]) or 12 DIGIT (date YYMMDDYYMMDD)
+                                else if ((kvp.Key is "7007" or "7251") && kvp.Value.Length == 12)
+                                {
+                                    if (DateTime.TryParseExact(kvp.Value[6..12], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue2))
+                                    {
+                                        valueDate2 = dateValue2.ToString("d", CultureInfo.CurrentCulture);
+                                        valueDate += $" - {valueDate2}";
+                                    }
+                                }
+
+                                // 8 DIGIT [2 DIGIT] [2 DIGIT] (date/time YYMMDDhh[mm][ss])
+                                else if (kvp.Key == "8008")
+                                {
+                                    switch (kvp.Value.Length)
+                                    {
+                                        case 12:
+                                            valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}:{kvp.Value[10..12]}";
+                                            break;
+                                        case 10:
+                                            valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
+                                            break;
+                                        case 8:
+                                            valueDate2 = $" {kvp.Value[6..8]}:00";
+                                            break;
+                                    }
+
+                                    valueDate += $" - {valueDate2}";
+                                }
+
+                                // 10 DIGIT (date/time YYMMDDhhmm)
+                                else if (kvp.Key == "8006" && kvp.Value.Length == 10)
+                                {
+                                    valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
+
+                                    valueDate += $" - {valueDate2}";
                                 }
                             }
 

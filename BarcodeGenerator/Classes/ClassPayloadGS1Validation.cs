@@ -1066,15 +1066,6 @@
                 }
             }
 
-            // 6 DIGIT [4 DIGIT]
-            else if (dataAttribute is "7011")
-            {
-                if (value.Length != 6 || value.Length != 10 || !ValueIsDigit(value))
-                {
-                    return false;
-                }
-            }
-
             // 6 DIGIT ["-"]
             else if (dataAttribute is "4330" or "4331" or "4332" or "4333")
             {
@@ -1137,9 +1128,16 @@
             // 18 DIGIT [1 * 2 DIGIT]
             else if (dataAttribute is "8043")
             {
-                if (value.Length != 18 || value.Length != 19 || value.Length != 20 || !ValueIsDigit(value))
+                switch (value.Length)
                 {
-                    return false;
+                    case 18 when ValueIsDigit(value):
+                        break;
+                    case 19 when ValueIsDigit(value):
+                        break;
+                    case 20 when ValueIsDigit(value):
+                        break;
+                    default:
+                        return false;
                 }
             }
 
@@ -1195,50 +1193,51 @@
             // 6 DIGIT [4 DIGIT] (date/time YYMMDD[hhmm])
             else if (dataAttribute is "7011")
             {
-                if (value.Length != 6 || value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
+                switch (value.Length)
                 {
-                    return false;
-                }
-                else if (value.Length == 10 && !IsTimeHHMM(value.Substring(6, 4)))
-                {
-                    return false;
+                    case 6 when ValueIsDigit(value) && IsDateYYMMDD(value):
+                        break;
+                    case 10 when ValueIsDigit(value) && IsDateYYMMDD(value[..6]) && IsTime(value.Substring(6, 4), "HHmm"):
+                        break;
+                    default:
+                        return false;
                 }
             }
 
             // 6 DIGIT [6 DIGIT] (date YYMMDD[YYMMDD])
             else if (dataAttribute is "7007")
             {
-                if (value.Length != 6 || value.Length != 12 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
+                switch (value.Length)
                 {
-                    return false;
-                }
-                else if (value.Length == 12 && !IsDateYYMMDD(value.Substring(6, 6)))
-                {
-                    return false;
+                    case 6 when ValueIsDigit(value) && IsDateYYMMDD(value):
+                        break;
+                    case 12 when ValueIsDigit(value) && IsDateYYMMDD(value[..6]) && IsDateYYMMDD(value.Substring(6, 6)):
+                        break;
+                    default:
+                        return false;
                 }
             }
 
             // 8 DIGIT [2 DIGIT] [2 DIGIT] (date/time YYMMDDhh[mm][ss])
             else if (dataAttribute is "8008")
             {
-                if (value.Length != 8 || value.Length != 10 || value.Length != 12 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]))
+                switch (value.Length)
                 {
-                    return false;
-                }
-                else if (value.Length == 10 && !IsTimeHHMM(value.Substring(6, 4)))
-                {
-                    return false;
-                }
-                else if (value.Length == 12 && !IsTimeHHMMSS(value.Substring(6, 6)))
-                {
-                    return false;
+                    case 8 when ValueIsDigit(value) && IsDateYYMMDD(value[..6]) && IsTime(value.Substring(6, 2), "HH"):
+                        break;
+                    case 10 when ValueIsDigit(value) && IsDateYYMMDD(value[..6]) && IsTime(value.Substring(6, 4), "HHmm"):
+                        break;
+                    case 12 when ValueIsDigit(value) && IsDateYYMMDD(value[..6]) && IsTime(value.Substring(6, 6), "HHmmss"):
+                        break;
+                    default:
+                        return false;
                 }
             }
 
             // 10 DIGIT (date/time YYMMDDhhmm)
             else if (dataAttribute is "4324" or "4325" or "7003")
             {
-                if (value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]) || !IsTimeHHMM(value.Substring(6, 4)))
+                if (value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]) || !IsTime(value.Substring(6, 4), "HHmm"))
                 {
                     return false;
                 }
@@ -1419,11 +1418,12 @@
         }
 
         /// <summary>
-        /// Validate if a string is a time in HHMM format
+        /// Validate if a string is a time in the specified format
         /// </summary>
         /// <param name="input"></param>
+        /// <param name="format"></param>
         /// <returns></returns>
-        static bool IsTimeHHMM(string input)
+        static bool IsTime(string input, string format)
         {
             if (string.IsNullOrWhiteSpace(input))
             {
@@ -1433,36 +1433,7 @@
             // Try parsing with exact format "HHmm"
             bool bIsValid = DateTime.TryParseExact(
                 input,
-                "HHmm",
-                CultureInfo.InvariantCulture,
-                DateTimeStyles.None,
-                out _ // discard parsed DateTime
-            );
-
-            if (!bIsValid)
-            {
-                cErrorMessage = CodeLang.ErrorGS1TimeInvalid_Text;
-            }
-
-            return bIsValid;
-        }
-
-        /// <summary>
-        /// Validate if a string is a time in HHMMSS format
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        static bool IsTimeHHMMSS(string input)
-        {
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                return false;
-            }
-
-            // Try parsing with exact format "HHmmss"
-            bool bIsValid = DateTime.TryParseExact(
-                input,
-                "HHmmss",
+                format,
                 CultureInfo.InvariantCulture,
                 DateTimeStyles.None,
                 out _ // discard parsed DateTime
