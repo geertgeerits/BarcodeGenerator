@@ -1550,4 +1550,8 @@ development of the GS1 Digital Link Standard: URI Syntax.
 Device Registration Identifier (HIDRI) [AI (8014)] are defined for the Master Unique Device 
 Identifier - Device Identifier (M-UDI-DI) restricted application, and as such are not permitted for 
 use in a GS1 Digital Link URI syntax.
+
+https://ref.gs1.org/
+https://ref.gs1.org/ai/
+https://ref.gs1.org/standards/digital-link/uri-syntax/
 */

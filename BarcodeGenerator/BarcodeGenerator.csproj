@@ -108,7 +108,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="16.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.110" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.130" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.14" />
         <PackageReference Include="QRCoder" Version="1.8.1" />
         <PackageReference Include="SkiaSharp" Version="4.155.0" />
