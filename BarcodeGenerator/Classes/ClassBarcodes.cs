@@ -799,7 +799,7 @@
                         try
                         {
                             // If the value is a date or date/time, format it as a date or date/time string in the current culture format
-                            if (value.Contains("Date", StringComparison.OrdinalIgnoreCase) || value.Contains("Time", StringComparison.OrdinalIgnoreCase))
+                            if (value.Contains("date", StringComparison.OrdinalIgnoreCase) || value.Contains("time", StringComparison.OrdinalIgnoreCase))
                             {
                                 // 6 DIGIT (date YYMMDD)
                                 if (kvp.Value.Length >= 6)

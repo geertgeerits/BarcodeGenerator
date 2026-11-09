@@ -1540,3 +1540,14 @@
         }
     }
 }
+
+/*
+Note that the following data attributes are intentionally omitted: 
+■ Extended Packaging URL [ AI (8200) ] is not expected to be used within a GS1 Digital Link URI, 
+as it is an alternate approach to enable extended packaging applications pre-dating the 
+development of the GS1 Digital Link Standard: URI Syntax.  
+■ Identification of a Made-to-order (MtO) trade item (GTIN) [AI (03)] and Highly Individualised 
+Device Registration Identifier (HIDRI) [AI (8014)] are defined for the Master Unique Device 
+Identifier - Device Identifier (M-UDI-DI) restricted application, and as such are not permitted for 
+use in a GS1 Digital Link URI syntax.
+*/
