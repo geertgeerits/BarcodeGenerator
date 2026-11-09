@@ -792,83 +792,79 @@
                     {
                         Debug.WriteLine($"dicGs1 kvp Key and Value: {kvp.Key} - {kvp.Value}");
 
-                        // Ignore the URL itself and only display the key-value pairs
-                        if (!kvp.Key.StartsWith("http", StringComparison.OrdinalIgnoreCase) && ClassPayloadGS1Validation.IsKnownGs1AppID(kvp.Key))
+                        string value = ClassPayloadGS1Validation.GetKnownGs1AppIDValue(kvp.Key);
+                        string valueDate1 = string.Empty;
+                        string valueDate2 = string.Empty;
+
+                        try
                         {
-                            string value = ClassPayloadGS1Validation.GetKnownGs1AppIDValue(kvp.Key);
-                            string valueDate1 = string.Empty;
-                            string valueDate2 = string.Empty;
-
-                            try
+                            // If the value is a date or date/time, format it as a date or date/time string in the current culture format
+                            if (value.Contains("Date", StringComparison.OrdinalIgnoreCase) || value.Contains("Time", StringComparison.OrdinalIgnoreCase))
                             {
-                                // If the value is a date or date/time, format it as a date or date/time string in the current culture format
-                                if (value.Contains("Date", StringComparison.OrdinalIgnoreCase) || value.Contains("Time", StringComparison.OrdinalIgnoreCase))
+                                // 6 DIGIT (date YYMMDD)
+                                if (kvp.Value.Length >= 6)
                                 {
-                                    // 6 DIGIT (date YYMMDD)
-                                    if (kvp.Value.Length >= 6)
+                                    if (DateTime.TryParseExact(kvp.Value[..6], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue))
                                     {
-                                        if (DateTime.TryParseExact(kvp.Value[..6], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue))
-                                        {
-                                            valueDate1 = dateValue.ToString("d", CultureInfo.CurrentCulture);
-                                        }
-                                    }
-
-                                    // 6 DIGIT [4 DIGIT] (date/time YYMMDD[hhmm])
-                                    if (kvp.Key == "7011" && kvp.Value.Length == 10)
-                                    {
-                                        valueDate1 += $" {kvp.Value[6..10].Insert(2, ":")}";
-                                    }
-
-                                    // 6 DIGIT [6 DIGIT] (date YYMMDD[YYMMDD]) or 12 DIGIT (date YYMMDDYYMMDD)
-                                    else if ((kvp.Key is "7007" or "7251") && kvp.Value.Length == 12)
-                                    {
-                                        if (DateTime.TryParseExact(kvp.Value[6..12], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue2))
-                                        {
-                                            valueDate2 = dateValue2.ToString("d", CultureInfo.CurrentCulture);
-                                            valueDate1 += $" - {valueDate2}";
-                                        }
-                                    }
-
-                                    // 8 DIGIT [2 DIGIT] [2 DIGIT] (date/time YYMMDDhh[mm][ss])
-                                    else if (kvp.Key == "8008")
-                                    {
-                                        switch (kvp.Value.Length)
-                                        {
-                                            case 12:
-                                                valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}:{kvp.Value[10..12]}";
-                                                break;
-                                            case 10:
-                                                valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
-                                                break;
-                                            case 8:
-                                                valueDate2 = $" {kvp.Value[6..8]}:00";
-                                                break;
-                                        }
-
-                                        valueDate1 += $" {valueDate2}";
-                                    }
-
-                                    // 10 DIGIT (date/time YYMMDDhhmm)
-                                    else if ((kvp.Key is "4324" or "4325" or "7003") && kvp.Value.Length == 10)
-                                    {
-                                        valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
-
-                                        valueDate1 += $" {valueDate2}";
+                                        valueDate1 = dateValue.ToString("d", CultureInfo.CurrentCulture);
                                     }
                                 }
 
-                                barcodeResult += $"\n- {kvp.Key} {value} = {kvp.Value}";
-
-                                if (valueDate1 != string.Empty)
+                                // 6 DIGIT [4 DIGIT] (date/time YYMMDD[hhmm])
+                                if (kvp.Key == "7011" && kvp.Value.Length == 10)
                                 {
-                                    barcodeResult += $" ({valueDate1})";
+                                    valueDate1 += $" {kvp.Value[6..10].Insert(2, ":")}";
+                                }
+
+                                // 6 DIGIT [6 DIGIT] (date YYMMDD[YYMMDD]) or 12 DIGIT (date YYMMDDYYMMDD)
+                                else if ((kvp.Key is "7007" or "7251") && kvp.Value.Length == 12)
+                                {
+                                    if (DateTime.TryParseExact(kvp.Value[6..12], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue2))
+                                    {
+                                        valueDate2 = dateValue2.ToString("d", CultureInfo.CurrentCulture);
+                                        valueDate1 += $" - {valueDate2}";
+                                    }
+                                }
+
+                                // 8 DIGIT [2 DIGIT] [2 DIGIT] (date/time YYMMDDhh[mm][ss])
+                                else if (kvp.Key == "8008")
+                                {
+                                    switch (kvp.Value.Length)
+                                    {
+                                        case 12:
+                                            valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}:{kvp.Value[10..12]}";
+                                            break;
+                                        case 10:
+                                            valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
+                                            break;
+                                        case 8:
+                                            valueDate2 = $" {kvp.Value[6..8]}:00";
+                                            break;
+                                    }
+
+                                    valueDate1 += $" {valueDate2}";
+                                }
+
+                                // 10 DIGIT (date/time YYMMDDhhmm)
+                                else if ((kvp.Key is "4324" or "4325" or "7003") && kvp.Value.Length == 10)
+                                {
+                                    valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
+
+                                    valueDate1 += $" {valueDate2}";
                                 }
                             }
 
-                            catch (Exception ex)
+                            barcodeResult += $"\n- {kvp.Key} {value} = {kvp.Value}";
+
+                            if (valueDate1 != string.Empty)
                             {
-                                Debug.WriteLine($"ClassBarcodes - FormatGS1DigitalLinkAppIdValuePairs:\n\n{ex.Message}", "OK");
+                                barcodeResult += $" ({valueDate1})";
                             }
+                        }
+
+                        catch (Exception ex)
+                        {
+                            Debug.WriteLine($"ClassBarcodes - FormatGS1DigitalLinkAppIdValuePairs:\n\n{ex.Message}", "OK");
                         }
                     }
                 }

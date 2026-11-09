@@ -108,6 +108,14 @@
                     }
                 }
             }
+
+            // Delete the key-value pairs if they are not in the _knownGs1AppIDs dictionary
+            List<string> keysToRemove = [.. dicGs1.Keys.Where(static key => !IsKnownGs1AppID(key))];
+            
+            foreach (string key in keysToRemove)
+            {
+                dicGs1.Remove(key);
+            }
         }
 
         /// <summary>
@@ -154,7 +162,8 @@
             bIsValid &= IsKnownGs1AppID(cKey);
             if (!bIsValid)
             {
-                cErrorMessage = CodeLang.ErrorGS1AppIDInvalid_Text;            }
+                cErrorMessage = CodeLang.ErrorGS1AppIDInvalid_Text;
+            }
 
             // Primary identification key formats (x 16)
 
@@ -1273,7 +1282,7 @@
         /// </summary>
         /// <param name="cAppId"></param>
         /// <returns></returns>
-        public static bool IsKnownGs1AppID(string cAppId)
+        private static bool IsKnownGs1AppID(string cAppId)
         {
             return _knownGs1AppIDs.ContainsKey(cAppId);
         }
