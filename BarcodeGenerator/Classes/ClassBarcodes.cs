@@ -799,9 +799,10 @@
                         try
                         {
                             // If the value is a date or date/time, format it as a date or date/time string in the current culture format
-                            if (value.Contains("date", StringComparison.OrdinalIgnoreCase) || value.Contains("time", StringComparison.OrdinalIgnoreCase))
+                            // 6 DIGIT (date YYMMDD)
+                            if (kvp.Key is "11" or "12" or "13" or "15" or "16" or "17" or "4324" or "4325" or "4326"
+                                or "7003" or "7006" or "7007" or "7011" or "7251" or "8008")
                             {
-                                // 6 DIGIT (date YYMMDD)
                                 if (kvp.Value.Length >= 6)
                                 {
                                     if (DateTime.TryParseExact(kvp.Value[..6], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue))
@@ -809,49 +810,49 @@
                                         valueDate1 = dateValue.ToString("d", CultureInfo.CurrentCulture);
                                     }
                                 }
+                            }
 
-                                // 6 DIGIT [4 DIGIT] (date/time YYMMDD[hhmm])
-                                if (kvp.Key == "7011" && kvp.Value.Length == 10)
+                            // 6 DIGIT [4 DIGIT] (date/time YYMMDD[hhmm])
+                            if (kvp.Key == "7011" && kvp.Value.Length == 10)
+                            {
+                                valueDate1 += $" {kvp.Value[6..10].Insert(2, ":")}";
+                            }
+
+                            // 6 DIGIT [6 DIGIT] (date YYMMDD[YYMMDD]) or 12 DIGIT (date YYMMDDYYMMDD)
+                            else if ((kvp.Key is "7007" or "7251") && kvp.Value.Length == 12)
+                            {
+                                if (DateTime.TryParseExact(kvp.Value[6..12], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue2))
                                 {
-                                    valueDate1 += $" {kvp.Value[6..10].Insert(2, ":")}";
+                                    valueDate2 = dateValue2.ToString("d", CultureInfo.CurrentCulture);
+                                    valueDate1 += $" - {valueDate2}";
+                                }
+                            }
+
+                            // 8 DIGIT [2 DIGIT] [2 DIGIT] (date/time YYMMDDhh[mm][ss])
+                            else if (kvp.Key == "8008")
+                            {
+                                switch (kvp.Value.Length)
+                                {
+                                    case 12:
+                                        valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}:{kvp.Value[10..12]}";
+                                        break;
+                                    case 10:
+                                        valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
+                                        break;
+                                    case 8:
+                                        valueDate2 = $" {kvp.Value[6..8]}:00";
+                                        break;
                                 }
 
-                                // 6 DIGIT [6 DIGIT] (date YYMMDD[YYMMDD]) or 12 DIGIT (date YYMMDDYYMMDD)
-                                else if ((kvp.Key is "7007" or "7251") && kvp.Value.Length == 12)
-                                {
-                                    if (DateTime.TryParseExact(kvp.Value[6..12], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue2))
-                                    {
-                                        valueDate2 = dateValue2.ToString("d", CultureInfo.CurrentCulture);
-                                        valueDate1 += $" - {valueDate2}";
-                                    }
-                                }
+                                valueDate1 += $" {valueDate2}";
+                            }
 
-                                // 8 DIGIT [2 DIGIT] [2 DIGIT] (date/time YYMMDDhh[mm][ss])
-                                else if (kvp.Key == "8008")
-                                {
-                                    switch (kvp.Value.Length)
-                                    {
-                                        case 12:
-                                            valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}:{kvp.Value[10..12]}";
-                                            break;
-                                        case 10:
-                                            valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
-                                            break;
-                                        case 8:
-                                            valueDate2 = $" {kvp.Value[6..8]}:00";
-                                            break;
-                                    }
+                            // 10 DIGIT (date/time YYMMDDhhmm)
+                            else if ((kvp.Key is "4324" or "4325" or "7003") && kvp.Value.Length == 10)
+                            {
+                                valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
 
-                                    valueDate1 += $" {valueDate2}";
-                                }
-
-                                // 10 DIGIT (date/time YYMMDDhhmm)
-                                else if ((kvp.Key is "4324" or "4325" or "7003") && kvp.Value.Length == 10)
-                                {
-                                    valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
-
-                                    valueDate1 += $" {valueDate2}";
-                                }
+                                valueDate1 += $" {valueDate2}";
                             }
 
                             barcodeResult += $"\n- {kvp.Key} {value} = {kvp.Value}";

@@ -1,545 +1,538 @@
-﻿00;sscc
-01;gtin
-02;content
-
-10;batch/lot
-11;prod date
-12;due date
-13;pack date
-15;best before date
-16;sell by date
-17;expiry date
-
-20;variant
-21;serial
-22;cpv
-235;tpx
-240;additional id
-241;cust part no
-242;mto variant
-243;pcn
-250;secondary serial
-251;ref to source
-253;gdti
-254;gln extension component
-255;gcn
-
-30;variable count
-3100;net weight VMTI kg
-3101;net weight VMTI kg
-3102;net weight VMTI kg
-3103;net weight VMTI kg
-3104;net weight VMTI kg
-3105;net weight VMTI kg
-3110;length VMTI m
-3111;length VMTI m
-3112;length VMTI m
-3113;length VMTI m
-3114;length VMTI m
-3115;length VMTI m
-3120;width VMTI m
-3121;width VMTI m
-3122;width VMTI m
-3123;width VMTI m
-3124;width VMTI m
-3125;width VMTI m
-3130;depth VMTI m
-3131;depth VMTI m
-3132;depth VMTI m
-3133;depth VMTI m
-3134;depth VMTI m
-3135;depth VMTI m
-3140;area VMTI m²
-3141;area VMTI m²
-3142;area VMTI m²
-3143;area VMTI m²
-3144;area VMTI m²
-3145;area VMTI m²
-3150;net volume VMTI l
-3151;net volume VMTI l
-3152;net volume VMTI l
-3153;net volume VMTI l
-3154;net volume VMTI l
-3155;net volume VMTI l
-3160;net volume VMTI m³
-3161;net volume VMTI m³
-3162;net volume VMTI m³
-3163;net volume VMTI m³
-3164;net volume VMTI m³
-3165;net volume VMTI m³
-3200;net weight VMTI lb
-3201;net weight VMTI lb
-3202;net weight VMTI lb
-3203;net weight VMTI lb
-3204;net weight VMTI lb
-3205;net weight VMTI lb
-3210;length VMTI in
-3211;length VMTI in
-3212;length VMTI in
-3213;length VMTI in
-3214;length VMTI in
-3215;length VMTI in
-3220;length VMTI ft
-3221;length VMTI ft
-3222;length VMTI ft
-3223;length VMTI ft
-3224;length VMTI ft
-3225;length VMTI ft
-3230;length VMTI yd
-3231;length VMTI yd
-3232;length VMTI yd
-3233;length VMTI yd
-3234;length VMTI yd
-3235;length VMTI yd
-3240;width VMTI in
-3241;width VMTI in
-3242;width VMTI in
-3243;width VMTI in
-3244;width VMTI in
-3245;width VMTI in
-3250;width VMTI ft
-3251;width VMTI ft
-3252;width VMTI ft
-3253;width VMTI ft
-3254;width VMTI ft
-3255;width VMTI ft
-3260;width VMTI yd
-3261;width VMTI yd
-3262;width VMTI yd
-3263;width VMTI yd
-3264;width VMTI yd
-3265;width VMTI yd
-3270;depth VMTI in
-3271;depth VMTI in
-3272;depth VMTI in
-3273;depth VMTI in
-3274;depth VMTI in
-3275;depth VMTI in
-3280;depth VMTI ft
-3281;depth VMTI ft
-3282;depth VMTI ft
-3283;depth VMTI ft
-3284;depth VMTI ft
-3285;depth VMTI ft
-3290;depth VMTI yd
-3291;depth VMTI yd
-3292;depth VMTI yd
-3293;depth VMTI yd
-3294;depth VMTI yd
-3295;depth VMTI yd
-3300;gross Weight kg
-3301;gross Weight kg
-3302;gross Weight kg
-3303;gross Weight kg
-3304;gross Weight kg
-3305;gross Weight kg
-3310;logistic length m
-3311;logistic length m
-3312;logistic length m
-3313;logistic length m
-3314;logistic length m
-3315;logistic length m
-3320;logistic width m
-3321;logistic width m
-3322;logistic width m
-3323;logistic width m
-3324;logistic width m
-3325;logistic width m
-3330;logistic depth m
-3331;logistic depth m
-3332;logistic depth m
-3333;logistic depth m
-3334;logistic depth m
-3335;logistic depth m
-3340;logistic area m²
-3341;logistic area m²
-3342;logistic area m²
-3343;logistic area m²
-3344;logistic area m²
-3345;logistic area m²
-3350;logistic volume l
-3351;logistic volume l
-3352;logistic volume l
-3353;logistic volume l
-3354;logistic volume l
-3355;logistic volume l
-3360;logistic volume m³
-3361;logistic volume m³
-3362;logistic volume m³
-3363;logistic volume m³
-3364;logistic volume m³
-3365;logistic volume m³
-3370;mass per unit area VMTI m²
-3371;mass per unit area VMTI m²
-3372;mass per unit area VMTI m²
-3373;mass per unit area VMTI m²
-3374;mass per unit area VMTI m²
-3375;mass per unit area VMTI m²
-3400;gross weight lb
-3401;gross weight lb
-3402;gross weight lb
-3403;gross weight lb
-3404;gross weight lb
-3405;gross weight lb
-3410;logistic length in log
-3411;logistic length in log
-3412;logistic length in log
-3413;logistic length in log
-3414;logistic length in log
-3415;logistic length in log
-3420;logistic length ft log
-3421;logistic length ft log
-3422;logistic length ft log
-3423;logistic length ft log
-3424;logistic length ft log
-3425;logistic length ft log
-3430;logistic length yd log
-3431;logistic length yd log
-3432;logistic length yd log
-3433;logistic length yd log
-3434;logistic length yd log
-3435;logistic length yd log
-3440;logistic width in log
-3441;logistic width in log
-3442;logistic width in log
-3443;logistic width in log
-3444;logistic width in log
-3445;logistic width in log
-3450;logistic width ft log
-3451;logistic width ft log
-3452;logistic width ft log
-3453;logistic width ft log
-3454;logistic width ft log
-3455;logistic width ft log
-3460;logistic width yd log
-3461;logistic width yd log
-3462;logistic width yd log
-3463;logistic width yd log
-3464;logistic width yd log
-3465;logistic width yd log
-3470;logistic depth in log
-3471;logistic depth in log
-3472;logistic depth in log
-3473;logistic depth in log
-3474;logistic depth in log
-3475;logistic depth in log
-3480;logistic depth ft log
-3481;logistic depth ft log
-3482;logistic depth ft log
-3483;logistic depth ft log
-3484;logistic depth ft log
-3485;logistic depth ft log
-3490;logistic depth yd log
-3491;logistic depth yd log
-3492;logistic depth yd log
-3493;logistic depth yd log
-3494;logistic depth yd log
-3495;logistic depth yd log
-3500;area VMTI in²
-3501;area VMTI in²
-3502;area VMTI in²
-3503;area VMTI in²
-3504;area VMTI in²
-3505;area VMTI in²
-3510;area VMTI ft²
-3511;area VMTI ft²
-3512;area VMTI ft²
-3513;area VMTI ft²
-3514;area VMTI ft²
-3515;area VMTI ft²
-3520;area VMTI yd²
-3521;area VMTI yd²
-3522;area VMTI yd²
-3523;area VMTI yd²
-3524;area VMTI yd²
-3525;area VMTI yd²
-3530;logistic area in² log
-3531;logistic area in² log
-3532;logistic area in² log
-3533;logistic area in² log
-3534;logistic area in² log
-3535;logistic area in² log
-3540;logistic area ft² log
-3541;logistic area ft² log
-3542;logistic area ft² log
-3543;logistic area ft² log
-3544;logistic area ft² log
-3545;logistic area ft² log
-3550;logistic area yd² log
-3551;logistic area yd² log
-3552;logistic area yd² log
-3553;logistic area yd² log
-3554;logistic area yd² log
-3555;logistic area yd² log
-3560;net weight VMTI troy oz
-3561;net weight VMTI troy oz
-3562;net weight VMTI troy oz
-3563;net weight VMTI troy oz
-3564;net weight VMTI troy oz
-3565;net weight VMTI troy oz
-3570;net weight VMTI oz
-3571;net weight VMTI oz
-3572;net weight VMTI oz
-3573;net weight VMTI oz
-3574;net weight VMTI oz
-3575;net weight VMTI oz
-3600;net volume VMTI qt
-3601;net volume VMTI qt
-3602;net volume VMTI qt
-3603;net volume VMTI qt
-3604;net volume VMTI qt
-3605;net volume VMTI qt
-3610;net volume VMTI gal
-3611;net volume VMTI gal
-3612;net volume VMTI gal
-3613;net volume VMTI gal
-3614;net volume VMTI gal
-3615;net volume VMTI gal
-3620;logistic volume qt log
-3621;logistic volume qt log
-3622;logistic volume qt log
-3623;logistic volume qt log
-3624;logistic volume qt log
-3625;logistic volume qt log
-3630;logistic volume gal log
-3631;logistic volume gal log
-3632;logistic volume gal log
-3633;logistic volume gal log
-3634;logistic volume gal log
-3635;logistic volume gal log
-3640;net volume VMTI in³
-3641;net volume VMTI in³
-3642;net volume VMTI in³
-3643;net volume VMTI in³
-3644;net volume VMTI in³
-3645;net volume VMTI in³
-3650;net volume VMTI ft³
-3651;net volume VMTI ft³
-3652;net volume VMTI ft³
-3653;net volume VMTI ft³
-3654;net volume VMTI ft³
-3655;net volume VMTI ft³
-3660;net volume VMTI yd³
-3661;net volume VMTI yd³
-3662;net volume VMTI yd³
-3663;net volume VMTI yd³
-3664;net volume VMTI yd³
-3665;net volume VMTI yd³
-3670;logistic volume in³ log
-3671;logistic volume in³ log
-3672;logistic volume in³ log
-3673;logistic volume in³ log
-3674;logistic volume in³ log
-3675;logistic volume in³ log
-3680;logistic volume ft³ log
-3681;logistic volume ft³ log
-3682;logistic volume ft³ log
-3683;logistic volume ft³ log
-3684;logistic volume ft³ log
-3685;logistic volume ft³ log
-3690;logistic volume yd³ log
-3691;logistic volume yd³ log
-3692;logistic volume yd³ log
-3693;logistic volume yd³ log
-3694;logistic volume yd³ log
-3695;logistic volume yd³ log
-37;count
-3900;amount
-3901;amount
-3902;amount
-3903;amount
-3904;amount
-3905;amount
-3906;amount
-3907;amount
-3908;amount
-3909;amount
-3910;amount ISO
-3911;amount ISO
-3912;amount ISO
-3913;amount ISO
-3914;amount ISO
-3915;amount ISO
-3916;amount ISO
-3917;amount ISO
-3918;amount ISO
-3919;amount ISO
-3920;price
-3921;price
-3922;price
-3923;price
-3924;price
-3925;price
-3926;price
-3927;price
-3928;price
-3929;price
-3930;price ISO
-3931;price ISO
-3932;price ISO
-3933;price ISO
-3934;price ISO
-3935;price ISO
-3936;price ISO
-3937;price ISO
-3938;price ISO
-3939;price ISO
-3940;percent off
-3941;percent off
-3942;percent off
-3943;percent off
-3950;amount pay per unit
-3951;amount pay per unit
-3952;amount pay per unit
-3953;amount pay per unit
-3954;amount pay per unit
-3955;amount pay per unit
-
-400;order number
-401;ginc
-402;gsin
-403;route
-410;ship to loc
-411;bill to
-412;purchase from
-413;ship for loc
-414;gln loc no
-415;pay to
-416;prod serv loc
-417;Party Gln
-420;ship to post
-421;ship to post ISO
-422;country origin
-423;country initial process
-424;country process
-425;country disassembly
-426;country full process
-427;country origin subdivision
-4300;ship to comp
-4301;ship to Name
-4302;ship to add1
-4303;ship to add2
-4304;ship to sub
-4305;ship to locality
-4306;ship to reg
-4307;ship to country
-4308;ship to phone
-4309;ship to geo loc
-4310;rtn to comp
-4311;rtn to name
-4312;rtn to add1
-4313;rtn to add2
-4314;rtn to sub
-4315;rtn to loc
-4316;rtn to reg
-4317;rtn to country
-4318;rtn to post
-4319;rtn to phone
-4320;srv description
-4321;dangerous goods
-4322;auth to leave
-4323;sig required
-4324;not before del date
-4325;not after del date
-4326;release date
-4330;max Temp F
-4331;max Temp C
-4332;min Temp F
-4333;min Temp C
-
-7001;nsn
-7002;meat cut
-7003;expiry time
-7004;active potency
-7005;catch area
-7006;first freeze date
-7007;harvest date
-7008;aquatic species
-7009;fishing gear type
-7010;prod method
-7011;test by date
-7020;refurb lot id
-7021;func stat
-7022;rev stat
-7023;giai assembly
-7030;processor 0
-7031;processor 1
-7032;processor 2
-7033;processor 3
-7034;processor 4
-7035;processor 5
-7036;processor 6
-7037;processor 7
-7038;processor 8
-7039;processor 9
-7040;uic + ext
-7041;ufrgt unit type
-710;nhrn PZN
-711;nhrn CIP
-712;nhrn CN
-713;nhrn DRN
-714;nhrn AIM
-715;nhrn NDC US-FDA
-716;nhrn AIC
-717;nhrn SRN
-7230;certification ref 0
-7231;certification ref 1
-7232;certification ref 2
-7233;certification ref 3
-7234;certification ref 4
-7235;certification ref 5
-7236;certification ref 6
-7237;certification ref 7
-7238;certification ref 8
-7239;certification ref 9
-7240;protocol
-7241;aidc media type
-7242;vcn
-7250;dob
-7251;dob time
-7252;bio sex
-7253;family name
-7254;given name
-7255;name suffix
-7256;full name
-7257;person addr
-7258;birth sequence
-7259;baby
-
-8001;dimensions
-8002;cmt no
-8003;grai
-8004;giai
-8005;price per unit
-8006;itip
-8007;iban
-8008;prod time
-8009;optical sensor
-8010;cpid
-8011;cpid serial
-8012;version
-8013;gmn
-8017;gsrn provider
-8018;gsrn recipient
-8019;srin
-8020;refno
-8026;itip content
-8030;dig sig
-8040;imei
-8041;imei2
-8042;embedded sim
-8043;physical sim
-8110;coupon IDNA
-8111;points
-8112;paperless coupon IDNA
-
-90;internal
-91;internal
-92;internal
-93;internal
-94;internal
-95;internal
-96;internal
-97;internal
-98;internal
-99;internal
+﻿00;SSCC
+01;GTIN
+02;CONTENT
+10;BATCH/LOT
+11;PROD DATE
+12;DUE DATE
+13;PACK DATE
+15;BEST BEFORE or BEST BY DATE
+16;SELL BY DATE
+17;USE BY or EXPIRY DATE
+20;VARIANT
+21;SERIAL
+22;CPV
+235;TPX
+240;ADDITIONAL ID
+241;CUST. PART No.
+242;MTO VARIANT
+243;PCN
+250;SECONDARY SERIAL
+251;REF. TO SOURCE
+253;GDTI
+254;GLN EXTENSION COMPONENT
+255;GCN
+30;VAR. COUNT
+3100;NET WEIGHT (kg)
+3101;NET WEIGHT (kg)
+3102;NET WEIGHT (kg)
+3103;NET WEIGHT (kg)
+3104;NET WEIGHT (kg)
+3105;NET WEIGHT (kg)
+3110;LENGTH (m)
+3111;LENGTH (m)
+3112;LENGTH (m)
+3113;LENGTH (m)
+3114;LENGTH (m)
+3115;LENGTH (m)
+3120;WIDTH (m)
+3121;WIDTH (m)
+3122;WIDTH (m)
+3123;WIDTH (m)
+3124;WIDTH (m)
+3125;WIDTH (m)
+3130;HEIGHT (m)
+3131;HEIGHT (m)
+3132;HEIGHT (m)
+3133;HEIGHT (m)
+3134;HEIGHT (m)
+3135;HEIGHT (m)
+3140;AREA (m²)
+3141;AREA (m²)
+3142;AREA (m²)
+3143;AREA (m²)
+3144;AREA (m²)
+3145;AREA (m²)
+3150;NET VOLUME (l)
+3151;NET VOLUME (l)
+3152;NET VOLUME (l)
+3153;NET VOLUME (l)
+3154;NET VOLUME (l)
+3155;NET VOLUME (l)
+3160;NET VOLUME (m³)
+3161;NET VOLUME (m³)
+3162;NET VOLUME (m³)
+3163;NET VOLUME (m³)
+3164;NET VOLUME (m³)
+3165;NET VOLUME (m³)
+3200;NET WEIGHT (lb)
+3201;NET WEIGHT (lb)
+3202;NET WEIGHT (lb)
+3203;NET WEIGHT (lb)
+3204;NET WEIGHT (lb)
+3205;NET WEIGHT (lb)
+3210;LENGTH (in)
+3211;LENGTH (in)
+3212;LENGTH (in)
+3213;LENGTH (in)
+3214;LENGTH (in)
+3215;LENGTH (in)
+3220;LENGTH (ft)
+3221;LENGTH (ft)
+3222;LENGTH (ft)
+3223;LENGTH (ft)
+3224;LENGTH (ft)
+3225;LENGTH (ft)
+3230;LENGTH (yd)
+3231;LENGTH (yd)
+3232;LENGTH (yd)
+3233;LENGTH (yd)
+3234;LENGTH (yd)
+3235;LENGTH (yd)
+3240;WIDTH (in)
+3241;WIDTH (in)
+3242;WIDTH (in)
+3243;WIDTH (in)
+3244;WIDTH (in)
+3245;WIDTH (in)
+3250;WIDTH (ft)
+3251;WIDTH (ft)
+3252;WIDTH (ft)
+3253;WIDTH (ft)
+3254;WIDTH (ft)
+3255;WIDTH (ft)
+3260;WIDTH (yd)
+3261;WIDTH (yd)
+3262;WIDTH (yd)
+3263;WIDTH (yd)
+3264;WIDTH (yd)
+3265;WIDTH (yd)
+3270;HEIGHT (in)
+3271;HEIGHT (in)
+3272;HEIGHT (in)
+3273;HEIGHT (in)
+3274;HEIGHT (in)
+3275;HEIGHT (in)
+3280;HEIGHT (ft)
+3281;HEIGHT (ft)
+3282;HEIGHT (ft)
+3283;HEIGHT (ft)
+3284;HEIGHT (ft)
+3285;HEIGHT (ft)
+3290;HEIGHT (yd)
+3291;HEIGHT (yd)
+3292;HEIGHT (yd)
+3293;HEIGHT (yd)
+3294;HEIGHT (yd)
+3295;HEIGHT (yd)
+3300;GROSS WEIGHT (kg)
+3301;GROSS WEIGHT (kg)
+3302;GROSS WEIGHT (kg)
+3303;GROSS WEIGHT (kg)
+3304;GROSS WEIGHT (kg)
+3305;GROSS WEIGHT (kg)
+3310;LENGTH (m), log
+3311;LENGTH (m), log
+3312;LENGTH (m), log
+3313;LENGTH (m), log
+3314;LENGTH (m), log
+3315;LENGTH (m), log
+3320;WIDTH (m), log
+3321;WIDTH (m), log
+3322;WIDTH (m), log
+3323;WIDTH (m), log
+3324;WIDTH (m), log
+3325;WIDTH (m), log
+3330;HEIGHT (m), log
+3331;HEIGHT (m), log
+3332;HEIGHT (m), log
+3333;HEIGHT (m), log
+3334;HEIGHT (m), log
+3335;HEIGHT (m), log
+3340;AREA (m²), log
+3341;AREA (m²), log
+3342;AREA (m²), log
+3343;AREA (m²), log
+3344;AREA (m²), log
+3345;AREA (m²), log
+3350;VOLUME (l), log
+3351;VOLUME (l), log
+3352;VOLUME (l), log
+3353;VOLUME (l), log
+3354;VOLUME (l), log
+3355;VOLUME (l), log
+3360;VOLUME (m³), log
+3361;VOLUME (m³), log
+3362;VOLUME (m³), log
+3363;VOLUME (m³), log
+3364;VOLUME (m³), log
+3365;VOLUME (m³), log
+3370;KG PER m²
+3371;KG PER m²
+3372;KG PER m²
+3373;KG PER m²
+3374;KG PER m²
+3375;KG PER m²
+3400;GROSS WEIGHT (lb)
+3401;GROSS WEIGHT (lb)
+3402;GROSS WEIGHT (lb)
+3403;GROSS WEIGHT (lb)
+3404;GROSS WEIGHT (lb)
+3405;GROSS WEIGHT (lb)
+3410;LENGTH (in), log
+3411;LENGTH (in), log
+3412;LENGTH (in), log
+3413;LENGTH (in), log
+3414;LENGTH (in), log
+3415;LENGTH (in), log
+3420;LENGTH (ft), log
+3421;LENGTH (ft), log
+3422;LENGTH (ft), log
+3423;LENGTH (ft), log
+3424;LENGTH (ft), log
+3425;LENGTH (ft), log
+3430;LENGTH (yd), log
+3431;LENGTH (yd), log
+3432;LENGTH (yd), log
+3433;LENGTH (yd), log
+3434;LENGTH (yd), log
+3435;LENGTH (yd), log
+3440;WIDTH (in), log
+3441;WIDTH (in), log
+3442;WIDTH (in), log
+3443;WIDTH (in), log
+3444;WIDTH (in), log
+3445;WIDTH (in), log
+3450;WIDTH (ft), log
+3451;WIDTH (ft), log
+3452;WIDTH (ft), log
+3453;WIDTH (ft), log
+3454;WIDTH (ft), log
+3455;WIDTH (ft), log
+3460;WIDTH (yd), log
+3461;WIDTH (yd), log
+3462;WIDTH (yd), log
+3463;WIDTH (yd), log
+3464;WIDTH (yd), log
+3465;WIDTH (yd), log
+3470;HEIGHT (in), log
+3471;HEIGHT (in), log
+3472;HEIGHT (in), log
+3473;HEIGHT (in), log
+3474;HEIGHT (in), log
+3475;HEIGHT (in), log
+3480;HEIGHT (ft), log
+3481;HEIGHT (ft), log
+3482;HEIGHT (ft), log
+3483;HEIGHT (ft), log
+3484;HEIGHT (ft), log
+3485;HEIGHT (ft), log
+3490;HEIGHT (yd), log
+3491;HEIGHT (yd), log
+3492;HEIGHT (yd), log
+3493;HEIGHT (yd), log
+3494;HEIGHT (yd), log
+3495;HEIGHT (yd), log
+3500;AREA (in²)
+3501;AREA (in²)
+3502;AREA (in²)
+3503;AREA (in²)
+3504;AREA (in²)
+3505;AREA (in²)
+3510;AREA (ft²)
+3511;AREA (ft²)
+3512;AREA (ft²)
+3513;AREA (ft²)
+3514;AREA (ft²)
+3515;AREA (ft²)
+3520;AREA (yd²)
+3521;AREA (yd²)
+3522;AREA (yd²)
+3523;AREA (yd²)
+3524;AREA (yd²)
+3525;AREA (yd²)
+3530;AREA (in²), log
+3531;AREA (in²), log
+3532;AREA (in²), log
+3533;AREA (in²), log
+3534;AREA (in²), log
+3535;AREA (in²), log
+3540;AREA (ft²), log
+3541;AREA (ft²), log
+3542;AREA (ft²), log
+3543;AREA (ft²), log
+3544;AREA (ft²), log
+3545;AREA (ft²), log
+3550;AREA (yd²), log
+3551;AREA (yd²), log
+3552;AREA (yd²), log
+3553;AREA (yd²), log
+3554;AREA (yd²), log
+3555;AREA (yd²), log
+3560;NET WEIGHT (troy oz)
+3561;NET WEIGHT (troy oz)
+3562;NET WEIGHT (troy oz)
+3563;NET WEIGHT (troy oz)
+3564;NET WEIGHT (troy oz)
+3565;NET WEIGHT (troy oz)
+3570;NET VOLUME (oz)
+3571;NET VOLUME (oz)
+3572;NET VOLUME (oz)
+3573;NET VOLUME (oz)
+3574;NET VOLUME (oz)
+3575;NET VOLUME (oz)
+3600;NET VOLUME (qt)
+3601;NET VOLUME (qt)
+3602;NET VOLUME (qt)
+3603;NET VOLUME (qt)
+3604;NET VOLUME (qt)
+3605;NET VOLUME (qt)
+3610;NET VOLUME (gal.)
+3611;NET VOLUME (gal.)
+3612;NET VOLUME (gal.)
+3613;NET VOLUME (gal.)
+3614;NET VOLUME (gal.)
+3615;NET VOLUME (gal.)
+3620;VOLUME (qt), log
+3621;VOLUME (qt), log
+3622;VOLUME (qt), log
+3623;VOLUME (qt), log
+3624;VOLUME (qt), log
+3625;VOLUME (qt), log
+3630;VOLUME (gal.), log
+3631;VOLUME (gal.), log
+3632;VOLUME (gal.), log
+3633;VOLUME (gal.), log
+3634;VOLUME (gal.), log
+3635;VOLUME (gal.), log
+3640;NET VOLUME (in³)
+3641;NET VOLUME (in³)
+3642;NET VOLUME (in³)
+3643;NET VOLUME (in³)
+3644;NET VOLUME (in³)
+3645;NET VOLUME (in³)
+3650;NET VOLUME (ft³)
+3651;NET VOLUME (ft³)
+3652;NET VOLUME (ft³)
+3653;NET VOLUME (ft³)
+3654;NET VOLUME (ft³)
+3655;NET VOLUME (ft³)
+3660;NET VOLUME (yd³)
+3661;NET VOLUME (yd³)
+3662;NET VOLUME (yd³)
+3663;NET VOLUME (yd³)
+3664;NET VOLUME (yd³)
+3665;NET VOLUME (yd³)
+3670;VOLUME (in³), log
+3671;VOLUME (in³), log
+3672;VOLUME (in³), log
+3673;VOLUME (in³), log
+3674;VOLUME (in³), log
+3675;VOLUME (in³), log
+3680;VOLUME (ft³), log
+3681;VOLUME (ft³), log
+3682;VOLUME (ft³), log
+3683;VOLUME (ft³), log
+3684;VOLUME (ft³), log
+3685;VOLUME (ft³), log
+3690;VOLUME (yd³), log
+3691;VOLUME (yd³), log
+3692;VOLUME (yd³), log
+3693;VOLUME (yd³), log
+3694;VOLUME (yd³), log
+3695;VOLUME (yd³), log
+37;COUNT
+3900;AMOUNT
+3901;AMOUNT
+3902;AMOUNT
+3903;AMOUNT
+3904;AMOUNT
+3905;AMOUNT
+3906;AMOUNT
+3907;AMOUNT
+3908;AMOUNT
+3909;AMOUNT
+3910;AMOUNT
+3911;AMOUNT
+3912;AMOUNT
+3913;AMOUNT
+3914;AMOUNT
+3915;AMOUNT
+3916;AMOUNT
+3917;AMOUNT
+3918;AMOUNT
+3919;AMOUNT
+3920;PRICE
+3921;PRICE
+3922;PRICE
+3923;PRICE
+3924;PRICE
+3925;PRICE
+3926;PRICE
+3927;PRICE
+3928;PRICE
+3929;PRICE
+3930;PRICE
+3931;PRICE
+3932;PRICE
+3933;PRICE
+3934;PRICE
+3935;PRICE
+3936;PRICE
+3937;PRICE
+3938;PRICE
+3939;PRICE
+3940;PRCNT OFF
+3941;PRCNT OFF
+3942;PRCNT OFF
+3943;PRCNT OFF
+3950;PRICE/UoM
+3951;PRICE/UoM
+3952;PRICE/UoM
+3953;PRICE/UoM
+3954;PRICE/UoM
+3955;PRICE/UoM
+400;ORDER NUMBER
+401;GINC
+402;GSIN
+403;ROUTE
+410;SHIP TO LOC
+411;BILL TO
+412;PURCHASE FROM
+413;SHIP FOR LOC
+414;LOC No.
+415;PAY TO
+416;PROD/SERV LOC
+417;PARTY
+420;SHIP TO POST
+421;SHIP TO POST
+422;ORIGIN
+423;COUNTRY - INITIAL PROCESS
+424;COUNTRY - PROCESS
+425;COUNTRY - DISASSEMBLY
+426;COUNTRY - FULL PROCESS
+427;ORIGIN SUBDIVISION
+4300;SHIP TO COMP
+4301;SHIP TO NAME
+4302;SHIP TO ADD1
+4303;SHIP TO ADD2
+4304;SHIP TO SUB
+4305;SHIP TO LOC
+4306;SHIP TO REG
+4307;SHIP TO COUNTRY
+4308;SHIP TO PHONE
+4309;SHIP TO GEO
+4310;RTN TO COMP
+4311;RTN TO NAME
+4312;RTN TO ADD1
+4313;RTN TO ADD2
+4314;RTN TO SUB
+4315;RTN TO LOC
+4316;RTN TO REG
+4317;RTN TO COUNTRY
+4318;RTN TO POST
+4319;RTN TO PHONE
+4320;SRV DESCRIPTION
+4321;DANGEROUS GOODS
+4322;AUTH LEAVE
+4323;SIG REQUIRED
+4324;NBEF DEL DATE
+4325;NAFT DEL DATE
+4326;REL DATE
+4330;MAX TEMP F
+4331;MAX TEMP C
+4332;MIN TEMP F
+4333;MIN TEMP C
+7001;NSN
+7002;MEAT CUT
+7003;EXPIRY TIME
+7004;ACTIVE POTENCY
+7005;CATCH AREA
+7006;FIRST FREEZE DATE
+7007;HARVEST DATE
+7008;AQUATIC SPECIES
+7009;FISHING GEAR TYPE
+7010;PROD METHOD
+7011;TEST BY DATE
+7020;REFURB LOT
+7021;FUNC STAT
+7022;REV STAT
+7023;GIAI - ASSEMBLY
+7030;PROCESSOR # 0
+7031;PROCESSOR # 1
+7032;PROCESSOR # 2
+7033;PROCESSOR # 3
+7034;PROCESSOR # 4
+7035;PROCESSOR # 5
+7036;PROCESSOR # 6
+7037;PROCESSOR # 7
+7038;PROCESSOR # 8
+7039;PROCESSOR # 9
+7040;UIC+EXT
+7041;UFRGT UNIT TYPE
+710;NHRN PZN
+711;NHRN CIP
+712;NHRN CN
+713;NHRN DRN
+714;NHRN AIM
+715;NHRN NDC
+716;NHRN AIC
+717;NHRN SRN
+7230;CERT # 0
+7231;CERT # 1
+7232;CERT # 2
+7233;CERT # 3
+7234;CERT # 4
+7235;CERT # 5
+7236;CERT # 6
+7237;CERT # 7
+7238;CERT # 8
+7239;CERT # 9
+7240;PROTOCOL
+7241;AIDC MEDIA TYPE
+7242;VCN
+7250;DOB
+7251;DOB TIME
+7252;BIO SEX
+7253;FAMILY NAME
+7254;GIVEN NAME
+7255;SUFFIX
+7256;FULL NAME
+7257;PERSON ADDR
+7258;BIRTH SEQUENCE
+7259;BABY
+8001;DIMENSIONS
+8002;CMT No.
+8003;GRAI
+8004;GIAI
+8005;PRICE PER UNIT
+8006;ITIP
+8007;IBAN
+8008;PROD TIME
+8009;OPTSEN
+8010;CPID
+8011;CPID SERIAL
+8012;VERSION
+8013;GMN
+8017;GSRN - PROVIDER
+8018;GSRN - RECIPIENT
+8019;SRIN
+8020;REF No.
+8026;ITIP CONTENT
+8030;DIGSIG
+8040;IMEI
+8041;IMEI2
+8042;ESIM
+8043;PSIM
+8110;COUPON ID NORTH AMERICA
+8111;POINTS
+8112;POS COUPON ID NORTH AMERICA
+90;INTERNAL
+91;INTERNAL
+92;INTERNAL
+93;INTERNAL
+94;INTERNAL
+95;INTERNAL
+96;INTERNAL
+97;INTERNAL
+98;INTERNAL
+99;INTERNAL

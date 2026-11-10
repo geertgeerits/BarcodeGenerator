@@ -109,12 +109,10 @@
                 }
             }
 
-            // Delete the key-value pairs if they are not in the _knownGs1AppIDs dictionary
-            List<string> keysToRemove = [.. dicGs1.Keys.Where(static key => !IsKnownGs1AppID(key))];
-            
-            foreach (string key in keysToRemove)
+            // If the first key in the dictionary starts with http the remove this key and value from the dictionary
+            if (dicGs1.Count > 0 && dicGs1.Keys.FirstOrDefault()?.StartsWith("http", StringComparison.OrdinalIgnoreCase) == true)
             {
-                dicGs1.Remove(key);
+                dicGs1.Remove(dicGs1.Keys.First());
             }
         }
 
