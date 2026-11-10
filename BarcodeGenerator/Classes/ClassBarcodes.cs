@@ -799,7 +799,7 @@
                         try
                         {
                             // If the value is a date or date/time, format it as a date or date/time string in the current culture format
-                            // 6 DIGIT (date YYMMDD)
+                            // 6 DIGIT (date YYMMDD) - Format the first 6 digits of the value as a date string in the current culture format
                             if (kvp.Key is "11" or "12" or "13" or "15" or "16" or "17" or "4324" or "4325" or "4326"
                                 or "7003" or "7006" or "7007" or "7011" or "7251" or "8008")
                             {
