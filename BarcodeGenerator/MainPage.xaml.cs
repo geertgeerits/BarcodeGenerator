@@ -3,7 +3,7 @@
  * Copyright ...: (C) 2022-2026
  * Version .....: 1.0.55
  * Date ........: 2026-11-10 (YYYY-MM-DD)
- * Language ....: Microsoft Visual Studio 2026: .NET 10.0 MAUI C# 14.0
+ * Language ....: Microsoft Visual Studio 2026: .NET 11.0 MAUI C# 15.0
  * Description .: Barcode Generator: ZXing - Barcode Scanner: Native Android and iOS
  * Note ........: zxing:CameraBarcodeReaderView -> ex. WidthRequest="300" -> Grid RowDefinitions="400" (300 x 1.3333) = 3:4 aspect ratio
  *                Apple Vision framework: https://developer.apple.com/documentation/vision
