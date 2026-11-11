@@ -1130,4 +1130,7 @@
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>مُعرِّفات تطبيقات GS1 ليست بالترتيب الصحيح.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>هل تود الاحتفاظ برقم الآيبان (IBAN) هذا؟</value>
+  </data>
 </root>

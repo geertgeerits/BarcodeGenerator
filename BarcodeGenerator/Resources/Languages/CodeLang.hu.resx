@@ -1129,4 +1129,7 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>A GS1 alkalmazásazonosítók sorrendje nem megfelelő.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Megtartja ezt az IBAN-t?</value>
+  </data>
 </root>

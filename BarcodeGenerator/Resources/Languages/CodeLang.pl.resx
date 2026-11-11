@@ -1129,4 +1129,7 @@ Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawie
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>Identyfikatory zastosowania GS1 nie znajdują się we właściwej kolejności.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Zachować ten numer IBAN?</value>
+  </data>
 </root>

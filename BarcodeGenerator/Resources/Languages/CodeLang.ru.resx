@@ -1129,4 +1129,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>Идентификаторы применения GS1 расположены в неправильном порядке.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Сохранить этот IBAN?</value>
+  </data>
 </root>

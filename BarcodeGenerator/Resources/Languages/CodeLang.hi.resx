@@ -1126,4 +1126,7 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>GS1 एप्लिकेशन आइडेंटिफायर सही क्रम में नहीं हैं।</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>क्या यह IBAN रखें?</value>
+  </data>
 </root>

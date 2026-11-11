@@ -1129,4 +1129,7 @@ Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tic
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>Identifikátory aplikace GS1 nejsou ve správném pořadí.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Ponechat toto IBAN?</value>
+  </data>
 </root>

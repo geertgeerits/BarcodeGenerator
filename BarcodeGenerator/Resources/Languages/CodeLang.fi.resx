@@ -1129,4 +1129,7 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>GS1-sovellustunnisteet eivät ole oikeassa järjestyksessä.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Säilytetäänkö tämä IBAN?</value>
+  </data>
 </root>

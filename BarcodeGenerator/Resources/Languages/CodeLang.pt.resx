@@ -1129,4 +1129,7 @@ Para alterar o tamanho do código QR dentro do círculo, ajuste a zona de silên
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>Os identificadores de aplicação GS1 não estão na ordem correta.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Manter este IBAN?</value>
+  </data>
 </root>

@@ -1129,4 +1129,7 @@ Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölg
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>GS1 uygulama tanımlayıcıları doğru sırada değil.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Bu IBAN'ı sakla?</value>
+  </data>
 </root>

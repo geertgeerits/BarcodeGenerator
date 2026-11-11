@@ -1187,7 +1187,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Keep the IBAN number?.
+        ///   Looks up a localized string similar to Keep this IBAN?.
         /// </summary>
         internal static string ErrorIbanInvalidKeep_Text {
             get {

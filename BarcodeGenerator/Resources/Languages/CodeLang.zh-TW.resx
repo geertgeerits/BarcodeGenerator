@@ -1130,4 +1130,7 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>GS1 應用標識符順序錯誤。</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>請保留此IBAN帳號？</value>
+  </data>
 </root>

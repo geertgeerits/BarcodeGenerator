@@ -1128,4 +1128,7 @@ Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruh
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>Die GS1-Anwendungsidentifikatoren befinden sich nicht in der korrekten Reihenfolge.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Diese IBAN behalten?</value>
+  </data>
 </root>

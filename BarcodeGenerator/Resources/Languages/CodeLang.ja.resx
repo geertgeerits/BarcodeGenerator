@@ -1143,4 +1143,7 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>GS1アプリケーション識別子の順序が正しくありません。</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>このIBANを保持しますか？</value>
+  </data>
 </root>

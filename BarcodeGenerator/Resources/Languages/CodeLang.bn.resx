@@ -1127,4 +1127,7 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>GS1 অ্যাপ্লিকেশন আইডেন্টিফায়ারগুলো সঠিক ক্রমে নেই।</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>এই IBAN-টি রাখবেন?</value>
+  </data>
 </root>

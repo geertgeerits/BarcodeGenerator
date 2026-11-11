@@ -1129,4 +1129,7 @@ Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet 
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>Pengidentifikasi aplikasi GS1 tidak dalam urutan yang benar.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Simpan IBAN ini?</value>
+  </data>
 </root>

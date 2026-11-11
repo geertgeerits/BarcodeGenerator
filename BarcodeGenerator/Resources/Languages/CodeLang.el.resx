@@ -1129,4 +1129,7 @@
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>Τα αναγνωριστικά εφαρμογής GS1 δεν βρίσκονται στη σωστή σειρά.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Διατήρηση αυτού του IBAN;</value>
+  </data>
 </root>

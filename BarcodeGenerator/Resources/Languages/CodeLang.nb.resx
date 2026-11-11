@@ -1129,4 +1129,7 @@ For å endre størrelsen på QR-koden inne i sirkelen, justerer du «quiet zone�
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>GS1-applikasjonsidentifikatorer er ikke i riktig rekkefølge.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Beholde dette IBAN-nummeret?</value>
+  </data>
 </root>

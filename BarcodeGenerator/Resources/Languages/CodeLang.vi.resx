@@ -1132,4 +1132,7 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="ErrorGS1AppIDOrderInvalid_Text" xml:space="preserve">
     <value>Các định danh ứng dụng GS1 không theo đúng thứ tự.</value>
   </data>
+  <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
+    <value>Giữ lại IBAN này?</value>
+  </data>
 </root>
