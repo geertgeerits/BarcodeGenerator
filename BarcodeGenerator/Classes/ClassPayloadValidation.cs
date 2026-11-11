@@ -85,6 +85,23 @@ namespace BarcodeGenerator
                 cleanIban = cIban;
             }
 
+            // Check if the IBAN is in the known IBAN data dictionary and has a valid length for the country code
+            int nIBANLength = ClassPayloadGS1Validation.GetKnownIbanLengthValue(cleanIban[..2]);
+
+            if (nIBANLength == 0)
+            {
+                return false;
+            }
+            
+            // Check if the IBAN length matches the expected length for the country code
+            else
+            {
+                if (cleanIban.Length != nIBANLength)
+                {
+                    return false;
+                }
+            }
+
             // Basic IBAN format check: starts with 2 letters (country code), followed by 2 digits (check digits), and then up to 30 alphanumeric characters (BBAN)
             if (!RegexIban().IsMatch(cleanIban))
             {

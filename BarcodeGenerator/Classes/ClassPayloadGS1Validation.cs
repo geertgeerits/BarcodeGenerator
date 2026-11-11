@@ -8,6 +8,9 @@
         // Add once in the class - central place for all supported GS1 Application Identifiers (AI) (keys and data attributes)
         public static readonly Dictionary<string, string> _knownGs1AppIDs = [];
 
+        /// Add once in the class - central place for all supported IBAN data (country and length)
+        public static readonly Dictionary<string, int> _knownIbanData = [];
+
         /// <summary>
         /// Copy the GS1 Application Identifiers and their values from a text file to a dictionary for validation
         /// </summary>
@@ -34,6 +37,37 @@
                 if (_knownGs1AppIDs.TryAdd(parts[0], parts[1]))
                 {
                     Debug.WriteLine($"Added GS1 Application Identifier: {parts[0]} = {parts[1]}");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Loads the known IBAN data from a text file into the dictionary
+        /// </summary>
+        /// <returns></returns>
+        public static async Task LoadKnownIbanData()
+        {
+            // Load the IBAN data from a text file into the dictionary
+            await using var stream = await FileSystem.OpenAppPackageFileAsync("IBANData.txt");
+            using var reader = new StreamReader(stream);
+
+            string? line;
+            while ((line = await reader.ReadLineAsync()) is not null)
+            {
+                if (string.IsNullOrWhiteSpace(line))
+                {
+                    continue;
+                }
+
+                string[] parts = line.Split(';', 2, StringSplitOptions.TrimEntries);
+                if (parts.Length != 2 || string.IsNullOrWhiteSpace(parts[0]))
+                {
+                    continue;
+                }
+
+                if (_knownIbanData.TryAdd(parts[0], int.Parse(parts[1])))
+                {
+                    Debug.WriteLine($"Added IBAN Data: {parts[0]} = {parts[1]}");
                 }
             }
         }
@@ -168,13 +202,14 @@
             // gtin-code 01 - Global Trade Item Number (GTIN) = 14DIGIT ; GTIN-8, GTIN-12 and GTIN-13 SHALL be expressed as 14 digits, with leading zeroes serving as filler digits
             if (bIsValid && cKey == "01")
             {
-                // If the GS1 identifier length is less than 14 characters, add zeroes to the left to make it 14 characters
-                // and replace the original value with the new value in the editor
+                // Pad the GTIN to 14 digits and replace only the value belonging to AI 01.
                 if (cValue.Length < 14)
                 {
+                    int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
+                    int originalLength = cValue.Length;
                     cValue = cValue.PadLeft(14, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("01", gs1Identifier), gs1Identifier), cValue);
-                    gs1Identifier = editor.Text;
+                    gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
+                    editor.Text = gs1Identifier;
                 }
 
                 // The GTIN must have a valid check digit (/01/09520123456788 is valid, /01/09520123456789 is invalid)
@@ -246,9 +281,11 @@
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 18)
                 {
+                    int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
+                    int originalLength = cValue.Length;
                     cValue = cValue.PadLeft(18, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("8006", gs1Identifier), gs1Identifier), cValue);
-                    gs1Identifier = editor.Text;
+                    gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
+                    editor.Text = gs1Identifier;
                 }
 
                 // The ITIP must have a valid check digit (/8006/095201234567881122 is valid, /8006/095201234567891122 is invalid)
@@ -351,8 +388,11 @@
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 13)
                 {
+                    int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
+                    int originalLength = cValue.Length;
                     cValue = cValue.PadLeft(13, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("414", gs1Identifier), gs1Identifier), cValue);
+                    gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
+                    editor.Text = gs1Identifier;
                 }
 
                 // The GLN must have a valid check digit (/414/9520123456788 is valid, /414/9520123456780 is invalid)
@@ -420,8 +460,11 @@
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 18)
                 {
+                    int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
+                    int originalLength = cValue.Length;
                     cValue = cValue.PadLeft(18, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("8018", gs1Identifier), gs1Identifier), cValue);
+                    gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
+                    editor.Text = gs1Identifier;
                 }
 
                 // If the GS1 identifier does not have a length of 18 characters, return false
@@ -452,8 +495,11 @@
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 13)
                 {
+                    int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
+                    int originalLength = cValue.Length;
                     cValue = cValue.PadLeft(13, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("255", gs1Identifier), gs1Identifier), cValue);
+                    gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
+                    editor.Text = gs1Identifier;
                 }
 
                 // The GCN must have a valid check digit (/255/0952012345678 is valid, /255/0952012345679 is invalid)
@@ -476,8 +522,11 @@
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 18)
                 {
+                    int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
+                    int originalLength = cValue.Length;
                     cValue = cValue.PadLeft(18, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("00", gs1Identifier), gs1Identifier), cValue);
+                    gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
+                    editor.Text = gs1Identifier;
                 }
 
                 // The GTIN must have a valid check digit (/00/195201234567891232 is valid, /00/195201234567891230 is invalid)
@@ -534,8 +583,11 @@
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 17)
                 {
+                    int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
+                    int originalLength = cValue.Length;
                     cValue = cValue.PadLeft(17, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("402", gs1Identifier), gs1Identifier), cValue);
+                    gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
+                    editor.Text = gs1Identifier;
                 }
 
                 // If the GS1 identifier does not have a length of 17 characters, return false
@@ -572,8 +624,11 @@
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 13)
                 {
+                    int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
+                    int originalLength = cValue.Length;
                     cValue = cValue.PadLeft(13, '0');
-                    editor.Text = gs1Identifier.Replace(GetValue(GetAppID("8003", gs1Identifier), gs1Identifier), cValue);
+                    gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
+                    editor.Text = gs1Identifier;
                 }
 
                 // The GRAI must have a valid check digit (/8003/9520123456788 is valid, /8003/9520123456789 is invalid)
@@ -764,7 +819,7 @@
             // Validate the GS1 identifier using the ValidateDataAttribute method, which checks the overall structure and format of the GS1 identifier
             if (bIsValid)
             {
-                bIsValid = ValidateDataAttribute(cKey, cValue);
+                bIsValid = await ValidateDataAttribute(cKey, cValue);
             }
 
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
@@ -784,7 +839,7 @@
         /// <param name="dataAttribute"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        private static bool ValidateDataAttribute(string dataAttribute, string value)
+        private async static Task<bool> ValidateDataAttribute(string dataAttribute, string value)
         {
             // Variable
             cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
@@ -878,22 +933,25 @@
                 }
             }
 
-            // 1 * 34 XCHAR
-            //else if (dataAttribute is "8007")
-            //{
-            //    if (value.Length is < 1 or > 34 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
-            //    {
-            //        return false;
-            //    }
-            //}
-
             // 1 * 34 XCHAR - IBAN (International Bank Account Number)
             else if (dataAttribute is "8007")
             {
                 if (value.Length is < 1 or > 34 || !ValueIsInCharacterSubset(value, _IBAN_CharacterSet) || !ClassPayloadValidation.IsValidIban(null!, value))
                 {
-                    cErrorMessage = CodeLang.ErrorIbanInvalid_Text;
-                    return false;
+                    bool bResult = await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.ErrorIbanInvalid_Text}\n\n{CodeLang.ErrorIbanInvalidKeep_Text}", CodeLang.Yes_Text, CodeLang.No_Text);
+
+                    if (bResult)
+                    {
+                        if (value.Length is < 1 or > 34 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
+                        {
+                            return false;
+                        }
+                    }
+                    
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
 
@@ -1286,6 +1344,16 @@
         }
 
         /// <summary>
+        /// Check if the provided country code is a known country code by searching in the predefined list of known country codes
+        /// </summary>
+        /// <param name="cCountryCode"></param>
+        /// <returns></returns>
+        private static bool IsKnownIbanCountry(string cCountryCode)
+        {
+            return _knownIbanData.ContainsKey(cCountryCode);
+        }
+
+        /// <summary>
         /// Get the value of the provided application identifier (AI) and return the value from the predefined list of known
         /// GS1 Application Identifiers (AIs). If the AI is not found, return an empty string.
         /// </summary>
@@ -1294,6 +1362,71 @@
         public static string GetKnownGs1AppIDValue(string cAppId)
         {
             return _knownGs1AppIDs.TryGetValue(cAppId, out string? value) ? value : string.Empty;
+        }
+
+        /// <summary>
+        /// Get the length of the IBAN code for a country code and return the value from the predefined list of known country codes
+        /// </summary>
+        /// <param name="cCountryCode"></param>
+        /// <returns></returns>
+        public static int GetKnownIbanLengthValue(string cCountryCode)
+        {
+            return _knownIbanData.TryGetValue(cCountryCode, out int value) ? value : 0;
+        }
+
+        /// <summary>
+        /// Get the start index of the value for the specified GS1 Application Identifier (AI) in the GS1 identifier string.
+        /// </summary>
+        /// <param name="gs1Identifier"></param>
+        /// <param name="appID"></param>
+        /// <param name="expectedValue"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        private static int GetValueStart(string gs1Identifier, string appID, string expectedValue)
+        {
+            int queryStart = gs1Identifier.IndexOf('?');
+            string pathPart = queryStart >= 0 ? gs1Identifier[..queryStart] : gs1Identifier;
+            string[] pathSegments = pathPart.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            int valueStart = -1;
+            string? value = null;
+            int position = 0;
+
+            for (int i = 0; i + 1 < pathSegments.Length; i += 2)
+            {
+                int keyStart = pathPart.IndexOf(pathSegments[i], position, StringComparison.Ordinal);
+                int segmentStart = pathPart.IndexOf(pathSegments[i + 1], keyStart + pathSegments[i].Length, StringComparison.Ordinal);
+                if (pathSegments[i] == appID)
+                {
+                    valueStart = segmentStart;
+                    value = pathSegments[i + 1];
+                }
+                position = segmentStart + pathSegments[i + 1].Length;
+            }
+
+            if (queryStart >= 0)
+            {
+                string queryPart = gs1Identifier[(queryStart + 1)..];
+                string[] queryPairs = queryPart.Split('&', StringSplitOptions.RemoveEmptyEntries);
+                position = queryStart + 1;
+                foreach (string pair in queryPairs)
+                {
+                    int pairStart = gs1Identifier.IndexOf(pair, position, StringComparison.Ordinal);
+                    int equalsIndex = pair.IndexOf('=');
+                    if (equalsIndex > 0 && pair[..equalsIndex] == appID)
+                    {
+                        valueStart = pairStart + equalsIndex + 1;
+                        value = pair[(equalsIndex + 1)..];
+                    }
+                    position = pairStart + pair.Length;
+                }
+            }
+
+            if (valueStart < 0 || !string.Equals(value, expectedValue, StringComparison.Ordinal))
+            {
+                Debug.WriteLine("The AI 01 value no longer matches the GS1 identifier.");
+            }
+
+            return valueStart;
         }
 
         /// <summary>
@@ -1365,7 +1498,7 @@
             int index = cGs1Identifier.IndexOf(cAppId);
             if (index >= 0)
             {
-                // Find the start position of the key
+                // return the start position of the key
                 return index;
             }
 

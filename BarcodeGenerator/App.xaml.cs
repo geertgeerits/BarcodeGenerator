@@ -35,6 +35,7 @@
         {
             base.OnStart();
             await ClassPayloadGS1Validation.LoadKnownGs1AppIDs();
+            await ClassPayloadGS1Validation.LoadKnownIbanData();
         }
     }
 }

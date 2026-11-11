@@ -1187,6 +1187,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Keep the IBAN number?.
+        /// </summary>
+        internal static string ErrorIbanInvalidKeep_Text {
+            get {
+                return ResourceManager.GetString("ErrorIbanInvalidKeep_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The selected file is not supported..
         /// </summary>
         internal static string ErrorInvalidImageType_Text {
