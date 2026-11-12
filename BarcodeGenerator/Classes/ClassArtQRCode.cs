@@ -67,35 +67,35 @@ namespace BarcodeGenerator
                     case 2:
                         // Adjust the positions for a two-color gradient
                         gradient = new GradientOptions(
-                            colors.ToArray(),
+                            [.. colors],
                             Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
                             [0f, 1f]);
                         break;
                     case 3:
                         // Adjust the positions for a three-color gradient
                         gradient = new GradientOptions(
-                            colors.ToArray(),
+                            [.. colors],
                             Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
                             [0f, 0.5f, 1f]);
                         break;
                     case 4:
                         // Adjust the positions for a four-color gradient
                         gradient = new GradientOptions(
-                            colors.ToArray(),
+                            [.. colors],
                             Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
                             [0f, 0.33f, 0.66f, 1f]);
                         break;
                     case 5:
                         // Adjust the positions for a five-color gradient
                         gradient = new GradientOptions(
-                            colors.ToArray(),
+                            [.. colors],
                             Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
                             [0f, 0.25f, 0.5f, 0.75f, 1f]);
                         break;
                     case 6:
                         // Adjust the positions for a six-color gradient
                         gradient = new GradientOptions(
-                            colors.ToArray(),
+                            [.. colors],
                             Enum.Parse<GradientDirection>(ClassBarcodes.cQRCodeGradientDirection),
                             [0f, 0.2f, 0.4f, 0.6f, 0.8f, 1f]);
                         break;

@@ -1,27 +1,27 @@
-﻿00;SSCC
-01;GTIN
-02;CONTENT
-10;BATCH/LOT
-11;PROD DATE
-12;DUE DATE
-13;PACK DATE
-15;BEST BEFORE or BEST BY DATE
-16;SELL BY DATE
-17;USE BY or EXPIRY DATE
-20;VARIANT
-21;SERIAL
-22;CPV
-235;TPX
-240;ADDITIONAL ID
-241;CUST. PART No.
-242;MTO VARIANT
-243;PCN
-250;SECONDARY SERIAL
-251;REF. TO SOURCE
-253;GDTI
-254;GLN EXTENSION COMPONENT
-255;GCN
-30;VAR. COUNT
+﻿00;SSCC, Serial Shipping Container Code
+01;GTIN, Global Trade Item Number
+02;CONTENT, Global Trade Item Number contained trade items
+10;BATCH/LOT, Batch or lot number
+11;PROD DATE, Production date (YYMMDD)
+12;DUE DATE, Due date (YYMMDD)
+13;PACK DATE, Packaging date (YYMMDD)
+15;BEST BEFORE or BEST BY DATE, Best before date (YYMMDD)
+16;SELL BY, Sell by date (YYMMDD)
+17;USE BY or EXPIRY, Expiration date (YYMMDD)
+20;VARIANT, Internal product variant
+21;SERIAL, Serial number
+22;CPV, Consumer product variant
+235;TPX, Third Party Controlled
+240;ADDITIONAL ID, Additional product identification by manufacturer
+241;CUST. PART No., Customer part number
+242;MTO VARIANT, Made-to-Order variation number
+243;PCN, Packaging component number
+250;SECONDARY SERIAL, Secondary serial number
+251;REF. TO SOURCE, Reference to source entity
+253;GDTI, Global Document Type Identifier
+254;GLN EXTENSION COMPONENT, Global Location Number extension component
+255;GCN, Global Coupon Number
+30;VAR. COUNT, Variable count of items (variable measure trade item)
 3100;NET WEIGHT (kg)
 3101;NET WEIGHT (kg)
 3102;NET WEIGHT (kg)
@@ -391,148 +391,148 @@
 3953;PRICE/UoM
 3954;PRICE/UoM
 3955;PRICE/UoM
-400;ORDER NUMBER
-401;GINC
-402;GSIN
-403;ROUTE
-410;SHIP TO LOC
-411;BILL TO
-412;PURCHASE FROM
-413;SHIP FOR LOC
-414;LOC No.
-415;PAY TO
-416;PROD/SERV LOC
-417;PARTY
-420;SHIP TO POST
-421;SHIP TO POST
-422;ORIGIN
-423;COUNTRY INITIAL PROCESS
-424;COUNTRY PROCESS
-425;COUNTRY DISASSEMBLY
-426;COUNTRY FULL PROCESS
-427;ORIGIN SUBDIVISION
-4300;SHIP TO COMP
-4301;SHIP TO NAME
-4302;SHIP TO ADD1
-4303;SHIP TO ADD2
-4304;SHIP TO SUB
-4305;SHIP TO LOC
-4306;SHIP TO REG
-4307;SHIP TO COUNTRY
-4308;SHIP TO PHONE
-4309;SHIP TO GEO
-4310;RTN TO COMP
-4311;RTN TO NAME
-4312;RTN TO ADD1
-4313;RTN TO ADD2
-4314;RTN TO SUB
-4315;RTN TO LOC
-4316;RTN TO REG
-4317;RTN TO COUNTRY
-4318;RTN TO POST
-4319;RTN TO PHONE
-4320;SRV DESCRIPTION
-4321;DANGEROUS GOODS
-4322;AUTH LEAVE
-4323;SIG REQUIRED
-4324;NBEF DEL DATE
-4325;NAFT DEL DATE
-4326;REL DATE
-4330;MAX TEMP F
-4331;MAX TEMP C
-4332;MIN TEMP F
-4333;MIN TEMP C
-7001;NSN
-7002;MEAT CUT
-7003;EXPIRY TIME
-7004;ACTIVE POTENCY
-7005;CATCH AREA
-7006;FIRST FREEZE DATE
-7007;HARVEST DATE
-7008;AQUATIC SPECIES
-7009;FISHING GEAR TYPE
-7010;PROD METHOD
-7011;TEST BY DATE
-7020;REFURB LOT
-7021;FUNC STAT
-7022;REV STAT
-7023;GIAI - ASSEMBLY
-7030;PROCESSOR # 0
-7031;PROCESSOR # 1
-7032;PROCESSOR # 2
-7033;PROCESSOR # 3
-7034;PROCESSOR # 4
-7035;PROCESSOR # 5
-7036;PROCESSOR # 6
-7037;PROCESSOR # 7
-7038;PROCESSOR # 8
-7039;PROCESSOR # 9
-7040;UIC+EXT
-7041;UFRGT UNIT TYPE
-710;NHRN PZN
-711;NHRN CIP
-712;NHRN CN
-713;NHRN DRN
-714;NHRN AIM
-715;NHRN NDC
-716;NHRN AIC
-717;NHRN SRN
-7230;CERT # 0
-7231;CERT # 1
-7232;CERT # 2
-7233;CERT # 3
-7234;CERT # 4
-7235;CERT # 5
-7236;CERT # 6
-7237;CERT # 7
-7238;CERT # 8
-7239;CERT # 9
-7240;PROTOCOL
-7241;AIDC MEDIA TYPE
-7242;VCN
-7250;DOB
-7251;DOB TIME
-7252;BIO SEX
+400;ORDER NUMBER, Customers purchase order number
+401;GINC, Global Identification Number for Consignment
+402;GSIN, Global Shipment Identification Number
+403;ROUTE, Routing code
+410;SHIP TO LOC, Ship to/Deliver to Global Location Number
+411;BILL TO, Bill to/Invoice to Global Location Number
+412;PURCHASE FROM, Purchased from Global Location Number
+413;SHIP FOR LOC, Ship for/Deliver for - Forward to Global Location Number
+414;LOC No., Identification of physical location - Global Location Number
+415;PAY TO, Global Location Number (GLN) of the invoicing party
+416;PROD/SERV LOC, Global Location Number of production or service location
+417;PARTY, Party Global Location Number
+420;SHIP TO POST, Ship to/Deliver to postal code within a single postal authority
+421;SHIP TO POST, Ship to/Deliver to postal code with ISO country code
+422;ORIGIN, Country of origin of a trade item
+423;COUNTRY INITIAL PROCESS, Country of initial processing
+424;COUNTRY PROCESS, Country of processing
+425;COUNTRY DISASSEMBLY, Country of disassembly
+426;COUNTRY FULL PROCESS, Country covering full process chain
+427;ORIGIN SUBDIVISION, Country subdivision Of origin
+4300;SHIP TO COMP, Ship-to/Deliver-to company name
+4301;SHIP TO NAME, Ship-to/Deliver-to contact
+4302;SHIP TO ADD1, Ship-to/Deliver-to address line 1
+4303;SHIP TO ADD2, Ship-to/Deliver-to address line 2
+4304;SHIP TO SUB, Ship-to/Deliver-to suburb
+4305;SHIP TO LOC, Ship-to/Deliver-to locality
+4306;SHIP TO REG, Ship-to/Deliver-to region
+4307;SHIP TO COUNTRY, Ship-to/Deliver-to country code
+4308;SHIP TO PHONE, Ship-to/Deliver-to telephone number
+4309;SHIP TO GEO, Ship-to/Deliver-to GEO location
+4310;RTN TO COMP, Return-to company name
+4311;RTN TO NAME, Return-to contact
+4312;RTN TO ADD1, Return-to address line 1
+4313;RTN TO ADD2, Return-to address line 2
+4314;RTN TO SUB, Return-to suburb
+4315;RTN TO LOC, Return-to locality
+4316;RTN TO REG, Return-to region
+4317;RTN TO COUNTRY, Return-to country code
+4318;RTN TO POST, Return-to postal code
+4319;RTN TO PHONE, Return-to telephone number
+4320;SRV DESCRIPTION, Service code description
+4321;DANGEROUS GOODS, Dangerous goods flag
+4322;AUTH LEAVE, Authority to leave
+4323;SIG REQUIRED, Signature required flag
+4324;NBEF DEL DATE, Not before delivery date time (YYMMDDhhmm)
+4325;NAFT DEL DATE, Not after delivery date time (YYMMDDhhmm)
+4326;REL DATE, Release date (YYMMDD)
+4330;MAX TEMP F, Maximum temperature in Fahrenheit
+4331;MAX TEMP C, Maximum temperature in Celsius
+4332;MIN TEMP F, Minimum temperature in Fahrenheit
+4333;MIN TEMP C, Minimum temperature in Celsius
+7001;NSN, NATO Stock Number
+7002;MEAT CUT, UN/ECE meat carcasses and cuts classification
+7003;EXPIRY TIME, Expiration date and time (YYMMDDhhmm)
+7004;ACTIVE POTENCY, Active potency
+7005;CATCH AREA, Catch area
+7006;FIRST FREEZE DATE, First freeze date (YYMMDD)
+7007;HARVEST DATE, Harvest date (YYMMDD[YYMMDD])
+7008;AQUATIC SPECIES, Species for fishery purposes
+7009;FISHING GEAR TYPE, Fishing gear type
+7010;PROD METHOD, Production method
+7011;TEST BY DATE, Test by date (YYMMDD[hhmm])
+7020;REFURB LOT, Refurbishment lot ID
+7021;FUNC STAT, Functional status
+7022;REV STAT, Revision status
+7023;GIAI - ASSEMBLY, Global Individual Asset Identifier of an assembly
+7030;PROCESSOR # 0, Number of processor with 3-digit ISO country code
+7031;PROCESSOR # 1, Number of processor with 3-digit ISO country code
+7032;PROCESSOR # 2, Number of processor with 3-digit ISO country code
+7033;PROCESSOR # 3, Number of processor with 3-digit ISO country code
+7034;PROCESSOR # 4, Number of processor with 3-digit ISO country code
+7035;PROCESSOR # 5, Number of processor with 3-digit ISO country code
+7036;PROCESSOR # 6, Number of processor with 3-digit ISO country code
+7037;PROCESSOR # 7, Number of processor with 3-digit ISO country code
+7038;PROCESSOR # 8, Number of processor with 3-digit ISO country code
+7039;PROCESSOR # 9, Number of processor with 3-digit ISO country code
+7040;UIC+EXT, GS1 UIC with Extension 1 and Importer index
+7041;UFRGT UNIT TYPE, UN/CEFACT freight unit type
+710;NHRN PZN, National Healthcare Reimbursement Number Germany
+711;NHRN CIP, National Healthcare Reimbursement Number France
+712;NHRN CN, National Healthcare Reimbursement Number Spain
+713;NHRN DRN, National Healthcare Reimbursement Number Brasil
+714;NHRN AIM, National Healthcare Reimbursement Number Portugal 
+715;NHRN NDC, National Healthcare Reimbursement Number United States America
+716;NHRN AIC, National Healthcare Reimbursement Number Italy
+717;NHRN SRN, National Healthcare Reimbursement Number Costa Rica
+7230;CERT # 0, Certification Reference # 0
+7231;CERT # 1, Certification Reference # 1
+7232;CERT # 2, Certification Reference # 2
+7233;CERT # 3, Certification Reference # 3
+7234;CERT # 4, Certification Reference # 4
+7235;CERT # 5, Certification Reference # 5
+7236;CERT # 6, Certification Reference # 6
+7237;CERT # 7, Certification Reference # 7
+7238;CERT # 8, Certification Reference # 8
+7239;CERT # 9, Certification Reference # 9
+7240;PROTOCOL, Protocol ID
+7241;AIDC MEDIA TYPE, AIDC media type
+7242;VCN, Version Control Number
+7250;DOB, Date of birth (YYYYMMDD)
+7251;DOB TIME, Date and time of birth (YYYYMMDDhhmm)
+7252;BIO SEX, Biological sex
 7253;FAMILY NAME
 7254;GIVEN NAME
-7255;SUFFIX
+7255;SUFFIX NAME
 7256;FULL NAME
-7257;PERSON ADDR
-7258;BIRTH SEQUENCE
-7259;BABY
-8001;DIMENSIONS
-8002;CMT No.
-8003;GRAI
-8004;GIAI
-8005;PRICE PER UNIT
-8006;ITIP
-8007;IBAN
-8008;PROD TIME
-8009;OPTSEN
-8010;CPID
-8011;CPID SERIAL
-8012;VERSION
-8013;GMN
-8017;GSRN - PROVIDER
-8018;GSRN - RECIPIENT
-8019;SRIN
-8020;REF No.
-8026;ITIP CONTENT
-8030;DIGSIG
-8040;IMEI
-8041;IMEI2
-8042;ESIM
-8043;PSIM
+7257;PERSON ADDRESS
+7258;BIRTH SEQUENCE, Baby birth sequence
+7259;BABY, Baby of family name
+8001;DIMENSIONS, Roll products
+8002;CMT No., Cellular mobile telephone identifier
+8003;GRAI, Global Returnable Asset Identifier
+8004;GIAI, Global Individual Asset Identifier
+8005;PRICE PER UNIT, Price per unit of measure
+8006;ITIP, Identification of an individual trade item piece
+8007;IBAN, International Bank Account Number
+8008;PROD TIME, Date and time of production
+8009;OPTSEN, Optically Readable Sensor Indicator
+8010;CPID, Component/Part Identifier
+8011;CPID SERIAL, Component/Part Identifier serial number
+8012;VERSION, Software version
+8013;GMN, Global Model Number
+8017;GSRN PROVIDER, Global Service Relation Number
+8018;GSRN RECIPIENT, Global Service Relation Number
+8019;SRIN, Service Relation Instance Number
+8020;REF No., Payment slip reference number
+8026;ITIP CONTENT, Identification pieces trade item contained in logistic unit
+8030;DIGSIG, Digital Signature
+8040;IMEI, Internatinal Mobile Equipment Identity
+8041;IMEI2, Internatinal Mobile Equipment Identity 2
+8042;ESIM, Embedded SIM number
+8043;PSIM, Physical SIM number
 8110;COUPON ID NORTH AMERICA
-8111;POINTS
+8111;POINTS, Loyalty points of a coupon
 8112;POS COUPON ID NORTH AMERICA
-90;INTERNAL
-91;INTERNAL
-92;INTERNAL
-93;INTERNAL
-94;INTERNAL
-95;INTERNAL
-96;INTERNAL
-97;INTERNAL
-98;INTERNAL
-99;INTERNAL
+90;INTERNAL #0
+91;INTERNAL #1
+92;INTERNAL #2
+93;INTERNAL #3
+94;INTERNAL #4
+95;INTERNAL #5
+96;INTERNAL #6
+97;INTERNAL #7
+98;INTERNAL #8
+99;INTERNAL #9

@@ -801,11 +801,23 @@
                             // If the value is a date or date/time, format it as a date or date/time string in the current culture format
                             // 6 DIGIT (date YYMMDD) - Format the first 6 digits of the value as a date string in the current culture format
                             if (kvp.Key is "11" or "12" or "13" or "15" or "16" or "17" or "4324" or "4325" or "4326"
-                                or "7003" or "7006" or "7007" or "7011" or "7251" or "8008")
+                                or "7003" or "7006" or "7007" or "7011" or "8008")
                             {
                                 if (kvp.Value.Length >= 6)
                                 {
                                     if (DateTime.TryParseExact(kvp.Value[..6], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue))
+                                    {
+                                        valueDate1 = dateValue.ToString("d", CultureInfo.CurrentCulture);
+                                    }
+                                }
+                            }
+
+                            // 8 DIGIT (date YYYYMMDD) - Format the first 8 digits of the value as a date string in the current culture format
+                            else if (kvp.Key is "7250" or "7251")
+                            {
+                                if (kvp.Value.Length >= 8)
+                                {
+                                    if (DateTime.TryParseExact(kvp.Value[..8], "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue))
                                     {
                                         valueDate1 = dateValue.ToString("d", CultureInfo.CurrentCulture);
                                     }
@@ -819,7 +831,7 @@
                             }
 
                             // 6 DIGIT [6 DIGIT] (date YYMMDD[YYMMDD]) or 12 DIGIT (date YYMMDDYYMMDD)
-                            else if ((kvp.Key is "7007" or "7251") && kvp.Value.Length == 12)
+                            else if ((kvp.Key is "7007") && kvp.Value.Length == 12)
                             {
                                 if (DateTime.TryParseExact(kvp.Value[6..12], "yyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateValue2))
                                 {
@@ -851,11 +863,18 @@
                             else if ((kvp.Key is "4324" or "4325" or "7003") && kvp.Value.Length == 10)
                             {
                                 valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
-
                                 valueDate1 += $" {valueDate2}";
                             }
 
-                            barcodeResult += $"\n- {kvp.Key} {value} = {kvp.Value}";
+                            // 12 DIGIT (date/time YYYYMMDDhhmm)
+                            else if ((kvp.Key is "7251") && kvp.Value.Length == 12)
+                            {
+                                valueDate2 = $" {kvp.Value[8..10]}:{kvp.Value[10..12]}";
+                                valueDate1 += $" {valueDate2}";
+                            }
+
+                            // Format the GS1 digital link key-value pairs in a readable format and append them to the barcode result string
+                            barcodeResult += $"\n- {kvp.Key} {value}\n  = {kvp.Value}";
 
                             if (valueDate1 != string.Empty)
                             {

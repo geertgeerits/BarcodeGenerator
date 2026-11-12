@@ -14,7 +14,7 @@
         /// <summary>
         /// Copy the GS1 Application Identifiers and their values from a text file to a dictionary for validation
         /// </summary>
-        public static async Task LoadKnownGs1AppIDs()
+        public static async Task LoadKnownGs1AppIDsAsync()
         {
             // Load the GS1 Application Identifiers and their values from a text file into the dictionary
             await using var stream = await FileSystem.OpenAppPackageFileAsync("GS1ApplicationIdentifiers.txt");
@@ -45,7 +45,7 @@
         /// Loads the known IBAN data from a text file into the dictionary
         /// </summary>
         /// <returns></returns>
-        public static async Task LoadKnownIbanData()
+        public static async Task LoadKnownIbanDataAsync()
         {
             // Load the IBAN data from a text file into the dictionary
             await using var stream = await FileSystem.OpenAppPackageFileAsync("IBANData.txt");
@@ -155,7 +155,7 @@
         /// </summary>
         /// <param name="editor"></param>
         /// <returns></returns>
-        public static async Task<bool> IsValidGS1Identifier(Editor editor)
+        public static async Task<bool> IsValidGS1IdentifierAsync(Editor editor)
         {
             bool bIsValid = true;
 
@@ -166,7 +166,7 @@
             foreach (var kvp in dicGs1)
             {
                 Debug.WriteLine($"AI: {kvp.Key}, Value: {kvp.Value}, Value length: {kvp.Value.Length}");
-                bIsValid &= await IsValidGS1IdentifierPart2(editor, kvp.Key, kvp.Value);
+                bIsValid &= await IsValidGS1IdentifierPart2Async(editor, kvp.Key, kvp.Value);
             }
 
             return bIsValid;
@@ -179,7 +179,7 @@
         /// <param name="cKey">The GS1 key to validate.</param>
         /// <param name="cValue">The GS1 value to validate.</param>
         /// <returns>true if the specified string is a valid GS1 identifier; otherwise, false.</returns>
-        private static async Task<bool> IsValidGS1IdentifierPart2(Editor editor, string cKey, string cValue)
+        private static async Task<bool> IsValidGS1IdentifierPart2Async(Editor editor, string cKey, string cValue)
         {
             // GS1 Digital Link Test Suite: https://ref.gs1.org/test-suites/resolver/
             // GS1 Digital Link Validator: https://qrbolt.com/en/validate-gs1
@@ -816,10 +816,10 @@
                 }
             }
 
-            // Validate the GS1 identifier using the ValidateDataAttribute method, which checks the overall structure and format of the GS1 identifier
+            // Validate the GS1 identifier using the ValidateDataAttributeAsync method, which checks the overall structure and format of the GS1 identifier
             if (bIsValid)
             {
-                bIsValid = await ValidateDataAttribute(cKey, cValue);
+                bIsValid = await ValidateDataAttributeAsync(cKey, cValue);
             }
 
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
@@ -839,7 +839,7 @@
         /// <param name="dataAttribute"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        private async static Task<bool> ValidateDataAttribute(string dataAttribute, string value)
+        private static async Task<bool> ValidateDataAttributeAsync(string dataAttribute, string value)
         {
             // Variable
             cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
@@ -1145,15 +1145,6 @@
                 }
             }
 
-            // 8 DIGIT
-            else if (dataAttribute is "7250")
-            {
-                if (value.Length != 8 || !ValueIsDigit(value))
-                {
-                    return false;
-                }
-            }
-
             // 13 DIGIT
             else if (dataAttribute is "410" or "411" or "412" or "413" or "416" or "7001")
             {
@@ -1249,7 +1240,7 @@
             // 6 DIGIT (date YYMMDD)
             else if (dataAttribute is "11" or "12" or "13" or "15" or "16" or "17" or "4326" or "7006")
             {
-                if (value.Length != 6 || !ValueIsDigit(value) || !IsDateYYMMDD(value))
+                if (value.Length != 6 || !ValueIsDigit(value) || !IsDate(value, "yyMMdd"))
                 {
                     return false;
                 }
@@ -1260,9 +1251,9 @@
             {
                 switch (value.Length)
                 {
-                    case 6 when ValueIsDigit(value) && IsDateYYMMDD(value):
+                    case 6 when ValueIsDigit(value) && IsDate(value, "yyMMdd"):
                         break;
-                    case 10 when ValueIsDigit(value) && IsDateYYMMDD(value[..6]) && IsTime(value.Substring(6, 4), "HHmm"):
+                    case 10 when ValueIsDigit(value) && IsDate(value[..6], "yyMMdd") && IsTime(value.Substring(6, 4), "HHmm"):
                         break;
                     default:
                         return false;
@@ -1274,12 +1265,21 @@
             {
                 switch (value.Length)
                 {
-                    case 6 when ValueIsDigit(value) && IsDateYYMMDD(value):
+                    case 6 when ValueIsDigit(value) && IsDate(value, "yyMMdd"):
                         break;
-                    case 12 when ValueIsDigit(value) && IsDateYYMMDD(value[..6]) && IsDateYYMMDD(value.Substring(6, 6)):
+                    case 12 when ValueIsDigit(value) && IsDate(value[..6], "yyMMdd") && IsDate(value.Substring(6, 6), "yyMMdd"):
                         break;
                     default:
                         return false;
+                }
+            }
+
+            // 8 DIGIT (date/time YYYYMMDD)
+            else if (dataAttribute is "7250")
+            {
+                if (value.Length != 8 || !ValueIsDigit(value) || !IsDate(value, "yyyyMMdd"))
+                {
+                    return false;
                 }
             }
 
@@ -1288,11 +1288,11 @@
             {
                 switch (value.Length)
                 {
-                    case 8 when ValueIsDigit(value) && IsDateYYMMDD(value[..6]) && IsTime(value.Substring(6, 2), "HH"):
+                    case 8 when ValueIsDigit(value) && IsDate(value[..6], "yyMMdd") && IsTime(value.Substring(6, 2), "HH"):
                         break;
-                    case 10 when ValueIsDigit(value) && IsDateYYMMDD(value[..6]) && IsTime(value.Substring(6, 4), "HHmm"):
+                    case 10 when ValueIsDigit(value) && IsDate(value[..6], "yyMMdd") && IsTime(value.Substring(6, 4), "HHmm"):
                         break;
-                    case 12 when ValueIsDigit(value) && IsDateYYMMDD(value[..6]) && IsTime(value.Substring(6, 6), "HHmmss"):
+                    case 12 when ValueIsDigit(value) && IsDate(value[..6], "yyMMdd") && IsTime(value.Substring(6, 6), "HHmmss"):
                         break;
                     default:
                         return false;
@@ -1302,16 +1302,16 @@
             // 10 DIGIT (date/time YYMMDDhhmm)
             else if (dataAttribute is "4324" or "4325" or "7003")
             {
-                if (value.Length != 10 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]) || !IsTime(value.Substring(6, 4), "HHmm"))
+                if (value.Length != 10 || !ValueIsDigit(value) || !IsDate(value[..6], "yyMMdd") || !IsTime(value.Substring(6, 4), "HHmm"))
                 {
                     return false;
                 }
             }
 
-            // 12 DIGIT (date YYMMDDYYMMDD)
+            // 12 DIGIT (date YYYYMMDDhhmm)
             else if (dataAttribute is "7251")
             {
-                if (value.Length != 12 || !ValueIsDigit(value) || !IsDateYYMMDD(value[..6]) || !IsDateYYMMDD(value.Substring(6, 6)))
+                if (value.Length != 12 || !ValueIsDigit(value) || !IsDate(value[..8], "yyyyMMdd") || !IsTime(value.Substring(8, 4), "HHmm"))
                 {
                     return false;
                 }
@@ -1343,15 +1343,15 @@
             return _knownGs1AppIDs.ContainsKey(cAppId);
         }
 
-        /// <summary>
-        /// Check if the provided country code is a known country code by searching in the predefined list of known country codes
-        /// </summary>
-        /// <param name="cCountryCode"></param>
-        /// <returns></returns>
-        private static bool IsKnownIbanCountry(string cCountryCode)
-        {
-            return _knownIbanData.ContainsKey(cCountryCode);
-        }
+        ///// <summary>
+        ///// Check if the provided country code is a known country code by searching in the predefined list of known country codes
+        ///// </summary>
+        ///// <param name="cCountryCode"></param>
+        ///// <returns></returns>
+        //private static bool IsKnownIbanCountry(string cCountryCode)
+        //{
+        //    return _knownIbanData.ContainsKey(cCountryCode);
+        //}
 
         /// <summary>
         /// Get the value of the provided application identifier (AI) and return the value from the predefined list of known
@@ -1429,63 +1429,63 @@
             return valueStart;
         }
 
-        /// <summary>
-        /// Get the application identifier (AI) of the GS1 identifier
-        /// </summary>
-        /// <param name="cAppId"></param>
-        /// <param name="cGs1Identifier"></param>
-        /// <returns></returns>
-        private static string GetAppID(string cAppId, string cGs1Identifier)
-        {
-            if (cGs1Identifier.Contains($"/{cAppId}/"))
-            {
-                return $"/{cAppId}/";
-            }
-            else if (cGs1Identifier.Contains($"?{cAppId}="))
-            {
-                return $"?{cAppId}=";
-            }
-            else if (cGs1Identifier.Contains($"&{cAppId}="))
-            {
-                return $"&{cAppId}=";
-            }
+        ///// <summary>
+        ///// Get the application identifier (AI) of the GS1 identifier
+        ///// </summary>
+        ///// <param name="cAppId"></param>
+        ///// <param name="cGs1Identifier"></param>
+        ///// <returns></returns>
+        //private static string GetAppID(string cAppId, string cGs1Identifier)
+        //{
+        //    if (cGs1Identifier.Contains($"/{cAppId}/"))
+        //    {
+        //        return $"/{cAppId}/";
+        //    }
+        //    else if (cGs1Identifier.Contains($"?{cAppId}="))
+        //    {
+        //        return $"?{cAppId}=";
+        //    }
+        //    else if (cGs1Identifier.Contains($"&{cAppId}="))
+        //    {
+        //        return $"&{cAppId}=";
+        //    }
 
-            return string.Empty;
-        }
+        //    return string.Empty;
+        //}
 
-        /// <summary>
-        /// Get the value of the Gs1 identifier following a certain application identifier (AI). The value is extracted from the
-        /// GS1 identifier string based on the position of the AI and the next delimiter (forward slash, question mark, or ampersand) or the end of the string.
-        /// </summary>
-        /// <param name="cAppId"></param>
-        /// <param name="cGs1Identifier"></param>
-        /// <returns></returns>
-        private static string GetValue(string cAppId, string cGs1Identifier)
-        {
-            int index = cGs1Identifier.IndexOf(cAppId);
+        ///// <summary>
+        ///// Get the value of the Gs1 identifier following a certain application identifier (AI). The value is extracted from the
+        ///// GS1 identifier string based on the position of the AI and the next delimiter (forward slash, question mark, or ampersand) or the end of the string.
+        ///// </summary>
+        ///// <param name="cAppId"></param>
+        ///// <param name="cGs1Identifier"></param>
+        ///// <returns></returns>
+        //private static string GetValue(string cAppId, string cGs1Identifier)
+        //{
+        //    int index = cGs1Identifier.IndexOf(cAppId);
 
-            if (index >= 0)
-            {
-                // Find the start position of the value after the key
-                int nStartPosition = index + cAppId.Length;
+        //    if (index >= 0)
+        //    {
+        //        // Find the start position of the value after the key
+        //        int nStartPosition = index + cAppId.Length;
 
-                // Find the end position of the value, which is either the next forward slash or question mark or ampersand or the end of the string
-                int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?', '&'], nStartPosition);
+        //        // Find the end position of the value, which is either the next forward slash or question mark or ampersand or the end of the string
+        //        int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?', '&'], nStartPosition);
 
-                // If no forward slash or question mark or ampersand is found, set the end position to the end of the string
-                if (nEndPosition == -1)
-                {
-                    nEndPosition = cGs1Identifier.Length;
-                }
+        //        // If no forward slash or question mark or ampersand is found, set the end position to the end of the string
+        //        if (nEndPosition == -1)
+        //        {
+        //            nEndPosition = cGs1Identifier.Length;
+        //        }
 
-                Debug.WriteLine(string.Concat("cGs1IdentifierValue: ", cGs1Identifier.AsSpan(nStartPosition, nEndPosition - nStartPosition)));
+        //        Debug.WriteLine(string.Concat("cGs1IdentifierValue: ", cGs1Identifier.AsSpan(nStartPosition, nEndPosition - nStartPosition)));
 
-                return cGs1Identifier[nStartPosition..nEndPosition];
-            }
+        //        return cGs1Identifier[nStartPosition..nEndPosition];
+        //    }
 
-            // If no forward slash is found, return an empty string
-            return string.Empty;
-        }
+        //    // If no forward slash is found, return an empty string
+        //    return string.Empty;
+        //}
 
         /// <summary>
         /// Finds the start index of a GS1 Application Identifier (AI) segment within a GS1 identifier string
@@ -1562,8 +1562,9 @@
         /// <remarks>Parsing uses `DateTime.TryParseExact` with `DateTimeStyles.None`. When validation
         /// fails, `cErrorMessage` is set to `CodeLang.ErrorGS1DateInvalid_Text`.</remarks>
         /// <param name="input">Text to validate as a date in `yyMMdd` format.</param>
+        /// <param name="format">The date format to validate against.</param>
         /// <returns>`true` if `input` is a valid date in `yyMMdd` format; otherwise, `false`.</returns>
-        private static bool IsDateYYMMDD(string input)
+        private static bool IsDate(string input, string format)
         {
             if (string.IsNullOrWhiteSpace(input))
             {
@@ -1573,7 +1574,7 @@
             // Try parsing with exact format "yyMMdd"
             bool bIsValid = DateTime.TryParseExact(
                 input,
-                "yyMMdd",
+                format,
                 CultureInfo.InvariantCulture,
                 DateTimeStyles.None,
                 out _ // discard parsed DateTime

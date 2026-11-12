@@ -66,8 +66,8 @@ namespace BarcodeGenerator
         /// </summary>
         /// <remarks>Validates both the format and checksum using the mod-97 algorithm defined in ISO
         /// 13616. Spaces in the input are automatically removed during validation.</remarks>
-        /// <param name="entry" The Entry control containing the IBAN to validate.</param>
-        /// <param name="cIban" The IBAN string to validate.</param>
+        /// <param name="entry">The Entry control containing the IBAN to validate</param>
+        /// <param name="cIban">The IBAN string to validate</param>
         /// <returns>true if the IBAN is valid; otherwise, false.</returns>
         public static bool IsValidIban(Entry entry, string cIban)
         {

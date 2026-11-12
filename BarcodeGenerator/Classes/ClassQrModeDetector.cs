@@ -6,7 +6,7 @@ namespace BarcodeGenerator
     {
         public enum Mode { Numeric, Alphanumeric, Kanji, Byte }
 
-        private static readonly string AlnumSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:";
+        private static readonly string AlNumSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:";
 
         // Call once at startup on non-Windows runtimes
         public static void RegisterCodePages() =>
@@ -44,7 +44,7 @@ namespace BarcodeGenerator
             // QR alphanumeric only accepts uppercase letters
             foreach (char c in s)
             {
-                if (!AlnumSet.Contains(c))
+                if (!AlNumSet.Contains(c))
                 {
                     return false;
                 }

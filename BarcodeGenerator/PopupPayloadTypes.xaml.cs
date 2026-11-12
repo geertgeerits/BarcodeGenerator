@@ -381,7 +381,7 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="sender">The source of the event, typically the entry field that received focus.</param>
         /// <param name="e">The event data associated with the focus event.</param>
-        private void edtPayloadTypeGS1Identifier_Focused(object sender, FocusEventArgs e)
+        private void EdtPayloadTypeGS1Identifier_Focused(object sender, FocusEventArgs e)
         {
             if (edtPayloadTypeGS1Identifier.Text == string.Empty)
             {
@@ -981,7 +981,7 @@ END:VCALENDAR";
                     }
 
                     // Validate the GS1 identifier to ensure it meets the required format and standards for GS1 payloads
-                    if (!await ClassPayloadGS1Validation.IsValidGS1Identifier(edtPayloadTypeGS1Identifier))
+                    if (!await ClassPayloadGS1Validation.IsValidGS1IdentifierAsync(edtPayloadTypeGS1Identifier))
                     {
                         return string.Empty;
                     }

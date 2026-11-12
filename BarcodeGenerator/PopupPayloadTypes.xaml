@@ -734,7 +734,7 @@
                         MaxLength="2000"
                         Keyboard="Text"
                         Text=""
-                        Focused="edtPayloadTypeGS1Identifier_Focused">
+                        Focused="EdtPayloadTypeGS1Identifier_Focused">
                     </Editor>
                 </ScrollView>
             </Border>
