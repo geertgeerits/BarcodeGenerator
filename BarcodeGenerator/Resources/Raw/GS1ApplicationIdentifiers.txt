@@ -340,7 +340,7 @@
 3693;VOLUME (yd³), log
 3694;VOLUME (yd³), log
 3695;VOLUME (yd³), log
-37;COUNT
+37;COUNT, Count of trade items or trade item pieces contained in a logistic unit
 3900;AMOUNT
 3901;AMOUNT
 3902;AMOUNT
@@ -507,7 +507,7 @@
 8005;PRICE PER UNIT, Price per unit of measure
 8006;ITIP, Identification of an individual trade item piece
 8007;IBAN, International Bank Account Number
-8008;PROD TIME, Date and time of production
+8008;PROD TIME, Date and time of production (YYMMDDhh[mm[ss]])
 8009;OPTSEN, Optically Readable Sensor Indicator
 8010;CPID, Component/Part Identifier
 8011;CPID SERIAL, Component/Part Identifier serial number

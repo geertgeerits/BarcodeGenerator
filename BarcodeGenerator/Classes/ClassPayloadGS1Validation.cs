@@ -1235,7 +1235,7 @@
                 }
             }
 
-            // Dates / times
+            // Dates / times (x 16)
 
             // 6 DIGIT (date YYMMDD)
             else if (dataAttribute is "11" or "12" or "13" or "15" or "16" or "17" or "4326" or "7006")
