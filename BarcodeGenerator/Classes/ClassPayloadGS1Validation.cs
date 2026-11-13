@@ -2,76 +2,6 @@
 {
     internal partial class ClassPayloadGS1Validation
     {
-        // Dictionary to hold GS1 Application Identifiers (AI) and their corresponding values
-        public static readonly Dictionary<string, string> dicGs1 = [];
-
-        // Add once in the class - central place for all supported GS1 Application Identifiers (AI) (keys and data attributes)
-        public static readonly Dictionary<string, string> _knownGs1AppIDs = [];
-
-        /// Add once in the class - central place for all supported IBAN data (country and length)
-        public static readonly Dictionary<string, int> _knownIbanData = [];
-
-        /// <summary>
-        /// Copy the GS1 Application Identifiers and their values from a text file to a dictionary for validation
-        /// </summary>
-        public static async Task LoadKnownGs1AppIDsAsync()
-        {
-            // Load the GS1 Application Identifiers and their values from a text file into the dictionary
-            await using var stream = await FileSystem.OpenAppPackageFileAsync("GS1ApplicationIdentifiers.txt");
-            using var reader = new StreamReader(stream);
-
-            string? line;
-            while ((line = await reader.ReadLineAsync()) is not null)
-            {
-                if (string.IsNullOrWhiteSpace(line))
-                {
-                    continue;
-                }
-
-                string[] parts = line.Split(';', 2, StringSplitOptions.TrimEntries);
-                if (parts.Length != 2 || string.IsNullOrWhiteSpace(parts[0]))
-                {
-                    continue;
-                }
-
-                if (_knownGs1AppIDs.TryAdd(parts[0], parts[1]))
-                {
-                    Debug.WriteLine($"Added GS1 Application Identifier: {parts[0]} = {parts[1]}");
-                }
-            }
-        }
-
-        /// <summary>
-        /// Loads the known IBAN data from a text file into the dictionary
-        /// </summary>
-        /// <returns></returns>
-        public static async Task LoadKnownIbanDataAsync()
-        {
-            // Load the IBAN data from a text file into the dictionary
-            await using var stream = await FileSystem.OpenAppPackageFileAsync("IBANData.txt");
-            using var reader = new StreamReader(stream);
-
-            string? line;
-            while ((line = await reader.ReadLineAsync()) is not null)
-            {
-                if (string.IsNullOrWhiteSpace(line))
-                {
-                    continue;
-                }
-
-                string[] parts = line.Split(';', 2, StringSplitOptions.TrimEntries);
-                if (parts.Length != 2 || string.IsNullOrWhiteSpace(parts[0]))
-                {
-                    continue;
-                }
-
-                if (_knownIbanData.TryAdd(parts[0], int.Parse(parts[1])))
-                {
-                    Debug.WriteLine($"Added IBAN Data: {parts[0]} = {parts[1]}");
-                }
-            }
-        }
-
         // Character sets
         private static readonly string _DIGIT = "0123456789";
         private static readonly string _UPPERALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -106,7 +36,7 @@
             // Example: /00/195201234567891232?02=09520123456788&37=25&10=ABC123
             //          /01/09520123456788?8004=9520614141234567
 
-            dicGs1.Clear();
+            ClassLoadDataFromFile.dicGs1.Clear();
 
             if (string.IsNullOrWhiteSpace(gs1Identifier))
             {
@@ -124,7 +54,7 @@
             {
                 string key = pathSegments[i];
                 string value = pathSegments[i + 1];
-                dicGs1[key] = value;
+                ClassLoadDataFromFile.dicGs1[key] = value;
             }
 
             // Parse query-based key/value pairs: 10=ABC123&37=25
@@ -138,15 +68,15 @@
                     {
                         string key = pair[..equalsIndex];
                         string value = pair[(equalsIndex + 1)..];
-                        dicGs1[key] = value;
+                        ClassLoadDataFromFile.dicGs1[key] = value;
                     }
                 }
             }
 
             // If the first key in the dictionary starts with http the remove this key and value from the dictionary
-            if (dicGs1.Count > 0 && dicGs1.Keys.FirstOrDefault()?.StartsWith("http", StringComparison.OrdinalIgnoreCase) == true)
+            if (ClassLoadDataFromFile.dicGs1.Count > 0 && ClassLoadDataFromFile.dicGs1.Keys.FirstOrDefault()?.StartsWith("http", StringComparison.OrdinalIgnoreCase) == true)
             {
-                dicGs1.Remove(dicGs1.Keys.First());
+                ClassLoadDataFromFile.dicGs1.Remove(ClassLoadDataFromFile.dicGs1.Keys.First());
             }
         }
 
@@ -161,9 +91,9 @@
 
             SplitKeyValuePairs(editor.Text);
 
-            Debug.WriteLine($"Length dictionary _knownGs1AppIDs: {_knownGs1AppIDs.Count}");
+            Debug.WriteLine($"Length dictionary _knownGs1AppIDs: {ClassLoadDataFromFile._knownGs1AppIDs.Count}");
 
-            foreach (var kvp in dicGs1)
+            foreach (var kvp in ClassLoadDataFromFile.dicGs1)
             {
                 Debug.WriteLine($"AI: {kvp.Key}, Value: {kvp.Value}, Value length: {kvp.Value.Length}");
                 bIsValid &= await IsValidGS1IdentifierPart2Async(editor, kvp.Key, kvp.Value);
@@ -1340,7 +1270,7 @@
         /// <returns></returns>
         private static bool IsKnownGs1AppID(string cAppId)
         {
-            return _knownGs1AppIDs.ContainsKey(cAppId);
+            return ClassLoadDataFromFile._knownGs1AppIDs.ContainsKey(cAppId);
         }
 
         ///// <summary>
@@ -1361,7 +1291,7 @@
         /// <returns></returns>
         public static string GetKnownGs1AppIDValue(string cAppId)
         {
-            return _knownGs1AppIDs.TryGetValue(cAppId, out string? value) ? value : string.Empty;
+            return ClassLoadDataFromFile._knownGs1AppIDs.TryGetValue(cAppId, out string? value) ? value : string.Empty;
         }
 
         /// <summary>
@@ -1371,7 +1301,43 @@
         /// <returns></returns>
         public static int GetKnownIbanLengthValue(string cCountryCode)
         {
-            return _knownIbanData.TryGetValue(cCountryCode, out int value) ? value : 0;
+            return ClassLoadDataFromFile._knownIbanData.TryGetValue(cCountryCode, out int value) ? value : 0;
+        }
+
+        /// <summary>
+        /// Get the name of the country for a country code and return the value from the predefined list of known numeric country code
+        /// </summary>
+        /// <param name="cCountryCodeNum"></param>
+        /// <returns></returns>
+        public static string GetKnownISOCountry(string cCountryCodeNum)
+        {
+            for (int i = 0; i < ClassLoadDataFromFile._knownIsoCountryCodes.Length; i++)
+            {
+                if (ClassLoadDataFromFile._knownIsoCountryCodes[i, 3] == cCountryCodeNum)
+                {
+                    return ClassLoadDataFromFile._knownIsoCountryCodes[i, 0];
+                }
+            }
+
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Get the name of the currency for a currency code and return the value from the predefined list of known numeric currency code
+        /// </summary>
+        /// <param name="cCurrencyCodeNum"></param>
+        /// <returns></returns>
+        public static string GetKnownISOCurrency(string cCurrencyCodeNum)
+        {
+            for (int i = 0; i < ClassLoadDataFromFile._knownIsoCurrencyCodes.Length; i++)
+            {
+                if (ClassLoadDataFromFile._knownIsoCurrencyCodes[i, 3] == cCurrencyCodeNum)
+                {
+                    return ClassLoadDataFromFile._knownIsoCurrencyCodes[i, 2];
+                }
+            }
+
+            return string.Empty;
         }
 
         /// <summary>

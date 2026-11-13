@@ -784,17 +784,19 @@
                 // Parse the URL for GS1 digital link key-value pairs and display them in a formatted manner
                 ClassPayloadGS1Validation.SplitKeyValuePairs(url);
 
-                if (ClassPayloadGS1Validation.dicGs1.Count > 0)
+                if (ClassLoadDataFromFile.dicGs1.Count > 0)
                 {
                     barcodeResult += $"\n{CodeLang.PayloadType_GS1DIGITALLINK_Text}";
 
-                    foreach (var kvp in ClassPayloadGS1Validation.dicGs1)
+                    foreach (var kvp in ClassLoadDataFromFile.dicGs1)
                     {
                         Debug.WriteLine($"dicGs1 kvp Key and Value: {kvp.Key} - {kvp.Value}");
 
                         string value = ClassPayloadGS1Validation.GetKnownGs1AppIDValue(kvp.Key);
                         string valueDate1 = string.Empty;
                         string valueDate2 = string.Empty;
+                        string countryName = string.Empty;
+                        string currencyName = string.Empty;
 
                         try
                         {
@@ -880,6 +882,29 @@
                             {
                                 barcodeResult += $" ({valueDate1})";
                             }
+
+                            // If the value is a country code, format it as a country name in the current culture format
+                            if (kvp.Key is "421" or "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
+                            {
+                                countryName = ClassPayloadGS1Validation.GetKnownISOCountry(kvp.Value[..3]);
+
+                                if (countryName != string.Empty)
+                                {
+                                    barcodeResult += $" ({countryName}, {kvp.Value[3..]})";
+                                }
+                            }
+
+                            // If the value is a currency code, format it as a currency name in the current culture format
+                            if (kvp.Key is "3910" or "3911" or "3912" or "3913" or "3914" or "3915" or "3916" or "3917" or "3918" or "3919")
+                            {
+                                currencyName = ClassPayloadGS1Validation.GetKnownISOCurrency(kvp.Value[..3]);
+
+                                if (currencyName != string.Empty)
+                                {
+                                    barcodeResult += $" ({currencyName}, {kvp.Value[3..]})";
+                                }
+                            }
+
                         }
 
                         catch (Exception ex)

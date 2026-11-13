@@ -34,8 +34,10 @@
         protected override async void OnStart()
         {
             base.OnStart();
-            await ClassPayloadGS1Validation.LoadKnownGs1AppIDsAsync();
-            await ClassPayloadGS1Validation.LoadKnownIbanDataAsync();
+            await ClassLoadDataFromFile.LoadKnownGs1AppIDsAsync();
+            await ClassLoadDataFromFile.LoadKnownIbanDataAsync();
+            await ClassLoadDataFromFile.LoadKnownIsoCountryCodesAsync();
+            await ClassLoadDataFromFile.LoadKnownIsoCurrencyCodesAsync();
         }
     }
 }
