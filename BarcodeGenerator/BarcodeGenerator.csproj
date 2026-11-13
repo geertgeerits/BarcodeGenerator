@@ -48,6 +48,9 @@
 		<Copyright>Geert Geerits</Copyright>
 		<Nullable>enable</Nullable>
 		<NeutralLanguage>en-US</NeutralLanguage>
+		
+		<!-- Enable Material 3 design on Android -->
+		<!--<UseMaterial3>true</UseMaterial3>-->
 
 	</PropertyGroup>
 
@@ -116,7 +119,7 @@
 		<PackageReference Include="ZXing.Net.Maui" Version="0.10.4" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.10.4" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.1.0" />
-		<PackageReference Include="Sentry.Maui" Version="6.13.0" />
+		<PackageReference Include="Sentry.Maui" Version="7.0.0" />
 		<!--<PackageReference Include="ZXingCpp" Version="0.5.3" />-->
 	</ItemGroup>
 

@@ -1274,7 +1274,7 @@
                 }
             }
 
-            // 8 DIGIT (date/time YYYYMMDD)
+            // 8 DIGIT (date YYYYMMDD)
             else if (dataAttribute is "7250")
             {
                 if (value.Length != 8 || !ValueIsDigit(value) || !IsDate(value, "yyyyMMdd"))
@@ -1308,7 +1308,7 @@
                 }
             }
 
-            // 12 DIGIT (date YYYYMMDDhhmm)
+            // 12 DIGIT (date/time YYYYMMDDhhmm)
             else if (dataAttribute is "7251")
             {
                 if (value.Length != 12 || !ValueIsDigit(value) || !IsDate(value[..8], "yyyyMMdd") || !IsTime(value.Substring(8, 4), "HHmm"))

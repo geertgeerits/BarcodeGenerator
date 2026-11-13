@@ -845,14 +845,14 @@
                             {
                                 switch (kvp.Value.Length)
                                 {
-                                    case 12:
-                                        valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}:{kvp.Value[10..12]}";
+                                    case 8:
+                                        valueDate2 = $" {kvp.Value[6..8]}:00";
                                         break;
                                     case 10:
                                         valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}";
                                         break;
-                                    case 8:
-                                        valueDate2 = $" {kvp.Value[6..8]}:00";
+                                    case 12:
+                                        valueDate2 = $" {kvp.Value[6..8]}:{kvp.Value[8..10]}:{kvp.Value[10..12]}";
                                         break;
                                 }
 
