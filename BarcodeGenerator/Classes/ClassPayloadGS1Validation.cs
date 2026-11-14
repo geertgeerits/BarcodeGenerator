@@ -1321,6 +1321,7 @@
                     }
                 }
 
+                // If the country code is not found, return false
                 cErrorMessage = CodeLang.ErrorGS1CountryInvalid_Text;
                 return false;
             }
@@ -1349,6 +1350,7 @@
                     }
                 }
 
+                // If the country code is not found, return an empty string
                 return string.Empty;
             }
             catch (Exception ex)
@@ -1375,6 +1377,7 @@
                     }
                 }
 
+                // If the currency code is not found, return false
                 cErrorMessage = CodeLang.ErrorGS1CurrencyInvalid_Text;
                 return false;
             }
@@ -1404,6 +1407,7 @@
                     }
                 }
 
+                // If the currency code is not found, return an empty string
                 return string.Empty;
             }
             
