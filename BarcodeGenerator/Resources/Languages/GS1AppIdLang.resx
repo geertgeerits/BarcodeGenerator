@@ -129,4 +129,64 @@
   <data name="10" xml:space="preserve">
     <value>Batch or lot number</value>
   </data>
+  <data name="11" xml:space="preserve">
+    <value>Production date (YYMMDD)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Due date (YYMMDD)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Packaging date (YYMMDD)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Best before date (YYMMDD)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Sell by date (YYMMDD)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Expiration date (YYMMDD)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Internal product variant</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Serial number</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Consumer product variant</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Variable count of items (variable measure trade item)</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Third Party Controlled</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>Additional product identification by manufacturer</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Customer part number</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Made-to-Order variation number</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Packaging component number</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>Secondary serial number</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Reference to source entity</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Global Document Type Identifier</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Global Location Number extension component</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Global Coupon Number</value>
+  </data>
 </root>

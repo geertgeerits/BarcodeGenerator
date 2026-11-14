@@ -1,4 +1,6 @@
-﻿namespace BarcodeGenerator
+﻿using System.Resources;
+
+namespace BarcodeGenerator
 {
     internal partial class ClassPayloadGS1Validation
     {
@@ -755,7 +757,7 @@
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {cKey} {GetKnownGs1AppIDValue(cKey)} {ClassLoadDataFromFile.GetValueResourceSet(cKey)}\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {cKey} {GetKnownGs1AppIDValue(cKey)} {GetKnownGs1AppIDValueFromLangResource(cKey)}.\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
                 //await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {cKey} {GetKnownGs1AppIDValue(cKey)}\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
                 _ = editor.Focus();
                 return false;
@@ -1283,6 +1285,18 @@
         public static string GetKnownGs1AppIDValue(string cAppId)
         {
             return ClassLoadDataFromFile._knownGs1AppIDs.TryGetValue(cAppId, out string? value) ? value : string.Empty;
+        }
+
+        /// <summary>
+        /// Read a key from the resource file and return the corresponding value
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string GetKnownGs1AppIDValueFromLangResource(string key)
+        {
+            ResourceManager rm = GS1AppIdLang.ResourceManager;
+            string? value = rm.GetString(key, CultureInfo.CurrentUICulture);
+            return value ?? string.Empty;
         }
 
         ///// <summary>

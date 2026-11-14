@@ -888,6 +888,7 @@
                             // If the value is an ISO country code, format it as a country name in the current culture format
                             if (kvp.Key is "421" or "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
                             {
+                                //countryName = ClassPayloadGS1Validation.GetKnownGs1AppIDValueFromLangResource(kvp.Key);
                                 countryName = ClassPayloadGS1Validation.GetKnownISOCountry(kvp.Value[..3]);
 
                                 if (countryName != string.Empty)

@@ -95,5 +95,185 @@ namespace BarcodeGenerator.Resources.Languages {
                 return ResourceManager.GetString("10", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Production date (YYMMDD).
+        /// </summary>
+        internal static string _11 {
+            get {
+                return ResourceManager.GetString("11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Due date (YYMMDD).
+        /// </summary>
+        internal static string _12 {
+            get {
+                return ResourceManager.GetString("12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Packaging date (YYMMDD).
+        /// </summary>
+        internal static string _13 {
+            get {
+                return ResourceManager.GetString("13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Best before date (YYMMDD).
+        /// </summary>
+        internal static string _15 {
+            get {
+                return ResourceManager.GetString("15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sell by date (YYMMDD).
+        /// </summary>
+        internal static string _16 {
+            get {
+                return ResourceManager.GetString("16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expiration date (YYMMDD).
+        /// </summary>
+        internal static string _17 {
+            get {
+                return ResourceManager.GetString("17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Internal product variant.
+        /// </summary>
+        internal static string _20 {
+            get {
+                return ResourceManager.GetString("20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial number.
+        /// </summary>
+        internal static string _21 {
+            get {
+                return ResourceManager.GetString("21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consumer product variant.
+        /// </summary>
+        internal static string _22 {
+            get {
+                return ResourceManager.GetString("22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Third Party Controlled.
+        /// </summary>
+        internal static string _235 {
+            get {
+                return ResourceManager.GetString("235", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Additional product identification by manufacturer.
+        /// </summary>
+        internal static string _240 {
+            get {
+                return ResourceManager.GetString("240", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer part number.
+        /// </summary>
+        internal static string _241 {
+            get {
+                return ResourceManager.GetString("241", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Made-to-Order variation number.
+        /// </summary>
+        internal static string _242 {
+            get {
+                return ResourceManager.GetString("242", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Packaging component number.
+        /// </summary>
+        internal static string _243 {
+            get {
+                return ResourceManager.GetString("243", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secondary serial number.
+        /// </summary>
+        internal static string _250 {
+            get {
+                return ResourceManager.GetString("250", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reference to source entity.
+        /// </summary>
+        internal static string _251 {
+            get {
+                return ResourceManager.GetString("251", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global Document Type Identifier.
+        /// </summary>
+        internal static string _253 {
+            get {
+                return ResourceManager.GetString("253", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global Location Number extension component.
+        /// </summary>
+        internal static string _254 {
+            get {
+                return ResourceManager.GetString("254", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global Coupon Number.
+        /// </summary>
+        internal static string _255 {
+            get {
+                return ResourceManager.GetString("255", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Variable count of items (variable measure trade item).
+        /// </summary>
+        internal static string _30 {
+            get {
+                return ResourceManager.GetString("30", resourceCulture);
+            }
+        }
     }
 }

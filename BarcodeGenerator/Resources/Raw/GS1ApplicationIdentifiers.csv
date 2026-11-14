@@ -1,27 +1,27 @@
-﻿00;SSCC, Serial Shipping Container Code
-01;GTIN, Global Trade Item Number
-02;CONTENT, Global Trade Item Number contained trade items
-10;BATCH/LOT, Batch or lot number
-11;PROD DATE, Production date (YYMMDD)
-12;DUE DATE, Due date (YYMMDD)
-13;PACK DATE, Packaging date (YYMMDD)
-15;BEST BEFORE or BEST BY DATE, Best before date (YYMMDD)
-16;SELL BY, Sell by date (YYMMDD)
-17;USE BY or EXPIRY, Expiration date (YYMMDD)
-20;VARIANT, Internal product variant
-21;SERIAL, Serial number
-22;CPV, Consumer product variant
-235;TPX, Third Party Controlled
-240;ADDITIONAL ID, Additional product identification by manufacturer
-241;CUST. PART No., Customer part number
-242;MTO VARIANT, Made-to-Order variation number
-243;PCN, Packaging component number
-250;SECONDARY SERIAL, Secondary serial number
-251;REF. TO SOURCE, Reference to source entity
-253;GDTI, Global Document Type Identifier
-254;GLN EXTENSION COMPONENT, Global Location Number extension component
-255;GCN, Global Coupon Number
-30;VAR. COUNT, Variable count of items (variable measure trade item)
+﻿00;SSCC
+01;GTIN
+02;CONTENT
+10;BATCH/LOT
+11;PROD DATE
+12;DUE DATE
+13;PACK DATE
+15;BEST BEFORE or BEST BY DATE
+16;SELL BY
+17;USE BY or EXPIRY
+20;VARIANT
+21;SERIAL
+22;CPV
+235;TPX
+240;ADDITIONAL ID
+241;CUST. PART No.
+242;MTO VARIANT
+243;PCN
+250;SECONDARY SERIAL
+251;REF. TO SOURCE
+253;GDTI
+254;GLN EXTENSION COMPONENT
+255;GCN
+30;VAR. COUNT
 3100;NET WEIGHT (kg)
 3101;NET WEIGHT (kg)
 3102;NET WEIGHT (kg)
