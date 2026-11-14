@@ -129,12 +129,21 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>CodeLang.resx</DependentUpon>
 	  </Compile>
+	  <Compile Update="Resources\Languages\GS1AppIdLang.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>GS1AppIdLang.resx</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <EmbeddedResource Update="Resources\Languages\CodeLang.resx">
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>CodeLang.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Languages\GS1AppIdLang.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>GS1AppIdLang.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
 	</ItemGroup>
 

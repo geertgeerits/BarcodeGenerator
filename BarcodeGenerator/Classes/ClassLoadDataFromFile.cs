@@ -1,12 +1,18 @@
-﻿namespace BarcodeGenerator
+﻿using System.Collections;
+using System.Resources;
+using System.Globalization;
+using BarcodeGenerator.Resources;
+
+namespace BarcodeGenerator
 {
-    internal class ClassLoadDataFromFile
+    public class ClassLoadDataFromFile
     {
         // Dictionary to hold GS1 Application Identifiers (AI) and their corresponding values
         public static readonly Dictionary<string, string> dicGs1 = [];
 
         // Add once in the class - central place for all supported GS1 Application Identifiers (AI) (keys and data attributes)
         public static readonly Dictionary<string, string> _knownGs1AppIDs = [];
+        public static readonly Dictionary<string, string> resourceSet = [];
 
         // Add once in the class - central place for all supported IBAN data (country and length)
         public static readonly Dictionary<string, int> _knownIbanData = [];
@@ -45,6 +51,8 @@
                     Debug.WriteLine($"Added GS1 Application Identifier: {parts[0]} = {parts[1]}");
                 }
             }
+
+            await ReadLanguageResourceFileAsync();
         }
 
         /// <summary>
@@ -149,6 +157,68 @@
                 index++;
                 Debug.WriteLine($"Added ISO Currency Code: {parts[0]} = {parts[1]}, {parts[2]}, {parts[3]}, {parts[4]}");
             }
+        }
+
+        /// <summary>
+        /// Read the name and data from the current language resource file and put them in an dictionary
+        /// </summary>
+        /// <returns></returns>
+        public static async Task ReadLanguageResourceFileAsync()
+        {
+            ResourceManager rm = GS1AppIdLang.ResourceManager;
+            ResourceSet? languageResourceSet = rm.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+
+            if (languageResourceSet != null)
+            {
+                foreach (DictionaryEntry entry in languageResourceSet)
+                {
+                    if (entry.Key is string key && entry.Value is string value)
+                    {
+                        resourceSet.TryAdd(key, value);
+                        Debug.WriteLine($"ReadLanguageResourceFileAsync: {key} = {value}");
+                    }
+                }
+            }
+        }
+
+        //public static async Task<Dictionary<string, string>> GetCurrentLanguageResources()
+        //{
+        //    var resourceDictionary = new Dictionary<string, string>();
+
+        //    // 1. Access the generated ResourceManager from your .resx class
+        //    ResourceManager resourceManager = GS1AppIdLang.ResourceManager;
+
+        //    // 2. Get the ResourceSet for the current UI culture
+        //    // The 'true' parameters ensure the resource file is loaded if not already in memory,
+        //    // and fall back to parent/default cultures if a specific translation is missing.
+        //    ResourceSet? resourceSet = resourceManager.GetResourceSet(
+        //        CultureInfo.CurrentUICulture,
+        //        createIfNotExists: true,
+        //        tryParents: true);
+
+        //    if (resourceSet != null)
+        //    {
+        //        // 3. Iterate through the entries and populate the Dictionary
+        //        foreach (DictionaryEntry entry in resourceSet)
+        //        {
+        //            if (entry.Key is string key && entry.Value is string value)
+        //            {
+        //                resourceDictionary[key] = value;
+        //                Debug.WriteLine($"ReadLanguageResourceFileAsync: {key} = {value}");
+        //            }
+        //        }
+        //    }
+
+        //    return resourceDictionary;
+        //}
+
+
+        public static string GetValueResourceSet(string cAppId)
+        {
+            string test = resourceSet.TryGetValue(cAppId, out string? value) ? value : string.Empty;
+            //return resourceSet.TryGetValue(cAppId, out string? value) ? value : string.Empty;
+            return test;
+
         }
     }
 }
