@@ -1124,6 +1124,24 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The country code is not valid..
+        /// </summary>
+        internal static string ErrorGS1CountryInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1CountryInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The currency code is not valid..
+        /// </summary>
+        internal static string ErrorGS1CurrencyInvalid_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1CurrencyInvalid_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date is not valid..
         /// </summary>
         internal static string ErrorGS1DateInvalid_Text {

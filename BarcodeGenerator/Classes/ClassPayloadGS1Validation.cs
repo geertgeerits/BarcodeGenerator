@@ -1042,11 +1042,11 @@
                 }
             }
 
-            // 3 DIGIT 1 * 15 DIGIT
+            // 3 DIGIT 1 * 15 DIGIT - ISO currency code
             else if (dataAttribute is "3910" or "3911" or "3912" or "3913" or "3914" or "3915" or "3916" or "3917" or "3918" or "3919"
                 or "3930" or "3931" or "3932" or "3933" or "3934" or "3935" or "3936" or "3937" or "3938" or "3939")
             {
-                if (value.Length is < 4 or > 18 || !ValueIsDigit(value))
+                if (value.Length is < 4 or > 18 || !ValueIsDigit(value) || !IsKnownISOCurrencyCode(value[..3]))
                 {
                     return false;
                 }
@@ -1147,19 +1147,19 @@
 
             // Mixed/others: digits and characters
 
-            // 3 DIGIT 1 * 9 XCHAR
+            // 3 DIGIT 1 * 9 XCHAR - ISO country code
             else if (dataAttribute is "421")
             {
-                if (value.Length is < 4 or > 12 || !ValueIsDigit(value[..3]))
+                if (value.Length is < 4 or > 12 || !ValueIsDigit(value[..3]) || !IsKnownISOCountryCode(value[..3]))
                 {
                     return false;
                 }
             }
 
-            // 3 DIGIT 1 * 27 XCHAR
+            // 3 DIGIT 1 * 27 XCHAR - ISO country code
             else if (dataAttribute is "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
             {
-                if (value.Length is < 4 or > 30 || !ValueIsDigit(value[..3]))
+                if (value.Length is < 4 or > 30 || !ValueIsDigit(value[..3]) || !IsKnownISOCountryCode(value[..3]))
                 {
                     return false;
                 }
@@ -1273,16 +1273,6 @@
             return ClassLoadDataFromFile._knownGs1AppIDs.ContainsKey(cAppId);
         }
 
-        ///// <summary>
-        ///// Check if the provided country code is a known country code by searching in the predefined list of known country codes
-        ///// </summary>
-        ///// <param name="cCountryCode"></param>
-        ///// <returns></returns>
-        //private static bool IsKnownIbanCountry(string cCountryCode)
-        //{
-        //    return _knownIbanData.ContainsKey(cCountryCode);
-        //}
-
         /// <summary>
         /// Get the value of the provided application identifier (AI) and return the value from the predefined list of known
         /// GS1 Application Identifiers (AIs). If the AI is not found, return an empty string.
@@ -1293,6 +1283,16 @@
         {
             return ClassLoadDataFromFile._knownGs1AppIDs.TryGetValue(cAppId, out string? value) ? value : string.Empty;
         }
+
+        ///// <summary>
+        ///// Check if the provided country code is a known country code by searching in the predefined list of known country codes
+        ///// </summary>
+        ///// <param name="cCountryCode"></param>
+        ///// <returns></returns>
+        //private static bool IsKnownIbanCountry(string cCountryCode)
+        //{
+        //    return ClassLoadDataFromFile._knownIbanData.ContainsKey(cCountryCode);
+        //}
 
         /// <summary>
         /// Get the length of the IBAN code for a country code and return the value from the predefined list of known country codes
@@ -1305,21 +1305,86 @@
         }
 
         /// <summary>
+        /// Check if the provided country code is a valid ISO country code by searching in the predefined list of known ISO country codes
+        /// </summary>
+        /// <param name="cCountryCode"></param>
+        /// <returns></returns>
+        private static bool IsKnownISOCountryCode(string cCountryCode)
+        {
+            try
+            {
+                for (int i = 0; i < ClassLoadDataFromFile._knownIsoCountryCodes.GetLength(0); i++)
+                {
+                    if (ClassLoadDataFromFile._knownIsoCountryCodes[i, 3] == cCountryCode)
+                    {
+                        return true;
+                    }
+                }
+
+                cErrorMessage = CodeLang.ErrorGS1CountryInvalid_Text;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in IsKnownISOCountryCode: {ex.Message}");
+                cErrorMessage = CodeLang.ErrorGS1CountryInvalid_Text;
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Get the name of the country for a country code and return the value from the predefined list of known numeric country code
         /// </summary>
         /// <param name="cCountryCodeNum"></param>
         /// <returns></returns>
         public static string GetKnownISOCountry(string cCountryCodeNum)
         {
-            for (int i = 0; i < ClassLoadDataFromFile._knownIsoCountryCodes.Length; i++)
+            try
             {
-                if (ClassLoadDataFromFile._knownIsoCountryCodes[i, 3] == cCountryCodeNum)
+                for (int i = 0; i < ClassLoadDataFromFile._knownIsoCountryCodes.GetLength(0); i++)
                 {
-                    return ClassLoadDataFromFile._knownIsoCountryCodes[i, 0];
+                    if (ClassLoadDataFromFile._knownIsoCountryCodes[i, 3] == cCountryCodeNum)
+                    {
+                        return ClassLoadDataFromFile._knownIsoCountryCodes[i, 0];
+                    }
                 }
+
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in GetKnownISOCountry: {ex.Message}");
+                return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Check if the provided currency code is a valid ISO currency code by searching in the predefined list of known ISO currency codes
+        /// </summary>
+        /// <param name="cCurrencyCode"></param>
+        /// <returns></returns>
+        private static bool IsKnownISOCurrencyCode(string cCurrencyCode)
+        {
+            try
+            {
+                for (int i = 0; i < ClassLoadDataFromFile._knownIsoCurrencyCodes.GetLength(0); i++)
+                {
+                    if (ClassLoadDataFromFile._knownIsoCurrencyCodes[i, 3] == cCurrencyCode)
+                    {
+                        return true;
+                    }
+                }
+
+                cErrorMessage = CodeLang.ErrorGS1CurrencyInvalid_Text;
+                return false;
             }
 
-            return string.Empty;
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in IsKnownISOCurrencyCode: {ex.Message}");
+                cErrorMessage = CodeLang.ErrorGS1CurrencyInvalid_Text;
+                return false;
+            }
         }
 
         /// <summary>
@@ -1329,15 +1394,24 @@
         /// <returns></returns>
         public static string GetKnownISOCurrency(string cCurrencyCodeNum)
         {
-            for (int i = 0; i < ClassLoadDataFromFile._knownIsoCurrencyCodes.Length; i++)
+            try
             {
-                if (ClassLoadDataFromFile._knownIsoCurrencyCodes[i, 3] == cCurrencyCodeNum)
+                for (int i = 0; i < ClassLoadDataFromFile._knownIsoCurrencyCodes.GetLength(0); i++)
                 {
-                    return ClassLoadDataFromFile._knownIsoCurrencyCodes[i, 2];
+                    if (ClassLoadDataFromFile._knownIsoCurrencyCodes[i, 3] == cCurrencyCodeNum)
+                    {
+                        return ClassLoadDataFromFile._knownIsoCurrencyCodes[i, 2];
+                    }
                 }
-            }
 
-            return string.Empty;
+                return string.Empty;
+            }
+            
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in GetKnownISOCurrency: {ex.Message}");
+                return string.Empty;
+            }
         }
 
         /// <summary>

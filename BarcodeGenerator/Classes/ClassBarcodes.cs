@@ -800,6 +800,7 @@
 
                         try
                         {
+                            // Dates / Times
                             // If the value is a date or date/time, format it as a date or date/time string in the current culture format
                             // 6 DIGIT (date YYMMDD) - Format the first 6 digits of the value as a date string in the current culture format
                             if (kvp.Key is "11" or "12" or "13" or "15" or "16" or "17" or "4324" or "4325" or "4326"
@@ -883,28 +884,30 @@
                                 barcodeResult += $" ({valueDate1})";
                             }
 
-                            // If the value is a country code, format it as a country name in the current culture format
+                            // ISO Country Codes
+                            // If the value is an ISO country code, format it as a country name in the current culture format
                             if (kvp.Key is "421" or "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
                             {
                                 countryName = ClassPayloadGS1Validation.GetKnownISOCountry(kvp.Value[..3]);
 
                                 if (countryName != string.Empty)
                                 {
-                                    barcodeResult += $" ({countryName}, {kvp.Value[3..]})";
+                                    barcodeResult += $" ({countryName} {kvp.Value[3..]})";
                                 }
                             }
 
-                            // If the value is a currency code, format it as a currency name in the current culture format
-                            if (kvp.Key is "3910" or "3911" or "3912" or "3913" or "3914" or "3915" or "3916" or "3917" or "3918" or "3919")
+                            // ISO Currency Codes
+                            // If the value is an ISO currency code, format it as a currency name in the current culture format
+                            if (kvp.Key is "3910" or "3911" or "3912" or "3913" or "3914" or "3915" or "3916" or "3917" or "3918" or "3919"
+                                or "3930" or "3931" or "3932" or "3933" or "3934" or "3935" or "3936" or "3937" or "3938" or "3939")
                             {
                                 currencyName = ClassPayloadGS1Validation.GetKnownISOCurrency(kvp.Value[..3]);
 
                                 if (currencyName != string.Empty)
                                 {
-                                    barcodeResult += $" ({currencyName}, {kvp.Value[3..]})";
+                                    barcodeResult += $" ({currencyName} {kvp.Value[3..]})";
                                 }
                             }
-
                         }
 
                         catch (Exception ex)
