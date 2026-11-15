@@ -1146,4 +1146,10 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>このIBANを保持しますか？</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>国コードが無効です。</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>通貨コードが無効です。</value>
+  </data>
 </root>

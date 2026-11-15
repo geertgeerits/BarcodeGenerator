@@ -1135,4 +1135,10 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>Giữ lại IBAN này?</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>Mã quốc gia không hợp lệ.</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>Mã tiền tệ không hợp lệ.</value>
+  </data>
 </root>

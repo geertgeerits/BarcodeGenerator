@@ -1132,4 +1132,10 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>Megtartja ezt az IBAN-t?</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>Az országkód érvénytelen.</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>A devizakód érvénytelen.</value>
+  </data>
 </root>

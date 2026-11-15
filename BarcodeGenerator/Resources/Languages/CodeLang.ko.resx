@@ -1133,4 +1133,10 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>이 IBAN을 유지할까요?</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>국가 코드가 유효하지 않습니다.</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>통화 코드가 유효하지 않습니다.</value>
+  </data>
 </root>

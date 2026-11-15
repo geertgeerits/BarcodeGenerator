@@ -1132,4 +1132,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>Сохранить этот IBAN?</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>Код страны недействителен.</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>Код валюты недействителен.</value>
+  </data>
 </root>

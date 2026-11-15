@@ -1129,4 +1129,10 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>क्या यह IBAN रखें?</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>देश का कोड मान्य नहीं है।</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>मुद्रा का कोड मान्य नहीं है।</value>
+  </data>
 </root>

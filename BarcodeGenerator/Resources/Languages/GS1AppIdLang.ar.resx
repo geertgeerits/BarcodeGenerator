@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>رمز حاوية الشحن التسلسلي</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>رقم الصنف التجاري العالمي</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>رقم السلعة التجارية العالمية (GTIN) للسلع التجارية المُضمَّنة</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>رقم الدفعة أو التشغيلة</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>تاريخ الإنتاج (سنة/شهر/يوم)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>تاريخ الاستحقاق (سنة-شهر-يوم)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>تاريخ التعبئة (س س ش ش ي ي)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>يُفضل استهلاكه قبل (سنة/شهر/يوم)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>تاريخ البيع (سنة/شهر/يوم)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>تاريخ الانتهاء (سنة/شهر/يوم)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>متغير منتج داخلي</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>رقم سري</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>طراز من منتج استهلاكي</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>عدد متغير من الأصناف (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>عدد الأصناف التجارية أو قطع الأصناف التجارية الموجودة ضمن وحدة لوجستية</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>معلومات متفق عليها متبادلاً بين الشركاء التجاريين</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>معلومات داخلية خاصة بالشركة</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>معلومات داخلية خاصة بالشركة</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>معلومات داخلية خاصة بالشركة</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>معلومات داخلية خاصة بالشركة</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>معلومات داخلية خاصة بالشركة</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>معلومات داخلية خاصة بالشركة</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>معلومات داخلية خاصة بالشركة</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>معلومات داخلية خاصة بالشركة</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>معلومات داخلية خاصة بالشركة</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>امتدادٌ مُسلسلٌ لرقم السلعة التجاري العالمي خاضعٌ لسيطرة طرفٍ ثالث</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>تعريف إضافي للمنتج يحدده المُصنِّع</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>رقم قطعة العميل</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>رقم إصدار المنتج المُصنَّع حسب الطلب</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>رقم مكون التغليف</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>الرقم التسلسلي الثانوي</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>إشارة إلى الكيان المصدر</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>مُعرِّف نوع المستند العالمي</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>مكوّن الامتداد الخاص برقم الموقع العالمي</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>رقم القسيمة العالمي</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>رقم أمر الشراء الخاص بالعميل</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>رقم التعريف العالمي للشحنة</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>رقم تعريف الشحنة العالمي</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>رمز التوجيه</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>الشحن إلى / التسليم إلى رقم الموقع العالمي</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>رقم الموقع العالمي  للجهة الموجهة إليها الفاتورة</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>تم الشراء من خلال رقم الموقع العالمي</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>الشحن لصالح / التسليم لصالح - التوجيه إلى رقم الموقع العالمي</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>تحديد موقع مادي - رقم الموقع العالمي (Global Location Number)</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>رقم الموقع العالمي للجهة المُصدِرة للفاتورة</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>رقم الموقع العالمي لموقع الإنتاج أو تقديم الخدمة</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>رقم الموقع العالمي للطرف</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>الشحن إلى / التوصيل إلى رمز بريدي يقع ضمن نطاق هيئة بريدية واحدة</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>الشحن إلى / التسليم إلى الرمز البريدي مع رمز الدولة وفق معيار ISO</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>بلد منشأ السلعة التجارية</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>بلد المعالجة الأولية</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>بلد المعالجة</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>بلد التفكيك</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>دولة تغطي سلسلة العمليات الكاملة</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>التقسيم الإداري للبلد الأصلي</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>رقم التعويض في نظام الرعاية الصحية الوطني - ألمانيا</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>رقم التعويض عن الرعاية الصحية - فرنسا</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>رقم التعويض عن الرعاية الصحية الوطني - إسبانيا</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>رقم التأمين الصحي الوطني - البرازيل</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>رقم التعويض عن الرعاية الصحية الوطني - البرتغال</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>رقم السداد الوطني للرعاية الصحية - الولايات المتحدة الأمريكية</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>رقم السداد في نظام الرعاية الصحية الوطني - إيطاليا</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>رقم التعويض عن الرعاية الصحية الوطني - كوستاريكا</value>
+  </data>
+  <data name="3100" xml:space="preserve">
+    <value>الوزن الصافي، بالكيلوغرام (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3101" xml:space="preserve">
+    <value>الوزن الصافي، بالكيلوغرام (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3102" xml:space="preserve">
+    <value>الوزن الصافي، بالكيلوغرام (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3103" xml:space="preserve">
+    <value>الوزن الصافي، بالكيلوغرام (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3104" xml:space="preserve">
+    <value>الوزن الصافي، بالكيلوغرام (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3105" xml:space="preserve">
+    <value>الوزن الصافي، بالكيلوغرام (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3111" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3112" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3113" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3114" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3115" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3121" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3122" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3123" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3124" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3125" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3131" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3132" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3133" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3134" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3135" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>المساحة، بالمتر المربع (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3141" xml:space="preserve">
+    <value>المساحة، بالمتر المربع (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3142" xml:space="preserve">
+    <value>المساحة، بالمتر المربع (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3143" xml:space="preserve">
+    <value>المساحة، بالمتر المربع (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3144" xml:space="preserve">
+    <value>المساحة، بالمتر المربع (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3145" xml:space="preserve">
+    <value>المساحة، بالمتر المربع (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>الحجم الصافي، باللتر (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3151" xml:space="preserve">
+    <value>الحجم الصافي، باللتر (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3152" xml:space="preserve">
+    <value>الحجم الصافي، باللتر (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3153" xml:space="preserve">
+    <value>الحجم الصافي، باللتر (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3154" xml:space="preserve">
+    <value>الحجم الصافي، باللتر (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3155" xml:space="preserve">
+    <value>الحجم الصافي، باللتر (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>الحجم الصافي، بالمتر المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3161" xml:space="preserve">
+    <value>الحجم الصافي، بالمتر المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3162" xml:space="preserve">
+    <value>الحجم الصافي، بالمتر المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3163" xml:space="preserve">
+    <value>الحجم الصافي، بالمتر المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3164" xml:space="preserve">
+    <value>الحجم الصافي، بالمتر المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3165" xml:space="preserve">
+    <value>الحجم الصافي، بالمتر المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>الوزن الصافي بالرطل (وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3201" xml:space="preserve">
+    <value>الوزن الصافي بالرطل (وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3202" xml:space="preserve">
+    <value>الوزن الصافي بالرطل (وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3203" xml:space="preserve">
+    <value>الوزن الصافي بالرطل (وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3204" xml:space="preserve">
+    <value>الوزن الصافي بالرطل (وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3205" xml:space="preserve">
+    <value>الوزن الصافي بالرطل (وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3211" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3212" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3213" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3214" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3215" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3221" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3222" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3223" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3224" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3225" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3231" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3232" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3233" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3234" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3235" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3241" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3242" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3243" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3244" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3245" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3251" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3252" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3253" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3254" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3255" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3261" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3262" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3263" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3264" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3265" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، بالياردة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3271" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3272" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3273" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3274" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3275" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3281" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3282" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3283" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3284" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3285" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم (وحدة قياس متغيرة للمنتج التجاري)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث؛ بالياردة (وحدة قياس متغيرة للمنتجات التجارية)</value>
+  </data>
+  <data name="3291" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث؛ بالياردة (وحدة قياس متغيرة للمنتجات التجارية)</value>
+  </data>
+  <data name="3292" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث؛ بالياردة (وحدة قياس متغيرة للمنتجات التجارية)</value>
+  </data>
+  <data name="3293" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث؛ بالياردة (وحدة قياس متغيرة للمنتجات التجارية)</value>
+  </data>
+  <data name="3294" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث؛ بالياردة (وحدة قياس متغيرة للمنتجات التجارية)</value>
+  </data>
+  <data name="3295" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث؛ بالياردة (وحدة قياس متغيرة للمنتجات التجارية)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>الوزن اللوجستي، بالكيلوغرامات</value>
+  </data>
+  <data name="3301" xml:space="preserve">
+    <value>الوزن اللوجستي، بالكيلوغرامات</value>
+  </data>
+  <data name="3302" xml:space="preserve">
+    <value>الوزن اللوجستي، بالكيلوغرامات</value>
+  </data>
+  <data name="3303" xml:space="preserve">
+    <value>الوزن اللوجستي، بالكيلوغرامات</value>
+  </data>
+  <data name="3304" xml:space="preserve">
+    <value>الوزن اللوجستي، بالكيلوغرامات</value>
+  </data>
+  <data name="3305" xml:space="preserve">
+    <value>الوزن اللوجستي، بالكيلوغرامات</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار</value>
+  </data>
+  <data name="3311" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار</value>
+  </data>
+  <data name="3312" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار</value>
+  </data>
+  <data name="3313" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار</value>
+  </data>
+  <data name="3314" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار</value>
+  </data>
+  <data name="3315" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالأمتار</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار</value>
+  </data>
+  <data name="3321" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار</value>
+  </data>
+  <data name="3322" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار</value>
+  </data>
+  <data name="3323" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار</value>
+  </data>
+  <data name="3324" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار</value>
+  </data>
+  <data name="3325" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالأمتار</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار</value>
+  </data>
+  <data name="3331" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار</value>
+  </data>
+  <data name="3332" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار</value>
+  </data>
+  <data name="3333" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار</value>
+  </data>
+  <data name="3334" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار</value>
+  </data>
+  <data name="3335" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالأمتار</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>المساحة، بالمتر المربع</value>
+  </data>
+  <data name="3341" xml:space="preserve">
+    <value>المساحة، بالمتر المربع</value>
+  </data>
+  <data name="3342" xml:space="preserve">
+    <value>المساحة، بالمتر المربع</value>
+  </data>
+  <data name="3343" xml:space="preserve">
+    <value>المساحة، بالمتر المربع</value>
+  </data>
+  <data name="3344" xml:space="preserve">
+    <value>المساحة، بالمتر المربع</value>
+  </data>
+  <data name="3345" xml:space="preserve">
+    <value>المساحة، بالمتر المربع</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>الحجم اللوجستي، لترات</value>
+  </data>
+  <data name="3351" xml:space="preserve">
+    <value>الحجم اللوجستي، لترات</value>
+  </data>
+  <data name="3352" xml:space="preserve">
+    <value>الحجم اللوجستي، لترات</value>
+  </data>
+  <data name="3353" xml:space="preserve">
+    <value>الحجم اللوجستي، لترات</value>
+  </data>
+  <data name="3354" xml:space="preserve">
+    <value>الحجم اللوجستي، لترات</value>
+  </data>
+  <data name="3355" xml:space="preserve">
+    <value>الحجم اللوجستي، لترات</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>الحجم اللوجستي، بالمتر المكعب</value>
+  </data>
+  <data name="3361" xml:space="preserve">
+    <value>الحجم اللوجستي، بالمتر المكعب</value>
+  </data>
+  <data name="3362" xml:space="preserve">
+    <value>الحجم اللوجستي، بالمتر المكعب</value>
+  </data>
+  <data name="3363" xml:space="preserve">
+    <value>الحجم اللوجستي، بالمتر المكعب</value>
+  </data>
+  <data name="3364" xml:space="preserve">
+    <value>الحجم اللوجستي، بالمتر المكعب</value>
+  </data>
+  <data name="3365" xml:space="preserve">
+    <value>الحجم اللوجستي، بالمتر المكعب</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>كيلوغرام لكل متر مربع</value>
+  </data>
+  <data name="3371" xml:space="preserve">
+    <value>كيلوغرام لكل متر مربع</value>
+  </data>
+  <data name="3372" xml:space="preserve">
+    <value>كيلوغرام لكل متر مربع</value>
+  </data>
+  <data name="3373" xml:space="preserve">
+    <value>كيلوغرام لكل متر مربع</value>
+  </data>
+  <data name="3374" xml:space="preserve">
+    <value>كيلوغرام لكل متر مربع</value>
+  </data>
+  <data name="3375" xml:space="preserve">
+    <value>كيلوغرام لكل متر مربع</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>الوزن اللوجستي، بالرطل</value>
+  </data>
+  <data name="3401" xml:space="preserve">
+    <value>الوزن اللوجستي، بالرطل</value>
+  </data>
+  <data name="3402" xml:space="preserve">
+    <value>الوزن اللوجستي، بالرطل</value>
+  </data>
+  <data name="3403" xml:space="preserve">
+    <value>الوزن اللوجستي، بالرطل</value>
+  </data>
+  <data name="3404" xml:space="preserve">
+    <value>الوزن اللوجستي، بالرطل</value>
+  </data>
+  <data name="3405" xml:space="preserve">
+    <value>الوزن اللوجستي، بالرطل</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة</value>
+  </data>
+  <data name="3411" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة</value>
+  </data>
+  <data name="3412" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة</value>
+  </data>
+  <data name="3413" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة</value>
+  </data>
+  <data name="3414" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة</value>
+  </data>
+  <data name="3415" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالبوصة</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم</value>
+  </data>
+  <data name="3421" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم</value>
+  </data>
+  <data name="3422" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم</value>
+  </data>
+  <data name="3423" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم</value>
+  </data>
+  <data name="3424" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم</value>
+  </data>
+  <data name="3425" xml:space="preserve">
+    <value>الطول أو البعد الأول، بالقدم</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>الطول أو البعد الأول، ياردة</value>
+  </data>
+  <data name="3431" xml:space="preserve">
+    <value>الطول أو البعد الأول، ياردة</value>
+  </data>
+  <data name="3432" xml:space="preserve">
+    <value>الطول أو البعد الأول، ياردة</value>
+  </data>
+  <data name="3433" xml:space="preserve">
+    <value>الطول أو البعد الأول، ياردة</value>
+  </data>
+  <data name="3434" xml:space="preserve">
+    <value>الطول أو البعد الأول، ياردة</value>
+  </data>
+  <data name="3435" xml:space="preserve">
+    <value>الطول أو البعد الأول، ياردة</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة</value>
+  </data>
+  <data name="3441" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة</value>
+  </data>
+  <data name="3442" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة</value>
+  </data>
+  <data name="3443" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة</value>
+  </data>
+  <data name="3444" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة</value>
+  </data>
+  <data name="3445" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالبوصة</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم</value>
+  </data>
+  <data name="3451" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم</value>
+  </data>
+  <data name="3452" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم</value>
+  </data>
+  <data name="3453" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم</value>
+  </data>
+  <data name="3454" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم</value>
+  </data>
+  <data name="3455" xml:space="preserve">
+    <value>العرض، أو القطر، أو البُعد الثاني، بالقدم</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، ياردة</value>
+  </data>
+  <data name="3461" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، ياردة</value>
+  </data>
+  <data name="3462" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، ياردة</value>
+  </data>
+  <data name="3463" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، ياردة</value>
+  </data>
+  <data name="3464" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، ياردة</value>
+  </data>
+  <data name="3465" xml:space="preserve">
+    <value>العرض، أو القطر، أو البعد الثاني، ياردة</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة</value>
+  </data>
+  <data name="3471" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة</value>
+  </data>
+  <data name="3472" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة</value>
+  </data>
+  <data name="3473" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة</value>
+  </data>
+  <data name="3474" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة</value>
+  </data>
+  <data name="3475" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالبوصة</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم</value>
+  </data>
+  <data name="3481" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم</value>
+  </data>
+  <data name="3482" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم</value>
+  </data>
+  <data name="3483" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم</value>
+  </data>
+  <data name="3484" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم</value>
+  </data>
+  <data name="3485" xml:space="preserve">
+    <value>العمق، أو السماكة، أو الارتفاع، أو البعد الثالث، بالقدم</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>العمق، السماكة، الارتفاع، أو البعد الثالث، ياردات</value>
+  </data>
+  <data name="3491" xml:space="preserve">
+    <value>العمق، السماكة، الارتفاع، أو البعد الثالث، ياردات</value>
+  </data>
+  <data name="3492" xml:space="preserve">
+    <value>العمق، السماكة، الارتفاع، أو البعد الثالث، ياردات</value>
+  </data>
+  <data name="3493" xml:space="preserve">
+    <value>العمق، السماكة، الارتفاع، أو البعد الثالث، ياردات</value>
+  </data>
+  <data name="3494" xml:space="preserve">
+    <value>العمق، السماكة، الارتفاع، أو البعد الثالث، ياردات</value>
+  </data>
+  <data name="3495" xml:space="preserve">
+    <value>العمق، السماكة، الارتفاع، أو البعد الثالث، ياردات</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>المساحة، بالبوصة المربعة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3501" xml:space="preserve">
+    <value>المساحة، بالبوصة المربعة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3502" xml:space="preserve">
+    <value>المساحة، بالبوصة المربعة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3503" xml:space="preserve">
+    <value>المساحة، بالبوصة المربعة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3504" xml:space="preserve">
+    <value>المساحة، بالبوصة المربعة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3505" xml:space="preserve">
+    <value>المساحة، بالبوصة المربعة (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>المساحة، بالقدم المربع (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3511" xml:space="preserve">
+    <value>المساحة، بالقدم المربع (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3512" xml:space="preserve">
+    <value>المساحة، بالقدم المربع (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3513" xml:space="preserve">
+    <value>المساحة، بالقدم المربع (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3514" xml:space="preserve">
+    <value>المساحة، بالقدم المربع (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3515" xml:space="preserve">
+    <value>المساحة، بالقدم المربع (صنف تجاري ذو قياس متغير)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3521" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3522" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3523" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3524" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3525" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>المساحة، بوصة مربعة</value>
+  </data>
+  <data name="3531" xml:space="preserve">
+    <value>المساحة، بوصة مربعة</value>
+  </data>
+  <data name="3532" xml:space="preserve">
+    <value>المساحة، بوصة مربعة</value>
+  </data>
+  <data name="3533" xml:space="preserve">
+    <value>المساحة، بوصة مربعة</value>
+  </data>
+  <data name="3534" xml:space="preserve">
+    <value>المساحة، بوصة مربعة</value>
+  </data>
+  <data name="3535" xml:space="preserve">
+    <value>المساحة، بوصة مربعة</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>المساحة، بالقدم المربع</value>
+  </data>
+  <data name="3541" xml:space="preserve">
+    <value>المساحة، بالقدم المربع</value>
+  </data>
+  <data name="3542" xml:space="preserve">
+    <value>المساحة، بالقدم المربع</value>
+  </data>
+  <data name="3543" xml:space="preserve">
+    <value>المساحة، بالقدم المربع</value>
+  </data>
+  <data name="3544" xml:space="preserve">
+    <value>المساحة، بالقدم المربع</value>
+  </data>
+  <data name="3545" xml:space="preserve">
+    <value>المساحة، بالقدم المربع</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة</value>
+  </data>
+  <data name="3551" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة</value>
+  </data>
+  <data name="3552" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة</value>
+  </data>
+  <data name="3553" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة</value>
+  </data>
+  <data name="3554" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة</value>
+  </data>
+  <data name="3555" xml:space="preserve">
+    <value>المساحة، بالياردات المربعة</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>الوزن الصافي، أونصة تروي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3561" xml:space="preserve">
+    <value>الوزن الصافي، أونصة تروي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3562" xml:space="preserve">
+    <value>الوزن الصافي، أونصة تروي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3563" xml:space="preserve">
+    <value>الوزن الصافي، أونصة تروي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3564" xml:space="preserve">
+    <value>الوزن الصافي، أونصة تروي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3565" xml:space="preserve">
+    <value>الوزن الصافي، أونصة تروي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>الوزن الصافي (أو الحجم)، بالأونصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3571" xml:space="preserve">
+    <value>الوزن الصافي (أو الحجم)، بالأونصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3572" xml:space="preserve">
+    <value>الوزن الصافي (أو الحجم)، بالأونصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3573" xml:space="preserve">
+    <value>الوزن الصافي (أو الحجم)، بالأونصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3574" xml:space="preserve">
+    <value>الوزن الصافي (أو الحجم)، بالأونصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3575" xml:space="preserve">
+    <value>الوزن الصافي (أو الحجم)، بالأونصة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>الحجم الصافي، بالكوارت (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3601" xml:space="preserve">
+    <value>الحجم الصافي، بالكوارت (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3602" xml:space="preserve">
+    <value>الحجم الصافي، بالكوارت (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3603" xml:space="preserve">
+    <value>الحجم الصافي، بالكوارت (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3604" xml:space="preserve">
+    <value>الحجم الصافي، بالكوارت (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3605" xml:space="preserve">
+    <value>الحجم الصافي، بالكوارت (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>الحجم الصافي، بالغالون الأمريكي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3611" xml:space="preserve">
+    <value>الحجم الصافي، بالغالون الأمريكي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3612" xml:space="preserve">
+    <value>الحجم الصافي، بالغالون الأمريكي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3613" xml:space="preserve">
+    <value>الحجم الصافي، بالغالون الأمريكي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3614" xml:space="preserve">
+    <value>الحجم الصافي، بالغالون الأمريكي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3615" xml:space="preserve">
+    <value>الحجم الصافي، بالغالون الأمريكي (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>الحجم اللوجستي، كوارت</value>
+  </data>
+  <data name="3621" xml:space="preserve">
+    <value>الحجم اللوجستي، كوارت</value>
+  </data>
+  <data name="3622" xml:space="preserve">
+    <value>الحجم اللوجستي، كوارت</value>
+  </data>
+  <data name="3623" xml:space="preserve">
+    <value>الحجم اللوجستي، كوارت</value>
+  </data>
+  <data name="3624" xml:space="preserve">
+    <value>الحجم اللوجستي، كوارت</value>
+  </data>
+  <data name="3625" xml:space="preserve">
+    <value>الحجم اللوجستي، كوارت</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>الحجم اللوجستي، بالغالون الأمريكي</value>
+  </data>
+  <data name="3631" xml:space="preserve">
+    <value>الحجم اللوجستي، بالغالون الأمريكي</value>
+  </data>
+  <data name="3632" xml:space="preserve">
+    <value>الحجم اللوجستي، بالغالون الأمريكي</value>
+  </data>
+  <data name="3633" xml:space="preserve">
+    <value>الحجم اللوجستي، بالغالون الأمريكي</value>
+  </data>
+  <data name="3634" xml:space="preserve">
+    <value>الحجم اللوجستي، بالغالون الأمريكي</value>
+  </data>
+  <data name="3635" xml:space="preserve">
+    <value>الحجم اللوجستي، بالغالون الأمريكي</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>الحجم الصافي، بالبوصة المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3641" xml:space="preserve">
+    <value>الحجم الصافي، بالبوصة المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3642" xml:space="preserve">
+    <value>الحجم الصافي، بالبوصة المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3643" xml:space="preserve">
+    <value>الحجم الصافي، بالبوصة المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3644" xml:space="preserve">
+    <value>الحجم الصافي، بالبوصة المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3645" xml:space="preserve">
+    <value>الحجم الصافي، بالبوصة المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>الحجم الصافي، بالقدم المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3651" xml:space="preserve">
+    <value>الحجم الصافي، بالقدم المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3652" xml:space="preserve">
+    <value>الحجم الصافي، بالقدم المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3653" xml:space="preserve">
+    <value>الحجم الصافي، بالقدم المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3654" xml:space="preserve">
+    <value>الحجم الصافي، بالقدم المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3655" xml:space="preserve">
+    <value>الحجم الصافي، بالقدم المكعب (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>الحجم الصافي، بالياردات المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3661" xml:space="preserve">
+    <value>الحجم الصافي، بالياردات المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3662" xml:space="preserve">
+    <value>الحجم الصافي، بالياردات المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3663" xml:space="preserve">
+    <value>الحجم الصافي، بالياردات المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3664" xml:space="preserve">
+    <value>الحجم الصافي، بالياردات المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3665" xml:space="preserve">
+    <value>الحجم الصافي، بالياردات المكعبة (سلعة تجارية ذات قياس متغير)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>الحجم اللوجستي، بالبوصة المكعبة</value>
+  </data>
+  <data name="3671" xml:space="preserve">
+    <value>الحجم اللوجستي، بالبوصة المكعبة</value>
+  </data>
+  <data name="3672" xml:space="preserve">
+    <value>الحجم اللوجستي، بالبوصة المكعبة</value>
+  </data>
+  <data name="3673" xml:space="preserve">
+    <value>الحجم اللوجستي، بالبوصة المكعبة</value>
+  </data>
+  <data name="3674" xml:space="preserve">
+    <value>الحجم اللوجستي، بالبوصة المكعبة</value>
+  </data>
+  <data name="3675" xml:space="preserve">
+    <value>الحجم اللوجستي، بالبوصة المكعبة</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>الحجم اللوجستي، بالقدم المكعب</value>
+  </data>
+  <data name="3681" xml:space="preserve">
+    <value>الحجم اللوجستي، بالقدم المكعب</value>
+  </data>
+  <data name="3682" xml:space="preserve">
+    <value>الحجم اللوجستي، بالقدم المكعب</value>
+  </data>
+  <data name="3683" xml:space="preserve">
+    <value>الحجم اللوجستي، بالقدم المكعب</value>
+  </data>
+  <data name="3684" xml:space="preserve">
+    <value>الحجم اللوجستي، بالقدم المكعب</value>
+  </data>
+  <data name="3685" xml:space="preserve">
+    <value>الحجم اللوجستي، بالقدم المكعب</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>الحجم اللوجستي، بالياردات المكعبة</value>
+  </data>
+  <data name="3691" xml:space="preserve">
+    <value>الحجم اللوجستي، بالياردات المكعبة</value>
+  </data>
+  <data name="3692" xml:space="preserve">
+    <value>الحجم اللوجستي، بالياردات المكعبة</value>
+  </data>
+  <data name="3693" xml:space="preserve">
+    <value>الحجم اللوجستي، بالياردات المكعبة</value>
+  </data>
+  <data name="3694" xml:space="preserve">
+    <value>الحجم اللوجستي، بالياردات المكعبة</value>
+  </data>
+  <data name="3695" xml:space="preserve">
+    <value>الحجم اللوجستي، بالياردات المكعبة</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>المبلغ المستحق الدفع أو قيمة القسيمة، بالعملة المحلية</value>
+  </data>
+  <data name="3901" xml:space="preserve">
+    <value>المبلغ المستحق الدفع أو قيمة القسيمة، بالعملة المحلية</value>
+  </data>
+  <data name="3902" xml:space="preserve">
+    <value>المبلغ المستحق الدفع أو قيمة القسيمة، بالعملة المحلية</value>
+  </data>
+  <data name="3903" xml:space="preserve">
+    <value>المبلغ المستحق الدفع أو قيمة القسيمة، بالعملة المحلية</value>
+  </data>
+  <data name="3904" xml:space="preserve">
+    <value>المبلغ المستحق الدفع أو قيمة القسيمة، بالعملة المحلية</value>
+  </data>
+  <data name="3905" xml:space="preserve">
+    <value>المبلغ المستحق الدفع أو قيمة القسيمة، بالعملة المحلية</value>
+  </data>
+  <data name="3906" xml:space="preserve">
+    <value>المبلغ المستحق الدفع أو قيمة القسيمة، بالعملة المحلية</value>
+  </data>
+  <data name="3907" xml:space="preserve">
+    <value>المبلغ المستحق الدفع أو قيمة القسيمة، بالعملة المحلية</value>
+  </data>
+  <data name="3908" xml:space="preserve">
+    <value>المبلغ المستحق الدفع أو قيمة القسيمة، بالعملة المحلية</value>
+  </data>
+  <data name="3909" xml:space="preserve">
+    <value>المبلغ المستحق الدفع أو قيمة القسيمة، بالعملة المحلية</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>المبلغ الواجب سداده متبوعاً برمز العملة وفقاً لمعيار ISO</value>
+  </data>
+  <data name="3911" xml:space="preserve">
+    <value>المبلغ الواجب سداده متبوعاً برمز العملة وفقاً لمعيار ISO</value>
+  </data>
+  <data name="3912" xml:space="preserve">
+    <value>المبلغ الواجب سداده متبوعاً برمز العملة وفقاً لمعيار ISO</value>
+  </data>
+  <data name="3913" xml:space="preserve">
+    <value>المبلغ الواجب سداده متبوعاً برمز العملة وفقاً لمعيار ISO</value>
+  </data>
+  <data name="3914" xml:space="preserve">
+    <value>المبلغ الواجب سداده متبوعاً برمز العملة وفقاً لمعيار ISO</value>
+  </data>
+  <data name="3915" xml:space="preserve">
+    <value>المبلغ الواجب سداده متبوعاً برمز العملة وفقاً لمعيار ISO</value>
+  </data>
+  <data name="3916" xml:space="preserve">
+    <value>المبلغ الواجب سداده متبوعاً برمز العملة وفقاً لمعيار ISO</value>
+  </data>
+  <data name="3917" xml:space="preserve">
+    <value>المبلغ الواجب سداده متبوعاً برمز العملة وفقاً لمعيار ISO</value>
+  </data>
+  <data name="3918" xml:space="preserve">
+    <value>المبلغ الواجب سداده متبوعاً برمز العملة وفقاً لمعيار ISO</value>
+  </data>
+  <data name="3919" xml:space="preserve">
+    <value>المبلغ الواجب سداده متبوعاً برمز العملة وفقاً لمعيار ISO</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>المبلغ الواجب سداده، منطقة نقدية موحدة (بند تجاري ذو قيمة متغيرة)</value>
+  </data>
+  <data name="3921" xml:space="preserve">
+    <value>المبلغ الواجب سداده، منطقة نقدية موحدة (بند تجاري ذو قيمة متغيرة)</value>
+  </data>
+  <data name="3922" xml:space="preserve">
+    <value>المبلغ الواجب سداده، منطقة نقدية موحدة (بند تجاري ذو قيمة متغيرة)</value>
+  </data>
+  <data name="3923" xml:space="preserve">
+    <value>المبلغ الواجب سداده، منطقة نقدية موحدة (بند تجاري ذو قيمة متغيرة)</value>
+  </data>
+  <data name="3924" xml:space="preserve">
+    <value>المبلغ الواجب سداده، منطقة نقدية موحدة (بند تجاري ذو قيمة متغيرة)</value>
+  </data>
+  <data name="3925" xml:space="preserve">
+    <value>المبلغ الواجب سداده، منطقة نقدية موحدة (بند تجاري ذو قيمة متغيرة)</value>
+  </data>
+  <data name="3926" xml:space="preserve">
+    <value>المبلغ الواجب سداده، منطقة نقدية موحدة (بند تجاري ذو قيمة متغيرة)</value>
+  </data>
+  <data name="3927" xml:space="preserve">
+    <value>المبلغ الواجب سداده، منطقة نقدية موحدة (بند تجاري ذو قيمة متغيرة)</value>
+  </data>
+  <data name="3928" xml:space="preserve">
+    <value>المبلغ الواجب سداده، منطقة نقدية موحدة (بند تجاري ذو قيمة متغيرة)</value>
+  </data>
+  <data name="3929" xml:space="preserve">
+    <value>المبلغ الواجب سداده، منطقة نقدية موحدة (بند تجاري ذو قيمة متغيرة)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>المبلغ الواجب سداده، متبوعاً برمز العملة وفقاً لمعيار ISO (بالنسبة للسلع التجارية ذات القياس المتغير)</value>
+  </data>
+  <data name="3931" xml:space="preserve">
+    <value>المبلغ الواجب سداده، متبوعاً برمز العملة وفقاً لمعيار ISO (بالنسبة للسلع التجارية ذات القياس المتغير)</value>
+  </data>
+  <data name="3932" xml:space="preserve">
+    <value>المبلغ الواجب سداده، متبوعاً برمز العملة وفقاً لمعيار ISO (بالنسبة للسلع التجارية ذات القياس المتغير)</value>
+  </data>
+  <data name="3933" xml:space="preserve">
+    <value>المبلغ الواجب سداده، متبوعاً برمز العملة وفقاً لمعيار ISO (بالنسبة للسلع التجارية ذات القياس المتغير)</value>
+  </data>
+  <data name="3934" xml:space="preserve">
+    <value>المبلغ الواجب سداده، متبوعاً برمز العملة وفقاً لمعيار ISO (بالنسبة للسلع التجارية ذات القياس المتغير)</value>
+  </data>
+  <data name="3935" xml:space="preserve">
+    <value>المبلغ الواجب سداده، متبوعاً برمز العملة وفقاً لمعيار ISO (بالنسبة للسلع التجارية ذات القياس المتغير)</value>
+  </data>
+  <data name="3936" xml:space="preserve">
+    <value>المبلغ الواجب سداده، متبوعاً برمز العملة وفقاً لمعيار ISO (بالنسبة للسلع التجارية ذات القياس المتغير)</value>
+  </data>
+  <data name="3937" xml:space="preserve">
+    <value>المبلغ الواجب سداده، متبوعاً برمز العملة وفقاً لمعيار ISO (بالنسبة للسلع التجارية ذات القياس المتغير)</value>
+  </data>
+  <data name="3938" xml:space="preserve">
+    <value>المبلغ الواجب سداده، متبوعاً برمز العملة وفقاً لمعيار ISO (بالنسبة للسلع التجارية ذات القياس المتغير)</value>
+  </data>
+  <data name="3939" xml:space="preserve">
+    <value>المبلغ الواجب سداده، متبوعاً برمز العملة وفقاً لمعيار ISO (بالنسبة للسلع التجارية ذات القياس المتغير)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>نسبة الخصم في القسيمة</value>
+  </data>
+  <data name="3941" xml:space="preserve">
+    <value>نسبة الخصم في القسيمة</value>
+  </data>
+  <data name="3942" xml:space="preserve">
+    <value>نسبة الخصم في القسيمة</value>
+  </data>
+  <data name="3943" xml:space="preserve">
+    <value>نسبة الخصم في القسيمة</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>المبلغ المستحق لكل وحدة قياس ضمن منطقة نقدية موحدة (سلعة تجارية ذات وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3951" xml:space="preserve">
+    <value>المبلغ المستحق لكل وحدة قياس ضمن منطقة نقدية موحدة (سلعة تجارية ذات وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3952" xml:space="preserve">
+    <value>المبلغ المستحق لكل وحدة قياس ضمن منطقة نقدية موحدة (سلعة تجارية ذات وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3953" xml:space="preserve">
+    <value>المبلغ المستحق لكل وحدة قياس ضمن منطقة نقدية موحدة (سلعة تجارية ذات وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3954" xml:space="preserve">
+    <value>المبلغ المستحق لكل وحدة قياس ضمن منطقة نقدية موحدة (سلعة تجارية ذات وحدة قياس متغيرة)</value>
+  </data>
+  <data name="3955" xml:space="preserve">
+    <value>المبلغ المستحق لكل وحدة قياس ضمن منطقة نقدية موحدة (سلعة تجارية ذات وحدة قياس متغيرة)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>اسم الشركة المرسل إليها / المراد التسليم إليها</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>جهة الاتصال الخاصة بالشحن/التسليم</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>سطر العنوان الأول للشحن/التسليم</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>سطر العنوان الثاني للشحن/التسليم</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>ضاحية الشحن / ضاحية التسليم</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>موقع الشحن / موقع التسليم</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>منطقة الشحن / منطقة التسليم</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>رمز بلد الشحن / التسليم</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>رقم هاتف الجهة المرسل إليها / الجهة الموجه إليها التسليم</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>الموقع الجغرافي للشحن / التسليم</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>اسم الشركة المُعاد إليها</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>العودة إلى جهة الاتصال</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>سطر عنوان المُرسِل 1</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>سطر العنوان الثاني للمُرسِل</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>العودة إلى الضواحي</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>العودة إلى الموقع الأصلي</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>منطقة العودة</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>رمز بلد العودة</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>الرمز البريدي لجهة الإرجاع</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>رقم الهاتف للمراسلة</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>وصف رمز الخدمة</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>علامة البضائع الخطرة</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>تصريح بالمغادرة</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>علامة تتطلب توقيعاً</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>ليس قبل تاريخ ووقت التسليم (YYMMDDhhmm)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>ليس بعد تاريخ ووقت التسليم (YYMMDDhhmm)</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>تاريخ الإصدار (سنة-شهر-يوم)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>درجة الحرارة القصوى بالفهرنهايت (مُعبَّرًا عنها بأجزاء من مئة من الدرجة)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>درجة الحرارة القصوى بالدرجات المئوية (مُعبَّر عنها بأجزاء من مئة من الدرجة)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>الحد الأدنى لدرجة الحرارة بالفهرنهايت (مُعبَّرًا عنه بأجزاء من مئة من الدرجة)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>درجة الحرارة الدنيا بالدرجات المئوية (مُعبَّر عنها بأجزاء من مئة من الدرجة)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>رقم مخزون حلف الناتو</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>تصنيف الأمم المتحدة/اللجنة الاقتصادية لأوروبا لذبائح اللحوم وقطعها</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>تاريخ ووقت الانتهاء (YYMMDDhhmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>الفعالية النشطة</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>منطقة التجميع</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>تاريخ أول تجمد (سنة-شهر-يوم)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>تاريخ الحصاد (س س ش ش ي ي [س س ش ش ي ي])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>أنواع لأغراض الصيد</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>نوع معدات الصيد</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>طريقة الإنتاج</value>
+  </data>
+</root>

@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>সিরিয়াল শিপিং কন্টেইনার কোড</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>গ্লোবাল ট্রেড আইটেম নম্বর</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>অন্তর্ভুক্ত বাণিজ্যিক পণ্যগুলোর গ্লোবাল ট্রেড আইটেম নম্বর (GTIN)</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>ব্যাচ বা লট নম্বর</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>উৎপাদনের তারিখ (YYMMDD)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>নির্ধারিত তারিখ (YYMMDD)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>প্যাকেজিংয়ের তারিখ (YYMMDD)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>সর্বোত্তম ব্যবহারের শেষ তারিখ (YYMMDD)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>বিক্রির শেষ তারিখ (YYMMDD)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>মেয়াদোত্তীর্ণের তারিখ (YYMMDD)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>অভ্যন্তরীণ পণ্যের ধরন</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>ক্রমিক নম্বর</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>ভোক্তা পণ্যের সংস্করণ</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>পরিবর্তনশীল সংখ্যক আইটেম (পরিবর্তনশীল পরিমাপের বাণিজ্যিক আইটেম)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>একটি লজিস্টিক ইউনিটের অন্তর্ভুক্ত বাণিজ্যিক পণ্য বা বাণিজ্যিক পণ্যের খণ্ডগুলোর সংখ্যা</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>বাণিজ্যিক অংশীদারদের মধ্যে পারস্পরিকভাবে সম্মত তথ্য</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>কোম্পানির অভ্যন্তরীণ তথ্য</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>কোম্পানির অভ্যন্তরীণ তথ্য</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>কোম্পানির অভ্যন্তরীণ তথ্য</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>কোম্পানির অভ্যন্তরীণ তথ্য</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>কোম্পানির অভ্যন্তরীণ তথ্য</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>কোম্পানির অভ্যন্তরীণ তথ্য</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>কোম্পানির অভ্যন্তরীণ তথ্য</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>কোম্পানির অভ্যন্তরীণ তথ্য</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>কোম্পানির অভ্যন্তরীণ তথ্য</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>তৃতীয় পক্ষ দ্বারা নিয়ন্ত্রিত, সিরিয়ালযুক্ত গ্লোবাল ট্রেড আইটেম নম্বরের সম্প্রসারণ</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>উৎপাদক কর্তৃক প্রদত্ত অতিরিক্ত পণ্য শনাক্তকরণ তথ্য</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>গ্রাহকের পার্ট নম্বর</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>অর্ডার অনুযায়ী তৈরির ভেরিয়েশন নম্বর</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>رقم مكون التغليف</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>দ্বিতীয় ক্রমিক নম্বর</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>উৎস সত্তার উল্লেখ</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>গ্লোবাল ডকুমেন্ট টাইপ আইডেন্টিফায়ার</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>গ্লোবাল লোকেশন নম্বরের এক্সটেনশন অংশ</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>গ্লোবাল কুপন নম্বর</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>গ্রাহকের ক্রয় আদেশের নম্বর</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>চালানের জন্য বৈশ্বিক শনাক্তকরণ নম্বর</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>বৈশ্বিক চালান শনাক্তকরণ নম্বর</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>রাউটিং কোড</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>গ্লোবাল লোকেশন নম্বরে শিপ করুন / পৌঁছে দিন</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>বিল বা ইনভয়েস পাঠানোর গ্লোবাল লোকেশন নম্বর</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>গ্লোবাল লোকেশন নম্বর থেকে কেনা হয়েছে</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>এর জন্য শিপমেন্ট / ডেলিভারি - গ্লোবাল লোকেশন নম্বরে ফরোয়ার্ড করুন</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>ভৌত অবস্থানের শনাক্তকরণ - গ্লোবাল লোকেশন নম্বর (Global Location Number)</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>চালান প্রদানকারী পক্ষের গ্লোবাল লোকেশন নম্বর</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>উৎপাদন বা পরিষেবা অবস্থানের গ্লোবাল লোকেশন নম্বর</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>পার্টি গ্লোবাল লোকেশন নম্বর</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>একটি একক ডাক কর্তৃপক্ষের আওতাধীন পোস্টাল কোডে পাঠানো/পৌঁছে দেওয়া</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>ISO কান্ট্রি কোডসহ পোস্টাল কোডে শিপিং/ডেলিভারি করুন</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>বাণিজ্যিক পণ্যের উৎপত্তিস্থল</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>প্রাথমিক প্রক্রিয়াকরণের দেশ</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>প্রক্রিয়াকরণের দেশ</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>বিয়োজনকারী দেশ</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>সম্পূর্ণ প্রক্রিয়ার শৃঙ্খল অন্তর্ভুক্তকারী দেশ</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>উৎপত্তিস্থল বিষয়ক দেশের উপবিভাগ</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>জাতীয় স্বাস্থ্যসেবা প্রতিপূরণ নম্বর - জার্মানি</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>জাতীয় স্বাস্থ্যসেবা প্রতিপূরণ নম্বর - ফ্রান্স</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>জাতীয় স্বাস্থ্যসেবা প্রতিপূরণ নম্বর - স্পেন</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>জাতীয় স্বাস্থ্যসেবা প্রতিপূরণ নম্বর - ব্রাজিল</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>জাতীয় স্বাস্থ্যসেবা প্রতিপূরণ নম্বর - পর্তুগাল</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>জাতীয় স্বাস্থ্যসেবা পরিশোধ নম্বর - মার্কিন যুক্তরাষ্ট্র</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>জাতীয় স্বাস্থ্যসেবা প্রতিপূরণ নম্বর - ইতালি</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>জাতীয় স্বাস্থ্যসেবা প্রতিপূরণ নম্বর - কোস্টা রিকা</value>
+  </data>
+  <data name="3100" xml:space="preserve">
+    <value>নিট ওজন, কিলোগ্রাম (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3101" xml:space="preserve">
+    <value>নিট ওজন, কিলোগ্রাম (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3102" xml:space="preserve">
+    <value>নিট ওজন, কিলোগ্রাম (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3103" xml:space="preserve">
+    <value>নিট ওজন, কিলোগ্রাম (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3104" xml:space="preserve">
+    <value>নিট ওজন, কিলোগ্রাম (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3105" xml:space="preserve">
+    <value>নিট ওজন, কিলোগ্রাম (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3111" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3112" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3113" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3114" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3115" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3121" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3122" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3123" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3124" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3125" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3131" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3132" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3133" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3134" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3135" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3141" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3142" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3143" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3144" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3145" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>নিট পরিমাণ, লিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3151" xml:space="preserve">
+    <value>নিট পরিমাণ, লিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3152" xml:space="preserve">
+    <value>নিট পরিমাণ, লিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3153" xml:space="preserve">
+    <value>নিট পরিমাণ, লিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3154" xml:space="preserve">
+    <value>নিট পরিমাণ, লিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3155" xml:space="preserve">
+    <value>নিট পরিমাণ, লিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>নিট আয়তন, ঘনমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3161" xml:space="preserve">
+    <value>নিট আয়তন, ঘনমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3162" xml:space="preserve">
+    <value>নিট আয়তন, ঘনমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3163" xml:space="preserve">
+    <value>নিট আয়তন, ঘনমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3164" xml:space="preserve">
+    <value>নিট আয়তন, ঘনমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3165" xml:space="preserve">
+    <value>নিট আয়তন, ঘনমিটার (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>নিট ওজন, পাউন্ড (পরিবর্তনশীল পরিমাপ বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3201" xml:space="preserve">
+    <value>নিট ওজন, পাউন্ড (পরিবর্তনশীল পরিমাপ বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3202" xml:space="preserve">
+    <value>নিট ওজন, পাউন্ড (পরিবর্তনশীল পরিমাপ বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3203" xml:space="preserve">
+    <value>নিট ওজন, পাউন্ড (পরিবর্তনশীল পরিমাপ বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3204" xml:space="preserve">
+    <value>নিট ওজন, পাউন্ড (পরিবর্তনশীল পরিমাপ বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3205" xml:space="preserve">
+    <value>নিট ওজন, পাউন্ড (পরিবর্তনশীল পরিমাপ বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3211" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3212" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3213" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3214" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3215" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3221" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3222" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3223" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3224" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3225" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3231" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3232" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3233" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3234" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3235" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3241" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3242" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3243" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3244" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3245" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3251" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3252" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3253" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3254" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3255" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3261" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3262" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3263" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3264" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3265" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3271" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3272" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3273" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3274" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3275" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3281" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3282" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3283" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3284" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3285" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা; ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3291" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা; ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3292" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা; ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3293" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা; ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3294" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা; ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3295" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা; ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>লজিস্টিক ওজন, কিলোগ্রাম</value>
+  </data>
+  <data name="3301" xml:space="preserve">
+    <value>লজিস্টিক ওজন, কিলোগ্রাম</value>
+  </data>
+  <data name="3302" xml:space="preserve">
+    <value>লজিস্টিক ওজন, কিলোগ্রাম</value>
+  </data>
+  <data name="3303" xml:space="preserve">
+    <value>লজিস্টিক ওজন, কিলোগ্রাম</value>
+  </data>
+  <data name="3304" xml:space="preserve">
+    <value>লজিস্টিক ওজন, কিলোগ্রাম</value>
+  </data>
+  <data name="3305" xml:space="preserve">
+    <value>লজিস্টিক ওজন, কিলোগ্রাম</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার</value>
+  </data>
+  <data name="3311" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার</value>
+  </data>
+  <data name="3312" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার</value>
+  </data>
+  <data name="3313" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার</value>
+  </data>
+  <data name="3314" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার</value>
+  </data>
+  <data name="3315" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, মিটার</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3321" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3322" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3323" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3324" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3325" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3331" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3332" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3333" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3334" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3335" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, মিটার</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার</value>
+  </data>
+  <data name="3341" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার</value>
+  </data>
+  <data name="3342" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার</value>
+  </data>
+  <data name="3343" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার</value>
+  </data>
+  <data name="3344" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার</value>
+  </data>
+  <data name="3345" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গমিটার</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, লিটার</value>
+  </data>
+  <data name="3351" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, লিটার</value>
+  </data>
+  <data name="3352" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, লিটার</value>
+  </data>
+  <data name="3353" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, লিটার</value>
+  </data>
+  <data name="3354" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, লিটার</value>
+  </data>
+  <data name="3355" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, লিটার</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘনমিটার</value>
+  </data>
+  <data name="3361" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘনমিটার</value>
+  </data>
+  <data name="3362" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘনমিটার</value>
+  </data>
+  <data name="3363" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘনমিটার</value>
+  </data>
+  <data name="3364" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘনমিটার</value>
+  </data>
+  <data name="3365" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘনমিটার</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>প্রতি বর্গমিটারে কিলোগ্রাম</value>
+  </data>
+  <data name="3371" xml:space="preserve">
+    <value>প্রতি বর্গমিটারে কিলোগ্রাম</value>
+  </data>
+  <data name="3372" xml:space="preserve">
+    <value>প্রতি বর্গমিটারে কিলোগ্রাম</value>
+  </data>
+  <data name="3373" xml:space="preserve">
+    <value>প্রতি বর্গমিটারে কিলোগ্রাম</value>
+  </data>
+  <data name="3374" xml:space="preserve">
+    <value>প্রতি বর্গমিটারে কিলোগ্রাম</value>
+  </data>
+  <data name="3375" xml:space="preserve">
+    <value>প্রতি বর্গমিটারে কিলোগ্রাম</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>লজিস্টিক ওজন, পাউন্ড</value>
+  </data>
+  <data name="3401" xml:space="preserve">
+    <value>লজিস্টিক ওজন, পাউন্ড</value>
+  </data>
+  <data name="3402" xml:space="preserve">
+    <value>লজিস্টিক ওজন, পাউন্ড</value>
+  </data>
+  <data name="3403" xml:space="preserve">
+    <value>লজিস্টিক ওজন, পাউন্ড</value>
+  </data>
+  <data name="3404" xml:space="preserve">
+    <value>লজিস্টিক ওজন, পাউন্ড</value>
+  </data>
+  <data name="3405" xml:space="preserve">
+    <value>লজিস্টিক ওজন, পাউন্ড</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3411" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3412" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3413" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3414" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3415" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট</value>
+  </data>
+  <data name="3421" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট</value>
+  </data>
+  <data name="3422" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট</value>
+  </data>
+  <data name="3423" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট</value>
+  </data>
+  <data name="3424" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট</value>
+  </data>
+  <data name="3425" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ফুট</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3431" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3432" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3433" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3434" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3435" xml:space="preserve">
+    <value>দৈর্ঘ্য বা প্রথম মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3441" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3442" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3443" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3444" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3445" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3451" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3452" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3453" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3454" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3455" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, গজ</value>
+  </data>
+  <data name="3461" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, গজ</value>
+  </data>
+  <data name="3462" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, গজ</value>
+  </data>
+  <data name="3463" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, গজ</value>
+  </data>
+  <data name="3464" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, গজ</value>
+  </data>
+  <data name="3465" xml:space="preserve">
+    <value>প্রস্থ, ব্যাস বা দ্বিতীয় মাত্রা, গজ</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3471" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3472" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3473" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3474" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3475" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইঞ্চি</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3481" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3482" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3483" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3484" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3485" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ফুট</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3491" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3492" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3493" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3494" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3495" xml:space="preserve">
+    <value>গভীরতা, পুরুত্ব, উচ্চতা বা তৃতীয় মাত্রা, ইয়ার্ড</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3501" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3502" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3503" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3504" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3505" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3511" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3512" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3513" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3514" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3515" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3521" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3522" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3523" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3524" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3525" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি</value>
+  </data>
+  <data name="3531" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি</value>
+  </data>
+  <data name="3532" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি</value>
+  </data>
+  <data name="3533" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি</value>
+  </data>
+  <data name="3534" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি</value>
+  </data>
+  <data name="3535" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ ইঞ্চি</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট</value>
+  </data>
+  <data name="3541" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট</value>
+  </data>
+  <data name="3542" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট</value>
+  </data>
+  <data name="3543" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট</value>
+  </data>
+  <data name="3544" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট</value>
+  </data>
+  <data name="3545" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গফুট</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ</value>
+  </data>
+  <data name="3551" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ</value>
+  </data>
+  <data name="3552" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ</value>
+  </data>
+  <data name="3553" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ</value>
+  </data>
+  <data name="3554" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ</value>
+  </data>
+  <data name="3555" xml:space="preserve">
+    <value>ক্ষেত্রফল, বর্গ গজ</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>নিট ওজন, ট্রয় আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3561" xml:space="preserve">
+    <value>নিট ওজন, ট্রয় আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3562" xml:space="preserve">
+    <value>নিট ওজন, ট্রয় আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3563" xml:space="preserve">
+    <value>নিট ওজন, ট্রয় আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3564" xml:space="preserve">
+    <value>নিট ওজন, ট্রয় আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3565" xml:space="preserve">
+    <value>নিট ওজন, ট্রয় আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>নিট ওজন (বা আয়তন), আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3571" xml:space="preserve">
+    <value>নিট ওজন (বা আয়তন), আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3572" xml:space="preserve">
+    <value>নিট ওজন (বা আয়তন), আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3573" xml:space="preserve">
+    <value>নিট ওজন (বা আয়তন), আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3574" xml:space="preserve">
+    <value>নিট ওজন (বা আয়তন), আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3575" xml:space="preserve">
+    <value>নিট ওজন (বা আয়তন), আউন্স (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>নিট পরিমাণ, কোয়ার্ট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3601" xml:space="preserve">
+    <value>নিট পরিমাণ, কোয়ার্ট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3602" xml:space="preserve">
+    <value>নিট পরিমাণ, কোয়ার্ট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3603" xml:space="preserve">
+    <value>নিট পরিমাণ, কোয়ার্ট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3604" xml:space="preserve">
+    <value>নিট পরিমাণ, কোয়ার্ট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3605" xml:space="preserve">
+    <value>নিট পরিমাণ, কোয়ার্ট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>নিট পরিমাণ, ইউ.এস. গ্যালন (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3611" xml:space="preserve">
+    <value>নিট পরিমাণ, ইউ.এস. গ্যালন (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3612" xml:space="preserve">
+    <value>নিট পরিমাণ, ইউ.এস. গ্যালন (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3613" xml:space="preserve">
+    <value>নিট পরিমাণ, ইউ.এস. গ্যালন (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3614" xml:space="preserve">
+    <value>নিট পরিমাণ, ইউ.এস. গ্যালন (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3615" xml:space="preserve">
+    <value>নিট পরিমাণ, ইউ.এস. গ্যালন (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কোয়ার্ট</value>
+  </data>
+  <data name="3621" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কোয়ার্ট</value>
+  </data>
+  <data name="3622" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কোয়ার্ট</value>
+  </data>
+  <data name="3623" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কোয়ার্ট</value>
+  </data>
+  <data name="3624" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কোয়ার্ট</value>
+  </data>
+  <data name="3625" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কোয়ার্ট</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ইউ.এস. গ্যালন</value>
+  </data>
+  <data name="3631" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ইউ.এস. গ্যালন</value>
+  </data>
+  <data name="3632" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ইউ.এস. গ্যালন</value>
+  </data>
+  <data name="3633" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ইউ.এস. গ্যালন</value>
+  </data>
+  <data name="3634" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ইউ.এস. গ্যালন</value>
+  </data>
+  <data name="3635" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ইউ.এস. গ্যালন</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3641" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3642" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3643" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3644" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3645" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ইঞ্চি (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3651" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3652" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3653" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3654" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3655" xml:space="preserve">
+    <value>নিট আয়তন, ঘন ফুট (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>নিট আয়তন, কিউবিক ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3661" xml:space="preserve">
+    <value>নিট আয়তন, কিউবিক ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3662" xml:space="preserve">
+    <value>নিট আয়তন, কিউবিক ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3663" xml:space="preserve">
+    <value>নিট আয়তন, কিউবিক ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3664" xml:space="preserve">
+    <value>নিট আয়তন, কিউবিক ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3665" xml:space="preserve">
+    <value>নিট আয়তন, কিউবিক ইয়ার্ড (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ইঞ্চি</value>
+  </data>
+  <data name="3671" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ইঞ্চি</value>
+  </data>
+  <data name="3672" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ইঞ্চি</value>
+  </data>
+  <data name="3673" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ইঞ্চি</value>
+  </data>
+  <data name="3674" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ইঞ্চি</value>
+  </data>
+  <data name="3675" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ইঞ্চি</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ফুট</value>
+  </data>
+  <data name="3681" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ফুট</value>
+  </data>
+  <data name="3682" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ফুট</value>
+  </data>
+  <data name="3683" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ফুট</value>
+  </data>
+  <data name="3684" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ফুট</value>
+  </data>
+  <data name="3685" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, ঘন ফুট</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কিউবিক ইয়ার্ড</value>
+  </data>
+  <data name="3691" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কিউবিক ইয়ার্ড</value>
+  </data>
+  <data name="3692" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কিউবিক ইয়ার্ড</value>
+  </data>
+  <data name="3693" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কিউবিক ইয়ার্ড</value>
+  </data>
+  <data name="3694" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কিউবিক ইয়ার্ড</value>
+  </data>
+  <data name="3695" xml:space="preserve">
+    <value>লজিস্টিক আয়তন, কিউবিক ইয়ার্ড</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ বা কুপন মূল্য, স্থানীয় মুদ্রা</value>
+  </data>
+  <data name="3901" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ বা কুপন মূল্য, স্থানীয় মুদ্রা</value>
+  </data>
+  <data name="3902" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ বা কুপন মূল্য, স্থানীয় মুদ্রা</value>
+  </data>
+  <data name="3903" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ বা কুপন মূল্য, স্থানীয় মুদ্রা</value>
+  </data>
+  <data name="3904" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ বা কুপন মূল্য, স্থানীয় মুদ্রা</value>
+  </data>
+  <data name="3905" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ বা কুপন মূল্য, স্থানীয় মুদ্রা</value>
+  </data>
+  <data name="3906" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ বা কুপন মূল্য, স্থানীয় মুদ্রা</value>
+  </data>
+  <data name="3907" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ বা কুপন মূল্য, স্থানীয় মুদ্রা</value>
+  </data>
+  <data name="3908" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ বা কুপন মূল্য, স্থানীয় মুদ্রা</value>
+  </data>
+  <data name="3909" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ বা কুপন মূল্য, স্থানীয় মুদ্রা</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ</value>
+  </data>
+  <data name="3911" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ</value>
+  </data>
+  <data name="3912" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ</value>
+  </data>
+  <data name="3913" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ</value>
+  </data>
+  <data name="3914" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ</value>
+  </data>
+  <data name="3915" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ</value>
+  </data>
+  <data name="3916" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ</value>
+  </data>
+  <data name="3917" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ</value>
+  </data>
+  <data name="3918" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ</value>
+  </data>
+  <data name="3919" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ, একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3921" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ, একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3922" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ, একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3923" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ, একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3924" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ, একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3925" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ, একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3926" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ, একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3927" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ, একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3928" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ, একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3929" xml:space="preserve">
+    <value>প্রযোজ্য প্রদেয় অর্থ, একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3931" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3932" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3933" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3934" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3935" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3936" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3937" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3938" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3939" xml:space="preserve">
+    <value>ISO কারেন্সি কোডসহ প্রদেয় প্রযোজ্য অর্থ (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>কুপনের শতাংশ ছাড়</value>
+  </data>
+  <data name="3941" xml:space="preserve">
+    <value>কুপনের শতাংশ ছাড়</value>
+  </data>
+  <data name="3942" xml:space="preserve">
+    <value>কুপনের শতাংশ ছাড়</value>
+  </data>
+  <data name="3943" xml:space="preserve">
+    <value>কুপনের শতাংশ ছাড়</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>পরিমাপের একক প্রতি প্রদেয় অর্থ — একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3951" xml:space="preserve">
+    <value>পরিমাপের একক প্রতি প্রদেয় অর্থ — একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3952" xml:space="preserve">
+    <value>পরিমাপের একক প্রতি প্রদেয় অর্থ — একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3953" xml:space="preserve">
+    <value>পরিমাপের একক প্রতি প্রদেয় অর্থ — একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3954" xml:space="preserve">
+    <value>পরিমাপের একক প্রতি প্রদেয় অর্থ — একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="3955" xml:space="preserve">
+    <value>পরিমাপের একক প্রতি প্রদেয় অর্থ — একক মুদ্রা অঞ্চল (পরিবর্তনশীল পরিমাপের বাণিজ্যিক পণ্য)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>যে কোম্পানির ঠিকানায় পাঠানো হবে / যে কোম্পানির ঠিকানায় পৌঁছে দেওয়া হবে, তার নাম</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>পণ্য পাঠানোর/পৌঁছে দেওয়ার জন্য যোগাযোগ ব্যক্তি</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>শিপিং/ডেলিভারির ঠিকানা, লাইন ১</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>শিপিং/ডেলিভারি ঠিকানার দ্বিতীয় লাইন</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>যে শহরতলিতে পাঠানো বা পৌঁছে দেওয়া হবে</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>যে এলাকায় পাঠানো হবে / যেখানে পৌঁছে দেওয়া হবে</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>শিপিং/ডেলিভারির অঞ্চল</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>পণ্য পাঠানোর/পৌঁছে দেওয়ার দেশের কোড</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>পণ্য পাঠানোর/পৌঁছে দেওয়ার স্থানের টেলিফোন নম্বর</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>শিপিং/ডেলিভারির ভৌগোলিক অবস্থান (GEO location)</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>কোম্পানির নাম (ফেরত পাঠানোর ক্ষেত্রে)</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>যোগাযোগে ফিরে যান</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>ফেরত পাঠানোর ঠিকানা, লাইন ১</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>প্রেরকের ঠিকানার দ্বিতীয় লাইন</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>শহরতলিতে প্রত্যাবর্তন</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>স্থানীয় অবস্থানে প্রত্যাবর্তন</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>রিটার্ন-টু রিজিয়ন</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>দেশে ফেরার কান্ট্রি কোড</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>ফেরত পাঠানোর পোস্টাল কোড</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>ফিরতি টেলিফোন নম্বর</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>পরিষেবা কোডের বিবরণ</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>বিপজ্জনক পণ্য নির্দেশক</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>চলে যাওয়ার অনুমতি</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>স্বাক্ষর প্রয়োজনীয়তার নির্দেশক</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>ডেলিভারি তারিখ ও সময়ের (YYMMDDhhmm) আগে নয়</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>ডেলিভারি তারিখ ও সময়ের (YYMMDDhhmm) পরবর্তী নয়</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>প্রকাশের তারিখ (YYMMDD)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>ফারেনহাইট এককে সর্বোচ্চ তাপমাত্রা (ডিগ্রির শতাংশ হিসেবে প্রকাশিত)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>সর্বোচ্চ তাপমাত্রা সেলসিয়াসে (ডিগ্রির শতাংশ হিসেবে প্রকাশিত)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>ফারেনহাইট এককে সর্বনিম্ন তাপমাত্রা (ডিগ্রির শতাংশ হিসেবে প্রকাশিত)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>সেলসিয়াসে সর্বনিম্ন তাপমাত্রা (ডিগ্রির শতাংশে প্রকাশিত)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>ন্যাটো স্টক নম্বর</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>UN/ECE মাংসের মৃতদেহ এবং খণ্ডের শ্রেণিবিন্যাস</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>মেয়াদোত্তীর্ণের তারিখ ও সময় (YYMMDDhhmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>সক্রিয় ক্ষমতা</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>সংগ্রহ এলাকা</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>প্রথম হিমায়নের তারিখ (YYMMDD)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>ফসল তোলার তারিখ (YYMMDD[YYMMDD])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>মৎস্যচাষের উদ্দেশ্যে ব্যবহৃত প্রজাতিসমূহ</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>মাছ ধরার সরঞ্জামের ধরন</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>উৎপাদন পদ্ধতি</value>
+  </data>
+</root>

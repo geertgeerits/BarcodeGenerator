@@ -1132,4 +1132,10 @@ Para cambiar el tamaño del código QR dentro del círculo, ajuste la zona de si
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>¿Mantener este IBAN?</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>El código de país no es válido.</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>El código de moneda no es válido.</value>
+  </data>
 </root>

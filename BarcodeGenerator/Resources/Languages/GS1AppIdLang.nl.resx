@@ -123,14 +123,1414 @@
   <data name="01" xml:space="preserve">
     <value>Globaal handelsartikelnummer</value>
   </data>
+  <data name="02" xml:space="preserve">
+    <value>Global Trade Item Number van de inbegrepen handelsartikelen</value>
+  </data>
   <data name="10" xml:space="preserve">
     <value>Batch- of partijnummer</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="3202" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="11" xml:space="preserve">
+    <value>Productiedatum (JJMMDD)</value>
   </data>
-  <data name="3250" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="12" xml:space="preserve">
+    <value>Vervaldatum (JJMMDD)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Verpakkingsdatum (JJMMDD)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Ten minste houdbaar tot (JJMMDD)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Verkoopdatum (JJMMDD)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Vervaldatum (JJMMDD)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Interne productvariant</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Serienummer</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Variant consumentenproduct</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Variabel aantal eenheden (handelseenheid met variabele maat)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>Aantal handelsartikelen of eenheden van handelsartikelen in een logistieke eenheid</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>Informatie waarover handelspartners onderling overeenstemming hebben bereikt</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>Interne bedrijfsinformatie</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>Interne bedrijfsinformatie</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>Interne bedrijfsinformatie</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>Interne bedrijfsinformatie</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>Interne bedrijfsinformatie</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>Interne bedrijfsinformatie</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>Interne bedrijfsinformatie</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>Interne bedrijfsinformatie</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>Interne bedrijfsinformatie</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Door derden beheerde, geserialiseerde uitbreiding van het Global Trade Item Number</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>Aanvullende productidentificatie toegekend door de fabrikant</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Onderdeelnummer van de klant</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Variatienummer voor op bestelling gemaakte artikelen</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Onderdeelnummer van de verpakking</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>Secundair serienummer</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Verwijzing naar bronentiteit</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Globale documenttype-identificatie</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Extensiecomponent voor het Global Location Number</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Globaal couponnummer</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>Inkoopordernummer van de klant</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>Globaal identificatienummer voor zendingen</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>Globaal zendingsidentificatienummer</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>Routeringscode</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>Afleverlocatie (Global Location Number)</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>Factuuradres / Global Location Number voor facturatie</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>Aangekocht bij Global Location Number</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>Verzenden naar / Leveren aan – Doorsturen naar Global Location Number</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>Identificatie van een fysieke locatie – Global Location Number</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>Global Location Number van de facturerende partij</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>Global Location Number van de productie- of servicelocatie</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>Globaal locatienummer van een partij</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>Verzenden naar/bezorgen op postcode binnen één postautoriteit</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>Verzenden naar / Afleveren op postcode met ISO-landcode</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>Land van oorsprong van een handelsartikel</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>Land van eerste verwerking</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>Land van verwerking</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>Land van demontage</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>Land dat de volledige procesketen beslaat</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>Subnationale eenheid van herkomst</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>Nationaal vergoedingsnummer voor de gezondheidszorg – Duitsland</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>Nationaal nummer voor zorgvergoedingen – Frankrijk</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>Nationaal nummer voor vergoeding in de gezondheidszorg – Spanje</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>Nationaal nummer voor vergoeding van zorgkosten - Brazilië</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>Nationaal nummer voor vergoeding in de gezondheidszorg – Portugal</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>Nationaal nummer voor zorgvergoedingen – Verenigde Staten van Amerika</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>Nationaal vergoedingsnummer voor de gezondheidszorg – Italië</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>Nationaal nummer voor vergoeding in de gezondheidszorg – Costa Rica</value>
+  </data>
+  <data name="3100" xml:space="preserve">
+    <value>Nettogewicht, kilogram (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3101" xml:space="preserve">
+    <value>Nettogewicht, kilogram (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3102" xml:space="preserve">
+    <value>Nettogewicht, kilogram (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3103" xml:space="preserve">
+    <value>Nettogewicht, kilogram (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3104" xml:space="preserve">
+    <value>Nettogewicht, kilogram (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3105" xml:space="preserve">
+    <value>Nettogewicht, kilogram (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>Lengte of eerste afmeting, meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3111" xml:space="preserve">
+    <value>Lengte of eerste afmeting, meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3112" xml:space="preserve">
+    <value>Lengte of eerste afmeting, meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3113" xml:space="preserve">
+    <value>Lengte of eerste afmeting, meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3114" xml:space="preserve">
+    <value>Lengte of eerste afmeting, meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3115" xml:space="preserve">
+    <value>Lengte of eerste afmeting, meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3121" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3122" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3123" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3124" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3125" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3131" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3132" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3133" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3134" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3135" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>Oppervlakte, vierkante meter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3141" xml:space="preserve">
+    <value>Oppervlakte, vierkante meter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3142" xml:space="preserve">
+    <value>Oppervlakte, vierkante meter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3143" xml:space="preserve">
+    <value>Oppervlakte, vierkante meter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3144" xml:space="preserve">
+    <value>Oppervlakte, vierkante meter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3145" xml:space="preserve">
+    <value>Oppervlakte, vierkante meter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>Nettovolume, liter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3151" xml:space="preserve">
+    <value>Nettovolume, liter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3152" xml:space="preserve">
+    <value>Nettovolume, liter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3153" xml:space="preserve">
+    <value>Nettovolume, liter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3154" xml:space="preserve">
+    <value>Nettovolume, liter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3155" xml:space="preserve">
+    <value>Nettovolume, liter (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>Nettovolume, kubieke meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3161" xml:space="preserve">
+    <value>Nettovolume, kubieke meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3162" xml:space="preserve">
+    <value>Nettovolume, kubieke meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3163" xml:space="preserve">
+    <value>Nettovolume, kubieke meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3164" xml:space="preserve">
+    <value>Nettovolume, kubieke meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3165" xml:space="preserve">
+    <value>Nettovolume, kubieke meters (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>Nettogewicht, ponden (variabele maat handelsartikel)</value>
+  </data>
+  <data name="3201" xml:space="preserve">
+    <value>Nettogewicht, ponden (variabele maat handelsartikel)</value>
+  </data>
+  <data name="3202" xml:space="preserve">
+    <value>Nettogewicht, ponden (variabele maat handelsartikel)</value>
+  </data>
+  <data name="3203" xml:space="preserve">
+    <value>Nettogewicht, ponden (variabele maat handelsartikel)</value>
+  </data>
+  <data name="3204" xml:space="preserve">
+    <value>Nettogewicht, ponden (variabele maat handelsartikel)</value>
+  </data>
+  <data name="3205" xml:space="preserve">
+    <value>Nettogewicht, ponden (variabele maat handelsartikel)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3211" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3212" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3213" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3214" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3215" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>Lengte of eerste afmeting, voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3221" xml:space="preserve">
+    <value>Lengte of eerste afmeting, voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3222" xml:space="preserve">
+    <value>Lengte of eerste afmeting, voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3223" xml:space="preserve">
+    <value>Lengte of eerste afmeting, voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3224" xml:space="preserve">
+    <value>Lengte of eerste afmeting, voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3225" xml:space="preserve">
+    <value>Lengte of eerste afmeting, voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3231" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3232" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3233" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3234" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3235" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3241" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3242" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3243" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3244" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3245" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3251" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3252" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3253" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3254" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3255" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3261" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3262" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3263" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3264" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3265" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3271" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3272" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3273" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3274" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3275" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3281" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3282" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3283" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3284" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3285" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet (handelsartikel met variabele afmeting)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3291" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3292" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3293" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3294" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3295" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>Logistiek gewicht, kilogram</value>
+  </data>
+  <data name="3301" xml:space="preserve">
+    <value>Logistiek gewicht, kilogram</value>
+  </data>
+  <data name="3302" xml:space="preserve">
+    <value>Logistiek gewicht, kilogram</value>
+  </data>
+  <data name="3303" xml:space="preserve">
+    <value>Logistiek gewicht, kilogram</value>
+  </data>
+  <data name="3304" xml:space="preserve">
+    <value>Logistiek gewicht, kilogram</value>
+  </data>
+  <data name="3305" xml:space="preserve">
+    <value>Logistiek gewicht, kilogram</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>Lengte of eerste dimensie, meter</value>
+  </data>
+  <data name="3311" xml:space="preserve">
+    <value>Lengte of eerste dimensie, meter</value>
+  </data>
+  <data name="3312" xml:space="preserve">
+    <value>Lengte of eerste dimensie, meter</value>
+  </data>
+  <data name="3313" xml:space="preserve">
+    <value>Lengte of eerste dimensie, meter</value>
+  </data>
+  <data name="3314" xml:space="preserve">
+    <value>Lengte of eerste dimensie, meter</value>
+  </data>
+  <data name="3315" xml:space="preserve">
+    <value>Lengte of eerste dimensie, meter</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>Breedte, diameter of tweede dimensie, meters</value>
+  </data>
+  <data name="3321" xml:space="preserve">
+    <value>Breedte, diameter of tweede dimensie, meters</value>
+  </data>
+  <data name="3322" xml:space="preserve">
+    <value>Breedte, diameter of tweede dimensie, meters</value>
+  </data>
+  <data name="3323" xml:space="preserve">
+    <value>Breedte, diameter of tweede dimensie, meters</value>
+  </data>
+  <data name="3324" xml:space="preserve">
+    <value>Breedte, diameter of tweede dimensie, meters</value>
+  </data>
+  <data name="3325" xml:space="preserve">
+    <value>Breedte, diameter of tweede dimensie, meters</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters</value>
+  </data>
+  <data name="3331" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters</value>
+  </data>
+  <data name="3332" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters</value>
+  </data>
+  <data name="3333" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters</value>
+  </data>
+  <data name="3334" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters</value>
+  </data>
+  <data name="3335" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, meters</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>Oppervlakte, vierkante meters</value>
+  </data>
+  <data name="3341" xml:space="preserve">
+    <value>Oppervlakte, vierkante meters</value>
+  </data>
+  <data name="3342" xml:space="preserve">
+    <value>Oppervlakte, vierkante meters</value>
+  </data>
+  <data name="3343" xml:space="preserve">
+    <value>Oppervlakte, vierkante meters</value>
+  </data>
+  <data name="3344" xml:space="preserve">
+    <value>Oppervlakte, vierkante meters</value>
+  </data>
+  <data name="3345" xml:space="preserve">
+    <value>Oppervlakte, vierkante meters</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>Logistiek volume, liters</value>
+  </data>
+  <data name="3351" xml:space="preserve">
+    <value>Logistiek volume, liters</value>
+  </data>
+  <data name="3352" xml:space="preserve">
+    <value>Logistiek volume, liters</value>
+  </data>
+  <data name="3353" xml:space="preserve">
+    <value>Logistiek volume, liters</value>
+  </data>
+  <data name="3354" xml:space="preserve">
+    <value>Logistiek volume, liters</value>
+  </data>
+  <data name="3355" xml:space="preserve">
+    <value>Logistiek volume, liters</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Logistiek volume, kubieke meters</value>
+  </data>
+  <data name="3361" xml:space="preserve">
+    <value>Logistiek volume, kubieke meters</value>
+  </data>
+  <data name="3362" xml:space="preserve">
+    <value>Logistiek volume, kubieke meters</value>
+  </data>
+  <data name="3363" xml:space="preserve">
+    <value>Logistiek volume, kubieke meters</value>
+  </data>
+  <data name="3364" xml:space="preserve">
+    <value>Logistiek volume, kubieke meters</value>
+  </data>
+  <data name="3365" xml:space="preserve">
+    <value>Logistiek volume, kubieke meters</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Kilogram per vierkante meter</value>
+  </data>
+  <data name="3371" xml:space="preserve">
+    <value>Kilogram per vierkante meter</value>
+  </data>
+  <data name="3372" xml:space="preserve">
+    <value>Kilogram per vierkante meter</value>
+  </data>
+  <data name="3373" xml:space="preserve">
+    <value>Kilogram per vierkante meter</value>
+  </data>
+  <data name="3374" xml:space="preserve">
+    <value>Kilogram per vierkante meter</value>
+  </data>
+  <data name="3375" xml:space="preserve">
+    <value>Kilogram per vierkante meter</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>Logistiek gewicht, in ponden</value>
+  </data>
+  <data name="3401" xml:space="preserve">
+    <value>Logistiek gewicht, in ponden</value>
+  </data>
+  <data name="3402" xml:space="preserve">
+    <value>Logistiek gewicht, in ponden</value>
+  </data>
+  <data name="3403" xml:space="preserve">
+    <value>Logistiek gewicht, in ponden</value>
+  </data>
+  <data name="3404" xml:space="preserve">
+    <value>Logistiek gewicht, in ponden</value>
+  </data>
+  <data name="3405" xml:space="preserve">
+    <value>Logistiek gewicht, in ponden</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches</value>
+  </data>
+  <data name="3411" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches</value>
+  </data>
+  <data name="3412" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches</value>
+  </data>
+  <data name="3413" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches</value>
+  </data>
+  <data name="3414" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches</value>
+  </data>
+  <data name="3415" xml:space="preserve">
+    <value>Lengte of eerste afmeting, in inches</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>Lengte of eerste dimensie, voet</value>
+  </data>
+  <data name="3421" xml:space="preserve">
+    <value>Lengte of eerste dimensie, voet</value>
+  </data>
+  <data name="3422" xml:space="preserve">
+    <value>Lengte of eerste dimensie, voet</value>
+  </data>
+  <data name="3423" xml:space="preserve">
+    <value>Lengte of eerste dimensie, voet</value>
+  </data>
+  <data name="3424" xml:space="preserve">
+    <value>Lengte of eerste dimensie, voet</value>
+  </data>
+  <data name="3425" xml:space="preserve">
+    <value>Lengte of eerste dimensie, voet</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards</value>
+  </data>
+  <data name="3431" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards</value>
+  </data>
+  <data name="3432" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards</value>
+  </data>
+  <data name="3433" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards</value>
+  </data>
+  <data name="3434" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards</value>
+  </data>
+  <data name="3435" xml:space="preserve">
+    <value>Lengte of eerste dimensie, yards</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches</value>
+  </data>
+  <data name="3441" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches</value>
+  </data>
+  <data name="3442" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches</value>
+  </data>
+  <data name="3443" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches</value>
+  </data>
+  <data name="3444" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches</value>
+  </data>
+  <data name="3445" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, in inches</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, voet</value>
+  </data>
+  <data name="3451" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, voet</value>
+  </data>
+  <data name="3452" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, voet</value>
+  </data>
+  <data name="3453" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, voet</value>
+  </data>
+  <data name="3454" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, voet</value>
+  </data>
+  <data name="3455" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, voet</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yard</value>
+  </data>
+  <data name="3461" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yard</value>
+  </data>
+  <data name="3462" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yard</value>
+  </data>
+  <data name="3463" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yard</value>
+  </data>
+  <data name="3464" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yard</value>
+  </data>
+  <data name="3465" xml:space="preserve">
+    <value>Breedte, diameter of tweede afmeting, yard</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches</value>
+  </data>
+  <data name="3471" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches</value>
+  </data>
+  <data name="3472" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches</value>
+  </data>
+  <data name="3473" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches</value>
+  </data>
+  <data name="3474" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches</value>
+  </data>
+  <data name="3475" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, in inches</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet</value>
+  </data>
+  <data name="3481" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet</value>
+  </data>
+  <data name="3482" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet</value>
+  </data>
+  <data name="3483" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet</value>
+  </data>
+  <data name="3484" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet</value>
+  </data>
+  <data name="3485" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, voet</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards</value>
+  </data>
+  <data name="3491" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards</value>
+  </data>
+  <data name="3492" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards</value>
+  </data>
+  <data name="3493" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards</value>
+  </data>
+  <data name="3494" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards</value>
+  </data>
+  <data name="3495" xml:space="preserve">
+    <value>Diepte, dikte, hoogte of derde dimensie, yards</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3501" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3502" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3503" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3504" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3505" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3511" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3512" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3513" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3514" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3515" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3521" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3522" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3523" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3524" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3525" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch</value>
+  </data>
+  <data name="3531" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch</value>
+  </data>
+  <data name="3532" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch</value>
+  </data>
+  <data name="3533" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch</value>
+  </data>
+  <data name="3534" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch</value>
+  </data>
+  <data name="3535" xml:space="preserve">
+    <value>Oppervlakte, vierkante inch</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet</value>
+  </data>
+  <data name="3541" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet</value>
+  </data>
+  <data name="3542" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet</value>
+  </data>
+  <data name="3543" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet</value>
+  </data>
+  <data name="3544" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet</value>
+  </data>
+  <data name="3545" xml:space="preserve">
+    <value>Oppervlakte, vierkante voet</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards</value>
+  </data>
+  <data name="3551" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards</value>
+  </data>
+  <data name="3552" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards</value>
+  </data>
+  <data name="3553" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards</value>
+  </data>
+  <data name="3554" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards</value>
+  </data>
+  <data name="3555" xml:space="preserve">
+    <value>Oppervlakte, vierkante yards</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>Nettogewicht, troy-ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3561" xml:space="preserve">
+    <value>Nettogewicht, troy-ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3562" xml:space="preserve">
+    <value>Nettogewicht, troy-ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3563" xml:space="preserve">
+    <value>Nettogewicht, troy-ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3564" xml:space="preserve">
+    <value>Nettogewicht, troy-ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3565" xml:space="preserve">
+    <value>Nettogewicht, troy-ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>Nettogewicht (of -volume), in ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3571" xml:space="preserve">
+    <value>Nettogewicht (of -volume), in ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3572" xml:space="preserve">
+    <value>Nettogewicht (of -volume), in ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3573" xml:space="preserve">
+    <value>Nettogewicht (of -volume), in ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3574" xml:space="preserve">
+    <value>Nettogewicht (of -volume), in ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3575" xml:space="preserve">
+    <value>Nettogewicht (of -volume), in ounces (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>Nettovolume, quarts (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3601" xml:space="preserve">
+    <value>Nettovolume, quarts (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3602" xml:space="preserve">
+    <value>Nettovolume, quarts (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3603" xml:space="preserve">
+    <value>Nettovolume, quarts (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3604" xml:space="preserve">
+    <value>Nettovolume, quarts (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3605" xml:space="preserve">
+    <value>Nettovolume, quarts (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>Nettovolume, Amerikaanse gallons (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3611" xml:space="preserve">
+    <value>Nettovolume, Amerikaanse gallons (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3612" xml:space="preserve">
+    <value>Nettovolume, Amerikaanse gallons (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3613" xml:space="preserve">
+    <value>Nettovolume, Amerikaanse gallons (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3614" xml:space="preserve">
+    <value>Nettovolume, Amerikaanse gallons (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3615" xml:space="preserve">
+    <value>Nettovolume, Amerikaanse gallons (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>Logistiek volume, quarts</value>
+  </data>
+  <data name="3621" xml:space="preserve">
+    <value>Logistiek volume, quarts</value>
+  </data>
+  <data name="3622" xml:space="preserve">
+    <value>Logistiek volume, quarts</value>
+  </data>
+  <data name="3623" xml:space="preserve">
+    <value>Logistiek volume, quarts</value>
+  </data>
+  <data name="3624" xml:space="preserve">
+    <value>Logistiek volume, quarts</value>
+  </data>
+  <data name="3625" xml:space="preserve">
+    <value>Logistiek volume, quarts</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>Logistiek volume, Amerikaanse gallons</value>
+  </data>
+  <data name="3631" xml:space="preserve">
+    <value>Logistiek volume, Amerikaanse gallons</value>
+  </data>
+  <data name="3632" xml:space="preserve">
+    <value>Logistiek volume, Amerikaanse gallons</value>
+  </data>
+  <data name="3633" xml:space="preserve">
+    <value>Logistiek volume, Amerikaanse gallons</value>
+  </data>
+  <data name="3634" xml:space="preserve">
+    <value>Logistiek volume, Amerikaanse gallons</value>
+  </data>
+  <data name="3635" xml:space="preserve">
+    <value>Logistiek volume, Amerikaanse gallons</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>Netto volume, kubieke inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3641" xml:space="preserve">
+    <value>Netto volume, kubieke inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3642" xml:space="preserve">
+    <value>Netto volume, kubieke inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3643" xml:space="preserve">
+    <value>Netto volume, kubieke inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3644" xml:space="preserve">
+    <value>Netto volume, kubieke inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3645" xml:space="preserve">
+    <value>Netto volume, kubieke inch (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>Nettovolume, in kubieke voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3651" xml:space="preserve">
+    <value>Nettovolume, in kubieke voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3652" xml:space="preserve">
+    <value>Nettovolume, in kubieke voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3653" xml:space="preserve">
+    <value>Nettovolume, in kubieke voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3654" xml:space="preserve">
+    <value>Nettovolume, in kubieke voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3655" xml:space="preserve">
+    <value>Nettovolume, in kubieke voet (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>Netto volume, in kubieke yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3661" xml:space="preserve">
+    <value>Netto volume, in kubieke yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3662" xml:space="preserve">
+    <value>Netto volume, in kubieke yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3663" xml:space="preserve">
+    <value>Netto volume, in kubieke yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3664" xml:space="preserve">
+    <value>Netto volume, in kubieke yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3665" xml:space="preserve">
+    <value>Netto volume, in kubieke yards (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>Logistiek volume, kubieke inch</value>
+  </data>
+  <data name="3671" xml:space="preserve">
+    <value>Logistiek volume, kubieke inch</value>
+  </data>
+  <data name="3672" xml:space="preserve">
+    <value>Logistiek volume, kubieke inch</value>
+  </data>
+  <data name="3673" xml:space="preserve">
+    <value>Logistiek volume, kubieke inch</value>
+  </data>
+  <data name="3674" xml:space="preserve">
+    <value>Logistiek volume, kubieke inch</value>
+  </data>
+  <data name="3675" xml:space="preserve">
+    <value>Logistiek volume, kubieke inch</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>Logistiek volume, kubieke voet</value>
+  </data>
+  <data name="3681" xml:space="preserve">
+    <value>Logistiek volume, kubieke voet</value>
+  </data>
+  <data name="3682" xml:space="preserve">
+    <value>Logistiek volume, kubieke voet</value>
+  </data>
+  <data name="3683" xml:space="preserve">
+    <value>Logistiek volume, kubieke voet</value>
+  </data>
+  <data name="3684" xml:space="preserve">
+    <value>Logistiek volume, kubieke voet</value>
+  </data>
+  <data name="3685" xml:space="preserve">
+    <value>Logistiek volume, kubieke voet</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>Logistiek volume, kubieke yards</value>
+  </data>
+  <data name="3691" xml:space="preserve">
+    <value>Logistiek volume, kubieke yards</value>
+  </data>
+  <data name="3692" xml:space="preserve">
+    <value>Logistiek volume, kubieke yards</value>
+  </data>
+  <data name="3693" xml:space="preserve">
+    <value>Logistiek volume, kubieke yards</value>
+  </data>
+  <data name="3694" xml:space="preserve">
+    <value>Logistiek volume, kubieke yards</value>
+  </data>
+  <data name="3695" xml:space="preserve">
+    <value>Logistiek volume, kubieke yards</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag of couponwaarde, in lokale valuta</value>
+  </data>
+  <data name="3901" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag of couponwaarde, in lokale valuta</value>
+  </data>
+  <data name="3902" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag of couponwaarde, in lokale valuta</value>
+  </data>
+  <data name="3903" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag of couponwaarde, in lokale valuta</value>
+  </data>
+  <data name="3904" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag of couponwaarde, in lokale valuta</value>
+  </data>
+  <data name="3905" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag of couponwaarde, in lokale valuta</value>
+  </data>
+  <data name="3906" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag of couponwaarde, in lokale valuta</value>
+  </data>
+  <data name="3907" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag of couponwaarde, in lokale valuta</value>
+  </data>
+  <data name="3908" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag of couponwaarde, in lokale valuta</value>
+  </data>
+  <data name="3909" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag of couponwaarde, in lokale valuta</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode</value>
+  </data>
+  <data name="3911" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode</value>
+  </data>
+  <data name="3912" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode</value>
+  </data>
+  <data name="3913" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode</value>
+  </data>
+  <data name="3914" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode</value>
+  </data>
+  <data name="3915" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode</value>
+  </data>
+  <data name="3916" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode</value>
+  </data>
+  <data name="3917" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode</value>
+  </data>
+  <data name="3918" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode</value>
+  </data>
+  <data name="3919" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag, één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3921" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag, één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3922" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag, één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3923" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag, één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3924" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag, één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3925" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag, één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3926" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag, één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3927" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag, één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3928" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag, één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3929" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag, één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3931" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3932" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3933" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3934" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3935" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3936" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3937" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3938" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3939" xml:space="preserve">
+    <value>Toepasselijk te betalen bedrag met ISO-valutacode (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>Percentagekorting van een coupon</value>
+  </data>
+  <data name="3941" xml:space="preserve">
+    <value>Percentagekorting van een coupon</value>
+  </data>
+  <data name="3942" xml:space="preserve">
+    <value>Percentagekorting van een coupon</value>
+  </data>
+  <data name="3943" xml:space="preserve">
+    <value>Percentagekorting van een coupon</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>Te betalen bedrag per meeteenheid binnen één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3951" xml:space="preserve">
+    <value>Te betalen bedrag per meeteenheid binnen één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3952" xml:space="preserve">
+    <value>Te betalen bedrag per meeteenheid binnen één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3953" xml:space="preserve">
+    <value>Te betalen bedrag per meeteenheid binnen één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3954" xml:space="preserve">
+    <value>Te betalen bedrag per meeteenheid binnen één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="3955" xml:space="preserve">
+    <value>Te betalen bedrag per meeteenheid binnen één monetair gebied (handelsartikel met variabele maat)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>Bedrijfsnaam voor verzending/levering</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>Contactpersoon voor verzending/levering</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>Adresregel 1 voor verzending/levering</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>Adresregel 2 voor verzending/aflevering</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>Voorstad van bestemming (afleverlocatie)</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>Locatie voor verzending/aflevering</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>Regio voor verzending/levering</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>Landcode voor verzending/aflevering</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>Telefoonnummer voor verzending/aflevering</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>Geografische locatie voor verzending/levering</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>Bedrijfsnaam voor retourzending</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>Terugkeren naar contact</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>Adres voor retourzending, regel 1</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>Regel 2 van het retouradres</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>Terugkeer naar de voorstad</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>Terugkeer naar de locatie</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>Terugkeer regio</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>Landcode voor terugkeer</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>Postcode voor retourzending</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>Telefoonnummer voor retourzendingen</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>Beschrijving van de servicecode</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>Markering voor gevaarlijke goederen</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>Toestemming om te vertrekken</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>Markering 'handtekening vereist'</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>Niet vóór datum en tijdstip van levering (JJMMDDuumm)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>Niet na de datum en het tijdstip van levering (JJMMDDuumm)</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>Releasedatum (JJMMDD)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>Maximumtemperatuur in Fahrenheit (uitgedrukt in honderdste graden)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>Maximumtemperatuur in graden Celsius (uitgedrukt in honderdsten van graden)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>Minimumtemperatuur in Fahrenheit (uitgedrukt in honderdste graden)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>Minimumtemperatuur in graden Celsius (uitgedrukt in honderdsten van graden)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>NAVO-voorraadnummer</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>Classificatie van vleeskarkassen en -delen volgens de VN/ECE</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>Vervaldatum en -tijd (JJMMDDuu-mm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>Actieve potentie</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>Vangstgebied</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>Datum van eerste vorst (JJMMDD)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>Oogstdatum (JJMMDD[JJMMDD])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>Soorten voor visserijdoeleinden</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>Type visgerei</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>Productiemethode</value>
   </data>
 </root>

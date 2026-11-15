@@ -1130,4 +1130,10 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>Зберегти цей IBAN?</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>Код країни недійсний.</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>Код валюти недійсний.</value>
+  </data>
 </root>

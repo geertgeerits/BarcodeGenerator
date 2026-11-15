@@ -1132,4 +1132,10 @@ Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de Q
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>Dit IBAN behouden?</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>De landcode is niet geldig.</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>De valutacode is niet geldig.</value>
+  </data>
 </root>

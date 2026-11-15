@@ -1133,4 +1133,10 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>請保留此IBAN帳號？</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>國家代碼無效。</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>貨幣代碼無效。</value>
+  </data>
 </root>

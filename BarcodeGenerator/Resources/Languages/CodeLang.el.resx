@@ -1132,4 +1132,10 @@
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>Διατήρηση αυτού του IBAN;</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>Ο κωδικός χώρας δεν είναι έγκυρος.</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>Ο κωδικός νομίσματος δεν είναι έγκυρος.</value>
+  </data>
 </root>

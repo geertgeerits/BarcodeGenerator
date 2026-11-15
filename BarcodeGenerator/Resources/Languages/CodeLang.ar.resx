@@ -1133,4 +1133,10 @@
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>هل تود الاحتفاظ برقم الآيبان (IBAN) هذا؟</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>رمز البلد غير صالح.</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>رمز العملة غير صالح.</value>
+  </data>
 </root>

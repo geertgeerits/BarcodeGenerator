@@ -1131,4 +1131,10 @@ Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruh
   <data name="ErrorIbanInvalidKeep_Text" xml:space="preserve">
     <value>Diese IBAN behalten?</value>
   </data>
+  <data name="ErrorGS1CountryInvalid_Text" xml:space="preserve">
+    <value>Der Ländercode ist ungültig.</value>
+  </data>
+  <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
+    <value>Der Währungscode ist ungültig.</value>
+  </data>
 </root>
