@@ -911,6 +911,13 @@
                                     barcodeResult += $" ({currencyName} {kvp.Value[3..]})";
                                 }
                             }
+
+                            // Numeric values with decimal point
+                            if (kvp.Key.StartsWith("3") && kvp.Key.Length == 4)
+                            {
+                                string formattedValue = FormatGs1ValueWithDecimalPoint(kvp.Key, kvp.Value);
+                                barcodeResult += $" ({formattedValue})";
+                            }
                         }
 
                         catch (Exception ex)
@@ -920,6 +927,33 @@
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Format the numeric GS1 Digital Link value with a decimal point
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string FormatGs1ValueWithDecimalPoint(string key, string value)
+        {
+            // The last number of the key is the number of decimal places, the value is a string of digits
+            int decimalPlaces = int.Parse(key.Last().ToString());
+
+            // Set the decimal point in the value
+            if (decimalPlaces > 0 && value.Length > decimalPlaces)
+            {
+                int integerPartLength = value.Length - decimalPlaces;
+                string integerPart = value[..integerPartLength];
+                string decimalPart = value[integerPartLength..];
+                value = $"{integerPart}.{decimalPart}";
+
+                // Format the value according the UI - decimal point or decimal comma
+                return value.Replace(".", CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator);
+            }
+
+            // Return the original value if no formatting is needed
+            return value;
         }
     }
 }
