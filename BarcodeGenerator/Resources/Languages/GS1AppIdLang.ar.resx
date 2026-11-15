@@ -1533,4 +1533,202 @@
   <data name="7010" xml:space="preserve">
     <value>طريقة الإنتاج</value>
   </data>
+  <data name="7011" xml:space="preserve">
+    <value>الاختبار حسب التاريخ (YYMMDD[hhmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>معرِّف دفعة التجديد</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>الحالة الوظيفية</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>حالة المراجعة</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>المُعرِّف الفردي العالمي لأصلٍ ضمن تجميعة</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>عدد المعالجات مع رمز البلد وفقاً لمعيار ISO المكون من ثلاثة أحرف</value>
+  </data>
+  <data name="7031" xml:space="preserve">
+    <value>عدد المعالجات مع رمز البلد وفقاً لمعيار ISO المكون من ثلاثة أحرف</value>
+  </data>
+  <data name="7032" xml:space="preserve">
+    <value>عدد المعالجات مع رمز البلد وفقاً لمعيار ISO المكون من ثلاثة أحرف</value>
+  </data>
+  <data name="7033" xml:space="preserve">
+    <value>عدد المعالجات مع رمز البلد وفقاً لمعيار ISO المكون من ثلاثة أحرف</value>
+  </data>
+  <data name="7034" xml:space="preserve">
+    <value>عدد المعالجات مع رمز البلد وفقاً لمعيار ISO المكون من ثلاثة أحرف</value>
+  </data>
+  <data name="7035" xml:space="preserve">
+    <value>عدد المعالجات مع رمز البلد وفقاً لمعيار ISO المكون من ثلاثة أحرف</value>
+  </data>
+  <data name="7036" xml:space="preserve">
+    <value>عدد المعالجات مع رمز البلد وفقاً لمعيار ISO المكون من ثلاثة أحرف</value>
+  </data>
+  <data name="7037" xml:space="preserve">
+    <value>عدد المعالجات مع رمز البلد وفقاً لمعيار ISO المكون من ثلاثة أحرف</value>
+  </data>
+  <data name="7038" xml:space="preserve">
+    <value>عدد المعالجات مع رمز البلد وفقاً لمعيار ISO المكون من ثلاثة أحرف</value>
+  </data>
+  <data name="7039" xml:space="preserve">
+    <value>عدد المعالجات مع رمز البلد وفقاً لمعيار ISO المكون من ثلاثة أحرف</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>معرف GS1 الموحد (GS1 UIC) مع الملحق 1 وفهرس المستورد</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>نوع وحدة الشحن وفقاً لمعيار UN/CEFACT</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>مرجع الشهادة</value>
+  </data>
+  <data name="7231" xml:space="preserve">
+    <value>مرجع الشهادة</value>
+  </data>
+  <data name="7232" xml:space="preserve">
+    <value>مرجع الشهادة</value>
+  </data>
+  <data name="7233" xml:space="preserve">
+    <value>مرجع الشهادة</value>
+  </data>
+  <data name="7234" xml:space="preserve">
+    <value>مرجع الشهادة</value>
+  </data>
+  <data name="7235" xml:space="preserve">
+    <value>مرجع الشهادة</value>
+  </data>
+  <data name="7236" xml:space="preserve">
+    <value>مرجع الشهادة</value>
+  </data>
+  <data name="7237" xml:space="preserve">
+    <value>مرجع الشهادة</value>
+  </data>
+  <data name="7238" xml:space="preserve">
+    <value>مرجع الشهادة</value>
+  </data>
+  <data name="7239" xml:space="preserve">
+    <value>مرجع الشهادة</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>معرِّف البروتوكول</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>نوع وسائط AIDC</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>رقم إصدار التحكم</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>تاريخ الميلاد (سنة-شهر-يوم)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>تاريخ ووقت الميلاد (YYYYMMDDhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>الجنس البيولوجي</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>اسم العائلة للشخص</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>الاسم الأول للشخص</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>لاحقة اسم الشخص</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>الاسم الكامل للشخص</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>عنوان الشخص</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>تسلسل ولادة الطفل</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>طفل يحمل اسم العائلة</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>المنتجات الملفوفة (العرض، الطول، قطر القلب، الاتجاه، الوصلات)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>مُعرِّف الهاتف المحمول</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>المُعرِّف العالمي للأصول القابلة للإرجاع</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>المُعرِّف الفردي العالمي للأصول</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>السعر لكل وحدة قياس</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>تحديد وحدة تجارية فردية</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>رقم الحساب المصرفي الدولي</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>تاريخ ووقت الإنتاج (YYMMDDhh[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>مؤشر مستشعر قابل للقراءة بصرياً</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>مُعرِّف المكوّن/الجزء</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>الرقم التسلسلي لمُعرِّف المكوّن/الجزء</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>إصدار البرنامج</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>رقم الطراز العالمي</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>رقم علاقة الخدمة العالمية (Global Service Relation Number) لتحديد العلاقة بين مؤسسة تقدم خدمات ومزود تلك الخدمات.</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>رقم علاقة الخدمة العالمية (Global Service Relation Number) لتحديد العلاقة بين مؤسسة تقدم خدمات ومتلقي هذه الخدمات.</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>رقم مثيل علاقة الخدمة</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>رقم مرجع قسيمة الدفع</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>تحديد أجزاء من صنف تجاري موجودة ضمن وحدة لوجستية</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>التوقيع الرقمي (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>الهوية الدولية للأجهزة المتنقلة</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>الهوية الدولية للأجهزة المحمولة 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>رقم شريحة SIM المدمجة</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>رقم شريحة الاتصال الفعلية (SIM)</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>تحديد رموز القسائم للاستخدام في أمريكا الشمالية</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>نقاط الولاء الخاصة بقسيمة</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>تحديد رموز القسائم (كوبونات الخصم) المتاحة للاستخدام في أمريكا الشمالية</value>
+  </data>
 </root>

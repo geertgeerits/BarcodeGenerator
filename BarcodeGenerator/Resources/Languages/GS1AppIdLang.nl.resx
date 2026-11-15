@@ -1510,7 +1510,7 @@
     <value>Classificatie van vleeskarkassen en -delen volgens de VN/ECE</value>
   </data>
   <data name="7003" xml:space="preserve">
-    <value>Vervaldatum en -tijd (JJMMDDuu-mm)</value>
+    <value>Vervaldatum en -tijd (JJMMDDuumm)</value>
   </data>
   <data name="7004" xml:space="preserve">
     <value>Actieve potentie</value>
@@ -1532,5 +1532,203 @@
   </data>
   <data name="7010" xml:space="preserve">
     <value>Productiemethode</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>Test op datum (JJMMDD[uumm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>ID van de partij voor revisie</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>Functionele status</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>Revisiestatus</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>Globale individuele actividentificatie van een samenstelling</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>Aantal processors met een ISO-landcode van drie tekens</value>
+  </data>
+  <data name="7031" xml:space="preserve">
+    <value>Aantal processors met een ISO-landcode van drie tekens</value>
+  </data>
+  <data name="7032" xml:space="preserve">
+    <value>Aantal processors met een ISO-landcode van drie tekens</value>
+  </data>
+  <data name="7033" xml:space="preserve">
+    <value>Aantal processors met een ISO-landcode van drie tekens</value>
+  </data>
+  <data name="7034" xml:space="preserve">
+    <value>Aantal processors met een ISO-landcode van drie tekens</value>
+  </data>
+  <data name="7035" xml:space="preserve">
+    <value>Aantal processors met een ISO-landcode van drie tekens</value>
+  </data>
+  <data name="7036" xml:space="preserve">
+    <value>Aantal processors met een ISO-landcode van drie tekens</value>
+  </data>
+  <data name="7037" xml:space="preserve">
+    <value>Aantal processors met een ISO-landcode van drie tekens</value>
+  </data>
+  <data name="7038" xml:space="preserve">
+    <value>Aantal processors met een ISO-landcode van drie tekens</value>
+  </data>
+  <data name="7039" xml:space="preserve">
+    <value>Aantal processors met een ISO-landcode van drie tekens</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>GS1 UIC met extensie 1 en importeursindex</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>UN/CEFACT-type vrachteenheid</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>Certificeringsreferentie</value>
+  </data>
+  <data name="7231" xml:space="preserve">
+    <value>Certificeringsreferentie</value>
+  </data>
+  <data name="7232" xml:space="preserve">
+    <value>Certificeringsreferentie</value>
+  </data>
+  <data name="7233" xml:space="preserve">
+    <value>Certificeringsreferentie</value>
+  </data>
+  <data name="7234" xml:space="preserve">
+    <value>Certificeringsreferentie</value>
+  </data>
+  <data name="7235" xml:space="preserve">
+    <value>Certificeringsreferentie</value>
+  </data>
+  <data name="7236" xml:space="preserve">
+    <value>Certificeringsreferentie</value>
+  </data>
+  <data name="7237" xml:space="preserve">
+    <value>Certificeringsreferentie</value>
+  </data>
+  <data name="7238" xml:space="preserve">
+    <value>Certificeringsreferentie</value>
+  </data>
+  <data name="7239" xml:space="preserve">
+    <value>Certificeringsreferentie</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>Protocol-ID</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>AIDC-mediatype</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>Versiebeheernummer</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>Geboortedatum (JJJJMMDD)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>Geboortedatum en -tijd (JJJJMMDDuuMMss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>Biologisch geslacht</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>Achternaam van persoon</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>Voornaam van persoon</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>Naamsachtervoegsel van een persoon</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>Volledige naam van de persoon</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>Adres van persoon</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>Volgorde van de geboorte van een baby</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>Achternaam van de baby</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>Rolproducten (breedte, lengte, kerndiameter, richting, lasverbindingen)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>Identificatiegegeven voor mobiele telefonie</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>Wereldwijde identificatiecode voor herbruikbare activa</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>Wereldwijde identificatiecode voor individuele activa</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>Prijs per meeteenheid</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>Identificatie van een individueel handelseenheid-item</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>Internationaal bankrekeningnummer</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>Datum en tijdstip van productie (JJMMDDuu[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>Optisch leesbare sensorindicator</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>Component-/onderdeelidentificatie</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>Serienummer van component/onderdeel</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>Softwareversie</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>Globaal modelnummer</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>Globaal servicerelatienummer om de relatie te identificeren tussen een organisatie die diensten aanbiedt en de aanbieder van diensten</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>Global Service Relation Number (GSRN) voor het identificeren van de relatie tussen een organisatie die diensten aanbiedt en de ontvanger van die diensten</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>Instantienummer van de servicerelatie</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>Referentienummer van de betalingsstrook</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>Identificatie van onderdelen van een handelsartikel die zich in een logistieke eenheid bevinden</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>Digitale handtekening (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>Internationale identificatie voor mobiele apparatuur</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>Internationale mobiele apparatuuridentificatie 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>Ingebouwd simkaartnummer</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>Fysiek simkaartnummer</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>Identificatie van couponcodes voor gebruik in Noord-Amerika</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>Loyaliteitspunten van een coupon</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>উত্তর আমেরিকায় ব্যবহারের জন্য কুপন কোড শনাক্তকরণ সুবিধা প্রদান করা হচ্ছে।</value>
   </data>
 </root>

@@ -75,10 +75,12 @@ namespace BarcodeGenerator
                 }
             }
 
-            // If the first key in the dictionary starts with http the remove this key and value from the dictionary
-            if (ClassLoadDataFromFile.dicGs1.Count > 0 && ClassLoadDataFromFile.dicGs1.Keys.FirstOrDefault()?.StartsWith("http", StringComparison.OrdinalIgnoreCase) == true)
+            // Remove the keys from the dictionary if the key is not in the list of known GS1 application identifiers
+            List<string> keysToRemove = [.. ClassLoadDataFromFile.dicGs1.Keys.Where(static k => !IsKnownGs1AppID(k))];
+
+            foreach (var key in keysToRemove)
             {
-                ClassLoadDataFromFile.dicGs1.Remove(ClassLoadDataFromFile.dicGs1.Keys.First());
+                ClassLoadDataFromFile.dicGs1.Remove(key);
             }
         }
 

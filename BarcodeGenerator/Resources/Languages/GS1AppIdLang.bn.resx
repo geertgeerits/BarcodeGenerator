@@ -1533,4 +1533,202 @@
   <data name="7010" xml:space="preserve">
     <value>উৎপাদন পদ্ধতি</value>
   </data>
+  <data name="7011" xml:space="preserve">
+    <value>তারিখ অনুযায়ী পরীক্ষা করুন (YYMMDD[hhmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>পুনর্সজ্জা লট আইডি</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>কার্যক্ষমতার অবস্থা</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>সংশোধনের অবস্থা</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>একটি অ্যাসেম্বলির বৈশ্বিক স্বতন্ত্র সম্পদ শনাক্তকারী</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>তিন-অঙ্কের আইএসও (ISO) কান্ট্রি কোডসহ প্রসেসরের সংখ্যা</value>
+  </data>
+  <data name="7031" xml:space="preserve">
+    <value>তিন-অঙ্কের আইএসও (ISO) কান্ট্রি কোডসহ প্রসেসরের সংখ্যা</value>
+  </data>
+  <data name="7032" xml:space="preserve">
+    <value>তিন-অঙ্কের আইএসও (ISO) কান্ট্রি কোডসহ প্রসেসরের সংখ্যা</value>
+  </data>
+  <data name="7033" xml:space="preserve">
+    <value>তিন-অঙ্কের আইএসও (ISO) কান্ট্রি কোডসহ প্রসেসরের সংখ্যা</value>
+  </data>
+  <data name="7034" xml:space="preserve">
+    <value>তিন-অঙ্কের আইএসও (ISO) কান্ট্রি কোডসহ প্রসেসরের সংখ্যা</value>
+  </data>
+  <data name="7035" xml:space="preserve">
+    <value>তিন-অঙ্কের আইএসও (ISO) কান্ট্রি কোডসহ প্রসেসরের সংখ্যা</value>
+  </data>
+  <data name="7036" xml:space="preserve">
+    <value>তিন-অঙ্কের আইএসও (ISO) কান্ট্রি কোডসহ প্রসেসরের সংখ্যা</value>
+  </data>
+  <data name="7037" xml:space="preserve">
+    <value>তিন-অঙ্কের আইএসও (ISO) কান্ট্রি কোডসহ প্রসেসরের সংখ্যা</value>
+  </data>
+  <data name="7038" xml:space="preserve">
+    <value>তিন-অঙ্কের আইএসও (ISO) কান্ট্রি কোডসহ প্রসেসরের সংখ্যা</value>
+  </data>
+  <data name="7039" xml:space="preserve">
+    <value>তিন-অঙ্কের আইএসও (ISO) কান্ট্রি কোডসহ প্রসেসরের সংখ্যা</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>এক্সটেনশন ১ ও ইম্পোর্টার ইনডেক্সসহ GS1 UIC</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>UN/CEFACT মালবাহী ইউনিটের ধরন</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>সনদ সংক্রান্ত তথ্যসূত্র</value>
+  </data>
+  <data name="7231" xml:space="preserve">
+    <value>সনদ সংক্রান্ত তথ্যসূত্র</value>
+  </data>
+  <data name="7232" xml:space="preserve">
+    <value>সনদ সংক্রান্ত তথ্যসূত্র</value>
+  </data>
+  <data name="7233" xml:space="preserve">
+    <value>সনদ সংক্রান্ত তথ্যসূত্র</value>
+  </data>
+  <data name="7234" xml:space="preserve">
+    <value>সনদ সংক্রান্ত তথ্যসূত্র</value>
+  </data>
+  <data name="7235" xml:space="preserve">
+    <value>সনদ সংক্রান্ত তথ্যসূত্র</value>
+  </data>
+  <data name="7236" xml:space="preserve">
+    <value>সনদ সংক্রান্ত তথ্যসূত্র</value>
+  </data>
+  <data name="7237" xml:space="preserve">
+    <value>সনদ সংক্রান্ত তথ্যসূত্র</value>
+  </data>
+  <data name="7238" xml:space="preserve">
+    <value>সনদ সংক্রান্ত তথ্যসূত্র</value>
+  </data>
+  <data name="7239" xml:space="preserve">
+    <value>সনদ সংক্রান্ত তথ্যসূত্র</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>প্রোটোকল আইডি</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>AIDC মিডিয়ার ধরন</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>সংস্করণ নিয়ন্ত্রণ সংখ্যা</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>জন্ম তারিখ (YYYYMMDD)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>জন্মের তারিখ ও সময় (YYYYMMDDhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>জৈবিক লিঙ্গ</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>ব্যক্তির পারিবারিক নাম</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>ব্যক্তির প্রদত্ত নাম</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>ব্যক্তির নামের প্রত্যয়</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>ব্যক্তির পুরো নাম</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>ব্যক্তির ঠিকানা</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>শিশুর জন্মের ক্রম</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>পরিবারের নামের শিশু</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>রোলজাত পণ্য (প্রস্থ, দৈর্ঘ্য, কোর ব্যাস, অভিমুখ, জোড়া)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>সেলুলার মোবাইল টেলিফোন শনাক্তকারী</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>গ্লোবাল রিটার্নেবল অ্যাসেট আইডেন্টিফায়ার</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>বৈশ্বিক ব্যক্তিগত সম্পদ শনাক্তকারী</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>পরিমাপের একক প্রতি মূল্য</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>একটি স্বতন্ত্র বাণিজ্যিক পণ্যের একক শনাক্তকরণ</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>আন্তর্জাতিক ব্যাংক অ্যাকাউন্ট নম্বর</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>উৎপাদনের তারিখ ও সময় (YYMMDDhh[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>দৃশ্যত পাঠযোগ্য সেন্সর নির্দেশক</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>উপাদান/অংশ শনাক্তকারী</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>উপাদান/অংশ শনাক্তকারী ক্রমিক নম্বর</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>সফটওয়্যার সংস্করণ</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>গ্লোবাল মডেল নম্বর</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>সেবা প্রদানকারী প্রতিষ্ঠান এবং সেবা সরবরাহকারীর মধ্যকার সম্পর্ক শনাক্ত করার জন্য ব্যবহৃত 'গ্লোবাল সার্ভিস রিলেশন নম্বর' (Global Service Relation Number)</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>সেবা প্রদানকারী একটি প্রতিষ্ঠান এবং সেবা গ্রহণকারীর মধ্যকার সম্পর্ক শনাক্ত করার জন্য ব্যবহৃত 'গ্লোবাল সার্ভিস রিলেশন নম্বর' (Global Service Relation Number)</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>পরিষেবা সম্পর্ক দৃষ্টান্ত সংখ্যা</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>পেমেন্ট স্লিপ রেফারেন্স নম্বর</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>একটি লজিস্টিক ইউনিটের অন্তর্ভুক্ত বাণিজ্যিক পণ্যের এককগুলোর শনাক্তকরণ</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>ডিজিটাল সিগনেচার (ডিগসিগ)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>ইন্টারন্যাশনাল মোবাইল ইকুইপমেন্ট আইডেন্টিটি</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>আন্তর্জাতিক মোবাইল সরঞ্জাম পরিচিতি ২</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>এমবেডেড সিম নম্বর</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>ফিজিক্যাল সিম নম্বর</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>উত্তর আমেরিকায় ব্যবহারের জন্য কুপন কোড শনাক্তকরণ</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>কুপনের লয়্যালটি পয়েন্ট</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>উত্তর আমেরিকায় ব্যবহারের জন্য কুপন কোড শনাক্তকরণ সুবিধা প্রদান করা হচ্ছে।</value>
+  </data>
 </root>
