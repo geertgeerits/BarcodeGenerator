@@ -798,6 +798,9 @@
                         string countryName = string.Empty;
                         string currencyName = string.Empty;
 
+                        // Get the known GS1 Application Identifier (AI) name from the language resource file and append it to the barcode result string
+                        string description = ClassPayloadGS1Validation.GetKnownGs1AppIDValueFromLangResource(kvp.Key);
+
                         try
                         {
                             // Dates / Times
@@ -877,7 +880,7 @@
                             }
 
                             // Format the GS1 digital link key-value pairs in a readable format and append them to the barcode result string
-                            barcodeResult += $"\n- {kvp.Key} {value}\n  = {kvp.Value}";
+                            barcodeResult += $"\n- {kvp.Key} {value}, {description}\n  = {kvp.Value}";
 
                             if (valueDate1 != string.Empty)
                             {
@@ -888,7 +891,6 @@
                             // If the value is an ISO country code, format it as a country name in the current culture format
                             if (kvp.Key is "421" or "7030" or "7031" or "7032" or "7033" or "7034" or "7035" or "7036" or "7037" or "7038" or "7039")
                             {
-                                //countryName = ClassPayloadGS1Validation.GetKnownGs1AppIDValueFromLangResource(kvp.Key);
                                 countryName = ClassPayloadGS1Validation.GetKnownISOCountry(kvp.Value[..3]);
 
                                 if (countryName != string.Empty)

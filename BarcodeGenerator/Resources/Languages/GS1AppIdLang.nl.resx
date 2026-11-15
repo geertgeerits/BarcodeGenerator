@@ -123,10 +123,14 @@
   <data name="01" xml:space="preserve">
     <value>Globaal handelsartikelnummer</value>
   </data>
-  <data name="02" xml:space="preserve">
-    <value>Handelsartikelen die onder een Global Trade Item Number vallen</value>
-  </data>
   <data name="10" xml:space="preserve">
     <value>Batch- of partijnummer</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="3202" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="3250" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
 </root>

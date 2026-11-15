@@ -758,7 +758,6 @@ namespace BarcodeGenerator
             if (!bIsValid)
             {
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {cKey} {GetKnownGs1AppIDValue(cKey)} {GetKnownGs1AppIDValueFromLangResource(cKey)}.\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
-                //await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {cKey} {GetKnownGs1AppIDValue(cKey)}\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
                 _ = editor.Focus();
                 return false;
             }
