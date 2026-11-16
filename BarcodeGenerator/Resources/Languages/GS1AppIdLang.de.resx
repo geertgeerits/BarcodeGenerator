@@ -145,7 +145,7 @@
     <value>Verkaufsdatum (JJMMTT)</value>
   </data>
   <data name="17" xml:space="preserve">
-    <value>Udløbsdato (ÅÅMMDD)</value>
+    <value>Ablaufdatum (JJMMTT)</value>
   </data>
   <data name="20" xml:space="preserve">
     <value>Interne Produktvariante</value>
