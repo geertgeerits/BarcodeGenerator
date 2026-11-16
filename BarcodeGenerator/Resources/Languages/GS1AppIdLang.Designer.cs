@@ -1033,7 +1033,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Depth, thickness, height, or third dimension, inches (variable measure trade item).
+        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
         /// </summary>
         internal static string _3270 {
             get {
@@ -1042,7 +1042,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Depth, thickness, height, or third dimension, inches (variable measure trade item).
+        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
         /// </summary>
         internal static string _3271 {
             get {
@@ -1051,7 +1051,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Depth, thickness, height, or third dimension, inches (variable measure trade item).
+        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
         /// </summary>
         internal static string _3272 {
             get {
@@ -1060,7 +1060,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Depth, thickness, height, or third dimension, inches (variable measure trade item).
+        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
         /// </summary>
         internal static string _3273 {
             get {
@@ -1069,7 +1069,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Depth, thickness, height, or third dimension, inches (variable measure trade item).
+        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
         /// </summary>
         internal static string _3274 {
             get {
@@ -1078,7 +1078,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Depth, thickness, height, or third dimension, inches (variable measure trade item).
+        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
         /// </summary>
         internal static string _3275 {
             get {

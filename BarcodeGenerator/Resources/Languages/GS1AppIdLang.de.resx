@@ -432,4 +432,652 @@
   <data name="3165" xml:space="preserve">
     <value>Nettoinhalt, Kubikmeter (Handelsartikel mit variabler Mengenangabe)</value>
   </data>
+  <data name="3200" xml:space="preserve">
+    <value>Nettogewicht, Pfund (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3201" xml:space="preserve">
+    <value>Nettogewicht, Pfund (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3202" xml:space="preserve">
+    <value>Nettogewicht, Pfund (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3203" xml:space="preserve">
+    <value>Nettogewicht, Pfund (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3204" xml:space="preserve">
+    <value>Nettogewicht, Pfund (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3205" xml:space="preserve">
+    <value>Nettogewicht, Pfund (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3211" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3212" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3213" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3214" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3215" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3221" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3222" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3223" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3224" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3225" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3231" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3232" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3233" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3234" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3235" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3241" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3242" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3243" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3244" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3245" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Zoll (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Fuß (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3251" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Fuß (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3252" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Fuß (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3253" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Fuß (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3254" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Fuß (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3255" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, in Fuß (Handelsartikel mit variabler Maßangabe)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3261" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3262" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3263" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3264" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3265" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll (Handelsartikel mit variabler Abmessung)</value>
+  </data>
+  <data name="3271" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll (Handelsartikel mit variabler Abmessung)</value>
+  </data>
+  <data name="3272" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll (Handelsartikel mit variabler Abmessung)</value>
+  </data>
+  <data name="3273" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll (Handelsartikel mit variabler Abmessung)</value>
+  </data>
+  <data name="3274" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll (Handelsartikel mit variabler Abmessung)</value>
+  </data>
+  <data name="3275" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll (Handelsartikel mit variabler Abmessung)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3281" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3282" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3283" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3284" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3285" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3291" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3292" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3293" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3294" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3295" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>Logistikgewicht, Kilogramm</value>
+  </data>
+  <data name="3301" xml:space="preserve">
+    <value>Logistikgewicht, Kilogramm</value>
+  </data>
+  <data name="3302" xml:space="preserve">
+    <value>Logistikgewicht, Kilogramm</value>
+  </data>
+  <data name="3303" xml:space="preserve">
+    <value>Logistikgewicht, Kilogramm</value>
+  </data>
+  <data name="3304" xml:space="preserve">
+    <value>Logistikgewicht, Kilogramm</value>
+  </data>
+  <data name="3305" xml:space="preserve">
+    <value>Logistikgewicht, Kilogramm</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>Länge oder erste Dimension, Meter</value>
+  </data>
+  <data name="3311" xml:space="preserve">
+    <value>Länge oder erste Dimension, Meter</value>
+  </data>
+  <data name="3312" xml:space="preserve">
+    <value>Länge oder erste Dimension, Meter</value>
+  </data>
+  <data name="3313" xml:space="preserve">
+    <value>Länge oder erste Dimension, Meter</value>
+  </data>
+  <data name="3314" xml:space="preserve">
+    <value>Länge oder erste Dimension, Meter</value>
+  </data>
+  <data name="3315" xml:space="preserve">
+    <value>Länge oder erste Dimension, Meter</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Meter</value>
+  </data>
+  <data name="3321" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Meter</value>
+  </data>
+  <data name="3322" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Meter</value>
+  </data>
+  <data name="3323" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Meter</value>
+  </data>
+  <data name="3324" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Meter</value>
+  </data>
+  <data name="3325" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Meter</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Meter</value>
+  </data>
+  <data name="3331" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Meter</value>
+  </data>
+  <data name="3332" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Meter</value>
+  </data>
+  <data name="3333" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Meter</value>
+  </data>
+  <data name="3334" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Meter</value>
+  </data>
+  <data name="3335" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Meter</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>Fläche, Quadratmeter</value>
+  </data>
+  <data name="3341" xml:space="preserve">
+    <value>Fläche, Quadratmeter</value>
+  </data>
+  <data name="3342" xml:space="preserve">
+    <value>Fläche, Quadratmeter</value>
+  </data>
+  <data name="3343" xml:space="preserve">
+    <value>Fläche, Quadratmeter</value>
+  </data>
+  <data name="3344" xml:space="preserve">
+    <value>Fläche, Quadratmeter</value>
+  </data>
+  <data name="3345" xml:space="preserve">
+    <value>Fläche, Quadratmeter</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>Logistikvolumen, Liter</value>
+  </data>
+  <data name="3351" xml:space="preserve">
+    <value>Logistikvolumen, Liter</value>
+  </data>
+  <data name="3352" xml:space="preserve">
+    <value>Logistikvolumen, Liter</value>
+  </data>
+  <data name="3353" xml:space="preserve">
+    <value>Logistikvolumen, Liter</value>
+  </data>
+  <data name="3354" xml:space="preserve">
+    <value>Logistikvolumen, Liter</value>
+  </data>
+  <data name="3355" xml:space="preserve">
+    <value>Logistikvolumen, Liter</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Logistikvolumen, Kubikmeter</value>
+  </data>
+  <data name="3361" xml:space="preserve">
+    <value>Logistikvolumen, Kubikmeter</value>
+  </data>
+  <data name="3362" xml:space="preserve">
+    <value>Logistikvolumen, Kubikmeter</value>
+  </data>
+  <data name="3363" xml:space="preserve">
+    <value>Logistikvolumen, Kubikmeter</value>
+  </data>
+  <data name="3364" xml:space="preserve">
+    <value>Logistikvolumen, Kubikmeter</value>
+  </data>
+  <data name="3365" xml:space="preserve">
+    <value>Logistikvolumen, Kubikmeter</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Kilogramm pro Quadratmeter</value>
+  </data>
+  <data name="3371" xml:space="preserve">
+    <value>Kilogramm pro Quadratmeter</value>
+  </data>
+  <data name="3372" xml:space="preserve">
+    <value>Kilogramm pro Quadratmeter</value>
+  </data>
+  <data name="3373" xml:space="preserve">
+    <value>Kilogramm pro Quadratmeter</value>
+  </data>
+  <data name="3374" xml:space="preserve">
+    <value>Kilogramm pro Quadratmeter</value>
+  </data>
+  <data name="3375" xml:space="preserve">
+    <value>Kilogramm pro Quadratmeter</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>Logistisches Gewicht, Pfund</value>
+  </data>
+  <data name="3401" xml:space="preserve">
+    <value>Logistisches Gewicht, Pfund</value>
+  </data>
+  <data name="3402" xml:space="preserve">
+    <value>Logistisches Gewicht, Pfund</value>
+  </data>
+  <data name="3403" xml:space="preserve">
+    <value>Logistisches Gewicht, Pfund</value>
+  </data>
+  <data name="3404" xml:space="preserve">
+    <value>Logistisches Gewicht, Pfund</value>
+  </data>
+  <data name="3405" xml:space="preserve">
+    <value>Logistisches Gewicht, Pfund</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll</value>
+  </data>
+  <data name="3411" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll</value>
+  </data>
+  <data name="3412" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll</value>
+  </data>
+  <data name="3413" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll</value>
+  </data>
+  <data name="3414" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll</value>
+  </data>
+  <data name="3415" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Zoll</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß</value>
+  </data>
+  <data name="3421" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß</value>
+  </data>
+  <data name="3422" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß</value>
+  </data>
+  <data name="3423" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß</value>
+  </data>
+  <data name="3424" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß</value>
+  </data>
+  <data name="3425" xml:space="preserve">
+    <value>Länge oder erste Abmessung, Fuß</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>Länge oder erste Dimension, Yards</value>
+  </data>
+  <data name="3431" xml:space="preserve">
+    <value>Länge oder erste Dimension, Yards</value>
+  </data>
+  <data name="3432" xml:space="preserve">
+    <value>Länge oder erste Dimension, Yards</value>
+  </data>
+  <data name="3433" xml:space="preserve">
+    <value>Länge oder erste Dimension, Yards</value>
+  </data>
+  <data name="3434" xml:space="preserve">
+    <value>Länge oder erste Dimension, Yards</value>
+  </data>
+  <data name="3435" xml:space="preserve">
+    <value>Länge oder erste Dimension, Yards</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Zoll</value>
+  </data>
+  <data name="3441" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Zoll</value>
+  </data>
+  <data name="3442" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Zoll</value>
+  </data>
+  <data name="3443" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Zoll</value>
+  </data>
+  <data name="3444" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Zoll</value>
+  </data>
+  <data name="3445" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Zoll</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Fuß</value>
+  </data>
+  <data name="3451" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Fuß</value>
+  </data>
+  <data name="3452" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Fuß</value>
+  </data>
+  <data name="3453" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Fuß</value>
+  </data>
+  <data name="3454" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Fuß</value>
+  </data>
+  <data name="3455" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Abmessung, Fuß</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Dimension, Yard</value>
+  </data>
+  <data name="3461" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Dimension, Yard</value>
+  </data>
+  <data name="3462" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Dimension, Yard</value>
+  </data>
+  <data name="3463" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Dimension, Yard</value>
+  </data>
+  <data name="3464" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Dimension, Yard</value>
+  </data>
+  <data name="3465" xml:space="preserve">
+    <value>Breite, Durchmesser oder zweite Dimension, Yard</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll</value>
+  </data>
+  <data name="3471" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll</value>
+  </data>
+  <data name="3472" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll</value>
+  </data>
+  <data name="3473" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll</value>
+  </data>
+  <data name="3474" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll</value>
+  </data>
+  <data name="3475" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, in Zoll</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß</value>
+  </data>
+  <data name="3481" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß</value>
+  </data>
+  <data name="3482" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß</value>
+  </data>
+  <data name="3483" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß</value>
+  </data>
+  <data name="3484" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß</value>
+  </data>
+  <data name="3485" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Fuß</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards</value>
+  </data>
+  <data name="3491" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards</value>
+  </data>
+  <data name="3492" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards</value>
+  </data>
+  <data name="3493" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards</value>
+  </data>
+  <data name="3494" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards</value>
+  </data>
+  <data name="3495" xml:space="preserve">
+    <value>Tiefe, Dicke, Höhe oder dritte Dimension, Yards</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>Fläche, Quadratzoll (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3501" xml:space="preserve">
+    <value>Fläche, Quadratzoll (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3502" xml:space="preserve">
+    <value>Fläche, Quadratzoll (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3503" xml:space="preserve">
+    <value>Fläche, Quadratzoll (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3504" xml:space="preserve">
+    <value>Fläche, Quadratzoll (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3505" xml:space="preserve">
+    <value>Fläche, Quadratzoll (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>Fläche, Quadratfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3511" xml:space="preserve">
+    <value>Fläche, Quadratfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3512" xml:space="preserve">
+    <value>Fläche, Quadratfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3513" xml:space="preserve">
+    <value>Fläche, Quadratfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3514" xml:space="preserve">
+    <value>Fläche, Quadratfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3515" xml:space="preserve">
+    <value>Fläche, Quadratfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3521" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3522" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3523" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3524" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3525" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards (Handelsartikel mit variabler Maßeinheit)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>Fläche, Quadratzoll</value>
+  </data>
+  <data name="3531" xml:space="preserve">
+    <value>Fläche, Quadratzoll</value>
+  </data>
+  <data name="3532" xml:space="preserve">
+    <value>Fläche, Quadratzoll</value>
+  </data>
+  <data name="3533" xml:space="preserve">
+    <value>Fläche, Quadratzoll</value>
+  </data>
+  <data name="3534" xml:space="preserve">
+    <value>Fläche, Quadratzoll</value>
+  </data>
+  <data name="3535" xml:space="preserve">
+    <value>Fläche, Quadratzoll</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>Fläche, Quadratfuß</value>
+  </data>
+  <data name="3541" xml:space="preserve">
+    <value>Fläche, Quadratfuß</value>
+  </data>
+  <data name="3542" xml:space="preserve">
+    <value>Fläche, Quadratfuß</value>
+  </data>
+  <data name="3543" xml:space="preserve">
+    <value>Fläche, Quadratfuß</value>
+  </data>
+  <data name="3544" xml:space="preserve">
+    <value>Fläche, Quadratfuß</value>
+  </data>
+  <data name="3545" xml:space="preserve">
+    <value>Fläche, Quadratfuß</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards</value>
+  </data>
+  <data name="3551" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards</value>
+  </data>
+  <data name="3552" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards</value>
+  </data>
+  <data name="3553" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards</value>
+  </data>
+  <data name="3554" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards</value>
+  </data>
+  <data name="3555" xml:space="preserve">
+    <value>Fläche, Quadrat-Yards</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>Nettogewicht, Feinunzen (Handelsartikel mit variablem Maß)</value>
+  </data>
+  <data name="3561" xml:space="preserve">
+    <value>Nettogewicht, Feinunzen (Handelsartikel mit variablem Maß)</value>
+  </data>
+  <data name="3562" xml:space="preserve">
+    <value>Nettogewicht, Feinunzen (Handelsartikel mit variablem Maß)</value>
+  </data>
+  <data name="3563" xml:space="preserve">
+    <value>Nettogewicht, Feinunzen (Handelsartikel mit variablem Maß)</value>
+  </data>
+  <data name="3564" xml:space="preserve">
+    <value>Nettogewicht, Feinunzen (Handelsartikel mit variablem Maß)</value>
+  </data>
+  <data name="3565" xml:space="preserve">
+    <value>Nettogewicht, Feinunzen (Handelsartikel mit variablem Maß)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>Nettogewicht (oder -volumen), Unzen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3571" xml:space="preserve">
+    <value>Nettogewicht (oder -volumen), Unzen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3572" xml:space="preserve">
+    <value>Nettogewicht (oder -volumen), Unzen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3573" xml:space="preserve">
+    <value>Nettogewicht (oder -volumen), Unzen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3574" xml:space="preserve">
+    <value>Nettogewicht (oder -volumen), Unzen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3575" xml:space="preserve">
+    <value>Nettogewicht (oder -volumen), Unzen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
 </root>
