@@ -1080,4 +1080,655 @@
   <data name="3575" xml:space="preserve">
     <value>Nettogewicht (oder -volumen), Unzen (Handelsartikel mit variabler Mengenangabe)</value>
   </data>
+  <data name="3600" xml:space="preserve">
+    <value>Nettoinhalt, Quarts (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3601" xml:space="preserve">
+    <value>Nettoinhalt, Quarts (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3602" xml:space="preserve">
+    <value>Nettoinhalt, Quarts (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3603" xml:space="preserve">
+    <value>Nettoinhalt, Quarts (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3604" xml:space="preserve">
+    <value>Nettoinhalt, Quarts (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3605" xml:space="preserve">
+    <value>Nettoinhalt, Quarts (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>Nettoinhalt, US-Gallonen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3611" xml:space="preserve">
+    <value>Nettoinhalt, US-Gallonen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3612" xml:space="preserve">
+    <value>Nettoinhalt, US-Gallonen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3613" xml:space="preserve">
+    <value>Nettoinhalt, US-Gallonen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3614" xml:space="preserve">
+    <value>Nettoinhalt, US-Gallonen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3615" xml:space="preserve">
+    <value>Nettoinhalt, US-Gallonen (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>Logistikvolumen, Quarts</value>
+  </data>
+  <data name="3621" xml:space="preserve">
+    <value>Logistikvolumen, Quarts</value>
+  </data>
+  <data name="3622" xml:space="preserve">
+    <value>Logistikvolumen, Quarts</value>
+  </data>
+  <data name="3623" xml:space="preserve">
+    <value>Logistikvolumen, Quarts</value>
+  </data>
+  <data name="3624" xml:space="preserve">
+    <value>Logistikvolumen, Quarts</value>
+  </data>
+  <data name="3625" xml:space="preserve">
+    <value>Logistikvolumen, Quarts</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>Logistikvolumen, US-Gallonen</value>
+  </data>
+  <data name="3631" xml:space="preserve">
+    <value>Logistikvolumen, US-Gallonen</value>
+  </data>
+  <data name="3632" xml:space="preserve">
+    <value>Logistikvolumen, US-Gallonen</value>
+  </data>
+  <data name="3633" xml:space="preserve">
+    <value>Logistikvolumen, US-Gallonen</value>
+  </data>
+  <data name="3634" xml:space="preserve">
+    <value>Logistikvolumen, US-Gallonen</value>
+  </data>
+  <data name="3635" xml:space="preserve">
+    <value>Logistikvolumen, US-Gallonen</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>Nettoinhalt, Kubikzoll (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3641" xml:space="preserve">
+    <value>Nettoinhalt, Kubikzoll (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3642" xml:space="preserve">
+    <value>Nettoinhalt, Kubikzoll (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3643" xml:space="preserve">
+    <value>Nettoinhalt, Kubikzoll (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3644" xml:space="preserve">
+    <value>Nettoinhalt, Kubikzoll (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3645" xml:space="preserve">
+    <value>Nettoinhalt, Kubikzoll (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>Nettovolumen, Kubikfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3651" xml:space="preserve">
+    <value>Nettovolumen, Kubikfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3652" xml:space="preserve">
+    <value>Nettovolumen, Kubikfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3653" xml:space="preserve">
+    <value>Nettovolumen, Kubikfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3654" xml:space="preserve">
+    <value>Nettovolumen, Kubikfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3655" xml:space="preserve">
+    <value>Nettovolumen, Kubikfuß (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>Nettovolumen, Kubikyards (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3661" xml:space="preserve">
+    <value>Nettovolumen, Kubikyards (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3662" xml:space="preserve">
+    <value>Nettovolumen, Kubikyards (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3663" xml:space="preserve">
+    <value>Nettovolumen, Kubikyards (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3664" xml:space="preserve">
+    <value>Nettovolumen, Kubikyards (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3665" xml:space="preserve">
+    <value>Nettovolumen, Kubikyards (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>Logistikvolumen, Kubikzoll</value>
+  </data>
+  <data name="3671" xml:space="preserve">
+    <value>Logistikvolumen, Kubikzoll</value>
+  </data>
+  <data name="3672" xml:space="preserve">
+    <value>Logistikvolumen, Kubikzoll</value>
+  </data>
+  <data name="3673" xml:space="preserve">
+    <value>Logistikvolumen, Kubikzoll</value>
+  </data>
+  <data name="3674" xml:space="preserve">
+    <value>Logistikvolumen, Kubikzoll</value>
+  </data>
+  <data name="3675" xml:space="preserve">
+    <value>Logistikvolumen, Kubikzoll</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>Logistisk volumen, kubikfod</value>
+  </data>
+  <data name="3681" xml:space="preserve">
+    <value>Logistisk volumen, kubikfod</value>
+  </data>
+  <data name="3682" xml:space="preserve">
+    <value>Logistisk volumen, kubikfod</value>
+  </data>
+  <data name="3683" xml:space="preserve">
+    <value>Logistisk volumen, kubikfod</value>
+  </data>
+  <data name="3684" xml:space="preserve">
+    <value>Logistisk volumen, kubikfod</value>
+  </data>
+  <data name="3685" xml:space="preserve">
+    <value>Logistisk volumen, kubikfod</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>Logistikvolumen, Kubikyards</value>
+  </data>
+  <data name="3691" xml:space="preserve">
+    <value>Logistikvolumen, Kubikyards</value>
+  </data>
+  <data name="3692" xml:space="preserve">
+    <value>Logistikvolumen, Kubikyards</value>
+  </data>
+  <data name="3693" xml:space="preserve">
+    <value>Logistikvolumen, Kubikyards</value>
+  </data>
+  <data name="3694" xml:space="preserve">
+    <value>Logistikvolumen, Kubikyards</value>
+  </data>
+  <data name="3695" xml:space="preserve">
+    <value>Logistikvolumen, Kubikyards</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag oder Kuponwert, in Landeswährung</value>
+  </data>
+  <data name="3901" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag oder Kuponwert, in Landeswährung</value>
+  </data>
+  <data name="3902" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag oder Kuponwert, in Landeswährung</value>
+  </data>
+  <data name="3903" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag oder Kuponwert, in Landeswährung</value>
+  </data>
+  <data name="3904" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag oder Kuponwert, in Landeswährung</value>
+  </data>
+  <data name="3905" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag oder Kuponwert, in Landeswährung</value>
+  </data>
+  <data name="3906" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag oder Kuponwert, in Landeswährung</value>
+  </data>
+  <data name="3907" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag oder Kuponwert, in Landeswährung</value>
+  </data>
+  <data name="3908" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag oder Kuponwert, in Landeswährung</value>
+  </data>
+  <data name="3909" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag oder Kuponwert, in Landeswährung</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode</value>
+  </data>
+  <data name="3911" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode</value>
+  </data>
+  <data name="3912" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode</value>
+  </data>
+  <data name="3913" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode</value>
+  </data>
+  <data name="3914" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode</value>
+  </data>
+  <data name="3915" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode</value>
+  </data>
+  <data name="3916" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode</value>
+  </data>
+  <data name="3917" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode</value>
+  </data>
+  <data name="3918" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode</value>
+  </data>
+  <data name="3919" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag, einheitlicher Währungsraum (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3921" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag, einheitlicher Währungsraum (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3922" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag, einheitlicher Währungsraum (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3923" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag, einheitlicher Währungsraum (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3924" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag, einheitlicher Währungsraum (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3925" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag, einheitlicher Währungsraum (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3926" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag, einheitlicher Währungsraum (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3927" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag, einheitlicher Währungsraum (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3928" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag, einheitlicher Währungsraum (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3929" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag, einheitlicher Währungsraum (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3931" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3932" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3933" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3934" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3935" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3936" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3937" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3938" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3939" xml:space="preserve">
+    <value>Anwendbarer Zahlungsbetrag mit ISO-Währungscode (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>Prozentualer Rabatt eines Gutscheins</value>
+  </data>
+  <data name="3941" xml:space="preserve">
+    <value>Prozentualer Rabatt eines Gutscheins</value>
+  </data>
+  <data name="3942" xml:space="preserve">
+    <value>Prozentualer Rabatt eines Gutscheins</value>
+  </data>
+  <data name="3943" xml:space="preserve">
+    <value>Prozentualer Rabatt eines Gutscheins</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>Zahlungsbetrag pro Maßeinheit innerhalb eines einheitlichen Währungsraums (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3951" xml:space="preserve">
+    <value>Zahlungsbetrag pro Maßeinheit innerhalb eines einheitlichen Währungsraums (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3952" xml:space="preserve">
+    <value>Zahlungsbetrag pro Maßeinheit innerhalb eines einheitlichen Währungsraums (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3953" xml:space="preserve">
+    <value>Zahlungsbetrag pro Maßeinheit innerhalb eines einheitlichen Währungsraums (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3954" xml:space="preserve">
+    <value>Zahlungsbetrag pro Maßeinheit innerhalb eines einheitlichen Währungsraums (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="3955" xml:space="preserve">
+    <value>Zahlungsbetrag pro Maßeinheit innerhalb eines einheitlichen Währungsraums (Handelsartikel mit variabler Mengenangabe)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>Firmenname (Empfänger / Lieferadresse)</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>Kontakt für Warenempfang / Lieferung</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>Lieferanschrift, Zeile 1</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>Lieferanschrift, Zeile 2</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>Ort der Warenlieferung</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>Versand- bzw. Lieferort</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>Versandregion / Lieferregion</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>Ländercode für den Versand- bzw. Lieferort</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>Telefonnummer für den Warenempfänger / Lieferempfänger</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>Geografischer Standort für Versand/Lieferung</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>Firmenname für Rücksendungen</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>Kontakt aufnehmen</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>Absenderadresse, Zeile 1</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>Absenderadresse, Zeile 2</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>Tilbagevenden til forstaden</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>Rückkehr an den Ort</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>Rückkehrbereich</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>Ländercode für die Rücksendung</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>Postleitzahl für Rücksendungen</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>Telefonnummer für Rückfragen</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>Beschreibung des Servicecodes</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>Gefahrgutkennzeichnung</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>Abstellgenehmigung</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>Kennzeichnung „Unterschrift erforderlich“</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>Nicht vor Lieferdatum/-uhrzeit (JJMMDDhhmm)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>Nicht nach Lieferdatum/-uhrzeit (JJMMDDhhmm)</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>Veröffentlichungsdatum (JJMMTT)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>Höchsttemperatur in Fahrenheit (angegeben in Hundertstelgraden)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>Höchsttemperatur in Celsius (angegeben in Hundertstelgrad)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>Mindesttemperatur in Fahrenheit (angegeben in Hundertstelgrad)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>Mindesttemperatur in Grad Celsius (angegeben in Hundertstelgrad)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>NATO-Versorgungsnummer (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>UN/ECE-Klassifizierung von Schlachtkörpern und Teilstücken</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>Ablaufdatum und -uhrzeit (JJMMTTssmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>Aktive Potenz</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>Einzugsgebiet</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>Datum des ersten Frosts (JJMMTT)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>Erntedatum (JJMMTT[JJMMTT])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>Arten für fischereiliche Zwecke</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>Art der Angelausrüstung</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>Herstellungsverfahren</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>Test nach Datum (JJMMTT[hhmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>ID des Aufarbeitungspostens</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>Funktionsstatus</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>Revisionsstand</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>Globaler individueller Objektidentifikator einer Baugruppe</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>Anzahl der Prozessoren mit dreistelligem ISO-Ländercode</value>
+  </data>
+  <data name="7031" xml:space="preserve">
+    <value>Anzahl der Prozessoren mit dreistelligem ISO-Ländercode</value>
+  </data>
+  <data name="7032" xml:space="preserve">
+    <value>Anzahl der Prozessoren mit dreistelligem ISO-Ländercode</value>
+  </data>
+  <data name="7033" xml:space="preserve">
+    <value>Anzahl der Prozessoren mit dreistelligem ISO-Ländercode</value>
+  </data>
+  <data name="7034" xml:space="preserve">
+    <value>Anzahl der Prozessoren mit dreistelligem ISO-Ländercode</value>
+  </data>
+  <data name="7035" xml:space="preserve">
+    <value>Anzahl der Prozessoren mit dreistelligem ISO-Ländercode</value>
+  </data>
+  <data name="7036" xml:space="preserve">
+    <value>Anzahl der Prozessoren mit dreistelligem ISO-Ländercode</value>
+  </data>
+  <data name="7037" xml:space="preserve">
+    <value>Anzahl der Prozessoren mit dreistelligem ISO-Ländercode</value>
+  </data>
+  <data name="7038" xml:space="preserve">
+    <value>Anzahl der Prozessoren mit dreistelligem ISO-Ländercode</value>
+  </data>
+  <data name="7039" xml:space="preserve">
+    <value>Anzahl der Prozessoren mit dreistelligem ISO-Ländercode</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>GS1 UIC mit Erweiterung 1 und Importeur-Index</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>UN/CEFACT-Frachteinheitstyp</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>Zertifizierungsreferenz</value>
+  </data>
+  <data name="7231" xml:space="preserve">
+    <value>Zertifizierungsreferenz</value>
+  </data>
+  <data name="7232" xml:space="preserve">
+    <value>Zertifizierungsreferenz</value>
+  </data>
+  <data name="7233" xml:space="preserve">
+    <value>Zertifizierungsreferenz</value>
+  </data>
+  <data name="7234" xml:space="preserve">
+    <value>Zertifizierungsreferenz</value>
+  </data>
+  <data name="7235" xml:space="preserve">
+    <value>Zertifizierungsreferenz</value>
+  </data>
+  <data name="7236" xml:space="preserve">
+    <value>Zertifizierungsreferenz</value>
+  </data>
+  <data name="7237" xml:space="preserve">
+    <value>Zertifizierungsreferenz</value>
+  </data>
+  <data name="7238" xml:space="preserve">
+    <value>Zertifizierungsreferenz</value>
+  </data>
+  <data name="7239" xml:space="preserve">
+    <value>Zertifizierungsreferenz</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>Protokoll-ID</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>AIDC-Medientyp</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>Versionskontrollnummer</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>Geburtsdatum (JJJJMMTT)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>Geburtsdatum und -uhrzeit (JJJJMMDDhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>Biologisches Geschlecht</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>Familienname der Person</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>Vorname der Person</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>Namenszusatz einer Person</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>Vollständiger Name der Person</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>Adresse der Person</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>Ablauf der Geburt eines Babys</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>Das jüngste Kind der Familie</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>Rollenware (Breite, Länge, Kerndurchmesser, Laufrichtung, Spleißstellen)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>Kennung für Mobilfunkendgeräte</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>Globaler Identifikator für Mehrweg-Betriebsmittel</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>Globaler individueller Vermögenswert-Identifikator</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>Preis pro Maßeinheit</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>Identifizierung eines einzelnen Handelseinheit-Exemplars</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>Internationale Bankkontonummer</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>Datum und Uhrzeit der Erstellung (JJMMTTss[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>Optisch lesbare Sensoranzeige</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>Komponenten-/Teilekennzeichnung</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>Seriennummer der Komponente/des Bauteils</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>Softwareversion</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>Globale Modellnummer</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>Global Service Relation Number zur Identifizierung der Beziehung zwischen einer Organisation, die Dienstleistungen anbietet, und dem Erbringer dieser Dienstleistungen</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>Global Service Relation Number zur Identifizierung der Beziehung zwischen einer Dienstleistungen anbietenden Organisation und dem Empfänger von Dienstleistungen</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>Instanznummer der Servicebeziehung</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>Referenznummer auf dem Einzahlungsschein</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>Identifizierung von Teilen eines Handelseinheit-Artikels, die in einer Logistikeinheit enthalten sind</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>Digitale Signatur (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>Internationale Mobilfunkgeräte-Identität</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>Internationale Identität mobiler Geräte 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>Nummer der eingebetteten SIM (eSIM)</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>Nummer der physischen SIM-Karte</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>Identifizierung von Gutscheincodes für die Verwendung in Nordamerika</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>Treuepunkte eines Gutscheins</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>Identifizierung des Gutscheincodes für eine positive Angebotsdatei zur Verwendung in Nordamerika</value>
+  </data>
 </root>

@@ -1080,4 +1080,655 @@
   <data name="3575" xml:space="preserve">
     <value>Čistá hmotnost (nebo objem), unce (obchodní položka s proměnlivým množstvím)</value>
   </data>
+  <data name="3600" xml:space="preserve">
+    <value>Čistý objem, quarty (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3601" xml:space="preserve">
+    <value>Čistý objem, quarty (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3602" xml:space="preserve">
+    <value>Čistý objem, quarty (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3603" xml:space="preserve">
+    <value>Čistý objem, quarty (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3604" xml:space="preserve">
+    <value>Čistý objem, quarty (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3605" xml:space="preserve">
+    <value>Čistý objem, quarty (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>Čistý objem, americké galony (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3611" xml:space="preserve">
+    <value>Čistý objem, americké galony (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3612" xml:space="preserve">
+    <value>Čistý objem, americké galony (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3613" xml:space="preserve">
+    <value>Čistý objem, americké galony (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3614" xml:space="preserve">
+    <value>Čistý objem, americké galony (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3615" xml:space="preserve">
+    <value>Čistý objem, americké galony (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>Logistický objem, quarty</value>
+  </data>
+  <data name="3621" xml:space="preserve">
+    <value>Logistický objem, quarty</value>
+  </data>
+  <data name="3622" xml:space="preserve">
+    <value>Logistický objem, quarty</value>
+  </data>
+  <data name="3623" xml:space="preserve">
+    <value>Logistický objem, quarty</value>
+  </data>
+  <data name="3624" xml:space="preserve">
+    <value>Logistický objem, quarty</value>
+  </data>
+  <data name="3625" xml:space="preserve">
+    <value>Logistický objem, quarty</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>Logistický objem, americké galony</value>
+  </data>
+  <data name="3631" xml:space="preserve">
+    <value>Logistický objem, americké galony</value>
+  </data>
+  <data name="3632" xml:space="preserve">
+    <value>Logistický objem, americké galony</value>
+  </data>
+  <data name="3633" xml:space="preserve">
+    <value>Logistický objem, americké galony</value>
+  </data>
+  <data name="3634" xml:space="preserve">
+    <value>Logistický objem, americké galony</value>
+  </data>
+  <data name="3635" xml:space="preserve">
+    <value>Logistický objem, americké galony</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>Čistý objem, kubické palce (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3641" xml:space="preserve">
+    <value>Čistý objem, kubické palce (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3642" xml:space="preserve">
+    <value>Čistý objem, kubické palce (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3643" xml:space="preserve">
+    <value>Čistý objem, kubické palce (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3644" xml:space="preserve">
+    <value>Čistý objem, kubické palce (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3645" xml:space="preserve">
+    <value>Čistý objem, kubické palce (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>Čistý objem, kubické stopy (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3651" xml:space="preserve">
+    <value>Čistý objem, kubické stopy (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3652" xml:space="preserve">
+    <value>Čistý objem, kubické stopy (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3653" xml:space="preserve">
+    <value>Čistý objem, kubické stopy (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3654" xml:space="preserve">
+    <value>Čistý objem, kubické stopy (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3655" xml:space="preserve">
+    <value>Čistý objem, kubické stopy (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>Čistý objem, kubické yardy (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3661" xml:space="preserve">
+    <value>Čistý objem, kubické yardy (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3662" xml:space="preserve">
+    <value>Čistý objem, kubické yardy (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3663" xml:space="preserve">
+    <value>Čistý objem, kubické yardy (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3664" xml:space="preserve">
+    <value>Čistý objem, kubické yardy (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3665" xml:space="preserve">
+    <value>Čistý objem, kubické yardy (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>Logistický objem, kubické palce</value>
+  </data>
+  <data name="3671" xml:space="preserve">
+    <value>Logistický objem, kubické palce</value>
+  </data>
+  <data name="3672" xml:space="preserve">
+    <value>Logistický objem, kubické palce</value>
+  </data>
+  <data name="3673" xml:space="preserve">
+    <value>Logistický objem, kubické palce</value>
+  </data>
+  <data name="3674" xml:space="preserve">
+    <value>Logistický objem, kubické palce</value>
+  </data>
+  <data name="3675" xml:space="preserve">
+    <value>Logistický objem, kubické palce</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>Logistický objem, kubické stopy</value>
+  </data>
+  <data name="3681" xml:space="preserve">
+    <value>Logistický objem, kubické stopy</value>
+  </data>
+  <data name="3682" xml:space="preserve">
+    <value>Logistický objem, kubické stopy</value>
+  </data>
+  <data name="3683" xml:space="preserve">
+    <value>Logistický objem, kubické stopy</value>
+  </data>
+  <data name="3684" xml:space="preserve">
+    <value>Logistický objem, kubické stopy</value>
+  </data>
+  <data name="3685" xml:space="preserve">
+    <value>Logistický objem, kubické stopy</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>Logistický objem, kubické yardy</value>
+  </data>
+  <data name="3691" xml:space="preserve">
+    <value>Logistický objem, kubické yardy</value>
+  </data>
+  <data name="3692" xml:space="preserve">
+    <value>Logistický objem, kubické yardy</value>
+  </data>
+  <data name="3693" xml:space="preserve">
+    <value>Logistický objem, kubické yardy</value>
+  </data>
+  <data name="3694" xml:space="preserve">
+    <value>Logistický objem, kubické yardy</value>
+  </data>
+  <data name="3695" xml:space="preserve">
+    <value>Logistický objem, kubické yardy</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>Příslušná splatná částka nebo hodnota kupónu, místní měna</value>
+  </data>
+  <data name="3901" xml:space="preserve">
+    <value>Příslušná splatná částka nebo hodnota kupónu, místní měna</value>
+  </data>
+  <data name="3902" xml:space="preserve">
+    <value>Příslušná splatná částka nebo hodnota kupónu, místní měna</value>
+  </data>
+  <data name="3903" xml:space="preserve">
+    <value>Příslušná splatná částka nebo hodnota kupónu, místní měna</value>
+  </data>
+  <data name="3904" xml:space="preserve">
+    <value>Příslušná splatná částka nebo hodnota kupónu, místní měna</value>
+  </data>
+  <data name="3905" xml:space="preserve">
+    <value>Příslušná splatná částka nebo hodnota kupónu, místní měna</value>
+  </data>
+  <data name="3906" xml:space="preserve">
+    <value>Příslušná splatná částka nebo hodnota kupónu, místní měna</value>
+  </data>
+  <data name="3907" xml:space="preserve">
+    <value>Příslušná splatná částka nebo hodnota kupónu, místní měna</value>
+  </data>
+  <data name="3908" xml:space="preserve">
+    <value>Příslušná splatná částka nebo hodnota kupónu, místní měna</value>
+  </data>
+  <data name="3909" xml:space="preserve">
+    <value>Příslušná splatná částka nebo hodnota kupónu, místní měna</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>Příslušná splatná částka s ISO kódem měny</value>
+  </data>
+  <data name="3911" xml:space="preserve">
+    <value>Příslušná splatná částka s ISO kódem měny</value>
+  </data>
+  <data name="3912" xml:space="preserve">
+    <value>Příslušná splatná částka s ISO kódem měny</value>
+  </data>
+  <data name="3913" xml:space="preserve">
+    <value>Příslušná splatná částka s ISO kódem měny</value>
+  </data>
+  <data name="3914" xml:space="preserve">
+    <value>Příslušná splatná částka s ISO kódem měny</value>
+  </data>
+  <data name="3915" xml:space="preserve">
+    <value>Příslušná splatná částka s ISO kódem měny</value>
+  </data>
+  <data name="3916" xml:space="preserve">
+    <value>Příslušná splatná částka s ISO kódem měny</value>
+  </data>
+  <data name="3917" xml:space="preserve">
+    <value>Příslušná splatná částka s ISO kódem měny</value>
+  </data>
+  <data name="3918" xml:space="preserve">
+    <value>Příslušná splatná částka s ISO kódem měny</value>
+  </data>
+  <data name="3919" xml:space="preserve">
+    <value>Příslušná splatná částka s ISO kódem měny</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>Příslušná splatná částka, jednotná měnová oblast (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3921" xml:space="preserve">
+    <value>Příslušná splatná částka, jednotná měnová oblast (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3922" xml:space="preserve">
+    <value>Příslušná splatná částka, jednotná měnová oblast (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3923" xml:space="preserve">
+    <value>Příslušná splatná částka, jednotná měnová oblast (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3924" xml:space="preserve">
+    <value>Příslušná splatná částka, jednotná měnová oblast (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3925" xml:space="preserve">
+    <value>Příslušná splatná částka, jednotná měnová oblast (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3926" xml:space="preserve">
+    <value>Příslušná splatná částka, jednotná měnová oblast (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3927" xml:space="preserve">
+    <value>Příslušná splatná částka, jednotná měnová oblast (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3928" xml:space="preserve">
+    <value>Příslušná splatná částka, jednotná měnová oblast (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3929" xml:space="preserve">
+    <value>Příslušná splatná částka, jednotná měnová oblast (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>Příslušná splatná částka s kódem měny ISO (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3931" xml:space="preserve">
+    <value>Příslušná splatná částka s kódem měny ISO (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3932" xml:space="preserve">
+    <value>Příslušná splatná částka s kódem měny ISO (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3933" xml:space="preserve">
+    <value>Příslušná splatná částka s kódem měny ISO (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3934" xml:space="preserve">
+    <value>Příslušná splatná částka s kódem měny ISO (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3935" xml:space="preserve">
+    <value>Příslušná splatná částka s kódem měny ISO (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3936" xml:space="preserve">
+    <value>Příslušná splatná částka s kódem měny ISO (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3937" xml:space="preserve">
+    <value>Příslušná splatná částka s kódem měny ISO (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3938" xml:space="preserve">
+    <value>Příslušná splatná částka s kódem měny ISO (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3939" xml:space="preserve">
+    <value>Příslušná splatná částka s kódem měny ISO (obchodní položka s proměnlivým rozměrem)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>Procentuální sleva kupónu</value>
+  </data>
+  <data name="3941" xml:space="preserve">
+    <value>Procentuální sleva kupónu</value>
+  </data>
+  <data name="3942" xml:space="preserve">
+    <value>Procentuální sleva kupónu</value>
+  </data>
+  <data name="3943" xml:space="preserve">
+    <value>Procentuální sleva kupónu</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>Částka k úhradě na měrnou jednotku v rámci jednotné měnové oblasti (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3951" xml:space="preserve">
+    <value>Částka k úhradě na měrnou jednotku v rámci jednotné měnové oblasti (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3952" xml:space="preserve">
+    <value>Částka k úhradě na měrnou jednotku v rámci jednotné měnové oblasti (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3953" xml:space="preserve">
+    <value>Částka k úhradě na měrnou jednotku v rámci jednotné měnové oblasti (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3954" xml:space="preserve">
+    <value>Částka k úhradě na měrnou jednotku v rámci jednotné měnové oblasti (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="3955" xml:space="preserve">
+    <value>Částka k úhradě na měrnou jednotku v rámci jednotné měnové oblasti (obchodní položka s proměnlivým množstvím)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>Název společnosti pro doručení</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>Kontakt pro doručení</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>Adresa pro doručení – 1. řádek</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>Adresa pro doručení – 2. řádek</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>Předměstí pro doručení</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>Lokalita pro dodání / místo doručení</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>Oblast dodání / Oblast doručení</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>Kód země pro dodání / doručení</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>Telefonní číslo pro doručení</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>Geografická poloha pro doručení</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>Název společnosti pro vrácení</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>Návrat ke kontaktu</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>Adresa odesílatele – 1. řádek</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>Adresa odesílatele – 2. řádek</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>Návrat na předměstí</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>Lokalita návratu</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>Oblast návratu</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>Kód země pro návrat</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>Poštovní směrovací číslo pro vrácení zásilky</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>Telefonní číslo pro zpětné volání</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>Popis kódu služby</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>Příznak nebezpečného zboží</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>Oprávnění k ponechání zásilky</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>Příznak vyžadující podpis</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>Ne dříve než v termínu a čase dodání (RRMMDDhhmm)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>Ne později než v čase data dodání (RRMMDDhhmm)</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>Datum vydání (RRMMDD)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>Maximální teplota ve stupních Fahrenheita (vyjádřená v setinách stupně)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>Maximální teplota ve stupních Celsia (vyjádřená v setinách stupně)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>Minimální teplota ve stupních Fahrenheita (vyjádřená v setinách stupně)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>Minimální teplota ve stupních Celsia (vyjádřená v setinách stupně)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>Skladové číslo NATO (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>Klasifikace masných jatečných těl a děleného masa podle UN/ECE</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>Datum a čas vypršení platnosti (RRMMDDhhmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>Aktivní potence</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>Oblast odlovu</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>Datum prvního mrazu (RRMMDD)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>Datum sklizně (RRMMDD[RRMMDD])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>Druhy pro rybolovné účely</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>Typ rybářského vybavení</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>Způsob výroby</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>Test podle data (RRMMDD[hhmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>ID šarže renovace</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>Funkční stav</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>Stav revize</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>Globální identifikátor jednotlivého aktiva sestavy</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>Počet procesorů s třímístným kódem země podle ISO</value>
+  </data>
+  <data name="7031" xml:space="preserve">
+    <value>Počet procesorů s třímístným kódem země podle ISO</value>
+  </data>
+  <data name="7032" xml:space="preserve">
+    <value>Počet procesorů s třímístným kódem země podle ISO</value>
+  </data>
+  <data name="7033" xml:space="preserve">
+    <value>Počet procesorů s třímístným kódem země podle ISO</value>
+  </data>
+  <data name="7034" xml:space="preserve">
+    <value>Počet procesorů s třímístným kódem země podle ISO</value>
+  </data>
+  <data name="7035" xml:space="preserve">
+    <value>Počet procesorů s třímístným kódem země podle ISO</value>
+  </data>
+  <data name="7036" xml:space="preserve">
+    <value>Počet procesorů s třímístným kódem země podle ISO</value>
+  </data>
+  <data name="7037" xml:space="preserve">
+    <value>Počet procesorů s třímístným kódem země podle ISO</value>
+  </data>
+  <data name="7038" xml:space="preserve">
+    <value>Počet procesorů s třímístným kódem země podle ISO</value>
+  </data>
+  <data name="7039" xml:space="preserve">
+    <value>Počet procesorů s třímístným kódem země podle ISO</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>GS1 UIC s rozšířením 1 a indexem dovozce</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>Typ přepravní jednotky UN/CEFACT</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>Odkaz na certifikaci</value>
+  </data>
+  <data name="7231" xml:space="preserve">
+    <value>Odkaz na certifikaci</value>
+  </data>
+  <data name="7232" xml:space="preserve">
+    <value>Odkaz na certifikaci</value>
+  </data>
+  <data name="7233" xml:space="preserve">
+    <value>Odkaz na certifikaci</value>
+  </data>
+  <data name="7234" xml:space="preserve">
+    <value>Odkaz na certifikaci</value>
+  </data>
+  <data name="7235" xml:space="preserve">
+    <value>Odkaz na certifikaci</value>
+  </data>
+  <data name="7236" xml:space="preserve">
+    <value>Odkaz na certifikaci</value>
+  </data>
+  <data name="7237" xml:space="preserve">
+    <value>Odkaz na certifikaci</value>
+  </data>
+  <data name="7238" xml:space="preserve">
+    <value>Odkaz na certifikaci</value>
+  </data>
+  <data name="7239" xml:space="preserve">
+    <value>Odkaz na certifikaci</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>ID protokolu</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>Typ média AIDC</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>Číslo verze</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>Datum narození (RRRRMMDD)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>Datum a čas narození (RRRRMMDDhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>Biologické pohlaví</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>Příjmení osoby</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>Křestní jméno osoby</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>Přípona jména osoby</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>Celé jméno osoby</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>Adresa osoby</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>Průběh porodu</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>Dítě nesoucí rodové příjmení</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>Výrobky v rolích (šířka, délka, průměr dutinky, směr, spoje)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>Identifikátor mobilního telefonu</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>Globální identifikátor vratných prostředků</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>Globální identifikátor jednotlivého aktiva</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>Cena za měrnou jednotku</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>Identifikace jednotlivého kusu obchodní položky</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>Mezinárodní číslo bankovního účtu</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>Datum a čas výroby (RRMMDDhh[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>Opticky čitelný senzorový indikátor</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>Identifikátor komponenty/dílu</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>Sériové číslo součásti/dílu</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>Verze softwaru</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>Globální číslo modelu</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>Globální číslo vztahu služeb (Global Service Relation Number) pro identifikaci vztahu mezi organizací nabízející služby a poskytovatelem služeb</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>Globální číslo vztahu ke službě (Global Service Relation Number) pro identifikaci vztahu mezi organizací poskytující služby a příjemcem služeb</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>Číslo instance vztahu služby</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>Referenční číslo platebního dokladu</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>Identifikace kusů obchodní položky obsažených v logistické jednotce</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>Digitální podpis (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>Mezinárodní identifikátor mobilního zařízení</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>Mezinárodní identita mobilních zařízení 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>Číslo vestavěné SIM karty</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>Číslo fyzické SIM karty</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>Identifikace kódu kupónu pro použití v Severní Americe</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>Věrnostní body kupónu</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>Identifikace kódu kupónu v souboru nabídek pro použití v Severní Americe</value>
+  </data>
 </root>
