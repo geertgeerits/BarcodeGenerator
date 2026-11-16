@@ -947,13 +947,11 @@
                 string integerPart = value[..integerPartLength];
                 string decimalPart = value[integerPartLength..];
                 value = $"{integerPart}.{decimalPart}";
-
-                // Format the value according the UI - decimal point or decimal comma
-                return value.Replace(".", CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator);
             }
 
-            // Return the original value if no formatting is needed
-            return value;
+            // Format the value according the UI - decimal point or decimal comma
+            decimal number = decimal.Parse(value, CultureInfo.InvariantCulture);
+            return number.ToString("N" + decimalPlaces, CultureInfo.CurrentCulture);
         }
     }
 }
