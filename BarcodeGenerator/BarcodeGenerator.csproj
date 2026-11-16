@@ -51,9 +51,13 @@
 		
 		<!-- Enable Material 3 design on Android -->
 		<!--<UseMaterial3>true</UseMaterial3>-->
-
 	</PropertyGroup>
 
+	<!-- Google Play code optimization -->
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<AndroidLinkTool>r8</AndroidLinkTool>
+	</PropertyGroup>
+	
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.png" />
