@@ -913,7 +913,7 @@
                             }
 
                             // Numeric values with decimal point
-                            if (kvp.Key.StartsWith("3") && kvp.Key.Length == 4)
+                            if (kvp.Key.StartsWith('3') && kvp.Key.Length == 4)
                             {
                                 string formattedValue = FormatGs1ValueWithDecimalPoint(kvp.Key, kvp.Value);
                                 barcodeResult += $" ({formattedValue})";

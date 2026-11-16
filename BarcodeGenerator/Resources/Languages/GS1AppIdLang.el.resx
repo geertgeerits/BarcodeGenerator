@@ -120,4 +120,190 @@
   <data name="00" xml:space="preserve">
     <value>Σειριακός Κωδικός Μεταφορικού Κοντέινερ</value>
   </data>
+  <data name="01" xml:space="preserve">
+    <value>Παγκόσμιος Αριθμός Είδους Εμπορίου</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>Παγκόσμιος Αριθμός Είδους Εμπορίου των περιεχόμενων ειδών εμπορίου</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>Αριθμός παρτίδας</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>Ημερομηνία παραγωγής (ΕΕΜΜΗΗ)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Ημερομηνία λήξης (ΕΕΜΜΗΗ)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Ημερομηνία συσκευασίας (ΕΕΜΜΗΗ)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Ημερομηνία ελάχιστης διατηρησιμότητας (ΕΕΜΜΗΗ)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Ημερομηνία διάθεσης (ΕΕΜΜΗΗ)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Ημερομηνία λήξης (ΕΕΜΜΗΗ)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Εσωτερική παραλλαγή προϊόντος</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Αύξων αριθμός</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Παραλλαγή καταναλωτικού προϊόντος</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Μεταβλητός αριθμός τεμαχίων (εμπορικό είδος μεταβλητής ποσότητας)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>Πλήθος εμπορικών ειδών ή τεμαχίων εμπορικών ειδών που περιέχονται σε μια εφοδιαστική μονάδα</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>Πληροφορίες για τις οποίες έχουν συμφωνήσει αμοιβαία οι εμπορικοί εταίροι</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>Εσωτερικές πληροφορίες εταιρείας</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>Εσωτερικές πληροφορίες εταιρείας</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>Εσωτερικές πληροφορίες εταιρείας</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>Εσωτερικές πληροφορίες εταιρείας</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>Εσωτερικές πληροφορίες εταιρείας</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>Εσωτερικές πληροφορίες εταιρείας</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>Εσωτερικές πληροφορίες εταιρείας</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>Εσωτερικές πληροφορίες εταιρείας</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>Εσωτερικές πληροφορίες εταιρείας</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Ελεγχόμενη από τρίτο μέρος, σειριοποιημένη επέκταση του Παγκόσμιου Αριθμού Είδους Εμπορίου (Global Trade Item Number)</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>Πρόσθετο στοιχείο αναγνώρισης προϊόντος που αποδίδεται από τον κατασκευαστή</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Κωδικός είδους πελάτη</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Αριθμός παραλλαγής κατασκευής κατόπιν παραγγελίας</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Αριθμός εξαρτήματος συσκευασίας</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>Δευτερεύων σειριακός αριθμός</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Αναφορά σε οντότητα-πηγή</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Παγκόσμιο Αναγνωριστικό Τύπου Εγγράφου</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Στοιχείο επέκτασης του Παγκόσμιου Αριθμού Τοποθεσίας</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Παγκόσμιος Αριθμός Κουπονιού</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>Αριθμός εντολής αγοράς πελάτη</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>Παγκόσμιος Αριθμός Ταυτοποίησης Αποστολής</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>Παγκόσμιος Αριθμός Ταυτοποίησης Αποστολής</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>Κωδικός δρομολόγησης</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>Αποστολή σε / Παράδοση σε Αριθμό Παγκόσμιας Τοποθεσίας</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>Χρέωση σε / Τιμολόγηση σε Παγκόσμιο Αριθμό Τοποθεσίας</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>Αγοράστηκε από Παγκόσμιο Αριθμό Τοποθεσίας</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>Αποστολή προς / Παράδοση προς – Προώθηση σε Παγκόσμιο Αριθμό Τοποθεσίας</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>Προσδιορισμός φυσικής τοποθεσίας – Παγκόσμιος Αριθμός Τοποθεσίας</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>Παγκόσμιος Αριθμός Τοποθεσίας του τιμολογούντος μέρους</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>Παγκόσμιος Αριθμός Τοποθεσίας της τοποθεσίας παραγωγής ή παροχής υπηρεσιών</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>Παγκόσμιος Αριθμός Τοποθεσίας Οντότητας</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>Αποστολή προς / Παράδοση σε ταχυδρομικό κώδικα εντός της ίδιας ταχυδρομικής αρχής</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>Αποστολή σε / Παράδοση σε ταχυδρομικό κώδικα με κωδικό χώρας ISO</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>Χώρα προέλευσης εμπορικού είδους</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>Χώρα αρχικής επεξεργασίας</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>Χώρα επεξεργασίας</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>Χώρα αποσυναρμολόγησης</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>Χώρα που καλύπτει ολόκληρη την αλυσίδα διαδικασιών</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>Υποδιαίρεση χώρας προέλευσης</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>Εθνικός Αριθμός Αποζημίωσης Υγειονομικής Περίθαλψης – Γερμανία</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>Εθνικός Αριθμός Αποζημίωσης Υγειονομικής Περίθαλψης – Γαλλία</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>Εθνικός Αριθμός Αποζημίωσης Υγειονομικής Περίθαλψης – Ισπανία</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>Εθνικός Αριθμός Επιστροφής Εξόδων Υγειονομικής Περίθαλψης - Βραζιλία</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>Εθνικός Αριθμός Αποζημίωσης Υγειονομικής Περίθαλψης – Πορτογαλία</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>Εθνικός Αριθμός Αποζημίωσης Υγειονομικής Περίθαλψης – Ηνωμένες Πολιτείες Αμερικής</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>Εθνικός Αριθμός Αποζημίωσης Υγειονομικής Περίθαλψης – Ιταλία</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>Εθνικός Αριθμός Αποζημίωσης Υγειονομικής Περίθαλψης – Κόστα Ρίκα</value>
+  </data>
 </root>

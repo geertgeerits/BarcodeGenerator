@@ -120,4 +120,190 @@
   <data name="00" xml:space="preserve">
     <value>Código de serie de la unidad de envío</value>
   </data>
+  <data name="01" xml:space="preserve">
+    <value>Número Global de Artículo Comercial</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>Número global de artículo comercial de los artículos comerciales contenidos</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>Número de lote</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>Fecha de producción (AAMMDD)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Fecha de vencimiento (AAMMDD)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Fecha de envasado (AAMMDD)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Fecha de consumo preferente (AAMMDD)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Fecha límite de venta (AAMMDD)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Fecha de caducidad (AAMMDD)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Variante interna de producto</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Número de serie</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Variante de producto de consumo</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Cantidad variable de artículos (artículo comercial de medida variable)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>Cantidad de artículos comerciales o unidades de artículos comerciales contenidos en una unidad logística</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>Información acordada mutuamente entre socios comerciales</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>Información interna de la empresa</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>Información interna de la empresa</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>Información interna de la empresa</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>Información interna de la empresa</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>Información interna de la empresa</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>Información interna de la empresa</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>Información interna de la empresa</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>Información interna de la empresa</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>Información interna de la empresa</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Extensión del Número Global de Artículo Comercial, serializada y controlada por terceros</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>Identificación adicional del producto asignada por el fabricante</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Número de pieza del cliente</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Número de variante de producto hecho a medida</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Número de componente del embalaje</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>Número de serie secundario</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Referencia a la entidad de origen</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Identificador global de tipo de documento</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Componente de extensión del Número de Localización Global</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Número global de cupón</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>Número de pedido de compra de los clientes</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>Número de identificación global para el envío</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>Número de identificación de envío global</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>Código de enrutamiento</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>Enviar a / Entregar en el Número de Localización Global</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>Facturar a / Número de Localización Global</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>Adquirido a partir de un Número de Localización Global</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>Enviar a / Entregar a – Reenviar al Número de Localización Global</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>Identificación de una ubicación física: Número de Ubicación Global</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>Número de localización global de la parte que factura</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>Número de localización global del lugar de producción o de prestación del servicio</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>Número de localización global de la parte</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>Enviar a / Entregar en un código postal dentro de una misma autoridad postal</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>Enviar a / Entregar en código postal con código de país ISO</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>País de origen de un artículo comercial</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>País de procesamiento inicial</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>País de procesamiento</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>País de desmontaje</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>País que abarca toda la cadena de procesos</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>Subdivisión territorial de origen</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>Número nacional de reembolso sanitario – Alemania</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>Número nacional de reembolso sanitario – Francia</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>Número nacional de reembolso sanitario - España</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>Número Nacional de Reembolso de Asistencia Sanitaria - Brasil</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>Número nacional de reembolso sanitario – Portugal</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>Número Nacional de Reembolso de Atención Médica - Estados Unidos de América</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>Número nacional de reembolso sanitario – Italia</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>Número Nacional de Reembolso de Atención Médica - Costa Rica</value>
+  </data>
 </root>
