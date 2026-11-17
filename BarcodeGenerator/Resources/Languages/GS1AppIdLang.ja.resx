@@ -306,4 +306,220 @@
   <data name="717" xml:space="preserve">
     <value>国家医療償還番号 - コスタリカ</value>
   </data>
+  <data name="3100" xml:space="preserve">
+    <value>正味重量（キログラム）（可変計量取引商品）</value>
+  </data>
+  <data name="3101" xml:space="preserve">
+    <value>正味重量（キログラム）（可変計量取引商品）</value>
+  </data>
+  <data name="3102" xml:space="preserve">
+    <value>正味重量（キログラム）（可変計量取引商品）</value>
+  </data>
+  <data name="3103" xml:space="preserve">
+    <value>正味重量（キログラム）（可変計量取引商品）</value>
+  </data>
+  <data name="3104" xml:space="preserve">
+    <value>正味重量（キログラム）（可変計量取引商品）</value>
+  </data>
+  <data name="3105" xml:space="preserve">
+    <value>正味重量（キログラム）（可変計量取引商品）</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>長さまたは第1の寸法（メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3111" xml:space="preserve">
+    <value>長さまたは第1の寸法（メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3112" xml:space="preserve">
+    <value>長さまたは第1の寸法（メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3113" xml:space="preserve">
+    <value>長さまたは第1の寸法（メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3114" xml:space="preserve">
+    <value>長さまたは第1の寸法（メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3115" xml:space="preserve">
+    <value>長さまたは第1の寸法（メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（メートル単位）（可変寸法取引商品）</value>
+  </data>
+  <data name="3121" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（メートル単位）（可変寸法取引商品）</value>
+  </data>
+  <data name="3122" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（メートル単位）（可変寸法取引商品）</value>
+  </data>
+  <data name="3123" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（メートル単位）（可変寸法取引商品）</value>
+  </data>
+  <data name="3124" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（メートル単位）（可変寸法取引商品）</value>
+  </data>
+  <data name="3125" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（メートル単位）（可変寸法取引商品）</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>奥行き、厚さ、高さ、または第3の次元（メートル単位）（可変寸法の商品）</value>
+  </data>
+  <data name="3131" xml:space="preserve">
+    <value>奥行き、厚さ、高さ、または第3の次元（メートル単位）（可変寸法の商品）</value>
+  </data>
+  <data name="3132" xml:space="preserve">
+    <value>奥行き、厚さ、高さ、または第3の次元（メートル単位）（可変寸法の商品）</value>
+  </data>
+  <data name="3133" xml:space="preserve">
+    <value>奥行き、厚さ、高さ、または第3の次元（メートル単位）（可変寸法の商品）</value>
+  </data>
+  <data name="3134" xml:space="preserve">
+    <value>奥行き、厚さ、高さ、または第3の次元（メートル単位）（可変寸法の商品）</value>
+  </data>
+  <data name="3135" xml:space="preserve">
+    <value>奥行き、厚さ、高さ、または第3の次元（メートル単位）（可変寸法の商品）</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>面積、平方メートル（可変計量取引商品）</value>
+  </data>
+  <data name="3141" xml:space="preserve">
+    <value>面積、平方メートル（可変計量取引商品）</value>
+  </data>
+  <data name="3142" xml:space="preserve">
+    <value>面積、平方メートル（可変計量取引商品）</value>
+  </data>
+  <data name="3143" xml:space="preserve">
+    <value>面積、平方メートル（可変計量取引商品）</value>
+  </data>
+  <data name="3144" xml:space="preserve">
+    <value>面積、平方メートル（可変計量取引商品）</value>
+  </data>
+  <data name="3145" xml:space="preserve">
+    <value>面積、平方メートル（可変計量取引商品）</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>正味容量（リットル）（可変計量取引商品）</value>
+  </data>
+  <data name="3151" xml:space="preserve">
+    <value>正味容量（リットル）（可変計量取引商品）</value>
+  </data>
+  <data name="3152" xml:space="preserve">
+    <value>正味容量（リットル）（可変計量取引商品）</value>
+  </data>
+  <data name="3153" xml:space="preserve">
+    <value>正味容量（リットル）（可変計量取引商品）</value>
+  </data>
+  <data name="3154" xml:space="preserve">
+    <value>正味容量（リットル）（可変計量取引商品）</value>
+  </data>
+  <data name="3155" xml:space="preserve">
+    <value>正味容量（リットル）（可変計量取引商品）</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>正味容量（立方メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3161" xml:space="preserve">
+    <value>正味容量（立方メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3162" xml:space="preserve">
+    <value>正味容量（立方メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3163" xml:space="preserve">
+    <value>正味容量（立方メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3164" xml:space="preserve">
+    <value>正味容量（立方メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3165" xml:space="preserve">
+    <value>正味容量（立方メートル）（可変計量取引商品）</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>正味重量、ポンド（可変測定単位）</value>
+  </data>
+  <data name="3201" xml:space="preserve">
+    <value>正味重量、ポンド（可変測定単位）</value>
+  </data>
+  <data name="3202" xml:space="preserve">
+    <value>正味重量、ポンド（可変測定単位）</value>
+  </data>
+  <data name="3203" xml:space="preserve">
+    <value>正味重量、ポンド（可変測定単位）</value>
+  </data>
+  <data name="3204" xml:space="preserve">
+    <value>正味重量、ポンド（可変測定単位）</value>
+  </data>
+  <data name="3205" xml:space="preserve">
+    <value>正味重量、ポンド（可変測定単位）</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>長さまたは第1の寸法（インチ）（可変計量取引商品）</value>
+  </data>
+  <data name="3211" xml:space="preserve">
+    <value>長さまたは第1の寸法（インチ）（可変計量取引商品）</value>
+  </data>
+  <data name="3212" xml:space="preserve">
+    <value>長さまたは第1の寸法（インチ）（可変計量取引商品）</value>
+  </data>
+  <data name="3213" xml:space="preserve">
+    <value>長さまたは第1の寸法（インチ）（可変計量取引商品）</value>
+  </data>
+  <data name="3214" xml:space="preserve">
+    <value>長さまたは第1の寸法（インチ）（可変計量取引商品）</value>
+  </data>
+  <data name="3215" xml:space="preserve">
+    <value>長さまたは第1の寸法（インチ）（可変計量取引商品）</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>長さまたは第1の寸法（フィート）（可変計量取引商品）</value>
+  </data>
+  <data name="3221" xml:space="preserve">
+    <value>長さまたは第1の寸法（フィート）（可変計量取引商品）</value>
+  </data>
+  <data name="3222" xml:space="preserve">
+    <value>長さまたは第1の寸法（フィート）（可変計量取引商品）</value>
+  </data>
+  <data name="3223" xml:space="preserve">
+    <value>長さまたは第1の寸法（フィート）（可変計量取引商品）</value>
+  </data>
+  <data name="3224" xml:space="preserve">
+    <value>長さまたは第1の寸法（フィート）（可変計量取引商品）</value>
+  </data>
+  <data name="3225" xml:space="preserve">
+    <value>長さまたは第1の寸法（フィート）（可変計量取引商品）</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>長さまたは第1の寸法（ヤード単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3231" xml:space="preserve">
+    <value>長さまたは第1の寸法（ヤード単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3232" xml:space="preserve">
+    <value>長さまたは第1の寸法（ヤード単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3233" xml:space="preserve">
+    <value>長さまたは第1の寸法（ヤード単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3234" xml:space="preserve">
+    <value>長さまたは第1の寸法（ヤード単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3235" xml:space="preserve">
+    <value>長さまたは第1の寸法（ヤード単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（インチ単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3241" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（インチ単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3242" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（インチ単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3243" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（インチ単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3244" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（インチ単位）（可変寸法の取引商品）</value>
+  </data>
+  <data name="3245" xml:space="preserve">
+    <value>幅、直径、または第2の寸法（インチ単位）（可変寸法の取引商品）</value>
+  </data>
 </root>
