@@ -1,101 +1,759 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>सीरियल शिपिंग कंटेनर कोड</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>ग्लोबल ट्रेड आइटम नंबर</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>इसमें शामिल व्यापार मदों का ग्लोबल ट्रेड आइटम नंबर</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>बैच या लॉट नंबर</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>उत्पादन तिथि (YYMMDD)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>देय तिथि (YYMMDD)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>पैकेजिंग की तारीख (YYMMDD)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>उपयोग की अंतिम तिथि (YYMMDD)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>बिक्री की अंतिम तिथि (YYMMDD)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>समाप्ति तिथि (YYMMDD)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>आंतरिक उत्पाद प्रकार</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>क्रम संख्या</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>उपभोक्ता उत्पाद प्रकार</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>वस्तुओं की परिवर्तनीय संख्या (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>लॉजिस्टिक यूनिट में शामिल ट्रेड आइटम या ट्रेड आइटम के टुकड़ों की संख्या</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>व्यापार भागीदारों के बीच आपसी सहमति से तय की गई जानकारी</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>कंपनी की आंतरिक जानकारी</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>कंपनी की आंतरिक जानकारी</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>कंपनी की आंतरिक जानकारी</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>कंपनी की आंतरिक जानकारी</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>कंपनी की आंतरिक जानकारी</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>कंपनी की आंतरिक जानकारी</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>कंपनी की आंतरिक जानकारी</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>कंपनी की आंतरिक जानकारी</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>कंपनी की आंतरिक जानकारी</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>थर्ड पार्टी द्वारा नियंत्रित, सीरियलाइज़्ड ग्लोबल ट्रेड आइटम नंबर का विस्तार</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>निर्माता द्वारा निर्धारित अतिरिक्त उत्पाद पहचान</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>ग्राहक पार्ट नंबर</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>ऑर्डर पर बनाए जाने वाले संस्करण की संख्या</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>पैकेजिंग घटक संख्या</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>द्वितीयक क्रम संख्या</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>स्रोत इकाई का संदर्भ</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>वैश्विक दस्तावेज़ प्रकार पहचानकर्ता</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>ग्लोबल लोकेशन नंबर एक्सटेंशन घटक</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>ग्लोबल कूपन नंबर</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>ग्राहक का खरीद आदेश नंबर</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>खेप के लिए वैश्विक पहचान संख्या</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>वैश्विक शिपमेंट पहचान संख्या</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>राउटिंग कोड</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>ग्लोबल लोकेशन नंबर पर शिप करें / डिलीवर करें</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>बिल / इनवॉइस के लिए ग्लोबल लोकेशन नंबर</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>ग्लोबल लोकेशन नंबर से खरीदा गया</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>के लिए शिप करें / के लिए डिलीवर करें - ग्लोबल लोकेशन नंबर पर भेजें</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>भौतिक स्थान की पहचान - ग्लोबल लोकेशन नंबर</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>इनवॉइस जारी करने वाली पार्टी का ग्लोबल लोकेशन नंबर</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>उत्पादन या सेवा स्थान का ग्लोबल लोकेशन नंबर</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>पार्टी ग्लोबल लोकेशन नंबर</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>एक ही डाक प्राधिकरण के अंतर्गत आने वाले पोस्टल कोड पर शिप/डिलीवर करें</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>ISO देश कोड के साथ पोस्टल कोड पर शिप करें / डिलीवर करें</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>व्यापारिक वस्तु का मूल देश</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>प्रारंभिक प्रसंस्करण का देश</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>प्रसंस्करण का देश</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>विघटन का देश</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>पूरी प्रक्रिया श्रृंखला को कवर करने वाला देश</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>मूल देश का उप-विभाग</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>राष्ट्रीय स्वास्थ्य देखभाल प्रतिपूर्ति संख्या - जर्मनी</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>राष्ट्रीय स्वास्थ्य देखभाल प्रतिपूर्ति संख्या - फ्रांस</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>राष्ट्रीय स्वास्थ्य देखभाल प्रतिपूर्ति संख्या - स्पेन</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>नेशनल हेल्थकेयर रीइम्बर्समेंट नंबर - ब्राज़ील</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>राष्ट्रीय स्वास्थ्य देखभाल प्रतिपूर्ति संख्या - पुर्तगाल</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>राष्ट्रीय स्वास्थ्य देखभाल प्रतिपूर्ति संख्या - संयुक्त राज्य अमेरिका</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>राष्ट्रीय स्वास्थ्य देखभाल प्रतिपूर्ति संख्या - इटली</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>राष्ट्रीय स्वास्थ्य देखभाल प्रतिपूर्ति संख्या - कोस्टा रिका</value>
+  </data>
+  <data name="3100" xml:space="preserve">
+    <value>शुद्ध वज़न, किलोग्राम (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3101" xml:space="preserve">
+    <value>शुद्ध वज़न, किलोग्राम (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3102" xml:space="preserve">
+    <value>शुद्ध वज़न, किलोग्राम (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3103" xml:space="preserve">
+    <value>शुद्ध वज़न, किलोग्राम (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3104" xml:space="preserve">
+    <value>शुद्ध वज़न, किलोग्राम (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3105" xml:space="preserve">
+    <value>शुद्ध वज़न, किलोग्राम (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3111" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3112" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3113" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3114" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3115" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3121" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3122" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3123" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3124" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3125" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3131" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3132" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3133" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3134" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3135" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3141" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3142" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3143" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3144" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3145" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>शुद्ध आयतन, लीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3151" xml:space="preserve">
+    <value>शुद्ध आयतन, लीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3152" xml:space="preserve">
+    <value>शुद्ध आयतन, लीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3153" xml:space="preserve">
+    <value>शुद्ध आयतन, लीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3154" xml:space="preserve">
+    <value>शुद्ध आयतन, लीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3155" xml:space="preserve">
+    <value>शुद्ध आयतन, लीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>शुद्ध आयतन, घन मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3161" xml:space="preserve">
+    <value>शुद्ध आयतन, घन मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3162" xml:space="preserve">
+    <value>शुद्ध आयतन, घन मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3163" xml:space="preserve">
+    <value>शुद्ध आयतन, घन मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3164" xml:space="preserve">
+    <value>शुद्ध आयतन, घन मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3165" xml:space="preserve">
+    <value>शुद्ध आयतन, घन मीटर (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>नेट वज़न, पाउंड (बदलाव वाला माप वाला ट्रेड आइटम)</value>
+  </data>
+  <data name="3201" xml:space="preserve">
+    <value>नेट वज़न, पाउंड (बदलाव वाला माप वाला ट्रेड आइटम)</value>
+  </data>
+  <data name="3202" xml:space="preserve">
+    <value>नेट वज़न, पाउंड (बदलाव वाला माप वाला ट्रेड आइटम)</value>
+  </data>
+  <data name="3203" xml:space="preserve">
+    <value>नेट वज़न, पाउंड (बदलाव वाला माप वाला ट्रेड आइटम)</value>
+  </data>
+  <data name="3204" xml:space="preserve">
+    <value>नेट वज़न, पाउंड (बदलाव वाला माप वाला ट्रेड आइटम)</value>
+  </data>
+  <data name="3205" xml:space="preserve">
+    <value>नेट वज़न, पाउंड (बदलाव वाला माप वाला ट्रेड आइटम)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3211" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3212" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3213" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3214" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3215" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3221" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3222" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3223" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3224" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3225" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3231" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3232" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3233" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3234" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3235" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच में (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3241" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच में (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3242" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच में (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3243" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच में (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3244" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच में (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3245" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच में (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3251" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3252" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3253" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3254" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3255" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3261" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3262" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3263" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3264" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3265" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3271" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3272" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3273" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3274" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3275" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3281" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3282" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3283" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3284" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3285" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3291" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3292" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3293" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3294" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3295" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, किलोग्राम</value>
+  </data>
+  <data name="3301" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, किलोग्राम</value>
+  </data>
+  <data name="3302" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, किलोग्राम</value>
+  </data>
+  <data name="3303" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, किलोग्राम</value>
+  </data>
+  <data name="3304" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, किलोग्राम</value>
+  </data>
+  <data name="3305" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, किलोग्राम</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर</value>
+  </data>
+  <data name="3311" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर</value>
+  </data>
+  <data name="3312" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर</value>
+  </data>
+  <data name="3313" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर</value>
+  </data>
+  <data name="3314" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर</value>
+  </data>
+  <data name="3315" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, मीटर</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर</value>
+  </data>
+  <data name="3321" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर</value>
+  </data>
+  <data name="3322" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर</value>
+  </data>
+  <data name="3323" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर</value>
+  </data>
+  <data name="3324" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर</value>
+  </data>
+  <data name="3325" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, मीटर</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर</value>
+  </data>
+  <data name="3331" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर</value>
+  </data>
+  <data name="3332" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर</value>
+  </data>
+  <data name="3333" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर</value>
+  </data>
+  <data name="3334" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर</value>
+  </data>
+  <data name="3335" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, मीटर</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर</value>
+  </data>
+  <data name="3341" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर</value>
+  </data>
+  <data name="3342" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर</value>
+  </data>
+  <data name="3343" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर</value>
+  </data>
+  <data name="3344" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर</value>
+  </data>
+  <data name="3345" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग मीटर</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, लीटर</value>
+  </data>
+  <data name="3351" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, लीटर</value>
+  </data>
+  <data name="3352" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, लीटर</value>
+  </data>
+  <data name="3353" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, लीटर</value>
+  </data>
+  <data name="3354" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, लीटर</value>
+  </data>
+  <data name="3355" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, लीटर</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3361" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3362" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3363" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3364" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3365" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
+  <data name="3371" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
+  <data name="3372" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
+  <data name="3373" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
+  <data name="3374" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
+  <data name="3375" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
 </root>

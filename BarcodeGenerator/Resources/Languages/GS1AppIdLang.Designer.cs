@@ -3769,7 +3769,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Country subdivision Of origin.
+        ///   Looks up a localized string similar to Country subdivision of origin.
         /// </summary>
         internal static string _427 {
             get {

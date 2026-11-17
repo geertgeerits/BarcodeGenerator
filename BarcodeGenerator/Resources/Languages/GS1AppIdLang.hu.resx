@@ -1,101 +1,759 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>Szállítókonténer-azonosító kód</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>Globális kereskedelmi áruazonosító szám</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>A benne foglalt kereskedelmi tételek globális kereskedelmi tételazonosító száma</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>Gyártási tétel vagy tételszám</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>Gyártási dátum (ÉÉHHNN)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Esedékesség dátuma (ÉÉHHNN)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Csomagolás dátuma (ÉÉHHNN)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Minőségmegőrzési idő (ÉÉHHNN)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Értékesítési határidő (ÉÉHHNN)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Lejárati dátum (ÉÉHHNN)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Belső termékváltozat</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Sorozatszám</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Fogyasztói termékváltozat</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Változó mennyiségű egységet tartalmazó tétel (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>Logisztikai egységben található kereskedelmi cikkek vagy kereskedelmicikk-darabok száma</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>Üzleti partnerek között kölcsönösen megállapodott információk</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>Vállalati belső információ</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>Vállalati belső információ</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>Vállalati belső információ</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>Vállalati belső információ</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>Vállalati belső információ</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>Vállalati belső információ</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>Vállalati belső információ</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>Vállalati belső információ</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>Vállalati belső információ</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Harmadik fél által ellenőrzött, sorozatszámmal ellátott globális kereskedelmi áruazonosító-kiterjesztés</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>A gyártó által hozzárendelt további termékazonosító</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Ügyfél cikkszáma</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Egyedi megrendelés változatszáma</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Csomagolóelem száma</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>Másodlagos sorozatszám</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Hivatkozás a forrásentitásra</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Globális dokumentumtípus-azonosító</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Globális helyazonosító szám kiegészítő összetevője</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Globális kuponszám</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>Ügyfél megrendelésszáma</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>Küldemények globális azonosítószáma</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>Globális szállítmányazonosító szám</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>Útválasztási kód</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>Szállítási cím / Kiszállítás helye – Globális helyszínazonosító szám</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>Számla címzettje / Számla címzettje Globális helyazonosító szám</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>Globális helyazonosítótól vásárolva</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>Szállítás ide / Kézbesítés ide – Továbbítás a globális helyazonosító számra</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>Fizikai helyszín azonosítása – Globális helyszínazonosító szám</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>A számlázó fél globális helyszínazonosító száma</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>A gyártási vagy szolgáltatási hely globális helyazonosító száma</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>Globális partnerazonosító szám</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>Szállítás / kézbesítés irányítószámra egyazon postai igazgatási területen belül</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>Szállítási cím irányítószáma ISO országkóddal</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>Kereskedelmi tétel származási országa</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>Az elsődleges feldolgozás országa</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>Feldolgozás országa</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>Szétszerelés országa</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>A teljes folyamatláncot lefedő ország</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>Származási országon belüli közigazgatási egység</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>Nemzeti egészségügyi elszámolási azonosító – Németország</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>Nemzeti egészségügyi elszámolási azonosító – Franciaország</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>Nemzeti egészségügyi elszámolási azonosító – Spanyolország</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>Nemzeti Egészségügyi Térítési Szám - Brazília</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>Nemzeti egészségügyi elszámolási azonosító – Portugália</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>Nemzeti egészségügyi elszámolási azonosítószám – Amerikai Egyesült Államok</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>Nemzeti egészségügyi elszámolási azonosító – Olaszország</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>Nemzeti egészségügyi elszámolási azonosító – Costa Rica</value>
+  </data>
+  <data name="3100" xml:space="preserve">
+    <value>Nettó tömeg, kilogramm (változó tömegű kereskedelmi egység)</value>
+  </data>
+  <data name="3101" xml:space="preserve">
+    <value>Nettó tömeg, kilogramm (változó tömegű kereskedelmi egység)</value>
+  </data>
+  <data name="3102" xml:space="preserve">
+    <value>Nettó tömeg, kilogramm (változó tömegű kereskedelmi egység)</value>
+  </data>
+  <data name="3103" xml:space="preserve">
+    <value>Nettó tömeg, kilogramm (változó tömegű kereskedelmi egység)</value>
+  </data>
+  <data name="3104" xml:space="preserve">
+    <value>Nettó tömeg, kilogramm (változó tömegű kereskedelmi egység)</value>
+  </data>
+  <data name="3105" xml:space="preserve">
+    <value>Nettó tömeg, kilogramm (változó tömegű kereskedelmi egység)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>Hossz vagy első méret, méter (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3111" xml:space="preserve">
+    <value>Hossz vagy első méret, méter (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3112" xml:space="preserve">
+    <value>Hossz vagy első méret, méter (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3113" xml:space="preserve">
+    <value>Hossz vagy első méret, méter (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3114" xml:space="preserve">
+    <value>Hossz vagy első méret, méter (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3115" xml:space="preserve">
+    <value>Hossz vagy első méret, méter (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3121" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3122" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3123" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3124" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3125" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter (változó méretű kereskedelmi tétel)</value>
+  </data>
+  <data name="3131" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter (változó méretű kereskedelmi tétel)</value>
+  </data>
+  <data name="3132" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter (változó méretű kereskedelmi tétel)</value>
+  </data>
+  <data name="3133" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter (változó méretű kereskedelmi tétel)</value>
+  </data>
+  <data name="3134" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter (változó méretű kereskedelmi tétel)</value>
+  </data>
+  <data name="3135" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter (változó méretű kereskedelmi tétel)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>Terület, négyzetméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3141" xml:space="preserve">
+    <value>Terület, négyzetméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3142" xml:space="preserve">
+    <value>Terület, négyzetméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3143" xml:space="preserve">
+    <value>Terület, négyzetméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3144" xml:space="preserve">
+    <value>Terület, négyzetméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3145" xml:space="preserve">
+    <value>Terület, négyzetméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>Nettó térfogat, liter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3151" xml:space="preserve">
+    <value>Nettó térfogat, liter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3152" xml:space="preserve">
+    <value>Nettó térfogat, liter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3153" xml:space="preserve">
+    <value>Nettó térfogat, liter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3154" xml:space="preserve">
+    <value>Nettó térfogat, liter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3155" xml:space="preserve">
+    <value>Nettó térfogat, liter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>Nettó térfogat, köbméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3161" xml:space="preserve">
+    <value>Nettó térfogat, köbméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3162" xml:space="preserve">
+    <value>Nettó térfogat, köbméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3163" xml:space="preserve">
+    <value>Nettó térfogat, köbméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3164" xml:space="preserve">
+    <value>Nettó térfogat, köbméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3165" xml:space="preserve">
+    <value>Nettó térfogat, köbméter (változó mennyiségű kereskedelmi egység)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>Nettó tömeg, font (változó mennyiségű kereskedelmi áru)</value>
+  </data>
+  <data name="3201" xml:space="preserve">
+    <value>Nettó tömeg, font (változó mennyiségű kereskedelmi áru)</value>
+  </data>
+  <data name="3202" xml:space="preserve">
+    <value>Nettó tömeg, font (változó mennyiségű kereskedelmi áru)</value>
+  </data>
+  <data name="3203" xml:space="preserve">
+    <value>Nettó tömeg, font (változó mennyiségű kereskedelmi áru)</value>
+  </data>
+  <data name="3204" xml:space="preserve">
+    <value>Nettó tömeg, font (változó mennyiségű kereskedelmi áru)</value>
+  </data>
+  <data name="3205" xml:space="preserve">
+    <value>Nettó tömeg, font (változó mennyiségű kereskedelmi áru)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>Hossz vagy első méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3211" xml:space="preserve">
+    <value>Hossz vagy első méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3212" xml:space="preserve">
+    <value>Hossz vagy első méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3213" xml:space="preserve">
+    <value>Hossz vagy első méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3214" xml:space="preserve">
+    <value>Hossz vagy első méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3215" xml:space="preserve">
+    <value>Hossz vagy első méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>Hossz vagy első méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3221" xml:space="preserve">
+    <value>Hossz vagy első méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3222" xml:space="preserve">
+    <value>Hossz vagy első méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3223" xml:space="preserve">
+    <value>Hossz vagy első méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3224" xml:space="preserve">
+    <value>Hossz vagy első méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3225" xml:space="preserve">
+    <value>Hossz vagy első méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>Hossz vagy első méret, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3231" xml:space="preserve">
+    <value>Hossz vagy első méret, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3232" xml:space="preserve">
+    <value>Hossz vagy első méret, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3233" xml:space="preserve">
+    <value>Hossz vagy első méret, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3234" xml:space="preserve">
+    <value>Hossz vagy első méret, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3235" xml:space="preserve">
+    <value>Hossz vagy első méret, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3241" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3242" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3243" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3244" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3245" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3251" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3252" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3253" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3254" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3255" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, yard (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3261" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, yard (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3262" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, yard (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3263" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, yard (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3264" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, yard (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3265" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, yard (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3271" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3272" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3273" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3274" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3275" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, hüvelyk (változó méretű kereskedelmi egység)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3281" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3282" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3283" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3284" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3285" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, láb (változó mértékű kereskedelmi egység)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3291" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3292" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3293" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3294" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3295" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, yard (változó mértékű kereskedelmi tétel)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>Logisztikai tömeg, kilogramm</value>
+  </data>
+  <data name="3301" xml:space="preserve">
+    <value>Logisztikai tömeg, kilogramm</value>
+  </data>
+  <data name="3302" xml:space="preserve">
+    <value>Logisztikai tömeg, kilogramm</value>
+  </data>
+  <data name="3303" xml:space="preserve">
+    <value>Logisztikai tömeg, kilogramm</value>
+  </data>
+  <data name="3304" xml:space="preserve">
+    <value>Logisztikai tömeg, kilogramm</value>
+  </data>
+  <data name="3305" xml:space="preserve">
+    <value>Logisztikai tömeg, kilogramm</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>Hossz vagy első méret, méter</value>
+  </data>
+  <data name="3311" xml:space="preserve">
+    <value>Hossz vagy első méret, méter</value>
+  </data>
+  <data name="3312" xml:space="preserve">
+    <value>Hossz vagy első méret, méter</value>
+  </data>
+  <data name="3313" xml:space="preserve">
+    <value>Hossz vagy első méret, méter</value>
+  </data>
+  <data name="3314" xml:space="preserve">
+    <value>Hossz vagy első méret, méter</value>
+  </data>
+  <data name="3315" xml:space="preserve">
+    <value>Hossz vagy első méret, méter</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter</value>
+  </data>
+  <data name="3321" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter</value>
+  </data>
+  <data name="3322" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter</value>
+  </data>
+  <data name="3323" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter</value>
+  </data>
+  <data name="3324" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter</value>
+  </data>
+  <data name="3325" xml:space="preserve">
+    <value>Szélesség, átmérő vagy második méret, méter</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter</value>
+  </data>
+  <data name="3331" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter</value>
+  </data>
+  <data name="3332" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter</value>
+  </data>
+  <data name="3333" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter</value>
+  </data>
+  <data name="3334" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter</value>
+  </data>
+  <data name="3335" xml:space="preserve">
+    <value>Mélység, vastagság, magasság vagy harmadik dimenzió, méter</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>Terület, négyzetméter</value>
+  </data>
+  <data name="3341" xml:space="preserve">
+    <value>Terület, négyzetméter</value>
+  </data>
+  <data name="3342" xml:space="preserve">
+    <value>Terület, négyzetméter</value>
+  </data>
+  <data name="3343" xml:space="preserve">
+    <value>Terület, négyzetméter</value>
+  </data>
+  <data name="3344" xml:space="preserve">
+    <value>Terület, négyzetméter</value>
+  </data>
+  <data name="3345" xml:space="preserve">
+    <value>Terület, négyzetméter</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>Logisztikai térfogat, liter</value>
+  </data>
+  <data name="3351" xml:space="preserve">
+    <value>Logisztikai térfogat, liter</value>
+  </data>
+  <data name="3352" xml:space="preserve">
+    <value>Logisztikai térfogat, liter</value>
+  </data>
+  <data name="3353" xml:space="preserve">
+    <value>Logisztikai térfogat, liter</value>
+  </data>
+  <data name="3354" xml:space="preserve">
+    <value>Logisztikai térfogat, liter</value>
+  </data>
+  <data name="3355" xml:space="preserve">
+    <value>Logisztikai térfogat, liter</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Logisztikai volumen, köbméter</value>
+  </data>
+  <data name="3361" xml:space="preserve">
+    <value>Logisztikai volumen, köbméter</value>
+  </data>
+  <data name="3362" xml:space="preserve">
+    <value>Logisztikai volumen, köbméter</value>
+  </data>
+  <data name="3363" xml:space="preserve">
+    <value>Logisztikai volumen, köbméter</value>
+  </data>
+  <data name="3364" xml:space="preserve">
+    <value>Logisztikai volumen, köbméter</value>
+  </data>
+  <data name="3365" xml:space="preserve">
+    <value>Logisztikai volumen, köbméter</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Kilogramm négyzetméterenként</value>
+  </data>
+  <data name="3371" xml:space="preserve">
+    <value>Kilogramm négyzetméterenként</value>
+  </data>
+  <data name="3372" xml:space="preserve">
+    <value>Kilogramm négyzetméterenként</value>
+  </data>
+  <data name="3373" xml:space="preserve">
+    <value>Kilogramm négyzetméterenként</value>
+  </data>
+  <data name="3374" xml:space="preserve">
+    <value>Kilogramm négyzetméterenként</value>
+  </data>
+  <data name="3375" xml:space="preserve">
+    <value>Kilogramm négyzetméterenként</value>
+  </data>
 </root>

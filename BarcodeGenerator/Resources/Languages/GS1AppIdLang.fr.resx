@@ -1,101 +1,759 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>Code série de conteneur d'expédition</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>Numéro d’article commercial mondial</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>Numéro mondial d’article commercial des articles commerciaux contenus</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>Numéro de lot</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>Date de production (AAMMJJ)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Date d’échéance (AAMMJJ)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Date de conditionnement (AAMMJJ)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Date de durabilité minimale (AAMMJJ)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Date limite de vente (AAMMJJ)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Date d’expiration (AAMMJJ)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Variante de produit interne</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Numéro de série</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Variante de produit de consommation</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Nombre variable d’articles (article commercial à mesure variable)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>Nombre d’articles commerciaux ou d’éléments d’articles commerciaux contenus dans une unité logistique</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>Informations convenues d’un commun accord entre partenaires commerciaux</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>Informations internes à l’entreprise</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>Informations internes à l’entreprise</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>Informations internes à l’entreprise</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>Informations internes à l’entreprise</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>Informations internes à l’entreprise</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>Informations internes à l’entreprise</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>Informations internes à l’entreprise</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>Informations internes à l’entreprise</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>Informations internes à l’entreprise</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Extension sérialisée du numéro d’article commercial mondial, contrôlée par un tiers</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>Identification de produit supplémentaire attribuée par le fabricant</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Référence client</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Numéro de variante pour commande sur mesure</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Numéro de composant d’emballage</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>Numéro de série secondaire</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Référence à l’entité source</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Identifiant mondial de type de document</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Composant d’extension du numéro de localisation mondial</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Numéro de coupon global</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>Numéro de bon de commande du client</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>Numéro d’identification mondial de l’envoi</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>Numéro d’identification d’expédition mondiale</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>Code d'acheminement</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>Expédier vers / Livrer au numéro de localisation mondial</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>Numéro mondial de lieu pour la facturation</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>Acheté auprès de Global Location Number</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>Expédier pour / Livrer pour – Transférer vers un numéro de localisation mondial</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>Identification d’un emplacement physique – Numéro mondial de lieu</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>Numéro mondial de localisation de la partie facturante</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>Numéro mondial de lieu du site de production ou de prestation de services</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>Numéro mondial de localisation d’une entité</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>Expédition ou livraison vers un code postal relevant d’une même autorité postale</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>Expédier vers / Livrer au code postal, accompagné du code pays ISO</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>Pays d’origine d’un article commercial</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>Pays de traitement initial</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>Pays de traitement</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>Pays de démontage</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>Pays couvrant l’ensemble de la chaîne de processus</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>Subdivision territoriale d’origine</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>Numéro national de remboursement des soins de santé – Allemagne</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>Numéro national de remboursement des soins de santé – France</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>Numéro national de remboursement des soins de santé – Espagne</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>Numéro national de remboursement des soins de santé - Brésil</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>Numéro national de remboursement des soins de santé – Portugal</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>Numéro national de remboursement des soins de santé – États-Unis d’Amérique</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>Numéro national de remboursement des soins de santé – Italie</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>Numéro national de remboursement des soins de santé – Costa Rica</value>
+  </data>
+  <data name="3100" xml:space="preserve">
+    <value>Poids net, en kilogrammes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3101" xml:space="preserve">
+    <value>Poids net, en kilogrammes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3102" xml:space="preserve">
+    <value>Poids net, en kilogrammes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3103" xml:space="preserve">
+    <value>Poids net, en kilogrammes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3104" xml:space="preserve">
+    <value>Poids net, en kilogrammes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3105" xml:space="preserve">
+    <value>Poids net, en kilogrammes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>Longueur ou première dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3111" xml:space="preserve">
+    <value>Longueur ou première dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3112" xml:space="preserve">
+    <value>Longueur ou première dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3113" xml:space="preserve">
+    <value>Longueur ou première dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3114" xml:space="preserve">
+    <value>Longueur ou première dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3115" xml:space="preserve">
+    <value>Longueur ou première dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3121" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3122" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3123" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3124" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3125" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3131" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3132" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3133" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3134" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3135" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en mètres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>Surface, mètres carrés (article commercial à mesure variable)</value>
+  </data>
+  <data name="3141" xml:space="preserve">
+    <value>Surface, mètres carrés (article commercial à mesure variable)</value>
+  </data>
+  <data name="3142" xml:space="preserve">
+    <value>Surface, mètres carrés (article commercial à mesure variable)</value>
+  </data>
+  <data name="3143" xml:space="preserve">
+    <value>Surface, mètres carrés (article commercial à mesure variable)</value>
+  </data>
+  <data name="3144" xml:space="preserve">
+    <value>Surface, mètres carrés (article commercial à mesure variable)</value>
+  </data>
+  <data name="3145" xml:space="preserve">
+    <value>Surface, mètres carrés (article commercial à mesure variable)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>Volume net, en litres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3151" xml:space="preserve">
+    <value>Volume net, en litres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3152" xml:space="preserve">
+    <value>Volume net, en litres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3153" xml:space="preserve">
+    <value>Volume net, en litres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3154" xml:space="preserve">
+    <value>Volume net, en litres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3155" xml:space="preserve">
+    <value>Volume net, en litres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>Volume net, mètres cubes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3161" xml:space="preserve">
+    <value>Volume net, mètres cubes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3162" xml:space="preserve">
+    <value>Volume net, mètres cubes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3163" xml:space="preserve">
+    <value>Volume net, mètres cubes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3164" xml:space="preserve">
+    <value>Volume net, mètres cubes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3165" xml:space="preserve">
+    <value>Volume net, mètres cubes (article commercial à mesure variable)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>Poids net, livres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3201" xml:space="preserve">
+    <value>Poids net, livres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3202" xml:space="preserve">
+    <value>Poids net, livres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3203" xml:space="preserve">
+    <value>Poids net, livres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3204" xml:space="preserve">
+    <value>Poids net, livres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3205" xml:space="preserve">
+    <value>Poids net, livres (article commercial à mesure variable)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>Longueur ou première dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3211" xml:space="preserve">
+    <value>Longueur ou première dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3212" xml:space="preserve">
+    <value>Longueur ou première dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3213" xml:space="preserve">
+    <value>Longueur ou première dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3214" xml:space="preserve">
+    <value>Longueur ou première dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3215" xml:space="preserve">
+    <value>Longueur ou première dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>Longueur ou première dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3221" xml:space="preserve">
+    <value>Longueur ou première dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3222" xml:space="preserve">
+    <value>Longueur ou première dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3223" xml:space="preserve">
+    <value>Longueur ou première dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3224" xml:space="preserve">
+    <value>Longueur ou première dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3225" xml:space="preserve">
+    <value>Longueur ou première dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>Longueur ou première dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3231" xml:space="preserve">
+    <value>Longueur ou première dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3232" xml:space="preserve">
+    <value>Longueur ou première dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3233" xml:space="preserve">
+    <value>Longueur ou première dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3234" xml:space="preserve">
+    <value>Longueur ou première dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3235" xml:space="preserve">
+    <value>Longueur ou première dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3241" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3242" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3243" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3244" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3245" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3251" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3252" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3253" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3254" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3255" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3261" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3262" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3263" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3264" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3265" xml:space="preserve">
+    <value>Largeur, diamètre ou seconde dimension, yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3271" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3272" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3273" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3274" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3275" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pouces (article commercial à mesure variable)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3281" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3282" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3283" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3284" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3285" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, en pieds (article commercial à mesure variable)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension ; yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3291" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension ; yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3292" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension ; yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3293" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension ; yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3294" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension ; yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3295" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension ; yards (article commercial à mesure variable)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>Poids logistique, kilogrammes</value>
+  </data>
+  <data name="3301" xml:space="preserve">
+    <value>Poids logistique, kilogrammes</value>
+  </data>
+  <data name="3302" xml:space="preserve">
+    <value>Poids logistique, kilogrammes</value>
+  </data>
+  <data name="3303" xml:space="preserve">
+    <value>Poids logistique, kilogrammes</value>
+  </data>
+  <data name="3304" xml:space="preserve">
+    <value>Poids logistique, kilogrammes</value>
+  </data>
+  <data name="3305" xml:space="preserve">
+    <value>Poids logistique, kilogrammes</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>Longueur ou première dimension, mètres</value>
+  </data>
+  <data name="3311" xml:space="preserve">
+    <value>Longueur ou première dimension, mètres</value>
+  </data>
+  <data name="3312" xml:space="preserve">
+    <value>Longueur ou première dimension, mètres</value>
+  </data>
+  <data name="3313" xml:space="preserve">
+    <value>Longueur ou première dimension, mètres</value>
+  </data>
+  <data name="3314" xml:space="preserve">
+    <value>Longueur ou première dimension, mètres</value>
+  </data>
+  <data name="3315" xml:space="preserve">
+    <value>Longueur ou première dimension, mètres</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>Largeur, diamètre ou deuxième dimension, en mètres</value>
+  </data>
+  <data name="3321" xml:space="preserve">
+    <value>Largeur, diamètre ou deuxième dimension, en mètres</value>
+  </data>
+  <data name="3322" xml:space="preserve">
+    <value>Largeur, diamètre ou deuxième dimension, en mètres</value>
+  </data>
+  <data name="3323" xml:space="preserve">
+    <value>Largeur, diamètre ou deuxième dimension, en mètres</value>
+  </data>
+  <data name="3324" xml:space="preserve">
+    <value>Largeur, diamètre ou deuxième dimension, en mètres</value>
+  </data>
+  <data name="3325" xml:space="preserve">
+    <value>Largeur, diamètre ou deuxième dimension, en mètres</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, mètres</value>
+  </data>
+  <data name="3331" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, mètres</value>
+  </data>
+  <data name="3332" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, mètres</value>
+  </data>
+  <data name="3333" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, mètres</value>
+  </data>
+  <data name="3334" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, mètres</value>
+  </data>
+  <data name="3335" xml:space="preserve">
+    <value>Profondeur, épaisseur, hauteur ou troisième dimension, mètres</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>Superficie, mètres carrés</value>
+  </data>
+  <data name="3341" xml:space="preserve">
+    <value>Superficie, mètres carrés</value>
+  </data>
+  <data name="3342" xml:space="preserve">
+    <value>Superficie, mètres carrés</value>
+  </data>
+  <data name="3343" xml:space="preserve">
+    <value>Superficie, mètres carrés</value>
+  </data>
+  <data name="3344" xml:space="preserve">
+    <value>Superficie, mètres carrés</value>
+  </data>
+  <data name="3345" xml:space="preserve">
+    <value>Superficie, mètres carrés</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>Volume logistique, litres</value>
+  </data>
+  <data name="3351" xml:space="preserve">
+    <value>Volume logistique, litres</value>
+  </data>
+  <data name="3352" xml:space="preserve">
+    <value>Volume logistique, litres</value>
+  </data>
+  <data name="3353" xml:space="preserve">
+    <value>Volume logistique, litres</value>
+  </data>
+  <data name="3354" xml:space="preserve">
+    <value>Volume logistique, litres</value>
+  </data>
+  <data name="3355" xml:space="preserve">
+    <value>Volume logistique, litres</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3361" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3362" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3363" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3364" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3365" xml:space="preserve">
+    <value>Volume logistique, mètres cubes</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
+  <data name="3371" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
+  <data name="3372" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
+  <data name="3373" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
+  <data name="3374" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
+  <data name="3375" xml:space="preserve">
+    <value>Kilogrammes par mètre carré</value>
+  </data>
 </root>
