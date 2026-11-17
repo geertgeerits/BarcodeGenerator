@@ -721,39 +721,1014 @@
     <value>लॉजिस्टिक वॉल्यूम, लीटर</value>
   </data>
   <data name="3360" xml:space="preserve">
-    <value>Volume logistique, mètres cubes</value>
+    <value>लॉजिस्टिक आयतन, घन मीटर</value>
   </data>
   <data name="3361" xml:space="preserve">
-    <value>Volume logistique, mètres cubes</value>
+    <value>लॉजिस्टिक आयतन, घन मीटर</value>
   </data>
   <data name="3362" xml:space="preserve">
-    <value>Volume logistique, mètres cubes</value>
+    <value>लॉजिस्टिक आयतन, घन मीटर</value>
   </data>
   <data name="3363" xml:space="preserve">
-    <value>Volume logistique, mètres cubes</value>
+    <value>लॉजिस्टिक आयतन, घन मीटर</value>
   </data>
   <data name="3364" xml:space="preserve">
-    <value>Volume logistique, mètres cubes</value>
+    <value>लॉजिस्टिक आयतन, घन मीटर</value>
   </data>
   <data name="3365" xml:space="preserve">
-    <value>Volume logistique, mètres cubes</value>
+    <value>लॉजिस्टिक आयतन, घन मीटर</value>
   </data>
   <data name="3370" xml:space="preserve">
-    <value>Kilogrammes par mètre carré</value>
+    <value>किलोग्राम प्रति वर्ग मीटर</value>
   </data>
   <data name="3371" xml:space="preserve">
-    <value>Kilogrammes par mètre carré</value>
+    <value>किलोग्राम प्रति वर्ग मीटर</value>
   </data>
   <data name="3372" xml:space="preserve">
-    <value>Kilogrammes par mètre carré</value>
+    <value>किलोग्राम प्रति वर्ग मीटर</value>
   </data>
   <data name="3373" xml:space="preserve">
-    <value>Kilogrammes par mètre carré</value>
+    <value>किलोग्राम प्रति वर्ग मीटर</value>
   </data>
   <data name="3374" xml:space="preserve">
-    <value>Kilogrammes par mètre carré</value>
+    <value>किलोग्राम प्रति वर्ग मीटर</value>
   </data>
   <data name="3375" xml:space="preserve">
-    <value>Kilogrammes par mètre carré</value>
+    <value>किलोग्राम प्रति वर्ग मीटर</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, पाउंड</value>
+  </data>
+  <data name="3401" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, पाउंड</value>
+  </data>
+  <data name="3402" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, पाउंड</value>
+  </data>
+  <data name="3403" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, पाउंड</value>
+  </data>
+  <data name="3404" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, पाउंड</value>
+  </data>
+  <data name="3405" xml:space="preserve">
+    <value>लॉजिस्टिक वज़न, पाउंड</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच</value>
+  </data>
+  <data name="3411" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच</value>
+  </data>
+  <data name="3412" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच</value>
+  </data>
+  <data name="3413" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच</value>
+  </data>
+  <data name="3414" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच</value>
+  </data>
+  <data name="3415" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, इंच</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट</value>
+  </data>
+  <data name="3421" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट</value>
+  </data>
+  <data name="3422" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट</value>
+  </data>
+  <data name="3423" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट</value>
+  </data>
+  <data name="3424" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट</value>
+  </data>
+  <data name="3425" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, फीट</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज</value>
+  </data>
+  <data name="3431" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज</value>
+  </data>
+  <data name="3432" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज</value>
+  </data>
+  <data name="3433" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज</value>
+  </data>
+  <data name="3434" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज</value>
+  </data>
+  <data name="3435" xml:space="preserve">
+    <value>लंबाई या पहला आयाम, गज</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच</value>
+  </data>
+  <data name="3441" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच</value>
+  </data>
+  <data name="3442" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच</value>
+  </data>
+  <data name="3443" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच</value>
+  </data>
+  <data name="3444" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच</value>
+  </data>
+  <data name="3445" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, इंच</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट</value>
+  </data>
+  <data name="3451" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट</value>
+  </data>
+  <data name="3452" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट</value>
+  </data>
+  <data name="3453" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट</value>
+  </data>
+  <data name="3454" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट</value>
+  </data>
+  <data name="3455" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, फीट</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, यार्ड</value>
+  </data>
+  <data name="3461" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, यार्ड</value>
+  </data>
+  <data name="3462" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, यार्ड</value>
+  </data>
+  <data name="3463" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, यार्ड</value>
+  </data>
+  <data name="3464" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, यार्ड</value>
+  </data>
+  <data name="3465" xml:space="preserve">
+    <value>चौड़ाई, व्यास, या दूसरा आयाम, यार्ड</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, इंच में</value>
+  </data>
+  <data name="3471" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, इंच में</value>
+  </data>
+  <data name="3472" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, इंच में</value>
+  </data>
+  <data name="3473" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, इंच में</value>
+  </data>
+  <data name="3474" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, इंच में</value>
+  </data>
+  <data name="3475" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, इंच में</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट</value>
+  </data>
+  <data name="3481" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट</value>
+  </data>
+  <data name="3482" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट</value>
+  </data>
+  <data name="3483" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट</value>
+  </data>
+  <data name="3484" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट</value>
+  </data>
+  <data name="3485" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई या तीसरा आयाम, फीट</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, गज</value>
+  </data>
+  <data name="3491" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, गज</value>
+  </data>
+  <data name="3492" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, गज</value>
+  </data>
+  <data name="3493" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, गज</value>
+  </data>
+  <data name="3494" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, गज</value>
+  </data>
+  <data name="3495" xml:space="preserve">
+    <value>गहराई, मोटाई, ऊँचाई, या तीसरा आयाम, गज</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3501" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3502" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3503" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3504" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3505" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3511" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3512" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3513" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3514" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3515" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3521" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3522" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3523" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3524" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3525" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच</value>
+  </data>
+  <data name="3531" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच</value>
+  </data>
+  <data name="3532" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच</value>
+  </data>
+  <data name="3533" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच</value>
+  </data>
+  <data name="3534" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच</value>
+  </data>
+  <data name="3535" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग इंच</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट</value>
+  </data>
+  <data name="3541" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट</value>
+  </data>
+  <data name="3542" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट</value>
+  </data>
+  <data name="3543" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट</value>
+  </data>
+  <data name="3544" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट</value>
+  </data>
+  <data name="3545" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग फुट</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज</value>
+  </data>
+  <data name="3551" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज</value>
+  </data>
+  <data name="3552" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज</value>
+  </data>
+  <data name="3553" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज</value>
+  </data>
+  <data name="3554" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज</value>
+  </data>
+  <data name="3555" xml:space="preserve">
+    <value>क्षेत्रफल, वर्ग गज</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>शुद्ध वज़न, ट्रॉय औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3561" xml:space="preserve">
+    <value>शुद्ध वज़न, ट्रॉय औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3562" xml:space="preserve">
+    <value>शुद्ध वज़न, ट्रॉय औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3563" xml:space="preserve">
+    <value>शुद्ध वज़न, ट्रॉय औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3564" xml:space="preserve">
+    <value>शुद्ध वज़न, ट्रॉय औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3565" xml:space="preserve">
+    <value>शुद्ध वज़न, ट्रॉय औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>शुद्ध वज़न (या आयतन), औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3571" xml:space="preserve">
+    <value>शुद्ध वज़न (या आयतन), औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3572" xml:space="preserve">
+    <value>शुद्ध वज़न (या आयतन), औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3573" xml:space="preserve">
+    <value>शुद्ध वज़न (या आयतन), औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3574" xml:space="preserve">
+    <value>शुद्ध वज़न (या आयतन), औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3575" xml:space="preserve">
+    <value>शुद्ध वज़न (या आयतन), औंस (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>शुद्ध आयतन, क्वार्ट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3601" xml:space="preserve">
+    <value>शुद्ध आयतन, क्वार्ट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3602" xml:space="preserve">
+    <value>शुद्ध आयतन, क्वार्ट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3603" xml:space="preserve">
+    <value>शुद्ध आयतन, क्वार्ट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3604" xml:space="preserve">
+    <value>शुद्ध आयतन, क्वार्ट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3605" xml:space="preserve">
+    <value>शुद्ध आयतन, क्वार्ट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>शुद्ध आयतन, गैलन (यू.एस.) (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3611" xml:space="preserve">
+    <value>शुद्ध आयतन, गैलन (यू.एस.) (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3612" xml:space="preserve">
+    <value>शुद्ध आयतन, गैलन (यू.एस.) (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3613" xml:space="preserve">
+    <value>शुद्ध आयतन, गैलन (यू.एस.) (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3614" xml:space="preserve">
+    <value>शुद्ध आयतन, गैलन (यू.एस.) (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3615" xml:space="preserve">
+    <value>शुद्ध आयतन, गैलन (यू.एस.) (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्वार्ट्स</value>
+  </data>
+  <data name="3621" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्वार्ट्स</value>
+  </data>
+  <data name="3622" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्वार्ट्स</value>
+  </data>
+  <data name="3623" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्वार्ट्स</value>
+  </data>
+  <data name="3624" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्वार्ट्स</value>
+  </data>
+  <data name="3625" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्वार्ट्स</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, अमेरिकी गैलन</value>
+  </data>
+  <data name="3631" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, अमेरिकी गैलन</value>
+  </data>
+  <data name="3632" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, अमेरिकी गैलन</value>
+  </data>
+  <data name="3633" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, अमेरिकी गैलन</value>
+  </data>
+  <data name="3634" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, अमेरिकी गैलन</value>
+  </data>
+  <data name="3635" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, अमेरिकी गैलन</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>शुद्ध आयतन, घन इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3641" xml:space="preserve">
+    <value>शुद्ध आयतन, घन इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3642" xml:space="preserve">
+    <value>शुद्ध आयतन, घन इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3643" xml:space="preserve">
+    <value>शुद्ध आयतन, घन इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3644" xml:space="preserve">
+    <value>शुद्ध आयतन, घन इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3645" xml:space="preserve">
+    <value>शुद्ध आयतन, घन इंच (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>शुद्ध आयतन, घन फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3651" xml:space="preserve">
+    <value>शुद्ध आयतन, घन फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3652" xml:space="preserve">
+    <value>शुद्ध आयतन, घन फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3653" xml:space="preserve">
+    <value>शुद्ध आयतन, घन फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3654" xml:space="preserve">
+    <value>शुद्ध आयतन, घन फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3655" xml:space="preserve">
+    <value>शुद्ध आयतन, घन फुट (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>शुद्ध आयतन, क्यूबिक यार्ड (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3661" xml:space="preserve">
+    <value>शुद्ध आयतन, क्यूबिक यार्ड (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3662" xml:space="preserve">
+    <value>शुद्ध आयतन, क्यूबिक यार्ड (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3663" xml:space="preserve">
+    <value>शुद्ध आयतन, क्यूबिक यार्ड (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3664" xml:space="preserve">
+    <value>शुद्ध आयतन, क्यूबिक यार्ड (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3665" xml:space="preserve">
+    <value>शुद्ध आयतन, क्यूबिक यार्ड (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, क्यूबिक इंच</value>
+  </data>
+  <data name="3671" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, क्यूबिक इंच</value>
+  </data>
+  <data name="3672" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, क्यूबिक इंच</value>
+  </data>
+  <data name="3673" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, क्यूबिक इंच</value>
+  </data>
+  <data name="3674" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, क्यूबिक इंच</value>
+  </data>
+  <data name="3675" xml:space="preserve">
+    <value>लॉजिस्टिक आयतन, क्यूबिक इंच</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक फीट</value>
+  </data>
+  <data name="3681" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक फीट</value>
+  </data>
+  <data name="3682" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक फीट</value>
+  </data>
+  <data name="3683" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक फीट</value>
+  </data>
+  <data name="3684" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक फीट</value>
+  </data>
+  <data name="3685" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक फीट</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक यार्ड</value>
+  </data>
+  <data name="3691" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक यार्ड</value>
+  </data>
+  <data name="3692" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक यार्ड</value>
+  </data>
+  <data name="3693" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक यार्ड</value>
+  </data>
+  <data name="3694" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक यार्ड</value>
+  </data>
+  <data name="3695" xml:space="preserve">
+    <value>लॉजिस्टिक वॉल्यूम, क्यूबिक यार्ड</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>देय राशि या कूपन मूल्य, स्थानीय मुद्रा</value>
+  </data>
+  <data name="3901" xml:space="preserve">
+    <value>देय राशि या कूपन मूल्य, स्थानीय मुद्रा</value>
+  </data>
+  <data name="3902" xml:space="preserve">
+    <value>देय राशि या कूपन मूल्य, स्थानीय मुद्रा</value>
+  </data>
+  <data name="3903" xml:space="preserve">
+    <value>देय राशि या कूपन मूल्य, स्थानीय मुद्रा</value>
+  </data>
+  <data name="3904" xml:space="preserve">
+    <value>देय राशि या कूपन मूल्य, स्थानीय मुद्रा</value>
+  </data>
+  <data name="3905" xml:space="preserve">
+    <value>देय राशि या कूपन मूल्य, स्थानीय मुद्रा</value>
+  </data>
+  <data name="3906" xml:space="preserve">
+    <value>देय राशि या कूपन मूल्य, स्थानीय मुद्रा</value>
+  </data>
+  <data name="3907" xml:space="preserve">
+    <value>देय राशि या कूपन मूल्य, स्थानीय मुद्रा</value>
+  </data>
+  <data name="3908" xml:space="preserve">
+    <value>देय राशि या कूपन मूल्य, स्थानीय मुद्रा</value>
+  </data>
+  <data name="3909" xml:space="preserve">
+    <value>देय राशि या कूपन मूल्य, स्थानीय मुद्रा</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय लागू राशि</value>
+  </data>
+  <data name="3911" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय लागू राशि</value>
+  </data>
+  <data name="3912" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय लागू राशि</value>
+  </data>
+  <data name="3913" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय लागू राशि</value>
+  </data>
+  <data name="3914" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय लागू राशि</value>
+  </data>
+  <data name="3915" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय लागू राशि</value>
+  </data>
+  <data name="3916" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय लागू राशि</value>
+  </data>
+  <data name="3917" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय लागू राशि</value>
+  </data>
+  <data name="3918" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय लागू राशि</value>
+  </data>
+  <data name="3919" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय लागू राशि</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>देय लागू राशि, एकल मौद्रिक क्षेत्र (परिवर्तनीय मात्रा वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3921" xml:space="preserve">
+    <value>देय लागू राशि, एकल मौद्रिक क्षेत्र (परिवर्तनीय मात्रा वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3922" xml:space="preserve">
+    <value>देय लागू राशि, एकल मौद्रिक क्षेत्र (परिवर्तनीय मात्रा वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3923" xml:space="preserve">
+    <value>देय लागू राशि, एकल मौद्रिक क्षेत्र (परिवर्तनीय मात्रा वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3924" xml:space="preserve">
+    <value>देय लागू राशि, एकल मौद्रिक क्षेत्र (परिवर्तनीय मात्रा वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3925" xml:space="preserve">
+    <value>देय लागू राशि, एकल मौद्रिक क्षेत्र (परिवर्तनीय मात्रा वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3926" xml:space="preserve">
+    <value>देय लागू राशि, एकल मौद्रिक क्षेत्र (परिवर्तनीय मात्रा वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3927" xml:space="preserve">
+    <value>देय लागू राशि, एकल मौद्रिक क्षेत्र (परिवर्तनीय मात्रा वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3928" xml:space="preserve">
+    <value>देय लागू राशि, एकल मौद्रिक क्षेत्र (परिवर्तनीय मात्रा वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3929" xml:space="preserve">
+    <value>देय लागू राशि, एकल मौद्रिक क्षेत्र (परिवर्तनीय मात्रा वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय राशि (परिवर्तनीय माप वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3931" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय राशि (परिवर्तनीय माप वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3932" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय राशि (परिवर्तनीय माप वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3933" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय राशि (परिवर्तनीय माप वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3934" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय राशि (परिवर्तनीय माप वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3935" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय राशि (परिवर्तनीय माप वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3936" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय राशि (परिवर्तनीय माप वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3937" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय राशि (परिवर्तनीय माप वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3938" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय राशि (परिवर्तनीय माप वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3939" xml:space="preserve">
+    <value>ISO मुद्रा कोड के साथ देय राशि (परिवर्तनीय माप वाली व्यापार वस्तु)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>कूपन पर प्रतिशत छूट</value>
+  </data>
+  <data name="3941" xml:space="preserve">
+    <value>कूपन पर प्रतिशत छूट</value>
+  </data>
+  <data name="3942" xml:space="preserve">
+    <value>कूपन पर प्रतिशत छूट</value>
+  </data>
+  <data name="3943" xml:space="preserve">
+    <value>कूपन पर प्रतिशत छूट</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>माप की प्रति इकाई देय राशि - एकल मौद्रिक क्षेत्र (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3951" xml:space="preserve">
+    <value>माप की प्रति इकाई देय राशि - एकल मौद्रिक क्षेत्र (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3952" xml:space="preserve">
+    <value>माप की प्रति इकाई देय राशि - एकल मौद्रिक क्षेत्र (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3953" xml:space="preserve">
+    <value>माप की प्रति इकाई देय राशि - एकल मौद्रिक क्षेत्र (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3954" xml:space="preserve">
+    <value>माप की प्रति इकाई देय राशि - एकल मौद्रिक क्षेत्र (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="3955" xml:space="preserve">
+    <value>माप की प्रति इकाई देय राशि - एकल मौद्रिक क्षेत्र (परिवर्तनीय माप वाली व्यापारिक वस्तु)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>शिप-टू / डिलीवर-टू कंपनी का नाम</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>शिप-टू / डिलीवर-टू संपर्क</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>शिप-टू / डिलीवर-टू पता पंक्ति 1</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>शिप-टू / डिलीवर-टू पता पंक्ति 2</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>शिप-टू / डिलीवर-टू उपनगर</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>शिप-टू / डिलीवर-टू इलाका</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>शिप-टू / डिलीवर-टू क्षेत्र</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>शिप-टू / डिलीवर-टू देश कोड</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>शिप-टू / डिलीवर-टू टेलीफ़ोन नंबर</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>शिप-टू / डिलीवर-टू जियो लोकेशन</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>कंपनी का नाम (वापसी के लिए)</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>संपर्क पर लौटें</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>वापसी पता पंक्ति 1</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>वापसी पता पंक्ति 2</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>उपनगर वापसी</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>स्थान पर वापसी</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>रिटर्न-टू क्षेत्र</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>वापसी-देश कोड</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>वापसी के लिए पोस्टल कोड</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>वापसी के लिए टेलीफोन नंबर</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>सेवा कोड विवरण</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>खतरनाक सामान का संकेत</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>जाने की अनुमति</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>हस्ताक्षर आवश्यक फ़्लैग</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>डिलीवरी की तारीख और समय (YYMMDDhhmm) से पहले नहीं</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>डिलीवरी की तारीख और समय (YYMMDDhhmm) के बाद नहीं</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>रिलीज़ की तारीख (YYMMDD)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>फ़ारेनहाइट में अधिकतम तापमान (डिग्री के सौवें हिस्से में दर्शाया गया)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>अधिकतम तापमान सेल्सियस में (डिग्री के सौवें हिस्से के रूप में दर्शाया गया)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>फ़ारेनहाइट में न्यूनतम तापमान (डिग्री के सौवें हिस्से में दर्शाया गया)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>सेल्सियस में न्यूनतम तापमान (डिग्री के सौवें हिस्से में दर्शाया गया)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>नाटो स्टॉक नंबर (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>UN/ECE मांस के शवों और टुकड़ों का वर्गीकरण</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>समाप्ति तिथि और समय (YYMMDDhhmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>सक्रिय क्षमता</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>कैच एरिया</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>पहली फ्रीज़ तिथि (YYMMDD)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>कटाई की तारीख (YYMMDD[YYMMDD])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>मत्स्य पालन के उद्देश्य से प्रजातियाँ</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>मछली पकड़ने के उपकरणों का प्रकार</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>उत्पाद विधि</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>तारीख के अनुसार परीक्षण (YYMMDD[hhmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>नवीनीकरण लॉट ID</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>व्यावहारिक स्थिति</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>संशोधन की स्थिति</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>किसी असेंबली का वैश्विक व्यक्तिगत परिसंपत्ति पहचानकर्ता</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>तीन अंकों वाले ISO देश कोड के साथ प्रोसेसर की संख्या</value>
+  </data>
+  <data name="7031" xml:space="preserve">
+    <value>तीन अंकों वाले ISO देश कोड के साथ प्रोसेसर की संख्या</value>
+  </data>
+  <data name="7032" xml:space="preserve">
+    <value>तीन अंकों वाले ISO देश कोड के साथ प्रोसेसर की संख्या</value>
+  </data>
+  <data name="7033" xml:space="preserve">
+    <value>तीन अंकों वाले ISO देश कोड के साथ प्रोसेसर की संख्या</value>
+  </data>
+  <data name="7034" xml:space="preserve">
+    <value>तीन अंकों वाले ISO देश कोड के साथ प्रोसेसर की संख्या</value>
+  </data>
+  <data name="7035" xml:space="preserve">
+    <value>तीन अंकों वाले ISO देश कोड के साथ प्रोसेसर की संख्या</value>
+  </data>
+  <data name="7036" xml:space="preserve">
+    <value>तीन अंकों वाले ISO देश कोड के साथ प्रोसेसर की संख्या</value>
+  </data>
+  <data name="7037" xml:space="preserve">
+    <value>तीन अंकों वाले ISO देश कोड के साथ प्रोसेसर की संख्या</value>
+  </data>
+  <data name="7038" xml:space="preserve">
+    <value>तीन अंकों वाले ISO देश कोड के साथ प्रोसेसर की संख्या</value>
+  </data>
+  <data name="7039" xml:space="preserve">
+    <value>तीन अंकों वाले ISO देश कोड के साथ प्रोसेसर की संख्या</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>एक्सटेंशन 1 और आयातक सूचकांक के साथ GS1 UIC</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>UN/CEFACT माल ढुलाई इकाई प्रकार</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>प्रमाणन संदर्भ</value>
+  </data>
+  <data name="7231" xml:space="preserve">
+    <value>प्रमाणन संदर्भ</value>
+  </data>
+  <data name="7232" xml:space="preserve">
+    <value>प्रमाणन संदर्भ</value>
+  </data>
+  <data name="7233" xml:space="preserve">
+    <value>प्रमाणन संदर्भ</value>
+  </data>
+  <data name="7234" xml:space="preserve">
+    <value>प्रमाणन संदर्भ</value>
+  </data>
+  <data name="7235" xml:space="preserve">
+    <value>प्रमाणन संदर्भ</value>
+  </data>
+  <data name="7236" xml:space="preserve">
+    <value>प्रमाणन संदर्भ</value>
+  </data>
+  <data name="7237" xml:space="preserve">
+    <value>प्रमाणन संदर्भ</value>
+  </data>
+  <data name="7238" xml:space="preserve">
+    <value>प्रमाणन संदर्भ</value>
+  </data>
+  <data name="7239" xml:space="preserve">
+    <value>प्रमाणन संदर्भ</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>प्रोटोकॉल आईडी</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>AIDC मीडिया प्रकार</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>वर्ज़न कंट्रोल नंबर</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>जन्म तिथि (YYYYMMDD)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>जन्म की तारीख और समय (YYYYMMDDhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>जैविक लिंग</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>व्यक्ति का पारिवारिक नाम</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>व्यक्ति का दिया गया नाम</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>व्यक्ति के नाम का प्रत्यय</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>व्यक्ति का पूरा नाम</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>व्यक्ति का पता</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>बच्चे के जन्म का क्रम</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>परिवार के नाम वाला बच्चा</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>रोल उत्पाद (चौड़ाई, लंबाई, कोर का व्यास, दिशा, जोड़)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>सेलुलर मोबाइल टेलीफोन पहचानकर्ता</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>ग्लोबल रिटर्नेबल एसेट आइडेंटिफायर</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>वैश्विक व्यक्तिगत संपत्ति पहचानकर्ता</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>माप की प्रति इकाई कीमत</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>किसी एक व्यापारिक वस्तु की पहचान</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>अंतर्राष्ट्रीय बैंक खाता संख्या</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>उत्पादन की तारीख और समय (YYMMDDhh[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>ऑप्टिकली रीडेबल सेंसर इंडिकेटर</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>घटक/भाग पहचानकर्ता</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>घटक/पुर्जे की पहचान करने वाला सीरियल नंबर</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>सॉफ्टवेयर संस्करण</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>ग्लोबल मॉडल नंबर</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>सेवाएँ देने वाले संगठन और सेवा प्रदाता के बीच के संबंध की पहचान करने के लिए 'ग्लोबल सर्विस रिलेशन नंबर'</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>सेवा प्रदान करने वाले संगठन और सेवा प्राप्त करने वाले के बीच के संबंध की पहचान करने के लिए 'ग्लोबल सर्विस रिलेशन नंबर'</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>सेवा संबंध इंस्टेंस नंबर</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>भुगतान पर्ची संदर्भ संख्या</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>लॉजिस्टिक यूनिट में शामिल व्यापारिक वस्तु के हिस्सों की पहचान</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>डिजिटल सिग्नेचर (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>इंटरनेशनल मोबाइल इक्विपमेंट आइडेंटिटी</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>अंतर्राष्ट्रीय मोबाइल उपकरण पहचान 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>एम्बेडेड सिम नंबर</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>फिजिकल सिम नंबर</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>उत्तरी अमेरिका में उपयोग के लिए कूपन कोड की पहचान</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>कूपन के लॉयल्टी पॉइंट</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>उत्तरी अमेरिका में उपयोग के लिए कूपन कोड की पहचान करने की सुविधा उपलब्ध है</value>
   </data>
 </root>
