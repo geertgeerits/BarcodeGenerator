@@ -450,4 +450,328 @@
   <data name="3205" xml:space="preserve">
     <value>净重，磅（可变计量单位商品）</value>
   </data>
+  <data name="3210" xml:space="preserve">
+    <value>长度或第一维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3211" xml:space="preserve">
+    <value>长度或第一维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3212" xml:space="preserve">
+    <value>长度或第一维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3213" xml:space="preserve">
+    <value>长度或第一维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3214" xml:space="preserve">
+    <value>长度或第一维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3215" xml:space="preserve">
+    <value>长度或第一维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>长度或第一维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3221" xml:space="preserve">
+    <value>长度或第一维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3222" xml:space="preserve">
+    <value>长度或第一维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3223" xml:space="preserve">
+    <value>长度或第一维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3224" xml:space="preserve">
+    <value>长度或第一维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3225" xml:space="preserve">
+    <value>长度或第一维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>长度或第一维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3231" xml:space="preserve">
+    <value>长度或第一维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3232" xml:space="preserve">
+    <value>长度或第一维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3233" xml:space="preserve">
+    <value>长度或第一维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3234" xml:space="preserve">
+    <value>长度或第一维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3235" xml:space="preserve">
+    <value>长度或第一维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>宽度、直径或第二维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3241" xml:space="preserve">
+    <value>宽度、直径或第二维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3242" xml:space="preserve">
+    <value>宽度、直径或第二维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3243" xml:space="preserve">
+    <value>宽度、直径或第二维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3244" xml:space="preserve">
+    <value>宽度、直径或第二维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3245" xml:space="preserve">
+    <value>宽度、直径或第二维度，英寸（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>宽度、直径或第二维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3251" xml:space="preserve">
+    <value>宽度、直径或第二维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3252" xml:space="preserve">
+    <value>宽度、直径或第二维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3253" xml:space="preserve">
+    <value>宽度、直径或第二维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3254" xml:space="preserve">
+    <value>宽度、直径或第二维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3255" xml:space="preserve">
+    <value>宽度、直径或第二维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>宽度、直径或第二维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3261" xml:space="preserve">
+    <value>宽度、直径或第二维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3262" xml:space="preserve">
+    <value>宽度、直径或第二维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3263" xml:space="preserve">
+    <value>宽度、直径或第二维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3264" xml:space="preserve">
+    <value>宽度、直径或第二维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3265" xml:space="preserve">
+    <value>宽度、直径或第二维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以英寸计（可变尺寸贸易项目）</value>
+  </data>
+  <data name="3271" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以英寸计（可变尺寸贸易项目）</value>
+  </data>
+  <data name="3272" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以英寸计（可变尺寸贸易项目）</value>
+  </data>
+  <data name="3273" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以英寸计（可变尺寸贸易项目）</value>
+  </data>
+  <data name="3274" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以英寸计（可变尺寸贸易项目）</value>
+  </data>
+  <data name="3275" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以英寸计（可变尺寸贸易项目）</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3281" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3282" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3283" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3284" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3285" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，英尺（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3291" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3292" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3293" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3294" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3295" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，码（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>物流重量（千克）</value>
+  </data>
+  <data name="3301" xml:space="preserve">
+    <value>物流重量（千克）</value>
+  </data>
+  <data name="3302" xml:space="preserve">
+    <value>物流重量（千克）</value>
+  </data>
+  <data name="3303" xml:space="preserve">
+    <value>物流重量（千克）</value>
+  </data>
+  <data name="3304" xml:space="preserve">
+    <value>物流重量（千克）</value>
+  </data>
+  <data name="3305" xml:space="preserve">
+    <value>物流重量（千克）</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>长度或第一维度，米</value>
+  </data>
+  <data name="3311" xml:space="preserve">
+    <value>长度或第一维度，米</value>
+  </data>
+  <data name="3312" xml:space="preserve">
+    <value>长度或第一维度，米</value>
+  </data>
+  <data name="3313" xml:space="preserve">
+    <value>长度或第一维度，米</value>
+  </data>
+  <data name="3314" xml:space="preserve">
+    <value>长度或第一维度，米</value>
+  </data>
+  <data name="3315" xml:space="preserve">
+    <value>长度或第一维度，米</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>宽度、直径或第二维度，米</value>
+  </data>
+  <data name="3321" xml:space="preserve">
+    <value>宽度、直径或第二维度，米</value>
+  </data>
+  <data name="3322" xml:space="preserve">
+    <value>宽度、直径或第二维度，米</value>
+  </data>
+  <data name="3323" xml:space="preserve">
+    <value>宽度、直径或第二维度，米</value>
+  </data>
+  <data name="3324" xml:space="preserve">
+    <value>宽度、直径或第二维度，米</value>
+  </data>
+  <data name="3325" xml:space="preserve">
+    <value>宽度、直径或第二维度，米</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，米</value>
+  </data>
+  <data name="3331" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，米</value>
+  </data>
+  <data name="3332" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，米</value>
+  </data>
+  <data name="3333" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，米</value>
+  </data>
+  <data name="3334" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，米</value>
+  </data>
+  <data name="3335" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，米</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>面积，平方米</value>
+  </data>
+  <data name="3341" xml:space="preserve">
+    <value>面积，平方米</value>
+  </data>
+  <data name="3342" xml:space="preserve">
+    <value>面积，平方米</value>
+  </data>
+  <data name="3343" xml:space="preserve">
+    <value>面积，平方米</value>
+  </data>
+  <data name="3344" xml:space="preserve">
+    <value>面积，平方米</value>
+  </data>
+  <data name="3345" xml:space="preserve">
+    <value>面积，平方米</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>物流体积，升</value>
+  </data>
+  <data name="3351" xml:space="preserve">
+    <value>物流体积，升</value>
+  </data>
+  <data name="3352" xml:space="preserve">
+    <value>物流体积，升</value>
+  </data>
+  <data name="3353" xml:space="preserve">
+    <value>物流体积，升</value>
+  </data>
+  <data name="3354" xml:space="preserve">
+    <value>物流体积，升</value>
+  </data>
+  <data name="3355" xml:space="preserve">
+    <value>物流体积，升</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>物流体积，立方米</value>
+  </data>
+  <data name="3361" xml:space="preserve">
+    <value>物流体积，立方米</value>
+  </data>
+  <data name="3362" xml:space="preserve">
+    <value>物流体积，立方米</value>
+  </data>
+  <data name="3363" xml:space="preserve">
+    <value>物流体积，立方米</value>
+  </data>
+  <data name="3364" xml:space="preserve">
+    <value>物流体积，立方米</value>
+  </data>
+  <data name="3365" xml:space="preserve">
+    <value>物流体积，立方米</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>千克每平方米</value>
+  </data>
+  <data name="3371" xml:space="preserve">
+    <value>千克每平方米</value>
+  </data>
+  <data name="3372" xml:space="preserve">
+    <value>千克每平方米</value>
+  </data>
+  <data name="3373" xml:space="preserve">
+    <value>千克每平方米</value>
+  </data>
+  <data name="3374" xml:space="preserve">
+    <value>千克每平方米</value>
+  </data>
+  <data name="3375" xml:space="preserve">
+    <value>千克每平方米</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>物流重量（磅）</value>
+  </data>
+  <data name="3401" xml:space="preserve">
+    <value>物流重量（磅）</value>
+  </data>
+  <data name="3402" xml:space="preserve">
+    <value>物流重量（磅）</value>
+  </data>
+  <data name="3403" xml:space="preserve">
+    <value>物流重量（磅）</value>
+  </data>
+  <data name="3404" xml:space="preserve">
+    <value>物流重量（磅）</value>
+  </data>
+  <data name="3405" xml:space="preserve">
+    <value>物流重量（磅）</value>
+  </data>
 </root>
