@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>일련 선적 컨테이너 코드</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>국제거래품목번호</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>포함된 거래 품목의 국제 거래 품목 번호(GTIN)</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>배치 또는 로트 번호</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>생산일자 (YYMMDD)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>마감일 (YYMMDD)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>포장 일자 (YYMMDD)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>유통기한 (연월일) (YYMMDD)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>판매 기한 (연월일) (YYMMDD)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>유효기간 (YYMMDD)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>내부 제품 변형</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>일련번호</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>소비자 제품 변형</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>수량이 가변적인 품목 (수량이 가변적인 거래 품목)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>물류 단위에 포함된 거래 품목 또는 거래 품목 단위의 수량</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>거래 파트너 간에 상호 합의된 정보</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>회사 내부 정보</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>회사 내부 정보</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>회사 내부 정보</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>회사 내부 정보</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>회사 내부 정보</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>회사 내부 정보</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>회사 내부 정보</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>회사 내부 정보</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>회사 내부 정보</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>제3자 관리형, 일련번호가 부여된 글로벌 무역 품목 번호확장</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>제조업체가 부여한 추가적인 제품 식별 정보</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>고객 부품 번호</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>주문 제작 옵션 번호</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>포장 구성품 번호</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>보조 일련번호</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>원본 엔티티에 대한 참조</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>글로벌 문서 유형 식별자</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>글로벌 위치 번호 확장 구성 요소</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>글로벌 쿠폰 번호</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>고객 주문 번호</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>탁송물용 국제 식별 번호</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>글로벌 배송 식별 번호</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>라우팅 코드</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>글로벌 위치 번호로 배송/전달</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>청구 대상 글로벌 위치 번호</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>글로벌 위치 번호를 통해 구매함</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>~로 배송 / ~로 전달 - 글로벌 위치 번호로 발송</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>물리적 위치 식별 - 글로벌 위치 번호</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>청구 당사자의 글로벌 위치 번호</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>생산 또는 서비스 장소의 글로벌 위치 번호</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>당사자 글로벌 위치 번호</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>단일 우편 관할 구역 내의 우편번호로 발송/배송</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>ISO 국가 코드를 포함한 우편번호로 배송</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>무역 품목의 원산지</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>최초 가공 국가</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>처리 국가</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>해체 국가</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>전체 공정 과정을 아우르는 국가</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>출처 국가 하위 행정구역</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>국가 의료 보상 번호 - 독일</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>국가 의료 보상 번호 - 프랑스</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>국가 의료 상환 번호 - 스페인</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>브라질 국가 의료비 상환 번호</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>국가 의료 보상 번호 - 포르투갈</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>국가 의료 보상 번호 - 미합중국</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>국가 의료 상환 번호 - 이탈리아</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>국가 의료 보상 번호 - 코스타리카</value>
+  </data>
+</root>

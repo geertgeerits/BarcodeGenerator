@@ -250,10 +250,10 @@
     <value>Identifikasi lokasi fisik - Global Location Number (Nomor Lokasi Global)</value>
   </data>
   <data name="415" xml:space="preserve">
-    <value>Global Location Number dari pihak penagih</value>
+    <value>Nomor Lokasi Global dari pihak penagih</value>
   </data>
   <data name="416" xml:space="preserve">
-    <value>Global Location Number (Nomor Lokasi Global) dari lokasi produksi atau layanan</value>
+    <value>Nomor Lokasi Global dari lokasi produksi atau layanan</value>
   </data>
   <data name="417" xml:space="preserve">
     <value>Nomor Lokasi Global Pihak</value>
@@ -521,5 +521,1214 @@
   </data>
   <data name="3245" xml:space="preserve">
     <value>Lebar, diameter, atau dimensi kedua, dalam inci (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, dalam satuan kaki (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3251" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, dalam satuan kaki (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3252" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, dalam satuan kaki (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3253" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, dalam satuan kaki (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3254" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, dalam satuan kaki (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3255" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, dalam satuan kaki (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3261" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3262" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3263" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3264" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3265" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, dalam inci (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3271" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, dalam inci (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3272" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, dalam inci (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3273" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, dalam inci (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3274" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, dalam inci (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3275" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, dalam inci (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3281" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3282" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3283" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3284" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3285" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki (ukuran variabel untuk barang dagangan)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard (item perdagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3291" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard (item perdagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3292" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard (item perdagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3293" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard (item perdagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3294" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard (item perdagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3295" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard (item perdagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>Bobot logistik, kilogram</value>
+  </data>
+  <data name="3301" xml:space="preserve">
+    <value>Bobot logistik, kilogram</value>
+  </data>
+  <data name="3302" xml:space="preserve">
+    <value>Bobot logistik, kilogram</value>
+  </data>
+  <data name="3303" xml:space="preserve">
+    <value>Bobot logistik, kilogram</value>
+  </data>
+  <data name="3304" xml:space="preserve">
+    <value>Bobot logistik, kilogram</value>
+  </data>
+  <data name="3305" xml:space="preserve">
+    <value>Bobot logistik, kilogram</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, meter</value>
+  </data>
+  <data name="3311" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, meter</value>
+  </data>
+  <data name="3312" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, meter</value>
+  </data>
+  <data name="3313" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, meter</value>
+  </data>
+  <data name="3314" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, meter</value>
+  </data>
+  <data name="3315" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, meter</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, meter</value>
+  </data>
+  <data name="3321" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, meter</value>
+  </data>
+  <data name="3322" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, meter</value>
+  </data>
+  <data name="3323" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, meter</value>
+  </data>
+  <data name="3324" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, meter</value>
+  </data>
+  <data name="3325" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, meter</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, meter</value>
+  </data>
+  <data name="3331" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, meter</value>
+  </data>
+  <data name="3332" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, meter</value>
+  </data>
+  <data name="3333" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, meter</value>
+  </data>
+  <data name="3334" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, meter</value>
+  </data>
+  <data name="3335" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, meter</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>Luas, meter persegi</value>
+  </data>
+  <data name="3341" xml:space="preserve">
+    <value>Luas, meter persegi</value>
+  </data>
+  <data name="3342" xml:space="preserve">
+    <value>Luas, meter persegi</value>
+  </data>
+  <data name="3343" xml:space="preserve">
+    <value>Luas, meter persegi</value>
+  </data>
+  <data name="3344" xml:space="preserve">
+    <value>Luas, meter persegi</value>
+  </data>
+  <data name="3345" xml:space="preserve">
+    <value>Luas, meter persegi</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>Volume logistik, liter</value>
+  </data>
+  <data name="3351" xml:space="preserve">
+    <value>Volume logistik, liter</value>
+  </data>
+  <data name="3352" xml:space="preserve">
+    <value>Volume logistik, liter</value>
+  </data>
+  <data name="3353" xml:space="preserve">
+    <value>Volume logistik, liter</value>
+  </data>
+  <data name="3354" xml:space="preserve">
+    <value>Volume logistik, liter</value>
+  </data>
+  <data name="3355" xml:space="preserve">
+    <value>Volume logistik, liter</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Volume logistik, meter kubik</value>
+  </data>
+  <data name="3361" xml:space="preserve">
+    <value>Volume logistik, meter kubik</value>
+  </data>
+  <data name="3362" xml:space="preserve">
+    <value>Volume logistik, meter kubik</value>
+  </data>
+  <data name="3363" xml:space="preserve">
+    <value>Volume logistik, meter kubik</value>
+  </data>
+  <data name="3364" xml:space="preserve">
+    <value>Volume logistik, meter kubik</value>
+  </data>
+  <data name="3365" xml:space="preserve">
+    <value>Volume logistik, meter kubik</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Kilogram per meter persegi</value>
+  </data>
+  <data name="3371" xml:space="preserve">
+    <value>Kilogram per meter persegi</value>
+  </data>
+  <data name="3372" xml:space="preserve">
+    <value>Kilogram per meter persegi</value>
+  </data>
+  <data name="3373" xml:space="preserve">
+    <value>Kilogram per meter persegi</value>
+  </data>
+  <data name="3374" xml:space="preserve">
+    <value>Kilogram per meter persegi</value>
+  </data>
+  <data name="3375" xml:space="preserve">
+    <value>Kilogram per meter persegi</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>Bobot logistik, pon</value>
+  </data>
+  <data name="3401" xml:space="preserve">
+    <value>Bobot logistik, pon</value>
+  </data>
+  <data name="3402" xml:space="preserve">
+    <value>Bobot logistik, pon</value>
+  </data>
+  <data name="3403" xml:space="preserve">
+    <value>Bobot logistik, pon</value>
+  </data>
+  <data name="3404" xml:space="preserve">
+    <value>Bobot logistik, pon</value>
+  </data>
+  <data name="3405" xml:space="preserve">
+    <value>Bobot logistik, pon</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, inci</value>
+  </data>
+  <data name="3411" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, inci</value>
+  </data>
+  <data name="3412" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, inci</value>
+  </data>
+  <data name="3413" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, inci</value>
+  </data>
+  <data name="3414" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, inci</value>
+  </data>
+  <data name="3415" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, inci</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, kaki</value>
+  </data>
+  <data name="3421" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, kaki</value>
+  </data>
+  <data name="3422" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, kaki</value>
+  </data>
+  <data name="3423" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, kaki</value>
+  </data>
+  <data name="3424" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, kaki</value>
+  </data>
+  <data name="3425" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, kaki</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, yard</value>
+  </data>
+  <data name="3431" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, yard</value>
+  </data>
+  <data name="3432" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, yard</value>
+  </data>
+  <data name="3433" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, yard</value>
+  </data>
+  <data name="3434" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, yard</value>
+  </data>
+  <data name="3435" xml:space="preserve">
+    <value>Panjang atau dimensi pertama, yard</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, inci</value>
+  </data>
+  <data name="3441" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, inci</value>
+  </data>
+  <data name="3442" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, inci</value>
+  </data>
+  <data name="3443" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, inci</value>
+  </data>
+  <data name="3444" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, inci</value>
+  </data>
+  <data name="3445" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, inci</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, kaki</value>
+  </data>
+  <data name="3451" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, kaki</value>
+  </data>
+  <data name="3452" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, kaki</value>
+  </data>
+  <data name="3453" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, kaki</value>
+  </data>
+  <data name="3454" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, kaki</value>
+  </data>
+  <data name="3455" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, kaki</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard</value>
+  </data>
+  <data name="3461" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard</value>
+  </data>
+  <data name="3462" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard</value>
+  </data>
+  <data name="3463" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard</value>
+  </data>
+  <data name="3464" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard</value>
+  </data>
+  <data name="3465" xml:space="preserve">
+    <value>Lebar, diameter, atau dimensi kedua, yard</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, inci</value>
+  </data>
+  <data name="3471" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, inci</value>
+  </data>
+  <data name="3472" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, inci</value>
+  </data>
+  <data name="3473" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, inci</value>
+  </data>
+  <data name="3474" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, inci</value>
+  </data>
+  <data name="3475" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, inci</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki</value>
+  </data>
+  <data name="3481" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki</value>
+  </data>
+  <data name="3482" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki</value>
+  </data>
+  <data name="3483" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki</value>
+  </data>
+  <data name="3484" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki</value>
+  </data>
+  <data name="3485" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, kaki</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard</value>
+  </data>
+  <data name="3491" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard</value>
+  </data>
+  <data name="3492" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard</value>
+  </data>
+  <data name="3493" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard</value>
+  </data>
+  <data name="3494" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard</value>
+  </data>
+  <data name="3495" xml:space="preserve">
+    <value>Kedalaman, ketebalan, tinggi, atau dimensi ketiga, yard</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>Luas, inci persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3501" xml:space="preserve">
+    <value>Luas, inci persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3502" xml:space="preserve">
+    <value>Luas, inci persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3503" xml:space="preserve">
+    <value>Luas, inci persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3504" xml:space="preserve">
+    <value>Luas, inci persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3505" xml:space="preserve">
+    <value>Luas, inci persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>Luas, kaki persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3511" xml:space="preserve">
+    <value>Luas, kaki persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3512" xml:space="preserve">
+    <value>Luas, kaki persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3513" xml:space="preserve">
+    <value>Luas, kaki persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3514" xml:space="preserve">
+    <value>Luas, kaki persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3515" xml:space="preserve">
+    <value>Luas, kaki persegi (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>Luas, yard persegi (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3521" xml:space="preserve">
+    <value>Luas, yard persegi (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3522" xml:space="preserve">
+    <value>Luas, yard persegi (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3523" xml:space="preserve">
+    <value>Luas, yard persegi (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3524" xml:space="preserve">
+    <value>Luas, yard persegi (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3525" xml:space="preserve">
+    <value>Luas, yard persegi (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>Luas, inci persegi</value>
+  </data>
+  <data name="3531" xml:space="preserve">
+    <value>Luas, inci persegi</value>
+  </data>
+  <data name="3532" xml:space="preserve">
+    <value>Luas, inci persegi</value>
+  </data>
+  <data name="3533" xml:space="preserve">
+    <value>Luas, inci persegi</value>
+  </data>
+  <data name="3534" xml:space="preserve">
+    <value>Luas, inci persegi</value>
+  </data>
+  <data name="3535" xml:space="preserve">
+    <value>Luas, inci persegi</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>Luas, kaki persegi</value>
+  </data>
+  <data name="3541" xml:space="preserve">
+    <value>Luas, kaki persegi</value>
+  </data>
+  <data name="3542" xml:space="preserve">
+    <value>Luas, kaki persegi</value>
+  </data>
+  <data name="3543" xml:space="preserve">
+    <value>Luas, kaki persegi</value>
+  </data>
+  <data name="3544" xml:space="preserve">
+    <value>Luas, kaki persegi</value>
+  </data>
+  <data name="3545" xml:space="preserve">
+    <value>Luas, kaki persegi</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>Luas, yard persegi</value>
+  </data>
+  <data name="3551" xml:space="preserve">
+    <value>Luas, yard persegi</value>
+  </data>
+  <data name="3552" xml:space="preserve">
+    <value>Luas, yard persegi</value>
+  </data>
+  <data name="3553" xml:space="preserve">
+    <value>Luas, yard persegi</value>
+  </data>
+  <data name="3554" xml:space="preserve">
+    <value>Luas, yard persegi</value>
+  </data>
+  <data name="3555" xml:space="preserve">
+    <value>Luas, yard persegi</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>Berat bersih, troy ounce (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3561" xml:space="preserve">
+    <value>Berat bersih, troy ounce (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3562" xml:space="preserve">
+    <value>Berat bersih, troy ounce (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3563" xml:space="preserve">
+    <value>Berat bersih, troy ounce (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3564" xml:space="preserve">
+    <value>Berat bersih, troy ounce (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3565" xml:space="preserve">
+    <value>Berat bersih, troy ounce (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>Berat bersih (atau volume), ons (barang dagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3571" xml:space="preserve">
+    <value>Berat bersih (atau volume), ons (barang dagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3572" xml:space="preserve">
+    <value>Berat bersih (atau volume), ons (barang dagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3573" xml:space="preserve">
+    <value>Berat bersih (atau volume), ons (barang dagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3574" xml:space="preserve">
+    <value>Berat bersih (atau volume), ons (barang dagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3575" xml:space="preserve">
+    <value>Berat bersih (atau volume), ons (barang dagangan dengan ukuran yang bervariasi)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>Volume bersih, kuart (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3601" xml:space="preserve">
+    <value>Volume bersih, kuart (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3602" xml:space="preserve">
+    <value>Volume bersih, kuart (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3603" xml:space="preserve">
+    <value>Volume bersih, kuart (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3604" xml:space="preserve">
+    <value>Volume bersih, kuart (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3605" xml:space="preserve">
+    <value>Volume bersih, kuart (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>Volume bersih, galon AS (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3611" xml:space="preserve">
+    <value>Volume bersih, galon AS (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3612" xml:space="preserve">
+    <value>Volume bersih, galon AS (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3613" xml:space="preserve">
+    <value>Volume bersih, galon AS (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3614" xml:space="preserve">
+    <value>Volume bersih, galon AS (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3615" xml:space="preserve">
+    <value>Volume bersih, galon AS (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>Volume logistik, kuart</value>
+  </data>
+  <data name="3621" xml:space="preserve">
+    <value>Volume logistik, kuart</value>
+  </data>
+  <data name="3622" xml:space="preserve">
+    <value>Volume logistik, kuart</value>
+  </data>
+  <data name="3623" xml:space="preserve">
+    <value>Volume logistik, kuart</value>
+  </data>
+  <data name="3624" xml:space="preserve">
+    <value>Volume logistik, kuart</value>
+  </data>
+  <data name="3625" xml:space="preserve">
+    <value>Volume logistik, kuart</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>Volume logistik, galon AS</value>
+  </data>
+  <data name="3631" xml:space="preserve">
+    <value>Volume logistik, galon AS</value>
+  </data>
+  <data name="3632" xml:space="preserve">
+    <value>Volume logistik, galon AS</value>
+  </data>
+  <data name="3633" xml:space="preserve">
+    <value>Volume logistik, galon AS</value>
+  </data>
+  <data name="3634" xml:space="preserve">
+    <value>Volume logistik, galon AS</value>
+  </data>
+  <data name="3635" xml:space="preserve">
+    <value>Volume logistik, galon AS</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>Volume bersih, inci kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3641" xml:space="preserve">
+    <value>Volume bersih, inci kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3642" xml:space="preserve">
+    <value>Volume bersih, inci kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3643" xml:space="preserve">
+    <value>Volume bersih, inci kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3644" xml:space="preserve">
+    <value>Volume bersih, inci kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3645" xml:space="preserve">
+    <value>Volume bersih, inci kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>Volume bersih, kaki kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3651" xml:space="preserve">
+    <value>Volume bersih, kaki kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3652" xml:space="preserve">
+    <value>Volume bersih, kaki kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3653" xml:space="preserve">
+    <value>Volume bersih, kaki kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3654" xml:space="preserve">
+    <value>Volume bersih, kaki kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3655" xml:space="preserve">
+    <value>Volume bersih, kaki kubik (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>Volume bersih, yard kubik (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3661" xml:space="preserve">
+    <value>Volume bersih, yard kubik (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3662" xml:space="preserve">
+    <value>Volume bersih, yard kubik (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3663" xml:space="preserve">
+    <value>Volume bersih, yard kubik (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3664" xml:space="preserve">
+    <value>Volume bersih, yard kubik (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3665" xml:space="preserve">
+    <value>Volume bersih, yard kubik (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>Volume logistik, inci kubik</value>
+  </data>
+  <data name="3671" xml:space="preserve">
+    <value>Volume logistik, inci kubik</value>
+  </data>
+  <data name="3672" xml:space="preserve">
+    <value>Volume logistik, inci kubik</value>
+  </data>
+  <data name="3673" xml:space="preserve">
+    <value>Volume logistik, inci kubik</value>
+  </data>
+  <data name="3674" xml:space="preserve">
+    <value>Volume logistik, inci kubik</value>
+  </data>
+  <data name="3675" xml:space="preserve">
+    <value>Volume logistik, inci kubik</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>Volume logistik, kaki kubik</value>
+  </data>
+  <data name="3681" xml:space="preserve">
+    <value>Volume logistik, kaki kubik</value>
+  </data>
+  <data name="3682" xml:space="preserve">
+    <value>Volume logistik, kaki kubik</value>
+  </data>
+  <data name="3683" xml:space="preserve">
+    <value>Volume logistik, kaki kubik</value>
+  </data>
+  <data name="3684" xml:space="preserve">
+    <value>Volume logistik, kaki kubik</value>
+  </data>
+  <data name="3685" xml:space="preserve">
+    <value>Volume logistik, kaki kubik</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>Volume logistik, yard kubik</value>
+  </data>
+  <data name="3691" xml:space="preserve">
+    <value>Volume logistik, yard kubik</value>
+  </data>
+  <data name="3692" xml:space="preserve">
+    <value>Volume logistik, yard kubik</value>
+  </data>
+  <data name="3693" xml:space="preserve">
+    <value>Volume logistik, yard kubik</value>
+  </data>
+  <data name="3694" xml:space="preserve">
+    <value>Volume logistik, yard kubik</value>
+  </data>
+  <data name="3695" xml:space="preserve">
+    <value>Volume logistik, yard kubik</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>Jumlah yang dapat dibayarkan atau nilai kupon, dalam mata uang lokal</value>
+  </data>
+  <data name="3901" xml:space="preserve">
+    <value>Jumlah yang dapat dibayarkan atau nilai kupon, dalam mata uang lokal</value>
+  </data>
+  <data name="3902" xml:space="preserve">
+    <value>Jumlah yang dapat dibayarkan atau nilai kupon, dalam mata uang lokal</value>
+  </data>
+  <data name="3903" xml:space="preserve">
+    <value>Jumlah yang dapat dibayarkan atau nilai kupon, dalam mata uang lokal</value>
+  </data>
+  <data name="3904" xml:space="preserve">
+    <value>Jumlah yang dapat dibayarkan atau nilai kupon, dalam mata uang lokal</value>
+  </data>
+  <data name="3905" xml:space="preserve">
+    <value>Jumlah yang dapat dibayarkan atau nilai kupon, dalam mata uang lokal</value>
+  </data>
+  <data name="3906" xml:space="preserve">
+    <value>Jumlah yang dapat dibayarkan atau nilai kupon, dalam mata uang lokal</value>
+  </data>
+  <data name="3907" xml:space="preserve">
+    <value>Jumlah yang dapat dibayarkan atau nilai kupon, dalam mata uang lokal</value>
+  </data>
+  <data name="3908" xml:space="preserve">
+    <value>Jumlah yang dapat dibayarkan atau nilai kupon, dalam mata uang lokal</value>
+  </data>
+  <data name="3909" xml:space="preserve">
+    <value>Jumlah yang dapat dibayarkan atau nilai kupon, dalam mata uang lokal</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO</value>
+  </data>
+  <data name="3911" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO</value>
+  </data>
+  <data name="3912" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO</value>
+  </data>
+  <data name="3913" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO</value>
+  </data>
+  <data name="3914" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO</value>
+  </data>
+  <data name="3915" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO</value>
+  </data>
+  <data name="3916" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO</value>
+  </data>
+  <data name="3917" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO</value>
+  </data>
+  <data name="3918" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO</value>
+  </data>
+  <data name="3919" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>Jumlah yang harus dibayarkan, area moneter tunggal (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3921" xml:space="preserve">
+    <value>Jumlah yang harus dibayarkan, area moneter tunggal (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3922" xml:space="preserve">
+    <value>Jumlah yang harus dibayarkan, area moneter tunggal (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3923" xml:space="preserve">
+    <value>Jumlah yang harus dibayarkan, area moneter tunggal (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3924" xml:space="preserve">
+    <value>Jumlah yang harus dibayarkan, area moneter tunggal (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3925" xml:space="preserve">
+    <value>Jumlah yang harus dibayarkan, area moneter tunggal (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3926" xml:space="preserve">
+    <value>Jumlah yang harus dibayarkan, area moneter tunggal (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3927" xml:space="preserve">
+    <value>Jumlah yang harus dibayarkan, area moneter tunggal (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3928" xml:space="preserve">
+    <value>Jumlah yang harus dibayarkan, area moneter tunggal (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3929" xml:space="preserve">
+    <value>Jumlah yang harus dibayarkan, area moneter tunggal (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3931" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3932" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3933" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3934" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3935" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3936" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3937" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3938" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3939" xml:space="preserve">
+    <value>Jumlah yang harus dibayar beserta kode mata uang ISO (item perdagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>Persentase diskon kupon</value>
+  </data>
+  <data name="3941" xml:space="preserve">
+    <value>Persentase diskon kupon</value>
+  </data>
+  <data name="3942" xml:space="preserve">
+    <value>Persentase diskon kupon</value>
+  </data>
+  <data name="3943" xml:space="preserve">
+    <value>Persentase diskon kupon</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>Jumlah yang harus dibayar per unit ukuran dalam satu wilayah moneter (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3951" xml:space="preserve">
+    <value>Jumlah yang harus dibayar per unit ukuran dalam satu wilayah moneter (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3952" xml:space="preserve">
+    <value>Jumlah yang harus dibayar per unit ukuran dalam satu wilayah moneter (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3953" xml:space="preserve">
+    <value>Jumlah yang harus dibayar per unit ukuran dalam satu wilayah moneter (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3954" xml:space="preserve">
+    <value>Jumlah yang harus dibayar per unit ukuran dalam satu wilayah moneter (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="3955" xml:space="preserve">
+    <value>Jumlah yang harus dibayar per unit ukuran dalam satu wilayah moneter (barang dagangan dengan ukuran variabel)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>Nama perusahaan tujuan pengiriman</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>Kontak untuk pengiriman/penyerahan</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>Alamat pengiriman - baris 1</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>Baris alamat pengiriman 2</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>Kelurahan/kecamatan tujuan pengiriman</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>Lokasi pengiriman / tujuan pengiriman</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>Wilayah pengiriman / tujuan pengiriman</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>Kode negara tujuan pengiriman</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>Nomor telepon untuk tujuan pengiriman</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>Lokasi geografis pengiriman / tujuan pengiriman</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>Nama perusahaan tujuan pengembalian</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>Kontak untuk tindak lanjut</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>Alamat pengirim baris 1</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>Baris 2 alamat pengirim</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>Kembali ke pinggiran kota</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>Lokasi kembali</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>Wilayah kembali</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>Kode negara tujuan pengembalian</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>Kode pos tujuan pengembalian</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>Nomor telepon untuk dihubungi kembali</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>Deskripsi kode layanan</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>Tanda barang berbahaya</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>Izin untuk meninggalkan</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>Tanda penanda wajib tanda tangan</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>Tidak boleh sebelum tanggal dan waktu pengiriman (YYMMDDhhmm)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>Tidak boleh melewati tanggal dan waktu pengiriman (YYMMDDhhmm)</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>Tanggal rilis (YYMMDD)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>Suhu maksimum dalam Fahrenheit (dinyatakan dalam seperseratus derajat)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>Suhu maksimum dalam derajat Celsius (dinyatakan dalam seperseratus derajat)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>Suhu minimum dalam Fahrenheit (dinyatakan dalam seperseratus derajat)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>Suhu minimum dalam derajat Celsius (dinyatakan dalam seperseratus derajat)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>Nomor Stok NATO (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>Klasifikasi karkas dan potongan daging menurut UN/ECE</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>Tanggal dan waktu kedaluwarsa (YYMMDDhhmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>Potensi aktif</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>Area tangkapan</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>Tanggal pembekuan pertama (YYMMDD)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>Tanggal panen (TTBBHH[TTBBHH])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>Spesies untuk tujuan perikanan</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>Jenis alat tangkap</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>Metode produksi</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>Uji berdasarkan tanggal (YYMMDD[hhmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>ID lot perbaikan</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>Status fungsional</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>Status revisi</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>Pengidentifikasi Aset Individual Global untuk suatu rakitan</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>Jumlah prosesor dengan kode negara ISO tiga digit</value>
+  </data>
+  <data name="7031" xml:space="preserve">
+    <value>Jumlah prosesor dengan kode negara ISO tiga digit</value>
+  </data>
+  <data name="7032" xml:space="preserve">
+    <value>Jumlah prosesor dengan kode negara ISO tiga digit</value>
+  </data>
+  <data name="7033" xml:space="preserve">
+    <value>Jumlah prosesor dengan kode negara ISO tiga digit</value>
+  </data>
+  <data name="7034" xml:space="preserve">
+    <value>Jumlah prosesor dengan kode negara ISO tiga digit</value>
+  </data>
+  <data name="7035" xml:space="preserve">
+    <value>Jumlah prosesor dengan kode negara ISO tiga digit</value>
+  </data>
+  <data name="7036" xml:space="preserve">
+    <value>Jumlah prosesor dengan kode negara ISO tiga digit</value>
+  </data>
+  <data name="7037" xml:space="preserve">
+    <value>Jumlah prosesor dengan kode negara ISO tiga digit</value>
+  </data>
+  <data name="7038" xml:space="preserve">
+    <value>Jumlah prosesor dengan kode negara ISO tiga digit</value>
+  </data>
+  <data name="7039" xml:space="preserve">
+    <value>Jumlah prosesor dengan kode negara ISO tiga digit</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>GS1 UIC dengan Ekstensi 1 dan indeks Importir</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>Jenis unit pengangkutan UN/CEFACT</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>Referensi Sertifikasi</value>
+  </data>
+  <data name="7231" xml:space="preserve">
+    <value>Referensi Sertifikasi</value>
+  </data>
+  <data name="7232" xml:space="preserve">
+    <value>Referensi Sertifikasi</value>
+  </data>
+  <data name="7233" xml:space="preserve">
+    <value>Referensi Sertifikasi</value>
+  </data>
+  <data name="7234" xml:space="preserve">
+    <value>Referensi Sertifikasi</value>
+  </data>
+  <data name="7235" xml:space="preserve">
+    <value>Referensi Sertifikasi</value>
+  </data>
+  <data name="7236" xml:space="preserve">
+    <value>Referensi Sertifikasi</value>
+  </data>
+  <data name="7237" xml:space="preserve">
+    <value>Referensi Sertifikasi</value>
+  </data>
+  <data name="7238" xml:space="preserve">
+    <value>Referensi Sertifikasi</value>
+  </data>
+  <data name="7239" xml:space="preserve">
+    <value>Referensi Sertifikasi</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>ID Protokol</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>Jenis media AIDC</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>Nomor Kontrol Versi</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>Tanggal lahir (YYYYMMDD)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>Tanggal dan waktu lahir (YYYYMMDDhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>Jenis kelamin biologis</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>Nama keluarga seseorang</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>Nama depan seseorang</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>Akhiran nama seseorang</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>Nama lengkap seseorang</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>Alamat seseorang</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>Urutan kelahiran bayi</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>Bayi dari keluarga bermarga...</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>Produk gulungan (lebar, panjang, diameter inti, arah, sambungan)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>Pengidentifikasi telepon seluler</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>Pengidentifikasi Aset yang Dapat Dikembalikan secara Global</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>Pengidentifikasi Aset Individu Global</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>Harga per satuan ukuran</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>Identifikasi satu unit barang dagangan tertentu</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>Nomor Rekening Bank Internasional</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>Tanggal dan waktu produksi (YYMMDDhh[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>Indikator Sensor yang Dapat Dibaca Secara Optis</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>Pengidentifikasi Komponen/Bagian</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>Nomor seri pengidentifikasi komponen/bagian</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>Versi perangkat lunak</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>Nomor Model Global</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>Nomor Hubungan Layanan Global untuk mengidentifikasi hubungan antara organisasi yang menawarkan layanan dan penyedia layanan tersebut.</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>Nomor Hubungan Layanan Global  untuk mengidentifikasi hubungan antara organisasi penyedia layanan dan penerima layanan</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>Nomor Instansi Hubungan Layanan</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>Nomor referensi slip pembayaran</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>Identifikasi bagian-bagian dari suatu item perdagangan yang terdapat di dalam unit logistik</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>Digital Signature (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>Identitas Peralatan Seluler Internasional</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>Identitas Peralatan Seluler Internasional 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>Nomor SIM tertanam</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>Nomor SIM fisik</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>Identifikasi kode kupon untuk digunakan di Amerika Utara</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>Poin loyalitas dari sebuah kupon</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>Identifikasi kode kupon penawaran yang valid untuk digunakan di Amerika Utara</value>
   </data>
 </root>

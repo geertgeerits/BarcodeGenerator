@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>Numer seryjny jednostki logistycznej</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>Globalny numer jednostki handlowej</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>Globalny numer jednostki handlowej (GTIN) zawartych jednostek handlowych</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>Numer partii lub serii</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>Data produkcji (RRMMDD)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Termin (RRMMDD)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Data pakowania (RRMMDD)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Data minimalnej trwałości (RRMMDD)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Termin sprzedaży (RRMMDD)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Data ważności (RRMMDD)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Wewnętrzny wariant produktu</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Numer seryjny</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Wariant produktu konsumenckiego</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Zmienna liczba jednostek (towar handlowy o zmiennej ilości)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>Liczba jednostek handlowych lub elementów jednostek handlowych zawartych w jednostce logistycznej</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>Informacje uzgodnione pomiędzy partnerami handlowymi</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>Informacje wewnętrzne firmy</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>Informacje wewnętrzne firmy</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>Informacje wewnętrzne firmy</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>Informacje wewnętrzne firmy</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>Informacje wewnętrzne firmy</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>Informacje wewnętrzne firmy</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>Informacje wewnętrzne firmy</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>Informacje wewnętrzne firmy</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>Informacje wewnętrzne firmy</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Kontrolowane przez podmiot zewnętrzny, zserializowane rozszerzenie globalnego numeru jednostki handlowej</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>Dodatkowe oznaczenie produktu nadane przez producenta</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Numer części klienta</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Numer wariantu produktu wykonywanego na zamówienie</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Numer elementu opakowania</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>Dodatkowy numer seryjny</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Odniesienie do podmiotu źródłowego</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Globalny identyfikator typu dokumentu</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Składnik rozszerzenia globalnego numeru lokalizacyjnego</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Globalny numer kuponu</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>Numer zamówienia klienta</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>Globalny numer identyfikacyjny przesyłki</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>Globalny numer identyfikacyjny przesyłki</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>Kod routingu</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>Wysyłka do / Dostawa do – Globalny Numer Lokalizacyjny</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>Globalny numer lokalizacji dla celów rozliczeniowych / wystawiania faktur</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>Zakupiono z Globalnego Numeru Lokalizacyjnego</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>Wysyłka do / Dostawa do – Przekierowanie na globalny numer lokalizacji</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>Identyfikacja lokalizacji fizycznej – Globalny Numer Lokalizacyjny</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>Globalny numer lokalizacyjny strony wystawiającej fakturę</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>Globalny numer lokalizacji miejsca produkcji lub świadczenia usługi</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>Globalny numer lokalizacyjny podmiotu</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>Wysyłka / dostawa na kod pocztowy w obrębie jednego obszaru pocztowego</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>Wysyłka do / Dostawa do – kod pocztowy wraz z kodem kraju ISO</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>Kraj pochodzenia towaru</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>Kraj wstępnego przetwarzania</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>Kraj przetwarzania</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>Kraj demontażu</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>Kraj obejmujący pełny łańcuch procesowy</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>Jednostka podziału terytorialnego kraju pochodzenia</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>Krajowy numer refundacji w ramach opieki zdrowotnej – Niemcy</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>Nasjonal refusjonskode for helsetjenester – Frankrike</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>Krajowy numer refundacji w ramach opieki zdrowotnej – Hiszpania</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>Narodowy Numer Refundacji Opieki Zdrowotnej – Brazylia</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>Krajowy numer refundacji w ramach opieki zdrowotnej – Portugalia</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>Krajowy numer refundacji świadczeń zdrowotnych – Stany Zjednoczone Ameryki</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>Krajowy numer refundacji w ramach opieki zdrowotnej – Włochy</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>Nasjonal refusjonskode for helsetjenester – Costa Rica</value>
+  </data>
+</root>
