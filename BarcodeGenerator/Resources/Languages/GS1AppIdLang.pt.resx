@@ -1,101 +1,453 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>Código de Série de Unidade de Carga</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>Número Global de Item Comercial</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>Número Global de Item Comercial dos itens comerciais contidos</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>Número de lote</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>Data de produção (AAMMDD)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Data de vencimento (AAMMDD)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Data de embalagem (AAMMDD)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Data de validade (AAMMDD)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Data limite para venda (AAMMDD)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Data de validade (AAMMDD)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Variante interna de produto</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Número de série</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Variante de produto de consumo</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Quantidade variável de itens (item comercial de medida variável)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>Contagem de itens comerciais ou unidades de itens comerciais contidos em uma unidade logística</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>Informações acordadas mutuamente entre parceiros comerciais</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>Informações internas da empresa</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>Informações internas da empresa</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>Informações internas da empresa</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>Informações internas da empresa</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>Informações internas da empresa</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>Informações internas da empresa</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>Informações internas da empresa</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>Informações internas da empresa</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>Informações internas da empresa</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Extensão serializada do Número Global de Item Comercial, controlada por terceiros</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>Identificação adicional do produto atribuída pelo fabricante</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Número de peça do cliente</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Número da variação sob encomenda</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Número do componente da embalagem</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>Número de série secundário</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Referência à entidade de origem</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Identificador Global de Tipo de Documento</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Componente de extensão do Número de Localização Global</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Número Global de Cupom</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>Número do pedido de compra do cliente</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>Número de Identificação Global de Remessa</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>Número de Identificação de Remessa Global</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>Código de roteamento</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>Enviar para / Entregar para o Número de Localização Global</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>Número de Localização Global para fins de faturamento</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>Adquirido de um Número de Localização Global</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>Enviar para / Entregar para – Encaminhar para o Número de Localização Global</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>Identificação de um local físico – Número Global de Localização</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>Número de Localização Global da parte que emite a fatura</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>Número Global de Localização do local de produção ou de prestação de serviço</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>Número Global de Localização de Parte</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>Enviar para / Entregar em um código postal dentro de uma mesma jurisdição postal</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>Enviar para / Entregar no código postal com código de país ISO</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>País de origem de um item comercial</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>País de processamento inicial</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>País de processamento</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>País de desmontagem</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>País que abrange toda a cadeia de processos</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>Subdivisão territorial de origem</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>Número Nacional de Reembolso em Saúde – Alemanha</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>Número Nacional de Reembolso de Assistência Médica – França</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>Número Nacional de Reembolso de Assistência Médica – Espanha</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>Número Nacional de Reembolso de Saúde - Brasil</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>Número Nacional de Reembolso de Cuidados de Saúde – Portugal</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>Número Nacional de Reembolso em Saúde – Estados Unidos da América</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>Número Nacional de Reembolso em Saúde – Itália</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>Número Nacional de Reembolso em Saúde – Costa Rica</value>
+  </data>
+  <data name="3100" xml:space="preserve">
+    <value>Peso líquido, quilogramas (item comercial de medida variável)</value>
+  </data>
+  <data name="3101" xml:space="preserve">
+    <value>Peso líquido, quilogramas (item comercial de medida variável)</value>
+  </data>
+  <data name="3102" xml:space="preserve">
+    <value>Peso líquido, quilogramas (item comercial de medida variável)</value>
+  </data>
+  <data name="3103" xml:space="preserve">
+    <value>Peso líquido, quilogramas (item comercial de medida variável)</value>
+  </data>
+  <data name="3104" xml:space="preserve">
+    <value>Peso líquido, quilogramas (item comercial de medida variável)</value>
+  </data>
+  <data name="3105" xml:space="preserve">
+    <value>Peso líquido, quilogramas (item comercial de medida variável)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>Comprimento ou primeira dimensão, metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3111" xml:space="preserve">
+    <value>Comprimento ou primeira dimensão, metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3112" xml:space="preserve">
+    <value>Comprimento ou primeira dimensão, metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3113" xml:space="preserve">
+    <value>Comprimento ou primeira dimensão, metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3114" xml:space="preserve">
+    <value>Comprimento ou primeira dimensão, metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3115" xml:space="preserve">
+    <value>Comprimento ou primeira dimensão, metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>Largura, diâmetro ou segunda dimensão, em metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3121" xml:space="preserve">
+    <value>Largura, diâmetro ou segunda dimensão, em metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3122" xml:space="preserve">
+    <value>Largura, diâmetro ou segunda dimensão, em metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3123" xml:space="preserve">
+    <value>Largura, diâmetro ou segunda dimensão, em metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3124" xml:space="preserve">
+    <value>Largura, diâmetro ou segunda dimensão, em metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3125" xml:space="preserve">
+    <value>Largura, diâmetro ou segunda dimensão, em metros (item comercial de medida variável)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>Profundidade, espessura, altura ou terceira dimensão, metros (item comercial com medida variável)</value>
+  </data>
+  <data name="3131" xml:space="preserve">
+    <value>Profundidade, espessura, altura ou terceira dimensão, metros (item comercial com medida variável)</value>
+  </data>
+  <data name="3132" xml:space="preserve">
+    <value>Profundidade, espessura, altura ou terceira dimensão, metros (item comercial com medida variável)</value>
+  </data>
+  <data name="3133" xml:space="preserve">
+    <value>Profundidade, espessura, altura ou terceira dimensão, metros (item comercial com medida variável)</value>
+  </data>
+  <data name="3134" xml:space="preserve">
+    <value>Profundidade, espessura, altura ou terceira dimensão, metros (item comercial com medida variável)</value>
+  </data>
+  <data name="3135" xml:space="preserve">
+    <value>Profundidade, espessura, altura ou terceira dimensão, metros (item comercial com medida variável)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>Área, metros quadrados (item comercial de medida variável)</value>
+  </data>
+  <data name="3141" xml:space="preserve">
+    <value>Área, metros quadrados (item comercial de medida variável)</value>
+  </data>
+  <data name="3142" xml:space="preserve">
+    <value>Área, metros quadrados (item comercial de medida variável)</value>
+  </data>
+  <data name="3143" xml:space="preserve">
+    <value>Área, metros quadrados (item comercial de medida variável)</value>
+  </data>
+  <data name="3144" xml:space="preserve">
+    <value>Área, metros quadrados (item comercial de medida variável)</value>
+  </data>
+  <data name="3145" xml:space="preserve">
+    <value>Área, metros quadrados (item comercial de medida variável)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>Volume líquido, litros (item comercial de medida variável)</value>
+  </data>
+  <data name="3151" xml:space="preserve">
+    <value>Volume líquido, litros (item comercial de medida variável)</value>
+  </data>
+  <data name="3152" xml:space="preserve">
+    <value>Volume líquido, litros (item comercial de medida variável)</value>
+  </data>
+  <data name="3153" xml:space="preserve">
+    <value>Volume líquido, litros (item comercial de medida variável)</value>
+  </data>
+  <data name="3154" xml:space="preserve">
+    <value>Volume líquido, litros (item comercial de medida variável)</value>
+  </data>
+  <data name="3155" xml:space="preserve">
+    <value>Volume líquido, litros (item comercial de medida variável)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>Volume líquido, metros cúbicos (item comercial de medida variável)</value>
+  </data>
+  <data name="3161" xml:space="preserve">
+    <value>Volume líquido, metros cúbicos (item comercial de medida variável)</value>
+  </data>
+  <data name="3162" xml:space="preserve">
+    <value>Volume líquido, metros cúbicos (item comercial de medida variável)</value>
+  </data>
+  <data name="3163" xml:space="preserve">
+    <value>Volume líquido, metros cúbicos (item comercial de medida variável)</value>
+  </data>
+  <data name="3164" xml:space="preserve">
+    <value>Volume líquido, metros cúbicos (item comercial de medida variável)</value>
+  </data>
+  <data name="3165" xml:space="preserve">
+    <value>Volume líquido, metros cúbicos (item comercial de medida variável)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>Peso líquido, libras (item comercial de medida variável)</value>
+  </data>
+  <data name="3201" xml:space="preserve">
+    <value>Peso líquido, libras (item comercial de medida variável)</value>
+  </data>
+  <data name="3202" xml:space="preserve">
+    <value>Peso líquido, libras (item comercial de medida variável)</value>
+  </data>
+  <data name="3203" xml:space="preserve">
+    <value>Peso líquido, libras (item comercial de medida variável)</value>
+  </data>
+  <data name="3204" xml:space="preserve">
+    <value>Peso líquido, libras (item comercial de medida variável)</value>
+  </data>
+  <data name="3205" xml:space="preserve">
+    <value>Peso líquido, libras (item comercial de medida variável)</value>
+  </data>
 </root>

@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>系列货运集装箱代码</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>全球贸易项目代码</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>所含贸易项目的全球贸易项目代码</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>批次或批号</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>生产日期（YYMMDD）</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>到期日（年年月月日日）</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>包装日期（YYMMDD）</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>最佳食用日期（年年月月日日）</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>销售截止日期（年年月月日日）</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>有效期（YYMMDD）</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>内部产品变体</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>序列号</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>消费品变体</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>数量可变的商品（数量可变的贸易项目）</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>物流单元内所含贸易项目或贸易项目件的数量</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>贸易伙伴双方共同商定的信息</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>公司内部信息</value>
+  </data>
+  <data name="92" xml:space="preserve">
+    <value>公司内部信息</value>
+  </data>
+  <data name="93" xml:space="preserve">
+    <value>公司内部信息</value>
+  </data>
+  <data name="94" xml:space="preserve">
+    <value>公司内部信息</value>
+  </data>
+  <data name="95" xml:space="preserve">
+    <value>公司内部信息</value>
+  </data>
+  <data name="96" xml:space="preserve">
+    <value>公司内部信息</value>
+  </data>
+  <data name="97" xml:space="preserve">
+    <value>公司内部信息</value>
+  </data>
+  <data name="98" xml:space="preserve">
+    <value>公司内部信息</value>
+  </data>
+  <data name="99" xml:space="preserve">
+    <value>公司内部信息</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>由第三方管控、经序列化扩展的全球贸易项目代码</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>由制造商指定的额外产品标识</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>客户零件编号</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>按需定制版本编号</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>包装组件编号</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>辅助序列号</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>对源实体的引用</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>全球文档类型标识符</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>全球位置码扩展部分</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>全球优惠券编号</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>客户采购订单编号</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>托运货物全球识别码</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>全球货运识别号</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>路由代码</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>发货至 / 配送至全球位置码</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>账单寄送/发票开具对象（全球位置编码）</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>从全球位置码  持有方处购得</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>发货至 / 配送至 —— 转发至全球位置编码</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>物理位置标识——全球位置码</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>开票方的全球位置编码</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>生产或服务地点的全球位置码</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>参与方全球位置编号</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>在同一邮政管理区域内寄送至/送达至邮政编码</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>发货至/送达至邮政编码（含ISO国家代码）</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>贸易商品的原产国</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>最初加工国家</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>加工国家</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>拆解国</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>涵盖全流程链的国家</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>所属国家行政区划</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>德国国家医疗报销编号</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>法国国家医疗报销编号</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>国家医疗报销编号——西班牙</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>巴西国家医疗保健报销号码</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>国家医疗报销编号 - 葡萄牙</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>国家医疗报销编号——美利坚合众国</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>国家医疗报销编号 - 意大利</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>国家医疗报销编号——哥斯达黎加</value>
+  </data>
+  <data name="3100" xml:space="preserve">
+    <value>净重，千克（按实际计量交易的商品）</value>
+  </data>
+  <data name="3101" xml:space="preserve">
+    <value>净重，千克（按实际计量交易的商品）</value>
+  </data>
+  <data name="3102" xml:space="preserve">
+    <value>净重，千克（按实际计量交易的商品）</value>
+  </data>
+  <data name="3103" xml:space="preserve">
+    <value>净重，千克（按实际计量交易的商品）</value>
+  </data>
+  <data name="3104" xml:space="preserve">
+    <value>净重，千克（按实际计量交易的商品）</value>
+  </data>
+  <data name="3105" xml:space="preserve">
+    <value>净重，千克（按实际计量交易的商品）</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>长度或第一维度，米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3111" xml:space="preserve">
+    <value>长度或第一维度，米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3112" xml:space="preserve">
+    <value>长度或第一维度，米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3113" xml:space="preserve">
+    <value>长度或第一维度，米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3114" xml:space="preserve">
+    <value>长度或第一维度，米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3115" xml:space="preserve">
+    <value>长度或第一维度，米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>宽度、直径或第二维度，单位：米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3121" xml:space="preserve">
+    <value>宽度、直径或第二维度，单位：米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3122" xml:space="preserve">
+    <value>宽度、直径或第二维度，单位：米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3123" xml:space="preserve">
+    <value>宽度、直径或第二维度，单位：米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3124" xml:space="preserve">
+    <value>宽度、直径或第二维度，单位：米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3125" xml:space="preserve">
+    <value>宽度、直径或第二维度，单位：米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以米为单位（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3131" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以米为单位（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3132" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以米为单位（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3133" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以米为单位（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3134" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以米为单位（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3135" xml:space="preserve">
+    <value>深度、厚度、高度或第三维度，以米为单位（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>面积，平方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3141" xml:space="preserve">
+    <value>面积，平方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3142" xml:space="preserve">
+    <value>面积，平方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3143" xml:space="preserve">
+    <value>面积，平方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3144" xml:space="preserve">
+    <value>面积，平方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3145" xml:space="preserve">
+    <value>面积，平方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>净容量，升（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3151" xml:space="preserve">
+    <value>净容量，升（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3152" xml:space="preserve">
+    <value>净容量，升（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3153" xml:space="preserve">
+    <value>净容量，升（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3154" xml:space="preserve">
+    <value>净容量，升（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3155" xml:space="preserve">
+    <value>净容量，升（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>净体积，立方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3161" xml:space="preserve">
+    <value>净体积，立方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3162" xml:space="preserve">
+    <value>净体积，立方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3163" xml:space="preserve">
+    <value>净体积，立方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3164" xml:space="preserve">
+    <value>净体积，立方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3165" xml:space="preserve">
+    <value>净体积，立方米（按可变计量单位交易的商品）</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>净重，磅（可变计量单位商品）</value>
+  </data>
+  <data name="3201" xml:space="preserve">
+    <value>净重，磅（可变计量单位商品）</value>
+  </data>
+  <data name="3202" xml:space="preserve">
+    <value>净重，磅（可变计量单位商品）</value>
+  </data>
+  <data name="3203" xml:space="preserve">
+    <value>净重，磅（可变计量单位商品）</value>
+  </data>
+  <data name="3204" xml:space="preserve">
+    <value>净重，磅（可变计量单位商品）</value>
+  </data>
+  <data name="3205" xml:space="preserve">
+    <value>净重，磅（可变计量单位商品）</value>
+  </data>
+</root>
