@@ -148,7 +148,7 @@
     <value>Son kullanma tarihi (YYAAGG)</value>
   </data>
   <data name="20" xml:space="preserve">
-    <value>Variantă internă de produs</value>
+    <value>Dahili ürün varyantı</value>
   </data>
   <data name="21" xml:space="preserve">
     <value>Seri numarası</value>
@@ -458,5 +458,272 @@
   </data>
   <data name="3950" xml:space="preserve">
     <value>Tek bir parasal alan içinde ölçü birimi başına ödenecek tutar (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>Gönderim yapılacak / Teslimat yapılacak şirket adı</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>Gönderim/Teslimat irtibat kişisi</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>Gönderim/Teslimat adresi satırı 1</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>Gönderim/Teslimat adresi satırı 2</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>Gönderim / Teslimat yapılacak semt</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>Gönderim / Teslimat yeri</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>Gönderim / Teslimat bölgesi</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>Gönderim / Teslimat ülkesi kodu</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>Gönderim / Teslimat telefon numarası</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>Gönderim / Teslimat coğrafi konumu</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>İade edilecek şirket adı</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>İletişime geri dön</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>İade adresi satırı 1</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>İade adresi 2. satır</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>Banliyöye dönüş</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>Yerelliğe dönüş</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>Dönüş bölgesi</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>Ülkeye dönüş kodu</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>İade posta kodu</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>Geri dönüş telefon numarası</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>Hizmet kodu açıklaması</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>Tehlikeli madde işareti</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>Ayrılma yetkisi</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>İmza gereklidir işareti</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>Teslimat tarih ve saatinden önce değil (YYAAGGssdd)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>Teslimat tarih ve saatinden (YYMMDDhhmm) sonra değil</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>Yayın tarihi (YYAAGG)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>Fahrenheit cinsinden maksimum sıcaklık (derecenin yüzde biri biriminde ifade edilmiştir)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>Celsius cinsinden maksimum sıcaklık (derecenin yüzde biri biriminde ifade edilmiştir)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>Fahrenheit cinsinden minimum sıcaklık (derecenin yüzde biri biriminde ifade edilmiştir)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>Celsius cinsinden minimum sıcaklık (derecenin yüzde biri biriminde ifade edilmiştir)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>NATO Stok Numarası (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>BM/ECE et karkasları ve parçalarının sınıflandırılması</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>Son kullanma tarihi ve saati (YYMMDDhhmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>Etkin güç</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>Yakalama alanı</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>İlk don tarihi (YYAAGG)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>Hasat tarihi (YYAAGG[YYAAGG])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>Balıkçılık amaçlı türler</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>Balıkçılık ekipmanı türü</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>Üretim yöntemi</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>Tarihe göre test et (YYMMDD[hhmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>Yenileme partisi kimliği</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>İşlevsel durum</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>Revizyon durumu</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>Bir montajın küresel bireysel varlık tanımlayıcısı</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>Üç haneli ISO ülke koduyla birlikte işlemci sayısı</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>Uzantı 1 ve İthalatçı indeksi içeren GS1 UIC</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>UN/CEFACT yük birimi türü</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>Sertifikasyon Referansı</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>Protokol Kimliği</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>AIDC ortam türü</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>Sürüm Kontrol Numarası</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>Doğum tarihi (YYYYAAGG)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>Doğum tarihi ve saati (YYYYMMDDhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>Biyolojik cinsiyet</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>Kişinin soyadı</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>Kişinin adı</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>Kişi isim eki</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>Kişinin tam adı</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>Kişinin adresi</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>Bebek doğum süreci</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>Aile ismini taşıyan bebek</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>Rulo ürünler (genişlik, uzunluk, göbek çapı, yön, ek yerleri)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>Hücresel mobil telefon tanımlayıcısı</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>Küresel İade Edilebilir Varlık Tanımlayıcı</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>Küresel Bireysel Varlık Tanımlayıcı</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>Ölçü birimi başına fiyat</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>Bireysel bir ticari ürün parçasının tanımlanması</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>Uluslararası Banka Hesap Numarası</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>Üretim tarihi ve saati (YYAAGGss[dd[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>Optik Olarak Okunabilir Sensör Göstergesi</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>Bileşen/Parça Tanımlayıcı</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>Bileşen/Parça Tanımlayıcı seri numarası</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>Yazılım sürümü</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>Küresel Model Numarası</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>Hizmet sunan bir kuruluş ile hizmet sağlayıcı arasındaki ilişkiyi tanımlamaya yarayan Küresel Hizmet İlişki Numarası</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>Hizmet sunan bir kuruluş ile hizmeti alan taraf arasındaki ilişkiyi tanımlayan Küresel Hizmet İlişkisi Numarası</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>Hizmet İlişkisi Örnek Numarası</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>Ödeme fişi referans numarası</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>Bir lojistik birim içinde yer alan ticari ürün parçalarının tanımlanması</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>Dijital İmza (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>Uluslararası Mobil Ekipman Kimliği</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>Uluslararası Mobil Ekipman Kimliği 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>Gömülü SIM numarası</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>Fiziksel SIM numarası</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>Kuzey Amerika'da kullanılacak kupon kodlarının tanımlanması</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>Bir kuponun sadakat puanları</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>Kuzey Amerika'da kullanılmak üzere kupon kodu içeren teklif dosyası</value>
   </data>
 </root>

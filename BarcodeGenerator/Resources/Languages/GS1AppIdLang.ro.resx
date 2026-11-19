@@ -459,4 +459,271 @@
   <data name="3950" xml:space="preserve">
     <value>Suma de plată per unitate de măsură în cadrul unei zone monetare unice (articol comercial cu cantitate variabilă)</value>
   </data>
+  <data name="4300" xml:space="preserve">
+    <value>Numele companiei către care se expediază / livrează</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>Persoană de contact pentru expediere / livrare</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>Adresa de expediere / livrare – rândul 1</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>Adresă de expediere / livrare – rândul 2</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>Suburbie de expediere / livrare</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>Localitate de expediere / livrare</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>Regiune de expediere / livrare</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>Codul țării de expediere / livrare</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>Număr de telefon pentru expediere / livrare</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>Locație geografică de expediere / livrare</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>Numele companiei către care se face returnarea</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>Revenire la contact</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>Adresa expeditorului, rândul 1</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>Adresa de retur – rândul 2</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>Revenirea în suburbii</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>Revenire în localitate</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>Regiune de revenire</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>Cod de țară pentru returnare</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>Cod poștal pentru retur</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>Număr de telefon pentru contact</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>Descrierea codului de serviciu</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>Indicator pentru mărfuri periculoase</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>Autorizație de plecare</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>Indicator „semnătură necesară”</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>Nu înainte de data și ora livrării (AALLZZhhmm)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>Nu după data și ora livrării (AALLZZooMM)</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>Data lansării (AALLZZ)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>Temperatura maximă în grade Fahrenheit (exprimată în sutimi de grad)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>Temperatura maximă în grade Celsius (exprimată în sutimi de grad)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>Temperatura minimă în grade Fahrenheit (exprimată în sutimi de grad)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>Temperatura minimă în grade Celsius (exprimată în sutimi de grad)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>Număr de stoc NATO (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>Clasificarea carcaselor și a bucăților de carne conform UN/ECE</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>Data și ora expirării (AALLZZhhmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>Potență activă</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>Zonă de captură</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>Data primului îngheț (AALLZZ)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>Data recoltării (AALLZZ[AALLZZ])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>Specii destinate pescuitului</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>Tip de echipament de pescuit</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>Metodă de producție</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>Testare după dată (AALLZZ[ooMM])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>ID lot de recondiționare</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>Stare funcțională</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>Stadiul revizuirii</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>Identificator global individual al activului pentru un ansamblu</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>Număr de procesor cu cod de țară ISO din trei cifre</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>GS1 UIC cu Extensia 1 și indicele importatorului</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>Tip de unitate de transport UN/CEFACT</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>Referință de certificare</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>ID protocol</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>Tip de suport AIDC</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>Număr de control al versiunii</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>Data nașterii (AAAALLZZ)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>Data și ora nașterii (AAAALLZZhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>Sex biologic</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>Numele de familie al persoanei</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>Prenumele persoanei</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>Sufix al numelui unei persoane</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>Numele complet al persoanei</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>Adresa persoanei</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>Secvența nașterii bebelușului</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>Copilul familiei</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>Produse sub formă de rolă (lățime, lungime, diametrul miezului, direcție, îmbinări)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>Identificator de telefon mobil celular</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>Identificator global pentru active reutilizabile</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>Identificator Global al Activelor Individuale</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>Preț pe unitatea de măsură</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>Identificarea unei unități comerciale individuale</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>Număr de cont bancar internațional</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>Data și ora producerii (AAZZLLoo[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>Indicator de senzor citibil optic</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>Identificator componentă/piesă</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>Număr de serie de identificare a componentei/piesei</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>Versiune software</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>Număr global de model</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>Număr global de relație de serviciu, utilizat pentru a identifica relația dintre o organizație care oferă servicii și furnizorul de servicii</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>Număr global de relație de serviciu, utilizat pentru a identifica relația dintre o organizație care oferă servicii și beneficiarul serviciilor</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>Număr de instanță a relației de serviciu</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>Număr de referință al documentului de plată</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>Identificarea componentelor unei unități comerciale conținute într-o unitate logistică</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>Semnătură digitală (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>Identificator Internațional al Echipamentului Mobil</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>Identitatea internațională a echipamentelor mobile 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>Număr SIM încorporat</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>Număr SIM fizic</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>Identificarea codurilor de cupon pentru utilizare în America de Nord</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>Puncte de loialitate aferente unui cupon</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>Identificarea codurilor de cupon pentru oferte, destinate utilizării în America de Nord</value>
+  </data>
 </root>

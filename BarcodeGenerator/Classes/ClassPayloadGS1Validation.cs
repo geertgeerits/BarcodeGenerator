@@ -1301,17 +1301,17 @@ namespace BarcodeGenerator
                 cAppId = cAppId[..3] + "0";
             }
 
-            if (cAppId.StartsWith("703") && cAppId.Length == 4 && cAppId[^1] != '0')
+            else if (cAppId.StartsWith("703") && cAppId.Length == 4 && cAppId[^1] != '0')
             {
                 cAppId = cAppId[..3] + "0";
             }
 
-            if (cAppId.StartsWith("723") && cAppId.Length == 4 && cAppId[^1] != '0')
+            else if (cAppId.StartsWith("723") && cAppId.Length == 4 && cAppId[^1] != '0')
             {
                 cAppId = cAppId[..3] + "0";
             }
 
-            if (cAppId.StartsWith('9') && cAppId.Length == 2 && cAppId[^1] != '1')
+            else if (cAppId.StartsWith('9') && cAppId.Length == 2 && cAppId[^1] != '1')
             {
                 cAppId = cAppId[..1] + "1";
             }

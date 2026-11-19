@@ -459,4 +459,271 @@
   <data name="3950" xml:space="preserve">
     <value>واحد مالیاتی علاقے میں فی پیمائشی اکائی قابلِ ادائیگی رقم (متغیر پیمائش والی تجارتی شے)</value>
   </data>
+  <data name="4300" xml:space="preserve">
+    <value>کمپنی کا نام (جہاں سامان بھیجا/پہنچایا جانا ہے)</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>سامان بھیجنے/پہنچانے کے لیے رابطہ</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>بھیجنے/پہنچانے کا پتہ، سطر 1</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>بھیجنے/پہنچانے کے پتے کی دوسری سطر</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>بھیجنے/پہنچانے کا مضافاتی علاقہ</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>مقامِ ترسیل / مقامِ حوالگی</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>بھیجنے/پہنچانے کا خطہ</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>بھیجنے/پہنچانے کے ملک کا کوڈ</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>سامان بھیجنے/پہنچانے کے لیے ٹیلیفون نمبر</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>بھیجنے/پہنچانے کا جغرافیائی محل وقوع </value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>کمپنی کا نام (واپسی کے لیے)</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>واپسی-رابطہ</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>واپسی کا پتہ، سطر 1</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>واپسی کے پتے کی دوسری سطر</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>مضافات کی طرف واپسی</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>واپسی کا مقام</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>واپسی کا خطہ</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>واپسی کے ملک کا کوڈ</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>واپسی کے لیے پوسٹل کوڈ</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>واپسی کے لیے ٹیلیفون نمبر</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>سروس کوڈ کی تفصیل</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>خطرناک اشیاء کا نشان</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>جانے کی اجازت</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>دستخط درکار ہونے کا اشارہ</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>ڈیلیوری کی تاریخ اور وقت (YYMMDDhhmm) سے پہلے نہیں</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>ڈیلیوری کی تاریخ اور وقت (YYMMDDhhmm) کے بعد نہیں</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>اجراء کی تاریخ (YYMMDD)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>فارن ہائیٹ میں زیادہ سے زیادہ درجہ حرارت (ڈگری کے سوویں حصوں میں ظاہر کیا گیا)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>زیادہ سے زیادہ درجہ حرارت ڈگری سیلسیس میں (ڈگری کے سوویں حصوں میں ظاہر کیا گیا)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>فارن ہائیٹ میں کم از کم درجہ حرارت (ڈگری کے سوویں حصوں میں ظاہر کیا گیا)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>کم از کم درجہ حرارت ڈگری سیلسیس میں (ڈگری کے سوویں حصوں میں ظاہر کیا گیا)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>نیٹو اسٹاک نمبر (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>UN/ECE گوشت کے لاشوں اور ٹکڑوں کی درجہ بندی</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>میعاد ختم ہونے کی تاریخ اور وقت (YYMMDDhhmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>فعال قوت</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>کیچ ایریا</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>پہلی منجمد ہونے کی تاریخ (YYMMDD)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>کٹائی کی تاریخ (YYMMDD[YYMMDD])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>ماہی پروری کے مقاصد کے لیے انواع</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>ماہی گیری کے سامان کی قسم</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>پیداواری طریقہ</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>تاریخ کے لحاظ سے ٹیسٹ (YYMMDD[hhmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>تجدید کاری لاٹ کی شناخت (ID)</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>فعالیت کی حیثیت</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>نظرِ ثانی کی حیثیت</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>کسی اسمبلی (assembly) کا عالمی انفرادی اثاثہ شناخت کنندہ</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>تین ہندسوں والے ISO ملکی کوڈ کے ساتھ پروسیسر کی تعداد</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>GS1 UIC بمعہ ایکسٹینشن 1 اور امپورٹر انڈیکس</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>UN/CEFACT مال برداری کی اکائی کی قسم</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>تصدیقی حوالہ</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>پروٹوکول شناختی نمبر</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>AIDC میڈیا کی قسم</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>ورژن کنٹرول نمبر</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>تاریخِ پیدائش (YYYYMMDD)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>تاریخ اور وقتِ پیدائش (YYYYMMDDhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>حیاتیاتی جنس</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>شخص کا خاندانی نام</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>شخص کا دیا گیا نام</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>شخص کے نام کا لاحقہ</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>شخص کا پورا نام</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>شخص کا پتہ</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>بچے کی پیدائش کا تسلسل</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>خاندان کا سب سے چھوٹا فرد</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>رول مصنوعات (چوڑائی، لمبائی، کور کا قطر، سمت، جوڑ)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>سیلولر موبائل ٹیلی فون شناخت کنندہ</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>عالمی قابلِ واپسی اثاثہ شناخت کنندہ</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>عالمی انفرادی اثاثہ شناخت کنندہ</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>فی پیمائشی اکائی قیمت</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>کسی انفرادی تجارتی شے (آئٹم) کی شناخت</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>بین الاقوامی بینک اکاؤنٹ نمبر</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>تیاری کی تاریخ اور وقت (YYMMDDhh[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>بصری طور پر قابلِ مطالعہ سینسر انڈیکیٹر</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>جز/حصے کی شناخت کنندہ</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>جز/حصے کی شناخت کنندہ سیریل نمبر</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>سافٹ ویئر ورژن</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>عالمی ماڈل نمبر</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>خدمات پیش کرنے والی تنظیم اور خدمات فراہم کرنے والے کے مابین تعلق کی نشاندہی کرنے کے لیے ’گلوبل سروس ریلیشن نمبر‘ ۔</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>خدمات فراہم کرنے والی تنظیم اور خدمات حاصل کرنے والے کے مابین تعلق کی نشاندہی کرنے والا ’گلوبل سروس ریلیشن نمبر‘ </value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>سروس ریلیشن انسٹینس نمبر</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>ادائیگی کی پرچی کا حوالہ نمبر</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>لاجسٹک یونٹ میں موجود تجارتی آئٹم کے اجزاء کی شناخت</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>ڈیجیٹل دستخط (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>انٹرنیشنل موبائل ایکوپمنٹ آئیڈینٹیٹی</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>بین الاقوامی موبائل آلات کی شناخت 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>ایمبیڈڈ سم نمبر</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>فزیکل سم نمبر</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>شمالی امریکہ میں استعمال کے لیے کوپن کوڈ کی شناخت</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>کوپن کے لائلٹی پوائنٹس</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>شمالی امریکہ میں استعمال کے لیے کوپن کوڈ کی نشاندہی فراہم کرتا ہے</value>
+  </data>
 </root>
