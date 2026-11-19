@@ -282,4 +282,181 @@
   <data name="717" xml:space="preserve">
     <value>Număr național de decontare a serviciilor de sănătate – Costa Rica</value>
   </data>
+  <data name="3100" xml:space="preserve">
+    <value>Greutate netă, kilograme (articol comercial cu cantitate variabilă)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>Lungime sau prima dimensiune, metri (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>Lățime, diametru sau a doua dimensiune, metri (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>Adâncime, grosime, înălțime sau a treia dimensiune, metri (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>Suprafață, metri pătrați (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>Volum net, litri (articol comercial cu cantitate variabilă)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>Volum net, metri cubi (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>Greutate netă, livre (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>Lungime sau prima dimensiune, inchi (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>Lungime sau prima dimensiune, picioare (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>Lungime sau prima dimensiune, yarzi (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>Lățime, diametru sau a doua dimensiune, inchi (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>Lățime, diametru sau a doua dimensiune, picioare (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>Lățime, diametru sau a doua dimensiune, yarzi (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>Adâncime, grosime, înălțime sau a treia dimensiune, inchi (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>Adâncime, grosime, înălțime sau a treia dimensiune, picioare (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>Adâncime, grosime, înălțime sau a treia dimensiune, yarzi (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>Greutate logistică, kilograme</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>Lungime sau prima dimensiune, metri</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>Lățime, diametru sau a doua dimensiune, metri</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>Adâncime, grosime, înălțime sau a treia dimensiune, metri</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>Suprafață, metri pătrați</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>Volum logistic, litri</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Volum logistic, metri cubi</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Kilograme pe metru pătrat</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>Greutate logistică, livre</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>Lungime sau prima dimensiune, inchi</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>Lungime sau prima dimensiune, picioare</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>Lungime sau prima dimensiune, yarzi</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>Lățime, diametru sau a doua dimensiune, inchi</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>Lățime, diametru sau a doua dimensiune, picioare</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>Lățime, diametru sau a doua dimensiune, yard</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>Adâncime, grosime, înălțime sau a treia dimensiune, inchi</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>Adâncime, grosime, înălțime sau a treia dimensiune, picioare</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>Adâncime, grosime, înălțime sau a treia dimensiune, yarzi</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>Suprafață, inchi pătrați (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>Suprafață, picioare pătrate (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>Suprafață, yarzi pătrați (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>Arie, inchi pătrați</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>Suprafață, picioare pătrate</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>Suprafață, yarzi pătrați</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>Greutate netă, uncii troy (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>Greutate netă (sau volum), uncii (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>Volum net, sferturi (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>Volum net, galoane SUA (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>Volum logistic, sferturi</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>Volum logistic, galoane SUA</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>Volum net, inchi cubi (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>Volum net, picioare cubice (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>Volum net, yarzi cubi (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>Volum logistic, inchi cubi</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>Volum logistic, picioare cubice</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>Volum logistic, metri cubi</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>Suma aplicabilă de plată sau valoarea cuponului, în moneda locală</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>Suma aplicabilă de plată, însoțită de codul valutar ISO</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>Suma de plată aplicabilă, zonă monetară unică (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>Suma aplicabilă de plată, însoțită de codul valutar ISO (articol comercial cu măsură variabilă)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>Reducere procentuală oferită de un cupon</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>Suma de plată per unitate de măsură în cadrul unei zone monetare unice (articol comercial cu cantitate variabilă)</value>
+  </data>
 </root>

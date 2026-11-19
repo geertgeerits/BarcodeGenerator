@@ -282,4 +282,181 @@
   <data name="717" xml:space="preserve">
     <value>Ulusal Sağlık Hizmetleri Geri Ödeme Numarası - Kosta Rika</value>
   </data>
+  <data name="3100" xml:space="preserve">
+    <value>Net ağırlık, kilogram (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>Uzunluk veya ilk boyut, metre (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>Genişlik, çap veya ikinci boyut, metre (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>Derinlik, kalınlık, yükseklik veya üçüncü boyut, metre (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>Alan, metrekare (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>Net hacim, litre (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>Net hacim, metreküp (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>Net ağırlık, pound (değişken ölçü birimi ticari ürün)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>Uzunluk veya ilk boyut, inç (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>Uzunluk veya ilk boyut, fit (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>Uzunluk veya ilk boyut, yarda (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>Genişlik, çap veya ikinci boyut, inç (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>Genişlik, çap veya ikinci boyut, fit (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>Genişlik, çap veya ikinci boyut, yarda (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>Derinlik, kalınlık, yükseklik veya üçüncü boyut, inç (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>Derinlik, kalınlık, yükseklik veya üçüncü boyut; fit (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>Derinlik, kalınlık, yükseklik veya üçüncü boyut; yarda (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>Lojistik ağırlık, kilogram</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>Uzunluk veya ilk boyut, metre</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>Genişlik, çap veya ikinci boyut, metre</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>Derinlik, kalınlık, yükseklik veya üçüncü boyut, metre</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>Alan, metrekare</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>Lojistik hacim, litre</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Lojistik hacim, metreküp</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Metrekare başına kilogram</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>Lojistik ağırlık, pound</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>Uzunluk veya ilk boyut, inç</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>Uzunluk veya ilk boyut, fit</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>Uzunluk veya ilk boyut, yarda</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>Genişlik, çap veya ikinci boyut, inç</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>Genişlik, çap veya ikinci boyut, fit</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>Genişlik, çap veya ikinci boyut, yarda</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>Derinlik, kalınlık, yükseklik veya üçüncü boyut, inç</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>Derinlik, kalınlık, yükseklik veya üçüncü boyut, fit</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>Derinlik, kalınlık, yükseklik veya üçüncü boyut, yarda</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>Alan, inç kare (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>Alan, fit kare (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>Alan, metrekare cinsinden (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>Alan, inç kare</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>Alan, fit kare</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>Alan, metrekare (yarda kare)</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>Net ağırlık, troy ons (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>Net ağırlık (veya hacim), ons (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>Net hacim, quart (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>Net hacim, ABD galonu (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>Lojistik hacim, litre</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>Lojistik hacim, ABD galonu</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>Net hacim, inç küp (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>Net hacim, fit küp (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>Net hacim, kübik yarda (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>Lojistik hacim, inç küp</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>Lojistik hacim, fit küp</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>Lojistik hacim, kübik yarda</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>Ödenecek tutar veya kupon değeri, yerel para birimi</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>ISO para birimi koduyla birlikte ödenecek tutar</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>Ödenebilir tutar, tek para birimi alanı (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>ISO para birimi koduyla birlikte ödenecek tutar (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>Bir kuponun yüzde indirimi</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>Tek bir parasal alan içinde ölçü birimi başına ödenecek tutar (değişken ölçülü ticari ürün)</value>
+  </data>
 </root>

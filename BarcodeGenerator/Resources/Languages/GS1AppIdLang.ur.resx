@@ -280,6 +280,183 @@
     <value>قومی صحت کی دیکھ بھال کی ادائیگی کا نمبر - اٹلی</value>
   </data>
   <data name="717" xml:space="preserve">
-    <value>Ulusal Sağlık Hizmetleri Geri Ödeme Numarası - Kosta Rika</value>
+    <value>قومی صحت کی دیکھ بھال کی ادائیگی کا نمبر - کوسٹا ریکا</value>
+  </data>
+  <data name="3100" xml:space="preserve">
+    <value>خالص وزن، کلوگرام (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>لمبائی یا پہلا طول، میٹر (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>چوڑائی، قطر، یا دوسرا طول، میٹر (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>گہرائی، موٹائی، اونچائی، یا تیسرا طول، میٹر (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>رقبہ، مربع میٹر (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>خالص مقدار، لیٹر (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>خالص حجم، مکعب میٹر (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>خالص وزن، پاؤنڈ (متغیر پیمائش تجارتی آئٹم</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>لمبائی یا پہلا طول، انچ (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>لمبائی یا پہلا طول، فٹ (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>لمبائی یا پہلا طول، گز (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>چوڑائی، قطر، یا دوسرا طول، انچ (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>چوڑائی، قطر، یا دوسرا طول، فٹ (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>چوڑائی، قطر، یا دوسرا طول، گز (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>گہرائی، موٹائی، اونچائی، یا تیسرا طول، انچ (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>گہرائی، موٹائی، اونچائی، یا تیسرا طول، فٹ (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>گہرائی، موٹائی، اونچائی، یا تیسرا طول ؛ گز (ایسی تجارتی شے جس کی پیمائش متغیر ہو سکتی ہے)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>لاجسٹک وزن، کلوگرام</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>لمبائی یا پہلا طول، میٹر</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>چوڑائی، قطر، یا دوسرا طول، میٹر</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>گہرائی، موٹائی، اونچائی، یا تیسرا طول ،میٹر</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>رقبہ، مربع میٹر</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>لاجسٹک حجم، لیٹر</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>لاجسٹک حجم، مکعب میٹر</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>کلوگرام فی مربع میٹر</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>لاجسٹک وزن، پاؤنڈ</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>لمبائی یا پہلا طول، انچ</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>لمبائی یا پہلا طول، فٹ</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>لمبائی یا پہلا طول، گز</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>چوڑائی، قطر، یا دوسرا طول، انچ</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>چوڑائی، قطر، یا دوسرا طول، فٹ</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>چوڑائی، قطر، یا دوسری جہت، صحن</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>گہرائی، موٹائی، اونچائی، یا تیسرا طول ، انچ</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>گہرائی، موٹائی، اونچائی، یا تیسرا طول، فٹ</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>گہرائی، موٹائی، اونچائی، یا تیسرا طول، گز</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>رقبہ، مربع انچ (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>رقبہ، مربع فٹ (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>رقبہ، مربع گز (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>رقبہ، مربع انچ</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>رقبہ، مربع فٹ</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>رقبہ، مربع گز</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>خالص وزن، ٹروئے اونس (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>خالص وزن (یا حجم)، اونس (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>خالص مقدار، کوارٹس (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>خالص مقدار، امریکی گیلن (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>لاجسٹک حجم، کوارٹس</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>لاجسٹک حجم، امریکی گیلن</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>خالص حجم، مکعب انچ (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>خالص حجم، مکعب فٹ (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>خالص حجم، مکعب گز (متغیر پیمائش والی تجارتی شے)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>لاجسٹک حجم، مکعب انچ</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>لاجسٹک حجم، مکعب فٹ</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>لاجسٹک حجم، کیوبک یارڈز</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>قابلِ ادائیگی رقم یا کوپن کی مالیت، مقامی کرنسی</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>قابلِ ادائیگی رقم، ISO کرنسی کوڈ کے ساتھ</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>قابلِ ادائیگی رقم، واحد مالیاتی علاقہ (متغیر مقدار والی تجارتی شے)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>قابلِ ادائیگی رقم، بمعہ ISO کرنسی کوڈ (متغیر پیمائش والی تجارتی آئٹم)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>کوپن پر فیصد رعایت</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>واحد مالیاتی علاقے میں فی پیمائشی اکائی قابلِ ادائیگی رقم (متغیر پیمائش والی تجارتی شے)</value>
   </data>
 </root>
