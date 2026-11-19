@@ -1291,12 +1291,34 @@ namespace BarcodeGenerator
         /// <summary>
         /// Read a key from the resource file and return the corresponding value
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="cAppId"></param>
         /// <returns></returns>
-        public static string GetKnownGs1AppIDValueFromLangResource(string key)
+        public static string GetKnownGs1AppIDValueFromLangResource(string cAppId)
         {
+            // If the key starts with 3 and the length is 4, if the last character is not 0, then replace the last character with a zero
+            if (cAppId.StartsWith('3') && cAppId.Length == 4 && cAppId[^1] != '0')
+            {
+                cAppId = cAppId[..3] + "0";
+            }
+
+            if (cAppId.StartsWith("703") && cAppId.Length == 4 && cAppId[^1] != '0')
+            {
+                cAppId = cAppId[..3] + "0";
+            }
+
+            if (cAppId.StartsWith("723") && cAppId.Length == 4 && cAppId[^1] != '0')
+            {
+                cAppId = cAppId[..3] + "0";
+            }
+
+            if (cAppId.StartsWith('9') && cAppId.Length == 2 && cAppId[^1] != '1')
+            {
+                cAppId = cAppId[..1] + "1";
+            }
+
+            // Search the value in the resource file using the key and return the value. If the value is not found, return an empty string.
             ResourceManager rm = GS1AppIdLang.ResourceManager;
-            string? value = rm.GetString(key, CultureInfo.CurrentUICulture);
+            string? value = rm.GetString(cAppId, CultureInfo.CurrentUICulture);
             return value ?? string.Empty;
         }
 

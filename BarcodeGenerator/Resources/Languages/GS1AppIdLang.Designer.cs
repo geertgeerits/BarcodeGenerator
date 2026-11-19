@@ -286,101 +286,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Net weight, kilograms (variable measure trade item).
-        /// </summary>
-        internal static string _3101 {
-            get {
-                return ResourceManager.GetString("3101", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, kilograms (variable measure trade item).
-        /// </summary>
-        internal static string _3102 {
-            get {
-                return ResourceManager.GetString("3102", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, kilograms (variable measure trade item).
-        /// </summary>
-        internal static string _3103 {
-            get {
-                return ResourceManager.GetString("3103", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, kilograms (variable measure trade item).
-        /// </summary>
-        internal static string _3104 {
-            get {
-                return ResourceManager.GetString("3104", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, kilograms (variable measure trade item).
-        /// </summary>
-        internal static string _3105 {
-            get {
-                return ResourceManager.GetString("3105", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Length or first dimension, metres (variable measure trade item).
         /// </summary>
         internal static string _3110 {
             get {
                 return ResourceManager.GetString("3110", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3111 {
-            get {
-                return ResourceManager.GetString("3111", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3112 {
-            get {
-                return ResourceManager.GetString("3112", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3113 {
-            get {
-                return ResourceManager.GetString("3113", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3114 {
-            get {
-                return ResourceManager.GetString("3114", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3115 {
-            get {
-                return ResourceManager.GetString("3115", resourceCulture);
             }
         }
         
@@ -394,101 +304,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3121 {
-            get {
-                return ResourceManager.GetString("3121", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3122 {
-            get {
-                return ResourceManager.GetString("3122", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3123 {
-            get {
-                return ResourceManager.GetString("3123", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3124 {
-            get {
-                return ResourceManager.GetString("3124", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3125 {
-            get {
-                return ResourceManager.GetString("3125", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres (variable measure trade item).
         /// </summary>
         internal static string _3130 {
             get {
                 return ResourceManager.GetString("3130", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3131 {
-            get {
-                return ResourceManager.GetString("3131", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3132 {
-            get {
-                return ResourceManager.GetString("3132", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3133 {
-            get {
-                return ResourceManager.GetString("3133", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3134 {
-            get {
-                return ResourceManager.GetString("3134", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres (variable measure trade item).
-        /// </summary>
-        internal static string _3135 {
-            get {
-                return ResourceManager.GetString("3135", resourceCulture);
             }
         }
         
@@ -502,101 +322,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Area, square metres (variable measure trade item).
-        /// </summary>
-        internal static string _3141 {
-            get {
-                return ResourceManager.GetString("3141", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square metres (variable measure trade item).
-        /// </summary>
-        internal static string _3142 {
-            get {
-                return ResourceManager.GetString("3142", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square metres (variable measure trade item).
-        /// </summary>
-        internal static string _3143 {
-            get {
-                return ResourceManager.GetString("3143", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square metres (variable measure trade item).
-        /// </summary>
-        internal static string _3144 {
-            get {
-                return ResourceManager.GetString("3144", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square metres (variable measure trade item).
-        /// </summary>
-        internal static string _3145 {
-            get {
-                return ResourceManager.GetString("3145", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Net volume, litres (variable measure trade item).
         /// </summary>
         internal static string _3150 {
             get {
                 return ResourceManager.GetString("3150", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, litres (variable measure trade item).
-        /// </summary>
-        internal static string _3151 {
-            get {
-                return ResourceManager.GetString("3151", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, litres (variable measure trade item).
-        /// </summary>
-        internal static string _3152 {
-            get {
-                return ResourceManager.GetString("3152", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, litres (variable measure trade item).
-        /// </summary>
-        internal static string _3153 {
-            get {
-                return ResourceManager.GetString("3153", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, litres (variable measure trade item).
-        /// </summary>
-        internal static string _3154 {
-            get {
-                return ResourceManager.GetString("3154", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, litres (variable measure trade item).
-        /// </summary>
-        internal static string _3155 {
-            get {
-                return ResourceManager.GetString("3155", resourceCulture);
             }
         }
         
@@ -610,101 +340,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic metres (variable measure trade item).
-        /// </summary>
-        internal static string _3161 {
-            get {
-                return ResourceManager.GetString("3161", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic metres (variable measure trade item).
-        /// </summary>
-        internal static string _3162 {
-            get {
-                return ResourceManager.GetString("3162", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic metres (variable measure trade item).
-        /// </summary>
-        internal static string _3163 {
-            get {
-                return ResourceManager.GetString("3163", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic metres (variable measure trade item).
-        /// </summary>
-        internal static string _3164 {
-            get {
-                return ResourceManager.GetString("3164", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic metres (variable measure trade item).
-        /// </summary>
-        internal static string _3165 {
-            get {
-                return ResourceManager.GetString("3165", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Net weight, pounds (variable measure trade item.
         /// </summary>
         internal static string _3200 {
             get {
                 return ResourceManager.GetString("3200", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, pounds (variable measure trade item.
-        /// </summary>
-        internal static string _3201 {
-            get {
-                return ResourceManager.GetString("3201", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, pounds (variable measure trade item.
-        /// </summary>
-        internal static string _3202 {
-            get {
-                return ResourceManager.GetString("3202", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, pounds (variable measure trade item.
-        /// </summary>
-        internal static string _3203 {
-            get {
-                return ResourceManager.GetString("3203", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, pounds (variable measure trade item.
-        /// </summary>
-        internal static string _3204 {
-            get {
-                return ResourceManager.GetString("3204", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, pounds (variable measure trade item.
-        /// </summary>
-        internal static string _3205 {
-            get {
-                return ResourceManager.GetString("3205", resourceCulture);
             }
         }
         
@@ -718,101 +358,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3211 {
-            get {
-                return ResourceManager.GetString("3211", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3212 {
-            get {
-                return ResourceManager.GetString("3212", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3213 {
-            get {
-                return ResourceManager.GetString("3213", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3214 {
-            get {
-                return ResourceManager.GetString("3214", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3215 {
-            get {
-                return ResourceManager.GetString("3215", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Length or first dimension, feet (variable measure trade item).
         /// </summary>
         internal static string _3220 {
             get {
                 return ResourceManager.GetString("3220", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3221 {
-            get {
-                return ResourceManager.GetString("3221", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3222 {
-            get {
-                return ResourceManager.GetString("3222", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3223 {
-            get {
-                return ResourceManager.GetString("3223", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3224 {
-            get {
-                return ResourceManager.GetString("3224", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3225 {
-            get {
-                return ResourceManager.GetString("3225", resourceCulture);
             }
         }
         
@@ -826,101 +376,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3231 {
-            get {
-                return ResourceManager.GetString("3231", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3232 {
-            get {
-                return ResourceManager.GetString("3232", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3233 {
-            get {
-                return ResourceManager.GetString("3233", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3234 {
-            get {
-                return ResourceManager.GetString("3234", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3235 {
-            get {
-                return ResourceManager.GetString("3235", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Width, diameter, or second dimension, inches (variable measure trade item).
         /// </summary>
         internal static string _3240 {
             get {
                 return ResourceManager.GetString("3240", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3241 {
-            get {
-                return ResourceManager.GetString("3241", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3242 {
-            get {
-                return ResourceManager.GetString("3242", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3243 {
-            get {
-                return ResourceManager.GetString("3243", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3244 {
-            get {
-                return ResourceManager.GetString("3244", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3245 {
-            get {
-                return ResourceManager.GetString("3245", resourceCulture);
             }
         }
         
@@ -934,101 +394,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3251 {
-            get {
-                return ResourceManager.GetString("3251", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3252 {
-            get {
-                return ResourceManager.GetString("3252", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3253 {
-            get {
-                return ResourceManager.GetString("3253", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3254 {
-            get {
-                return ResourceManager.GetString("3254", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3255 {
-            get {
-                return ResourceManager.GetString("3255", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Width, diameter, or second dimension, yards (variable measure trade item).
         /// </summary>
         internal static string _3260 {
             get {
                 return ResourceManager.GetString("3260", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3261 {
-            get {
-                return ResourceManager.GetString("3261", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3262 {
-            get {
-                return ResourceManager.GetString("3262", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3263 {
-            get {
-                return ResourceManager.GetString("3263", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3264 {
-            get {
-                return ResourceManager.GetString("3264", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3265 {
-            get {
-                return ResourceManager.GetString("3265", resourceCulture);
             }
         }
         
@@ -1042,101 +412,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3271 {
-            get {
-                return ResourceManager.GetString("3271", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3272 {
-            get {
-                return ResourceManager.GetString("3272", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3273 {
-            get {
-                return ResourceManager.GetString("3273", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3274 {
-            get {
-                return ResourceManager.GetString("3274", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches (variable measure trade item).
-        /// </summary>
-        internal static string _3275 {
-            get {
-                return ResourceManager.GetString("3275", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet (variable measure trade item).
         /// </summary>
         internal static string _3280 {
             get {
                 return ResourceManager.GetString("3280", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3281 {
-            get {
-                return ResourceManager.GetString("3281", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3282 {
-            get {
-                return ResourceManager.GetString("3282", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3283 {
-            get {
-                return ResourceManager.GetString("3283", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3284 {
-            get {
-                return ResourceManager.GetString("3284", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet (variable measure trade item).
-        /// </summary>
-        internal static string _3285 {
-            get {
-                return ResourceManager.GetString("3285", resourceCulture);
             }
         }
         
@@ -1150,101 +430,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3291 {
-            get {
-                return ResourceManager.GetString("3291", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3292 {
-            get {
-                return ResourceManager.GetString("3292", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3293 {
-            get {
-                return ResourceManager.GetString("3293", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3294 {
-            get {
-                return ResourceManager.GetString("3294", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, yards (variable measure trade item).
-        /// </summary>
-        internal static string _3295 {
-            get {
-                return ResourceManager.GetString("3295", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Logistic weight, kilograms.
         /// </summary>
         internal static string _3300 {
             get {
                 return ResourceManager.GetString("3300", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic weight, kilograms.
-        /// </summary>
-        internal static string _3301 {
-            get {
-                return ResourceManager.GetString("3301", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic weight, kilograms.
-        /// </summary>
-        internal static string _3302 {
-            get {
-                return ResourceManager.GetString("3302", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic weight, kilograms.
-        /// </summary>
-        internal static string _3303 {
-            get {
-                return ResourceManager.GetString("3303", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic weight, kilograms.
-        /// </summary>
-        internal static string _3304 {
-            get {
-                return ResourceManager.GetString("3304", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic weight, kilograms.
-        /// </summary>
-        internal static string _3305 {
-            get {
-                return ResourceManager.GetString("3305", resourceCulture);
             }
         }
         
@@ -1258,101 +448,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, metres.
-        /// </summary>
-        internal static string _3311 {
-            get {
-                return ResourceManager.GetString("3311", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, metres.
-        /// </summary>
-        internal static string _3312 {
-            get {
-                return ResourceManager.GetString("3312", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, metres.
-        /// </summary>
-        internal static string _3313 {
-            get {
-                return ResourceManager.GetString("3313", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, metres.
-        /// </summary>
-        internal static string _3314 {
-            get {
-                return ResourceManager.GetString("3314", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, metres.
-        /// </summary>
-        internal static string _3315 {
-            get {
-                return ResourceManager.GetString("3315", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Width, diameter, or second dimension, metres.
         /// </summary>
         internal static string _3320 {
             get {
                 return ResourceManager.GetString("3320", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, metres.
-        /// </summary>
-        internal static string _3321 {
-            get {
-                return ResourceManager.GetString("3321", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, metres.
-        /// </summary>
-        internal static string _3322 {
-            get {
-                return ResourceManager.GetString("3322", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, metres.
-        /// </summary>
-        internal static string _3323 {
-            get {
-                return ResourceManager.GetString("3323", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, metres.
-        /// </summary>
-        internal static string _3324 {
-            get {
-                return ResourceManager.GetString("3324", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, metres.
-        /// </summary>
-        internal static string _3325 {
-            get {
-                return ResourceManager.GetString("3325", resourceCulture);
             }
         }
         
@@ -1366,101 +466,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres.
-        /// </summary>
-        internal static string _3331 {
-            get {
-                return ResourceManager.GetString("3331", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres.
-        /// </summary>
-        internal static string _3332 {
-            get {
-                return ResourceManager.GetString("3332", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres.
-        /// </summary>
-        internal static string _3333 {
-            get {
-                return ResourceManager.GetString("3333", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres.
-        /// </summary>
-        internal static string _3334 {
-            get {
-                return ResourceManager.GetString("3334", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, metres.
-        /// </summary>
-        internal static string _3335 {
-            get {
-                return ResourceManager.GetString("3335", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Area, square metres.
         /// </summary>
         internal static string _3340 {
             get {
                 return ResourceManager.GetString("3340", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square metres.
-        /// </summary>
-        internal static string _3341 {
-            get {
-                return ResourceManager.GetString("3341", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square metres.
-        /// </summary>
-        internal static string _3342 {
-            get {
-                return ResourceManager.GetString("3342", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square metres.
-        /// </summary>
-        internal static string _3343 {
-            get {
-                return ResourceManager.GetString("3343", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square metres.
-        /// </summary>
-        internal static string _3344 {
-            get {
-                return ResourceManager.GetString("3344", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square metres.
-        /// </summary>
-        internal static string _3345 {
-            get {
-                return ResourceManager.GetString("3345", resourceCulture);
             }
         }
         
@@ -1474,101 +484,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, litres.
-        /// </summary>
-        internal static string _3351 {
-            get {
-                return ResourceManager.GetString("3351", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, litres.
-        /// </summary>
-        internal static string _3352 {
-            get {
-                return ResourceManager.GetString("3352", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, litres.
-        /// </summary>
-        internal static string _3353 {
-            get {
-                return ResourceManager.GetString("3353", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, litres.
-        /// </summary>
-        internal static string _3354 {
-            get {
-                return ResourceManager.GetString("3354", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, litres.
-        /// </summary>
-        internal static string _3355 {
-            get {
-                return ResourceManager.GetString("3355", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Logistic volume, cubic metres.
         /// </summary>
         internal static string _3360 {
             get {
                 return ResourceManager.GetString("3360", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic metres.
-        /// </summary>
-        internal static string _3361 {
-            get {
-                return ResourceManager.GetString("3361", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic metres.
-        /// </summary>
-        internal static string _3362 {
-            get {
-                return ResourceManager.GetString("3362", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic metres.
-        /// </summary>
-        internal static string _3363 {
-            get {
-                return ResourceManager.GetString("3363", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic metres.
-        /// </summary>
-        internal static string _3364 {
-            get {
-                return ResourceManager.GetString("3364", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic metres.
-        /// </summary>
-        internal static string _3365 {
-            get {
-                return ResourceManager.GetString("3365", resourceCulture);
             }
         }
         
@@ -1582,101 +502,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kilograms per square metre.
-        /// </summary>
-        internal static string _3371 {
-            get {
-                return ResourceManager.GetString("3371", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kilograms per square metre.
-        /// </summary>
-        internal static string _3372 {
-            get {
-                return ResourceManager.GetString("3372", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kilograms per square metre.
-        /// </summary>
-        internal static string _3373 {
-            get {
-                return ResourceManager.GetString("3373", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kilograms per square metre.
-        /// </summary>
-        internal static string _3374 {
-            get {
-                return ResourceManager.GetString("3374", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kilograms per square metre.
-        /// </summary>
-        internal static string _3375 {
-            get {
-                return ResourceManager.GetString("3375", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Logistic weight, pounds.
         /// </summary>
         internal static string _3400 {
             get {
                 return ResourceManager.GetString("3400", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic weight, pounds.
-        /// </summary>
-        internal static string _3401 {
-            get {
-                return ResourceManager.GetString("3401", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic weight, pounds.
-        /// </summary>
-        internal static string _3402 {
-            get {
-                return ResourceManager.GetString("3402", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic weight, pounds.
-        /// </summary>
-        internal static string _3403 {
-            get {
-                return ResourceManager.GetString("3403", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic weight, pounds.
-        /// </summary>
-        internal static string _3404 {
-            get {
-                return ResourceManager.GetString("3404", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic weight, pounds.
-        /// </summary>
-        internal static string _3405 {
-            get {
-                return ResourceManager.GetString("3405", resourceCulture);
             }
         }
         
@@ -1690,101 +520,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, inches.
-        /// </summary>
-        internal static string _3411 {
-            get {
-                return ResourceManager.GetString("3411", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, inches.
-        /// </summary>
-        internal static string _3412 {
-            get {
-                return ResourceManager.GetString("3412", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, inches.
-        /// </summary>
-        internal static string _3413 {
-            get {
-                return ResourceManager.GetString("3413", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, inches.
-        /// </summary>
-        internal static string _3414 {
-            get {
-                return ResourceManager.GetString("3414", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, inches.
-        /// </summary>
-        internal static string _3415 {
-            get {
-                return ResourceManager.GetString("3415", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Length or first dimension, feet.
         /// </summary>
         internal static string _3420 {
             get {
                 return ResourceManager.GetString("3420", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, feet.
-        /// </summary>
-        internal static string _3421 {
-            get {
-                return ResourceManager.GetString("3421", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, feet.
-        /// </summary>
-        internal static string _3422 {
-            get {
-                return ResourceManager.GetString("3422", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, feet.
-        /// </summary>
-        internal static string _3423 {
-            get {
-                return ResourceManager.GetString("3423", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, feet.
-        /// </summary>
-        internal static string _3424 {
-            get {
-                return ResourceManager.GetString("3424", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, feet.
-        /// </summary>
-        internal static string _3425 {
-            get {
-                return ResourceManager.GetString("3425", resourceCulture);
             }
         }
         
@@ -1798,101 +538,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, yards.
-        /// </summary>
-        internal static string _3431 {
-            get {
-                return ResourceManager.GetString("3431", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, yards.
-        /// </summary>
-        internal static string _3432 {
-            get {
-                return ResourceManager.GetString("3432", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, yards.
-        /// </summary>
-        internal static string _3433 {
-            get {
-                return ResourceManager.GetString("3433", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, yards.
-        /// </summary>
-        internal static string _3434 {
-            get {
-                return ResourceManager.GetString("3434", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length or first dimension, yards.
-        /// </summary>
-        internal static string _3435 {
-            get {
-                return ResourceManager.GetString("3435", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Width, diameter, or second dimension, inches .
         /// </summary>
         internal static string _3440 {
             get {
                 return ResourceManager.GetString("3440", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches .
-        /// </summary>
-        internal static string _3441 {
-            get {
-                return ResourceManager.GetString("3441", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches .
-        /// </summary>
-        internal static string _3442 {
-            get {
-                return ResourceManager.GetString("3442", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches .
-        /// </summary>
-        internal static string _3443 {
-            get {
-                return ResourceManager.GetString("3443", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches .
-        /// </summary>
-        internal static string _3444 {
-            get {
-                return ResourceManager.GetString("3444", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches .
-        /// </summary>
-        internal static string _3445 {
-            get {
-                return ResourceManager.GetString("3445", resourceCulture);
             }
         }
         
@@ -1906,101 +556,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, feet.
-        /// </summary>
-        internal static string _3451 {
-            get {
-                return ResourceManager.GetString("3451", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, feet.
-        /// </summary>
-        internal static string _3452 {
-            get {
-                return ResourceManager.GetString("3452", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, feet.
-        /// </summary>
-        internal static string _3453 {
-            get {
-                return ResourceManager.GetString("3453", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, feet.
-        /// </summary>
-        internal static string _3454 {
-            get {
-                return ResourceManager.GetString("3454", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, feet.
-        /// </summary>
-        internal static string _3455 {
-            get {
-                return ResourceManager.GetString("3455", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Width, diameter, or second dimension, yard.
         /// </summary>
         internal static string _3460 {
             get {
                 return ResourceManager.GetString("3460", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, yard.
-        /// </summary>
-        internal static string _3461 {
-            get {
-                return ResourceManager.GetString("3461", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, yard.
-        /// </summary>
-        internal static string _3462 {
-            get {
-                return ResourceManager.GetString("3462", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, yard.
-        /// </summary>
-        internal static string _3463 {
-            get {
-                return ResourceManager.GetString("3463", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, yard.
-        /// </summary>
-        internal static string _3464 {
-            get {
-                return ResourceManager.GetString("3464", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, yard.
-        /// </summary>
-        internal static string _3465 {
-            get {
-                return ResourceManager.GetString("3465", resourceCulture);
             }
         }
         
@@ -2014,101 +574,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches.
-        /// </summary>
-        internal static string _3471 {
-            get {
-                return ResourceManager.GetString("3471", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches.
-        /// </summary>
-        internal static string _3472 {
-            get {
-                return ResourceManager.GetString("3472", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches.
-        /// </summary>
-        internal static string _3473 {
-            get {
-                return ResourceManager.GetString("3473", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches.
-        /// </summary>
-        internal static string _3474 {
-            get {
-                return ResourceManager.GetString("3474", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, inches.
-        /// </summary>
-        internal static string _3475 {
-            get {
-                return ResourceManager.GetString("3475", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet.
         /// </summary>
         internal static string _3480 {
             get {
                 return ResourceManager.GetString("3480", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet.
-        /// </summary>
-        internal static string _3481 {
-            get {
-                return ResourceManager.GetString("3481", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet.
-        /// </summary>
-        internal static string _3482 {
-            get {
-                return ResourceManager.GetString("3482", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet.
-        /// </summary>
-        internal static string _3483 {
-            get {
-                return ResourceManager.GetString("3483", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet.
-        /// </summary>
-        internal static string _3484 {
-            get {
-                return ResourceManager.GetString("3484", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, feet.
-        /// </summary>
-        internal static string _3485 {
-            get {
-                return ResourceManager.GetString("3485", resourceCulture);
             }
         }
         
@@ -2122,101 +592,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, yards.
-        /// </summary>
-        internal static string _3491 {
-            get {
-                return ResourceManager.GetString("3491", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, yards.
-        /// </summary>
-        internal static string _3492 {
-            get {
-                return ResourceManager.GetString("3492", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, yards.
-        /// </summary>
-        internal static string _3493 {
-            get {
-                return ResourceManager.GetString("3493", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, yards.
-        /// </summary>
-        internal static string _3494 {
-            get {
-                return ResourceManager.GetString("3494", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth, thickness, height, or third dimension, yards.
-        /// </summary>
-        internal static string _3495 {
-            get {
-                return ResourceManager.GetString("3495", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Area, square inches (variable measure trade item).
         /// </summary>
         internal static string _3500 {
             get {
                 return ResourceManager.GetString("3500", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square inches (variable measure trade item).
-        /// </summary>
-        internal static string _3501 {
-            get {
-                return ResourceManager.GetString("3501", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square inches (variable measure trade item).
-        /// </summary>
-        internal static string _3502 {
-            get {
-                return ResourceManager.GetString("3502", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square inches (variable measure trade item).
-        /// </summary>
-        internal static string _3503 {
-            get {
-                return ResourceManager.GetString("3503", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square inches (variable measure trade item).
-        /// </summary>
-        internal static string _3504 {
-            get {
-                return ResourceManager.GetString("3504", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square inches (variable measure trade item).
-        /// </summary>
-        internal static string _3505 {
-            get {
-                return ResourceManager.GetString("3505", resourceCulture);
             }
         }
         
@@ -2230,101 +610,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Area, square feet (variable measure trade item).
-        /// </summary>
-        internal static string _3511 {
-            get {
-                return ResourceManager.GetString("3511", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square feet (variable measure trade item).
-        /// </summary>
-        internal static string _3512 {
-            get {
-                return ResourceManager.GetString("3512", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square feet (variable measure trade item).
-        /// </summary>
-        internal static string _3513 {
-            get {
-                return ResourceManager.GetString("3513", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square feet (variable measure trade item).
-        /// </summary>
-        internal static string _3514 {
-            get {
-                return ResourceManager.GetString("3514", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square feet (variable measure trade item).
-        /// </summary>
-        internal static string _3515 {
-            get {
-                return ResourceManager.GetString("3515", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Area, square yards (variable measure trade item).
         /// </summary>
         internal static string _3520 {
             get {
                 return ResourceManager.GetString("3520", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square yards (variable measure trade item).
-        /// </summary>
-        internal static string _3521 {
-            get {
-                return ResourceManager.GetString("3521", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square yards (variable measure trade item).
-        /// </summary>
-        internal static string _3522 {
-            get {
-                return ResourceManager.GetString("3522", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square yards (variable measure trade item).
-        /// </summary>
-        internal static string _3523 {
-            get {
-                return ResourceManager.GetString("3523", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square yards (variable measure trade item).
-        /// </summary>
-        internal static string _3524 {
-            get {
-                return ResourceManager.GetString("3524", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square yards (variable measure trade item).
-        /// </summary>
-        internal static string _3525 {
-            get {
-                return ResourceManager.GetString("3525", resourceCulture);
             }
         }
         
@@ -2338,101 +628,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Area, square inches.
-        /// </summary>
-        internal static string _3531 {
-            get {
-                return ResourceManager.GetString("3531", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square inches.
-        /// </summary>
-        internal static string _3532 {
-            get {
-                return ResourceManager.GetString("3532", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square inches.
-        /// </summary>
-        internal static string _3533 {
-            get {
-                return ResourceManager.GetString("3533", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square inches.
-        /// </summary>
-        internal static string _3534 {
-            get {
-                return ResourceManager.GetString("3534", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square inches.
-        /// </summary>
-        internal static string _3535 {
-            get {
-                return ResourceManager.GetString("3535", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Area, square feet.
         /// </summary>
         internal static string _3540 {
             get {
                 return ResourceManager.GetString("3540", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square feet.
-        /// </summary>
-        internal static string _3541 {
-            get {
-                return ResourceManager.GetString("3541", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square feet.
-        /// </summary>
-        internal static string _3542 {
-            get {
-                return ResourceManager.GetString("3542", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square feet.
-        /// </summary>
-        internal static string _3543 {
-            get {
-                return ResourceManager.GetString("3543", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square feet.
-        /// </summary>
-        internal static string _3544 {
-            get {
-                return ResourceManager.GetString("3544", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square feet.
-        /// </summary>
-        internal static string _3545 {
-            get {
-                return ResourceManager.GetString("3545", resourceCulture);
             }
         }
         
@@ -2446,101 +646,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Area, square yards.
-        /// </summary>
-        internal static string _3551 {
-            get {
-                return ResourceManager.GetString("3551", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square yards.
-        /// </summary>
-        internal static string _3552 {
-            get {
-                return ResourceManager.GetString("3552", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square yards.
-        /// </summary>
-        internal static string _3553 {
-            get {
-                return ResourceManager.GetString("3553", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square yards.
-        /// </summary>
-        internal static string _3554 {
-            get {
-                return ResourceManager.GetString("3554", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Area, square yards.
-        /// </summary>
-        internal static string _3555 {
-            get {
-                return ResourceManager.GetString("3555", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Net weight, troy ounces (variable measure trade item).
         /// </summary>
         internal static string _3560 {
             get {
                 return ResourceManager.GetString("3560", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, troy ounces (variable measure trade item).
-        /// </summary>
-        internal static string _3561 {
-            get {
-                return ResourceManager.GetString("3561", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, troy ounces (variable measure trade item).
-        /// </summary>
-        internal static string _3562 {
-            get {
-                return ResourceManager.GetString("3562", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, troy ounces (variable measure trade item).
-        /// </summary>
-        internal static string _3563 {
-            get {
-                return ResourceManager.GetString("3563", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, troy ounces (variable measure trade item).
-        /// </summary>
-        internal static string _3564 {
-            get {
-                return ResourceManager.GetString("3564", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight, troy ounces (variable measure trade item).
-        /// </summary>
-        internal static string _3565 {
-            get {
-                return ResourceManager.GetString("3565", resourceCulture);
             }
         }
         
@@ -2554,101 +664,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Net weight (or volume), ounces (variable measure trade item).
-        /// </summary>
-        internal static string _3571 {
-            get {
-                return ResourceManager.GetString("3571", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight (or volume), ounces (variable measure trade item).
-        /// </summary>
-        internal static string _3572 {
-            get {
-                return ResourceManager.GetString("3572", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight (or volume), ounces (variable measure trade item).
-        /// </summary>
-        internal static string _3573 {
-            get {
-                return ResourceManager.GetString("3573", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight (or volume), ounces (variable measure trade item).
-        /// </summary>
-        internal static string _3574 {
-            get {
-                return ResourceManager.GetString("3574", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net weight (or volume), ounces (variable measure trade item).
-        /// </summary>
-        internal static string _3575 {
-            get {
-                return ResourceManager.GetString("3575", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Net volume, quarts (variable measure trade item).
         /// </summary>
         internal static string _3600 {
             get {
                 return ResourceManager.GetString("3600", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, quarts (variable measure trade item).
-        /// </summary>
-        internal static string _3601 {
-            get {
-                return ResourceManager.GetString("3601", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, quarts (variable measure trade item).
-        /// </summary>
-        internal static string _3602 {
-            get {
-                return ResourceManager.GetString("3602", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, quarts (variable measure trade item).
-        /// </summary>
-        internal static string _3603 {
-            get {
-                return ResourceManager.GetString("3603", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, quarts (variable measure trade item).
-        /// </summary>
-        internal static string _3604 {
-            get {
-                return ResourceManager.GetString("3604", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, quarts (variable measure trade item).
-        /// </summary>
-        internal static string _3605 {
-            get {
-                return ResourceManager.GetString("3605", resourceCulture);
             }
         }
         
@@ -2662,101 +682,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Net volume, gallons U.S. (variable measure trade item).
-        /// </summary>
-        internal static string _3611 {
-            get {
-                return ResourceManager.GetString("3611", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, gallons U.S. (variable measure trade item).
-        /// </summary>
-        internal static string _3612 {
-            get {
-                return ResourceManager.GetString("3612", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, gallons U.S. (variable measure trade item).
-        /// </summary>
-        internal static string _3613 {
-            get {
-                return ResourceManager.GetString("3613", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, gallons U.S. (variable measure trade item).
-        /// </summary>
-        internal static string _3614 {
-            get {
-                return ResourceManager.GetString("3614", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, gallons U.S. (variable measure trade item).
-        /// </summary>
-        internal static string _3615 {
-            get {
-                return ResourceManager.GetString("3615", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Logistic volume, quarts.
         /// </summary>
         internal static string _3620 {
             get {
                 return ResourceManager.GetString("3620", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, quarts.
-        /// </summary>
-        internal static string _3621 {
-            get {
-                return ResourceManager.GetString("3621", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, quarts.
-        /// </summary>
-        internal static string _3622 {
-            get {
-                return ResourceManager.GetString("3622", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, quarts.
-        /// </summary>
-        internal static string _3623 {
-            get {
-                return ResourceManager.GetString("3623", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, quarts.
-        /// </summary>
-        internal static string _3624 {
-            get {
-                return ResourceManager.GetString("3624", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, quarts.
-        /// </summary>
-        internal static string _3625 {
-            get {
-                return ResourceManager.GetString("3625", resourceCulture);
             }
         }
         
@@ -2770,101 +700,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, gallons U.S..
-        /// </summary>
-        internal static string _3631 {
-            get {
-                return ResourceManager.GetString("3631", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, gallons U.S..
-        /// </summary>
-        internal static string _3632 {
-            get {
-                return ResourceManager.GetString("3632", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, gallons U.S..
-        /// </summary>
-        internal static string _3633 {
-            get {
-                return ResourceManager.GetString("3633", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, gallons U.S..
-        /// </summary>
-        internal static string _3634 {
-            get {
-                return ResourceManager.GetString("3634", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, gallons U.S..
-        /// </summary>
-        internal static string _3635 {
-            get {
-                return ResourceManager.GetString("3635", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Net volume, cubic inches (variable measure trade item).
         /// </summary>
         internal static string _3640 {
             get {
                 return ResourceManager.GetString("3640", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic inches (variable measure trade item).
-        /// </summary>
-        internal static string _3641 {
-            get {
-                return ResourceManager.GetString("3641", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic inches (variable measure trade item).
-        /// </summary>
-        internal static string _3642 {
-            get {
-                return ResourceManager.GetString("3642", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic inches (variable measure trade item).
-        /// </summary>
-        internal static string _3643 {
-            get {
-                return ResourceManager.GetString("3643", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic inches (variable measure trade item).
-        /// </summary>
-        internal static string _3644 {
-            get {
-                return ResourceManager.GetString("3644", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic inches (variable measure trade item).
-        /// </summary>
-        internal static string _3645 {
-            get {
-                return ResourceManager.GetString("3645", resourceCulture);
             }
         }
         
@@ -2878,101 +718,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic feet (variable measure trade item).
-        /// </summary>
-        internal static string _3651 {
-            get {
-                return ResourceManager.GetString("3651", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic feet (variable measure trade item).
-        /// </summary>
-        internal static string _3652 {
-            get {
-                return ResourceManager.GetString("3652", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic feet (variable measure trade item).
-        /// </summary>
-        internal static string _3653 {
-            get {
-                return ResourceManager.GetString("3653", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic feet (variable measure trade item).
-        /// </summary>
-        internal static string _3654 {
-            get {
-                return ResourceManager.GetString("3654", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic feet (variable measure trade item).
-        /// </summary>
-        internal static string _3655 {
-            get {
-                return ResourceManager.GetString("3655", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Net volume, cubic yards (variable measure trade item).
         /// </summary>
         internal static string _3660 {
             get {
                 return ResourceManager.GetString("3660", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic yards (variable measure trade item).
-        /// </summary>
-        internal static string _3661 {
-            get {
-                return ResourceManager.GetString("3661", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic yards (variable measure trade item).
-        /// </summary>
-        internal static string _3662 {
-            get {
-                return ResourceManager.GetString("3662", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic yards (variable measure trade item).
-        /// </summary>
-        internal static string _3663 {
-            get {
-                return ResourceManager.GetString("3663", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic yards (variable measure trade item).
-        /// </summary>
-        internal static string _3664 {
-            get {
-                return ResourceManager.GetString("3664", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Net volume, cubic yards (variable measure trade item).
-        /// </summary>
-        internal static string _3665 {
-            get {
-                return ResourceManager.GetString("3665", resourceCulture);
             }
         }
         
@@ -2986,51 +736,6 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic inches.
-        /// </summary>
-        internal static string _3671 {
-            get {
-                return ResourceManager.GetString("3671", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic inches.
-        /// </summary>
-        internal static string _3672 {
-            get {
-                return ResourceManager.GetString("3672", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic inches.
-        /// </summary>
-        internal static string _3673 {
-            get {
-                return ResourceManager.GetString("3673", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic inches.
-        /// </summary>
-        internal static string _3674 {
-            get {
-                return ResourceManager.GetString("3674", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic inches.
-        /// </summary>
-        internal static string _3675 {
-            get {
-                return ResourceManager.GetString("3675", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Logistic volume, cubic feet.
         /// </summary>
         internal static string _3680 {
@@ -3040,101 +745,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic feet.
-        /// </summary>
-        internal static string _3681 {
-            get {
-                return ResourceManager.GetString("3681", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic feet.
-        /// </summary>
-        internal static string _3682 {
-            get {
-                return ResourceManager.GetString("3682", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic feet.
-        /// </summary>
-        internal static string _3683 {
-            get {
-                return ResourceManager.GetString("3683", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic feet.
-        /// </summary>
-        internal static string _3684 {
-            get {
-                return ResourceManager.GetString("3684", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic feet.
-        /// </summary>
-        internal static string _3685 {
-            get {
-                return ResourceManager.GetString("3685", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Logistic volume, cubic yards.
         /// </summary>
         internal static string _3690 {
             get {
                 return ResourceManager.GetString("3690", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic yards.
-        /// </summary>
-        internal static string _3691 {
-            get {
-                return ResourceManager.GetString("3691", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic yards.
-        /// </summary>
-        internal static string _3692 {
-            get {
-                return ResourceManager.GetString("3692", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic yards.
-        /// </summary>
-        internal static string _3693 {
-            get {
-                return ResourceManager.GetString("3693", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic yards.
-        /// </summary>
-        internal static string _3694 {
-            get {
-                return ResourceManager.GetString("3694", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistic volume, cubic yards.
-        /// </summary>
-        internal static string _3695 {
-            get {
-                return ResourceManager.GetString("3695", resourceCulture);
             }
         }
         
@@ -3157,173 +772,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable or Coupon value, local currency.
-        /// </summary>
-        internal static string _3901 {
-            get {
-                return ResourceManager.GetString("3901", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable or Coupon value, local currency.
-        /// </summary>
-        internal static string _3902 {
-            get {
-                return ResourceManager.GetString("3902", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable or Coupon value, local currency.
-        /// </summary>
-        internal static string _3903 {
-            get {
-                return ResourceManager.GetString("3903", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable or Coupon value, local currency.
-        /// </summary>
-        internal static string _3904 {
-            get {
-                return ResourceManager.GetString("3904", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable or Coupon value, local currency.
-        /// </summary>
-        internal static string _3905 {
-            get {
-                return ResourceManager.GetString("3905", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable or Coupon value, local currency.
-        /// </summary>
-        internal static string _3906 {
-            get {
-                return ResourceManager.GetString("3906", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable or Coupon value, local currency.
-        /// </summary>
-        internal static string _3907 {
-            get {
-                return ResourceManager.GetString("3907", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable or Coupon value, local currency.
-        /// </summary>
-        internal static string _3908 {
-            get {
-                return ResourceManager.GetString("3908", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable or Coupon value, local currency.
-        /// </summary>
-        internal static string _3909 {
-            get {
-                return ResourceManager.GetString("3909", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Applicable amount payable with ISO currency code.
         /// </summary>
         internal static string _3910 {
             get {
                 return ResourceManager.GetString("3910", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code.
-        /// </summary>
-        internal static string _3911 {
-            get {
-                return ResourceManager.GetString("3911", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code.
-        /// </summary>
-        internal static string _3912 {
-            get {
-                return ResourceManager.GetString("3912", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code.
-        /// </summary>
-        internal static string _3913 {
-            get {
-                return ResourceManager.GetString("3913", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code.
-        /// </summary>
-        internal static string _3914 {
-            get {
-                return ResourceManager.GetString("3914", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code.
-        /// </summary>
-        internal static string _3915 {
-            get {
-                return ResourceManager.GetString("3915", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code.
-        /// </summary>
-        internal static string _3916 {
-            get {
-                return ResourceManager.GetString("3916", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code.
-        /// </summary>
-        internal static string _3917 {
-            get {
-                return ResourceManager.GetString("3917", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code.
-        /// </summary>
-        internal static string _3918 {
-            get {
-                return ResourceManager.GetString("3918", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code.
-        /// </summary>
-        internal static string _3919 {
-            get {
-                return ResourceManager.GetString("3919", resourceCulture);
             }
         }
         
@@ -3337,173 +790,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable, single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3921 {
-            get {
-                return ResourceManager.GetString("3921", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable, single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3922 {
-            get {
-                return ResourceManager.GetString("3922", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable, single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3923 {
-            get {
-                return ResourceManager.GetString("3923", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable, single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3924 {
-            get {
-                return ResourceManager.GetString("3924", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable, single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3925 {
-            get {
-                return ResourceManager.GetString("3925", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable, single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3926 {
-            get {
-                return ResourceManager.GetString("3926", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable, single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3927 {
-            get {
-                return ResourceManager.GetString("3927", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable, single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3928 {
-            get {
-                return ResourceManager.GetString("3928", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable, single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3929 {
-            get {
-                return ResourceManager.GetString("3929", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Applicable amount payable with ISO currency code (variable measure trade item).
         /// </summary>
         internal static string _3930 {
             get {
                 return ResourceManager.GetString("3930", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code (variable measure trade item).
-        /// </summary>
-        internal static string _3931 {
-            get {
-                return ResourceManager.GetString("3931", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code (variable measure trade item).
-        /// </summary>
-        internal static string _3932 {
-            get {
-                return ResourceManager.GetString("3932", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code (variable measure trade item).
-        /// </summary>
-        internal static string _3933 {
-            get {
-                return ResourceManager.GetString("3933", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code (variable measure trade item).
-        /// </summary>
-        internal static string _3934 {
-            get {
-                return ResourceManager.GetString("3934", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code (variable measure trade item).
-        /// </summary>
-        internal static string _3935 {
-            get {
-                return ResourceManager.GetString("3935", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code (variable measure trade item).
-        /// </summary>
-        internal static string _3936 {
-            get {
-                return ResourceManager.GetString("3936", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code (variable measure trade item).
-        /// </summary>
-        internal static string _3937 {
-            get {
-                return ResourceManager.GetString("3937", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code (variable measure trade item).
-        /// </summary>
-        internal static string _3938 {
-            get {
-                return ResourceManager.GetString("3938", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Applicable amount payable with ISO currency code (variable measure trade item).
-        /// </summary>
-        internal static string _3939 {
-            get {
-                return ResourceManager.GetString("3939", resourceCulture);
             }
         }
         
@@ -3517,83 +808,11 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Percentage discount of a coupon.
-        /// </summary>
-        internal static string _3941 {
-            get {
-                return ResourceManager.GetString("3941", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Percentage discount of a coupon.
-        /// </summary>
-        internal static string _3942 {
-            get {
-                return ResourceManager.GetString("3942", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Percentage discount of a coupon.
-        /// </summary>
-        internal static string _3943 {
-            get {
-                return ResourceManager.GetString("3943", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Amount Payable per unit of measure single monetary area (variable measure trade item).
         /// </summary>
         internal static string _3950 {
             get {
                 return ResourceManager.GetString("3950", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Amount Payable per unit of measure single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3951 {
-            get {
-                return ResourceManager.GetString("3951", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Amount Payable per unit of measure single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3952 {
-            get {
-                return ResourceManager.GetString("3952", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Amount Payable per unit of measure single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3953 {
-            get {
-                return ResourceManager.GetString("3953", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Amount Payable per unit of measure single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3954 {
-            get {
-                return ResourceManager.GetString("3954", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Amount Payable per unit of measure single monetary area (variable measure trade item).
-        /// </summary>
-        internal static string _3955 {
-            get {
-                return ResourceManager.GetString("3955", resourceCulture);
             }
         }
         
@@ -4201,87 +1420,6 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Number of processor with three-digit ISO country code.
-        /// </summary>
-        internal static string _7031 {
-            get {
-                return ResourceManager.GetString("7031", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number of processor with three-digit ISO country code.
-        /// </summary>
-        internal static string _7032 {
-            get {
-                return ResourceManager.GetString("7032", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number of processor with three-digit ISO country code.
-        /// </summary>
-        internal static string _7033 {
-            get {
-                return ResourceManager.GetString("7033", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number of processor with three-digit ISO country code.
-        /// </summary>
-        internal static string _7034 {
-            get {
-                return ResourceManager.GetString("7034", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number of processor with three-digit ISO country code.
-        /// </summary>
-        internal static string _7035 {
-            get {
-                return ResourceManager.GetString("7035", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number of processor with three-digit ISO country code.
-        /// </summary>
-        internal static string _7036 {
-            get {
-                return ResourceManager.GetString("7036", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number of processor with three-digit ISO country code.
-        /// </summary>
-        internal static string _7037 {
-            get {
-                return ResourceManager.GetString("7037", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number of processor with three-digit ISO country code.
-        /// </summary>
-        internal static string _7038 {
-            get {
-                return ResourceManager.GetString("7038", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number of processor with three-digit ISO country code.
-        /// </summary>
-        internal static string _7039 {
-            get {
-                return ResourceManager.GetString("7039", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to GS1 UIC with Extension 1 and Importer index.
         /// </summary>
         internal static string _7040 {
@@ -4377,87 +1515,6 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string _7230 {
             get {
                 return ResourceManager.GetString("7230", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Certification Reference.
-        /// </summary>
-        internal static string _7231 {
-            get {
-                return ResourceManager.GetString("7231", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Certification Reference.
-        /// </summary>
-        internal static string _7232 {
-            get {
-                return ResourceManager.GetString("7232", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Certification Reference.
-        /// </summary>
-        internal static string _7233 {
-            get {
-                return ResourceManager.GetString("7233", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Certification Reference.
-        /// </summary>
-        internal static string _7234 {
-            get {
-                return ResourceManager.GetString("7234", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Certification Reference.
-        /// </summary>
-        internal static string _7235 {
-            get {
-                return ResourceManager.GetString("7235", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Certification Reference.
-        /// </summary>
-        internal static string _7236 {
-            get {
-                return ResourceManager.GetString("7236", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Certification Reference.
-        /// </summary>
-        internal static string _7237 {
-            get {
-                return ResourceManager.GetString("7237", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Certification Reference.
-        /// </summary>
-        internal static string _7238 {
-            get {
-                return ResourceManager.GetString("7238", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Certification Reference.
-        /// </summary>
-        internal static string _7239 {
-            get {
-                return ResourceManager.GetString("7239", resourceCulture);
             }
         }
         
@@ -4827,78 +1884,6 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string _91 {
             get {
                 return ResourceManager.GetString("91", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Company internal information.
-        /// </summary>
-        internal static string _92 {
-            get {
-                return ResourceManager.GetString("92", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Company internal information.
-        /// </summary>
-        internal static string _93 {
-            get {
-                return ResourceManager.GetString("93", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Company internal information.
-        /// </summary>
-        internal static string _94 {
-            get {
-                return ResourceManager.GetString("94", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Company internal information.
-        /// </summary>
-        internal static string _95 {
-            get {
-                return ResourceManager.GetString("95", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Company internal information.
-        /// </summary>
-        internal static string _96 {
-            get {
-                return ResourceManager.GetString("96", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Company internal information.
-        /// </summary>
-        internal static string _97 {
-            get {
-                return ResourceManager.GetString("97", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Company internal information.
-        /// </summary>
-        internal static string _98 {
-            get {
-                return ResourceManager.GetString("98", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Company internal information.
-        /// </summary>
-        internal static string _99 {
-            get {
-                return ResourceManager.GetString("99", resourceCulture);
             }
         }
     }
