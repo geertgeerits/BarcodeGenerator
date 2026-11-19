@@ -355,7 +355,7 @@
     <value>Logistic volume, cubic metres</value>
   </data>
   <data name="3370" xml:space="preserve">
-    <value>Kilograms per square metre</value>
+    <value>Kilograms per square metres</value>
   </data>
   <data name="3400" xml:space="preserve">
     <value>Logistic weight, pounds</value>
@@ -370,7 +370,7 @@
     <value>Length or first dimension, yards</value>
   </data>
   <data name="3440" xml:space="preserve">
-    <value>Width, diameter, or second dimension, inches </value>
+    <value>Width, diameter, or second dimension, inches</value>
   </data>
   <data name="3450" xml:space="preserve">
     <value>Width, diameter, or second dimension, feet</value>

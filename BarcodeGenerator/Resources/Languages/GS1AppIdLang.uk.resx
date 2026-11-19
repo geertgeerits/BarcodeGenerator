@@ -282,4 +282,181 @@
   <data name="717" xml:space="preserve">
     <value>Національний номер відшкодування витрат на охорону здоров’я — Коста-Рика</value>
   </data>
+  <data name="3100" xml:space="preserve">
+    <value>Маса нетто, кілограми (товарна одиниця зі змінною кількістю)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>Довжина або перший вимір, метри (товарна одиниця зі змінними параметрами)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>Ширина, діаметр або другий вимір, метри (товарна одиниця зі змінними параметрами)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>Глибина, товщина, висота або третій вимір, метри (товарна одиниця зі змінними розмірами)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>Площа, квадратні метри (товарна одиниця зі змінною величиною)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>Обсяг нетто, літри (товарна одиниця зі змінною кількістю)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>Чистий об’єм, кубічні метри (товарна одиниця зі змінною кількісною характеристикою)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>Вага нетто, фунти (торговельний товар змінної міри)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>Довжина або перший вимір, дюйми (товарна одиниця зі змінними параметрами)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>Довжина або перший вимір, фути (товарна одиниця зі змінними параметрами)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>Довжина або перший вимір, ярди (товарна одиниця з мінливим розміром)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>Ширина, діаметр або другий вимір, дюйми (товарна одиниця зі змінними параметрами)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>Ширина, діаметр або другий вимір, фути (товарна одиниця зі змінними розмірами)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>Ширина, діаметр або другий вимір, ярди (товарна одиниця зі змінними розмірами)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>Глибина, товщина, висота або третій вимір, дюйми (товарна одиниця зі змінними розмірами)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>Глибина, товщина, висота або третій вимір, фути (товарна одиниця зі змінними розмірами)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>Глибина, товщина, висота або третій вимір, ярди (товарна одиниця зі змінним розміром)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>Логістична вага, кілограми</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>Довжина або перший розмір, метри</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>Ширина, діаметр або другий розмір, метри</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>Глибина, товщина, висота або третій вимір, метри</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>Площа, квадратні метри</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>Логістичний об'єм, літри</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Логістичний обсяг, кубічні метри</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Кілограми на квадратний метр</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>Логістична вага, фунти</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>Довжина або перший розмір, дюйми</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>Довжина або перший розмір, фути</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>Довжина або перший вимір, ярди</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>Ширина, діаметр або другий розмір, дюйми</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>Ширина, діаметр або другий розмір, фути</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>Ширина, діаметр або другий вимір, ярд</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>Глибина, товщина, висота або третій вимір, дюйми</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>Глибина, товщина, висота або третій вимір, фути</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>Глибина, товщина, висота або третій вимір, ярди</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>Площа, квадратні дюйми (товарна одиниця зі змінним показником)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>Площа, квадратні фути (товарна одиниця зі змінною величиною)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>Площа, квадратні ярди (товарна одиниця з мінливою величиною)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>Площа, квадратні дюйми</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>Площа, квадратні фути</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>Площа, квадратні ярди</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>Маса нетто, тройські унції (товар із змінною величиною)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>Маса (або об’єм) нетто, унції (товарна одиниця зі змінною величиною)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>Чистий об'єм, кварти (товарна одиниця зі змінною мірою)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>Чистий об’єм, галони США (товарна одиниця зі змінною кількісною характеристикою)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>Логістичний об'єм, кварти</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>Логістичний об'єм, галони (США)</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>Об’єм нетто, кубічні дюйми (товарна одиниця зі змінним показником)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>Чистий об’єм, кубічні фути (товарна одиниця зі змінною величиною)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>Чистий об’єм, кубічні ярди (товарна одиниця зі змінною величиною)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>Логістичний об'єм, кубічні дюйми</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>Логістичний обсяг, кубічні фути</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>Логістичний обсяг, кубічні ярди</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>Сума до сплати або розмір купона, у місцевій валюті</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>Сума до сплати разом із кодом валюти за стандартом ISO</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>Сума до сплати, єдина грошова зона (товарна одиниця зі змінним показником)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>Сума до сплати (з кодом валюти за стандартом ISO) — для товарної одиниці зі змінним показником</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>Відсоткова знижка за купоном</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>Сума до сплати за одиницю виміру в межах єдиної грошової зони (товарна одиниця зі змінною величиною)</value>
+  </data>
 </root>

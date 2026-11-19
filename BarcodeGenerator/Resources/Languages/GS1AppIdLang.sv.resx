@@ -282,4 +282,181 @@
   <data name="717" xml:space="preserve">
     <value>Nationellt nummer för ersättning inom hälso- och sjukvården – Costa Rica</value>
   </data>
+  <data name="3100" xml:space="preserve">
+    <value>Nettovikt, kilogram (handelsvara med variabel mängd)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>Längd eller första dimension, meter (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>Bredd, diameter eller andra dimension, meter (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>Djup, tjocklek, höjd eller tredje dimension, meter (varuobjekt med variabelt mått)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>Area, kvadratmeter (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>Nettovolym, liter (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>Nettovolym, kubikmeter (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>Nettovikt, pund (variabelt mått, artikel)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>Längd eller första dimension, tum (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>Längd eller första dimension, fot (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>Längd eller första dimension, yards (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>Bredd, diameter eller andra dimension, tum (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>Bredd, diameter eller andra dimension, fot (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>Bredd, diameter eller andra dimension, yards (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>Djup, tjocklek, höjd eller tredje dimension, tum (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>Djup, tjocklek, höjd eller tredje dimension, fot (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>Djup, tjocklek, höjd eller tredje dimension, yards (handelsartikel med variabelt mått)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>Logistisk vikt, kilogram</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>Längd eller första dimension, meter</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>Bredd, diameter eller andra dimension, meter</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>Djup, tjocklek, höjd eller tredje dimension, meter</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>Area, kvadratmeter</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>Logistikvolym, liter</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Logistikvolym, kubikmeter</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Kilogram per kvadratmeter</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>Logistisk vikt, pund</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>Längd eller första dimension, tum</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>Längd eller första dimension, fot</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>Längd eller första dimension, yards</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>Bredd, diameter eller andra dimension, tum</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>Bredd, diameter eller andra dimension, fot</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>Bredd, diameter eller andra dimension, yard</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>Djup, tjocklek, höjd eller tredje dimension, tum</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>Djup, tjocklek, höjd eller tredje dimension, fot</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>Djup, tjocklek, höjd eller tredje dimension, yards</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>Area, kvadrattum (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>Area, kvadratfot (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>Area, kvadratyard (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>Area, kvadrattum</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>Area, kvadratfot</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>Area, square yards</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>Nettovikt, troy-uns (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>Nettovikt (eller volym), uns (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>Nettovolym, quarts (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>Nettovolym, amerikanska gallon (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>Logistikvolym, quarts</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>Logistikvolym, amerikanska gallon</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>Nettovolym, kubiktum (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>Nettovolym, kubikfot (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>Nettovolym, kubikyards (handelsvara med variabelt mått)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>Logistisk volym, kubiktum</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>Logistikvolym, kubikfot</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>Logistikvolym, kubikyard</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>Tillämpligt belopp som ska betalas eller kupongvärde, lokal valuta</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>Tillämpligt belopp som ska betalas, med ISO-valutakod</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>Tillämpligt belopp som ska betalas, enhetligt valutaområde (handelsartikel med variabelt mått)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>Tillämpligt belopp som ska betalas, inklusive ISO-valutakod (handelsartikel med variabelt mått)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>Procentuell rabatt via kupong</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>Betalbart belopp per måttenhet inom ett enhetligt valutaområde (handelsvara med variabel måttenhet)</value>
+  </data>
 </root>

@@ -493,7 +493,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kilograms per square metre.
+        ///   Looks up a localized string similar to Kilograms per square metres.
         /// </summary>
         internal static string _3370 {
             get {
@@ -538,7 +538,7 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches .
+        ///   Looks up a localized string similar to Width, diameter, or second dimension, inches.
         /// </summary>
         internal static string _3440 {
             get {
