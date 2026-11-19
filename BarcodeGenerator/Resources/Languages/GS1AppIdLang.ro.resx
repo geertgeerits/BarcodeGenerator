@@ -117,4 +117,169 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="00" xml:space="preserve">
+    <value>Cod Serial al Containerului de Expediție</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>Număr Global de Articol Comercial</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>Numărul global de identificare a articolului comercial pentru articolele comerciale conținute</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>Număr de lot</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>Data producției (AALLZZ)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Data scadenței (AALLZZ)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Data ambalării (AALLZZ)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Data de expirare (AALLZZ)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Data limită de vânzare (AALLZZ)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Data expirării (AALLZZ)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Variantă internă de produs</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Număr de serie</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Variantă de produs de consum</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Număr variabil de articole (articol comercial cu cantitate variabilă)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>Numărul de articole comerciale sau de unități ale unui articol comercial conținute într-o unitate logistică</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>Informații convenite de comun acord între partenerii comerciali</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>Informații interne ale companiei</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Extensie a Numărului Global de Articol Comercial (GTIN), serializată și controlată de o parte terță</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>Identificare suplimentară a produsului, atribuită de producător</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Cod piesă client</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Numărul variantei realizate la comandă</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Numărul componentei de ambalaj</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>Număr de serie secundar</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Referință la entitatea sursă</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Identificator global al tipului de document</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Componentă de extensie a Numărului Global de Localizare</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Număr global de cupon</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>Numărul comenzii de achiziție a clientului</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>Număr global de identificare a expedierii</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>Număr global de identificare a expedierii</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>Cod de rutare</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>Expediere către / Livrare către Numărul de Localizare Globală</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>Număr de locație global pentru facturare</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>Achiziționat de la un deținător de Număr Global de Localizare</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>Expediere către / Livrare către – Direcționare către un Număr Global de Locație</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>Identificarea unei locații fizice – Număr Global de Locație</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>Numărul global de localizare al părții care emite factura</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>Numărul Global de Localizare al locului de producție sau de prestare a serviciilor</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>Număr Global de Locație al Partenerului</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>Expediere către / Livrare la un cod poștal aflat în cadrul aceleiași autorități poștale</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>Expediere către / Livrare către codul poștal, cu codul de țară ISO</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>Țara de origine a unui articol comercial</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>Țara prelucrării inițiale</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>Țara de prelucrare</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>Țara de dezmembrare</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>Țară care acoperă întregul lanț de procese</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>Subdiviziune teritorială de origine</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>Număr național de decontare în sistemul de sănătate – Germania</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>Număr național de decontare a serviciilor de sănătate – Franța</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>Număr național de decontare a serviciilor de sănătate – Spania</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>Numărul Național de Rambursare a Asistenței Medicale - Brazilia</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>Număr național de decontare în domeniul sănătății – Portugalia</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>Număr național de decontare în asistența medicală – Statele Unite ale Americii</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>Număr național de decontare în sistemul de sănătate – Italia</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>Număr național de decontare a serviciilor de sănătate – Costa Rica</value>
+  </data>
 </root>

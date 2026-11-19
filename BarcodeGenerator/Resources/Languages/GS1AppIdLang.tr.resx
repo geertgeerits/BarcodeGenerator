@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>Seri Sevkiyat Konteyner Kodu</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>Küresel Ticari Ürün Numarası</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>İçerilen ticari ürünlere ait Küresel Ticari Ürün Numarası</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>Parti veya lot numarası</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>Üretim tarihi (YYAAGG)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Son tarih (YYAAGG)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Paketleme tarihi (YYAAGG)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Tavsiye edilen tüketim tarihi (YYAAGG)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Son satış tarihi (YYAAGG)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Son kullanma tarihi (YYAAGG)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Variantă internă de produs</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Seri numarası</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Tüketici ürünü varyantı</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Değişken miktarda ürün (değişken ölçülü ticari ürün)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>Bir lojistik birim içinde yer alan ticari ürünlerin veya ticari ürün parçalarının sayısı</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>Informații convenite de comun acord între partenerii comerciali</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>Şirket içi bilgiler</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Üçüncü Tarafça Kontrol Edilen, Seri Numarası Eklenmiş Küresel Ticari Ürün Numarası</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>Üretici tarafından atanan ek ürün tanımlayıcısı</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Müşteri parça numarası</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Sipariş üzerine üretim varyasyon numarası</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Ambalaj bileşeni numarası</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>İkincil seri numarası</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Kaynak varlığa referans</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Küresel Belge Türü Tanımlayıcısı</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Küresel Konum Numarası ek bileşeni</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Küresel Kupon Numarası</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>Müşteri sipariş numarası</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>Gönderi için Küresel Tanımlama Numarası</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>Küresel Gönderi Tanımlama Numarası</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>Yönlendirme kodu</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>Gönderim Yeri / Teslimat Yeri Küresel Konum Numarası</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>Fatura Edilecek Küresel Konum Numarası</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>Küresel Konum Numarası'ndan satın alınmıştır</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>Şu adrese gönder / Teslimat adresi - Küresel Konum Numarasına yönlendir</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>Fiziksel bir konumun tanımlanması - Küresel Konum Numarası</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>Faturalandıran tarafın Küresel Konum Numarası</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>Üretim veya hizmet lokasyonuna ait Küresel Lokasyon Numarası</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>Taraf Küresel Konum Numarası</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>Tek bir posta idaresi sınırları dahilinde, posta koduna göre gönderim/teslimat</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>ISO ülke koduyla birlikte gönderim/teslimat posta kodu</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>Bir ticari ürünün menşe ülkesi</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>İlk işleme ülkesi</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>İşleme ülkesi</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>Söküm ülkesi</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>Tüm süreç zincirini kapsayan ülke</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>Kökenin bulunduğu ülke alt birimi</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>Ulusal Sağlık Hizmeti Geri Ödeme Numarası - Almanya</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>Ulusal Sağlık Hizmetleri Geri Ödeme Numarası - Fransa</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>Ulusal Sağlık Hizmetleri Geri Ödeme Numarası - İspanya</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>Ulusal Sağlık Hizmetleri Geri Ödeme Numarası - Brezilya</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>Ulusal Sağlık Hizmetleri Geri Ödeme Numarası - Portekiz</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>Ulusal Sağlık Hizmeti Geri Ödeme Numarası - Amerika Birleşik Devletleri</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>Ulusal Sağlık Hizmeti Geri Ödeme Numarası - İtalya</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>Ulusal Sağlık Hizmetleri Geri Ödeme Numarası - Kosta Rika</value>
+  </data>
+</root>
