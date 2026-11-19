@@ -360,4 +360,370 @@
   <data name="3400" xml:space="preserve">
     <value>Peso logístico, libras</value>
   </data>
+  <data name="3410" xml:space="preserve">
+    <value>Length or first dimension, inches</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>Comprimento ou primeira dimensão, pés</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>Comprimento ou primeira dimensão, jardas</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>Largura, diâmetro ou segunda dimensão, polegadas</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>Largura, diâmetro ou segunda dimensão, pés</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>Largura, diâmetro ou segunda dimensão, jarda</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>Profundidade, espessura, altura ou terceira dimensão, polegadas</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>Profundidade, espessura, altura ou terceira dimensão, pés</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>Profundidade, espessura, altura ou terceira dimensão, jardas</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>Área, em polegadas quadradas (item comercial de medida variável)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>Área, pés quadrados (item comercial com medida variável)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>Área, em jardas quadradas (item comercial com medida variável)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>Área, polegadas quadradas</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>Área, pés quadrados</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>Área, jardas quadradas</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>Peso líquido, onças-troy (item comercial de medida variável)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>Peso líquido (ou volume), onças (item comercial de medida variável)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>Volume líquido, quarts (item comercial de medida variável)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>Volume líquido, galões (EUA) (item comercial de medida variável)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>Volume logístico, quartos</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>Volume logístico, galões (EUA)</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>Volume líquido, polegadas cúbicas (item comercial de medida variável)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>Volume líquido, pés cúbicos (item comercial de medida variável)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>Volume líquido, jardas cúbicas (item comercial de medida variável)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>Volume logístico, polegadas cúbicas</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>Volume logístico, pés cúbicos</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>Volume logístico, jardas cúbicas</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>Valor a pagar aplicável ou valor do cupom, moeda local</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>Valor a pagar, acompanhado do código de moeda ISO</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>Valor a pagar aplicável, área monetária única (item comercial de medida variável)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>Valor a pagar, com código de moeda ISO (item comercial de medida variável)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>Desconto percentual de um cupom</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>Valor a pagar por unidade de medida em uma área monetária única (item comercial de medida variável)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>Nome da empresa destinatária / para a qual a entrega será feita</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>Contato para envio/entrega</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>Endereço de envio/entrega – linha 1</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>Endereço de envio/entrega – linha 2</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>Bairro de envio / entrega</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>Localidade de envio / entrega</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>Região de envio / entrega</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>Código do país de envio/entrega</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>Número de telefone para envio/entrega</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>Localização geográfica de envio/entrega</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>Nome da empresa (remetente)</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>Retorno ao contato</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>Linha 1 do endereço de remetente</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>Linha 2 do endereço de remetente</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>Retorno ao subúrbio</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>Localidade de retorno</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>Região de retorno</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>Código de país de retorno</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>Código postal de devolução</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>Número de telefone para retorno</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>Descrição do código de serviço</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>Indicador de mercadorias perigosas</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>Autorização para deixar no local</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>Indicador de exigência de assinatura</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>Não antes da data e hora de entrega (AAMMDDhhmm)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>Não posterior à data e hora de entrega (AAMMDDhhmm)</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>Data de lançamento (AAMMDD)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>Temperatura máxima em Fahrenheit (expressa em centésimos de grau)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>Temperatura máxima em graus Celsius (expressa em centésimos de grau)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>Temperatura mínima em Fahrenheit (expressa em centésimos de grau)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>Temperatura mínima em graus Celsius (expressa em centésimos de grau)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>Número de Estoque da OTAN (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>Classificação de carcaças e cortes de carne da UN/ECE</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>Data e hora de expiração (AAMMDDhhmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>Potência ativa</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>Área de captura</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>Data da primeira geada (AAMMDD)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>Data da colheita (AAMMDD[AAMMDD])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>Espécies para fins pesqueiros</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>Tipo de equipamento de pesca</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>Método de produção</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>Teste por data (AAMMDD[hhmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>ID do lote de recondicionamento</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>Estado funcional</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>Status da revisão</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>Identificador Individual Global de Ativo de um conjunto</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>Número de processador com código de país ISO de três dígitos</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>GS1 UIC com Extensão 1 e índice do importador</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>Tipo de unidade de carga UN/CEFACT</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>Referência de certificação</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>ID do protocolo</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>Tipo de mídia AIDC</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>Número de controle de versão</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>Data de nascimento (AAAAMMDD)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>Data e hora de nascimento (AAAAMMDDhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>Sexo biológico</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>Sobrenome da pessoa</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>Nome próprio da pessoa</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>Sufixo do nome de uma pessoa</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>Nome completo da pessoa</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>Endereço da pessoa</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>Sequência do nascimento do bebê</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>Bebê com sobrenome da família</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>Produtos em bobina (largura, comprimento, diâmetro do tubete, sentido, emendas)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>Identificador de telefone celular móvel</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>Identificador Global de Ativos Retornáveis</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>Identificador Global de Ativo Individual</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>Preço por unidade de medida</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>Identificação de uma unidade individual de um item comercial</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>Número de Conta Bancária Internacional</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>Data e hora de produção (AAMMDDhh[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>Indicador de sensor de leitura óptica</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>Identificador de componente/peça</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>Número de série do componente/peça</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>Versão do software</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>Número de Modelo Global</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>Número de Relação de Serviço Global, utilizado para identificar a relação entre uma organização que oferece serviços e o prestador de serviços.</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>Número de Relação de Serviço Global, utilizado para identificar a relação entre uma organização que oferece serviços e o destinatário desses serviços.</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>Número da Instância de Relação de Serviço</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>Número de referência do boleto de pagamento</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>Identificação de itens comerciais contidos em uma unidade logística</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>Assinatura Digital (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>Identificação Internacional de Equipamento Móvel</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>Identidade Internacional de Equipamento Móvel 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>Número de SIM integrado</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>Número do SIM físico</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>Identificação de código de cupom para uso na América do Norte</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>Pontos de fidelidade de um cupom</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>Identificação de código de cupom para ofertas, para uso na América do Norte</value>
+  </data>
 </root>
