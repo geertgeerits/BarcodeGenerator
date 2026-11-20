@@ -208,7 +208,7 @@
     <value>Глобальний ідентифікаційний номер відправлення</value>
   </data>
   <data name="403" xml:space="preserve">
-    <value>Dirigeringskod</value>
+    <value>Код маршрутизації</value>
   </data>
   <data name="410" xml:space="preserve">
     <value>Відвантажити на / Доставити за Глобальним номером місцезнаходження</value>
@@ -458,5 +458,272 @@
   </data>
   <data name="3950" xml:space="preserve">
     <value>Сума до сплати за одиницю виміру в межах єдиної грошової зони (товарна одиниця зі змінною величиною)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>Назва компанії-отримувача / компанії, якій здійснюється доставка</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>Контактна особа для отримання вантажу / доставки</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>Адреса доставки — рядок 1</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>Адреса доставки — рядок 2</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>Передмістя для відправлення / доставки</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>Місце призначення / Місце доставки</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>Регіон доставки</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>Код країни призначення / доставки</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>Номер телефону для доставки</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>Геолокація для відправлення / доставки</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>Назва компанії-отримувача повернення</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>Повернення до контакту</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>Адреса для повернення, рядок 1</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>Адреса для повернення, рядок 2</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>Повернення в передмістя</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>Повернення до місцевості</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>Область повернення</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>Код країни повернення</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>Поштовий індекс для повернення</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>Номер телефону для зворотного зв’язку</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>Опис коду послуги</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>Ознака небезпечного вантажу</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>Дозвіл на вихід</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>Ознака «потрібен підпис»</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>Не раніше дати й часу доставки (РРММДДггхх)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>Не пізніше дати й часу доставки (РРММДДггмм)</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>Дата випуску (РРММДД)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>Максимальна температура за Фаренгейтом (виражена в сотих частках градуса)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>Максимальна температура в градусах Цельсія (виражена в сотих частках градуса)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>Мінімальна температура за Фаренгейтом (виражена в сотих частках градуса)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>Мінімальна температура в градусах Цельсія (виражена в сотих частках градуса)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>Номенклатурний номер НАТО (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>Класифікація м'ясних туш і відрубів за стандартами ЄЕК ООН</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>Дата й час закінчення терміну дії (РРММДДггмм)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>Активна потенція</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>Зона охоплення</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>Дата перших заморозків (РРММДД)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>Дата збору врожаю (РРММДД[РРММДД])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>Види для рибогосподарських цілей</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>Тип рибальського спорядження</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>Спосіб виробництва</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>Перевірка за датою (РРММДД[ггмм])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>Ідентифікатор партії для відновлення</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>Функціональний стан</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>Статус перегляду</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>Глобальний індивідуальний ідентифікатор активу для вузла</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>Кількість процесорів із тризначним кодом країни за стандартом ISO</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>GS1 UIC з розширенням 1 та індексом імпортера</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>Тип вантажної одиниці UN/CEFACT</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>Довідкова інформація про сертифікацію</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>Ідентифікатор протоколу</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>Тип носія AIDC</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>Номер версії</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>Дата народження (РРРРММДД)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>Дата й час народження (РРРРММДДггммсс)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>Біологічна стать</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>Прізвище особи</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>Особисте ім'я особи</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>Суфікс імені особи</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>Повне ім'я особи</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>Адреса особи</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>Послідовність народження дитини</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>Наймолодший член сім'ї</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>Рулонна продукція (ширина, довжина, діаметр гільзи, напрямок, місця з’єднання)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>Ідентифікатор стільникового мобільного телефону</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>Глобальний ідентифікатор зворотних активів</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>Глобальний індивідуальний ідентифікатор активу</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>Ціна за одиницю виміру</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>Ідентифікація окремої одиниці товару</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>Міжнародний номер банківського рахунку</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>Дата й час виготовлення (РРММДДгг[мм[сс]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>Оптично зчитуваний сенсорний індикатор</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>Ідентифікатор компонента/деталі</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>Серійний номер компонента/деталі</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>Версія програмного забезпечення</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>Глобальний номер моделі</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>Глобальний номер зв’язку щодо послуг для ідентифікації взаємин між організацією, яка пропонує послуги, та надавачем послуг</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>Глобальний номер зв’язку з послугами (Global Service Relation Number) — для ідентифікації взаємин між організацією, що надає послуги, та отримувачем послуг</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>Номер екземпляра відношення послуги</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>Довідковий номер платіжного документа</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>Ідентифікація складових частин торговельної одиниці, що містяться в логістичній одиниці</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>Цифровий підпис (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>Міжнародний ідентифікатор мобільного обладнання</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>Міжнародний ідентифікатор мобільного обладнання 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>Номер вбудованої SIM-карти</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>Номер фізичної SIM-карти</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>Номер фізичної SIM-картки; ідентифікація коду купона для використання в Північній Америці</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>Бали лояльності за купоном</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>Бали лояльності за купоном; файл із вигідними пропозиціями, що містить коди купонів для використання в Північній Америці</value>
   </data>
 </root>

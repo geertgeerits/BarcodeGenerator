@@ -459,4 +459,271 @@
   <data name="3950" xml:space="preserve">
     <value>Betalbart belopp per måttenhet inom ett enhetligt valutaområde (handelsvara med variabel måttenhet)</value>
   </data>
+  <data name="4300" xml:space="preserve">
+    <value>Företagsnamn för leverans</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>Kontaktperson för leverans</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>Leveransadress, rad 1</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>Leveransadress, rad 2</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>Förort för leverans</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>Ort för leverans</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>Region för leverans</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>Landskod för leverans</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>Telefonnummer för leverans</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>Geografisk plats för leverans</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>Företagsnamn för retur</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>Återgå till kontakt</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>Returadress, rad 1</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>Returadress, rad 2</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>Återvändande till förorten</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>Återgång till orten</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>Region för återgång</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>Landskod för återresa</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>Postnummer för retur</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>Telefonnummer för återkontakt</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>Beskrivning av tjänstekod</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>Markering för farligt gods</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>Tillåtelse att lämna kvar</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>Markering för krav på underskrift</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>Inte före leveransdatum och -tid (ÅÅMMDDttmm)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>Inte efter leveransdatum och -tid (ÅÅMMDDttmm)</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>Utgivningsdatum (ÅÅMMDD)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>Maximitemperatur i Fahrenheit (angiven i hundradels grader)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>Maximal temperatur i grader Celsius (uttryckt i hundradels grader)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>Lägsta temperatur i Fahrenheit (uttryckt i hundradelar av grader)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>Minimitemperatur i grader Celsius (uttryckt i hundradels grader)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>NATO-lagernummer (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>FN/ECE-klassificering av slaktkroppar och styckningsdelar av kött</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>Utgångsdatum och -tid (ÅÅMMDDttmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>Aktiv potens</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>Fångstområde</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>Datum för första frost (ÅÅMMDD)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>Skördedatum (ÅÅMMDD[ÅÅMMDD])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>Arter för fiskeriändamål</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>Typ av fiskeutrustning</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>Produktionsmetod</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>Testa efter datum (ÅÅMMDD[ttmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>ID för renoveringsparti</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>Funktionsstatus</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>Revisionsstatus</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>Global individuell tillgångsidentifierare för en sammansättning</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>Antal processorer med tresiffrig ISO-landskod</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>GS1 UIC med tillägg 1 och importörsindex</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>UN/CEFACT-typ av fraktenhet</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>Certifieringsreferens</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>Protokoll-ID</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>AIDC-medietyp</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>Versionskontrollnummer</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>Födelsedatum (ÅÅÅÅMMDD)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>Födelsedatum och -tid (ÅÅÅÅMMDDttmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>Biologiskt kön</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>Persons efternamn</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>Persons förnamn</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>Namnsuffix för person</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>Personens fullständiga namn</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>Persons adress</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>Förlopp vid barnafödsel</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>Familjens yngsta</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>Rullprodukter (bredd, längd, kärndiameter, riktning, skarvar)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>Identifierare för mobiltelefon</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>Global identifierare för returemballage</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>Global identifierare för enskilda tillgångar</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>Pris per måttenhet</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>Identifiering av en enskild handelsvara</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>Internationellt bankkontonummer</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>Datum och tid för framställning (ÅÅMMDDtt[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>Optiskt läsbar sensorindikator</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>Identifierare för komponent/del</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>Serienummer för komponent/del</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>Mjukvaruversion</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>Globalt modellnummer</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>Globalt tjänsterelationsnummer för att identifiera relationen mellan en organisation som erbjuder tjänster och den som tillhandahåller tjänsterna</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>Global Service Relation Number för att identifiera relationen mellan en organisation som erbjuder tjänster och mottagaren av tjänster</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>Instansnummer för tjänsterelation</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>Referensnummer på inbetalningskort</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>Identifiering av delar av en handelsvara som ingår i en logistisk enhet</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>Digital signatur (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>Internationell identitetskod för mobilutrustning</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>Internationell mobil utrustningsidentitet 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>Nummer för inbyggt SIM-kort</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>Nummer för fysiskt SIM-kort</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>Identifiering av kupongkod för fysiskt SIM-kort för användning i Nordamerika</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>Loyalitetspoäng från en kupong</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>Lojalitetspoäng via kupong – identifiering av kupongkoder för erbjudanden som kan användas i Nordamerika</value>
+  </data>
 </root>
