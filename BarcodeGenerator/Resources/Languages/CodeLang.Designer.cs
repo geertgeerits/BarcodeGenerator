@@ -1160,6 +1160,42 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The key must be preceded by an ampersand and followed by an equal sign..
+        /// </summary>
+        internal static string ErrorGS1KeyBetweenAmpersandEqualSign_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1KeyBetweenAmpersandEqualSign_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The key must be preceded by a question mark and followed by an equal sign..
+        /// </summary>
+        internal static string ErrorGS1KeyBetweenQuestionMarkEqualSign_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1KeyBetweenQuestionMarkEqualSign_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The key must be preceded and followed by a forward slash..
+        /// </summary>
+        internal static string ErrorGS1KeyBetweenSlash_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1KeyBetweenSlash_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only one key can start with a question mark..
+        /// </summary>
+        internal static string ErrorGS1KeyOnly1KeyStartWithQuestionMark_Text {
+            get {
+                return ResourceManager.GetString("ErrorGS1KeyOnly1KeyStartWithQuestionMark_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The value must contain only digits..
         /// </summary>
         internal static string ErrorGS1NumberOnlyDigits_Text {

@@ -93,6 +93,7 @@ namespace BarcodeGenerator
         {
             bool bIsValid = true;
 
+            // Split the GS1 identifier into key-value pairs and add them to the dictionary
             SplitKeyValuePairs(editor.Text);
 
             Debug.WriteLine($"Length dictionary _knownGs1AppIDs: {ClassLoadDataFromFile._knownGs1AppIDs.Count}");
@@ -130,6 +131,12 @@ namespace BarcodeGenerator
             {
                 cErrorMessage = CodeLang.ErrorGS1AppIDInvalid_Text;
             }
+
+            // Check if the GS1 identifier is a valid GS1 Digital Link
+            //if (bIsValid)
+            //{
+            //    bIsValid = IsValidGS1DigitalLink(gs1Identifier, cKey);
+            //}
 
             // Primary identification key formats (x 16)
 
@@ -1260,6 +1267,58 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 6 || !ValueIsDigit(value))
                 {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Check is the GS1 Digital link is valid
+        /// </summary>
+        /// <param name="gs1Identifier"></param>
+        /// <param name="cKey"></param>
+        /// <returns></returns>
+        private static bool IsValidGS1DigitalLink(string gs1Identifier, string cKey)
+        {
+            // If the key is one of the primary identification keys or key qualifiers, it must be preceded and followed by a slash.
+            // If the key is one of the data attributes, it must be preceded by a question mark and followed by an equal sign,
+            // or preceded by an ampersand and followed by an equal sign.
+            
+            if (cKey is "01" or "8006" or "8013" or "8010" or "414" or "415" or "417" or "8017"
+                or "8018" or "255" or "00" or "253" or "401" or "402" or "8003" or "8004"
+                or "22" or "10" or "21" or "8011" or "254" or "8020" or "235" or "7040")
+            {
+                // If the key is not preceded and followed by a slash, return false
+                if (!gs1Identifier.Contains($"/{cKey}/"))
+                {
+                    cErrorMessage = CodeLang.ErrorGS1KeyBetweenSlash_Text;
+                    return false;
+                }
+            }
+
+            else
+            {
+                // Check if there is only one data attribute that is preceded by a question mark and followed by an equal sign,
+                // and all other data attributes are preceded by an ampersand and followed by an equal sign
+                if (gs1Identifier.Split('?').Length - 1 > 1 || gs1Identifier.Split('&').Length - 1 > 0)
+                {
+                    cErrorMessage = CodeLang.ErrorGS1KeyOnly1KeyStartWithQuestionMark_Text;
+                    return false;
+                }
+
+                // If the first data attribute in the GS1 identifier is not preceded by a question mark and followed by an equal sign, return false
+                if (!gs1Identifier.Contains($"?{cKey}="))
+                {
+                    cErrorMessage = CodeLang.ErrorGS1KeyBetweenQuestionMarkEqualSign_Text;
+                    return false;
+                }
+
+                // If the next data attributes are not preceded by an ampersand and followed by an equal sign, return false
+                else if (!gs1Identifier.Contains($"&{cKey}="))
+                {
+                    cErrorMessage = CodeLang.ErrorGS1KeyBetweenAmpersandEqualSign_Text;
                     return false;
                 }
             }
