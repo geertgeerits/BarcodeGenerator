@@ -1,101 +1,729 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00" xml:space="preserve">
+    <value>Mã số container vận chuyển</value>
+  </data>
+  <data name="01" xml:space="preserve">
+    <value>Mã số thương phẩm toàn cầu</value>
+  </data>
+  <data name="02" xml:space="preserve">
+    <value>Mã số thương phẩm toàn cầu của các mặt hàng thương mại bên trong</value>
+  </data>
+  <data name="10" xml:space="preserve">
+    <value>Số lô</value>
+  </data>
+  <data name="11" xml:space="preserve">
+    <value>Ngày sản xuất (YYMMDD)</value>
+  </data>
+  <data name="12" xml:space="preserve">
+    <value>Ngày đến hạn (YYMMDD)</value>
+  </data>
+  <data name="13" xml:space="preserve">
+    <value>Ngày đóng gói (YYMMDD)</value>
+  </data>
+  <data name="15" xml:space="preserve">
+    <value>Hạn sử dụng tốt nhất trước ngày (NămThángNgày)</value>
+  </data>
+  <data name="16" xml:space="preserve">
+    <value>Hạn bán (YYMMDD)</value>
+  </data>
+  <data name="17" xml:space="preserve">
+    <value>Ngày hết hạn (YYMMDD)</value>
+  </data>
+  <data name="20" xml:space="preserve">
+    <value>Biến thể sản phẩm nội bộ</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>Số seri</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>Biến thể sản phẩm tiêu dùng</value>
+  </data>
+  <data name="30" xml:space="preserve">
+    <value>Số lượng mặt hàng thay đổi (mặt hàng thương mại có đại lượng biến đổi)</value>
+  </data>
+  <data name="37" xml:space="preserve">
+    <value>Số lượng mặt hàng thương mại hoặc các đơn vị thành phần của mặt hàng thương mại có trong một đơn vị logistics</value>
+  </data>
+  <data name="90" xml:space="preserve">
+    <value>Thông tin được các đối tác thương mại cùng thỏa thuận</value>
+  </data>
+  <data name="91" xml:space="preserve">
+    <value>Thông tin nội bộ công ty</value>
+  </data>
+  <data name="235" xml:space="preserve">
+    <value>Mở rộng mã số thương phẩm toàn cầu (GTIN) theo dạng chuỗi, dưới sự kiểm soát của bên thứ ba</value>
+  </data>
+  <data name="240" xml:space="preserve">
+    <value>Thông tin nhận diện sản phẩm bổ sung do nhà sản xuất chỉ định</value>
+  </data>
+  <data name="241" xml:space="preserve">
+    <value>Mã linh kiện của khách hàng</value>
+  </data>
+  <data name="242" xml:space="preserve">
+    <value>Mã biến thể sản phẩm đặt làm theo yêu cầu</value>
+  </data>
+  <data name="243" xml:space="preserve">
+    <value>Mã thành phần bao bì</value>
+  </data>
+  <data name="250" xml:space="preserve">
+    <value>Số sê-ri phụ</value>
+  </data>
+  <data name="251" xml:space="preserve">
+    <value>Tham chiếu đến thực thể nguồn</value>
+  </data>
+  <data name="253" xml:space="preserve">
+    <value>Mã định danh loại tài liệu toàn cầu</value>
+  </data>
+  <data name="254" xml:space="preserve">
+    <value>Thành phần mở rộng của Mã vị trí toàn cầu</value>
+  </data>
+  <data name="255" xml:space="preserve">
+    <value>Mã phiếu giảm giá toàn cầu</value>
+  </data>
+  <data name="400" xml:space="preserve">
+    <value>Số đơn đặt hàng của khách hàng</value>
+  </data>
+  <data name="401" xml:space="preserve">
+    <value>Mã định danh lô hàng toàn cầu</value>
+  </data>
+  <data name="402" xml:space="preserve">
+    <value>Mã định danh lô hàng toàn cầu</value>
+  </data>
+  <data name="403" xml:space="preserve">
+    <value>Mã định tuyến</value>
+  </data>
+  <data name="410" xml:space="preserve">
+    <value>Giao đến / Vận chuyển đến Mã vị trí toàn cầu</value>
+  </data>
+  <data name="411" xml:space="preserve">
+    <value>Mã vị trí toàn cầu dùng cho bên thanh toán / bên nhận hóa đơn</value>
+  </data>
+  <data name="412" xml:space="preserve">
+    <value>Được mua từ Mã vị trí toàn cầu</value>
+  </data>
+  <data name="413" xml:space="preserve">
+    <value>Giao hàng đến / Vận chuyển đến - Chuyển tiếp đến Mã vị trí toàn cầu</value>
+  </data>
+  <data name="414" xml:space="preserve">
+    <value>Xác định một vị trí vật lý - Mã vị trí toàn cầu</value>
+  </data>
+  <data name="415" xml:space="preserve">
+    <value>Mã vị trí toàn cầu của bên xuất hóa đơn</value>
+  </data>
+  <data name="416" xml:space="preserve">
+    <value>Mã vị trí toàn cầu của địa điểm sản xuất hoặc cung cấp dịch vụ</value>
+  </data>
+  <data name="417" xml:space="preserve">
+    <value>Mã vị trí toàn cầu của đối tác</value>
+  </data>
+  <data name="420" xml:space="preserve">
+    <value>Giao hàng đến mã bưu chính nằm trong phạm vi quản lý của cùng một cơ quan bưu chính</value>
+  </data>
+  <data name="421" xml:space="preserve">
+    <value>Giao đến mã bưu chính kèm mã quốc gia theo tiêu chuẩn ISO</value>
+  </data>
+  <data name="422" xml:space="preserve">
+    <value>Quốc gia xuất xứ của một mặt hàng thương mại</value>
+  </data>
+  <data name="423" xml:space="preserve">
+    <value>Quốc gia thực hiện xử lý ban đầu</value>
+  </data>
+  <data name="424" xml:space="preserve">
+    <value>Quốc gia thực hiện xử lý</value>
+  </data>
+  <data name="425" xml:space="preserve">
+    <value>Quốc gia tháo dỡ</value>
+  </data>
+  <data name="426" xml:space="preserve">
+    <value>Quốc gia bao phủ toàn bộ chuỗi quy trình</value>
+  </data>
+  <data name="427" xml:space="preserve">
+    <value>Đơn vị hành chính cấp quốc gia nơi xuất xứ</value>
+  </data>
+  <data name="710" xml:space="preserve">
+    <value>Mã số thanh toán chi phí chăm sóc sức khỏe quốc gia - Đức</value>
+  </data>
+  <data name="711" xml:space="preserve">
+    <value>Mã số hoàn trả chi phí chăm sóc sức khỏe quốc gia - Pháp</value>
+  </data>
+  <data name="712" xml:space="preserve">
+    <value>Mã số hoàn trả chi phí chăm sóc sức khỏe quốc gia - Tây Ban Nha</value>
+  </data>
+  <data name="713" xml:space="preserve">
+    <value>Mã số hoàn trả chi phí chăm sóc sức khỏe quốc gia - Brazil</value>
+  </data>
+  <data name="714" xml:space="preserve">
+    <value>Mã số hoàn trả chi phí chăm sóc sức khỏe quốc gia - Bồ Đào Nha</value>
+  </data>
+  <data name="715" xml:space="preserve">
+    <value>Số hoàn trả chăm sóc sức khỏe quốc gia - Hoa Kỳ</value>
+  </data>
+  <data name="716" xml:space="preserve">
+    <value>Mã số hoàn trả chi phí chăm sóc sức khỏe quốc gia - Ý</value>
+  </data>
+  <data name="717" xml:space="preserve">
+    <value>Mã số hoàn trả chi phí chăm sóc sức khỏe quốc gia - Costa Rica</value>
+  </data>
+  <data name="3100" xml:space="preserve">
+    <value>Khối lượng tịnh, kilôgam (mặt hàng thương mại có đại lượng biến đổi)</value>
+  </data>
+  <data name="3110" xml:space="preserve">
+    <value>Chiều dài hoặc kích thước thứ nhất, tính bằng mét (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3120" xml:space="preserve">
+    <value>Chiều rộng, đường kính hoặc kích thước thứ hai, tính bằng mét (mặt hàng thương mại có số đo thay đổi)</value>
+  </data>
+  <data name="3130" xml:space="preserve">
+    <value>Chiều sâu, độ dày, chiều cao hoặc chiều thứ ba, tính bằng mét (mặt hàng có kích thước thay đổi)</value>
+  </data>
+  <data name="3140" xml:space="preserve">
+    <value>Diện tích, mét vuông (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3150" xml:space="preserve">
+    <value>Thể tích thực, lít (mặt hàng thương mại có đại lượng biến đổi)</value>
+  </data>
+  <data name="3160" xml:space="preserve">
+    <value>Thể tích thực, mét khối (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3200" xml:space="preserve">
+    <value>Trọng lượng tịnh, pound (đơn vị đo lường thay đổi của mặt hàng thương mại)</value>
+  </data>
+  <data name="3210" xml:space="preserve">
+    <value>Chiều dài hoặc kích thước thứ nhất, tính bằng inch (mặt hàng thương mại có số đo thay đổi)</value>
+  </data>
+  <data name="3220" xml:space="preserve">
+    <value>Chiều dài hoặc kích thước thứ nhất, tính bằng feet (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3230" xml:space="preserve">
+    <value>Chiều dài hoặc kích thước thứ nhất, tính bằng yard (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3240" xml:space="preserve">
+    <value>Chiều rộng, đường kính hoặc kích thước thứ hai, tính bằng inch (mặt hàng thương mại có thông số thay đổi)</value>
+  </data>
+  <data name="3250" xml:space="preserve">
+    <value>Chiều rộng, đường kính hoặc kích thước thứ hai, tính bằng feet (mặt hàng thương mại có kích thước thay đổi)</value>
+  </data>
+  <data name="3260" xml:space="preserve">
+    <value>Chiều rộng, đường kính hoặc kích thước thứ hai, tính bằng yard (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3270" xml:space="preserve">
+    <value>Chiều sâu, độ dày, chiều cao hoặc chiều thứ ba, tính bằng inch (mặt hàng thương mại có kích thước thay đổi)</value>
+  </data>
+  <data name="3280" xml:space="preserve">
+    <value>Chiều sâu, độ dày, chiều cao hoặc chiều thứ ba, tính bằng feet (đơn vị đo thay đổi tùy theo mặt hàng thương mại)</value>
+  </data>
+  <data name="3290" xml:space="preserve">
+    <value>Chiều sâu, độ dày, chiều cao hoặc chiều thứ ba, thước Anh (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3300" xml:space="preserve">
+    <value>Trọng lượng logistic, kilôgam</value>
+  </data>
+  <data name="3310" xml:space="preserve">
+    <value>Chiều dài hoặc kích thước thứ nhất, mét</value>
+  </data>
+  <data name="3320" xml:space="preserve">
+    <value>Chiều rộng, đường kính hoặc kích thước thứ hai, tính bằng mét</value>
+  </data>
+  <data name="3330" xml:space="preserve">
+    <value>Độ sâu, độ dày, chiều cao hoặc chiều thứ ba, mét</value>
+  </data>
+  <data name="3340" xml:space="preserve">
+    <value>Diện tích, mét vuông</value>
+  </data>
+  <data name="3350" xml:space="preserve">
+    <value>Khối lượng vận chuyển, lít</value>
+  </data>
+  <data name="3360" xml:space="preserve">
+    <value>Khối lượng logistics, mét khối</value>
+  </data>
+  <data name="3370" xml:space="preserve">
+    <value>Kilôgam trên mét vuông</value>
+  </data>
+  <data name="3400" xml:space="preserve">
+    <value>Trọng lượng vận chuyển, tính bằng pound</value>
+  </data>
+  <data name="3410" xml:space="preserve">
+    <value>Chiều dài hoặc kích thước thứ nhất, tính bằng inch</value>
+  </data>
+  <data name="3420" xml:space="preserve">
+    <value>Chiều dài hoặc kích thước thứ nhất, tính bằng feet</value>
+  </data>
+  <data name="3430" xml:space="preserve">
+    <value>Chiều dài hoặc kích thước thứ nhất, tính bằng yard</value>
+  </data>
+  <data name="3440" xml:space="preserve">
+    <value>Chiều rộng, đường kính hoặc kích thước thứ hai, tính bằng inch</value>
+  </data>
+  <data name="3450" xml:space="preserve">
+    <value>Chiều rộng, đường kính hoặc kích thước thứ hai, tính bằng feet</value>
+  </data>
+  <data name="3460" xml:space="preserve">
+    <value>Chiều rộng, đường kính, hoặc kích thước thứ hai, thước Anh</value>
+  </data>
+  <data name="3470" xml:space="preserve">
+    <value>Chiều sâu, độ dày, chiều cao hoặc chiều thứ ba, tính bằng inch</value>
+  </data>
+  <data name="3480" xml:space="preserve">
+    <value>Chiều sâu, độ dày, chiều cao, hay chiều thứ ba, tính bằng feet</value>
+  </data>
+  <data name="3490" xml:space="preserve">
+    <value>Chiều sâu, độ dày, chiều cao, hay chiều thứ ba, đơn vị là yard</value>
+  </data>
+  <data name="3500" xml:space="preserve">
+    <value>Diện tích, inch vuông (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3510" xml:space="preserve">
+    <value>Diện tích, tính bằng feet vuông (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3520" xml:space="preserve">
+    <value>Diện tích, tính bằng yard vuông (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3530" xml:space="preserve">
+    <value>Diện tích, inch vuông</value>
+  </data>
+  <data name="3540" xml:space="preserve">
+    <value>Diện tích, foot vuông</value>
+  </data>
+  <data name="3550" xml:space="preserve">
+    <value>Diện tích, yard vuông</value>
+  </data>
+  <data name="3560" xml:space="preserve">
+    <value>Khối lượng tịnh, đơn vị troy ounce (mặt hàng thương mại có đại lượng thay đổi)</value>
+  </data>
+  <data name="3570" xml:space="preserve">
+    <value>Khối lượng tịnh (hoặc thể tích), tính bằng ounce (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3600" xml:space="preserve">
+    <value>Thể tích thực, quart (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3610" xml:space="preserve">
+    <value>Thể tích thực, gallon Mỹ (mặt hàng thương mại có đơn vị đo lường thay đổi)</value>
+  </data>
+  <data name="3620" xml:space="preserve">
+    <value>Khối lượng hậu cần, đơn vị quart</value>
+  </data>
+  <data name="3630" xml:space="preserve">
+    <value>Khối lượng vận chuyển, gallon Mỹ</value>
+  </data>
+  <data name="3640" xml:space="preserve">
+    <value>Thể tích thực, tính bằng inch khối (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3650" xml:space="preserve">
+    <value>Thể tích thực, tính bằng feet khối (mặt hàng thương mại có đơn vị đo thay đổi)</value>
+  </data>
+  <data name="3660" xml:space="preserve">
+    <value>Thể tích thực, tính bằng yard khối (mặt hàng thương mại có đơn vị đo biến đổi)</value>
+  </data>
+  <data name="3670" xml:space="preserve">
+    <value>Khối lượng vận chuyển, inch khối</value>
+  </data>
+  <data name="3680" xml:space="preserve">
+    <value>Khối lượng vận chuyển, feet khối</value>
+  </data>
+  <data name="3690" xml:space="preserve">
+    <value>Khối lượng vận chuyển, yard khối</value>
+  </data>
+  <data name="3900" xml:space="preserve">
+    <value>Số tiền phải thanh toán hoặc giá trị phiếu ưu đãi, bằng nội tệ</value>
+  </data>
+  <data name="3910" xml:space="preserve">
+    <value>Số tiền phải thanh toán kèm mã tiền tệ theo tiêu chuẩn ISO</value>
+  </data>
+  <data name="3920" xml:space="preserve">
+    <value>Số tiền phải thanh toán áp dụng, khu vực tiền tệ thống nhất (mặt hàng thương mại có đơn vị đo lường biến đổi)</value>
+  </data>
+  <data name="3930" xml:space="preserve">
+    <value>Số tiền phải thanh toán kèm mã tiền tệ theo tiêu chuẩn ISO (đối với mặt hàng thương mại có đại lượng biến đổi)</value>
+  </data>
+  <data name="3940" xml:space="preserve">
+    <value>Mức giảm giá theo phần trăm của phiếu ưu đãi</value>
+  </data>
+  <data name="3950" xml:space="preserve">
+    <value>Số tiền phải thanh toán trên mỗi đơn vị đo lường trong một khu vực tiền tệ thống nhất (đối với mặt hàng thương mại có đơn vị đo lường thay đổi)</value>
+  </data>
+  <data name="4300" xml:space="preserve">
+    <value>Tên công ty nhận hàng / được giao hàng</value>
+  </data>
+  <data name="4301" xml:space="preserve">
+    <value>Người liên hệ nhận hàng / Người liên hệ tại địa điểm giao hàng</value>
+  </data>
+  <data name="4302" xml:space="preserve">
+    <value>Dòng địa chỉ giao hàng 1</value>
+  </data>
+  <data name="4303" xml:space="preserve">
+    <value>Dòng địa chỉ 2 (nơi nhận hàng/nơi giao hàng)</value>
+  </data>
+  <data name="4304" xml:space="preserve">
+    <value>Khu vực ngoại ô nhận hàng / giao hàng</value>
+  </data>
+  <data name="4305" xml:space="preserve">
+    <value>Địa điểm giao hàng</value>
+  </data>
+  <data name="4306" xml:space="preserve">
+    <value>Khu vực giao hàng</value>
+  </data>
+  <data name="4307" xml:space="preserve">
+    <value>Mã quốc gia nơi nhận hàng / nơi giao hàng</value>
+  </data>
+  <data name="4308" xml:space="preserve">
+    <value>Số điện thoại tại địa điểm nhận hàng / giao hàng</value>
+  </data>
+  <data name="4309" xml:space="preserve">
+    <value>Vị trí địa lý (GEO) nơi vận chuyển/giao hàng</value>
+  </data>
+  <data name="4310" xml:space="preserve">
+    <value>Tên công ty nhận hàng trả lại</value>
+  </data>
+  <data name="4311" xml:space="preserve">
+    <value>Liên hệ lại</value>
+  </data>
+  <data name="4312" xml:space="preserve">
+    <value>Dòng 1 địa chỉ người gửi</value>
+  </data>
+  <data name="4313" xml:space="preserve">
+    <value>Dòng 2 của địa chỉ gửi trả</value>
+  </data>
+  <data name="4314" xml:space="preserve">
+    <value>Quay trở lại vùng ngoại ô</value>
+  </data>
+  <data name="4315" xml:space="preserve">
+    <value>Quay trở lại địa phương</value>
+  </data>
+  <data name="4316" xml:space="preserve">
+    <value>Vùng quay lại</value>
+  </data>
+  <data name="4317" xml:space="preserve">
+    <value>Mã quốc gia nơi quay về</value>
+  </data>
+  <data name="4318" xml:space="preserve">
+    <value>Mã bưu chính nơi gửi trả</value>
+  </data>
+  <data name="4319" xml:space="preserve">
+    <value>Số điện thoại liên hệ lại</value>
+  </data>
+  <data name="4320" xml:space="preserve">
+    <value>Mô tả mã dịch vụ</value>
+  </data>
+  <data name="4321" xml:space="preserve">
+    <value>Cờ hiệu hàng nguy hiểm</value>
+  </data>
+  <data name="4322" xml:space="preserve">
+    <value>Ủy quyền để lại hàng</value>
+  </data>
+  <data name="4323" xml:space="preserve">
+    <value>Cờ yêu cầu chữ ký</value>
+  </data>
+  <data name="4324" xml:space="preserve">
+    <value>Không được trước ngày giờ giao hàng (YYMMDDhhmm)</value>
+  </data>
+  <data name="4325" xml:space="preserve">
+    <value>Không được vượt quá ngày giờ giao hàng (YYMMDDhhmm)</value>
+  </data>
+  <data name="4326" xml:space="preserve">
+    <value>Ngày phát hành (YYMMDD)</value>
+  </data>
+  <data name="4330" xml:space="preserve">
+    <value>Nhiệt độ tối đa tính bằng độ Fahrenheit (biểu thị dưới dạng phần trăm độ)</value>
+  </data>
+  <data name="4331" xml:space="preserve">
+    <value>Nhiệt độ tối đa tính bằng độ C (biểu thị dưới dạng phần trăm độ)</value>
+  </data>
+  <data name="4332" xml:space="preserve">
+    <value>Nhiệt độ tối thiểu tính theo độ Fahrenheit (biểu thị dưới dạng phần trăm độ)</value>
+  </data>
+  <data name="4333" xml:space="preserve">
+    <value>Nhiệt độ tối thiểu tính bằng độ C (được biểu thị theo đơn vị một phần trăm độ)</value>
+  </data>
+  <data name="7001" xml:space="preserve">
+    <value>Mã số vật tư NATO (NSN)</value>
+  </data>
+  <data name="7002" xml:space="preserve">
+    <value>Phân loại thân thịt và các phần thịt theo tiêu chuẩn UN/ECE</value>
+  </data>
+  <data name="7003" xml:space="preserve">
+    <value>Ngày giờ hết hạn (YYMMDDhhmm)</value>
+  </data>
+  <data name="7004" xml:space="preserve">
+    <value>Hoạt lực</value>
+  </data>
+  <data name="7005" xml:space="preserve">
+    <value>Khu vực thu gom</value>
+  </data>
+  <data name="7006" xml:space="preserve">
+    <value>Ngày đóng băng đầu tiên (YYMMDD)</value>
+  </data>
+  <data name="7007" xml:space="preserve">
+    <value>Ngày thu hoạch (YYMMDD[YYMMDD])</value>
+  </data>
+  <data name="7008" xml:space="preserve">
+    <value>Các loài phục vụ mục đích khai thác thủy sản</value>
+  </data>
+  <data name="7009" xml:space="preserve">
+    <value>Loại ngư cụ</value>
+  </data>
+  <data name="7010" xml:space="preserve">
+    <value>Phương pháp sản xuất</value>
+  </data>
+  <data name="7011" xml:space="preserve">
+    <value>Kiểm tra theo ngày (YYMMDD[hhmm])</value>
+  </data>
+  <data name="7020" xml:space="preserve">
+    <value>Mã lô tân trang</value>
+  </data>
+  <data name="7021" xml:space="preserve">
+    <value>Trạng thái chức năng</value>
+  </data>
+  <data name="7022" xml:space="preserve">
+    <value>Trạng thái sửa đổi</value>
+  </data>
+  <data name="7023" xml:space="preserve">
+    <value>Mã định danh tài sản cá biệt toàn cầu của một cụm lắp ráp</value>
+  </data>
+  <data name="7030" xml:space="preserve">
+    <value>Số lượng bộ xử lý kèm mã quốc gia ISO gồm ba chữ số</value>
+  </data>
+  <data name="7040" xml:space="preserve">
+    <value>GS1 UIC kèm Phần mở rộng 1 (Extension 1) và Chỉ số nhà nhập khẩu (Importer index)</value>
+  </data>
+  <data name="7041" xml:space="preserve">
+    <value>Loại đơn vị vận chuyển theo chuẩn UN/CEFACT</value>
+  </data>
+  <data name="7230" xml:space="preserve">
+    <value>Tài liệu tham khảo về chứng nhận</value>
+  </data>
+  <data name="7240" xml:space="preserve">
+    <value>ID giao thức</value>
+  </data>
+  <data name="7241" xml:space="preserve">
+    <value>Loại phương tiện AIDC</value>
+  </data>
+  <data name="7242" xml:space="preserve">
+    <value>Số hiệu kiểm soát phiên bản</value>
+  </data>
+  <data name="7250" xml:space="preserve">
+    <value>Ngày sinh (YYYYMMDD)</value>
+  </data>
+  <data name="7251" xml:space="preserve">
+    <value>Ngày giờ sinh (YYYYMMDDhhmmss)</value>
+  </data>
+  <data name="7252" xml:space="preserve">
+    <value>Giới tính sinh học</value>
+  </data>
+  <data name="7253" xml:space="preserve">
+    <value>Họ của một người</value>
+  </data>
+  <data name="7254" xml:space="preserve">
+    <value>Tên của cá nhân</value>
+  </data>
+  <data name="7255" xml:space="preserve">
+    <value>Hậu tố tên của một người</value>
+  </data>
+  <data name="7256" xml:space="preserve">
+    <value>Họ và tên của cá nhân</value>
+  </data>
+  <data name="7257" xml:space="preserve">
+    <value>Địa chỉ của cá nhân</value>
+  </data>
+  <data name="7258" xml:space="preserve">
+    <value>Trình tự sinh em bé</value>
+  </data>
+  <data name="7259" xml:space="preserve">
+    <value>Đứa trẻ mang họ gia đình</value>
+  </data>
+  <data name="8001" xml:space="preserve">
+    <value>Các sản phẩm dạng cuộn (chiều rộng, chiều dài, đường kính lõi, hướng, các mối nối)</value>
+  </data>
+  <data name="8002" xml:space="preserve">
+    <value>Mã định danh điện thoại di động</value>
+  </data>
+  <data name="8003" xml:space="preserve">
+    <value>Mã định danh tài sản luân chuyển toàn cầu</value>
+  </data>
+  <data name="8004" xml:space="preserve">
+    <value>Mã định danh tài sản cá nhân toàn cầu</value>
+  </data>
+  <data name="8005" xml:space="preserve">
+    <value>Giá trên mỗi đơn vị đo lường</value>
+  </data>
+  <data name="8006" xml:space="preserve">
+    <value>Xác định một đơn vị sản phẩm thương mại cụ thể</value>
+  </data>
+  <data name="8007" xml:space="preserve">
+    <value>Số tài khoản ngân hàng quốc tế</value>
+  </data>
+  <data name="8008" xml:space="preserve">
+    <value>Ngày giờ sản xuất (YYMMDDhh[mm[ss]])</value>
+  </data>
+  <data name="8009" xml:space="preserve">
+    <value>Chỉ báo cảm biến có thể đọc được bằng quang học</value>
+  </data>
+  <data name="8010" xml:space="preserve">
+    <value>Mã định danh linh kiện/chi tiết</value>
+  </data>
+  <data name="8011" xml:space="preserve">
+    <value>Số sê-ri định danh linh kiện/bộ phận</value>
+  </data>
+  <data name="8012" xml:space="preserve">
+    <value>Phiên bản phần mềm</value>
+  </data>
+  <data name="8013" xml:space="preserve">
+    <value>Mã số kiểu loại toàn cầu</value>
+  </data>
+  <data name="8017" xml:space="preserve">
+    <value>Mã số quan hệ dịch vụ toàn cầu (Global Service Relation Number) dùng để xác định mối quan hệ giữa một tổ chức cung cấp dịch vụ và đơn vị thực hiện dịch vụ đó.</value>
+  </data>
+  <data name="8018" xml:space="preserve">
+    <value>Mã số quan hệ dịch vụ toàn cầu (Global Service Relation Number) dùng để xác định mối quan hệ giữa một tổ chức cung cấp dịch vụ và bên tiếp nhận dịch vụ.</value>
+  </data>
+  <data name="8019" xml:space="preserve">
+    <value>Số hiệu thực thể quan hệ dịch vụ</value>
+  </data>
+  <data name="8020" xml:space="preserve">
+    <value>Mã tham chiếu phiếu thanh toán</value>
+  </data>
+  <data name="8026" xml:space="preserve">
+    <value>Xác định các thành phần của một mặt hàng thương mại có trong một đơn vị logistics</value>
+  </data>
+  <data name="8030" xml:space="preserve">
+    <value>Chữ ký số (DigSig)</value>
+  </data>
+  <data name="8040" xml:space="preserve">
+    <value>Mã định danh thiết bị di động quốc tế</value>
+  </data>
+  <data name="8041" xml:space="preserve">
+    <value>Nhận dạng thiết bị di động quốc tế 2</value>
+  </data>
+  <data name="8042" xml:space="preserve">
+    <value>Số SIM nhúng</value>
+  </data>
+  <data name="8043" xml:space="preserve">
+    <value>Số SIM vật lý</value>
+  </data>
+  <data name="8110" xml:space="preserve">
+    <value>Xác định mã phiếu giảm giá để sử dụng tại Bắc Mỹ</value>
+  </data>
+  <data name="8111" xml:space="preserve">
+    <value>Điểm thưởng từ phiếu ưu đãi</value>
+  </data>
+  <data name="8112" xml:space="preserve">
+    <value>Xác định mã phiếu ưu đãi áp dụng tại khu vực Bắc Mỹ</value>
+  </data>
 </root>
