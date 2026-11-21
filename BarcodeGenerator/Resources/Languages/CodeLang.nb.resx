@@ -1138,4 +1138,7 @@ For å endre størrelsen på QR-koden inne i sirkelen, justerer du «quiet zone�
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>Valutakoden er ikke gyldig.</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>eksempel:</value>
+  </data>
 </root>

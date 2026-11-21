@@ -1138,4 +1138,7 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>A devizakód érvénytelen.</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>példa:</value>
+  </data>
 </root>

@@ -1138,4 +1138,7 @@ Per modificare le dimensioni del codice QR all'interno del cerchio, regola la zo
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>Il codice valuta non è valido.</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>esempio:</value>
+  </data>
 </root>

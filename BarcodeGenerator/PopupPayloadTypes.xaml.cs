@@ -211,6 +211,7 @@ namespace BarcodeGenerator
                 btnButtonURL.IsVisible = true;
                 brdPayloadTypeGS1Identifier.IsVisible = true;
                 lblValidationInput.IsVisible = true;
+                edtPayloadTypeGS1Identifier.Placeholder = $"{CodeLang.PayloadTypeGS1Identifier_Text} {CodeLang.Example_Text}\n(01)09520123456788(17)180426(10)ABC1(21)12345";
                 _ = entPayloadTypeURL.Focus();
             }
         }

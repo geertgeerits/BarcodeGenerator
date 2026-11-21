@@ -1138,4 +1138,7 @@ Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de Q
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>De valutacode is niet geldig.</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>voorbeeld:</value>
+  </data>
 </root>

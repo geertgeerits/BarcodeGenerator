@@ -1150,4 +1150,7 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
   <data name="ErrorGS1KeyOnly1KeyStartWithQuestionMark_Text" xml:space="preserve">
     <value>Only one key can start with a question mark.</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>example:</value>
+  </data>
 </root>

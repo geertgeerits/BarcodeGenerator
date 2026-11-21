@@ -1138,4 +1138,7 @@ Para cambiar el tamaño del código QR dentro del círculo, ajuste la zona de si
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>El código de moneda no es válido.</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>ejemplo:</value>
+  </data>
 </root>

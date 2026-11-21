@@ -1139,4 +1139,7 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>貨幣代碼無效。</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>範例：</value>
+  </data>
 </root>

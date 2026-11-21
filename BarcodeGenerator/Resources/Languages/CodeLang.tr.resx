@@ -1138,4 +1138,7 @@ Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölg
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>Para birimi kodu geçerli değil.</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>örnek:</value>
+  </data>
 </root>

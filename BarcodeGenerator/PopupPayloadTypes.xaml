@@ -730,7 +730,6 @@
                         VerticalOptions="Fill"
                         AutoSize="TextChanges"
                         MinimumHeightRequest="100"
-                        Placeholder="{Translate PayloadTypeGS1Identifier_Text}"
                         MaxLength="2000"
                         Keyboard="Text"
                         Text=""

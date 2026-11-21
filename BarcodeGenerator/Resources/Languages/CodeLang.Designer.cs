@@ -1367,6 +1367,15 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to example:.
+        /// </summary>
+        internal static string Example_Text {
+            get {
+                return ResourceManager.GetString("Example_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First number should be 0..
         /// </summary>
         internal static string FirstNumber0_Text {

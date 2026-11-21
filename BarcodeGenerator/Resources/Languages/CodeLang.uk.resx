@@ -1136,4 +1136,7 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>Код валюти недійсний.</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>приклад:</value>
+  </data>
 </root>

@@ -1135,4 +1135,7 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>मुद्रा का कोड मान्य नहीं है।</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>उदाहरण:</value>
+  </data>
 </root>

@@ -1136,4 +1136,7 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>মুদ্রার কোডটি বৈধ নয়।</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>উদাহরণ:</value>
+  </data>
 </root>

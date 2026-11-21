@@ -747,10 +747,10 @@ namespace BarcodeGenerator
                 bIsValid = await ValidateDataAttributeAsync(cKey, cValue);
             }
 
-            // Check if the GS1 identifier is a valid GS1 Digital Link
+            // Format and check the GS1 identifier to a valid GS1 Digital Link
             if (bIsValid)
             {
-                bIsValid = IsValidGS1DigitalLink(ref gs1Identifier, cKey);
+                bIsValid = FormatGS1DigitalLink(ref gs1Identifier, cKey);
                 editor.Text = gs1Identifier;
             }
 
@@ -1266,12 +1266,12 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Check is the GS1 Digital link is valid
+        /// Format and check the GS1 identifier to a valid GS1 Digital Link
         /// </summary>
         /// <param name="gs1Identifier"></param>
         /// <param name="cKey"></param>
         /// <returns></returns>
-        private static bool IsValidGS1DigitalLink(ref string gs1Identifier, string cKey)
+        private static bool FormatGS1DigitalLink(ref string gs1Identifier, string cKey)
         {
             // If the key is one of the primary identification keys or key qualifiers, it must be preceded and followed by a slash.
             // If the key is one of the data attributes, it must be preceded by a question mark and followed by an equal sign,
@@ -1313,18 +1313,6 @@ namespace BarcodeGenerator
                         gs1Identifier = gs1Identifier.Replace($"({cKey})", $"&{cKey}=");
                     }
                 }
-
-            //    // If the key is not preceded by a question mark and followed by a equal sign, replace the parentheses with a question mark and equal sign
-            //    if (gs1Identifier.Contains($"({cKey})") && !gs1Identifier.Contains('?'))
-            //    {
-            //        gs1Identifier = gs1Identifier.Replace($"({cKey})", $"?{cKey}=");
-            //    }
-                
-            //    // If the key is not preceded by a ampersand and followed by a equal sign, replace the parentheses with a ampersand and equal sign
-            //    else if (gs1Identifier.Contains($"({cKey})") && gs1Identifier.Contains('?'))
-            //    {
-            //        gs1Identifier = gs1Identifier.Replace($"({cKey})", $"&{cKey}=");
-            //    }
 
             //    // Check if there is only one data attribute that is preceded by a question mark and followed by an equal sign,
             //    // and all other data attributes are preceded by an ampersand and followed by an equal sign
@@ -1673,7 +1661,7 @@ namespace BarcodeGenerator
             int index = cGs1Identifier.IndexOf(cAppId);
             if (index >= 0)
             {
-                // return the start position of the key
+                // Return the start position of the key
                 return index;
             }
 

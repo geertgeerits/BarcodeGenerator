@@ -1138,4 +1138,7 @@ Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tic
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>Kód měny není platný.</value>
   </data>
+  <data name="Example_Text" xml:space="preserve">
+    <value>příklad:</value>
+  </data>
 </root>
