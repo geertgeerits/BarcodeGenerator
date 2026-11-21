@@ -28,50 +28,40 @@ namespace BarcodeGenerator
         private static string cErrorMessage = string.Empty;
 
         /// <summary>
-        /// Splits the GS1 identifier into key-value pairs and adds them to the dictionary
+        /// Splits the GS1 identifier into key-value pairs, where the key is surrounded by and left parenthesis and
+        /// a right parenthesis, and adds them to the dictionary dicGs1 - example: (01)09520123456788(21)ABC123
         /// </summary>
-        /// <param name="gs1Identifier"></param>
-        public static void SplitKeyValuePairs(string gs1Identifier)
+        private static void SplitKeyValuePairsParenthesis(string gs1Identifier)
         {
-            // Keys are surrounded by slashes (/) or start with a question mark (?) or start with an ampersand (&)
-            // and values are separated by equal signs (=) for keys started with question mark or ampersand.
-            // Example: /00/195201234567891232?02=09520123456788&37=25&10=ABC123
-            //          /01/09520123456788?8004=9520614141234567
-
             ClassLoadDataFromFile.dicGs1.Clear();
-
             if (string.IsNullOrWhiteSpace(gs1Identifier))
             {
                 return;
             }
-
-            // Split into path part (/01/09520123456788/...) and query part (?10=ABC123&37=25)
-            int queryStart = gs1Identifier.IndexOf('?');
-            string pathPart = queryStart >= 0 ? gs1Identifier[..queryStart] : gs1Identifier;
-            string queryPart = queryStart >= 0 ? gs1Identifier[(queryStart + 1)..] : string.Empty;
-
-            // Parse slash-based key/value pairs: /01/09520123456788/21/ABC123
-            string[] pathSegments = pathPart.Split('/', StringSplitOptions.RemoveEmptyEntries);
-            for (int i = 0; i + 1 < pathSegments.Length; i += 2)
+            int index = 0;
+            while (index < gs1Identifier.Length)
             {
-                string key = pathSegments[i];
-                string value = pathSegments[i + 1];
-                ClassLoadDataFromFile.dicGs1[key] = value;
-            }
-
-            // Parse query-based key/value pairs: 10=ABC123&37=25
-            if (!string.IsNullOrWhiteSpace(queryPart))
-            {
-                string[] queryPairs = queryPart.Split('&', StringSplitOptions.RemoveEmptyEntries);
-                foreach (string pair in queryPairs)
+                if (gs1Identifier[index] == '(')
                 {
-                    int equalsIndex = pair.IndexOf('=');
-                    if (equalsIndex > 0)
+                    int closingParenIndex = gs1Identifier.IndexOf(')', index);
+                    if (closingParenIndex > index)
                     {
-                        string key = pair[..equalsIndex];
-                        string value = pair[(equalsIndex + 1)..];
+                        string key = gs1Identifier[(index + 1)..closingParenIndex];
+                        index = closingParenIndex + 1;
+                        // Find the next opening parenthesis or the end of the string
+                        int nextOpeningParenIndex = gs1Identifier.IndexOf('(', index);
+                        string value = nextOpeningParenIndex > index ? gs1Identifier[index..nextOpeningParenIndex] : gs1Identifier[index..];
                         ClassLoadDataFromFile.dicGs1[key] = value;
+                        index += value.Length;
                     }
+                    else
+                    {
+                        break; // Malformed input, exit the loop
+                    }
+                }
+                else
+                {
+                    index++;
                 }
             }
 
@@ -94,7 +84,7 @@ namespace BarcodeGenerator
             bool bIsValid = true;
 
             // Split the GS1 identifier into key-value pairs and add them to the dictionary
-            SplitKeyValuePairs(editor.Text);
+            SplitKeyValuePairsParenthesis(editor.Text);
 
             Debug.WriteLine($"Length dictionary _knownGs1AppIDs: {ClassLoadDataFromFile._knownGs1AppIDs.Count}");
 
@@ -132,13 +122,6 @@ namespace BarcodeGenerator
                 cErrorMessage = CodeLang.ErrorGS1AppIDInvalid_Text;
             }
 
-            // Check if the GS1 identifier is a valid GS1 Digital Link
-            //if (bIsValid)
-            //{
-            //    bIsValid = IsValidGS1DigitalLink(ref gs1Identifier, cKey);
-            //    editor.Text = gs1Identifier;
-            //}
-
             // Primary identification key formats (x 16)
 
             // gtin-code 01 - Global Trade Item Number (GTIN) = 14DIGIT ; GTIN-8, GTIN-12 and GTIN-13 SHALL be expressed as 14 digits, with leading zeroes serving as filler digits
@@ -154,23 +137,23 @@ namespace BarcodeGenerator
                     editor.Text = gs1Identifier;
                 }
 
-                // The GTIN must have a valid check digit (/01/09520123456788 is valid, /01/09520123456789 is invalid)
+                // The GTIN must have a valid check digit - (01)09520123456788 is valid, (01)09520123456789 is invalid
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 14))
                 {
                     bIsValid = false;
                 }
 
-                // Check the path element order for /22/, /10/, and /21/ if they exist in the GS1 identifier
+                // Check the path element order for (22), (10), and (21) if they exist in the GS1 identifier
                 if (bIsValid)
                 {
-                    int nStartPos22 = GetAppIDStartPosition("/22/", gs1Identifier);
-                    int nStartPos10 = GetAppIDStartPosition("/10/", gs1Identifier);
-                    int nStartPos21 = GetAppIDStartPosition("/21/", gs1Identifier);
+                    int nStartPos22 = GetAppIDStartPosition("(22)", gs1Identifier);
+                    int nStartPos10 = GetAppIDStartPosition("(10)", gs1Identifier);
+                    int nStartPos21 = GetAppIDStartPosition("(21)", gs1Identifier);
                     Debug.WriteLine($"Start Position 22: {nStartPos22}");
                     Debug.WriteLine($"Start Position 10: {nStartPos10}");
                     Debug.WriteLine($"Start Position 21: {nStartPos21}");
 
-                    // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21 - /22/, /10/, and /21/
+                    // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21 - (22), (10), and (21)
                     if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 != -1)
                     {
                         if (!(nStartPos22 < nStartPos10 && nStartPos10 < nStartPos21))
@@ -179,7 +162,7 @@ namespace BarcodeGenerator
                         }
                     }
 
-                    // If only two of the three keys exist, check their order - /22/ and /10/
+                    // If only two of the three keys exist, check their order - (22) and (10)
                     else if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 == -1)
                     {
                         if (!(nStartPos22 < nStartPos10))
@@ -188,7 +171,7 @@ namespace BarcodeGenerator
                         }
                     }
 
-                    // If only two of the three keys exist, check their order - /22/ and /21/
+                    // If only two of the three keys exist, check their order - (22) and (21)
                     else if (nStartPos22 != -1 && nStartPos10 == -1 && nStartPos21 != -1)
                     {
                         if (!(nStartPos22 < nStartPos21))
@@ -197,7 +180,7 @@ namespace BarcodeGenerator
                         }
                     }
 
-                    // If only two of the three keys exist, check their order - /10/ and /21/
+                    // If only two of the three keys exist, check their order - (10) and (21)
                     else if (nStartPos22 == -1 && nStartPos10 != -1 && nStartPos21 != -1)
                     {
                         if (!(nStartPos10 < nStartPos21))
@@ -236,14 +219,14 @@ namespace BarcodeGenerator
                     bIsValid = false;
                 }
 
-                // Check the path element order for /22/, /10/, and /21/ if they exist in the GS1 identifier
+                // Check the path element order for (22), (10), and (21) if they exist in the GS1 identifier
                 if (bIsValid)
                 {
-                    int nStartPos22 = GetAppIDStartPosition("/22/", gs1Identifier);
-                    int nStartPos10 = GetAppIDStartPosition("/10/", gs1Identifier);
-                    int nStartPos21 = GetAppIDStartPosition("/21/", gs1Identifier);
+                    int nStartPos22 = GetAppIDStartPosition("(22)", gs1Identifier);
+                    int nStartPos10 = GetAppIDStartPosition("(10)", gs1Identifier);
+                    int nStartPos21 = GetAppIDStartPosition("(21)", gs1Identifier);
 
-                    // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21 - /22/, /10/, and /21/
+                    // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21 - (22), (10), and (21)
                     if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 != -1)
                     {
                         if (!(nStartPos22 < nStartPos10 && nStartPos10 < nStartPos21))
@@ -252,7 +235,7 @@ namespace BarcodeGenerator
                         }
                     }
 
-                    // If only two of the three keys exist, check their order - /22/ and /10/
+                    // If only two of the three keys exist, check their order - (22) and (10)
                     else if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 == -1)
                     {
                         if (!(nStartPos22 < nStartPos10))
@@ -261,7 +244,7 @@ namespace BarcodeGenerator
                         }
                     }
 
-                    // If only two of the three keys exist, check their order - /22/ and /21/
+                    // If only two of the three keys exist, check their order - (22) and (21)
                     else if (nStartPos22 != -1 && nStartPos10 == -1 && nStartPos21 != -1)
                     {
                         if (!(nStartPos22 < nStartPos21))
@@ -270,7 +253,7 @@ namespace BarcodeGenerator
                         }
                     }
 
-                    // If only two of the three keys exist, check their order - /10/ and /21/
+                    // If only two of the three keys exist, check their order - (10) and (21)
                     else if (nStartPos22 == -1 && nStartPos10 != -1 && nStartPos21 != -1)
                     {
                         if (!(nStartPos10 < nStartPos21))
@@ -762,6 +745,13 @@ namespace BarcodeGenerator
             if (bIsValid)
             {
                 bIsValid = await ValidateDataAttributeAsync(cKey, cValue);
+            }
+
+            // Check if the GS1 identifier is a valid GS1 Digital Link
+            if (bIsValid)
+            {
+                bIsValid = IsValidGS1DigitalLink(ref gs1Identifier, cKey);
+                editor.Text = gs1Identifier;
             }
 
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
@@ -1307,39 +1297,56 @@ namespace BarcodeGenerator
 
             else
             {
-                // If the key is not preceded by a question mark and followed by a equal sign, replace the parentheses with a question mark and equal sign
-                if (gs1Identifier.Contains($"({cKey})") && !gs1Identifier.Contains('?'))
+                // The key is a data attribute, so it must be preceded by a question mark or ampersand and followed by an equal sign
+                if (gs1Identifier.Contains($"({cKey})"))
                 {
-                    gs1Identifier = gs1Identifier.Replace($"({cKey})", $"?{cKey}=");
+                    // If the key is not preceded by a question mark and followed by an equal sign,
+                    // replace the parentheses with a question mark and equal sign.
+                    // There can be only one data attribute that is preceded by a question mark and followed by an equal sign,
+                    // and all other data attributes must be preceded by an ampersand and followed by an equal sign.
+                    if (!gs1Identifier.Contains('?'))
+                    {
+                        gs1Identifier = gs1Identifier.Replace($"({cKey})", $"?{cKey}=");
+                    }
+                    else
+                    {
+                        gs1Identifier = gs1Identifier.Replace($"({cKey})", $"&{cKey}=");
+                    }
                 }
+
+            //    // If the key is not preceded by a question mark and followed by a equal sign, replace the parentheses with a question mark and equal sign
+            //    if (gs1Identifier.Contains($"({cKey})") && !gs1Identifier.Contains('?'))
+            //    {
+            //        gs1Identifier = gs1Identifier.Replace($"({cKey})", $"?{cKey}=");
+            //    }
                 
-                // If the key is not preceded by a ampersand and followed by a equal sign, replace the parentheses with a ampersand and equal sign
-                else if (gs1Identifier.Contains($"({cKey})") && gs1Identifier.Contains('?'))
-                {
-                    gs1Identifier = gs1Identifier.Replace($"({cKey})", $"&{cKey}=");
-                }
+            //    // If the key is not preceded by a ampersand and followed by a equal sign, replace the parentheses with a ampersand and equal sign
+            //    else if (gs1Identifier.Contains($"({cKey})") && gs1Identifier.Contains('?'))
+            //    {
+            //        gs1Identifier = gs1Identifier.Replace($"({cKey})", $"&{cKey}=");
+            //    }
 
-                // Check if there is only one data attribute that is preceded by a question mark and followed by an equal sign,
-                // and all other data attributes are preceded by an ampersand and followed by an equal sign
-                if (gs1Identifier.Split('?').Length - 1 > 1 || gs1Identifier.Split('&').Length - 1 > 0)
-                {
-                    cErrorMessage = CodeLang.ErrorGS1KeyOnly1KeyStartWithQuestionMark_Text;
-                    return false;
-                }
+            //    // Check if there is only one data attribute that is preceded by a question mark and followed by an equal sign,
+            //    // and all other data attributes are preceded by an ampersand and followed by an equal sign
+            //    if (gs1Identifier.Split('?').Length - 1 > 1 || gs1Identifier.Split('&').Length - 1 > 0)
+            //    {
+            //        cErrorMessage = CodeLang.ErrorGS1KeyOnly1KeyStartWithQuestionMark_Text;
+            //        return false;
+            //    }
 
-                // If the first data attribute in the GS1 identifier is not preceded by a question mark and followed by an equal sign, return false
-                if (!gs1Identifier.Contains($"?{cKey}="))
-                {
-                    cErrorMessage = CodeLang.ErrorGS1KeyBetweenQuestionMarkEqualSign_Text;
-                    return false;
-                }
+            //    // If the first data attribute in the GS1 identifier is not preceded by a question mark and followed by an equal sign, return false
+            //    if (!gs1Identifier.Contains($"?{cKey}="))
+            //    {
+            //        cErrorMessage = CodeLang.ErrorGS1KeyBetweenQuestionMarkEqualSign_Text;
+            //        return false;
+            //    }
 
-                // If the next data attributes are not preceded by an ampersand and followed by an equal sign, return false
-                else if (!gs1Identifier.Contains($"&{cKey}="))
-                {
-                    cErrorMessage = CodeLang.ErrorGS1KeyBetweenAmpersandEqualSign_Text;
-                    return false;
-                }
+            //    // If the next data attributes are not preceded by an ampersand and followed by an equal sign, return false
+            //    else if (!gs1Identifier.Contains($"&{cKey}="))
+            //    {
+            //        cErrorMessage = CodeLang.ErrorGS1KeyBetweenAmpersandEqualSign_Text;
+            //        return false;
+            //    }
             }
 
             return true;
@@ -1350,13 +1357,13 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="cAppId"></param>
         /// <returns></returns>
-        private static bool IsKnownGs1AppID(string cAppId)
+        internal static bool IsKnownGs1AppID(string cAppId)
         {
             return ClassLoadDataFromFile._knownGs1AppIDs.ContainsKey(cAppId);
         }
 
         /// <summary>
-        /// Get the value of the provided application identifier (AI) and return the value from the predefined list of known
+        /// Get the short description of the provided application identifier (AI) and return the value from the predefined list of known
         /// GS1 Application Identifiers (AIs). If the AI is not found, return an empty string.
         /// </summary>
         /// <param name="cAppId"></param>
@@ -1367,7 +1374,7 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Read a key from the resource file and return the corresponding value
+        /// Read a key from the language resource file and return the corresponding long description
         /// </summary>
         /// <param name="cAppId"></param>
         /// <returns></returns>
@@ -1544,9 +1551,11 @@ namespace BarcodeGenerator
         /// <exception cref="InvalidOperationException"></exception>
         private static int GetValueStart(string gs1Identifier, string appID, string expectedValue)
         {
-            int queryStart = gs1Identifier.IndexOf('?');
+            //int queryStart = gs1Identifier.IndexOf('?');
+            int queryStart = gs1Identifier.IndexOf('(');
             string pathPart = queryStart >= 0 ? gs1Identifier[..queryStart] : gs1Identifier;
-            string[] pathSegments = pathPart.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            //string[] pathSegments = pathPart.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            string[] pathSegments = pathPart.Split(')', StringSplitOptions.RemoveEmptyEntries);
             int valueStart = -1;
             string? value = null;
             int position = 0;
@@ -1566,12 +1575,14 @@ namespace BarcodeGenerator
             if (queryStart >= 0)
             {
                 string queryPart = gs1Identifier[(queryStart + 1)..];
-                string[] queryPairs = queryPart.Split('&', StringSplitOptions.RemoveEmptyEntries);
+                //string[] queryPairs = queryPart.Split('&', StringSplitOptions.RemoveEmptyEntries);
+                string[] queryPairs = queryPart.Split('(', StringSplitOptions.RemoveEmptyEntries);
                 position = queryStart + 1;
                 foreach (string pair in queryPairs)
                 {
                     int pairStart = gs1Identifier.IndexOf(pair, position, StringComparison.Ordinal);
-                    int equalsIndex = pair.IndexOf('=');
+                    //int equalsIndex = pair.IndexOf('=');
+                    int equalsIndex = pair.IndexOf(')');
                     if (equalsIndex > 0 && pair[..equalsIndex] == appID)
                     {
                         valueStart = pairStart + equalsIndex + 1;
@@ -1597,7 +1608,11 @@ namespace BarcodeGenerator
         ///// <returns></returns>
         //private static string GetAppID(string cAppId, string cGs1Identifier)
         //{
-        //    if (cGs1Identifier.Contains($"/{cAppId}/"))
+        //    if (cGs1Identifier.Contains($"({cAppId})"))
+        //    {
+        //        return $"({cAppId})";
+        //    }
+        //    else if (cGs1Identifier.Contains($"/{cAppId}/"))
         //    {
         //        return $"/{cAppId}/";
         //    }
@@ -1662,7 +1677,7 @@ namespace BarcodeGenerator
                 return index;
             }
 
-            // If no forward slash is found, return -1
+            // If no parenthesis is found, return -1
             return -1;
         }
 

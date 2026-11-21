@@ -385,7 +385,7 @@ namespace BarcodeGenerator
         {
             if (edtPayloadTypeGS1Identifier.Text == string.Empty)
             {
-                edtPayloadTypeGS1Identifier.Text = "/01/";
+                edtPayloadTypeGS1Identifier.Text = "(01)";
 
                 // Move cursor to the end of the text
                 edtPayloadTypeGS1Identifier.CursorPosition = edtPayloadTypeGS1Identifier.Text.Length;
@@ -967,12 +967,6 @@ END:VCALENDAR";
 
                     // Trim the GS1 identifier input values to remove leading and trailing whitespace
                     edtPayloadTypeGS1Identifier.Text = edtPayloadTypeGS1Identifier.Text.Trim();
-
-                    // If the GS1 identifier does not start with /, prepend it to ensure the payload is correctly formatted according to GS1 standards
-                    if (!edtPayloadTypeGS1Identifier.Text.StartsWith('/'))
-                    {
-                        edtPayloadTypeGS1Identifier.Text = '/' + edtPayloadTypeGS1Identifier.Text;
-                    }
 
                     // If the last character of the URL is a forward slash, remove it to ensure proper formatting for the GS1 payload
                     if (edtPayloadTypeGS1Identifier.Text.EndsWith('/') && !(edtPayloadTypeGS1Identifier.Text.Length.Equals(4) || edtPayloadTypeGS1Identifier.Text.Length.Equals(5) || edtPayloadTypeGS1Identifier.Text.Length.Equals(6)))   // 4 or 5 or 6 = /nn/ /nnn/ /nnnn/ (length of a valid GS1 identifier)

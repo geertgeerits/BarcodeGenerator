@@ -554,7 +554,7 @@ namespace BarcodeGenerator
             Dispatcher.Dispatch(() =>
             {
                 // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-                lblBarcodeResult.Text = ClassBarcodes.ProcessScannedBarcodes(list, btnShare);
+                lblBarcodeResult.Text = ClassBarcodeFormat.ProcessScannedBarcodes(list, btnShare);
 
                 // Enable the buttons after processing the results
                 imgbtnCopyToClipboard.IsEnabled = true;
@@ -677,7 +677,7 @@ namespace BarcodeGenerator
                 }
 
                 // Process the list of BarcodeResult objects, remove duplicates, sort them, and set the results in the label 'lblBarcodeResult.Text'
-                lblBarcodeResult.Text = ClassBarcodes.ProcessScannedBarcodes(listBarcodes, btnShare);
+                lblBarcodeResult.Text = ClassBarcodeFormat.ProcessScannedBarcodes(listBarcodes, btnShare);
 
                 // Set the file name in the label 'lblFileName.Text'
                 lblFileName.Text = file.FileName;
