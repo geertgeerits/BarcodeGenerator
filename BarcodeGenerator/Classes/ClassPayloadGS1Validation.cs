@@ -31,6 +31,7 @@ namespace BarcodeGenerator
         /// Splits the GS1 identifier into key-value pairs, where the key is surrounded by and left parenthesis and
         /// a right parenthesis, and adds them to the dictionary dicGs1 - example: (01)09520123456788(21)ABC123
         /// </summary>
+        /// <param name="gs1Identifier">The GS1 identifier to split into key-value pairs.</param>
         private static void SplitKeyValuePairsParenthesis(string gs1Identifier)
         {
             ClassLoadDataFromFile.dicGs1.Clear();
@@ -88,6 +89,7 @@ namespace BarcodeGenerator
 
             Debug.WriteLine($"Length dictionary _knownGs1AppIDs: {ClassLoadDataFromFile._knownGs1AppIDs.Count}");
 
+            // Validate each key-value pair in the dictionary
             foreach (var kvp in ClassLoadDataFromFile.dicGs1)
             {
                 Debug.WriteLine($"AI: {kvp.Key}, Value: {kvp.Value}, Value length: {kvp.Value.Length}");
@@ -135,6 +137,12 @@ namespace BarcodeGenerator
                     cValue = cValue.PadLeft(14, '0');
                     gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
                     editor.Text = gs1Identifier;
+                }
+
+                if (cValue.Length > 14)
+                {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 14)}";
+                    bIsValid = false;
                 }
 
                 // The GTIN must have a valid check digit - (01)09520123456788 is valid, (01)09520123456789 is invalid
@@ -213,6 +221,12 @@ namespace BarcodeGenerator
                     editor.Text = gs1Identifier;
                 }
 
+                if (cValue.Length > 18)
+                {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 18)}";
+                    bIsValid = false;
+                }
+
                 // The ITIP must have a valid check digit (/8006/095201234567881122 is valid, /8006/095201234567891122 is invalid)
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue[..14], 14))
                 {
@@ -278,8 +292,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-25 characters, return false
                 if (cValue.Length is < 1 or > 25)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 25)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be from the 82-character subset
@@ -295,8 +309,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
                 if (cValue.Length is < 1 or > 30)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 30)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be from the 39-character subset
@@ -320,6 +334,12 @@ namespace BarcodeGenerator
                     editor.Text = gs1Identifier;
                 }
 
+                if (cValue.Length > 13)
+                {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 13)}";
+                    bIsValid = false;
+                }
+
                 // The GLN must have a valid check digit (/414/9520123456788 is valid, /414/9520123456780 is invalid)
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 13))
                 {
@@ -333,8 +353,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 13 characters, return false
                 if (cValue.Length != 13)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 13)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be numeric
@@ -350,8 +370,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 13 characters, return false
                 if (cValue.Length != 13)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 13)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be numeric
@@ -367,8 +387,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 18 characters, return false
                 if (cValue.Length != 18)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 18)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be numeric
@@ -392,14 +412,14 @@ namespace BarcodeGenerator
                     editor.Text = gs1Identifier;
                 }
 
-                // If the GS1 identifier does not have a length of 18 characters, return false
+                // If the GS1 identifier does not have a length of 18 digits, return false
                 if (cValue.Length != 18)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 18)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
-                // The GSRN must have a valid check digit (/8018/195201234567891232 is valid, /8018/195201234567891230 is invalid)
+                // The GSRN must have a valid check digit  - (8018)195201234567891232 is valid, (8018)195201234567891230 is invalid)
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 18))
                 {
                     bIsValid = false;
@@ -409,14 +429,7 @@ namespace BarcodeGenerator
             // gcn-code 255 - Global Coupon Number (GCN) =  13DIGIT [1*12DIGIT] ; 13 digits then optional 1 - 12 digits
             else if (bIsValid && cKey == "255")
             {
-                // If the GS1 identifier does not have a length of 13-25 characters, return false
-                if (cValue.Length is < 13 or > 25)
-                {
-                    bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
-                }
-
-                // If the GCN identifier length is less than 18 characters, add zeroes to the left to make it 18 characters
+                // If the GCN identifier length is less than 13 digits, add zeroes to the left to make it 13 digits
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 13)
                 {
@@ -425,6 +438,13 @@ namespace BarcodeGenerator
                     cValue = cValue.PadLeft(13, '0');
                     gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
                     editor.Text = gs1Identifier;
+                }
+
+                // If the GS1 identifier does not have a length of 13-25 digits, return false
+                if (cValue.Length > 25)
+                {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 13, 25)}";
+                    bIsValid = false;
                 }
 
                 // The GCN must have a valid check digit (/255/0952012345678 is valid, /255/0952012345679 is invalid)
@@ -454,6 +474,12 @@ namespace BarcodeGenerator
                     editor.Text = gs1Identifier;
                 }
 
+                if (cValue.Length > 18)
+                {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 18)}";
+                    bIsValid = false;
+                }
+
                 // The GTIN must have a valid check digit (/00/195201234567891232 is valid, /00/195201234567891230 is invalid)
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 18))
                 {
@@ -467,8 +493,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 13-30 characters, return false
                 if (cValue.Length is < 13 or > 30)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 13, 30)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The first 13characters of the GS1 identifier must be numeric
@@ -490,8 +516,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
                 if (cValue.Length is < 1 or > 30)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 30)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be from the 82-character subset
@@ -515,11 +541,11 @@ namespace BarcodeGenerator
                     editor.Text = gs1Identifier;
                 }
 
-                // If the GS1 identifier does not have a length of 17 characters, return false
+                // If the GS1 identifier does not have a length of 17 digits, return false
                 if (cValue.Length != 17)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 17)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The GSIN must have a valid check digit (/402/9520123456788 is valid, /402/09520123456789000 is invalid)
@@ -532,20 +558,7 @@ namespace BarcodeGenerator
             // grai-code 8003 - Global Returnable Asset Identifier (GRAI) = 13DIGIT [1*16XCHAR] ; 13 digits then optional 1 - 16 characters ; from the 82-character subset of ISO / IEC 646
             else if (bIsValid && cKey == "8003")
             {
-                // If the GS1 identifier does not have a length of 13-29 characters, return false
-                if (cValue.Length is < 13 or > 29)
-                {
-                    bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
-                }
-
-                // The characters of the GS1 identifier must be from the 82-character subset (from character 14 to the end)
-                else if (bIsValid && cValue.Length > 13)
-                {
-                    bIsValid = ValueIsInCharacterSubset(cValue[13..], _XCHAR_82CharacterSubset);
-                }
-
-                // If the GS1 identifier length is less than 13 characters, add zeroes to the left to make it 13 characters
+                // If the GS1 identifier length is less than 13 digits, add zeroes to the left to make it 13 digits
                 // and replace the original value with the new value in the editor
                 if (cValue.Length < 13)
                 {
@@ -554,6 +567,19 @@ namespace BarcodeGenerator
                     cValue = cValue.PadLeft(13, '0');
                     gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
                     editor.Text = gs1Identifier;
+                }
+
+                // If the GS1 identifier does not have a length of 13-29 characters, return false
+                if (cValue.Length > 29)
+                {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 13, 29)}";
+                    bIsValid = false;
+                }
+
+                // The characters of the GS1 identifier must be from the 82-character subset (from character 14 to the end)
+                else if (bIsValid && cValue.Length > 13)
+                {
+                    bIsValid = ValueIsInCharacterSubset(cValue[13..], _XCHAR_82CharacterSubset);
                 }
 
                 // The GRAI must have a valid check digit (/8003/9520123456788 is valid, /8003/9520123456789 is invalid)
@@ -569,8 +595,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-30 characters, return false
                 if (cValue.Length is < 1 or > 30)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 30)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be from the 82-character subset
@@ -588,8 +614,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 20)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be from the 82-character subset
@@ -605,8 +631,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 20)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be from the 82-character subset
@@ -622,8 +648,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 20)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be from the 82-character subset
@@ -639,8 +665,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-12 digits, return false
                 if (cValue.Length is < 1 or > 12)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 1, 12)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be numeric
@@ -656,8 +682,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-20 characters, return false
                 if (cValue.Length is < 1 or > 20)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 20)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be from the 82-character subset
@@ -673,8 +699,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-25 characters, return false
                 if (cValue.Length is < 1 or > 25)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 25)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be from the 82-character subset
@@ -690,8 +716,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-10 digits, return false
                 if (cValue.Length is < 1 or > 10)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 1, 10)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be numeric
@@ -707,8 +733,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 1-28 characters, return false
                 if (cValue.Length is < 1 or > 28)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 28)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The characters of the GS1 identifier must be from the 82-character subset
@@ -724,8 +750,8 @@ namespace BarcodeGenerator
                 // If the GS1 identifier does not have a length of 4 characters, return false
                 if (cValue.Length != 4)
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthCharacters_Text, 4)}";
                     bIsValid = false;
-                    cErrorMessage = CodeLang.ErrorGS1ValueLengthInvalid_Text;
                 }
 
                 // The first character of the GS1 identifier must be numeric
@@ -785,6 +811,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 1 || value != "0" || value != "1" || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 1)}  -> 0 / 1";
                     return false;
                 }
             }
@@ -796,6 +823,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 2 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 2)}";
                     return false;
                 }
             }
@@ -805,6 +833,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 3 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 3)}";
                     return false;
                 }
             }
@@ -814,6 +843,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 4 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 4)}";
                     return false;
                 }
             }
@@ -823,6 +853,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 10 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 10)}";
                     return false;
                 }
             }
@@ -832,6 +863,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 12 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 12)}";
                     return false;
                 }
             }
@@ -842,6 +874,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 20 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 20)}";
                     return false;
                 }
             }
@@ -851,6 +884,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 25 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 25)}";
                     return false;
                 }
             }
@@ -861,6 +895,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 30 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 30)}";
                     return false;
                 }
             }
@@ -876,6 +911,7 @@ namespace BarcodeGenerator
                     {
                         if (value.Length is < 1 or > 34 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                         {
+                            cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 34)}";
                             return false;
                         }
                     }
@@ -892,6 +928,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 35 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 35)}";
                     return false;
                 }
             }
@@ -901,6 +938,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 40 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 40)}";
                     return false;
                 }
             }
@@ -910,6 +948,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 50 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 50)}";
                     return false;
                 }
             }
@@ -920,6 +959,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 70 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 70)}";
                     return false;
                 }
             }
@@ -929,6 +969,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 90 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 90)}";
                     return false;
                 }
             }
@@ -938,6 +979,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 90 || !ValueIsInCharacterSubset(value, _ZCHAR_64CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 1, 90)}";
                     return false;
                 }
             }
@@ -947,6 +989,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 2 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthCharacters_Text, 2)}";
                     return false;
                 }
             }
@@ -956,6 +999,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 3 or > 30 || !ValueIsInCharacterSubset(value, _XCHAR_82CharacterSubset))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 3, 30)}";
                     return false;
                 }
             }
@@ -967,6 +1011,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 4 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 1, 4)}";
                     return false;
                 }
             }
@@ -976,6 +1021,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 6 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 1, 6)}";
                     return false;
                 }
             }
@@ -985,6 +1031,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 8 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 1, 8)}";
                     return false;
                 }
             }
@@ -995,6 +1042,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 1 or > 15 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 1, 15)}";
                     return false;
                 }
             }
@@ -1004,6 +1052,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 1 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 1)}";
                     return false;
                 }
             }
@@ -1013,6 +1062,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 3 || !ValueIsDigit(value[..1]) || value[1] != '/' || !ValueIsDigit(value[2..]))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 3)}  -> 0/0";
                     return false;
                 }
             }
@@ -1022,6 +1072,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 2 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 2)}";
                     return false;
                 }
             }
@@ -1031,6 +1082,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 3 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 3)}";
                     return false;
                 }
             }
@@ -1040,6 +1092,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 4 or > 15 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 4, 15)}";
                     return false;
                 }
             }
@@ -1050,6 +1103,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 4 or > 18 || !ValueIsDigit(value) || !IsKnownISOCurrencyCode(value[..3]))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 4, 18)}";
                     return false;
                 }
             }
@@ -1059,6 +1113,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 4 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 4)}";
                     return false;
                 }
             }
@@ -1068,11 +1123,13 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 6 or > 7 || !ValueIsDigit(value[..6]))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 6, 7)}  -> 000000 / 000000-";
                     return false;
                 }
 
                 if (value.Length == 7 && !value.EndsWith('-'))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 7)}  -> 000000-";
                     return false;
                 }
             }
@@ -1082,6 +1139,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 13 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 13)}";
                     return false;
                 }
             }
@@ -1091,6 +1149,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 14 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 14)}";
                     return false;
                 }
             }
@@ -1100,6 +1159,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 18 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 18)}";
                     return false;
                 }
             }
@@ -1109,6 +1169,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 15 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 15)}";
                     return false;
                 }
             }
@@ -1125,6 +1186,7 @@ namespace BarcodeGenerator
                     case 20 when ValueIsDigit(value):
                         break;
                     default:
+                        cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 18, 20)}";
                         return false;
                 }
             }
@@ -1134,6 +1196,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 20 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 20)}";
                     return false;
                 }
             }
@@ -1143,6 +1206,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 32 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 32)}";
                     return false;
                 }
             }
@@ -1154,6 +1218,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 4 or > 12 || !ValueIsDigit(value[..3]) || !IsKnownISOCountryCode(value[..3]))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 4, 12)}";
                     return false;
                 }
             }
@@ -1163,6 +1228,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length is < 4 or > 30 || !ValueIsDigit(value[..3]) || !IsKnownISOCountryCode(value[..3]))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 4, 30)}";
                     return false;
                 }
             }
@@ -1174,6 +1240,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 6 || !ValueIsDigit(value) || !IsDate(value, "yyMMdd"))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 6)}";
                     return false;
                 }
             }
@@ -1188,6 +1255,7 @@ namespace BarcodeGenerator
                     case 10 when ValueIsDigit(value) && IsDate(value[..6], "yyMMdd") && IsTime(value.Substring(6, 4), "HHmm"):
                         break;
                     default:
+                        cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 6, 10)}  -> 6 / 10";
                         return false;
                 }
             }
@@ -1202,6 +1270,7 @@ namespace BarcodeGenerator
                     case 12 when ValueIsDigit(value) && IsDate(value[..6], "yyMMdd") && IsDate(value.Substring(6, 6), "yyMMdd"):
                         break;
                     default:
+                        cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 6, 12)}  -> 6 / 12";
                         return false;
                 }
             }
@@ -1211,6 +1280,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 8 || !ValueIsDigit(value) || !IsDate(value, "yyyyMMdd"))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 8)}";
                     return false;
                 }
             }
@@ -1227,6 +1297,7 @@ namespace BarcodeGenerator
                     case 12 when ValueIsDigit(value) && IsDate(value[..6], "yyMMdd") && IsTime(value.Substring(6, 6), "HHmmss"):
                         break;
                     default:
+                        cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenDigits_Text, 8, 12)}  -> 8 / 10 / 12";
                         return false;
                 }
             }
@@ -1236,6 +1307,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 10 || !ValueIsDigit(value) || !IsDate(value[..6], "yyMMdd") || !IsTime(value.Substring(6, 4), "HHmm"))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 10)}";
                     return false;
                 }
             }
@@ -1245,6 +1317,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 12 || !ValueIsDigit(value) || !IsDate(value[..8], "yyyyMMdd") || !IsTime(value.Substring(8, 4), "HHmm"))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 12)}";
                     return false;
                 }
             }
@@ -1258,6 +1331,7 @@ namespace BarcodeGenerator
             {
                 if (value.Length != 6 || !ValueIsDigit(value))
                 {
+                    cErrorMessage = $"{string.Format(CodeLang.ErrorLengthDigits_Text, 6)}";
                     return false;
                 }
             }
@@ -1286,13 +1360,6 @@ namespace BarcodeGenerator
                 {
                     gs1Identifier = gs1Identifier.Replace($"({cKey})", $"/{cKey}/");
                 }
-
-                // If the key is not preceded and followed by a slash, return false
-                if (!gs1Identifier.Contains($"/{cKey}/"))
-                {
-                    cErrorMessage = CodeLang.ErrorGS1KeyBetweenSlash_Text;
-                    return false;
-                }
             }
 
             else
@@ -1313,28 +1380,6 @@ namespace BarcodeGenerator
                         gs1Identifier = gs1Identifier.Replace($"({cKey})", $"&{cKey}=");
                     }
                 }
-
-            //    // Check if there is only one data attribute that is preceded by a question mark and followed by an equal sign,
-            //    // and all other data attributes are preceded by an ampersand and followed by an equal sign
-            //    if (gs1Identifier.Split('?').Length - 1 > 1 || gs1Identifier.Split('&').Length - 1 > 0)
-            //    {
-            //        cErrorMessage = CodeLang.ErrorGS1KeyOnly1KeyStartWithQuestionMark_Text;
-            //        return false;
-            //    }
-
-            //    // If the first data attribute in the GS1 identifier is not preceded by a question mark and followed by an equal sign, return false
-            //    if (!gs1Identifier.Contains($"?{cKey}="))
-            //    {
-            //        cErrorMessage = CodeLang.ErrorGS1KeyBetweenQuestionMarkEqualSign_Text;
-            //        return false;
-            //    }
-
-            //    // If the next data attributes are not preceded by an ampersand and followed by an equal sign, return false
-            //    else if (!gs1Identifier.Contains($"&{cKey}="))
-            //    {
-            //        cErrorMessage = CodeLang.ErrorGS1KeyBetweenAmpersandEqualSign_Text;
-            //        return false;
-            //    }
             }
 
             return true;

@@ -1160,42 +1160,6 @@ namespace BarcodeGenerator.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The key must be preceded by an ampersand and followed by an equal sign..
-        /// </summary>
-        internal static string ErrorGS1KeyBetweenAmpersandEqualSign_Text {
-            get {
-                return ResourceManager.GetString("ErrorGS1KeyBetweenAmpersandEqualSign_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The key must be preceded by a question mark and followed by an equal sign..
-        /// </summary>
-        internal static string ErrorGS1KeyBetweenQuestionMarkEqualSign_Text {
-            get {
-                return ResourceManager.GetString("ErrorGS1KeyBetweenQuestionMarkEqualSign_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The key must be preceded and followed by a forward slash..
-        /// </summary>
-        internal static string ErrorGS1KeyBetweenSlash_Text {
-            get {
-                return ResourceManager.GetString("ErrorGS1KeyBetweenSlash_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Only one key can start with a question mark..
-        /// </summary>
-        internal static string ErrorGS1KeyOnly1KeyStartWithQuestionMark_Text {
-            get {
-                return ResourceManager.GetString("ErrorGS1KeyOnly1KeyStartWithQuestionMark_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The value must contain only digits..
         /// </summary>
         internal static string ErrorGS1NumberOnlyDigits_Text {
@@ -1273,6 +1237,42 @@ namespace BarcodeGenerator.Resources.Languages {
         internal static string ErrorLatitudeRange_Text {
             get {
                 return ResourceManager.GetString("ErrorLatitudeRange_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The length must be between {0} and {1} characters..
+        /// </summary>
+        internal static string ErrorLengthBetweenCharacters_Text {
+            get {
+                return ResourceManager.GetString("ErrorLengthBetweenCharacters_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The length must be between {0} and {1} digits..
+        /// </summary>
+        internal static string ErrorLengthBetweenDigits_Text {
+            get {
+                return ResourceManager.GetString("ErrorLengthBetweenDigits_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The length must be {0} characters..
+        /// </summary>
+        internal static string ErrorLengthCharacters_Text {
+            get {
+                return ResourceManager.GetString("ErrorLengthCharacters_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The length must be {0} digits..
+        /// </summary>
+        internal static string ErrorLengthDigits_Text {
+            get {
+                return ResourceManager.GetString("ErrorLengthDigits_Text", resourceCulture);
             }
         }
         

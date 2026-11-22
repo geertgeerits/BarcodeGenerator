@@ -1138,19 +1138,19 @@ To change the size of the QR code within the circle, adjust the quiet zone in th
   <data name="ErrorGS1CurrencyInvalid_Text" xml:space="preserve">
     <value>The currency code is not valid.</value>
   </data>
-  <data name="ErrorGS1KeyBetweenSlash_Text" xml:space="preserve">
-    <value>The key must be preceded and followed by a forward slash.</value>
-  </data>
-  <data name="ErrorGS1KeyBetweenQuestionMarkEqualSign_Text" xml:space="preserve">
-    <value>The key must be preceded by a question mark and followed by an equal sign.</value>
-  </data>
-  <data name="ErrorGS1KeyBetweenAmpersandEqualSign_Text" xml:space="preserve">
-    <value>The key must be preceded by an ampersand and followed by an equal sign.</value>
-  </data>
-  <data name="ErrorGS1KeyOnly1KeyStartWithQuestionMark_Text" xml:space="preserve">
-    <value>Only one key can start with a question mark.</value>
-  </data>
   <data name="Example_Text" xml:space="preserve">
     <value>example:</value>
+  </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>The length must be between {0} and {1} digits.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>The length must be between {0} and {1} characters.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>The length must be {0} characters.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>The length must be {0} digits.</value>
   </data>
 </root>
