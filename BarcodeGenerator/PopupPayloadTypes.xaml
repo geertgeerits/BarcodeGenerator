@@ -747,6 +747,21 @@
                 SemanticProperties.Description="{Translate ValidationInput_Text}"
                 Text="{Translate ValidationInput_Text}">
             </Label>
+
+            <ImageButton
+                x:Name="btnButtonHelp"
+                Style="{StaticResource imageButtonStyleColorPicker}"
+                Grid.Row="32"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="120"
+                Margin="0,15,0,10"
+                SemanticProperties.Description=""
+                ToolTipProperties.Text=""
+                Source="ic_action_help.png"
+                Clicked="OnButtonHelp_Clicked">
+            </ImageButton>
             
             <ImageButton
                 x:Name="btnButtonURL"

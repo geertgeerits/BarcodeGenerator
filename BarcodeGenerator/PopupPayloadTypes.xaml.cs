@@ -208,6 +208,7 @@ namespace BarcodeGenerator
             else if (selectedName == ClassPayloadTypes.cPayloadType_GS1DIGITALLINK)
             {
                 brdPayloadTypeURL.IsVisible = true;
+                btnButtonHelp.IsVisible = true;
                 btnButtonURL.IsVisible = true;
                 brdPayloadTypeGS1Identifier.IsVisible = true;
                 lblValidationInput.IsVisible = true;
@@ -302,6 +303,7 @@ namespace BarcodeGenerator
 
             btnButtonGeoLocation.IsVisible = false;
             btnButtonGeoMap.IsVisible = false;
+            btnButtonHelp.IsVisible = false;
             btnButtonURL.IsVisible = false;
             imgbtnPasteFromClipboard.IsVisible = false;
         }
@@ -1143,6 +1145,33 @@ END:VCALENDAR";
                 await scrollViewPayloadTypes.ScrollToAsync(entPayloadTypeSctInformation, ScrollToPosition.Start, true);
             }
 #endif
+        }
+
+        /// <summary>
+        /// Shows a help dialog with information about the GS1 Application Identifier when the help button is clicked, providing users with guidance on how to use the GS1 identifier in their QR code payloads.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonHelp_Clicked(object sender, EventArgs e)
+        {
+            if (ClassPayloadTypes.cPayloadType == ClassPayloadTypes.cPayloadType_GS1DIGITALLINK)
+            {
+                System.Text.RegularExpressions.MatchCollection appIdMatches = System.Text.RegularExpressions.Regex.Matches(
+                edtPayloadTypeGS1Identifier.Text ?? string.Empty,
+                @"\(([0-9]{2,4})\)");
+
+                string cAppId = appIdMatches.Count > 0
+                    ? appIdMatches[appIdMatches.Count - 1].Groups[1].Value
+                    : string.Empty;
+
+                string cMessage1 = ClassPayloadGS1Validation.GetKnownGs1AppIDValue(cAppId);
+                string cMessage2 = ClassPayloadGS1Validation.GetKnownGs1AppIDValueFromLangResource(cAppId);
+
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(
+                    CodeLang.GS1ApplicationIdentifier_Text,
+                    $"{cAppId} - {cMessage1}\n{cMessage2}\n{ClassPayloadGS1Validation.cValuePattern}",
+                    CodeLang.ButtonClose_Text);
+            }
         }
     }
 }

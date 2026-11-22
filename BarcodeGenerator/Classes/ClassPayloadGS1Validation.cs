@@ -27,6 +27,8 @@ namespace BarcodeGenerator
         // Error message for GS1 identifier validation
         private static string cErrorMessage = string.Empty;
 
+        public static string cValuePattern = string.Empty;
+
         /// <summary>
         /// Splits the GS1 identifier into key-value pairs, where the key is surrounded by and left parenthesis and
         /// a right parenthesis, and adds them to the dictionary dicGs1 - example: (01)09520123456788(21)ABC123
