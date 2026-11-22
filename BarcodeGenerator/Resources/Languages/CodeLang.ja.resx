@@ -1155,4 +1155,16 @@ Microsoft、Microsoft Store、Microsoft Storeロゴ、およびWindowsは、Micr
   <data name="Example_Text" xml:space="preserve">
     <value>例：</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>長さは{0}桁から{1}桁の間である必要があります。</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>長さは{0}文字から{1}文字の間である必要があります。</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>長さは{0}文字である必要があります。</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>長さは{0}桁である必要があります。</value>
+  </data>
 </root>

@@ -1139,4 +1139,16 @@ Microsoft, Microsoft Store, логотип Microsoft Store та Windows є то�
   <data name="Example_Text" xml:space="preserve">
     <value>приклад:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Довжина має становити від {0} до {1} цифр.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Довжина має становити від {0} до {1} символів.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Довжина має становити {0} символів.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Довжина має становити {0} цифр.</value>
+  </data>
 </root>

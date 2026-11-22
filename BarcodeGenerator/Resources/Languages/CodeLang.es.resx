@@ -1141,4 +1141,16 @@ Para cambiar el tamaño del código QR dentro del círculo, ajuste la zona de si
   <data name="Example_Text" xml:space="preserve">
     <value>ejemplo:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>La longitud debe estar entre {0} y {1} dígitos.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>La longitud debe estar entre {0} y {1} caracteres.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>La longitud debe ser de {0} caracteres.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>La longitud debe ser de {0} dígitos.</value>
+  </data>
 </root>

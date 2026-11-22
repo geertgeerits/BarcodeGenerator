@@ -1141,4 +1141,16 @@ Daire içindeki QR kodunun boyutunu değiştirmek için ayarlardan "sessiz bölg
   <data name="Example_Text" xml:space="preserve">
     <value>örnek:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Uzunluk {0} ile {1} basamak arasında olmalıdır.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Uzunluk {0} ile {1} karakter arasında olmalıdır.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Uzunluk {0} karakter olmalıdır.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Uzunluk {0} basamak olmalıdır.</value>
+  </data>
 </root>

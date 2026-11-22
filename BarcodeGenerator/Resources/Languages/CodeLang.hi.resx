@@ -1138,4 +1138,16 @@ Microsoft, Microsoft Store, Microsoft Store लोगो और Windows, Microso
   <data name="Example_Text" xml:space="preserve">
     <value>उदाहरण:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>लंबाई {0} और {1} अंकों के बीच होनी चाहिए।</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>लंबाई {0} और {1} कैरेक्टर के बीच होनी चाहिए।</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>लंबाई {0} कैरेक्टर होनी चाहिए।</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>लंबाई {0} अंक होनी चाहिए।</value>
+  </data>
 </root>

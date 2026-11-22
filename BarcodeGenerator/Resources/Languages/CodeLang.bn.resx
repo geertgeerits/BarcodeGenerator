@@ -1139,4 +1139,16 @@ Microsoft, Microsoft Store, Microsoft Store লোগো এবং Windows হ�
   <data name="Example_Text" xml:space="preserve">
     <value>উদাহরণ:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>দৈর্ঘ্যটি {0} থেকে {1} অঙ্কের মধ্যে হতে হবে।</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>দৈর্ঘ্যটি {0} থেকে {1} অক্ষরের মধ্যে হতে হবে।</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>দৈর্ঘ্যটি {0} অক্ষর হতে হবে।</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>দৈর্ঘ্যটি {0} অঙ্ক হতে হবে।</value>
+  </data>
 </root>

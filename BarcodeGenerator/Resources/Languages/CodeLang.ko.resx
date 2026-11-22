@@ -1142,4 +1142,16 @@ Microsoft, Microsoft Store, Microsoft Store 로고 및 Windows는 Microsoft Corp
   <data name="Example_Text" xml:space="preserve">
     <value>예:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>길이는 {0}자리에서 {1}자리 사이여야 합니다.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>길이는 {0}자에서 {1}자 사이여야 합니다.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>길이는 {0}자여야 합니다.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>길이는 {0}자리여야 합니다.</value>
+  </data>
 </root>

@@ -1140,4 +1140,16 @@ Um die Größe des QR-Codes innerhalb des Kreises zu ändern, passen Sie die Ruh
   <data name="Example_Text" xml:space="preserve">
     <value>Beispiel:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Die Länge muss zwischen {0} und {1} Ziffern liegen.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Die Länge muss zwischen {0} und {1} Zeichen liegen.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Die Länge muss {0} Zeichen betragen.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Die Länge muss {0} Ziffern betragen.</value>
+  </data>
 </root>

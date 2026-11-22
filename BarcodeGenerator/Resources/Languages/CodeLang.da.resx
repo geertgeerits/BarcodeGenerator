@@ -1141,4 +1141,16 @@ For at ændre størrelsen på QR-koden inde i cirklen skal du justere frizonen i
   <data name="Example_Text" xml:space="preserve">
     <value>eksempel:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Længden skal være mellem {0} og {1} cifre.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Længden skal være mellem {0} og {1} tegn.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Længden skal være {0} tegn.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Længden skal være {0} cifre.</value>
+  </data>
 </root>

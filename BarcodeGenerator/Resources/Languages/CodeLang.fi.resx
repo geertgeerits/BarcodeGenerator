@@ -1141,4 +1141,16 @@ Voit muuttaa ympyrän sisällä olevan QR-koodin kokoa säätämällä asetusten
   <data name="Example_Text" xml:space="preserve">
     <value>esimerkki:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Pituuden on oltava {0}–{1} numeroa.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Pituuden on oltava {0}–{1} merkkiä.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Pituuden on oltava {0} merkkiä.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Pituuden on oltava {0} numeroa.</value>
+  </data>
 </root>

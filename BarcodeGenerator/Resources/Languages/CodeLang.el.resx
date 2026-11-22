@@ -1141,4 +1141,16 @@
   <data name="Example_Text" xml:space="preserve">
     <value>παράδειγμα:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Το μήκος πρέπει να είναι μεταξύ {0} και {1} ψηφίων.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Το μήκος πρέπει να είναι μεταξύ {0} και {1} χαρακτήρων.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Το μήκος πρέπει να είναι {0} χαρακτήρες.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Το μήκος πρέπει να είναι {0} ψηφία.</value>
+  </data>
 </root>

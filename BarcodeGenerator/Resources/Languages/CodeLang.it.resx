@@ -1141,4 +1141,16 @@ Per modificare le dimensioni del codice QR all'interno del cerchio, regola la zo
   <data name="Example_Text" xml:space="preserve">
     <value>esempio:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>La lunghezza deve essere compresa tra {0} e {1} cifre.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>La lunghezza deve essere compresa tra {0} e {1} caratteri.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>La lunghezza deve essere di {0} caratteri.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>La lunghezza deve essere di {0} cifre.</value>
+  </data>
 </root>

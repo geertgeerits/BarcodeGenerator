@@ -1141,4 +1141,16 @@ Chcete-li změnit velikost QR kódu uvnitř kruhu, upravte v nastavení tzv. tic
   <data name="Example_Text" xml:space="preserve">
     <value>příklad:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Délka musí být v rozmezí {0} až {1} číslic.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Délka musí být v rozmezí {0} až {1} znaků.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Délka musí být {0} znaků.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Délka musí být {0} číslic.</value>
+  </data>
 </root>

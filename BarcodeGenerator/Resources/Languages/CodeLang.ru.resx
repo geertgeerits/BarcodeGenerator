@@ -1141,4 +1141,16 @@ Microsoft, Microsoft Store, логотип Microsoft Store и Windows являю
   <data name="Example_Text" xml:space="preserve">
     <value>пример:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Длина должна составлять от {0} до {1} цифр.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Длина должна составлять от {0} до {1} символов.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Длина должна составлять {0} символов.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Длина должна составлять {0} цифр.</value>
+  </data>
 </root>

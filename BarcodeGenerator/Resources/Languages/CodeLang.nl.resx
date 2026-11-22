@@ -1141,4 +1141,16 @@ Pas de 'quiet zone' (vrije ruimte) in de instellingen aan om de grootte van de Q
   <data name="Example_Text" xml:space="preserve">
     <value>voorbeeld:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>De lengte moet tussen {0} en {1} cijfers liggen.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>De lengte moet tussen {0} en {1} tekens liggen.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>De lengte moet {0} tekens zijn.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>De lengte moet {0} cijfers zijn.</value>
+  </data>
 </root>

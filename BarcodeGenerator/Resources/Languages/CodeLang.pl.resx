@@ -1141,4 +1141,16 @@ Aby zmienić rozmiar kodu QR wewnątrz okręgu, dostosuj strefę ciszy w ustawie
   <data name="Example_Text" xml:space="preserve">
     <value>przykład:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Długość musi wynosić od {0} do {1} cyfr.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Długość musi wynosić od {0} do {1} znaków.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Długość musi wynosić {0} znaków.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Długość musi wynosić {0} cyfr.</value>
+  </data>
 </root>

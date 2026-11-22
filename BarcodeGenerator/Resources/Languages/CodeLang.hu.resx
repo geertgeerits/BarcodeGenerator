@@ -1141,4 +1141,16 @@ A körön belüli QR-kód méretének módosításához állítsa be a „csende
   <data name="Example_Text" xml:space="preserve">
     <value>példa:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>A hossz {0} és {1} számjegy között kell, hogy legyen.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>A hossz {0} és {1} karakter között kell, hogy legyen.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>A hossznak {0} karakternek kell lennie.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>A hossznak {0} számjegynek kell lennie.</value>
+  </data>
 </root>

@@ -1142,4 +1142,16 @@ Microsoft、Microsoft Store、Microsoft Store 標誌和 Windows 是 Microsoft Co
   <data name="Example_Text" xml:space="preserve">
     <value>範例：</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>長度必須介於 {0} 到 {1} 位數之間。</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>長度必須介於 {0} 到 {1} 個字元之間。</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>長度必須為 {0} 個字元。</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>長度必須為 {0} 位數。</value>
+  </data>
 </root>

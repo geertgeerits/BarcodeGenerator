@@ -1141,4 +1141,16 @@ Microsoft، Microsoft Store، Microsoft Store لوگو اور Windows Microsoft 
   <data name="Example_Text" xml:space="preserve">
     <value>مثال:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>لمبائی {0} اور {1} ہندسوں کے درمیان ہونی چاہیے۔</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>لمبائی {0} اور {1} حروف کے درمیان ہونی چاہیے۔</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>لمبائی {0} حروف ہونی چاہیے۔</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>لمبائی {0} ہندسوں پر مشتمل ہونی چاہیے۔</value>
+  </data>
 </root>

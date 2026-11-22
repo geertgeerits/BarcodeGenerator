@@ -1141,4 +1141,16 @@ For å endre størrelsen på QR-koden inne i sirkelen, justerer du «quiet zone�
   <data name="Example_Text" xml:space="preserve">
     <value>eksempel:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Lengden må være mellom {0} og {1} siffer.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Lengden må være mellom {0} og {1} tegn.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Lengden må være {0} tegn.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Lengden må være {0} siffer.</value>
+  </data>
 </root>

@@ -1142,4 +1142,16 @@
   <data name="Example_Text" xml:space="preserve">
     <value>مثال:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>يجب أن يتراوح الطول بين {0} و{1} رقمًا.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>يجب أن يتراوح الطول بين {0} و{1} حرفاً.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>يجب أن يكون الطول {0} حرفاً.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>يجب أن يكون الطول {0} رقمًا.</value>
+  </data>
 </root>

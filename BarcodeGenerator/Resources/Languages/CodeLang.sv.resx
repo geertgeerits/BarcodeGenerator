@@ -1141,4 +1141,16 @@ För att ändra storleken på QR-koden inuti cirkeln justerar du tyst zon i inst
   <data name="Example_Text" xml:space="preserve">
     <value>exempel:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Längden måste vara mellan {0} och {1} siffror.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Längden måste vara mellan {0} och {1} tecken.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Längden måste vara {0} tecken.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Längden måste vara {0} siffror.</value>
+  </data>
 </root>

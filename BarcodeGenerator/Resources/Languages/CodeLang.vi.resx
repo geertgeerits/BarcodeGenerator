@@ -1144,4 +1144,16 @@ Các ngôn ngữ được hỗ trợ bao gồm: tiếng Ả Rập, tiếng Benga
   <data name="Example_Text" xml:space="preserve">
     <value>ví dụ:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Độ dài phải nằm trong khoảng từ {0} đến {1} chữ số.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Độ dài phải nằm trong khoảng từ {0} đến {1} ký tự.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Độ dài phải là {0} ký tự.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Độ dài phải là {0} chữ số.</value>
+  </data>
 </root>

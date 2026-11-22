@@ -1141,4 +1141,16 @@ Untuk mengubah ukuran kode QR di dalam lingkaran, sesuaikan zona senyap (*quiet 
   <data name="Example_Text" xml:space="preserve">
     <value>contoh:</value>
   </data>
+  <data name="ErrorLengthBetweenDigits_Text" xml:space="preserve">
+    <value>Panjangnya harus antara {0} dan {1} digit.</value>
+  </data>
+  <data name="ErrorLengthBetweenCharacters_Text" xml:space="preserve">
+    <value>Panjangnya harus antara {0} dan {1} karakter.</value>
+  </data>
+  <data name="ErrorLengthCharacters_Text" xml:space="preserve">
+    <value>Panjangnya harus {0} karakter.</value>
+  </data>
+  <data name="ErrorLengthDigits_Text" xml:space="preserve">
+    <value>Panjangnya harus {0} digit.</value>
+  </data>
 </root>
