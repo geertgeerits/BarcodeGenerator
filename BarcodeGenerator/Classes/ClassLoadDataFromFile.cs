@@ -8,6 +8,9 @@
         // Add once in the class - central place for all supported GS1 Application Identifiers (AI) (keys and data attributes)
         public static readonly Dictionary<string, string> _knownGs1AppIDs = [];
 
+        // Add once in the class - central place for all supported GS1 Application Identifiers (AI) and their value patterns (keys and regex patterns)
+        public static readonly Dictionary<string, string> _knownGs1ValuePatterns = [];
+
         // Add once in the class - central place for all supported IBAN data (country and length)
         public static readonly Dictionary<string, int> _knownIbanData = [];
 
@@ -34,8 +37,8 @@
                     continue;
                 }
 
-                string[] parts = line.Split(';', 2, StringSplitOptions.TrimEntries);
-                if (parts.Length != 2 || string.IsNullOrWhiteSpace(parts[0]))
+                string[] parts = line.Split(';', 3, StringSplitOptions.TrimEntries);
+                if (parts.Length != 3 || string.IsNullOrWhiteSpace(parts[0]))
                 {
                     continue;
                 }
@@ -43,6 +46,11 @@
                 if (_knownGs1AppIDs.TryAdd(parts[0], parts[1]))
                 {
                     Debug.WriteLine($"Added GS1 Application Identifier: {parts[0]} = {parts[1]}");
+                }
+
+                if (_knownGs1ValuePatterns.TryAdd(parts[0], parts[2]))
+                {
+                    Debug.WriteLine($"Added GS1 Value Pattern: {parts[0]} = {parts[2]}");
                 }
             }
         }

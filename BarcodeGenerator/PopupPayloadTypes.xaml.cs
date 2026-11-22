@@ -1166,10 +1166,11 @@ END:VCALENDAR";
 
                 string cMessage1 = ClassPayloadGS1Validation.GetKnownGs1AppIDValue(cAppId);
                 string cMessage2 = ClassPayloadGS1Validation.GetKnownGs1AppIDValueFromLangResource(cAppId);
+                string cPattern = ClassPayloadGS1Validation.GetKnownGs1ValuePattern(cAppId);
 
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(
                     CodeLang.GS1ApplicationIdentifier_Text,
-                    $"{cAppId} - {cMessage1}\n{cMessage2}\n{ClassPayloadGS1Validation.cValuePattern}",
+                    $"{cAppId} - {cMessage1}\n{cMessage2}\n{cPattern}",
                     CodeLang.ButtonClose_Text);
             }
         }

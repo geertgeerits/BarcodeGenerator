@@ -1442,6 +1442,17 @@ namespace BarcodeGenerator
             return value ?? string.Empty;
         }
 
+        /// <summary>
+        /// Get the pattern of the provided application identifier(AI) and return the value from the predefined list of known
+        /// GS1 Application Identifiers (AIs). If the AI is not found, return an empty string.
+        /// </summary>
+        /// <param name="cAppId"></param>
+        /// <returns></returns>
+        public static string GetKnownGs1ValuePattern(string cAppId)
+        {
+            return ClassLoadDataFromFile._knownGs1ValuePatterns.TryGetValue(cAppId, out string? value) ? value : string.Empty;
+        }
+
         ///// <summary>
         ///// Check if the provided country code is a known country code by searching in the predefined list of known country codes
         ///// </summary>
