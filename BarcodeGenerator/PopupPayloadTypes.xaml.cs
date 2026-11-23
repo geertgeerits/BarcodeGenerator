@@ -423,6 +423,30 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
+        /// Shows a info dialog with information about the GS1 Application Identifier when the info button is clicked, providing users with guidance on how to use the GS1 identifier in their QR code payloads.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnButtonInfo_Clicked(object sender, EventArgs e)
+        {
+            if (ClassPayloadTypes.cPayloadType == ClassPayloadTypes.cPayloadType_GS1DIGITALLINK)
+            {
+                System.Text.RegularExpressions.MatchCollection appIdMatches = System.Text.RegularExpressions.Regex.Matches(
+                edtPayloadTypeGS1Identifier.Text ?? string.Empty,
+                @"\(([0-9]{2,4})\)");
+
+                string cAppId = appIdMatches.Count > 0
+                    ? appIdMatches[appIdMatches.Count - 1].Groups[1].Value
+                    : string.Empty;
+
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(
+                    CodeLang.GS1ApplicationIdentifier_Text,
+                    $"{cAppId} - {ClassPayloadGS1Validation.GetKnownGs1AppIDValue(cAppId)} - {ClassPayloadGS1Validation.GetKnownGs1ValuePattern(cAppId)}\n\n{ClassPayloadGS1Validation.GetKnownGs1AppIDValueFromLangResource(cAppId)}",
+                    CodeLang.ButtonClose_Text);
+            }
+        }
+
+        /// <summary>
         /// Displays the device's cached and current geographic location to the user in alert dialogs.
         /// </summary>
         /// <remarks>This method first attempts to retrieve a cached location and displays it if
@@ -1145,34 +1169,6 @@ END:VCALENDAR";
                 await scrollViewPayloadTypes.ScrollToAsync(entPayloadTypeSctInformation, ScrollToPosition.Start, true);
             }
 #endif
-        }
-
-        /// <summary>
-        /// Shows a info dialog with information about the GS1 Application Identifier when the info button is clicked, providing users with guidance on how to use the GS1 identifier in their QR code payloads.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnButtonInfo_Clicked(object sender, EventArgs e)
-        {
-            if (ClassPayloadTypes.cPayloadType == ClassPayloadTypes.cPayloadType_GS1DIGITALLINK)
-            {
-                System.Text.RegularExpressions.MatchCollection appIdMatches = System.Text.RegularExpressions.Regex.Matches(
-                edtPayloadTypeGS1Identifier.Text ?? string.Empty,
-                @"\(([0-9]{2,4})\)");
-
-                string cAppId = appIdMatches.Count > 0
-                    ? appIdMatches[appIdMatches.Count - 1].Groups[1].Value
-                    : string.Empty;
-
-                string cMessage1 = ClassPayloadGS1Validation.GetKnownGs1AppIDValue(cAppId);
-                string cMessage2 = ClassPayloadGS1Validation.GetKnownGs1AppIDValueFromLangResource(cAppId);
-                string cPattern = ClassPayloadGS1Validation.GetKnownGs1ValuePattern(cAppId);
-
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(
-                    CodeLang.GS1ApplicationIdentifier_Text,
-                    $"{cAppId} - {cMessage1} - {cPattern}\n\n{cMessage2}",
-                    CodeLang.ButtonClose_Text);
-            }
         }
     }
 }

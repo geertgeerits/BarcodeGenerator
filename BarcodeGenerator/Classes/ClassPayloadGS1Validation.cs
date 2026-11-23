@@ -67,14 +67,6 @@ namespace BarcodeGenerator
                     index++;
                 }
             }
-
-            // Remove the keys from the dictionary if the key is not in the list of known GS1 application identifiers
-            List<string> keysToRemove = [.. ClassLoadDataFromFile.dicGs1.Keys.Where(static k => !IsKnownGs1AppID(k))];
-
-            foreach (var key in keysToRemove)
-            {
-                ClassLoadDataFromFile.dicGs1.Remove(key);
-            }
         }
 
         /// <summary>
@@ -591,6 +583,40 @@ namespace BarcodeGenerator
                 }
             }
 
+            //// grai-code 8003 - Global Returnable Asset Identifier (GRAI) = 14DIGIT [1*16XCHAR] ; 14 digits then optional 1 - 16 characters ; from the 82-character subset of ISO / IEC 646
+            //else if (bIsValid && cKey == "8003")
+            //{
+            //    // If the GS1 identifier length is less than 14 digits, add zeroes to the left to make it 14 digits
+            //    // and replace the original value with the new value in the editor
+            //    if (cValue.Length < 14)
+            //    {
+            //        int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
+            //        int originalLength = cValue.Length;
+            //        cValue = cValue.PadLeft(14, '0');
+            //        gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
+            //        editor.Text = gs1Identifier;
+            //    }
+
+            //    // If the GS1 identifier does not have a length of 14-30 characters, return false
+            //    if (cValue.Length > 30)
+            //    {
+            //        cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 14, 30)}";
+            //        bIsValid = false;
+            //    }
+
+            //    // The characters of the GS1 identifier must be from the 82-character subset (from character 14 to the end)
+            //    else if (bIsValid && cValue.Length > 14)
+            //    {
+            //        bIsValid = ValueIsInCharacterSubset(cValue[14..], _XCHAR_82CharacterSubset);
+            //    }
+
+            //    // The GRAI must have a valid check digit (/8003/09520123456788 is valid, /8003/09520123456789 is invalid)
+            //    if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 14))
+            //    {
+            //        bIsValid = false;
+            //    }
+            //}
+
             // giai-code 8004 - Global Individual Asset Identifier (GIAI) = 1*30XCHAR  ; 1-30 characters from 82-character subset
             else if (bIsValid && cKey == "8004")
             {
@@ -785,7 +811,11 @@ namespace BarcodeGenerator
             // If the GS1 identifier is not valid, display an error message and return false to indicate that the validation failed
             if (!bIsValid)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(CodeLang.ErrorTitle_Text, $"{CodeLang.GS1ApplicationIdentifier_Text} {cKey} {GetKnownGs1AppIDValue(cKey)} {GetKnownGs1AppIDValueFromLangResource(cKey)}.\n\n{cErrorMessage}", CodeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(
+                    CodeLang.ErrorTitle_Text,
+                    $"{CodeLang.GS1ApplicationIdentifier_Text} {cKey} - {GetKnownGs1AppIDValue(cKey)} - {GetKnownGs1ValuePattern(cKey)}\n\n{GetKnownGs1AppIDValueFromLangResource(cKey)}.\n\n{cErrorMessage}",
+                    CodeLang.ButtonClose_Text);
+                
                 _ = editor.Focus();
                 return false;
             }
@@ -1645,68 +1675,6 @@ namespace BarcodeGenerator
 
             return valueStart;
         }
-
-        ///// <summary>
-        ///// Get the application identifier (AI) of the GS1 identifier
-        ///// </summary>
-        ///// <param name="cAppId"></param>
-        ///// <param name="cGs1Identifier"></param>
-        ///// <returns></returns>
-        //private static string GetAppID(string cAppId, string cGs1Identifier)
-        //{
-        //    if (cGs1Identifier.Contains($"({cAppId})"))
-        //    {
-        //        return $"({cAppId})";
-        //    }
-        //    else if (cGs1Identifier.Contains($"/{cAppId}/"))
-        //    {
-        //        return $"/{cAppId}/";
-        //    }
-        //    else if (cGs1Identifier.Contains($"?{cAppId}="))
-        //    {
-        //        return $"?{cAppId}=";
-        //    }
-        //    else if (cGs1Identifier.Contains($"&{cAppId}="))
-        //    {
-        //        return $"&{cAppId}=";
-        //    }
-
-        //    return string.Empty;
-        //}
-
-        ///// <summary>
-        ///// Get the value of the Gs1 identifier following a certain application identifier (AI). The value is extracted from the
-        ///// GS1 identifier string based on the position of the AI and the next delimiter (forward slash, question mark, or ampersand) or the end of the string.
-        ///// </summary>
-        ///// <param name="cAppId"></param>
-        ///// <param name="cGs1Identifier"></param>
-        ///// <returns></returns>
-        //private static string GetValue(string cAppId, string cGs1Identifier)
-        //{
-        //    int index = cGs1Identifier.IndexOf(cAppId);
-
-        //    if (index >= 0)
-        //    {
-        //        // Find the start position of the value after the key
-        //        int nStartPosition = index + cAppId.Length;
-
-        //        // Find the end position of the value, which is either the next forward slash or question mark or ampersand or the end of the string
-        //        int nEndPosition = cGs1Identifier.IndexOfAny(['/', '?', '&'], nStartPosition);
-
-        //        // If no forward slash or question mark or ampersand is found, set the end position to the end of the string
-        //        if (nEndPosition == -1)
-        //        {
-        //            nEndPosition = cGs1Identifier.Length;
-        //        }
-
-        //        Debug.WriteLine(string.Concat("cGs1IdentifierValue: ", cGs1Identifier.AsSpan(nStartPosition, nEndPosition - nStartPosition)));
-
-        //        return cGs1Identifier[nStartPosition..nEndPosition];
-        //    }
-
-        //    // If no forward slash is found, return an empty string
-        //    return string.Empty;
-        //}
 
         /// <summary>
         /// Finds the start index of a GS1 Application Identifier (AI) segment within a GS1 identifier string

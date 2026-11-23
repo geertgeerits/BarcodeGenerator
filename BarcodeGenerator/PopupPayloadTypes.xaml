@@ -757,8 +757,8 @@
                 VerticalOptions="Start"
                 WidthRequest="120"
                 Margin="0,15,0,10"
-                SemanticProperties.Description=""
-                ToolTipProperties.Text=""
+                SemanticProperties.Description="{Translate Info_Text}"
+                ToolTipProperties.Text="{Translate Info_Text}"
                 Source="ic_action_info.png"
                 Clicked="OnButtonInfo_Clicked">
             </ImageButton>
