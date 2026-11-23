@@ -221,7 +221,7 @@ namespace BarcodeGenerator
                     bIsValid = false;
                 }
 
-                // The ITIP must have a valid check digit (/8006/095201234567881122 is valid, /8006/095201234567891122 is invalid)
+                // The ITIP must have a valid check digit - (8006)095201234567881122 is valid, (8006)095201234567891122 is invalid
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue[..14], 14))
                 {
                     bIsValid = false;
@@ -334,7 +334,7 @@ namespace BarcodeGenerator
                     bIsValid = false;
                 }
 
-                // The GLN must have a valid check digit (/414/9520123456788 is valid, /414/9520123456780 is invalid)
+                // The GLN must have a valid check digit - (414)9520123456788 is valid, (414)9520123456780 is invalid
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 13))
                 {
                     bIsValid = false;
@@ -413,14 +413,14 @@ namespace BarcodeGenerator
                     bIsValid = false;
                 }
 
-                // The GSRN must have a valid check digit  - (8018)195201234567891232 is valid, (8018)195201234567891230 is invalid)
+                // The GSRN must have a valid check digit  - (8018)195201234567891232 is valid, (8018)195201234567891230 is invalid
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 18))
                 {
                     bIsValid = false;
                 }
             }
 
-            // gcn-code 255 - Global Coupon Number (GCN) =  13DIGIT [1*12DIGIT] ; 13 digits then optional 1 - 12 digits
+            // gcn-code 255 - Global Coupon Number (GCN) = 13DIGIT [1*12DIGIT] ; 13 digits then optional 1 - 12 digits
             else if (bIsValid && cKey == "255")
             {
                 // If the GCN identifier length is less than 13 digits, add zeroes to the left to make it 13 digits
@@ -441,7 +441,7 @@ namespace BarcodeGenerator
                     bIsValid = false;
                 }
 
-                // The GCN must have a valid check digit (/255/0952012345678 is valid, /255/0952012345679 is invalid)
+                // The GCN must have a valid check digit - (255)0952012345678 is valid, (255)0952012345679 is invalid
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue[..13], 13))
                 {
                     bIsValid = false;
@@ -474,7 +474,7 @@ namespace BarcodeGenerator
                     bIsValid = false;
                 }
 
-                // The GTIN must have a valid check digit (/00/195201234567891232 is valid, /00/195201234567891230 is invalid)
+                // The GTIN must have a valid check digit - (00)195201234567891232 is valid, (00)195201234567891230 is invalid
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 18))
                 {
                     bIsValid = false;
@@ -542,12 +542,18 @@ namespace BarcodeGenerator
                     bIsValid = false;
                 }
 
-                // The GSIN must have a valid check digit (/402/9520123456788 is valid, /402/09520123456789000 is invalid)
+                // The GSIN must have a valid check digit - (402)9520123456788 is valid, (402)09520123456789000 is invalid
                 if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 17))
                 {
                     bIsValid = false;
                 }
             }
+
+            /* Why the confusion about "13 or 14 digits" for AI 8003?
+            The core asset identity (Company Prefix +Asset Type + Check Digit) technically totals 13 digits of unique payload data.
+            However, GS1 standard data structures always require a mandatory leading filler zero in the leftmost position when
+            encoding AI 8003. This zero pads the field to an absolute total of 14 digits, making it structurally consistent
+            for processing systems and barcode symbologies. */
 
             // grai-code 8003 - Global Returnable Asset Identifier (GRAI) = 13DIGIT [1*16XCHAR] ; 13 digits then optional 1 - 16 characters ; from the 82-character subset of ISO / IEC 646
             else if (bIsValid && cKey == "8003")
@@ -576,46 +582,23 @@ namespace BarcodeGenerator
                     bIsValid = ValueIsInCharacterSubset(cValue[13..], _XCHAR_82CharacterSubset);
                 }
 
-                // The GRAI must have a valid check digit (/8003/9520123456788 is valid, /8003/9520123456789 is invalid)
-                if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 13))
+                // The GRAI must have a valid check digit - (8003)9520123456788 is valid, (8003)9520123456789 is invalid
+                if (bIsValid && !ValidateValueCheckDigitModulo10(cValue[..13], 13))
                 {
                     bIsValid = false;
                 }
+
+                // ABNF syntax for GRAI [AI (8003)] corrected to align with GS1 General Specifications,
+                // use of "0" as pad character, not as part of GRAI value
+                if (bIsValid)
+                {
+                    int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
+                    int originalLength = cValue.Length;
+                    cValue = $"0{cValue}";
+                    gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
+                    editor.Text = gs1Identifier;
+                }
             }
-
-            //// grai-code 8003 - Global Returnable Asset Identifier (GRAI) = 14DIGIT [1*16XCHAR] ; 14 digits then optional 1 - 16 characters ; from the 82-character subset of ISO / IEC 646
-            //else if (bIsValid && cKey == "8003")
-            //{
-            //    // If the GS1 identifier length is less than 14 digits, add zeroes to the left to make it 14 digits
-            //    // and replace the original value with the new value in the editor
-            //    if (cValue.Length < 14)
-            //    {
-            //        int valueStart = GetValueStart(gs1Identifier, cKey, cValue);
-            //        int originalLength = cValue.Length;
-            //        cValue = cValue.PadLeft(14, '0');
-            //        gs1Identifier = gs1Identifier.Remove(valueStart, originalLength).Insert(valueStart, cValue);
-            //        editor.Text = gs1Identifier;
-            //    }
-
-            //    // If the GS1 identifier does not have a length of 14-30 characters, return false
-            //    if (cValue.Length > 30)
-            //    {
-            //        cErrorMessage = $"{string.Format(CodeLang.ErrorLengthBetweenCharacters_Text, 14, 30)}";
-            //        bIsValid = false;
-            //    }
-
-            //    // The characters of the GS1 identifier must be from the 82-character subset (from character 14 to the end)
-            //    else if (bIsValid && cValue.Length > 14)
-            //    {
-            //        bIsValid = ValueIsInCharacterSubset(cValue[14..], _XCHAR_82CharacterSubset);
-            //    }
-
-            //    // The GRAI must have a valid check digit (/8003/09520123456788 is valid, /8003/09520123456789 is invalid)
-            //    if (bIsValid && !ValidateValueCheckDigitModulo10(cValue, 14))
-            //    {
-            //        bIsValid = false;
-            //    }
-            //}
 
             // giai-code 8004 - Global Individual Asset Identifier (GIAI) = 1*30XCHAR  ; 1-30 characters from 82-character subset
             else if (bIsValid && cKey == "8004")
@@ -1379,34 +1362,33 @@ namespace BarcodeGenerator
         /// <returns></returns>
         private static bool FormatGS1DigitalLink(ref string gs1Identifier, string cKey)
         {
-            // If the key is one of the primary identification keys or key qualifiers, it must be preceded and followed by a slash.
-            // If the key is one of the data attributes, it must be preceded by a question mark and followed by an equal sign,
-            // or preceded by an ampersand and followed by an equal sign.
-            
+            // If the key (AI) is one of the primary identification keys or key qualifiers, it must be preceded and followed by a slash.
             if (cKey is "01" or "8006" or "8013" or "8010" or "414" or "415" or "417" or "8017"
                 or "8018" or "255" or "00" or "253" or "401" or "402" or "8003" or "8004"
                 or "22" or "10" or "21" or "8011" or "254" or "8020" or "235" or "7040")
             {
-                // If the key is not preceded and followed by a slash, replace the parentheses with slashes
+                // Replace the parentheses with slashes
                 if (gs1Identifier.Contains($"({cKey})"))
                 {
                     gs1Identifier = gs1Identifier.Replace($"({cKey})", $"/{cKey}/");
                 }
             }
 
+            // If the key (AI) is one of the data attributes, it must be preceded by a question mark and followed by an equal sign,
+            // or preceded by an ampersand and followed by an equal sign.
             else
             {
-                // The key is a data attribute, so it must be preceded by a question mark or ampersand and followed by an equal sign
+                // The key (AI) must be preceded by a question mark or ampersand and followed by an equal sign
                 if (gs1Identifier.Contains($"({cKey})"))
                 {
-                    // If the key is not preceded by a question mark and followed by an equal sign,
-                    // replace the parentheses with a question mark and equal sign.
+                    // Replace the parentheses with a question mark and equal sign.
                     // There can be only one data attribute that is preceded by a question mark and followed by an equal sign,
                     // and all other data attributes must be preceded by an ampersand and followed by an equal sign.
                     if (!gs1Identifier.Contains('?'))
                     {
                         gs1Identifier = gs1Identifier.Replace($"({cKey})", $"?{cKey}=");
                     }
+                    
                     else
                     {
                         gs1Identifier = gs1Identifier.Replace($"({cKey})", $"&{cKey}=");
@@ -1482,16 +1464,6 @@ namespace BarcodeGenerator
         {
             return ClassLoadDataFromFile._knownGs1ValuePatterns.TryGetValue(cAppId, out string? value) ? value : string.Empty;
         }
-
-        ///// <summary>
-        ///// Check if the provided country code is a known country code by searching in the predefined list of known country codes
-        ///// </summary>
-        ///// <param name="cCountryCode"></param>
-        ///// <returns></returns>
-        //private static bool IsKnownIbanCountry(string cCountryCode)
-        //{
-        //    return ClassLoadDataFromFile._knownIbanData.ContainsKey(cCountryCode);
-        //}
 
         /// <summary>
         /// Get the length of the IBAN code for a country code and return the value from the predefined list of known country codes
@@ -1627,10 +1599,8 @@ namespace BarcodeGenerator
         /// <exception cref="InvalidOperationException"></exception>
         private static int GetValueStart(string gs1Identifier, string appID, string expectedValue)
         {
-            //int queryStart = gs1Identifier.IndexOf('?');
             int queryStart = gs1Identifier.IndexOf('(');
             string pathPart = queryStart >= 0 ? gs1Identifier[..queryStart] : gs1Identifier;
-            //string[] pathSegments = pathPart.Split('/', StringSplitOptions.RemoveEmptyEntries);
             string[] pathSegments = pathPart.Split(')', StringSplitOptions.RemoveEmptyEntries);
             int valueStart = -1;
             string? value = null;
@@ -1651,13 +1621,11 @@ namespace BarcodeGenerator
             if (queryStart >= 0)
             {
                 string queryPart = gs1Identifier[(queryStart + 1)..];
-                //string[] queryPairs = queryPart.Split('&', StringSplitOptions.RemoveEmptyEntries);
                 string[] queryPairs = queryPart.Split('(', StringSplitOptions.RemoveEmptyEntries);
                 position = queryStart + 1;
                 foreach (string pair in queryPairs)
                 {
                     int pairStart = gs1Identifier.IndexOf(pair, position, StringComparison.Ordinal);
-                    //int equalsIndex = pair.IndexOf('=');
                     int equalsIndex = pair.IndexOf(')');
                     if (equalsIndex > 0 && pair[..equalsIndex] == appID)
                     {
