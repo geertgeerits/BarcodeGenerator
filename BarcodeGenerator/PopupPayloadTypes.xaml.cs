@@ -208,7 +208,7 @@ namespace BarcodeGenerator
             else if (selectedName == ClassPayloadTypes.cPayloadType_GS1DIGITALLINK)
             {
                 brdPayloadTypeURL.IsVisible = true;
-                btnButtonHelp.IsVisible = true;
+                btnButtonInfo.IsVisible = true;
                 btnButtonURL.IsVisible = true;
                 brdPayloadTypeGS1Identifier.IsVisible = true;
                 lblValidationInput.IsVisible = true;
@@ -303,7 +303,7 @@ namespace BarcodeGenerator
 
             btnButtonGeoLocation.IsVisible = false;
             btnButtonGeoMap.IsVisible = false;
-            btnButtonHelp.IsVisible = false;
+            btnButtonInfo.IsVisible = false;
             btnButtonURL.IsVisible = false;
             imgbtnPasteFromClipboard.IsVisible = false;
         }
@@ -1148,11 +1148,11 @@ END:VCALENDAR";
         }
 
         /// <summary>
-        /// Shows a help dialog with information about the GS1 Application Identifier when the help button is clicked, providing users with guidance on how to use the GS1 identifier in their QR code payloads.
+        /// Shows a info dialog with information about the GS1 Application Identifier when the info button is clicked, providing users with guidance on how to use the GS1 identifier in their QR code payloads.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnButtonHelp_Clicked(object sender, EventArgs e)
+        private async void OnButtonInfo_Clicked(object sender, EventArgs e)
         {
             if (ClassPayloadTypes.cPayloadType == ClassPayloadTypes.cPayloadType_GS1DIGITALLINK)
             {
@@ -1170,7 +1170,7 @@ END:VCALENDAR";
 
                 await Application.Current!.Windows[0].Page!.DisplayAlertAsync(
                     CodeLang.GS1ApplicationIdentifier_Text,
-                    $"{cAppId} - {cMessage1}\n{cMessage2}\n{cPattern}",
+                    $"{cAppId} - {cMessage1} - {cPattern}\n\n{cMessage2}",
                     CodeLang.ButtonClose_Text);
             }
         }

@@ -749,7 +749,7 @@
             </Label>
 
             <ImageButton
-                x:Name="btnButtonHelp"
+                x:Name="btnButtonInfo"
                 Style="{StaticResource imageButtonStyleColorPicker}"
                 Grid.Row="32"
                 Grid.Column="0"
@@ -759,8 +759,8 @@
                 Margin="0,15,0,10"
                 SemanticProperties.Description=""
                 ToolTipProperties.Text=""
-                Source="ic_action_help.png"
-                Clicked="OnButtonHelp_Clicked">
+                Source="ic_action_info.png"
+                Clicked="OnButtonInfo_Clicked">
             </ImageButton>
             
             <ImageButton
