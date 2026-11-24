@@ -105,7 +105,7 @@ namespace BarcodeGenerator
 
             foreach (KeyValuePair<string, string> kvp in ClassLoadDataFromFile.dicGs1)
             {
-                gs1DigitalLink = FormatGS1DigitalLink(gs1DigitalLink, kvp.Key);
+                gs1DigitalLink = FormatGS1DigitalLink(gs1DigitalLink, kvp.Key, kvp.Value);
             }
             
             editor.Text = gs1DigitalLink;
@@ -1395,8 +1395,9 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="gs1Identifier"></param>
         /// <param name="cAppId"></param>
+        /// <param name="cValue"></param>
         /// <returns></returns>
-        private static string FormatGS1DigitalLink(string gs1Identifier, string cAppId)
+        private static string FormatGS1DigitalLink(string gs1Identifier, string cAppId, string cValue)
         {
             // If the AI is one of the primary identification keys or key qualifiers, it must be preceded and followed by a slash.
             if (cAppId is "01" or "8006" or "8013" or "8010" or "414" or "415" or "417" or "8017"
@@ -1431,6 +1432,10 @@ namespace BarcodeGenerator
                     }
                 }
             }
+
+            // Escape the value to ensure it is valid for an URL
+            // (414)9520123456788(254)32a/b -> /414/9520123456788/254/32a/b -> /414/9520123456788/254/32a%2Fb
+            gs1Identifier = gs1Identifier.Replace(cValue, Uri.EscapeDataString(cValue));
 
             return gs1Identifier;
         }

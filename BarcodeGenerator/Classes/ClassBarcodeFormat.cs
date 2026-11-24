@@ -1,4 +1,6 @@
-﻿namespace BarcodeGenerator
+﻿using System.Web;
+
+namespace BarcodeGenerator
 {
     internal class ClassBarcodeFormat
     {
@@ -162,7 +164,10 @@
                             }
 
                             // Format the GS1 digital link key-value pairs in a readable format and append them to the barcode result string
-                            barcodeResult += $"\n- {kvp.Key} {value}, {description}\n  = {kvp.Value}";
+                            // Decode the value to ensure it is human-readable, especially for values that may have been URL-encoded
+                            string decodedValue = HttpUtility.UrlDecode(kvp.Value);
+
+                            barcodeResult += $"\n- {kvp.Key} {value}, {description}\n  = {decodedValue}";
 
                             if (valueDate1 != string.Empty)
                             {
