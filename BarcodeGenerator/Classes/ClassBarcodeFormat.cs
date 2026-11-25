@@ -70,7 +70,7 @@ namespace BarcodeGenerator
 
                 if (ClassLoadDataFromFile.dicGs1.Count > 0)
                 {
-                    barcodeResult += $"\n{CodeLang.PayloadType_GS1DIGITALLINK_Text}";
+                    barcodeResult += $"\r\n\r\n{CodeLang.PayloadType_GS1DIGITALLINK_Text}";
 
                     foreach (var kvp in ClassLoadDataFromFile.dicGs1)
                     {
@@ -163,10 +163,10 @@ namespace BarcodeGenerator
                                 valueDate1 += $" {valueDate2}";
                             }
 
-                            // Format the GS1 digital link key-value pairs in a readable format and append them to the barcode result string
                             // Decode the value to ensure it is human-readable, especially for values that may have been URL-encoded
                             string decodedValue = HttpUtility.UrlDecode(kvp.Value);
 
+                            // Format the GS1 digital link key-value pairs in a readable format and append them to the barcode result string
                             barcodeResult += $"\n- {kvp.Key} {value}, {description}\n  = {decodedValue}";
 
                             if (valueDate1 != string.Empty)

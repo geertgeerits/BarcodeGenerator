@@ -472,8 +472,9 @@ namespace BarcodeGenerator
         /// <param name="e"></param>
         private async void OnShareClicked(object sender, EventArgs e)
         {
-            // Share the payload types - this will parse the text and offer relevant share/open options for recognized payload types like URLs, Wi‑Fi config, contact (vCard), calendar event (iCal), etc.
-            await ClassPayloadTypes.SharePayloadTypes(lblBarcodeResult.Text);            
+            // Share the payload types - this will parse the text and offer relevant share/open options for recognized
+            // payload types like URLs, Wi‑Fi config, contact (vCard), calendar event (iCal), etc.
+            await ClassPayloadTypes.SharePayloadTypes(lblBarcodeResult.Text);
         }
 
         /// <summary>

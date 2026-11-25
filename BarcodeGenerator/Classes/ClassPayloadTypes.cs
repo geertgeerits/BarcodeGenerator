@@ -225,15 +225,20 @@
                 }
             }
 
-            // Generic URI handlers (URL, geo, mailto, sms, mms, etc.)
-            else if (text.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ||
-                text.StartsWith("https://", StringComparison.OrdinalIgnoreCase) ||
-                text.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase) ||
+            // Generic URI handlers (mailto, sms, mms, geo, etc.)
+            else if (text.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase) ||
                 text.StartsWith("sms:", StringComparison.OrdinalIgnoreCase) ||
                 text.StartsWith("mms:", StringComparison.OrdinalIgnoreCase) ||
                 text.StartsWith("geo:", StringComparison.OrdinalIgnoreCase))
             {
-                await Launcher.Default.OpenAsync(new Uri(text));
+                try
+                {
+                    await Launcher.Default.OpenAsync(new Uri(text));
+                }
+                catch (Exception Exception)
+                {
+                    Debug.WriteLine($"ClassPayloadTypes.SharePayloadTypes - Failed to open URI: {text}\n{Exception.Message}");
+                }
             }
 
             // Telephone numbers - prefer PhoneDialer where available
@@ -287,6 +292,7 @@
             }
 
             // Fallback: use existing generic share method
+            // Generic URI handlers (http, https, ftp, file, etc.) - GS1 Digital link
             else
             {
                 _ = ClassUtilities.ShareBarcodeResultAsync(text);
@@ -294,6 +300,7 @@
         }
     }
 }
+
 /*
 GS1 - Global Standards One
 https://www.gs1.org/standards/gs1-digital-link
