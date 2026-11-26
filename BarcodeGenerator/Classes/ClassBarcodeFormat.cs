@@ -305,9 +305,8 @@ namespace BarcodeGenerator
         /// in a specific order, with the application identifiers (AIs) in the path and the data attributes in the query string,
         /// the reading software should be able to parse the GS1 Digital Link regardless of the order of the AIs and data attributes.
         /// </summary>
-        /// <param name="gs1IdentifierOriginal"></param>
         /// <returns></returns>
-        public static string OrderGS1DigitalLink(string gs1IdentifierOriginal)
+        public static string OrderGS1DigitalLink()
         {
             /*
             Path element order
@@ -384,7 +383,7 @@ namespace BarcodeGenerator
             if (ClassLoadDataFromFile.dicGs1.ContainsKey("8004")) gs1Identifier += $"(8004){GetdicGs1Value("8004")}";
             if (ClassLoadDataFromFile.dicGs1.ContainsKey("7040")) gs1Identifier += $"(7040){GetdicGs1Value("7040")}";
 
-            // Sort the dictionary by key and then iterate through it to ensure that the AIs are added in order
+            // Make a sorted dictionary by key and then iterate through it to ensure that the AIs are added in order
             // This way, you can maintain the order of the AIs in the GS1 identifier string
             IOrderedEnumerable<KeyValuePair<string, string>> sortedDicGs1Order = ClassLoadDataFromFile.dicGs1.OrderBy(static kvp => kvp.Key);
 
