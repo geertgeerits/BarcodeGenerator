@@ -35,6 +35,7 @@ namespace BarcodeGenerator
         private static void SplitKeyValuePairsParenthesis(string gs1Identifier)
         {
             ClassLoadDataFromFile.dicGs1.Clear();
+            
             if (string.IsNullOrWhiteSpace(gs1Identifier))
             {
                 return;
@@ -50,6 +51,7 @@ namespace BarcodeGenerator
                     {
                         string key = gs1Identifier[(index + 1)..closingParenIndex];
                         index = closingParenIndex + 1;
+                        
                         // Find the next opening parenthesis or the end of the string
                         int nextOpeningParenIndex = gs1Identifier.IndexOf('(', index);
                         string value = nextOpeningParenIndex > index ? gs1Identifier[index..nextOpeningParenIndex] : gs1Identifier[index..];
@@ -105,18 +107,22 @@ namespace BarcodeGenerator
             // Needs to be done again because the GS1 identifier may have been modified during validation (e.g., padding with leading zeroes)
             SplitKeyValuePairsParenthesis(editor.Text);
 
-            // Sort the dictionary by key and then iterate through it to ensure that the AIs are added in order
-            //IOrderedEnumerable<KeyValuePair<string, string>> sortedDicGs1 = ClassLoadDataFromFile.dicGs1.OrderBy(static kvp => kvp.Key);
-
             // Order the GS1 identifier to a valid GS1 Digital Link
             string gs1DigitalLink = ClassBarcodeFormat.OrderGS1DigitalLink(editor.Text);
 
+            // Split the GS1 identifier into key-value pairs and add them to the dictionary
+            SplitKeyValuePairsParenthesis(editor.Text);
+
+            // Sort the dictionary by key to ensure that the AIs are added in order
+            Dictionary<string, string> sortedDicGs1Format = ClassLoadDataFromFile.dicGs1.OrderBy(kvp => kvp.Key).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
             // Format the GS1 identifier to a valid GS1 Digital Link
-            foreach (KeyValuePair<string, string> kvp in ClassLoadDataFromFile.dicGs1)
+            foreach (KeyValuePair<string, string> kvp in sortedDicGs1Format)
             {
-                editor.Text = ClassBarcodeFormat.FormatGS1DigitalLink(gs1DigitalLink, kvp.Key, kvp.Value);
+                gs1DigitalLink = ClassBarcodeFormat.FormatGS1DigitalLink(gs1DigitalLink, kvp.Key, kvp.Value);
             }
-            
+
+            editor.Text = gs1DigitalLink;
             return bIsValid;
         }
 

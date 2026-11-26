@@ -72,7 +72,7 @@ namespace BarcodeGenerator
                 {
                     barcodeResult += $"\r\n\r\n{CodeLang.PayloadType_GS1DIGITALLINK_Text}";
 
-                    foreach (var kvp in ClassLoadDataFromFile.dicGs1)
+                    foreach (KeyValuePair<string, string> kvp in ClassLoadDataFromFile.dicGs1)
                     {
                         Debug.WriteLine($"dicGs1 kvp Key and Value: {kvp.Key} - {kvp.Value}");
 
@@ -293,7 +293,7 @@ namespace BarcodeGenerator
             // Remove the keys from the dictionary if the key is not in the list of known GS1 application identifiers
             List<string> keysToRemove = [.. ClassLoadDataFromFile.dicGs1.Keys.Where(static k => !ClassPayloadGS1Validation.IsKnownGs1AppID(k))];
 
-            foreach (var key in keysToRemove)
+            foreach (string key in keysToRemove)
             {
                 ClassLoadDataFromFile.dicGs1.Remove(key);
             }
@@ -373,8 +373,6 @@ namespace BarcodeGenerator
 
             if (ClassLoadDataFromFile.dicGs1.ContainsKey("255")) gs1Identifier += $"(255){GetdicGs1Value("255")}";
 
-            //if (ClassLoadDataFromFile.dicGs1.ContainsKey("00")) gs1Identifier += $"(00){GetdicGs1Value("00")}";
-
             if (ClassLoadDataFromFile.dicGs1.ContainsKey("253")) gs1Identifier += $"(253){GetdicGs1Value("253")}";
 
             if (ClassLoadDataFromFile.dicGs1.ContainsKey("401")) gs1Identifier += $"(401){GetdicGs1Value("401")}";
@@ -388,10 +386,10 @@ namespace BarcodeGenerator
 
             // Sort the dictionary by key and then iterate through it to ensure that the AIs are added in order
             // This way, you can maintain the order of the AIs in the GS1 identifier string
-            IOrderedEnumerable<KeyValuePair<string, string>> sortedDicGs1 = ClassLoadDataFromFile.dicGs1.OrderBy(static kvp => kvp.Key);
+            IOrderedEnumerable<KeyValuePair<string, string>> sortedDicGs1Order = ClassLoadDataFromFile.dicGs1.OrderBy(static kvp => kvp.Key);
 
             // Add any remaining GS1 Application Identifiers (AIs) that are not part of the primary identification keys or key qualifiers
-            foreach (KeyValuePair<string, string> kvp in sortedDicGs1)
+            foreach (KeyValuePair<string, string> kvp in sortedDicGs1Order)
             {
                 if (kvp.Key is not "01" and not "8006" and not "8013" and not "8010" and not "414" and not "415" and not "417"
                     and not "8017" and not "8018" and not "255" and not "00" and not "253" and not "401" and not "402" and not "8003" and not "8004"
