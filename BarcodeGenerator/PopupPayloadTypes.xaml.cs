@@ -1011,7 +1011,7 @@ END:VCALENDAR";
                     ClassPayloadTypes.cPayloadCaption = edtPayloadTypeGS1Identifier.Text.Length > 18 ? edtPayloadTypeGS1Identifier.Text[..18] : edtPayloadTypeGS1Identifier.Text;
 
                     // Concatenate the URL payload with the GS1 identifier to form the complete payload string
-                    payload = generator.ToString() + edtPayloadTypeGS1Identifier.Text;
+                    payload = $"{generator}{edtPayloadTypeGS1Identifier.Text}";
                 }
                 catch (Exception ex)
                 {

@@ -39,6 +39,7 @@ namespace BarcodeGenerator
             {
                 return;
             }
+            
             int index = 0;
             while (index < gs1Identifier.Length)
             {
@@ -100,9 +101,15 @@ namespace BarcodeGenerator
                 }
             }
 
+            // Split the GS1 identifier into key-value pairs and add them to the dictionary
+            // Needs to be done again because the GS1 identifier may have been modified during validation (e.g., padding with leading zeroes)
+            SplitKeyValuePairsParenthesis(editor.Text);
+
+            // Sort the dictionary by key and then iterate through it to ensure that the AIs are added in order
+            //IOrderedEnumerable<KeyValuePair<string, string>> sortedDicGs1 = ClassLoadDataFromFile.dicGs1.OrderBy(static kvp => kvp.Key);
+
             // Order the GS1 identifier to a valid GS1 Digital Link
-            string gs1DigitalLink = editor.Text;
-            //gs1DigitalLink = ClassBarcodeFormat.OrderGS1DigitalLink(editor.Text);
+            string gs1DigitalLink = ClassBarcodeFormat.OrderGS1DigitalLink(editor.Text);
 
             // Format the GS1 identifier to a valid GS1 Digital Link
             foreach (KeyValuePair<string, string> kvp in ClassLoadDataFromFile.dicGs1)
@@ -110,7 +117,6 @@ namespace BarcodeGenerator
                 editor.Text = ClassBarcodeFormat.FormatGS1DigitalLink(gs1DigitalLink, kvp.Key, kvp.Value);
             }
             
-            //editor.Text = gs1DigitalLink;
             return bIsValid;
         }
 
@@ -1543,25 +1549,6 @@ namespace BarcodeGenerator
             }
 
             return valueStart;
-        }
-
-        /// <summary>
-        /// Finds the start index of a GS1 Application Identifier (AI) segment within a GS1 identifier string
-        /// </summary>
-        /// <param name="cAppId"></param>
-        /// <param name="cGs1Identifier"></param>
-        /// <returns></returns>
-        private static int GetAppIDStartPosition(string cAppId, string cGs1Identifier)
-        {
-            int index = cGs1Identifier.IndexOf(cAppId);
-            if (index >= 0)
-            {
-                // Return the start position of the key
-                return index;
-            }
-
-            // If no parenthesis is found, return -1
-            return -1;
         }
 
         /// <summary>

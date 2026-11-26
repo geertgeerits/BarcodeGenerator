@@ -300,7 +300,10 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Order the GS1 Digital Link
+        /// Order the GS1 Digital Link with the primary identification keys and key qualifiers in the correct order according to the GS1 Digital Link specification.
+        /// I do not understand why the GS1 Digital Link specification require the primary identification keys and key qualifiers to be
+        /// in a specific order, with the application identifiers (AIs) in the path and the data attributes in the query string,
+        /// the reading software should be able to parse the GS1 Digital Link regardless of the order of the AIs and data attributes.
         /// </summary>
         /// <param name="gs1IdentifierOriginal"></param>
         /// <returns></returns>
