@@ -101,11 +101,12 @@ namespace BarcodeGenerator
             }
 
             // Order the GS1 identifier to a valid GS1 Digital Link
-            //string gs1DigitalLink = OrderGS1DigitalLink(editor.Text);
+            string gs1DigitalLink = editor.Text;
+            //gs1DigitalLink = ClassBarcodeFormat.OrderGS1DigitalLink(gs1DigitalLink);
+            Debug.WriteLine($"GS1 Digital Link: {gs1DigitalLink} - editor.Text: {editor.Text}");
+
 
             // Format the GS1 identifier to a valid GS1 Digital Link
-            string gs1DigitalLink = editor.Text;
-
             foreach (KeyValuePair<string, string> kvp in ClassLoadDataFromFile.dicGs1)
             {
                 gs1DigitalLink = FormatGS1DigitalLink(gs1DigitalLink, kvp.Key, kvp.Value);
@@ -166,53 +167,6 @@ namespace BarcodeGenerator
                 {
                     return false;
                 }
-
-                // Check the path element order for (22), (10), and (21) if they exist in the GS1 identifier
-                // If only one of the three keys exist, no order check is needed
-                int nStartPos22 = GetAppIDStartPosition("(22)", gs1Identifier);
-                int nStartPos10 = GetAppIDStartPosition("(10)", gs1Identifier);
-                int nStartPos21 = GetAppIDStartPosition("(21)", gs1Identifier);
-                Debug.WriteLine($"Start Position 22: {nStartPos22}");
-                Debug.WriteLine($"Start Position 10: {nStartPos10}");
-                Debug.WriteLine($"Start Position 21: {nStartPos21}");
-
-                cErrorMessage = CodeLang.ErrorGS1AppIDOrderInvalid_Text;
-
-                // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21 - (22), (10), and (21)
-                if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 != -1)
-                {
-                    if (!(nStartPos22 < nStartPos10 && nStartPos10 < nStartPos21))
-                    {
-                        return false;
-                    }
-                }
-
-                // If only two of the three keys exist, check their order - (22) and (10)
-                else if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 == -1)
-                {
-                    if (!(nStartPos22 < nStartPos10))
-                    {
-                        return false;
-                    }
-                }
-
-                // If only two of the three keys exist, check their order - (22) and (21)
-                else if (nStartPos22 != -1 && nStartPos10 == -1 && nStartPos21 != -1)
-                {
-                    if (!(nStartPos22 < nStartPos21))
-                    {
-                        return false;
-                    }
-                }
-
-                // If only two of the three keys exist, check their order - (10) and (21)
-                else if (nStartPos22 == -1 && nStartPos10 != -1 && nStartPos21 != -1)
-                {
-                    if (!(nStartPos10 < nStartPos21))
-                    {
-                        return false;
-                    }
-                }
             }
 
             // itip-code 8006 - International Ticketing Information Protocol (ITIP) = 14DIGIT 2DIGIT 2DIGIT ; 14 digits then 2 digits then 2 digits
@@ -239,50 +193,6 @@ namespace BarcodeGenerator
                 if (!ValidateValueCheckDigitModulo10(cValue[..14], 14))
                 {
                     return false;
-                }
-
-                // Check the path element order for (22), (10), and (21) if they exist in the GS1 identifier
-                // If only one of the three keys exist, no order check is needed
-                int nStartPos22 = GetAppIDStartPosition("(22)", gs1Identifier);
-                int nStartPos10 = GetAppIDStartPosition("(10)", gs1Identifier);
-                int nStartPos21 = GetAppIDStartPosition("(21)", gs1Identifier);
-
-                cErrorMessage = CodeLang.ErrorGS1AppIDOrderInvalid_Text;
-
-                // nStartPos22 must be less than nStartPos10 and nStartPos10 must be less than nStartPos21 - (22), (10), and (21)
-                if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 != -1)
-                {
-                    if (!(nStartPos22 < nStartPos10 && nStartPos10 < nStartPos21))
-                    {
-                        return false;
-                    }
-                }
-
-                // If only two of the three keys exist, check their order - (22) and (10)
-                else if (nStartPos22 != -1 && nStartPos10 != -1 && nStartPos21 == -1)
-                {
-                    if (!(nStartPos22 < nStartPos10))
-                    {
-                        return false;
-                    }
-                }
-
-                // If only two of the three keys exist, check their order - (22) and (21)
-                else if (nStartPos22 != -1 && nStartPos10 == -1 && nStartPos21 != -1)
-                {
-                    if (!(nStartPos22 < nStartPos21))
-                    {
-                        return false;
-                    }
-                }
-
-                // If only two of the three keys exist, check their order - (10) and (21)
-                else if (nStartPos22 == -1 && nStartPos10 != -1 && nStartPos21 != -1)
-                {
-                    if (!(nStartPos10 < nStartPos21))
-                    {
-                        return false;
-                    }
                 }
             }
 
@@ -1870,149 +1780,6 @@ namespace BarcodeGenerator
             }
 
             return true;
-        }
-
-        private static string OrderGS1DigitalLink(string gs1IdentifierOriginal)
-        {
-            /*
-            Path element order
-            The following rules express how the URI path information should be structured for each primary 
-            identification key. Note that some primary identification keys such as SSCC do not have any 
-            associated key qualifier. Other primary identification keys such as GTIN, may have multiple key 
-            qualifiers. The square bracket notation indicates that the enclosed key qualifier component may be 
-            omitted but the sequence in which they appear is important and must be preserved. For example, 
-            the rule for gtin-path would permit any of these: 
-            
-            01   gtin-path       =   01 gtin-comp       22 [cpv-comp]    10 [lot-comp]    21 [ser-comp] 
-            8006 itip-path       = 8006 itip-comp       22 [cpv-comp]    10 [lot-comp]    21 [ser-comp]
-            8013 gmn-path        = 8013 gmn-comp
-            8010 cpid-path       = 8010 cpid-comp     8011 [cpsn-comp] 
-            414  gln-path        =  414 gln-comp       254 [glnx-comp]
-            415  payTo-path      =  415 payTo-comp     115 refNo-comp
-            417  partyGln-path   =  417 partyGln-comp 
-            8017 gsrnp-path      = 8017 gsrnp-comp    8019 [srin-comp]
-            8018 gsrn-path       = 8018 gsrn-comp     8019 [srin-comp] 
-            255  gcn-path        =  255 gcn-comp 
-            00   sscc-path       =   00 sscc-comp 
-            253  gdti-path       =  253 gdti-comp  
-            401  ginc-path       =  401 ginc-comp 
-            402  gsin-path       =  402 gsin-comp
-            8003 grai-path       = 8003 grai-comp
-            8004 giai-path       = 8004 giai-comp
-                 upui-path       =   01 gtin-comp      235 tpx-comp
-                 eoid-path       =  417 partyGln-comp 7040 uic-ext-comp 
-                 fid-path        =  414 gln-comp      7040 uic-ext-comp
-                 mid-path        = 8004 giai-comp     7040 uic-ext-comp
-            */
-
-            //if (ClassLoadDataFromFile.dicGs1.ContainsKey("01"))
-            //{
-            //    cValue = ClassLoadDataFromFile.dicGs1["01"];
-            //}
-
-            string cValue = string.Empty;
-            string gs1Identifier = string.Empty;
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("01")) cValue = ClassLoadDataFromFile.dicGs1["01"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier = $"(01){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8006")) cValue = ClassLoadDataFromFile.dicGs1["8006"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(8006){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("22")) cValue = ClassLoadDataFromFile.dicGs1["22"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(22){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("10")) cValue = ClassLoadDataFromFile.dicGs1["10"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(10){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("21")) cValue = ClassLoadDataFromFile.dicGs1["21"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(21){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("01")) cValue = ClassLoadDataFromFile.dicGs1["01"];
-            if (!string.IsNullOrWhiteSpace(cValue))
-            {
-                if (ClassLoadDataFromFile.dicGs1.ContainsKey("235")) cValue = ClassLoadDataFromFile.dicGs1["235"];
-                if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(235){cValue}";
-            }
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8013")) cValue = ClassLoadDataFromFile.dicGs1["8013"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(8013){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8010")) cValue = ClassLoadDataFromFile.dicGs1["8010"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(8010){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8011")) cValue = ClassLoadDataFromFile.dicGs1["8011"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(8011){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("414")) cValue = ClassLoadDataFromFile.dicGs1["414"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(414){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("254")) cValue = ClassLoadDataFromFile.dicGs1["254"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(254){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("415")) cValue = ClassLoadDataFromFile.dicGs1["415"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(415){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("115")) cValue = ClassLoadDataFromFile.dicGs1["115"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(115){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("417")) cValue = ClassLoadDataFromFile.dicGs1["417"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(417){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8017")) cValue = ClassLoadDataFromFile.dicGs1["8017"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(8017){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8018")) cValue = ClassLoadDataFromFile.dicGs1["8018"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(8018){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8019")) cValue = ClassLoadDataFromFile.dicGs1["8019"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(8019){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("255")) cValue = ClassLoadDataFromFile.dicGs1["255"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(255){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("00")) cValue = ClassLoadDataFromFile.dicGs1["00"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(00){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("253")) cValue = ClassLoadDataFromFile.dicGs1["253"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(253){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("401")) cValue = ClassLoadDataFromFile.dicGs1["401"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(401){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("402")) cValue = ClassLoadDataFromFile.dicGs1["402"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(402){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8003")) cValue = ClassLoadDataFromFile.dicGs1["8003"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(8003){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8004")) cValue = ClassLoadDataFromFile.dicGs1["8004"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(8004){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("7040")) cValue = ClassLoadDataFromFile.dicGs1["7040"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(7040){cValue}";
-
-            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8020")) cValue = ClassLoadDataFromFile.dicGs1["8020"];
-            if (!string.IsNullOrWhiteSpace(cValue)) gs1Identifier += $"(8020){cValue}";
-
-            // Sort the dictionary by key and then iterate through it to ensure that the AIs are added in order
-            // This way, you can maintain the order of the AIs in the GS1 identifier string
-            IOrderedEnumerable<KeyValuePair<string, string>> sortedDicGs1 = ClassLoadDataFromFile.dicGs1.OrderBy(static kvp => kvp.Key);
-
-            // Add any remaining GS1 Application Identifiers (AIs) that are not part of the primary identification keys or key qualifiers
-            foreach (KeyValuePair<string, string> kvp in sortedDicGs1)
-            {
-                if (kvp.Key is not "01" and not "8006" and not "8013" and not "8010" and not "414" and not "415" and not "417"
-                    and not "8017" and not "8018" and not "255" and not "00" and not "253" and not "401" and not "402" and not "8003" and not "8004"
-                    and not "22" and not "10" and not "21" and not "8011" and not "254" and not "8020" and not "8019" and not "235" and not "7040")
-                {
-                    cValue = GetKnownGs1AppIDValue(kvp.Key);
-                    gs1Identifier += $"({kvp.Key}){cValue}";
-                }
-            }
-
-            // Return the ordered GS1 identifier
-            return gs1Identifier;
         }
     }
 }

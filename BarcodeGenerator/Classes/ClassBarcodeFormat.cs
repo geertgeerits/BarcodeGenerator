@@ -66,7 +66,7 @@ namespace BarcodeGenerator
             if (url.StartsWith("http", StringComparison.OrdinalIgnoreCase))
             {
                 // Parse the URL for GS1 digital link key-value pairs and display them in a formatted manner
-                SplitKeyValuePairs(url);
+                SplitScannedKeyValuePairs(url);
 
                 if (ClassLoadDataFromFile.dicGs1.Count > 0)
                 {
@@ -242,10 +242,11 @@ namespace BarcodeGenerator
         }
 
         /// <summary>
-        /// Splits the GS1 identifier into key-value pairs and adds them to the dictionary
+        /// Splits the GS1 identifier into key-value pairs and adds them to the dictionary after scanning the GS1 digital link barcode.
+        /// The keys are surrounded by slashes (/) or start with a question mark (?) or start with an ampersand (&), and values are separated by equal signs (=) for keys started with question mark or ampersand.
         /// </summary>
         /// <param name="gs1Identifier"></param>
-        private static void SplitKeyValuePairs(string gs1Identifier)
+        private static void SplitScannedKeyValuePairs(string gs1Identifier)
         {
             // Keys are surrounded by slashes (/) or start with a question mark (?) or start with an ampersand (&)
             // and values are separated by equal signs (=) for keys started with question mark or ampersand.
@@ -296,6 +297,118 @@ namespace BarcodeGenerator
             {
                 ClassLoadDataFromFile.dicGs1.Remove(key);
             }
+        }
+
+        /// <summary>
+        /// Order the GS1 Digital Link
+        /// </summary>
+        /// <param name="gs1IdentifierOriginal"></param>
+        /// <returns></returns>
+        public static string OrderGS1DigitalLink(string gs1IdentifierOriginal)
+        {
+            /*
+            Path element order
+            The following rules express how the URI path information should be structured for each primary 
+            identification key. Note that some primary identification keys such as SSCC do not have any 
+            associated key qualifier. Other primary identification keys such as GTIN, may have multiple key 
+            qualifiers. The square bracket notation indicates that the enclosed key qualifier component may be 
+            omitted but the sequence in which they appear is important and must be preserved. For example, 
+            the rule for gtin-path would permit any of these: 
+            
+            01   gtin-path       =   01 gtin-comp       22 [cpv-comp]    10 [lot-comp]    21 [ser-comp] 
+            8006 itip-path       = 8006 itip-comp       22 [cpv-comp]    10 [lot-comp]    21 [ser-comp]
+            8013 gmn-path        = 8013 gmn-comp
+            8010 cpid-path       = 8010 cpid-comp     8011 [cpsn-comp] 
+            414  gln-path        =  414 gln-comp       254 [glnx-comp]
+            415  payTo-path      =  415 payTo-comp    8020 refNo-comp
+            417  partyGln-path   =  417 partyGln-comp 
+            8017 gsrnp-path      = 8017 gsrnp-comp    8019 [srin-comp]
+            8018 gsrn-path       = 8018 gsrn-comp     8019 [srin-comp] 
+            255  gcn-path        =  255 gcn-comp 
+            00   sscc-path       =   00 sscc-comp 
+            253  gdti-path       =  253 gdti-comp  
+            401  ginc-path       =  401 ginc-comp 
+            402  gsin-path       =  402 gsin-comp
+            8003 grai-path       = 8003 grai-comp
+            8004 giai-path       = 8004 giai-comp
+                 upui-path       =   01 gtin-comp      235 tpx-comp
+                 eoid-path       =  417 partyGln-comp 7040 uic-ext-comp 
+                 fid-path        =  414 gln-comp      7040 uic-ext-comp
+                 mid-path        = 8004 giai-comp     7040 uic-ext-comp
+            */
+
+            string gs1Identifier = string.Empty;
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("00")) gs1Identifier += $"(00){GetdicGs1Value("00")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("01")) gs1Identifier = $"(01){GetdicGs1Value("01")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8006")) gs1Identifier += $"(8006){GetdicGs1Value("8006")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("22")) gs1Identifier += $"(22){GetdicGs1Value("22")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("10")) gs1Identifier += $"(10){GetdicGs1Value("10")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("21")) gs1Identifier += $"(21){GetdicGs1Value("21")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("01"))
+            {
+                if (ClassLoadDataFromFile.dicGs1.ContainsKey("235")) gs1Identifier += $"(235){GetdicGs1Value("235")}";
+            }
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8013")) gs1Identifier += $"(8013){GetdicGs1Value("8013")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8010")) gs1Identifier += $"(8010){GetdicGs1Value("8010")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8011")) gs1Identifier += $"(8011){GetdicGs1Value("8011")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("414")) gs1Identifier += $"(414){GetdicGs1Value("414")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("254")) gs1Identifier += $"(254){GetdicGs1Value("254")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("415")) gs1Identifier += $"(415){GetdicGs1Value("415")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8020")) gs1Identifier += $"(8020){GetdicGs1Value("8020")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("417")) gs1Identifier += $"(417){GetdicGs1Value("417")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8017")) gs1Identifier += $"(8017){GetdicGs1Value("8017")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8018")) gs1Identifier += $"(8018){GetdicGs1Value("8018")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8019")) gs1Identifier += $"(8019){GetdicGs1Value("8019")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("255")) gs1Identifier += $"(255){GetdicGs1Value("255")}";
+
+            //if (ClassLoadDataFromFile.dicGs1.ContainsKey("00")) gs1Identifier += $"(00){GetdicGs1Value("00")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("253")) gs1Identifier += $"(253){GetdicGs1Value("253")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("401")) gs1Identifier += $"(401){GetdicGs1Value("401")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("402")) gs1Identifier += $"(402){GetdicGs1Value("402")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8003")) gs1Identifier += $"(8003){GetdicGs1Value("8003")}";
+
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("8004")) gs1Identifier += $"(8004){GetdicGs1Value("8004")}";
+            if (ClassLoadDataFromFile.dicGs1.ContainsKey("7040")) gs1Identifier += $"(7040){GetdicGs1Value("7040")}";
+
+            // Sort the dictionary by key and then iterate through it to ensure that the AIs are added in order
+            // This way, you can maintain the order of the AIs in the GS1 identifier string
+            IOrderedEnumerable<KeyValuePair<string, string>> sortedDicGs1 = ClassLoadDataFromFile.dicGs1.OrderBy(static kvp => kvp.Key);
+
+            // Add any remaining GS1 Application Identifiers (AIs) that are not part of the primary identification keys or key qualifiers
+            foreach (KeyValuePair<string, string> kvp in sortedDicGs1)
+            {
+                if (kvp.Key is not "01" and not "8006" and not "8013" and not "8010" and not "414" and not "415" and not "417"
+                    and not "8017" and not "8018" and not "255" and not "00" and not "253" and not "401" and not "402" and not "8003" and not "8004"
+                    and not "22" and not "10" and not "21" and not "8011" and not "254" and not "8020" and not "8019" and not "235" and not "7040")
+                {
+                    gs1Identifier += $"({kvp.Key}){GetdicGs1Value(kvp.Key)}";
+                }
+            }
+
+            // Return the ordered GS1 identifier
+            return gs1Identifier;
+        }
+
+        /// <summary>
+        /// Get the value connected to a certain key cAppId in the dictionary dicGs1
+        /// </summary>
+        /// <param name="cAppId"></param>
+        /// <returns></returns>
+        private static string GetdicGs1Value(string cAppId)
+        {
+            return ClassLoadDataFromFile.dicGs1.TryGetValue(cAppId, out string? value) ? value : string.Empty;
         }
     }
 }
