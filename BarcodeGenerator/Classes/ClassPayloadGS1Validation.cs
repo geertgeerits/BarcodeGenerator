@@ -102,18 +102,15 @@ namespace BarcodeGenerator
 
             // Order the GS1 identifier to a valid GS1 Digital Link
             string gs1DigitalLink = editor.Text;
-            //gs1DigitalLink = ClassBarcodeFormat.OrderGS1DigitalLink(gs1DigitalLink);
-            Debug.WriteLine($"GS1 Digital Link: {gs1DigitalLink} - editor.Text: {editor.Text}");
-
+            //gs1DigitalLink = ClassBarcodeFormat.OrderGS1DigitalLink(editor.Text);
 
             // Format the GS1 identifier to a valid GS1 Digital Link
             foreach (KeyValuePair<string, string> kvp in ClassLoadDataFromFile.dicGs1)
             {
-                gs1DigitalLink = FormatGS1DigitalLink(gs1DigitalLink, kvp.Key, kvp.Value);
+                editor.Text = ClassBarcodeFormat.FormatGS1DigitalLink(gs1DigitalLink, kvp.Key, kvp.Value);
             }
             
-            editor.Text = gs1DigitalLink;
-
+            //editor.Text = gs1DigitalLink;
             return bIsValid;
         }
 
@@ -1301,56 +1298,6 @@ namespace BarcodeGenerator
             }
 
             return true;
-        }
-
-        /// <summary>
-        /// Format the GS1 identifier to a valid GS1 Digital Link
-        /// </summary>
-        /// <param name="gs1Identifier"></param>
-        /// <param name="cAppId"></param>
-        /// <param name="cValue"></param>
-        /// <returns></returns>
-        private static string FormatGS1DigitalLink(string gs1Identifier, string cAppId, string cValue)
-        {
-            // If the AI is one of the primary identification keys or key qualifiers, it must be preceded and followed by a slash.
-            if (cAppId is "01" or "8006" or "8013" or "8010" or "414" or "415" or "417" or "8017"
-                or "8018" or "255" or "00" or "253" or "401" or "402" or "8003" or "8004"
-                or "22" or "10" or "21" or "8011" or "254" or "8020" or "235" or "7040")
-            {
-                // Replace the parentheses with slashes
-                if (gs1Identifier.Contains($"({cAppId})"))
-                {
-                    gs1Identifier = gs1Identifier.Replace($"({cAppId})", $"/{cAppId}/");
-                }
-            }
-
-            // If the AI is one of the data attributes, it must be preceded by a question mark and followed by an equal sign,
-            // or preceded by an ampersand and followed by an equal sign.
-            else
-            {
-                // The AI must be preceded by a question mark or ampersand and followed by an equal sign
-                if (gs1Identifier.Contains($"({cAppId})"))
-                {
-                    // Replace the parentheses with a question mark and equal sign.
-                    // There can be only one data attribute that is preceded by a question mark and followed by an equal sign,
-                    // and all other data attributes must be preceded by an ampersand and followed by an equal sign.
-                    if (!gs1Identifier.Contains('?'))
-                    {
-                        gs1Identifier = gs1Identifier.Replace($"({cAppId})", $"?{cAppId}=");
-                    }
-                    
-                    else
-                    {
-                        gs1Identifier = gs1Identifier.Replace($"({cAppId})", $"&{cAppId}=");
-                    }
-                }
-            }
-
-            // Escape the value to ensure it is valid for an URL
-            // (414)9520123456788(254)32a/b -> /414/9520123456788/254/32a/b -> /414/9520123456788/254/32a%2Fb
-            gs1Identifier = gs1Identifier.Replace(cValue, Uri.EscapeDataString(cValue));
-
-            return gs1Identifier;
         }
 
         /// <summary>
