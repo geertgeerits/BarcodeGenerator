@@ -110,9 +110,6 @@ namespace BarcodeGenerator
             // Order the GS1 identifier to a valid GS1 Digital Link
             string gs1DigitalLink = ClassBarcodeFormat.OrderGS1DigitalLink();
 
-            // Split the GS1 identifier into key-value pairs and add them to the dictionary
-            SplitKeyValuePairsParenthesis(editor.Text);
-
             // Format the GS1 identifier to a valid GS1 Digital Link
             gs1DigitalLink = ClassBarcodeFormat.FormatGS1DigitalLink(gs1DigitalLink);
             
@@ -1731,4 +1728,8 @@ use in a GS1 Digital Link URI syntax.
 https://ref.gs1.org/
 https://ref.gs1.org/ai/
 https://ref.gs1.org/standards/digital-link/uri-syntax/
+https://github.com/gs1/DigitalLinkDocs
+https://github.com/Evebury/Evebury.Gs1.DigitalLink
+https://github.com/duruilhan/gs1-digital-link-toolkit
+https://gs1-2027.com/structure-and-parse-gs1-digital-link-uris/
 */

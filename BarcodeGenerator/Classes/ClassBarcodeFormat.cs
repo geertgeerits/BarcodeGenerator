@@ -4,6 +4,7 @@ namespace BarcodeGenerator
 {
     internal class ClassBarcodeFormat
     {
+        /// <summary>
         /// Process the list of scanned BarcodeResult objects, remove duplicates and sort them
         /// </summary>
         /// <param name="list"></param>
@@ -196,11 +197,13 @@ namespace BarcodeGenerator
                                 if (currencyName != string.Empty)
                                 {
                                     barcodeResult += $" ({currencyName} {kvp.Value[3..]})";
+                                    string formattedValue = FormatGs1ValueWithDecimalPoint(kvp.Key, kvp.Value[3..]);
+                                    barcodeResult += $" ({formattedValue})";
                                 }
                             }
 
                             // Numeric values with decimal point
-                            if (kvp.Key.StartsWith('3') && kvp.Key.Length == 4)
+                            else if (kvp.Key.StartsWith('3') && kvp.Key.Length == 4)
                             {
                                 string formattedValue = FormatGs1ValueWithDecimalPoint(kvp.Key, kvp.Value);
                                 barcodeResult += $" ({formattedValue})";
@@ -243,8 +246,9 @@ namespace BarcodeGenerator
 
         /// <summary>
         /// Splits the GS1 identifier into key-value pairs and adds them to the dictionary after scanning the GS1 digital link barcode.
-        /// The keys are surrounded by slashes (/) or start with a question mark (?) or start with an ampersand (&), and values are separated by equal signs (=) for keys started with question mark or ampersand.
+        /// The keys are surrounded by slashes or start with a question mark or start with an ampersand, and values are separated by equal signs for keys started with question mark or ampersand.
         /// </summary>
+        /// <remarks></remarks>
         /// <param name="gs1Identifier"></param>
         private static void SplitScannedKeyValuePairs(string gs1Identifier)
         {
