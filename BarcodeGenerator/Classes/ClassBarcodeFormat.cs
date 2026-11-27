@@ -196,9 +196,8 @@ namespace BarcodeGenerator
 
                                 if (currencyName != string.Empty)
                                 {
-                                    barcodeResult += $" ({currencyName} {kvp.Value[3..]})";
                                     string formattedValue = FormatGs1ValueWithDecimalPoint(kvp.Key, kvp.Value[3..]);
-                                    barcodeResult += $" ({formattedValue})";
+                                    barcodeResult += $" ({currencyName} {formattedValue})";
                                 }
                             }
 
