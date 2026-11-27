@@ -113,15 +113,9 @@ namespace BarcodeGenerator
             // Split the GS1 identifier into key-value pairs and add them to the dictionary
             SplitKeyValuePairsParenthesis(editor.Text);
 
-            // Sort the dictionary by key to ensure that the AIs are added in order
-            Dictionary<string, string> sortedDicGs1Format = ClassLoadDataFromFile.dicGs1.OrderBy(static kvp => kvp.Key).ToDictionary(static kvp => kvp.Key, static kvp => kvp.Value);
-
             // Format the GS1 identifier to a valid GS1 Digital Link
-            foreach (KeyValuePair<string, string> kvp in sortedDicGs1Format)
-            {
-                gs1DigitalLink = ClassBarcodeFormat.FormatGS1DigitalLink(gs1DigitalLink, kvp.Key, kvp.Value);
-            }
-
+            gs1DigitalLink = ClassBarcodeFormat.FormatGS1DigitalLink(gs1DigitalLink);
+            
             editor.Text = gs1DigitalLink;
             return bIsValid;
         }
