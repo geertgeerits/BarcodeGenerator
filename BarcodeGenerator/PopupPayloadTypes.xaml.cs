@@ -1002,7 +1002,7 @@ END:VCALENDAR";
                     }
 
                     // Validate the GS1 identifier to ensure it meets the required format and standards for GS1 payloads
-                    if (!await ClassPayloadGS1Validation.IsValidGS1IdentifierAsync(edtPayloadTypeGS1Identifier))
+                    if (!await ClassPayloadGS1Validation.IsValidGS1IdentifierAsync(entPayloadTypeURL, edtPayloadTypeGS1Identifier))
                     {
                         return string.Empty;
                     }
@@ -1011,7 +1011,18 @@ END:VCALENDAR";
                     ClassPayloadTypes.cPayloadCaption = edtPayloadTypeGS1Identifier.Text.Length > 18 ? edtPayloadTypeGS1Identifier.Text[..18] : edtPayloadTypeGS1Identifier.Text;
 
                     // Concatenate the URL payload with the GS1 identifier to form the complete payload string
-                    payload = $"{generator}{edtPayloadTypeGS1Identifier.Text}";
+                    // If the payload is already in the editor 'edtPayloadTypeGS1Identifier.Text', do not add it again.
+                    // This happens when using the library 'Solidsoft.Reply.Gs1DigitalLinkLib' for formatting the payload
+                    if (edtPayloadTypeGS1Identifier.Text.Contains(payload))
+                    {
+                        payload = edtPayloadTypeGS1Identifier.Text;
+                    }
+                    else
+                    {
+                        payload = $"{generator}{edtPayloadTypeGS1Identifier.Text}";
+                    }
+
+                    // If the payload is already in the edtPayloadTypeGS1Identifier.Text, do not
                 }
                 catch (Exception ex)
                 {

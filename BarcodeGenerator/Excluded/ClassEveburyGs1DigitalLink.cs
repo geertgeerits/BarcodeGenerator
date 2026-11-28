@@ -34,7 +34,7 @@ namespace BarcodeGenerator
             builder.AddPrice(PriceType.PRICE_TRADE_ITEM, new Price(88, 2, CurrencyCode.EUR));
 
             //uncomment to raise validation error
-            builder.AddKey(KeyType.GTIN, "00074562000526");
+            //builder.AddKey(KeyType.GTIN, "00074562000526");
 
             DigitalLink link = builder.Build();
             if (!link.IsValid)

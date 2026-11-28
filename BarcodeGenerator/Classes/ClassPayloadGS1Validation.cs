@@ -73,9 +73,10 @@ namespace BarcodeGenerator
         /// <summary>
         /// Determines whether the specified string is a valid GS1 identifier
         /// </summary>
+        /// <param name="entry"></param>
         /// <param name="editor"></param>
         /// <returns></returns>
-        public static async Task<bool> IsValidGS1IdentifierAsync(Editor editor)
+        public static async Task<bool> IsValidGS1IdentifierAsync(Entry entry, Editor editor)
         {
             bool bIsValid = true;
 
@@ -111,7 +112,7 @@ namespace BarcodeGenerator
             string gs1DigitalLink = ClassBarcodeFormat.OrderGS1DigitalLink();
 
             // Format the GS1 identifier to a valid GS1 Digital Link
-            gs1DigitalLink = ClassBarcodeFormat.FormatGS1DigitalLink(gs1DigitalLink);
+            gs1DigitalLink = ClassBarcodeFormat.FormatGS1DigitalLink(entry.Text, gs1DigitalLink);
             
             editor.Text = gs1DigitalLink;
             return bIsValid;
@@ -1732,4 +1733,5 @@ https://github.com/gs1/DigitalLinkDocs
 https://github.com/Evebury/Evebury.Gs1.DigitalLink
 https://github.com/duruilhan/gs1-digital-link-toolkit
 https://gs1-2027.com/structure-and-parse-gs1-digital-link-uris/
+https://github.com/Solidsoft-Reply/Gs1DigitalLinkLib
 */

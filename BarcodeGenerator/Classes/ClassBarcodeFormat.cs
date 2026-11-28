@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using Solidsoft.Reply.Gs1DigitalLinkLib;
 
 namespace BarcodeGenerator
 {
@@ -417,8 +418,25 @@ namespace BarcodeGenerator
         /// </summary>
         /// <param name="gs1Identifier"></param>
         /// <returns></returns>
-        public static string FormatGS1DigitalLink(string gs1Identifier)
+        public static string FormatGS1DigitalLink(string hostName, string gs1Identifier)
         {
+            // Using the library Solidsoft.Reply.Gs1DigitalLinkLib for formatting the GS1 identifier to a valid GS1 Digital Link
+            Debug.WriteLine($"hostName = {hostName} - gs1Identifier = {gs1Identifier}");
+
+            try
+            {
+                Gs1DigitalLink gs1DigitalLink = gs1Identifier.ToGs1DigitalLink(uriStem: hostName);
+
+                Debug.WriteLine($"Digital Link URI = '{gs1DigitalLink}'");
+                return $"{gs1DigitalLink}";
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+
+            return gs1Identifier;
+
             // Sort the dictionary by key to ensure that the AIs are added in order
             Dictionary<string, string> sortedDicGs1Format = ClassLoadDataFromFile.dicGs1.OrderBy(static kvp => kvp.Key).ToDictionary(static kvp => kvp.Key, static kvp => kvp.Value);
 

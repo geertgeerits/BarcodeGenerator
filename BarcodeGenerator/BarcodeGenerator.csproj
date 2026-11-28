@@ -88,6 +88,7 @@
 
 	<ItemGroup>
 	  <Compile Remove="ClassArtQRCodeWin.cs" />
+	  <Compile Remove="Classes\ClassEveburyGs1DigitalLink.cs" />
 	  <Compile Remove="ClassScanFromImageZX.cs" />
 	  <Compile Remove="ClassValidateBarcodesOLD.cs" />
 	  <Compile Remove="KeyboardAwareBehavior.cs" />
@@ -115,12 +116,12 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="17.0.0" />
-		<PackageReference Include="Evebury.Gs1.DigitalLink" Version="1.0.6" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="11.0.10" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="11.0.0" />
         <PackageReference Include="QRCoder" Version="1.9.0" />
         <PackageReference Include="SkiaSharp" Version="4.158.0" />
         <PackageReference Include="SkiaSharp.QrCode" Version="1.2.0" />
+        <PackageReference Include="Solidsoft.Reply.Gs1DigitalLinkLib" Version="1.1.5" />
 		<PackageReference Include="ZXing.Net.Maui" Version="0.10.4" />
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.10.4" />
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.1.0" />
