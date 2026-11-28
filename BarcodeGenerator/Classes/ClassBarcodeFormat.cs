@@ -421,6 +421,7 @@ namespace BarcodeGenerator
         public static string FormatGS1DigitalLink(string hostName, string gs1Identifier)
         {
             // Using the library Solidsoft.Reply.Gs1DigitalLinkLib for formatting the GS1 identifier to a valid GS1 Digital Link
+            // https://github.com/Solidsoft-Reply/Gs1DigitalLinkLib
             Debug.WriteLine($"hostName = {hostName} - gs1Identifier = {gs1Identifier}");
 
             try

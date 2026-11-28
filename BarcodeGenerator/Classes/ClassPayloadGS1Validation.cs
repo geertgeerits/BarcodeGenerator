@@ -76,7 +76,7 @@ namespace BarcodeGenerator
         /// <param name="entry"></param>
         /// <param name="editor"></param>
         /// <returns></returns>
-        public static async Task<bool> IsValidGS1IdentifierAsync(Entry entry, Editor editor)
+        public static async Task<bool> IsValidGS1IdentifierAsync(string cPayloadTypeURL, Editor editor)
         {
             bool bIsValid = true;
 
@@ -112,7 +112,7 @@ namespace BarcodeGenerator
             string gs1DigitalLink = ClassBarcodeFormat.OrderGS1DigitalLink();
 
             // Format the GS1 identifier to a valid GS1 Digital Link
-            gs1DigitalLink = ClassBarcodeFormat.FormatGS1DigitalLink(entry.Text, gs1DigitalLink);
+            gs1DigitalLink = ClassBarcodeFormat.FormatGS1DigitalLink(cPayloadTypeURL, gs1DigitalLink);
             
             editor.Text = gs1DigitalLink;
             return bIsValid;
